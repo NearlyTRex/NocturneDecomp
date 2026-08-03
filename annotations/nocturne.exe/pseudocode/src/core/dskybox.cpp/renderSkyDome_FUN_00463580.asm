@@ -64,7 +64,7 @@
 ;   undefined4 DAT_01b7b728
 ;   undefined4 DAT_01b7b72c
 ;   undefined4 DAT_01b7b730
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440
@@ -109,13 +109,13 @@ section .text
     MOV dword ptr [EBP],EAX             ; 004635bc
     LEA EAX,[ESP + 0x54]                ; 004635bf
     PUSH EAX                            ; 004635c3
-    PUSH 0x1fba938                      ; 004635c4 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004635c4 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0 ; 004635c9
         ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004635ce
     LEA EAX,[ESP + 0x60]                ; 004635d1
     PUSH EAX                            ; 004635d5
-    PUSH 0x1fba938                      ; 004635d6 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004635d6 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0 ; 004635db
         ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004635e0

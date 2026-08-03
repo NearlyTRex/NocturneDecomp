@@ -19,6 +19,7 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float para
   CCurtain *pCVar8;
   SCurtainVertex *pSVar9;
   int iVar10;
+  SCollisionInfo *pSVar11;
   float fStack_e0;
   float fStack_c4;
   float fStack_c0;
@@ -108,23 +109,28 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float para
       }
       iStack_28 = 0;
       DAT_0077bdb8 = 0;
-      for (iStack_20 = 0; iVar6 = DAT_0077bdb8, iStack_20 < *(int *)(0x01E57284 + 0x14ecb0);
-          iStack_20 = iStack_20 + 1) {
-        iVar10 = *(int *)(0x01E57284 + iStack_28 + 0x14ecb4);
-        iVar7 = DAT_0077bdb8 * 10;
-        if (&DAT_0077bdbc + DAT_0077bdb8 * 3 != (uint *)(iVar10 + 0x20)) {
-          (&DAT_0077bdbc)[DAT_0077bdb8 * 3] = *(uint *)(iVar10 + 0x20);
-          (&DAT_0077bdc0)[iVar6 * 3] = *(uint *)(iVar10 + 0x24);
-          (&DAT_0077bdc4)[iVar6 * 3] = *(uint *)(iVar10 + 0x28);
+      for (iStack_20 = 0; iVar6 = DAT_0077bdb8,
+          iStack_20 < g_CDemonSet_PTR_005be368->character_count; iStack_20 = iStack_20 + 1) {
+        iVar10 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iStack_28);
+        pSVar11 = g_SCollisionInfo_ARRAY_0077c26c + DAT_0077bdb8;
+        if (g_CVector3f_ARRAY_0077bdbc + DAT_0077bdb8 != (CVector3f *)(iVar10 + 0x20)) {
+          g_CVector3f_ARRAY_0077bdbc[DAT_0077bdb8].x = ((CVector3f *)(iVar10 + 0x20))->x;
+          g_CVector3f_ARRAY_0077bdbc[iVar6].y = *(float *)(iVar10 + 0x24);
+          g_CVector3f_ARRAY_0077bdbc[iVar6].z = *(float *)(iVar10 + 0x28);
         }
-        (&DAT_0077c26c)[iVar7] = 0;
-        iVar7 = (**(code **)(*(int *)(iVar10 + 0x14c) + 0x34))(iVar10,&DAT_0077c26c + iVar7);
+        (pSVar11->ray_query).ray_type = 0;
+        iVar7 = (**(code **)(*(int *)(iVar10 + 0x14c) + 0x34))(iVar10,pSVar11);
         if (((iVar7 == 2) && (*(float *)(iVar10 + 0x24) <= local_78)) &&
-           ((local_a8 <= *(float *)(iVar10 + 0x24) + (float)(&DAT_0077c284)[iVar6 * 10] &&
-            ((((local_ac <= *(float *)(iVar10 + 0x20) + (float)(&DAT_0077c288)[iVar6 * 10] &&
-               (*(float *)(iVar10 + 0x20) - (float)(&DAT_0077c288)[iVar6 * 10] <= local_7c)) &&
-              (local_a4 <= *(float *)(iVar10 + 0x28) + (float)(&DAT_0077c288)[iVar6 * 10])) &&
-             (*(float *)(iVar10 + 0x28) - (float)(&DAT_0077c288)[iVar6 * 10] <= local_74)))))) {
+           ((local_a8 <=
+             *(float *)(iVar10 + 0x24) + g_SCollisionInfo_ARRAY_0077c26c[iVar6].cylinder_top_y &&
+            ((((local_ac <=
+                *(float *)(iVar10 + 0x20) + g_SCollisionInfo_ARRAY_0077c26c[iVar6].cylinder_radius
+               && (*(float *)(iVar10 + 0x20) -
+                   g_SCollisionInfo_ARRAY_0077c26c[iVar6].cylinder_radius <= local_7c)) &&
+              (local_a4 <=
+               *(float *)(iVar10 + 0x28) + g_SCollisionInfo_ARRAY_0077c26c[iVar6].cylinder_radius))
+             && (*(float *)(iVar10 + 0x28) - g_SCollisionInfo_ARRAY_0077c26c[iVar6].cylinder_radius
+                 <= local_74)))))) {
           DAT_0077bdb8 = DAT_0077bdb8 + 1;
         }
         iStack_28 = iStack_28 + 4;

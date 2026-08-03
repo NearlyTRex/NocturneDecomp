@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_none_0059699b
 ;   TerminatedCString s_none_005969a0
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cc9454
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     PUSH EBX                            ; 00547a05
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00547a06
         ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
-    MOV EAX,[0x005baf90]                ; 00547a0b | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 00547a0b | g_CDemonMission_PTR_005baf90
     MOV dword ptr [EBX + 0xf8],0x0      ; 00547a10
     MOV EAX,dword ptr [EAX + 0x4]       ; 00547a1a | DAT_01cc9454
     MOV dword ptr [EBX + 0x100],0x1     ; 00547a1d

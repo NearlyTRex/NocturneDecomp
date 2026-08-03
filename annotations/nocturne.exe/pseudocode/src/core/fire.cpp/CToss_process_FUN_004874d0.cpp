@@ -23,7 +23,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(CToss *this_ptr)
   float local_c;
   
   if (0.0 < this_ptr->fuse_timer) {
-    local_c = *(float *)(0x01C775EC + 0x264);
+    local_c = g_CGame_PTR_005b9354->delta_time_float;
     fVar1 = this_ptr->fuse_timer - local_c;
     this_ptr_00 = &this_ptr->physics_box;
     this_ptr->fuse_timer = fVar1;
@@ -36,7 +36,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(CToss *this_ptr)
       local_30.y = _DAT_02dd1188;
       local_30.z = _DAT_02dd118c;
       pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
-      local_30.z = local_30.z + (float)pCVar2->texture_list[7].textures[2].base.type;
+      local_30.z = local_30.z + (pCVar2->bounds).max.z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                          (&(this_ptr->physics_box).rotation_matrix,&local_18,&local_30);
       local_24 = (this_ptr_00->position).x + pCVar3->x;
@@ -48,11 +48,11 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(CToss *this_ptr)
         local_30.z = local_1c;
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,&local_30,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,&local_30,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
       return;
     }
     if (this_ptr->toss_type == 0) {
-      core_fire_cpp_FUN_0048c0d0(0x01C08D04,&this_ptr_00->position,16.0,100.0,4.0);
+      core_fire_cpp_FUN_0048c0d0(g_CFireEffect_PTR_005b80f0,&this_ptr_00->position,16.0,100.0,4.0);
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
       return;
     }

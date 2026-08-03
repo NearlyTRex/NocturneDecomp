@@ -97,23 +97,25 @@ void core_trash_cpp_CTrash_process_FUN_00546e10(CDemonActor *param_1,float param
   *pfVar11 = local_14 + *pfVar11;
   local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.05,0.05);
   param_1[2].runtime_state = (int)(local_14 + (float)param_1[2].runtime_state);
-  pCVar6 = 0x01E57284;
+  pCVar6 = g_CDemonSet_PTR_005be368;
   local_d0 = 0x40800000;
   local_cc = 0;
+  pCVar9 = &(g_CDemonSet_PTR_005be368->active_fog).scroll;
   local_c8 = 0;
-  if (0x01E57284->renderable_actors + 0x6e2 != (CDemonActor **)&local_d0) {
-    0x01E57284->renderable_actors[0x6e2] = (CDemonActor *)0x40800000;
-    pCVar6->renderable_actors[0x6e3] = (CDemonActor *)0x0;
-    pCVar6->renderable_actors[0x6e4] = (CDemonActor *)0x0;
+  if (pCVar9 != (CVector3f *)&local_d0) {
+    pCVar9->x = 4.0;
+    (pCVar6->active_fog).scroll.y = 0.0;
+    (pCVar6->active_fog).scroll.z = 0.0;
   }
   fVar8 = (float)param_1[2].direction_hint - param_2;
   param_1[2].direction_hint = (int)fVar8;
-  pCVar6 = 0x01E57284;
+  pCVar6 = g_CDemonSet_PTR_005be368;
   if (fVar8 <= 0.0) {
-    if ((CDemonActor **)&param_1[2].lifecycle_state != 0x01E57284->renderable_actors + 0x6e2) {
-      param_1[2].lifecycle_state = (EActorLifecycleState)0x01E57284->renderable_actors[0x6e2];
-      param_1[2].create_prob = (float)pCVar6->renderable_actors[0x6e3];
-      *(CDemonActor **)param_1[2].create_event = pCVar6->renderable_actors[0x6e4];
+    pCVar9 = &(g_CDemonSet_PTR_005be368->active_fog).scroll;
+    if ((CVector3f *)&param_1[2].lifecycle_state != pCVar9) {
+      param_1[2].lifecycle_state = (EActorLifecycleState)pCVar9->x;
+      param_1[2].create_prob = (pCVar6->active_fog).scroll.y;
+      *(float *)param_1[2].create_event = (pCVar6->active_fog).scroll.z;
     }
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-10.0,10.0);
     param_1[2].lifecycle_state =
@@ -126,10 +128,10 @@ void core_trash_cpp_CTrash_process_FUN_00546e10(CDemonActor *param_1,float param
     param_1[2].direction_hint = (int)fVar8;
   }
   pEVar1 = &param_1[2].lifecycle_state;
-  local_28 = (float)0x01E57284->renderable_actors[0x6e2] - (float)*pEVar1;
-  local_24 = (float)0x01E57284->renderable_actors[0x6e3] - param_1[2].create_prob;
+  local_28 = (g_CDemonSet_PTR_005be368->active_fog).scroll.x - (float)*pEVar1;
+  local_24 = (g_CDemonSet_PTR_005be368->active_fog).scroll.y - param_1[2].create_prob;
   local_ac = local_28 * 0.05f;
-  local_20 = (float)0x01E57284->renderable_actors[0x6e4] - *(float *)param_1[2].create_event;
+  local_20 = (g_CDemonSet_PTR_005be368->active_fog).scroll.z - *(float *)param_1[2].create_event;
   local_a8 = local_24 * 0.05f;
   local_a4 = local_20 * 0.05f;
   pfVar11 = &param_1[2].orient_matrix.m[2].y;
@@ -204,9 +206,10 @@ void core_trash_cpp_CTrash_process_FUN_00546e10(CDemonActor *param_1,float param
   local_34.y = param_1[2].orient_matrix.m[1].z * param_2;
   local_34.z = param_2 * param_1[2].orient_matrix.m[2].x;
   local_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-                       (0x01E57284,(param_1->location).position.x,(param_1->location).position.z,
-                        local_58,local_50,(float)param_1[2].validation_magic,param_1[2].orient.vec.z
-                        ,param_1[2].orient_matrix.m[0].x);
+                       (g_CDemonSet_PTR_005be368,(param_1->location).position.x,
+                        (param_1->location).position.z,local_58,local_50,
+                        (float)param_1[2].validation_magic,param_1[2].orient.vec.z,
+                        param_1[2].orient_matrix.m[0].x);
   bVar5 = false;
   if ((0.0 <= local_14) && (local_14 < 1.0)) {
     local_58 = local_58 * local_14;
@@ -221,7 +224,7 @@ void core_trash_cpp_CTrash_process_FUN_00546e10(CDemonActor *param_1,float param
   (param_1->location).position.y = fVar8 + local_54;
   (param_1->location).position.z = fVar3 + local_50;
   local_1c = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                       (0x01E57284,&position->position,
+                       (g_CDemonSet_PTR_005be368,&position->position,
                         (float)param_1[2].validation_magic * (float)0.90000000000000002);
   if (local_1c <= (param_1->location).position.y) {
     if (!bVar5) goto LAB_005474f0;

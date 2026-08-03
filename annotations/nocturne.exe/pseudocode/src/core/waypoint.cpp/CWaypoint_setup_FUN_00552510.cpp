@@ -37,8 +37,8 @@ void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CTrigger *param_1)
     iVar6 = _stricmp(str1,"none");
     if ((iVar6 != 0) &&
        (iVar6 = _stricmp(str1,"true"), iVar6 != 0)) {
-      PTR_01cc4800 = "..\\core\\waypoint.cpp";
-      INT_01cc4804 = 0x79;
+      g_CHAR_PTR_01cc4800 = "..\\core\\waypoint.cpp";
+      g_INT_01cc4804 = 0x79;
       core_main_c_FUN_004c8440("Can't have creation event for waypoint.");
       return;
     }

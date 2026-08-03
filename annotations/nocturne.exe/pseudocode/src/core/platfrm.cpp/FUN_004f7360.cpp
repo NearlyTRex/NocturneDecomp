@@ -48,7 +48,7 @@ int __cdecl core_platfrm_cpp_FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor
             (CStack_24.y + local_88.cylinder_bottom_y <= CStack_60.max.y)))) {
           pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                              (&this_ptr->model);
-          if (*(int *)(pCVar2->texture_list[7].textures[2].texture_name + 4) != 0) {
+          if (pCVar2->collision_triangle_list != (CDemonTriangle *)0x0) {
             CStack_48.x = CStack_24.x;
             CStack_48.z = CStack_24.z;
             output_normal = &CStack_3c;

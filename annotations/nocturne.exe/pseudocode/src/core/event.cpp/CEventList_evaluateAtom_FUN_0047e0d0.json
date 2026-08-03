@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3375,
-    "complexity_score": 2850,
+    "complexity_score": 2835,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 224,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1555,
-    "suspect_count": 125,
+    "suspect_count": 124,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "undefined_data",
       "unresolved_funcptr",
       "unrolled_strcpy",
@@ -1490,21 +1489,21 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005bdee0",
-      "name": "DAT_005bdee0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CNetGame_PTR_005bdee0",
+      "type": "CNetGame*",
+      "value": "01cea280"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005c168c",
@@ -1562,7 +1561,7 @@
     },
     {
       "addr": "01c77604",
-      "name": "DAT_01c77604",
+      "name": "g_CGame_01c775ec.nudity_flag",
       "type": "undefined4",
       "value": null
     },
@@ -1586,37 +1585,37 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea280",
-      "name": "DAT_01cea280",
-      "type": "undefined4",
+      "name": "g_CNetGame_01cea280",
+      "type": "CNetGame",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa7e78",
-      "name": "DAT_01fa7e78",
+      "name": "g_CDemonSet_01e57284.enemy_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d40",
-      "name": "DAT_01fb1d40",
+      "name": "g_CDemonSet_01e57284.selected_camera_index",
       "type": "undefined4",
       "value": null
     }
@@ -3212,9 +3211,9 @@
     {
       "description": "Complex pointer cast",
       "line": 1159,
-      "match": "(int *)((int)0x01E57284",
+      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "iVar8 = *(int *)((int)0x01E57284->characters + local_14 + 0x1b5c",
+      "text": "iVar8 = *(int *)((int)g_CDemonSet_PTR_005be368->enemies + local_14",
       "type": "pointer_cast"
     },
     {
@@ -3368,14 +3367,6 @@
       "severity": "moderate",
       "text": "local_dc = (uint)pCVar10 ^ (uint)0x0FFFFFFF;",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 624,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01C775EC;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

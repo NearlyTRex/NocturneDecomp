@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(CGame *this_ptr)
 
 {
@@ -182,7 +180,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(CGame *this_ptr)
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
   _sprintf(acStack_158,"%d\n\n",*(uint *)(unaff_EDI + 0x24c));
-  this_ptr_00 = _DAT_014b9900;
+  this_ptr_00 = g_CBitFont_PTR_014b9900;
   pcVar12 = acStack_158;
   iVar4 = -1;
   pcVar8 = &stack0xfffffaa8;

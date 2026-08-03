@@ -29,14 +29,14 @@
 ;   double DOUBLE_0059081a = 0.0555555555555556
 ;   double DOUBLE_00590822 = 0.0000152587890625
 ;   double DOUBLE_0059082a = 1000
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_0077ad0c
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_007f7370
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c777f8
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.profile_mode
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -59,8 +59,8 @@ section .text
     PUSH EBP                            ; 0050d2d3
     SUB ESP,0x74                        ; 0050d2d4
     MOV EBP,dword ptr [ESP + 0x88]      ; 0050d2d7
-    MOV EAX,[0x005b9354]                ; 0050d2de | DAT_005b9354
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0050d2e3 | DAT_01c777f8
+    MOV EAX,[0x005b9354]                ; 0050d2de | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0050d2e3 | g_CGame_01c775ec.profile_mode
     JNZ 0x0050d436                      ; 0050d2ea
         ;   XREF to: 0050d436 (CONDITIONAL_JUMP)  ; LAB_0050d436
     MOV EBX,dword ptr [0x005ae704]      ; 0050d2f0 | DAT_005ae704
@@ -86,8 +86,8 @@ section .text
     MOV EAX,0x5907aa                    ; 0050d329 | = "..\\core\\set.cpp"
     MOV EDX,0xedb                       ; 0050d32e
     PUSH 0x5907ba                       ; 0050d333 | = "CSet::buildActorDisplayList - Don't h..."
-    MOV [0x01cc4800],EAX                ; 0050d338 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050d33d | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0050d338 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0050d33d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050d343
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050d348
@@ -164,8 +164,8 @@ section .text
     INC EAX                             ; 0050d415
     MOV dword ptr [EBP + 0x15f2fc],EAX  ; 0050d416
         ;   Label: LAB_0050d416
-    MOV EAX,[0x005b9354]                ; 0050d41c | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0050d421 | DAT_01c777f8
+    MOV EAX,[0x005b9354]                ; 0050d41c | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0050d421 | g_CGame_01c775ec.profile_mode
     JNZ 0x0050d5da                      ; 0050d428
         ;   XREF to: 0050d5da (CONDITIONAL_JUMP)  ; LAB_0050d5da
     ADD ESP,0x74                        ; 0050d42e
@@ -180,9 +180,9 @@ section .text
     MOV dword ptr [ESP + 0x5c],EAX      ; 0050d43b
     JMP 0x0050d2f0                      ; 0050d43f
         ;   XREF to: 0050d2f0 (UNCONDITIONAL_JUMP)  ; LAB_0050d2f0
-    MOV EAX,[0x005b9354]                ; 0050d444 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0050d444 | g_CGame_PTR_005b9354
         ;   Label: LAB_0050d444
-    CMP dword ptr [EAX + 0x240],0x0     ; 0050d449 | DAT_01c7782c
+    CMP dword ptr [EAX + 0x240],0x0     ; 0050d449 | g_CGame_01c775ec.goggles_active
     JNZ 0x0050d362                      ; 0050d450
         ;   XREF to: 0050d362 (CONDITIONAL_JUMP)  ; LAB_0050d362
     JMP 0x0050d367                      ; 0050d456
@@ -330,9 +330,9 @@ section .text
     MOV dword ptr [ESP + 0x70],EAX      ; 0050d5e5
     FILD dword ptr [ESP + 0x70]         ; 0050d5e9
     FMUL double ptr [0x0059081a]        ; 0050d5ed | DOUBLE_0059081a
-    MOV EAX,[0x005b9354]                ; 0050d5f3 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0050d5f3 | g_CGame_PTR_005b9354
     FMUL double ptr [0x00590822]        ; 0050d5f8 | DOUBLE_00590822
-    FLD float ptr [EAX + 0x264]         ; 0050d5fe | DAT_01c77850
+    FLD float ptr [EAX + 0x264]         ; 0050d5fe | g_CGame_01c775ec.delta_time_float
     FXCH                                ; 0050d604
     FMUL double ptr [0x0059082a]        ; 0050d606 | DOUBLE_0059082a
     FDIVRP                              ; 0050d60c
@@ -341,8 +341,8 @@ section .text
     FSTP double ptr [ESP]               ; 0050d617
     PUSH ECX                            ; 0050d61a
     PUSH 0x5907ed                       ; 0050d61b | = "buildDispList %d items : %3.2f ms\n"
-    MOV EBX,dword ptr [0x005ad350]      ; 0050d620 | PTR_DAT_005ad350
-    PUSH EBX                            ; 0050d626 | DAT_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 0050d620 | g_CConsole_PTR_005ad350
+    PUSH EBX                            ; 0050d626 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0050d627
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x14                        ; 0050d62c

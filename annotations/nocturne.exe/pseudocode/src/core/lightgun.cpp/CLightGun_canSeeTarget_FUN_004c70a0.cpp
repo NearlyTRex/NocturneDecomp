@@ -21,7 +21,7 @@ uint core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CVector3f *param_1,CD
   float fStack_18;
   float fStack_14;
   
-  core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(0x01E57284);
+  core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
   pCVar1 = (*((param_2->vtable)._ub)->getBoundingBox)(param_2,&CStack_4c);
   fStack_1c = (pCVar1->min).x + (pCVar1->max).x;
   fStack_18 = (pCVar1->min).y + (pCVar1->max).y;
@@ -33,8 +33,8 @@ uint core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CVector3f *param_1,CD
   iVar3 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,&CStack_28,&CStack_34);
   do {
-    core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(0x01E57284,param_1,&CStack_28);
-    actor_ptr = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18);
+    core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(g_CDemonSet_PTR_005be368,param_1,&CStack_28);
+    actor_ptr = g_CDemonSet_PTR_005be368->collision_actor;
     if (actor_ptr == (CDemonActor *)0x0) break;
     if (param_2 == actor_ptr) {
       uVar4 = 1;
@@ -44,8 +44,8 @@ uint core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CVector3f *param_1,CD
     if (iVar2 == 0) break;
     iVar3 = iVar3 + 1;
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-              (0x01E57284,*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18));
+              (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->collision_actor);
   } while (iVar3 < 3);
-  core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(0x01E57284);
+  core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSet_PTR_005be368);
   return uVar4;
 }

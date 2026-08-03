@@ -31,7 +31,8 @@ void __cdecl core_script_cpp_readActorReference_FUN_00505200(_FILE *file_handle,
     actor_out->actor_name[3] = '\0';
     return;
   }
-  pCVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(0x01CC9450,local_d0);
+  pCVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
+                     (g_CDemonMission_PTR_005baf90,local_d0);
   *(CDemonActor **)actor_out->actor_name = pCVar2;
   return;
 }

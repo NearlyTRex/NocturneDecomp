@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,62 +58,50 @@
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 37,
+        "line": 39,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 43,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 52,
+        "line": 54,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 55,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0'"
       },
       {
         "category": "type_error",
         "column": 84,
-        "line": 62,
+        "line": 64,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 67,
+        "line": 69,
         "message": "no matching function for call to 'core_flame_cpp_CFlame_updateGlobe_FUN_0048e230'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 70,
-        "message": "no matching function for call to 'core_sound_cpp_CSound_killSound_FUN_0052ebb0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 75,
-        "message": "no matching function for call to 'core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 90,
+        "line": 93,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 91,
+        "line": 94,
         "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 26,
+        "line": 94,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 96,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
     "success": false,
@@ -122,21 +110,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 222,
+    "complexity_score": 233,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 137,
+    "pseudocode_lines": 143,
     "suspect_count": 6,
     "suspect_types": [
       "bit_int_float_compare",
       "raw_address_pointer_store",
       "unknown_field",
       "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 520
+    "total_lines": 526
   },
   "cross_references": [
     {
@@ -294,21 +283,21 @@
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "01cae0e8",
@@ -318,13 +307,13 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa7e78",
-      "name": "DAT_01fa7e78",
+      "name": "g_CDemonSet_01e57284.enemy_count",
       "type": "undefined4",
       "value": null
     }
@@ -498,8 +487,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -507,7 +504,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 55,
+      "line": 57,
       "match": "._0_4_",
       "severity": "mild",
       "text": "this_ptr->animation_time = this_ptr->animation_time + 1.5997858892824123e-314._0_4_;",
@@ -515,31 +512,23 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 84,
+      "line": 87,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x34))(iVar4,&local_94);",
+      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,&local_94);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 86,
+      "line": 89,
       "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
-      "text": "pCVar2 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 113,
-      "match": "*(CCharacter **)(0x01E57284 + 0x150bf8",
-      "severity": "moderate",
-      "text": "pCVar2 = *(CCharacter **)(0x01E57284 + 0x150bf8 + this_ptr->enemy_burn_index * 4);",
+      "text": "this_ptr_00 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40ffffff is the IEEE 754 bit pattern of 8f. Rewrite in a .keep as a plain float compare against 8f.",
-      "line": 54,
+      "line": 56,
       "match": "0x40ffffff < (int)this_ptr->animation_time)",
       "severity": "moderate",
       "text": "if (0x40ffffff < (int)this_ptr->animation_time) {",

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -98,10 +98,10 @@
         "message": "use of undeclared identifier '_DAT_0059c8a0'"
       },
       {
-        "category": "other",
-        "column": 33,
+        "category": "undeclared_identifier",
+        "column": 40,
         "line": 60,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
         "category": "undeclared_identifier",
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 650,
-    "complexity_score": 602,
+    "complexity_score": 457,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 207,
-    "suspect_count": 36,
+    "suspect_count": 22,
     "suspect_types": [
-      "raw_address_constant",
       "raw_address_pointer_store",
       "unaffected_reg",
       "undefined_data",
@@ -230,9 +229,9 @@
     },
     {
       "addr": "005ae700",
-      "name": "DAT_005ae700",
-      "type": "undefined4",
-      "value": null
+      "name": "PTR_DAT_005ae700",
+      "type": "void*",
+      "value": "01b4d738"
     },
     {
       "addr": "005ae704",
@@ -326,31 +325,31 @@
     },
     {
       "addr": "01b8efcc",
-      "name": "CVector3f_ARRAY_01b8efcc",
+      "name": "g_CVector3f_ARRAY_01b8efcc",
       "type": "CVector3f[20000]",
       "value": null
     },
     {
       "addr": "01b8efd0",
-      "name": "CVector3f_ARRAY_01b8efcc[0].y",
+      "name": "g_CVector3f_ARRAY_01b8efcc[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b8efd4",
-      "name": "CVector3f_ARRAY_01b8efcc[0].z",
+      "name": "g_CVector3f_ARRAY_01b8efcc[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -1006,70 +1005,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr[1].projected_vertex,&local_7c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr[2].projected_vertex,&local_40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr[3].projected_vertex,&local_58);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr[4].projected_vertex,&local_a0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr[5].projected_vertex,&local_94);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr[6].projected_vertex,&local_70);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr[7].projected_vertex,&local_88);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 117,
       "match": "DAT_005c5024",
       "severity": "mild",
@@ -1197,59 +1132,11 @@
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 116,
-      "match": "0x1b4d738",
-      "severity": "moderate",
-      "text": "pCVar1 = 0x01B4D738;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 129,
-      "match": "0x1b4d738",
-      "severity": "moderate",
-      "text": "pCVar1 = 0x01B4D738;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 138,
-      "match": "0x1b4d738",
-      "severity": "moderate",
-      "text": "pCVar1 = 0x01B4D738;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 147,
-      "match": "0x1b4d738",
-      "severity": "moderate",
-      "text": "pCVar1 = 0x01B4D738;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 156,
-      "match": "0x1b4d738",
-      "severity": "moderate",
-      "text": "pCVar1 = 0x01B4D738;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 165,
-      "match": "0x1b4d738",
-      "severity": "moderate",
-      "text": "pCVar1 = 0x01B4D738;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 196,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CVector3f_ARRAY_01b8efcc[iVar3].x = local_64.x;",
+      "text": "g_CVector3f_ARRAY_01b8efcc[iVar3].x = local_64.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1257,7 +1144,7 @@
       "line": 53,
       "match": "(CVector3i *)&local_64",
       "severity": "moderate",
-      "text": "(&DAT_005ae700->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);",
+      "text": "(*(SProjectedVertex **)PTR_DAT_005ae700,(CVector3i *)&local_64);",
       "type": "vector_type_pun"
     },
     {

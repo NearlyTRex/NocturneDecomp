@@ -5,7 +5,7 @@
 #include "types/classes/CKeyFramedModel.h"
 
 // Structure: CMoon
-// Ghidra size: 0x56e0 (22240 bytes)
+// Ghidra size: 0x3a0 (928 bytes)
 #pragma pack(push, 1)
 typedef struct CMoon {
     int is_loaded; // 0x0

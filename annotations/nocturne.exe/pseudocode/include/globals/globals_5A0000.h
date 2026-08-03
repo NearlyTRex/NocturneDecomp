@@ -6,6 +6,7 @@
 #include "system/strstream.h"
 #include "system/watcom.h"
 #include "types/classes/CCharacter_full_vtable.h"
+#include "types/classes/CConsole.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDemonPod_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
@@ -28,6 +29,9 @@ extern CCharacter_full_vtable g_CNPCVTable;
 extern CCharacter_full_vtable g_CPassengerVTable;
 extern CCharacter_full_vtable g_CBassPlayerVTable;
 extern CCharacter_full_vtable g_CDrummerVTable;
+
+// CConsole*
+extern CConsole* g_CConsole_PTR_005ad350;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CMansionPuzzleCircleVTable;

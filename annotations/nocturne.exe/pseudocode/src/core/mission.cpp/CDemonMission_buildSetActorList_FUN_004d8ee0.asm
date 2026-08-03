@@ -14,12 +14,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_00589ca4
 ;   TerminatedCString s_CDemonMission_buildSetAc_00589cb8
-;   undefined4 DAT_005be368
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -36,8 +36,8 @@ section .text
     PUSH EDI                            ; 004d8ee2
     PUSH EBP                            ; 004d8ee3
     MOV ESI,dword ptr [ESP + 0x14]      ; 004d8ee4
-    MOV EAX,[0x005be368]                ; 004d8ee8 | DAT_005be368
-    MOV dword ptr [EAX + 0x14cd6c],0x0  ; 004d8eed | DAT_01fa3ff0
+    MOV EAX,[0x005be368]                ; 004d8ee8 | g_CDemonSet_PTR_005be368
+    MOV dword ptr [EAX + 0x14cd6c],0x0  ; 004d8eed | g_CDemonSet_01e57284.actor_count
     MOV EBX,dword ptr [ESI + 0x514]     ; 004d8ef7
     TEST EBX,EBX                        ; 004d8efd
     JZ 0x004d8f1c                       ; 004d8eff
@@ -54,14 +54,14 @@ section .text
     TEST EBX,EBX                        ; 004d8f18
     JNZ 0x004d8f0b                      ; 004d8f1a
         ;   XREF to: 004d8f0b (CONDITIONAL_JUMP)  ; LAB_004d8f0b
-    MOV ECX,dword ptr [0x005be368]      ; 004d8f1c | DAT_005be368
+    MOV ECX,dword ptr [0x005be368]      ; 004d8f1c | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d8f1c
-    PUSH ECX                            ; 004d8f22 | DAT_01e57284
+    PUSH ECX                            ; 004d8f22 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0 ; 004d8f23
         ;   XREF to: 005119b0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d8f28
-    MOV EBX,dword ptr [0x005be368]      ; 004d8f2b | DAT_005be368
-    PUSH EBX                            ; 004d8f31 | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 004d8f2b | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 004d8f31 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 ; 004d8f32
         ;   XREF to: 0050e6b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d8f37
@@ -70,22 +70,22 @@ section .text
     POP ESI                             ; 004d8f3c
     POP EBX                             ; 004d8f3d
     RET                                 ; 004d8f3e
-    MOV EAX,[0x005be368]                ; 004d8f3f | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004d8f3f | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d8f3f
-    CMP dword ptr [EAX + 0x14cd6c],0x7d0 ; 004d8f44 | DAT_01fa3ff0
+    CMP dword ptr [EAX + 0x14cd6c],0x7d0 ; 004d8f44 | g_CDemonSet_01e57284.actor_count
     JL 0x004d8f69                       ; 004d8f4e
         ;   XREF to: 004d8f69 (CONDITIONAL_JUMP)  ; LAB_004d8f69
     PUSH 0x589cb8                       ; 004d8f50 | = "CDemonMission::buildSetActorList - To..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004d8f55 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004d8f5b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004d8f55 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004d8f5b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d8f61
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d8f66
-    MOV EAX,[0x005be368]                ; 004d8f69 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004d8f69 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d8f69
-    MOV EDX,dword ptr [EAX + 0x14cd6c]  ; 004d8f6e | DAT_01fa3ff0
-    MOV dword ptr [EAX + EDX*0x4 + 0x14cd70],EBX ; 004d8f74 | DAT_01fa3ff4
-    INC dword ptr [EAX + 0x14cd6c]      ; 004d8f7b | DAT_01fa3ff0
+    MOV EDX,dword ptr [EAX + 0x14cd6c]  ; 004d8f6e | g_CDemonSet_01e57284.actor_count
+    MOV dword ptr [EAX + EDX*0x4 + 0x14cd70],EBX ; 004d8f74 | g_CDemonSet_01e57284.actors[0]
+    INC dword ptr [EAX + 0x14cd6c]      ; 004d8f7b | g_CDemonSet_01e57284.actor_count
     JMP 0x004d8f12                      ; 004d8f81
         ;   XREF to: 004d8f12 (UNCONDITIONAL_JUMP)  ; LAB_004d8f12
 

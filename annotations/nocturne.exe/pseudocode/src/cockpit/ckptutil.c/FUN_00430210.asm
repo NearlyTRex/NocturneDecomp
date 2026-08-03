@@ -18,8 +18,8 @@
 ;   TerminatedCString s_cockpit_ckptutil_c_0057aa5e
 ;   TerminatedCString s_Unable_to_read_bitmap_fi_0057aa74
 ;   TerminatedCString s_cockpit_ckptutil_c_0057aa95
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_applyActPalette_FUN_0042d370
@@ -100,11 +100,11 @@ section .text
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV EAX,0x7ce                       ; 004302a9
     ADD ESP,0x4                         ; 004302ae
-    MOV [0x01cc4804],EAX                ; 004302b1 | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004302b1 | g_INT_01cc4804
     MOV EAX,ESP                         ; 004302b6
     MOV ECX,0x57aa95                    ; 004302b8 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 004302bd
-    MOV dword ptr [0x01cc4800],ECX      ; 004302be | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],ECX      ; 004302be | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 004302c4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004302c9
@@ -159,11 +159,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x7b8                       ; 0043033f
     ADD ESP,0x10                        ; 00430344
-    MOV [0x01cc4804],EAX                ; 00430347 | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 00430347 | g_INT_01cc4804
     MOV EAX,ESP                         ; 0043034c
     MOV EDI,0x57aa20                    ; 0043034e | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 00430353
-    MOV dword ptr [0x01cc4800],EDI      ; 00430354 | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EDI      ; 00430354 | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 0043035a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0043035f
@@ -182,8 +182,8 @@ section .text
     MOV EAX,ESP                         ; 00430383
     MOV ESI,0x7c1                       ; 00430385
     PUSH EAX                            ; 0043038a
-    MOV dword ptr [0x01cc4800],EBX      ; 0043038b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00430391 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0043038b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00430391 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00430397
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0043039c

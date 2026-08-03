@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_00590ac5
 ;   TerminatedCString s_CDemonSet_pushRaytraceSt_00590ada
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_020842d0
 ;
 ; Called Functions:
@@ -154,8 +154,8 @@ section .text
         ;   Label: LAB_00511556
     MOV ESI,0x406                       ; 0051155b
     PUSH 0x590ada                       ; 00511560 | = "CDemonSet::pushRaytraceState - stack ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00511565 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051156b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00511565 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0051156b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00511571
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00511576

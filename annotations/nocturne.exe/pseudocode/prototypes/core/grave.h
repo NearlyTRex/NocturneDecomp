@@ -45,7 +45,7 @@ void CGrave::archive(CDemonActor *param_1);
 
 // Original: core_grave.cpp_CGrave_getBoundingBox_FUN_004b0f20
 // Address: 004b0f20
-int * CGrave::getBoundingBox(int param_1,int *param_2);
+CBoundingBox3D * CGrave::getBoundingBox(int param_1,CBoundingBox3D *param_2);
 
 // Original: core_grave.cpp_CGrave_getCollisionType_FUN_004b1000
 // Address: 004b1000

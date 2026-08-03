@@ -29,9 +29,9 @@ void core_mimic_cpp_CMimic_setup_FUN_004d4650(CEnemy *param_1)
   uint uStack_1c;
   
   bVar8 = 0;
-  if (*0x01CEA280 != 0) {
-    PTR_01cc4800 = "..\\core\\mimic.cpp";
-    INT_01cc4804 = 0xb6;
+  if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+    g_CHAR_PTR_01cc4800 = "..\\core\\mimic.cpp";
+    g_INT_01cc4804 = 0xb6;
     core_main_c_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
@@ -91,8 +91,8 @@ void core_mimic_cpp_CMimic_setup_FUN_004d4650(CEnemy *param_1)
   pCVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar4,class_name_hash);
   param_1[6].base.model.rest_pose_data[0x10] = (float)pCVar4;
   if (pCVar4 == (CDemonActor *)0x0) {
-    PTR_01cc4800 = "..\\core\\mimic.cpp";
-    INT_01cc4804 = 0x101;
+    g_CHAR_PTR_01cc4800 = "..\\core\\mimic.cpp";
+    g_INT_01cc4804 = 0x101;
     core_main_c_FUN_004c8440("CMimic failed to create morph target actor!");
   }
   fVar3 = param_1[6].base.model.rest_pose_data[0x10];

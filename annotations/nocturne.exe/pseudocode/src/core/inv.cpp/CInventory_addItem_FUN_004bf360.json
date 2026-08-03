@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,58 +62,52 @@
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
-        "category": "other",
-        "column": 53,
-        "line": 54,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 963,
+        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
       },
       {
-        "category": "other",
-        "column": 73,
-        "line": 128,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 15,
+        "line": 1008,
+        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
       },
       {
-        "category": "other",
-        "column": 73,
-        "line": 170,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 1028,
+        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
       },
       {
-        "category": "other",
-        "column": 73,
-        "line": 213,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 1057,
+        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
       },
       {
-        "category": "other",
-        "column": 73,
-        "line": 270,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 1081,
+        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
       },
       {
-        "category": "other",
-        "column": 73,
-        "line": 312,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 1113,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       },
       {
-        "category": "other",
-        "column": 73,
-        "line": 355,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 1122,
+        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
       },
       {
-        "category": "other",
-        "column": 73,
-        "line": 413,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 73,
-        "line": 470,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 1129,
+        "message": "no matching function for call to 'core_mission_cpp_FUN_004d8cd0'"
       }
     ],
     "success": false,
@@ -122,15 +116,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1993,
-    "complexity_score": 2441,
+    "complexity_score": 2409,
     "cross_reference_count": 10,
     "function_call_count": 20,
     "global_count": 58,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1121,
-    "suspect_count": 128,
+    "pseudocode_lines": 1124,
+    "suspect_count": 125,
     "suspect_types": [
-      "raw_address_constant",
       "raw_address_pointer_store",
       "shadow_pointer_walk",
       "suspect_float",
@@ -139,7 +132,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3114
+    "total_lines": 3117
   },
   "cross_references": [
     {
@@ -560,21 +553,21 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "007641f4",
@@ -584,61 +577,61 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
       "addr": "014b9904",
-      "name": "DAT_014b9904",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b9904",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01c77634",
-      "name": "DAT_01c77634",
+      "name": "g_CGame_01c775ec.key_fire",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77638",
-      "name": "DAT_01c77638",
+      "name": "g_CGame_01c775ec.key_use_item",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77668",
-      "name": "DAT_01c77668",
+      "name": "g_CGame_01c775ec.key_next_weapon",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7766c",
-      "name": "DAT_01c7766c",
+      "name": "g_CGame_01c775ec.key_prev_weapon",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77670",
-      "name": "DAT_01c77670",
+      "name": "g_CGame_01c775ec.key_next_item",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77674",
-      "name": "DAT_01c77674",
+      "name": "g_CGame_01c775ec.key_prev_item",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77814",
-      "name": "DAT_01c77814",
+      "name": "g_CGame_01c775ec.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -789,35 +782,11 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1068,
+      "line": 1070,
       "match": "2.8026e-43",
       "severity": "mild",
       "text": "pCVar5[4].location.position.x = 2.8026e-43;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Raw hex address 0x1cc9450 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 1018,
-      "match": "0x1cc9450",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01CC9450;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1cc9450 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 1046,
-      "match": "0x1cc9450",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01CC9450;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1cc9450 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 1117,
-      "match": "0x1cc9450",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01CC9450;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -1197,7 +1166,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_20` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_20->owner`). Replace `pCStack_20->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1077,
+      "line": 1079,
       "match": "pCStack_20 = (T *)&pCStack_20->FIELD",
       "severity": "moderate",
       "text": "pCStack_20 = (CInventory *)&pCStack_20->owner;",
@@ -1205,7 +1174,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_18->owner`). Replace `pCStack_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1107,
+      "line": 1110,
       "match": "pCStack_18 = (T *)&pCStack_18->FIELD",
       "severity": "moderate",
       "text": "pCStack_18 = (CInventory *)&pCStack_18->owner;",

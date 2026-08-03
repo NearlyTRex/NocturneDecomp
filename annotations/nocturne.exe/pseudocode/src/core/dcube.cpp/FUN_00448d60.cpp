@@ -18,39 +18,39 @@ void core_dcube_cpp_FUN_00448d60(float param_1)
   
   iVar3 = 0;
   if (0 < (int)_DAT_014b8860) {
-    vertex1 = CVector3f_ARRAY_014b8864;
+    vertex1 = g_CVector3f_ARRAY_014b8864;
     do {
       uVar2 = iVar3 + 1;
       if (uVar2 == _DAT_014b8860) {
         uVar2 = uVar2 ^ _DAT_014b8860;
       }
       bVar1 = param_1 < vertex1->z;
-      if (param_1 < CVector3f_ARRAY_014b8864[uVar2].z) {
+      if (param_1 < g_CVector3f_ARRAY_014b8864[uVar2].z) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
-        if (CVector3f_ARRAY_014b8928 + _DAT_014b8924 != vertex1) {
-          CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;
-          CVector3f_ARRAY_014b8928[_DAT_014b8924].y = vertex1->y;
-          CVector3f_ARRAY_014b8928[_DAT_014b8924].z = vertex1->z;
+        if (g_CVector3f_ARRAY_014b8928 + _DAT_014b8924 != vertex1) {
+          g_CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;
+          g_CVector3f_ARRAY_014b8928[_DAT_014b8924].y = vertex1->y;
+          g_CVector3f_ARRAY_014b8928[_DAT_014b8924].z = vertex1->z;
         }
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_004484c0
-                  (CVector3f_ARRAY_014b8864 + uVar2,vertex1,CVector3f_ARRAY_014b8928 + _DAT_014b8924
-                   ,0.0,0.0,-1.0,(double)param_1);
+                  (g_CVector3f_ARRAY_014b8864 + uVar2,vertex1,
+                   g_CVector3f_ARRAY_014b8928 + _DAT_014b8924,0.0,0.0,-1.0,(double)param_1);
         break;
       case 2:
-        if (CVector3f_ARRAY_014b8928 + _DAT_014b8924 != vertex1) {
-          CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;
-          CVector3f_ARRAY_014b8928[_DAT_014b8924].y = vertex1->y;
-          CVector3f_ARRAY_014b8928[_DAT_014b8924].z = vertex1->z;
+        if (g_CVector3f_ARRAY_014b8928 + _DAT_014b8924 != vertex1) {
+          g_CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;
+          g_CVector3f_ARRAY_014b8928[_DAT_014b8924].y = vertex1->y;
+          g_CVector3f_ARRAY_014b8928[_DAT_014b8924].z = vertex1->z;
         }
         _DAT_014b8924 = _DAT_014b8924 + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_004484c0
-                  (vertex1,CVector3f_ARRAY_014b8864 + uVar2,CVector3f_ARRAY_014b8928 + _DAT_014b8924
-                   ,0.0,0.0,-1.0,(double)param_1);
+                  (vertex1,g_CVector3f_ARRAY_014b8864 + uVar2,
+                   g_CVector3f_ARRAY_014b8928 + _DAT_014b8924,0.0,0.0,-1.0,(double)param_1);
         break;
       default:
         goto switchD_00448dd4_caseD_3;

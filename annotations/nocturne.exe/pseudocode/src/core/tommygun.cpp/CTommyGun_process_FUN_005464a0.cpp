@@ -61,7 +61,7 @@ void core_tommygun_cpp_CTommyGun_process_FUN_005464a0(CWeapon *param_1,float par
     }
     pCVar5 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);
     if (pCVar5 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0(INT_005b9284);
+      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
       return;
     }
   }
@@ -73,15 +73,15 @@ void core_tommygun_cpp_CTommyGun_process_FUN_005464a0(CWeapon *param_1,float par
                       (*(uint *)(param_1[1].base.actor_name + 4),fVar2);
     if (iVar3 == 0) {
       sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1[1].base.actor_name + 4));
-      _sprintf(local_1b4.loop_endpoints,"m-gun1.wav @ 2.3 * %f",(double)fVar2);
+      _sprintf(&local_1b4.taken,"m-gun1.wav @ 2.3 * %f",(double)fVar2);
       sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1[1].base.actor_name + 8));
       uVar4 = (*((param_1->base).vtable._ub)->playAmbientSound)
-                        (&param_1->base,(char *)local_1b4.loop_endpoints);
+                        (&param_1->base,(char *)&local_1b4.taken);
       *(uint *)(param_1[1].base.actor_name + 4) = uVar4;
     }
     pCVar5 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);
     if (pCVar5 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0(INT_005b9284);
+      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
       return;
     }
   }

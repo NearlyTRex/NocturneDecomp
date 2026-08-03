@@ -19,8 +19,8 @@
 ;   TerminatedCString s_CGame_slamDT_invalid_dt_00584463
 ;   float FLOAT_00584482 = 65536
 ;   undefined4 DAT_01bd1d80
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -56,8 +56,8 @@ section .text
         ;   Label: LAB_004a5f41
     MOV ECX,0x10b5                      ; 004a5f46
     PUSH 0x584463                       ; 004a5f4b | = "CGame::slamDT - invalid dt!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004a5f50 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004a5f56 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004a5f50 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004a5f56 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004a5f5c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004a5f61

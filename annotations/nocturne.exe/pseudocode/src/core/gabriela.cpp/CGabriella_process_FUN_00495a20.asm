@@ -327,11 +327,11 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 00495c65
     FMUL float ptr [0x0059dcd8]         ; 00495c68 | FLOAT_0059dcd8
     ADD ESP,0x8                         ; 00495c6e
-    MOV EAX,[0x005b9354]                ; 00495c71 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00495c71 | g_CGame_PTR_005b9354
     FXCH                                ; 00495c76
     FSTP float ptr [EBX + 0x2430]       ; 00495c78
     FADD float ptr [EBP + 0x6a]         ; 00495c7e
-    MOV EDI,dword ptr [EAX + 0x228]     ; 00495c81 | DAT_01c77814
+    MOV EDI,dword ptr [EAX + 0x228]     ; 00495c81 | g_CGame_01c775ec.letterbox_mode
     FSTP float ptr [EBP + 0x6a]         ; 00495c87
     TEST EDI,EDI                        ; 00495c8a
     JZ 0x00495ca0                       ; 00495c8c
@@ -570,8 +570,8 @@ section .text
     SAHF                                ; 00495f55
     JBE 0x00495f79                      ; 00495f56
         ;   XREF to: 00495f79 (CONDITIONAL_JUMP)  ; LAB_00495f79
-    MOV ECX,dword ptr [0x005b9354]      ; 00495f58 | DAT_005b9354
-    PUSH ECX                            ; 00495f5e | DAT_01c775ec
+    MOV ECX,dword ptr [0x005b9354]      ; 00495f58 | g_CGame_PTR_005b9354
+    PUSH ECX                            ; 00495f5e | g_CGame_01c775ec
     CALL core_game.cpp_FUN_004a3a70     ; 00495f5f
         ;   XREF to: 004a3a70 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3a70(CGame * this_ptr)
     ADD ESP,0x4                         ; 00495f64
@@ -1168,8 +1168,8 @@ section .text
     ADD ESP,0xc                         ; 00496618
     PUSH EBX                            ; 0049661b
     PUSH 0x581f93                       ; 0049661c | = "%s confused while walking to scriptDe..."
-    MOV EAX,[0x005ad350]                ; 00496621 | PTR_DAT_005ad350
-    PUSH EAX                            ; 00496626 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00496621 | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 00496626 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00496627
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x00495d9a                      ; 0049662c

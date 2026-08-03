@@ -18,7 +18,7 @@ int core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankensti
   CBoundingBox3D local_34;
   double dStack_1c;
   
-  if (*(int *)(0x01CC9450 + 4) != 0) {
+  if (g_CDemonMission_PTR_005baf90->is_in_editor != 0) {
     pCVar2 = core_frankgen_cpp_findLeader_FUN_00495240();
     param_1->master_frame = *(float *)(pCVar2[1].actor_name + 4);
     core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(param_1);

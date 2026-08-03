@@ -16,10 +16,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_exploding_0057b45f
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CConsole g_CConsole_0077ad0c
 ;
 ; Called Functions:
 ;   core_fire.cpp_FUN_0048c0d0
@@ -43,8 +43,8 @@ section .text
     PUSH EBX                            ; 0043cdc3
         ;   Label: LAB_0043cdc3
     PUSH 0x57b45f                       ; 0043cdc4 | = "%s exploding!\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 0043cdc9 | PTR_DAT_005ad350
-    PUSH ECX                            ; 0043cdcf | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 0043cdc9 | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 0043cdcf | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0043cdd0
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 0043cdd5
@@ -72,7 +72,7 @@ section .text
     FLD float ptr [ESP + 0x1c]          ; 0043ce0e
     PUSH 0x44bb8000                     ; 0043ce12
     LEA EAX,[ESP + 0x28]                ; 0043ce17
-    MOV ESI,dword ptr [0x005b80f0]      ; 0043ce1b | DAT_005b80f0
+    MOV ESI,dword ptr [0x005b80f0]      ; 0043ce1b | g_CFireEffect_PTR_005b80f0
     PUSH 0x42000000                     ; 0043ce21
     FSUB float ptr [ESP + 0x18]         ; 0043ce26
     PUSH EAX                            ; 0043ce2a
@@ -84,7 +84,7 @@ section .text
     ADD ESP,0x14                        ; 0043ce39
     PUSH 0x1                            ; 0043ce3c
     PUSH EBX                            ; 0043ce3e
-    MOV EDI,dword ptr [0x005baf90]      ; 0043ce3f | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 0043ce3f | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 0043ce45
     CALL core_mission.cpp_FUN_004d9110  ; 0043ce46
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()

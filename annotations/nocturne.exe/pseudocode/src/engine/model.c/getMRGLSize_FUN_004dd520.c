@@ -68,8 +68,8 @@ int __cdecl engine_model_c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended *header)
     return 0x14;
   default:
     _sprintf(local_100,"MRGLSize: Bad type : %d",iVar1);
-    PTR_01cc4800 = "..\\engine\\model.c";
-    INT_01cc4804 = 0x25b;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
+    g_INT_01cc4804 = 0x25b;
     core_main_c_FUN_004c8440(local_100);
     return 4;
   case 0x16:

@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be220
-;   undefined4 DAT_01e56dac
+;   undefined4 g_CScript_01e56da0.focus_actor
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
     PUSH EDI                            ; 004a3862
     SUB ESP,0x60                        ; 004a3863
     MOV EAX,[0x005be220]                ; 004a3866 | DAT_005be220
-    MOV EDX,dword ptr [EAX + 0xc]       ; 004a386b | DAT_01e56dac
+    MOV EDX,dword ptr [EAX + 0xc]       ; 004a386b | g_CScript_01e56da0.focus_actor
     TEST EDX,EDX                        ; 004a386e
     JNZ 0x004a3695                      ; 004a3870
         ;   XREF to: 004a3695 (CONDITIONAL_JUMP)  ; LAB_004a3695

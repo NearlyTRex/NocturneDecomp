@@ -50,8 +50,8 @@ void sound_mp3_cpp_FUN_004e2630(int *param_1)
       iVar5 = 4;
     }
     if (iVar5 != *(int *)(iVar3 * 0xb4 + 0xc)) {
-      PTR_01cc4800 = "..\\sound\\mp3.cpp";
-      INT_01cc4804 = 0x1a1;
+      g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+      g_INT_01cc4804 = 0x1a1;
       core_main_c_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28,uVar7);
     }
     param_1[6] = (int)param_1;
@@ -66,8 +66,8 @@ void sound_mp3_cpp_FUN_004e2630(int *param_1)
   iVar5 = *(int *)(iVar1 + 4);
   iVar1 = *(int *)(iVar1 + 0x20);
   if ((((iVar5 < 1) || (3 < iVar5)) || (iVar1 < 0)) || (3 < iVar1)) {
-    PTR_01cc4800 = "..\\sound\\mp3.cpp";
-    INT_01cc4804 = 0x1b1;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+    g_INT_01cc4804 = 0x1b1;
     core_main_c_FUN_004c8440("js_bound bad layer/modext (%d/%d)  File: %s",iVar5,iVar1,&DAT_01cd8b28);
   }
   param_1[5] = *(int *)("$CMotionController$$" + iVar5 * 0x10 + iVar1 * 4 + 10);

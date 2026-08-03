@@ -16,11 +16,11 @@ void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580(CDemonS
   pCVar2 = this_ptr;
   if (0 < this_ptr->camera_count) {
     do {
-      if ((float)group_id == pCVar2->cameras[0].ambient_value) {
+      if (group_id == pCVar2->cameras[0].camera_group) {
         core_set_cpp_FUN_0050e550(this_ptr,iVar1,enabled);
       }
       iVar1 = iVar1 + 1;
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].vdir_zone;
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
     } while (iVar1 < this_ptr->camera_count);
   }
   return;

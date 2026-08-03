@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 27,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 27,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
       },
       {
         "category": "incompatible_types",
@@ -80,17 +68,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 64,
+    "complexity_score": 24,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 84
   },
   "cross_references": [
@@ -140,13 +125,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -332,30 +317,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*(uint *)((int)(this_ptr->model).texture_list + vertex_index * 0x11c + 0x2e8) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*(float *)((int)(this_ptr->model).texture_list + vertex_index * 0x11c + 0x34c) = fVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `str2` was initialized to the address of an array element's subfield (`str2 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*str2)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `str2->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 16,
-      "match": "str2 = str2 + N",
-      "severity": "moderate",
-      "text": "str2 = str2 + 0x2b;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

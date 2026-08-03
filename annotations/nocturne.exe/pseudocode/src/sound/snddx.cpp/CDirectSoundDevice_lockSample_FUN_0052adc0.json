@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -117,7 +117,7 @@
     ],
     "convention": "unknown",
     "name": "sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0",
-    "signature": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(undefined4 param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)"
+    "signature": "void * sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(undefined4 param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)"
   },
   "function_calls": [
     {
@@ -215,7 +215,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
+      "text": "void * sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -223,7 +223,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
+      "text": "void * sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -231,7 +231,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
+      "text": "void * sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -239,7 +239,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
+      "text": "void * sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -247,7 +247,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
+      "text": "void * sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -295,7 +295,7 @@
       "line": 18,
       "match": "param_5",
       "severity": "mild",
-      "text": "piStack_1a0 = &param_5->streaming_slot_index;",
+      "text": "puStack_1a0 = &param_5->locked_bytes2;",
       "type": "unnamed_param"
     },
     {
@@ -303,7 +303,7 @@
       "line": 19,
       "match": "param_5",
       "severity": "mild",
-      "text": "piStack_1a4 = &param_5->stream_read_position;",
+      "text": "ppvStack_1a4 = &param_5->locked_ptr2;",
       "type": "unnamed_param"
     },
     {
@@ -311,7 +311,7 @@
       "line": 20,
       "match": "param_5",
       "severity": "mild",
-      "text": "piStack_1a8 = &param_5->buffer_id;",
+      "text": "puStack_1a8 = &param_5->locked_bytes1;",
       "type": "unnamed_param"
     },
     {
@@ -319,7 +319,7 @@
       "line": 21,
       "match": "param_5",
       "severity": "mild",
-      "text": "piStack_1ac = &param_5->streaming_buffer_size;",
+      "text": "ppvStack_1ac = &param_5->locked_ptr1;",
       "type": "unnamed_param"
     },
     {
@@ -367,7 +367,7 @@
       "line": 27,
       "match": "param_5",
       "severity": "mild",
-      "text": "return param_5->streaming_buffer_size;",
+      "text": "return param_5->locked_ptr1;",
       "type": "unnamed_param"
     }
   ],

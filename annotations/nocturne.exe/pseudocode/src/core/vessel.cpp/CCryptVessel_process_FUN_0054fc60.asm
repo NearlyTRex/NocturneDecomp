@@ -24,7 +24,7 @@
 ;   double DOUBLE_00597493 = 3.14159265350000
 ;   float FLOAT_0059749b = 1.700000
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b80f0
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -429,7 +429,7 @@ section .text
     PUSH 0x44bb8000                     ; 0055010f
     PUSH 0x41000000                     ; 00550114
     PUSH ESI                            ; 00550119
-    MOV EAX,[0x005b80f0]                ; 0055011a | DAT_005b80f0
+    MOV EAX,[0x005b80f0]                ; 0055011a | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 0055011f
     CALL core_fire.cpp_FUN_0048c0d0     ; 00550120
         ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)

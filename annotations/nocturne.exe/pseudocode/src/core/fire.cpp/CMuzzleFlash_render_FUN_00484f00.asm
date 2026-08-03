@@ -23,9 +23,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01fb1b1c
+;   undefined4 g_CDemonSet_01e57284.lighting_quality_mode
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -92,9 +92,9 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00484f78
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00484f7d
-    MOV EAX,[0x005be368]                ; 00484f80 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00484f80 | g_CDemonSet_PTR_005be368
     PUSH 0x1                            ; 00484f85
-    MOV dword ptr [EAX + 0x15a898],0x1  ; 00484f87 | DAT_01fb1b1c
+    MOV dword ptr [EAX + 0x15a898],0x1  ; 00484f87 | g_CDemonSet_01e57284.lighting_quality_mode
     MOV EAX,[0x005ae704]                ; 00484f91 | DAT_005ae704
     PUSH EAX                            ; 00484f96 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 00484f97
@@ -163,9 +163,9 @@ section .text
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 0048505a
     MOV EDI,dword ptr [0x005ae704]      ; 0048505d | DAT_005ae704
-    MOV EAX,[0x005be368]                ; 00485063 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00485063 | g_CDemonSet_PTR_005be368
     PUSH EDI                            ; 00485068 | DAT_01b4d738
-    MOV dword ptr [EAX + 0x15a898],0x0  ; 00485069 | DAT_01fb1b1c
+    MOV dword ptr [EAX + 0x15a898],0x0  ; 00485069 | g_CDemonSet_01e57284.lighting_quality_mode
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00485073
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 00485078

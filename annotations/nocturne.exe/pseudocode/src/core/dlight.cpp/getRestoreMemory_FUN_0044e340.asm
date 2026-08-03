@@ -13,8 +13,8 @@
 ;   TerminatedCString s_core_dlight_cpp_0057c58e
 ;   TerminatedCString s_getRestoreMemory_Need_mo_0057c5a1
 ;   undefined4 DAT_01ab99ec
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -51,8 +51,8 @@ section .text
     MOV EBX,0x57c58e                    ; 0044e381 | = "..\\core\\dlight.cpp"
     MOV ESI,0xa3                        ; 0044e386
     PUSH 0x57c5a1                       ; 0044e38b | = "getRestoreMemory - Need more static m..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0044e390 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044e396 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0044e390 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044e396 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044e39c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044e3a1

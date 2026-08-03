@@ -39,8 +39,8 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(CFootstep *this_ptr,CVect
     local_40.y = position->y + 1.0;
     local_34[0].y = local_34[0].y + -3.0f;
     local_18 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                         ((CDemonRaytrace *)&DAT_01fba938,&local_40,local_34,(CVector3f *)0x0,
-                          (int *)0x0);
+                         (&g_CDemonRaytrace_01fba938,&local_40,local_34,(CVector3f *)0x0,(int *)0x0)
+    ;
     fVar1 = (local_40.y - local_18 * (float)4) + 0.08333334f;
     if (pCVar4 != &local_40) {
       pCVar4->x = local_40.x;

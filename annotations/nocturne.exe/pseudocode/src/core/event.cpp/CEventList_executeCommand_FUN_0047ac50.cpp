@@ -177,8 +177,8 @@ LAB_0047acd1:
         return iVar5;
       }
       if (99 < (this_ptr->events).count) {
-        PTR_01cc4800 = "..\\core\\event.cpp";
-        INT_01cc4804 = 599;
+        g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+        g_INT_01cc4804 = 599;
         core_main_c_FUN_004c8440();
       }
       pcVar16 = (this_ptr->events).names[(this_ptr->events).count];
@@ -231,16 +231,16 @@ LAB_0047acd1:
       }
       pcVar17 = core_event_cpp_extractParenArg_FUN_0047a650((char **)&local_ec,local_fc4,200);
       if (pcVar17 != (char *)0x0) goto LAB_0047aec8;
-      core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(0x01E57284,local_fc4,&local_e8,&local_44)
-      ;
+      core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
+                (g_CDemonSet_PTR_005be368,local_fc4,&local_e8,&local_44);
       if (local_e8 == (C3DSLight *)0x0) {
         iVar5 = core_event_cpp_FUN_0047a210("SpotLight %s doesn't exist.",local_fc4);
         return iVar5;
       }
       if (local_f0 != 0) {
         if (local_44 == (CDemonLight *)0x0) {
-          PTR_01cc4800 = "..\\core\\event.cpp";
-          INT_01cc4804 = 0x27f;
+          g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+          g_INT_01cc4804 = 0x27f;
           core_main_c_FUN_004c8440("Can't find CDemonLight for light %s in advanceLightFilter meta-command");
         }
         core_setutil_cpp_C3DSLight_advanceFilter_FUN_005155e0(local_e8,local_44);
@@ -332,7 +332,8 @@ LAB_0047acd1:
         }
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
-          core_fire_cpp_FUN_0048c0d0(0x01C08D04,&local_128,local_e0,1500.0,local_dc);
+          core_fire_cpp_FUN_0048c0d0(g_CFireEffect_PTR_005b80f0,&local_128,local_e0,1500.0,local_dc)
+          ;
         }
       }
       else {
@@ -401,7 +402,7 @@ LAB_0047acd1:
             }
             if (local_f0 != 0) {
               core_game_cpp_CGame_displayBitmap_FUN_004a5740
-                        (0x01C775EC,&stack0xffffe9c4,local_d8,local_d4);
+                        (g_CGame_PTR_005b9354,&stack0xffffe9c4,local_d8,local_d4);
             }
           }
           else {
@@ -420,7 +421,8 @@ LAB_0047acd1:
               }
               local_ec = local_ec + local_c4;
               if (local_f0 != 0) {
-                core_sound_cpp_CSound_setVolumeFade_FUN_0052ede0(0x02DC9450,local_cc,local_c8);
+                core_sound_cpp_CSound_setVolumeFade_FUN_0052ede0
+                          (g_CSound_PTR_005bed68,local_cc,local_c8);
               }
             }
             else {
@@ -793,7 +795,7 @@ LAB_0047aec8:
                                 while (((&DAT_005c168c)[(byte)(*local_ec + 1)] & 2) != 0) {
                                   local_ec = local_ec + 1;
                                 }
-                                if (*0x01CEA280 != 0) {
+                                if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
                                   iVar5 = core_event_cpp_FUN_0047a210();
                                   return iVar5;
                                 }
@@ -1040,8 +1042,8 @@ LAB_0047aec8:
                                             sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
                                             sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(1);
                                             uVar13 = core_sound_cpp_CSound_playSound_FUN_0052ea40
-                                                               (0x02DC9450,this_ptr,local_13ad + 1
-                                                               );
+                                                               (g_CSound_PTR_005bed68,this_ptr,
+                                                                local_13ad + 1);
                                             sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
                                             if (local_b15[1] != '\0') {
                                               core_event_cpp_CEventList_setSfxHandle_FUN_00480c30
@@ -1051,7 +1053,8 @@ LAB_0047aec8:
                                         }
                                         else {
                                           uVar13 = core_sound_cpp_CSound_playSound_FUN_0052ea40
-                                                             (0x02DC9450,this_ptr,local_13ad + 1);
+                                                             (g_CSound_PTR_005bed68,this_ptr,
+                                                              local_13ad + 1);
                                           if (local_b15[1] != '\0') {
                                             core_event_cpp_CEventList_setSfxHandle_FUN_00480c30
                                                       (this_ptr,local_b15 + 1,uVar13);
@@ -1105,7 +1108,7 @@ LAB_0047aec8:
                                           SVar15 = SVar15 - 1;
                                         }
                                         iVar5 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
-                                                          (0x01E57284,local_12e5 + 1);
+                                                          (g_CDemonSet_PTR_005be368,local_12e5 + 1);
                                         if (iVar5 < 0) {
                                           _sprintf(&DAT_01c08b60,
                                                      "Camera \"%s\" does not exist.",
@@ -1120,7 +1123,7 @@ LAB_0047aec8:
                                         }
                                         if (local_f0 != 0) {
                                           core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0
-                                                    (0x01E57284,iVar5,
+                                                    (g_CDemonSet_PTR_005be368,iVar5,
                                                      local_78 * (float)0.01);
                                         }
                                       }
@@ -1225,7 +1228,7 @@ LAB_0047aec8:
                                             }
                                             if (local_f0 != 0) {
                                               core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510
-                                                        (0x01E57284,local_64,
+                                                        (g_CDemonSet_PTR_005be368,local_64,
                                                          local_60 * (float)0.01);
                                             }
                                           }
@@ -1250,8 +1253,8 @@ LAB_0047aec8:
                                               }
                                               local_ec = local_ec + local_58;
                                               core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
-                                                        (0x01E57284,local_7f4,&local_50,&local_4c)
-                                              ;
+                                                        (g_CDemonSet_PTR_005be368,local_7f4,
+                                                         &local_50,&local_4c);
                                               if (local_50 == (C3DSLight *)0x0) {
                                                 iVar5 = core_event_cpp_FUN_0047a210
                                                                   (
@@ -1268,8 +1271,8 @@ LAB_0047aec8:
                                               }
                                               if (local_f0 != 0) {
                                                 if (local_4c == (CDemonLight *)0x0) {
-                                                  PTR_01cc4800 = "..\\core\\event.cpp";
-                                                  INT_01cc4804 = 0x4e0;
+                                                  g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+                                                  g_INT_01cc4804 = 0x4e0;
                                                   core_main_c_FUN_004c8440
                                                             ("Can't find CDemonLight for light %s in setLightFilterFrame meta-command");
                                                 }
@@ -1667,8 +1670,8 @@ LAB_0047aec8:
                                                   local_ec = local_ec + local_24;
                                                   if (local_f0 != 0) {
                                                     core_set_cpp_FUN_0050e660
-                                                              (0x01E57284,local_30,local_2c,
-                                                               local_80,local_28);
+                                                              (g_CDemonSet_PTR_005be368,local_30,
+                                                               local_2c,local_80,local_28);
                                                   }
                                                   }
                                                   else {
@@ -1825,7 +1828,7 @@ LAB_0047aec8:
                                                       }
                                                       iVar5 = 
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
-                                                            (0x01E57284,local_344);
+                                                            (g_CDemonSet_PTR_005be368,local_344);
                                                   if (iVar5 < 0) {
                                                     iVar5 = core_event_cpp_FUN_0047a210
                                                                       (
@@ -1855,7 +1858,8 @@ LAB_0047aec8:
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0
-                                                            (0x01E57284,iVar5,local_70);
+                                                            (g_CDemonSet_PTR_005be368,iVar5,local_70
+                                                            );
                                                   }
                                                   }
                                                   else {

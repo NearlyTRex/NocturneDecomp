@@ -21,8 +21,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058cc6f
 ;   TerminatedCString s_queuePop_empty_queue_0058cc80
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01e312f4
 ;   undefined4 DAT_01e3161c
 ;   undefined4 DAT_01e31620
@@ -198,8 +198,8 @@ section .text
         ;   Label: LAB_004f2260
     MOV EAX,0xdf                        ; 004f2265
     PUSH 0x58cc80                       ; 004f226a | = "queuePop - empty queue?!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f226f | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f2275 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f226f | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f2275 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f227a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f227f

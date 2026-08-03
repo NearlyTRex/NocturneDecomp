@@ -11,7 +11,7 @@
 void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
 
 {
-  float *pfVar1;
+  CBoundingBox3D *pCVar1;
   longlong lVar2;
   CKeyFramedModel *pCVar3;
   int iVar4;
@@ -54,27 +54,27 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
             (DAT_005ae704,(CVector3i *)&param_1[6].y,(CVector3i *)0x0);
   if (param_1[5].z == 0.0) {
-    this_ptr = (CKeyFramedModelInstance *)0x1c08ec4;
+    this_ptr = &g_CKeyFramedModelInstance_01c08ec4;
   }
   else if (param_1[5].z == 1.4013e-45) {
-    this_ptr = (CKeyFramedModelInstance *)0x1c09040;
+    this_ptr = &g_CKeyFramedModelInstance_01c09040;
   }
   else {
-    this_ptr = (CKeyFramedModelInstance *)0x1c091bc;
+    this_ptr = &g_CKeyFramedModelInstance_01c091bc;
   }
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr);
-  pfVar1 = (float *)pCVar3->texture_list[7].textures[2].base.count;
-  local_e0.min.x = *pfVar1;
-  local_e0.min.y = pfVar1[1];
-  local_e0.min.z = pfVar1[2];
-  local_e0.max.x = pfVar1[3];
-  local_e0.max.y = pfVar1[4];
-  local_e0.max.z = pfVar1[5];
+  pCVar1 = pCVar3->frame_bounds;
+  local_e0.min.x = (pCVar1->min).x;
+  local_e0.min.y = (pCVar1->min).y;
+  local_e0.min.z = (pCVar1->min).z;
+  local_e0.max.x = (pCVar1->max).x;
+  local_e0.max.y = (pCVar1->max).y;
+  local_e0.max.z = (pCVar1->max).z;
   iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(&local_e0);
   if (iVar4 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-              (0x01E57284,param_1,(UOrientationVector *)&DAT_02dd1184,&local_e0.min,&local_e0.max,
-               (CMatrix3x3f *)0x0);
+              (g_CDemonSet_PTR_005be368,param_1,(UOrientationVector *)&DAT_02dd1184,&local_e0.min,
+               &local_e0.max,(CMatrix3x3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(this_ptr,0.0,-1);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();

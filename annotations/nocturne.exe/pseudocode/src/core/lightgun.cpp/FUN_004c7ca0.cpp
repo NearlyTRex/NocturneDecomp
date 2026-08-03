@@ -68,7 +68,7 @@ void core_lightgun_cpp_FUN_004c7ca0(CCharacter *param_1)
     }
     fVar4 = (float10)fpatan((float10)18 / (float10)112.0f,(float10)1);
     core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
-              (0x01C08D04,&CStack_4c,&CStack_40,1.0,0xff,0xff,0xb4,(float)fVar4);
+              (g_CFireEffect_PTR_005b80f0,&CStack_4c,&CStack_40,1.0,0xff,0xff,0xb4,(float)fVar4);
     if ((param_1->model).transformed_vertices[0x52].x != 0.0) {
       (param_1->model).transformed_vertices[0x52].x = 0.0;
       iVar2 = 1;
@@ -76,7 +76,7 @@ void core_lightgun_cpp_FUN_004c7ca0(CCharacter *param_1)
         iVar3 = iVar2 + 1;
         iStack_18 = iVar2;
         core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
-                  (0x01C08D04,&CStack_4c,&CStack_40,1.0,0xff,0xff,0xb4,
+                  (g_CFireEffect_PTR_005b80f0,&CStack_4c,&CStack_40,1.0,0xff,0xff,0xb4,
                    (float)iVar2 * (float)fVar4 * (float)0.10000000000000001);
         iVar2 = iVar3;
       } while (iVar3 < 10);
@@ -110,7 +110,7 @@ void core_lightgun_cpp_FUN_004c7ca0(CCharacter *param_1)
       iVar2 = 0;
       do {
         core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                  (0x01C08D04,&CStack_88,(CVector3f *)0x0,0x8000,0x4000,0,0x3333);
+                  (g_CFireEffect_PTR_005b80f0,&CStack_88,(CVector3f *)0x0,0x8000,0x4000,0,0x3333);
         iVar2 = iVar2 + 1;
         CStack_88.x = CStack_88.x + fStack_70;
         CStack_88.y = CStack_88.y + fStack_6c;

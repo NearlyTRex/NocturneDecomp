@@ -29,7 +29,7 @@ void core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(int param_1,float param_2)
   *(char *)(param_1 + 0x2f0) =
        (char)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(this_ptr,1.0);
-  this_ptr_00 = 0x01E57284;
+  this_ptr_00 = g_CDemonSet_PTR_005be368;
   *(uint *)(param_1 + 0x2f4) = 0;
   core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(this_ptr_00,this_ptr);
   return;

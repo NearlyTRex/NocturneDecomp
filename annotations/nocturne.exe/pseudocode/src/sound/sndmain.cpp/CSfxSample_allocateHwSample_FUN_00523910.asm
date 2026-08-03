@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_allocateHwSample_failed_005927ce
 ;   undefined4 DAT_02dc1ed8
-;   undefined4 DAT_02dc216c
-;   undefined4 DAT_02dc2170
-;   undefined4 DAT_02dc2174
+;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].taken
+;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].buffer_id
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
@@ -93,7 +93,7 @@ section .text
     XOR EAX,EAX                         ; 0052399a
     IMUL EDX,EAX,0x168                  ; 0052399c
         ;   Label: LAB_0052399c
-    CMP dword ptr [EDX + 0x2dc2008],0x0 ; 005239a2 | DAT_02dc2170
+    CMP dword ptr [EDX + 0x2dc2008],0x0 ; 005239a2 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
     JZ 0x005239df                       ; 005239a9
         ;   XREF to: 005239df (CONDITIONAL_JUMP)  ; LAB_005239df
     INC EBX                             ; 005239ab
@@ -124,11 +124,11 @@ section .text
     POP ESI                             ; 005239dc
     POP EBX                             ; 005239dd
     RET                                 ; 005239de
-    CMP dword ptr [EDX + 0x2dc200c],0x0 ; 005239df | DAT_02dc2174
+    CMP dword ptr [EDX + 0x2dc200c],0x0 ; 005239df | g_CSfxSample_ARRAY_02dc1edc[1].buffer_id
         ;   Label: LAB_005239df
     JZ 0x005239ab                       ; 005239e6
         ;   XREF to: 005239ab (CONDITIONAL_JUMP)  ; LAB_005239ab
-    CMP dword ptr [EDX + 0x2dc2004],0x0 ; 005239e8 | DAT_02dc216c
+    CMP dword ptr [EDX + 0x2dc2004],0x0 ; 005239e8 | g_CSfxSample_ARRAY_02dc1edc[1].taken
     JNZ 0x005239ab                      ; 005239ef
         ;   XREF to: 005239ab (CONDITIONAL_JUMP)  ; LAB_005239ab
     ADD EDX,0x2dc1edc                   ; 005239f1

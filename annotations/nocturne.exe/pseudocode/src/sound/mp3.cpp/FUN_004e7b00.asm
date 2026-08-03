@@ -120,9 +120,9 @@ section .text
     MOV EDI,0x58b7b4                    ; 004e7c15 | = "..\\sound\\mp3.cpp"
     MOV EAX,0xd76                       ; 004e7c1a
     PUSH 0x58b7c5                       ; 004e7c1f | = "wrong table %u reference.  File: %s"
-    MOV dword ptr [0x01cc4800],EDI      ; 004e7c24 | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EDI      ; 004e7c24 | g_CHAR_PTR_01cc4800
         ;   Label: LAB_004e7c24
-    MOV [0x01cc4804],EAX                ; 004e7c2a | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004e7c2a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e7c2f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004e7c34
@@ -144,8 +144,8 @@ section .text
     MOV EDI,0x58b862                    ; 004e7c67 | = "..\\sound\\mp3.cpp"
     MOV EBP,0xda1                       ; 004e7c6c
     PUSH 0x58b873                       ; 004e7c71 | = "decoder table read error.  File: %s"
-    MOV dword ptr [0x01cc4800],EDI      ; 004e7c76 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004e7c7c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004e7c76 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004e7c7c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e7c82
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e7c87
@@ -164,8 +164,8 @@ section .text
     MOV ECX,0x58b782                    ; 004e7ca2 | = "..\\sound\\mp3.cpp"
     MOV ESI,0xd6b                       ; 004e7ca7
     PUSH 0x58b793                       ; 004e7cac | = "wrong table number %u.  File: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 004e7cb1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e7cb7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004e7cb1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004e7cb7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e7cbd
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004e7cc2
@@ -219,8 +219,8 @@ section .text
     MOV ESI,0x58b7e9                    ; 004e7d4b | = "..\\sound\\mp3.cpp"
     MOV EDI,0xd7e                       ; 004e7d50
     PUSH 0x58b7fa                       ; 004e7d55 | = "MP3 Huffman tree overflow!  File: %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 004e7d5a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004e7d60 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004e7d5a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004e7d60 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e7d66
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e7d6b

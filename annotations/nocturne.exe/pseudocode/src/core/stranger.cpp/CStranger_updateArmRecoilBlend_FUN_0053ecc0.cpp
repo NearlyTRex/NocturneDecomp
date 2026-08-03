@@ -47,8 +47,8 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(CStra
     iVar6 = 0;
 LAB_0053ecf1:
     do {
-      if ((int)0x01E57284->actors[0x6d6] <= iVar5) goto LAB_0053ee02;
-      this_ptr_00 = *(CStranger **)((int)0x01E57284->actors + iVar6 + 0x1b5c);
+      if (g_CDemonSet_PTR_005be368->character_count <= iVar5) goto LAB_0053ee02;
+      this_ptr_00 = *(CStranger **)((int)g_CDemonSet_PTR_005be368->characters + iVar6);
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                 ((CDemonActor *)this_ptr,&local_68,&(this_ptr_00->base).base.base.location.position)
       ;
@@ -96,8 +96,8 @@ LAB_0053f147:
   this_ptr->arm_recoil_blend = this_ptr->arm_recoil_blend + local_f4;
   return;
 LAB_0053ee02:
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,(CDemonActor *)this_ptr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
   local_a4.x = 0.0;
   local_a4.y = 0.0;
   local_20 = 3.5;
@@ -127,7 +127,8 @@ LAB_0053ee02:
     local_98.y = local_74.y;
     local_98.z = local_74.z;
   }
-  local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(0x01E57284,&local_5c,&local_98);
+  local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                       (g_CDemonSet_PTR_005be368,&local_5c,&local_98);
   if (((0.0 <= local_18) && (local_18 < 1.0)) &&
      (fVar1 = 1.0 - (local_18 * local_20 - local_1c) / (local_20 - local_1c), local_f8 < fVar1)) {
     local_f8 = fVar1;
@@ -149,11 +150,12 @@ LAB_0053ee02:
     local_98.y = local_38[0].y;
     local_98.z = local_38[0].z;
   }
-  local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(0x01E57284,&local_5c,&local_98);
+  local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                       (g_CDemonSet_PTR_005be368,&local_5c,&local_98);
   if (((0.0 <= local_18) && (local_18 < 1.0)) &&
      (fVar1 = 1.0 - (local_18 * local_20 - local_1c) / (local_20 - local_1c), local_f8 < fVar1)) {
     local_f8 = fVar1;
   }
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   goto LAB_0053f147;
 }

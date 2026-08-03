@@ -43,8 +43,8 @@ CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040d3f0(CDemonA
   }
   this_ptr->name_hash = uVar4;
   if (199 < iVar3) {
-    PTR_01cc4800 = "..\\core\\actor.cpp";
-    INT_01cc4804 = 0xa19;
+    g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+    g_INT_01cc4804 = 0xa19;
     core_main_c_FUN_004c8440("Too many actor types!");
   }
   (&DAT_00763e98)[DAT_00763e94] = this_ptr;

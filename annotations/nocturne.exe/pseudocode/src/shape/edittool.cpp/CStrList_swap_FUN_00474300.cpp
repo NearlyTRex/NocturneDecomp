@@ -14,8 +14,8 @@ void __cdecl shape_edittool_cpp_CStrList_swap_FUN_00474300(CStrList *this_ptr,in
   
   if ((((index1 < 0) || (this_ptr->item_count <= index1)) || (index2 < 0)) ||
      (this_ptr->item_count <= index2)) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0xab6;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0xab6;
     core_main_c_FUN_004c8440("CStrList::swap - invalid indices");
     if (index1 == index2) {
       return;

@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b567
 ;   TerminatedCString s_Out_of_memory_File_s_0058b578
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cd8b28
 ;
 ; Called Functions:
@@ -98,8 +98,8 @@ section .text
     MOV ESI,0x58b567                    ; 004e2953 | = "..\\sound\\mp3.cpp"
     MOV EDI,0x1ff                       ; 004e2958
     PUSH 0x58b578                       ; 004e295d | = "Out of memory.  File: %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 004e2962 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004e2968 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004e2962 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004e2968 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e296e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e2973

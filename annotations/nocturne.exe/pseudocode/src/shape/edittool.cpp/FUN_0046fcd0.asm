@@ -24,7 +24,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   TerminatedCString s_Error_0057e5d7
-;   int INT_005bac64 = 0x1cc30e4
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
@@ -33,9 +33,9 @@
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01cc30e4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CKeys g_CKeys_01cc30e4
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -69,8 +69,8 @@ section .text
     MOV ECX,0x57e4fa                    ; 0046fce4 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 0046fce9
     PUSH 0x57e510                       ; 0046fcee | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046fcf3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0046fcf9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0046fcf3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0046fcf9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046fcff
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046fd04
@@ -179,8 +179,8 @@ section .text
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0046fe2a
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
-    MOV EBP,dword ptr [0x005bac64]      ; 0046fe2f | INT_005bac64
-    PUSH EBP                            ; 0046fe35 | DAT_01cc30e4
+    MOV EBP,dword ptr [0x005bac64]      ; 0046fe2f | g_CKeys_PTR_005bac64
+    PUSH EBP                            ; 0046fe35 | g_CKeys_01cc30e4
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0046fe36
         ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0046fe3b

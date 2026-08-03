@@ -28,8 +28,8 @@
 ;   TerminatedCString s_CDemonSet_rotateVerticie_00590662
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -112,8 +112,8 @@ section .text
     MOV ECX,0x590652                    ; 0050c290 | = "..\\core\\set.cpp"
     MOV EBX,0xce7                       ; 0050c295
     PUSH 0x590662                       ; 0050c29a | = "CDemonSet::rotateVerticies - tried to..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0050c29f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050c2a5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0050c29f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050c2a5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050c2ab
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0050c2b0

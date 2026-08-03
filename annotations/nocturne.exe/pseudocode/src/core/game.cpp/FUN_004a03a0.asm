@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01cc9450
 ;
@@ -48,7 +48,7 @@ section .text
     RET                                 ; 004a03ca
     PUSH EBX                            ; 004a03cb
         ;   Label: LAB_004a03cb
-    MOV EDX,dword ptr [0x005baf90]      ; 004a03cc | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 004a03cc | g_CDemonMission_PTR_005baf90
     PUSH EDX                            ; 004a03d2 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004a03d3
         ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)

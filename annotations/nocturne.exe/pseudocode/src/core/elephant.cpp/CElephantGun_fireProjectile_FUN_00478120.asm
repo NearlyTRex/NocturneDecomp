@@ -12,7 +12,7 @@
 ;   double DOUBLE_0057f17c = 3.14159265350000
 ;   double DOUBLE_0057f184 = 0.00555555555555555
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b80f0
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -157,7 +157,7 @@ section .text
     PUSH EAX                            ; 00478287
     LEA EAX,[ESP + 0x28]                ; 00478288
     PUSH EAX                            ; 0047828c
-    MOV ECX,dword ptr [0x005b80f0]      ; 0047828d | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 0047828d | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 00478293
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0 ; 00478294
         ;   XREF to: 0048b3e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)

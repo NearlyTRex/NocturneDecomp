@@ -28,7 +28,7 @@ void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDraculaBride *p
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,&local_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,&local_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
     bVar2 = true;
   }

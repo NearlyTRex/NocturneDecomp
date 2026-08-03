@@ -28,56 +28,56 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(C3DSLight *this_ptr,_F
   C3DSLight *local_18;
   char (*local_14) [40];
   
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%[^\n]\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%f,%f,%f\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%f,%f,%f\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%f\n");
-  if (*(int *)(0x01E57284 + 0x15a8c4) < 0x15) {
+  if (g_CDemonSet_PTR_005be368->set_file_version < 0x15) {
     this_ptr->aspect = 1.0;
   }
   else {
     _fgets(local_148,0xff,file_handle);
     _fscanf(file_handle,"%f\n");
   }
-  if (*(int *)(0x01E57284 + 0x15a8c4) < 0x16) {
+  if (g_CDemonSet_PTR_005be368->set_file_version < 0x16) {
     this_ptr->intensity = 1.0;
   }
   else {
     _fgets(local_148,0xff,file_handle);
     _fscanf(file_handle,"%f\n");
   }
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%d\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%f,%f,%f,%f,%f\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%d,%d\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%d\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
-  if (*(int *)(0x01E57284 + 0x15a8c4) < 9) {
+  if (g_CDemonSet_PTR_005be368->set_file_version < 9) {
     this_ptr->blend_filter = 1;
   }
   else {
@@ -90,7 +90,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(C3DSLight *this_ptr,_F
     local_18 = this_ptr;
     do {
       local_1c = iVar3 * 4;
-      if (*(int *)(0x01E57284 + 0x15a8c4) < 0x10) {
+      if (g_CDemonSet_PTR_005be368->set_file_version < 0x10) {
         _fscanf(file_handle,"%f,%s\n");
         *(uint *)((int)this_ptr->filter_indices + local_1c) = 0;
       }
@@ -104,11 +104,11 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(C3DSLight *this_ptr,_F
       local_18 = (C3DSLight *)pcVar1;
     } while (iVar3 < this_ptr->filter_count);
   }
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%d\n");
-  if (*(int *)(0x01E57284 + 0x15a8c4) < 0x13) {
+  if (g_CDemonSet_PTR_005be368->set_file_version < 0x13) {
     (this_ptr->filter_vel).x = 0;
     (this_ptr->filter_vel).y = 0;
     (this_ptr->filter_pos).x = 0;
@@ -119,15 +119,15 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(C3DSLight *this_ptr,_F
     _fgets(local_148,0xff,file_handle);
     _fscanf(file_handle,"%d,%d,%d,%d,%d\n");
   }
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
   _fscanf(file_handle,"%f,%f\n");
   _fgets(local_148,0xff,file_handle);
-  if (*(int *)(0x01E57284 + 0x15a8c4) < 0xb) {
+  if (g_CDemonSet_PTR_005be368->set_file_version < 0xb) {
     local_20 = 100;
-    if (6 < *(int *)(0x01E57284 + 0x15a8c4)) {
-      if (*(int *)(0x01E57284 + 0x15a8c4) < 0x1a) {
+    if (6 < g_CDemonSet_PTR_005be368->set_file_version) {
+      if (g_CDemonSet_PTR_005be368->set_file_version < 0x1a) {
         local_20 = 200;
       }
       else {
@@ -140,7 +140,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(C3DSLight *this_ptr,_F
       iVar3 = 0;
       pCVar2 = this_ptr;
       do {
-        if (*(int *)(0x01E57284 + 0x15a8c4) < 2) {
+        if (g_CDemonSet_PTR_005be368->set_file_version < 2) {
           _fscanf(file_handle,"%d\n");
           pCVar2->visible_flags[0] = local_44;
           *(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar3) = 1;
@@ -166,8 +166,8 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(C3DSLight *this_ptr,_F
       do {
         _fscanf(file_handle,"%d,%d,%d,%d,%d\n");
         if (0xf9 < local_3c) {
-          PTR_01cc4800 = "..\\core\\setutil.cpp";
-          INT_01cc4804 = 0x2a5;
+          g_CHAR_PTR_01cc4800 = "..\\core\\setutil.cpp";
+          g_INT_01cc4804 = 0x2a5;
           core_main_c_FUN_004c8440("Invalid camera number in visiblilty list!");
         }
         this_ptr->visible_flags[local_3c] = '\x01';

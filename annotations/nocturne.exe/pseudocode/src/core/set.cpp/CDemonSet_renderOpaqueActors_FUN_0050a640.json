@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 33,
+        "line": 31,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 42,
-        "line": 33,
+        "line": 31,
         "message": "expected expression"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 50,
+        "line": 48,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 51,
+        "line": 49,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 51,
+        "line": 49,
         "message": "expected expression"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 58,
+        "line": 56,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050'"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 63,
+        "line": 61,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 32,
-        "line": 63,
+        "line": 61,
         "message": "expected expression"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 67,
+        "line": 65,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 69,
+        "line": 67,
         "message": "no matching function for call to 'core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 164,
+    "complexity_score": 162,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 67,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 233
+    "total_lines": 231
   },
   "cross_references": [
     {
@@ -314,15 +314,15 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
-      "text": "pCVar3 = (CVector3f *)(**(code **)(*(int *)(iVar2 + 0x14c) + 0x14))(iVar2,auStack_44);",
+      "text": "pCVar2 = (CVector3f *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_44);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
@@ -330,15 +330,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
+      "line": 42,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x14c) + 8))(iVar2);",
+      "text": "iVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 49,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);",
@@ -346,15 +346,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
+      "line": 54,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)(iVar2 + 0x14c) + 8))(iVar2);",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 58,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);",
@@ -362,18 +362,18 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 28,
+      "line": 26,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_2c.x = pCVar3->x;",
+      "text": "CStack_2c.x = pCVar2->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_20.x = pCVar3[1].x;",
+      "text": "CStack_20.x = pCVar2[1].x;",
       "type": "unrolled_memcpy"
     }
   ]

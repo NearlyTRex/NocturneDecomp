@@ -34,15 +34,15 @@
 ;   double DOUBLE_00578660 = 0.333333333333333
 ;   double DOUBLE_00578668 = 32
 ;   undefined4 DAT_005acf40
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9354
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_007642e8
 ;   undefined4 DAT_0076431c
 ;   undefined4 DAT_00764320
 ;   undefined4 DAT_0076432c
-;   undefined4 DAT_0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -143,9 +143,9 @@ section .text
     FLD float ptr [ESP + 0xac]          ; 00410551
         ;   Label: LAB_00410551
     FMUL double ptr [0x00578658]        ; 00410558 | DOUBLE_00578658
-    MOV EAX,[0x005b9354]                ; 0041055e | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0041055e | g_CGame_PTR_005b9354
     FSTP float ptr [EBP + 0x2430]       ; 00410563
-    CMP dword ptr [EAX + 0x228],0x0     ; 00410569 | DAT_01c77814
+    CMP dword ptr [EAX + 0x228],0x0     ; 00410569 | g_CGame_01c775ec.letterbox_mode
     JZ 0x00410584                       ; 00410570
         ;   XREF to: 00410584 (CONDITIONAL_JUMP)  ; LAB_00410584
     FLD float ptr [EBP + 0x2430]        ; 00410572
@@ -307,7 +307,7 @@ section .text
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00410778
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xa0],EAX      ; 0041077d
-    MOV EBP,dword ptr [0x005b80f0]      ; 00410784 | DAT_005b80f0
+    MOV EBP,dword ptr [0x005b80f0]      ; 00410784 | g_CFireEffect_PTR_005b80f0
     FLD float ptr [ESP + 0xa0]          ; 0041078a
     ADD ESP,0x8                         ; 00410791
     LEA EAX,[ESP + 0x48]                ; 00410794
@@ -361,8 +361,8 @@ section .text
     ADD ESP,0xc                         ; 0041081e
     PUSH EBP                            ; 00410821
     PUSH 0x57862e                       ; 00410822 | = "%s confused while walking to scriptDe..."
-    MOV EAX,[0x005ad350]                ; 00410827 | PTR_DAT_005ad350
-    PUSH EAX                            ; 0041082c | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00410827 | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 0041082c | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0041082d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x00410621                      ; 00410832
@@ -460,7 +460,7 @@ section .text
     PUSH EAX                            ; 00410936
     LEA EAX,[ESP + 0x8c]                ; 00410937
     PUSH EAX                            ; 0041093e
-    MOV EDI,dword ptr [0x005b80f0]      ; 0041093f | DAT_005b80f0
+    MOV EDI,dword ptr [0x005b80f0]      ; 0041093f | g_CFireEffect_PTR_005b80f0
     PUSH EDI                            ; 00410945
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590 ; 00410946
         ;   XREF to: 0048c590 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)
@@ -473,7 +473,7 @@ section .text
     PUSH EAX                            ; 00410968
     LEA EAX,[ESP + 0x68]                ; 00410969
     PUSH EAX                            ; 0041096d
-    MOV EAX,[0x005b80f0]                ; 0041096e | DAT_005b80f0
+    MOV EAX,[0x005b80f0]                ; 0041096e | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 00410973
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590 ; 00410974
         ;   XREF to: 0048c590 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)

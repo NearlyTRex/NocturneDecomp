@@ -359,9 +359,9 @@ section .text
         ;   XREF to: 0051d7a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(CDeformableModelInstance * this_ptr, CQuaternion4f * rotation_quat, float blend_weight, int bone_index, ...)
         ;   Label: LAB_00538749
     ADD ESP,0x14                        ; 0053874e
-    MOV EAX,[0x005b9354]                ; 00538751 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00538751 | g_CGame_PTR_005b9354
         ;   Label: LAB_00538751
-    CMP dword ptr [EAX + 0x240],0x0     ; 00538756 | DAT_01c7782c
+    CMP dword ptr [EAX + 0x240],0x0     ; 00538756 | g_CGame_01c775ec.goggles_active
     JZ 0x005387ea                       ; 0053875d
         ;   XREF to: 005387ea (CONDITIONAL_JUMP)  ; LAB_005387ea
     XOR ESI,ESI                         ; 00538763

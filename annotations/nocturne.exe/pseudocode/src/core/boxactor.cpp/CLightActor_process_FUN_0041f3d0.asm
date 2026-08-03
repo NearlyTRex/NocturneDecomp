@@ -15,9 +15,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_0076483c
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonFilter[8] g_CDemonFilter_ARRAY_0076483c
+;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -89,7 +89,7 @@ section .text
     SUB EAX,EDX                         ; 0041f452
     SHL EAX,0x2                         ; 0041f454
     ADD ESP,0x8                         ; 0041f457
-    ADD EAX,0x76483c                    ; 0041f45a | DAT_0076483c
+    ADD EAX,0x76483c                    ; 0041f45a | g_CDemonFilter_ARRAY_0076483c
     PUSH EAX                            ; 0041f45f
     LEA EAX,[EBX + 0x668]               ; 0041f460
     PUSH EAX                            ; 0041f466
@@ -136,8 +136,8 @@ section .text
         ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 0041f4e2
     PUSH EBX                            ; 0041f4e5
-    MOV EBP,dword ptr [0x005be368]      ; 0041f4e6 | DAT_005be368
-    PUSH EBP                            ; 0041f4ec | DAT_01e57284
+    MOV EBP,dword ptr [0x005be368]      ; 0041f4e6 | g_CDemonSet_PTR_005be368
+    PUSH EBP                            ; 0041f4ec | g_CDemonSet_01e57284
     MOV dword ptr [EBX + 0x20],0x0      ; 0041f4ed
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 0041f4f4
         ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)
@@ -213,8 +213,8 @@ section .text
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0041f5d6
     PUSH ESI                            ; 0041f5d9
-    MOV EDI,dword ptr [0x005be368]      ; 0041f5da | DAT_005be368
-    PUSH EDI                            ; 0041f5e0 | DAT_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 0041f5da | g_CDemonSet_PTR_005be368
+    PUSH EDI                            ; 0041f5e0 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970 ; 0041f5e1
         ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 0041f5e6

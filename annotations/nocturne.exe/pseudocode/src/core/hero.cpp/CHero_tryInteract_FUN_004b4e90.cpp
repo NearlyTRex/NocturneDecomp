@@ -43,11 +43,11 @@ int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004b4e90(CHero *this_ptr)
             ((CDemonActor *)this_ptr,&CStack_4c,&CStack_40);
   fStack_1c = 1e+30;
   iVar5 = 0;
-  for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
-    iVar1 = *(int *)(iVar3 + 0x14cd70 + 0x01E57284);
+  for (iVar4 = 0; iVar4 < g_CDemonSet_PTR_005be368->actor_count; iVar4 = iVar4 + 1) {
+    iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->actors + iVar3);
     fStack_18 = (float)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x58))(iVar1,this_ptr,&CStack_4c);
     if ((0.0 <= fStack_18) && (fStack_18 < fStack_1c)) {
-      iVar5 = *(int *)(iVar3 + 0x14cd70 + 0x01E57284);
+      iVar5 = *(int *)((int)g_CDemonSet_PTR_005be368->actors + iVar3);
       fStack_1c = fStack_18;
     }
     iVar3 = iVar3 + 4;

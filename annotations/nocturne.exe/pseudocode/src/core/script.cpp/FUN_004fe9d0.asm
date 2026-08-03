@@ -31,7 +31,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0
 ;   cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320
 ;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480
-;   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0
+;   cockpit_drawsurf.cpp_setColor_FUN_0045b5f0
 ;   cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_00477660
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 0045b480 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 004fea13
     PUSH 0x0                            ; 004fea16
-    CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004fea18
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
+    CALL cockpit_drawsurf.cpp_setColor_FUN_0045b5f0 ; 004fea18
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColor_FUN_0045b5f0(int color_value)
     ADD ESP,0x4                         ; 004fea1d
     LEA EAX,[ESP + 0x64]                ; 004fea20
     PUSH EAX                            ; 004fea24
@@ -135,8 +135,8 @@ section .text
     JNZ 0x004feb83                      ; 004feadd
         ;   XREF to: 004feb83 (CONDITIONAL_JUMP)  ; LAB_004feb83
     PUSH 0xfa                           ; 004feae3
-    CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004feae8
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
+    CALL cockpit_drawsurf.cpp_setColor_FUN_0045b5f0 ; 004feae8
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColor_FUN_0045b5f0(int color_value)
         ;   Label: LAB_004feae8
     ADD ESP,0x4                         ; 004feaed
     LEA EDI,[EBX + 0x1]                 ; 004feaf0
@@ -179,8 +179,8 @@ section .text
         ;   XREF to: 004feab3 (CONDITIONAL_JUMP)  ; LAB_004feab3
     PUSH 0xff                           ; 004feb57
         ;   Label: LAB_004feb57
-    CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004feb5c
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
+    CALL cockpit_drawsurf.cpp_setColor_FUN_0045b5f0 ; 004feb5c
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColor_FUN_0045b5f0(int color_value)
     ADD ESP,0x4                         ; 004feb61
     LEA EAX,[ESP + 0x64]                ; 004feb64
     PUSH EAX                            ; 004feb68
@@ -214,8 +214,8 @@ section .text
         ;   XREF to: 004feae8 (UNCONDITIONAL_JUMP)  ; LAB_004feae8
     PUSH 0xf9                           ; 004feba6
         ;   Label: LAB_004feba6
-    CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004febab
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
+    CALL cockpit_drawsurf.cpp_setColor_FUN_0045b5f0 ; 004febab
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setColor_FUN_0045b5f0(int color_value)
     ADD ESP,0x4                         ; 004febb0
     PUSH 0x58e251                       ; 004febb3 | = "(No script loaded.)"
     LEA EAX,[ESP + 0x68]                ; 004febb8

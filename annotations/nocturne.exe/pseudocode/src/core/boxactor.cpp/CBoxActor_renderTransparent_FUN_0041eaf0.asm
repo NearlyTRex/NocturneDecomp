@@ -7,11 +7,11 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae700
+;   void* PTR_DAT_005ae700 = 01b4d738
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01fb1b24
+;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
@@ -50,7 +50,7 @@ section .text
     PUSH ESI                            ; 0041eb1c
     LEA EAX,[EBX + 0x20]                ; 0041eb1d
     PUSH EAX                            ; 0041eb20
-    MOV ECX,dword ptr [0x005ae700]      ; 0041eb21 | DAT_005ae700
+    MOV ECX,dword ptr [0x005ae700]      ; 0041eb21 | PTR_DAT_005ae700
     PUSH ECX                            ; 0041eb27 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0041eb28
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -58,7 +58,7 @@ section .text
     PUSH 0x0                            ; 0041eb30
     LEA EAX,[EBX + 0x30]                ; 0041eb32
     PUSH EAX                            ; 0041eb35
-    MOV ESI,dword ptr [0x005ae700]      ; 0041eb36 | DAT_005ae700
+    MOV ESI,dword ptr [0x005ae700]      ; 0041eb36 | PTR_DAT_005ae700
     PUSH ESI                            ; 0041eb3c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0041eb3d
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -85,8 +85,8 @@ section .text
     TEST EBP,EBP                        ; 0041eb7e
     JZ 0x0041eb91                       ; 0041eb80
         ;   XREF to: 0041eb91 (CONDITIONAL_JUMP)  ; LAB_0041eb91
-    MOV EAX,[0x005be368]                ; 0041eb82 | DAT_005be368
-    MOV dword ptr [EAX + 0x15a8a0],0x1  ; 0041eb87 | DAT_01fb1b24
+    MOV EAX,[0x005be368]                ; 0041eb82 | g_CDemonSet_PTR_005be368
+    MOV dword ptr [EAX + 0x15a8a0],0x1  ; 0041eb87 | g_CDemonSet_01e57284.disable_directional_lighting
     TEST ESI,ESI                        ; 0041eb91
         ;   Label: LAB_0041eb91
     JZ 0x0041ebac                       ; 0041eb93
@@ -102,9 +102,9 @@ section .text
         ;   Label: LAB_0041ebac
     JZ 0x0041ebc4                       ; 0041ebb3
         ;   XREF to: 0041ebc4 (CONDITIONAL_JUMP)  ; LAB_0041ebc4
-    MOV EAX,[0x005be368]                ; 0041ebb5 | DAT_005be368
-    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 0041ebba | DAT_01fb1b24
-    MOV EDX,dword ptr [0x005ae700]      ; 0041ebc4 | DAT_005ae700
+    MOV EAX,[0x005be368]                ; 0041ebb5 | g_CDemonSet_PTR_005be368
+    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 0041ebba | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV EDX,dword ptr [0x005ae700]      ; 0041ebc4 | PTR_DAT_005ae700
         ;   Label: LAB_0041ebc4
     PUSH EDX                            ; 0041ebca | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0041ebcb

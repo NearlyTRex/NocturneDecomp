@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a0020
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc9454
 ;   undefined4 DAT_02dd1184
@@ -101,7 +101,7 @@ section .text
     CMP EBX,0xc                         ; 004c9c84
     JL 0x004c9c6f                       ; 004c9c87
         ;   XREF to: 004c9c6f (CONDITIONAL_JUMP)  ; LAB_004c9c6f
-    MOV EAX,[0x005baf90]                ; 004c9c89 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 004c9c89 | g_CDemonMission_PTR_005baf90
     CMP dword ptr [EAX + 0x4],0x0       ; 004c9c8e | DAT_01cc9454
     JNZ 0x004c9cc4                      ; 004c9c92
         ;   XREF to: 004c9cc4 (CONDITIONAL_JUMP)  ; LAB_004c9cc4

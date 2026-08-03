@@ -14,12 +14,11 @@ int __cdecl shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_00475f10(CPi
   int iVar1;
   int iVar2;
   
-  iVar1 = (mouse_y - _DAT_01c00c5c) / *(int *)(this_ptr->search_text_buffer + 4);
-  iVar2 = (mouse_x - _DAT_01c00c58) / *(int *)(this_ptr->search_text_buffer + 0x1c);
-  if ((((iVar1 < 0) || (*(int *)(this_ptr->search_text_buffer + 0x18) <= iVar1)) || (iVar2 < 0)) ||
-     (((*(int *)(this_ptr->search_text_buffer + 0x20) <= iVar2 ||
-       (iVar1 = iVar2 * *(int *)(this_ptr->search_text_buffer + 0x18) +
-                *(int *)(this_ptr->search_text_buffer + 0x10) + iVar1, iVar1 < 0)) ||
+  iVar1 = (mouse_y - _DAT_01c00c5c) / this_ptr->character_width;
+  iVar2 = (mouse_x - _DAT_01c00c58) / this_ptr->total_content_width;
+  if ((((iVar1 < 0) || (this_ptr->vertical_page_size <= iVar1)) || (iVar2 < 0)) ||
+     (((this_ptr->column_count <= iVar2 ||
+       (iVar1 = iVar2 * this_ptr->vertical_page_size + this_ptr->scroll_top + iVar1, iVar1 < 0)) ||
       ((this_ptr->base).item_count <= iVar1)))) {
     iVar1 = -1;
   }

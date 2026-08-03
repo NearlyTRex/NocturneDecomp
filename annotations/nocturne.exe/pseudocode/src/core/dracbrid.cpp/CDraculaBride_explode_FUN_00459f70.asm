@@ -28,7 +28,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057d74e = 5.22209901682860E-315
-;   int INT_005b96c4 = 0x1c78c7c
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -230,7 +230,7 @@ section .text
     PUSH EBX                            ; 0045a176
     LEA EAX,[ESP + 0x5c]                ; 0045a177
     PUSH EAX                            ; 0045a17b
-    MOV EDI,dword ptr [0x005b96c4]      ; 0045a17c | INT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 0045a17c | g_CGore_PTR_005b96c4
     PUSH EDI                            ; 0045a182
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 0045a183
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)

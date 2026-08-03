@@ -17,8 +17,8 @@ void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_0044d460(CDemonImage *t
   if (pvVar1 != (void *)0x0) {
     return;
   }
-  PTR_01cc4800 = "..\\core\\dimage.cpp";
-  INT_01cc4804 = 0x31;
+  g_CHAR_PTR_01cc4800 = "..\\core\\dimage.cpp";
+  g_INT_01cc4804 = 0x31;
   core_main_c_FUN_004c8440("CDemonImage::allocMemory - Out of memory!");
   return;
 }

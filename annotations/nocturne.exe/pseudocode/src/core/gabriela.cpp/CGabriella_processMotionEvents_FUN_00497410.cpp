@@ -138,8 +138,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabr
           dVar5 = round((double)fStack_94 * 0.20000000000000001);
           iStack_14 = (int)ROUND(dVar5);
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                    ((CGore *)INT_005b96c4,(CVector3f *)(local_64 + 4),(CVector3f *)0x0,
-                     iStack_14 + 1,0);
+                    (g_CGore_PTR_005b96c4,(CVector3f *)(local_64 + 4),(CVector3f *)0x0,iStack_14 + 1
+                     ,0);
           in_stack_ffffff58 = "kick1.wav";
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"kick1.wav");

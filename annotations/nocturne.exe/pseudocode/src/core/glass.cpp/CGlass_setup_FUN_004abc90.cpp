@@ -114,8 +114,8 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr)
   this_ptr->broken_vertex_count = (this_ptr->grid_cols + 1) * (this_ptr->grid_rows + 1);
   this_ptr->broken_polygon_count = iVar4;
   if ((0x19 < this_ptr->broken_vertex_count) || (0x10 < iVar4)) {
-    PTR_01cc4800 = "..\\core\\glass.cpp";
-    INT_01cc4804 = 0x86;
+    g_CHAR_PTR_01cc4800 = "..\\core\\glass.cpp";
+    g_INT_01cc4804 = 0x86;
     core_main_c_FUN_004c8440
               ("CGlass::setup - Too many verticies(%d) or faces(%d)!",this_ptr->broken_vertex_count,
                this_ptr->broken_polygon_count);

@@ -160,8 +160,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
           iVar4 = 4;
         }
         if (iVar4 != *(int *)(local_a4 + 0xc)) {
-          PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          INT_01cc4804 = 0x1a1;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          g_INT_01cc4804 = 0x1a1;
           core_main_c_FUN_004c8440();
         }
         SStack_e4.channel_mode = (int)local_a0;
@@ -175,8 +175,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         uVar9 = *(uint *)(iVar7 + 0x20);
         if (((((int)local_8c < 1) || (3 < (int)local_8c)) || ((int)uVar9 < 0)) || (3 < (int)uVar9))
         {
-          PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          INT_01cc4804 = 0x1b1;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          g_INT_01cc4804 = 0x1b1;
           core_main_c_FUN_004c8440();
         }
         SStack_e4.private_bit =
@@ -373,8 +373,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         iVar7 = sound_mp3_cpp_calculateMainDataSize_FUN_004e77d0(frame_info_00);
         this_ptr->main_data_offset = this_ptr->main_data_offset + iVar7;
         if (local_74 < 0) {
-          PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          INT_01cc4804 = 0xf90;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          g_INT_01cc4804 = 0xf90;
           core_main_c_FUN_004c8440();
         }
         while (iVar7 = local_74, 0 < local_74) {

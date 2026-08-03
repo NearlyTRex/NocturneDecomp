@@ -24,7 +24,7 @@ void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(CNetGam
     iVar2 = 0;
     do {
       iVar3 = support_trisock_cpp_receiveSocketData_FUN_00549010
-                        (&this_ptr->socket,&DAT_01d16408,0x405,(SNetworkAddr *)0x0);
+                        (&this_ptr->socket,(char *)&g_INT_01d16408,0x405,(SNetworkAddr *)0x0);
       if (iVar3 < 1) {
         DAT_005c1664 = uVar1;
         return;

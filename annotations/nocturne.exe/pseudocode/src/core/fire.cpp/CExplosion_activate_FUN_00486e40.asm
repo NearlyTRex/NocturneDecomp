@@ -23,9 +23,9 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00581210 = 30
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -60,10 +60,10 @@ section .text
     PUSH 0x0                            ; 00486e68
     MOV EAX,dword ptr [ESP + 0x64]      ; 00486e6a
     PUSH 0x0                            ; 00486e6e
-    MOV EDX,dword ptr [0x005be368]      ; 00486e70 | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 00486e70 | g_CDemonSet_PTR_005be368
     PUSH 0x43480000                     ; 00486e76
     MOV dword ptr [ESI + 0xc],0x3f800000 ; 00486e7b
-    PUSH EDX                            ; 00486e82 | DAT_01e57284
+    PUSH EDX                            ; 00486e82 | g_CDemonSet_01e57284
     MOV dword ptr [ESI + 0x10],EAX      ; 00486e83
     CALL core_set.cpp_FUN_0050e660      ; 00486e86
         ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
@@ -141,7 +141,7 @@ section .text
     PUSH EAX                            ; 00486f66
     LEA EAX,[ESP + 0x14]                ; 00486f67
     PUSH EAX                            ; 00486f6b
-    MOV ECX,dword ptr [0x005b80f0]      ; 00486f6c | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 00486f6c | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 00486f72
     INC EBX                             ; 00486f73
     CALL core_fire.cpp_CFireEffect_createRock_FUN_0048b320 ; 00486f74

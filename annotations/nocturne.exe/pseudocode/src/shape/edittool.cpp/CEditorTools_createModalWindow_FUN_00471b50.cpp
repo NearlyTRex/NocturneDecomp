@@ -34,15 +34,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   
   bVar12 = 0;
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0x8b;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0x8b;
     core_main_c_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   if (4 < _DAT_01bcd07c) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0x674;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0x674;
     core_main_c_FUN_004c8440("Can't open another window!");
   }
   iVar1 = _DAT_01bcd07c * 0x1d8;
@@ -135,8 +135,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
     pvVar4 = malloc((bottom - top) * local_14);
     local_1c[0x72] = (int)pvVar4;
     if (pvVar4 == (void *)0x0) {
-      PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      INT_01cc4804 = 0x6c4;
+      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+      g_INT_01cc4804 = 0x6c4;
       core_main_c_FUN_004c8440("out of memory to open editor window.");
     }
     puVar8 = (uint *)local_1c[0x72];

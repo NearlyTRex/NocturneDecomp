@@ -21,8 +21,8 @@ void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(CDemonSet *this_p
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      _fprintf(file_handle,"%d\n",pCVar2->cameras[0].vdir_zone);
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].vdir_zone;
+      _fprintf(file_handle,"%d\n",pCVar2->cameras[0].enabled);
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
     } while (iVar1 < this_ptr->camera_count);
   }
   return;

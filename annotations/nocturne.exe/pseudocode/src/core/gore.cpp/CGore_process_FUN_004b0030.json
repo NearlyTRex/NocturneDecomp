@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,25 +57,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
-        "line": 19,
-        "message": "use of undeclared identifier 'DAT_01c78cec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 22,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 22,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
+        "column": 46,
         "line": 25,
         "message": "use of undeclared identifier 'DAT_01c7ccec'"
       },
@@ -110,16 +92,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 90,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 116
@@ -165,19 +146,19 @@
   "globals": [
     {
       "addr": "01c78d04",
-      "name": "DAT_01c78d04",
+      "name": "g_CBloodParticle_ARRAY_01c78cec[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78d44",
-      "name": "DAT_01c78d44",
+      "name": "g_CBloodParticle_ARRAY_01c78cec[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c78d60",
-      "name": "DAT_01c78d60",
+      "name": "g_CBloodParticle_ARRAY_01c78cec[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
@@ -296,26 +277,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_01c78cec",
-      "severity": "mild",
-      "text": "puVar1 = &DAT_01c78cec;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(puVar1 + 0x34) + 4))(puVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_01c7ccec",
       "severity": "mild",
-      "text": "} while (puVar1 != &DAT_01c7ccec);",
+      "text": "} while (this_ptr_00 != (CBloodParticle *)&DAT_01c7ccec);",
       "type": "undefined_data"
     }
   ]

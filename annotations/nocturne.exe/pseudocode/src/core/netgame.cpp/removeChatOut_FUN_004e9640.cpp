@@ -12,8 +12,8 @@ void __cdecl core_netgame_cpp_removeChatOut_FUN_004e9640(int index)
 
 {
   if ((index < 0) || (_DAT_01d06610 <= index)) {
-    PTR_01cc4800 = "..\\core\\netgame.cpp";
-    INT_01cc4804 = 0x107;
+    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+    g_INT_01cc4804 = 0x107;
     core_main_c_FUN_004c8440("removeChatOut - invalid index");
   }
   _DAT_01d06610 = _DAT_01d06610 + -1;

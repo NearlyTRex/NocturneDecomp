@@ -14,11 +14,11 @@
 ;   TerminatedCString s_DirectSoundDevice_alloca_00594403
 ;   TerminatedCString s_Duplicate_sound_buffer_00594435
 ;   TerminatedCString s_get_DirectSound3DBuffer_0059444c
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005c3918
-;   undefined4 DAT_0077ad0c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CConsole g_CConsole_0077ad0c
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc9214
 ;   ... and 5 more
 ;
@@ -51,8 +51,8 @@ section .text
     MOV ECX,0x59436b                    ; 0052af6f | = "..\\sound\\snddx.cpp"
     MOV EBX,0x2be                       ; 0052af74
     PUSH 0x59437e                       ; 0052af79 | = "DirectSoundDevice::allocateSfx - Inva..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0052af7e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0052af84 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0052af7e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0052af84 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052af8a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052af8f
@@ -63,8 +63,8 @@ section .text
     MOV EBP,0x5943b9                    ; 0052af9b | = "..\\sound\\snddx.cpp"
     MOV EAX,0x2bf                       ; 0052afa0
     PUSH 0x5943cc                       ; 0052afa5 | = "DirectSoundDevice::allocateSfx - dSou..."
-    MOV dword ptr [0x01cc4800],EBP      ; 0052afaa | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0052afb0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 0052afaa | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0052afb0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052afb5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052afba
@@ -192,8 +192,8 @@ section .text
         ;   XREF to: 0052af92 (UNCONDITIONAL_JUMP)  ; LAB_0052af92
     PUSH 0x594403                       ; 0052b100 | = "DirectSoundDevice::allocateSfx - no f..."
         ;   Label: LAB_0052b100
-    MOV EBX,dword ptr [0x005ad350]      ; 0052b105 | PTR_DAT_005ad350
-    PUSH EBX                            ; 0052b10b | DAT_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 0052b105 | g_CConsole_PTR_005ad350
+    PUSH EBX                            ; 0052b10b | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0052b10c
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 0052b111

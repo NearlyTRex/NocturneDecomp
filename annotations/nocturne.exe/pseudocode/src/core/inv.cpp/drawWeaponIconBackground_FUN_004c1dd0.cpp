@@ -67,6 +67,6 @@ void core_inv_cpp_drawWeaponIconBackground_FUN_004c1dd0(int param_1,int param_2,
   local_1c = param_3;
   local_14 = param_4;
   core_dcamera_cpp_CDemonCamera_pushRect_FUN_004405d0
-            ((CDemonCamera *)&DAT_01fb8508,param_1,param_3,param_2,param_4);
+            (&g_CDemonCamera_01fb8508,param_1,param_3,param_2,param_4);
   return;
 }

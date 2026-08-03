@@ -86,11 +86,11 @@
 ;   undefined4 DAT_0059c038
 ;   undefined4 DAT_005ae470
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f4
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c775f8
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.halo_mode
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
@@ -123,8 +123,8 @@ section .text
     CMP dword ptr [EAX + 0x1cbc],0x0    ; 00450532
     JZ 0x00450546                       ; 00450539
         ;   XREF to: 00450546 (CONDITIONAL_JUMP)  ; LAB_00450546
-    MOV EAX,[0x005b9354]                ; 0045053b | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0xc],0x2       ; 00450540 | DAT_01c775f8
+    MOV EAX,[0x005b9354]                ; 0045053b | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0xc],0x2       ; 00450540 | g_CGame_01c775ec.halo_mode
     JZ 0x0045054d                       ; 00450544
         ;   XREF to: 0045054d (CONDITIONAL_JUMP)  ; LAB_0045054d
     MOV ESP,EBP                         ; 00450546

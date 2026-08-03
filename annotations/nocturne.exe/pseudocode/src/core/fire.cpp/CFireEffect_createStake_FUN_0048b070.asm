@@ -25,7 +25,7 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0048b038 = 0048b091
 ;   TerminatedCString s_a_wood_wav_005814bc
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_01c23d48
 ;   undefined4 DAT_01c23d4c
 ;
@@ -138,7 +138,7 @@ section .text
     PUSH 0x5814bc                       ; 0048b162 | = "a-wood?.wav"
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0048b167
     PUSH EAX                            ; 0048b16b
-    MOV EDX,dword ptr [0x005bed68]      ; 0048b16c | DAT_005bed68
+    MOV EDX,dword ptr [0x005bed68]      ; 0048b16c | g_CSound_PTR_005bed68
     PUSH EDX                            ; 0048b172
     CALL core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00 ; 0048b173
         ;   XREF to: 0052eb00 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)

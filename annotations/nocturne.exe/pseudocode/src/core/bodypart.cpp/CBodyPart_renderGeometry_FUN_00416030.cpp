@@ -16,9 +16,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(CBodyPart *
   int local_14;
   
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-            (0x01E57284,this_ptr->vertex_count,this_ptr->vertices);
+            (g_CDemonSet_PTR_005be368,this_ptr->vertex_count,this_ptr->vertices);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-            (0x01E57284,this_ptr->vertex_count,this_ptr->tri_count,this_ptr->faces,
+            (g_CDemonSet_PTR_005be368,this_ptr->vertex_count,this_ptr->tri_count,this_ptr->faces,
              this_ptr->vertices,3,this_ptr->normals);
   if ((this_ptr->texture_count == 1) ||
      (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar2 != 0)

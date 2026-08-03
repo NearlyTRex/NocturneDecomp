@@ -29,10 +29,10 @@
 ;   double DOUBLE_0058dec6 = 1.57079632675000
 ;   double DOUBLE_0058dece = 1.59386252192652E-314
 ;   double DOUBLE_0058ded6 = 3.14159265350000
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01c77814
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CConsole g_CConsole_0077ad0c
+;   undefined4 g_CGame_01c775ec.letterbox_mode
 ;   undefined4 DAT_01e53388
 ;
 ; Called Functions:
@@ -76,9 +76,9 @@ section .text
         ;   XREF to: 004fc2e3 (CONDITIONAL_JUMP)  ; caseD_5
     FLD float ptr [EBP + 0x18]          ; 004fbf43
     FMUL double ptr [0x0058de9e]        ; 004fbf46 | DOUBLE_0058de9e
-    MOV EAX,[0x005b9354]                ; 004fbf4c | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004fbf4c | g_CGame_PTR_005b9354
     FSTP float ptr [EBX + 0x2430]       ; 004fbf51
-    CMP dword ptr [EAX + 0x228],0x0     ; 004fbf57 | DAT_01c77814
+    CMP dword ptr [EAX + 0x228],0x0     ; 004fbf57 | g_CGame_01c775ec.letterbox_mode
     JNZ 0x004fc2ea                      ; 004fbf5e
         ;   XREF to: 004fc2ea (CONDITIONAL_JUMP)  ; LAB_004fc2ea
     FLD float ptr [EBX + 0xbc8c]        ; 004fbf64
@@ -438,8 +438,8 @@ section .text
     PUSH EBX                            ; 004fc301
         ;   Label: LAB_004fc301
     PUSH 0x58de70                       ; 004fc302 | = "%s confused while walking to scriptDe..."
-    MOV ECX,dword ptr [0x005ad350]      ; 004fc307 | PTR_DAT_005ad350
-    PUSH ECX                            ; 004fc30d | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004fc307 | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 004fc30d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004fc30e
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 004fc313

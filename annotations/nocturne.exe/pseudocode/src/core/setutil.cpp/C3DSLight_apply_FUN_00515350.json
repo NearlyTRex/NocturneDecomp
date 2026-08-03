@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,21 +62,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 355,
+    "complexity_score": 346,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 29,
+    "pseudocode_lines": 41,
+    "suspect_count": 28,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
-      "pointer_cast",
       "shadow_pointer_walk",
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_strcpy"
     ],
-    "total_lines": 117
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -210,7 +210,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
+      "line": 7,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "uint extraout_EAX;",
@@ -218,18 +218,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "pcVar2 = (param_2->base).camera_name + 0xc4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (pcVar2 != (char *)(param_1 + 0x104)) {",
+      "text": "pCVar1 = &(param_2->base).position;",
       "type": "unnamed_param"
     },
     {
@@ -237,15 +229,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)pcVar2 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)((param_2->base).camera_name + 200) = *(uint *)(param_1 + 0x108);",
+      "text": "if (pCVar1 != (CVector3f *)(param_1 + 0x104)) {",
       "type": "unnamed_param"
     },
     {
@@ -253,7 +237,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)((param_2->base).camera_name + 200) = *(uint *)(param_1 + 0x108);",
+      "text": "pCVar1->x = *(float *)(param_1 + 0x104);",
       "type": "unnamed_param"
     },
     {
@@ -261,7 +245,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)((param_2->base).camera_name + 0xcc) = *(uint *)(param_1 + 0x10c);",
+      "text": "(param_2->base).position.y = *(float *)(param_1 + 0x108);",
       "type": "unnamed_param"
     },
     {
@@ -269,23 +253,23 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)((param_2->base).camera_name + 0xcc) = *(uint *)(param_1 + 0x10c);",
+      "text": "(param_2->base).position.y = *(float *)(param_1 + 0x108);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "((CMatrix3x3f *)((param_2->base).camera_name + 0xd0),(CVector3f *)(param_1 + 0x110));",
+      "text": "(param_2->base).position.z = *(float *)(param_1 + 0x10c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMatrix3x3f *)((param_2->base).camera_name + 0xd0),(CVector3f *)(param_1 + 0x110));",
+      "text": "(param_2->base).position.z = *(float *)(param_1 + 0x10c);",
       "type": "unnamed_param"
     },
     {
@@ -293,7 +277,7 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)((param_2->base).camera_name + 0xf8) = *(uint *)(param_1 + 0x11c);",
+      "text": "(&(param_2->base).rotation_matrix,(CVector3f *)(param_1 + 0x110));",
       "type": "unnamed_param"
     },
     {
@@ -301,12 +285,28 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)((param_2->base).camera_name + 0xf8) = *(uint *)(param_1 + 0x11c);",
+      "text": "(&(param_2->base).rotation_matrix,(CVector3f *)(param_1 + 0x110));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2->base).focal_length = *(float *)(param_1 + 0x11c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2->base).focal_length = *(float *)(param_1 + 0x11c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "((double)(*(float *)(param_1 + 0x120) * (float)65536));",
@@ -314,32 +314,24 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->transform_scale_factor = (int)ROUND(dVar4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar2 = (char *)(param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2,*(float *)(param_1 + 0x124));",
+      "text": "param_2->transform_scale_factor = (int)ROUND(dVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar3 = (char *)(param_1 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
       "severity": "mild",
       "text": "(param_2,*(float *)(param_1 + 0x124));",
       "type": "unnamed_param"
@@ -349,7 +341,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x11e8) = 0;",
+      "text": "(param_2,*(float *)(param_1 + 0x124));",
       "type": "unnamed_param"
     },
     {
@@ -357,20 +349,28 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1894) = 0;",
+      "text": "*(uint *)(param_1 + 0x11e8) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 28,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "pCVar3 = param_2;",
+      "text": "*(uint *)(param_1 + 0x1894) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 29,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pCVar4 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x17f4) == 0) {",
@@ -378,7 +378,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 42,
       "match": "param_2",
       "severity": "mild",
       "text": "core_dlight_cpp_CDemonLight_allocateFilter_FUN_00450170(param_2);",
@@ -386,34 +386,26 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 42,
+      "line": 43,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "return extraout_EAX;",
       "type": "extra_output"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 35,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 30,
+      "match": "do {",
       "severity": "moderate",
-      "text": "*(char *)((int)&(pCVar3->base).base.fixed_point_scale + 1) = cVar1;",
-      "type": "pointer_cast"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 37,
+      "match": "pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar3 = (CDemonLight *)((int)&(pCVar3->base).base.fixed_point_scale + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 36,
-      "match": "pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)",
-      "severity": "moderate",
-      "text": "pCVar3 = (CDemonLight *)((int)&(pCVar3->base).base.fixed_point_scale + 2);",
+      "text": "pCVar4 = (CDemonLight *)((pCVar4->base).camera_name + 2);",
       "type": "shadow_pointer_walk"
     },
     {

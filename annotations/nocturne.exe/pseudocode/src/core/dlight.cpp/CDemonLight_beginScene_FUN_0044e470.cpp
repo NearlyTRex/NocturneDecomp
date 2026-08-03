@@ -17,8 +17,8 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
   CDemonLight *pCVar3;
   
   if ((this_ptr->base).scene_open_flag != 0) {
-    PTR_01cc4800 = "..\\core\\dlight.cpp";
-    INT_01cc4804 = 0xf3;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
+    g_INT_01cc4804 = 0xf3;
     core_main_c_FUN_004c8440("CDemonLight::beginScene - Scene already open");
   }
   (this_ptr->base).scene_open_flag = 1;
@@ -34,11 +34,11 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
   (this_ptr->base).rect_array_count = 0;
   (this_ptr->base).skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-            (this_ptr_00,(CVector3f *)((this_ptr->base).camera_name + 0xc4));
+            (this_ptr_00,&(this_ptr->base).position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-            (DAT_005ae704,*(float *)((this_ptr->base).camera_name + 0xf8));
+            (DAT_005ae704,(this_ptr->base).focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
-            (DAT_005ae704,(CMatrix3x3f *)((this_ptr->base).camera_name + 0xd0));
+            (DAT_005ae704,&(this_ptr->base).rotation_matrix);
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c039ec;
   _DAT_01c039ec = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c039f8;
@@ -56,7 +56,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
       *(ushort **)(&DAT_01bd2fa0 + iVar2 * 4) =
            this_ptr->shadow_depth_buffer + this_ptr->shadow_map_width * iVar2;
       iVar2 = iVar2 + 1;
-      pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;
+      pCVar3 = (CDemonLight *)((pCVar3->base).camera_name + 4);
     } while (iVar2 < this_ptr->shadow_map_height);
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(&this_ptr->base);

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,9 +57,9 @@
       },
       {
         "category": "incompatible_types",
-        "column": 5,
-        "line": 55,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createRock_FUN_0048b320'"
+        "column": 3,
+        "line": 33,
+        "message": "no matching function for call to 'core_set_cpp_FUN_0050e660'"
       }
     ],
     "success": false,
@@ -68,18 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 78,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 2,
+    "pseudocode_lines": 49,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
       "unrolled_memcpy"
     ],
-    "total_lines": 166
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -137,20 +136,20 @@
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -309,14 +308,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `uVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 23,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "uVar1 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 19,

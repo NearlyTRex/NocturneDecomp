@@ -32,7 +32,7 @@ void core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *param_1,S
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,local_28,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,local_28,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   fVar1 = (param_1->base).base.hit_points - param_2->damage_amount;
@@ -45,7 +45,8 @@ void core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *param_1,S
     if ((pSVar2->state_index != 0xd) && (pSVar2->state_index != 0xc)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&this_ptr->motion_controller,0xc,1);
-      if ((param_1->type == WEREWOLF_TYPE_TRAIN) && (*(int *)(0x01E57284 + 0x15aa60) != 0)) {
+      if ((param_1->type == WEREWOLF_TYPE_TRAIN) &&
+         (g_CDemonSet_PTR_005be368->last_switch_area_invalid != 0)) {
         fVar1 = (param_1->base).base.base.location.position.x;
         if (fVar1 <= (float)5) {
           if ((double)fVar1 < -5) {

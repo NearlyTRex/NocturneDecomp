@@ -17,8 +17,8 @@
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004b3e00 at 004b3e3c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fa5f34
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.character_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -54,9 +54,9 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004b3f6f
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004b3f74
-    MOV EBX,dword ptr [0x005be368]      ; 004b3f77 | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 004b3f77 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004b3f77
-    CMP EDI,dword ptr [EBX + 0x14ecb0]  ; 004b3f7d | DAT_01fa5f34
+    CMP EDI,dword ptr [EBX + 0x14ecb0]  ; 004b3f7d | g_CDemonSet_01e57284.character_count
     JGE 0x004b3fd1                      ; 004b3f83
         ;   XREF to: 004b3fd1 (CONDITIONAL_JUMP)  ; LAB_004b3fd1
     MOV EBX,dword ptr [ESI + EBX*0x1 + 0x14ecb4] ; 004b3f85

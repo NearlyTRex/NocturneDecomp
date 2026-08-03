@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -63,45 +63,15 @@
       },
       {
         "category": "incompatible_types",
-        "column": 7,
-        "line": 59,
-        "message": "no matching function for call to 'core_setcolid_cpp_FUN_00511aa0'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 13,
         "line": 83,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
-        "column": 9,
-        "line": 100,
-        "message": "no matching function for call to 'core_setcolid_cpp_FUN_00511a10'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 109,
-        "message": "no matching function for call to 'core_setcolid_cpp_FUN_00511a10'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 3,
         "line": 121,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 131,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 132,
-        "message": "member reference type 'int' is not a pointer"
       },
       {
         "category": "undeclared_identifier",
@@ -202,25 +172,25 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "DAT_01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "DAT_01fa5f38",
+      "name": "g_CDemonSet_01e57284.characters[0]",
       "type": "undefined4",
       "value": null
     }
@@ -440,7 +410,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_setcolid_cpp_FUN_00511aa0(0x01E57284,&param_1->base);",
+      "text": "core_setcolid_cpp_FUN_00511aa0(g_CDemonSet_PTR_005be368,&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -752,7 +722,7 @@
       "line": 93,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_setcolid_cpp_FUN_00511a10(0x01E57284,&param_1->base);",
+      "text": "core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -800,7 +770,7 @@
       "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_setcolid_cpp_FUN_00511a10(0x01E57284,&param_1->base);",
+      "text": "core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -902,9 +872,9 @@
     {
       "description": "Complex pointer cast",
       "line": 125,
-      "match": "(int *)((int)0x01E57284",
+      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)0x01E57284->actors + iVar4 + 0x1b5c);",
+      "text": "iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);",
       "type": "pointer_cast"
     },
     {

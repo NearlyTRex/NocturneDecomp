@@ -15,8 +15,8 @@
 ;   double DOUBLE_00593a0e = 0.0500000000000000
 ;   double DOUBLE_00593a16 = 2
 ;   undefined4 DAT_005bea98
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_005289b9
     MOV ECX,0x1329                      ; 005289be
     PUSH 0x5939d3                       ; 005289c3 | = "setMaxSwSoundLatency - can't do this ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005289c8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005289ce | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 005289c8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005289ce | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005289d4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005289d9

@@ -15,13 +15,13 @@ uint core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *param
   if ((param_1->is_visible != 0) &&
      ((param_1->render_in_background < 2 || (param_1->fire_count != 0)))) {
     if (param_1->transparent_geometry_flag != 0) {
-      *(int *)(0x01E57284 + 0x15a8a0) = param_1->dont_use_normals;
+      g_CDemonSet_PTR_005be368->disable_directional_lighting = param_1->dont_use_normals;
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
                 (DAT_005ae704,param_1->render_alpha);
       core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(param_1,0x2e7);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);
-      *(uint *)(0x01E57284 + 0x15a8a0) = 0;
+      g_CDemonSet_PTR_005be368->disable_directional_lighting = 0;
     }
     iVar2 = 0;
     if (0 < param_1->fire_count) {

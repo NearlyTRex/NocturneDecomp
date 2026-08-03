@@ -17,8 +17,8 @@ void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param
   
   bVar5 = 0;
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0xa9b;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0xa9b;
     core_main_c_FUN_004c8440("CStrList::set - invalid index");
   }
   if (param_3 == (char *)0x0) {
@@ -35,8 +35,8 @@ void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param
   pvVar2 = realloc(*(void **)(param_1[2] + param_2 * 4),~uVar3);
   *(void **)(param_1[2] + param_2 * 4) = pvVar2;
   if (*(int *)(param_1[2] + param_2 * 4) == 0) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0xaa4;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0xaa4;
     core_main_c_FUN_004c8440("CStrList::set - out of memory!");
   }
   pcVar4 = *(char **)(param_1[2] + param_2 * 4);

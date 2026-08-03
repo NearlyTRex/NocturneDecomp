@@ -86,8 +86,8 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   CStack_13c.y = 0x446012;
   engine_drender_cpp_CDemonRenderer_matrixPush_FUN_00460be0();
   fVar7 = (float)256;
-  fVar2 = *(float *)(this_ptr->camera_name + 0xcc);
-  fVar3 = *(float *)(this_ptr->camera_name + 200);
+  fVar2 = (this_ptr->position).z;
+  fVar3 = (this_ptr->position).y;
   fVar4 = position->y;
   fVar5 = position->z;
   _DAT_01c039e8 = (this_ptr->source_matrix).m[0].x;
@@ -98,8 +98,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   CStack_13c.y = (int)orientation;
   iVar8 = (this_ptr->source_matrix).m[1].y;
   CStack_13c.x = 0x446087;
-  dVar10 = round
-                     ((double)((*(float *)(this_ptr->camera_name + 0xc4) - position->x) * fVar7));
+  dVar10 = round((double)(((this_ptr->position).x - position->x) * fVar7));
   iVar6 = (this_ptr->source_matrix).m[1].z;
   rotation = (CVector3f *)0x446099;
   _DAT_01c039f8 = iVar8;

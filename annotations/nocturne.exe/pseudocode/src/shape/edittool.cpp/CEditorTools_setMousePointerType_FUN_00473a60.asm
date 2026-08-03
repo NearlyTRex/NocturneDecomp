@@ -12,8 +12,8 @@
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01bcd9c0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -115,8 +115,8 @@ section .text
     MOV ESI,0x57eb12                    ; 00473b23 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x93b                       ; 00473b28
     PUSH 0x57eb28                       ; 00473b2d | = "CEditorTools::setMousePointerType - i..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00473b32 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00473b38 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00473b32 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00473b38 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00473b3e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00473b43

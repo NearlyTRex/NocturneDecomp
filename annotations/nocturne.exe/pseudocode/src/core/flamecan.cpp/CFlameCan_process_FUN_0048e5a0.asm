@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   float FLOAT_00581657 = 0.5
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005baf90
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -76,7 +76,7 @@ section .text
     PUSH ESI                            ; 0048e614
     PUSH 0x1                            ; 0048e615
     PUSH EBX                            ; 0048e617
-    MOV ESI,dword ptr [0x005baf90]      ; 0048e618 | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 0048e618 | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 0048e61e | DAT_01cc9450
     CALL core_mission.cpp_FUN_004d9110  ; 0048e61f
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
@@ -104,7 +104,7 @@ section .text
     FXCH                                ; 0048e669
     FST float ptr [ESP + 0x40]          ; 0048e66b
     FMULP ST3                           ; 0048e66f
-    MOV EDI,dword ptr [0x005b80f0]      ; 0048e671 | DAT_005b80f0
+    MOV EDI,dword ptr [0x005b80f0]      ; 0048e671 | g_CFireEffect_PTR_005b80f0
     PUSH 0x40800000                     ; 0048e677
     LEA EAX,[EBX + 0x20]                ; 0048e67c
     PUSH 0x44bb8000                     ; 0048e67f

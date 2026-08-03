@@ -23,8 +23,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_none_0058022c
 ;   TerminatedCString s_s_00580231
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_01c08b5c
 ;   undefined4 DAT_01c08b60
 ;
@@ -73,8 +73,8 @@ section .text
         ;   XREF to: 0047dc40 (CONDITIONAL_JUMP)  ; LAB_0047dc40
     PUSH 0x1c08b60                      ; 0047dc6e | DAT_01c08b60
     PUSH 0x580231                       ; 0047dc73 | = "%s\n"
-    MOV EBX,dword ptr [0x005ad350]      ; 0047dc78 | PTR_DAT_005ad350
-    PUSH EBX                            ; 0047dc7e | DAT_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 0047dc78 | g_CConsole_PTR_005ad350
+    PUSH EBX                            ; 0047dc7e | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0047dc7f
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 0047dc84

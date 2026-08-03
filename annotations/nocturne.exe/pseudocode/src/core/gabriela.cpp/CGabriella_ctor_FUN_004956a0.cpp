@@ -30,7 +30,7 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(CGabriella *
   pCVar3[-1].wind_velocity.z = 0.0;
   fVar1 = 10.0f;
   pCVar3[-1].last_position.x = 0.0;
-  pCVar3->vertices[0x300].connected_indices[9] = (int)fVar1;
+  *(float *)pCVar3[1].model.model_filename = fVar1;
   pCVar3[-1].last_position.y = 0.0;
   pCVar3[-1].last_position.z = 0.0;
   fVar1 = pCVar3[-1].last_euler.y;

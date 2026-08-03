@@ -31,7 +31,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005badbc
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc9454
 ;
@@ -81,7 +81,7 @@ section .text
     PUSH EDI                            ; 004cc625 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004cc626
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-    MOV EDX,dword ptr [0x005baf90]      ; 004cc62b | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 004cc62b | g_CDemonMission_PTR_005baf90
     ADD ESP,0x8                         ; 004cc631
     MOV EBP,dword ptr [EDX + 0x4]       ; 004cc634 | DAT_01cc9454
     LEA EAX,[EBX + 0x19c]               ; 004cc637

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,62 +57,44 @@
       },
       {
         "category": "incompatible_types",
-        "column": 5,
-        "line": 35,
-        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 45,
-        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 17,
-        "line": 50,
+        "line": 49,
         "message": "no matching function for call to 'engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0'"
       },
       {
         "category": "incompatible_types",
-        "column": 5,
-        "line": 59,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_004720c0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 61,
-        "message": "no matching function for call to 'shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 75,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 75,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 3,
-        "line": 80,
+        "line": 79,
         "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 56,
-        "line": 88,
+        "line": 87,
         "message": "use of undeclared identifier 'DAT_0058d9a8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
+        "line": 95,
+        "message": "use of undeclared identifier 'DAT_01e428d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
         "line": 96,
+        "message": "use of undeclared identifier 'DAT_01e428d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 105,
+        "message": "use of undeclared identifier 'DAT_01e428d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 106,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       }
     ],
@@ -122,17 +104,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 167,
+    "complexity_score": 236,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 112,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 111,
+    "suspect_count": 11,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data"
     ],
-    "total_lines": 415
+    "total_lines": 414
   },
   "cross_references": [
     {
@@ -287,19 +271,19 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -452,7 +436,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_0058d9a8",
       "severity": "mild",
       "text": "iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,filename);",
@@ -460,7 +444,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 88,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar8 = &DAT_01e428d0;",
@@ -468,7 +452,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 89,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,0x10000,1,p_Var3);",
@@ -476,7 +460,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 98,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar8 = &DAT_01e428d0;",
@@ -484,11 +468,59 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 99,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,size,1,p_Var3);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&pCVar2->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)&pCVar2->offset",
+      "severity": "moderate",
+      "text": "local_14 = *(int *)((int)&pCVar2->offset + iVar4) - pCVar2->offset;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar2->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)&pCVar2->checksum",
+      "severity": "moderate",
+      "text": "if (iVar5 != *(int *)((int)&pCVar2->checksum + iVar4)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "(&local_198.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_14 = *(int *)((int)&pCVar2->offset + iVar4) - pCVar2->offset;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (iVar5 != *(int *)((int)&pCVar2->checksum + iVar4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 45,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(&local_198.base,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
+      "type": "pointer_cast"
     }
   ]
 }

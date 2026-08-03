@@ -29,7 +29,7 @@ uint CVehicle::process(CVehicle *param_1,float param_2);
 
 // Original: core_vehicle.cpp_CVehicle_getBoundingBox_FUN_0054f320
 // Address: 0054f320
-undefined4 * CVehicle::getBoundingBox(int param_1,undefined4 *param_2);
+float * CVehicle::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_vehicle.cpp_CVehicle_archive_FUN_0054f370
 // Address: 0054f370

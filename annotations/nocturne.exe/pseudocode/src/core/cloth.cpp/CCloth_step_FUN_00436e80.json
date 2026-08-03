@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,25 +58,25 @@
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 221,
+        "line": 220,
         "message": "use of undeclared identifier '_DAT_0057ae35'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 47,
-        "line": 425,
+        "column": 52,
+        "line": 411,
         "message": "use of undeclared identifier '_DAT_0059b360'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 51,
-        "line": 426,
+        "column": 54,
+        "line": 412,
         "message": "use of undeclared identifier '_DAT_0059b360'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 51,
-        "line": 427,
+        "column": 54,
+        "line": 413,
         "message": "use of undeclared identifier '_DAT_0059b360'"
       }
     ],
@@ -86,20 +86,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 672,
+    "complexity_score": 668,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 422,
+    "pseudocode_lines": 408,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
+      "unrolled_memcpy",
+      "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1257
+    "total_lines": 1243
   },
   "cross_references": [
     {
@@ -186,25 +188,25 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01fb1afc",
-      "name": "DAT_01fb1afc",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1b00",
-      "name": "DAT_01fb1b00",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1b04",
-      "name": "DAT_01fb1b04",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.z",
       "type": "undefined4",
       "value": null
     }
@@ -1073,23 +1075,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCloth_step_FUN_00436e80.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 20,
-          "line": 136,
-          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -1101,159 +1086,143 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 177,
       "match": "(float *)((int)local_20",
       "severity": "moderate",
-      "text": "pfVar9 = (float *)((int)local_20 + local_64);",
+      "text": "pfVar9 = (float *)((int)local_20->connected_indices + local_64 + -0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 276,
+      "match": "(CVector3f *)((int)(pCVar4 + 0x17) +",
+      "severity": "moderate",
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0x17) + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 278,
+      "match": "(CVector3f *)((int)(local_4c + 0x17) +",
+      "severity": "moderate",
+      "text": "local_4c = (CVector3f *)((int)(local_4c + 0x17) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 304,
+      "line": 296,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->vertices[0x300].secondary_velocity.x + local_58) * 0x47);",
+      "text": "pSVar11 = local_74 + *(int *)((int)this_ptr->vertex_sort_buffer + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 370,
-      "match": "(int *)(iVar10 + (int)this_ptr",
+      "line": 360,
+      "match": "(int *)(iVar7 + (int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)(iVar10 + (int)this_ptr->vertices[0x300].secondary_velocity.x) * 0x47))->locked",
+      "text": "if (local_34[*(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer)].locked == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 375,
-      "match": "(int *)(iVar10 + (int)this_ptr",
+      "line": 362,
+      "match": "(int *)(iVar7 + (int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)(iVar10 + (int)this_ptr->vertices[0x300].secondary_velocity.x)",
+      "text": "(this_ptr,local_34 + *(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 390,
-      "match": "(int *)(iVar10 + (int)this_ptr",
+      "line": 376,
+      "match": "(int *)(iVar7 + (int)this_ptr",
       "severity": "moderate",
-      "text": "iVar7 = *(int *)(iVar10 + (int)this_ptr->vertices[0x300].secondary_velocity.x) * 0x11c;",
+      "text": "iVar2 = *(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 391,
-      "match": "(int *)((int)(this_ptr->model).texture_list",
+      "description": "Pointer value `(pCVar4 + 0x17)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 276,
+      "match": "(int)(pCVar4 + 0x17)",
       "severity": "moderate",
-      "text": "if (*(int *)((int)(this_ptr->model).texture_list + iVar7 + 0x32c) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 392,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "pfVar1 = (float *)((int)(this_ptr->model).texture_list + iVar7 + 0x298);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 394,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 395,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*pfVar2 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 396,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 397,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*pfVar2 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 399,
-      "match": "(int *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)(this_ptr->model).texture_list + iVar7 + 0x330) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 400,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "pfVar1 = (float *)((int)(this_ptr->model).texture_list + iVar7 + 0x298);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 402,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 403,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*pfVar9 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 404,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 405,
-      "match": "(float *)((int)(this_ptr->model).texture_list",
-      "severity": "moderate",
-      "text": "*pfVar9 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 178,
-      "match": "(int)local_20",
-      "severity": "moderate",
-      "text": "pfVar9 = (float *)((int)local_20 + local_64);",
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0x17) + 8);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `(local_4c + 0x17)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 278,
+      "match": "(int)(local_4c + 0x17)",
+      "severity": "moderate",
+      "text": "local_4c = (CVector3f *)((int)(local_4c + 0x17) + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 230,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4->x = position->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 251,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4->x = euler->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 271,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4[0x10].x = (pSVar11->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 121,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(pSVar11->position).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 222,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->wind_velocity).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 264,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "pCVar4->z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 416,
+      "line": 402,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar11 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar10);",
+      "text": "piVar8 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar7);",
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_30->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 138,
+      "match": "local_30 = (T *)&(local_30->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "local_30 = (SClothVertex *)&(local_30->position).y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_48->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 147,
+      "line": 146,
       "match": "local_48 = (T *)((local_48->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "local_48 = (CCloth *)((local_48->model).model_filename + 4);",
@@ -1261,27 +1230,35 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_84` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_84->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 186,
+      "line": 185,
       "match": "local_84 = (T *)&(local_84->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "local_84 = (CCloth *)&(local_84->model).env_map_opac_list;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 281,
-      "match": "pCVar12 = (T *)&(pCVar12->FIELD).SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 275,
+      "match": "pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar12 = (CCloth *)&(pCVar12->model).env_map_opac_list;",
+      "text": "pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 136,
-      "match": "Cppcheck: invalid pointer cast",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via element-arithmetic `(int)(pCVar4 + N) + M`, where `N*sizeof(*pCVar4) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar4->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 276,
+      "match": "pCVar4 = (T *)((int)(pCVar4 + N) + M)",
       "severity": "moderate",
-      "text": "pfVar9 = (float *)(piVar13 + 0x44);",
-      "type": "static_invalid_pointer_cast"
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0x17) + 8);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_4c` self-updates via element-arithmetic `(int)(local_4c + N) + M`, where `N*sizeof(*local_4c) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_4c->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 278,
+      "match": "local_4c = (T *)((int)(local_4c + N) + M)",
+      "severity": "moderate",
+      "text": "local_4c = (CVector3f *)((int)(local_4c + 0x17) + 8);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

@@ -14,8 +14,8 @@
 ;   TerminatedCString s_core_netgame_cpp_0058c79b
 ;   TerminatedCString s_CNetGame_getMyControls_I_0058c7af
 ;   undefined4 DAT_01cae0e8
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -57,8 +57,8 @@ section .text
     MOV ESI,0x58c79b                    ; 004eda84 | = "..\\core\\netgame.cpp"
     MOV EDI,0xa0f                       ; 004eda89
     PUSH 0x58c7af                       ; 004eda8e | = "CNetGame::getMyControls - I'm not in ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004eda93 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004eda99 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004eda93 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004eda99 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004eda9f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004edaa4

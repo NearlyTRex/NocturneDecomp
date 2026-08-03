@@ -105,7 +105,7 @@ void __cdecl core_bugs_cpp_FUN_00421b80(CBugs *this_ptr)
            (local_28 < iVar5)) {
           local_14 = iVar5;
           fVar3 = core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580
-                            ((CDemonRaytrace *)&DAT_01fba938,&local_54,&local_40,(CVector3f *)0x0);
+                            (&g_CDemonRaytrace_01fba938,&local_54,&local_40,(CVector3f *)0x0);
           *(float *)(iVar9 + 0x12720) = fVar3 - *(float *)(unaff_EBX + 0x24);
         }
         else {

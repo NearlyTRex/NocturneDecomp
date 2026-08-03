@@ -12,8 +12,8 @@ void __cdecl core_event_cpp_CRuleList_remove_FUN_00481770(CRuleList *this_ptr,in
   int iVar1;
   
   if ((index < 0) || (this_ptr->list_size <= index)) {
-    PTR_01cc4800 = "..\\core\\event.cpp";
-    INT_01cc4804 = 0xcef;
+    g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+    g_INT_01cc4804 = 0xcef;
     core_main_c_FUN_004c8440("CRuleList::remove - invalid index");
   }
   iVar1 = this_ptr->list_size + -1;

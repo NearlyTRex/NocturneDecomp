@@ -81,8 +81,8 @@ section .text
     MOV ECX,0x577489                    ; 00404403 | = "..\\engine\\2d.c"
     MOV ESI,0x9e8                       ; 00404408
     PUSH 0x577498                       ; 0040440d | = "unmapFrameBuffer - frame buffer was n..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00404412 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00404418 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00404412 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00404418 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040441e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00404423

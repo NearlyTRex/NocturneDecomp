@@ -29,7 +29,7 @@
 ;   TerminatedCString s_CBoxActor_005873f2
 ;   double DOUBLE_00587401 = 98
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 g_CAmmoActorType_007641bc.name_hash
 ;   ... and 7 more
 ;
@@ -79,8 +79,8 @@ section .text
     MOV ECX,0x587366                    ; 004c15c0 | = "..\\core\\inv.cpp"
     MOV ESI,0x5c3                       ; 004c15c5
     PUSH 0x587376                       ; 004c15ca | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01cc4800],ECX      ; 004c15cf | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004c15d5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004c15cf | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004c15d5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004c15db
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c15e0
@@ -129,8 +129,8 @@ section .text
     MOV EDX,0x5873a8                    ; 004c1646 | = "..\\core\\inv.cpp"
     MOV ECX,0x5c9                       ; 004c164b
     PUSH 0x5873b8                       ; 004c1650 | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01cc4800],EDX      ; 004c1655 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004c165b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004c1655 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004c165b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004c1661
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c1666
@@ -245,8 +245,8 @@ section .text
     MOV EAX,ESP                         ; 004c173e
     PUSH 0x40a00000                     ; 004c1740
     PUSH EAX                            ; 004c1745
-    MOV ESI,dword ptr [0x005b9354]      ; 004c1746 | DAT_005b9354
-    PUSH ESI                            ; 004c174c | DAT_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004c1746 | g_CGame_PTR_005b9354
+    PUSH ESI                            ; 004c174c | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004c174d
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     MOV EAX,[0x01cae0e8]                ; 004c1752 | DAT_01cae0e8

@@ -25,7 +25,7 @@ void core_hotdemon_cpp_CHotDemon_processDamage_FUN_004b9720(CEnemy *param_1,SDam
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   fVar1 = (param_1->base).hit_points - param_2->damage_amount;

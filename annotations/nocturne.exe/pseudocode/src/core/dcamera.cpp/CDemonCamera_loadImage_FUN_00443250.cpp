@@ -106,8 +106,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(CDemonCamera *
   pcVar24 = (char *)0x0;
 LAB_00443299:
   if (pcVar24 == (char *)0x0) {
-    PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    INT_01cc4804 = 0x982;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    g_INT_01cc4804 = 0x982;
     core_main_c_FUN_004c8440("CDemonCamera::loadImage - no extention");
   }
   pcVar26 = ".ACT";
@@ -149,8 +149,8 @@ LAB_00443299:
     pcVar26 = (char *)0x0;
 LAB_00443363:
     if (pcVar26 == (char *)0x0) {
-      PTR_01cc4800 = "..\\core\\dcamera.cpp";
-      INT_01cc4804 = 0x995;
+      g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+      g_INT_01cc4804 = 0x995;
       core_main_c_FUN_004c8440("CDemonCamera::loadImage - no ext");
     }
     pcVar24 = ".fog";
@@ -183,24 +183,24 @@ LAB_00443363:
           iVar7 = engine_dosio_cpp_getFileSize_FUN_004568c0("backdrop",local_f4);
           local_9c = iVar7 - 0x1003;
           if ((int)local_9c < 1) {
-            PTR_01cc4800 = "..\\core\\dcamera.cpp";
-            INT_01cc4804 = 0x9b5;
+            g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+            g_INT_01cc4804 = 0x9b5;
             core_main_c_FUN_004c8440("Hell froze loading %s",local_f4);
           }
           if (500000 < local_9c) {
-            PTR_01cc4800 = "..\\core\\dcamera.cpp";
-            INT_01cc4804 = 0x9bb;
+            g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+            g_INT_01cc4804 = 0x9bb;
             core_main_c_FUN_004c8440("%s too big to fit in decompress buffer",local_f4);
           }
           _fread(&DAT_0077d250,local_9c,1,local_14);
-          support_codec_cpp_CLZWDecompress_init_FUN_00439a30((CLZWDecompress *)&DAT_012cdb28);
+          support_codec_cpp_CLZWDecompress_init_FUN_00439a30(&g_CLZWDecompress_012cdb28);
           local_98 = _DAT_0140d780 * 0x12c00;
           iVar7 = support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30
-                            ((CLZWDecompress *)&DAT_012cdb28,&DAT_0077d250,(int *)&local_9c,
+                            (&g_CLZWDecompress_012cdb28,&DAT_0077d250,(int *)&local_9c,
                              (char *)0x12e1778,&local_98,1);
           if (iVar7 == 0) {
-            PTR_01cc4800 = "..\\core\\dcamera.cpp";
-            INT_01cc4804 = 0x9c4;
+            g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+            g_INT_01cc4804 = 0x9c4;
             core_main_c_FUN_004c8440("Error decompressing %s",local_f4);
           }
           local_a4 = 0;
@@ -302,7 +302,7 @@ LAB_00443363:
       }
       else if ((int)fVar2 < 0x1e1) {
         local_88 = this_ptr->framebuffer_aligned;
-        uVar4 = 0x9600000 / (longlong)*(int *)(this_ptr->camera_name + 0xfc);
+        uVar4 = 0x9600000 / (longlong)this_ptr->screen_width;
         local_84 = (uint)((longlong)
                           ((ulonglong)(uint)((int)uVar4 >> 0x1f) << 0x20 | uVar4 & 0xffffffff) /
                          (longlong)(int)this_ptr->max_distance);
@@ -311,14 +311,13 @@ LAB_00443363:
           local_28 = 0;
           do {
             local_80 = 0;
-            if (0 < *(int *)(this_ptr->camera_name + 0xfc)) {
+            if (0 < this_ptr->screen_width) {
               local_2c = 0;
               local_64 = local_28;
               do {
-                uVar9 = local_2c / *(int *)(this_ptr->camera_name + 0xfc);
+                uVar9 = local_2c / this_ptr->screen_width;
                 uVar10 = local_28 / (int)this_ptr->max_distance;
-                local_6c = (int)(0x27d80 / (longlong)*(int *)(this_ptr->camera_name + 0xfc)) + uVar9
-                ;
+                local_6c = (int)(0x27d80 / (longlong)this_ptr->screen_width) + uVar9;
                 iVar21 = ((int)uVar10 >> 8) * 0x280;
                 local_68 = (int)(0x1de20 / (longlong)(int)this_ptr->max_distance) + uVar10;
                 local_60 = (int)uVar9 >> 8;
@@ -365,7 +364,7 @@ LAB_00443363:
                 *local_88 = uVar14 | uVar9 << 8 | uVar10 << 0x10;
                 local_88 = local_88 + 1;
                 local_2c = local_2c + 0x28000;
-              } while (local_80 < *(int *)(this_ptr->camera_name + 0xfc));
+              } while (local_80 < this_ptr->screen_width);
             }
             local_28 = local_28 + 0x1e000;
             local_7c = local_7c + 1;
@@ -379,10 +378,10 @@ LAB_00443363:
           local_24 = 0;
           do {
             iVar7 = 0;
-            if (0 < *(int *)(this_ptr->camera_name + 0xfc)) {
+            if (0 < this_ptr->screen_width) {
               iVar21 = 0;
               do {
-                iVar17 = iVar21 / *(int *)(this_ptr->camera_name + 0xfc);
+                iVar17 = iVar21 / this_ptr->screen_width;
                 iVar21 = iVar21 + 0x280;
                 *local_90 = *(uint *)
                              ((uint)(byte)(&DAT_01410290)
@@ -390,7 +389,7 @@ LAB_00443363:
                                           ] * 4 + 0xb0ddfc);
                 local_90 = local_90 + 1;
                 iVar7 = iVar7 + 1;
-              } while (iVar7 < *(int *)(this_ptr->camera_name + 0xfc));
+              } while (iVar7 < this_ptr->screen_width);
             }
             local_24 = local_24 + 0x1e0;
             local_8c = local_8c + 1;

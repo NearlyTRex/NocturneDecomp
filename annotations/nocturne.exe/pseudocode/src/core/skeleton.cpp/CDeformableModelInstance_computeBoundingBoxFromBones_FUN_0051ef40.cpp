@@ -30,14 +30,13 @@ CBoundingBox3D * __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBound
   core_box_cpp_CBoundingBox3D_reset_FUN_0041dbc0(output_bbox);
   local_1c = 0;
   if (0 < local_24) {
-    local_20 = (CBoundingBox3D *)&this_ptr_01->texture_sets[1].textures[0x11].textures[0].base.count
-    ;
+    local_20 = (CBoundingBox3D *)&this_ptr_01->bbox_pool[0].max;
     local_14 = (this_ptr->bone_transform).bone_world_matrices;
     local_18 = this_ptr_01;
     do {
       pCVar1 = local_14;
       this_ptr_00 = local_20;
-      if (local_18->texture_sets[1].textures[0x32].textures[1].base.count == 2) {
+      if (local_18->bone_flags[0] == 2) {
         corner_index = 0;
         do {
           matrix = pCVar1;

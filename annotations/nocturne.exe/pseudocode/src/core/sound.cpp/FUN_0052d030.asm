@@ -13,7 +13,7 @@
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d522
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc9610
+;   CStrList g_CStrList_02dc9610
 ;   undefined4 DAT_02dc9620
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     XOR EBX,EBX                         ; 0052d03e
     MOV dword ptr [0x02dc9620],EDX      ; 0052d040 | DAT_02dc9620
     MOV byte ptr [EAX],0x0              ; 0052d046
-    MOV EAX,[0x02dc9610]                ; 0052d049 | DAT_02dc9610
+    MOV EAX,[0x02dc9610]                ; 0052d049 | g_CStrList_02dc9610
         ;   Label: LAB_0052d049
     CMP EBX,EAX                         ; 0052d04e
     JL 0x0052d064                       ; 0052d050
@@ -53,7 +53,7 @@ section .text
     PUSH 0x0                            ; 0052d064
         ;   Label: LAB_0052d064
     PUSH EBX                            ; 0052d066
-    PUSH 0x2dc9610                      ; 0052d067 | DAT_02dc9610
+    PUSH 0x2dc9610                      ; 0052d067 | g_CStrList_02dc9610
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 0052d06c
         ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 0052d071
@@ -66,7 +66,7 @@ section .text
     JZ 0x0052d0cb                       ; 0052d080
         ;   XREF to: 0052d0cb (CONDITIONAL_JUMP)  ; LAB_0052d0cb
     PUSH EBX                            ; 0052d082
-    PUSH 0x2dc9610                      ; 0052d083 | DAT_02dc9610
+    PUSH 0x2dc9610                      ; 0052d083 | g_CStrList_02dc9610
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 0052d088
         ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     IMUL EDI,dword ptr [0x02dc9620],0x28 ; 0052d08d | DAT_02dc9620

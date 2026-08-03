@@ -10,7 +10,7 @@ void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(CPickLis
 
 {
   shape_edittool_cpp_FUN_00475470(this_ptr,dialog_title,window_flags);
-  *(int *)(this_ptr->search_text_buffer + 0xc) = initial_selected_index;
+  this_ptr->current_index = initial_selected_index;
   shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(this_ptr);
   return;
 }

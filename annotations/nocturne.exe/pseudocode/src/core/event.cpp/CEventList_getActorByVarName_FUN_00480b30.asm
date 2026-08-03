@@ -12,8 +12,8 @@
 ;   core_script.cpp_getActor_FUN_004fe180 at 004fe1f2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fa3ff0
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.actor_count
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findActorVariable_FUN_00480ba0
@@ -46,9 +46,9 @@ section .text
     XOR ESI,ESI                         ; 00480b59
     ADD EDI,EAX                         ; 00480b5b
     XOR EBX,EBX                         ; 00480b5d
-    MOV EAX,[0x005be368]                ; 00480b5f | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00480b5f | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00480b5f
-    CMP ESI,dword ptr [EAX + 0x14cd6c]  ; 00480b64 | DAT_01fa3ff0
+    CMP ESI,dword ptr [EAX + 0x14cd6c]  ; 00480b64 | g_CDemonSet_01e57284.actor_count
     JL 0x00480b79                       ; 00480b6a
         ;   XREF to: 00480b79 (CONDITIONAL_JUMP)  ; LAB_00480b79
     XOR EAX,EAX                         ; 00480b6c
@@ -73,7 +73,7 @@ section .text
     TEST EAX,EAX                        ; 00480b8a
     JNZ 0x00480b73                      ; 00480b8c
         ;   XREF to: 00480b73 (CONDITIONAL_JUMP)  ; LAB_00480b73
-    MOV EAX,[0x005be368]                ; 00480b8e | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00480b8e | g_CDemonSet_PTR_005be368
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 00480b93
     POP EBP                             ; 00480b9a
     POP EDI                             ; 00480b9b

@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc9454
 ;   undefined4 DAT_01fba480
@@ -24,7 +24,7 @@
 
 section .text
 
-    MOV EAX,[0x005baf90]                ; 0050aa20 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 0050aa20 | g_CDemonMission_PTR_005baf90
         ;   Label: core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20
     CMP dword ptr [EAX + 0x4],0x0       ; 0050aa25 | DAT_01cc9454
     JNZ 0x0050aa36                      ; 0050aa29

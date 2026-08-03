@@ -26,8 +26,8 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(CIni *this_ptr,cha
   bVar3 = false;
   stream = _fopen(filename,"rt");
   if (stream == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\engine\\ini.cpp";
-    INT_01cc4804 = 0x57;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\ini.cpp";
+    g_INT_01cc4804 = 0x57;
     core_main_c_FUN_004c8440("cIni::getProfileString: Unable to open input");
   }
   _sprintf(local_110,"[%s]\n",section);

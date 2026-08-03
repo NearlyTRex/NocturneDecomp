@@ -13,13 +13,13 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
 {
   char cVar1;
   float fVar2;
-  CVector3f *pCVar3;
+  STrainNoise *pSVar3;
   int iVar4;
   int iVar5;
-  CVector3f *pCVar6;
-  char *pcVar7;
-  uint *puVar8;
-  int iVar9;
+  uint uVar6;
+  STrainNoise *pSVar7;
+  char *pcVar8;
+  uint *puVar9;
   char *pcVar10;
   byte bVar11;
   float fVar12;
@@ -43,12 +43,12 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
   float local_28;
   float local_24;
   float local_20;
-  CVector3f *local_1c;
+  STrainNoise *local_1c;
   float local_18;
   float local_14;
   
   bVar11 = 0;
-  local_3c = *(float *)(0x01C775EC + 0x264);
+  local_3c = g_CGame_PTR_005b9354->delta_time_float;
   local_20 = local_3c * (float)0.5;
   local_30 = local_3c;
   core_sound_cpp_updateListeners_FUN_0052c9d0();
@@ -75,10 +75,9 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
   local_138 = 0.0;
   if (((0.0 < *(float *)(0x02DD1210 + 0xc)) &&
       (iVar4 = _strnicmp
-                         (0x01E57284->lights[199].filter_names[0x11] + 0x14,"NDUN",4),
-      iVar4 == 0)) &&
-     (local_138 = SQRT(*(float *)(0x02DD1210 + 0xc)) * (float)0.027777777777777801 +
-                  (float)0.20000000000000001, (float)0.69999999999999996 < local_138)) {
+                         (g_CDemonSet_PTR_005be368->geometry_filename,"NDUN",4), iVar4 == 0
+      )) && (local_138 = SQRT(*(float *)(0x02DD1210 + 0xc)) * (float)0.027777777777777801 +
+                         (float)0.20000000000000001, (float)0.69999999999999996 < local_138)) {
     local_138 = 0.7;
   }
   local_34 = -local_20;
@@ -119,12 +118,12 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
     local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(0);
     sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(3,local_14 * _DAT_02dc9c98);
   }
-  if (0x01E57284->renderable_actors[0x6f4] != (CDemonActor *)0x0) {
-    local_18 = *(float *)(0x01C775EC + 0x264);
-    if (*(int *)(0x01C775EC + 0x240) == 0) {
-      if (_DAT_02dc9d54 != 0x01E57284->renderable_actors[0x773]) {
-        core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-        core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(0x01E57284);
+  if (g_CDemonSet_PTR_005be368->player_on_train != 0) {
+    local_18 = g_CGame_PTR_005b9354->delta_time_float;
+    if (g_CGame_PTR_005b9354->goggles_active == 0) {
+      if (_DAT_02dc9d54 != g_CDemonSet_PTR_005be368->selected_camera_index) {
+        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+        core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSet_PTR_005be368);
         local_54.x = _DAT_02dc945c;
         local_54.y = _DAT_02dc9460;
         local_54.z = _DAT_02dc9464;
@@ -135,19 +134,19 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
         local_64 = 0;
         local_48.y = _DAT_02dc9460 + 20.0f;
         iVar4 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                          (0x01E57284,&local_54,&local_48);
+                          (g_CDemonSet_PTR_005be368,&local_54,&local_48);
         if (iVar4 == 0) {
           PTR_s_int_005bed60 = "ext";
         }
         else {
           PTR_s_int_005bed60 = "int";
         }
-        core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-        _DAT_02dc9d54 = 0x01E57284->renderable_actors[0x773];
+        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+        _DAT_02dc9d54 = g_CDemonSet_PTR_005be368->selected_camera_index;
       }
     }
     else {
-      _DAT_02dc9d54 = (CDemonActor *)0xffffffff;
+      _DAT_02dc9d54 = -1;
       PTR_s_int_005bed60 = "ext";
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
@@ -183,44 +182,44 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
       }
     }
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
-    pCVar6 = (CVector3f *)&DAT_02dc9ca4;
+    pSVar7 = g_STrainNoise_ARRAY_02dc9ca4;
     iVar4 = 0;
     PTR_s_x_005bed64 = PTR_s_int_005bed60;
     _DAT_02dc9d44 = 0.0;
     _DAT_02dc9d48 = 0.0;
     _DAT_02dc9d4c = 30.0;
-    local_1c = (CVector3f *)0x0;
+    local_1c = (STrainNoise *)0x0;
     do {
-      iVar9 = iVar4 * 0x10;
-      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(iVar9 + 0x2dc9cb0));
-      pCVar3 = pCVar6;
+      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50
+                        (g_STrainNoise_ARRAY_02dc9ca4[iVar4].sfx_handle);
+      pSVar3 = pSVar7;
       if (iVar5 != 0) {
         local_60 = _DAT_02dc9d44 * local_18;
         local_5c = _DAT_02dc9d48 * local_18;
         local_58 = _DAT_02dc9d4c * local_18;
-        pCVar6->x = pCVar6->x + local_60;
-        pCVar6->y = pCVar6->y + local_5c;
-        pCVar6->z = pCVar6->z + local_58;
-        pCVar3 = local_1c;
-        if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar9))) {
-          sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(iVar9 + 0x2dc9cb0));
-          pCVar3 = local_1c;
+        (pSVar7->position).x = (pSVar7->position).x + local_60;
+        (pSVar7->position).y = (pSVar7->position).y + local_5c;
+        (pSVar7->position).z = (pSVar7->position).z + local_58;
+        pSVar3 = local_1c;
+        if ((float)510 < ABS(g_STrainNoise_ARRAY_02dc9ca4[iVar4].position.z)) {
+          sound_sndmain_cpp_killSfx_FUN_00527230(g_STrainNoise_ARRAY_02dc9ca4[iVar4].sfx_handle);
+          pSVar3 = local_1c;
         }
       }
-      local_1c = pCVar3;
+      local_1c = pSVar3;
       iVar4 = iVar4 + 1;
-      pCVar6 = (CVector3f *)&pCVar6[1].y;
+      pSVar7 = pSVar7 + 1;
     } while (iVar4 < 10);
     _DAT_02dc9d50 = _DAT_02dc9d50 - local_18;
-    if ((_DAT_02dc9d50 <= 0.0) && (local_1c != (CVector3f *)0x0)) {
+    if ((_DAT_02dc9d50 <= 0.0) && (local_1c != (STrainNoise *)0x0)) {
       _DAT_02dc9d50 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(1.0,5.0);
       local_2c = 20.0;
-      puVar8 = &DAT_005bef88;
+      puVar9 = &DAT_005bef88;
       pcVar10 = local_d0;
       local_14 = _DAT_02dc9d50;
       for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *(uint *)pcVar10 = *puVar8;
-        puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
+        *(uint *)pcVar10 = *puVar9;
+        puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
         pcVar10 = pcVar10 + ((uint)bVar11 * -2 + 1) * 4;
       }
       iVar4 = rand();
@@ -235,15 +234,15 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
       case 2:
       case 3:
         fVar12 = local_13c * (float)0.80000000000000004;
-        pcVar7 = "bump?.wav";
+        pcVar8 = "bump?.wav";
         local_2c = 20.0;
         pcVar10 = local_d0;
         do {
-          cVar1 = *pcVar7;
+          cVar1 = *pcVar8;
           *pcVar10 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar7[1];
-          pcVar7 = pcVar7 + 2;
+          cVar1 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
           pcVar10[1] = cVar1;
           pcVar10 = pcVar10 + 2;
         } while (cVar1 != '\0');
@@ -251,18 +250,18 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
       case 4:
         goto switchD_0052e844_caseD_4;
       }
-      local_1c->x = 0.0;
+      (local_1c->position).x = 0.0;
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-3.0,2.0);
       fVar2 = local_14 * local_2c + _DAT_02dc9464;
-      local_1c->y = 0.0;
-      local_1c->z = fVar2;
+      (local_1c->position).y = 0.0;
+      (local_1c->position).z = fVar2;
       sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
       sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(3);
       sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);
       _sprintf(local_134,"%s @ %g",local_d0,(double)fVar12);
-      fVar12 = (float)core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                                (0x02DC9450,(CDemonActor *)0x0,local_134,local_1c);
-      local_1c[1].x = fVar12;
+      uVar6 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
+                        (g_CSound_PTR_005bed68,(CDemonActor *)0x0,local_134,&local_1c->position);
+      local_1c->sfx_handle = uVar6;
       sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
       return;
     }

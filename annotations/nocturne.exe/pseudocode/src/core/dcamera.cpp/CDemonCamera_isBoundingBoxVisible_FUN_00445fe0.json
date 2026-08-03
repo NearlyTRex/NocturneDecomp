@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -82,37 +82,37 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 105,
+        "line": 104,
         "message": "use of undeclared identifier '_DAT_01c039f8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 109,
+        "line": 108,
         "message": "use of undeclared identifier '_DAT_01c039fc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 111,
+        "line": 110,
         "message": "use of undeclared identifier '_DAT_01c03a04'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 112,
+        "line": 111,
         "message": "use of undeclared identifier '_DAT_01c039b8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 113,
+        "line": 112,
         "message": "use of undeclared identifier '_DAT_01c03a08'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 114,
+        "line": 113,
         "message": "use of undeclared identifier '_DAT_01c039bc'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 355,
+    "complexity_score": 354,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 210,
+    "pseudocode_lines": 209,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 572
+    "total_lines": 571
   },
   "cross_references": [
     {
@@ -928,7 +928,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 110,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,position_00,rotation);",
@@ -936,7 +936,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 121,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[0x4e18].projected_vertex,&local_f4);",
@@ -944,7 +944,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 132,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[0x4e19].projected_vertex,&local_dc);",
@@ -952,7 +952,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 143,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_100);",
@@ -960,7 +960,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 154,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_118);",
@@ -968,7 +968,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 166,
+      "line": 165,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[0x4e1c].projected_vertex,&CStack_13c);",
@@ -976,7 +976,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 176,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_b8);",
@@ -984,7 +984,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 188,
+      "line": 187,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_88);",
@@ -992,7 +992,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 199,
+      "line": 198,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[19999].projected_vertex,&local_c4);",
@@ -1000,7 +1000,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 202,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x + iVar8);",
@@ -1008,7 +1008,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 203,
+      "line": 202,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x + iVar8);",

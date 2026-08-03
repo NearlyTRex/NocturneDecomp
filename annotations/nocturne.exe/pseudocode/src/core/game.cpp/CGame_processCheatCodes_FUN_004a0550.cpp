@@ -34,8 +34,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
   CSkeleton *pCVar17;
   byte *pbVar18;
   byte bVar19;
-  float fVar20;
-  uint uVar21;
+  CDemonSet *pCVar20;
+  float fVar21;
+  uint uVar22;
   char acStack_498 [256];
   byte abStack_398 [100];
   SDamageInfo local_334;
@@ -214,22 +215,24 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
   if (_DAT_01c78420 == 0) {
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                       (0x01C03A10,"headOfHorror");
-    if ((iVar6 != 0) && (0x01C775EC->head_of_horror_cheat != 0x29a)) {
-      fVar20 = 5.0;
-      0x01C775EC->head_of_horror_cheat = 0x29a;
+    if ((iVar6 != 0) && (g_CGame_PTR_005b9354->head_of_horror_cheat != 0x29a)) {
+      fVar21 = 5.0;
+      g_CGame_PTR_005b9354->head_of_horror_cheat = 0x29a;
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("The horror has been unleashed.");
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
-      core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,(void *)0x0,"cheat-1.wav");
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
+      core_sound_cpp_CSound_playSound_FUN_0052ea40
+                (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
-       (iVar6 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x44), iVar6 != 0)) {
+       (iVar6 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F10),
+       iVar6 != 0)) {
       iVar16 = 0;
       iVar6 = 100;
       pbVar18 = abStack_398;
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Enter cheat code");
       iVar6 = shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_00471630
-                        (0x01BCD074,pcVar7,(char *)pbVar18,iVar6,iVar16);
+                        (g_CEditorTools_PTR_005b6d50,pcVar7,(char *)pbVar18,iVar6,iVar16);
       if (iVar6 != 0) {
         iVar6 = 0;
         while (abStack_398[0] != 0) {
@@ -242,7 +245,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
     }
     local_188 = &this_ptr->time_scale_factor;
     while (iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar6 != 0) {
-      uVar8 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0((CKeys *)INT_005bac64);
+      uVar8 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(g_CKeys_PTR_005bac64);
       iVar6 = (uVar8 & 0xff) << 8;
       iVar16 = 0x13;
       do {
@@ -279,10 +282,10 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
         } while (local_c8 < iVar6);
       }
       if (local_294 == local_298) {
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         DAT_01c78af0 = 0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit cheating!!!");
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_334);
         this_ptr->god_mode_enabled = 0;
         this_ptr->allow_damage_flag = 1;
@@ -299,14 +302,14 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           (((DAT_01c78af5 == 'D' && (DAT_01c78af4 == 'B')) &&
            ((DAT_01c78af3 == 'R' && ((DAT_01c78af2 == 'I' && (DAT_01c78af1 == 'C')))))))) &&
          (DAT_01c78af0 == 0x4b)) {
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Buy Fly! today!");
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         uVar8 = (uint)(this_ptr->developer_mode_enabled == 0);
         this_ptr->developer_mode_enabled = uVar8;
         if (uVar8 != 0) {
           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                    (0x02DC9450,(void *)0x0,"buy-fly-today.wav @ 4.0");
+                    (g_CSound_PTR_005bed68,(void *)0x0,"buy-fly-today.wav @ 4.0");
         }
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00582c4d);
@@ -422,11 +425,11 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           else {
             pcVar7 = "Event debug on";
           }
-          fVar20 = 5.0;
+          fVar21 = 5.0;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar7);
-          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                    (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                    (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         }
       }
       if (this_ptr->developer_mode_enabled != 0) {
@@ -460,25 +463,25 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           uVar8 = (uint)(this_ptr->subtitle_system_enabled == 0);
           this_ptr->subtitle_system_enabled = uVar8;
           if (uVar8 == 0) {
-            fVar20 = 5.0;
+            fVar21 = 5.0;
             pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Script debug off")
             ;
-            core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
-            iVar6 = 0x01E57284;
-            uVar21 = DAT_005b7620;
+            core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
+            pCVar20 = g_CDemonSet_PTR_005be368;
+            uVar22 = DAT_005b7620;
             this_ptr->screen_clear_enabled = 0;
           }
           else {
-            fVar20 = 5.0;
+            fVar21 = 5.0;
             pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Script debug on");
-            core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
-            iVar6 = 0x01E57284;
-            uVar21 = 0xf0;
+            core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
+            pCVar20 = g_CDemonSet_PTR_005be368;
+            uVar22 = 0xf0;
             this_ptr->screen_clear_enabled = 1;
           }
-          core_set_cpp_FUN_005090f0(iVar6,0,0,uVar21);
+          core_set_cpp_FUN_005090f0(pCVar20,0,0,uVar22);
           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                    (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                    (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         }
       }
       if (this_ptr->developer_mode_enabled != 0) {
@@ -517,11 +520,11 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           else {
             pcVar7 = "Memory debugging on";
           }
-          fVar20 = 5.0;
+          fVar21 = 5.0;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar7);
-          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                    (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                    (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         }
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00582dea);
@@ -549,13 +552,13 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
         } while (iStack_b0 < iVar6);
       }
       if (iStack_264 == iStack_268) {
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         DAT_01c78af0 = 0;
         this_ptr->aim_mode = AIM_MODE_MANUAL;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Manual aim enabled");
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         *(EAimMode *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) = this_ptr->aim_mode;
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00582e3d);
@@ -583,13 +586,13 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
         } while (iStack_ac < iVar6);
       }
       if (iStack_25c == iStack_260) {
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         DAT_01c78af0 = 0;
         this_ptr->aim_mode = AIM_MODE_AUTO;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Auto aim enabled");
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         *(EAimMode *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) = this_ptr->aim_mode;
       }
       if (this_ptr->developer_mode_enabled != 0) {
@@ -623,19 +626,20 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           _DAT_01c78acc = 0;
           _DAT_01c78ad4 = 0;
           iVar6 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430
-                            (0x01BCD074,"Enter Movie FPS",(float *)&DAT_005b9360,1,0.25,
-                             240.0,1);
+                            (g_CEditorTools_PTR_005b6d50,"Enter Movie FPS",
+                             (float *)&DAT_005b9360,1,0.25,240.0,1);
           if ((((iVar6 != 0) &&
                (iVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
-                                  (0x01BCD074,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",
+                                  (g_CEditorTools_PTR_005b6d50,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",
                                    (int *)&DAT_01c78ad0,1,0,99999,1), iVar6 != 0)) &&
               (iVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
-                                 (0x01BCD074,"Enter image width",&DAT_005b9364,1,1,9999,1
-                                 ), iVar6 != 0)) &&
+                                 (g_CEditorTools_PTR_005b6d50,"Enter image width",
+                                  &DAT_005b9364,1,1,9999,1), iVar6 != 0)) &&
              (iVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
-                                (0x01BCD074,"Enter image height",&DAT_005b9368,1,1,9999,1
-                                ), iVar6 != 0)) {
-            shape_edittool_cpp_FUN_0046fe60(0x01BCD074,"Press CTRL+V to begin recording.");
+                                (g_CEditorTools_PTR_005b6d50,"Enter image height",
+                                 &DAT_005b9368,1,1,9999,1), iVar6 != 0)) {
+            shape_edittool_cpp_FUN_0046fe60
+                      (g_CEditorTools_PTR_005b6d50,"Press CTRL+V to begin recording.");
             _DAT_01c78ac8 = 1;
           }
         }
@@ -716,14 +720,14 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
             pCVar11 = (CDemonActor *)(pCVar11->actor_name + 2);
           } while (cVar4 != '\0');
           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                    (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                    (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
           core_inv_cpp_CInventory_addItem_FUN_004bf360
                     ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),this_ptr_01,1
                     );
-          fVar20 = 5.0;
+          fVar21 = 5.0;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                              ("You have the skeleton key");
-          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         }
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00582f76);
@@ -755,18 +759,18 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
         uVar8 = (uint)(this_ptr->god_mode_enabled == 0);
         this_ptr->god_mode_enabled = uVar8;
         if (uVar8 == 0) {
-          fVar20 = 5.0;
+          fVar21 = 5.0;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("God mode disabled");
-          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         }
         else {
-          fVar20 = 5.0;
+          fVar21 = 5.0;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("God mode enabled");
-          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
           *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434) = 0x42c80000;
         }
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00582fe6);
       uVar8 = 0xffffffff;
@@ -802,11 +806,11 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
         else {
           pcVar7 = "Enemies frozen";
         }
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar7);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You have the shotgun");
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00583066);
@@ -838,9 +842,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
       if (iStack_224 == iStack_228) {
         DAT_01c78af0 = (byte)((uint)iStack_224 >> 8) ^ (byte)((uint)iStack_228 >> 8);
         core_game_cpp_giveHeroWeapon_FUN_004a02e0(pcStack_230);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,pcStack_22c,5.0);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,pcStack_22c,5.0);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You have the crossbow");
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005830c0);
@@ -872,9 +876,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
       if (iStack_214 == iStack_218) {
         DAT_01c78af0 = 0;
         core_game_cpp_giveHeroWeapon_FUN_004a02e0(pcStack_220);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,pcStack_21c,5.0);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,pcStack_21c,5.0);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("DY-NO-MITE");
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00583111);
@@ -906,9 +910,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
       if (iVar16 == iStack_208) {
         DAT_01c78af0 = 0;
         core_game_cpp_giveHeroWeapon_FUN_004a02e0(pcStack_210);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,pcStack_20c,5.0);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,pcStack_20c,5.0);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Fire! Fire! Fire!");
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00583167);
@@ -940,9 +944,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
       if (iStack_1f8 == iStack_1fc) {
         DAT_01c78af0 = 0;
         core_game_cpp_giveHeroWeapon_FUN_004a02e0(pcStack_204);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,pcStack_200,5.0);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,pcStack_200,5.0);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You have the tommy gun")
       ;
@@ -975,9 +979,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
       if (iStack_1e8 == iStack_1ec) {
         DAT_01c78af0 = 0;
         core_game_cpp_giveHeroWeapon_FUN_004a02e0(pcStack_1f4);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,pcStack_1f0,5.0);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,pcStack_1f0,5.0);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("You can now summon the baron");
@@ -1010,9 +1014,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
       if (iStack_1d8 == iStack_1dc) {
         DAT_01c78af0 = 0;
         core_game_cpp_giveHeroWeapon_FUN_004a02e0(pcStack_1e4);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,pcStack_1e0,5.0);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,pcStack_1e0,5.0);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("You have the elephant gun");
@@ -1045,9 +1049,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
       if (iStack_1c8 == iStack_1cc) {
         DAT_01c78af0 = 0;
         core_game_cpp_giveHeroWeapon_FUN_004a02e0(pcStack_1d4);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,pcStack_1d0,5.0);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,pcStack_1d0,5.0);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("You have the charged radiance emitter");
@@ -1080,9 +1084,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
       if (iStack_1b8 == iStack_1bc) {
         DAT_01c78af0 = (byte)iStack_1b8 ^ (byte)iStack_1bc;
         core_game_cpp_giveHeroWeapon_FUN_004a02e0(pcStack_1c4);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,pcStack_1c0,5.0);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,pcStack_1c0,5.0);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_0058331b);
       iStack_1b0 = 0;
@@ -1116,8 +1120,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           pCVar13 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar12);
         }
         if (pCVar13 != (CAmmo *)0x0) {
-          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&pCVar13->base)
-          ;
+          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                    (g_CDemonMission_PTR_005baf90,&pCVar13->base);
           (*((pCVar13->base).vtable._ub)->setup)(&pCVar13->base);
           pCVar13->ammo_type = AMMO_TYPE_SILVER;
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar13,"CGun");
@@ -1132,8 +1136,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           pCVar13 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar12);
         }
         if (pCVar13 != (CAmmo *)0x0) {
-          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&pCVar13->base)
-          ;
+          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                    (g_CDemonMission_PTR_005baf90,&pCVar13->base);
           (*((pCVar13->base).vtable._ub)->setup)(&pCVar13->base);
           pCVar13->ammo_type = AMMO_TYPE_LITHIUM;
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar13,"CGun");
@@ -1148,8 +1152,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           pCVar13 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar12);
         }
         if (pCVar13 != (CAmmo *)0x0) {
-          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&pCVar13->base)
-          ;
+          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                    (g_CDemonMission_PTR_005baf90,&pCVar13->base);
           (*((pCVar13->base).vtable._ub)->setup)(&pCVar13->base);
           pCVar13->ammo_type = AMMO_TYPE_MERCURY;
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar13,"CGun");
@@ -1166,8 +1170,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           pCVar13 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar12);
         }
         if (pCVar13 != (CAmmo *)0x0) {
-          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&pCVar13->base)
-          ;
+          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                    (g_CDemonMission_PTR_005baf90,&pCVar13->base);
           (*((pCVar13->base).vtable._ub)->setup)(&pCVar13->base);
           pCVar13->ammo_type = AMMO_TYPE_HOLY;
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar13,"CCrossbow");
@@ -1181,12 +1185,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
         core_game_cpp_giveHeroWeapon_FUN_004a02e0("CTommyGun");
         core_game_cpp_giveHeroWeapon_FUN_004a02e0("CElephantGun");
         core_game_cpp_giveHeroWeapon_FUN_004a02e0("CLightGun");
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                            ("You've got all the weapons");
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         this_ptr->god_mode_enabled = 1;
-        this_ptr_00 = 0x02DC9450;
+        this_ptr_00 = g_CSound_PTR_005bed68;
         *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434) = 0x42c80000;
         core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr_00,(void *)0x0,"cheat-1.wav")
         ;
@@ -1222,12 +1226,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           piVar1 = (int *)(iVar6 + 0x560);
           *piVar1 = *piVar1 + 100;
         }
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                            ("You just got 100 more bullets");
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       if (this_ptr->developer_mode_enabled != 0) {
         pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0
@@ -1259,23 +1263,23 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           DAT_01c78af0 = 0;
         }
         else {
-          iVar6 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
+          iVar6 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
           if ((iVar6 == 0) ||
-             (iVar6 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x13), iVar6 == 0))
-          goto LAB_004a2165;
+             (iVar6 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+                                (g_CKeys_PTR_005bac64,DIK_R), iVar6 == 0)) goto LAB_004a2165;
         }
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         while (iVar6 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600
-                                 (0x01BCD074,"Raise an event",&DAT_005b92f0,100,1),
-              iVar6 != 0) {
+                                 (g_CEditorTools_PTR_005b6d50,"Raise an event",
+                                  &DAT_005b92f0,100,1), iVar6 != 0) {
           pcVar7 = core_event_cpp_CEventList_validateCommands_FUN_0047dcd0
                              (0x01C03A10,&DAT_005b92f0);
           if (pcVar7 == (char *)0x0) {
             core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,&DAT_005b92f0);
             break;
           }
-          shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,pcVar7);
+          shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar7);
         }
       }
 LAB_004a2165:
@@ -1306,11 +1310,11 @@ LAB_004a2165:
       if (iStack_19c == iStack_1a0) {
         DAT_01c78af0 = 0;
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         iStack_1c = 0;
         iVar6 = 0;
-        while (iStack_1c < *(int *)(0x01E57284 + 0x150bf4)) {
-          iVar16 = *(int *)(iVar6 + 0x150bf8 + 0x01E57284);
+        while (iStack_1c < g_CDemonSet_PTR_005be368->enemy_count) {
+          iVar16 = *(int *)((int)g_CDemonSet_PTR_005be368->enemies + iVar6);
           iVar9 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
           fStack_2bc = *(float *)(iVar9 + 0x20) - *(float *)(iVar16 + 0x20);
           fStack_2b8 = *(float *)(iVar9 + 0x24) - *(float *)(iVar16 + 0x24);
@@ -1363,11 +1367,11 @@ LAB_004a2165:
         else {
           pcVar7 = "Gratuitous dismemberment enabled";
         }
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar7);
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       if (this_ptr->developer_mode_enabled != 0) {
         pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0
@@ -1398,9 +1402,10 @@ LAB_004a2165:
         if (iStack_18c == iStack_190) {
           DAT_01c78af0 = 0;
           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                    (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                    (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
           shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430
-                    (0x01BCD074,"Enter time factor",local_188,1,0.01,4.0,1);
+                    (g_CEditorTools_PTR_005b6d50,"Enter time factor",local_188,1,0.01,4.0,1
+                    );
         }
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005835a2);
@@ -1430,7 +1435,7 @@ LAB_004a2165:
       if (iStack_180 == iStack_184) {
         DAT_01c78af0 = 0;
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         this_ptr->scripted_sequence_active = (uint)(this_ptr->scripted_sequence_active == 0);
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005835e1);
@@ -1460,7 +1465,7 @@ LAB_004a2165:
       if (iStack_178 == iStack_17c) {
         DAT_01c78af0 = (byte)iStack_178 ^ (byte)iStack_17c;
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         this_ptr->render_mode = (uint)(this_ptr->render_mode == 0);
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00583620);
@@ -1492,7 +1497,7 @@ LAB_004a2165:
         pCVar11 = *(CDemonActor **)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f8d0);
         if (pCVar11 != (CDemonActor *)0x0) {
           if (pCVar11[4].location.position.y == 7.00649e-45) {
-            fVar20 = 5.0;
+            fVar21 = 5.0;
             pCVar11[4].location.position.y = 0.0;
             pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                ("Flaming ammo disabled");
@@ -1500,21 +1505,21 @@ LAB_004a2165:
           else {
             iVar6 = core_actor_cpp_isOfClass_FUN_0040d7e0(pCVar11,"CCrossbow");
             if (iVar6 == 0) {
-              fVar20 = 5.0;
+              fVar21 = 5.0;
               pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                  ("You can only use flaming ammo on the crossbow.");
             }
             else {
-              fVar20 = 5.0;
+              fVar21 = 5.0;
               pCVar11[4].location.position.y = 7.00649e-45;
               pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                  ("Flaming ammo enabled.");
             }
           }
-          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         }
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       if (this_ptr->developer_mode_enabled != 0) {
         pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0
@@ -1545,9 +1550,9 @@ LAB_004a2165:
         if (iStack_16c == iStack_170) {
           DAT_01c78af0 = 0;
           core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30
-                    ((CDemonCamera *)&DAT_01fb8508,0xff00ff);
+                    (&g_CDemonCamera_01fb8508,0xff00ff);
           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                    (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                    (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         }
       }
       if (this_ptr->developer_mode_enabled != 0) {
@@ -1578,9 +1583,9 @@ LAB_004a2165:
         }
         if (iStack_164 == iStack_168) {
           DAT_01c78af0 = 0;
-          *(uint *)(0x01E57284 + 0x14cd68) = 0;
+          g_CDemonSet_PTR_005be368->min_ambient_value = 0.0;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-                    ((CDemonCamera *)&DAT_01fb8508,0.0);
+                    (&g_CDemonCamera_01fb8508,0.0);
         }
       }
       if (this_ptr->developer_mode_enabled != 0) {
@@ -1619,9 +1624,9 @@ LAB_004a2165:
           else {
             pcVar7 = "Single step enabled";
           }
-          fVar20 = 5.0;
+          fVar21 = 5.0;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar7);
-          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+          core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         }
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00583793);
@@ -1649,14 +1654,14 @@ LAB_004a2165:
         } while (iStack_54 < iVar6);
       }
       if (iStack_154 == iStack_158) {
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         DAT_01c78af0 = 0;
         *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0) = 0x42c80000;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                            ("Flashlight battery restored");
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
         core_sound_cpp_CSound_playSound_FUN_0052ea40
-                  (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                  (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005837f2);
       iStack_14c = 0;
@@ -1750,11 +1755,11 @@ LAB_004a2165:
           pcVar7 = "burp2.wav";
           fStack_138 = 4.0;
         }
-        core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,(void *)0x0,pcVar7);
+        core_sound_cpp_CSound_playSound_FUN_0052ea40(g_CSound_PTR_005bed68,(void *)0x0,pcVar7);
         iStack_44 = 0;
-        for (iStack_20 = 0; iStack_20 < *(int *)(0x01E57284 + 0x14ecb0); iStack_20 = iStack_20 + 1
-            ) {
-          iVar6 = *(int *)(0x01E57284 + iStack_44 + 0x14ecb4);
+        for (iStack_20 = 0; iStack_20 < g_CDemonSet_PTR_005be368->character_count;
+            iStack_20 = iStack_20 + 1) {
+          iVar6 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iStack_44);
           pCStack_134 = (CDeformableModelInstance *)(iVar6 + 0x150);
           if (*(char *)(iVar6 + 0x23b0) != '\0') {
             pCVar14 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
@@ -1903,15 +1908,16 @@ LAB_004a2165:
         if (this_ptr_02 != (CGasMask *)0x0) {
           actor = core_gasmask_cpp_CGasMask_ctor_FUN_004a8a10(this_ptr_02);
         }
-        core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&actor->base);
+        core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                  (g_CDemonMission_PTR_005baf90,&actor->base);
         (*((actor->base).vtable._ub)->setup)(&actor->base);
         core_inv_cpp_CInventory_addItem_FUN_004bf360
                   ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),&actor->base,1)
         ;
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You've got a gasmask!")
         ;
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_00583964);
       iStack_f4 = 0;
@@ -1938,11 +1944,11 @@ LAB_004a2165:
         } while (iStack_38 < iVar6);
       }
       if (iStack_f4 == iStack_f8) {
-        fVar20 = 5.0;
+        fVar21 = 5.0;
         DAT_01c78af0 = 0;
         *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434) = 0x42c80000;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Health restored.");
-        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar20);
+        core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar7,fVar21);
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005839aa);
       iStack_ec = 0;
@@ -1980,7 +1986,7 @@ LAB_004a2165:
           core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
                     ((CKeyFramedModelInstance *)(pCVar11[0x182].create_event + 0x28));
           core_sound_cpp_CSound_playSound_FUN_0052ea40
-                    (0x02DC9450,(void *)0x0,"cheat-1.wav");
+                    (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         }
       }
       pbVar10 = (byte *)support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005839f5);
@@ -2015,8 +2021,8 @@ LAB_004a2165:
           pCVar13 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar12);
         }
         if (pCVar13 != (CAmmo *)0x0) {
-          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&pCVar13->base)
-          ;
+          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                    (g_CDemonMission_PTR_005baf90,&pCVar13->base);
           (*((pCVar13->base).vtable._ub)->setup)(&pCVar13->base);
           pCVar13->ammo_type = AMMO_TYPE_SILVER;
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar13,"CGun");
@@ -2058,8 +2064,8 @@ LAB_004a2165:
           pCVar13 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar12);
         }
         if (pCVar13 != (CAmmo *)0x0) {
-          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&pCVar13->base)
-          ;
+          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                    (g_CDemonMission_PTR_005baf90,&pCVar13->base);
           (*((pCVar13->base).vtable._ub)->setup)(&pCVar13->base);
           pCVar13->ammo_type = AMMO_TYPE_LITHIUM;
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar13,"CGun");
@@ -2101,8 +2107,8 @@ LAB_004a2165:
           pCVar13 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar12);
         }
         if (pCVar13 != (CAmmo *)0x0) {
-          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&pCVar13->base)
-          ;
+          core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                    (g_CDemonMission_PTR_005baf90,&pCVar13->base);
           (*((pCVar13->base).vtable._ub)->setup)(&pCVar13->base);
           pCVar13->ammo_type = AMMO_TYPE_MERCURY;
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar13,"CGun");

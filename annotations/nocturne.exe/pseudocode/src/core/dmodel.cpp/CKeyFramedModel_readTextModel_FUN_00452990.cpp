@@ -36,9 +36,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(CKeyFram
 
 {
   SMRGLPrimitiveQuad *pSVar1;
-  SMRGLTextureBasic *pSVar2;
+  int iVar2;
   int iVar3;
-  int iVar4;
   int local_48;
   uint local_40;
   uint local_3c;
@@ -48,97 +47,89 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(CKeyFram
   int local_20;
   int local_1c;
   
-  iVar4 = 1;
+  iVar3 = 1;
   do {
-    iVar3 = _fgetc(file);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   _fscanf(file,"%d\n");
-  PTR_01cc4800 = "..\\core\\dmodel.cpp";
-  INT_01cc4804 = 0x128;
+  g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
+  g_INT_01cc4804 = 0x128;
   core_main_c_FUN_004c8440("KFM file is invalid version %d",0xffffffff);
-  iVar4 = 1;
+  iVar3 = 1;
   do {
-    iVar3 = _fgetc(file);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   _fscanf(file,"%d,%d,%d,%d,%d\n");
   core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0
             (this_ptr,local_40,local_3c,local_38,local_34,local_30);
-  iVar4 = 1;
+  iVar3 = 1;
   do {
-    iVar3 = _fgetc(file);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   _fscanf(file,"%d\n");
-  pSVar2 = this_ptr->texture_list[7].textures;
-  pSVar2[2].texture_name[8] = '\0';
-  pSVar2[2].texture_name[9] = '\0';
-  pSVar2[2].texture_name[10] = '\0';
-  pSVar2[2].texture_name[0xb] = '\0';
-  pSVar2 = this_ptr->texture_list[7].textures;
-  pSVar2[2].texture_name[0xc] = '\0';
-  pSVar2[2].texture_name[0xd] = '\0';
-  pSVar2[2].texture_name[0xe] = '\0';
-  pSVar2[2].texture_name[0xf] = '\0';
-  iVar4 = 1;
+  this_ptr->transparent_pixel_flag = 0;
+  this_ptr->disable_backface_culling = 0;
+  iVar3 = 1;
   do {
-    iVar3 = _fgetc(file);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  for (iVar4 = 0; iVar4 < this_ptr->vertex_count * this_ptr->frame_count; iVar4 = iVar4 + 1) {
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+  for (iVar3 = 0; iVar3 < this_ptr->vertex_count * this_ptr->frame_count; iVar3 = iVar3 + 1) {
     _fscanf(file,"%d,%d,%d\n");
   }
-  iVar4 = 1;
+  iVar3 = 1;
   do {
-    iVar3 = _fgetc(file);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   local_1c = 0;
   if (0 < this_ptr->poly_count) {
     local_20 = 0;
     do {
       pSVar1 = this_ptr->poly_vert_list;
       _fscanf(file,"%d,%d");
-      iVar4 = 0;
+      iVar3 = 0;
       if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {
         do {
           _fscanf(file,", %d,%d,%d");
-          iVar4 = iVar4 + 1;
-        } while (iVar4 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));
+          iVar3 = iVar3 + 1;
+        } while (iVar3 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));
       }
       _fscanf(file,"\n");
       local_20 = local_20 + 0x48;
       local_1c = local_1c + 1;
     } while (local_1c < this_ptr->poly_count);
   }
-  iVar4 = 1;
+  iVar3 = 1;
   do {
-    iVar3 = _fgetc(file);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  iVar4 = 0;
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+  iVar3 = 0;
   if (0 < this_ptr->texture_count) {
     do {
       _fscanf(file,"%[^\n]\n");
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < this_ptr->texture_count);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < this_ptr->texture_count);
   }
-  iVar4 = 1;
+  iVar3 = 1;
   do {
-    iVar3 = _fgetc(file);
-    if (iVar3 < 0) break;
-  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  iVar4 = 0;
-  if (0 < this_ptr->texture_list[4].textures[0].base.type) {
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+  iVar3 = 0;
+  if (0 < this_ptr->part_count) {
     do {
       _fscanf(file,"%d,%d\n");
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < this_ptr->texture_list[4].textures[0].base.type);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < this_ptr->part_count);
   }
   if ((file->_flag & 0x20) != 0) {
-    PTR_01cc4800 = "..\\core\\dmodel.cpp";
-    INT_01cc4804 = 0x197;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    g_INT_01cc4804 = 0x197;
     core_main_c_FUN_004c8440("Error reading KFM model");
   }
   if (local_48 == 0) {

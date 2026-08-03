@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,42 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 18,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 23,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 23,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 29,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 29,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
       },
       {
         "category": "undeclared_identifier",
@@ -215,13 +179,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -374,7 +338,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->ref_count != 0) {",
+      "text": "if (param_1->locked_length != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -382,7 +346,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((param_2 < 0) || (param_1->loop_endpoints[4] < param_2 + param_3)) {",
+      "text": "if ((param_2 < 0) || (param_1->streaming_buffer_size < param_2 + param_3)) {",
       "type": "unnamed_param"
     },
     {
@@ -390,7 +354,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_2 < 0) || (param_1->loop_endpoints[4] < param_2 + param_3)) {",
+      "text": "if ((param_2 < 0) || (param_1->streaming_buffer_size < param_2 + param_3)) {",
       "type": "unnamed_param"
     },
     {
@@ -398,7 +362,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((param_2 < 0) || (param_1->loop_endpoints[4] < param_2 + param_3)) {",
+      "text": "if ((param_2 < 0) || (param_1->streaming_buffer_size < param_2 + param_3)) {",
       "type": "unnamed_param"
     },
     {
@@ -406,7 +370,7 @@
       "line": 15,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((param_2 < 0) || (param_1->loop_endpoints[4] < param_2 + param_3)) {",
+      "text": "if ((param_2 < 0) || (param_1->streaming_buffer_size < param_2 + param_3)) {",
       "type": "unnamed_param"
     },
     {
@@ -414,7 +378,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->loop_endpoints[2] == 0) {",
+      "text": "if (param_1->buffer_id == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -470,7 +434,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "(_DAT_02dc8318,param_1->loop_endpoints[2],param_2,param_3,param_1);",
+      "text": "(_DAT_02dc8318,param_1->buffer_id,param_2,param_3,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -478,7 +442,7 @@
       "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "(_DAT_02dc8318,param_1->loop_endpoints[2],param_2,param_3,param_1);",
+      "text": "(_DAT_02dc8318,param_1->buffer_id,param_2,param_3,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -486,7 +450,7 @@
       "line": 34,
       "match": "param_3",
       "severity": "mild",
-      "text": "(_DAT_02dc8318,param_1->loop_endpoints[2],param_2,param_3,param_1);",
+      "text": "(_DAT_02dc8318,param_1->buffer_id,param_2,param_3,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -494,7 +458,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "(_DAT_02dc8318,param_1->loop_endpoints[2],param_2,param_3,param_1);",
+      "text": "(_DAT_02dc8318,param_1->buffer_id,param_2,param_3,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -502,7 +466,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->ref_count = param_3;",
+      "text": "param_1->locked_length = param_3;",
       "type": "unnamed_param"
     },
     {
@@ -510,7 +474,7 @@
       "line": 37,
       "match": "param_3",
       "severity": "mild",
-      "text": "param_1->ref_count = param_3;",
+      "text": "param_1->locked_length = param_3;",
       "type": "unnamed_param"
     },
     {
@@ -518,7 +482,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->taken = param_2;",
+      "text": "param_1->locked_offset = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -526,7 +490,7 @@
       "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_1->taken = param_2;",
+      "text": "param_1->locked_offset = param_2;",
       "type": "unnamed_param"
     },
     {

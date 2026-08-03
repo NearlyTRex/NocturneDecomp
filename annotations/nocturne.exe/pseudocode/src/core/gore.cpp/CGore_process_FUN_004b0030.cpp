@@ -11,36 +11,36 @@
 void __cdecl core_gore_cpp_CGore_process_FUN_004b0030(CGore *this_ptr)
 
 {
-  byte *puVar1;
-  int iVar2;
-  CBloodPool *this_ptr_00;
-  CBloodSplat *this_ptr_01;
+  CBloodParticle *this_ptr_00;
+  int iVar1;
+  CBloodPool *this_ptr_01;
+  CBloodSplat *this_ptr_02;
   
-  puVar1 = &DAT_01c78cec;
+  this_ptr_00 = g_CBloodParticle_ARRAY_01c78cec;
   do {
-    if (0.0 < *(float *)(puVar1 + 0x18)) {
-      (**(code **)(*(int *)(puVar1 + 0x34) + 4))(puVar1);
+    if (0.0 < (this_ptr_00->base).lifetime_remaining) {
+      (*((this_ptr_00->base).vtable)->process)(&this_ptr_00->base);
     }
-    puVar1 = puVar1 + 0x40;
-  } while (puVar1 != &DAT_01c7ccec);
-  iVar2 = 0;
+    this_ptr_00 = this_ptr_00 + 1;
+  } while (this_ptr_00 != (CBloodParticle *)&DAT_01c7ccec);
+  iVar1 = 0;
   if (0 < _DAT_01c7ccf0) {
-    this_ptr_01 = (CBloodSplat *)0x1c7ccf4;
+    this_ptr_02 = g_CBloodSplat_ARRAY_01c7ccf4;
     do {
-      core_gore_cpp_CBloodSplat_processAge_FUN_004af130(this_ptr_01);
-      iVar2 = iVar2 + 1;
-      this_ptr_01 = this_ptr_01 + 1;
-    } while (iVar2 < _DAT_01c7ccf0);
+      core_gore_cpp_CBloodSplat_processAge_FUN_004af130(this_ptr_02);
+      iVar1 = iVar1 + 1;
+      this_ptr_02 = this_ptr_02 + 1;
+    } while (iVar1 < _DAT_01c7ccf0);
   }
-  core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0((CBloodPool *)0x1c9e03c);
-  iVar2 = 0;
+  core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(g_CBloodPool_ARRAY_01c9e03c);
+  iVar1 = 0;
   if (0 < _DAT_01c9e038) {
-    this_ptr_00 = (CBloodPool *)0x1c9e03c;
+    this_ptr_01 = g_CBloodPool_ARRAY_01c9e03c;
     do {
-      core_gore_cpp_CBloodPool_processAge_FUN_004af700(this_ptr_00);
-      iVar2 = iVar2 + 1;
-      this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar2 < _DAT_01c9e038);
+      core_gore_cpp_CBloodPool_processAge_FUN_004af700(this_ptr_01);
+      iVar1 = iVar1 + 1;
+      this_ptr_01 = this_ptr_01 + 1;
+    } while (iVar1 < _DAT_01c9e038);
   }
   return;
 }

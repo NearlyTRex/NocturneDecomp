@@ -11,9 +11,9 @@
 ;   TerminatedCString s_Nocturne_R_Debug_editor_00587b08
 ;   TerminatedCString s_s_1_Play_a_mission_00587b26
 ;   TerminatedCString s_Z_Display_memory_usage_i_00587b38
-;   undefined4 DAT_005b6d50
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c775ec
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame g_CGame_01c775ec
 ;
 ; Called Functions:
 ;   core_game.cpp_FUN_004a4b50
@@ -88,8 +88,8 @@ section .text
     RET                                 ; 004c858e
     PUSH ESI                            ; 004c858f
         ;   Label: LAB_004c858f
-    MOV EDI,dword ptr [0x005b9354]      ; 004c8590 | DAT_005b9354
-    PUSH EDI                            ; 004c8596 | DAT_01c775ec
+    MOV EDI,dword ptr [0x005b9354]      ; 004c8590 | g_CGame_PTR_005b9354
+    PUSH EDI                            ; 004c8596 | g_CGame_01c775ec
     CALL core_game.cpp_FUN_004a4b50     ; 004c8597
         ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a4b50(CGame * this_ptr, int select_mode)
     ADD ESP,0x8                         ; 004c859c
@@ -98,14 +98,14 @@ section .text
     MOV EAX,ESP                         ; 004c85a1
         ;   Label: LAB_004c85a1
     PUSH EAX                            ; 004c85a3
-    MOV EDX,dword ptr [0x005b6d50]      ; 004c85a4 | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004c85a4 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004c85aa
     CALL shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0 ; 004c85ab
         ;   XREF to: 004736d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(CEditorTools * this_ptr, char * output_buffer)
     ADD ESP,0x8                         ; 004c85b0
     MOV EAX,ESP                         ; 004c85b3
     PUSH EAX                            ; 004c85b5
-    MOV ECX,dword ptr [0x005b6d50]      ; 004c85b6 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004c85b6 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004c85bc
     CALL shape_edittool.cpp_FUN_0046fe60 ; 004c85bd
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()

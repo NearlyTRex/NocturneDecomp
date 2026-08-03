@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_0058fcb1
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   TerminatedCString s_none_005be228
 ;   undefined4 DAT_005be230
 ;   undefined4 DAT_005be234
@@ -62,7 +62,7 @@ section .text
     MOV EAX,ESP                         ; 0050525c
         ;   Label: LAB_0050525c
     PUSH EAX                            ; 0050525e
-    MOV ECX,dword ptr [0x005baf90]      ; 0050525f | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 0050525f | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 00505265
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 00505266
         ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)

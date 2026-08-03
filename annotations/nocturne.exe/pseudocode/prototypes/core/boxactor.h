@@ -13,7 +13,7 @@ CBoxActor * __cdecl factoryFunc(void);
 
 // Original: core_boxactor.cpp_CBoxActor_getActorType_FUN_0041e2f0
 // Address: 0041e2f0
-CDemonActorType * CBoxActor::getActorType(void);
+CDemonActorType * __cdecl CBoxActor::getActorType(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300
 // Address: 0041e300
@@ -41,7 +41,7 @@ int CBoxActor::renderTransparent(int param_1);
 
 // Original: core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_0041ebe0
 // Address: 0041ebe0
-undefined4 * CBoxActor::getBoundingBox(int param_1,undefined4 *param_2);
+float * CBoxActor::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60
 // Address: 0041ec60
@@ -95,9 +95,9 @@ void CBoxActor::setPositionAndOrientation(CBoxActor *param_1,float *param_2,floa
 // Address: 0041f2d0
 int __cdecl CBoxActor::getAllowedMeleeAttackTypes(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041f2e0
+// Original: core_boxactor.cpp_factoryFunc_FUN_0041f2e0
 // Address: 0041f2e0
-void FUN_0041f2e0(void);
+CLightActor * __cdecl factoryFunc(void);
 
 // Original: core_boxactor.cpp_CLightActor_getActorType_FUN_0041f300
 // Address: 0041f300
@@ -135,6 +135,6 @@ CLightActor * __cdecl CLightActor::dtor(CLightActor *this_ptr,uint flags);
 // Address: 0041fa90
 CBoxActor * __cdecl CBoxActor::dtor(CBoxActor *this_ptr,uint flags);
 
-// Original: core_boxactor.cpp_FUN_0041fb00
+// Original: core_boxactor.cpp_CDemonFilter_arrdtor_FUN_0041fb00
 // Address: 0041fb00
-void FUN_0041fb00(void *param_1);
+CDemonFilter * __cdecl CDemonFilter::arrdtor(CDemonFilter *this_ptr,uint flags);

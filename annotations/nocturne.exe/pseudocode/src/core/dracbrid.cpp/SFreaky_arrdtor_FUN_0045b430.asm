@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_0045b430(SFreaky *objs,uint flags)
+; SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_0045b430(SFreaky *this_ptr,uint flags)
 ;
 ; Parameters:
-; SFreaky *        Stack[0x4]:4   objs
+; SFreaky *        Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:

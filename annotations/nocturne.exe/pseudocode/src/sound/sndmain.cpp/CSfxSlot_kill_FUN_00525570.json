@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,62 +58,56 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 18,
+        "line": 17,
         "message": "use of undeclared identifier '_DAT_02dc84bc'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
         "category": "incompatible_types",
-        "column": 20,
-        "line": 19,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 29,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+        "column": 5,
+        "line": 27,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 32,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 33,
+        "line": 32,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 33,
+        "line": 32,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 33,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 33,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 41,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 52,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 57,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -122,18 +116,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 85,
+    "complexity_score": 98,
     "cross_reference_count": 10,
     "function_call_count": 4,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 2,
+    "pseudocode_lines": 53,
+    "suspect_count": 3,
     "suspect_types": [
+      "pointer_truncation",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 184
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -294,25 +289,25 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -512,11 +507,19 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc8318 + 0x4c))(_DAT_02dc8318,slot);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `&slot[-0x28a84].fade_time_remaining` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&slot[-0x28a84].fade_time_remaining",
+      "severity": "moderate",
+      "text": "if ((int)&slot[-0x28a84].fade_time_remaining / 0x120 != pCVar2->streaming_slot_index) {",
+      "type": "pointer_truncation"
     }
   ]
 }

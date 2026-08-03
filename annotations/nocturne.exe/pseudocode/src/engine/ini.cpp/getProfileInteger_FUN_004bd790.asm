@@ -16,8 +16,8 @@
 ;   TerminatedCString s_d_00586621
 ;   TerminatedCString s_engine_ini_cpp_00586624
 ;   TerminatedCString s_Bad_ini_read_00586636
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -76,8 +76,8 @@ section .text
     MOV EDI,0x586624                    ; 004bd807 | = "..\\engine\\ini.cpp"
     MOV EBP,0x22b                       ; 004bd80c
     PUSH 0x586636                       ; 004bd811 | = "Bad ini read!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004bd816 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004bd81c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004bd816 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004bd81c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004bd822
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd827

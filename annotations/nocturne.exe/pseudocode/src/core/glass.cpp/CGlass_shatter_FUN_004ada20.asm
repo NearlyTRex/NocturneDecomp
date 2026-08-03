@@ -69,9 +69,9 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b762c
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
@@ -312,8 +312,8 @@ section .text
         ;   XREF to: 004add07 (CONDITIONAL_JUMP)  ; LAB_004add07
     POP EDI                             ; 004add1f
         ;   Label: LAB_004add1f
-    MOV ESI,dword ptr [0x005be368]      ; 004add20 | DAT_005be368
-    PUSH ESI                            ; 004add26 | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 004add20 | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 004add26 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300 ; 004add27
         ;   XREF to: 0050e300 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004add2c

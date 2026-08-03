@@ -29,43 +29,43 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
   iVar5 = 0;
   local_14 = 0x7fffffff;
   while( true ) {
-    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040((CMoon *)&DAT_01cc5780);
+    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(&g_CMoon_01cc5780);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Center gamepad, press ENTER")
     ;
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b98f8,pcVar2);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_CBitFont_PTR_014b98f8,pcVar2);
     local_24 = 0x140 - iVar3 / 2;
-    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_014b98f8,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_014b98f8,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_00490980
-              (_DAT_014b98f8,pcVar2,local_24,0xf0 - iVar3 / 2,7,0);
+              (g_CBitFont_PTR_014b98f8,pcVar2,local_24,0xf0 - iVar3 / 2,7,0);
     _sprintf(local_224,"%d,%d,%x",_DAT_01c038f8,_DAT_01c038fc,_DAT_01c03908);
     engine_2d_c_drawText_FUN_00402600(local_224,0,0);
-    core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(0x01C775EC);
+    core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGame_PTR_005b9354);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
+    iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_RETURN);
     iVar3 = 0;
     if (iVar4 != 0) break;
-    iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
+    iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
     if (iVar3 != 0) goto LAB_004cfb43;
     iStack_1c = _DAT_01c038f8;
     iStack_18 = _DAT_01c038fc;
   }
   while( true ) {
-    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040((CMoon *)&DAT_01cc5780);
+    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(&g_CMoon_01cc5780);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Move gamepad in all directions, press ENTER")
     ;
-    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b98f8,pcVar2);
+    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_CBitFont_PTR_014b98f8,pcVar2);
     iStack_20 = 0x140 - iVar4 / 2;
-    iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_014b98f8,0x58);
+    iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_014b98f8,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_00490980
-              (_DAT_014b98f8,pcVar2,iStack_20,0xf0 - iVar4 / 2,7,0);
+              (g_CBitFont_PTR_014b98f8,pcVar2,iStack_20,0xf0 - iVar4 / 2,7,0);
     _sprintf(acStack_124,"%d,%d,%x",_DAT_01c038f8,_DAT_01c038fc,_DAT_01c03908);
     engine_2d_c_drawText_FUN_00402600(acStack_124,0,0);
-    core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(0x01C775EC);
+    core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGame_PTR_005b9354);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
-    pCVar1 = 0x01C775EC;
+    iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_RETURN);
+    pCVar1 = g_CGame_PTR_005b9354;
     if (iVar4 != 0) {
-      0x01C775EC->x_center = iStack_1c;
+      g_CGame_PTR_005b9354->x_center = iStack_1c;
       pCVar1->x_stick_min = iVar6;
       pCVar1->x_stick_max = iVar5;
       pCVar1->y_stick_max = iVar3;
@@ -73,7 +73,7 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
       pCVar1->y_stick_min = local_14;
       return 1;
     }
-    iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
+    iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
     if (iVar4 != 0) break;
     if (_DAT_01c038f8 < iVar6) {
       iVar6 = _DAT_01c038f8;
@@ -89,8 +89,8 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
     }
   }
 LAB_004cfb43:
-  pCVar1 = 0x01C775EC;
-  0x01C775EC->x_center = 0;
+  pCVar1 = g_CGame_PTR_005b9354;
+  g_CGame_PTR_005b9354->x_center = 0;
   pCVar1->game_control = CONTROL_MODE_KEYBOARD;
   return 0;
 }

@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_00588258
 ;   TerminatedCString s_sqrt_out_of_domain_0058826b
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_004cddd9
     MOV ECX,0x38e                       ; 004cddde
     PUSH 0x58826b                       ; 004cdde3 | = "sqrt out of domain!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004cdde8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004cddee | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004cdde8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004cddee | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004cddf4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cddf9

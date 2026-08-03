@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c11ec
-;   undefined4 DAT_02dd1210
+;   CWater g_CWater_02dd1210
 ;
 ; Called Functions:
 ;   core_dlight.cpp_captureLightTextures_FUN_004504e0
@@ -25,7 +25,7 @@ section .text
         ;   XREF to: 004504e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_captureLightTextures_FUN_004504e0()
         ;   Label: core_set.cpp_CDemonSet_loadAssets_FUN_0050d280
     MOV EDX,dword ptr [0x005c11ec]      ; 0050d285 | DAT_005c11ec
-    PUSH EDX                            ; 0050d28b | DAT_02dd1210
+    PUSH EDX                            ; 0050d28b | g_CWater_02dd1210
     CALL core_water.cpp_CWater_captureTextures_FUN_005507d0 ; 0050d28c
         ;   XREF to: 005507d0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_captureTextures_FUN_005507d0(CWater * this_ptr)
     ADD ESP,0x4                         ; 0050d291

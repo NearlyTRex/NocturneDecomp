@@ -48,7 +48,7 @@ int core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CDemonActor *param_1)
               CStack_2c.y = CStack_20.y;
               CStack_2c.z = CStack_20.z;
             }
-            core_set_cpp_FUN_0050e370(0x01E57284,&CStack_2c);
+            core_set_cpp_FUN_0050e370(g_CDemonSet_PTR_005be368,&CStack_2c);
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                       ((CKeyFramedModelInstance *)(pEStack_10 + piStack_8[1] * 0x5f),0.0,0x2e7);
@@ -58,7 +58,7 @@ int core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CDemonActor *param_1)
             rotation = (CVector3f *)&rotation[5].y;
           } while (iVar2 < (int)param_1[0x90].location.position.z);
         }
-        core_set_cpp_FUN_0050e370(0x01E57284,(CVector3f *)0x0);
+        core_set_cpp_FUN_0050e370(g_CDemonSet_PTR_005be368,(CVector3f *)0x0);
       }
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
       return iStack_14;

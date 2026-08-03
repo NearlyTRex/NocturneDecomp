@@ -12,10 +12,10 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005810cc = 0.0000152587890625
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c77850
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_slamDT_FUN_004a5f00
@@ -35,9 +35,9 @@ section .text
     JNZ 0x00483759                      ; 004836ee
         ;   XREF to: 00483759 (CONDITIONAL_JUMP)  ; LAB_00483759
     MOV dword ptr [EBX + 0x40],0x1      ; 004836f0
-    MOV EAX,[0x005b9354]                ; 004836f7 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004836f7 | g_CGame_PTR_005b9354
         ;   Label: LAB_004836f7
-    MOV EAX,dword ptr [EAX + 0x264]     ; 004836fc | DAT_01c77850
+    MOV EAX,dword ptr [EAX + 0x264]     ; 004836fc | g_CGame_01c775ec.delta_time_float
     MOV EDX,dword ptr [0x01bd1d80]      ; 00483702 | DAT_01bd1d80
     MOV dword ptr [ESP],EAX             ; 00483708
     MOV EAX,dword ptr [EBX + 0x48]      ; 0048370b
@@ -47,9 +47,9 @@ section .text
     FILD dword ptr [ESP + 0x4]          ; 00483718
     FMUL double ptr [0x005810cc]        ; 0048371c | DOUBLE_005810cc
     SUB ESP,0x4                         ; 00483722
-    MOV EDI,dword ptr [0x005b9354]      ; 00483725 | DAT_005b9354
+    MOV EDI,dword ptr [0x005b9354]      ; 00483725 | g_CGame_PTR_005b9354
     FSTP float ptr [ESP]                ; 0048372b
-    PUSH EDI                            ; 0048372e | DAT_01c775ec
+    PUSH EDI                            ; 0048372e | g_CGame_01c775ec
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 0048372f
         ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004a5f00(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00483734
@@ -57,9 +57,9 @@ section .text
     CALL core_particle.cpp_CParticle_process_FUN_004ef120 ; 00483738
         ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_004ef120(CParticle * this_ptr)
     ADD ESP,0x4                         ; 0048373d
-    MOV EBP,dword ptr [0x005b9354]      ; 00483740 | DAT_005b9354
+    MOV EBP,dword ptr [0x005b9354]      ; 00483740 | g_CGame_PTR_005b9354
     PUSH dword ptr [ESP]                ; 00483746
-    PUSH EBP                            ; 00483749 | DAT_01c775ec
+    PUSH EBP                            ; 00483749 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 0048374a
         ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004a5f00(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0048374f

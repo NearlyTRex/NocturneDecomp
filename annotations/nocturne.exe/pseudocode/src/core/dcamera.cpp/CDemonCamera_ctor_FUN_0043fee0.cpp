@@ -14,10 +14,7 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0(CDemonCam
   this_ptr->zbuffer_raw = (void *)0x0;
   this_ptr->corona_blend_factor = 0;
   this_ptr->scene_open_flag = 0;
-  this_ptr->camera_name[0xc0] = -0x66;
-  this_ptr->camera_name[0xc1] = -7;
-  this_ptr->camera_name[0xc2] = 'y';
-  this_ptr->camera_name[0xc3] = 'D';
+  this_ptr->fixed_point_scale = 999.9;
   this_ptr->framebuffer_aligned = (void *)0x0;
   return this_ptr;
 }

@@ -19,10 +19,10 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c77808
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.collision_render_enabled
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_00425c6b
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 ; 00425c6c
         ;   XREF to: 004265a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0(CCharacter * this_ptr)
-    MOV EAX,[0x005b9354]                ; 00425c71 | DAT_005b9354 | DAT_01c775ec
-    MOV EDI,dword ptr [EAX + 0x21c]     ; 00425c76 | DAT_01c77808
+    MOV EAX,[0x005b9354]                ; 00425c71 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    MOV EDI,dword ptr [EAX + 0x21c]     ; 00425c76 | g_CGame_01c775ec.collision_render_enabled
     ADD ESP,0x4                         ; 00425c7c
     TEST EDI,EDI                        ; 00425c7f
     JNZ 0x00425cb0                      ; 00425c81

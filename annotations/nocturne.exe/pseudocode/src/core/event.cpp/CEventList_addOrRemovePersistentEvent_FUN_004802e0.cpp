@@ -32,8 +32,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(C
     }
     else if (iVar2 < 0) {
       if (99 < (this_ptr->persistent_events).count) {
-        PTR_01cc4800 = "..\\core\\event.cpp";
-        INT_01cc4804 = 0x9f5;
+        g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+        g_INT_01cc4804 = 0x9f5;
         core_main_c_FUN_004c8440("Too many persistent events!");
       }
       uVar3 = 0xffffffff;
@@ -45,8 +45,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(C
         pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
       if (0x1f < ~uVar3 - 1) {
-        PTR_01cc4800 = "..\\core\\event.cpp";
-        INT_01cc4804 = 0x9fb;
+        g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+        g_INT_01cc4804 = 0x9fb;
         core_main_c_FUN_004c8440("Event name %s too long!",name);
       }
       pacVar6 = (this_ptr->persistent_events).names + (this_ptr->persistent_events).count;

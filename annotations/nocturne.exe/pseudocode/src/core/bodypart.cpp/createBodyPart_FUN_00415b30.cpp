@@ -26,8 +26,8 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(CVector3f *pos
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(this_ptr);
   }
   if (this_ptr_00 == (CBodyPart *)0x0) {
-    PTR_01cc4800 = "..\\core\\bodypart.cpp";
-    INT_01cc4804 = 0x32;
+    g_CHAR_PTR_01cc4800 = "..\\core\\bodypart.cpp";
+    g_INT_01cc4804 = 0x32;
     core_main_c_FUN_004c8440("Can't create body part!");
   }
   (this_ptr_00->base).location.position.x = position->x;
@@ -57,8 +57,10 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(CVector3f *pos
     (this_ptr_00->initial_velocity).y = initial_velocity->y;
     (this_ptr_00->initial_velocity).z = initial_velocity->z;
   }
-  core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&this_ptr_00->base);
-  core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(0x01CC9450,&this_ptr_00->base);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+            (g_CDemonMission_PTR_005baf90,&this_ptr_00->base);
+  core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
+            (g_CDemonMission_PTR_005baf90,&this_ptr_00->base);
   if (scale_source != (CDemonActor *)0x0) {
     (this_ptr_00->base).scale.x = (scale_source->scale).x;
     (this_ptr_00->base).scale.y = (scale_source->scale).y;

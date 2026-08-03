@@ -28,8 +28,8 @@ int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(CMotionList
   if (error_on_not_found == 0) {
     return -1;
   }
-  PTR_01cc4800 = "..\\core\\motion.cpp";
-  INT_01cc4804 = 0x100;
+  g_CHAR_PTR_01cc4800 = "..\\core\\motion.cpp";
+  g_INT_01cc4804 = 0x100;
   core_main_c_FUN_004c8440("Can't find motion \"%s\" in motion list",motion_name);
   return -1;
 }

@@ -14,7 +14,8 @@ void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(CStr
   if ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0) {
     if (this_ptr->action_pending != 4) {
       shape_edittool_cpp_FUN_0046fb40
-                (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",this_ptr->action_pending,0xd49);
+                (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
+                 this_ptr->action_pending,0xd49);
     }
     this_ptr_00 = (CAmmoBox *)
                   core_actor_cpp_castToClassHash_FUN_0040d890

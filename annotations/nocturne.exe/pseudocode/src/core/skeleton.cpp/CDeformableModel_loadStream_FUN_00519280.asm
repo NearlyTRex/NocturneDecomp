@@ -107,8 +107,8 @@ section .text
         ;   Label: LAB_005192c1
     MOV ECX,0x4c7                       ; 005192c6
     PUSH 0x5916f2                       ; 005192cb | = "Deformable model file is corrupt"
-    MOV dword ptr [0x01cc4800],EDX      ; 005192d0 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005192d6 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 005192d0 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005192d6 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005192dc
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005192e1
@@ -124,8 +124,8 @@ section .text
     MOV EBP,0x591713                    ; 005192f8 | = "..\\core\\skeleton.cpp"
     MOV EAX,0x4ca                       ; 005192fd
     PUSH 0x591728                       ; 00519302 | = "Can't load model of version %d, this ..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00519307 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0051930d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 00519307 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0051930d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00519312
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00519317
@@ -964,8 +964,8 @@ section .text
         ;   Label: LAB_00519ab1
     MOV ESI,0x596                       ; 00519ab6
     PUSH 0x59186e                       ; 00519abb | = "CDeformableModel::loadStream - error ..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00519ac0 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00519ac6 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 00519ac0 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00519ac6 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00519acc
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00519ad1

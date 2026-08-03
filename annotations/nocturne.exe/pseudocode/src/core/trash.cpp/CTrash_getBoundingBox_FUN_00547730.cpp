@@ -9,20 +9,20 @@
 float * core_trash_cpp_CTrash_getBoundingBox_FUN_00547730(CDemonActor *param_1,float *param_2)
 
 {
-  float *pfVar1;
+  CBoundingBox3D *pCVar1;
   CKeyFramedModel *pCVar2;
   CVector3f local_20;
   CVector3f local_14;
   
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                      ((CKeyFramedModelInstance *)(param_1 + 1));
-  pfVar1 = (float *)pCVar2->texture_list[7].textures[2].base.count;
-  *param_2 = *pfVar1;
-  param_2[1] = pfVar1[1];
-  param_2[2] = pfVar1[2];
-  param_2[3] = pfVar1[3];
-  param_2[4] = pfVar1[4];
-  param_2[5] = pfVar1[5];
+  pCVar1 = pCVar2->frame_bounds;
+  *param_2 = (pCVar1->min).x;
+  param_2[1] = (pCVar1->min).y;
+  param_2[2] = (pCVar1->min).z;
+  param_2[3] = (pCVar1->max).x;
+  param_2[4] = (pCVar1->max).y;
+  param_2[5] = (pCVar1->max).z;
   local_14.y = (float)param_1[2].validation_magic;
   local_14.x = 0.0;
   local_14.z = 0.0;

@@ -73,7 +73,7 @@
 ;   float FLOAT_00591683 = 127
 ;   double DOUBLE_0059168b = 127
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc5118
 ;   undefined4 DAT_01cc511c
@@ -84,7 +84,7 @@
 ;   undefined4 DAT_01cc5130
 ;   undefined4 DAT_01cc5134
 ;   undefined4 DAT_01cc5138
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0
@@ -191,8 +191,8 @@ section .text
     MOV EDX,dword ptr [EDX + 0x7c]      ; 00518638
     ADD EAX,EDX                         ; 0051863b
     PUSH EAX                            ; 0051863d
-    MOV EBX,dword ptr [0x005be368]      ; 0051863e | DAT_005be368
-    PUSH EBX                            ; 00518644 | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 0051863e | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 00518644 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0 ; 00518645
         ;   XREF to: 0050ded0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
     ADD ESP,0x10                        ; 0051864a
@@ -677,8 +677,8 @@ section .text
     MOV EDX,dword ptr [EDX + 0x7c]      ; 00518dba
     ADD EAX,EDX                         ; 00518dbd
     PUSH EAX                            ; 00518dbf
-    MOV ESI,dword ptr [0x005be368]      ; 00518dc0 | DAT_005be368
-    PUSH ESI                            ; 00518dc6 | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 00518dc0 | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 00518dc6 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0 ; 00518dc7
         ;   XREF to: 0050ded0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
     ADD ESP,0x10                        ; 00518dcc
@@ -750,8 +750,8 @@ section .text
     PUSH 0x1                            ; 00518e9b
     MOV ECX,dword ptr [ESP + 0xcc]      ; 00518e9d
     PUSH ECX                            ; 00518ea4
-    MOV EDI,dword ptr [0x005be368]      ; 00518ea5 | DAT_005be368
-    PUSH EDI                            ; 00518eab | DAT_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 00518ea5 | g_CDemonSet_PTR_005be368
+    PUSH EDI                            ; 00518eab | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0 ; 00518eac
         ;   XREF to: 0050ded0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
     ADD ESP,0x10                        ; 00518eb1

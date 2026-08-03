@@ -32,8 +32,8 @@
 ;   TerminatedCString s_turret_tail_wav_00596d86
 ;   double DOUBLE_00596d9d = 2
 ;   undefined4 DAT_005b7650
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -371,8 +371,8 @@ section .text
         ;   Label: default
     MOV ECX,0x15a                       ; 00549c15
     PUSH 0x596d50                       ; 00549c1a | = "CTurret::process - invalid state"
-    MOV dword ptr [0x01cc4800],EDX      ; 00549c1f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00549c25 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00549c1f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00549c25 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00549c2b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00549c30

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,6 +54,12 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "cast_error",
+        "column": 12,
+        "line": 21,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       }
     ],
     "success": false,
@@ -85,7 +91,7 @@
     ],
     "convention": "unknown",
     "name": "core_turret.cpp_CTurret_getInteractionInfo_FUN_0054a800",
-    "signature": "void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(int param_1,undefined4 *param_2)"
+    "signature": "void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CDemonActor *param_1,SInteractionInfo *param_2)"
   },
   "function_calls": [
     {
@@ -155,7 +161,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(int param_1,uint *param_2)",
+      "text": "void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CDemonActor *param_1,SInteractionInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -163,7 +169,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(int param_1,uint *param_2)",
+      "text": "void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CDemonActor *param_1,SInteractionInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -187,7 +193,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x850) == 0) {",
+      "text": "if (param_1[6].lifecycle_state == ACTOR_NOT_CREATED) {",
       "type": "unnamed_param"
     },
     {
@@ -195,7 +201,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = 1;",
+      "text": "param_2->can_interact = 1;",
       "type": "unnamed_param"
     },
     {
@@ -203,7 +209,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = *(uint *)(param_1 + 0x854);",
+      "text": "pCVar2 = (CDemonActor *)param_1[6].create_prob;",
       "type": "unnamed_param"
     },
     {
@@ -211,7 +217,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[4] = 0x40c90fdb;",
+      "text": "param_2->yaw_max = 6.2831855;",
       "type": "unnamed_param"
     },
     {
@@ -219,7 +225,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[5] = 0xc0c90fdb;",
+      "text": "param_2->yaw_min = -6.2831855;",
       "type": "unnamed_param"
     },
     {
@@ -227,7 +233,7 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = uVar2;",
+      "text": "param_2->interacting_actor = pCVar2;",
       "type": "unnamed_param"
     },
     {
@@ -235,7 +241,7 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[6] = 1.22173f - *(float *)(param_1 + 0x30);",
+      "text": "param_2->pitch_max = 1.22173f - (param_1->orient).vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -243,7 +249,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_2[6] = 1.22173f - *(float *)(param_1 + 0x30);",
+      "text": "param_2->pitch_max = 1.22173f - (param_1->orient).vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -251,7 +257,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x30);",
+      "text": "fVar1 = (param_1->orient).vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -259,7 +265,7 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[2] = 0xc0800000;",
+      "text": "param_2->approach_offset = -4.0;",
       "type": "unnamed_param"
     },
     {
@@ -267,7 +273,7 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[7] = fVar3 - fVar1;",
+      "text": "param_2->pitch_min = fVar3 - fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -275,7 +281,7 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[3] = 0;",
+      "text": "param_2->distance_max = 0.0;",
       "type": "unnamed_param"
     }
   ],

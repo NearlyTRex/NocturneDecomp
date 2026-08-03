@@ -38,8 +38,8 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger *t
   float fStack_14;
   
   if (this_ptr->weapon == (CWeapon *)0x0) {
-    PTR_01cc4800 = "..\\core\\stranger.cpp";
-    INT_01cc4804 = 0x10b4;
+    g_CHAR_PTR_01cc4800 = "..\\core\\stranger.cpp";
+    g_INT_01cc4804 = 0x10b4;
     core_main_c_FUN_004c8440("CStranger::aimLeftPistol - no weapon?");
   }
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canWalk)
@@ -57,12 +57,13 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger *t
   CStack_90.x = CStack_a8.x + CStack_84.x;
   CStack_90.y = CStack_a8.y + CStack_84.y;
   CStack_90.z = CStack_a8.z + CStack_84.z;
-  core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00511840(0x01E57284,1,0xff,0,0);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&this_ptr->weapon->base);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,(CDemonActor *)this_ptr);
-  fStack_bc = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(0x01E57284,&CStack_a8,&CStack_90);
+  core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00511840(g_CDemonSet_PTR_005be368,1,0xff,0,0);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,&this_ptr->weapon->base);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+  fStack_bc = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                        (g_CDemonSet_PTR_005be368,&CStack_a8,&CStack_90);
   fStack_14 = fStack_bc;
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   if ((fStack_bc < 0.0) || (1.0 < fStack_bc)) {
     fStack_bc = 1.0;
   }

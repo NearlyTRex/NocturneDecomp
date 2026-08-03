@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -63,12 +63,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 38,
-        "line": 25,
-        "message": "use of undeclared identifier 'DAT_0268cef4'; did you mean 'DAT_006af5f4'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 22,
         "line": 29,
         "message": "use of undeclared identifier '_DAT_0268cef0'"
@@ -80,18 +74,6 @@
         "message": "use of undeclared identifier '_DAT_0268cef0'; did you mean 'DAT_006afec0'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 32,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 32,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 5,
         "line": 34,
@@ -99,13 +81,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
-        "line": 36,
-        "message": "use of undeclared identifier 'DAT_0268cef4'; did you mean 'DAT_006af5f4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
+        "column": 50,
         "line": 36,
         "message": "use of undeclared identifier '_DAT_0268cef0'; did you mean 'DAT_006afec0'?"
       },
@@ -114,6 +90,12 @@
         "column": 3,
         "line": 37,
         "message": "use of undeclared identifier '_DAT_0268cef0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 37,
+        "message": "use of undeclared identifier '_DAT_0268cef0'; did you mean 'DAT_006afec0'?"
       }
     ],
     "success": false,
@@ -122,15 +104,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 70,
+    "complexity_score": 45,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 30,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 115
@@ -199,13 +180,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -304,22 +285,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0268cef4",
-      "severity": "mild",
-      "text": "return (CDeformableModel *)(&DAT_0268cef4 + iVar2 * 0x2ac0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_0268cef4",
-      "severity": "mild",
-      "text": "this_ptr = (CDeformableModel *)(&DAT_0268cef4 + _DAT_0268cef0 * 0x2ac0);",
-      "type": "undefined_data"
     }
   ]
 }

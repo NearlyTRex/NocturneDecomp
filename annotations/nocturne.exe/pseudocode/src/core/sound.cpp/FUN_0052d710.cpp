@@ -16,9 +16,9 @@ void core_sound_cpp_FUN_0052d710(void)
     _DAT_02dc9d54 = 0xffffffff;
     return;
   }
-  _DAT_02dc9d44 = -*(float *)(0x01E57284 + 0x15a878);
-  _DAT_02dc9d48 = -*(float *)(0x01E57284 + 0x15a87c);
-  _DAT_02dc9d4c = -*(float *)(0x01E57284 + 0x15a880);
+  _DAT_02dc9d44 = -(g_CDemonSet_PTR_005be368->active_fog).scroll.x;
+  _DAT_02dc9d48 = -(g_CDemonSet_PTR_005be368->active_fog).scroll.y;
+  _DAT_02dc9d4c = -(g_CDemonSet_PTR_005be368->active_fog).scroll.z;
   _DAT_02dc9d54 = 0xffffffff;
   return;
 }

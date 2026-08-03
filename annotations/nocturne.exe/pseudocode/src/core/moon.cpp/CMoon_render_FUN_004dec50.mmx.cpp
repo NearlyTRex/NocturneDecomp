@@ -50,17 +50,17 @@ __asm {
         mov dword ptr [EBP + -0x44],EDI
         fstp float ptr [EBP + -0x48]
         call engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-        mov EAX,[DAT_005be368]
+        mov EAX,[g_CDemonSet_PTR_005be368]
         add ESP,0x8
-        mov dword ptr [DAT_01fb1d0c + EAX],0x1
+        mov dword ptr [EAX + 0x15aa88],0x1
         push 0x10000
-        mov dword ptr [DAT_01fb1d10 + EAX],0xffff6f78
+        mov dword ptr [EAX + 0x15aa8c],0xffff6f78
         push 0x10000
-        mov dword ptr [DAT_01fb1d14 + EAX],0xffff6f78
+        mov dword ptr [EAX + 0x15aa90],0xffff6f78
         push 0x10000
-        mov dword ptr [DAT_01fb1d18 + EAX],0x9088
+        mov dword ptr [EAX + 0x15aa94],0x9088
         push EAX
-        mov dword ptr [DAT_01fb1d1c + EAX],0x280
+        mov dword ptr [EAX + 0x15aa98],0x280
         call core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340
         add ESP,0x10
         push 0x205
@@ -69,13 +69,13 @@ __asm {
         lea EAX,[ESI + 0x8]
         push EAX
         call core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-        mov EAX,[DAT_005be368]
-        mov dword ptr [DAT_01fb1d10 + EAX],0xffffb7bc
-        mov dword ptr [DAT_01fb1d14 + EAX],0xffffb7bc
+        mov EAX,[g_CDemonSet_PTR_005be368]
+        mov dword ptr [EAX + 0x15aa8c],0xffffb7bc
+        mov dword ptr [EAX + 0x15aa90],0xffffb7bc
         mov EDX,dword ptr [DAT_005bb210]
-        mov dword ptr [DAT_01fb1d18 + EAX],0x4844
+        mov dword ptr [EAX + 0x15aa94],0x4844
         add ESP,0x10
-        mov dword ptr [DAT_01fb1d1c + EAX],0x2000
+        mov dword ptr [EAX + 0x15aa98],0x2000
         test EDX,EDX
         jz LAB_004deeae
         xor EBX,EBX
@@ -157,19 +157,19 @@ __asm {
         fmul float ptr [FLOAT_0058a94e]
         fsubr float ptr [FLOAT_0058a952]
     LAB_004dee88:
-        mov EDX,dword ptr [DAT_005be368]
+        mov EDX,dword ptr [g_CDemonSet_PTR_005be368]
         call crt_math_c_round_FUN_00563a30
         fistp dword ptr [EBP + -0x4]
         mov EAX,dword ptr [EBP + -0x4]
-        mov dword ptr [DAT_01fb1d1c + EDX],EAX
+        mov dword ptr [EDX + 0x15aa98],EAX
     LAB_004dee9f:
         add EBX,0x18
         cmp EBX,0x2d0
         jnz LAB_004ded89
     LAB_004deeae:
-        mov EAX,[DAT_005be368]
+        mov EAX,[g_CDemonSet_PTR_005be368]
         push 0x1ccdc50
-        mov dword ptr [DAT_01fb1d0c + EAX],0x0
+        mov dword ptr [EAX + 0x15aa88],0x0
         call engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0
         mov EAX,[DAT_01ccdebc]
         add ESP,0x4
@@ -178,7 +178,7 @@ __asm {
         mov EAX,[DAT_01ccdec0]
         sar EAX,0x10
         mov dword ptr [EBP + -0x14],EAX
-        mov EAX,[DAT_01ccdc50]
+        mov EAX,[g_CAlphaBitmap_01ccdc50]
         mov dword ptr [EBP + -0x1c],EAX
         xor EAX,EAX
         mov dword ptr [EBP + -0x18],EAX

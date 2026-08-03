@@ -24,11 +24,11 @@
 ;   double DOUBLE_00582a2a = -1
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
 ;   undefined4 DAT_01c7841c
-;   undefined4 DAT_01fb1d40
+;   undefined4 g_CDemonSet_01e57284.selected_camera_index
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30
@@ -88,9 +88,9 @@ section .text
     MOV dword ptr [ESP + 0x24],EAX      ; 0049f777
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 0049f77b
         ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
-    MOV EAX,[0x005be368]                ; 0049f780 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0049f780 | g_CDemonSet_PTR_005be368
     MOV EDX,dword ptr [0x01c7841c]      ; 0049f785 | DAT_01c7841c
-    MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049f78b | DAT_01fb1d40
+    MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049f78b | g_CDemonSet_01e57284.selected_camera_index
     ADD ESP,0x8                         ; 0049f791
     CMP EAX,EDX                         ; 0049f794
     JNZ 0x0049f736                      ; 0049f796

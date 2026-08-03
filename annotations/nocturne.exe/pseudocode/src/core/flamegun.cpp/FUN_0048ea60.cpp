@@ -24,7 +24,7 @@ uint core_flamegun_cpp_FUN_0048ea60(CCharacter *param_1)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             (&param_1->base,&CStack_14,input_local_point);
   core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0
-            (0x01C08D04,&CStack_14,&(param_1->base).orient.vec,3,1);
+            (g_CFireEffect_PTR_005b80f0,&CStack_14,&(param_1->base).orient.vec,3,1);
   if ((param_1->model).transformed_vertices[0x51].y == 0.0) {
     fVar2 = 1.0 / 4.0f;
     pfVar1 = &(param_1->model).transformed_vertices[0x4f].y;
@@ -33,7 +33,7 @@ uint core_flamegun_cpp_FUN_0048ea60(CCharacter *param_1)
   }
   pCVar3 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);
   if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    xxx_unk_c_FUN_004940d0(INT_005b9284);
+    xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
   }
   (param_1->model).transformed_vertices[0x50].z = 1.4013e-45;
   return 1;

@@ -42,8 +42,8 @@ float * core_xform_cpp_inverse_FUN_0055bd00(CMatrix3x4f *param_1)
   local_20 = dVar5;
   local_98 = SUB84(__BITCAST_UINT64(dVar5),0);
   if ((((ulonglong)dVar5 & 0x7fffffff00000000) == 0) && (local_98 == 0)) {
-    PTR_01cc4800 = "..\\core\\xform.cpp";
-    INT_01cc4804 = 0x23e;
+    g_CHAR_PTR_01cc4800 = "..\\core\\xform.cpp";
+    g_INT_01cc4804 = 0x23e;
     core_main_c_FUN_004c8440("inverse() - Singular matrix");
   }
   local_90 = param_1->m[1].x * param_1->m[2].y - param_1->m[1].y * param_1->m[2].x;

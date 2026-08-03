@@ -13,7 +13,7 @@ void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004246e0
   
   (*(((this_ptr->base).vtable._uc)->_uc).releaseVictim)(this_ptr);
   core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150
-            (this_ptr,new_position,new_orientation);
+            (&this_ptr->base,new_position,new_orientation);
   fVar1 = 9999.0f;
   (this_ptr->velocity).z = 0.0;
   (this_ptr->velocity).y = (this_ptr->velocity).z;

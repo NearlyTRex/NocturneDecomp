@@ -9,7 +9,7 @@
 void __cdecl core_water_cpp_staticInit_FUN_00550730(void)
 
 {
-  core_water_cpp_CWater_ctor_FUN_005507a0((CWater *)&DAT_02dd1210);
+  core_water_cpp_CWater_ctor_FUN_005507a0(&g_CWater_02dd1210);
   _atexit(&g_WatcomStaticDestructorNode_005c11dc);
   return;
 }

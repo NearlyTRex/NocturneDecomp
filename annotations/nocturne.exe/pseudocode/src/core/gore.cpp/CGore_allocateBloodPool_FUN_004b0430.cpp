@@ -15,7 +15,7 @@ CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004b0430(CGore *t
   int iVar2;
   
   iVar2 = _DAT_01c9e034 + 1;
-  pCVar1 = (CBloodPool *)(_DAT_01c9e034 * 0x28 + 0x1c9e03c);
+  pCVar1 = g_CBloodPool_ARRAY_01c9e03c + _DAT_01c9e034;
   if (0x1f < iVar2) {
     iVar2 = 0;
   }

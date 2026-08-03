@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_0057ee19
-;   undefined4 DAT_005be1cc
+;   CPod* g_CPod_PTR_005be1cc = 01e528d0
 ;
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_0056626c
@@ -69,7 +69,7 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004748ef
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x10                        ; 004748f4
-    MOV EDX,dword ptr [0x005be1cc]      ; 004748f7 | DAT_005be1cc
+    MOV EDX,dword ptr [0x005be1cc]      ; 004748f7 | g_CPod_PTR_005be1cc
         ;   Label: LAB_004748f7
     TEST EDX,EDX                        ; 004748fd
     JZ 0x004749d1                       ; 004748ff
@@ -139,7 +139,7 @@ section .text
     MOV EAX,ESP                         ; 004749b5
         ;   Label: LAB_004749b5
     PUSH EAX                            ; 004749b7
-    MOV EBX,dword ptr [0x005be1cc]      ; 004749b8 | DAT_005be1cc
+    MOV EBX,dword ptr [0x005be1cc]      ; 004749b8 | g_CPod_PTR_005be1cc
     PUSH EBX                            ; 004749be
     CALL engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0 ; 004749bf
         ;   XREF to: 004f8da0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod * this_ptr, CPodSearchContext * search_context)

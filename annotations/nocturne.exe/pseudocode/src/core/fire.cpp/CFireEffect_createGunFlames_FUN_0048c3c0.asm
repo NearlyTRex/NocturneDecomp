@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c62eb8
-;   undefined4 DAT_01c62ebc
+;   CGunFlame[500] g_CGunFlame_ARRAY_01c62ebc
 ;
 ; Called Functions:
 ;   core_fire.cpp_CGunFlame_activate_FUN_00488280
@@ -45,7 +45,7 @@ section .text
     PUSH EDX                            ; 0048c3e2
     PUSH EBP                            ; 0048c3e3
     ADD EAX,0x1c62ebc                   ; 0048c3e4
-    PUSH EAX                            ; 0048c3e9 | DAT_01c62ebc
+    PUSH EAX                            ; 0048c3e9 | g_CGunFlame_ARRAY_01c62ebc
     MOV dword ptr [0x01c62eb8],ESI      ; 0048c3ea | DAT_01c62eb8
     CALL core_fire.cpp_CGunFlame_activate_FUN_00488280 ; 0048c3f0
         ;   XREF to: 00488280 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_activate_FUN_00488280(CGunFlame * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_type)

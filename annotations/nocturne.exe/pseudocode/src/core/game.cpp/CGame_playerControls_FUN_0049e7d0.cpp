@@ -25,7 +25,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
     return;
   }
   if ((this_ptr->is_paused == 0) && (this_ptr->allow_hero_controls_flag == 0)) {
-    player_control = core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(0x01CEA280);
+    player_control = core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(g_CNetGame_PTR_005bdee0);
     EVar1 = this_ptr->game_control;
     if (EVar1 == CONTROL_MODE_KEYBOARD) {
       core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(this_ptr,player_control);
@@ -37,8 +37,8 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
       core_game_cpp_CGame_processJoystickControls_FUN_0049ec80(this_ptr,player_control);
     }
     else {
-      PTR_01cc4800 = "..\\core\\game.cpp";
-      INT_01cc4804 = 0x71d;
+      g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
+      g_INT_01cc4804 = 0x71d;
       core_main_c_FUN_004c8440("CGame::playerControls - unknown control type");
     }
     puVar3 = (uint *)&DAT_01c02598;
@@ -54,7 +54,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
       puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);
     }
     _DAT_01c78418 = _DAT_01bd1d94;
-    _DAT_01c7841c = *(uint *)(0x01E57284 + 0x15aabc);
+    _DAT_01c7841c = g_CDemonSet_PTR_005be368->selected_camera_index;
     return;
   }
   return;

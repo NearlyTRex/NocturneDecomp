@@ -33,8 +33,8 @@
 ;   undefined4 DAT_01c00634
 ;   undefined4 DAT_01c0063c
 ;   undefined4 DAT_01c00640
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -194,8 +194,8 @@ section .text
         ;   Label: LAB_00493368
     MOV EDX,0x686                       ; 0049336d
     PUSH 0x581967                       ; 00493372 | = "CBitFont::remapPalette - Invalid bits..."
-    MOV [0x01cc4800],EAX                ; 00493377 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0049337c | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00493377 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0049337c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00493382
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00493387

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c69610
-;   undefined4 DAT_01c69648
+;   undefined4 g_CPopcorn_ARRAY_01c69614[0].base.vtable
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     PUSH EBX                            ; 0048c72b
     ADD EAX,0x1c69614                   ; 0048c72c
     PUSH EAX                            ; 0048c731
-    MOV EDX,dword ptr [EAX + 0x34]      ; 0048c732 | DAT_01c69648
+    MOV EDX,dword ptr [EAX + 0x34]      ; 0048c732 | g_CPopcorn_ARRAY_01c69614[0].base.vtable
     CALL dword ptr [EDX]                ; 0048c735
     MOV ESI,dword ptr [0x01c69610]      ; 0048c737 | DAT_01c69610
     INC ESI                             ; 0048c73d

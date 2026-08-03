@@ -18,11 +18,8 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_00543050(CSvetlana *thi
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return this_ptr;
   }
-  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160
-                     ((CCloth *)((this_ptr->cape_cloth).vertices[0x300].connected_indices + 9),0);
-  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160
-                     ((CCloth *)
-                      (pCVar1[-1].model.texture_list[0x123].textures[2].texture_name + 0xc),0);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160(&this_ptr->hair_cloth,0);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160(pCVar1 + -1,0);
   pCVar2 = (CSvetlana *)
            core_hero_cpp_CHero_dtor_FUN_004b4800((CHero *)(pCVar1[-1].vertices + 0x183),1);
   if ((flags & 2) == 0) {

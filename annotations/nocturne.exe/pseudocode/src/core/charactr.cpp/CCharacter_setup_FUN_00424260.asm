@@ -20,8 +20,8 @@
 ;   TerminatedCString s_bip01_head_00579e16
 ;   float FLOAT_0059b094 = 9999
 ;   undefined4 DAT_007658e4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
@@ -214,8 +214,8 @@ section .text
     MOV EDX,0x579dc6                    ; 0042442b | = "..\\core\\charactr.cpp"
     MOV ECX,0x10c                       ; 00424430
     PUSH 0x579ddb                       ; 00424435 | = "%s is carrying %s, but %s thinks it i..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0042443a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00424440 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0042443a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00424440 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00424446
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x14                        ; 0042444b

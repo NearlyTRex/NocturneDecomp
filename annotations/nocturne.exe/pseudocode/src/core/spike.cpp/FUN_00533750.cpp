@@ -89,8 +89,9 @@ void __cdecl core_spike_cpp_FUN_00533750(CSpike *this_ptr)
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&this_ptr->base,&CStack_98,&CStack_bc);
   pCStack_20 = &(this_ptr->base).location;
   iStack_24 = 0;
-  for (iStack_1c = 0; iStack_1c < *(int *)(0x01E57284 + 0x14ecb0); iStack_1c = iStack_1c + 1) {
-    this_ptr_00 = *(CCharacter **)(0x01E57284 + iStack_24 + 0x14ecb4);
+  for (iStack_1c = 0; iStack_1c < g_CDemonSet_PTR_005be368->character_count;
+      iStack_1c = iStack_1c + 1) {
+    this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_24);
     input_world_point = &(this_ptr_00->base).location;
     fVar1 = (pCStack_20->position).x - (input_world_point->position).x;
     fVar3 = (pCStack_20->position).y - (this_ptr_00->base).location.position.y;

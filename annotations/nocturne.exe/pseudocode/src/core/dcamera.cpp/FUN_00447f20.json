@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -82,37 +82,37 @@
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 79,
+        "line": 78,
         "message": "no matching function for call to 'core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 81,
+        "line": 80,
         "message": "use of undeclared identifier 'stack0xffffff30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 83,
+        "line": 82,
         "message": "use of undeclared identifier 'stack0xffffff34'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 86,
+        "line": 85,
         "message": "no matching function for call to 'core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 56,
-        "line": 88,
+        "line": 87,
         "message": "use of undeclared identifier 'stack0xffffff24'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 90,
+        "line": 89,
         "message": "use of undeclared identifier 'stack0xffffff28'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 392,
+    "complexity_score": 391,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 157,
+    "pseudocode_lines": 156,
     "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
@@ -138,7 +138,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 456
+    "total_lines": 455
   },
   "cross_references": [
     {
@@ -290,75 +290,82 @@
   "static_analysis": {
     "analyzed_file": "FUN_00447f20.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 10,
+      "diagnostic_count": 11,
       "diagnostics": [
         {
-          "check_id": "invalidPointerCast",
-          "column": 36,
-          "line": 94,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 17,
+          "line": 80,
+          "message": "Array 'aiStack_94[5]' accessed at index 6, which is out of bounds.",
+          "severity": "error"
         },
         {
-          "check_id": "invalidPointerCast",
-          "column": 36,
-          "line": 95,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 17,
+          "line": 81,
+          "message": "Array 'aiStack_94[5]' accessed at index 7, which is out of bounds.",
+          "severity": "error"
         },
         {
-          "check_id": "invalidPointerCast",
-          "column": 36,
-          "line": 96,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 19,
+          "line": 87,
+          "message": "Array 'aiStack_94[5]' accessed at index 12, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 19,
+          "line": 88,
+          "message": "Array 'aiStack_94[5]' accessed at index 13, which is out of bounds.",
+          "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 21,
-          "line": 87,
+          "line": 86,
           "message": "Uninitialized variable: iStack_e0",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 28,
-          "line": 92,
+          "line": 91,
           "message": "Uninitialized variable: iStack_64",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 28,
-          "line": 93,
+          "line": 92,
           "message": "Uninitialized variable: iStack_60",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 115,
+          "line": 114,
           "message": "Uninitialized variable: iStack_c0",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 25,
-          "line": 129,
+          "line": 128,
           "message": "Uninitialized variable: iStack_a8",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 11,
-          "line": 84,
+          "line": 83,
           "message": "Uninitialized variable: iStack_78",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 25,
-          "line": 152,
+          "line": 151,
           "message": "Uninitialized variable: iStack_6c",
           "severity": "error"
         }
@@ -394,7 +401,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 74,
+      "line": 73,
       "match": "&stack0xffffff30",
       "severity": "moderate",
       "text": "aiStack_94[(uint)bVar3 * -2 + 6] = *(int *)(&stack0xffffff30 + (uint)bVar3 * -8);",
@@ -402,7 +409,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 76,
+      "line": 75,
       "match": "&stack0xffffff34",
       "severity": "moderate",
       "text": "*(int *)(&stack0xffffff34 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -410,7 +417,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 81,
+      "line": 80,
       "match": "&stack0xffffff24",
       "severity": "moderate",
       "text": "aiStack_94[(uint)bVar3 * -2 + 0xc] = *(int *)(&stack0xffffff24 + (uint)bVar3 * -8);",
@@ -418,7 +425,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 83,
+      "line": 82,
       "match": "&stack0xffffff28",
       "severity": "moderate",
       "text": "*(int *)(&stack0xffffff28 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -426,7 +433,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 103,
       "match": "&stack0xffffff3c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff3c + (uint)bVar3 * -8) =",
@@ -434,7 +441,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 104,
       "match": "&stack0xffffff48",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff48 + (uint)bVar3 * -8);",
@@ -442,7 +449,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 106,
+      "line": 105,
       "match": "&stack0xffffff40",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff40 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -450,7 +457,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 106,
       "match": "&stack0xffffff4c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff4c + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -458,7 +465,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 118,
+      "line": 117,
       "match": "&stack0xffffff54",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff54 + (uint)bVar3 * -8) =",
@@ -466,7 +473,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 119,
+      "line": 118,
       "match": "&stack0xffffff18",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff18 + (uint)bVar3 * -8);",
@@ -474,7 +481,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 119,
       "match": "&stack0xffffff58",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -482,7 +489,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 121,
+      "line": 120,
       "match": "&stack0xffffff1c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff1c + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -490,7 +497,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
+      "line": 105,
       "match": "(int)&stack0xffffff40",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff40 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -498,7 +505,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 120,
+      "line": 119,
       "match": "(int)&stack0xffffff58",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -514,7 +521,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 106,
+      "line": 105,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff40 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -522,39 +529,47 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 120,
+      "line": 119,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 94,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "CStack_5c.x = fStack_a4 - *(float *)pcStack_20;",
-      "type": "static_invalid_pointer_cast"
+      "description": "Array 'aiStack_94[5]' accessed at index 6, which is out of bounds.",
+      "line": 80,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "aiStack_94[(uint)bVar3 * -2 + 6] = *(int *)(&stack0xffffff30 + (uint)bVar3 * -8);",
+      "type": "static_array_oob"
     },
     {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 95,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "CStack_5c.y = fStack_a0 - *(float *)(pcStack_20 + 4);",
-      "type": "static_invalid_pointer_cast"
+      "description": "Array 'aiStack_94[5]' accessed at index 7, which is out of bounds.",
+      "line": 81,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "aiStack_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =",
+      "type": "static_array_oob"
     },
     {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 96,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "CStack_5c.z = fStack_9c - *(float *)(pcStack_20 + 8);",
-      "type": "static_invalid_pointer_cast"
+      "description": "Array 'aiStack_94[5]' accessed at index 12, which is out of bounds.",
+      "line": 87,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "aiStack_94[(uint)bVar3 * -2 + 0xc] = *(int *)(&stack0xffffff24 + (uint)bVar3 * -8);",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'aiStack_94[5]' accessed at index 13, which is out of bounds.",
+      "line": 88,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "aiStack_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd] =",
+      "type": "static_array_oob"
     },
     {
       "description": "Uninitialized variable: iStack_e0",
-      "line": 87,
+      "line": 86,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "iStack_68 = iStack_e0;",
@@ -562,7 +577,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_64",
-      "line": 92,
+      "line": 91,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_a0 = (float)iStack_64 * 0.00390625f;",
@@ -570,7 +585,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_60",
-      "line": 93,
+      "line": 92,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_9c = (float)iStack_60 * 0.00390625f;",
@@ -578,7 +593,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_c0",
-      "line": 115,
+      "line": 114,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (0x1f400 < iStack_c0) goto LAB_0044808b;",
@@ -586,7 +601,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_a8",
-      "line": 129,
+      "line": 128,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (0x1f400 < iStack_a8) goto LAB_0044809a;",
@@ -594,7 +609,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_78",
-      "line": 84,
+      "line": 83,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (iStack_78 < 0x1f401) {",
@@ -602,7 +617,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_6c",
-      "line": 152,
+      "line": 151,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (0x1f400 < iStack_6c) goto LAB_004480cc;",

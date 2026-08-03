@@ -13,9 +13,7 @@ CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(CCloth *this_ptr)
   void *pvVar2;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(&this_ptr->model);
-  pvVar2 = __arrinit
-                     (&pCVar1->texture_list[8].textures[2].base.count,800,
-                      &g_SClothVertexTypeInfo_0059b3a0);
+  pvVar2 = __arrinit(pCVar1 + 1,800,&g_SClothVertexTypeInfo_0059b3a0);
   pvVar2 = __arrinit
                      ((void *)((int)pvVar2 + 0x377b8),0x32,&g_SClothBoneTypeInfo_0059b3c0);
   *(uint *)((int)pvVar2 + 0x2fac) = 0;

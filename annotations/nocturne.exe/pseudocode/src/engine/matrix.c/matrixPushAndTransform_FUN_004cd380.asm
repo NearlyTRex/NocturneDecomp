@@ -555,8 +555,8 @@ section .text
         ;   Label: LAB_004cda95
     MOV ESI,0x31c                       ; 004cda9a
     PUSH 0x5881fe                       ; 004cda9f | = "Matrix unbalance"
-    MOV dword ptr [0x01cc4800],EBX      ; 004cdaa4 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004cdaaa | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 004cdaa4 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004cdaaa | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004cdab0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cdab5

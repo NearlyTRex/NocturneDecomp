@@ -16,12 +16,12 @@ CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(CDemonActor 
   iVar3 = 0;
   iVar2 = 0;
   while( true ) {
-    if (*(int *)(0x01E57284 + 0x14cd6c) <= iVar2) {
+    if (g_CDemonSet_PTR_005be368->actor_count <= iVar2) {
       return (CFlies *)0x0;
     }
     pCVar1 = (CFlies *)
              core_actor_cpp_castToClassHash_FUN_0040d890
-                       (*(CDemonActor **)(iVar3 + 0x14cd70 + 0x01E57284),
+                       (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar3),
                         g_CFliesActorType_01c70718.name_hash);
     if ((pCVar1 != (CFlies *)0x0) && (actor == pCVar1->follow_actor)) break;
     iVar2 = iVar2 + 1;

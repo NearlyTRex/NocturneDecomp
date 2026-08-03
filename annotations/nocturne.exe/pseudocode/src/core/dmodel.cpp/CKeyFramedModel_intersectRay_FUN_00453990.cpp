@@ -12,9 +12,9 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFram
 
 {
   CVector3i *pCVar1;
-  CDemonTriangle *triangle;
   CVector3f *pCVar2;
-  char *this_ptr_00;
+  CMatrix3x3f *this_ptr_00;
+  CDemonTriangle *triangle;
   int iVar3;
   CDemonTriangle local_d0;
   CVector3f local_98;
@@ -27,7 +27,7 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFram
   CVector3f local_44;
   CVector3i *local_38;
   float local_34;
-  char *local_30;
+  CMatrix3x3f *local_30;
   int local_2c;
   int local_28;
   int local_24;
@@ -42,15 +42,14 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFram
     frame_index = 0;
   }
   local_18 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
-                       ((CBoundingBox3D *)
-                        (frame_index * 0x18 + this_ptr->texture_list[7].textures[2].base.count),
-                        ray_origin,ray_direction,(CVector3f *)0x0);
+                       (this_ptr->frame_bounds + frame_index,ray_origin,ray_direction,
+                        (CVector3f *)0x0);
   if ((local_18 < 0.0) || (1.0 < local_18)) {
     local_34 = 2.0;
   }
   else {
     local_20 = 2.0;
-    if (*(int *)(this_ptr->texture_list[7].textures[2].texture_name + 4) == 0) {
+    if (this_ptr->collision_triangle_list == (CDemonTriangle *)0x0) {
       local_38 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(this_ptr,frame_index)
       ;
       local_2c = 0;
@@ -105,17 +104,16 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFram
       }
     }
     else {
-      this_ptr_00 = this_ptr->texture_list[8].textures[0].texture_name + 4;
+      this_ptr_00 = &this_ptr->rotation_matrix_workspace;
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                ((CMatrix3x3f *)this_ptr_00,&local_80,ray_origin);
+                (this_ptr_00,&local_80,ray_origin);
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                ((CMatrix3x3f *)this_ptr_00,&local_50,ray_direction);
-      triangle = (CDemonTriangle *)
-                 (*(int *)(this_ptr->texture_list[7].textures[2].texture_name + 4) +
-                 frame_index * *(int *)this_ptr->texture_list[7].textures[2].texture_name * 0x38);
+                (this_ptr_00,&local_50,ray_direction);
+      triangle = this_ptr->collision_triangle_list +
+                 frame_index * this_ptr->collision_triangle_count;
       iVar3 = 0;
       local_30 = this_ptr_00;
-      if (0 < *(int *)this_ptr->texture_list[7].textures[2].texture_name) {
+      if (0 < this_ptr->collision_triangle_count) {
         do {
           local_18 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
                                (triangle,&local_80,&local_50);
@@ -125,7 +123,7 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFram
             local_8c.y = -(triangle->normal).y;
             local_8c.z = -(triangle->normal).z;
             pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                               ((CMatrix3x3f *)local_30,&local_74,&local_8c);
+                               (local_30,&local_74,&local_8c);
             if (output_normal != pCVar2) {
               output_normal->x = pCVar2->x;
               output_normal->y = pCVar2->y;
@@ -134,7 +132,7 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFram
           }
           iVar3 = iVar3 + 1;
           triangle = triangle + 1;
-        } while (iVar3 < *(int *)this_ptr->texture_list[7].textures[2].texture_name);
+        } while (iVar3 < this_ptr->collision_triangle_count);
       }
     }
     local_34 = local_20;

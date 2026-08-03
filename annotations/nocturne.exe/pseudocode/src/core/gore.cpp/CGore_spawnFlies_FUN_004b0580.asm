@@ -11,9 +11,9 @@
 ;   TerminatedCString s_core_gore_cpp_00585198
 ;   TerminatedCString s_Can_t_create_flies_005851a9
 ;   double DOUBLE_005851c0 = 60
-;   undefined4 DAT_005baf90
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -48,8 +48,8 @@ section .text
     MOV EDX,0x585198                    ; 004b05a6 | = "..\\core\\gore.cpp"
     MOV ECX,0x675                       ; 004b05ab
     PUSH 0x5851a9                       ; 004b05b0 | = "Can't create flies!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004b05b5 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004b05bb | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004b05b5 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004b05bb | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004b05c1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b05c6
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004b05dd
     MOV EDX,dword ptr [EDI + 0x8]       ; 004b05e0
     MOV dword ptr [EAX + 0x8],EDX       ; 004b05e3
-    MOV EAX,[0x005baf90]                ; 004b05e6 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 004b05e6 | g_CDemonMission_PTR_005baf90
     MOV EAX,dword ptr [EAX]             ; 004b05eb | DAT_01cc9450
     MOV dword ptr [EBX + 0x15c],0x0     ; 004b05ed
     MOV dword ptr [EBX + 0x2c],EAX      ; 004b05f7
@@ -89,13 +89,13 @@ section .text
     CALL dword ptr [EAX]                ; 004b062f
     ADD ESP,0x4                         ; 004b0631
     PUSH EBX                            ; 004b0634
-    MOV ESI,dword ptr [0x005baf90]      ; 004b0635 | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004b0635 | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 004b063b | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004b063c
         ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004b0641
     PUSH EBX                            ; 004b0644
-    MOV EDI,dword ptr [0x005baf90]      ; 004b0645 | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 004b0645 | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004b064b | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004b064c
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)

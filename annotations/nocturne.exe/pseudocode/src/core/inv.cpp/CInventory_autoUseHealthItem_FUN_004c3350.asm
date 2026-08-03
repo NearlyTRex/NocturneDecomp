@@ -13,8 +13,8 @@
 ;   TerminatedCString s_Auto_use_selected_health_0058752f
 ;   TerminatedCString s_Auto_use_health_00587549
 ;   TerminatedCString s_no_more_auto_health_left_0058755a
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 g_CHealthItemActorType_01cae098.name_hash
 ;
 ; Called Functions:
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 004c336d (CONDITIONAL_JUMP)  ; LAB_004c336d
     PUSH 0x58755a                       ; 004c338f | = "no more auto health left\n"
         ;   Label: LAB_004c338f
-    MOV EDX,dword ptr [0x005ad350]      ; 004c3394 | PTR_DAT_005ad350
-    PUSH EDX                            ; 004c339a | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 004c3394 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 004c339a | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c339b
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 004c33a0
@@ -85,8 +85,8 @@ section .text
     JZ 0x004c3362                       ; 004c33bc
         ;   XREF to: 004c3362 (CONDITIONAL_JUMP)  ; LAB_004c3362
     PUSH 0x58752f                       ; 004c33be | = "Auto use selected health\n"
-    MOV EBP,dword ptr [0x005ad350]      ; 004c33c3 | PTR_DAT_005ad350
-    PUSH EBP                            ; 004c33c9 | DAT_0077ad0c
+    MOV EBP,dword ptr [0x005ad350]      ; 004c33c3 | g_CConsole_PTR_005ad350
+    PUSH EBP                            ; 004c33c9 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c33ca
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 004c33cf
@@ -103,8 +103,8 @@ section .text
         ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_select_FUN_004c1580(CInventory * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004c33e2
     PUSH 0x587549                       ; 004c33e5 | = "Auto use health\n"
-    MOV EAX,[0x005ad350]                ; 004c33ea | PTR_DAT_005ad350
-    PUSH EAX                            ; 004c33ef | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 004c33ea | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 004c33ef | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c33f0
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 004c33f5

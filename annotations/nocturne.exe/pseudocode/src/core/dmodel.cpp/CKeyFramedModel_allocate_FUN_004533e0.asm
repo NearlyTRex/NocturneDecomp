@@ -17,8 +17,8 @@
 ;   TerminatedCString s_Out_of_memory_in_CKeyFra_0057cbd3
 ;   TerminatedCString s_core_dmodel_cpp_0057cc2c
 ;   TerminatedCString s_Out_of_memory_for_vertex_0057cc3f
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_FUN_00452f10
@@ -60,8 +60,8 @@ section .text
     MOV EBP,0x57cb9d                    ; 0045343b | = "..\\core\\dmodel.cpp"
     MOV EAX,0x2c1                       ; 00453440
     PUSH 0x57cbb0                       ; 00453445 | = "Too many parts!"
-    MOV dword ptr [0x01cc4800],EBP      ; 0045344a | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00453450 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 0045344a | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00453450 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00453455
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045345a
@@ -127,8 +127,8 @@ section .text
     MOV ESI,0x2d3                       ; 00453516
     MOV ECX,0x57cbc0                    ; 0045351b | = "..\\core\\dmodel.cpp"
     PUSH 0x57cbd3                       ; 00453520 | = "Out of memory in CKeyFramedModel::all..."
-    MOV dword ptr [0x01cc4804],ESI      ; 00453525 | INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 0045352b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00453525 | g_INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0045352b | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 00453531
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 00453536
@@ -145,8 +145,8 @@ section .text
         ;   Label: LAB_0045354b
     MOV ESI,0x2c0                       ; 00453550
     PUSH 0x57cb89                       ; 00453555 | = "Too many materials!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0045355a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00453560 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0045355a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00453560 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00453566
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045356b
@@ -196,8 +196,8 @@ section .text
     MOV ESI,0x57cc2c                    ; 004535ea | = "..\\core\\dmodel.cpp"
     MOV EDI,0x2db                       ; 004535ef
     PUSH 0x57cc3f                       ; 004535f4 | = "Out of memory for vertex normals in C..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004535f9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004535ff | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004535f9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004535ff | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00453605
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0045360a

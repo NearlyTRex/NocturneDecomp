@@ -13,8 +13,8 @@
 ;   TerminatedCString s_Unable_to_allocate_memor_0058d148
 ;   TerminatedCString s_Out_of_memory_packing_fi_0058d18d
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d1ce
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_FUN_004f3f50
@@ -145,8 +145,8 @@ section .text
     MOV EAX,ESP                         ; 004f490a
     MOV ECX,0x3b5                       ; 004f490c
     PUSH EAX                            ; 004f4911
-    MOV dword ptr [0x01cc4800],EDX      ; 004f4912 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f4918 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004f4912 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f4918 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f491e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4923
@@ -194,8 +194,8 @@ section .text
         ;   Label: LAB_004f49ad
     MOV ESI,0x37d                       ; 004f49b2
     PUSH 0x58d148                       ; 004f49b7 | = "Unable to allocate memory for rowOffs..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004f49bc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f49c2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 004f49bc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f49c2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f49c8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f49cd

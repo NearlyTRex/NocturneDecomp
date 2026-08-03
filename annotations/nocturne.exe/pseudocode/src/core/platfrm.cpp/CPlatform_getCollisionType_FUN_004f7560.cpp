@@ -13,7 +13,7 @@ uint core_platfrm_cpp_CPlatform_getCollisionType_FUN_004f7560(int param_1,int pa
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                      ((CKeyFramedModelInstance *)(param_1 + 0x150));
-  if (*(int *)(pCVar1->texture_list[7].textures[2].texture_name + 4) == 0) {
+  if (pCVar1->collision_triangle_list == (CDemonTriangle *)0x0) {
     return 1;
   }
   *(int *)(param_2 + 0x24) = param_1 + 0x150;

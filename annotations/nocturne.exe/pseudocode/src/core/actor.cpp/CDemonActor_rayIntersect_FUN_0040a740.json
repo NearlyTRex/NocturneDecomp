@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,64 +56,64 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 91,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 91,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 3,
-        "line": 93,
+        "line": 94,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 132,
+        "line": 133,
         "message": "use of undeclared identifier '_DAT_0268ced8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 133,
+        "line": 134,
         "message": "use of undeclared identifier '_DAT_0268cee8'; did you mean 'DAT_006af5e8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 134,
+        "line": 135,
         "message": "use of undeclared identifier '_DAT_0268ceec'; did you mean 'DAT_006afebc'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 135,
+        "line": 136,
         "message": "use of undeclared identifier '_DAT_0268cee8'; did you mean 'DAT_006af5e8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 136,
+        "line": 137,
         "message": "use of undeclared identifier '_DAT_0268ceec'; did you mean 'DAT_006afebc'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 12,
-        "line": 143,
+        "column": 19,
+        "line": 144,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 144,
+        "line": 146,
         "message": "use of undeclared identifier '_DAT_0268cedc'; did you mean 'DAT_006afebc'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 147,
+        "message": "use of undeclared identifier '_DAT_0268cee0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 148,
+        "message": "use of undeclared identifier '_DAT_0268cee4'; did you mean 'DAT_006af5e4'?"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 277,
+    "complexity_score": 264,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 147,
-    "suspect_count": 10,
+    "pseudocode_lines": 149,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_truncation",
-      "raw_address_constant",
       "stack_param",
       "stack_ref",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 490
+    "total_lines": 492
   },
   "cross_references": [
     {
@@ -253,25 +252,25 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01fb6578",
-      "name": "DAT_01fb6578",
+      "name": "g_CDemonSet_01e57284.skip_exact_collisions",
       "type": "undefined4",
       "value": null
     },
@@ -593,7 +592,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
       "text": "ulonglong in_stack_ffffff48;",
@@ -601,15 +600,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 65,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
-      "text": "(this_ptr_00,pCVar3,(CVector3f *)in_stack_ffffff48,",
+      "text": "(this_ptr_00,pCVar4,(CVector3f *)in_stack_ffffff48,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 66,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
       "text": "(CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));",
@@ -617,31 +616,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 136,
+      "line": 137,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x268cf0c) {",
+      "text": "if ((int *)&stack0x00000000 !=",
       "type": "stack_ref"
     },
     {
       "description": "Pointer value `frame_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
+      "line": 107,
       "match": "(int)frame_index",
       "severity": "moderate",
-      "text": "(this_ptr_01,(int)frame_index,ray_origin_00,pCVar3,output_normal);",
+      "text": "(this_ptr_01,(int)frame_index,ray_origin_00,pCVar4,output_normal);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 94,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "iVar1 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 36,
+      "line": 37,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_6c.min.x = ray_origin->x;",
@@ -649,7 +640,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 41,
+      "line": 42,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_6c.max.x = ray_origin->x;",
@@ -657,10 +648,10 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 146,
+      "line": 148,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(out_hit->normal).x = (pSVar2->normal).x;",
+      "text": "(out_hit->normal).x = (pSVar3->normal).x;",
       "type": "unrolled_memcpy"
     }
   ]

@@ -73,7 +73,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90(CDem
           iVar2 = iVar8;
         } while (iVar8 != 0 && bVar1);
       }
-      local_14 = (CDemonLight *)&(local_14->base).base.position;
+      local_14 = (CDemonLight *)((local_14->base).camera_name + 4);
       local_20 = local_20 + 0x140;
       local_18 = local_18 + 0x500;
       local_1c = local_1c + 1;

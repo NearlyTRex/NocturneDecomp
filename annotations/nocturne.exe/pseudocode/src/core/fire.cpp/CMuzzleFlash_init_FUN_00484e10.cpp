@@ -19,7 +19,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_00484e10(CMuzzleFlash *this_ptr
   (this_ptr->light).intensity_multiplier = 0x8000;
   (this_ptr->light).intensity.bytes[0] = ' ';
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(this_ptr_00,8.0);
-  this_ptr_01 = 0x01E57284;
+  this_ptr_01 = g_CDemonSet_PTR_005be368;
   (this_ptr->light).corona_mode = 0;
   core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(this_ptr_01,this_ptr_00);
   if (&this_ptr->position != position) {

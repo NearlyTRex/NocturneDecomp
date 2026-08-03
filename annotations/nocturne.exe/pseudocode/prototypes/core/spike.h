@@ -33,7 +33,7 @@ int CSpike::renderOpaque(CDemonActor *param_1);
 
 // Original: core_spike.cpp_CSpike_getBoundingBox_FUN_005335a0
 // Address: 005335a0
-undefined4 * CSpike::getBoundingBox(int param_1,undefined4 *param_2);
+float * CSpike::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_spike.cpp_CSpike_archive_FUN_005335f0
 // Address: 005335f0

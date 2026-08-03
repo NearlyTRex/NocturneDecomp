@@ -8,9 +8,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -119,8 +119,8 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 00421636
         ;   Label: LAB_00421636
     PUSH EAX                            ; 0042163a
-    MOV EAX,[0x005be368]                ; 0042163b | DAT_005be368
-    PUSH EAX                            ; 00421640 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 0042163b | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 00421640 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050e370      ; 00421641
         ;   XREF to: 0050e370 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e370(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 00421646
@@ -155,8 +155,8 @@ section .text
         ;   XREF to: 004215d7 (CONDITIONAL_JUMP)  ; LAB_004215d7
     PUSH 0x0                            ; 004216a6
         ;   Label: LAB_004216a6
-    MOV ECX,dword ptr [0x005be368]      ; 004216a8 | DAT_005be368
-    PUSH ECX                            ; 004216ae | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004216a8 | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 004216ae | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050e370      ; 004216af
         ;   XREF to: 0050e370 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e370(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004216b4

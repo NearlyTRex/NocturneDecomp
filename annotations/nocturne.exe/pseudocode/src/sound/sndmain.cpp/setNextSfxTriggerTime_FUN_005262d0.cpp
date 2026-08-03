@@ -13,8 +13,8 @@ void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005262d0(double trigger
 {
   int iVar1;
   
-  iVar1 = _DAT_02dc1b74 * 0x6c;
-  *(double *)(iVar1 + 0x2dc1bd8) = trigger_time;
-  *(int *)(iVar1 + 0x2dc1be0) = trigger_id;
+  iVar1 = _DAT_02dc1b74;
+  g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].trigger_time = trigger_time;
+  g_CSfxOptions_ARRAY_02dc1b78[iVar1].trigger_id = trigger_id;
   return;
 }

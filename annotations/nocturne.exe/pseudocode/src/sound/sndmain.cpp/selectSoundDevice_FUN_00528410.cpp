@@ -14,8 +14,8 @@ void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_00528410(int device_id)
   
   uVar1 = sound_sndmain_cpp_isSoundSystemActive_FUN_00528480();
   if (uVar1 != 0) {
-    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    INT_01cc4804 = 0x1211;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    g_INT_01cc4804 = 0x1211;
     core_main_c_FUN_004c8440("selectSoundDevice - device already open.");
   }
   if (device_id < 0) {

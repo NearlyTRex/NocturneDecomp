@@ -50,7 +50,8 @@ void core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *param_1,float para
   iVar4 = _strcmp(param_1->event_on,"none");
   if ((iVar4 != 0) &&
      (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,param_1->event_on), pCVar3 = 0x01E57284, iVar4 != 0)) {
+                        (0x01C03A10,param_1->event_on), pCVar3 = g_CDemonSet_PTR_005be368,
+     iVar4 != 0)) {
     iVar8 = 1;
     param_1->emitter_state = 1;
     param_1->state_timer = param_1->max_emit_time;
@@ -66,7 +67,7 @@ void core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *param_1,float para
                       ((double)(param_1->base).location.position.x,
                        (double)(param_1->base).location.position.y,
                        (double)(param_1->base).location.position.z,50.0);
-    if (((iVar4 == 0) || (iVar8 = 1, *(int *)(0x01C775EC + 0x1c) != 0)) ||
+    if (((iVar4 == 0) || (iVar8 = 1, g_CGame_PTR_005b9354->foul_language_flag != 0)) ||
        (iVar4 = _strnicmp(param_1->wav_name,"mob",3), iVar4 != 0)
        ) {
       if (iVar8 != 0) goto LAB_0047883d;
@@ -90,7 +91,8 @@ LAB_0047883d:
   case 0:
     pCVar1 = &(param_1->base).location;
     core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-              (0x01C08D04,&pCVar1->position,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
+              (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(CVector3f *)0x0,0x4000,0x10000,0,0xffff
+              );
     core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(&param_1->globe,&pCVar1->position);
     iVar8 = core_actor_cpp_getRandomInt_FUN_0040de00(0,0x7fff);
     (param_1->globe).intensity_multiplier = iVar8;
@@ -118,7 +120,7 @@ LAB_0047883d:
       iVar8 = iVar8 + 1;
       local_d0.z = 0.0;
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                (0x01C08D04,&local_70,1.0,&local_d0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,&local_70,1.0,&local_d0,0xffff);
     } while (iVar8 < 4);
     break;
   case 4:
@@ -135,12 +137,12 @@ LAB_0047883d:
     local_94.z = (float)(fVar12 * (float10)local_2c * fVar9);
     model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&param_1->model);
     core_fire_cpp_CFireEffect_createRock_FUN_0048b320
-              (0x01C08D04,&(param_1->base).location.position,&local_94,model_ptr);
+              (g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,&local_94,model_ptr);
     break;
   case 5:
     core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(param_1,&local_b8);
     core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0
-              (0x01C08D04,&local_b8,&(param_1->base).orient.vec,2,1);
+              (g_CFireEffect_PTR_005b80f0,&local_b8,&(param_1->base).orient.vec,2,1);
     pCVar2 = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     pCVar1 = &(param_1->base).location;
     local_ac = (pCVar2->location).position.x - (pCVar1->position).x;
@@ -156,18 +158,18 @@ LAB_0047883d:
   case 6:
     pCVar1 = &(param_1->base).location;
     core_fire_cpp_CFireEffect_createPopcorn_FUN_0048c710
-              (0x01C08D04,&pCVar1->position,(CVector3f *)0x0);
+              (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(CVector3f *)0x0);
     core_fire_cpp_CFireEffect_createPopcorn_FUN_0048c710
-              (0x01C08D04,&pCVar1->position,(CVector3f *)0x0);
+              (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(CVector3f *)0x0);
     core_fire_cpp_CFireEffect_createPopcorn_FUN_0048c710
-              (0x01C08D04,&pCVar1->position,(CVector3f *)0x0);
+              (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(CVector3f *)0x0);
     core_fire_cpp_CFireEffect_createPopcorn_FUN_0048c710
-              (0x01C08D04,&pCVar1->position,(CVector3f *)0x0);
+              (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(CVector3f *)0x0);
     break;
   case 7:
     pCVar1 = &(param_1->base).location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420
-              (0x01C08D04,&pCVar1->position,(param_1->emitter_size).y,0,
+              (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(param_1->emitter_size).y,0,
                (param_1->emitter_size).x * (float)0.5);
     if ((CLocation *)local_4c != pCVar1) {
       local_4c[0].x = (pCVar1->position).x;
@@ -185,14 +187,14 @@ LAB_0047883d:
     fVar13 = (param_1->emitter_size).y;
 LAB_00478902:
     core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(&param_1->globe,fVar13);
-    pCVar3 = 0x01E57284;
+    pCVar3 = g_CDemonSet_PTR_005be368;
     (param_1->globe).corona_mode = 0;
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(pCVar3,&param_1->globe);
     break;
   case 8:
     core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-              (0x01C08D04,&(param_1->base).location.position,(CVector3f *)0x0,0x4000,0x10000,1,
-               0xffff);
+              (g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,(CVector3f *)0x0,0x4000
+               ,0x10000,1,0xffff);
     break;
   case 9:
     pCVar2 = param_1->dest_actor;
@@ -216,7 +218,8 @@ LAB_00478902:
         CStack_58.z = CStack_7c.z;
       }
       core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0
-                (0x01C08D04,&(param_1->base).location.position,&CStack_58,0,0.0,4.0);
+                (g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,&CStack_58,0,0.0,4.0)
+      ;
     }
   }
   if (((param_1->wav_name[0] != '\0') &&

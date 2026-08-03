@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,22 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_01fba938'"
-      },
-      {
         "category": "incompatible_types",
-        "column": 11,
-        "line": 70,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 86,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createRock_FUN_0048b320'"
+        "column": 9,
+        "line": 54,
+        "message": "no matching function for call to 'core_set_cpp_FUN_0050e660'"
       },
       {
         "category": "undeclared_identifier",
@@ -92,7 +80,7 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 297,
-    "complexity_score": 771,
+    "complexity_score": 766,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
@@ -102,7 +90,6 @@
     "suspect_types": [
       "pointer_cast",
       "suspect_float",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -185,44 +172,44 @@
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "DAT_01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "DAT_01fa5f38",
+      "name": "g_CDemonSet_01e57284.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "DAT_01fa5f3c",
+      "name": "g_CDemonSet_01e57284.characters[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba938",
-      "name": "DAT_01fba938",
-      "type": "undefined4",
+      "name": "g_CDemonRaytrace_01fba938",
+      "type": "CDemonRaytrace",
       "value": null
     }
   ],
@@ -376,14 +363,6 @@
       "severity": "mild",
       "text": "local_48.y = param_1[2].orient_matrix.m[2].x + -5000.0f;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,&local_54,(CVector3f *)ray_start,&local_48);",
-      "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -582,7 +561,7 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,&(param_1->location).position,aCStack_3c,model_ptr);",
+      "text": "(g_CFireEffect_PTR_005b80f0,&(param_1->location).position,aCStack_3c,model_ptr);",
       "type": "unnamed_param"
     },
     {
@@ -720,6 +699,14 @@
       "severity": "mild",
       "text": "pCStack_20 = &param_1->location;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",

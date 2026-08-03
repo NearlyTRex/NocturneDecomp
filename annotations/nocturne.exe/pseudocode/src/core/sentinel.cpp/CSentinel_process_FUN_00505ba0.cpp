@@ -368,7 +368,7 @@ LAB_005062ff:
                             (&(param_1->base).model,local_44,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)param_1,&local_128,pCVar10);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_128,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_128,0);
         param_1->pool_me = 1;
       }
       break;
@@ -416,7 +416,7 @@ LAB_00505fcd:
     if (uVar3 != 3) goto LAB_00505fcd;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   (param_1->base).model.accumulated_root_motion.z = 0.0;
   (param_1->base).model.accumulated_root_motion.y = (param_1->base).model.accumulated_root_motion.z;

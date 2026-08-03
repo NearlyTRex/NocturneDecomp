@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,44 +58,44 @@
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 19,
+        "line": 18,
         "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 19,
+        "line": 18,
         "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 20,
+        "line": 19,
         "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 21,
+        "line": 20,
         "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
+        "column": 38,
+        "line": 22,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
         "line": 23,
         "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 11,
-        "line": 30,
-        "message": "use of undeclared identifier 'DAT_02dc1edc'; did you mean 'DAT_005c1ddc'?"
-      },
-      {
-        "category": "pointer_type",
-        "column": 10,
-        "line": 30,
-        "message": "cannot initialize return object of type 'byte *' (aka 'unsigned char *') with an rvalue of type 'undefined4 *' (aka 'unsigned int *')"
+        "column": 40,
+        "line": 29,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
       }
     ],
     "success": false,
@@ -104,18 +104,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 50,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 50
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -128,7 +127,7 @@
     ],
     "convention": "unknown",
     "name": "sound_sndmain.cpp_FUN_00521c50",
-    "signature": "undefined * sound_sndmain_cpp_FUN_00521c50(void)"
+    "signature": "CSfxSample * sound_sndmain_cpp_FUN_00521c50(void)"
   },
   "function_calls": [],
   "globals": [
@@ -140,13 +139,13 @@
     },
     {
       "addr": "02dc216c",
-      "name": "DAT_02dc216c",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].taken",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc2170",
-      "name": "DAT_02dc2170",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].ref_count",
       "type": "undefined4",
       "value": null
     }
@@ -203,14 +202,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_02dc1edc",
-      "severity": "mild",
-      "text": "return &DAT_02dc1edc + iVar2;",
-      "type": "undefined_data"
     }
   ]
 }

@@ -27,8 +27,8 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
   
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   if (sync_stage < 1) {
-    PTR_01cc4800 = "..\\core\\netgame.cpp";
-    INT_01cc4804 = 0x337;
+    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+    g_INT_01cc4804 = 0x337;
     core_main_c_FUN_004c8440("CNetGame::syncPlayers - don't use 0!");
   }
   if (this_ptr->connection_type == CONNECTION_NONE) {
@@ -103,7 +103,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
           } while (iVar2 < this_ptr->player_count);
         }
       }
-      iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
+      iVar2 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         return 0;
@@ -120,7 +120,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
       engine_2d_c_drawText_FUN_00402600(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(this_ptr);
-      iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
+      iVar2 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         return 0;
@@ -128,8 +128,8 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
     }
   }
   else {
-    PTR_01cc4800 = "..\\core\\netgame.cpp";
-    INT_01cc4804 = 0x3c0;
+    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+    g_INT_01cc4804 = 0x3c0;
     core_main_c_FUN_004c8440("CNetGame::syncPlayers - invalid mode");
   }
   return 1;

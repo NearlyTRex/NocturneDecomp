@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -122,24 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1655,
-    "complexity_score": 3537,
+    "complexity_score": 3521,
     "cross_reference_count": 0,
     "function_call_count": 47,
     "global_count": 42,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 707,
-    "suspect_count": 279,
+    "pseudocode_lines": 706,
+    "suspect_count": 278,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "unnamed_param",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 2362
+    "total_lines": 2361
   },
   "cross_references": [],
   "function": {
@@ -575,15 +574,15 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "00764230",
@@ -605,8 +604,8 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -635,13 +634,13 @@
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01c77814",
-      "name": "DAT_01c77814",
+      "name": "g_CGame_01c775ec.letterbox_mode",
       "type": "undefined4",
       "value": null
     }
@@ -1927,7 +1926,7 @@
       "line": 297,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s confused while walking to scriptDest!\\n\",param_1);",
+      "text": "(g_CConsole_PTR_005ad350,\"%s confused while walking to scriptDest!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -3191,7 +3190,15 @@
       "line": 650,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar3 = param_2 * (float)25 +",
+      "text": "fVar3 = param_2 * (float)25 + param_1->dynamite_charge_power;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 650,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = param_2 * (float)25 + param_1->dynamite_charge_power;",
       "type": "unnamed_param"
     },
     {
@@ -3199,15 +3206,15 @@
       "line": 651,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float)(param_1->coat_cloth).vertices[0x300].connected_indices[9];",
+      "text": "param_1->dynamite_charge_power = fVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 652,
+      "line": 653,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->coat_cloth).vertices[0x300].connected_indices[9] = (int)fVar3;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
@@ -3215,7 +3222,7 @@
       "line": 654,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->base).player_input.action_state.fire = 0;",
+      "text": "param_1->fire_state = 2;",
       "type": "unnamed_param"
     },
     {
@@ -3223,20 +3230,12 @@
       "line": 655,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->fire_state = 2;",
+      "text": "param_1->dynamite_charge_power = 60.0f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 656,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->coat_cloth).vertices[0x300].connected_indices[9] = (int)60.0f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 659,
+      "line": 658,
       "match": "param_1",
       "severity": "mild",
       "text": "local_e8.x = param_1->aim_pitch;",
@@ -3244,15 +3243,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 663,
+      "line": 662,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_d0.z = (float)(param_1->coat_cloth).vertices[0x300].connected_indices[9];",
+      "text": "local_d0.z = param_1->dynamite_charge_power;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 670,
+      "line": 669,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1,&local_94,pCVar11);",
@@ -3260,7 +3259,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 678,
+      "line": 677,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->fire_state = 2;",
@@ -3268,15 +3267,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 680,
+      "line": 679,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->coat_cloth).vertices[0x300].connected_indices[9] = (int)10.0f;",
+      "text": "param_1->dynamite_charge_power = 10.0f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 681,
+      "line": 680,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar10 = core_gabriela_cpp_CGabriella_canFireWeapon_FUN_00498af0(param_1);",
@@ -3284,7 +3283,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 683,
+      "line": 682,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->fire_state = 1;",
@@ -3292,7 +3291,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 687,
+      "line": 686,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->fire_state == 2) goto LAB_004961ba;",
@@ -3300,7 +3299,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 689,
+      "line": 688,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->fire_state != 1) goto LAB_0049620e;",
@@ -3308,7 +3307,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 691,
+      "line": 690,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->fire_state = 0;",
@@ -3316,7 +3315,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 692,
+      "line": 691,
       "match": "param_1",
       "severity": "mild",
       "text": "core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(param_1);",
@@ -3324,7 +3323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 693,
+      "line": 692,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((param_1->base).inventory.selected_weapon)->fire_cooldown == 0) {",
@@ -3332,7 +3331,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 694,
+      "line": 693,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).player_input.action_state.fire = 0;",
@@ -3340,7 +3339,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 697,
+      "line": 696,
       "match": "param_1",
       "severity": "mild",
       "text": "EVar15 = (*(((param_1->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)param_1);",
@@ -3348,7 +3347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 697,
+      "line": 696,
       "match": "param_1",
       "severity": "mild",
       "text": "EVar15 = (*(((param_1->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)param_1);",
@@ -3356,7 +3355,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 700,
+      "line": 699,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->coat_cloth,&(param_1->base).base.base.location.position,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 699,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->coat_cloth,&(param_1->base).base.base.location.position,",
@@ -3365,14 +3372,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 700,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->coat_cloth,&(param_1->base).base.base.location.position,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 701,
       "match": "param_1",
       "severity": "mild",
       "text": "&(param_1->base).base.base.orient.vec,param_2,",
@@ -3380,7 +3379,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 701,
+      "line": 700,
       "match": "param_2",
       "severity": "mild",
       "text": "&(param_1->base).base.base.orient.vec,param_2,",
@@ -3388,7 +3387,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 702,
+      "line": 701,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).base.closest_distance_threshold,&(param_1->base).base.model);",
@@ -3396,7 +3395,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 702,
+      "line": 701,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).base.closest_distance_threshold,&(param_1->base).base.model);",
@@ -3404,7 +3403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 704,
+      "line": 703,
       "match": "param_1",
       "severity": "mild",
       "text": "this_ptr = (param_1->base).inventory.selected_weapon;",
@@ -3412,7 +3411,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 705,
+      "line": 704,
       "match": "param_2",
       "severity": "mild",
       "text": "(*((this_ptr->base).vtable._ub)->process)(&this_ptr->base,param_2);",
@@ -3420,7 +3419,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 706,
+      "line": 705,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((param_1->base).inventory.selected_weapon)->base).is_transparent == 0) {",
@@ -3428,7 +3427,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 709,
+      "line": 708,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).base.base.is_transparent = 1;",
@@ -3436,19 +3435,11 @@
     },
     {
       "description": "Pointer value `&pCVar13[4].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 668,
+      "line": 667,
       "match": "(int)&pCVar13[4].orient",
       "severity": "moderate",
       "text": "pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 166,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar9 = 0x01C775EC;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
@@ -3476,7 +3467,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 668,
+      "line": 667,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar12 = (CVector3f *)((int)&pCVar13[4].orient + 4);",

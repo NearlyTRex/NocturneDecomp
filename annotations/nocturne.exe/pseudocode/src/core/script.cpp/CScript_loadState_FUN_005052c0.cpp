@@ -18,8 +18,8 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_F
   _fgets(local_118,0xff,file_handle);
   _fscanf(file_handle,"%d\n");
   if (6 < local_18) {
-    PTR_01cc4800 = "..\\core\\script.cpp";
-    INT_01cc4804 = 0xf56;
+    g_CHAR_PTR_01cc4800 = "..\\core\\script.cpp";
+    g_INT_01cc4804 = 0xf56;
     core_main_c_FUN_004c8440("CScript::loadState - file version is newer than .EXE");
   }
   _fgets(local_118,0xff,file_handle);
@@ -37,7 +37,7 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_F
   _fgets(local_118,0xff,file_handle);
   _fscanf(file_handle,"%d\n");
   _fgets(local_118,0xff,file_handle);
-  *(byte *)&this_ptr->cmd_timer = 0;
+  this_ptr->current_message[0] = '\0';
   _fscanf(file_handle,"\"%[^\"]");
   _fscanf(file_handle,"\"\n");
   _fgets(local_118,0xff,file_handle);
@@ -58,11 +58,11 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_F
     _fgets(local_118,0xff,file_handle);
     iVar2 = 0;
     _fscanf(file_handle,"%d\n");
-    if (0 < (int)this_ptr->message_duration) {
+    if (0 < this_ptr->call_stack_count) {
       do {
         iVar2 = iVar2 + 1;
         _fscanf(file_handle,"%d\n");
-      } while (iVar2 < (int)this_ptr->message_duration);
+      } while (iVar2 < this_ptr->call_stack_count);
     }
   }
   if (5 < local_18) {
@@ -70,7 +70,8 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_F
     _fscanf(file_handle,"%u\n");
     uVar1 = core_script_cpp_CScript_computeChecksum_FUN_00505820(this_ptr);
     if (uVar1 != local_14) {
-      shape_edittool_cpp_FUN_0046fb40(0x01BCD074,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
+      shape_edittool_cpp_FUN_0046fb40
+                (g_CEditorTools_PTR_005b6d50,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
       return;
     }
   }

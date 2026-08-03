@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_0040a320(CDemonActor *param_1,char *param_2,float param_3)
+; uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_0040a320(CDemonActor *this_ptr,char *sound_name,float volume)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   sound_name
+; float            Stack[0xc]:4   volume
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00
@@ -23,7 +27,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 0040a32d
     PUSH ECX                            ; 0040a331
     PUSH EDX                            ; 0040a332
-    MOV EBX,dword ptr [0x005bed68]      ; 0040a333 | DAT_005bed68
+    MOV EBX,dword ptr [0x005bed68]      ; 0040a333 | g_CSound_PTR_005bed68
     PUSH EBX                            ; 0040a339
     CALL core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00 ; 0040a33a
         ;   XREF to: 0052eb00 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)

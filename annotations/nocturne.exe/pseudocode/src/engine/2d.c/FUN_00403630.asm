@@ -23,8 +23,8 @@
 ;   TerminatedCString s_engine_2d_c_0057726c
 ;   TerminatedCString s_Unable_to_write_quick_ma_0057727b
 ;   undefined4 DAT_01bf7720
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -91,8 +91,8 @@ section .text
     MOV EDX,0x577244                    ; 00403678 | = "..\\engine\\2d.c"
     MOV ECX,0x76e                       ; 0040367d
     PUSH 0x577253                       ; 00403682 | = "hose!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00403687 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040368d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00403687 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0040368d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00403693
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00403698
@@ -129,8 +129,8 @@ section .text
     MOV ESI,0x57726c                    ; 004036e8 | = "..\\engine\\2d.c"
     MOV EDI,0x775                       ; 004036ed
     PUSH 0x57727b                       ; 004036f2 | = "Unable to write quick map!"
-    MOV dword ptr [0x01cc4800],ESI      ; 004036f7 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004036fd | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004036f7 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004036fd | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00403703
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00403708

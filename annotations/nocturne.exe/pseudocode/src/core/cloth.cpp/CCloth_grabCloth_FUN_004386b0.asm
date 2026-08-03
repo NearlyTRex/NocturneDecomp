@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af91
 ;   TerminatedCString s_CCloth_grabCloth_Can_t_f_0057afa3
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -78,8 +78,8 @@ section .text
     MOV EAX,0x57af91                    ; 00438721 | = "..\\core\\cloth.cpp"
     MOV EDX,0xaa7                       ; 00438726
     PUSH 0x57afa3                       ; 0043872b | = "CCloth::grabCloth - Can't find bone %s"
-    MOV [0x01cc4800],EAX                ; 00438730 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00438735 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00438730 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00438735 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0043873b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00438740

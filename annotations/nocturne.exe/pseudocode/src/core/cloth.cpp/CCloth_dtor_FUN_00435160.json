@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -68,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 30,
+    "complexity_score": 29,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 14,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 42
+    "total_lines": 41
   },
   "cross_references": [
     {
@@ -327,7 +327,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 15,
       "match": "pSVar2[-4].",
       "severity": "mild",
       "text": "((CKeyFramedModel *)&pSVar2[-4].collide_bone_index,1);",

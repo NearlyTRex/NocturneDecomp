@@ -130,10 +130,10 @@ void core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *param_1,float p
       dVar15 = round((double)(local_14 * (float)0.25));
       local_34 = (int)ROUND(dVar15);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                ((CGore *)INT_005b96c4,&local_98,(CVector3f *)0x0,local_34,iVar6);
+                (g_CGore_PTR_005b96c4,&local_98,(CVector3f *)0x0,local_34,iVar6);
     }
     else if (uVar7 == 0x29a) {
-      core_mission_cpp_FUN_004d9110(0x01CC9450,param_1,1);
+      core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,param_1,1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)param_1,uVar7);
@@ -263,12 +263,12 @@ LAB_005567cd:
         pCVar13 = (param_1->base).victim;
         if (param_1->type == WEREWOLF_TYPE_FOREST) {
           if ((param_1->alpha1 == (CDemonActor *)0x0) || (param_1->alpha2 == (CDemonActor *)0x0)) {
-            PTR_01cc4800 = "..\\core\\werewolf.cpp";
-            INT_01cc4804 = 0x1ad;
+            g_CHAR_PTR_01cc4800 = "..\\core\\werewolf.cpp";
+            g_INT_01cc4804 = 0x1ad;
             core_main_c_FUN_004c8440();
           }
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"Phase: %d, Timer: %f\n");
+                    (g_CConsole_PTR_005ad350,"Phase: %d, Timer: %f\n");
           if ((param_1->phase == 1) || (param_1->phase == 3)) {
             pCVar8 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                                (&((param_1->base).victim)->base,&local_f8,
@@ -382,12 +382,12 @@ LAB_00556967:
                   core_werewolf_cpp_CWerewolf_playHowl_FUN_00557060(param_1);
                 }
                 iVar6 = 0;
-                for (iVar14 = 0; iVar14 < (int)0x01E57284->characters[0x6d6]; iVar14 = iVar14 + 1)
-                {
+                for (iVar14 = 0; iVar14 < g_CDemonSet_PTR_005be368->enemy_count; iVar14 = iVar14 + 1
+                    ) {
                   pCVar10 = (CWerewolf *)
                             core_actor_cpp_castToClassHash_FUN_0040d890
                                       (*(CDemonActor **)
-                                        ((int)0x01E57284->characters + iVar6 + 0x1b5c),
+                                        ((int)g_CDemonSet_PTR_005be368->enemies + iVar6),
                                        g_CWerewolfActorType_02de078c.name_hash);
                   if (((pCVar10 != (CWerewolf *)0x0) && (pCVar10 != param_1)) &&
                      (pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -485,7 +485,7 @@ LAB_005567aa:
                                (pCVar1,&local_1ac,0);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                       ((CDemonActor *)param_1,&local_1b8,pCVar8);
-            core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_1b8,0);
+            core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_1b8,0);
             (param_1->base).pool_me = 1;
           }
           goto LAB_00555e90;
@@ -644,7 +644,7 @@ LAB_00555e70:
     if (uVar4 != 3) goto LAB_0055610d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
 LAB_00555e78:
   (param_1->base).base.model.accumulated_root_motion.z = 0.0;
@@ -685,7 +685,8 @@ LAB_00555e90:
     if ((pCVar13 != (CCharacter *)0x0) &&
        (pCVar10 = (CWerewolf *)(*(((pCVar13->base).vtable._uc)->_uc).getGrabber)(pCVar13),
        pCVar10 == param_1)) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&((param_1->base).victim)->base);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                (g_CDemonSet_PTR_005be368,&((param_1->base).victim)->base);
     }
     (param_1->base).base.velocity.y =
          (param_1->base).base.velocity.y - param_2 * (float)32;

@@ -15,8 +15,8 @@
 ;   TerminatedCString s_models_00591696
 ;   TerminatedCString s_core_skeleton_cpp_0059169d
 ;   TerminatedCString s_CDeformableModel_load_Ca_005916b2
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -82,8 +82,8 @@ section .text
     MOV EDX,0x59169d                    ; 00519252 | = "..\\core\\skeleton.cpp"
     MOV ECX,0x4b2                       ; 00519257
     PUSH 0x5916b2                       ; 0051925c | = "CDeformableModel::load - Can't open %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 00519261 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00519267 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00519261 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00519267 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051926d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00519272

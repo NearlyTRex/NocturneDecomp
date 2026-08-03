@@ -133,8 +133,8 @@ section .text
     MOV EDI,0x594d27                    ; 00531850 | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 00531855
     PUSH 0x594d3b                       ; 0053185a | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 0053185f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00531865 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 0053185f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00531865 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0053186b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531870
@@ -152,8 +152,8 @@ section .text
     MOV EDX,0x594d27                    ; 0053188f | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00531894
     PUSH 0x594d3b                       ; 00531899 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0053189e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005318a4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0053189e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005318a4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005318aa
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005318af
@@ -171,8 +171,8 @@ section .text
     MOV EDI,0x594d27                    ; 005318cf | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 005318d4
     PUSH 0x594d3b                       ; 005318d9 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 005318de | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 005318e4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 005318de | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 005318e4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005318ea
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005318ef
@@ -190,8 +190,8 @@ section .text
     MOV EDX,0x594d27                    ; 0053190e | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00531913
     PUSH 0x594d3b                       ; 00531918 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0053191d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00531923 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0053191d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00531923 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531929
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0053192e
@@ -209,8 +209,8 @@ section .text
     MOV EDI,0x594d27                    ; 0053194e | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 00531953
     PUSH 0x594d3b                       ; 00531958 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 0053195d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00531963 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 0053195d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00531963 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531969
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0053196e
@@ -228,8 +228,8 @@ section .text
     MOV EDX,0x594d27                    ; 0053198d | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00531992
     PUSH 0x594d3b                       ; 00531997 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0053199c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005319a2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0053199c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005319a2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005319a8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005319ad
@@ -247,8 +247,8 @@ section .text
     MOV EDI,0x594d27                    ; 005319cd | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 005319d2
     PUSH 0x594d3b                       ; 005319d7 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 005319dc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 005319e2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 005319dc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 005319e2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005319e8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005319ed
@@ -266,8 +266,8 @@ section .text
     MOV EDX,0x594d27                    ; 00531a0c | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00531a11
     PUSH 0x594d3b                       ; 00531a16 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00531a1b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00531a21 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00531a1b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00531a21 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531a27
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531a2c
@@ -285,8 +285,8 @@ section .text
     MOV EDI,0x594d27                    ; 00531a4c | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 00531a51
     PUSH 0x594d3b                       ; 00531a56 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 00531a5b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00531a61 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00531a5b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00531a61 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531a67
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531a6c
@@ -304,8 +304,8 @@ section .text
     MOV EDX,0x594d27                    ; 00531a8b | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00531a90
     PUSH 0x594d3b                       ; 00531a95 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00531a9a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00531aa0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00531a9a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00531aa0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531aa6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531aab
@@ -323,8 +323,8 @@ section .text
     MOV EDI,0x594d27                    ; 00531acb | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 00531ad0
     PUSH 0x594d3b                       ; 00531ad5 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 00531ada | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00531ae0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00531ada | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00531ae0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531ae6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531aeb
@@ -342,8 +342,8 @@ section .text
     MOV EDX,0x594d27                    ; 00531b0a | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00531b0f
     PUSH 0x594d3b                       ; 00531b14 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00531b19 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00531b1f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00531b19 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00531b1f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531b25
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531b2a
@@ -361,8 +361,8 @@ section .text
     MOV EDI,0x594d27                    ; 00531b4a | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 00531b4f
     PUSH 0x594d3b                       ; 00531b54 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 00531b59 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00531b5f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00531b59 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00531b5f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531b65
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531b6a
@@ -380,8 +380,8 @@ section .text
     MOV EDX,0x594d27                    ; 00531b89 | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00531b8e
     PUSH 0x594d3b                       ; 00531b93 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00531b98 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00531b9e | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00531b98 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00531b9e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531ba4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531ba9
@@ -399,8 +399,8 @@ section .text
     MOV EDI,0x594d27                    ; 00531bc9 | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 00531bce
     PUSH 0x594d3b                       ; 00531bd3 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 00531bd8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00531bde | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00531bd8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00531bde | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531be4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531be9
@@ -432,8 +432,8 @@ section .text
     MOV ESI,0x594d27                    ; 00531c3a | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531c3f
     PUSH 0x594d3b                       ; 00531c44 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531c49 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531c4f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00531c49 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00531c4f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531c55
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531c5a
@@ -451,8 +451,8 @@ section .text
     MOV EAX,0x594d27                    ; 00531c7a | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531c7f
     PUSH 0x594d3b                       ; 00531c84 | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531c89 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00531c8e | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00531c89 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00531c8e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531c94
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531c99
@@ -470,8 +470,8 @@ section .text
     MOV ESI,0x594d27                    ; 00531cb9 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531cbe
     PUSH 0x594d3b                       ; 00531cc3 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531cc8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531cce | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00531cc8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00531cce | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531cd4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531cd9
@@ -489,8 +489,8 @@ section .text
     MOV EAX,0x594d27                    ; 00531cf9 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531cfe
     PUSH 0x594d3b                       ; 00531d03 | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531d08 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00531d0d | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00531d08 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00531d0d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531d13
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531d18
@@ -508,8 +508,8 @@ section .text
     MOV ESI,0x594d27                    ; 00531d38 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531d3d
     PUSH 0x594d3b                       ; 00531d42 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531d47 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531d4d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00531d47 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00531d4d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531d53
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531d58
@@ -527,8 +527,8 @@ section .text
     MOV EAX,0x594d27                    ; 00531d78 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531d7d
     PUSH 0x594d3b                       ; 00531d82 | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531d87 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00531d8c | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00531d87 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00531d8c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531d92
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531d97
@@ -546,8 +546,8 @@ section .text
     MOV ESI,0x594d27                    ; 00531db7 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531dbc
     PUSH 0x594d3b                       ; 00531dc1 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531dc6 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531dcc | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00531dc6 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00531dcc | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531dd2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531dd7
@@ -565,8 +565,8 @@ section .text
     MOV EAX,0x594d27                    ; 00531df7 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531dfc
     PUSH 0x594d3b                       ; 00531e01 | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531e06 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00531e0b | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00531e06 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00531e0b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531e11
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531e16
@@ -584,8 +584,8 @@ section .text
     MOV ESI,0x594d27                    ; 00531e36 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531e3b
     PUSH 0x594d3b                       ; 00531e40 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531e45 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531e4b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00531e45 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00531e4b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531e51
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531e56
@@ -603,8 +603,8 @@ section .text
     MOV EAX,0x594d27                    ; 00531e76 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531e7b
     PUSH 0x594d3b                       ; 00531e80 | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531e85 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00531e8a | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00531e85 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00531e8a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531e90
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531e95
@@ -622,8 +622,8 @@ section .text
     MOV ESI,0x594d27                    ; 00531eb5 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531eba
     PUSH 0x594d3b                       ; 00531ebf | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531ec4 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531eca | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00531ec4 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00531eca | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531ed0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531ed5
@@ -641,8 +641,8 @@ section .text
     MOV EAX,0x594d27                    ; 00531ef5 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531efa
     PUSH 0x594d3b                       ; 00531eff | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531f04 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00531f09 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00531f04 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00531f09 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531f0f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531f14
@@ -660,8 +660,8 @@ section .text
     MOV ESI,0x594d27                    ; 00531f34 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531f39
     PUSH 0x594d3b                       ; 00531f3e | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531f43 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531f49 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00531f43 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00531f49 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531f4f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531f54
@@ -679,8 +679,8 @@ section .text
     MOV EAX,0x594d27                    ; 00531f74 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531f79
     PUSH 0x594d3b                       ; 00531f7e | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531f83 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00531f88 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00531f83 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00531f88 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531f8e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531f93
@@ -698,8 +698,8 @@ section .text
     MOV ESI,0x594d27                    ; 00531fb3 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531fb8
     PUSH 0x594d3b                       ; 00531fbd | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531fc2 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531fc8 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00531fc2 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00531fc8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00531fce
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00531fd3
@@ -717,8 +717,8 @@ section .text
     MOV EAX,0x594d27                    ; 00531ff3 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531ff8
     PUSH 0x594d3b                       ; 00531ffd | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00532002 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00532007 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00532002 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00532007 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0053200d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00532012
@@ -736,8 +736,8 @@ section .text
     MOV ESI,0x594d27                    ; 00532032 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00532037
     PUSH 0x594d3b                       ; 0053203c | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00532041 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00532047 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00532041 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00532047 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0053204d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00532052

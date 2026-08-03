@@ -76,10 +76,10 @@ section .text
     PUSH EAX                            ; 00505319
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0050531a
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
-    MOV EAX,[0x005b9354]                ; 0050531f | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0050531f | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 00505324
     ADD EAX,0x228                       ; 00505327
-    PUSH EAX                            ; 0050532c | DAT_01c77814
+    PUSH EAX                            ; 0050532c | g_CGame_01c775ec.letterbox_mode
     PUSH 0x58fd12                       ; 0050532d | = "%d\n"
     PUSH EDI                            ; 00505332
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00505333
@@ -94,10 +94,10 @@ section .text
     PUSH EAX                            ; 0050534f
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00505350
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
-    MOV EAX,[0x005b9354]                ; 00505355 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00505355 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 0050535a
     ADD EAX,0x22c                       ; 0050535d
-    PUSH EAX                            ; 00505362 | DAT_01c77818
+    PUSH EAX                            ; 00505362 | g_CGame_01c775ec.allow_damage_flag
     PUSH 0x58fd16                       ; 00505363 | = "%d\n"
     PUSH EDI                            ; 00505368
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00505369
@@ -113,10 +113,10 @@ section .text
     PUSH EAX                            ; 00505385
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00505386
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
-    MOV EAX,[0x005b9354]                ; 0050538b | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0050538b | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 00505390
     ADD EAX,0x230                       ; 00505393
-    PUSH EAX                            ; 00505398 | DAT_01c7781c
+    PUSH EAX                            ; 00505398 | g_CGame_01c775ec.allow_enemy_attack_flag
     PUSH 0x58fd1a                       ; 00505399 | = "%d\n"
     PUSH EDI                            ; 0050539e
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0050539f
@@ -296,8 +296,8 @@ section .text
         ;   Label: LAB_00505565
     MOV EBX,0xf56                       ; 0050556a
     PUSH 0x58fcdd                       ; 0050556f | = "CScript::loadState - file version is ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00505574 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050557a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00505574 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050557a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00505580
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00505585
@@ -326,7 +326,7 @@ section .text
     JZ 0x0050555a                       ; 005055c6
         ;   XREF to: 0050555a (CONDITIONAL_JUMP)  ; LAB_0050555a
     PUSH 0x58fd48                       ; 005055c8 | = "The script you were using when this g..."
-    MOV EBX,dword ptr [0x005b6d50]      ; 005055cd | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 005055cd | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 005055d3
     CALL shape_edittool.cpp_FUN_0046fb40 ; 005055d4
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()

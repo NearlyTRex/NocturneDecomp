@@ -30,8 +30,8 @@
 ;   float FLOAT_0058769c = 2
 ;   float FLOAT_005876a0 = -1.5
 ;   undefined4 DAT_01bd1d84
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -125,8 +125,8 @@ section .text
     MOV ECX,0x58762e                    ; 004c3d41 | = "..\\engine\\keyframe.c"
     MOV EAX,0x16b                       ; 004c3d46
     PUSH 0x587643                       ; 004c3d4b | = "Bad keyframe 1"
-    MOV dword ptr [0x01cc4800],ECX      ; 004c3d50 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004c3d56 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004c3d50 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004c3d56 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004c3d5b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c3d60
@@ -387,8 +387,8 @@ section .text
         ;   Label: LAB_004c4042
     MOV EAX,0x1a6                       ; 004c4047
     PUSH 0x587667                       ; 004c404c | = "ZBP not found!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004c4051 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004c4057 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004c4051 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004c4057 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004c405c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c4061

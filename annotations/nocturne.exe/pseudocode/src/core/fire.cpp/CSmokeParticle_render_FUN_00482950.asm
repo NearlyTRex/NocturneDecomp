@@ -40,7 +40,7 @@
 ;   float FLOAT_0059d1f8 = 256
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b80f4
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_005c505c
@@ -121,8 +121,8 @@ section .text
         ;   Label: LAB_004829cb
     MOV EBP,0x11d                       ; 004829d0
     PUSH 0x581089                       ; 004829d5 | = "CSmokeParticle::render - Frame out of..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004829da | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004829e0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004829da | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004829e0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004829e6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004829eb
@@ -282,7 +282,7 @@ section .text
     PUSH 0x1c08d14                      ; 00482c04 | DAT_01c08d14
     LEA EAX,[ESP + 0x3c]                ; 00482c09
     PUSH EAX                            ; 00482c0d
-    MOV EAX,[0x005be368]                ; 00482c0e | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00482c0e | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 00482c13
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50 ; 00482c14
         ;   XREF to: 0050bb50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)

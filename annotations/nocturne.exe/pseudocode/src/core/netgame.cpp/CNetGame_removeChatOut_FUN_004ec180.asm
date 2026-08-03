@@ -38,8 +38,8 @@
 ;   double DOUBLE_0058c312 = 20
 ;   double DOUBLE_0058c31a = 2
 ;   double DOUBLE_0058c322 = 5
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01d06610
@@ -186,8 +186,8 @@ section .text
         ;   Label: LAB_004ec34b
     MOV EDX,0x107                       ; 004ec350
     PUSH 0x58ba36                       ; 004ec355 | = "removeChatOut - invalid index"
-    MOV [0x01cc4800],EAX                ; 004ec35a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ec35f | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004ec35a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004ec35f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ec365
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ec36a

@@ -20,8 +20,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPacked
                           ("art",param_1->filename,"rb");
   if (file_handle == (_FILE *)0x0) {
     _sprintf(auStack_64,"Unable to open PBM file %s",param_1);
-    INT_01cc4804 = 0x4ff;
-    PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+    g_INT_01cc4804 = 0x4ff;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
     core_main_c_FUN_004c8440(auStack_64);
   }
   cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(param_1,file_handle,0);

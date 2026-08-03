@@ -24,6 +24,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SLaserInfo.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -116,7 +117,7 @@ void core_glass_cpp_CGlass_archive_FUN_004acbc0(CDemonActor *param_1);
 undefined4 core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(int param_1);
 void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004ada20(CGlass *this_ptr,CVector3f *location);
-void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2);
+void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CDemonActor *param_1,SLaserInfo *param_2);
 undefined4 core_glass_cpp_CGlass_getGroundType_FUN_004adec0(void);
 int __cdecl core_glass_cpp_FUN_004aded0(CGlass *this_ptr);
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004adef0(CGlass *this_ptr,uint flags);
@@ -145,5 +146,5 @@ CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004afd80(CGore *this_ptr);
 CGore * __cdecl core_gore_cpp_CGore_dtor_FUN_004afda0(CGore *this_ptr,uint flags);
 void __cdecl core_gore_cpp_CGore_reset_FUN_004afdb0(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(CGore *this_ptr);
-int core_gore_cpp_CGore_renderDecals_FUN_004afe80(undefined4 param_1,int param_2);
+CGame * core_gore_cpp_CGore_renderDecals_FUN_004afe80(undefined4 param_1,int param_2);
 

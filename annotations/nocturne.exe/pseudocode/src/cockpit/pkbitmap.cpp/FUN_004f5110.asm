@@ -22,8 +22,8 @@
 ;   TerminatedCString s_art_0058d426
 ;   TerminatedCString s_Unable_to_open_PBG_file_0058d42a
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d445
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0
@@ -116,11 +116,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x598                       ; 004f51d6
     ADD ESP,0xc                         ; 004f51db
-    MOV [0x01cc4804],EAX                ; 004f51de | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004f51de | g_INT_01cc4804
     LEA EAX,[ESP + 0x100]               ; 004f51e3
     MOV ESI,0x58d445                    ; 004f51ea | = "..\\cockpit\\pkbitmap.cpp"
     PUSH EAX                            ; 004f51ef
-    MOV dword ptr [0x01cc4800],ESI      ; 004f51f0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],ESI      ; 004f51f0 | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 004f51f6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f51fb

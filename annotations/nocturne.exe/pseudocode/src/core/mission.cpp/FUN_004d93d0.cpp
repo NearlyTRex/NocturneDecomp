@@ -10,21 +10,18 @@ void core_mission_cpp_FUN_004d93d0(CDemonMission *param_1,char *param_2)
 
 {
   char cVar1;
-  char *pcVar2;
+  char (*pacVar2) [256];
   
-  pcVar2 = param_1->mission_name + 0xd0;
-  param_1->mission_name[0xcc] = '\x01';
-  param_1->mission_name[0xcd] = '\0';
-  param_1->mission_name[0xce] = '\0';
-  param_1->mission_name[0xcf] = '\0';
+  pacVar2 = param_1->set_names;
+  param_1->num_sets = 1;
   do {
     cVar1 = *param_2;
-    *pcVar2 = cVar1;
+    (*pacVar2)[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = param_2[1];
     param_2 = param_2 + 2;
-    pcVar2[1] = cVar1;
-    pcVar2 = pcVar2 + 2;
+    (*pacVar2)[1] = cVar1;
+    pacVar2 = (char (*) [256])(*pacVar2 + 2);
   } while (cVar1 != '\0');
   param_1->current_set_index = 0;
   core_mission_cpp_FUN_004d8fc0(param_1);

@@ -26,11 +26,11 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b763c
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_005be680
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f4
-;   undefined4 DAT_01c777e0
+;   undefined4 g_CGame_01c775ec.render_mode
 ;   undefined4 DAT_02045ab0
 ;   undefined4 DAT_02045ab4
 ;   undefined4 DAT_02045ab8
@@ -59,8 +59,8 @@ section .text
     PUSH EDX                            ; 0050d6bc | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0050d6bd
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-    MOV EAX,[0x005b9354]                ; 0050d6c2 | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0x1f4]     ; 0050d6c7 | DAT_01c777e0
+    MOV EAX,[0x005b9354]                ; 0050d6c2 | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0x1f4]     ; 0050d6c7 | g_CGame_01c775ec.render_mode
     ADD ESP,0x8                         ; 0050d6cd
     CMP ECX,0x2                         ; 0050d6d0
     JNZ 0x0050d8b9                      ; 0050d6d3

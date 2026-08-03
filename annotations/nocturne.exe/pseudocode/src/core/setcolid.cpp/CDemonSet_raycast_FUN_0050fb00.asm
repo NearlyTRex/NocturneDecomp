@@ -33,7 +33,7 @@
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
@@ -74,7 +74,7 @@ section .text
     PUSH EBP                            ; 0050fb48
     PUSH EDI                            ; 0050fb49
     PUSH ESI                            ; 0050fb4a
-    PUSH 0x1fba938                      ; 0050fb4b | DAT_01fba938
+    PUSH 0x1fba938                      ; 0050fb4b | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0050fb50
         ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x38],EAX      ; 0050fb55

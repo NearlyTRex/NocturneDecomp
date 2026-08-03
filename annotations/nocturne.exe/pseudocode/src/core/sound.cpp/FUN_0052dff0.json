@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -122,21 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 366,
+    "complexity_score": 355,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 62,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 261,
-    "suspect_count": 8,
+    "pseudocode_lines": 260,
+    "suspect_count": 7,
     "suspect_types": [
-      "shadow_pointer_walk",
+      "raw_address_constant",
       "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 901
+    "total_lines": 900
   },
   "cross_references": [
     {
@@ -456,15 +456,15 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005bed60",
@@ -480,9 +480,9 @@
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "005bef88",
@@ -504,31 +504,31 @@
     },
     {
       "addr": "01c7782c",
-      "name": "DAT_01c7782c",
+      "name": "g_CGame_01c775ec.goggles_active",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77850",
-      "name": "DAT_01c77850",
+      "name": "g_CGame_01c775ec.delta_time_float",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fb1b44",
-      "name": "DAT_01fb1b44",
+      "name": "g_CDemonSet_01e57284.player_on_train",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d40",
-      "name": "DAT_01fb1d40",
+      "name": "g_CDemonSet_01e57284.selected_camera_index",
       "type": "undefined4",
       "value": null
     },
@@ -600,19 +600,19 @@
     },
     {
       "addr": "02dc9ca4",
-      "name": "DAT_02dc9ca4",
-      "type": "undefined4",
+      "name": "g_STrainNoise_ARRAY_02dc9ca4",
+      "type": "STrainNoise[10]",
       "value": null
     },
     {
       "addr": "02dc9ca8",
-      "name": "DAT_02dc9ca8",
+      "name": "g_STrainNoise_ARRAY_02dc9ca4[0].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9cac",
-      "name": "DAT_02dc9cac",
+      "name": "g_STrainNoise_ARRAY_02dc9ca4[0].position.z",
       "type": "undefined4",
       "value": null
     },
@@ -660,7 +660,7 @@
     },
     {
       "addr": "02dd121c",
-      "name": "DAT_02dd121c",
+      "name": "g_CWater_02dd1210.visible_area_sqft",
       "type": "undefined4",
       "value": null
     }
@@ -990,39 +990,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 179,
-      "match": "DAT_02dc9ca4",
-      "severity": "mild",
-      "text": "pCVar6 = (CVector3f *)&DAT_02dc9ca4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 198,
-      "match": "DAT_02dc9cac",
-      "severity": "mild",
-      "text": "if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar9))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 211,
+      "line": 210,
       "match": "DAT_005bef88",
       "severity": "mild",
-      "text": "puVar8 = &DAT_005bef88;",
+      "text": "puVar9 = &DAT_005bef88;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 254,
+      "line": 253,
       "match": "DAT_02dc9d44",
       "severity": "mild",
       "text": "sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);",
       "type": "undefined_data"
     },
     {
+      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 69,
+      "match": "0x2dd1210",
+      "severity": "moderate",
+      "text": "if (((0.0 < *(float *)(0x02DD1210 + 0xc)) &&",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 72,
+      "match": "0x2dd1210",
+      "severity": "moderate",
+      "text": ")) && (local_138 = SQRT(*(float *)(0x02DD1210 + 0xc)) * (float)0.027777777777777801 +",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 234,
+      "line": 233,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1030,19 +1030,11 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 214,
+      "line": 213,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar6) + offsetof(subfield)` equals the real array stride. Replace `pCVar6->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 205,
-      "match": "pCVar6 = (T *)&pCVar6[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar6 = (CVector3f *)&pCVar6[1].y;",
-      "type": "shadow_pointer_walk"
     }
   ]
 }

@@ -33,7 +33,7 @@ int CAmmo::renderOpaque(CDemonActor *param_1);
 
 // Original: core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040eca0
 // Address: 0040eca0
-undefined4 * CAmmo::getBoundingBox(int param_1,undefined4 *param_2);
+float * CAmmo::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_ammo.cpp_CAmmo_archive_FUN_0040ecf0
 // Address: 0040ecf0

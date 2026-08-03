@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,26 +58,8 @@
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 27,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 51,
-        "message": "no matching function for call to 'core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 56,
+        "line": 57,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 59,
-        "message": "no matching function for call to 'core_sound_cpp_CSound_playSound_FUN_0052ea40'"
       }
     ],
     "success": false,
@@ -86,18 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 234,
-    "complexity_score": 355,
+    "complexity_score": 356,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 86,
     "suspect_count": 26,
     "suspect_types": [
       "suspect_float",
       "unnamed_param"
     ],
-    "total_lines": 319
+    "total_lines": 320
   },
   "cross_references": [],
   "function": {
@@ -218,21 +200,21 @@
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "01cae124",
@@ -407,7 +389,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(param_1,0,this_ptr_00,0.2);",
@@ -415,7 +397,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1[0x10].carry_hands[1].bone_index);",
@@ -423,15 +405,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x02DC9450,param_1,\"voicudeath.wav @ 2.5\");",
+      "text": "(g_CSound_PTR_005bed68,param_1,\"voicudeath.wav @ 2.5\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hit_points = 0.0;",
@@ -439,7 +421,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 59,
+      "line": 60,
       "match": "2.8026e-45",
       "severity": "mild",
       "text": "if (fVar1 != 2.8026e-45) {",
@@ -447,7 +429,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 4) = 0;",
@@ -455,16 +437,8 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 64,
       "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1->hit_points - *(float *)(param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = param_1->hit_points - *(float *)(param_2 + 4);",
       "type": "unnamed_param"
@@ -472,6 +446,14 @@
     {
       "description": "Unnamed function parameter",
       "line": 64,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = param_1->hit_points - *(float *)(param_2 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hit_points = fVar1;",
@@ -479,7 +461,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hit_points = 24.999;",
@@ -487,7 +469,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMotionController *)(param_1[1].base.create_event + 0x20),iVar2,1);",
@@ -495,7 +477,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1[0x10].carry_hands[1].bone_index);",
@@ -503,15 +485,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"voicuhurt.wav\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar3 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"voicuhurt.wav\");",
@@ -520,6 +494,14 @@
     {
       "description": "Unnamed function parameter",
       "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar3 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"voicuhurt.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x10].carry_hands[1].bone_index = uVar3;",

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 30,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 30,
-        "message": "assigning to 'int' from incompatible type 'const char[20]'"
       },
       {
         "category": "undeclared_identifier",
@@ -114,6 +102,18 @@
         "column": 19,
         "line": 46,
         "message": "use of undeclared identifier '_DAT_01cea3f8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 46,
+        "message": "use of undeclared identifier '_DAT_01cea3f4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 47,
+        "message": "use of undeclared identifier '_DAT_01cea3f4'"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 205,
+    "complexity_score": 180,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
       "suspect_float",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 449
@@ -285,25 +284,25 @@
     },
     {
       "addr": "005bac64",
-      "name": "INT_005bac64",
-      "type": "int",
-      "value": "0x1cc30e4"
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
     },
     {
       "addr": "01cc30e4",
-      "name": "DAT_01cc30e4",
-      "type": "undefined4",
+      "name": "g_CKeys_01cc30e4",
+      "type": "CKeys",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -568,22 +567,6 @@
       "severity": "mild",
       "text": "local_1c = 1.4013e-45;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 99,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 116,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

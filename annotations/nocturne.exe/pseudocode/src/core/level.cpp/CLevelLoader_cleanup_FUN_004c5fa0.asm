@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gLevelIndicator_Used_d_c_005878cd
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_FUN_00452f10
@@ -27,8 +27,8 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 004c5fa4
     PUSH EDX                            ; 004c5fa6
     PUSH 0x5878cd                       ; 004c5fa7 | = "gLevelIndicator: Used %d calls\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 004c5fac | PTR_DAT_005ad350
-    PUSH ECX                            ; 004c5fb2 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004c5fac | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 004c5fb2 | g_CConsole_0077ad0c
     MOV dword ptr [EAX + 0xc],0x0       ; 004c5fb3
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c5fba
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()

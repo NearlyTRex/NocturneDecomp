@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591bd3
 ;   TerminatedCString s_CDeformableModelInstance_00591be8
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -63,8 +63,8 @@ section .text
     MOV ECX,0x591bd3                    ; 0051dc06 | = "..\\core\\skeleton.cpp"
     MOV ESI,0xd23                       ; 0051dc0b
     PUSH 0x591be8                       ; 0051dc10 | = "CDeformableModelInstance::renderPolyg..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051dc15 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051dc1b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0051dc15 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0051dc1b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051dc21
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051dc26

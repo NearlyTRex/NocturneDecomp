@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,26 +57,14 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 82,
+        "column": 19,
         "line": 31,
         "message": "use of undeclared identifier 'DAT_01e56420'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 37,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 37,
-        "message": "assigning to 'int' from incompatible type 'const char[19]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 7,
-        "line": 38,
+        "line": 37,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
@@ -86,19 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 110,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "undefined_data"
     ],
-    "total_lines": 120
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -163,31 +149,31 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "01c77814",
-      "name": "DAT_01c77814",
+      "name": "g_CGame_01c775ec.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -267,52 +253,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(uint *)(this_ptr->xref_entries->name + (int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)(this_ptr->xref_entries->name + (int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420)",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 24,
       "match": "DAT_01e56420",
       "severity": "mild",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420)",
+      "text": "&DAT_01e56420);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
-      "match": "(int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8),",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
-      "match": "(int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420)",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 33,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": "*(uint *)",
-      "type": "pointer_cast"
     }
   ]
 }

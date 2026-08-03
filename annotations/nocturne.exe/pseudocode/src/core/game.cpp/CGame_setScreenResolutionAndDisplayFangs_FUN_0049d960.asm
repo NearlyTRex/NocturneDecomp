@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_fangs_005827b8
 ;   undefined4 DAT_005b7620
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_014b9900
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CBitFont* g_CBitFont_PTR_014b9900
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01cc9454
 ;
@@ -52,7 +52,7 @@ section .text
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 0049d98b
         ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 0049d990
-    MOV EAX,[0x005baf90]                ; 0049d993 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 0049d993 | g_CDemonMission_PTR_005baf90
         ;   Label: LAB_0049d993
     CMP dword ptr [EAX + 0x4],0x0       ; 0049d998 | DAT_01cc9454
     JZ 0x0049d9f9                       ; 0049d99c
@@ -92,7 +92,7 @@ section .text
     ADD ESP,0x14                        ; 0049d9f4
     POP EBX                             ; 0049d9f7
     RET                                 ; 0049d9f8
-    MOV EAX,[0x014b9900]                ; 0049d9f9 | DAT_014b9900
+    MOV EAX,[0x014b9900]                ; 0049d9f9 | g_CBitFont_PTR_014b9900
         ;   Label: LAB_0049d9f9
     MOV [0x01bcd070],EAX                ; 0049d9fe | DAT_01bcd070
     JMP 0x0049d99e                      ; 0049da03

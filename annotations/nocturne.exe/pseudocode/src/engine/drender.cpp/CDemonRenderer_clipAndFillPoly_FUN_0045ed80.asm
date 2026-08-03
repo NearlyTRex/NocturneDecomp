@@ -28,8 +28,8 @@
 ;   undefined4 DAT_00766c74
 ;   undefined4 DAT_01c039a0
 ;   undefined4 DAT_01c039a1
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_0045edc3
     MOV EBP,0xac                        ; 0045edc8
     PUSH 0x57db88                       ; 0045edcd | = "CDemonRenderer::clipAndFillPoly - Bad..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0045edd2 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0045edd8 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0045edd2 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0045edd8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045edde
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045ede3

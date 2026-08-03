@@ -140,8 +140,8 @@ section .text
     MOV EDX,0x57b81b                    ; 0044329f | = "..\\core\\dcamera.cpp"
     MOV ECX,0x982                       ; 004432a4
     PUSH 0x57b82f                       ; 004432a9 | = "CDemonCamera::loadImage - no extention"
-    MOV dword ptr [0x01cc4800],EDX      ; 004432ae | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004432b4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004432ae | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004432b4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004432ba
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004432bf
@@ -233,8 +233,8 @@ section .text
     MOV EBX,0x57b86e                    ; 00443369 | = "..\\core\\dcamera.cpp"
     MOV ESI,0x995                       ; 0044336e
     PUSH 0x57b882                       ; 00443373 | = "CDemonCamera::loadImage - no ext"
-    MOV dword ptr [0x01cc4800],EBX      ; 00443378 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044337e | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 00443378 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044337e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00443384
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00443389
@@ -326,8 +326,8 @@ section .text
     MOV ECX,0x57b8c5                    ; 0044348a | = "..\\core\\dcamera.cpp"
     MOV EBX,0x9b5                       ; 0044348f
     PUSH 0x57b8d9                       ; 00443494 | = "Hell froze loading %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 00443499 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0044349f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00443499 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0044349f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004434a5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004434aa
@@ -340,8 +340,8 @@ section .text
     MOV EDI,0x57b8ef                    ; 004434bf | = "..\\core\\dcamera.cpp"
     MOV EBP,0x9bb                       ; 004434c4
     PUSH 0x57b903                       ; 004434c9 | = "%s too big to fit in decompress buffer"
-    MOV dword ptr [0x01cc4800],EDI      ; 004434ce | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004434d4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004434ce | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004434d4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004434da
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004434df
@@ -757,8 +757,8 @@ section .text
     MOV ECX,0x57b92a                    ; 00443a9b | = "..\\core\\dcamera.cpp"
     MOV EBX,0x9c4                       ; 00443aa0
     PUSH 0x57b93e                       ; 00443aa5 | = "Error decompressing %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 00443aaa | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00443ab0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00443aaa | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00443ab0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00443ab6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00443abb

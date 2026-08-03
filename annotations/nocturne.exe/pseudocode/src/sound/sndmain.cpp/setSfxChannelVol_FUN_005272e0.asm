@@ -19,12 +19,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005935cf
 ;   TerminatedCString s_setSfxChannelVol_invalid_005935e4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_02dbd3e4
-;   undefined4 DAT_02dbd494
-;   undefined4 DAT_02dbd500
-;   undefined4 DAT_02dbd504
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[0].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].hardware_buffer_handle
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].playback_state
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
@@ -52,8 +52,8 @@ section .text
     MOV EDX,0x5935cf                    ; 005272f0 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xf32                       ; 005272f5
     PUSH 0x5935e4                       ; 005272fa | = "setSfxChannelVol - invalid channel in..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005272ff | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00527305 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 005272ff | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00527305 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052730b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00527310
@@ -79,7 +79,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 0052733a
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
     LEA EDI,[EBX + 0x4800]              ; 0052733f
-    CMP dword ptr [EBX + 0x70],0x0      ; 00527345 | DAT_02dbd3e4 | DAT_02dbd504
+    CMP dword ptr [EBX + 0x70],0x0      ; 00527345 | g_CSfxSlot_ARRAY_02dbd374[0].playback_state | g_CSfxSlot_ARRAY_02dbd374[1].playback_state
         ;   Label: LAB_00527345
     JNZ 0x0052735e                      ; 00527349
         ;   XREF to: 0052735e (CONDITIONAL_JUMP)  ; LAB_0052735e
@@ -94,16 +94,16 @@ section .text
     POP ESI                             ; 0052735b
     POP EBX                             ; 0052735c
     RET                                 ; 0052735d
-    CMP dword ptr [EBX + 0x6c],0x0      ; 0052735e | DAT_02dbd500
+    CMP dword ptr [EBX + 0x6c],0x0      ; 0052735e | g_CSfxSlot_ARRAY_02dbd374[1].hardware_buffer_handle
         ;   Label: LAB_0052735e
     JZ 0x0052734b                       ; 00527362
         ;   XREF to: 0052734b (CONDITIONAL_JUMP)  ; LAB_0052734b
-    CMP ESI,dword ptr [EBX]             ; 00527364 | DAT_02dbd494
+    CMP ESI,dword ptr [EBX]             ; 00527364 | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
     JNZ 0x0052734b                      ; 00527366
         ;   XREF to: 0052734b (CONDITIONAL_JUMP)  ; LAB_0052734b
     PUSH 0x8                            ; 00527368
     MOV EAX,[0x02dc8318]                ; 0052736a | DAT_02dc8318
-    PUSH EBX                            ; 0052736f | DAT_02dbd494
+    PUSH EBX                            ; 0052736f | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
     MOV EDX,dword ptr [EAX]             ; 00527370
     PUSH EAX                            ; 00527372
     CALL dword ptr [EDX + 0x40]         ; 00527373

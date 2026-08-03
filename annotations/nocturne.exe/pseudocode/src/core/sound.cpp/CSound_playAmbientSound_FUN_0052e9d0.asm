@@ -12,8 +12,8 @@
 ;   core_script.cpp_FUN_004feff0 at 004ff123
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 DAT_02dc9c68
 ;   undefined4 DAT_02dc9c69
 ;   undefined4 DAT_02dc9c6a
@@ -65,8 +65,8 @@ section .text
     RET                                 ; 0052ea14
     PUSH EDI                            ; 0052ea15 | DAT_02dc9c68
         ;   Label: LAB_0052ea15
-    MOV ESI,dword ptr [0x005be368]      ; 0052ea16 | DAT_005be368
-    PUSH ESI                            ; 0052ea1c | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 0052ea16 | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 0052ea1c | g_CDemonSet_01e57284
     MOV EDI,dword ptr [ESP + 0x14]      ; 0052ea1d
     PUSH EDI                            ; 0052ea21
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 0052ea22

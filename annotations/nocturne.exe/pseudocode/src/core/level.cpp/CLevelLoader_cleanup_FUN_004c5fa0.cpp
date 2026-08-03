@@ -9,12 +9,12 @@
 void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004c5fa0(CLevelLoader *this_ptr)
 
 {
-  byte *puVar1;
+  CConsole *pCVar1;
   
-  puVar1 = PTR_DAT_005ad350;
+  pCVar1 = g_CConsole_PTR_005ad350;
   this_ptr->enabled = 0;
   engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (puVar1,"gLevelIndicator: Used %d calls\n",this_ptr->current_frame);
-  core_dmodel_cpp_FUN_00452f10(&DAT_01cc3290);
+            (pCVar1,"gLevelIndicator: Used %d calls\n",this_ptr->current_frame);
+  core_dmodel_cpp_FUN_00452f10(&g_CKeyFramedModel_01cc3290);
   return;
 }

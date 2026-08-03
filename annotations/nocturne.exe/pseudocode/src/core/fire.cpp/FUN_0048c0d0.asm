@@ -20,8 +20,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_xplode_wav_6_0_005814f4
-;   int INT_005b9284 = 0x1c70f74
-;   undefined4 DAT_005bed68
+;   void* PTR_DAT_005b9284 = 01c70f74
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_01c5d704
 ;
 ; Called Functions:
@@ -67,7 +67,7 @@ section .text
     PUSH 0x5814f4                       ; 0048c11a | = "xplode?.wav @ 6.0"
     MOV EDI,dword ptr [ESP + 0x18]      ; 0048c11f
     PUSH EDI                            ; 0048c123
-    MOV EBP,dword ptr [0x005bed68]      ; 0048c124 | DAT_005bed68
+    MOV EBP,dword ptr [0x005bed68]      ; 0048c124 | g_CSound_PTR_005bed68
     PUSH EBP                            ; 0048c12a
     CALL core_sound.cpp_CSound_playActorSound_FUN_0052ea60 ; 0048c12b
         ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0052ea60(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -78,7 +78,7 @@ section .text
     CALL core_fire.cpp_CFireEffect_createCrater_FUN_0048c370 ; 0048c139
         ;   XREF to: 0048c370 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createCrater_FUN_0048c370(CFireEffect * this_ptr, CVector3f * position, float radius)
     ADD ESP,0xc                         ; 0048c13e
-    MOV EDX,dword ptr [0x005b9284]      ; 0048c141 | INT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0048c141 | PTR_DAT_005b9284
     PUSH EDX                            ; 0048c147
     CALL xxx_unk.c_FUN_004940d0         ; 0048c148
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()

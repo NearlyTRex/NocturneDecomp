@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,24 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 7,
-        "line": 19,
-        "message": "indirection requires pointer operand ('int' invalid)"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 20,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
       },
       {
         "category": "undeclared_identifier",
@@ -88,19 +70,19 @@
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 38,
+        "line": 37,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 42,
+        "line": 41,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 60,
-        "line": 48,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
@@ -110,18 +92,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 318,
+    "complexity_score": 325,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 68,
-    "suspect_count": 24,
+    "pseudocode_lines": 65,
+    "suspect_count": 25,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 238
+    "total_lines": 235
   },
   "cross_references": [],
   "function": {
@@ -204,9 +186,9 @@
     },
     {
       "addr": "005bdee0",
-      "name": "DAT_005bdee0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CNetGame_PTR_005bdee0",
+      "type": "CNetGame*",
+      "value": "01cea280"
     },
     {
       "addr": "01cae0e8",
@@ -216,20 +198,20 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea280",
-      "name": "DAT_01cea280",
-      "type": "undefined4",
+      "name": "g_CNetGame_01cea280",
+      "type": "CNetGame",
       "value": null
     }
   ],
@@ -332,7 +314,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (param_1->cloth).vertices[0x30b].rest_lengths[2];",
+      "text": "fVar1 = param_1->morph_blend;",
       "type": "unnamed_param"
     },
     {
@@ -380,12 +362,20 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (param_1->cloth).vertices[0x300].connected_indices[9];",
+      "text": "if (param_1->attack_mode < 2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->attack_mode < 1) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01C03A10,param_1->attack_condition), iVar3 != 0)) {",
@@ -393,15 +383,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->cloth).vertices[0x300].connected_indices[9] = 1;",
+      "text": "param_1->attack_mode = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01C03A10,param_1->mirror_condition);",
@@ -409,23 +399,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "(core_mimic_cpp_FUN_004d4ba0(param_1),",
+      "text": "if ((iVar3 != 0) && (core_mimic_cpp_FUN_004d4ba0(param_1), param_1->attack_mode == 1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->cloth).vertices[0x300].connected_indices[9] == 1)) {",
+      "text": "if ((iVar3 != 0) && (core_mimic_cpp_FUN_004d4ba0(param_1), param_1->attack_mode == 1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(param_1);",
@@ -433,7 +423,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)param_1);",
@@ -441,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)param_1);",
@@ -449,7 +439,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)param_1);",
@@ -457,7 +447,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "core_mimic_cpp_FUN_004d4f30(param_1,param_2);",
@@ -465,7 +455,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 64,
       "match": "param_2",
       "severity": "mild",
       "text": "core_mimic_cpp_FUN_004d4f30(param_1,param_2);",
@@ -473,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)param_1);",

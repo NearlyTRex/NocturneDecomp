@@ -191,7 +191,7 @@ section .text
     PUSH -0x1                           ; 004a42ca
     PUSH 0x0                            ; 004a42cc
     PUSH 0x9                            ; 004a42ce
-    MOV EDI,dword ptr [0x005baca0]      ; 004a42d0 | INT_005baca0
+    MOV EDI,dword ptr [0x005baca0]      ; 004a42d0 | g_CLevelLoader_PTR_005baca0
     PUSH EDI                            ; 004a42d6
     CALL core_level.cpp_CLevelLoader_show_FUN_004c5640 ; 004a42d7
         ;   XREF to: 004c5640 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_show_FUN_004c5640(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)
@@ -406,8 +406,8 @@ section .text
     MOV EDX,0x583cf2                    ; 004a4554 | = "..\\core\\game.cpp"
     MOV ECX,0xe2f                       ; 004a4559
     PUSH 0x583d03                       ; 004a455e | = "Can't reopen %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 004a4563 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004a4569 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004a4563 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004a4569 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004a456f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004a4574
@@ -461,7 +461,7 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 004a45fd
     PUSH EAX                            ; 004a4604
     PUSH 0x583d1e                       ; 004a4605 | = "Can't load old save game file %s.  So..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 004a460a | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004a460a | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004a4610
     CALL shape_edittool.cpp_FUN_0046fe60 ; 004a4611
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
@@ -473,7 +473,7 @@ section .text
     MOV byte ptr [ESP + 0x104],AH       ; 004a4620
     JMP 0x004a420f                      ; 004a4627
         ;   XREF to: 004a420f (UNCONDITIONAL_JUMP)  ; LAB_004a420f
-    MOV EAX,[0x014b9900]                ; 004a462c | DAT_014b9900
+    MOV EAX,[0x014b9900]                ; 004a462c | g_CBitFont_PTR_014b9900
         ;   Label: LAB_004a462c
     MOV [0x01bcd070],EAX                ; 004a4631 | DAT_01bcd070
     JMP 0x004a422a                      ; 004a4636
@@ -489,7 +489,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a4659
     PUSH EAX                            ; 004a465c
-    MOV EBX,dword ptr [0x005b6d50]      ; 004a465d | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004a465d | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a4663
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 ; 004a4664
         ;   XREF to: 00470550 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
@@ -519,7 +519,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a46b3
     PUSH EAX                            ; 004a46b6
-    MOV EBX,dword ptr [0x005b6d50]      ; 004a46b7 | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004a46b7 | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a46bd
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a46be
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -548,7 +548,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a46ff
     PUSH EAX                            ; 004a4702
-    MOV EDI,dword ptr [0x005b6d50]      ; 004a4703 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004a4703 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004a4709
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a470a
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -577,7 +577,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a474b
     PUSH EAX                            ; 004a474e
-    MOV EBX,dword ptr [0x005b6d50]      ; 004a474f | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004a474f | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a4755
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a4756
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -625,7 +625,7 @@ section .text
         ;   XREF to: 004a4a74 (CONDITIONAL_JUMP)  ; LAB_004a4a74
     PUSH EBP                            ; 004a47d2
     PUSH EBX                            ; 004a47d3
-    MOV EDI,dword ptr [0x005baf90]      ; 004a47d4 | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 004a47d4 | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004a47da
     CALL core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 ; 004a47db
         ;   XREF to: 004d7fe0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonMission * this_ptr, _FILE * file_handle, int load_flags)
@@ -666,7 +666,7 @@ section .text
     PUSH EAX                            ; 004a4855
     LEA EAX,[ESP + 0x40c]               ; 004a4856
     PUSH EAX                            ; 004a485d
-    MOV EDX,dword ptr [0x005baf90]      ; 004a485e | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 004a485e | g_CDemonMission_PTR_005baf90
     PUSH EDX                            ; 004a4864
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 004a4865
         ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)
@@ -686,7 +686,7 @@ section .text
     LEA EAX,[ESP + 0x408]               ; 004a4889
     PUSH EAX                            ; 004a4890
     PUSH 0x583d85                       ; 004a4891 | = "Can't find hero %s.  Sorry."
-    MOV ESI,dword ptr [0x005b6d50]      ; 004a4896 | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 004a4896 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 004a489c
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a489d
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -700,7 +700,7 @@ section .text
     CMP ESI,EDI                         ; 004a48bd
     JL 0x004a4827                       ; 004a48bf
         ;   XREF to: 004a4827 (CONDITIONAL_JUMP)  ; LAB_004a4827
-    MOV EBP,dword ptr [0x005baf90]      ; 004a48c5 | DAT_005baf90
+    MOV EBP,dword ptr [0x005baf90]      ; 004a48c5 | g_CDemonMission_PTR_005baf90
         ;   Label: LAB_004a48c5
     PUSH EBP                            ; 004a48cb
     CALL core_mission.cpp_CDemonMission_startMission_FUN_004d9780 ; 004a48cc
@@ -717,7 +717,7 @@ section .text
     ADD ESP,0x8                         ; 004a48e8
     PUSH EBX                            ; 004a48eb
     MOV EDX,dword ptr [0x005be220]      ; 004a48ec | DAT_005be220
-    PUSH EDX                            ; 004a48f2 | DAT_01e56da0
+    PUSH EDX                            ; 004a48f2 | g_CScript_01e56da0
     CALL core_script.cpp_CScript_loadState_FUN_005052c0 ; 004a48f3
         ;   XREF to: 005052c0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_loadState_FUN_005052c0(CScript * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004a48f8
@@ -728,7 +728,7 @@ section .text
     JNZ 0x004a491d                      ; 004a490b
         ;   XREF to: 004a491d (CONDITIONAL_JUMP)  ; LAB_004a491d
     PUSH EBX                            ; 004a490d
-    MOV EDI,dword ptr [0x005b96c4]      ; 004a490e | INT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 004a490e | g_CGore_PTR_005b96c4
     PUSH EDI                            ; 004a4914
     CALL core_gore.cpp_CGore_load_FUN_004b0820 ; 004a4915
         ;   XREF to: 004b0820 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_load_FUN_004b0820(CGore * this_ptr, _FILE * file_handle)
@@ -737,7 +737,7 @@ section .text
         ;   Label: LAB_004a491d
     JGE 0x004a4ab2                      ; 004a4925
         ;   XREF to: 004a4ab2 (CONDITIONAL_JUMP)  ; LAB_004a4ab2
-    MOV ECX,dword ptr [0x005b80f0]      ; 004a492b | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 004a492b | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 004a4931
     CALL core_fire.cpp_CFireEffect_init_FUN_0048a150 ; 004a4932
         ;   XREF to: 0048a150 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_0048a150(CFireEffect * this_ptr)
@@ -810,8 +810,8 @@ section .text
     JL 0x004a4a16                       ; 004a4a05
         ;   XREF to: 004a4a16 (CONDITIONAL_JUMP)  ; LAB_004a4a16
     PUSH EBX                            ; 004a4a07
-    MOV EAX,[0x005be368]                ; 004a4a08 | DAT_005be368
-    PUSH EAX                            ; 004a4a0d | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 004a4a08 | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 004a4a0d | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920 ; 004a4a0e
         ;   XREF to: 0050e920 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920(CDemonSet * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004a4a13
@@ -823,7 +823,7 @@ section .text
     CMP dword ptr [ESP + 0x644],0x0     ; 004a4a1f
     JZ 0x004a469e                       ; 004a4a27
         ;   XREF to: 004a469e (CONDITIONAL_JUMP)  ; LAB_004a469e
-    MOV ECX,dword ptr [0x005baf90]      ; 004a4a2d | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 004a4a2d | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004a4a33
     CALL core_mission.cpp_CDemonMission_run_FUN_004d9440 ; 004a4a34
         ;   XREF to: 004d9440 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_run_FUN_004d9440(CDemonMission * this_ptr)
@@ -846,14 +846,14 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 004a4a7d
     PUSH EAX                            ; 004a4a84
     PUSH 0x583d4c                       ; 004a4a85 | = "Can't load old save game file %s.  So..."
-    MOV EDX,dword ptr [0x005b6d50]      ; 004a4a8a | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004a4a8a | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004a4a90
     CALL shape_edittool.cpp_FUN_0046fe60 ; 004a4a91
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
     ADD ESP,0xc                         ; 004a4a96
     JMP 0x004a4289                      ; 004a4a99
         ;   XREF to: 004a4289 (UNCONDITIONAL_JUMP)  ; LAB_004a4289
-    MOV EBP,dword ptr [0x005b96c4]      ; 004a4a9e | INT_005b96c4
+    MOV EBP,dword ptr [0x005b96c4]      ; 004a4a9e | g_CGore_PTR_005b96c4
         ;   Label: LAB_004a4a9e
     PUSH EBP                            ; 004a4aa4
     CALL core_gore.cpp_CGore_reset_FUN_004afdb0 ; 004a4aa5
@@ -863,7 +863,7 @@ section .text
         ;   XREF to: 004a491d (UNCONDITIONAL_JUMP)  ; LAB_004a491d
     PUSH EBX                            ; 004a4ab2
         ;   Label: LAB_004a4ab2
-    MOV EDX,dword ptr [0x005b80f0]      ; 004a4ab3 | DAT_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 004a4ab3 | g_CFireEffect_PTR_005b80f0
     PUSH EDX                            ; 004a4ab9
     CALL core_fire.cpp_CFireEffect_load_FUN_0048c7d0 ; 004a4aba
         ;   XREF to: 0048c7d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_load_FUN_0048c7d0(CFireEffect * this_ptr, _FILE * file_handle)

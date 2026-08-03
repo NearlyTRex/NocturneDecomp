@@ -11,7 +11,7 @@
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054eefe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90
@@ -44,7 +44,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0054f7c7
     PUSH EDX                            ; 0054f7cb
     PUSH ESI                            ; 0054f7cc
-    MOV ECX,dword ptr [0x005bed68]      ; 0054f7cd | DAT_005bed68
+    MOV ECX,dword ptr [0x005bed68]      ; 0054f7cd | g_CSound_PTR_005bed68
     PUSH ECX                            ; 0054f7d3
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 0054f7d4
         ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)

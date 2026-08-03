@@ -28,8 +28,8 @@ void core_fire_cpp_CShell_render_FUN_004896d0(CVector3f *param_1)
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(_DAT_007f7370,param_1,0);
       }
       core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-                (0x01E57284,param_1,(UOrientationVector *)&param_1[4].z,(CVector3f *)&DAT_02dd1184
-                 ,(CVector3f *)&DAT_02dd1184,(CMatrix3x3f *)0x0);
+                (g_CDemonSet_PTR_005be368,param_1,(UOrientationVector *)&param_1[4].z,
+                 (CVector3f *)&DAT_02dd1184,(CVector3f *)&DAT_02dd1184,(CMatrix3x3f *)0x0);
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                 (DAT_005ae704,param_1);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0

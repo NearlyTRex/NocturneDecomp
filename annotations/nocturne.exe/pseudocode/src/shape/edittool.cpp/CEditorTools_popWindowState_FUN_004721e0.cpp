@@ -14,8 +14,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(CEditor
   int iVar1;
   
   if (_DAT_01bcd07c < 1) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0x718;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0x718;
     core_main_c_FUN_004c8440("CEditorTools::popWindow() called but no window was opened!");
   }
   _DAT_01bcd07c = _DAT_01bcd07c + -1;

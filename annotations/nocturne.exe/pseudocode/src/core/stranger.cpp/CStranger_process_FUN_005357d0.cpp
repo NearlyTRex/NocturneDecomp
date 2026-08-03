@@ -18,7 +18,7 @@ void core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *param_1,float p
   if (iVar2 == 0) {
     return;
   }
-  delta_time = 0x01C775EC->delta_time_float;
+  delta_time = g_CGame_PTR_005b9354->delta_time_float;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                      (&(param_1->base).base.model.motion_controller);
   bVar1 = false;
@@ -51,6 +51,6 @@ void core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *param_1,float p
     core_stranger_cpp_FUN_00535900(param_1,param_2);
   }
   core_stranger_cpp_FUN_00535900(param_1,param_2);
-  core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,delta_time);
+  core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGame_PTR_005b9354,delta_time);
   return;
 }

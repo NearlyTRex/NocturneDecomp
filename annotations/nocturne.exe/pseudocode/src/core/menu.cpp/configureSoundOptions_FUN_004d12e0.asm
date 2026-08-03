@@ -90,9 +90,9 @@ section .text
     MOV EBP,ESP                         ; 004d12e4
     SUB ESP,0x800                       ; 004d12e6
     AND ESP,0xfffffff8                  ; 004d12ec
-    MOV ECX,dword ptr [0x005b9354]      ; 004d12ef | DAT_005b9354
+    MOV ECX,dword ptr [0x005b9354]      ; 004d12ef | g_CGame_PTR_005b9354
     XOR EDX,EDX                         ; 004d12f5
-    PUSH ECX                            ; 004d12f7 | DAT_01c775ec
+    PUSH ECX                            ; 004d12f7 | g_CGame_01c775ec
     MOV dword ptr [ESP + 0x7d8],EDX     ; 004d12f8
     CALL core_game.cpp_CGame_saveClockTime_FUN_0049a890 ; 004d12ff
         ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_0049a890(CGame * this_ptr)
@@ -106,15 +106,15 @@ section .text
     CMP EAX,0x28                        ; 004d131d
     JNZ 0x004d130e                      ; 004d1320
         ;   XREF to: 004d130e (CONDITIONAL_JUMP)  ; LAB_004d130e
-    MOV EBX,dword ptr [0x005b9354]      ; 004d1322 | DAT_005b9354
+    MOV EBX,dword ptr [0x005b9354]      ; 004d1322 | g_CGame_PTR_005b9354
         ;   Label: LAB_004d1322
-    PUSH EBX                            ; 004d1328 | DAT_01c775ec
+    PUSH EBX                            ; 004d1328 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_updateDT_FUN_0049a8a0 ; 004d1329
         ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_0049a8a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d132e
-    MOV EAX,[0x005b9354]                ; 004d1331 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d1331 | g_CGame_PTR_005b9354
     SUB ESP,0x4                         ; 004d1336
-    MOV EDX,dword ptr [EAX + 0x264]     ; 004d1339 | DAT_01c77850
+    MOV EDX,dword ptr [EAX + 0x264]     ; 004d1339 | g_CGame_01c775ec.delta_time_float
     MOV dword ptr [ESP],EDX             ; 004d133f
     PUSH 0x1cc5780                      ; 004d1342
     CALL core_moon.cpp_CMoon_update_FUN_004deae0 ; 004d1347
@@ -929,7 +929,7 @@ section .text
     TEST EAX,EAX                        ; 004d1b7b
     JNZ 0x004d1b8d                      ; 004d1b7d
         ;   XREF to: 004d1b8d (CONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x005bed68]                ; 004d1b7f | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 004d1b7f | g_CSound_PTR_005bed68
         ;   Label: LAB_004d1b7f
     PUSH EAX                            ; 004d1b84
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d1b85
@@ -938,9 +938,9 @@ section .text
     ADD ESP,0x4                         ; 004d1b8a
     PUSH 0x1                            ; 004d1b8d
         ;   Label: default
-    MOV EAX,[0x005bac64]                ; 004d1b8f | INT_005bac64
-    PUSH EAX                            ; 004d1b94 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004d1b95 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004d1b8f | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004d1b94 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004d1b95 | g_CKeys_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004d1b97
     ADD ESP,0x8                         ; 004d1b9a
     TEST EAX,EAX                        ; 004d1b9d
@@ -1290,7 +1290,7 @@ section .text
     CALL sound_sndmain.cpp_enableSfxChannel_FUN_00527410 ; 004d1f22
         ;   XREF to: 00527410 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableSfxChannel_FUN_00527410(int channel_index, int enable_state)
     ADD ESP,0x8                         ; 004d1f27
-    MOV EDI,dword ptr [0x005bed68]      ; 004d1f2a | DAT_005bed68
+    MOV EDI,dword ptr [0x005bed68]      ; 004d1f2a | g_CSound_PTR_005bed68
     PUSH EDI                            ; 004d1f30
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d1f31
         ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0052e850(CSound * this_ptr)
@@ -1338,7 +1338,7 @@ section .text
     CALL sound_sndmain.cpp_enableSfxChannel_FUN_00527410 ; 004d1f9d
         ;   XREF to: 00527410 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableSfxChannel_FUN_00527410(int channel_index, int enable_state)
     ADD ESP,0x8                         ; 004d1fa2
-    MOV EDX,dword ptr [0x005bed68]      ; 004d1fa5 | DAT_005bed68
+    MOV EDX,dword ptr [0x005bed68]      ; 004d1fa5 | g_CSound_PTR_005bed68
     PUSH EDX                            ; 004d1fab
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d1fac
         ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0052e850(CSound * this_ptr)
@@ -1378,7 +1378,7 @@ section .text
     CALL sound_sndmain.cpp_setAudioSampleRate_FUN_00528210 ; 004d1ffc
         ;   XREF to: 00528210 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setAudioSampleRate_FUN_00528210(int sample_rate)
     ADD ESP,0x4                         ; 004d2001
-    MOV EDI,dword ptr [0x005bed68]      ; 004d2004 | DAT_005bed68
+    MOV EDI,dword ptr [0x005bed68]      ; 004d2004 | g_CSound_PTR_005bed68
     PUSH EDI                            ; 004d200a
     JMP 0x004d1b85                      ; 004d200b
         ;   XREF to: 004d1b85 (UNCONDITIONAL_JUMP)  ; LAB_004d1b85
@@ -1433,7 +1433,7 @@ section .text
     CALL sound_sndmain.cpp_setAudioBitDepth_FUN_005281d0 ; 004d2071
         ;   XREF to: 005281d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setAudioBitDepth_FUN_005281d0(int bit_depth)
     ADD ESP,0x4                         ; 004d2076
-    MOV ECX,dword ptr [0x005bed68]      ; 004d2079 | DAT_005bed68
+    MOV ECX,dword ptr [0x005bed68]      ; 004d2079 | g_CSound_PTR_005bed68
     PUSH ECX                            ; 004d207f
     JMP 0x004d1b85                      ; 004d2080
         ;   XREF to: 004d1b85 (UNCONDITIONAL_JUMP)  ; LAB_004d1b85
@@ -1466,7 +1466,7 @@ section .text
     CALL sound_sndmain.cpp_setAudioChannelCount_FUN_005281f0 ; 004d20c0
         ;   XREF to: 005281f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setAudioChannelCount_FUN_005281f0(int channel_count)
     ADD ESP,0x4                         ; 004d20c5
-    MOV EDX,dword ptr [0x005bed68]      ; 004d20c8 | DAT_005bed68
+    MOV EDX,dword ptr [0x005bed68]      ; 004d20c8 | g_CSound_PTR_005bed68
     PUSH EDX                            ; 004d20ce
     JMP 0x004d1b85                      ; 004d20cf
         ;   XREF to: 004d1b85 (UNCONDITIONAL_JUMP)  ; LAB_004d1b85
@@ -1532,7 +1532,7 @@ section .text
     CALL sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0 ; 004d2158
         ;   XREF to: 005280c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0(int bits_per_sample, int channels, int sample_rate)
     ADD ESP,0xc                         ; 004d215d
-    MOV EDX,dword ptr [0x005bed68]      ; 004d2160 | DAT_005bed68
+    MOV EDX,dword ptr [0x005bed68]      ; 004d2160 | g_CSound_PTR_005bed68
         ;   Label: LAB_004d2160
     PUSH EDX                            ; 004d2166
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d2167

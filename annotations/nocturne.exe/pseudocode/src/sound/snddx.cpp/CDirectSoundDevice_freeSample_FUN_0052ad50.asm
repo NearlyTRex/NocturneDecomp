@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_snddx_cpp_005942a2
 ;   TerminatedCString s_DirectSoundDevice_freeSa_005942b5
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc9244
 ;
 ; Called Functions:
@@ -34,8 +34,8 @@ section .text
     MOV ECX,0x5942a2                    ; 0052ad61 | = "..\\sound\\snddx.cpp"
     MOV ESI,0x2a1                       ; 0052ad66
     PUSH 0x5942b5                       ; 0052ad6b | = "DirectSoundDevice::freeSample - Inval..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0052ad70 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0052ad76 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0052ad70 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0052ad76 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052ad7c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052ad81

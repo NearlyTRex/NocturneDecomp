@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,20 +57,8 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 60,
-        "line": 14,
-        "message": "use of undeclared identifier 'DAT_01cea280'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 3,
         "line": 17,
-        "message": "use of undeclared identifier '_DAT_01d16408'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
         "message": "use of undeclared identifier 'DAT_01d1640c'"
       }
     ],
@@ -80,16 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 50,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
     "total_lines": 30
   },
@@ -126,8 +113,8 @@
   "globals": [
     {
       "addr": "01d16408",
-      "name": "DAT_01d16408",
-      "type": "undefined4",
+      "name": "g_INT_01d16408",
+      "type": "int",
       "value": null
     },
     {
@@ -177,24 +164,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_01cea280",
-      "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_ctor_FUN_004e9860((CNetGame *)&DAT_01cea280);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
+      "line": 10,
       "match": "DAT_01d1640c",
       "severity": "mild",
       "text": "DAT_01d1640c = 0;",

@@ -44,10 +44,10 @@
 ;   double DOUBLE_005820aa = 0.0500000000000000
 ;   float FLOAT_005820b2 = 0.5
 ;   float FLOAT_005820b6 = 3
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa3fe0
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
@@ -390,14 +390,14 @@ section .text
     MOV dword ptr [ESP + 0xe8],EAX      ; 00497189
     PUSH 0x1                            ; 00497190
         ;   Label: LAB_00497190
-    MOV EDX,dword ptr [0x005be368]      ; 00497192 | DAT_005be368
-    PUSH EDX                            ; 00497198 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00497192 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 00497198 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800 ; 00497199
         ;   XREF to: 00511800 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800(CDemonSet * this_ptr, int ray_type)
     ADD ESP,0x8                         ; 0049719e
     PUSH EBX                            ; 004971a1
-    MOV ECX,dword ptr [0x005be368]      ; 004971a2 | DAT_005be368
-    PUSH ECX                            ; 004971a8 | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004971a2 | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 004971a8 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 004971a9
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004971ae
@@ -405,18 +405,18 @@ section .text
     PUSH EDX                            ; 004971b8
     LEA EDX,[ESP + 0xb4]                ; 004971b9
     PUSH EDX                            ; 004971c0
-    MOV EAX,[0x005be368]                ; 004971c1 | DAT_005be368
-    PUSH EAX                            ; 004971c6 | DAT_01e57284
-    MOV dword ptr [EAX + 0x14cd5c],0x0  ; 004971c7 | DAT_01fa3fe0
+    MOV EAX,[0x005be368]                ; 004971c1 | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 004971c6 | g_CDemonSet_01e57284
+    MOV dword ptr [EAX + 0x14cd5c],0x0  ; 004971c7 | g_CDemonSet_01e57284.collision_actor
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 004971d1
         ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     ADD ESP,0xc                         ; 004971d6
-    MOV EDI,dword ptr [0x005be368]      ; 004971d9 | DAT_005be368
-    PUSH EDI                            ; 004971df | DAT_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 004971d9 | g_CDemonSet_PTR_005be368
+    PUSH EDI                            ; 004971df | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004971e0
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
-    MOV EAX,[0x005be368]                ; 004971e5 | DAT_005be368 | DAT_01e57284
-    MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 004971ea | DAT_01fa3fe0
+    MOV EAX,[0x005be368]                ; 004971e5 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 004971ea | g_CDemonSet_01e57284.collision_actor
     ADD ESP,0x4                         ; 004971f0
     CMP ESI,EDX                         ; 004971f3
     JNZ 0x00496f15                      ; 004971f5

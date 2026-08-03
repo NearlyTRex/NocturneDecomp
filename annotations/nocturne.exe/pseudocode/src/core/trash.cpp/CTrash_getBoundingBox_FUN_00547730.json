@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -215,7 +215,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = *pfVar1;",
+      "text": "*param_2 = (pCVar1->min).x;",
       "type": "unnamed_param"
     },
     {
@@ -223,7 +223,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = pfVar1[1];",
+      "text": "param_2[1] = (pCVar1->min).y;",
       "type": "unnamed_param"
     },
     {
@@ -231,7 +231,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[2] = pfVar1[2];",
+      "text": "param_2[2] = (pCVar1->min).z;",
       "type": "unnamed_param"
     },
     {
@@ -239,7 +239,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[3] = pfVar1[3];",
+      "text": "param_2[3] = (pCVar1->max).x;",
       "type": "unnamed_param"
     },
     {
@@ -247,7 +247,7 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[4] = pfVar1[4];",
+      "text": "param_2[4] = (pCVar1->max).y;",
       "type": "unnamed_param"
     },
     {
@@ -255,7 +255,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[5] = pfVar1[5];",
+      "text": "param_2[5] = (pCVar1->max).z;",
       "type": "unnamed_param"
     },
     {

@@ -38,9 +38,8 @@ void core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CBoxActor *param_1,float
     filter_index = 0;
     iVar3 = core_actor_cpp_getRandomInt_FUN_0040de00(0,7);
     core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0
-              ((CDemonLight *)(param_1[1].base.actor_name + 4),
-               (CDemonFilter *)(&DAT_0076483c + iVar3 * 0x4c),filter_index,filter_pos_x,filter_pos_y
-              );
+              ((CDemonLight *)(param_1[1].base.actor_name + 4),g_CDemonFilter_ARRAY_0076483c + iVar3
+               ,filter_index,filter_pos_x,filter_pos_y);
     local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,0.15);
     param_1[8].pickup_type = (int)local_c;
   }
@@ -72,7 +71,7 @@ void core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CBoxActor *param_1,float
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
               ((CMatrix3x3f *)&param_1[1].base.blood_effect_timer,&local_24);
     core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970
-              (0x01E57284,(CDemonLight *)(param_1[1].base.actor_name + 4));
+              (g_CDemonSet_PTR_005be368,(CDemonLight *)(param_1[1].base.actor_name + 4));
     return;
   }
   this_ptr_00 = &param_1[8].carrier_actor;
@@ -82,7 +81,7 @@ void core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CBoxActor *param_1,float
   *(uint *)(param_1[8].push_sound + 0x28) = uVar2 & 0x7fff;
   param_1[8].push_sound[8] = (char)((int)(uVar2 & 0x7fff) >> 10);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0((CDemonGlobe *)this_ptr_00,2.0);
-  this_ptr = 0x01E57284;
+  this_ptr = g_CDemonSet_PTR_005be368;
   param_1[8].push_sound[0xc] = '\0';
   param_1[8].push_sound[0xd] = '\0';
   param_1[8].push_sound[0xe] = '\0';

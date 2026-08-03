@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,18 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 99,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 30,
     "suspect_count": 6,
     "suspect_types": [
       "negative_offset",
       "pointer_truncation"
     ],
-    "total_lines": 66
+    "total_lines": 67
   },
   "cross_references": [
     {
@@ -186,50 +186,50 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "pCVar3[-2].vertices[0x184].connected_count = (int)&g_CSvetlanaVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
       "line": 13,
       "match": "pCVar3[-2].",
       "severity": "mild",
-      "text": "pCVar3[-2].vertices[0x1cf].connected_indices[2] = (int)&g_CSvetlanaVTable;",
+      "text": "pCVar3[-2].wind_velocity.y = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 14,
-      "match": "pCVar3[-1].",
-      "severity": "mild",
-      "text": "pSVar1 = pCVar3[-1].model.texture_list[0x123].textures;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 19,
-      "match": "pCVar3[-1].",
-      "severity": "mild",
-      "text": "pSVar1 = pCVar3[-1].model.texture_list[0x123].textures;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 25,
       "match": "pCVar3[-2].",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(pCVar3[-2].vertices[0x1cf].connected_indices + 3),",
+      "text": "pCVar3[-2].wind_velocity.z = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 16,
       "match": "pCVar3[-2].",
       "severity": "mild",
-      "text": "return (CSvetlana *)&pCVar3[-2].vertices[0x1ce].force;",
+      "text": "((CDeformableModelInstance *)pCVar3[-2].vertices[0x184].connected_indices,",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 32,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "return (CSvetlana *)(pCVar3[-2].vertices + 0x183);",
       "type": "negative_offset"
     },
     {
       "description": "Pointer value `&g_CSvetlanaVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
+      "line": 12,
       "match": "(int)&g_CSvetlanaVTable",
       "severity": "moderate",
-      "text": "pCVar3[-2].vertices[0x1cf].connected_indices[2] = (int)&g_CSvetlanaVTable;",
+      "text": "pCVar3[-2].vertices[0x184].connected_count = (int)&g_CSvetlanaVTable;",
       "type": "pointer_truncation"
     }
   ],

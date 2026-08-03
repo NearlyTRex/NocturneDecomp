@@ -20,14 +20,14 @@ void sound_sndmain_cpp_FUN_00526020(void)
   uint in_stack_00000014;
   uint in_stack_00000018;
   
-  iVar1 = _DAT_02dc1b74 * 0x6c;
-  *(uint *)(iVar1 + 0x2dc1b9c) = in_stack_00000004;
-  *(uint *)(iVar1 + 0x2dc1ba0) = in_stack_00000008;
-  *(uint *)(iVar1 + 0x2dc1ba4) = in_stack_0000000c;
-  *(uint *)(iVar1 + 0x2dc1ba8) = in_stack_00000010;
-  *(uint *)(iVar1 + 0x2dc1bac) = in_stack_00000014;
-  *(uint *)(iVar1 + 0x2dc1bb0) = in_stack_00000018;
-  *(uint *)(iVar1 + 0x2dc1bb4) = 0;
-  *(uint *)(iVar1 + 0x2dc1bb8) = 0;
+  iVar1 = _DAT_02dc1b74;
+  *(uint *)&g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].velocity.x = in_stack_00000004;
+  *(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.x + 4) = in_stack_00000008;
+  *(uint *)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.y = in_stack_0000000c;
+  *(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.y + 4) = in_stack_00000010;
+  *(uint *)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.z = in_stack_00000014;
+  *(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.z + 4) = in_stack_00000018;
+  g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity_source_ptr = (void *)0x0;
+  g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity_format = 0;
   return;
 }

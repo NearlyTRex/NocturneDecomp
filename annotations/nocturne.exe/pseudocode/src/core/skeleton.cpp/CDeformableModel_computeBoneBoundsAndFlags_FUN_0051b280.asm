@@ -22,8 +22,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591aee
 ;   TerminatedCString s_Bug_00591b03
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00
@@ -229,8 +229,8 @@ section .text
         ;   Label: LAB_0051b44d
     MOV EDX,0x86b                       ; 0051b452
     PUSH 0x591b03                       ; 0051b457 | = "Bug!"
-    MOV [0x01cc4800],EAX                ; 0051b45c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0051b461 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0051b45c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0051b461 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051b467
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051b46c

@@ -9,15 +9,15 @@
 CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004d4540(CMimic *this_ptr,uint flags)
 
 {
-  float fVar1;
-  CMorph *pCVar2;
-  CCloth *pCVar3;
-  CFlame *pCVar4;
-  SFire *pSVar5;
-  CVector3f *pCVar6;
-  CClothList *pCVar7;
-  CDeformableModelInstance *pCVar8;
-  CMimic *pCVar9;
+  CDemonActor *this_ptr_00;
+  CMorph *pCVar1;
+  CCloth *pCVar2;
+  CFlame *pCVar3;
+  SFire *pSVar4;
+  CVector3f *pCVar5;
+  CClothList *pCVar6;
+  CDeformableModelInstance *pCVar7;
+  CMimic *pCVar8;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -25,31 +25,30 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004d4540(CMimic *this_ptr,uint f
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return this_ptr;
   }
-  fVar1 = (this_ptr->cloth).vertices[0x30b].rest_lengths[3];
+  this_ptr_00 = this_ptr->morph_target_actor;
   (this_ptr->base).base.base.vtable._ub = &g_CMimicVTable._ub;
-  if (fVar1 != 0.0) {
-    (**(code **)(*(int *)((int)fVar1 + 0x14c) + 200))(fVar1,2);
+  if (this_ptr_00 != (CDemonActor *)0x0) {
+    (*((this_ptr_00->vtable)._ub)->dtor)(this_ptr_00,2);
   }
-  (this_ptr->cloth).vertices[0x30b].rest_lengths[3] = 0.0;
-  pCVar2 = core_morph_cpp_CMorph_dtor_FUN_004e0070
-                     ((CMorph *)((this_ptr->cloth).vertices[0x300].rest_lengths + 4),0);
-  pCVar3 = core_cloth_cpp_CCloth_dtor_FUN_00435160
-                     ((CCloth *)pCVar2[-0x4e].models[1].textures[0xc].textures[2].texture_name,0);
-  pCVar4 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50
-                     ((CFlame *)(pCVar3[-1].vertices[0x2ce].bone_index + 2),0);
-  pSVar5 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30
-                     ((SFire *)(pCVar4[-2].base.create_event + 0x10),0);
-  pCVar6 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10((CVector3f *)&pSVar5[-0x16].bone_index,0);
-  pCVar6 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(pCVar6 + -0xf,0);
-  pCVar7 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar6 + -0x26),0);
-  pCVar8 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
-                     ((CDeformableModelInstance *)(pCVar7[-0x18].filenames[2] + 0x10),0);
-  pCVar9 = (CMimic *)
+  this_ptr->morph_target_actor = (CDemonActor *)0x0;
+  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070(&this_ptr->morph,0);
+  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160
+                     ((CCloth *)pCVar1[-0x4e].models[1].textures[0xc].textures[2].texture_name,0);
+  pCVar3 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50
+                     ((CFlame *)(pCVar2[-1].vertices[0x2ce].bone_index + 2),0);
+  pSVar4 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30
+                     ((SFire *)(pCVar3[-2].base.create_event + 0x10),0);
+  pCVar5 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10((CVector3f *)&pSVar4[-0x16].bone_index,0);
+  pCVar5 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(pCVar5 + -0xf,0);
+  pCVar6 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar5 + -0x26),0);
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
+                     ((CDeformableModelInstance *)(pCVar6[-0x18].filenames[2] + 0x10),0);
+  pCVar8 = (CMimic *)
            core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
-                     ((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 9),1);
+                     ((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 9),1);
   if ((flags & 2) == 0) {
-    return pCVar9;
+    return pCVar8;
   }
-  FUN_00564494(pCVar9);
-  return pCVar9;
+  FUN_00564494(pCVar8);
+  return pCVar8;
 }

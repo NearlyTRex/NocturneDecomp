@@ -20,15 +20,15 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
   int iStack_c;
   int iStack_8;
   
-  pCVar2 = 0x01C775EC;
+  pCVar2 = g_CGame_PTR_005b9354;
   if (DAT_005b7620 < 0x1e0) {
     return 1;
   }
-  if ((INT_02dc9d60 == 0) && (0x1e0 < 0x01C775EC->game_pixy)) {
-    0x01C775EC->game_pixy = 0x1e0;
+  if ((INT_02dc9d60 == 0) && (0x1e0 < g_CGame_PTR_005b9354->game_pixy)) {
+    g_CGame_PTR_005b9354->game_pixy = 0x1e0;
     pCVar2->game_pixx = 0x280;
   }
-  this_ptr = (CAlphaBitmap *)&DAT_01cc56e0;
+  this_ptr = g_CAlphaBitmap_ARRAY_01cc56e0;
   iVar6 = 0;
   do {
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
@@ -38,22 +38,23 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
     this_ptr = this_ptr + 1;
   } while (iVar6 != 0x20);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            ((CAlphaBitmap *)&DAT_01cc5b20,"fblurl",0x68,0x46);
+            (&g_CAlphaBitmap_01cc5b20,"fblurl",0x68,0x46);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            ((CAlphaBitmap *)&DAT_01cc5b34,"fblurm",0x20,0x46);
+            (&g_CAlphaBitmap_01cc5b34,"fblurm",0x20,0x46);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            ((CAlphaBitmap *)&DAT_01cc5b48,"fblurr",0x68,0x46);
+            (&g_CAlphaBitmap_01cc5b48,"fblurr",0x68,0x46);
   iVar6 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   engine_texture_cpp_FUN_005459f0();
   iStack_c = 0;
-  core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)&DAT_01cc5780);
+  core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoon_01cc5780);
   iStack_8 = 1;
-  core_game_cpp_CGame_saveClockTime_FUN_0049a890(0x01C775EC);
+  core_game_cpp_CGame_saveClockTime_FUN_0049a890(g_CGame_PTR_005b9354);
   do {
-    core_game_cpp_CGame_updateDT_FUN_0049a8a0(0x01C775EC);
-    core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)&DAT_01cc5780,0x01C775EC->delta_time_float);
-    core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)&DAT_01cc5780);
+    core_game_cpp_CGame_updateDT_FUN_0049a8a0(g_CGame_PTR_005b9354);
+    core_moon_cpp_CMoon_update_FUN_004deae0
+              (&g_CMoon_01cc5780,g_CGame_PTR_005b9354->delta_time_float);
+    core_moon_cpp_CMoon_render_FUN_004dec50(&g_CMoon_01cc5780);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("S T A R T");
     pcVar7 = &DAT_01cc7d10;
     do {
@@ -113,12 +114,13 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     switch(iVar4) {
     case 0:
-      core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)&DAT_01cc5780);
-      core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
-      iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);
+      core_moon_cpp_CMoon_free_FUN_004dea60(&g_CMoon_01cc5780);
+      core_sound_cpp_CSound_reset_FUN_0052e9c0(g_CSound_PTR_005bed68);
+      iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LSHIFT);
       if ((iVar4 == 0) ||
-         (iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d), iVar4 == 0)) {
-        iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
+         (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL),
+         iVar4 == 0)) {
+        iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
         if (iVar4 == 0) {
           iVar4 = 0;
         }
@@ -129,58 +131,61 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
       else {
         iVar4 = 2;
       }
-      core_game_cpp_FUN_004a4b50(0x01C775EC,iVar4);
+      core_game_cpp_FUN_004a4b50(g_CGame_PTR_005b9354,iVar4);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
       engine_texture_cpp_FUN_005459f0();
-      core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)&DAT_01cc5780);
+      core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoon_01cc5780);
       goto LAB_004d2665;
     case 1:
       core_menu_cpp_showOptionsScreen_FUN_004d21c0(0);
       break;
     case 2:
-      core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)&DAT_01cc5780);
-      core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
-      core_game_cpp_FUN_004a4170(0x01C775EC,(char *)0x0,1);
+      core_moon_cpp_CMoon_free_FUN_004dea60(&g_CMoon_01cc5780);
+      core_sound_cpp_CSound_reset_FUN_0052e9c0(g_CSound_PTR_005bed68);
+      core_game_cpp_FUN_004a4170(g_CGame_PTR_005b9354,(char *)0x0,1);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
       engine_texture_cpp_FUN_005459f0();
-      core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)&DAT_01cc5780);
+      core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoon_01cc5780);
 LAB_004d2665:
-      core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
+      core_sound_cpp_CSound_configure_FUN_0052e850(g_CSound_PTR_005bed68);
       break;
     case 3:
       iVar6 = 99;
     }
-    iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
+    iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
     if (iVar4 != 0) {
       iVar6 = 99;
     }
-    iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
+    iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
     if ((iVar4 != 0) &&
-       (iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x32), iVar4 != 0)) {
+       (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_M),
+       iVar4 != 0)) {
       iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
       sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0((uint)(iVar4 == 0));
-      core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
+      core_sound_cpp_CSound_configure_FUN_0052e850(g_CSound_PTR_005bed68);
     }
-    iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
+    iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
     if ((iVar4 != 0) &&
-       ((iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x20), iVar4 != 0 ||
-        (iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x26), iVar4 != 0)))) {
-      core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
+       ((iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_D),
+        iVar4 != 0 ||
+        (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_L),
+        iVar4 != 0)))) {
+      core_sound_cpp_CSound_reset_FUN_0052e9c0(g_CSound_PTR_005bed68);
       core_main_c_FUN_004c8510();
-      core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
+      core_sound_cpp_CSound_configure_FUN_0052e850(g_CSound_PTR_005bed68);
     }
-    iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
+    iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
     if (iVar4 != 0) {
-      (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x21);
+      (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F);
     }
     if (iStack_8 != 0) {
       iStack_8 = 0;
-      core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
+      core_sound_cpp_CSound_configure_FUN_0052e850(g_CSound_PTR_005bed68);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
     }
     if (iVar6 != 0) {
-      core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
-      core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)&DAT_01cc5780);
+      core_sound_cpp_CSound_reset_FUN_0052e9c0(g_CSound_PTR_005bed68);
+      core_moon_cpp_CMoon_free_FUN_004dea60(&g_CMoon_01cc5780);
       return iVar6;
     }
   } while( true );

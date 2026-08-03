@@ -24,10 +24,10 @@
 ;   TerminatedCString s_sound_sndmain_cpp_00593789
 ;   TerminatedCString s_getSampleInfo_can_t_dete_0059379e
 ;   WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea44
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_02db4e18
-;   undefined4 DAT_02db4e1c
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   undefined4 g_CMP3Decoder_02db4d18.sample_rate
+;   undefined4 g_CMP3Decoder_02db4d18.num_channels
 ;   undefined4 DAT_02dbd348
 ;
 ; Called Functions:
@@ -242,10 +242,10 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0 ; 00527b8b
         ;   XREF to: 004e7df0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0()
     MOV dword ptr [EBP + 0x104],0x10    ; 00527b90
-    MOV EAX,[0x02db4e1c]                ; 00527b9a | DAT_02db4e1c
+    MOV EAX,[0x02db4e1c]                ; 00527b9a | g_CMP3Decoder_02db4d18.num_channels
     MOV dword ptr [EBP + 0x108],EAX     ; 00527b9f
     ADD ESP,0x8                         ; 00527ba5
-    MOV EAX,[0x02db4e18]                ; 00527ba8 | DAT_02db4e18
+    MOV EAX,[0x02db4e18]                ; 00527ba8 | g_CMP3Decoder_02db4d18.sample_rate
     MOV dword ptr [EBP + 0x110],0xffffffff ; 00527bad
     PUSH 0x2db4d18                      ; 00527bb7
     MOV dword ptr [EBP + 0x10c],EAX     ; 00527bbc
@@ -258,8 +258,8 @@ section .text
     MOV ECX,0x59374b                    ; 00527bcd | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x1084                      ; 00527bd2
     PUSH 0x593760                       ; 00527bd7 | = "Unknown sample file format extension: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 00527bdc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00527be2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00527bdc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00527be2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00527be8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00527bed
@@ -270,8 +270,8 @@ section .text
     MOV EDI,0x593789                    ; 00527bf6 | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x108f                      ; 00527bfb
     PUSH 0x59379e                       ; 00527c00 | = "getSampleInfo - can't determine lengt..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00527c05 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00527c0b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00527c05 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00527c0b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00527c10
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00527c15

@@ -261,7 +261,7 @@
 ;   double DOUBLE_005796ed = 0.0100000000000000
 ;   double DOUBLE_005796f5 = 0.5
 ;   double DOUBLE_005796fd = 0.100000000000000
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -317,7 +317,7 @@ section .text
     PUSH EAX                            ; 0041ad99
     FXCH                                ; 0041ad9a
     FSTP float ptr [ESP + 0x344]        ; 0041ad9c
-    PUSH 0x1fba938                      ; 0041ada3 | DAT_01fba938
+    PUSH 0x1fba938                      ; 0041ada3 | g_CDemonRaytrace_01fba938
     FSTP float ptr [ESP + 0x114]        ; 0041ada8
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0041adaf
         ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
@@ -1977,7 +1977,7 @@ section .text
     PUSH EDI                            ; 0041c76c
     MOV EDX,dword ptr [ESP + 0x3e0]     ; 0041c76d
     PUSH EDX                            ; 0041c774
-    PUSH 0x1fba938                      ; 0041c775 | DAT_01fba938
+    PUSH 0x1fba938                      ; 0041c775 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0041c77a
         ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x43c],EAX     ; 0041c77f

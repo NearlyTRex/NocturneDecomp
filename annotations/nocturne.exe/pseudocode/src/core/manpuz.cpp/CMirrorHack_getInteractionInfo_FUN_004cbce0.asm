@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(int param_1,undefined4 *param_2)
+; void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(CDemonActor *param_1,SInteractionInfo *param_2)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cbce6
     PUSH EDX                            ; 004cbcea
     CALL core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0 ; 004cbceb
-        ;   XREF to: 0040b1b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0()
+        ;   XREF to: 0040b1b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0(CDemonActor * this_ptr, SInteractionInfo * out_info)
     ADD ESP,0x8                         ; 004cbcf0
     MOV EAX,dword ptr [ESP + 0x8]       ; 004cbcf3
     MOV dword ptr [EBX],0x1             ; 004cbcf7

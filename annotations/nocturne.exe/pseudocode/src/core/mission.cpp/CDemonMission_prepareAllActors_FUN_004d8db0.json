@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 33,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 33,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -74,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 59,
+    "complexity_score": 43,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
-    "total_lines": 168
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -163,9 +149,9 @@
     },
     {
       "addr": "005baca0",
-      "name": "INT_005baca0",
-      "type": "int",
-      "value": "0x1cc3160"
+      "name": "g_CLevelLoader_PTR_005baca0",
+      "type": "CLevelLoader*",
+      "value": "01cc3160"
     }
   ],
   "param_estimates": {
@@ -288,14 +274,14 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 23,
-          "line": 30,
+          "line": 29,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 42,
-          "line": 34,
+          "line": 33,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -306,16 +292,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)(iVar5 + 0x14c))(iVar5);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 30,
+      "line": 29,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar2 = iVar4 * 3 >> 0x1f;",
@@ -323,10 +301,10 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 34,
+      "line": 33,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "if (iVar3 == (int)((iVar4 + (iVar4 >> 0x1f) * -4) - (uint)((iVar4 >> 0x1f) << 1 < 0)) >> 2) {",
+      "text": "if (iVar5 == (int)((iVar4 + (iVar4 >> 0x1f) * -4) - (uint)((iVar4 >> 0x1f) << 1 < 0)) >> 2) {",
       "type": "static_shift_too_many_bits"
     }
   ]

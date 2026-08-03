@@ -3,10 +3,58 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "types/classes/CDemonMission.h"
+#include "types/classes/CDemonSet.h"
+#include "types/classes/CEditorTools.h"
+#include "types/classes/CFireEffect.h"
+#include "types/classes/CGame.h"
+#include "types/classes/CGore.h"
+#include "types/classes/CKeys.h"
+#include "types/classes/CLevelLoader.h"
+#include "types/classes/CMouse.h"
+#include "types/classes/CNetGame.h"
+#include "types/classes/CPod.h"
+#include "types/classes/CSound.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5B0000
 // =============================================================================
+
+// CDemonMission*
+extern CDemonMission* g_CDemonMission_PTR_005baf90;
+
+// CDemonSet*
+extern CDemonSet* g_CDemonSet_PTR_005be368;
+
+// CEditorTools*
+extern CEditorTools* g_CEditorTools_PTR_005b6d50;
+
+// CFireEffect*
+extern CFireEffect* g_CFireEffect_PTR_005b80f0;
+
+// CGame*
+extern CGame* g_CGame_PTR_005b9354;
+
+// CGore*
+extern CGore* g_CGore_PTR_005b96c4;
+
+// CKeys*
+extern CKeys* g_CKeys_PTR_005bac64;
+
+// CLevelLoader*
+extern CLevelLoader* g_CLevelLoader_PTR_005baca0;
+
+// CMouse*
+extern CMouse* g_CMouse_PTR_005be060;
+
+// CNetGame*
+extern CNetGame* g_CNetGame_PTR_005bdee0;
+
+// CPod*
+extern CPod* g_CPod_PTR_005be1cc;
+
+// CSound*
+extern CSound* g_CSound_PTR_005bed68;
 
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b6d40;
@@ -82,13 +130,11 @@ extern int INT_005b8018;
 extern int INT_005b801c;
 extern int INT_005b91c0;
 extern int INT_005b9210;
-extern int INT_005b9284;
 extern int g_INT_005b9288;
 extern int INT_005b92a8;
 extern int INT_005b9624;
 extern int INT_005b9650;
 extern int INT_005b9668;
-extern int INT_005b96c4;
 extern int INT_005ba8c8;
 extern int INT_005ba8ec;
 extern int INT_005ba928;
@@ -101,10 +147,8 @@ extern int INT_005bab6c;
 extern int INT_005babd0;
 extern int INT_005babd4;
 extern int INT_005bac4c;
-extern int INT_005bac64;
 extern int INT_005bac68;
 extern int INT_005bac7c;
-extern int INT_005baca0;
 extern int INT_005bacbc;
 extern int INT_005bacf8;
 extern int INT_005bad50;
@@ -112,6 +156,7 @@ extern int INT_005bade4;
 extern int INT_005baf48;
 extern int g_INT_005bb124;
 extern int g_INT_005bb144;
+extern int g_INT_005bdee4;
 extern int INT_005be074;
 extern int INT_005be078;
 extern int INT_005be164;
@@ -231,7 +276,6 @@ extern undefined4 DAT_005bbba0;
 extern undefined4 DAT_005bbbb4;
 extern undefined4 DAT_005bbbfc;
 extern undefined4 DAT_005bbc40;
-extern undefined4 DAT_005bdee4;
 extern undefined4 DAT_005be0b8;
 extern undefined4 DAT_005be0bc;
 extern undefined4 DAT_005be230;

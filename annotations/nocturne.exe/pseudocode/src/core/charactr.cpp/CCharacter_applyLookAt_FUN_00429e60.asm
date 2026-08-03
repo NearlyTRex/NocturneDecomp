@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a316
 ;   TerminatedCString s_CCharacter_applyLookAt_n_0057a32b
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -118,8 +118,8 @@ section .text
     MOV ECX,0x57a316                    ; 00429f31 | = "..\\core\\charactr.cpp"
     MOV ESI,0xdf9                       ; 00429f36
     PUSH 0x57a32b                       ; 00429f3b | = "CCharacter::applyLookAt - never set l..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00429f40 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00429f46 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00429f40 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00429f46 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00429f4c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00429f51

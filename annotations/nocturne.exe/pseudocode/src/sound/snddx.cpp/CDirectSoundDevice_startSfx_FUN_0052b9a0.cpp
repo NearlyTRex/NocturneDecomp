@@ -23,8 +23,8 @@ uint sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(int *param_1,int p
   if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
      (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
     pcStack_1a8 = "DirectSoundDevice::startSfx - invalid handle: %d";
-    PTR_01cc4800 = "..\\sound\\snddx.cpp";
-    INT_01cc4804 = 0x3b9;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
+    g_INT_01cc4804 = 0x3b9;
     piStack_1ac = (int *)0x52b9e8;
     pcStack_1a4 = (char *)iVar1;
     core_main_c_FUN_004c8440();
@@ -38,8 +38,8 @@ uint sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(int *param_1,int p
   if (iVar2 != 0) {
     if (*(int *)(param_2 + 0x74) == 0) {
       pcStack_1a4 = "DirectSoundDevice::startSfx - no sample??";
-      PTR_01cc4800 = "..\\sound\\snddx.cpp";
-      INT_01cc4804 = 0x3c3;
+      g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
+      g_INT_01cc4804 = 0x3c3;
       pcStack_1a8 = (char *)0x52ba93;
       core_main_c_FUN_004c8440();
     }

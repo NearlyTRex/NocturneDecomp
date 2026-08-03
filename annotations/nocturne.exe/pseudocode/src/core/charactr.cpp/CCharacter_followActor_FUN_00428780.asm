@@ -38,8 +38,8 @@
 ;   double DOUBLE_0057a0e2 = 0.0100000000000000
 ;   double DOUBLE_0057a0ea = 0.0349065850388889
 ;   double DOUBLE_0057a0f2 = 0.174532925194444
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -163,8 +163,8 @@ section .text
     PUSH ESI                            ; 00428890
         ;   Label: LAB_00428890
     PUSH 0x57a053                       ; 00428891 | = "%s tried to follow NULL actor!\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 00428896 | PTR_DAT_005ad350
-    PUSH ECX                            ; 0042889c | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 00428896 | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 0042889c | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0042889d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 004288a2
@@ -283,8 +283,8 @@ section .text
         ;   Label: LAB_004289ce
     PUSH ESI                            ; 004289cf
     PUSH 0x57a073                       ; 004289d0 | = "%s confused while following %s\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 004289d5 | PTR_DAT_005ad350
-    PUSH ECX                            ; 004289db | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004289d5 | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 004289db | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004289dc
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x10                        ; 004289e1
@@ -357,8 +357,8 @@ section .text
         ;   Label: LAB_00428a78
     PUSH ESI                            ; 00428a79
     PUSH 0x57a093                       ; 00428a7a | = "%s confused after pathmap call while ..."
-    MOV EDX,dword ptr [0x005ad350]      ; 00428a7f | PTR_DAT_005ad350
-    PUSH EDX                            ; 00428a85 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00428a7f | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00428a85 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00428a86
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x10                        ; 00428a8b

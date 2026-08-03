@@ -20,8 +20,8 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_FUN_004f5110(CPackedBitmapSet *bitm
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60("art",pbg_filename,"rb");
   if (file_handle == (_FILE *)0x0) {
     _sprintf(local_78,"Unable to open PBG file %s",pbg_filename);
-    INT_01cc4804 = 0x598;
-    PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+    g_INT_01cc4804 = 0x598;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
     core_main_c_FUN_004c8440(local_78);
   }
   this_ptr = cockpit_pkbitmap_cpp_FUN_004f4f90

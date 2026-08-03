@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_attacking_hero_00589487
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 g_CGabriellaActorType_01c713e8.name_hash
 ;   undefined4 DAT_01cae0e8
 ;
@@ -83,8 +83,8 @@ section .text
     ADD ESP,0xc                         ; 004d5800
     PUSH EBX                            ; 004d5803
     PUSH 0x589487                       ; 004d5804 | = "%s attacking hero\n"
-    MOV EBX,dword ptr [0x005ad350]      ; 004d5809 | PTR_DAT_005ad350
-    PUSH EBX                            ; 004d580f | DAT_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 004d5809 | g_CConsole_PTR_005ad350
+    PUSH EBX                            ; 004d580f | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004d5810
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 004d5815

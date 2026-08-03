@@ -24,7 +24,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057aedd = 65535
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_0076934c
 ;   undefined4 DAT_00769350
 ;   undefined4 DAT_00769364
@@ -66,8 +66,8 @@ section .text
     PUSH EDX                            ; 00437dc5
     MOV ECX,dword ptr [EBP + 0x104]     ; 00437dc6
     PUSH ECX                            ; 00437dcc
-    MOV ESI,dword ptr [0x005be368]      ; 00437dcd | DAT_005be368
-    PUSH ESI                            ; 00437dd3 | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 00437dcd | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 00437dd3 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 00437dd4
         ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 00437dd9
@@ -124,8 +124,8 @@ section .text
     PUSH EAX                            ; 00437e7d
     MOV EAX,dword ptr [EBP + 0x104]     ; 00437e7e
     PUSH EAX                            ; 00437e84
-    MOV EDX,dword ptr [0x005be368]      ; 00437e85 | DAT_005be368
-    PUSH EDX                            ; 00437e8b | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00437e85 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 00437e8b | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 00437e8c
         ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 00437e91
@@ -175,8 +175,8 @@ section .text
     PUSH EAX                            ; 00437f12
     MOV ECX,dword ptr [EBP + 0x114]     ; 00437f13
     PUSH ECX                            ; 00437f19
-    MOV EBX,dword ptr [0x005be368]      ; 00437f1a | DAT_005be368
-    PUSH EBX                            ; 00437f20 | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 00437f1a | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 00437f20 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 00437f21
         ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
         ;   Label: LAB_00437f21
@@ -200,8 +200,8 @@ section .text
     PUSH EDX                            ; 00437f57
     MOV EDI,dword ptr [EBP + 0x104]     ; 00437f58
     PUSH EDI                            ; 00437f5e
-    MOV EAX,[0x005be368]                ; 00437f5f | DAT_005be368
-    PUSH EAX                            ; 00437f64 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 00437f5f | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 00437f64 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 00437f65
         ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 00437f6a
@@ -222,9 +222,9 @@ section .text
     MOV EAX,dword ptr [EBP + 0x114]     ; 00437f9a
     ADD EAX,EDX                         ; 00437fa0
     PUSH EAX                            ; 00437fa2
-    MOV EBX,dword ptr [0x005be368]      ; 00437fa3 | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 00437fa3 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00437fa3
-    PUSH EBX                            ; 00437fa9 | DAT_01e57284
+    PUSH EBX                            ; 00437fa9 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 00437faa
         ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
         ;   Label: LAB_00437faa
@@ -267,8 +267,8 @@ section .text
     PUSH EAX                            ; 00438001
     MOV EAX,dword ptr [EBP + 0x114]     ; 00438002
     PUSH EAX                            ; 00438008
-    MOV EDX,dword ptr [0x005be368]      ; 00438009 | DAT_005be368
-    PUSH EDX                            ; 0043800f | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00438009 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 0043800f | g_CDemonSet_01e57284
     JMP 0x00437f21                      ; 00438010
         ;   XREF to: 00437f21 (UNCONDITIONAL_JUMP)  ; LAB_00437f21
     MOV EAX,dword ptr [EBP + 0x110]     ; 00438015
@@ -286,8 +286,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x114]     ; 00438031
     ADD EAX,EDX                         ; 00438037
     PUSH EAX                            ; 00438039
-    MOV ECX,dword ptr [0x005be368]      ; 0043803a | DAT_005be368
-    PUSH ECX                            ; 00438040 | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0043803a | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 00438040 | g_CDemonSet_01e57284
     JMP 0x00437faa                      ; 00438041
         ;   XREF to: 00437faa (UNCONDITIONAL_JUMP)  ; LAB_00437faa
     PUSH 0x0                            ; 00438046
@@ -301,8 +301,8 @@ section .text
     PUSH EDI                            ; 0043805e
     MOV EAX,dword ptr [EBP + 0x104]     ; 0043805f
     PUSH EAX                            ; 00438065
-    MOV EDX,dword ptr [0x005be368]      ; 00438066 | DAT_005be368
-    PUSH EDX                            ; 0043806c | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00438066 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 0043806c | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 0043806d
         ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 00438072
@@ -347,8 +347,8 @@ section .text
     PUSH EBX                            ; 004380e9
     MOV ESI,dword ptr [EBP + 0x114]     ; 004380ea
     PUSH ESI                            ; 004380f0
-    MOV EDI,dword ptr [0x005be368]      ; 004380f1 | DAT_005be368
-    PUSH EDI                            ; 004380f7 | DAT_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 004380f1 | g_CDemonSet_PTR_005be368
+    PUSH EDI                            ; 004380f7 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 004380f8
         ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
         ;   Label: LAB_004380f8
@@ -418,8 +418,8 @@ section .text
     PUSH EBX                            ; 004381a3
     MOV ESI,dword ptr [EBP + 0x104]     ; 004381a4
     PUSH ESI                            ; 004381aa
-    MOV EDI,dword ptr [0x005be368]      ; 004381ab | DAT_005be368
-    PUSH EDI                            ; 004381b1 | DAT_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 004381ab | g_CDemonSet_PTR_005be368
+    PUSH EDI                            ; 004381b1 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 004381b2
         ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 004381b7
@@ -437,16 +437,16 @@ section .text
     PUSH EAX                            ; 004381dc
     MOV EDX,dword ptr [EBP + 0x114]     ; 004381dd
     PUSH EDX                            ; 004381e3
-    MOV ECX,dword ptr [0x005be368]      ; 004381e4 | DAT_005be368
-    PUSH ECX                            ; 004381ea | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004381e4 | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 004381ea | g_CDemonSet_01e57284
     JMP 0x004380f8                      ; 004381eb
         ;   XREF to: 004380f8 (UNCONDITIONAL_JUMP)  ; LAB_004380f8
     PUSH -0x1                           ; 004381f0
         ;   Label: LAB_004381f0
     PUSH EBX                            ; 004381f2
     PUSH 0x76934c                       ; 004381f3 | DAT_0076934c
-    MOV EDX,dword ptr [0x005be368]      ; 004381f8 | DAT_005be368
-    PUSH EDX                            ; 004381fe | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004381f8 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 004381fe | g_CDemonSet_01e57284
     JMP 0x00437faa                      ; 004381ff
         ;   XREF to: 00437faa (UNCONDITIONAL_JUMP)  ; LAB_00437faa
 

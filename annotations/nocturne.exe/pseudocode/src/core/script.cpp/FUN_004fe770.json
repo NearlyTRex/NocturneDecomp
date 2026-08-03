@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 25,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 26,
-        "message": "no matching function for call to 'core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0'"
       },
       {
         "category": "undeclared_identifier",
@@ -86,18 +74,6 @@
         "message": "use of undeclared identifier '_DAT_01e53410'; did you mean 'DAT_02DF3410'?"
       },
       {
-        "category": "other",
-        "column": 33,
-        "line": 30,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 31,
-        "message": "no matching function for call to 'core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 5,
         "line": 32,
@@ -114,6 +90,30 @@
         "column": 7,
         "line": 36,
         "message": "use of undeclared identifier '_DAT_01e56c20'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 37,
+        "message": "use of undeclared identifier '_DAT_01e56c20'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 39,
+        "message": "use of undeclared identifier '_DAT_01e56c20'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 40,
+        "message": "use of undeclared identifier '_DAT_01e56c20'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 44,
+        "message": "use of undeclared identifier '_DAT_01e53410'; did you mean 'DAT_02DF3410'?"
       }
     ],
     "success": false,
@@ -218,32 +218,32 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "014b98f8",
-      "name": "DAT_014b98f8",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b98f8",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "014b98fc",
-      "name": "DAT_014b98fc",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b98fc",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "014b9904",
-      "name": "DAT_014b9904",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b9904",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "014b990c",
-      "name": "DAT_014b990c",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b990c",
+      "type": "CBitFont*",
       "value": null
     },
     {
@@ -254,19 +254,19 @@
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01c775fc",
-      "name": "DAT_01c775fc",
+      "name": "g_CGame_01c775ec.subtitle_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77814",
-      "name": "DAT_01c77814",
+      "name": "g_CGame_01c775ec.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -465,7 +465,7 @@
       "line": 48,
       "match": "DAT_005b7620",
       "severity": "mild",
-      "text": "if ((DAT_005b7620 < 0x180) && (this_ptr_00 = _DAT_014b990c, _DAT_01d16810 != 0)) {",
+      "text": "if ((DAT_005b7620 < 0x180) && (this_ptr_00 = g_CBitFont_PTR_014b990c, _DAT_01d16810 != 0)) {",
       "type": "undefined_data"
     },
     {

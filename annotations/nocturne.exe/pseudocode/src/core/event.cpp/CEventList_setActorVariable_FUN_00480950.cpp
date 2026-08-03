@@ -17,8 +17,8 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00480950(CEventList 
   int iVar5;
   
   if ((actor != (CDemonActor *)0x0) && (actor->actor_name[0] == '\0')) {
-    PTR_01cc4800 = "..\\core\\event.cpp";
-    INT_01cc4804 = 0xb2b;
+    g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+    g_INT_01cc4804 = 0xb2b;
     pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(actor);
     core_main_c_FUN_004c8440("Tried to assign actor var %s an actor of type %s with no name",var_name,pcVar2);
   }
@@ -26,8 +26,8 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00480950(CEventList 
   if (iVar3 < 0) {
     if (actor != (CDemonActor *)0x0) {
       if (0x18 < (this_ptr->actor_vars).count) {
-        PTR_01cc4800 = "..\\core\\event.cpp";
-        INT_01cc4804 = 0xb38;
+        g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+        g_INT_01cc4804 = 0xb38;
         core_main_c_FUN_004c8440("CEventList::setActorVariable - already too many actor variables.  Max is %d.",0x19);
       }
       pacVar4 = (this_ptr->actor_vars).var_names + (this_ptr->actor_vars).count;

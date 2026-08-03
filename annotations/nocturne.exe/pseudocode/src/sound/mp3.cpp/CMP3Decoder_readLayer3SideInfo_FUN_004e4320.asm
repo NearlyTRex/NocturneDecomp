@@ -37,8 +37,8 @@
 ;   TerminatedCString s_Side_info_bad_block_type_0058b6f9
 ;   TerminatedCString s_sound_mp3_cpp_0058b732
 ;   TerminatedCString s_Side_info_bad_block_type_0058b743
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cd8b28
 ;
 ; Called Functions:
@@ -229,8 +229,8 @@ section .text
     MOV EBP,0x58b6e8                    ; 004e44e8 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x65b                       ; 004e44ed
     PUSH 0x58b6f9                       ; 004e44f2 | = "Side info bad: block_type == 0 in spl..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004e44f7 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e44fd | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004e44f7 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004e44fd | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e4502
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e4507
@@ -540,8 +540,8 @@ section .text
     MOV EBP,0x58b732                    ; 004e483b | = "..\\sound\\mp3.cpp"
     MOV EAX,0x68a                       ; 004e4840
     PUSH 0x58b743                       ; 004e4845 | = "Side info bad: block_type == 0 in spl..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004e484a | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e4850 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004e484a | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004e4850 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e4855
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e485a

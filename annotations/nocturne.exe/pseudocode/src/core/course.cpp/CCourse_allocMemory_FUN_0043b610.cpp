@@ -26,8 +26,8 @@ void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(CCourse *this_ptr,
       return;
     }
   }
-  PTR_01cc4800 = "..\\core\\course.cpp";
-  INT_01cc4804 = 0x6e;
+  g_CHAR_PTR_01cc4800 = "..\\core\\course.cpp";
+  g_INT_01cc4804 = 0x6e;
   core_main_c_FUN_004c8440("CCourse::allocMemory - out of hunk!");
   return;
 }

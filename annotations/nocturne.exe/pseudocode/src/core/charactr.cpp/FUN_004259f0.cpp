@@ -36,7 +36,7 @@ int __cdecl core_charactr_cpp_FUN_004259f0(CCharacter *this_ptr,float delta_time
   }
   if (this_ptr->health_bar_mode == 2) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
-              (0x01C775EC,this_ptr->descriptive_name,
+              (g_CGame_PTR_005b9354,this_ptr->descriptive_name,
                (int)(this_ptr->hit_points / this_ptr->max_hit_points),2.0);
   }
   if (this_ptr->render_active == 0) {

@@ -17,9 +17,9 @@
 ;   TerminatedCString s_core_mimic_cpp_00589588
 ;   TerminatedCString s_CMimic_processMorph_can_0058959a
 ;   float FLOAT_005a05e4 = 1
-;   undefined4 DAT_005baf90
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_004d5e80
     MOV ESI,0x4c9                       ; 004d5e85
     PUSH 0x58959a                       ; 004d5e8a | = "CMimic::processMorph - can't process ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d5e8f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d5e95 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d5e8f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d5e95 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d5e9b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d5ea0
@@ -90,14 +90,14 @@ section .text
     MOV EDI,dword ptr [EBX + 0x4757c]   ; 004d5ea5
         ;   Label: LAB_004d5ea5
     PUSH EDI                            ; 004d5eab
-    MOV EAX,[0x005baf90]                ; 004d5eac | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 004d5eac | g_CDemonMission_PTR_005baf90
     PUSH EAX                            ; 004d5eb1 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004d5eb2
         ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d5eb7
     MOV EDX,dword ptr [EBX + 0x4757c]   ; 004d5eba
     PUSH EDX                            ; 004d5ec0
-    MOV ECX,dword ptr [0x005baf90]      ; 004d5ec1 | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 004d5ec1 | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004d5ec7 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004d5ec8
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
@@ -105,7 +105,7 @@ section .text
     PUSH 0x1                            ; 004d5ed0
     PUSH EBX                            ; 004d5ed2
     MOV dword ptr [EBX + 0x4757c],0x0   ; 004d5ed3
-    MOV EBX,dword ptr [0x005baf90]      ; 004d5edd | DAT_005baf90
+    MOV EBX,dword ptr [0x005baf90]      ; 004d5edd | g_CDemonMission_PTR_005baf90
     PUSH EBX                            ; 004d5ee3 | DAT_01cc9450
     CALL core_mission.cpp_FUN_004d9110  ; 004d5ee4
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()

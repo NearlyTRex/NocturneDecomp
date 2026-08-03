@@ -35,9 +35,9 @@
 ;   double DOUBLE_00595e0f = 0.990000000000000
 ;   float FLOAT_005a2704 = 10
 ;   float FLOAT_005a2708 = 70
-;   undefined4 DAT_005b6d50
-;   int INT_005b9284 = 0x1c70f74
-;   undefined4 DAT_005baf90
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   void* PTR_DAT_005b9284 = 01c70f74
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 g_CDynamiteActorType_01bca088.name_hash
 ;   undefined4 g_CMeleeActorType_01cc56a4.name_hash
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
@@ -304,7 +304,7 @@ section .text
     ADD ESP,0xc                         ; 0053f592
     MOV ECX,dword ptr [EBX + 0x1fa1c]   ; 0053f595
     PUSH ECX                            ; 0053f59b
-    MOV EAX,[0x005baf90]                ; 0053f59c | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 0053f59c | g_CDemonMission_PTR_005baf90
     PUSH EAX                            ; 0053f5a1
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 0053f5a2
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
@@ -884,7 +884,7 @@ section .text
     PUSH 0x13ba                         ; 0053fba8
     PUSH EDX                            ; 0053fbad
     PUSH 0x595dde                       ; 0053fbae | = "actionPending = %d\nstranger.cpp line %d"
-    MOV EAX,[0x005b6d50]                ; 0053fbb3 | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 0053fbb3 | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 0053fbb8
     CALL shape_edittool.cpp_FUN_0046fb40 ; 0053fbb9
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
@@ -921,7 +921,7 @@ section .text
         ;   XREF to: 0053f638 (CONDITIONAL_JUMP)  ; LAB_0053f638
     JMP 0x0053f642                      ; 0053fc1e
         ;   XREF to: 0053f642 (UNCONDITIONAL_JUMP)  ; LAB_0053f642
-    MOV EDX,dword ptr [0x005b9284]      ; 0053fc23 | INT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0053fc23 | PTR_DAT_005b9284
         ;   Label: LAB_0053fc23
     PUSH EDX                            ; 0053fc29
     CALL xxx_unk.c_FUN_004940d0         ; 0053fc2a

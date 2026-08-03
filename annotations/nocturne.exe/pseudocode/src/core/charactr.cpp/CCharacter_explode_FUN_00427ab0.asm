@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0057a026 = 0.5
-;   undefined4 DAT_005b80f0
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -69,7 +69,7 @@ section .text
     LEA EAX,[ESP + 0x2c]                ; 00427b26
     PUSH 0x40000000                     ; 00427b2a
     PUSH EAX                            ; 00427b2f
-    MOV EDX,dword ptr [0x005b80f0]      ; 00427b30 | DAT_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 00427b30 | g_CFireEffect_PTR_005b80f0
     PUSH EDX                            ; 00427b36
     CALL core_fire.cpp_FUN_0048c0d0     ; 00427b37
         ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)

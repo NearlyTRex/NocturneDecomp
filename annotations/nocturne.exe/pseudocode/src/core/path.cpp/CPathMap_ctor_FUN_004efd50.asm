@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058cc99
 ;   TerminatedCString s_Too_many_pathmaps_0058ccaa
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01e312f8
 ;
 ; Called Functions:
@@ -55,8 +55,8 @@ section .text
     MOV ECX,0x58cc99                    ; 004efda4 | = "..\\core\\path.cpp"
     MOV ESI,0x123                       ; 004efda9
     PUSH 0x58ccaa                       ; 004efdae | = "Too many pathmaps!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004efdb3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004efdb9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004efdb3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004efdb9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004efdbf
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004efdc4

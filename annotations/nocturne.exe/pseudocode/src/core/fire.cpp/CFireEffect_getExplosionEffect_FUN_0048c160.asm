@@ -32,13 +32,13 @@
 ; Referenced Globals:
 ;   double DOUBLE_0058150c = 0.5
 ;   double DOUBLE_00581514 = 5.48113170615542E-315
-;   undefined4 DAT_01c5d714
-;   undefined4 DAT_01c5d724
-;   undefined4 DAT_01c5d728
-;   undefined4 DAT_01c5d72c
-;   undefined4 DAT_01c5d730
-;   undefined4 DAT_01c5d734
-;   undefined4 DAT_01c5d738
+;   undefined4 g_CExplosion_ARRAY_01c5d708[0].lifetime
+;   undefined4 g_CExplosion_ARRAY_01c5d708[1].position.x
+;   undefined4 g_CExplosion_ARRAY_01c5d708[1].position.y
+;   undefined4 g_CExplosion_ARRAY_01c5d708[1].position.z
+;   undefined4 g_CExplosion_ARRAY_01c5d708[1].lifetime
+;   undefined4 g_CExplosion_ARRAY_01c5d708[1].scale
+;   undefined4 g_CExplosion_ARRAY_01c5d708[1].gore_multiplier
 ;
 ; *****************************************************************************
 
@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0048c172
     MOV EDX,0x1c5d708                   ; 0048c176
     XOR ECX,ECX                         ; 0048c17b
-    FLD float ptr [EDX + 0xc]           ; 0048c17d | DAT_01c5d714 | DAT_01c5d730
+    FLD float ptr [EDX + 0xc]           ; 0048c17d | g_CExplosion_ARRAY_01c5d708[0].lifetime | g_CExplosion_ARRAY_01c5d708[1].lifetime
         ;   Label: LAB_0048c17d
     MOV ESI,EDX                         ; 0048c180
     FCOMP double ptr [0x0058150c]       ; 0048c182 | DOUBLE_0058150c
@@ -80,14 +80,14 @@ section .text
     RET                                 ; 0048c19e
     FLD float ptr [EBX]                 ; 0048c19f
         ;   Label: LAB_0048c19f
-    FSUB float ptr [EDX]                ; 0048c1a1 | DAT_01c5d724
+    FSUB float ptr [EDX]                ; 0048c1a1 | g_CExplosion_ARRAY_01c5d708[1].position.x
     FSTP float ptr [ESP + 0x2c]         ; 0048c1a3
     FLD float ptr [EBX + 0x4]           ; 0048c1a7
-    FSUB float ptr [EDX + 0x4]          ; 0048c1aa | DAT_01c5d728
+    FSUB float ptr [EDX + 0x4]          ; 0048c1aa | g_CExplosion_ARRAY_01c5d708[1].position.y
     LEA EDI,[ESP + 0x2c]                ; 0048c1ad
     FSTP float ptr [ESP + 0x30]         ; 0048c1b1
     FLD float ptr [EBX + 0x8]           ; 0048c1b5
-    FSUB float ptr [EDX + 0x8]          ; 0048c1b8 | DAT_01c5d72c
+    FSUB float ptr [EDX + 0x8]          ; 0048c1b8 | g_CExplosion_ARRAY_01c5d708[1].position.z
     LEA EAX,[ESP + 0x8]                 ; 0048c1bb
     FSTP float ptr [ESP + 0x34]         ; 0048c1bf
     CMP EAX,EDI                         ; 0048c1c3
@@ -109,7 +109,7 @@ section .text
     FMUL ST0                            ; 0048c1f1
     FADDP                               ; 0048c1f3
     FSQRT                               ; 0048c1f5
-    FLD float ptr [ESI + 0x10]          ; 0048c1f7 | DAT_01c5d734
+    FLD float ptr [ESI + 0x10]          ; 0048c1f7 | g_CExplosion_ARRAY_01c5d708[1].scale
     FMUL double ptr [0x0058150c]        ; 0048c1fa | DOUBLE_0058150c
     FADD float ptr [ESP + 0x4]          ; 0048c200
     FXCH                                ; 0048c204
@@ -164,7 +164,7 @@ section .text
     TEST EBX,EBX                        ; 0048c285
     JZ 0x0048c28e                       ; 0048c287
         ;   XREF to: 0048c28e (CONDITIONAL_JUMP)  ; LAB_0048c28e
-    MOV EAX,dword ptr [ESI + 0x14]      ; 0048c289 | DAT_01c5d738
+    MOV EAX,dword ptr [ESI + 0x14]      ; 0048c289 | g_CExplosion_ARRAY_01c5d708[1].gore_multiplier
     MOV dword ptr [EBX],EAX             ; 0048c28c
     MOV EAX,0x1                         ; 0048c28e
         ;   Label: LAB_0048c28e

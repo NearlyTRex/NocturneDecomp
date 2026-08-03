@@ -19,8 +19,8 @@ void core_cloth_cpp_CClothList_remove_FUN_00438410(int *param_1,int param_2)
   int *piVar8;
   
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    PTR_01cc4800 = "..\\core\\cloth.cpp";
-    INT_01cc4804 = 0x5e4;
+    g_CHAR_PTR_01cc4800 = "..\\core\\cloth.cpp";
+    g_INT_01cc4804 = 0x5e4;
     core_main_c_FUN_004c8440("CClothList::remove - invalid index");
   }
   if ((CCloth *)param_1[param_2 + 0x65] != (CCloth *)0x0) {

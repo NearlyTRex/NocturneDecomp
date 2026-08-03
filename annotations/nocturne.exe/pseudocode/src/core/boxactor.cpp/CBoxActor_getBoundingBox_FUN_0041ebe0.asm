@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_0041ebe0(int param_1,undefined4 *param_2)
+; float * core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_0041ebe0(int param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

@@ -8,12 +8,12 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f4
-;   undefined4 DAT_01c777e0
-;   undefined4 DAT_01fb1d20
+;   undefined4 g_CGame_01c775ec.render_mode
+;   undefined4 g_CDemonSet_01e57284.skip_normal_normalization
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -34,9 +34,9 @@ section .text
     PUSH EBP                            ; 00542d22
     SUB ESP,0x78                        ; 00542d23
     MOV ESI,dword ptr [ESP + 0x88]      ; 00542d26
-    MOV EAX,[0x005be368]                ; 00542d2d | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00542d2d | g_CDemonSet_PTR_005be368
     MOV EDX,ESI                         ; 00542d32
-    MOV dword ptr [EAX + 0x15aa9c],0x1  ; 00542d34 | DAT_01fb1d20
+    MOV dword ptr [EAX + 0x15aa9c],0x1  ; 00542d34 | g_CDemonSet_01e57284.skip_normal_normalization
     XOR EAX,EAX                         ; 00542d3e
     INC EAX                             ; 00542d40
         ;   Label: LAB_00542d40
@@ -77,10 +77,10 @@ section .text
     PUSH 0x0                            ; 00542db3
     MOV EBP,dword ptr [0x005ae704]      ; 00542db5 | DAT_005ae704
     MOV dword ptr [ESI + EAX*0x4 + 0x2290],0x1 ; 00542dbb
-    MOV EAX,[0x005b9354]                ; 00542dc6 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00542dc6 | g_CGame_PTR_005b9354
     PUSH EBP                            ; 00542dcb | DAT_01b4d738
-    MOV EDI,dword ptr [EAX + 0x1f4]     ; 00542dcc | DAT_01c777e0
-    MOV dword ptr [EAX + 0x1f4],0x2     ; 00542dd2 | DAT_01c777e0
+    MOV EDI,dword ptr [EAX + 0x1f4]     ; 00542dcc | g_CGame_01c775ec.render_mode
+    MOV dword ptr [EAX + 0x1f4],0x2     ; 00542dd2 | g_CGame_01c775ec.render_mode
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 00542ddc
         ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 00542de1
@@ -93,10 +93,10 @@ section .text
     TEST EBX,EBX                        ; 00542df7
     JNZ 0x00542e3c                      ; 00542df9
         ;   XREF to: 00542e3c (CONDITIONAL_JUMP)  ; LAB_00542e3c
-    MOV EAX,[0x005b9354]                ; 00542dfb | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00542dfb | g_CGame_PTR_005b9354
         ;   Label: LAB_00542dfb
     MOV EDX,ESI                         ; 00542e00
-    MOV dword ptr [EAX + 0x1f4],EDI     ; 00542e02 | DAT_01c777e0
+    MOV dword ptr [EAX + 0x1f4],EDI     ; 00542e02 | g_CGame_01c775ec.render_mode
     XOR EAX,EAX                         ; 00542e08
     POP EDI                             ; 00542e0a
     ADD EDX,0x4                         ; 00542e0b
@@ -108,9 +108,9 @@ section .text
     JL 0x00542e0b                       ; 00542e1b
         ;   XREF to: 00542e0b (CONDITIONAL_JUMP)  ; LAB_00542e0b
     LEA EAX,[EAX]                       ; 00542e1d
-    MOV EAX,[0x005be368]                ; 00542e20 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00542e20 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00542e20
-    MOV dword ptr [EAX + 0x15aa9c],0x0  ; 00542e25 | DAT_01fb1d20
+    MOV dword ptr [EAX + 0x15aa9c],0x0  ; 00542e25 | g_CDemonSet_01e57284.skip_normal_normalization
     TEST EBX,EBX                        ; 00542e2f
     JNZ 0x00542e47                      ; 00542e31
         ;   XREF to: 00542e47 (CONDITIONAL_JUMP)  ; LAB_00542e47

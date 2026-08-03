@@ -68,7 +68,7 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
     sound_sndmain_cpp_killSfx_FUN_00527230((uint)(param_1->model).transformed_vertices[0x51].x);
     pCVar5 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);
     if (pCVar5 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0(INT_005b9284);
+      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
     }
     (param_1->model).transformed_vertices[0x51].x = 0.0;
     return 0;
@@ -87,22 +87,22 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
   CStack_38.x = CStack_98.x - CStack_d0.z;
   CStack_38.y = CStack_98.y - fStack_c4;
   CStack_38.z = CStack_98.z - fStack_c0;
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,1);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&param_1->base);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,&param_1->base);
   pCVar5 = (CDemonActor *)(param_1->model).transformed_vertices[0x1c].y;
   if (pCVar5 != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,pCVar5);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar5);
   }
   fStack_1c = 0.0;
   do {
-    fStack_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(0x01E57284,&CStack_38,&CStack_bc)
-    ;
+    fStack_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                          (g_CDemonSet_PTR_005be368,&CStack_38,&CStack_bc);
     dVar8 = (double)fStack_14;
     if ((dVar8 < 0.0) || (1.0 < dVar8)) goto LAB_00545ebe;
     this_ptr_00 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                            (g_CDemonSet_PTR_005be368->collision_actor,
                              g_CCharacterActorType_00765a60.name_hash);
     if ((this_ptr_00 != (CCharacter *)0x0) &&
        (EVar6 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
@@ -111,20 +111,20 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
     }
     pCStack_18 = (CGlass *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                           (g_CDemonSet_PTR_005be368->collision_actor,
                             g_CGlassActorType_01c78c40.name_hash);
     this_ptr_01 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                            (g_CDemonSet_PTR_005be368->collision_actor,
                              g_CTriggerActorType_02dd1084.name_hash);
     pCStack_24 = this_ptr_01;
     pCStack_20 = (CCrate *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                           (g_CDemonSet_PTR_005be368->collision_actor,
                             g_CCrateActorType_0077bd40.name_hash);
     this_ptr_02 = (CFlameCan *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                            (g_CDemonSet_PTR_005be368->collision_actor,
                              g_CFlameCanActorType_01c70654.name_hash);
     if (this_ptr_00 == (CCharacter *)0x0) {
       if (pCStack_18 == (CGlass *)0x0) {
@@ -132,11 +132,11 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
           if (pCStack_20 == (CCrate *)0x0) {
             if (this_ptr_02 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60
-                        (0x01C08D04,
-                         (CVector3f *)(0x01E57284->lights[199].filter_names[0x13] + 0xc),
-                         (CVector3f *)(0x01E57284->lights[199].filter_names[0x12] + 0x24),
-                         *(int *)(0x01E57284->lights[199].filter_names[0x13] + 8),
-                         *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18));
+                        (g_CFireEffect_PTR_005b80f0,
+                         &g_CDemonSet_PTR_005be368->collision_impact_position,
+                         &g_CDemonSet_PTR_005be368->collision_normal,
+                         g_CDemonSet_PTR_005be368->ground_type,
+                         g_CDemonSet_PTR_005be368->collision_actor);
               goto LAB_00545ebe;
             }
             core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(this_ptr_02);
@@ -155,14 +155,15 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
                                   (param_1,SUB84(__BITCAST_UINT64(dVar8),0),(int)((ulonglong)dVar8 >> 0x20));
             core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(this_ptr_01,in_stack_fffffebc);
           }
-          core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&pCStack_24->base);
+          core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                    (g_CDemonSet_PTR_005be368,&pCStack_24->base);
         }
       }
       else {
         iVar4 = core_glass_cpp_FUN_004aded0(pCStack_18);
         if (iVar4 == 0) goto LAB_00545ebe;
         core_glass_cpp_CGlass_shatter_FUN_004ada20
-                  (pCStack_18,(CVector3f *)(0x01E57284->lights[199].filter_names[0x13] + 0xc));
+                  (pCStack_18,&g_CDemonSet_PTR_005be368->collision_impact_position);
       }
     }
     else {
@@ -171,8 +172,8 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
       if ((iVar4 != 0) &&
          (pCVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
                              ((CDemonActor *)(param_1->model).transformed_vertices[0x1c].y,
-                              g_CHeroActorType_01cae0ec.name_hash), this_ptr = 0x01E57284,
-         pCVar7 != (CDemonActor *)0x0)) {
+                              g_CHeroActorType_01cae0ec.name_hash),
+         this_ptr = g_CDemonSet_PTR_005be368, pCVar7 != (CDemonActor *)0x0)) {
         if (pCStack_18 == (CGlass *)0x0) {
           (param_1->model).transformed_vertices[0x4f].y =
                (float)((int)(param_1->model).transformed_vertices[0x4f].y + 1);
@@ -185,12 +186,12 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
       auStack_130._0_4_ =
            (*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,pCVar5,(int)in_stack_fffffebc);
       auStack_130._4_4_ = 0.4;
-      fStack_c4 = *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x18) -
-                  *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0xc);
-      fStack_c0 = *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x1c) -
-                  *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x10);
-      CStack_bc.x = *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x20) -
-                    *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x14);
+      fStack_c4 = (g_CDemonSet_PTR_005be368->ray_target).x -
+                  (g_CDemonSet_PTR_005be368->ray_origin).x;
+      fStack_c0 = (g_CDemonSet_PTR_005be368->ray_target).y -
+                  (g_CDemonSet_PTR_005be368->ray_origin).y;
+      CStack_bc.x = (g_CDemonSet_PTR_005be368->ray_target).z -
+                    (g_CDemonSet_PTR_005be368->ray_origin).z;
       fStack_1c = (float)10 /
                   SQRT(CStack_bc.x * CStack_bc.x + fStack_c4 * fStack_c4 + fStack_c0 * fStack_c0);
       CStack_38.y = fStack_c4 * fStack_1c;
@@ -203,7 +204,7 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
       }
       pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                          (&this_ptr_00->base,&CStack_d0,
-                          (CVector3f *)(0x01E57284->lights[199].filter_names[0x13] + 0xc));
+                          &g_CDemonSet_PTR_005be368->collision_impact_position);
       if ((CVector3f *)(auStack_130 + 0x18) != pCVar3) {
         auStack_130._24_4_ = pCVar3->x;
         fStack_114 = pCVar3->y;
@@ -219,19 +220,18 @@ uint core_tommygun_cpp_FUN_00545c30(CCharacter *param_1)
                 (this_ptr_00,(SDamageInfo *)auStack_130);
       if ((param_1->model).transformed_vertices[0x19].z == 0.0) goto LAB_00545ebe;
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (0x01E57284,*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18)
-                );
+                (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->collision_actor);
     }
     fStack_1c = (float)((int)fStack_1c + 1);
     if (3 < (int)fStack_1c) {
 LAB_00545ebe:
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
       if ((param_1->model).transformed_vertices[0x50].y != 0.0) {
         aCStack_68[0].x = CStack_98.x;
         aCStack_68[0].z = CStack_98.z;
         aCStack_68[0].y = CStack_98.y + -0.125f;
         core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20
-                  (0x01C08D04,aCStack_68,&(param_1->base).orient_matrix);
+                  (g_CFireEffect_PTR_005b80f0,aCStack_68,&(param_1->base).orient_matrix);
         CStack_80.x = 5.0;
         CStack_80.y = 6.0;
         CStack_80.z = -6.0;
@@ -252,8 +252,8 @@ LAB_00545ebe:
         }
         model_ptr = core_dmodel_cpp_loadModel_FUN_004543b0("bullet.kfm");
         core_fire_cpp_CFireEffect_createShell_FUN_0048c6b0
-                  (0x01C08D04,&(param_1->base).location.position,&(param_1->base).orient.vec,
-                   &CStack_80,model_ptr);
+                  (g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,
+                   &(param_1->base).orient.vec,&CStack_80,model_ptr);
       }
       return 1;
     }

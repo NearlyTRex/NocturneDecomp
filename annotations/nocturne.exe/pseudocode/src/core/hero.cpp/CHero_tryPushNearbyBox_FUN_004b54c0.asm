@@ -17,10 +17,10 @@
 ;   double DOUBLE_0058587b = 1.20000000000000
 ;   double DOUBLE_00585883 = 5
 ;   double DOUBLE_0058588b = 0.610865238180555
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CBoxActorActorType_00764800.name_hash
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -56,9 +56,9 @@ section .text
         ;   XREF to: 004b5544 (CONDITIONAL_JUMP)  ; LAB_004b5544
     XOR EDI,EDI                         ; 004b54ec
     XOR ESI,ESI                         ; 004b54ee
-    MOV EBX,dword ptr [0x005be368]      ; 004b54f0 | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 004b54f0 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004b54f0
-    CMP EDI,dword ptr [EBX + 0x14cd6c]  ; 004b54f6 | DAT_01fa3ff0
+    CMP EDI,dword ptr [EBX + 0x14cd6c]  ; 004b54f6 | g_CDemonSet_01e57284.actor_count
     JL 0x004b555a                       ; 004b54fc
         ;   XREF to: 004b555a (CONDITIONAL_JUMP)  ; LAB_004b555a
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b54fe
@@ -107,7 +107,7 @@ section .text
     MOV EDX,dword ptr [0x00764838]      ; 004b555a | g_CBoxActorActorType_00764800.name_hash
         ;   Label: LAB_004b555a
     PUSH EDX                            ; 004b5560
-    MOV ECX,dword ptr [ESI + EBX*0x1 + 0x14cd70] ; 004b5561 | DAT_01fa3ff4
+    MOV ECX,dword ptr [ESI + EBX*0x1 + 0x14cd70] ; 004b5561 | g_CDemonSet_01e57284.actors[0]
     PUSH ECX                            ; 004b5568
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5569
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)

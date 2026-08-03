@@ -600,7 +600,7 @@ LAB_00538749:
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
             (this_ptr_02,rotation_quat,(float)local_1edc,(int)local_1f0c,pcVar17);
 LAB_00538751:
-  if (*(int *)(0x01C775EC + 0x240) != 0) {
+  if (g_CGame_PTR_005b9354->goggles_active != 0) {
     local_88 = 0;
     local_84 = 0;
     local_94.z = 0.0;

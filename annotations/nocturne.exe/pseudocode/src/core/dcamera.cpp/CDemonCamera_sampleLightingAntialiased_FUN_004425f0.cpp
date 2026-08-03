@@ -66,12 +66,11 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0
     if (((0 < piVar5[2]) &&
         (light_source->shadow_depth_buffer
          [(*piVar5 >> 0x10) + light_source->shadow_map_width * (piVar5[1] >> 0x10)] != 0)) &&
-       ((float)piVar5[2] * (float)0.00390625 <
-        *(float *)((light_source->base).camera_name + 0xc0))) {
+       ((float)piVar5[2] * (float)0.00390625 < (light_source->base).fixed_point_scale)) {
       return (int)ROUND((float)intensity *
-                        ((*(float *)((light_source->base).camera_name + 0xc0) -
+                        (((light_source->base).fixed_point_scale -
                          (float)piVar5[2] * (float)0.00390625) /
-                        *(float *)((light_source->base).camera_name + 0xc0)));
+                        (light_source->base).fixed_point_scale));
     }
     return 0;
   }

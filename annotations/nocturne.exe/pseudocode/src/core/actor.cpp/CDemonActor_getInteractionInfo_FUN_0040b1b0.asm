@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0(undefined4 param_1,undefined4 *param_2)
+; void __cdecl core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0(CDemonActor *this_ptr,SInteractionInfo *out_info)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; SInteractionInfo * Stack[0x8]:4   out_info
 ;
 ; XREF[2]:
 ;   core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0 at 004cbceb

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005992b0
-;   undefined4 DAT_005ae700
+;   void* PTR_DAT_005ae700 = 01b4d738
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01b4d738
@@ -33,7 +33,7 @@ section .text
     SUB ESP,0xc                         ; 0040ab72
     MOV EAX,dword ptr [ESP + 0x18]      ; 0040ab75
     MOV EBX,ESP                         ; 0040ab79
-    MOV EDX,dword ptr [0x005ae700]      ; 0040ab7b | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0040ab7b | PTR_DAT_005ae700
     FLD float ptr [EAX]                 ; 0040ab81
     FMUL float ptr [0x005992b0]         ; 0040ab83 | DAT_005992b0
     FISTP dword ptr [EBX]               ; 0040ab89
@@ -50,7 +50,7 @@ section .text
     PUSH EAX                            ; 0040abad
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0040abae
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
-    MOV EBX,dword ptr [0x005ae700]      ; 0040abb3 | DAT_005ae700
+    MOV EBX,dword ptr [0x005ae700]      ; 0040abb3 | PTR_DAT_005ae700
     MOV EBX,dword ptr [EBX]             ; 0040abb9 | DAT_01b4d738
     MOV AH,byte ptr [EBX + 0xea5e3]     ; 0040abbb
     ADD ESP,0x8                         ; 0040abc1

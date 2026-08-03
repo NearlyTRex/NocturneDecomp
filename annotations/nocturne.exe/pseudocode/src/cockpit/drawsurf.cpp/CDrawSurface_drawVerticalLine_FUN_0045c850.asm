@@ -26,8 +26,8 @@
 ;   undefined4 DAT_01b4d720
 ;   undefined4 DAT_01b4d730
 ;   undefined4 DAT_01bd2fa0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -138,8 +138,8 @@ section .text
         ;   Label: LAB_0045c933
     MOV EBX,0x3db                       ; 0045c938
     PUSH 0x57da05                       ; 0045c93d | = "Invalid bitsPerPixel!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0045c942 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0045c948 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0045c942 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0045c948 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045c94e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045c953
@@ -244,8 +244,8 @@ section .text
         ;   Label: LAB_0045ca1b
     MOV EDX,0x3fb                       ; 0045ca20
     PUSH 0x57da33                       ; 0045ca25 | = "Invalid bitsPerPixel!"
-    MOV [0x01cc4800],EAX                ; 0045ca2a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0045ca2f | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0045ca2a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0045ca2f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045ca35
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045ca3a

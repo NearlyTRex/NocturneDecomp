@@ -22,14 +22,14 @@ void cockpit_ckptutil_c_FUN_0042e7b0(int param_1,int param_2,int param_3,int par
   
   if (param_1 != 0) {
     if (param_6 < (param_2 - param_4) + 1) {
-      PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-      INT_01cc4804 = 0x3f0;
+      g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+      g_INT_01cc4804 = 0x3f0;
       core_main_c_FUN_004c8440("Invalid height array size.");
     }
     piVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(param_4 * 4);
     if (piVar1 == (int *)0x0) {
-      PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-      INT_01cc4804 = 0x3f6;
+      g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+      g_INT_01cc4804 = 0x3f6;
       core_main_c_FUN_004c8440("No room for scroll bitmap height table.");
     }
     iVar6 = 0;

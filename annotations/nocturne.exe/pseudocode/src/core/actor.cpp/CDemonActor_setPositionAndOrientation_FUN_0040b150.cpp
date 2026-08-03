@@ -1,22 +1,22 @@
 // Name: core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150
 // Address: 0040b150
 // Address Range: [[0040b150, 0040b19f]]
-// Convention: unknown
-// Signature: void core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *param_1,float *param_2,float *param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 
 #include "nocturne.h"
 
-void core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *param_1,float *param_2,float *param_3)
+void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 
 {
-  (param_1->location).position.x = *param_2;
-  (param_1->location).position.y = param_2[1];
-  (param_1->location).position.z = param_2[2];
-  if (&param_1->orient != (UOrientationVector *)param_3) {
-    (param_1->orient).vec.x = *param_3;
-    (param_1->orient).vec.y = param_3[1];
-    (param_1->orient).vec.z = param_3[2];
+  (this_ptr->location).position.x = new_position->x;
+  (this_ptr->location).position.y = new_position->y;
+  (this_ptr->location).position.z = new_position->z;
+  if ((CVector3f *)&this_ptr->orient != new_orientation) {
+    (this_ptr->orient).vec.x = new_orientation->x;
+    (this_ptr->orient).vec.y = new_orientation->y;
+    (this_ptr->orient).vec.z = new_orientation->z;
   }
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(this_ptr);
   return;
 }

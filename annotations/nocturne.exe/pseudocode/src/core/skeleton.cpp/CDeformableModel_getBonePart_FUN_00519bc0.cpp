@@ -9,9 +9,8 @@
 int __cdecl core_skeleton_cpp_CDeformableModel_getBonePart_FUN_00519bc0(CDeformableModel *this_ptr,int bone_index)
 
 {
-  if (this_ptr->texture_sets[0].textures[0x28].textures[0].base.type < 2) {
+  if (this_ptr->num_parts < 2) {
     return 0;
   }
-  return *(int *)(this_ptr->texture_sets[1].textures[0x37].textures[2].texture_name +
-                 bone_index * 4 + 0xc);
+  return this_ptr->bone_to_part_map[bone_index];
 }

@@ -16,8 +16,8 @@ void engine_boss_c_modelStructNotSupported4_FUN_0041a5a0(void)
   uint local_3c [13];
   
   bVar3 = 0;
-  PTR_01cc4800 = "..\\engine\\boss.c";
-  INT_01cc4804 = 0x44;
+  g_CHAR_PTR_01cc4800 = "..\\engine\\boss.c";
+  g_INT_01cc4804 = 0x44;
   core_main_c_FUN_004c8440("modelStruct not supported");
   puVar2 = local_3c;
   for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {

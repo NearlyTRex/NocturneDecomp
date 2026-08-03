@@ -9,23 +9,11 @@
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_004f7a80(CPodFile *this_ptr)
 
 {
-  this_ptr->author_info[4] = '\0';
-  this_ptr->author_info[5] = '\0';
-  this_ptr->author_info[6] = '\0';
-  this_ptr->author_info[7] = '\0';
+  this_ptr->directory_entries = (CPodDirectoryEntry *)0x0;
   this_ptr->filename[0] = '\0';
   this_ptr->pod_format_version = 0;
-  this_ptr->author_info[0xc] = '\0';
-  this_ptr->author_info[0xd] = '\0';
-  this_ptr->author_info[0xe] = '\0';
-  this_ptr->author_info[0xf] = '\0';
-  this_ptr->author_info[8] = '\0';
-  this_ptr->author_info[9] = '\0';
-  this_ptr->author_info[10] = '\0';
-  this_ptr->author_info[0xb] = '\0';
-  this_ptr->author_info[0] = '\0';
-  this_ptr->author_info[1] = '\0';
-  this_ptr->author_info[2] = '\0';
-  this_ptr->author_info[3] = '\0';
+  this_ptr->audit_count = 0;
+  this_ptr->file_data_buffer = (char *)0x0;
+  this_ptr->file_count = 0;
   return this_ptr;
 }

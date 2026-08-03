@@ -17,21 +17,22 @@ void __cdecl core_script_cpp_FUN_005055f0(CScript *this_ptr,_FILE *file_handle)
   _fprintf(file_handle,"// CScript version\n");
   _fprintf(file_handle,"%d\n",6);
   _fprintf(file_handle,"// gGame->letterboxMode\n");
-  _fprintf(file_handle,"%d\n",*(uint *)(0x01C775EC + 0x228));
+  _fprintf(file_handle,"%d\n",g_CGame_PTR_005b9354->letterbox_mode);
   _fprintf(file_handle,"// gGame->allowDamageFlag\n");
-  _fprintf(file_handle,"%d\n",*(uint *)(0x01C775EC + 0x22c));
+  _fprintf(file_handle,"%d\n",g_CGame_PTR_005b9354->allow_damage_flag)
+  ;
   _fprintf(file_handle,"// gGame->allowEnemyAttackFlag\n");
-  _fprintf(file_handle,"%d\n",*(uint *)(0x01C775EC + 0x230));
+  _fprintf(file_handle,"%d\n",g_CGame_PTR_005b9354->allow_enemy_attack_flag);
   _fprintf(file_handle,"// letterBoxBlackT\n");
   _fprintf(file_handle,"%g\n",(double)_DAT_01e56c20);
   _fprintf(file_handle,"// nextCmd\n");
-  _fprintf(file_handle,"%d\n",(this_ptr->script_text).data_array);
+  _fprintf(file_handle,"%d\n",this_ptr->next_cmd);
   _fprintf(file_handle,"// currentMessage\n");
-  _fprintf(file_handle,"\"%s\"\n",&this_ptr->cmd_timer);
+  _fprintf(file_handle,"\"%s\"\n",this_ptr->current_message);
   _fprintf(file_handle,"// cmdTimer\n");
-  _fprintf(file_handle,"%g\n",(double)(float)(this_ptr->script_text).vtable);
+  _fprintf(file_handle,"%g\n",(double)this_ptr->cmd_timer);
   _fprintf(file_handle,"// dialogWavTime\n");
-  _fprintf(file_handle,"%g\n",(double)(float)this_ptr->next_cmd);
+  _fprintf(file_handle,"%g\n",(double)this_ptr->dialog_wav_time);
   _fprintf(file_handle);
   core_script_cpp_writeActorReference_FUN_00505280(file_handle,&this_ptr->who_is_speaking);
   _fprintf(file_handle);
@@ -41,11 +42,11 @@ void __cdecl core_script_cpp_FUN_005055f0(CScript *this_ptr,_FILE *file_handle)
   _fprintf(file_handle);
   iVar2 = 0;
   _fprintf(file_handle,"%d\n");
-  if (0 < (int)this_ptr->message_duration) {
+  if (0 < this_ptr->call_stack_count) {
     do {
       iVar2 = iVar2 + 1;
       _fprintf(file_handle,"%d\n");
-    } while (iVar2 < (int)this_ptr->message_duration);
+    } while (iVar2 < this_ptr->call_stack_count);
   }
   _fprintf(file_handle);
   uVar1 = core_script_cpp_CScript_computeChecksum_FUN_00505820(this_ptr);

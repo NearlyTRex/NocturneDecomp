@@ -35,7 +35,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
   if (0x100 < this_ptr->rect_array_count) {
     local_3c.x_min = _DAT_01c02594;
     local_3c.y_min = _DAT_01c02594;
-    local_3c.x_max = *(int *)(this_ptr->camera_name + 0xfc) + -1;
+    local_3c.x_max = this_ptr->screen_width + -1;
     local_3c.y_max = (int)this_ptr->max_distance + -1;
     core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(this_ptr,&local_3c);
     return;
@@ -47,7 +47,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
       if (pCVar6->x_min < this_ptr->framebuffer_width) {
         pCVar6->x_min = this_ptr->framebuffer_width;
       }
-      iVar7 = this_ptr->framebuffer_width + *(int *)(this_ptr->camera_name + 0xfc);
+      iVar7 = this_ptr->framebuffer_width + this_ptr->screen_width;
       if (iVar7 <= pCVar6->x_max) {
         pCVar6->x_max = iVar7 + -1;
       }
@@ -138,8 +138,8 @@ LAB_0044089a:
                     ((void *)(*(int *)(&DAT_01bd4260 + local_20) + *piVar1 * 4),
                      (void *)((int)this_ptr->zbuffer_aligned +
                              ((((int)local_18 - this_ptr->framebuffer_height) *
-                               *(int *)(this_ptr->camera_name + 0xfc) + *piVar2) -
-                             this_ptr->framebuffer_width) * 4),(*piVar4 - *piVar3) * 4 + 4);
+                               this_ptr->screen_width + *piVar2) - this_ptr->framebuffer_width) * 4)
+                     ,(*piVar4 - *piVar3) * 4 + 4);
         } while (iVar8 < _DAT_0140e7a4);
       }
       local_28 = local_28 + 4;

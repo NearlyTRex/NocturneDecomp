@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0046f2
   int iVar4;
   int iVar5;
   
-  this_ptr_00 = 0x01BCD074;
+  this_ptr_00 = g_CEditorTools_PTR_005b6d50;
   iVar3 = this_ptr->cursor_position;
   iVar5 = this_ptr->selection_start;
   if (iVar5 != iVar3) {

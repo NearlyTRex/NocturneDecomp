@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 70,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 39,
     "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk"
     ],
-    "total_lines": 127
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -204,77 +204,22 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModel_computeFarthestChildBones_FUN_0051b480.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 29,
-          "line": 39,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 29,
-          "line": 40,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 29,
-          "line": 41,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar6->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 40,
-      "match": "pCVar6 = (T *)((pCVar6->FIELD).ARRAY[N] + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar5->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 34,
+      "match": "pCVar5 = (T *)((pCVar5->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCVar6 = (CSkeleton *)((pCVar6->motion_list).state_names[1] + 2);",
+      "text": "pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_1c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 44,
+      "line": 38,
       "match": "local_1c = (T *)local_1c->ARRAY",
       "severity": "moderate",
       "text": "local_1c = (CDeformableModel *)local_1c->lod_info;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 39,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(fVar1 = SQRT(*(float *)(pcVar5 + 8) * *(float *)(pcVar5 + 8) +",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 40,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)pcVar5 * *(float *)pcVar5 +",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 41,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(pcVar5 + 4) * *(float *)(pcVar5 + 4)), local_18 < fVar1)) {",
-      "type": "static_invalid_pointer_cast"
     }
   ]
 }

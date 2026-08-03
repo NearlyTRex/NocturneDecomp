@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_palette_cpp_CFont_getLineSpacing_FUN_004ef000(void)
+; int __cdecl engine_palette_cpp_CFont_getLineSpacing_FUN_004ef000(CFont *this_ptr)
 ;
+; Parameters:
+; CFont *          Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

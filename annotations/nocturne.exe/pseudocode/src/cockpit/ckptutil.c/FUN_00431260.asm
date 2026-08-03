@@ -29,8 +29,8 @@
 ;   TerminatedCString s_cockpit_ckptutil_c_0057abea
 ;   TerminatedCString s_Too_many_spans_bitmap_s_0057ac00
 ;   TerminatedCString s_cockpit_ckptutil_c_0057ac31
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -130,8 +130,8 @@ section .text
     MOV EAX,ESP                         ; 0043138f
     MOV EBP,0x96a                       ; 00431391
     PUSH EAX                            ; 00431396
-    MOV dword ptr [0x01cc4800],EDI      ; 00431397 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0043139d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00431397 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0043139d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004313a3
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004313a8
@@ -190,8 +190,8 @@ section .text
     MOV EAX,ESP                         ; 00431471
     MOV ESI,0x93a                       ; 00431473
     PUSH EAX                            ; 00431478
-    MOV dword ptr [0x01cc4800],EBX      ; 00431479 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0043147f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 00431479 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0043147f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00431485
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0043148a

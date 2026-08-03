@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_005905d2 = 4
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01fb8618
+;   undefined4 g_CDemonCamera_01fb8508.rotation_matrix.m[0].x
 ;   undefined4 DAT_01fb9b54
 ;   undefined4 DAT_01fb9b58
 ;
@@ -92,7 +92,7 @@ section .text
     FSTP float ptr [ESP + 0x10]         ; 0050ac5c
     PUSH EAX                            ; 0050ac60
     FCHS                                ; 0050ac61
-    PUSH 0x1fb8618                      ; 0050ac63 | DAT_01fb8618
+    PUSH 0x1fb8618                      ; 0050ac63 | g_CDemonCamera_01fb8508.rotation_matrix.m[0].x
     FSTP float ptr [ESP + 0x14]         ; 0050ac68
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0050ac6c
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)

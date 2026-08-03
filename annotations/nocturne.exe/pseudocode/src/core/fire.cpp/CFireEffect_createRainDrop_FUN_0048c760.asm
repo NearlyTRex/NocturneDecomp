@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6ce14
-;   undefined4 DAT_01c6ce30
-;   undefined4 DAT_01c6ce4c
+;   undefined4 g_CRainDrop_ARRAY_01c6ce18[0].base.lifetime_remaining
+;   undefined4 g_CRainDrop_ARRAY_01c6ce18[0].base.vtable
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     PUSH ESI                            ; 0048c77f
     ADD EAX,0x1c6ce18                   ; 0048c780
     PUSH EAX                            ; 0048c785
-    MOV EDX,dword ptr [EAX + 0x34]      ; 0048c786 | DAT_01c6ce4c
+    MOV EDX,dword ptr [EAX + 0x34]      ; 0048c786 | g_CRainDrop_ARRAY_01c6ce18[0].base.vtable
     CALL dword ptr [EDX]                ; 0048c789
     MOV EBX,dword ptr [0x01c6ce14]      ; 0048c78b | DAT_01c6ce14
     LEA EAX,[EBX*0x8 + 0x0]             ; 0048c791
@@ -44,7 +44,7 @@ section .text
     ADD EAX,0x1c6ce18                   ; 0048c79f
     ADD ESP,0xc                         ; 0048c7a4
     INC EBX                             ; 0048c7a7
-    MOV dword ptr [EAX + 0x18],0x3e800000 ; 0048c7a8 | DAT_01c6ce30
+    MOV dword ptr [EAX + 0x18],0x3e800000 ; 0048c7a8 | g_CRainDrop_ARRAY_01c6ce18[0].base.lifetime_remaining
     CMP EBX,0x100                       ; 0048c7af
     JL 0x0048c7b9                       ; 0048c7b5
         ;   XREF to: 0048c7b9 (CONDITIONAL_JUMP)  ; LAB_0048c7b9

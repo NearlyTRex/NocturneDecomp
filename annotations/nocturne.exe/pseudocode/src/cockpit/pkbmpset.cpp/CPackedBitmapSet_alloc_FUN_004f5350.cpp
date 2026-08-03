@@ -26,8 +26,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(CPackedBit
   this_ptr->bitmap_array = pCVar1;
   if (pCVar1 == (CPackedBitmap *)0x0) {
     _sprintf(local_d0,"Unable to allocate %u bytes for %u CPackedBitmaps in CPackedBitmapSet::alloc",bitmap_count * 0x24,bitmap_count);
-    INT_01cc4804 = 0x6b;
-    PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01cc4804 = 0x6b;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_FUN_004c8440(local_d0);
   }
   this_ptr->bitmap_count = bitmap_count;

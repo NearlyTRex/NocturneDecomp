@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_GlassHiram_005859df
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 g_CGlassActorType_01c78c40.name_hash
 ;   undefined4 DAT_01cc9450
 ;
@@ -94,7 +94,7 @@ section .text
         ;   XREF to: 004b6871 (CONDITIONAL_JUMP)  ; LAB_004b6871
     PUSH 0x1                            ; 004b67f8
     PUSH EBX                            ; 004b67fa
-    MOV EDI,dword ptr [0x005baf90]      ; 004b67fb | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 004b67fb | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004b6801 | DAT_01cc9450
     CALL core_mission.cpp_FUN_004d9110  ; 004b6802
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
@@ -121,7 +121,7 @@ section .text
     MOV ECX,dword ptr [0x01c78c78]      ; 004b6833 | g_CGlassActorType_01c78c40.name_hash
     PUSH ECX                            ; 004b6839
     PUSH 0x5859df                       ; 004b683a | = "GlassHiram"
-    MOV ESI,dword ptr [0x005baf90]      ; 004b683f | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004b683f | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 004b6845 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 004b6846
         ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)

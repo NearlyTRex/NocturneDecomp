@@ -18,8 +18,8 @@
 ;   TerminatedCString s_core_dmodel_cpp_0057ce51
 ;   TerminatedCString s_Can_t_load_s_because_key_0057ce64
 ;   undefined4 DAT_01abb658
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950
@@ -68,8 +68,8 @@ section .text
     MOV ESI,0x57ce51                    ; 004543fb | = "..\\core\\dmodel.cpp"
     MOV EAX,0x4cd                       ; 00454400
     PUSH 0x57ce64                       ; 00454405 | = "Can't load %s because keyFrame model ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0045440a | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00454410 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0045440a | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00454410 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00454415
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0045441a

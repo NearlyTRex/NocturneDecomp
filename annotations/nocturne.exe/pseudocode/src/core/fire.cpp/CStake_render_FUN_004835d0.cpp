@@ -20,20 +20,21 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004835d0(CStake *this_ptr)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (DAT_005ae704,orientation,(CVector3f *)0x0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     ((CKeyFramedModelInstance *)0x1c08d48);
-  local_24.min.x = (float)pCVar1->texture_list[7].textures[1].base.count;
-  local_24.min.y = *(float *)pCVar1->texture_list[7].textures[1].texture_name;
-  local_24.min.z = *(float *)(pCVar1->texture_list[7].textures[1].texture_name + 4);
-  local_24.max.x = *(float *)(pCVar1->texture_list[7].textures[1].texture_name + 8);
-  local_24.max.y = *(float *)(pCVar1->texture_list[7].textures[1].texture_name + 0xc);
-  local_24.max.z = (float)pCVar1->texture_list[7].textures[2].base.type;
+                     (&g_CKeyFramedModelInstance_01c08d48);
+  local_24.min.x = (pCVar1->bounds).min.x;
+  local_24.min.y = (pCVar1->bounds).min.y;
+  local_24.min.z = (pCVar1->bounds).min.z;
+  local_24.max.x = (pCVar1->bounds).max.x;
+  local_24.max.y = (pCVar1->bounds).max.y;
+  local_24.max.z = (pCVar1->bounds).max.z;
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(&local_24);
   if (iVar2 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-              (0x01E57284,&(this_ptr->physics_box).position,(UOrientationVector *)orientation,
-               &local_24.min,&local_24.max,&(this_ptr->physics_box).rotation_matrix);
+              (g_CDemonSet_PTR_005be368,&(this_ptr->physics_box).position,
+               (UOrientationVector *)orientation,&local_24.min,&local_24.max,
+               &(this_ptr->physics_box).rotation_matrix);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-              ((CKeyFramedModelInstance *)0x1c08d48,0.0,-1);
+              (&g_CKeyFramedModelInstance_01c08d48,0.0,-1);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   return;

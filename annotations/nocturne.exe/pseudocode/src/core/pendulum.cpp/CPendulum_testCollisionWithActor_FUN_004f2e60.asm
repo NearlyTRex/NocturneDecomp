@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0058d01c = 0.5
 ;   undefined4 DAT_005a1228
-;   int INT_005b96c4 = 0x1c78c7c
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
@@ -413,7 +413,7 @@ section .text
     PUSH 0x0                            ; 004f3316
     LEA EAX,[ESP + 0x7c]                ; 004f3318
     PUSH EAX                            ; 004f331c
-    MOV EBX,dword ptr [0x005b96c4]      ; 004f331d | INT_005b96c4
+    MOV EBX,dword ptr [0x005b96c4]      ; 004f331d | g_CGore_PTR_005b96c4
     PUSH EBX                            ; 004f3323
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004f3324
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)

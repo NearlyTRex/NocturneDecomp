@@ -14,14 +14,14 @@ int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(CPodFile *this_pt
   int iVar3;
   int iVar4;
   
-  iVar3 = *(int *)this_ptr->author_info + -1;
+  iVar3 = this_ptr->file_count + -1;
   iVar4 = 0;
   if (-1 < iVar3) {
     do {
       while( true ) {
         iVar1 = (iVar4 + iVar3) / 2;
-        iVar2 = _stricmp
-                          (filename,*(char **)(*(int *)(this_ptr->author_info + 4) + iVar1 * 0x14));
+        iVar2 = _stricmp(filename,this_ptr->directory_entries[iVar1].name)
+        ;
         if (iVar2 == 0) {
           return iVar1;
         }

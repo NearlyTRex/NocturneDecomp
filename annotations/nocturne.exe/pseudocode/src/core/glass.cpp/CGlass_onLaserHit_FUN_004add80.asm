@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)
+; void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CDemonActor *param_1,SLaserInfo *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 004add8f
     PUSH EBX                            ; 004add90
     CALL core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10 ; 004add91
-        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10()
+        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10(CDemonActor * this_ptr, SLaserInfo * laser_info)
     MOV EDX,dword ptr [EBX + 0x1e0]     ; 004add96
     ADD ESP,0x8                         ; 004add9c
     TEST EDX,EDX                        ; 004add9f

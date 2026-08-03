@@ -12,8 +12,8 @@
 ;   TerminatedCString s_fog_005771c6
 ;   TerminatedCString s_engine_2d_c_005771ca
 ;   TerminatedCString s_Unable_to_write_fog_tab_005771d9
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -57,8 +57,8 @@ section .text
     MOV ECX,0x5771ca                    ; 0040316f | = "..\\engine\\2d.c"
     MOV ESI,0x6b7                       ; 00403174
     PUSH 0x5771d9                       ; 00403179 | = "Unable to write fog tab"
-    MOV dword ptr [0x01cc4800],ECX      ; 0040317e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00403184 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0040317e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00403184 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040318a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040318f

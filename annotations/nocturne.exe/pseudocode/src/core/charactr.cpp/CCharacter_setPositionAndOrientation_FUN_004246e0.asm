@@ -34,7 +34,7 @@ section .text
     PUSH ECX                            ; 004246fe
     PUSH EBX                            ; 004246ff
     CALL core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150 ; 00424700
-        ;   XREF to: 0040b150 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150()
+        ;   XREF to: 0040b150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor * this_ptr, CVector3f * new_position, CVector3f * new_orientation)
     LEA EAX,[EBX + 0x2420]              ; 00424705
     FLD float ptr [0x0059b094]          ; 0042470b | FLOAT_0059b094
     MOV dword ptr [EAX + 0x8],0x0       ; 00424711

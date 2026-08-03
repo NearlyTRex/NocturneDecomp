@@ -26,7 +26,7 @@ void core_dtrace_cpp_FUN_004673e0(CDemonRaytrace *param_1)
   
   bVar11 = 0;
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660
-            (0x01BCD074,"Consolidating raytrace geometry arrays...");
+            (g_CEditorTools_PTR_005b6d50,"Consolidating raytrace geometry arrays...");
   core_dtrace_cpp_FUN_004675e0(param_1);
   param_1->triangle_count = 0;
   iVar5 = 0;
@@ -82,11 +82,11 @@ void core_dtrace_cpp_FUN_004673e0(CDemonRaytrace *param_1)
     }
     local_1c = local_1c + 1;
     shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760
-              (0x01BCD074,(float)local_1c,
+              (g_CEditorTools_PTR_005b6d50,(float)local_1c,
                (float)((param_1->grid_coord).x * (param_1->grid_coord).y * (param_1->grid_coord).z))
     ;
     local_20 = local_20 + 0x58;
   }
-  shape_edittool_cpp_FUN_004720c0(0x01BCD074);
+  shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
   return;
 }

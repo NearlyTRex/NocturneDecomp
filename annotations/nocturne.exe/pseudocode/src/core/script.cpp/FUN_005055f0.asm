@@ -61,9 +61,9 @@ section .text
     PUSH EDI                            ; 0050561f
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00505620
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
-    MOV EAX,[0x005b9354]                ; 00505625 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00505625 | g_CGame_PTR_005b9354
     ADD ESP,0x8                         ; 0050562a
-    MOV EDX,dword ptr [EAX + 0x228]     ; 0050562d | DAT_01c77814
+    MOV EDX,dword ptr [EAX + 0x228]     ; 0050562d | g_CGame_01c775ec.letterbox_mode
     PUSH EDX                            ; 00505633
     PUSH 0x58fe06                       ; 00505634 | = "%d\n"
     PUSH EDI                            ; 00505639
@@ -74,9 +74,9 @@ section .text
     PUSH EDI                            ; 00505647
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00505648
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
-    MOV EAX,[0x005b9354]                ; 0050564d | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0050564d | g_CGame_PTR_005b9354
     ADD ESP,0x8                         ; 00505652
-    MOV ECX,dword ptr [EAX + 0x22c]     ; 00505655 | DAT_01c77818
+    MOV ECX,dword ptr [EAX + 0x22c]     ; 00505655 | g_CGame_01c775ec.allow_damage_flag
     PUSH ECX                            ; 0050565b
     PUSH 0x58fe25                       ; 0050565c | = "%d\n"
     PUSH EDI                            ; 00505661
@@ -87,9 +87,9 @@ section .text
     PUSH EDI                            ; 0050566f
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00505670
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
-    MOV EAX,[0x005b9354]                ; 00505675 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00505675 | g_CGame_PTR_005b9354
     ADD ESP,0x8                         ; 0050567a
-    MOV EBX,dword ptr [EAX + 0x230]     ; 0050567d | DAT_01c7781c
+    MOV EBX,dword ptr [EAX + 0x230]     ; 0050567d | g_CGame_01c775ec.allow_enemy_attack_flag
     PUSH EBX                            ; 00505683
     PUSH 0x58fe49                       ; 00505684 | = "%d\n"
     PUSH EDI                            ; 00505689

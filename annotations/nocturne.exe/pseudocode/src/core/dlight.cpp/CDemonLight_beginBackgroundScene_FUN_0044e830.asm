@@ -23,8 +23,8 @@
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01bd2fa5
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -68,8 +68,8 @@ section .text
     MOV EDX,0x57c724                    ; 0044e887 | = "..\\core\\dlight.cpp"
     MOV ECX,0x1bc                       ; 0044e88c
     PUSH 0x57c737                       ; 0044e891 | = "CDemonLight::beginBackgroundScene - N..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0044e896 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0044e89c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0044e896 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0044e89c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044e8a2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044e8a7
@@ -111,8 +111,8 @@ section .text
         ;   Label: LAB_0044e8f6
     MOV ESI,0x1af                       ; 0044e8fb
     PUSH 0x57c6f1                       ; 0044e900 | = "CDemonLight::beginBackgroundScene - S..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0044e905 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044e90b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0044e905 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044e90b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044e911
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044e916

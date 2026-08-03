@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593818
 ;   TerminatedCString s_getSoundDeviceInfo_inval_0059382d
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_005282f8
     MOV ECX,0x11d1                      ; 005282fd
     PUSH 0x59382d                       ; 00528302 | = "getSoundDeviceInfo - invalid index"
-    MOV dword ptr [0x01cc4800],EDX      ; 00528307 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0052830d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00528307 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0052830d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00528313
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00528318

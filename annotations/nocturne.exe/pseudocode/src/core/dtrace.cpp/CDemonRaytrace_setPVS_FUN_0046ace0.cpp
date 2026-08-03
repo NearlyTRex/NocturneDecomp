@@ -28,13 +28,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *
   if ((0 < visible_cube_count) && (visible_cube_indices != (int *)0x0)) {
     _DAT_01b7b744 = visible_cube_count;
     if (20000 < visible_cube_count) {
-      PTR_01cc4800 = "..\\core\\dtrace.cpp";
-      INT_01cc4804 = 0x8c9;
+      g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
+      g_INT_01cc4804 = 0x8c9;
       core_main_c_FUN_004c8440("CDemonRaytrace::setPVS - Too many drawn cubes in pvs!");
     }
     iVar11 = 0;
     if (0 < _DAT_01b7b744) {
-      pCVar10 = CVector3f_ARRAY_01b8efcc;
+      pCVar10 = g_CVector3f_ARRAY_01b8efcc;
       do {
         iVar5 = *visible_cube_indices;
         *(CDemonCube **)(iVar11 * 4 + 0x1b7b74c) = this_ptr->cube_data + iVar5;

@@ -39,8 +39,8 @@ int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(SRenderVertex **
         break;
       case 1:
         if (0xb < DAT_00767b38) {
-          PTR_01cc4800 = "..\\engine\\clipper.c";
-          INT_01cc4804 = 0x5e;
+          g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+          g_INT_01cc4804 = 0x5e;
           core_main_c_FUN_004c8440("Ran out of clipped verts!");
         }
         iVar2 = DAT_00767b38 * 0x30;
@@ -53,8 +53,8 @@ int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(SRenderVertex **
       case 2:
         output_vertices[iVar4] = v1;
         if (0xb < iVar2) {
-          PTR_01cc4800 = "..\\engine\\clipper.c";
-          INT_01cc4804 = 0x5e;
+          g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+          g_INT_01cc4804 = 0x5e;
           core_main_c_FUN_004c8440("Ran out of clipped verts!");
         }
         iVar2 = DAT_00767b38 * 0x30;

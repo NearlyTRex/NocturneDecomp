@@ -20,8 +20,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_
   }
   this_ptr->max_distance = (float)screen_height;
   this_ptr->scale_factor = 1;
-  *(int *)(this_ptr->camera_name + 0xfc) = (screen_height * 4) / 3;
-  this_ptr->display_width = *(int *)(this_ptr->camera_name + 0xfc);
+  this_ptr->screen_width = (screen_height * 4) / 3;
+  this_ptr->display_width = this_ptr->screen_width;
   _DAT_012b0660 = 0;
   iVar1 = this_ptr->display_width;
   this_ptr->display_height = (int)this_ptr->max_distance;
@@ -33,21 +33,19 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_
     this_ptr->scale_factor = this_ptr->scale_factor * 2;
   }
   pvVar2 = malloc
-                     (*(int *)(this_ptr->camera_name + 0xfc) * (int)this_ptr->max_distance * 4 +
-                      0x1010);
+                     (this_ptr->screen_width * (int)this_ptr->max_distance * 4 + 0x1010);
   this_ptr->framebuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    INT_01cc4804 = 0x248;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    g_INT_01cc4804 = 0x248;
     core_main_c_FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
   }
   pvVar2 = malloc
-                     (*(int *)(this_ptr->camera_name + 0xfc) * (int)this_ptr->max_distance * 4 +
-                      0x1010);
+                     (this_ptr->screen_width * (int)this_ptr->max_distance * 4 + 0x1010);
   this_ptr->zbuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    INT_01cc4804 = 0x24d;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    g_INT_01cc4804 = 0x24d;
     core_main_c_FUN_004c8440("CDemonCamera::init - Unable to alloc z buffer");
   }
   this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,62 +58,62 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 41,
+        "line": 42,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 65,
+        "line": 67,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 29,
-        "line": 65,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 67,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 34,
         "line": 67,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 68,
+        "line": 69,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 34,
-        "line": 68,
+        "line": 69,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 70,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 34,
+        "line": 70,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 76,
+        "line": 78,
         "message": "use of undeclared identifier 'DAT_01bcdef8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 103,
+        "line": 105,
         "message": "use of undeclared identifier 'DAT_01bcdef8'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 105,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 110,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
     "success": false,
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 335,
-    "complexity_score": 201,
+    "complexity_score": 218,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
-    "suspect_count": 5,
+    "pseudocode_lines": 143,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 476
+    "total_lines": 478
   },
   "cross_references": [],
   "function": {
@@ -203,8 +204,8 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
@@ -215,20 +216,20 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -257,31 +258,31 @@
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01c777c0",
-      "name": "DAT_01c777c0",
+      "name": "g_CGame_01c775ec.freeze_enemies_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7781c",
-      "name": "DAT_01c7781c",
+      "name": "g_CGame_01c775ec.allow_enemy_attack_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "DAT_01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "DAT_01fa5f38",
+      "name": "g_CDemonSet_01e57284.characters[0]",
       "type": "undefined4",
       "value": null
     }
@@ -456,8 +457,16 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 58,
+      "line": 60,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar10 = (**(code **)(*(int *)(iVar11 + 0x14c) + 0xdc))(iVar11,this_ptr);",
@@ -465,7 +474,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 60,
+      "line": 62,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar10 = (**(code **)(*(int *)(iVar11 + 0x14c) + 0x104))(iVar11), iVar10 == 0)) &&",
@@ -473,7 +482,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 61,
+      "line": 63,
       "match": "code *",
       "severity": "moderate",
       "text": "((iVar10 = (**(code **)(*(int *)(iVar11 + 0x14c) + 0x68))(iVar11), iVar10 == 0 &&",
@@ -481,7 +490,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 71,
       "match": "DAT_01bcdef8",
       "severity": "mild",
       "text": "*(int *)(&DAT_01bcdef8 + local_20) = iVar11;",
@@ -489,7 +498,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 98,
       "match": "DAT_01bcdef8",
       "severity": "mild",
       "text": "local_1c = *(CCharacter **)(&DAT_01bcdef8 + iVar11 * 4);",

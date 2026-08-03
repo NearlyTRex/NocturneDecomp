@@ -41,12 +41,12 @@
 ;   double DOUBLE_00582172 = -0.800000000000000
 ;   double DOUBLE_0058217a = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   undefined4 DAT_005be368
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
-;   undefined4 DAT_01fa3ff8
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
+;   undefined4 g_CDemonSet_01e57284.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -154,13 +154,13 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 004984fb
     MOV dword ptr [ESP + 0xa8],EDX      ; 004984fe
     MOV dword ptr [ESP + 0x94],EAX      ; 00498505
-    MOV EAX,[0x005be368]                ; 0049850c | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0049850c | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0049850c
     MOV EDX,dword ptr [ESP + 0xa8]      ; 00498511
-    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 00498518 | DAT_01fa3ff0
+    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 00498518 | g_CDemonSet_01e57284.actor_count
     JGE 0x004986e0                      ; 0049851e
         ;   XREF to: 004986e0 (CONDITIONAL_JUMP)  ; LAB_004986e0
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 00498524 | DAT_01fa3ff4 | DAT_01fa3ff8
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 00498524 | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
     PUSH EBX                            ; 0049852b
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0049852c
     CALL dword ptr [EAX + 0x8c]         ; 00498532
@@ -370,8 +370,8 @@ section .text
     MOV EBX,0x582134                    ; 00498761 | = "..\\core\\gabriela.cpp"
     MOV ESI,0x638                       ; 00498766
     PUSH 0x582149                       ; 0049876b | = "Hell froze - invalid pickUpType: %d"
-    MOV dword ptr [0x01cc4800],EBX      ; 00498770 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00498776 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 00498770 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00498776 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0049877c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00498781

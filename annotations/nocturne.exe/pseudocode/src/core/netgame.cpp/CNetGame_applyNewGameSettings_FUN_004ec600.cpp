@@ -74,8 +74,8 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame
   bVar18 = 0;
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
      ) {
-    PTR_01cc4800 = "..\\core\\netgame.cpp";
-    INT_01cc4804 = 0x7e6;
+    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+    g_INT_01cc4804 = 0x7e6;
     core_main_c_FUN_004c8440("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
   }
   piVar13 = (int *)&stack0xfffffe90;
@@ -138,8 +138,8 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame
       }
       if (iVar6 == local_113) {
         if (local_24 == this_ptr->local_player_index) {
-          PTR_01cc4800 = "..\\core\\netgame.cpp";
-          INT_01cc4804 = 0x811;
+          g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+          g_INT_01cc4804 = 0x811;
           core_main_c_FUN_004c8440("Hell froze");
         }
         core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(this_ptr,local_24);
@@ -149,16 +149,16 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame
         pcVar8 = local_10f + iVar6 * 0x28;
         pSVar11 = local_28;
         if (uVar3 == this_ptr->local_player_index) {
-          DAT_005bdee4 = uVar3 ^ this_ptr->local_player_index;
+          g_INT_005bdee4 = uVar3 ^ this_ptr->local_player_index;
           iVar14 = _strcmp(local_28->name,pcVar8);
           if (iVar14 != 0) {
-            DAT_005bdee4 = 1;
+            g_INT_005bdee4 = 1;
           }
           if (local_2c->players[0].ready_flag == aEStack_f3[iVar6 * 10 + 2]) {
-            if (DAT_005bdee4 == 0) goto LAB_004ecb76;
+            if (g_INT_005bdee4 == 0) goto LAB_004ecb76;
           }
           else {
-            DAT_005bdee4 = 1;
+            g_INT_005bdee4 = 1;
           }
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(this_ptr);
         }

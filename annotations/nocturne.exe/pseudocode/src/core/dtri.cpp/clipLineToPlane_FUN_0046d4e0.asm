@@ -26,8 +26,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtri_cpp_0057e48e
 ;   TerminatedCString s_Bad_clip_0057e49f
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -194,8 +194,8 @@ section .text
         ;   Label: LAB_0046d636
     MOV EDX,0x457                       ; 0046d63b
     PUSH 0x57e49f                       ; 0046d640 | = "Bad clip!"
-    MOV [0x01cc4800],EAX                ; 0046d645 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0046d64a | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0046d645 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0046d64a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046d650
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046d655

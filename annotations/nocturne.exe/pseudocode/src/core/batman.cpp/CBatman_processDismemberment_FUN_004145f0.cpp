@@ -13,7 +13,7 @@ void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_004145f0(CBatman *
 {
   CVector3f *initial_velocity;
   float fVar1;
-  byte *puVar2;
+  CConsole *pCVar2;
   int iVar3;
   CBodyPart *body_part;
   CVector3f local_34;
@@ -59,10 +59,10 @@ switchD_00414626_default:
     if (this_ptr->part_indices[1] == damage_info->hit_part_index) {
       local_14 = 0.02;
     }
-    if (*(int *)(0x01C775EC + 0x1e0) != 0) {
+    if (g_CGame_PTR_005b9354->gratuitous_dismemberment != 0) {
       local_14 = 1.0;
     }
-    if (*(int *)(0x01C775EC + 0x14) == 0) {
+    if (g_CGame_PTR_005b9354->blood_flag == 0) {
       local_14 = 0.0;
     }
     iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(local_14);
@@ -116,11 +116,11 @@ switchD_00414626_default:
   }
   damage_info->damage_amount = fVar1;
 LAB_004147e1:
-  puVar2 = PTR_DAT_005ad350;
+  pCVar2 = g_CConsole_PTR_005ad350;
   if ((this_ptr->part_indices[1] == damage_info->hit_part_index) &&
      (damage_info->damage_type == DAMAGE_TYPE_LAUNCH)) {
     damage_info->damage_amount = damage_info->damage_amount * (float)20;
-    engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar2,"Shot thru the heart\n");
+    engine_console_cpp_CConsole_printf_FUN_0043ac60(pCVar2,"Shot thru the heart\n");
     iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
     if (iVar3 != 0) {
       local_28.x = 0.0;

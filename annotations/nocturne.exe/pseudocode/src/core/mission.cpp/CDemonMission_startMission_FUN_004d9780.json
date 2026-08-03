@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,14 +58,8 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 19,
+        "line": 18,
         "message": "use of undeclared identifier '_DAT_01cae0d4'; did you mean 'DAT_005ae4d4'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 20,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       },
       {
         "category": "undeclared_identifier",
@@ -76,38 +70,26 @@
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 27,
+        "line": 26,
         "message": "incompatible integer to pointer conversion assigning to 'CEventList *' from 'int'"
       },
       {
         "category": "undeclared_identifier",
         "column": 43,
-        "line": 41,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 50,
+        "line": 42,
         "message": "no matching function for call to 'core_script_cpp_FUN_004feff0'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 51,
+        "line": 43,
         "message": "no matching function for call to 'core_script_cpp_CScript_executeInitSection_FUN_004ff170'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 52,
-        "message": "no matching function for call to 'core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 55,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       }
     ],
     "success": false,
@@ -116,19 +98,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 161,
+    "complexity_score": 103,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 10,
+    "pseudocode_lines": 38,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast",
       "raw_address_constant",
+      "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 159
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -241,9 +223,9 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "005b7650",
@@ -253,15 +235,15 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005baca0",
-      "name": "INT_005baca0",
-      "type": "int",
-      "value": "0x1cc3160"
+      "name": "g_CLevelLoader_PTR_005baca0",
+      "type": "CLevelLoader*",
+      "value": "01cc3160"
     },
     {
       "addr": "005be220",
@@ -271,19 +253,19 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01c77814",
-      "name": "DAT_01c77814",
+      "name": "g_CGame_01c775ec.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77820",
-      "name": "DAT_01c77820",
+      "name": "g_CGame_01c775ec.is_loading",
       "type": "undefined4",
       "value": null
     },
@@ -301,14 +283,14 @@
     },
     {
       "addr": "01e56da0",
-      "name": "DAT_01e56da0",
-      "type": "undefined4",
+      "name": "g_CScript_01e56da0",
+      "type": "CScript",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -430,76 +412,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 19,
-      "match": "(char *)((int)(pacVar1 + 3) +",
+      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 35,
+      "match": "0x1e56da0",
       "severity": "moderate",
-      "text": "*(char *)((int)(pacVar1 + 3) + 0xe0) = -1;",
-      "type": "pointer_cast"
+      "text": "core_script_cpp_FUN_004feff0(0x01E56DA0);",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 21,
-      "match": "(char *)((int)(pacVar1 + 3) +",
+      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 36,
+      "match": "0x1e56da0",
       "severity": "moderate",
-      "text": "*(char *)((int)(pacVar1 + 3) + 0xe1) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 22,
-      "match": "(char *)((int)(pacVar1 + 3) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar1 + 3) + 0xe2) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 23,
-      "match": "(char *)((int)(pacVar1 + 3) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar1 + 3) + 0xe3) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 25,
-      "match": "(char *)((int)(pacVar1 + 3) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar1 + 3) + 0xdc) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 26,
-      "match": "(char *)((int)(pacVar1 + 3) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar1 + 3) + 0xdd) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 27,
-      "match": "(char *)((int)(pacVar1 + 3) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar1 + 3) + 0xde) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 28,
-      "match": "(char *)((int)(pacVar1 + 3) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar1 + 3) + 0xdf) = '\\0';",
-      "type": "pointer_cast"
+      "text": "core_script_cpp_CScript_executeInitSection_FUN_004ff170(0x01E56DA0);",
+      "type": "raw_address_constant"
     },
     {
       "description": "Raw hex address 0x1c03a10 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 19,
       "match": "0x1c03a10",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01C03A10;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 20,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->pending_teleport).position.z = 0.0;",
+      "type": "unrolled_memset"
     }
   ]
 }

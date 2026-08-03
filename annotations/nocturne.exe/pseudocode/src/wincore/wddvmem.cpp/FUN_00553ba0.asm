@@ -15,8 +15,8 @@
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   int INT_02dc9d60
 ;   undefined4 DAT_02ddf550
 ;   undefined4 DAT_02ddf554
@@ -171,8 +171,8 @@ section .text
     MOV EBP,0x597b48                    ; 00553cec | = "..\\wincore\\wddvmem.cpp"
     MOV EAX,0x3df                       ; 00553cf1
     PUSH 0x597b5f                       ; 00553cf6 | = "videoRestore - Unable to set front bu..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00553cfb | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00553d01 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 00553cfb | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00553d01 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00553d06
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00553d0b

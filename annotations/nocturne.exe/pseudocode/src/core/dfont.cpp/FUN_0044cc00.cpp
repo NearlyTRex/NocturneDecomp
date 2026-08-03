@@ -13,37 +13,37 @@ void __cdecl core_dfont_cpp_FUN_0044cc00(void)
 {
   CBitFont *pCVar1;
   
-  if (_DAT_014b98f8 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_FUN_0048fe30(_DAT_014b98f8,0);
+  if (g_CBitFont_PTR_014b98f8 != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_FUN_0048fe30(g_CBitFont_PTR_014b98f8,0);
     FUN_00564494(pCVar1);
   }
-  _DAT_014b98f8 = (CBitFont *)0x0;
-  if (_DAT_014b98fc != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_FUN_0048fe30(_DAT_014b98fc,0);
+  g_CBitFont_PTR_014b98f8 = (CBitFont *)0x0;
+  if (g_CBitFont_PTR_014b98fc != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_FUN_0048fe30(g_CBitFont_PTR_014b98fc,0);
     FUN_00564494(pCVar1);
   }
-  _DAT_014b98fc = (CBitFont *)0x0;
-  if (_DAT_014b9900 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_FUN_0048fe30(_DAT_014b9900,0);
+  g_CBitFont_PTR_014b98fc = (CBitFont *)0x0;
+  if (g_CBitFont_PTR_014b9900 != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_FUN_0048fe30(g_CBitFont_PTR_014b9900,0);
     FUN_00564494(pCVar1);
   }
-  _DAT_014b9900 = (CBitFont *)0x0;
-  if (_DAT_014b9904 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_FUN_0048fe30(_DAT_014b9904,0);
+  g_CBitFont_PTR_014b9900 = (CBitFont *)0x0;
+  if (g_CBitFont_PTR_014b9904 != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_FUN_0048fe30(g_CBitFont_PTR_014b9904,0);
     FUN_00564494(pCVar1);
   }
-  _DAT_014b9904 = (CBitFont *)0x0;
-  if (_DAT_014b9908 != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_FUN_0048fe30(_DAT_014b9908,0);
+  g_CBitFont_PTR_014b9904 = (CBitFont *)0x0;
+  if (g_CBitFont_PTR_014b9908 != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_FUN_0048fe30(g_CBitFont_PTR_014b9908,0);
     FUN_00564494(pCVar1);
   }
   _DAT_01bcd070 = 0;
-  _DAT_014b9908 = (CBitFont *)0x0;
-  if (_DAT_014b990c != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_FUN_0048fe30(_DAT_014b990c,0);
+  g_CBitFont_PTR_014b9908 = (CBitFont *)0x0;
+  if (g_CBitFont_PTR_014b990c != (CBitFont *)0x0) {
+    pCVar1 = engine_font_cpp_CBitFont_FUN_0048fe30(g_CBitFont_PTR_014b990c,0);
     FUN_00564494(pCVar1);
   }
-  _DAT_014b990c = (CBitFont *)0x0;
+  g_CBitFont_PTR_014b990c = (CBitFont *)0x0;
   if (_DAT_01d16810 != 0) {
     if (_DAT_014b9910 != (uint *)0x0) {
       (**(code **)*_DAT_014b9910)(_DAT_014b9910,2);

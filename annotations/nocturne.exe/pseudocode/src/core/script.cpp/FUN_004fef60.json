@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,10 +62,10 @@
         "message": "use of undeclared identifier '_DAT_01e56418'; did you mean 'DAT_02DE6418'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 36,
+        "category": "incompatible_types",
+        "column": 3,
         "line": 20,
-        "message": "use of undeclared identifier 'DAT_01e56c30'"
+        "message": "no matching function for call to 'shape_edittool_cpp_FUN_00476160'"
       },
       {
         "category": "undeclared_identifier",
@@ -86,16 +86,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 125,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -234,59 +232,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01e56c30",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_00476160(&DAT_01e56c30);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(int *)(this_ptr->xref_entries->name + (int)ppcVar2",
-      "severity": "moderate",
-      "text": "*error_line_out = *(int *)(this_ptr->xref_entries->name + (int)ppcVar2 * 8) + -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_01e56420",
       "severity": "mild",
       "text": "return &DAT_01e56420;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(char **)((int)ppcVar2",
-      "severity": "moderate",
-      "text": "ppcVar2 = (char **)((int)ppcVar2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `ppcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
-      "match": "(int)ppcVar2",
-      "severity": "moderate",
-      "text": "*error_line_out = *(int *)(this_ptr->xref_entries->name + (int)ppcVar2 * 8) + -1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `ppcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
-      "match": "(int)ppcVar2",
-      "severity": "moderate",
-      "text": "ppcVar2 = (char **)((int)ppcVar2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `ppcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
-      "match": "(int)ppcVar2",
-      "severity": "moderate",
-      "text": "} while ((int)ppcVar2 < this_ptr->xref_count);",
-      "type": "pointer_truncation"
     }
   ]
 }

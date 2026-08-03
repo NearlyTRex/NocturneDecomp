@@ -16,8 +16,8 @@
 ;   TerminatedCString s_CDemonPart_alloc_Out_of_0057d3af
 ;   TerminatedCString s_core_dpart_cpp_0057d3d9
 ;   TerminatedCString s_CDemonPart_alloc_Out_of_0057d3eb
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dpart.cpp_CDemonPart_free_FUN_00457060
@@ -73,11 +73,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x8b                        ; 00456fba
     ADD ESP,0xc                         ; 00456fbf
-    MOV [0x01cc4804],EAX                ; 00456fc2 | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 00456fc2 | g_INT_01cc4804
     MOV EAX,ESP                         ; 00456fc7
     MOV EBP,0x57d38b                    ; 00456fc9 | = "..\\core\\dpart.cpp"
     PUSH EAX                            ; 00456fce
-    MOV dword ptr [0x01cc4800],EBP      ; 00456fcf | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EBP      ; 00456fcf | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 00456fd5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00456fda
@@ -96,8 +96,8 @@ section .text
     MOV ESI,0x57d39d                    ; 00456ff3 | = "..\\core\\dpart.cpp"
     MOV EDI,0x91                        ; 00456ff8
     PUSH 0x57d3af                       ; 00456ffd | = "CDemonPart::alloc - Out of normal mem..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00457002 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00457008 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00457002 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00457008 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045700e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00457013
@@ -117,8 +117,8 @@ section .text
     MOV ECX,0x57d3d9                    ; 00457032 | = "..\\core\\dpart.cpp"
     MOV EBX,0x99                        ; 00457037
     PUSH 0x57d3eb                       ; 0045703c | = "CDemonPart::alloc - Out of face memory!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00457041 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00457047 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00457041 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00457047 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045704d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00457052

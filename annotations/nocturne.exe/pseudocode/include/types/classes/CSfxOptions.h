@@ -5,7 +5,7 @@
 #include "types/classes/CVector3d.h"
 
 // Structure: CSfxOptions
-// Ghidra size: 0x70 (112 bytes)
+// Ghidra size: 0x6c (108 bytes)
 #pragma pack(push, 1)
 typedef struct CSfxOptions {
     int channel_index; // 0x0
@@ -22,7 +22,6 @@ typedef struct CSfxOptions {
     uint flags; // 0x5c
     double trigger_time; // 0x60
     int trigger_id; // 0x68
-    int dead; // 0x6c
 } CSfxOptions;
 #pragma pack(pop)
 

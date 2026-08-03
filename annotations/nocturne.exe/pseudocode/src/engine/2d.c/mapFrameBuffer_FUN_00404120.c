@@ -14,8 +14,8 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width
   int iVar1;
   
   if (DAT_006b023c != 0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x998;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x998;
     core_main_c_FUN_004c8440("mapFrameBuffer - already mapped!");
   }
   if (stride == 0) {
@@ -23,30 +23,30 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width
     stride = (int)((width * bits_per_pixel + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
   }
   if (((bits_per_pixel != 8) && (bits_per_pixel != 0x10)) && (bits_per_pixel != 0x20)) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x9a0;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x9a0;
     core_main_c_FUN_004c8440("mapFrameBuffer - invalid bits/pixel");
   }
   iVar1 = width * bits_per_pixel >> 0x1f;
   if ((stride ^ stride >> 0x1f) - (stride >> 0x1f) <
       (int)((width * bits_per_pixel + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x9a1;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x9a1;
     core_main_c_FUN_004c8440("mapFrameBuffer - invalid stride");
   }
   if ((width < 1) || (height < 1)) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x9a2;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x9a2;
     core_main_c_FUN_004c8440("mapFrameBuffer - invalid size");
   }
   if (0x4b0 < height) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x9a3;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x9a3;
     core_main_c_FUN_004c8440("mapFrameBuffer - ySize too big!");
   }
   if (frame_buffer == (void *)0x0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x9a4;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x9a4;
     core_main_c_FUN_004c8440("mapFrameBuffer - invalid buffer!");
   }
   DAT_006b023c = DAT_005b761c;

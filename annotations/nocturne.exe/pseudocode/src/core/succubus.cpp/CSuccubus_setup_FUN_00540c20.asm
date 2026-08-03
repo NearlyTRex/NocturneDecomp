@@ -52,9 +52,9 @@ section .text
     PUSH EBP                            ; 00540c23
     SUB ESP,0x8                         ; 00540c24
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00540c27
-    MOV EDI,dword ptr [0x005b9354]      ; 00540c2b | DAT_005b9354
+    MOV EDI,dword ptr [0x005b9354]      ; 00540c2b | g_CGame_PTR_005b9354
     LEA ESI,[EBX + 0xbd24]              ; 00540c31
-    MOV EDX,dword ptr [EDI + 0x18]      ; 00540c37 | DAT_01c77604
+    MOV EDX,dword ptr [EDI + 0x18]      ; 00540c37 | g_CGame_01c775ec.nudity_flag
     LEA EAX,[EBX + 0x150]               ; 00540c3a
     TEST EDX,EDX                        ; 00540c40
     JZ 0x00540f2e                       ; 00540c42

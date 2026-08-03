@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005829aa
 ;   TerminatedCString s_CGame_playerControls_unk_005829bb
-;   undefined4 DAT_005bdee0
-;   undefined4 DAT_005be368
+;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01bd1d94
 ;   undefined4 DAT_01c02598
 ;   undefined4 DAT_01c0259c
@@ -22,9 +22,9 @@
 ;   undefined4 DAT_01c78418
 ;   undefined4 DAT_01c7841c
 ;   undefined4 DAT_01c78420
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01cea280
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   CNetGame g_CNetGame_01cea280
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -85,8 +85,8 @@ section .text
     POP EDI                             ; 0049e82c
     MOV EAX,[0x01bd1d94]                ; 0049e82d | DAT_01bd1d94
     MOV [0x01c78418],EAX                ; 0049e832 | DAT_01c78418
-    MOV EAX,[0x005be368]                ; 0049e837 | DAT_005be368
-    MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049e83c | DAT_01fb1d40
+    MOV EAX,[0x005be368]                ; 0049e837 | g_CDemonSet_PTR_005be368
+    MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049e83c | g_CDemonSet_01e57284.selected_camera_index
     MOV [0x01c7841c],EAX                ; 0049e842 | DAT_01c7841c
     POP EDI                             ; 0049e847
     POP EBP                             ; 0049e848
@@ -108,8 +108,8 @@ section .text
         ;   XREF to: 0049e80b (UNCONDITIONAL_JUMP)  ; LAB_0049e80b
     PUSH EDI                            ; 0049e85d
         ;   Label: LAB_0049e85d
-    MOV EDI,dword ptr [0x005bdee0]      ; 0049e85e | DAT_005bdee0
-    PUSH EDI                            ; 0049e864 | DAT_01cea280
+    MOV EDI,dword ptr [0x005bdee0]      ; 0049e85e | g_CNetGame_PTR_005bdee0
+    PUSH EDI                            ; 0049e864 | g_CNetGame_01cea280
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40 ; 0049e865
         ;   XREF to: 004eda40 (UNCONDITIONAL_CALL)  ; SPlayerInput * core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40(CNetGame * this_ptr)
     MOV EDX,EAX                         ; 0049e86a
@@ -133,8 +133,8 @@ section .text
         ;   Label: LAB_0049e887
     MOV EAX,0x71d                       ; 0049e88c
     PUSH 0x5829bb                       ; 0049e891 | = "CGame::playerControls - unknown contr..."
-    MOV dword ptr [0x01cc4800],EBP      ; 0049e896 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0049e89c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 0049e896 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0049e89c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0049e8a1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0049e8a6

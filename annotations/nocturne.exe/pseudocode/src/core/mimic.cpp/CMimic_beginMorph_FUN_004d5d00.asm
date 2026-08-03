@@ -13,10 +13,10 @@
 ;   TerminatedCString s_core_mimic_cpp_00589513
 ;   TerminatedCString s_CMimic_beginMorph_can_t_00589525
 ;   TerminatedCString s_s_morphing_into_type_s_0058956e
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -87,8 +87,8 @@ section .text
     PUSH EAX                            ; 004d5dc7
     PUSH EBX                            ; 004d5dc8
     PUSH 0x58956e                       ; 004d5dc9 | = "%s morphing into type %s\n"
-    MOV EDI,dword ptr [0x005ad350]      ; 004d5dce | PTR_DAT_005ad350
-    PUSH EDI                            ; 004d5dd4 | DAT_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 004d5dce | g_CConsole_PTR_005ad350
+    PUSH EDI                            ; 004d5dd4 | g_CConsole_0077ad0c
     MOV dword ptr [EBX + 0xfc],0x1      ; 004d5dd5
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004d5ddf
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
@@ -101,8 +101,8 @@ section .text
     MOV ECX,0x589513                    ; 004d5deb | = "..\\core\\mimic.cpp"
     MOV ESI,0x499                       ; 004d5df0
     PUSH 0x589525                       ; 004d5df5 | = "CMimic::beginMorph() - can't do this ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d5dfa | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d5e00 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d5dfa | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d5e00 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d5e06
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d5e0b

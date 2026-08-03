@@ -404,8 +404,8 @@ section .text
     SAHF                                ; 00485d0f
     JNC 0x00486239                      ; 00485d10
         ;   XREF to: 00486239 (CONDITIONAL_JUMP)  ; LAB_00486239
-    MOV EAX,[0x005b9354]                ; 00485d16 | DAT_005b9354
-    CMP dword ptr [EAX + 0xc],0x0       ; 00485d1b | DAT_01c775f8
+    MOV EAX,[0x005b9354]                ; 00485d16 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0xc],0x0       ; 00485d1b | g_CGame_01c775ec.halo_mode
     JZ 0x00486239                       ; 00485d1f
         ;   XREF to: 00486239 (CONDITIONAL_JUMP)  ; LAB_00486239
     FLD double ptr [ESP + 0x10]         ; 00485d25

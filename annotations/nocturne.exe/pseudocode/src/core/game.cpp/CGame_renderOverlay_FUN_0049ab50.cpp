@@ -53,20 +53,20 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_0049ab50(CGame *this_ptr)
       local_18 = (CGame *)(int)ROUND(dVar6);
     }
     engine_3d_c_setRenderAlpha_FUN_00408370(iVar2);
-    local_38 = _DAT_014b9900;
-    if (_DAT_01fb8644 < 0x1e0) {
-      local_38 = _DAT_014b9904;
+    local_38 = g_CBitFont_PTR_014b9900;
+    if (g_CDemonCamera_01fb8508.screen_width < 0x1e0) {
+      local_38 = g_CBitFont_PTR_014b9904;
     }
     iVar2 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
                       (local_38,this_ptr->message_text,(char *)0x1c71430,10,0x100,
-                       (_DAT_01fb8644 * 9) / 10);
+                       (g_CDemonCamera_01fb8508.screen_width * 9) / 10);
     local_48 = iVar2;
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_38,0x58);
     iVar2 = DAT_005b7620 - iVar2 * iVar4;
     local_54 = iVar4;
     iVar3 = core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(0x01E56DA0);
     iVar4 = (iVar2 - iVar3) - iVar4;
-    if (_DAT_014b9904 == local_38) {
+    if (g_CBitFont_PTR_014b9904 == local_38) {
       iVar4 = iVar4 + -7;
     }
     iVar2 = 0;
@@ -84,9 +84,9 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_0049ab50(CGame *this_ptr)
     }
   }
   if (0.0 < _DAT_01c78ac4) {
-    this_ptr_00 = _DAT_014b98f8;
-    if ((DAT_005b7620 < 0x1e0) && (this_ptr_00 = _DAT_014b98fc, DAT_005b7620 < 0x180)) {
-      this_ptr_00 = _DAT_014b9904;
+    this_ptr_00 = g_CBitFont_PTR_014b98f8;
+    if ((DAT_005b7620 < 0x1e0) && (this_ptr_00 = g_CBitFont_PTR_014b98fc, DAT_005b7620 < 0x180)) {
+      this_ptr_00 = g_CBitFont_PTR_014b9904;
     }
     iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr_00,0x58);
     iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(this_ptr_00,0x58);
@@ -102,12 +102,12 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_0049ab50(CGame *this_ptr)
     iVar3 = local_60 >> 0x1f;
     iVar2 = local_60 + iVar3 * -4;
     local_44 = (CBitFont *)(local_5c / 0x28);
-    local_40 = _DAT_014b9904;
+    local_40 = g_CBitFont_PTR_014b9904;
     if (0x280 < DAT_005b761c) {
-      local_40 = _DAT_014b98fc;
+      local_40 = g_CBitFont_PTR_014b98fc;
     }
     if (800 < DAT_005b761c) {
-      local_40 = _DAT_014b98f8;
+      local_40 = g_CBitFont_PTR_014b98f8;
     }
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_40,0x58);
     if ((int)local_44 < iVar4) {

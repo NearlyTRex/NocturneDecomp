@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -92,27 +92,27 @@
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 110,
-        "message": "no matching function for call to 'core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90'"
+        "category": "type_error",
+        "column": 52,
+        "line": 121,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 54,
+        "line": 131,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 54,
+        "line": 134,
+        "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "type_error",
         "column": 52,
-        "line": 120,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 54,
-        "line": 130,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 54,
-        "line": 133,
+        "line": 147,
         "message": "invalid suffix '._0_4_' on floating constant"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 553,
-    "complexity_score": 299,
+    "complexity_score": 301,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 159,
+    "pseudocode_lines": 161,
     "suspect_count": 13,
     "suspect_types": [
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 712
+    "total_lines": 714
   },
   "cross_references": [
     {
@@ -241,9 +241,9 @@
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     }
   ],
   "param_estimates": {
@@ -550,7 +550,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 113,
+      "line": 114,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_44 = local_44 + 1.5873523201947252e-314._0_4_;",
@@ -558,7 +558,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 123,
+      "line": 124,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_58 = local_58 + 1.5873523201947252e-314._0_4_;",
@@ -566,7 +566,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 126,
+      "line": 127,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_58 = local_58 + 1.5873523201947252e-314._0_4_;",
@@ -574,7 +574,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 139,
+      "line": 140,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_48 = local_48 + 1.5873523201947252e-314._0_4_;",
@@ -582,7 +582,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 150,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_60 = local_60 + 1.5873523201947252e-314._0_4_;",
@@ -590,7 +590,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 152,
+      "line": 153,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_60 = local_60 + 1.5873523201947252e-314._0_4_;",

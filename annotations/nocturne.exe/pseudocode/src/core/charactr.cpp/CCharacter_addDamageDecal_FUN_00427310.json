@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,37 +58,37 @@
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 89,
+        "line": 92,
         "message": "no matching function for call to 'core_xform_cpp_buildRotationY_FUN_0055c7b0'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 99,
+        "line": 102,
         "message": "no matching function for call to 'core_xform_cpp_buildRotationX_FUN_0055c730'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 107,
+        "line": 110,
         "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 115,
+        "line": 118,
         "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 134,
+        "line": 137,
         "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 142,
+        "line": 145,
         "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       }
     ],
@@ -98,20 +98,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 292,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 142,
-    "suspect_count": 13,
+    "pseudocode_lines": 145,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "unrolled_memcpy"
     ],
-    "total_lines": 403
+    "total_lines": 406
   },
   "cross_references": [
     {
@@ -179,73 +178,73 @@
   "globals": [
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01fa3fac",
-      "name": "DAT_01fa3fac",
+      "name": "g_CDemonSet_01e57284.ray_origin.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb0",
-      "name": "DAT_01fa3fb0",
+      "name": "g_CDemonSet_01e57284.ray_origin.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb4",
-      "name": "DAT_01fa3fb4",
+      "name": "g_CDemonSet_01e57284.ray_origin.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb8",
-      "name": "DAT_01fa3fb8",
+      "name": "g_CDemonSet_01e57284.ray_target.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fbc",
-      "name": "DAT_01fa3fbc",
+      "name": "g_CDemonSet_01e57284.ray_target.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc0",
-      "name": "DAT_01fa3fc0",
+      "name": "g_CDemonSet_01e57284.ray_target.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fd4",
-      "name": "DAT_01fa3fd4",
+      "name": "g_CDemonSet_01e57284.collision_impact_position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fd8",
-      "name": "DAT_01fa3fd8",
+      "name": "g_CDemonSet_01e57284.collision_impact_position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fdc",
-      "name": "DAT_01fa3fdc",
+      "name": "g_CDemonSet_01e57284.collision_impact_position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe4",
-      "name": "DAT_01fa3fe4",
+      "name": "g_CDemonSet_01e57284.collision_part_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe8",
-      "name": "DAT_01fa3fe8",
+      "name": "g_CDemonSet_01e57284.collision_bone_index",
       "type": "undefined4",
       "value": null
     }
@@ -560,7 +559,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 117,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -568,7 +567,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 144,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
@@ -576,7 +575,7 @@
     },
     {
       "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 117,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -584,23 +583,15 @@
     },
     {
       "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
+      "line": 144,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 39,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "iVar1 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 86,
+      "line": 89,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -608,7 +599,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 95,
+      "line": 98,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -616,7 +607,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 103,
+      "line": 106,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -624,7 +615,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 111,
+      "line": 114,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -632,7 +623,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 122,
+      "line": 125,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -640,7 +631,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 130,
+      "line": 133,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -648,7 +639,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 138,
+      "line": 141,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",

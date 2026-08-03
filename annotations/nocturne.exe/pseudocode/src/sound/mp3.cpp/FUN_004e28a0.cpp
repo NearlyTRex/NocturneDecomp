@@ -28,8 +28,8 @@ void sound_mp3_cpp_FUN_004e28a0(uint *param_1,_FILE *param_2,ulong param_3,uint 
   pvVar2 = malloc(param_3);
   param_1[1] = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    PTR_01cc4800 = "..\\sound\\mp3.cpp";
-    INT_01cc4804 = 0x1ff;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+    g_INT_01cc4804 = 0x1ff;
     core_main_c_FUN_004c8440("Out of memory.  File: %s",&DAT_01cd8b28);
   }
   _fseek((_FILE *)*param_1,param_1[8],0);

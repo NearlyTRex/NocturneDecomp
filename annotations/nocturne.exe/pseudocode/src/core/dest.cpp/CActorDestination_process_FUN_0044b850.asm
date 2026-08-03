@@ -24,10 +24,10 @@
 ;   double DOUBLE_0057be0f = 0.25
 ;   double DOUBLE_0057be17 = 0.100000000000000
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
-;   undefined4 DAT_01fa3ff8
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
+;   undefined4 g_CDemonSet_01e57284.actors[1]
 ;
 ; Called Functions:
 ;   core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0
@@ -55,13 +55,13 @@ section .text
     LEA ESI,[EAX + 0x20]                ; 0044b879
     XOR EDI,EDI                         ; 0044b87c
     XOR EBX,EBX                         ; 0044b87e
-    MOV EDX,dword ptr [0x005be368]      ; 0044b880 | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 0044b880 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0044b880
-    CMP EDI,dword ptr [EDX + 0x14cd6c]  ; 0044b886 | DAT_01fa3ff0
+    CMP EDI,dword ptr [EDX + 0x14cd6c]  ; 0044b886 | g_CDemonSet_01e57284.actor_count
     JGE 0x0044b8f1                      ; 0044b88c
         ;   XREF to: 0044b8f1 (CONDITIONAL_JUMP)  ; LAB_0044b8f1
     ADD EDX,EBX                         ; 0044b88e
-    MOV EAX,dword ptr [EDX + 0x14cd70]  ; 0044b890 | DAT_01fa3ff4 | DAT_01fa3ff8
+    MOV EAX,dword ptr [EDX + 0x14cd70]  ; 0044b890 | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
     FLD float ptr [ESI]                 ; 0044b896
     FSUB float ptr [EAX + 0x20]         ; 0044b898
     FSTP float ptr [ESP + 0xc]          ; 0044b89b
@@ -89,7 +89,7 @@ section .text
     ADD EBX,0x4                         ; 0044b8d5
     JMP 0x0044b880                      ; 0044b8d8
         ;   XREF to: 0044b880 (UNCONDITIONAL_JUMP)  ; LAB_0044b880
-    MOV ECX,dword ptr [EDX + 0x14cd70]  ; 0044b8da | DAT_01fa3ff4
+    MOV ECX,dword ptr [EDX + 0x14cd70]  ; 0044b8da | g_CDemonSet_01e57284.actors[0]
         ;   Label: LAB_0044b8da
     PUSH ECX                            ; 0044b8e0
     MOV EAX,dword ptr [EBP + 0x14]      ; 0044b8e1

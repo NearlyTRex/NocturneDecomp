@@ -33,7 +33,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427b60(CCharacter *thi
   sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
   if ((this_ptr->model).model_name[0] != '\0') {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(&this_ptr->model);
-    local_24 = pCVar1->texture_sets[0].textures[0x28].textures[0].base.type;
+    local_24 = pCVar1->num_parts;
     if (1 < local_24) {
       if (impact_force < 0.0) {
         local_b0 = 20.0;
@@ -77,7 +77,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427b60(CCharacter *thi
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(&this_ptr->base,&CStack_60,&CStack_54);
   if (this_ptr->is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-              ((CGore *)INT_005b96c4,&CStack_60,impact_point,100,this_ptr->blood_type);
+              (g_CGore_PTR_005b96c4,&CStack_60,impact_point,100,this_ptr->blood_type);
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
     return;
   }

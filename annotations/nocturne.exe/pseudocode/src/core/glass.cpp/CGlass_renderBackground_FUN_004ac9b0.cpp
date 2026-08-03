@@ -54,7 +54,7 @@ void core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *param_1,int par
     }
     iVar4 = 0;
     core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-              (0x01E57284,param_1->broken_vertex_count,param_1->render_vertices);
+              (g_CDemonSet_PTR_005be368,param_1->broken_vertex_count,param_1->render_vertices);
     if (0 < param_1->broken_polygon_count) {
       poly = (SMRGLPrimitivePoly *)param_1->broken_quads;
       pCVar3 = param_1;

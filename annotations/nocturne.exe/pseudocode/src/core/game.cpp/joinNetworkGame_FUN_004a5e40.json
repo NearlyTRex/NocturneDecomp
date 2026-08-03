@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -63,7 +63,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 52,
+        "column": 69,
         "line": 26,
         "message": "use of undeclared identifier 'stack0xffffff8c'"
       },
@@ -74,40 +74,10 @@
         "message": "use of undeclared identifier 'stack0xffffff8c'"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 31,
-        "message": "no matching function for call to 'core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 33,
+        "line": 34,
         "message": "use of undeclared identifier 'DAT_01c78598'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 35,
-        "message": "no matching function for call to 'core_netgame_cpp_CNetGame_runLobby_FUN_004eb520'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 37,
-        "message": "no matching function for call to 'core_mission_cpp_CDemonMission_run_FUN_004d9440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 39,
-        "message": "no matching function for call to 'core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 42,
-        "message": "no matching function for call to 'core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90'"
       }
     ],
     "success": false,
@@ -116,18 +86,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 84,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 35,
     "suspect_count": 4,
     "suspect_types": [
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 122
+    "total_lines": 123
   },
   "cross_references": [],
   "function": {
@@ -183,9 +153,9 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "005b9568",
@@ -195,15 +165,15 @@
     },
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "005bdee0",
-      "name": "DAT_005bdee0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CNetGame_PTR_005bdee0",
+      "type": "CNetGame*",
+      "value": "01cea280"
     },
     {
       "addr": "01c78598",
@@ -271,7 +241,7 @@
       "line": 19,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
-      "text": "(0x01BCD074,\"Enter Server IP\",&stack0xffffff8c,100,1);",
+      "text": "(g_CEditorTools_PTR_005b6d50,\"Enter Server IP\",&stack0xffffff8c,100,1);",
       "type": "stack_ref"
     },
     {
@@ -284,7 +254,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "DAT_01c78598 = 0;",

@@ -10,8 +10,8 @@
 ;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 004961ec
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
@@ -26,8 +26,8 @@ section .text
     PUSH ESI                            ; 00498b61
     MOV ESI,dword ptr [ESP + 0xc]       ; 00498b62
     PUSH ESI                            ; 00498b66
-    MOV EDX,dword ptr [0x005be368]      ; 00498b67 | DAT_005be368
-    PUSH EDX                            ; 00498b6d | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00498b67 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 00498b6d | g_CDemonSet_01e57284
     LEA EBX,[ESI + 0x1f5a0]             ; 00498b6e
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00498b74
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
@@ -45,9 +45,9 @@ section .text
     JNZ 0x00498baf                      ; 00498ba3
         ;   XREF to: 00498baf (CONDITIONAL_JUMP)  ; LAB_00498baf
     MOV dword ptr [ESI + 0x1fa74],0x3f800000 ; 00498ba5
-    MOV EBX,dword ptr [0x005be368]      ; 00498baf | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 00498baf | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00498baf
-    PUSH EBX                            ; 00498bb5 | DAT_01e57284
+    PUSH EBX                            ; 00498bb5 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 00498bb6
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00498bbb

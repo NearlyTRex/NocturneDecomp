@@ -1,22 +1,22 @@
 // Name: core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0
 // Address: 0040bca0
 // Address Range: [[0040bca0, 0040bcdc]]
-// Convention: unknown
-// Signature: void core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(int param_1,undefined4 param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 #include "nocturne.h"
 
-void core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(int param_1,uint param_2,int param_3)
+void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 {
-  uint uVar1;
+  CDemonActor *pCVar1;
   
-  *(uint *)(param_3 + 4) = 0x40a00000;
-  *(uint *)(param_3 + 0x30) = 0x67;
-  *(uint *)(param_3 + 0x2c) = 0x3e4ccccd;
-  *(uint *)(param_3 + 8) = 0x3ecccccd;
-  *(int *)(param_3 + 0x34) = param_1;
-  uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
-  *(uint *)(param_3 + 0x38) = uVar1;
+  out_damage_info->damage_amount = 5.0;
+  out_damage_info->damage_type = DAMAGE_TYPE_MELEE;
+  out_damage_info->dismember_prob = 0.2;
+  out_damage_info->gore_multiplier = 0.4;
+  out_damage_info->attacker = this_ptr;
+  pCVar1 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
+  out_damage_info->wielder = pCVar1;
   return;
 }

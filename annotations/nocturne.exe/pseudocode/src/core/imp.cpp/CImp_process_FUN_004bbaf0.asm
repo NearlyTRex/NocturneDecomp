@@ -362,7 +362,7 @@ section .text
     PUSH 0x0                            ; 004bbd8b
     LEA EAX,[EBP + -0x2]                ; 004bbd8d
     PUSH EAX                            ; 004bbd90
-    MOV ESI,dword ptr [0x005b96c4]      ; 004bbd91 | INT_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004bbd91 | g_CGore_PTR_005b96c4
     PUSH ESI                            ; 004bbd97
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004bbd98
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
@@ -570,8 +570,8 @@ section .text
     PUSH EBX                            ; 004bc000
     MOV EAX,0x5863dc                    ; 004bc001 | = "%s confused while walking to scriptDe..."
     PUSH EAX                            ; 004bc006 | = "%s confused while walking to scriptDe..."
-    MOV ESI,dword ptr [0x005ad350]      ; 004bc007 | PTR_DAT_005ad350
-    PUSH ESI                            ; 004bc00d | DAT_0077ad0c
+    MOV ESI,dword ptr [0x005ad350]      ; 004bc007 | g_CConsole_PTR_005ad350
+    PUSH ESI                            ; 004bc00d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004bc00e
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x004bbe94                      ; 004bc013
@@ -612,7 +612,7 @@ section .text
     PUSH 0x0                            ; 004bc063
     LEA EAX,[EBP + -0x3e]               ; 004bc065
     PUSH EAX                            ; 004bc068
-    MOV ECX,dword ptr [0x005b96c4]      ; 004bc069 | INT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 004bc069 | g_CGore_PTR_005b96c4
     PUSH ECX                            ; 004bc06f
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004b0480 ; 004bc070
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004b0480(CGore * this_ptr, CVector3f * position, int blood_type)
@@ -712,9 +712,9 @@ section .text
         ;   XREF to: 004bbeaf (CONDITIONAL_JUMP)  ; caseD_8
     XOR EDI,EDI                         ; 004bc187
     XOR ESI,ESI                         ; 004bc189
-    MOV EAX,[0x005be368]                ; 004bc18b | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004bc18b | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004bc18b
-    CMP ESI,dword ptr [EAX + 0x150bf4]  ; 004bc190 | DAT_01fa7e78
+    CMP ESI,dword ptr [EAX + 0x150bf4]  ; 004bc190 | g_CDemonSet_01e57284.enemy_count
     JGE 0x004bbeaf                      ; 004bc196
         ;   XREF to: 004bbeaf (CONDITIONAL_JUMP)  ; caseD_8
     MOV ECX,dword ptr [0x01cae374]      ; 004bc19c | g_CImpActorType_01cae33c.name_hash

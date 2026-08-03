@@ -10,7 +10,7 @@
 ;   TerminatedCString s_Enter_image_width_00582340
 ;   TerminatedCString s_Enter_image_height_00582352
 ;   TerminatedCString s_Press_CTRL_V_to_begin_re_00582365
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_01c78ac8
 ;   undefined4 DAT_01c78acc
 ;   undefined4 DAT_01c78ad4
@@ -35,7 +35,7 @@ section .text
     PUSH 0x1                            ; 0049a250
     PUSH 0x5b9360                       ; 0049a252
     PUSH 0x5822e6                       ; 0049a257 | = "Enter Movie FPS"
-    MOV EBX,dword ptr [0x005b6d50]      ; 0049a25c | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 0049a25c | g_CEditorTools_PTR_005b6d50
     XOR EDX,EDX                         ; 0049a262
     PUSH EBX                            ; 0049a264
     MOV dword ptr [0x01c78acc],EDX      ; 0049a265 | DAT_01c78acc
@@ -59,7 +59,7 @@ section .text
     PUSH 0x1                            ; 0049a28b
     PUSH 0x1c78ad0                      ; 0049a28d
     PUSH 0x5822f6                       ; 0049a292 | = "Enter number of frames to record (or ..."
-    MOV ESI,dword ptr [0x005b6d50]      ; 0049a297 | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 0049a297 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 0049a29d
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360 ; 0049a29e
         ;   XREF to: 00471360 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
@@ -73,7 +73,7 @@ section .text
     PUSH 0x1                            ; 0049a2b3
     PUSH 0x5b9364                       ; 0049a2b5
     PUSH 0x582340                       ; 0049a2ba | = "Enter image width"
-    MOV EDI,dword ptr [0x005b6d50]      ; 0049a2bf | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 0049a2bf | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 0049a2c5
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360 ; 0049a2c6
         ;   XREF to: 00471360 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
@@ -87,7 +87,7 @@ section .text
     PUSH 0x1                            ; 0049a2db
     PUSH 0x5b9368                       ; 0049a2dd
     PUSH 0x582352                       ; 0049a2e2 | = "Enter image height"
-    MOV EBP,dword ptr [0x005b6d50]      ; 0049a2e7 | DAT_005b6d50
+    MOV EBP,dword ptr [0x005b6d50]      ; 0049a2e7 | g_CEditorTools_PTR_005b6d50
     PUSH EBP                            ; 0049a2ed
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360 ; 0049a2ee
         ;   XREF to: 00471360 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
@@ -96,7 +96,7 @@ section .text
     JZ 0x0049a27d                       ; 0049a2f8
         ;   XREF to: 0049a27d (CONDITIONAL_JUMP)  ; LAB_0049a27d
     PUSH 0x582365                       ; 0049a2fa | = "Press CTRL+V to begin recording."
-    MOV EAX,[0x005b6d50]                ; 0049a2ff | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 0049a2ff | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 0049a304
     CALL shape_edittool.cpp_FUN_0046fe60 ; 0049a305
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()

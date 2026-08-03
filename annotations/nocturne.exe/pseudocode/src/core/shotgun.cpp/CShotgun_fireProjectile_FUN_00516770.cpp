@@ -60,7 +60,7 @@ void __cdecl core_shotgun_cpp_CShotgun_fireProjectile_FUN_00516770(CShotgun *thi
     fStack_48 = fStack_48 * fVar1;
   }
   core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
-            (0x01C08D04,aCStack_68,&CStack_2c,1.0,0,0xff,0,
+            (g_CFireEffect_PTR_005b80f0,aCStack_68,&CStack_2c,1.0,0,0xff,0,
              this_ptr->spread_angle * (float)3.1415926535000001 * (float)0.0055555555555555497);
   this_ptr->muzzle_flash_active = 1;
   this_ptr->muzzle_flash_distance =

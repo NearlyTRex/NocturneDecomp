@@ -14,7 +14,7 @@ void __cdecl core_game_cpp_rampControlAxis_FUN_0049ed20(int negative_key,int pos
   
   if ((&DAT_01c02598)[negative_key] == '\0') {
     if ((((&DAT_01c02598)[positive_key] != '\0') && (*axis_value < max_value)) &&
-       (fVar1 = (*(float *)(0x01C775EC + 0x264) * max_value) / ramp_time + *axis_value,
+       (fVar1 = (g_CGame_PTR_005b9354->delta_time_float * max_value) / ramp_time + *axis_value,
        *axis_value = fVar1, max_value < fVar1)) {
       *axis_value = max_value;
       return;
@@ -23,7 +23,7 @@ void __cdecl core_game_cpp_rampControlAxis_FUN_0049ed20(int negative_key,int pos
   else {
     fVar1 = -max_value;
     if ((fVar1 < *axis_value) &&
-       (fVar2 = *axis_value - (*(float *)(0x01C775EC + 0x264) * max_value) / ramp_time,
+       (fVar2 = *axis_value - (g_CGame_PTR_005b9354->delta_time_float * max_value) / ramp_time,
        *axis_value = fVar2, fVar2 < fVar1)) {
       *axis_value = fVar1;
       return;

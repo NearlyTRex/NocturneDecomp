@@ -7,9 +7,9 @@
 // Address: 0043abe0
 CConsole * __cdecl CConsole::ctor(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
 
-// Original: engine_console.cpp_FUN_0043ac50
+// Original: engine_console.cpp_CConsole_dtor_FUN_0043ac50
 // Address: 0043ac50
-undefined4 FUN_0043ac50(undefined4 param_1);
+CConsole * __cdecl CConsole::dtor(CConsole *this_ptr,uint flags);
 
 // Original: engine_console.cpp_CConsole_printf_FUN_0043ac60
 // Address: 0043ac60

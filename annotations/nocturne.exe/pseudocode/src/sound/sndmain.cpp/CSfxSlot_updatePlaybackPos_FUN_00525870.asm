@@ -21,8 +21,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005931cb
 ;   TerminatedCString s_SfxSlot_updatePlaybackPo_005931e0
 ;   double DOUBLE_0059322e = 0.00100000000000000
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_00525897
     MOV EAX,0xbb5                       ; 0052589c
     PUSH 0x593196                       ; 005258a1 | = "SfxSlot::updatePlaybackPos - invalid ..."
-    MOV dword ptr [0x01cc4800],EDI      ; 005258a6 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 005258ac | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 005258a6 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 005258ac | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005258b1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005258b6
@@ -89,12 +89,12 @@ section .text
     MOV EDX,0x5931cb                    ; 005258f8 | = "..\\sound\\sndmain.cpp"
     PUSH EDI                            ; 005258fd
     MOV EAX,dword ptr [ESP + 0xc]       ; 005258fe
-    MOV dword ptr [0x01cc4800],EDX      ; 00525902 | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EDX      ; 00525902 | g_CHAR_PTR_01cc4800
     PUSH EAX                            ; 00525908
     MOV EDX,dword ptr [ESP + 0xc]       ; 00525909
     MOV ECX,0xbc3                       ; 0052590d
     PUSH EDX                            ; 00525912
-    MOV dword ptr [0x01cc4804],ECX      ; 00525913 | INT_01cc4804
+    MOV dword ptr [0x01cc4804],ECX      ; 00525913 | g_INT_01cc4804
     MOV ECX,dword ptr [EBX + 0x11c]     ; 00525919
     PUSH ECX                            ; 0052591f
     MOV ESI,dword ptr [EBX + 0x118]     ; 00525920
@@ -162,8 +162,8 @@ section .text
         ;   Label: LAB_005259c5
     MOV ESI,0xbaf                       ; 005259ca
     PUSH 0x593157                       ; 005259cf | = "SfxSlot::updatePlaybackPos - no sampl..."
-    MOV dword ptr [0x01cc4800],ECX      ; 005259d4 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005259da | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 005259d4 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 005259da | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005259e0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005259e5

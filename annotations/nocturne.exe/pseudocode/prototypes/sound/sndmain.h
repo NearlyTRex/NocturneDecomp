@@ -25,7 +25,7 @@ int FUN_00521bf0(void);
 
 // Original: sound_sndmain.cpp_FUN_00521c50
 // Address: 00521c50
-undefined * FUN_00521c50(void);
+CSfxSample * FUN_00521c50(void);
 
 // Original: sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0
 // Address: 00521ca0
@@ -629,7 +629,7 @@ int FUN_00529a00(void);
 
 // Original: sound_sndmain.cpp_CSfxSlot_ctor_FUN_00529a20
 // Address: 00529a20
-CSfxOptions * __cdecl CSfxSlot::ctor(CSfxOptions *this_ptr);
+CSfxSlot * __cdecl CSfxSlot::ctor(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxOptions_dtor_FUN_00529a40
 // Address: 00529a40
@@ -639,6 +639,6 @@ CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 // Address: 00529a50
 CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 
-// Original: sound_sndmain.cpp_FUN_00529a60
+// Original: sound_sndmain.cpp_CSfxSample_arrdtor_FUN_00529a60
 // Address: 00529a60
-void FUN_00529a60(void *param_1);
+CSfxSample * __cdecl CSfxSample::arrdtor(CSfxSample *this_ptr,uint flags);

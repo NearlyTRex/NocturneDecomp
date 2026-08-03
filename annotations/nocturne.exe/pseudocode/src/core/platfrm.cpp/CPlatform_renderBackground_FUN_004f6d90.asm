@@ -10,11 +10,11 @@
 ;   undefined4 DAT_005a1360
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_007f7370
 ;   undefined4 DAT_014b7190
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01fb1b14
+;   undefined4 g_CDemonSet_01e57284.per_pixel_lighting_enabled
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -132,9 +132,9 @@ section .text
     TEST EAX,EAX                        ; 004f6e8d
     JNZ 0x004f6f29                      ; 004f6e8f
         ;   XREF to: 004f6f29 (CONDITIONAL_JUMP)  ; LAB_004f6f29
-    MOV EAX,[0x005be368]                ; 004f6e95 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004f6e95 | g_CDemonSet_PTR_005be368
     LEA EBX,[ESP + 0x1c]                ; 004f6e9a
-    MOV dword ptr [EAX + 0x15a890],0x1  ; 004f6e9e | DAT_01fb1b14
+    MOV dword ptr [EAX + 0x15a890],0x1  ; 004f6e9e | g_CDemonSet_01e57284.per_pixel_lighting_enabled
     LEA EAX,[ESI + 0x20]                ; 004f6ea8
     FLD float ptr [EAX]                 ; 004f6eab
     FMUL float ptr [0x005a1360]         ; 004f6ead | DAT_005a1360
@@ -160,9 +160,9 @@ section .text
     PUSH EAX                            ; 004f6ef2
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 004f6ef3
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
-    MOV EAX,[0x005be368]                ; 004f6ef8 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004f6ef8 | g_CDemonSet_PTR_005be368
     ADD ESP,0xc                         ; 004f6efd
-    MOV dword ptr [EAX + 0x15a890],0x0  ; 004f6f00 | DAT_01fb1b14
+    MOV dword ptr [EAX + 0x15a890],0x0  ; 004f6f00 | g_CDemonSet_01e57284.per_pixel_lighting_enabled
     PUSH ESI                            ; 004f6f0a
         ;   Label: LAB_004f6f0a
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004f6f0b

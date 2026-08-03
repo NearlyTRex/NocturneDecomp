@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 155,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 155,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -74,20 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 370,
+    "complexity_score": 223,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 150,
-    "suspect_count": 20,
+    "pseudocode_lines": 133,
+    "suspect_count": 8,
     "suspect_types": [
-      "pointer_cast",
       "shadow_pointer_walk",
-      "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 481
+    "total_lines": 464
   },
   "cross_references": [
     {
@@ -497,112 +483,8 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 32,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x1c) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 33,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x1d) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 34,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x1e) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 35,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x1f) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 37,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x20) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 38,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x21) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 39,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x22) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 40,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x23) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 43,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x18) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 44,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x19) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 45,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x1a) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 46,
-      "match": "(char *)((int)(pacVar3 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar3 + 0x13) + 0x1b) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 148,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar5 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x3c))(iVar2);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 65,
+      "line": 50,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_88.min.x = ray_origin->x;",
@@ -610,15 +492,23 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 70,
+      "line": 55,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_88.max.x = ray_origin->x;",
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 64,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_cc.ray_query.ray_type = (this_ptr->ray_query).ray_type;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 105,
+      "line": 88,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(local_18->normal).x = SStack_a4.normal.x;",
@@ -626,7 +516,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 119,
+      "line": 102,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_64.x = CStack_58.x;",
@@ -634,7 +524,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 124,
+      "line": 107,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_88.min.x = ray_origin->x;",
@@ -642,7 +532,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 129,
+      "line": 112,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_88.max.x = ray_origin->x;",
@@ -650,7 +540,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_20->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 142,
+      "line": 125,
       "match": "local_20 = (T *)local_20->ARRAY",
       "severity": "moderate",
       "text": "local_20 = (CDemonSet *)local_20->cameras;",

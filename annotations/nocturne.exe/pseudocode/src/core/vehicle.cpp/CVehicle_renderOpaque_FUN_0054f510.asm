@@ -8,9 +8,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c7782c
+;   undefined4 g_CGame_01c775ec.goggles_active
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -66,8 +66,8 @@ section .text
     TEST EAX,EAX                        ; 0054f570
     JZ 0x0054f5da                       ; 0054f572
         ;   XREF to: 0054f5da (CONDITIONAL_JUMP)  ; LAB_0054f5da
-    MOV EAX,[0x005b9354]                ; 0054f574 | DAT_005b9354
-    CMP dword ptr [EAX + 0x240],0x0     ; 0054f579 | DAT_01c7782c
+    MOV EAX,[0x005b9354]                ; 0054f574 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x240],0x0     ; 0054f579 | g_CGame_01c775ec.goggles_active
     JNZ 0x0054f5da                      ; 0054f580
         ;   XREF to: 0054f5da (CONDITIONAL_JUMP)  ; LAB_0054f5da
     MOV EAX,ESP                         ; 0054f582

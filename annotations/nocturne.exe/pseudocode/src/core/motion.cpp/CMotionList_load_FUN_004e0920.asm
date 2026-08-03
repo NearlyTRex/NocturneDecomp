@@ -459,8 +459,8 @@ section .text
         ;   Label: LAB_004e0cb9
     MOV ESI,0x5b                        ; 004e0cbe
     PUSH 0x58ade4                       ; 004e0cc3 | = "Error reading motion list."
-    MOV dword ptr [0x01cc4800],EBX      ; 004e0cc8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e0cce | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 004e0cc8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004e0cce | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e0cd4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004e0cd9
@@ -472,8 +472,8 @@ section .text
     MOV EAX,0x58adff                    ; 004e0ce4 | = "..\\core\\motion.cpp"
     MOV EDX,0x5d                        ; 004e0ce9
     PUSH 0x58ae12                       ; 004e0cee | = "Can't read motion list - it's version..."
-    MOV [0x01cc4800],EAX                ; 004e0cf3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004e0cf8 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004e0cf3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004e0cf8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e0cfe
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004e0d03

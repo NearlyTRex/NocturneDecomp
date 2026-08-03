@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -63,57 +63,45 @@
       },
       {
         "category": "incompatible_types",
-        "column": 66,
-        "line": 53,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 5,
-        "line": 57,
+        "line": 58,
         "message": "no matching function for call to 'core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 59,
+        "line": 60,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 92,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 120,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 137,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createRock_FUN_0048b320'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 142,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 144,
+        "line": 146,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 153,
+        "line": 155,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "type_error",
+        "column": 56,
+        "line": 205,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 56,
+        "line": 207,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 56,
+        "line": 208,
+        "message": "invalid suffix '._0_4_' on floating constant"
       }
     ],
     "success": false,
@@ -122,22 +110,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 661,
-    "complexity_score": 1406,
+    "complexity_score": 1394,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 246,
-    "suspect_count": 113,
+    "pseudocode_lines": 249,
+    "suspect_count": 112,
     "suspect_types": [
-      "raw_address_constant",
       "raw_address_pointer_store",
       "unknown_field",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 907
+    "total_lines": 910
   },
   "cross_references": [],
   "function": {
@@ -320,25 +307,25 @@
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01c77608",
-      "name": "DAT_01c77608",
+      "name": "g_CGame_01c775ec.foul_language_flag",
       "type": "undefined4",
       "value": null
     },
@@ -350,8 +337,8 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -612,28 +599,28 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 29,
-          "line": 97,
+          "line": 99,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 19,
-          "line": 98,
+          "line": 100,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 29,
-          "line": 181,
+          "line": 183,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 19,
-          "line": 182,
+          "line": 184,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -688,12 +675,12 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C03A10,param_1->event_on), pCVar3 = 0x01E57284, iVar4 != 0)) {",
+      "text": "(0x01C03A10,param_1->event_on), pCVar3 = g_CDemonSet_PTR_005be368,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->emitter_state = 1;",
@@ -701,15 +688,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->state_timer = param_1->max_emit_time;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->state_timer = param_1->max_emit_time;",
@@ -720,12 +699,20 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1->state_timer = param_1->max_emit_time;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(pCVar3,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1->event_off);",
@@ -733,7 +720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->emitter_state = 0;",
@@ -741,7 +728,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->emitter_type == 10) {",
@@ -749,7 +736,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "((double)(param_1->base).location.position.x,",
@@ -757,7 +744,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "(double)(param_1->base).location.position.y,",
@@ -765,7 +752,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "(double)(param_1->base).location.position.z,50.0);",
@@ -773,7 +760,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar4 = _strnicmp(param_1->wav_name,\"mob\",3), iVar4 != 0)",
@@ -781,18 +768,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handle);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->emitter_state == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -800,23 +779,15 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handle);",
+      "text": "if (param_1->emitter_state == 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar13 = param_1->emit_timer + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar13 = param_1->emit_timer + param_2;",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handle);",
       "type": "unnamed_param"
     },
     {
@@ -824,7 +795,15 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->emit_timer = fVar13;",
+      "text": "fVar13 = param_1->emit_timer + param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar13 = param_1->emit_timer + param_2;",
       "type": "unnamed_param"
     },
     {
@@ -832,12 +811,20 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1->emit_timer = fVar13;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
       "text": "if ((fVar13 < param_1->emit_period) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->emit_timer = param_1->emit_timer - param_1->emit_period, iVar8 == 0))",
@@ -845,7 +832,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->emit_timer = param_1->emit_timer - param_1->emit_period, iVar8 == 0))",
@@ -853,7 +840,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->emit_timer = param_1->emit_timer - param_1->emit_period, iVar8 == 0))",
@@ -861,7 +848,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "switch(param_1->emitter_type) {",
@@ -869,18 +856,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = &(param_1->base).location;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(&param_1->globe,&pCVar1->position);",
       "type": "unnamed_param"
     },
     {
@@ -888,12 +867,20 @@
       "line": 89,
       "match": "param_1",
       "severity": "mild",
+      "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(&param_1->globe,&pCVar1->position);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(param_1->globe).intensity_multiplier = iVar8;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->globe).intensity.bytes[0] =",
@@ -901,7 +888,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 99,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = &(param_1->base).location;",
@@ -909,7 +896,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
       "text": "local_70.y = (param_1->base).location.position.y;",
@@ -917,7 +904,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "local_70.z = (param_1->base).location.position.z;",
@@ -925,7 +912,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "local_70.x = local_14 * (param_1->emitter_size).x + local_70.x;",
@@ -933,7 +920,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "local_70.z = local_14 * (param_1->emitter_size).z + local_70.z;",
@@ -941,7 +928,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "local_d0.y = (param_1->emitter_size).y;",
@@ -949,7 +936,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = param_1->rock_speed;",
@@ -957,7 +944,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 131,
       "match": "param_1",
       "severity": "mild",
       "text": "model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&param_1->model);",
@@ -965,18 +952,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 131,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,&(param_1->base).location.position,&local_94,model_ptr);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 134,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(param_1,&local_b8);",
+      "text": "(g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,&local_94,model_ptr);",
       "type": "unnamed_param"
     },
     {
@@ -984,12 +963,20 @@
       "line": 136,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,&local_b8,&(param_1->base).orient.vec,2,1);",
+      "text": "core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(param_1,&local_b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 138,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(g_CFireEffect_PTR_005b80f0,&local_b8,&(param_1->base).orient.vec,2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 137,
+      "line": 139,
       "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "pCVar2 = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
@@ -997,7 +984,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 138,
+      "line": 140,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = &(param_1->base).location;",
@@ -1005,7 +992,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 142,
       "match": "param_1",
       "severity": "mild",
       "text": "local_a8 = (pCVar2->location).position.y - (param_1->base).location.position.y;",
@@ -1013,7 +1000,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 141,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
       "text": "local_a4 = (pCVar2->location).position.z - (param_1->base).location.position.z;",
@@ -1021,7 +1008,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 146,
+      "line": 148,
       "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "(*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),&local_a0,0,0,1.0,1);",
@@ -1029,15 +1016,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = &(param_1->base).location;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 161,
+      "line": 152,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = &(param_1->base).location;",
@@ -1048,12 +1027,20 @@
       "line": 163,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,&pCVar1->position,(param_1->emitter_size).y,0,",
+      "text": "pCVar1 = &(param_1->base).location;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 165,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(g_CFireEffect_PTR_005b80f0,&pCVar1->position,(param_1->emitter_size).y,0,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 166,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->emitter_size).x * (float)0.5);",
@@ -1061,7 +1048,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 167,
+      "line": 169,
       "match": "param_1",
       "severity": "mild",
       "text": "local_4c[0].y = (param_1->base).location.position.y;",
@@ -1069,7 +1056,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 170,
       "match": "param_1",
       "severity": "mild",
       "text": "local_4c[0].z = (param_1->base).location.position.z;",
@@ -1077,7 +1064,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 172,
       "match": "param_1",
       "severity": "mild",
       "text": "local_4c[0].y = (param_1->emitter_size).y * (float)0.5 + local_4c[0].y;",
@@ -1085,7 +1072,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 173,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(&param_1->globe,local_4c);",
@@ -1093,7 +1080,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 175,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->globe).intensity_multiplier = iVar8;",
@@ -1101,7 +1088,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 176,
+      "line": 178,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->globe).intensity.bytes[0] =",
@@ -1109,7 +1096,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 180,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar13 = (param_1->emitter_size).y;",
@@ -1117,7 +1104,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 180,
+      "line": 182,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(&param_1->globe,fVar13);",
@@ -1125,7 +1112,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 184,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->globe).corona_mode = 0;",
@@ -1133,7 +1120,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 183,
+      "line": 185,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(pCVar3,&param_1->globe);",
@@ -1141,15 +1128,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 187,
+      "line": 189,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,&(param_1->base).location.position,(CVector3f *)0x0,0x4000,0x10000,1,",
+      "text": "(g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,(CVector3f *)0x0,0x4000",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 191,
+      "line": 193,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = param_1->dest_actor;",
@@ -1157,7 +1144,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 196,
+      "line": 198,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.x = fStack_c4 * 5.2220990168285998e-315._0_4_;",
@@ -1165,7 +1152,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 198,
+      "line": 200,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.y = fStack_c0 * 5.2220990168285998e-315._0_4_;",
@@ -1173,7 +1160,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 199,
+      "line": 201,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.z = fStack_bc * 5.2220990168285998e-315._0_4_;",
@@ -1181,7 +1168,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 201,
+      "line": 203,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->dest_actor,&CStack_64,&CStack_88);",
@@ -1189,7 +1176,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 204,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = param_1->dest_actor;",
@@ -1197,15 +1184,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 212,
+      "line": 214,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,&(param_1->base).location.position,&CStack_58,0,0.0,4.0);",
+      "text": "(g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,&CStack_58,0,0.0,4.0)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 215,
+      "line": 218,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((param_1->wav_name[0] != '\\0') &&",
@@ -1213,7 +1200,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 216,
+      "line": 219,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handle), iVar8 == 0)) &&",
@@ -1221,7 +1208,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 217,
+      "line": 220,
       "match": "param_1",
       "severity": "mild",
       "text": "((param_1->sfx_type != 1 || (param_1->prev_emitter_state == 0)))) {",
@@ -1229,7 +1216,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 217,
+      "line": 220,
       "match": "param_1",
       "severity": "mild",
       "text": "((param_1->sfx_type != 1 || (param_1->prev_emitter_state == 0)))) {",
@@ -1237,7 +1224,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 218,
+      "line": 221,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar7 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,param_1->wav_name);",
@@ -1245,7 +1232,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 218,
+      "line": 221,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar7 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,param_1->wav_name);",
@@ -1253,7 +1240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 218,
+      "line": 221,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar7 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,param_1->wav_name);",
@@ -1261,7 +1248,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 219,
+      "line": 222,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->sfx_handle = uVar7;",
@@ -1269,7 +1256,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 222,
+      "line": 225,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->prev_emitter_state = param_1->emitter_state;",
@@ -1277,74 +1264,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 222,
+      "line": 225,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->prev_emitter_state = param_1->emitter_state;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 223,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->periodic_flag == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 224,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((0.0 < param_1->max_emit_time) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 225,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 225,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 225,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 225,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 225,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 225,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
       "type": "unnamed_param"
     },
     {
@@ -1352,7 +1275,7 @@
       "line": 226,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->state_timer = 0.0;",
+      "text": "if (param_1->periodic_flag == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -1360,12 +1283,76 @@
       "line": 227,
       "match": "param_1",
       "severity": "mild",
+      "text": "if ((0.0 < param_1->max_emit_time) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 = param_1->state_timer - param_2, param_1->state_timer = param_2, param_2 <= 0.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 229,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->state_timer = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 230,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1->emitter_state = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 231,
+      "line": 234,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (param_1->emitter_state == 0) {",
@@ -1373,50 +1360,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 232,
+      "line": 235,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_1->state_timer - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 232,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = param_1->state_timer - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 232,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_1->state_timer - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 233,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->state_timer = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 233,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->state_timer = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 234,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 <= 0.0) {",
       "type": "unnamed_param"
     },
     {
@@ -1424,7 +1371,15 @@
       "line": 235,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->emitter_state = 1;",
+      "text": "param_2 = param_1->state_timer - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 235,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_1->state_timer - param_2;",
       "type": "unnamed_param"
     },
     {
@@ -1432,52 +1387,12 @@
       "line": 236,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->state_timer = param_1->max_emit_time;",
+      "text": "param_1->state_timer = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 236,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->state_timer = param_1->max_emit_time;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 241,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_1->state_timer - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 241,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = param_1->state_timer - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 241,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_1->state_timer - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 242,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->state_timer = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 242,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1->state_timer = param_2;",
@@ -1485,7 +1400,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 237,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 <= 0.0) {",
@@ -1493,7 +1408,79 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 238,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->emitter_state = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 239,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->state_timer = param_1->max_emit_time;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 239,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->state_timer = param_1->max_emit_time;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 244,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_1->state_timer - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 244,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_2 = param_1->state_timer - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 244,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_1->state_timer - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 245,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->state_timer = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 245,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_1->state_timer = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 246,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 <= 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 247,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->emitter_state = 0;",
@@ -1501,7 +1488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 245,
+      "line": 248,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->state_timer = param_1->max_wait_time;",
@@ -1509,23 +1496,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 245,
+      "line": 248,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->state_timer = param_1->max_wait_time;",
       "type": "unnamed_param"
     },
     {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 181,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 101,
+      "line": 103,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_70.x = (pCVar1->position).x;",
@@ -1533,7 +1512,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 166,
+      "line": 168,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_4c[0].x = (pCVar1->position).x;",
@@ -1541,7 +1520,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 207,
+      "line": 209,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_58.x = CStack_7c.x;",
@@ -1549,7 +1528,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 97,
+      "line": 99,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar8 = (iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0);",
@@ -1557,7 +1536,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 98,
+      "line": 100,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar4 = iVar8 >> 0x1f;",
@@ -1565,7 +1544,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 181,
+      "line": 183,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar8 = (iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0);",
@@ -1573,7 +1552,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 182,
+      "line": 184,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar4 = iVar8 >> 0x1f;",

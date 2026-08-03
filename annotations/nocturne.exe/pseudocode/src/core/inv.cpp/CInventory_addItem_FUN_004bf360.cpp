@@ -51,7 +51,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
   }
   pcVar11 = acStack_334;
   if (((this_ptr->owner == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) &&
-      (show_tutorial_message != 0)) && (0x01C775EC->letterbox_mode == 0)) {
+      (show_tutorial_message != 0)) && (g_CGame_PTR_005b9354->letterbox_mode == 0)) {
     pcStack_34 = core_inv_cpp_getItemDisplayName_FUN_004beca0(item_actor);
     core_inv_cpp_getItemIconName_FUN_004bed10(item_actor);
     pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
@@ -125,7 +125,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar11[1] = cVar1;
         pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_next_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -167,7 +167,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_prev_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -210,7 +210,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_use_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_use_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -267,7 +267,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar11[1] = cVar1;
         pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_next_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -309,7 +309,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_prev_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -352,7 +352,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_use_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_use_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -410,7 +410,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar11[1] = cVar1;
         pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_fire);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_fire);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -467,7 +467,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar11[1] = cVar1;
         pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_next_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -509,7 +509,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_prev_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -552,7 +552,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_use_item);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_use_item);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -695,7 +695,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_weapon);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_next_weapon);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -737,7 +737,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_weapon);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_prev_weapon);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -840,7 +840,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_weapon);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_next_weapon);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -882,7 +882,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12[1] = cVar1;
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_weapon);
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(g_CGame_PTR_005b9354->key_prev_weapon);
       iVar9 = -1;
       pcVar11 = acStack_234;
       do {
@@ -925,7 +925,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
     }
-    core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,acStack_334,10.0);
+    core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,acStack_334,10.0);
     pcVar11 = acStack_234;
     pcVar6 = this_ptr->message_text;
     do {
@@ -938,7 +938,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     iStack_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                          (_DAT_014b9904,this_ptr->message_text);
+                          (g_CBitFont_PTR_014b9904,this_ptr->message_text);
     this_ptr->message_display_timer = (float)iStack_14 * (float)0.025000000000000001;
   }
   pCStack_24 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040d890
@@ -959,8 +959,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
            (pCVar5[2].lifecycle_state == pCStack_24->ammo_type)) {
           pCVar5[2].direction_hint = pCVar5[2].direction_hint + pCStack_24->ammo_count;
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"Found existing ammo, but no weapon\n");
-          core_mission_cpp_FUN_004d9110(0x01CC9450,item_actor,1);
+                    (g_CConsole_PTR_005ad350,"Found existing ammo, but no weapon\n");
+          core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,item_actor,1);
           return 1;
         }
         iVar9 = iVar9 + 1;
@@ -1005,9 +1005,9 @@ LAB_004bfff1:
               if ((pCVar5 != (CDemonActor *)0x0) && (200 < (int)pCVar5[4].location.position.x)) {
                 pCVar5[4].location.position.x = 2.8026e-43;
               }
-              core_mission_cpp_FUN_004d9110(0x01CC9450,item_actor,1);
+              core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,item_actor,1);
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (PTR_DAT_005ad350,"Found weapon to put this ammo into\n");
+                        (g_CConsole_PTR_005ad350,"Found weapon to put this ammo into\n");
               return 1;
             }
           }
@@ -1016,29 +1016,31 @@ LAB_004bfff1:
         } while (iVar9 < this_ptr->item_count);
       }
       pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540(pcStack_28);
-      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,pCVar5);
+      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                (g_CDemonMission_PTR_005baf90,pCVar5);
       (*((pCVar5->vtable)._ub)->setup)(pCVar5);
       pCVar5[4].location.position.x = (float)pCStack_24->ammo_count;
       pCVar5[4].location.position.y = (float)pCStack_24->ammo_type;
       (*((pCVar5->vtable)._ub)->pickup)(pCVar5,this_ptr->owner);
       this_ptr->items[this_ptr->item_count] = pCVar5;
-      pCVar3 = 0x01CC9450;
+      pCVar3 = g_CDemonMission_PTR_005baf90;
       this_ptr->item_count = this_ptr->item_count + 1;
       core_mission_cpp_FUN_004d9110(pCVar3,item_actor,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"Found new type of ammo for existing weapon.  Making new weapon for it\n");
+                (g_CConsole_PTR_005ad350,"Found new type of ammo for existing weapon.  Making new weapon for it\n");
       return 1;
     }
     iVar9 = _strcmp(pcVar11,"CDynamite");
     if (iVar9 == 0) {
       pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540("CDynamite");
-      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,pCVar5);
+      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                (g_CDemonMission_PTR_005baf90,pCVar5);
       (*((pCVar5->vtable)._ub)->setup)(pCVar5);
       pCVar5[4].location.position.x = (float)pCStack_24->ammo_count;
       (*((pCVar5->vtable)._ub)->pickup)(pCVar5,this_ptr->owner);
       core_actor_cpp_destroyActor_FUN_00409cd0(item_actor);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"Found dynamite.  Creating weapon for it.\n");
+                (g_CConsole_PTR_005ad350,"Found dynamite.  Creating weapon for it.\n");
       core_inv_cpp_CInventory_addItem_FUN_004bf360(this_ptr,pCVar5,1);
       return 1;
     }
@@ -1050,7 +1052,7 @@ LAB_004bfff1:
                        (pCVar5,g_CMeleeActorType_01cc56a4.name_hash);
     if (pCVar8 != (CDemonActor *)0x0) {
       this_ptr->items[this_ptr->item_count] = item_actor;
-      pCVar3 = 0x01CC9450;
+      pCVar3 = g_CDemonMission_PTR_005baf90;
       this_ptr->item_count = this_ptr->item_count + 1;
       core_mission_cpp_FUN_004d9110(pCVar3,item_actor,0);
       (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
@@ -1075,8 +1077,8 @@ LAB_004bfff1:
               pCVar5[4].location.position.x = 2.8026e-43;
             }
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (PTR_DAT_005ad350,"Found same weapon, increasing ammoCount\n");
-            core_mission_cpp_FUN_004d9110(0x01CC9450,item_actor,1);
+                      (g_CConsole_PTR_005ad350,"Found same weapon, increasing ammoCount\n");
+            core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,item_actor,1);
             return 1;
           }
         }
@@ -1097,7 +1099,8 @@ LAB_004bfff1:
           if (iVar9 == 0) {
             pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
             actor = core_actor_cpp_createActorByName_FUN_0040d540(pcVar11);
-            core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,actor);
+            core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+                      (g_CDemonMission_PTR_005baf90,actor);
             (*((actor->vtable)._ub)->setup)(actor);
             actor[4].location.position.x = (float)pCVar8[2].direction_hint;
             actor[4].location.position.y = (float)pCVar8[2].lifecycle_state;
@@ -1108,7 +1111,7 @@ LAB_004bfff1:
             pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
             bVar2 = true;
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (PTR_DAT_005ad350,"Converting existing ammo for %s to weapon\n",pcVar11);
+                      (g_CConsole_PTR_005ad350,"Converting existing ammo for %s to weapon\n",pcVar11);
           }
         }
         pCStack_18 = (CInventory *)&pCStack_18->owner;
@@ -1116,12 +1119,12 @@ LAB_004bfff1:
       } while (iStack_1c < this_ptr->item_count);
     }
     if (bVar2) {
-      core_mission_cpp_FUN_004d9110(0x01CC9450,pCVar5,1);
+      core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,pCVar5,1);
       return 1;
     }
   }
   this_ptr->items[this_ptr->item_count] = item_actor;
-  pCVar3 = 0x01CC9450;
+  pCVar3 = g_CDemonMission_PTR_005baf90;
   this_ptr->item_count = this_ptr->item_count + 1;
   core_mission_cpp_FUN_004d8cd0(pCVar3,item_actor);
   (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);

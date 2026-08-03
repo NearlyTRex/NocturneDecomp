@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,10 +62,10 @@
         "message": "unknown type name 'code'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 187,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 186,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       },
       {
         "category": "cast_error",
@@ -102,12 +102,6 @@
         "column": 13,
         "line": 282,
         "message": "use of undeclared identifier '_DAT_02dca058'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 283,
-        "message": "no matching function for call to 'core_xform_cpp_eulerToQuaternion_FUN_0055d610'"
       }
     ],
     "success": false,
@@ -116,12 +110,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 1655,
+    "complexity_score": 1653,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 295,
+    "pseudocode_lines": 293,
     "suspect_count": 131,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +129,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 929
+    "total_lines": 927
   },
   "cross_references": [],
   "function": {
@@ -352,14 +346,14 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -1116,7 +1110,7 @@
       "line": 180,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s confused while walking to scriptDest!\\n\",param_1);",
+      "text": "(g_CConsole_PTR_005ad350,\"%s confused while walking to scriptDest!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1460,20 +1454,20 @@
       "line": 274,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar12 = (float)(param_1->hair_cloth).vertices[0x2b5].connected_indices[10];",
+      "text": "fVar12 = param_1->head_blend_weight;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 277,
+      "line": 276,
       "match": "param_1",
       "severity": "mild",
-      "text": "((param_1->hair_cloth).vertices[0x2b5].connected_indices + 7);",
+      "text": "core_xform_cpp_eulerToQuaternion_FUN_0055d610(&param_1->head_euler_angles);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 287,
+      "line": 286,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_FUN_0042a150((CCharacter *)param_1,param_2);",
@@ -1481,7 +1475,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 287,
+      "line": 286,
       "match": "param_2",
       "severity": "mild",
       "text": "core_charactr_cpp_FUN_0042a150((CCharacter *)param_1,param_2);",
@@ -1489,7 +1483,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 288,
+      "line": 287,
       "match": "param_1",
       "severity": "mild",
       "text": "model_ptr = &(param_1->base).base.model;",
@@ -1497,7 +1491,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 289,
+      "line": 288,
       "match": "param_1",
       "severity": "mild",
       "text": "euler = &(param_1->base).base.base.orient;",
@@ -1505,7 +1499,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 290,
+      "line": 289,
       "match": "param_1",
       "severity": "mild",
       "text": "local_14 = (CCharacter_full_vtable *)&(param_1->base).base.base.location;",
@@ -1513,7 +1507,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 292,
+      "line": 291,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->cape_cloth,(CVector3f *)local_14,&euler->vec,param_2,",
@@ -1521,7 +1515,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 292,
+      "line": 291,
       "match": "param_2",
       "severity": "mild",
       "text": "(&param_1->cape_cloth,(CVector3f *)local_14,&euler->vec,param_2,",
@@ -1529,10 +1523,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 293,
+      "line": 292,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).base.closest_distance_threshold,model_ptr);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 294,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->hair_cloth,(CVector3f *)local_14,&euler->vec,param_2,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 294,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(&param_1->hair_cloth,(CVector3f *)local_14,&euler->vec,param_2,",
       "type": "unnamed_param"
     },
     {
@@ -1540,28 +1550,12 @@
       "line": 295,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CCloth *)((param_1->cape_cloth).vertices[0x300].connected_indices + 9),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 296,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(CVector3f *)local_14,&euler->vec,param_2,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 297,
-      "match": "param_1",
-      "severity": "mild",
       "text": "(param_1->base).base.closest_distance_threshold,model_ptr);",
       "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&CStack_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 279,
+      "line": 278,
       "match": "(int)&CStack_94",
       "severity": "moderate",
       "text": "pfVar10 = (float *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
@@ -1569,7 +1563,7 @@
     },
     {
       "description": "Pointer value `&CStack_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 280,
+      "line": 279,
       "match": "(int)&CStack_94",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_94 + (uint)bVar11 * -8 + 4) = afStack_80[(uint)bVar11 * -2];",
@@ -1601,7 +1595,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 279,
+      "line": 278,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pfVar10 = (float *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
@@ -1609,7 +1603,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 280,
+      "line": 279,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_94 + (uint)bVar11 * -8 + 4) = afStack_80[(uint)bVar11 * -2];",

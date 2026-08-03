@@ -20,8 +20,8 @@ void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,i
   if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {
     iStack_1a4 = param_2;
     pcStack_1a8 = "DirectSoundDevice::unlockSample - Can't unlock invalid handle: %d";
-    PTR_01cc4800 = "..\\sound\\snddx.cpp";
-    INT_01cc4804 = 0x2b6;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
+    g_INT_01cc4804 = 0x2b6;
     uStack_1ac = 0x52aed2;
     core_main_c_FUN_004c8440();
   }

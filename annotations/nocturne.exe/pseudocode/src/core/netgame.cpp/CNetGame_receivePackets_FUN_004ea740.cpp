@@ -32,9 +32,9 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame *thi
     iVar1 = support_trisock_cpp_receiveSocketData_FUN_00549010
                       (&this_ptr->socket,&DAT_01d1640c,0x404,&local_10);
     if (iVar1 < 1) break;
-    _DAT_01d16408 = iVar1 + 1;
+    g_INT_01d16408 = iVar1 + 1;
     core_netgame_cpp_CNetGame_processPacket_FUN_004ea830
-              (this_ptr,&local_10,(UNetPacket *)&DAT_01d16408);
+              (this_ptr,&local_10,(UNetPacket *)&g_INT_01d16408);
   }
   core_netgame_cpp_CNetGame_removeChatOut_FUN_004ec180(this_ptr);
   return;

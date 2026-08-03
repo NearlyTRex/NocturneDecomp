@@ -19,13 +19,12 @@ void __cdecl core_sound_cpp_FUN_0052d030(CSound *this_ptr,char *out_result,char 
   
   _DAT_02dc9620 = 0;
   *out_result = '\0';
-  for (iVar2 = 0; iVar2 < _DAT_02dc9610; iVar2 = iVar2 + 1) {
+  for (iVar2 = 0; iVar2 < g_CStrList_02dc9610.item_count; iVar2 = iVar2 + 1) {
     iVar5 = 0;
-    pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080((CStrList *)&DAT_02dc9610,iVar2);
+    pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,iVar2);
     iVar5 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(wildcard_pattern,pcVar3,iVar5);
     if (iVar5 != 0) {
-      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080((CStrList *)&DAT_02dc9610,iVar2)
-      ;
+      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,iVar2);
       pcVar4 = (char *)(_DAT_02dc9620 * 0x28 + 0x2dc9628);
       do {
         cVar1 = *pcVar3;

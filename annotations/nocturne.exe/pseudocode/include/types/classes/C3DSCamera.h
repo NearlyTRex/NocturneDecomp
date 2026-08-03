@@ -8,7 +8,7 @@
 #include "types/structs/SFog.h"
 
 // Structure: C3DSCamera
-// Ghidra size: 0x1a4 (420 bytes)
+// Ghidra size: 0x1a0 (416 bytes)
 #pragma pack(push, 1)
 typedef struct C3DSCamera {
     char name[256]; // 0x0
@@ -16,18 +16,17 @@ typedef struct C3DSCamera {
     CVector3f orientation; // 0x10c
     CMatrix3x3f rotation_matrix; // 0x118
     int dead; // 0x13c
-    int is_panning; // 0x140
-    float projection_scale; // 0x144
-    float ambient_value; // 0x148
-    int camera_group; // 0x14c
-    int fog_enabled; // 0x150
-    SFog fog; // 0x154
-    int reverb_preset; // 0x178
-    CBoundingBox3D box; // 0x17c
-    int pvs_count; // 0x194
-    int* pvs_list; // 0x198
-    int vdir_zone; // 0x19c
-    int enabled; // 0x1a0
+    float projection_scale; // 0x140
+    float ambient_value; // 0x144
+    int camera_group; // 0x148
+    int fog_enabled; // 0x14c
+    SFog fog; // 0x150
+    int reverb_preset; // 0x174
+    CBoundingBox3D box; // 0x178
+    int pvs_count; // 0x190
+    int* pvs_list; // 0x194
+    int vdir_zone; // 0x198
+    int enabled; // 0x19c
 } C3DSCamera;
 #pragma pack(pop)
 

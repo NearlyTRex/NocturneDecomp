@@ -37,7 +37,7 @@ void core_drip_cpp_CDrip_process_FUN_00462300(CDemonActor *param_1,float param_2
     local_48.z = param_1[2].orient_matrix.m[2].y;
     local_48.y = param_1[2].orient_matrix.m[2].x + -5000.0f;
     core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00467930
-              ((CDemonRaytrace *)&DAT_01fba938,&local_54,(CVector3f *)ray_start,&local_48);
+              (&g_CDemonRaytrace_01fba938,&local_54,(CVector3f *)ray_start,&local_48);
     param_1[2].orient_matrix.m[0].z = 1.4013e-45;
     param_1[2].orient_matrix.m[1].x = local_54.y;
   }
@@ -51,7 +51,7 @@ void core_drip_cpp_CDrip_process_FUN_00462300(CDemonActor *param_1,float param_2
         param_1[2].orient_matrix.m[1].x - (local_78.max.y - local_78.min.y) * (float)0.84999999999999998
        ) {
       if (*(int *)(param_1[2].create_event + 0x18) != 0) {
-        core_set_cpp_FUN_0050e660(0x01E57284,0x42c80000,0,0,0x3f800000);
+        core_set_cpp_FUN_0050e660(g_CDemonSet_PTR_005be368,0x42c80000,0,0,0x3f800000);
         (*((param_1->vtable)._ub)->playSound)(param_1,(char *)&param_1[2].direction_hint);
       }
       iVar4 = *(int *)(param_1[2].create_event + 0x14);
@@ -68,7 +68,7 @@ void core_drip_cpp_CDrip_process_FUN_00462300(CDemonActor *param_1,float param_2
           CStack_60.y = CStack_60.y + (param_1->location).position.y;
           CStack_60.z = fStack_14 + (param_1->location).position.z;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                    (0x01C08D04,&CStack_60,0.5,(CVector3f *)0x0,0xffff);
+                    (g_CFireEffect_PTR_005b80f0,&CStack_60,0.5,(CVector3f *)0x0,0xffff);
           fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.7853982,1.5707964);
           fStack_14 = fStack_1c;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,6.2831855);
@@ -84,7 +84,7 @@ void core_drip_cpp_CDrip_process_FUN_00462300(CDemonActor *param_1,float param_2
                                 ((CKeyFramedModelInstance *)0x1b7b330);
           iVar4 = iVar4 + 1;
           core_fire_cpp_CFireEffect_createRock_FUN_0048b320
-                    (0x01C08D04,&(param_1->location).position,aCStack_3c,model_ptr);
+                    (g_CFireEffect_PTR_005b80f0,&(param_1->location).position,aCStack_3c,model_ptr);
         } while (iVar4 < 10);
       }
       (param_1->location).position.y = param_1[2].orient_matrix.m[2].x;
@@ -105,8 +105,8 @@ void core_drip_cpp_CDrip_process_FUN_00462300(CDemonActor *param_1,float param_2
     iVar5 = 0;
     iVar4 = 0;
     while( true ) {
-      if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar5) break;
-      iVar2 = *(int *)(iVar4 + 0x14ecb4 + 0x01E57284);
+      if (g_CDemonSet_PTR_005be368->character_count <= iVar5) break;
+      iVar2 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_b4);
       SStack_b4.damage_amount = (float)param_1[2].validation_magic;
       SStack_b4.attacker = param_1;

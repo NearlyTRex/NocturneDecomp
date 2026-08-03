@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonFilter.h"
 #include "types/classes/CVector3f.h"
 
 // =============================================================================
@@ -33,6 +34,9 @@ extern CDemonActorType g_CBrideActorType_00764af0;
 extern CDemonActorType g_CBugsActorType_00765888;
 extern CDemonActorType g_CCharacterActorType_00765a60;
 extern CDemonActorType g_CChainActorType_00765c30;
+
+// CDemonFilter[8]
+extern CDemonFilter g_CDemonFilter_ARRAY_0076483c[8];
 
 // CVector3f
 extern CVector3f CVector3f_00764ad8;

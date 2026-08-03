@@ -17,8 +17,8 @@
 ;   TerminatedCString s_eopen_ext_not_found_00585270
 ;   TerminatedCString s_core_ground_cpp_00585287
 ;   TerminatedCString s_eopen_Cannot_open_file_0058529a
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -81,8 +81,8 @@ section .text
     MOV EDX,0x58525d                    ; 004b10d9 | = "..\\core\\ground.cpp"
     MOV ECX,0x40                        ; 004b10de
     PUSH 0x585270                       ; 004b10e3 | = "eopen - ext not found!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004b10e8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004b10ee | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004b10e8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004b10ee | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004b10f4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b10f9
@@ -129,8 +129,8 @@ section .text
         ;   Label: LAB_004b1142
     MOV EBP,0x44                        ; 004b1147
     PUSH 0x58529a                       ; 004b114c | = "eopen - Cannot open file"
-    MOV dword ptr [0x01cc4800],EDI      ; 004b1151 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004b1157 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004b1151 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004b1157 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004b115d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b1162

@@ -21,7 +21,7 @@ void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
   CCharacter_full_vtable *pCVar8;
   CWeapon *pCVar9;
   float fVar10;
-  int iVar11;
+  CGame *pCVar11;
   int iVar12;
   CVector3f *pCVar13;
   CDeformableModelInstance *pCVar14;
@@ -31,6 +31,7 @@ void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
   SMotion *pSVar18;
   CDeformableModelInstance *unaff_EBX;
   uint uVar19;
+  int desired_state_index;
   float *pfVar20;
   byte bVar21;
   float afStackY_1844 [1516];
@@ -48,13 +49,13 @@ void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
   CVector3f CStack_20;
   
   bVar21 = 0;
-  iVar11 = core_charactr_cpp_FUN_004259f0((CCharacter *)param_1,param_2);
-  iVar12 = 0x01C775EC;
-  if (iVar11 == 0) {
+  iVar12 = core_charactr_cpp_FUN_004259f0((CCharacter *)param_1,param_2);
+  pCVar11 = g_CGame_PTR_005b9354;
+  if (iVar12 == 0) {
     return;
   }
   (param_1->base).base.turn_speed = param_2 * (float)12.566370614;
-  if (*(int *)(iVar12 + 0x228) != 0) {
+  if (pCVar11->letterbox_mode != 0) {
     (param_1->base).base.turn_speed = (param_1->base).base.turn_speed * (float)0.33333333333333298;
   }
   fVar16 = (param_1->base).invincibility_timer - param_2;
@@ -86,31 +87,31 @@ void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
     case 10:
       if ((param_1->base).base.is_on_ground != 0) {
         iVar12 = core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(param_1);
-        iVar11 = 0;
+        desired_state_index = 0;
         if (iVar12 != 0) {
-          iVar11 = 7;
+          desired_state_index = 7;
         }
         if ((param_1->base).player_input.action_state.walk != 0) {
           iVar12 = core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(param_1);
           if (iVar12 == 0) {
             if ((param_1->base).player_input.action_state.run == 0) {
-              iVar11 = 1;
+              desired_state_index = 1;
             }
             else {
-              iVar11 = 2;
+              desired_state_index = 2;
             }
           }
           else {
-            iVar11 = 9;
+            desired_state_index = 9;
           }
         }
         if ((param_1->base).player_input.action_state.backup != 0) {
           iVar12 = core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(param_1);
           if (iVar12 == 0) {
-            iVar11 = 3;
+            desired_state_index = 3;
           }
           else {
-            iVar11 = 10;
+            desired_state_index = 10;
           }
         }
         if (((((param_1->base).player_input.action_state.fire != 0) && (param_1->guns_drawn != 0))
@@ -122,7 +123,7 @@ void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
           pCVar9 = param_1->weapon_actor;
           (param_1->base).player_input.action_state.fire = 0;
           if (pCVar9->weapon_type == 8) {
-            iVar11 = 0xb;
+            desired_state_index = 0xb;
           }
         }
         pCVar14 = &(param_1->base).base.model;
@@ -131,9 +132,9 @@ void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
              (param_1->base).base.turn_angle_accumulator;
         pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                             (&pCVar14->motion_controller);
-        if (iVar11 != pSVar18->state_index) {
+        if (desired_state_index != pSVar18->state_index) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&pCVar14->motion_controller,iVar11,1);
+                    (&pCVar14->motion_controller,desired_state_index,1);
         }
         if ((param_1->base).player_input.action_state.draw != 0) {
           (param_1->base).player_input.action_state.draw = 0;
@@ -182,7 +183,7 @@ LAB_004fc367:
     else {
       if (uVar19 != 3) goto LAB_004fc367;
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
       iVar12 = core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(param_1);
       if (iVar12 == 0) {
         iVar12 = 0;

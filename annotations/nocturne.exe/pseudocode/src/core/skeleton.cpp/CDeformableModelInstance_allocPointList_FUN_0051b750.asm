@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591b08
 ;   TerminatedCString s_CDeformableModelInstance_00591b1d
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -59,8 +59,8 @@ section .text
     MOV ECX,0x591b08                    ; 0051b799 | = "..\\core\\skeleton.cpp"
     MOV EDI,0x8fa                       ; 0051b79e
     PUSH 0x591b1d                       ; 0051b7a3 | = "CDeformableModelInstance::allocPointL..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051b7a8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0051b7ae | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0051b7a8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0051b7ae | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051b7b4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0051b7b9

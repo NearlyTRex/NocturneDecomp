@@ -45,7 +45,7 @@ int CTVBat::renderOpaque(CDemonActor *param_1);
 
 // Original: core_tvbat.cpp_CTVBat_getBoundingBox_FUN_0054c040
 // Address: 0054c040
-undefined4 * CTVBat::getBoundingBox(int param_1,undefined4 *param_2);
+float * CTVBat::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_tvbat.cpp_CTVBat_getCollisionType_FUN_0054c0c0
 // Address: 0054c0c0

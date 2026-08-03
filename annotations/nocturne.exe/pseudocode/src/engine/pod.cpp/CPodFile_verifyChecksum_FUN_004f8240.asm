@@ -28,9 +28,9 @@
 ;   TerminatedCString s_Invalid_pod_version_0058da47
 ;   TerminatedCString s_Verifying_CRC_for_s_0058da5c
 ;   TerminatedCString s_rb_0058da74
-;   undefined4 DAT_005b6d50
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01e428d0
 ;   undefined4 DAT_01e428d1
 ;
@@ -83,7 +83,7 @@ section .text
         ;   Label: LAB_004f8284
     PUSH ESI                            ; 004f8287
     PUSH 0x58da5c                       ; 004f8288 | = "Verifying CRC for %s..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 004f828d | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004f828d | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004f8293
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004f8294
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
@@ -234,7 +234,7 @@ section .text
     RET                                 ; 004f8409
     PUSH 0x58d9f1                       ; 004f840a | = "Checking individual file CRCs"
         ;   Label: LAB_004f840a
-    MOV ESI,dword ptr [0x005b6d50]      ; 004f840f | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 004f840f | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 004f8415
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 ; 004f8416
         ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools * this_ptr, char * message_text)
@@ -270,7 +270,7 @@ section .text
     MOV dword ptr [ESP + 0x188],EDX     ; 004f8476
     FILD dword ptr [ESP + 0x188]        ; 004f847d
     SUB ESP,0x4                         ; 004f8484
-    MOV EAX,[0x005b6d50]                ; 004f8487 | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004f8487 | g_CEditorTools_PTR_005b6d50
     FSTP float ptr [ESP]                ; 004f848c
     PUSH EAX                            ; 004f848f
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 ; 004f8490
@@ -301,7 +301,7 @@ section .text
     CMP EDI,EBP                         ; 004f84d1
     JL 0x004f843b                       ; 004f84d3
         ;   XREF to: 004f843b (CONDITIONAL_JUMP)  ; LAB_004f843b
-    MOV EAX,[0x005b6d50]                ; 004f84d9 | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004f84d9 | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_004f84d9
     PUSH EAX                            ; 004f84de
     CALL shape_edittool.cpp_FUN_004720c0 ; 004f84df
@@ -352,8 +352,8 @@ section .text
         ;   Label: LAB_004f8547
     MOV EBP,0x1cf                       ; 004f854c
     PUSH 0x58da47                       ; 004f8551 | = "Invalid pod version!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004f8556 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004f855c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004f8556 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004f855c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f8562
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f8567

@@ -28,8 +28,8 @@
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_01c039a0
 ;   undefined4 DAT_01c039a4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -293,8 +293,8 @@ section .text
     MOV ECX,0x57dcfa                    ; 00461993 | = "..\\engine\\drender.cpp"
     MOV EAX,0x9e1                       ; 00461998
     PUSH 0x57dd10                       ; 0046199d | = "CDemonRenderer::demonGZFacetList - To..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004619a2 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004619a8 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004619a2 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004619a8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004619ad
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004619b2

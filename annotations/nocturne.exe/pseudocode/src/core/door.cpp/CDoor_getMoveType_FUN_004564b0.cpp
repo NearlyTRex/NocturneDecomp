@@ -19,7 +19,7 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(CDoor *this_ptr,CDemonA
     if ((this_ptr->allowed_sides & 2) != 0) goto LAB_0045663d;
     if (this_ptr->allowed_sides != 0) {
       core_door_cpp_CDoor_onLocked_FUN_00456650(this_ptr);
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,message,5.0);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,message,5.0);
       return 0;
     }
   }
@@ -48,15 +48,15 @@ LAB_0045663d:
       case DOOR_TYPE_TILT:
         return 1;
       default:
-        PTR_01cc4800 = "..\\core\\door.cpp";
-        INT_01cc4804 = 0x39e;
+        g_CHAR_PTR_01cc4800 = "..\\core\\door.cpp";
+        g_INT_01cc4804 = 0x39e;
         core_main_c_FUN_004c8440("CDoor::getMoveType - invalid door!");
         return 0;
       }
     }
     if (this_ptr->allowed_sides != 0) {
       core_door_cpp_CDoor_onLocked_FUN_00456650(this_ptr);
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,message,5.0);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,message,5.0);
     }
   }
   return 0;

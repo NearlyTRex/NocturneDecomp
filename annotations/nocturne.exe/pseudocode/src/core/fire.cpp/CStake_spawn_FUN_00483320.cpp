@@ -58,15 +58,15 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_00483320(CStake *this_ptr,CVector3f 
   }
   this_ptr->active = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     ((CKeyFramedModelInstance *)0x1c08d48);
-  local_8c = (float)pCVar1->texture_list[7].textures[1].base.count;
-  local_88 = *(float *)pCVar1->texture_list[7].textures[1].texture_name;
-  local_84 = *(float *)(pCVar1->texture_list[7].textures[1].texture_name + 4);
-  local_80 = *(float *)(pCVar1->texture_list[7].textures[1].texture_name + 8);
-  local_7c = *(float *)(pCVar1->texture_list[7].textures[1].texture_name + 0xc);
+                     (&g_CKeyFramedModelInstance_01c08d48);
+  local_8c = (pCVar1->bounds).min.x;
+  local_88 = (pCVar1->bounds).min.y;
+  local_84 = (pCVar1->bounds).min.z;
+  local_80 = (pCVar1->bounds).max.x;
+  local_7c = (pCVar1->bounds).max.y;
   local_2c.x = local_80 - local_8c;
   local_2c.y = local_7c - local_88;
-  local_78 = (float)pCVar1->texture_list[7].textures[2].base.type;
+  local_78 = (pCVar1->bounds).max.z;
   local_2c.z = local_78 - local_84;
   if (&local_74 != &local_2c) {
     local_74.x = local_2c.x;

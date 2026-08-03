@@ -26,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacte
     }
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(this_ptr);
-  if (*(int *)(0x01C775EC + 0x21c) == 0) {
+  if (g_CGame_PTR_005b9354->collision_render_enabled == 0) {
     return;
   }
   core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(this_ptr);

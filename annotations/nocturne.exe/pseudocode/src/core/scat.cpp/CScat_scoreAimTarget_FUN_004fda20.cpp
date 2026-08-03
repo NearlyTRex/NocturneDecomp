@@ -85,14 +85,14 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDem
     CStack_5c.y = (this_ptr->base).base.base.location.position.y + fStack_28;
     CStack_5c.z = (this_ptr->base).base.base.location.position.z + fStack_24;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(target,&CStack_44,local_f8);
-    core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,1);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,(CDemonActor *)this_ptr);
-    fStack_1c = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(0x01E57284,&CStack_5c,&CStack_44)
-    ;
+    core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+              (g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+    fStack_1c = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                          (g_CDemonSet_PTR_005be368,&CStack_5c,&CStack_44);
     fStack_14 = fStack_1c;
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-    if ((fStack_1c <= 1.0) &&
-       (target == *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18))) {
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+    if ((fStack_1c <= 1.0) && (target == g_CDemonSet_PTR_005be368->collision_actor)) {
       return (int)fStack_20;
     }
   }

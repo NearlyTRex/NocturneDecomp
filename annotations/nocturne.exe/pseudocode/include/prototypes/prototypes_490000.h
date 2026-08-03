@@ -81,7 +81,7 @@ void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMa
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_00494dd0(CFrankenstienMachine *this_ptr,float emission_rate,float delta_time);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30(CFrankenstienMachine *this_ptr,float trigger_frame,char *sfx_filename);
 int core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankenstienMachine *param_1);
-undefined4 * core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000(int param_1,undefined4 *param_2);
+float * core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000(int param_1,float *param_2);
 CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(CFrankenstienMachine *this_ptr);
 CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_00495240(void);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);

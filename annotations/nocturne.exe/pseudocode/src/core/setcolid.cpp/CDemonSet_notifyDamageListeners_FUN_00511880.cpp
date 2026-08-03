@@ -19,7 +19,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880(CDem
   float *local_10;
   
   iVar1 = 0;
-  if (0 < (int)this_ptr->actors[0x6d6]) {
+  if (0 < this_ptr->character_count) {
     local_14 = &damage_info->impact_point;
     local_10 = &(damage_info->impact_point).y;
     local_1c = &damage_info->impact_direction;
@@ -42,12 +42,11 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880(CDem
       local_5c.damage_type = damage_info->damage_type;
       local_5c.attacker = damage_info->attacker;
       local_5c.wielder = damage_info->wielder;
-      (*(((((CCharacter *)pCVar2->actors[0x6d7])->base).vtable._uc)->_uc).testDamageLine)
-                ((CCharacter *)pCVar2->actors[0x6d7],position,actor_position,&local_5c,
-                 (CVector3f *)0x0);
+      (*(((pCVar2->characters[0]->base).vtable._uc)->_uc).testDamageLine)
+                (pCVar2->characters[0],position,actor_position,&local_5c,(CVector3f *)0x0);
       iVar1 = iVar1 + 1;
       pCVar2 = (CDemonSet *)pCVar2->cameras;
-    } while (iVar1 < (int)this_ptr->actors[0x6d6]);
+    } while (iVar1 < this_ptr->character_count);
   }
   return;
 }

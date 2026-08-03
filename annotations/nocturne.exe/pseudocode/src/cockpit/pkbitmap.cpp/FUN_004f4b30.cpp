@@ -15,8 +15,8 @@ void cockpit_pkbitmap_cpp_FUN_004f4b30(CPackedBitmap *param_1,char *param_2)
   file_handle = _fopen(param_2,"wb");
   if (file_handle == (_FILE *)0x0) {
     _sprintf(&uStack_6c,"Unable to create PBM file %s",param_2);
-    PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-    INT_01cc4804 = 0x473;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+    g_INT_01cc4804 = 0x473;
     core_main_c_FUN_004c8440(&uStack_6c);
   }
   cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(param_1,file_handle);

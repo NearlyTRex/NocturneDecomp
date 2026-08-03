@@ -46,10 +46,10 @@ LAB_004c621d:
   }
   iVar2 = 0;
   iVar3 = 0;
-  while (iVar3 < *(int *)(0x01E57284 + 0x14cd6c)) {
+  while (iVar3 < g_CDemonSet_PTR_005be368->actor_count) {
     this_ptr = (CLever *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (*(CDemonActor **)(iVar2 + 0x14cd70 + 0x01E57284),
+                         (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar2),
                           g_CLeverActorType_01cc3628.name_hash);
     if ((this_ptr == (CLever *)0x0) || (param_1 != this_ptr->linked_lever)) {
       iVar3 = iVar3 + 1;

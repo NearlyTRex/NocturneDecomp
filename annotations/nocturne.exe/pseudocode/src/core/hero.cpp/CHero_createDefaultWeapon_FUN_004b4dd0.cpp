@@ -20,8 +20,8 @@ void core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(int param_1)
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040d540("CGun");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,class_name_hash);
   if (pCVar2 == (CDemonActor *)0x0) {
-    PTR_01cc4800 = "..\\core\\hero.cpp";
-    INT_01cc4804 = 0x1b2;
+    g_CHAR_PTR_01cc4800 = "..\\core\\hero.cpp";
+    g_INT_01cc4804 = 0x1b2;
     core_main_c_FUN_004c8440("Out of memory!");
   }
   pcVar3 = "Your_weapon";

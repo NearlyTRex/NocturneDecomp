@@ -22,8 +22,8 @@
 ;   float FLOAT_0059fd80 = 1
 ;   float FLOAT_0059fd84 = 1.580000
 ;   undefined4 DAT_005ad54c
-;   int INT_005b9284 = 0x1c70f74
-;   undefined4 DAT_005be368
+;   void* PTR_DAT_005b9284 = 01c70f74
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -147,7 +147,7 @@ section .text
     FMUL float ptr [EBX + 0x57c]        ; 004c7aef
     FXCH ST3                            ; 004c7af5
     FMUL float ptr [EBX + 0x57c]        ; 004c7af7
-    MOV EAX,[0x005b9284]                ; 004c7afd | INT_005b9284
+    MOV EAX,[0x005b9284]                ; 004c7afd | PTR_DAT_005b9284
     FXCH ST3                            ; 004c7b02
     FADDP ST2,ST0                       ; 004c7b04
     FADDP ST2,ST0                       ; 004c7b06
@@ -173,7 +173,7 @@ section .text
     MOV EDI,dword ptr [0x005ad54c]      ; 004c7b3f | DAT_005ad54c
     MOV ESI,0x1                         ; 004c7b45
     PUSH EDI                            ; 004c7b4a
-    MOV dword ptr [0x01c76310],ESI      ; 004c7b4b | DAT_01c76310
+    MOV dword ptr [0x01c76310],ESI      ; 004c7b4b | g_CDemonLight_01c74640.antialiasing_enabled
     CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 ; 004c7b51
         ;   XREF to: 0044bd20 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20()
     ADD ESP,0xc                         ; 004c7b56
@@ -181,7 +181,7 @@ section .text
     PUSH 0x0                            ; 004c7b5b
     PUSH 0x0                            ; 004c7b5d
     PUSH EAX                            ; 004c7b5f
-    PUSH 0x1c74640                      ; 004c7b60 | DAT_01c74640
+    PUSH 0x1c74640                      ; 004c7b60 | g_CDemonLight_01c74640
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 004c7b65
         ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 004c7b6a
@@ -192,10 +192,10 @@ section .text
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 ; 004c7b7b
         ;   XREF to: 00554d40 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40(CWeather * this_ptr, float flash_timer, int play_sound)
     ADD ESP,0xc                         ; 004c7b80
-    PUSH 0x1c74640                      ; 004c7b83 | DAT_01c74640
+    PUSH 0x1c74640                      ; 004c7b83 | g_CDemonLight_01c74640
         ;   Label: LAB_004c7b83
-    MOV EAX,[0x005be368]                ; 004c7b88 | DAT_005be368
-    PUSH EAX                            ; 004c7b8d | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 004c7b88 | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 004c7b8d | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970 ; 004c7b8e
         ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 004c7b93
@@ -226,7 +226,7 @@ section .text
     CMP EAX,ECX                         ; 004c7be4
     JNZ 0x004c7bf7                      ; 004c7be6
         ;   XREF to: 004c7bf7 (CONDITIONAL_JUMP)  ; LAB_004c7bf7
-    MOV ESI,dword ptr [0x005b9284]      ; 004c7be8 | INT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 004c7be8 | PTR_DAT_005b9284
     PUSH ESI                            ; 004c7bee
     CALL xxx_unk.c_FUN_004940d0         ; 004c7bef
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
@@ -263,7 +263,7 @@ section .text
         ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     JMP 0x004c7aac                      ; 004c7c49
         ;   XREF to: 004c7aac (UNCONDITIONAL_JUMP)  ; LAB_004c7aac
-    MOV dword ptr [0x01c76310],EDX      ; 004c7c4e | DAT_01c76310
+    MOV dword ptr [0x01c76310],EDX      ; 004c7c4e | g_CDemonLight_01c74640.antialiasing_enabled
         ;   Label: LAB_004c7c4e
     JMP 0x004c7b83                      ; 004c7c54
         ;   XREF to: 004c7b83 (UNCONDITIONAL_JUMP)  ; LAB_004c7b83

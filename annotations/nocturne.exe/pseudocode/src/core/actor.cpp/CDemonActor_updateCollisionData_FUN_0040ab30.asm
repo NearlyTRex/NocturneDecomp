@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_CDemonActor_updateCollisionData_FUN_0040ab30(void)
+; void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_0040ab30(CDemonActor *this_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

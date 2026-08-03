@@ -13,8 +13,8 @@
 ;   TerminatedCString s_art_0058d308
 ;   TerminatedCString s_Unable_to_open_PBM_file_0058d30c
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d327
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_004f4ab0
@@ -67,8 +67,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004f4e92
     MOV ECX,0x58d327                    ; 004f4e96 | = "..\\cockpit\\pkbitmap.cpp"
     PUSH EAX                            ; 004f4e9b
-    MOV dword ptr [0x01cc4804],EDI      ; 004f4e9c | INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004f4ea2 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004f4e9c | g_INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f4ea2 | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 004f4ea8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4ead

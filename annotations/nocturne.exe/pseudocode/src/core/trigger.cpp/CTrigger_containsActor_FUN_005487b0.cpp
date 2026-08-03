@@ -65,11 +65,11 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(CTrigger *this_
       }
       else {
         if (this_ptr->shape != 1) {
-          PTR_01cc4800 = "..\\core\\trigger.cpp";
-          INT_01cc4804 = 0x37d;
+          g_CHAR_PTR_01cc4800 = "..\\core\\trigger.cpp";
+          g_INT_01cc4804 = 0x37d;
           core_main_c_FUN_004c8440("CTrigger::containsActor - invalid trigger shape %d for %s",this_ptr->shape,this_ptr);
-          INT_01cc4804 = 899;
-          PTR_01cc4800 = "..\\core\\trigger.cpp";
+          g_INT_01cc4804 = 899;
+          g_CHAR_PTR_01cc4800 = "..\\core\\trigger.cpp";
           core_main_c_FUN_004c8440("Hell froze...");
           return 0;
         }

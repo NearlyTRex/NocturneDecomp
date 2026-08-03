@@ -15,7 +15,7 @@ ECollisionType __cdecl core_pendulum_cpp_CPendulum_getCollisionType_FUN_004f3df0
     return COLLISION_TYPE_NONE;
   }
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
-  if (*(int *)(pCVar1->texture_list[7].textures[2].texture_name + 4) != 0) {
+  if (pCVar1->collision_triangle_list != (CDemonTriangle *)0x0) {
     collision_info->keyframed_model = &this_ptr->model;
   }
   return COLLISION_TYPE_MESH;

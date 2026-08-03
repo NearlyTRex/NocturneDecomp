@@ -20,12 +20,9 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(CVampire
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660
                      ((CDeformableModelInstance *)(pCVar3 + 1));
   pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(pCVar4 + 1));
-  pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00435100
-                     ((CCloth *)(pCVar5->vertices[0x300].connected_indices + 9));
-  pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00435100
-                     ((CCloth *)(pCVar5->vertices[0x300].connected_indices + 9));
-  pCVar6 = core_morph_cpp_CMorph_ctor_FUN_004e0050
-                     ((CMorph *)(pCVar5->vertices[0x300].connected_indices + 10));
+  pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00435100(pCVar5 + 1);
+  pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00435100(pCVar5 + 1);
+  pCVar6 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)(pCVar5[1].model.model_filename + 4));
   pCVar6[-0xfa].models[0].textures[8].textures[2].base.type = (int)&g_CVampireBossVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             ((CDeformableModelInstance *)&pCVar6[-0xfa].models[0].textures[8].textures[2].base.count

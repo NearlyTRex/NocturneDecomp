@@ -17,8 +17,8 @@
 ;   double DOUBLE_0059764f = 65536
 ;   double DOUBLE_00597657 = 8
 ;   undefined4 DAT_005b7650
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -136,8 +136,8 @@ section .text
         ;   Label: default
     MOV ESI,0x1a5                       ; 00551bd7
     PUSH 0x59762c                       ; 00551bdc | = "CWaterActor::process - Bad state"
-    MOV dword ptr [0x01cc4800],ECX      ; 00551be1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00551be7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00551be1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00551be7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00551bed
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00551bf2

@@ -28,17 +28,17 @@
 ;   double DOUBLE_0059051a = 0.0555555555555556
 ;   double DOUBLE_00590522 = 0.0000152587890625
 ;   double DOUBLE_0059052a = 1000
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9354
-;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 DAT_0077ad0c
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_014b9920
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c77610
-;   undefined4 DAT_01c777f8
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.shadow_flag
+;   undefined4 g_CGame_01c775ec.profile_mode
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -67,18 +67,18 @@ section .text
     PUSH EBP                            ; 00509763
     SUB ESP,0x30                        ; 00509764
     MOV ESI,dword ptr [ESP + 0x44]      ; 00509767
-    MOV EAX,[0x005b9354]                ; 0050976b | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0x24],0x0      ; 00509770 | DAT_01c77610
+    MOV EAX,[0x005b9354]                ; 0050976b | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0x24],0x0      ; 00509770 | g_CGame_01c775ec.shadow_flag
     JZ 0x0050983b                       ; 00509774
         ;   XREF to: 0050983b (CONDITIONAL_JUMP)  ; LAB_0050983b
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0050977a | DAT_01c777f8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0050977a | g_CGame_01c775ec.profile_mode
     JNZ 0x00509843                      ; 00509781
         ;   XREF to: 00509843 (CONDITIONAL_JUMP)  ; LAB_00509843
     XOR EBX,EBX                         ; 00509787
         ;   Label: LAB_00509787
     MOV EBP,dword ptr [0x01fba2d8]      ; 00509789 | DAT_01fba2d8
     MOV dword ptr [ESP + 0x18],EBX      ; 0050978f
-    MOV dword ptr [0x01fba938],EBX      ; 00509793 | DAT_01fba938
+    MOV dword ptr [0x01fba938],EBX      ; 00509793 | g_CDemonRaytrace_01fba938
     TEST EBP,EBP                        ; 00509799
     JLE 0x005097db                      ; 0050979b
         ;   XREF to: 005097db (CONDITIONAL_JUMP)  ; LAB_005097db
@@ -129,9 +129,9 @@ section .text
     CMP ECX,EBX                         ; 00509825
     JL 0x005097ef                       ; 00509827
         ;   XREF to: 005097ef (CONDITIONAL_JUMP)  ; LAB_005097ef
-    MOV EAX,[0x005b9354]                ; 00509829 | DAT_005b9354 | DAT_01c775ec
+    MOV EAX,[0x005b9354]                ; 00509829 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
         ;   Label: LAB_00509829
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0050982e | DAT_01c777f8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0050982e | g_CGame_01c775ec.profile_mode
     JNZ 0x00509a27                      ; 00509835
         ;   XREF to: 00509a27 (CONDITIONAL_JUMP)  ; LAB_00509a27
     ADD ESP,0x30                        ; 0050983b
@@ -236,13 +236,13 @@ section .text
     CMP EDX,ECX                         ; 00509938
     JL 0x005098c2                       ; 0050993a
         ;   XREF to: 005098c2 (CONDITIONAL_JUMP)  ; LAB_005098c2
-    MOV EBX,dword ptr [0x005b96c4]      ; 0050993c | INT_005b96c4
+    MOV EBX,dword ptr [0x005b96c4]      ; 0050993c | g_CGore_PTR_005b96c4
         ;   Label: LAB_0050993c
     PUSH EBX                            ; 00509942
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 00509943
         ;   XREF to: 004afe00 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004afe00(CGore * this_ptr)
     ADD ESP,0x4                         ; 00509948
-    MOV EDI,dword ptr [0x005b80f0]      ; 0050994b | DAT_005b80f0
+    MOV EDI,dword ptr [0x005b80f0]      ; 0050994b | g_CFireEffect_PTR_005b80f0
     PUSH EDI                            ; 00509951
     CALL core_fire.cpp_CFireEffect_render_FUN_0048a650 ; 00509952
         ;   XREF to: 0048a650 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0048a650(CFireEffect * this_ptr)
@@ -301,13 +301,13 @@ section .text
     CMP EBP,EDX                         ; 005099e1
     JL 0x005099a9                       ; 005099e3
         ;   XREF to: 005099a9 (CONDITIONAL_JUMP)  ; LAB_005099a9
-    MOV ECX,dword ptr [0x005b96c4]      ; 005099e5 | INT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 005099e5 | g_CGore_PTR_005b96c4
         ;   Label: LAB_005099e5
     PUSH ECX                            ; 005099eb
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 005099ec
         ;   XREF to: 004afe00 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004afe00(CGore * this_ptr)
     ADD ESP,0x4                         ; 005099f1
-    MOV EBX,dword ptr [0x005b80f0]      ; 005099f4 | DAT_005b80f0
+    MOV EBX,dword ptr [0x005b80f0]      ; 005099f4 | g_CFireEffect_PTR_005b80f0
     PUSH EBX                            ; 005099fa
     CALL core_fire.cpp_CFireEffect_render_FUN_0048a650 ; 005099fb
         ;   XREF to: 0048a650 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0048a650(CFireEffect * this_ptr)
@@ -334,17 +334,17 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 00509a32
     FILD dword ptr [ESP + 0x2c]         ; 00509a36
     FMUL double ptr [0x0059051a]        ; 00509a3a | DOUBLE_0059051a
-    MOV EAX,[0x005b9354]                ; 00509a40 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00509a40 | g_CGame_PTR_005b9354
     FMUL double ptr [0x00590522]        ; 00509a45 | DOUBLE_00590522
-    FLD float ptr [EAX + 0x264]         ; 00509a4b | DAT_01c77850
+    FLD float ptr [EAX + 0x264]         ; 00509a4b | g_CGame_01c775ec.delta_time_float
     FXCH                                ; 00509a51
     FMUL double ptr [0x0059052a]        ; 00509a53 | DOUBLE_0059052a
     FDIVRP                              ; 00509a59
     SUB ESP,0x8                         ; 00509a5b
     FSTP double ptr [ESP]               ; 00509a5e
     PUSH 0x5904fa                       ; 00509a61 | = "renderStaticLights : %3.2f ms\n"
-    MOV EBP,dword ptr [0x005ad350]      ; 00509a66 | PTR_DAT_005ad350
-    PUSH EBP                            ; 00509a6c | DAT_0077ad0c
+    MOV EBP,dword ptr [0x005ad350]      ; 00509a66 | g_CConsole_PTR_005ad350
+    PUSH EBP                            ; 00509a6c | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00509a6d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x10                        ; 00509a72

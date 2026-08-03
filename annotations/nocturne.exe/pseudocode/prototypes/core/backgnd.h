@@ -37,7 +37,7 @@ undefined4 CBackgroundActor::renderOpaque(void);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040fff0
 // Address: 0040fff0
-undefined4 * CBackgroundActor::getBoundingBox(int param_1,undefined4 *param_2);
+float * CBackgroundActor::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_backgnd.cpp_CBackgroundActor_archive_FUN_00410040
 // Address: 00410040

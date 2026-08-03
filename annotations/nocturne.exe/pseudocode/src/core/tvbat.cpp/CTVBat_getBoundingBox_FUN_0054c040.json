@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 133,
+    "complexity_score": 132,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 17,
     "suspect_count": 11,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 60
+    "total_lines": 59
   },
   "cross_references": [],
   "function": {
@@ -85,7 +85,7 @@
     ],
     "convention": "unknown",
     "name": "core_tvbat.cpp_CTVBat_getBoundingBox_FUN_0054c040",
-    "signature": "undefined4 * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,undefined4 *param_2)"
+    "signature": "float * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,float *param_2)"
   },
   "function_calls": [
     {
@@ -162,7 +162,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,uint *param_2)",
+      "text": "float * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -170,7 +170,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,uint *param_2)",
+      "text": "float * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -191,10 +191,18 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = (pCVar2->min).x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = *puVar2;",
+      "text": "param_2[1] = (pCVar2->min).y;",
       "type": "unnamed_param"
     },
     {
@@ -202,7 +210,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = puVar2[1];",
+      "text": "param_2[2] = (pCVar2->min).z;",
       "type": "unnamed_param"
     },
     {
@@ -210,7 +218,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[2] = puVar2[2];",
+      "text": "param_2[3] = (pCVar2->max).x;",
       "type": "unnamed_param"
     },
     {
@@ -218,7 +226,7 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[3] = puVar2[3];",
+      "text": "param_2[4] = (pCVar2->max).y;",
       "type": "unnamed_param"
     },
     {
@@ -226,20 +234,12 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[4] = puVar2[4];",
+      "text": "param_2[5] = (pCVar2->max).z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[5] = puVar2[5];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "return param_2;",

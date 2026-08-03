@@ -37,4 +37,4 @@ int __cdecl CWinFont::getStringHeight(CWinFont *this_ptr,char *text_string);
 
 // Original: engine_winfont.cpp_CWinFont_getLineSpacing_FUN_005587e0
 // Address: 005587e0
-undefined4 CWinFont::getLineSpacing(void);
+int __cdecl CWinFont::getLineSpacing(CWinFont *this_ptr);

@@ -9,6 +9,6 @@
 void __cdecl core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(CDemonSet *this_ptr)
 
 {
-  this_ptr->sorted_render_actors[0x6e1] = (CDemonActor *)0x1;
+  this_ptr->mirror_camera_dirty = 1;
   return;
 }

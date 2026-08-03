@@ -38,8 +38,8 @@ _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004b1090(char *directo
   pcVar4 = (char *)0x0;
 LAB_004b10d3:
   if (pcVar4 == (char *)0x0) {
-    PTR_01cc4800 = "..\\core\\ground.cpp";
-    INT_01cc4804 = 0x40;
+    g_CHAR_PTR_01cc4800 = "..\\core\\ground.cpp";
+    g_INT_01cc4804 = 0x40;
     core_main_c_FUN_004c8440("eopen - ext not found!");
   }
   pcVar4 = pcVar4 + 1;
@@ -54,8 +54,8 @@ LAB_004b10d3:
   } while (cVar1 != '\0');
   p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60(directory,local_60,open_mode);
   if (p_Var2 == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\core\\ground.cpp";
-    INT_01cc4804 = 0x44;
+    g_CHAR_PTR_01cc4800 = "..\\core\\ground.cpp";
+    g_INT_01cc4804 = 0x44;
     core_main_c_FUN_004c8440("eopen - Cannot open file");
     return (_FILE *)0x0;
   }

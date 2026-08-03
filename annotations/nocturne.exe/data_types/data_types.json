@@ -10735,7 +10735,7 @@
           "type":"float"
         }
       ],
-      "return_type":"int",
+      "return_type":"uint",
       "type":"function_definition"
     },
     {
@@ -10963,7 +10963,7 @@
           "type":"float"
         }
       ],
-      "return_type":"int",
+      "return_type":"uint",
       "type":"function_definition"
     },
     {
@@ -19677,79 +19677,73 @@
         },
         {
           "len":4,
-          "name":"is_panning",
-          "offset":320,
-          "type":"int"
-        },
-        {
-          "len":4,
           "name":"projection_scale",
-          "offset":324,
+          "offset":320,
           "type":"float"
         },
         {
           "len":4,
           "name":"ambient_value",
-          "offset":328,
+          "offset":324,
           "type":"float"
         },
         {
           "len":4,
           "name":"camera_group",
-          "offset":332,
+          "offset":328,
           "type":"int"
         },
         {
           "len":4,
           "name":"fog_enabled",
-          "offset":336,
+          "offset":332,
           "type":"int"
         },
         {
           "len":36,
           "name":"fog",
-          "offset":340,
+          "offset":336,
           "type":"SFog"
         },
         {
           "len":4,
           "name":"reverb_preset",
-          "offset":376,
+          "offset":372,
           "type":"int"
         },
         {
           "len":24,
           "name":"box",
-          "offset":380,
+          "offset":376,
           "type":"CBoundingBox3D"
         },
         {
           "len":4,
           "name":"pvs_count",
-          "offset":404,
+          "offset":400,
           "type":"int"
         },
         {
           "len":4,
           "name":"pvs_list",
-          "offset":408,
+          "offset":404,
           "type":"int*"
         },
         {
           "len":4,
           "name":"vdir_zone",
-          "offset":412,
+          "offset":408,
           "type":"int"
         },
         {
           "len":4,
           "name":"enabled",
-          "offset":416,
+          "offset":412,
           "type":"int"
         }
       ],
       "importable":true,
-      "len":420,
+      "len":416,
       "name":"C3DSCamera",
       "pack":false,
       "type":"struct"
@@ -23055,7 +23049,7 @@
       "desc":"",
       "fields":[
         {
-          "len":22232,
+          "len":920,
           "name":"model",
           "offset":0,
           "type":"CKeyFramedModel"
@@ -23063,144 +23057,144 @@
         {
           "len":227200,
           "name":"vertices",
-          "offset":22232,
+          "offset":920,
           "type":"SClothVertex[800]"
         },
         {
           "len":4,
           "name":"weight",
-          "offset":249432,
+          "offset":228120,
           "type":"float"
         },
         {
           "len":4,
           "name":"gravity",
-          "offset":249436,
+          "offset":228124,
           "type":"float"
         },
         {
           "len":4,
           "name":"dampen",
-          "offset":249440,
+          "offset":228128,
           "type":"float"
         },
         {
           "len":4,
           "name":"spring",
-          "offset":249444,
+          "offset":228132,
           "type":"float"
         },
         {
           "len":4,
           "name":"body_friction",
-          "offset":249448,
+          "offset":228136,
           "type":"float"
         },
         {
           "len":4,
           "name":"floor_friction",
-          "offset":249452,
+          "offset":228140,
           "type":"float"
         },
         {
           "len":4,
           "name":"wind_area",
-          "offset":249456,
+          "offset":228144,
           "type":"float"
         },
         {
           "len":4,
           "name":"mom_inert",
-          "offset":249460,
+          "offset":228148,
           "type":"float"
         },
         {
           "len":12,
           "name":"dead",
-          "offset":249464,
+          "offset":228152,
           "type":"char[12]"
         },
         {
           "len":4,
           "name":"double_sided",
-          "offset":249476,
+          "offset":228164,
           "type":"int"
         },
         {
           "len":4,
           "name":"transparency",
-          "offset":249480,
+          "offset":228168,
           "type":"float"
         },
         {
           "len":4,
           "name":"collide_bone_count",
-          "offset":249484,
+          "offset":228172,
           "type":"int"
         },
         {
           "len":8600,
           "name":"collide_bones",
-          "offset":249488,
+          "offset":228176,
           "type":"SClothBone[50]"
         },
         {
           "len":4,
           "name":"locked_vertex_count",
-          "offset":258088,
+          "offset":236776,
           "type":"int"
         },
         {
           "len":3600,
           "name":"locked_vertex_indices",
-          "offset":258092,
+          "offset":236780,
           "type":"int[900]"
         },
         {
           "len":4,
           "name":"vertex_sort_buffer",
-          "offset":261692,
+          "offset":240380,
           "type":"int*"
         },
         {
           "len":4,
           "name":"inv_delta_time",
-          "offset":261696,
+          "offset":240384,
           "type":"float"
         },
         {
           "len":4,
           "name":"floor_y",
-          "offset":261700,
+          "offset":240388,
           "type":"float"
         },
         {
           "len":12,
           "name":"last_position",
-          "offset":261704,
+          "offset":240392,
           "type":"CVector3f"
         },
         {
           "len":12,
           "name":"last_euler",
-          "offset":261716,
+          "offset":240404,
           "type":"CVector3f"
         },
         {
           "len":4,
           "name":"version_num",
-          "offset":261728,
+          "offset":240416,
           "type":"int"
         },
         {
           "len":12,
           "name":"wind_velocity",
-          "offset":261732,
+          "offset":240420,
           "type":"CVector3f"
         }
       ],
       "importable":true,
-      "len":261744,
+      "len":240432,
       "name":"CCloth",
       "pack":false,
       "type":"struct"
@@ -23487,7 +23481,7 @@
       "desc":"",
       "fields":[
         {
-          "len":1828,
+          "len":1824,
           "name":"base",
           "offset":0,
           "type":"CPlatform"
@@ -23495,42 +23489,42 @@
         {
           "len":12,
           "name":"size",
-          "offset":1828,
+          "offset":1824,
           "type":"CVector3f"
         },
         {
           "len":12,
           "name":"direction",
-          "offset":1840,
+          "offset":1836,
           "type":"CVector3f"
         },
         {
           "len":100,
           "name":"start_event",
-          "offset":1852,
+          "offset":1848,
           "type":"char[100]"
         },
         {
           "len":100,
           "name":"stop_event",
-          "offset":1952,
+          "offset":1948,
           "type":"char[100]"
         },
         {
           "len":4,
           "name":"state",
-          "offset":2052,
+          "offset":2048,
           "type":"int"
         },
         {
           "len":80,
           "name":"actor_class",
-          "offset":2056,
+          "offset":2052,
           "type":"char[80]"
         }
       ],
       "importable":true,
-      "len":2136,
+      "len":2132,
       "name":"CConveyor",
       "pack":false,
       "type":"struct"
@@ -24225,7 +24219,7 @@
           "type":"int"
         },
         {
-          "len":28800,
+          "len":2880,
           "name":"texture_sets",
           "offset":192,
           "type":"STextureSet[5]"
@@ -24233,78 +24227,78 @@
         {
           "len":4,
           "name":"num_parts",
-          "offset":28992,
+          "offset":3072,
           "type":"int"
         },
         {
           "len":2880,
           "name":"parts",
-          "offset":28996,
+          "offset":3076,
           "type":"SPart[30]"
         },
         {
           "len":12,
           "name":"model_scale",
-          "offset":31876,
+          "offset":5956,
           "type":"CVector3f"
         },
         {
           "len":1200,
           "name":"vertex_pool",
-          "offset":31888,
+          "offset":5968,
           "type":"CVector3f[100]"
         },
         {
           "len":2400,
           "name":"bbox_pool",
-          "offset":33088,
+          "offset":7168,
           "type":"CBoundingBox3D[100]"
         },
         {
           "len":12,
           "name":"dead",
-          "offset":35488,
+          "offset":9568,
           "type":"char[12]"
         },
         {
           "len":400,
           "name":"bone_flags",
-          "offset":35500,
+          "offset":9580,
           "type":"int[100]"
         },
         {
           "len":400,
           "name":"bone_to_part_map",
-          "offset":35900,
+          "offset":9980,
           "type":"int[100]"
         },
         {
           "len":400,
           "name":"farthest_child_bone",
-          "offset":36300,
+          "offset":10380,
           "type":"int[100]"
         },
         {
           "len":80,
           "name":"model_name",
-          "offset":36700,
+          "offset":10780,
           "type":"char[80]"
         },
         {
           "len":4,
           "name":"skeleton_ptr",
-          "offset":36780,
+          "offset":10860,
           "type":"CSkeleton*"
         },
         {
           "len":80,
           "name":"model_filename",
-          "offset":36784,
+          "offset":10864,
           "type":"char[80]"
         }
       ],
       "importable":true,
-      "len":36864,
+      "len":10944,
       "name":"CDeformableModel",
       "pack":false,
       "type":"struct"
@@ -24994,16 +24988,46 @@
       "desc":"",
       "fields":[
         {
-          "len":64,
-          "name":"base",
-          "offset":0,
-          "type":"CCameraView"
-        },
-        {
           "len":256,
           "name":"camera_name",
-          "offset":64,
+          "offset":0,
           "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"fixed_point_scale",
+          "offset":256,
+          "type":"float"
+        },
+        {
+          "len":12,
+          "name":"position",
+          "offset":260,
+          "type":"CVector3f"
+        },
+        {
+          "len":36,
+          "name":"rotation_matrix",
+          "offset":272,
+          "type":"CMatrix3x3f"
+        },
+        {
+          "len":4,
+          "name":"dead",
+          "offset":308,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"focal_length",
+          "offset":312,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"screen_width",
+          "offset":316,
+          "type":"int"
         },
         {
           "len":4,
@@ -25632,146 +25656,86 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"current_camera_index",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":16,
-          "name":"viewport",
-          "offset":20,
-          "type":"SWindowRect"
-        },
-        {
-          "len":4,
-          "name":"show_3d_viewport",
-          "offset":36,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"selected_actor",
-          "offset":40,
-          "type":"CDemonActor*"
-        },
-        {
-          "len":4,
-          "name":"hovered_actor",
-          "offset":44,
-          "type":"CDemonActor*"
-        },
-        {
-          "len":4,
-          "name":"render_sky_in_editor",
-          "offset":48,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"render_water_in_editor",
-          "offset":52,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"full_light_in_editor",
-          "offset":56,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"skip_gore_load_flag",
-          "offset":60,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"show_waypoint_coverage",
-          "offset":64,
-          "type":"int"
-        },
-        {
           "len":256,
           "name":"mission_name",
-          "offset":68,
+          "offset":16,
           "type":"char[256]"
         },
         {
           "len":4,
           "name":"num_sets",
-          "offset":324,
+          "offset":272,
           "type":"int"
         },
         {
           "len":1024,
           "name":"set_names",
-          "offset":328,
+          "offset":276,
           "type":"char[4][256]"
         },
         {
           "len":4,
           "name":"first_actor",
-          "offset":1352,
+          "offset":1300,
           "type":"CDemonActor*"
         },
         {
           "len":4,
           "name":"last_actor",
-          "offset":1356,
+          "offset":1304,
           "type":"CDemonActor*"
         },
         {
           "len":16,
           "name":"pending_teleport",
-          "offset":1360,
+          "offset":1308,
           "type":"CLocation"
         },
         {
           "len":4,
           "name":"delete_queue_count",
-          "offset":1376,
+          "offset":1324,
           "type":"int"
         },
         {
           "len":400,
           "name":"delete_queue_actors",
-          "offset":1380,
+          "offset":1328,
           "type":"CDemonActor*[100]"
         },
         {
           "len":400,
           "name":"delete_queue_flags",
-          "offset":1780,
+          "offset":1728,
           "type":"uint[100]"
         },
         {
           "len":4,
           "name":"actors_prepared",
-          "offset":2180,
+          "offset":2128,
           "type":"int"
         },
         {
           "len":4,
           "name":"next_inventory_actor",
-          "offset":2184,
+          "offset":2132,
           "type":"CDemonActor*"
         },
         {
           "len":4,
           "name":"actor_lookup_count",
-          "offset":2188,
+          "offset":2136,
           "type":"int"
         },
         {
           "len":8000,
           "name":"actor_lookup_table",
-          "offset":2192,
+          "offset":2140,
           "type":"CDemonActor*[2000]"
         }
       ],
       "importable":true,
-      "len":10192,
+      "len":10140,
       "name":"CDemonMission",
       "pack":false,
       "type":"struct"
@@ -26142,7 +26106,7 @@
           "type":"int"
         },
         {
-          "len":105000,
+          "len":104000,
           "name":"cameras",
           "offset":4,
           "type":"C3DSCamera[250]"
@@ -26150,516 +26114,516 @@
         {
           "len":4,
           "name":"light_count",
-          "offset":105004,
+          "offset":104004,
           "type":"int"
         },
         {
           "len":1259200,
           "name":"lights",
-          "offset":105008,
+          "offset":104008,
           "type":"C3DSLight[200]"
         },
         {
           "len":32,
           "name":"geometry_filename",
-          "offset":1364208,
+          "offset":1363208,
           "type":"char[32]"
         },
         {
           "len":12,
           "name":"ray_origin",
-          "offset":1364240,
+          "offset":1363240,
           "type":"CVector3f"
         },
         {
           "len":12,
           "name":"ray_target",
-          "offset":1364252,
+          "offset":1363252,
           "type":"CVector3f"
         },
         {
           "len":12,
           "name":"collision_normal",
-          "offset":1364264,
+          "offset":1363264,
           "type":"CVector3f"
         },
         {
           "len":4,
           "name":"ground_type",
-          "offset":1364276,
+          "offset":1363276,
           "type":"int"
         },
         {
           "len":12,
           "name":"collision_impact_position",
-          "offset":1364280,
+          "offset":1363280,
           "type":"CVector3f"
         },
         {
           "len":4,
           "name":"collision_actor",
-          "offset":1364292,
+          "offset":1363292,
           "type":"CDemonActor*"
         },
         {
           "len":4,
           "name":"collision_part_index",
-          "offset":1364296,
+          "offset":1363296,
           "type":"int"
         },
         {
           "len":4,
           "name":"collision_bone_index",
-          "offset":1364300,
+          "offset":1363300,
           "type":"int"
         },
         {
           "len":4,
           "name":"min_ambient_value",
-          "offset":1364304,
+          "offset":1363304,
           "type":"float"
         },
         {
           "len":4,
           "name":"actor_count",
-          "offset":1364308,
+          "offset":1363308,
           "type":"int"
         },
         {
           "len":8000,
           "name":"actors",
-          "offset":1364312,
+          "offset":1363312,
           "type":"CDemonActor*[2000]"
         },
         {
           "len":4,
           "name":"character_count",
-          "offset":1372312,
+          "offset":1371312,
           "type":"int"
         },
         {
           "len":8000,
           "name":"characters",
-          "offset":1372316,
+          "offset":1371316,
           "type":"CCharacter*[2000]"
         },
         {
           "len":4,
           "name":"enemy_count",
-          "offset":1380316,
+          "offset":1379316,
           "type":"int"
         },
         {
           "len":8000,
           "name":"enemies",
-          "offset":1380320,
+          "offset":1379320,
           "type":"CEnemy*[2000]"
         },
         {
           "len":4,
           "name":"threat_count",
-          "offset":1388320,
+          "offset":1387320,
           "type":"int"
         },
         {
           "len":8000,
           "name":"threats",
-          "offset":1388324,
+          "offset":1387324,
           "type":"CDemonActor*[2000]"
         },
         {
           "len":4,
           "name":"waypoint_count",
-          "offset":1396324,
+          "offset":1395324,
           "type":"int"
         },
         {
           "len":8000,
           "name":"waypoints",
-          "offset":1396328,
+          "offset":1395328,
           "type":"CWayPoint*[2000]"
         },
         {
           "len":4,
           "name":"collidable_actor_count",
-          "offset":1404328,
+          "offset":1403328,
           "type":"int"
         },
         {
           "len":8000,
           "name":"collidable_actors",
-          "offset":1404332,
+          "offset":1403332,
           "type":"CDemonActor*[2000]"
         },
         {
           "len":4,
           "name":"renderable_actor_count",
-          "offset":1412332,
+          "offset":1411332,
           "type":"int"
         },
         {
           "len":8000,
           "name":"renderable_actors",
-          "offset":1412336,
+          "offset":1411336,
           "type":"CDemonActor*[2000]"
         },
         {
           "len":36,
           "name":"scene_fog",
-          "offset":1420336,
+          "offset":1419336,
           "type":"SFog"
         },
         {
           "len":36,
           "name":"active_fog",
-          "offset":1420372,
+          "offset":1419372,
           "type":"SFog"
         },
         {
           "len":4,
           "name":"per_pixel_lighting_enabled",
-          "offset":1420408,
+          "offset":1419408,
           "type":"int"
         },
         {
           "len":4,
           "name":"default_master_reverb",
-          "offset":1420412,
+          "offset":1419412,
           "type":"int"
         },
         {
           "len":4,
           "name":"lighting_quality_mode",
-          "offset":1420416,
+          "offset":1419416,
           "type":"int"
         },
         {
           "len":4,
           "name":"disable_spotlight_shadows",
-          "offset":1420420,
+          "offset":1419420,
           "type":"int"
         },
         {
           "len":4,
           "name":"disable_directional_lighting",
-          "offset":1420424,
+          "offset":1419424,
           "type":"int"
         },
         {
           "len":4,
           "name":"disable_water_rendering",
-          "offset":1420428,
+          "offset":1419428,
           "type":"int"
         },
         {
           "len":4,
           "name":"disable_sky_rendering",
-          "offset":1420432,
+          "offset":1419432,
           "type":"int"
         },
         {
           "len":4,
           "name":"use_enviro_model",
-          "offset":1420436,
+          "offset":1419436,
           "type":"int"
         },
         {
           "len":16,
           "name":"enviro_model_name",
-          "offset":1420440,
+          "offset":1419440,
           "type":"char[16]"
         },
         {
           "len":4,
           "name":"player_on_train",
-          "offset":1420456,
+          "offset":1419456,
           "type":"int"
         },
         {
           "len":4,
           "name":"set_file_version",
-          "offset":1420460,
+          "offset":1419460,
           "type":"int"
         },
         {
           "len":4,
           "name":"actor_list_capacity",
-          "offset":1420464,
+          "offset":1419464,
           "type":"int"
         },
         {
           "len":4,
           "name":"mirror_glass_actor_count",
-          "offset":1420468,
+          "offset":1419468,
           "type":"int"
         },
         {
           "len":400,
           "name":"mirror_glass_actors",
-          "offset":1420472,
+          "offset":1419472,
           "type":"CGlass*[100]"
         },
         {
           "len":4,
           "name":"last_switch_area_invalid",
-          "offset":1420872,
+          "offset":1419872,
           "type":"int"
         },
         {
           "len":4,
           "name":"use_world_geometry_flag",
-          "offset":1420876,
+          "offset":1419876,
           "type":"int"
         },
         {
           "len":32,
           "name":"world_geometry_name",
-          "offset":1420880,
+          "offset":1419880,
           "type":"char[32]"
         },
         {
           "len":4,
           "name":"rendering_mode",
-          "offset":1420912,
+          "offset":1419912,
           "type":"int"
         },
         {
           "len":12,
           "name":"light_direction",
-          "offset":1420916,
+          "offset":1419916,
           "type":"CVector3i"
         },
         {
           "len":4,
           "name":"ambient_base_quick",
-          "offset":1420928,
+          "offset":1419928,
           "type":"int"
         },
         {
           "len":4,
           "name":"skip_normal_normalization",
-          "offset":1420932,
+          "offset":1419932,
           "type":"int"
         },
         {
           "len":12,
           "name":"flat_color",
-          "offset":1420936,
+          "offset":1419936,
           "type":"CColor3i"
         },
         {
           "len":4,
           "name":"set_scale_factor",
-          "offset":1420948,
+          "offset":1419948,
           "type":"float"
         },
         {
           "len":4,
           "name":"dead1",
-          "offset":1420952,
+          "offset":1419952,
           "type":"int"
         },
         {
           "len":4,
           "name":"dead2",
-          "offset":1420956,
+          "offset":1419956,
           "type":"int"
         },
         {
           "len":4,
           "name":"camera_enabled_flag",
-          "offset":1420960,
+          "offset":1419960,
           "type":"int"
         },
         {
           "len":4,
           "name":"selected_camera_index",
-          "offset":1420964,
+          "offset":1419964,
           "type":"int"
         },
         {
           "len":4,
           "name":"previous_best_camera_index",
-          "offset":1420968,
+          "offset":1419968,
           "type":"int"
         },
         {
           "len":4,
           "name":"previous_best_camera_timer",
-          "offset":1420972,
+          "offset":1419972,
           "type":"float"
         },
         {
           "len":4,
           "name":"pending_camera_index",
-          "offset":1420976,
+          "offset":1419976,
           "type":"int"
         },
         {
           "len":4,
           "name":"camera_switch_cooldown",
-          "offset":1420980,
+          "offset":1419980,
           "type":"float"
         },
         {
           "len":4,
           "name":"default_room_size",
-          "offset":1420984,
+          "offset":1419984,
           "type":"int"
         },
         {
           "len":4,
           "name":"room_count",
-          "offset":1420988,
+          "offset":1419988,
           "type":"int"
         },
         {
           "len":1360,
           "name":"rooms",
-          "offset":1420992,
+          "offset":1419992,
           "type":"SRoom[20]"
         },
         {
           "len":4,
           "name":"vdir_box_count",
-          "offset":1422352,
+          "offset":1421352,
           "type":"int"
         },
         {
           "len":17000,
           "name":"vdir_boxes",
-          "offset":1422356,
+          "offset":1421356,
           "type":"SVDBox[250]"
         },
         {
           "len":4,
           "name":"default_ground_type",
-          "offset":1439356,
+          "offset":1438356,
           "type":"int"
         },
         {
           "len":20,
           "name":"ray_query",
-          "offset":1439360,
+          "offset":1438360,
           "type":"SRayQueryState"
         },
         {
           "len":4,
           "name":"ignore_list_count",
-          "offset":1439380,
+          "offset":1438380,
           "type":"int"
         },
         {
           "len":4,
           "name":"collision_flag",
-          "offset":1439384,
+          "offset":1438384,
           "type":"int"
         },
         {
           "len":40,
           "name":"ignore_list",
-          "offset":1439388,
+          "offset":1438388,
           "type":"CDemonActor*[10]"
         },
         {
           "len":4,
           "name":"raycast_distance",
-          "offset":1439428,
+          "offset":1438428,
           "type":"float"
         },
         {
           "len":4,
           "name":"voxel_distance",
-          "offset":1439432,
+          "offset":1438432,
           "type":"float"
         },
         {
           "len":12,
           "name":"voxel_hit_point",
-          "offset":1439436,
+          "offset":1438436,
           "type":"CVector3f"
         },
         {
           "len":4,
           "name":"voxel_surface_type",
-          "offset":1439448,
+          "offset":1438448,
           "type":"int"
         },
         {
           "len":4,
           "name":"skip_exact_collisions",
-          "offset":1439452,
+          "offset":1438452,
           "type":"int"
         },
         {
           "len":4,
           "name":"directional_light_ratio_enabled",
-          "offset":1439456,
+          "offset":1438456,
           "type":"int"
         },
         {
           "len":4,
           "name":"sorted_render_actor_count",
-          "offset":1439460,
+          "offset":1438460,
           "type":"int"
         },
         {
           "len":8000,
           "name":"sorted_render_actors",
-          "offset":1439464,
+          "offset":1438464,
           "type":"CDemonActor*[2000]"
         },
         {
           "len":4,
           "name":"has_sky",
-          "offset":1447464,
+          "offset":1446464,
           "type":"int"
         },
         {
           "len":32,
           "name":"sky_texture_name",
-          "offset":1447468,
+          "offset":1446468,
           "type":"char[32]"
         },
         {
           "len":4,
           "name":"sky_brightness",
-          "offset":1447500,
+          "offset":1446500,
           "type":"int"
         },
         {
           "len":4,
           "name":"active_mirror",
-          "offset":1447504,
+          "offset":1446504,
           "type":"CMirror*"
         },
         {
           "len":4,
           "name":"mirror_camera_dirty",
-          "offset":1447508,
+          "offset":1446508,
           "type":"int"
         },
         {
           "len":4,
           "name":"mirror_lighting_cached",
-          "offset":1447512,
+          "offset":1446512,
           "type":"int"
         },
         {
           "len":12,
           "name":"mirror_cached_color",
-          "offset":1447516,
+          "offset":1446516,
           "type":"CColor3i"
         },
         {
           "len":4,
           "name":"weather_type",
-          "offset":1447528,
+          "offset":1446528,
           "type":"EWeatherType"
         }
       ],
       "importable":true,
-      "len":1447532,
+      "len":1446532,
       "name":"CDemonSet",
       "pack":false,
       "type":"struct"
@@ -29065,7 +29029,7 @@
           "type":"float"
         },
         {
-          "len":261744,
+          "len":240432,
           "name":"coat_cloth",
           "offset":129660,
           "type":"CCloth"
@@ -29073,12 +29037,12 @@
         {
           "len":4,
           "name":"dynamite_charge_power",
-          "offset":391404,
+          "offset":370092,
           "type":"float"
         }
       ],
       "importable":true,
-      "len":391408,
+      "len":370096,
       "name":"CGabriella",
       "pack":false,
       "type":"struct"
@@ -31420,81 +31384,81 @@
           "type":"int"
         },
         {
-          "len":21600,
+          "len":288,
           "name":"texture_list",
           "offset":292,
-          "type":"SMRGLTextureLod[300]"
+          "type":"SMRGLTextureLod[4]"
         },
         {
           "comment":"max=30",
           "len":4,
           "name":"part_count",
-          "offset":21892,
+          "offset":580,
           "type":"int"
         },
         {
           "len":240,
           "name":"part_list",
-          "offset":21896,
+          "offset":584,
           "type":"CKeyFramedModelPart[30]"
         },
         {
           "len":24,
           "name":"bounds",
-          "offset":22136,
+          "offset":824,
           "type":"CBoundingBox3D"
         },
         {
           "len":4,
           "name":"frame_bounds",
-          "offset":22160,
+          "offset":848,
           "type":"CBoundingBox3D*"
         },
         {
           "len":4,
           "name":"collision_triangle_count",
-          "offset":22164,
+          "offset":852,
           "type":"int"
         },
         {
           "len":4,
           "name":"collision_triangle_list",
-          "offset":22168,
+          "offset":856,
           "type":"CDemonTriangle*"
         },
         {
           "len":4,
           "name":"transparent_pixel_flag",
-          "offset":22172,
+          "offset":860,
           "type":"int"
         },
         {
           "len":4,
           "name":"disable_backface_culling",
-          "offset":22176,
+          "offset":864,
           "type":"int"
         },
         {
           "len":12,
           "name":"transform_vector",
-          "offset":22180,
+          "offset":868,
           "type":"CVector3f"
         },
         {
           "len":36,
           "name":"rotation_matrix_workspace",
-          "offset":22192,
+          "offset":880,
           "type":"CMatrix3x3f"
         },
         {
           "len":4,
           "name":"dead",
-          "offset":22228,
+          "offset":916,
           "type":"int"
         }
       ],
       "importable":true,
-      "len":22232,
+      "len":920,
       "name":"CKeyFramedModel",
       "pack":false,
       "type":"struct"
@@ -32945,7 +32909,7 @@
           "type":"char[100]"
         },
         {
-          "len":261744,
+          "len":240432,
           "name":"cloth",
           "offset":48620,
           "type":"CCloth"
@@ -32953,42 +32917,42 @@
         {
           "len":4,
           "name":"attack_mode",
-          "offset":310364,
+          "offset":289052,
           "type":"int"
         },
         {
           "len":4,
           "name":"mirror_plane_actor",
-          "offset":310368,
+          "offset":289056,
           "type":"CDemonActor*"
         },
         {
           "len":40,
           "name":"morph_actor_type",
-          "offset":310372,
+          "offset":289060,
           "type":"char[40]"
         },
         {
           "len":3116,
           "name":"morph",
-          "offset":310412,
+          "offset":289100,
           "type":"CMorph"
         },
         {
           "len":4,
           "name":"morph_blend",
-          "offset":313528,
+          "offset":292216,
           "type":"float"
         },
         {
           "len":4,
           "name":"morph_target_actor",
-          "offset":313532,
+          "offset":292220,
           "type":"CDemonActor*"
         }
       ],
       "importable":true,
-      "len":313536,
+      "len":292224,
       "name":"CMimic",
       "pack":false,
       "type":"struct"
@@ -32999,7 +32963,7 @@
       "desc":"",
       "fields":[
         {
-          "len":1828,
+          "len":1824,
           "name":"base",
           "offset":0,
           "type":"CPlatform"
@@ -33007,12 +32971,12 @@
         {
           "len":4,
           "name":"spark_timer",
-          "offset":1828,
+          "offset":1824,
           "type":"float"
         }
       ],
       "importable":true,
-      "len":1832,
+      "len":1828,
       "name":"CMineCar",
       "pack":false,
       "type":"struct"
@@ -33431,14 +33395,14 @@
           "type":"float"
         },
         {
-          "len":22232,
+          "len":920,
           "name":"moon",
           "offset":8,
           "type":"CKeyFramedModel"
         }
       ],
       "importable":true,
-      "len":22240,
+      "len":928,
       "name":"CMoon",
       "pack":false,
       "type":"struct"
@@ -34945,158 +34909,122 @@
           "type":"CStrList"
         },
         {
+          "len":4,
+          "name":"forced_column_count",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":100,
+          "name":"hotkeys",
+          "offset":20,
+          "type":"char[100]"
+        },
+        {
+          "len":4,
+          "name":"state_flag",
+          "offset":120,
+          "type":"int"
+        },
+        {
           "len":40,
           "name":"tab_column_widths",
-          "offset":16,
+          "offset":124,
           "type":"int[10]"
         },
         {
           "len":4,
           "name":"tab_column_count",
-          "offset":56,
+          "offset":164,
           "type":"int"
-        },
-        {
-          "len":4,
-          "name":"selected_index",
-          "offset":60,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"state_flag",
-          "offset":64,
-          "type":"int"
-        },
-        {
-          "len":100,
-          "name":"ok_button_text",
-          "offset":68,
-          "type":"char[100]"
-        },
-        {
-          "len":100,
-          "name":"cancel_button_text",
-          "offset":168,
-          "type":"char[100]"
         },
         {
           "len":100,
           "name":"search_text_buffer",
-          "offset":268,
+          "offset":168,
           "type":"char[100]"
         },
         {
           "len":4,
           "name":"confirmed_flag",
-          "offset":368,
+          "offset":268,
           "type":"int"
         },
         {
           "len":4,
           "name":"character_width",
-          "offset":372,
+          "offset":272,
           "type":"int"
         },
         {
           "len":4,
           "name":"column_padding",
-          "offset":376,
+          "offset":276,
           "type":"int"
         },
         {
           "len":4,
           "name":"current_index",
-          "offset":380,
+          "offset":280,
           "type":"int"
         },
         {
           "len":4,
           "name":"scroll_top",
-          "offset":384,
+          "offset":284,
           "type":"int"
         },
         {
           "len":4,
           "name":"page_size",
-          "offset":388,
+          "offset":288,
           "type":"int"
         },
         {
           "len":4,
           "name":"vertical_page_size",
-          "offset":392,
+          "offset":292,
           "type":"int"
         },
         {
           "len":4,
           "name":"total_content_width",
-          "offset":396,
+          "offset":296,
           "type":"int"
         },
         {
           "len":4,
           "name":"column_count",
-          "offset":400,
+          "offset":300,
           "type":"int"
         },
         {
           "len":4,
           "name":"enabled_capacity",
-          "offset":404,
+          "offset":304,
           "type":"int"
         },
         {
           "len":4,
           "name":"enabled_array",
-          "offset":408,
-          "type":"int*"
-        },
-        {
-          "len":4,
-          "name":"hotkey_capacity",
-          "offset":412,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"hotkey_array",
-          "offset":416,
+          "offset":308,
           "type":"int*"
         },
         {
           "len":52,
           "name":"scrollbar",
-          "offset":420,
+          "offset":312,
           "type":"CEdScrollBar"
         },
         {
           "len":4,
           "name":"dialog_result",
-          "offset":472,
-          "type":"int"
-        },
-        {
-          "len":228,
-          "name":"ok_button",
-          "offset":476,
-          "type":"CEdButton"
-        },
-        {
-          "len":228,
-          "name":"cancel_button",
-          "offset":704,
-          "type":"CEdButton"
-        },
-        {
-          "len":4,
-          "name":"selection_state",
-          "offset":932,
+          "offset":364,
           "type":"int"
         }
       ],
       "importable":true,
-      "len":936,
+      "len":368,
       "name":"CPickList",
       "pack":false,
       "type":"struct"
@@ -35336,19 +35264,13 @@
         },
         {
           "len":4,
-          "name":"platform_type",
-          "offset":1820,
-          "type":"EPlatformType"
-        },
-        {
-          "len":4,
           "name":"rendered_in_background",
-          "offset":1824,
+          "offset":1820,
           "type":"int"
         }
       ],
       "importable":true,
-      "len":1828,
+      "len":1824,
       "name":"CPlatform",
       "pack":false,
       "type":"struct"
@@ -35503,74 +35425,38 @@
           "type":"char[256]"
         },
         {
-          "len":256,
-          "name":"author_info",
-          "offset":520,
-          "type":"char[256]"
-        },
-        {
-          "len":256,
-          "name":"copyright_info",
-          "offset":776,
-          "type":"char[256]"
-        },
-        {
-          "len":4,
-          "name":"mount_priority",
-          "offset":1032,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"format_flags",
-          "offset":1036,
-          "type":"uint"
-        },
-        {
           "len":4,
           "name":"file_count",
-          "offset":1040,
+          "offset":520,
           "type":"int"
         },
         {
           "len":4,
           "name":"directory_entries",
-          "offset":1044,
+          "offset":524,
           "type":"CPodDirectoryEntry*"
         },
         {
           "len":4,
           "name":"file_data_buffer",
-          "offset":1048,
+          "offset":528,
           "type":"char*"
         },
         {
           "len":4,
           "name":"audit_count",
-          "offset":1052,
+          "offset":532,
           "type":"int"
         },
         {
           "len":4,
           "name":"total_file_size",
-          "offset":1056,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"dependency_count",
-          "offset":1060,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"dependency_records_offset",
-          "offset":1064,
+          "offset":536,
           "type":"uint"
         }
       ],
       "importable":true,
-      "len":1068,
+      "len":540,
       "name":"CPodFile",
       "pack":false,
       "type":"struct"
@@ -36302,85 +36188,73 @@
         },
         {
           "len":4,
-          "name":"xref_count",
+          "name":"parsed_line_count",
           "offset":40,
           "type":"int"
         },
         {
           "len":4,
-          "name":"xref_entries",
-          "offset":44,
-          "type":"SScriptXRef*"
-        },
-        {
-          "len":4,
-          "name":"parsed_line_count",
-          "offset":48,
-          "type":"int"
-        },
-        {
-          "len":4,
           "name":"parsed_lines",
-          "offset":52,
+          "offset":44,
           "type":"SScriptLine*"
         },
         {
           "len":16,
           "name":"script_text",
-          "offset":56,
+          "offset":48,
           "type":"CStrList"
         },
         {
           "len":4,
           "name":"next_cmd",
-          "offset":72,
+          "offset":64,
           "type":"int"
         },
         {
           "len":4,
           "name":"cmd_timer",
-          "offset":76,
+          "offset":68,
           "type":"float"
         },
         {
           "len":4,
           "name":"dialog_wav_time",
-          "offset":80,
+          "offset":72,
           "type":"float"
         },
         {
           "len":1024,
           "name":"current_message",
-          "offset":84,
+          "offset":76,
           "type":"char[1024]"
         },
         {
           "len":4,
           "name":"message_duration",
-          "offset":1108,
+          "offset":1100,
           "type":"float"
         },
         {
           "len":4,
           "name":"saved_cmd_index",
-          "offset":1112,
+          "offset":1104,
           "type":"int"
         },
         {
           "len":4,
           "name":"call_stack_count",
-          "offset":1116,
+          "offset":1108,
           "type":"int"
         },
         {
           "len":32,
           "name":"call_stack",
-          "offset":1120,
+          "offset":1112,
           "type":"int[8]"
         }
       ],
       "importable":true,
-      "len":1152,
+      "len":1144,
       "name":"CScript",
       "pack":false,
       "type":"struct"
@@ -36503,16 +36377,10 @@
           "name":"trigger_id",
           "offset":104,
           "type":"int"
-        },
-        {
-          "len":4,
-          "name":"dead",
-          "offset":108,
-          "type":"int"
         }
       ],
       "importable":true,
-      "len":112,
+      "len":108,
       "name":"CSfxOptions",
       "pack":false,
       "type":"struct"
@@ -36541,92 +36409,104 @@
           "type":"int"
         },
         {
-          "len":20,
-          "name":"loop_endpoints",
-          "offset":296,
-          "type":"int[5]"
-        },
-        {
-          "len":20,
-          "name":"loop_destinations",
-          "offset":316,
-          "type":"int[5]"
-        },
-        {
           "len":4,
           "name":"taken",
-          "offset":336,
+          "offset":296,
           "type":"int"
         },
         {
           "len":4,
           "name":"ref_count",
-          "offset":340,
+          "offset":300,
           "type":"int"
         },
         {
           "len":4,
           "name":"buffer_id",
-          "offset":344,
+          "offset":304,
           "type":"int"
         },
         {
           "len":4,
           "name":"streaming_slot_index",
-          "offset":348,
+          "offset":308,
           "type":"int"
         },
         {
           "len":4,
           "name":"streaming_buffer_size",
-          "offset":352,
+          "offset":312,
           "type":"int"
         },
         {
           "len":4,
           "name":"stream_read_position",
-          "offset":356,
+          "offset":316,
           "type":"int"
         },
         {
           "len":4,
           "name":"stream_write_position",
-          "offset":360,
+          "offset":320,
           "type":"int"
         },
         {
           "len":4,
           "name":"mp3_data",
-          "offset":364,
+          "offset":324,
           "type":"CMP3Decoder*"
         },
         {
           "len":4,
           "name":"file_offset",
-          "offset":368,
+          "offset":328,
           "type":"int"
         },
         {
           "len":4,
           "name":"file_handle",
-          "offset":372,
+          "offset":332,
           "type":"_FILE*"
         },
         {
           "len":4,
           "name":"locked_offset",
-          "offset":376,
+          "offset":336,
           "type":"int"
         },
         {
           "len":4,
           "name":"locked_length",
-          "offset":380,
+          "offset":340,
           "type":"int"
+        },
+        {
+          "len":4,
+          "name":"locked_bytes1",
+          "offset":344,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"locked_bytes2",
+          "offset":348,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"locked_ptr1",
+          "offset":352,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"locked_ptr2",
+          "offset":356,
+          "type":"void*"
         }
       ],
       "importable":true,
-      "len":384,
+      "len":360,
       "name":"CSfxSample",
       "pack":false,
       "type":"struct"
@@ -36637,7 +36517,7 @@
       "desc":"",
       "fields":[
         {
-          "len":112,
+          "len":108,
           "name":"options",
           "offset":0,
           "type":"CSfxOptions"
@@ -36645,108 +36525,102 @@
         {
           "len":4,
           "name":"hardware_buffer_handle",
-          "offset":112,
+          "offset":108,
           "type":"int"
         },
         {
           "len":4,
           "name":"playback_state",
-          "offset":116,
+          "offset":112,
           "type":"int"
         },
         {
           "len":4,
           "name":"sample",
-          "offset":120,
+          "offset":116,
           "type":"CSfxSample*"
         },
         {
           "len":4,
           "name":"effective_frequency",
-          "offset":124,
+          "offset":120,
           "type":"float"
         },
         {
           "len":32,
           "name":"distance_to_speakers",
-          "offset":128,
+          "offset":124,
           "type":"float[8]"
         },
         {
           "len":32,
           "name":"channel_volumes",
-          "offset":160,
+          "offset":156,
           "type":"float[8]"
         },
         {
           "len":32,
           "name":"channel_target_buffer_offsets",
-          "offset":192,
+          "offset":188,
           "type":"int[8]"
         },
         {
           "len":32,
           "name":"channel_current_buffer_offsets",
-          "offset":224,
+          "offset":220,
           "type":"int[8]"
         },
         {
           "len":4,
           "name":"reference_distance",
-          "offset":256,
+          "offset":252,
           "type":"float"
         },
         {
           "len":4,
           "name":"min_distance",
-          "offset":260,
+          "offset":256,
           "type":"float"
         },
         {
           "len":4,
           "name":"max_distance",
-          "offset":264,
+          "offset":260,
           "type":"float"
         },
         {
           "len":4,
           "name":"fade_target_volume",
-          "offset":268,
+          "offset":264,
           "type":"float"
         },
         {
           "len":4,
           "name":"fade_time_remaining",
-          "offset":272,
+          "offset":268,
           "type":"float"
         },
         {
           "len":4,
           "name":"stop_after_fade",
-          "offset":276,
+          "offset":272,
           "type":"float"
         },
         {
           "len":4,
           "name":"is_active",
-          "offset":280,
+          "offset":276,
           "type":"int"
         },
         {
           "len":8,
           "name":"prev_hardware_playback_pos",
-          "offset":284,
+          "offset":280,
           "type":"double"
-        },
-        {
-          "len":4,
-          "name":"loop_marker_index",
-          "offset":292,
-          "type":"int"
         }
       ],
       "importable":true,
-      "len":296,
+      "len":288,
       "name":"CSfxSlot",
       "pack":false,
       "type":"struct"
@@ -36977,16 +36851,10 @@
           "name":"frame_positions_2",
           "offset":168824,
           "type":"CVector3f*"
-        },
-        {
-          "len":1200,
-          "name":"bone_scales",
-          "offset":168828,
-          "type":"CVector3f[100]"
         }
       ],
       "importable":true,
-      "len":170028,
+      "len":168828,
       "name":"CSkeleton",
       "pack":false,
       "type":"struct"
@@ -38137,44 +38005,44 @@
           "type":"int"
         },
         {
-          "len":261744,
+          "len":240432,
           "name":"cape_cloth",
           "offset":129604,
           "type":"CCloth"
         },
         {
-          "len":261744,
+          "len":240432,
           "name":"hair_cloth",
-          "offset":391348,
+          "offset":370036,
           "type":"CCloth"
         },
         {
           "len":4,
           "name":"sfx_handle",
-          "offset":653092,
+          "offset":610468,
           "type":"uint"
         },
         {
           "len":12,
           "name":"head_euler_angles",
-          "offset":653096,
+          "offset":610472,
           "type":"CVector3f"
         },
         {
           "len":4,
           "name":"head_blend_weight",
-          "offset":653108,
+          "offset":610484,
           "type":"float"
         },
         {
           "len":8,
           "name":"part_indices",
-          "offset":653112,
+          "offset":610488,
           "type":"int[2]"
         }
       ],
       "importable":true,
-      "len":653120,
+      "len":610496,
       "name":"CSvetlana",
       "pack":false,
       "type":"struct"
@@ -38411,28 +38279,10 @@
           "name":"texture_values",
           "offset":24004,
           "type":"int[1000]"
-        },
-        {
-          "len":4,
-          "name":"master_texture_count",
-          "offset":28004,
-          "type":"int"
-        },
-        {
-          "len":80000,
-          "name":"master_texture_names",
-          "offset":28008,
-          "type":"char[5000][16]"
-        },
-        {
-          "len":4,
-          "name":"current_master_selection",
-          "offset":108008,
-          "type":"int"
         }
       ],
       "importable":true,
-      "len":108012,
+      "len":28004,
       "name":"CTextureList",
       "pack":false,
       "type":"struct"
@@ -39193,110 +39043,110 @@
           "type":"CDeformableModelInstance"
         },
         {
-          "len":261744,
+          "len":240432,
           "name":"wing_cloth",
           "offset":57304,
           "type":"CCloth"
         },
         {
-          "len":261744,
+          "len":240432,
           "name":"cape_cloth",
-          "offset":319048,
+          "offset":297736,
           "type":"CCloth"
         },
         {
-          "len":261744,
+          "len":240432,
           "name":"skirt_cloth",
-          "offset":580792,
+          "offset":538168,
           "type":"CCloth"
         },
         {
           "len":4,
           "name":"form",
-          "offset":842536,
+          "offset":778600,
           "type":"int"
         },
         {
           "len":3116,
           "name":"morph",
-          "offset":842540,
+          "offset":778604,
           "type":"CMorph"
         },
         {
           "len":4,
           "name":"morph_t",
-          "offset":845656,
+          "offset":781720,
           "type":"float"
         },
         {
           "len":4,
           "name":"action_timer",
-          "offset":845660,
+          "offset":781724,
           "type":"float"
         },
         {
           "len":4,
           "name":"flee_timer",
-          "offset":845664,
+          "offset":781728,
           "type":"float"
         },
         {
           "len":4,
           "name":"has_attacked",
-          "offset":845668,
+          "offset":781732,
           "type":"int"
         },
         {
           "len":4,
           "name":"sfx_handle",
-          "offset":845672,
+          "offset":781736,
           "type":"uint"
         },
         {
           "len":4,
           "name":"bat_ai_state",
-          "offset":845676,
+          "offset":781740,
           "type":"int"
         },
         {
           "len":4,
           "name":"waypoint_index",
-          "offset":845680,
+          "offset":781744,
           "type":"int"
         },
         {
           "len":4,
           "name":"way_point_0",
-          "offset":845684,
+          "offset":781748,
           "type":"CDemonActor*"
         },
         {
           "len":4,
           "name":"way_point_1",
-          "offset":845688,
+          "offset":781752,
           "type":"CDemonActor*"
         },
         {
           "len":4,
           "name":"way_point_2",
-          "offset":845692,
+          "offset":781756,
           "type":"CDemonActor*"
         },
         {
           "len":4,
           "name":"way_point_3",
-          "offset":845696,
+          "offset":781760,
           "type":"CDemonActor*"
         },
         {
           "len":4,
           "name":"follow_result",
-          "offset":845700,
+          "offset":781764,
           "type":"int"
         }
       ],
       "importable":true,
-      "len":845704,
+      "len":781768,
       "name":"CVampireBoss",
       "pack":false,
       "type":"struct"
@@ -53609,14 +53459,14 @@
       "desc":"",
       "fields":[
         {
-          "len":5760,
+          "len":576,
           "name":"textures",
           "offset":0,
-          "type":"SMRGLTextureLod[80]"
+          "type":"SMRGLTextureLod[8]"
         }
       ],
       "importable":true,
-      "len":5760,
+      "len":576,
       "name":"STextureSet",
       "pack":false,
       "type":"struct"
@@ -56042,7 +55892,7 @@
           "len":4,
           "name":"destructor_func",
           "offset":4,
-          "type":"void*"
+          "type":"WATCOM_VIRTUAL_DESTRUCTOR_FUNC*"
         },
         {
           "len":4,

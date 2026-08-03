@@ -11,7 +11,7 @@
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507c6b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_0046bcf0
@@ -21,7 +21,7 @@
 
 section .text
 
-    PUSH 0x1fba938                      ; 00511b30 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00511b30 | g_CDemonRaytrace_01fba938
         ;   Label: core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30
     CALL core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_0046bcf0 ; 00511b35
         ;   XREF to: 0046bcf0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_0046bcf0(CDemonRaytrace * this_ptr)

@@ -25,8 +25,8 @@ void shape_edittool_cpp_FUN_004720c0(CEditorTools *param_1)
   
   bVar10 = 0;
   if (_DAT_01bcd07c < 1) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0x6f7;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0x6f7;
     core_main_c_FUN_004c8440("CEditorTools::closeWindow() called but no window was opened!");
   }
   iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;

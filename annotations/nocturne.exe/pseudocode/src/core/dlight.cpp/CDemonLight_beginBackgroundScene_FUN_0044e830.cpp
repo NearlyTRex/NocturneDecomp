@@ -20,8 +20,8 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
   
   bVar6 = 0;
   if ((this_ptr->base).scene_open_flag == 0) {
-    PTR_01cc4800 = "..\\core\\dlight.cpp";
-    INT_01cc4804 = 0x1af;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
+    g_INT_01cc4804 = 0x1af;
     core_main_c_FUN_004c8440("CDemonLight::beginBackgroundScene - Scene not open");
   }
   _DAT_01ab99f0 = _DAT_01ab99f0 + 1;
@@ -39,8 +39,8 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
       puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);
     }
     if (this_ptr->master_zbuffer == (void *)0x0) {
-      PTR_01cc4800 = "..\\core\\dlight.cpp";
-      INT_01cc4804 = 0x1bc;
+      g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
+      g_INT_01cc4804 = 0x1bc;
       core_main_c_FUN_004c8440("CDemonLight::beginBackgroundScene - No master Z buffer");
     }
     iVar2 = 0;

@@ -159,11 +159,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x57ab2a                    ; 00430740 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00430745
-    MOV [0x01cc4800],EAX                ; 00430748 | PTR_01cc4800
+    MOV [0x01cc4800],EAX                ; 00430748 | g_CHAR_PTR_01cc4800
     MOV EAX,ESP                         ; 0043074d
     MOV EDX,0x87e                       ; 0043074f
     PUSH EAX                            ; 00430754
-    MOV dword ptr [0x01cc4804],EDX      ; 00430755 | INT_01cc4804
+    MOV dword ptr [0x01cc4804],EDX      ; 00430755 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0043075b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00430760
@@ -528,11 +528,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x57ab6f                    ; 00430cf4 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00430cf9
-    MOV [0x01cc4800],EAX                ; 00430cfc | PTR_01cc4800
+    MOV [0x01cc4800],EAX                ; 00430cfc | g_CHAR_PTR_01cc4800
     MOV EAX,ESP                         ; 00430d01
     MOV EDX,0x8b8                       ; 00430d03
     PUSH EAX                            ; 00430d08
-    MOV dword ptr [0x01cc4804],EDX      ; 00430d09 | INT_01cc4804
+    MOV dword ptr [0x01cc4804],EDX      ; 00430d09 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00430d0f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00430d14
@@ -757,8 +757,8 @@ section .text
     MOV EAX,ESP                         ; 0043108a
     MOV ECX,0x8f7                       ; 0043108c
     PUSH EAX                            ; 00431091
-    MOV dword ptr [0x01cc4800],EDX      ; 00431092 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00431098 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00431092 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00431098 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0043109e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004310a3

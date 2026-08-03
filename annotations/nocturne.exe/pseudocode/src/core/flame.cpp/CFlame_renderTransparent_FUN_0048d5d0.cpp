@@ -55,7 +55,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
   float fStack_c;
   
   bVar6 = 0;
-  if (((this_ptr->flame_state != 0) || (*(int *)(0x01CC9450 + 4) != 0)) &&
+  if (((this_ptr->flame_state != 0) || (g_CDemonMission_PTR_005baf90->is_in_editor != 0)) &&
      (iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar5 == 0)
      ) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
@@ -68,7 +68,8 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
        (fVar2 = (this_ptr->flame_size).y, fVar3 = (this_ptr->flame_size).x,
        fVar4 = (this_ptr->flame_size).z,
        1.0 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) * this_ptr->globe_scalar)) {
-      core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20(0x01E57284,&this_ptr->globe);
+      core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20
+                (g_CDemonSet_PTR_005be368,&this_ptr->globe);
     }
     if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != 3)) {
       engine_drender_cpp_FUN_00460d90(DAT_005ae704);

@@ -16,8 +16,8 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(CDemonLight *this
   ushort uVar5;
   
   if ((this_ptr->base).scene_open_flag == 0) {
-    PTR_01cc4800 = "..\\core\\dlight.cpp";
-    INT_01cc4804 = 0x164;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
+    g_INT_01cc4804 = 0x164;
     core_main_c_FUN_004c8440("CDemonLight::endScene - Scene not open");
   }
   if ((this_ptr->base).skip_clear_buffer_flag == 0) {
@@ -31,7 +31,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(CDemonLight *this
       }
       puVar2 = puVar2 + 1;
     }
-    *(float *)((this_ptr->base).camera_name + 0xc0) = (float)uVar5 * (float)0.00390625;
+    (this_ptr->base).fixed_point_scale = (float)uVar5 * (float)0.00390625;
   }
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0);
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
@@ -41,7 +41,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(CDemonLight *this
     do {
       *(void **)(&DAT_01bd2fa0 + iVar3 * 4) = pCVar4->saved_screen_buffer_rows[0];
       iVar3 = iVar3 + 1;
-      pCVar4 = (CDemonLight *)&(pCVar4->base).base.position;
+      pCVar4 = (CDemonLight *)((pCVar4->base).camera_name + 4);
     } while (iVar3 < this_ptr->shadow_map_height);
   }
   core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_00440270(&this_ptr->base);

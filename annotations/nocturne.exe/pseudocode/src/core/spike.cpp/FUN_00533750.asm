@@ -17,11 +17,11 @@
 ;   float FLOAT_005950f6 = 2
 ;   float FLOAT_005950fa = 10
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa5f34
-;   undefined4 DAT_01fa5f38
-;   undefined4 DAT_01fa5f3c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.character_count
+;   undefined4 g_CDemonSet_01e57284.characters[0]
+;   undefined4 g_CDemonSet_01e57284.characters[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -189,14 +189,14 @@ section .text
     MOV dword ptr [ESP + 0x1bc],EDI     ; 0053395d
     MOV dword ptr [ESP + 0x1b8],EAX     ; 00533964
     MOV dword ptr [ESP + 0x1b4],EDI     ; 0053396b
-    MOV EAX,[0x005be368]                ; 00533972 | DAT_005be368 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 00533972 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
         ;   Label: LAB_00533972
     MOV EDX,dword ptr [ESP + 0x1bc]     ; 00533977
-    CMP EDX,dword ptr [EAX + 0x14ecb0]  ; 0053397e | DAT_01fa5f34
+    CMP EDX,dword ptr [EAX + 0x14ecb0]  ; 0053397e | g_CDemonSet_01e57284.character_count
     JGE 0x00533c85                      ; 00533984
         ;   XREF to: 00533c85 (CONDITIONAL_JUMP)  ; LAB_00533c85
     ADD EAX,dword ptr [ESP + 0x1b4]     ; 0053398a
-    MOV EBX,dword ptr [EAX + 0x14ecb4]  ; 00533991 | DAT_01fa5f38 | DAT_01fa5f3c
+    MOV EBX,dword ptr [EAX + 0x14ecb4]  ; 00533991 | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1]
     MOV EAX,dword ptr [ESP + 0x1b8]     ; 00533997
     LEA EDI,[EBX + 0x20]                ; 0053399e
     FLD float ptr [EAX]                 ; 005339a1

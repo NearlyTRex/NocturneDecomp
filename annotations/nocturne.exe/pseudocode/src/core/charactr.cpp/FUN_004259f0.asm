@@ -25,10 +25,10 @@
 ; Referenced Globals:
 ;   double DOUBLE_00579f62 = 0.0100000000000000
 ;   float FLOAT_0059b094 = 9999
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_005be220
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01e56da0
+;   CGame g_CGame_01c775ec
+;   CScript g_CScript_01e56da0
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00429660
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 00425a9c (CONDITIONAL_JUMP)  ; LAB_00425a9c
     PUSH ESI                            ; 00425a82
     MOV EDX,dword ptr [0x005be220]      ; 00425a83 | DAT_005be220
-    PUSH EDX                            ; 00425a89 | DAT_01e56da0
+    PUSH EDX                            ; 00425a89 | g_CScript_01e56da0
     MOV dword ptr [ESI + 0x2610],0x0    ; 00425a8a
     CALL core_script.cpp_CScript_setSpeaker_FUN_00504bf0 ; 00425a94
         ;   XREF to: 00504bf0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setSpeaker_FUN_00504bf0(CScript * this_ptr, CDemonActor * actor)
@@ -115,8 +115,8 @@ section .text
     LEA EAX,[ESI + 0x2440]              ; 00425ab9
     FSTP float ptr [ESP]                ; 00425abf
     PUSH EAX                            ; 00425ac2
-    MOV EBX,dword ptr [0x005b9354]      ; 00425ac3 | DAT_005b9354
-    PUSH EBX                            ; 00425ac9 | DAT_01c775ec
+    MOV EBX,dword ptr [0x005b9354]      ; 00425ac3 | g_CGame_PTR_005b9354
+    PUSH EBX                            ; 00425ac9 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0 ; 00425aca
         ;   XREF to: 004a3ab0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame * this_ptr, char * name, int value, float duration)
     ADD ESP,0x10                        ; 00425acf

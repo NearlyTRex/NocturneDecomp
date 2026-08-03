@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dimage_cpp_0057c399
 ;   TerminatedCString s_CDemonImage_allocMemory_0057c3ac
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dimage.cpp_CDemonImage_freeMemory_FUN_0044d4c0
@@ -48,8 +48,8 @@ section .text
     MOV EBX,0x57c399                    ; 0044d491 | = "..\\core\\dimage.cpp"
     MOV ESI,0x31                        ; 0044d496
     PUSH 0x57c3ac                       ; 0044d49b | = "CDemonImage::allocMemory - Out of mem..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0044d4a0 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044d4a6 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0044d4a0 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044d4a6 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044d4ac
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044d4b1

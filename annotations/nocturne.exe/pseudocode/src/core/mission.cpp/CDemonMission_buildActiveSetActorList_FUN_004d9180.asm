@@ -13,12 +13,12 @@
 ;   TerminatedCString s_core_mission_cpp_00589d49
 ;   TerminatedCString s_CDemonMission_buildActiv_00589d5d
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005be368
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040dea0
@@ -37,8 +37,8 @@ section .text
     PUSH ESI                            ; 004d9181
     PUSH EDI                            ; 004d9182
     MOV EDI,dword ptr [ESP + 0x10]      ; 004d9183
-    MOV EAX,[0x005be368]                ; 004d9187 | DAT_005be368
-    MOV dword ptr [EAX + 0x14cd6c],0x0  ; 004d918c | DAT_01fa3ff0
+    MOV EAX,[0x005be368]                ; 004d9187 | g_CDemonSet_PTR_005be368
+    MOV dword ptr [EAX + 0x14cd6c],0x0  ; 004d918c | g_CDemonSet_01e57284.actor_count
     MOV EBX,dword ptr [EDI + 0x514]     ; 004d9196
     TEST EBX,EBX                        ; 004d919c
     JZ 0x004d91b1                       ; 004d919e
@@ -53,14 +53,14 @@ section .text
     TEST EBX,EBX                        ; 004d91ad
     JNZ 0x004d91a0                      ; 004d91af
         ;   XREF to: 004d91a0 (CONDITIONAL_JUMP)  ; LAB_004d91a0
-    MOV EAX,[0x005be368]                ; 004d91b1 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004d91b1 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d91b1
-    PUSH EAX                            ; 004d91b6 | DAT_01e57284
+    PUSH EAX                            ; 004d91b6 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0 ; 004d91b7
         ;   XREF to: 005119b0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d91bc
-    MOV EDX,dword ptr [0x005be368]      ; 004d91bf | DAT_005be368
-    PUSH EDX                            ; 004d91c5 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004d91bf | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 004d91c5 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 ; 004d91c6
         ;   XREF to: 0050e6b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d91cb
@@ -84,24 +84,24 @@ section .text
     JZ 0x004d9289                       ; 004d91ef
         ;   XREF to: 004d9289 (CONDITIONAL_JUMP)  ; LAB_004d9289
     MOV dword ptr [EBX + 0x70],0x1      ; 004d91f5
-    MOV EAX,[0x005be368]                ; 004d91fc | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004d91fc | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d91fc
-    CMP dword ptr [EAX + 0x14cd6c],0x7d0 ; 004d9201 | DAT_01fa3ff0
+    CMP dword ptr [EAX + 0x14cd6c],0x7d0 ; 004d9201 | g_CDemonSet_01e57284.actor_count
     JL 0x004d9230                       ; 004d920b
         ;   XREF to: 004d9230 (CONDITIONAL_JUMP)  ; LAB_004d9230
     MOV ECX,0x589d49                    ; 004d920d | = "..\\core\\mission.cpp"
     MOV ESI,0x44e                       ; 004d9212
     PUSH 0x589d5d                       ; 004d9217 | = "CDemonMission::buildActiveSetActorLis..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d921c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d9222 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d921c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d9222 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d9228
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d922d
-    MOV EAX,[0x005be368]                ; 004d9230 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004d9230 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d9230
-    MOV ESI,dword ptr [EAX + 0x14cd6c]  ; 004d9235 | DAT_01fa3ff0
-    MOV dword ptr [EAX + ESI*0x4 + 0x14cd70],EBX ; 004d923b | DAT_01fa3ff4
-    INC dword ptr [EAX + 0x14cd6c]      ; 004d9242 | DAT_01fa3ff0
+    MOV ESI,dword ptr [EAX + 0x14cd6c]  ; 004d9235 | g_CDemonSet_01e57284.actor_count
+    MOV dword ptr [EAX + ESI*0x4 + 0x14cd70],EBX ; 004d923b | g_CDemonSet_01e57284.actors[0]
+    INC dword ptr [EAX + 0x14cd6c]      ; 004d9242 | g_CDemonSet_01e57284.actor_count
     JMP 0x004d91a7                      ; 004d9248
         ;   XREF to: 004d91a7 (UNCONDITIONAL_JUMP)  ; LAB_004d91a7
     PUSH 0x589d44                       ; 004d924d | = "none"

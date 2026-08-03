@@ -331,8 +331,8 @@ section .text
     MOV EBP,0x58d8d2                    ; 004f72dd | = "..\\core\\platfrm.cpp"
     MOV EAX,0x316                       ; 004f72e2
     PUSH 0x58d8e6                       ; 004f72e7 | = "CPlatform::archive - too many attache..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004f72ec | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f72f2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004f72ec | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f72f2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f72f7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f72fc

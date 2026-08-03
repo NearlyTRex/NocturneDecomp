@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_3d_c_00577504
 ;   TerminatedCString s_old_func_00577513
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -23,8 +23,8 @@ section .text
         ;   Label: engine_3d.c_oldFunction7_FUN_00405990
     MOV ECX,0x4ff                       ; 00405995
     PUSH 0x577513                       ; 0040599a | = "old func"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040599f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004059a5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0040599f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004059a5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004059ab
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004059b0

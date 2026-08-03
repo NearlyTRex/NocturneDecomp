@@ -10,46 +10,40 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_00
 
 {
   float fVar1;
-  SMRGLTextureBasic *pSVar2;
-  CSkeleton *pCVar3;
-  int iVar4;
-  char *pcVar5;
-  CSkeleton *pCVar6;
-  int iVar7;
+  CSkeleton *pCVar2;
+  int iVar3;
+  CVector3f *pCVar4;
+  CSkeleton *pCVar5;
+  int iVar6;
   CDeformableModel *local_1c;
   float local_18;
   
-  pCVar3 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(this_ptr);
-  iVar7 = 0;
-  if (0 < pCVar3->bone_count) {
+  pCVar2 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(this_ptr);
+  iVar6 = 0;
+  if (0 < pCVar2->bone_count) {
     local_1c = this_ptr;
     do {
-      pSVar2 = local_1c->texture_sets[1].textures[0x3d].textures;
-      pSVar2[1].texture_name[4] = -1;
-      pSVar2[1].texture_name[5] = -1;
-      pSVar2[1].texture_name[6] = -1;
-      pSVar2[1].texture_name[7] = -1;
-      iVar4 = 0;
+      local_1c->farthest_child_bone[0] = -1;
+      iVar3 = 0;
       local_18 = 0.0;
-      pcVar5 = this_ptr->texture_sets[1].textures[0].textures[0].texture_name + 8;
-      pCVar6 = pCVar3;
-      if (0 < pCVar3->bone_count) {
+      pCVar4 = this_ptr->vertex_pool;
+      pCVar5 = pCVar2;
+      if (0 < pCVar2->bone_count) {
         do {
-          if ((iVar7 == pCVar6->bone_list[0].parent_index) &&
-             (fVar1 = SQRT(*(float *)(pcVar5 + 8) * *(float *)(pcVar5 + 8) +
-                           *(float *)pcVar5 * *(float *)pcVar5 +
-                           *(float *)(pcVar5 + 4) * *(float *)(pcVar5 + 4)), local_18 < fVar1)) {
-            *(int *)(local_1c->texture_sets[1].textures[0x3d].textures[1].texture_name + 4) = iVar4;
+          if ((iVar6 == pCVar5->bone_list[0].parent_index) &&
+             (fVar1 = SQRT(pCVar4->z * pCVar4->z + pCVar4->x * pCVar4->x + pCVar4->y * pCVar4->y),
+             local_18 < fVar1)) {
+            local_1c->farthest_child_bone[0] = iVar3;
             local_18 = fVar1;
           }
-          iVar4 = iVar4 + 1;
-          pcVar5 = pcVar5 + 0xc;
-          pCVar6 = (CSkeleton *)((pCVar6->motion_list).state_names[1] + 2);
-        } while (iVar4 < pCVar3->bone_count);
+          iVar3 = iVar3 + 1;
+          pCVar4 = pCVar4 + 1;
+          pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
+        } while (iVar3 < pCVar2->bone_count);
       }
-      iVar7 = iVar7 + 1;
+      iVar6 = iVar6 + 1;
       local_1c = (CDeformableModel *)local_1c->lod_info;
-    } while (iVar7 < pCVar3->bone_count);
+    } while (iVar6 < pCVar2->bone_count);
   }
   return;
 }

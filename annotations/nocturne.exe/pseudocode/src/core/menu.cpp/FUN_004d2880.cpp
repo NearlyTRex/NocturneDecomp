@@ -19,8 +19,8 @@ void core_menu_cpp_FUN_004d2880(void)
   char *in_stack_00000008;
   
   if (0x1d < _DAT_01cc8120) {
-    PTR_01cc4800 = "..\\core\\menu.cpp";
-    INT_01cc4804 = 0x827;
+    g_CHAR_PTR_01cc4800 = "..\\core\\menu.cpp";
+    g_INT_01cc4804 = 0x827;
     core_main_c_FUN_004c8440("Too many custom keys!");
   }
   iVar2 = _DAT_01cc8120;

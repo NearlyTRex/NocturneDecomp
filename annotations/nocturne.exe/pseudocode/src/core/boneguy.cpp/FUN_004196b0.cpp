@@ -54,7 +54,7 @@ int __cdecl core_boneguy_cpp_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)
         pCVar3 = (*((pCVar3->vtable)._ub)->getCarrier)(pCVar3);
         if (pCVar3 != (CDemonActor *)0x0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",this_ptr,
+                    (g_CConsole_PTR_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",this_ptr,
                      this_ptr->pickup_target);
           this_ptr->pickup_target = (CDemonActor *)0x0;
           this_ptr->pickup_cooldown = 0.0;
@@ -91,14 +91,14 @@ int __cdecl core_boneguy_cpp_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)
             return 1;
           }
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"%s beginning to pickup %s\n",this_ptr,
+                    (g_CConsole_PTR_005ad350,"%s beginning to pickup %s\n",this_ptr,
                      this_ptr->pickup_target);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&this_ptr_00->motion_controller,7,1);
           return 1;
         }
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"%s can't pick up %s, giving up!!!!\n",this_ptr,
+                  (g_CConsole_PTR_005ad350,"%s can't pick up %s, giving up!!!!\n",this_ptr,
                    this_ptr->pickup_target);
         this_ptr->pickup_target = (CDemonActor *)0x0;
         this_ptr->pickup_cooldown = 20.0;
@@ -109,8 +109,9 @@ int __cdecl core_boneguy_cpp_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)
       iVar6 = 0;
       local_2c = 0;
       local_20 = 0;
-      for (local_24 = 0; local_24 < *(int *)(0x01E57284 + 0x14cd6c); local_24 = local_24 + 1) {
-        pCVar3 = *(CDemonActor **)(0x01E57284 + local_20 + 0x14cd70);
+      for (local_24 = 0; local_24 < g_CDemonSet_PTR_005be368->actor_count; local_24 = local_24 + 1)
+      {
+        pCVar3 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_20);
         pCVar2 = (*((pCVar3->vtable)._ub)->getCarrier)(pCVar3);
         if (pCVar2 == (CDemonActor *)0x0) {
           iVar4 = (*((pCVar3->vtable)._ub)->canPickup)(pCVar3,(CDemonActor *)this_ptr);
@@ -151,7 +152,7 @@ int __cdecl core_boneguy_cpp_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)
         this_ptr->pickup_target = pCVar3;
         this_ptr->pickup_attempt_count = this_ptr->pickup_attempt_count + 1;
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"%s is going to try to pick up %s\n",this_ptr,
+                  (g_CConsole_PTR_005ad350,"%s is going to try to pick up %s\n",this_ptr,
                    this_ptr->pickup_target);
         return 1;
       }

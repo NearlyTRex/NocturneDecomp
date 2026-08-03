@@ -315,5 +315,4 @@ static undefined4 DAT_005ae4b0 = 0x000000F8;
 static undefined4 DAT_005ae4b4 = 0x000000F8;
 static undefined4 DAT_005ae4d4 = 0x3C44C048;
 static undefined4 DAT_005ae6fc = 0x00412B41;
-static undefined4 DAT_005ae700 = 0x01B4D738;
 

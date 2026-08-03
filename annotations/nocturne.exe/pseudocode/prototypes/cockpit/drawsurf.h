@@ -11,13 +11,57 @@ CDrawSurface * __cdecl CDrawSurface::initFromParent(CDrawSurface *this_ptr,int x
 // Address: 0045b4c0
 void __cdecl CDrawSurface::init(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0
+// Original: cockpit_drawsurf.cpp_setColor_FUN_0045b5f0
 // Address: 0045b5f0
-void __cdecl CDrawSurface::setColor(int color_value);
+void __cdecl setColor(int color_value);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_0045b800
+// Original: cockpit_drawsurf.cpp_setColorRGB_FUN_0045b800
 // Address: 0045b800
-void __cdecl CDrawSurface::setColorRGB(int red,int green,int blue);
+void __cdecl setColorRGB(int red,int green,int blue);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045b960
+// Address: 0045b960
+void __cdecl FUN_0045b960(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045b970
+// Address: 0045b970
+void __cdecl FUN_0045b970(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045b990
+// Address: 0045b990
+void __cdecl FUN_0045b990(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045b9b0
+// Address: 0045b9b0
+void __cdecl FUN_0045b9b0(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045b9d0
+// Address: 0045b9d0
+void __cdecl FUN_0045b9d0(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045b9f0
+// Address: 0045b9f0
+void __cdecl FUN_0045b9f0(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045ba10
+// Address: 0045ba10
+void __cdecl FUN_0045ba10(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045ba30
+// Address: 0045ba30
+void __cdecl FUN_0045ba30(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045ba50
+// Address: 0045ba50
+void __cdecl FUN_0045ba50(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045ba60
+// Address: 0045ba60
+void __cdecl FUN_0045ba60(void);
+
+// Original: cockpit_drawsurf.cpp_FUN_0045ba80
+// Address: 0045ba80
+void __cdecl FUN_0045ba80(void);
 
 // Original: cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0
 // Address: 0045baa0
@@ -27,9 +71,9 @@ void __cdecl setCurrentFont(CBitFont *font_ptr);
 // Address: 0045bab0
 void __cdecl CDrawSurface::plotPixel(CDrawSurface *this_ptr,int x,int y);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20
+// Original: cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0045bc20
 // Address: 0045bc20
-void __cdecl CDrawSurface::drawHorizontalLineWithEffect(int start_x,int end_x,int y);
+void __cdecl drawHorizontalLineWithEffect(int start_x,int end_x,int y);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_0045bd50
 // Address: 0045bd50

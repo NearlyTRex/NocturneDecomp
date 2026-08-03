@@ -17,7 +17,7 @@ void engine_pod_cpp_FUN_004f8eb0(uint param_1,char *param_2)
   uint current_crc;
   SIZE_T size;
   uchar *puVar6;
-  int local_240 [135];
+  CPodFile local_240;
   uint local_24;
   _FILE *local_20;
   int local_1c;
@@ -25,25 +25,26 @@ void engine_pod_cpp_FUN_004f8eb0(uint param_1,char *param_2)
   _FILE *local_14;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-            (0x01BCD074,"Computing CRC over entire pod: %s...",param_2);
-  engine_pod_cpp_CPodFile_ctor_FUN_004f7a80((CPodFile *)local_240);
-  iVar2 = engine_pod_cpp_FUN_004f7ae0(local_240,param_2);
+            (g_CEditorTools_PTR_005b6d50,"Computing CRC over entire pod: %s...",param_2);
+  engine_pod_cpp_CPodFile_ctor_FUN_004f7a80(&local_240);
+  iVar2 = engine_pod_cpp_FUN_004f7ae0(&local_240,param_2);
   if (iVar2 == 0) {
-    PTR_01cc4800 = "..\\engine\\pod.cpp";
-    INT_01cc4804 = 0x37a;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
+    g_INT_01cc4804 = 0x37a;
     core_main_c_FUN_004c8440("Can't mount %s to check version",param_2);
   }
-  engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0((CPodFile *)local_240);
-  if (local_240[0] == 1) {
+  engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0(&local_240);
+  if (local_240.pod_format_version == 1) {
     local_1c = 0x54;
   }
-  else if (local_240[0] == 2) {
+  else if (local_240.pod_format_version == 2) {
     local_1c = 8;
   }
   else {
-    PTR_01cc4800 = "..\\engine\\pod.cpp";
-    INT_01cc4804 = 0x385;
-    core_main_c_FUN_004c8440("Invalid pod version for %s: %d",param_2,local_240[0]);
+    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
+    g_INT_01cc4804 = 0x385;
+    core_main_c_FUN_004c8440
+              ("Invalid pod version for %s: %d",param_2,local_240.pod_format_version);
   }
   iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,param_2);
   iVar2 = local_1c;
@@ -82,6 +83,6 @@ void engine_pod_cpp_FUN_004f8eb0(uint param_1,char *param_2)
   _fseek(p_Var4,local_1c + -4,0);
   _fwrite(&local_24,4,1,p_Var4);
   _fclose(p_Var4);
-  engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0((CPodFile *)local_240,0);
+  engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0(&local_240,0);
   return;
 }

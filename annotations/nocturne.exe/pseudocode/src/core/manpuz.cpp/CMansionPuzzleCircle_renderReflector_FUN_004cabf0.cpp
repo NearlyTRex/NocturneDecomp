@@ -12,7 +12,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0(C
   CKeyFramedModel *pCVar1;
   int render_flags;
   
-  if ((*(int *)(0x01CC9450 + 4) == 0) &&
+  if ((g_CDemonMission_PTR_005baf90->is_in_editor == 0) &&
      (this_ptr->reflectors[reflector_index].interp_factor <= 0.0)) {
     return;
   }

@@ -49,8 +49,9 @@ void __cdecl core_baron_cpp_FUN_00410cc0(CBaron *this_ptr)
   if ((local_40.y < (float)-0.78539816337500001) || (0.78539816337500001 < (double)local_40.y)) {
     start_position = &(this_ptr_00->base).location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420
-              (0x01C08D04,&start_position->position,16.0,1,0.0);
-    core_fire_cpp_CFireEffect_createCrater_FUN_0048c370(0x01C08D04,&start_position->position,4.0);
+              (g_CFireEffect_PTR_005b80f0,&start_position->position,16.0,1,0.0);
+    core_fire_cpp_CFireEffect_createCrater_FUN_0048c370
+              (g_CFireEffect_PTR_005b80f0,&start_position->position,4.0);
   }
   else {
     __arrinit(local_148,10,&g_CVectorTypeInfo_005993b0);
@@ -86,9 +87,9 @@ void __cdecl core_baron_cpp_FUN_00410cc0(CBaron *this_ptr)
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&CStack_34,pCVar1);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0
-              (0x01C08D04,&CStack_70,&CStack_28,1,0.5,4.0);
+              (g_CFireEffect_PTR_005b80f0,&CStack_70,&CStack_28,1,0.5,4.0);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0
-              (0x01C08D04,&CStack_34,&CStack_28,1,0.5,4.0);
+              (g_CFireEffect_PTR_005b80f0,&CStack_34,&CStack_28,1,0.5,4.0);
     (*((this_ptr->base).base.base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,"baron-attack.wav");
   }

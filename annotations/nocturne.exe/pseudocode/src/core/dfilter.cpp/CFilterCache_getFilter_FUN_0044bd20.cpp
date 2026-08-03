@@ -30,8 +30,8 @@ int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *para
     } while (iVar4 < *param_1);
   }
   if (0x3f < *param_1) {
-    PTR_01cc4800 = "..\\core\\dfilter.cpp";
-    INT_01cc4804 = 0x55;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    g_INT_01cc4804 = 0x55;
     core_main_c_FUN_004c8440("CFilterCache::getFilter - Too many filters");
   }
   piVar6 = param_1 + iVar4 * 10 + 1;
@@ -53,8 +53,8 @@ int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *para
   }
   param_1[iVar4 + 0x281] = (int)pCVar3;
   if (pCVar3 == (CDemonFilter *)0x0) {
-    PTR_01cc4800 = "..\\core\\dfilter.cpp";
-    INT_01cc4804 = 0x59;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    g_INT_01cc4804 = 0x59;
     core_main_c_FUN_004c8440("CFilterCache::getFilter - Out of memory");
   }
   core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90((CDemonFilter *)param_1[iVar4 + 0x281],param_2);

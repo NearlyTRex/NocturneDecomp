@@ -31,7 +31,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_00522480(char *filename)
   _FILE *local_14;
   
   bVar10 = 0;
-  pCVar6 = (CSfxSample *)&DAT_02dc1edc;
+  pCVar6 = g_CSfxSample_ARRAY_02dc1edc;
   iVar7 = 0;
   do {
     iVar2 = _stricmp((char *)pCVar6,filename);
@@ -39,7 +39,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_00522480(char *filename)
       return pCVar6;
     }
     iVar7 = iVar7 + 1;
-    pCVar6 = (CSfxSample *)&pCVar6->stream_write_position;
+    pCVar6 = pCVar6 + 1;
   } while (iVar7 < 0x40);
   iVar7 = 0;
   do {
@@ -47,9 +47,9 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_00522480(char *filename)
     if (0x3f < _DAT_02dc1ed8) {
       _DAT_02dc1ed8 = 0;
     }
-    iVar2 = _DAT_02dc1ed8 * 0x168;
-    if ((*(int *)(iVar2 + 0x2dc2004) == 0) && (*(int *)(iVar2 + 0x2dc2008) == 0)) {
-      pCVar6 = (CSfxSample *)(&DAT_02dc1edc + iVar2);
+    if ((g_CSfxSample_ARRAY_02dc1edc[_DAT_02dc1ed8].taken == 0) &&
+       (g_CSfxSample_ARRAY_02dc1edc[_DAT_02dc1ed8].ref_count == 0)) {
+      pCVar6 = g_CSfxSample_ARRAY_02dc1edc + _DAT_02dc1ed8;
       bVar9 = pCVar6 == (CSfxSample *)0x0;
       goto LAB_005224ea;
     }
@@ -64,7 +64,7 @@ LAB_005224ea:
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(pCVar6);
   if ((DAT_02db1110 & 1) == 0) {
     DAT_02db1110 = DAT_02db1110 | 1;
-    sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90((CMP3Decoder *)&DAT_02da8ae0);
+    sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(&g_CMP3Decoder_02da8ae0);
     _atexit(&g_WatcomStaticDestructorNode_005bea30);
   }
   local_14 = (_FILE *)0x0;
@@ -97,27 +97,26 @@ LAB_005224ea:
   if (iVar7 == 0) {
     local_14 = engine_dosio_cpp_getFile_FUN_00456a60("sound",filename,"rb");
     if (local_14 == (_FILE *)0x0) {
-      PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-      INT_01cc4804 = 0x300;
+      g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+      g_INT_01cc4804 = 0x300;
       core_main_c_FUN_004c8440("Can't open %s",filename);
     }
     lVar3 = _ftell(local_14);
-    pCVar6->loop_destinations[3] = lVar3;
-    iVar7 = sound_sndmain_cpp_parseWavFile_FUN_00521830
-                      (local_14,pCVar6->loop_destinations + 3,pCVar6);
+    pCVar6->file_offset = lVar3;
+    iVar7 = sound_sndmain_cpp_parseWavFile_FUN_00521830(local_14,&pCVar6->file_offset,pCVar6);
     if (iVar7 == 0) goto LAB_005226f8;
     sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(pCVar6);
-    pCVar6->loop_endpoints[0] = 0;
-    pCVar6->loop_endpoints[1] = 0;
-    pCVar6->loop_endpoints[2] = 0;
-    pCVar6->loop_endpoints[3] = -1;
+    pCVar6->taken = 0;
+    pCVar6->ref_count = 0;
+    pCVar6->buffer_id = 0;
+    pCVar6->streaming_slot_index = -1;
     iVar7 = (pCVar6->sample_info).sample_count;
-    pCVar6->loop_endpoints[4] = iVar7;
-    pCVar6->loop_destinations[0] = iVar7;
-    pCVar6->loop_destinations[1] = iVar7;
+    pCVar6->streaming_buffer_size = iVar7;
+    pCVar6->stream_read_position = iVar7;
+    pCVar6->stream_write_position = iVar7;
     iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pCVar6);
     if (iVar7 == 0) goto LAB_005226f8;
-    _fseek(local_14,pCVar6->loop_destinations[3],0);
+    _fseek(local_14,pCVar6->file_offset,0);
     buffer = (void *)sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
                                (pCVar6,0,(pCVar6->sample_info).sample_count);
     if (buffer == (void *)0x0) {
@@ -139,31 +138,31 @@ LAB_005224ea:
   else {
     iVar7 = _stricmp(&local_114,"mp3");
     if (iVar7 != 0) {
-      PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-      INT_01cc4804 = 0x37d;
+      g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+      g_INT_01cc4804 = 0x37d;
       core_main_c_FUN_004c8440("Unknown sample file format extension: %s",filename);
       return pCVar6;
     }
-    sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(&DAT_02da8ae0,filename);
+    sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(&g_CMP3Decoder_02da8ae0,filename);
     (pCVar6->sample_info).bit_depth = 0x10;
-    (pCVar6->sample_info).num_channels = _DAT_02da8be4;
-    iVar7 = _DAT_02da8be0;
+    (pCVar6->sample_info).num_channels = g_CMP3Decoder_02da8ae0.num_channels;
+    iVar7 = g_CMP3Decoder_02da8ae0.sample_rate;
     (pCVar6->sample_info).sample_count = -1;
     (pCVar6->sample_info).sample_rate = iVar7;
     sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(pCVar6);
     if ((pCVar6->sample_info).sample_count < 0) {
-      PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-      INT_01cc4804 = 0x34f;
+      g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+      g_INT_01cc4804 = 0x34f;
       core_main_c_FUN_004c8440("Don't know length of sample %s",filename);
     }
-    pCVar6->loop_endpoints[0] = 0;
-    pCVar6->loop_endpoints[1] = 0;
-    pCVar6->loop_endpoints[2] = 0;
-    pCVar6->loop_endpoints[3] = -1;
+    pCVar6->taken = 0;
+    pCVar6->ref_count = 0;
+    pCVar6->buffer_id = 0;
+    pCVar6->streaming_slot_index = -1;
     iVar7 = (pCVar6->sample_info).sample_count;
-    pCVar6->loop_endpoints[4] = iVar7;
-    pCVar6->loop_destinations[0] = iVar7;
-    pCVar6->loop_destinations[1] = iVar7;
+    pCVar6->streaming_buffer_size = iVar7;
+    pCVar6->stream_read_position = iVar7;
+    pCVar6->stream_write_position = iVar7;
     iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pCVar6);
     if (iVar7 == 0) goto LAB_005226f8;
     output_buffer =
@@ -174,8 +173,7 @@ LAB_005224ea:
     }
     else {
       iVar7 = sound_mp3_cpp_CMP3Decoder_read_FUN_004e82d0
-                        ((CMP3Decoder *)&DAT_02da8ae0,output_buffer,
-                         (pCVar6->sample_info).sample_count);
+                        (&g_CMP3Decoder_02da8ae0,output_buffer,(pCVar6->sample_info).sample_count);
       if (iVar7 == (pCVar6->sample_info).sample_count) {
         sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(pCVar6);
         return pCVar6;
@@ -185,7 +183,7 @@ LAB_005224ea:
   }
   sound_sndmain_cpp_FUN_00529980(pcVar11,filename);
 LAB_005226f8:
-  sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260((CMP3Decoder *)&DAT_02da8ae0);
+  sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(&g_CMP3Decoder_02da8ae0);
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(pCVar6);
   if (local_14 != (_FILE *)0x0) {
     _fclose(local_14);

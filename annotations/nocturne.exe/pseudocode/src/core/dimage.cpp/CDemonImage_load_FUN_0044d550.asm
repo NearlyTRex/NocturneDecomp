@@ -25,7 +25,7 @@
 ;   TerminatedCString s_art_0057c463
 ;   TerminatedCString s_core_dimage_cpp_0057c467
 ;   TerminatedCString s_CDemonImage_load_Unable_0057c47a
-;   char* PTR_01cc4800
+;   char* g_CHAR_PTR_01cc4800
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -128,8 +128,8 @@ section .text
     MOV EAX,0x57c41a                    ; 0044d613 | = "..\\core\\dimage.cpp"
     MOV EDX,0x7b                        ; 0044d618
     PUSH 0x57c42d                       ; 0044d61d | = "CDemonImage::load - Unable to find ex..."
-    MOV [0x01cc4800],EAX                ; 0044d622 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0044d627 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0044d622 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0044d627 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044d62d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044d632
@@ -226,8 +226,8 @@ section .text
         ;   Label: LAB_0044d743
     MOV ECX,0x68                        ; 0044d748
     PUSH 0x57c3f0                       ; 0044d74d | = "CDemonImage::load - Unable to load im..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0044d752 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0044d758 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0044d752 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0044d758 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044d75e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044d763
@@ -237,8 +237,8 @@ section .text
         ;   Label: LAB_0044d76b
     MOV ESI,0x7f                        ; 0044d770
     PUSH 0x57c47a                       ; 0044d775 | = "CDemonImage::load - Unable to load pa..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0044d77a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044d780 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0044d77a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044d780 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044d786
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044d78b

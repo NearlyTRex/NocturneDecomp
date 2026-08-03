@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c58df8
-;   undefined4 DAT_01c58e30
+;   undefined4 g_CFireball_ARRAY_01c58dfc[0].base.vtable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
@@ -53,7 +53,7 @@ section .text
     PUSH EDI                            ; 0048b2ab
     MOV EBP,dword ptr [ESP + 0x18]      ; 0048b2ac
     PUSH EBP                            ; 0048b2b0
-    MOV EAX,dword ptr [EBX + 0x34]      ; 0048b2b1 | DAT_01c58e30
+    MOV EAX,dword ptr [EBX + 0x34]      ; 0048b2b1 | g_CFireball_ARRAY_01c58dfc[0].base.vtable
     PUSH EBX                            ; 0048b2b4
     CALL dword ptr [EAX]                ; 0048b2b5
     ADD ESP,0xc                         ; 0048b2b7

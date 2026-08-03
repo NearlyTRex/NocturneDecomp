@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(int param_1,int param_2)
+; void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(CDemonActor *param_1,SLaserInfo *param_2)
 ;
 ;
 ; Called Functions:
@@ -19,7 +19,7 @@ section .text
     PUSH EBX                            ; 0054853a
     PUSH ESI                            ; 0054853b
     CALL core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10 ; 0054853c
-        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10()
+        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10(CDemonActor * this_ptr, SLaserInfo * laser_info)
     MOV EDX,dword ptr [ESI + 0x16c]     ; 00548541
     ADD ESP,0x8                         ; 00548547
     CMP EDX,0x5                         ; 0054854a

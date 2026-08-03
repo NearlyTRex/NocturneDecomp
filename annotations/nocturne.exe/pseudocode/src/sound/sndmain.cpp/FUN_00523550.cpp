@@ -29,8 +29,8 @@ void sound_sndmain_cpp_FUN_00523550(void)
     return;
   }
 LAB_00523580:
-  PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-  INT_01cc4804 = 0x5c4;
+  g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+  g_INT_01cc4804 = 0x5c4;
   core_main_c_FUN_004c8440("generateSilence - invalid bit depth!");
   return;
 }

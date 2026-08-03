@@ -12,6 +12,6 @@ int __cdecl core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0(CDemonSet 
   int iVar1;
   
   iVar1 = core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0
-                    ((CDemonRaytrace *)&DAT_01fba938,start_pos,end_pos);
+                    (&g_CDemonRaytrace_01fba938,start_pos,end_pos);
   return iVar1;
 }

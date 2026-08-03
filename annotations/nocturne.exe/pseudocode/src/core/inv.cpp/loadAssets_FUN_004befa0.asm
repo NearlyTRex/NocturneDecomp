@@ -160,8 +160,8 @@ section .text
     PUSH 0x1cc308c                      ; 004bf111
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004bf116
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
-    MOV EAX,[0x005b9354]                ; 004bf11b | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0x4]       ; 004bf120 | DAT_01c775f0
+    MOV EAX,[0x005b9354]                ; 004bf11b | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0x4]       ; 004bf120 | g_CGame_01c775ec.game_pixy
     ADD ESP,0x10                        ; 004bf123
     CMP ECX,0x180                       ; 004bf126
     JGE 0x004bf1ed                      ; 004bf12c

@@ -32,9 +32,9 @@
 ;   TerminatedCString s_core_bodypart_cpp_00578e7a
 ;   TerminatedCString s_Can_t_create_body_part_00578e8f
 ;   float FLOAT_00578eaa = 10
-;   undefined4 DAT_005baf90
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -73,8 +73,8 @@ section .text
     MOV EDX,0x578e7a                    ; 00415b5e | = "..\\core\\bodypart.cpp"
     MOV ECX,0x32                        ; 00415b63
     PUSH 0x578e8f                       ; 00415b68 | = "Can't create body part!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00415b6d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00415b73 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00415b6d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00415b73 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00415b79
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00415b7e
@@ -117,13 +117,13 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00415bd8
     PUSH EBX                            ; 00415bdb
         ;   Label: LAB_00415bdb
-    MOV ESI,dword ptr [0x005baf90]      ; 00415bdc | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 00415bdc | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 00415be2
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 00415be3
         ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00415be8
     PUSH EBX                            ; 00415beb
-    MOV EBP,dword ptr [0x005baf90]      ; 00415bec | DAT_005baf90
+    MOV EBP,dword ptr [0x005baf90]      ; 00415bec | g_CDemonMission_PTR_005baf90
     PUSH EBP                            ; 00415bf2
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 00415bf3
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)

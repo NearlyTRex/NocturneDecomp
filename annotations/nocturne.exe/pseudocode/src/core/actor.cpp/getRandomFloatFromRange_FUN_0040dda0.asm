@@ -28,8 +28,8 @@
 ; Referenced Globals:
 ;   float FLOAT_00578049 = 0.00003051851
 ;   float FLOAT_0057804d = 5.960465E-8
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77828
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.is_processing
 ;
 ; Called Functions:
 ;   core_actor.cpp_generateRandomValue_FUN_0040dd30
@@ -42,9 +42,9 @@ section .text
     SUB ESP,0x10                        ; 0040dda0
         ;   Label: core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
     FLD float ptr [ESP + 0x18]          ; 0040dda3
-    MOV EAX,[0x005b9354]                ; 0040dda7 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0040dda7 | g_CGame_PTR_005b9354
     FSUB float ptr [ESP + 0x14]         ; 0040ddac
-    MOV EDX,dword ptr [EAX + 0x23c]     ; 0040ddb0 | DAT_01c77828
+    MOV EDX,dword ptr [EAX + 0x23c]     ; 0040ddb0 | g_CGame_01c775ec.is_processing
     FSTP float ptr [ESP + 0x4]          ; 0040ddb6
     TEST EDX,EDX                        ; 0040ddba
     JZ 0x0040ddeb                       ; 0040ddbc

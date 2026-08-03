@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,45 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 75,
-        "line": 19,
-        "message": "use of undeclared identifier 'DAT_01c20148'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 13,
         "line": 22,
         "message": "use of undeclared identifier '_DAT_01c20140'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 74,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_01c20148'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 24,
-        "line": 31,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_01c20140'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 36,
+        "line": 38,
         "message": "use of undeclared identifier '_DAT_01c20140'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 74,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_01c20148'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 24,
-        "line": 44,
+        "line": 47,
         "message": "use of undeclared identifier '_DAT_01c20140'"
       },
       {
         "category": "undeclared_identifier",
         "column": 41,
-        "line": 47,
+        "line": 50,
         "message": "use of undeclared identifier '_DAT_01c23d48'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
-        "line": 48,
-        "message": "use of undeclared identifier 'DAT_01c23d50'; did you mean 'DAT_005c2050'?"
+        "column": 22,
+        "line": 67,
+        "message": "use of undeclared identifier '_DAT_01c23d48'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
-        "line": 52,
-        "message": "use of undeclared identifier 'DAT_01c23d50'"
+        "column": 38,
+        "line": 85,
+        "message": "use of undeclared identifier 'DAT_01c62eb8'"
       }
     ],
     "success": false,
@@ -122,20 +104,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 259,
+    "complexity_score": 367,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 69,
-    "suspect_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 218
+    "total_lines": 226
   },
   "cross_references": [
     {
@@ -200,13 +184,13 @@
     },
     {
       "addr": "01c23fa8",
-      "name": "DAT_01c23fa8",
+      "name": "g_CStake_ARRAY_01c23d50[0].physics_box.is_valid",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c24208",
-      "name": "DAT_01c24208",
+      "name": "g_CStake_ARRAY_01c23d50[1].physics_box.is_valid",
       "type": "undefined4",
       "value": null
     }
@@ -307,14 +291,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_01c20148",
-      "severity": "mild",
-      "text": "core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0((CBulletHole *)&DAT_01c20148);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_2",
@@ -323,92 +299,172 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01c20148",
-      "severity": "mild",
-      "text": "core_fire_cpp_CBulletHole_render_FUN_00482f50((CBulletHole *)(&DAT_01c20148 + iVar1));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01c20148",
-      "severity": "mild",
-      "text": "core_fire_cpp_CBulletHole_render_FUN_00482f50((CBulletHole *)(&DAT_01c20148 + iVar1));",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 43,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 != 0) && (iVar2 = 0, 0 < _DAT_01c23d48)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_01c23d50",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_01c23d50;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_01c23d50",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c23d50 + iVar1) = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_01c23d50",
-      "severity": "mild",
-      "text": "core_fire_cpp_CStake_render_FUN_004835d0((CStake *)(&DAT_01c23d50 + iVar1));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c23d50",
-      "severity": "mild",
-      "text": "else if (*(int *)(&DAT_01c23d50 + iVar1) != 0) goto LAB_0048a9ef;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(int *)((int)g_CStake_ARRAY_01c23d50",
+      "severity": "moderate",
+      "text": "else if (*(int *)((int)g_CStake_ARRAY_01c23d50[0].physics_box.rotation_matrix.m +",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 62,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_01c625f8",
-      "severity": "mild",
-      "text": "core_fire_cpp_CCrater_render_FUN_00487af0((CCrater *)(&DAT_01c625f8 + iVar2));",
-      "type": "undefined_data"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 65,
+      "match": "(int *)((int)(g_CCrater_ARRAY_01c625f8[0].smoke_positions + -2) +",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)(g_CCrater_ARRAY_01c625f8[0].smoke_positions + -2) + iVar2) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(CCrater *)((int)g_CCrater_ARRAY_01c625f8",
+      "severity": "moderate",
+      "text": "((CCrater *)((int)g_CCrater_ARRAY_01c625f8[0].smoke_positions + iVar2 + -0x1c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 68,
+      "match": "(uint *)((int)(g_CCrater_ARRAY_01c625f8[0].smoke_positions + -2) +",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(g_CCrater_ARRAY_01c625f8[0].smoke_positions + -2) + iVar2) = 0;",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_01c625f8",
-      "severity": "mild",
-      "text": "this_ptr = (CCrater *)&DAT_01c625f8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
+      "line": 78,
       "match": "DAT_01c62eb8",
       "severity": "mild",
       "text": "} while (this_ptr != (CCrater *)&DAT_01c62eb8);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&g_CBulletHole_ARRAY_01c20148[0].active` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&g_CBulletHole_ARRAY_01c20148[0].active",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].active + iVar1) != 0) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CBulletHole_ARRAY_01c20148[0].actor_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr + iVar1) == 0)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CBulletHole_ARRAY_01c20148[0].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)&g_CBulletHole_ARRAY_01c20148[0].position.x",
+      "severity": "moderate",
+      "text": "((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c20148[0].position.x + iVar1));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CBulletHole_ARRAY_01c20148[0].active` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)&g_CBulletHole_ARRAY_01c20148[0].active",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CBulletHole_ARRAY_01c20148[0].active + iVar1) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CBulletHole_ARRAY_01c20148[0].actor_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr + iVar1) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CBulletHole_ARRAY_01c20148[0].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&g_CBulletHole_ARRAY_01c20148[0].position.x",
+      "severity": "moderate",
+      "text": "((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c20148[0].position.x + iVar1));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 48,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "*(uint *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 52,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "((CStake *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 18,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].active + iVar1) != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr + iVar1) == 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 21,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c20148[0].position.x + iVar1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CBulletHole_ARRAY_01c20148[0].active + iVar1) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 34,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 36,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c20148[0].position.x + iVar1));",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

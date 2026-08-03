@@ -13,8 +13,8 @@
 ;   double DOUBLE_0058816a = 6.28318530700000
 ;   double DOUBLE_00588172 = 30
 ;   double DOUBLE_0058817a = 0.200000000000000
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_01cc30e4
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
+;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -34,9 +34,9 @@ section .text
     FMUL double ptr [0x0058816a]        ; 004cbbd0 | DOUBLE_0058816a
     FDIV double ptr [0x00588172]        ; 004cbbd6 | DOUBLE_00588172
     PUSH 0x38                           ; 004cbbdc
-    MOV EAX,[0x005bac64]                ; 004cbbde | INT_005bac64
-    PUSH EAX                            ; 004cbbe3 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cbbe4 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004cbbde | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004cbbe3 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004cbbe4 | g_CKeys_01cc30e4
     FSTP float ptr [ESP + 0x8]          ; 004cbbe6
     CALL dword ptr [EDX]                ; 004cbbea
     ADD ESP,0x8                         ; 004cbbec
@@ -48,9 +48,9 @@ section .text
     FSTP float ptr [ESP]                ; 004cbbfc
     PUSH 0x33                           ; 004cbbff
         ;   Label: LAB_004cbbff
-    MOV EAX,[0x005bac64]                ; 004cbc01 | INT_005bac64
-    PUSH EAX                            ; 004cbc06 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cbc07 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004cbc01 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004cbc06 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004cbc07 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004cbc09
     ADD ESP,0x8                         ; 004cbc0b
     TEST EAX,EAX                        ; 004cbc0e
@@ -61,9 +61,9 @@ section .text
     FSTP float ptr [EBX + 0x34]         ; 004cbc18
     PUSH 0x34                           ; 004cbc1b
         ;   Label: LAB_004cbc1b
-    MOV EAX,[0x005bac64]                ; 004cbc1d | INT_005bac64
-    PUSH EAX                            ; 004cbc22 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cbc23 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004cbc1d | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004cbc22 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004cbc23 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004cbc25
     ADD ESP,0x8                         ; 004cbc27
     TEST EAX,EAX                        ; 004cbc2a

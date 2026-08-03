@@ -36,11 +36,11 @@ float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *p
   }
   pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                      ((CKeyFramedModelInstance *)(param_1 + 0x150));
-  *param_2 = (float)pCVar7->texture_list[7].textures[1].base.count;
-  param_2[1] = *(float *)pCVar7->texture_list[7].textures[1].texture_name;
-  param_2[2] = *(float *)(pCVar7->texture_list[7].textures[1].texture_name + 4);
-  param_2[3] = *(float *)(pCVar7->texture_list[7].textures[1].texture_name + 8);
-  param_2[4] = *(float *)(pCVar7->texture_list[7].textures[1].texture_name + 0xc);
-  param_2[5] = (float)pCVar7->texture_list[7].textures[2].base.type;
+  *param_2 = (pCVar7->bounds).min.x;
+  param_2[1] = (pCVar7->bounds).min.y;
+  param_2[2] = (pCVar7->bounds).min.z;
+  param_2[3] = (pCVar7->bounds).max.x;
+  param_2[4] = (pCVar7->bounds).max.y;
+  param_2[5] = (pCVar7->bounds).max.z;
   return param_2;
 }

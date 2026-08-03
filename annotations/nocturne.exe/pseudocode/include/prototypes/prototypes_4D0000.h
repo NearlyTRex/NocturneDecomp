@@ -5,6 +5,7 @@
 #include "system/stdio.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CCourse.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -107,7 +108,7 @@ void core_mirror_cpp_FUN_004d7db0(void);
 void __cdecl core_mission_cpp_staticInit_FUN_004d7dd0(void);
 void core_mission_cpp_FUN_004d7de0(void);
 void core_mission_cpp_FUN_004d7e00(int param_1);
-void core_mission_cpp_FUN_004d7e90(undefined4 param_1);
+void __cdecl core_mission_cpp_FUN_004d7e90(void *param_1);
 void core_mission_cpp_FUN_004d7ea0(int param_1);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_004d7ee0(CDemonMission *this_ptr,char *mission_filename,int load_flags);
 void core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *param_1,char *param_2);
@@ -204,8 +205,8 @@ int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(CMoon *this_pt
 SBat * __cdecl core_moon_cpp_SBat_ctor_FUN_004df190(SBat *this_ptr);
 SBat * __cdecl core_moon_cpp_SBat_dtor_FUN_004df1a0(SBat *this_ptr,uint flags);
 void core_moon_cpp_FUN_004df1b0(void);
-void core_moon_cpp_FUN_004df1d0(void *param_1);
-void core_moon_cpp_FUN_004df1f0(void *param_1);
+CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_004df1d0(CCourse *this_ptr,uint flags);
+CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_004df1f0(CAlphaBitmap *this_ptr,uint flags);
 int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004df240(CMorphModel *this_ptr);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_dtor_FUN_004df270(CMorphModel *this_ptr,uint flags);

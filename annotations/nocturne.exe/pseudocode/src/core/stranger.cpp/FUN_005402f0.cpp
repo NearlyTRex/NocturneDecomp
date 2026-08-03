@@ -15,7 +15,7 @@ void __cdecl core_stranger_cpp_FUN_005402f0(CStranger *this_ptr)
   bool bVar3;
   EDeathState EVar4;
   SMotion *pSVar5;
-  int *piVar6;
+  CVector3f *pCVar6;
   uint auStack_28 [3];
   uint auStack_1c [3];
   
@@ -94,22 +94,22 @@ void __cdecl core_stranger_cpp_FUN_005402f0(CStranger *this_ptr)
     core_cloth_cpp_CCloth_resetState_FUN_00438750(this_ptr_00,0x2f);
     core_cloth_cpp_CCloth_resetState_FUN_00438750(this_ptr_00,0x32);
   }
-  piVar6 = this_ptr_00->vertices[0x300].connected_indices + 6;
+  pCVar6 = &this_ptr_00->wind_velocity;
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                      (&(this_ptr->base).base.model.motion_controller);
   if (pSVar5->state_index == 0x2a) {
-    if (piVar6 != auStack_28) {
-      this_ptr_00->vertices[0x300].connected_indices[7] = 0;
-      *piVar6 = 0;
-      this_ptr_00->vertices[0x300].connected_indices[8] = -0x3e600000;
+    if (pCVar6 != (CVector3f *)auStack_28) {
+      (this_ptr_00->wind_velocity).y = 0.0;
+      pCVar6->x = 0.0;
+      (this_ptr_00->wind_velocity).z = -20.0;
       return;
     }
   }
   else if (pSVar5->state_index == 0x2b) {
-    if (piVar6 != auStack_1c) {
-      this_ptr_00->vertices[0x300].connected_indices[7] = 0;
-      *piVar6 = 0;
-      this_ptr_00->vertices[0x300].connected_indices[8] = 0x41a00000;
+    if (pCVar6 != (CVector3f *)auStack_1c) {
+      (this_ptr_00->wind_velocity).y = 0.0;
+      pCVar6->x = 0.0;
+      (this_ptr_00->wind_velocity).z = 20.0;
       return;
     }
   }

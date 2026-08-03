@@ -95,7 +95,8 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
     local_4c.x = (int)ROUND(local_34.x * 65536.0f);
     local_4c.y = (int)ROUND(local_34.y * 65536.0f);
     local_4c.z = (int)ROUND(local_34.z * 65536.0f);
-    core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(0x01E57284,&local_64,&local_4c,0,4);
+    core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
+              (g_CDemonSet_PTR_005be368,&local_64,&local_4c,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
             (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);

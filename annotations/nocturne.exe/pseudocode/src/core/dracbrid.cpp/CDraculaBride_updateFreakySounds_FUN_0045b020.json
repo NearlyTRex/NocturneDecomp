@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,39 +57,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 24,
-        "line": 42,
-        "message": "use of undeclared identifier 'DAT_01fb8610'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_01fb8614'; did you mean 'DAT_02DE8614'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 46,
-        "message": "use of undeclared identifier 'DAT_01b4d280'; did you mean 'DAT_005ad280'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 47,
+        "column": 26,
+        "line": 45,
         "message": "use of undeclared identifier 'DAT_01b4d478'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 79,
-        "message": "use of undeclared identifier '_DAT_01fb860c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 107,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 104,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
     "success": false,
@@ -98,18 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 172,
+    "complexity_score": 151,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 112,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 111,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 381
+    "total_lines": 380
   },
   "cross_references": [
     {
@@ -179,169 +155,169 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
       "addr": "01b4d280",
-      "name": "DAT_01b4d280",
-      "type": "undefined4",
+      "name": "g_SFreaky_ARRAY_01b4d280",
+      "type": "SFreaky[6]",
       "value": null
     },
     {
       "addr": "01b4d2d0",
-      "name": "DAT_01b4d2d0",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].owner",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2d4",
-      "name": "DAT_01b4d2d4",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].sfx_handle",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2d8",
-      "name": "DAT_01b4d2d8",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2dc",
-      "name": "DAT_01b4d2dc",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2e0",
-      "name": "DAT_01b4d2e0",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2e4",
-      "name": "DAT_01b4d2e4",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].tangent.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2e8",
-      "name": "DAT_01b4d2e8",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].tangent.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2ec",
-      "name": "DAT_01b4d2ec",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].tangent.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2f0",
-      "name": "DAT_01b4d2f0",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].t",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2f4",
-      "name": "DAT_01b4d2f4",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2f8",
-      "name": "DAT_01b4d2f8",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2fc",
-      "name": "DAT_01b4d2fc",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d300",
-      "name": "DAT_01b4d300",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d304",
-      "name": "DAT_01b4d304",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d308",
-      "name": "DAT_01b4d308",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d30c",
-      "name": "DAT_01b4d30c",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d310",
-      "name": "DAT_01b4d310",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d314",
-      "name": "DAT_01b4d314",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d318",
-      "name": "DAT_01b4d318",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[3].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d31c",
-      "name": "DAT_01b4d31c",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[3].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d320",
-      "name": "DAT_01b4d320",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].control_points[3].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d324",
-      "name": "DAT_01b4d324",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].owner",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb860c",
-      "name": "DAT_01fb860c",
+      "name": "g_CDemonCamera_01fb8508.position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb8610",
-      "name": "DAT_01fb8610",
+      "name": "g_CDemonCamera_01fb8508.position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb8614",
-      "name": "DAT_01fb8614",
+      "name": "g_CDemonCamera_01fb8508.position.z",
       "type": "undefined4",
       "value": null
     }
@@ -593,44 +569,28 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01fb8610",
-      "severity": "mild",
-      "text": "local_24 = (float *)&DAT_01fb8610;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01fb8614",
-      "severity": "mild",
-      "text": "local_28 = (float *)&DAT_01fb8614;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_01b4d280",
-      "severity": "mild",
-      "text": "local_34 = (uint *)&DAT_01b4d280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
+      "line": 38,
       "match": "DAT_01b4d478",
       "severity": "mild",
-      "text": "local_38 = (uint *)&DAT_01b4d478;",
+      "text": "local_38 = (SFreaky *)&DAT_01b4d478;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 93,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(local_20->position).x = pCVar5->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 105,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(local_20->tangent).x = pCVar5->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -18,10 +18,10 @@
 ;   TerminatedCString s_core_mission_cpp_0058a0d2
 ;   TerminatedCString s_Hell_froze_finding_hero_0058a0e6
 ;   TerminatedCString s_Replaced_hero_OK_You_wil_0058a0ff
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 g_CHeroPlaceholderActorType_01cae128.name_hash
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -122,8 +122,8 @@ section .text
     MOV ECX,0x58a0d2                    ; 004d9ccc | = "..\\core\\mission.cpp"
     MOV EBX,0x687                       ; 004d9cd1
     PUSH 0x58a0e6                       ; 004d9cd6 | = "Hell froze finding hero."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d9cdb | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004d9ce1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d9cdb | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004d9ce1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d9ce7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d9cec
@@ -181,7 +181,7 @@ section .text
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d9d68
     PUSH 0x58a0ff                       ; 004d9d6b | = "Replaced hero OK.  You will need to s..."
-    MOV ESI,dword ptr [0x005b6d50]      ; 004d9d70 | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 004d9d70 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 004d9d76
     CALL shape_edittool.cpp_FUN_0046fe60 ; 004d9d77
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
@@ -216,7 +216,7 @@ section .text
     RET                                 ; 004d9dbe
     PUSH 0x589fd7                       ; 004d9dbf | = "Warning: mission has no hero placehol..."
         ;   Label: LAB_004d9dbf
-    MOV EDI,dword ptr [0x005b6d50]      ; 004d9dc4 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004d9dc4 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004d9dca
     CALL shape_edittool.cpp_FUN_0046fe60 ; 004d9dcb
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,39 +57,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 23,
-        "line": 50,
-        "message": "use of undeclared identifier 'DAT_01b4d280'; did you mean 'DAT_005ad280'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 20,
         "line": 54,
         "message": "use of undeclared identifier '_DAT_01b4d260'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 99,
-        "message": "use of undeclared identifier '_DAT_01fb860c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 100,
-        "message": "use of undeclared identifier '_DAT_01fb8610'; did you mean 'DAT_02DE8610'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 101,
-        "message": "use of undeclared identifier '_DAT_01fb8614'; did you mean 'DAT_02DE8614'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 138,
-        "message": "no matching function for call to 'core_sound_cpp_FUN_0052d030'"
       }
     ],
     "success": false,
@@ -98,15 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 169,
+    "complexity_score": 189,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 27,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 139,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 478
@@ -217,9 +187,9 @@
   "globals": [
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "01b4d260",
@@ -229,151 +199,151 @@
     },
     {
       "addr": "01b4d280",
-      "name": "DAT_01b4d280",
-      "type": "undefined4",
+      "name": "g_SFreaky_ARRAY_01b4d280",
+      "type": "SFreaky[6]",
       "value": null
     },
     {
       "addr": "01b4d284",
-      "name": "DAT_01b4d284",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d288",
-      "name": "DAT_01b4d288",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d28c",
-      "name": "DAT_01b4d28c",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d290",
-      "name": "DAT_01b4d290",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].tangent.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d294",
-      "name": "DAT_01b4d294",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].tangent.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d298",
-      "name": "DAT_01b4d298",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].tangent.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d29c",
-      "name": "DAT_01b4d29c",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].t",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2a0",
-      "name": "DAT_01b4d2a0",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2a4",
-      "name": "DAT_01b4d2a4",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2a8",
-      "name": "DAT_01b4d2a8",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2ac",
-      "name": "DAT_01b4d2ac",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2b0",
-      "name": "DAT_01b4d2b0",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2b4",
-      "name": "DAT_01b4d2b4",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2b8",
-      "name": "DAT_01b4d2b8",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2bc",
-      "name": "DAT_01b4d2bc",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2c0",
-      "name": "DAT_01b4d2c0",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2c4",
-      "name": "DAT_01b4d2c4",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[3].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2c8",
-      "name": "DAT_01b4d2c8",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[3].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2cc",
-      "name": "DAT_01b4d2cc",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].control_points[3].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2d0",
-      "name": "DAT_01b4d2d0",
+      "name": "g_SFreaky_ARRAY_01b4d280[0].owner",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2d4",
-      "name": "DAT_01b4d2d4",
+      "name": "g_SFreaky_ARRAY_01b4d280[1].sfx_handle",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb860c",
-      "name": "DAT_01fb860c",
+      "name": "g_CDemonCamera_01fb8508.position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb8610",
-      "name": "DAT_01fb8610",
+      "name": "g_CDemonCamera_01fb8508.position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb8614",
-      "name": "DAT_01fb8614",
+      "name": "g_CDemonCamera_01fb8508.position.z",
       "type": "undefined4",
       "value": null
     }
@@ -729,12 +699,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01b4d280",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)&DAT_01b4d280;",
-      "type": "undefined_data"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 55,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pSVar5->control_points[1].x = pCVar3->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 115,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar5->position).x = pCVar3->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 123,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar5->tangent).x = pCVar3->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

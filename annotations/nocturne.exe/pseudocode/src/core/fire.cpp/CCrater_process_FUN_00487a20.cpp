@@ -14,12 +14,13 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_00487a20(CCrater *this_ptr)
   
   if (this_ptr->active != 0) {
     if ((0.0 < this_ptr->smoke_delay) &&
-       (this_ptr->smoke_delay = this_ptr->smoke_delay - *(float *)(0x01C775EC + 0x264),
+       (this_ptr->smoke_delay = this_ptr->smoke_delay - g_CGame_PTR_005b9354->delta_time_float,
        this_ptr->smoke_delay < 0.0)) {
       this_ptr->has_smoke = 1;
       this_ptr->smoke_delay = 0.0;
     }
-    this_ptr->smoke_spawn_timer = *(float *)(0x01C775EC + 0x264) + this_ptr->smoke_spawn_timer;
+    this_ptr->smoke_spawn_timer =
+         g_CGame_PTR_005b9354->delta_time_float + this_ptr->smoke_spawn_timer;
     if ((float)0.20000000000000001 < this_ptr->smoke_spawn_timer) {
       this_ptr->smoke_spawn_timer = this_ptr->smoke_spawn_timer + -0.2f;
       local_18.x = 0.0;
@@ -28,7 +29,7 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_00487a20(CCrater *this_ptr)
       local_18.z = 0.0;
       do {
         core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                  (0x01C08D04,position,1.0,&local_18,0xffff);
+                  (g_CFireEffect_PTR_005b80f0,position,1.0,&local_18,0xffff);
         position = position + 1;
       } while (position != this_ptr->corner_positions);
     }

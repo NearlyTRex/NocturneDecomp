@@ -18,8 +18,8 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(CVector3f *vertex1,CVec
   dVar1 = (double)fVar2;
   local_28 = SUB84(__BITCAST_UINT64(dVar1),0);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
-    PTR_01cc4800 = "..\\core\\dcube.cpp";
-    INT_01cc4804 = 0x6e;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcube.cpp";
+    g_INT_01cc4804 = 0x6e;
     core_main_c_FUN_004c8440("Bad clip!");
   }
   fVar2 = -(vertex1->z * (float)plane_nz +

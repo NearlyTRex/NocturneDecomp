@@ -39,7 +39,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D *thi
     pCVar3->z = (int)ROUND(local_1c.z * _DAT_0059aa80);
     pCVar3 = pCVar3 + 1;
   } while ((int)corner_index < 8);
-  core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(0x01E57284,8,local_b0);
+  core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(g_CDemonSet_PTR_005be368,8,local_b0);
   local_50.base.count = 4;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(DAT_005ae704,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);

@@ -54,31 +54,32 @@ void core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *param_1,float p
     pCVar3 = (*((param_1->base).base.vtable._ub)->getCarrier)((CDemonActor *)param_1);
     if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
       xxx_unk_c_FUN_004940d0
-                (INT_005b9284,
+                (PTR_DAT_005b9284,
                  1.0f + (1.58f - 1.0f) * param_1->charge_ratio,
                  (0.45f - 0.3f) * param_1->charge_ratio + 0.3f);
     }
     core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(param_1);
     if (param_1->fire_flash_pending == 0) {
-      _DAT_01c76310 = 0;
+      g_CDemonLight_01c74640.antialiasing_enabled = 0;
     }
     else {
-      _DAT_01c76310 = 1;
+      g_CDemonLight_01c74640.antialiasing_enabled = 1;
       filter_ptr = (CDemonFilter *)
                    core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20
                              (0x014B8DE8,"lgunmask.raw",0);
-      core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0
-                ((CDemonLight *)&DAT_01c74640,filter_ptr,0,0,0);
+      core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0(&g_CDemonLight_01c74640,filter_ptr,0,0,0)
+      ;
       core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.1,0);
     }
-    core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(0x01E57284,(CDemonLight *)&DAT_01c74640);
+    core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970
+              (g_CDemonSet_PTR_005be368,&g_CDemonLight_01c74640);
     param_1->fire_flash_pending = 0;
     return;
   }
   sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handle);
   pCVar3 = (*((param_1->base).base.vtable._ub)->getCarrier)((CDemonActor *)param_1);
   if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    xxx_unk_c_FUN_004940d0(INT_005b9284);
+    xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
   }
   param_1->fire_flash_pending = 0;
   return;

@@ -29,9 +29,9 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(CGhoul *this_pt
     local_18 = 0;
     local_1c = 0;
     this_ptr->heal_timer = local_14 + this_ptr->heal_timer;
-    for (; local_18 < *(int *)(0x01E57284 + 0x14cd6c); local_18 = local_18 + 1) {
+    for (; local_18 < g_CDemonSet_PTR_005be368->actor_count; local_18 = local_18 + 1) {
       this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040d890
-                              (*(CDemonActor **)(0x01E57284 + local_1c + 0x14cd70),
+                              (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_1c),
                                g_CWayPointActorType_02ddf514.name_hash);
       if ((this_ptr_00 != (CDemonActor *)0x0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0
@@ -39,10 +39,10 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(CGhoul *this_pt
          iVar2 != 0)) {
         iVar2 = 0;
         local_20 = 1;
-        for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x150bf4); iVar4 = iVar4 + 1) {
+        for (iVar4 = 0; iVar4 < g_CDemonSet_PTR_005be368->enemy_count; iVar4 = iVar4 + 1) {
           pCVar3 = (CGhoul *)
                    core_actor_cpp_castToClassHash_FUN_0040d890
-                             (*(CDemonActor **)(iVar2 + 0x150bf8 + 0x01E57284),
+                             (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar2),
                               g_CGhoulActorType_01c78bd8.name_hash);
           if (((pCVar3 != (CGhoul *)0x0) && (pCVar3 != this_ptr)) &&
              (this_ptr_00 == pCVar3->dark_waypoint)) goto LAB_004a90df;
@@ -54,8 +54,8 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(CGhoul *this_pt
             this_ptr_01 = core_path_cpp_getPathMap_FUN_004f1e00(&this_ptr_00->location);
           }
           if (this_ptr_01 == (CPathMap *)0x0) {
-            PTR_01cc4800 = "..\\core\\ghoul.cpp";
-            INT_01cc4804 = 300;
+            g_CHAR_PTR_01cc4800 = "..\\core\\ghoul.cpp";
+            g_INT_01cc4804 = 300;
             core_main_c_FUN_004c8440("CGhoul::findDarkWayPoint - Can't get temp path map");
           }
           CStack_30.x = 0.0;

@@ -19,8 +19,9 @@ uint core_dynamite_cpp_FUN_0046ec80(CWeapon *param_1)
   }
   velocity = (CVector3f *)(param_1[1].base.actor_name + 4);
   core_fire_cpp_CFireEffect_createToss_FUN_0048c2a0
-            (0x01C08D04,&(param_1->base).location.position,&(param_1->base).orient,velocity,
-             *(float *)param_1[1].base.actor_name,*(uint *)(param_1[1].base.actor_name + 0x10));
+            (g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,&(param_1->base).orient,
+             velocity,*(float *)param_1[1].base.actor_name,
+             *(uint *)(param_1[1].base.actor_name + 0x10));
   pCVar1 = param_1 + 1;
   (pCVar1->base).actor_name[0x10] = '\0';
   (pCVar1->base).actor_name[0x11] = '\0';

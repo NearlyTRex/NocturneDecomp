@@ -14,7 +14,7 @@ int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(C
   CDemonActor *actor_ptr;
   int iVar2;
   
-  actor_ptr = *(CDemonActor **)(this_ptr->set_names[3] + 0xcc);
+  actor_ptr = this_ptr->first_actor;
   iVar2 = 0;
   do {
     if (actor_ptr == (CDemonActor *)0x0) {

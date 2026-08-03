@@ -168,9 +168,9 @@ section .text
     CALL core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0 ; 00535a4e
         ;   XREF to: 0042abd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535a53
-    MOV EDI,dword ptr [0x005b9354]      ; 00535a56 | DAT_005b9354
+    MOV EDI,dword ptr [0x005b9354]      ; 00535a56 | g_CGame_PTR_005b9354
     PUSH dword ptr [EBP + 0x18]         ; 00535a5c
-    PUSH EDI                            ; 00535a5f | DAT_01c775ec
+    PUSH EDI                            ; 00535a5f | g_CGame_01c775ec
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 00535a60
         ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004a5f00(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535a65
@@ -242,8 +242,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x2590]    ; 00535b40
     PUSH EDX                            ; 00535b46
     PUSH 0x5954ea                       ; 00535b47 | = "grabbedBy=%s\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 00535b4c | PTR_DAT_005ad350
-    PUSH ECX                            ; 00535b52 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 00535b4c | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 00535b52 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535b53
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 00535b58
@@ -263,8 +263,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x1fa0c]   ; 00535b83
     PUSH EDX                            ; 00535b89
     PUSH 0x5954f8                       ; 00535b8a | = "pushedObject=%s\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 00535b8f | PTR_DAT_005ad350
-    PUSH ECX                            ; 00535b95 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 00535b8f | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 00535b95 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535b96
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 00535b9b
@@ -284,8 +284,8 @@ section .text
     JZ 0x00535be5                       ; 00535bcf
         ;   XREF to: 00535be5 (CONDITIONAL_JUMP)  ; LAB_00535be5
     PUSH 0x595509                       ; 00535bd1 | = "ladder\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00535bd6 | PTR_DAT_005ad350
-    PUSH EDX                            ; 00535bdc | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00535bd6 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00535bdc | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535bdd
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535be2
@@ -303,8 +303,8 @@ section .text
     JZ 0x00535c1d                       ; 00535c08
         ;   XREF to: 00535c1d (CONDITIONAL_JUMP)  ; LAB_00535c1d
     PUSH 0x595511                       ; 00535c0a | = "pickup\n"
-    MOV EAX,[0x005ad350]                ; 00535c0f | PTR_DAT_005ad350
-    PUSH EAX                            ; 00535c14 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00535c0f | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 00535c14 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535c15
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535c1a
@@ -335,8 +335,8 @@ section .text
     JZ 0x00535c83                       ; 00535c6d
         ;   XREF to: 00535c83 (CONDITIONAL_JUMP)  ; LAB_00535c83
     PUSH 0x595519                       ; 00535c6f | = "hurt\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00535c74 | PTR_DAT_005ad350
-    PUSH EDX                            ; 00535c7a | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00535c74 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00535c7a | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535c7b
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535c80
@@ -365,8 +365,8 @@ section .text
     JZ 0x00535cdf                       ; 00535cca
         ;   XREF to: 00535cdf (CONDITIONAL_JUMP)  ; LAB_00535cdf
     PUSH 0x59551f                       ; 00535ccc | = "door\n"
-    MOV EAX,[0x005ad350]                ; 00535cd1 | PTR_DAT_005ad350
-    PUSH EAX                            ; 00535cd6 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00535cd1 | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 00535cd6 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535cd7
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535cdc
@@ -396,8 +396,8 @@ section .text
     JZ 0x00535d41                       ; 00535d2b
         ;   XREF to: 00535d41 (CONDITIONAL_JUMP)  ; LAB_00535d41
     PUSH 0x595525                       ; 00535d2d | = "sitting\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00535d32 | PTR_DAT_005ad350
-    PUSH EDX                            ; 00535d38 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00535d32 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00535d38 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535d39
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535d3e
@@ -412,8 +412,8 @@ section .text
     JZ 0x00535d6d                       ; 00535d57
         ;   XREF to: 00535d6d (CONDITIONAL_JUMP)  ; LAB_00535d6d
     PUSH 0x59552e                       ; 00535d59 | = "stashinventory\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00535d5e | PTR_DAT_005ad350
-    PUSH EDX                            ; 00535d64 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00535d5e | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00535d64 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535d65
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535d6a
@@ -428,8 +428,8 @@ section .text
     JZ 0x00535d99                       ; 00535d83
         ;   XREF to: 00535d99 (CONDITIONAL_JUMP)  ; LAB_00535d99
     PUSH 0x59553e                       ; 00535d85 | = "placeobject\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00535d8a | PTR_DAT_005ad350
-    PUSH EDX                            ; 00535d90 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00535d8a | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00535d90 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535d91
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535d96
@@ -444,8 +444,8 @@ section .text
     JZ 0x00535dc5                       ; 00535daf
         ;   XREF to: 00535dc5 (CONDITIONAL_JUMP)  ; LAB_00535dc5
     PUSH 0x59554b                       ; 00535db1 | = "putdownobject\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00535db6 | PTR_DAT_005ad350
-    PUSH EDX                            ; 00535dbc | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00535db6 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00535dbc | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535dbd
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535dc2
@@ -460,8 +460,8 @@ section .text
     JZ 0x00535df1                       ; 00535ddb
         ;   XREF to: 00535df1 (CONDITIONAL_JUMP)  ; LAB_00535df1
     PUSH 0x59555a                       ; 00535ddd | = "toss\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00535de2 | PTR_DAT_005ad350
-    PUSH EDX                            ; 00535de8 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00535de2 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00535de8 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535de9
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535dee
@@ -476,8 +476,8 @@ section .text
     JZ 0x00535e1d                       ; 00535e07
         ;   XREF to: 00535e1d (CONDITIONAL_JUMP)  ; LAB_00535e1d
     PUSH 0x595560                       ; 00535e09 | = "attackmelee\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00535e0e | PTR_DAT_005ad350
-    PUSH EDX                            ; 00535e14 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00535e0e | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00535e14 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00535e15
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00535e1a
@@ -732,13 +732,13 @@ section .text
     CMP dword ptr [EBX + 0x1fa3c],0x0   ; 00536173
     JZ 0x00537b99                       ; 0053617a
         ;   XREF to: 00537b99 (CONDITIONAL_JUMP)  ; LAB_00537b99
-    MOV EAX,[0x005b9354]                ; 00536180 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00536180 | g_CGame_PTR_005b9354
     MOV dword ptr [EBX + 0x1fa3c],0x0   ; 00536185
-    CMP dword ptr [EAX + 0x244],0x0     ; 0053618f | DAT_01c77830
+    CMP dword ptr [EAX + 0x244],0x0     ; 0053618f | g_CGame_01c775ec.flashlight_active
     JZ 0x005361b4                       ; 00536196
         ;   XREF to: 005361b4 (CONDITIONAL_JUMP)  ; LAB_005361b4
     PUSH 0x5955b6                       ; 00536198 | = "flashlit.wav"
-    MOV dword ptr [EAX + 0x244],0x0     ; 0053619d | DAT_01c77830
+    MOV dword ptr [EAX + 0x244],0x0     ; 0053619d | g_CGame_01c775ec.flashlight_active
     PUSH EBX                            ; 005361a7
     MOV EAX,dword ptr [EBX + 0x14c]     ; 005361a8
     CALL dword ptr [EAX + 0x24]         ; 005361ae
@@ -755,13 +755,13 @@ section .text
     CMP dword ptr [EAX + 0x2e8],0x0     ; 005361cd
     JZ 0x00536216                       ; 005361d4
         ;   XREF to: 00536216 (CONDITIONAL_JUMP)  ; LAB_00536216
-    MOV EAX,[0x005b9354]                ; 005361d6 | DAT_005b9354
-    CMP dword ptr [EAX + 0x244],0x0     ; 005361db | DAT_01c77830
+    MOV EAX,[0x005b9354]                ; 005361d6 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x244],0x0     ; 005361db | g_CGame_01c775ec.flashlight_active
     SETZ AL                             ; 005361e2
     MOV EDX,EAX                         ; 005361e5
-    MOV EAX,[0x005b9354]                ; 005361e7 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 005361e7 | g_CGame_PTR_005b9354
     AND EDX,0xff                        ; 005361ec
-    MOV dword ptr [EAX + 0x244],EDX     ; 005361f2 | DAT_01c77830
+    MOV dword ptr [EAX + 0x244],EDX     ; 005361f2 | g_CGame_01c775ec.flashlight_active
     JZ 0x00536204                       ; 005361f8
         ;   XREF to: 00536204 (CONDITIONAL_JUMP)  ; LAB_00536204
     MOV dword ptr [EBX + 0x1fa3c],0x1   ; 005361fa
@@ -777,8 +777,8 @@ section .text
     TEST EAX,EAX                        ; 00536222
     JNZ 0x00537ba8                      ; 00536224
         ;   XREF to: 00537ba8 (CONDITIONAL_JUMP)  ; LAB_00537ba8
-    MOV EAX,[0x005b9354]                ; 0053622a | DAT_005b9354
-    MOV dword ptr [EAX + 0x244],0x0     ; 0053622f | DAT_01c77830
+    MOV EAX,[0x005b9354]                ; 0053622a | g_CGame_PTR_005b9354
+    MOV dword ptr [EAX + 0x244],0x0     ; 0053622f | g_CGame_01c775ec.flashlight_active
     CMP dword ptr [ESP + 0x2cc],0x0     ; 00536239
         ;   Label: LAB_00536239
     JZ 0x0053624f                       ; 00536241
@@ -1022,8 +1022,8 @@ section .text
     TEST EAX,EAX                        ; 005364ec
     JZ 0x00537c47                       ; 005364ee
         ;   XREF to: 00537c47 (CONDITIONAL_JUMP)  ; LAB_00537c47
-    MOV EAX,[0x005b9354]                ; 005364f4 | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0x240],0x0     ; 005364f9 | DAT_01c7782c
+    MOV EAX,[0x005b9354]                ; 005364f4 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0x240],0x0     ; 005364f9 | g_CGame_01c775ec.goggles_active
     JZ 0x00537c01                       ; 00536500
         ;   XREF to: 00537c01 (CONDITIONAL_JUMP)  ; LAB_00537c01
     MOV ESP,EBP                         ; 00536506
@@ -1952,8 +1952,8 @@ section .text
     ADD ESP,0xc                         ; 0053716e
     PUSH EBX                            ; 00537171
     PUSH 0x59556d                       ; 00537172 | = "%s confused while walking to scriptDe..."
-    MOV EAX,[0x005ad350]                ; 00537177 | PTR_DAT_005ad350
-    PUSH EAX                            ; 0053717c | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00537177 | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 0053717c | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053717d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x00537144                      ; 00537182
@@ -2316,7 +2316,7 @@ section .text
         ;   Label: LAB_0053769e
     JZ 0x00537741                       ; 005376a5
         ;   XREF to: 00537741 (CONDITIONAL_JUMP)  ; LAB_00537741
-    MOV EAX,[0x005b9284]                ; 005376ab | INT_005b9284
+    MOV EAX,[0x005b9284]                ; 005376ab | PTR_DAT_005b9284
     PUSH EAX                            ; 005376b0
     CALL xxx_unk.c_FUN_004940d0         ; 005376b1
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
@@ -2325,8 +2325,8 @@ section .text
     FLD float ptr [EBX + 0x2424]        ; 005376bc
     FSTP double ptr [ESP]               ; 005376c2
     PUSH 0x595597                       ; 005376c5 | = "Splat at %3.2f fps\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 005376ca | PTR_DAT_005ad350
-    PUSH EDX                            ; 005376d0 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 005376ca | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 005376d0 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005376d1
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     FLD float ptr [EBX + 0x1fcd4]       ; 005376d6
@@ -2707,8 +2707,8 @@ section .text
     TEST ECX,ECX                        ; 00537bae
     JNZ 0x00536239                      ; 00537bb0
         ;   XREF to: 00536239 (CONDITIONAL_JUMP)  ; LAB_00536239
-    MOV EAX,[0x005b9354]                ; 00537bb6 | DAT_005b9354
-    MOV dword ptr [EAX + 0x244],ECX     ; 00537bbb | DAT_01c77830
+    MOV EAX,[0x005b9354]                ; 00537bb6 | g_CGame_PTR_005b9354
+    MOV dword ptr [EAX + 0x244],ECX     ; 00537bbb | g_CGame_01c775ec.flashlight_active
     JMP 0x00536239                      ; 00537bc1
         ;   XREF to: 00536239 (UNCONDITIONAL_JUMP)  ; LAB_00536239
     FLD float ptr [EBP + 0x18]          ; 00537bc6
@@ -2761,9 +2761,9 @@ section .text
     POP ESI                             ; 00537c44
     POP EBX                             ; 00537c45
     RET                                 ; 00537c46
-    MOV EAX,[0x005b9354]                ; 00537c47 | DAT_005b9354 | DAT_01c775ec
+    MOV EAX,[0x005b9354]                ; 00537c47 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
         ;   Label: LAB_00537c47
-    CMP dword ptr [EAX + 0x240],0x0     ; 00537c4c | DAT_01c7782c
+    CMP dword ptr [EAX + 0x240],0x0     ; 00537c4c | g_CGame_01c775ec.goggles_active
     JZ 0x00536506                       ; 00537c53
         ;   XREF to: 00536506 (CONDITIONAL_JUMP)  ; LAB_00536506
     MOV EDI,dword ptr [EBX + 0x1fab4]   ; 00537c59

@@ -34,8 +34,8 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_00522f10(int requested_size,i
   _DAT_02dc8338 = realloc(_DAT_02dc8338,iVar4 * DAT_005bea68);
   if (((_DAT_02dc835c == (void *)0x0) || (_DAT_02dc8380 == (void *)0x0)) ||
      (_DAT_02dc8338 == (void *)0x0)) {
-    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    INT_01cc4804 = 0x4ac;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    g_INT_01cc4804 = 0x4ac;
     core_main_c_FUN_004c8440("allocMixBuffers - out of memory");
   }
   iVar4 = 0;

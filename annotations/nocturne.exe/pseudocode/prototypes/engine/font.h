@@ -15,9 +15,9 @@ int __cdecl clipCharacter(int *bitmap_offset,int *left_x,int *top_y,int *right_x
 // Address: 0048fe10
 CBitFont * __cdecl CBitFont::ctor(CBitFont *this_ptr);
 
-// Original: engine_font.cpp_FUN_0048fe30
+// Original: engine_font.cpp_CBitFont_FUN_0048fe30
 // Address: 0048fe30
-CBitFont * __cdecl FUN_0048fe30(CBitFont *this_ptr,uint flags);
+CBitFont * __cdecl CBitFont(CBitFont *this_ptr,uint flags);
 
 // Original: engine_font.cpp_CBitFont_reset_FUN_0048fe50
 // Address: 0048fe50

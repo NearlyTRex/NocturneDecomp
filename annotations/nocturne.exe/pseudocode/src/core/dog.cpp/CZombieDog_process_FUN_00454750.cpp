@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void core_dog_cpp_CZombieDog_process_FUN_00454750(CEnemy *param_1,float param_2)
 
 {
@@ -97,7 +95,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(CEnemy *param_1,float param_2)
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&pCVar1->motion_controller,iVar4,1);
           iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
-                            (0x02DC9450,*(uint *)(param_1[1].base.base.actor_name + 8));
+                            (g_CSound_PTR_005bed68,*(uint *)(param_1[1].base.base.actor_name + 8));
           if (iVar4 == 0) {
             uVar8 = (*((param_1->base).base.vtable._ub)->playSound)
                               ((CDemonActor *)param_1,"dog5.wav");
@@ -154,7 +152,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(CEnemy *param_1,float param_2)
         pCVar1 = &(param_1->base).model;
         if (iVar4 < 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"%s gave up chase - I'm confused\n",param_1);
+                    (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",param_1);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&pCVar1->motion_controller,0,1);
         }
@@ -189,7 +187,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(CEnemy *param_1,float param_2)
                          ((CDemonActor *)param_1,&local_8c,pCVar9);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(param_1,pCVar9,fVar10,damage_info);
       iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
-                        (0x02DC9450,*(uint *)(param_1[1].base.base.actor_name + 8));
+                        (g_CSound_PTR_005bed68,*(uint *)(param_1[1].base.base.actor_name + 8));
       if (iVar4 == 0) {
         uVar8 = (*((param_1->base).base.vtable._ub)->playSound)
                           ((CDemonActor *)param_1,"dog5.wav");
@@ -202,7 +200,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(CEnemy *param_1,float param_2)
                            (&(param_1->base).model,&local_50,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)param_1,&local_44,pCVar9);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_44,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_44,0);
         param_1->pool_me = 1;
       }
     }
@@ -227,7 +225,7 @@ LAB_004549fd:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(param_1->base).model.motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   (param_1->base).model.accumulated_root_motion.z = 0.0;
   (param_1->base).model.accumulated_root_motion.y = (param_1->base).model.accumulated_root_motion.z;
@@ -242,7 +240,8 @@ switchD_00454db3_caseD_5:
     if ((pCVar3 != (CCharacter *)0x0) &&
        (pCVar7 = (CEnemy *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
        pCVar7 == param_1)) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&param_1->victim->base);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                (g_CDemonSet_PTR_005be368,&param_1->victim->base);
     }
     (param_1->base).velocity.y = (param_1->base).velocity.y - param_2 * (float)32;
     local_68 = (param_1->base).velocity.x * param_2;

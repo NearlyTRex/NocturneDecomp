@@ -13,8 +13,7 @@ int __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_004d86d0(CDemonMission
   char local_104 [260];
   
   makepath
-            (local_104,(char *)0x0,(char *)0x0,(char *)&this_ptr->current_camera_index,
-             "scr");
+            (local_104,(char *)0x0,(char *)0x0,this_ptr->mission_name,"scr");
   iVar1 = core_script_cpp_FUN_004febd0(0x01E56DA0,local_104,is_loading);
   return iVar1;
 }

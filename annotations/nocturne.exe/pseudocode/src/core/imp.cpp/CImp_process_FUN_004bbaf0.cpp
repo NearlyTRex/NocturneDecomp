@@ -143,7 +143,7 @@ LAB_004bbb59:
                                     (float)0.25));
         local_3c = (int)ROUND(dVar13);
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                  ((CGore *)INT_005b96c4,&local_8c,(CVector3f *)0x0,local_3c,iVar5);
+                  (g_CGore_PTR_005b96c4,&local_8c,(CVector3f *)0x0,local_3c,iVar5);
         EVar9 = (*(((param_1->victim->base).vtable._uc)->_uc).getDeathState)(param_1->victim);
         if ((int)EVar9 < 1) {
           (*((param_1->base).base.vtable._ub)->playSound)
@@ -395,10 +395,10 @@ LAB_004bbb59:
       if (iVar5 != 0) {
         iVar11 = 0;
         iVar5 = 0;
-        while (iVar5 < *(int *)(0x01E57284 + 0x150bf4)) {
+        while (iVar5 < g_CDemonSet_PTR_005be368->enemy_count) {
           pCVar12 = (CEnemy *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
-                              (*(CDemonActor **)(iVar11 + 0x150bf8 + 0x01E57284),
+                              (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar11),
                                g_CImpActorType_01cae33c.name_hash);
           if (((pCVar12 == (CEnemy *)0x0) || (pCVar12 == param_1)) ||
              (param_1->victim != pCVar12->victim)) {
@@ -420,7 +420,7 @@ LAB_004bbb59:
                            (pCVar1,&local_f8,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)param_1,&local_c8,pCVar8);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_c8,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_c8,0);
         param_1->pool_me = 1;
       }
       break;
@@ -466,7 +466,7 @@ LAB_004bc023:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(param_1->base).model.motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   (param_1->base).model.accumulated_root_motion.z = 0.0;
   (param_1->base).model.accumulated_root_motion.y = (param_1->base).model.accumulated_root_motion.z;

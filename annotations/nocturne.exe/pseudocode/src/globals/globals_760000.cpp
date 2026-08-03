@@ -29,6 +29,9 @@ CDemonActorType g_CBugsActorType_00765888 = {};
 CDemonActorType g_CCharacterActorType_00765a60 = {};
 CDemonActorType g_CChainActorType_00765c30 = {};
 
+// CDemonFilter[8]
+CDemonFilter g_CDemonFilter_ARRAY_0076483c[8] = {};
+
 // CVector3f
 CVector3f CVector3f_00764ad8 = {};
 CVector3f CVector3f_00764ae4 = {};

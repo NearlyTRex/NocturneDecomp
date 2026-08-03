@@ -27,6 +27,7 @@
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SGem.h"
+#include "types/structs/SInteractionInfo.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
@@ -80,7 +81,7 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_004c3460(CKeyActor *thi
 void __cdecl core_keyactor_cpp_CKeyActor_setup_FUN_004c34c0(CKeyActor *this_ptr);
 void core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(int param_1,float param_2);
 int core_keyactor_cpp_CKeyActor_renderOpaque_FUN_004c3590(CDemonActor *param_1);
-undefined4 * core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004c3600(int param_1,undefined4 *param_2);
+float * core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004c3600(int param_1,float *param_2);
 void core_keyactor_cpp_CKeyActor_archive_FUN_004c3650(CDemonActor *param_1);
 undefined4 core_keyactor_cpp_CKeyActor_getCollisionType_FUN_004c36c0(void);
 undefined4 core_keyactor_cpp_CKeyActor_canPickup_FUN_004c36d0(undefined4 param_1,CDemonActor *param_2);
@@ -138,7 +139,7 @@ void core_lever_cpp_CLever_process_FUN_004c6190(CLever *param_1,float param_2);
 void __cdecl core_lever_cpp_CLever_setState_FUN_004c6390(CLever *this_ptr,float new_state);
 void __cdecl core_lever_cpp_CLever_activate_FUN_004c6500(CLever *this_ptr);
 int core_lever_cpp_CLever_renderOpaque_FUN_004c6560(CDemonActor *param_1);
-undefined4 * core_lever_cpp_CLever_getBoundingBox_FUN_004c65f0(int param_1,undefined4 *param_2);
+float * core_lever_cpp_CLever_getBoundingBox_FUN_004c65f0(int param_1,float *param_2);
 CVector3f * __cdecl core_lever_cpp_CLever_getHandlePosition_FUN_004c6640(CLever *this_ptr,CVector3f *out_position);
 void core_lever_cpp_CLever_archive_FUN_004c66f0(CDemonActor *param_1);
 bool core_lever_cpp_CLever_getCollisionType_FUN_004c68d0(int param_1);
@@ -198,7 +199,7 @@ undefined4 core_manpuz_cpp_CMansionPuzzleCircle_getCollisionType_FUN_004c9e40(vo
 float core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_004c9e50(int param_1,CVector3f *param_2,CVector3f *param_3,CVector3f *param_4);
 void core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004ca240(int param_1,SIntersectXZCylinder *param_2);
 undefined4 core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_004ca2f0(void);
-void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(int param_1,float *param_2);
+void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2);
 void __cdecl core_manpuz_cpp_FUN_004ca410(CMansionPuzzleCircle *this_ptr);
 void core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(CDemonActor *param_1,int param_2);
 void core_manpuz_cpp_FUN_004ca710(int param_1,int param_2);
@@ -223,10 +224,10 @@ CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_ctor_FUN_004cbb00(CMirrorHack 
 void core_manpuz_cpp_CMirrorHack_setup_FUN_004cbb50(CDemonActor *param_1);
 undefined4 core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_004cbb70(CDemonActor *param_1);
 void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_004cbbc0(CMirrorHack *this_ptr,float delta_time);
-int * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,int *param_2);
+float * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,float *param_2);
 undefined4 core_manpuz_cpp_CMirrorHack_getCollisionType_FUN_004cbca0(void);
 void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_004cbcb0(CMirrorHack *this_ptr,SLaserInfo *laser_info);
-void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(int param_1,undefined4 *param_2);
+void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(CDemonActor *param_1,SInteractionInfo *param_2);
 undefined4 core_manpuz_cpp_CMirrorHack_startInteraction_FUN_004cbd30(int param_1,undefined4 param_2);
 int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_004cbd50(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
 void __cdecl core_manpuz_cpp_CMirrorHack_stopUsing_FUN_004cbdb0(CMirrorHack *this_ptr,CDemonActor *user);
@@ -297,7 +298,7 @@ float core_melee_cpp_FUN_004cef00(int param_1);
 void core_melee_cpp_FUN_004cef30(void);
 undefined4 core_melee_cpp_CMelee_canPickup_FUN_004cef40(int param_1,CDemonActor *param_2);
 undefined4 core_melee_cpp_CMelee_getAllowedMeleeAttackTypes_FUN_004cef70(int param_1);
-void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(int param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4);
 void core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4);
 void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type);
 void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_2);

@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591629
 ;   TerminatedCString s_Tried_to_do_something_wi_0059163e
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -42,8 +42,8 @@ section .text
     MOV ECX,0x591629                    ; 00518149 | = "..\\core\\skeleton.cpp"
     MOV EBX,0x2e6                       ; 0051814e
     PUSH 0x59163e                       ; 00518153 | = "Tried to do something with the skelet..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00518158 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0051815e | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00518158 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0051815e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00518164
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00518169

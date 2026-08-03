@@ -38,10 +38,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00577701
 ;   TerminatedCString s_CDemonActor_rayIntersect_00577713
-;   undefined4 DAT_005be368
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01fb6578
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   undefined4 g_CDemonSet_01e57284.skip_exact_collisions
 ;   undefined4 DAT_0268ced8
 ;   undefined4 DAT_0268cedc
 ;   undefined4 DAT_0268cee0
@@ -219,9 +219,9 @@ section .text
     MOV dword ptr [EBX + 0x10],0xffffffff ; 0040a8c1
     MOV dword ptr [EBX + 0x14],0xffffffff ; 0040a8c8
     MOV dword ptr [EBX + 0x18],0xffffffff ; 0040a8cf
-    MOV EAX,[0x005be368]                ; 0040a8d6 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0040a8d6 | g_CDemonSet_PTR_005be368
     MOV dword ptr [EBX + 0xc],0xffffffff ; 0040a8db
-    MOV EAX,dword ptr [EAX + 0x15f2f4]  ; 0040a8e2 | DAT_01fb6578
+    MOV EAX,dword ptr [EAX + 0x15f2f4]  ; 0040a8e2 | g_CDemonSet_01e57284.skip_exact_collisions
     TEST EAX,EAX                        ; 0040a8e8
     JZ 0x0040a9c9                       ; 0040a8ea
         ;   XREF to: 0040a9c9 (CONDITIONAL_JUMP)  ; LAB_0040a9c9
@@ -300,8 +300,8 @@ section .text
         ;   Label: LAB_0040a9a2
     MOV EDX,0x45d                       ; 0040a9a7
     PUSH 0x577713                       ; 0040a9ac | = "CDemonActor::rayIntersect - Invalid c..."
-    MOV [0x01cc4800],EAX                ; 0040a9b1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0040a9b6 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0040a9b1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0040a9b6 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040a9bc
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040a9c1

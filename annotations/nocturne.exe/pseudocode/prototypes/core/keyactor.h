@@ -33,7 +33,7 @@ int CKeyActor::renderOpaque(CDemonActor *param_1);
 
 // Original: core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004c3600
 // Address: 004c3600
-undefined4 * CKeyActor::getBoundingBox(int param_1,undefined4 *param_2);
+float * CKeyActor::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_keyactor.cpp_CKeyActor_archive_FUN_004c3650
 // Address: 004c3650

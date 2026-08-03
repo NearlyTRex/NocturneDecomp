@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01cc9450
 ;
@@ -90,7 +90,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x15c]     ; 0054399a
     ADD EDX,0x20                        ; 005439a0
     PUSH EDX                            ; 005439a3
-    MOV ECX,dword ptr [0x005baf90]      ; 005439a4 | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 005439a4 | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 005439aa | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_FUN_004d90e0 ; 005439ab
         ;   XREF to: 004d90e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d90e0(CDemonMission * this_ptr, CLocation * teleport_target)

@@ -30,7 +30,7 @@ void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CIcePick 
   local_18 = 0;
   do {
     while( true ) {
-      if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar3) {
+      if (g_CDemonSet_PTR_005be368->character_count <= iVar3) {
         if (local_18 == 0) {
           return;
         }
@@ -38,7 +38,7 @@ void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CIcePick 
                   ((CDemonActor *)this_ptr,"icepick-punch?.wav");
         return;
       }
-      this_ptr_00 = *(CIcePick **)(0x01E57284 + 0x14ecb4 + iVar2);
+      this_ptr_00 = *(CIcePick **)((int)g_CDemonSet_PTR_005be368->characters + iVar2);
       if (this_ptr_00 != this_ptr) break;
 LAB_004bb419:
       iVar3 = iVar3 + 1;

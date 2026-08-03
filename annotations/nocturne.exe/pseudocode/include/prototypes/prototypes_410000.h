@@ -23,6 +23,7 @@
 #include "types/classes/CColor3f.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonFilter.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CHero.h"
 #include "types/classes/CLightActor.h"
@@ -88,7 +89,7 @@ void core_barrier_cpp_CBarrier_getBoundingBox_FUN_004117a0(int param_1,float *pa
 void core_barrier_cpp_CBarrier_archive_FUN_00411800(CDemonActor *param_1);
 undefined4 core_barrier_cpp_CBarrier_getCollisionType_FUN_00411860(int param_1,int *param_2);
 void core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CDemonActor *param_1);
-CDemonActor * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CDemonActor *this_ptr,uint flags);
+CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CBarrier *this_ptr,uint flags);
 void __cdecl core_bat_cpp_staticInit_FUN_00411910(void);
 float core_bat_cpp_FUN_00411940(float param_1,float param_2);
 CBat * __cdecl core_bat_cpp_factoryFunc_FUN_004119e0(void);
@@ -98,7 +99,7 @@ void core_bat_cpp_CBat_setup_FUN_00411ae0(CBat *param_1);
 void core_bat_cpp_CBat_archive_FUN_00411b50(CDemonActor *param_1);
 void core_bat_cpp_CBat_process_FUN_00411c40(CBat *param_1,float param_2);
 int core_bat_cpp_CBat_renderOpaque_FUN_00411e30(CDemonActor *param_1);
-undefined4 * core_bat_cpp_CBat_getBoundingBox_FUN_00411ea0(int param_1,undefined4 *param_2);
+float * core_bat_cpp_CBat_getBoundingBox_FUN_00411ea0(int param_1,float *param_2);
 void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_00411f20(CBat *this_ptr);
 CBat * __cdecl core_bat_cpp_CBat_dtor_FUN_00412000(CBat *this_ptr,uint flags);
 void core_bat_cpp_FUN_0041206c(void);
@@ -274,14 +275,14 @@ CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(CBoundin
 int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);
 void __cdecl core_boxactor_cpp_staticInit_FUN_0041e260(void);
 CBoxActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_0041e2d0(void);
-CDemonActorType * core_boxactor_cpp_CBoxActor_getActorType_FUN_0041e2f0(void);
+CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_0041e2f0(CBoxActor *this_ptr);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_0041e430(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(CBoxActor *this_ptr,float delta_time);
 int core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041ea00(int param_1);
 int core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041eaf0(int param_1);
-undefined4 * core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_0041ebe0(int param_1,undefined4 *param_2);
+float * core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_0041ebe0(int param_1,float *param_2);
 void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041ec60(CBoxActor *this_ptr);
 undefined4 core_boxactor_cpp_CBoxActor_getBlockVirtualDirectorFlag_FUN_0041ef30(int param_1);
 undefined4 core_boxactor_cpp_CBoxActor_getCollisionType_FUN_0041ef40(int param_1,int param_2);
@@ -295,7 +296,7 @@ void core_boxactor_cpp_CBoxActor_onPickup_FUN_0041f170(CDemonActor *param_1,CDem
 void __cdecl core_boxactor_cpp_FUN_0041f190(CBoxActor *this_ptr);
 void core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240(CBoxActor *param_1,float *param_2,float *param_3);
 int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_0041f2d0(CBoxActor *this_ptr);
-void core_boxactor_cpp_FUN_0041f2e0(void);
+CLightActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_0041f2e0(void);
 CDemonActorType * core_boxactor_cpp_CLightActor_getActorType_FUN_0041f300(void);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_0041f310(CLightActor *this_ptr);
 void core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(CLightActor *param_1);
@@ -305,7 +306,7 @@ void __cdecl core_boxactor_cpp_FUN_0041f6e0(CLightActor *this_ptr);
 int __cdecl core_boxactor_cpp_CLightActor_isLightPartVisible_FUN_0041f9f0(CLightActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_0041fa10(CLightActor *this_ptr,uint flags);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_0041fa90(CBoxActor *this_ptr,uint flags);
-void core_boxactor_cpp_FUN_0041fb00(void *param_1);
+CDemonFilter * __cdecl core_boxactor_cpp_CDemonFilter_arrdtor_FUN_0041fb00(CDemonFilter *this_ptr,uint flags);
 void __cdecl core_bride_cpp_staticInit_FUN_0041fb20(void);
 CBride * __cdecl core_bride_cpp_factoryFunc_FUN_0041fb80(void);
 CDemonActorType * core_bride_cpp_CBride_getActorType_FUN_0041fba0(void);

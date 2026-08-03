@@ -184,7 +184,7 @@ LAB_005413d0:
     if (uVar13 != 3) goto LAB_005413d0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar16->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   (param_1->base).model.accumulated_root_motion.z = 0.0;
   (param_1->base).model.accumulated_root_motion.y = (param_1->base).model.accumulated_root_motion.z;
@@ -235,7 +235,7 @@ LAB_00541090:
     if (this_ptr != (CHotDemon *)0x0) {
       pCVar12 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004b8ca0(this_ptr);
     }
-    pCVar9 = 0x01CC9450;
+    pCVar9 = g_CDemonMission_PTR_005baf90;
     local_18 = pCVar12;
     if (pCVar12 != (CHotDemon *)0x0) {
       (param_1->base).base.lifecycle_state = ACTOR_DESTROYED;
@@ -271,7 +271,7 @@ LAB_00541090:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(pCVar16);
       (pCVar12->base).base.base.scale.x = (param_1->base).base.scale.x;
       (pCVar12->base).base.base.scale.y = (param_1->base).base.scale.y;
-      pCVar9 = 0x01CC9450;
+      pCVar9 = g_CDemonMission_PTR_005baf90;
       (pCVar12->base).base.base.scale.z = (param_1->base).base.scale.z;
       core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(pCVar9,(CDemonActor *)pCVar12);
       pCVar4 = *(CCloth **)(param_1[1].base.descriptive_name + 8);

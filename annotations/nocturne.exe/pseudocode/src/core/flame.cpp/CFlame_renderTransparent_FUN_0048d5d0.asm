@@ -22,8 +22,8 @@
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b8de8
 ;   undefined4 DAT_005b8e00
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_005be368
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_005c5034
@@ -62,7 +62,7 @@ section .text
     CMP dword ptr [EBP + 0x1ac],0x0     ; 0048d5df
     JNZ 0x0048d5fe                      ; 0048d5e6
         ;   XREF to: 0048d5fe (CONDITIONAL_JUMP)  ; LAB_0048d5fe
-    MOV EAX,[0x005baf90]                ; 0048d5e8 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 0048d5e8 | g_CDemonMission_PTR_005baf90
     CMP dword ptr [EAX + 0x4],0x0       ; 0048d5ed | DAT_01cc9454
     JNZ 0x0048d5fe                      ; 0048d5f1
         ;   XREF to: 0048d5fe (CONDITIONAL_JUMP)  ; LAB_0048d5fe
@@ -126,8 +126,8 @@ section .text
         ;   XREF to: 0048d690 (CONDITIONAL_JUMP)  ; LAB_0048d690
     LEA EAX,[EBP + 0x160]               ; 0048d67b
     PUSH EAX                            ; 0048d681
-    MOV EAX,[0x005be368]                ; 0048d682 | DAT_005be368
-    PUSH EAX                            ; 0048d687 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 0048d682 | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 0048d687 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20 ; 0048d688
         ;   XREF to: 0050aa20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 0048d68d

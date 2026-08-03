@@ -11,7 +11,7 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
 
 {
-  CDemonRenderer *pCVar1;
+  byte *puVar1;
   uint uVar2;
   int iVar3;
   int unaff_EBX;
@@ -57,7 +57,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
       local_64.z = (float)(int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                                      _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                (&DAT_005ae700->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);
+                (*(SProjectedVertex **)PTR_DAT_005ae700,(CVector3i *)&local_64);
       local_14 = grid_x + 1;
       local_2c = (float)local_14;
       local_7c.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -67,7 +67,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
       local_7c.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                (&DAT_005ae700->vertex_buffer_ptr[1].projected_vertex,&local_7c);
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0x30),&local_7c);
       local_14 = grid_z + 1;
       local_24 = (float)local_14;
       local_40.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -77,7 +77,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
       local_40.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                (&DAT_005ae700->vertex_buffer_ptr[2].projected_vertex,&local_40);
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0x60),&local_40);
       local_58.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
       local_58.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -85,7 +85,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
       local_58.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                (&DAT_005ae700->vertex_buffer_ptr[3].projected_vertex,&local_58);
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0x90),&local_58);
       local_14 = grid_y + 1;
       local_1c = (float)local_14;
       local_a0.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -95,7 +95,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
       local_a0.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                (&DAT_005ae700->vertex_buffer_ptr[4].projected_vertex,&local_a0);
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0xc0),&local_a0);
       local_94.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
       local_94.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -103,7 +103,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
       local_94.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                (&DAT_005ae700->vertex_buffer_ptr[5].projected_vertex,&local_94);
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0xf0),&local_94);
       local_70.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
       local_70.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -111,7 +111,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
       local_70.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                (&DAT_005ae700->vertex_buffer_ptr[6].projected_vertex,&local_70);
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0x120),&local_70);
       local_88.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
       local_88.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -119,8 +119,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
       local_88.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                (&DAT_005ae700->vertex_buffer_ptr[7].projected_vertex,&local_88);
-      pCVar1 = 0x01B4D738;
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0x150),&local_88);
+      puVar1 = PTR_DAT_005ae700;
       uVar2 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4 & DAT_005c50e4 &
               DAT_005c5114 & DAT_005c5144 & DAT_005c5174;
       if (((uVar2 & 0x80000000) == 0) || ((char)uVar2 == '\0')) {
@@ -132,8 +132,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                     ((double)(((float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                              (float)-256));
           iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-                            (pCVar1,pSVar4);
-          pCVar1 = 0x01B4D738;
+                            ((CDemonRenderer *)puVar1,pSVar4);
+          puVar1 = PTR_DAT_005ae700;
           if (iVar3 == 0) {
             local_18 = grid_z + 1;
             pSVar4 = (SMRGLHeaderPrimitive *)0x469ae8;
@@ -141,8 +141,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                       ((double)(((float)local_18 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z)
                                * (float)256));
             iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-                              (pCVar1,pSVar4);
-            pCVar1 = 0x01B4D738;
+                              ((CDemonRenderer *)puVar1,pSVar4);
+            puVar1 = PTR_DAT_005ae700;
             if (iVar3 == 0) {
               local_1c = (float)grid_x;
               pSVar4 = (SMRGLHeaderPrimitive *)0x469b55;
@@ -150,8 +150,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                         ((double)(((float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x)
                                  * (float)-256));
               iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-                                (pCVar1,pSVar4);
-              pCVar1 = 0x01B4D738;
+                                ((CDemonRenderer *)puVar1,pSVar4);
+              puVar1 = PTR_DAT_005ae700;
               if (iVar3 == 0) {
                 local_20 = (float)(grid_x + 1);
                 pSVar4 = (SMRGLHeaderPrimitive *)0x469bc1;
@@ -159,8 +159,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                           ((double)(((float)(int)local_20 * (this_ptr->cell_size).x +
                                     (this_ptr->bbox_min).x) * (float)256));
                 iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-                                  (pCVar1,pSVar4);
-                pCVar1 = 0x01B4D738;
+                                  ((CDemonRenderer *)puVar1,pSVar4);
+                puVar1 = PTR_DAT_005ae700;
                 if (iVar3 == 0) {
                   local_24 = (float)(unaff_EBX + 1);
                   pSVar4 = (SMRGLHeaderPrimitive *)0x469c40;
@@ -168,8 +168,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                             ((double)(((float)(int)local_24 * (this_ptr->cell_size).y +
                                       (this_ptr->bbox_min).y) * (float)256));
                   iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-                                    (pCVar1,pSVar4);
-                  pCVar1 = 0x01B4D738;
+                                    ((CDemonRenderer *)puVar1,pSVar4);
+                  puVar1 = PTR_DAT_005ae700;
                   if (iVar3 == 0) {
                     pSVar4 = (SMRGLHeaderPrimitive *)0x469cb3;
                     local_28 = unaff_ESI;
@@ -177,7 +177,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                               ((double)(((float)(int)unaff_ESI * (this_ptr->cell_size).y +
                                         (this_ptr->bbox_min).y) * (float)-256));
                     iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-                                      (pCVar1,pSVar4);
+                                      ((CDemonRenderer *)puVar1,pSVar4);
                     if (iVar3 == 0) {
                       return;
                     }
@@ -199,15 +199,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                   (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
         iVar3 = _DAT_01b7b744;
         *(CDemonCube **)(_DAT_01b7b744 * 4 + 0x1b7b74c) = local_4c;
-        if (CVector3f_ARRAY_01b8efcc + iVar3 != &local_64) {
-          CVector3f_ARRAY_01b8efcc[iVar3].x = local_64.x;
-          CVector3f_ARRAY_01b8efcc[iVar3].y = local_64.y;
-          CVector3f_ARRAY_01b8efcc[iVar3].z = local_64.z;
+        if (g_CVector3f_ARRAY_01b8efcc + iVar3 != &local_64) {
+          g_CVector3f_ARRAY_01b8efcc[iVar3].x = local_64.x;
+          g_CVector3f_ARRAY_01b8efcc[iVar3].y = local_64.y;
+          g_CVector3f_ARRAY_01b8efcc[iVar3].z = local_64.z;
         }
         _DAT_01b7b744 = _DAT_01b7b744 + 1;
         if (19999 < _DAT_01b7b744) {
-          PTR_01cc4800 = "..\\core\\dtrace.cpp";
-          INT_01cc4804 = 0x792;
+          g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
+          g_INT_01cc4804 = 0x792;
           core_main_c_FUN_004c8440("Too many drawn cubes.  Need to recompile.");
           return;
         }

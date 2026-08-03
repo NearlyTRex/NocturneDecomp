@@ -38,8 +38,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Chain_stretched_to_f_00597ef1
 ;   double DOUBLE_00597f09 = 2
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
@@ -130,8 +130,8 @@ section .text
     FST float ptr [EBP + -0xc]          ; 00557d7e
     FSTP double ptr [ESP]               ; 00557d81
     PUSH 0x597ef1                       ; 00557d84 | = "Chain stretched to %f\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00557d89 | PTR_DAT_005ad350
-    PUSH EDX                            ; 00557d8f | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00557d89 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00557d8f | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00557d90
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     FLD float ptr [EBP + -0xc]          ; 00557d95

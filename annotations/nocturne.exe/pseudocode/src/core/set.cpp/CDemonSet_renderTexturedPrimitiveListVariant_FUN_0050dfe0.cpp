@@ -13,7 +13,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050d
 {
   int iVar1;
   
-  if (*(int *)(0x01C775EC + 0x1f0) == 0) {
+  if (g_CGame_PTR_005b9354->scripted_sequence_active == 0) {
     if (DAT_005ae704->advanced_culling_enabled == 0) {
       iVar1 = 0;
       if (0 < count) {
@@ -34,8 +34,8 @@ void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050d
       if (0 < count) {
         do {
           iVar1 = iVar1 + 1;
-          core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004d7760
-                    ((CMirror *)this_ptr->sorted_render_actors[0x6e0],prim);
+          core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004d7760(this_ptr->active_mirror,prim)
+          ;
           prim = prim + 3;
         } while (iVar1 < count);
       }

@@ -31,10 +31,10 @@ void core_trap_cpp_CTrap_process_FUN_00546900(CDemonActor *param_1)
     }
     iVar4 = 0;
     (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_34);
-    for (iVar3 = 0; iVar3 < *(int *)(0x01E57284 + 0x150bf4); iVar3 = iVar3 + 1) {
+    for (iVar3 = 0; iVar3 < g_CDemonSet_PTR_005be368->enemy_count; iVar3 = iVar3 + 1) {
       this_ptr = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (*(CDemonActor **)(iVar4 + 0x150bf8 + 0x01E57284),
+                           (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar4),
                             g_CWerewolfActorType_02de078c.name_hash);
       if ((this_ptr != (CCharacter *)0x0) && (*(int *)(this_ptr[1].base.create_event + 0x4c) == 0))
       {

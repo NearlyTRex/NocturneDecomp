@@ -95,7 +95,7 @@ section .text
     MOV EAX,[0x01bcd070]                ; 004a4bc2 | DAT_01bcd070
     PUSH 0x583dd0                       ; 004a4bc7 | = "pod.ini"
     MOV dword ptr [ESP + 0x4a0],EAX     ; 004a4bcc
-    MOV EAX,[0x014b9900]                ; 004a4bd3 | DAT_014b9900
+    MOV EAX,[0x014b9900]                ; 004a4bd3 | g_CBitFont_PTR_014b9900
     XOR EBX,EBX                         ; 004a4bd8
     MOV [0x01bcd070],EAX                ; 004a4bda | DAT_01bcd070
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004a4bdf
@@ -313,7 +313,7 @@ section .text
         ;   Label: LAB_004a4e77
     PUSH 0x0                            ; 004a4e78
     PUSH 0xa                            ; 004a4e7a
-    MOV ECX,dword ptr [0x005baca0]      ; 004a4e7c | INT_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 004a4e7c | g_CLevelLoader_PTR_005baca0
     PUSH ECX                            ; 004a4e82
     CALL core_level.cpp_CLevelLoader_show_FUN_004c5640 ; 004a4e83
         ;   XREF to: 004c5640 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_show_FUN_004c5640(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)
@@ -321,13 +321,13 @@ section .text
     PUSH ESI                            ; 004a4e8b
     LEA EAX,[ESP + 0x374]               ; 004a4e8c
     PUSH EAX                            ; 004a4e93
-    MOV EBX,dword ptr [0x005baf90]      ; 004a4e94 | DAT_005baf90
+    MOV EBX,dword ptr [0x005baf90]      ; 004a4e94 | g_CDemonMission_PTR_005baf90
     PUSH EBX                            ; 004a4e9a
     CALL core_mission.cpp_CDemonMission_load_FUN_004d7ee0 ; 004a4e9b
         ;   XREF to: 004d7ee0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_004d7ee0(CDemonMission * this_ptr, char * mission_filename, int load_flags)
     ADD ESP,0xc                         ; 004a4ea0
     PUSH 0x0                            ; 004a4ea3
-    MOV ESI,dword ptr [0x005baf90]      ; 004a4ea5 | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004a4ea5 | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 004a4eab
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 ; 004a4eac
         ;   XREF to: 004d9a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission * this_ptr, CCharacter * existing_hero)
@@ -335,12 +335,12 @@ section .text
     TEST EAX,EAX                        ; 004a4eb4
     JZ 0x004a4f05                       ; 004a4eb6
         ;   XREF to: 004a4f05 (CONDITIONAL_JUMP)  ; LAB_004a4f05
-    MOV EDI,dword ptr [0x005baf90]      ; 004a4eb8 | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 004a4eb8 | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004a4ebe
     CALL core_mission.cpp_CDemonMission_startMission_FUN_004d9780 ; 004a4ebf
         ;   XREF to: 004d9780 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_004d9780(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004a4ec4
-    MOV EBP,dword ptr [0x005baf90]      ; 004a4ec7 | DAT_005baf90
+    MOV EBP,dword ptr [0x005baf90]      ; 004a4ec7 | g_CDemonMission_PTR_005baf90
     PUSH EBP                            ; 004a4ecd
     CALL core_mission.cpp_CDemonMission_run_FUN_004d9440 ; 004a4ece
         ;   XREF to: 004d9440 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_run_FUN_004d9440(CDemonMission * this_ptr)
@@ -1118,7 +1118,7 @@ section .text
     PUSH 0x584307                       ; 004a56f9 | = "*.msn"
     PUSH 0x58430d                       ; 004a56fe | = "world"
     PUSH 0x584313                       ; 004a5703 | = "Select mission to play"
-    MOV EDI,dword ptr [0x005b6d50]      ; 004a5708 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004a5708 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004a570e
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 ; 004a570f
         ;   XREF to: 00470550 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)

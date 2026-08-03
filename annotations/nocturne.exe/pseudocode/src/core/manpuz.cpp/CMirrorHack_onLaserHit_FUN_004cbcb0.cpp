@@ -9,7 +9,7 @@
 void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_004cbcb0(CMirrorHack *this_ptr,SLaserInfo *laser_info)
 
 {
-  core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(this_ptr,laser_info);
+  core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(&this_ptr->base,laser_info);
   if ((laser_info->local_hit_position).z <= (float)-0.01) {
     return;
   }

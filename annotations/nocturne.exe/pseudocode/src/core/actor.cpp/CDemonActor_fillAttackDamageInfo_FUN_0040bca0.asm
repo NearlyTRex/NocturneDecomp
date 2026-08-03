@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(int param_1,undefined4 param_2,int param_3)
+; void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   attack_flags
+; SDamageInfo *    Stack[0xc]:4   out_damage_info
+; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10 at 00417f29

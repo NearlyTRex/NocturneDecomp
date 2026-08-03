@@ -83,8 +83,8 @@ section .text
     MOV EBP,0x57e8e2                    ; 00471b9a | = "..\\shape\\edittool.cpp"
     MOV EAX,0x674                       ; 00471b9f
     PUSH 0x57e8f8                       ; 00471ba4 | = "Can't open another window!"
-    MOV dword ptr [0x01cc4800],EBP      ; 00471ba9 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00471baf | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 00471ba9 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00471baf | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00471bb4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00471bb9
@@ -312,8 +312,8 @@ section .text
     MOV EBP,0x57e917                    ; 00471e9d | = "..\\shape\\edittool.cpp"
     MOV EAX,0x6c4                       ; 00471ea2
     PUSH 0x57e92d                       ; 00471ea7 | = "out of memory to open editor window."
-    MOV dword ptr [0x01cc4800],EBP      ; 00471eac | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00471eb2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 00471eac | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00471eb2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00471eb7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00471ebc
@@ -426,8 +426,8 @@ section .text
         ;   Label: LAB_00472058
     MOV EBX,0x8b                        ; 0047205d
     PUSH 0x57e510                       ; 00472062 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00472067 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0047206d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00472067 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0047206d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00472073
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472078

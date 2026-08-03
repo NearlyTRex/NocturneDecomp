@@ -25,7 +25,6 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
   byte bVar9;
   double dVar10;
   CGame *unaff_retaddr;
-  uint uVar11;
   uint local_1134 [1024];
   char local_134 [252];
   byte auStack_38 [20];
@@ -71,8 +70,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
     pvVar4 = malloc(~uVar5 + 9);
     *(void **)((int)local_1134 + iVar6) = pvVar4;
     if (pvVar4 == (void *)0x0) {
-      PTR_01cc4800 = "..\\core\\game.cpp";
-      INT_01cc4804 = 0x1242;
+      g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
+      g_INT_01cc4804 = 0x1242;
       core_main_c_FUN_004c8440("CGame::rollCredits - Out of memory");
     }
     pcVar3 = local_134;
@@ -101,8 +100,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }
   engine_2d_c_clearInputAndWait_FUN_00403f50();
-  this_ptr_00 = _DAT_014b9900;
-  _DAT_014b9900->win_font_enabled = 0;
+  this_ptr_00 = g_CBitFont_PTR_014b9900;
+  g_CBitFont_PTR_014b9900->win_font_enabled = 0;
   iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr_00,0x58);
   local_20 = -1;
   core_game_cpp_CGame_saveClockTime_FUN_0049a890(this_ptr);
@@ -110,7 +109,6 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
   local_10 = 0x1df - iVar6;
   do {
     iVar2 = local_20;
-    uVar11 = 0x4a6ffd;
     dVar10 = round((double)local_14);
     local_10 = (int)ROUND(dVar10);
     if (local_10 != iVar2) {
@@ -162,7 +160,7 @@ LAB_004a722b:
       engine_2d_c_fillRectColor_FUN_00403e60(0x19e,0x1b7,0x27f,0x1df,0);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar2 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1,uVar11);
+    iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
     if (iVar2 != 0) goto LAB_004a722b;
     core_game_cpp_CGame_updateDT_FUN_0049a8a0(unaff_retaddr);
     local_18 = local_18 - unaff_retaddr->delta_time_float * 32.0f;

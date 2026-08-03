@@ -52,7 +52,8 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004853c0(CGlassParticle *th
   local_40.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_40.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   local_40.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(0x01E57284,&local_40,(CVector3i *)0x0,0,3);
+  core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
+            (g_CDemonSet_PTR_005be368,&local_40,(CVector3i *)0x0,0,3);
   DAT_005c502c = (this_ptr->uv_u_per_vertex).x;
   _DAT_005c5030 = (this_ptr->uv_v_per_vertex).x;
   _DAT_005c505c = (this_ptr->uv_u_per_vertex).y;

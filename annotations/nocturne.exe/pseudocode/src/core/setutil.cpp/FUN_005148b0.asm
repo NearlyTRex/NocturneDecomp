@@ -15,10 +15,10 @@
 ;   TerminatedCString s_Ambient_set_low_by_scrip_00590d03
 ;   TerminatedCString s_Ambient_set_ridiculously_00590d1e
 ;   double DOUBLE_00590d41 = 0.25
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005be368
-;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01fa3fec
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CConsole g_CConsole_0077ad0c
+;   undefined4 g_CDemonSet_01e57284.min_ambient_value
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740
@@ -74,17 +74,17 @@ section .text
     PUSH EDX                            ; 0051491e
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 0051491f
         ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera * this_ptr, float intensity)
-    MOV EAX,[0x005be368]                ; 00514924 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00514924 | g_CDemonSet_PTR_005be368
     FLD float ptr [EBX + 0x144]         ; 00514929
     ADD ESP,0x8                         ; 0051492f
-    FCOMP float ptr [EAX + 0x14cd68]    ; 00514932 | DAT_01fa3fec
+    FCOMP float ptr [EAX + 0x14cd68]    ; 00514932 | g_CDemonSet_01e57284.min_ambient_value
     FNSTSW AX                           ; 00514938
     SAHF                                ; 0051493a
     JNC 0x00514951                      ; 0051493b
         ;   XREF to: 00514951 (CONDITIONAL_JUMP)  ; LAB_00514951
     PUSH 0x590d03                       ; 0051493d | = "Ambient set low by script\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00514942 | PTR_DAT_005ad350
-    PUSH EDX                            ; 00514948 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00514942 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00514948 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00514949
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 0051494e
@@ -101,8 +101,8 @@ section .text
     RET                                 ; 00514965
     PUSH 0x590d1e                       ; 00514966 | = "Ambient set ridiculously high\n"
         ;   Label: LAB_00514966
-    MOV ECX,dword ptr [0x005ad350]      ; 0051496b | PTR_DAT_005ad350
-    PUSH ECX                            ; 00514971 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 0051496b | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 00514971 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00514972
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 00514977

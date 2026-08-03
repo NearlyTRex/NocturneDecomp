@@ -33,10 +33,10 @@
 ;   double DOUBLE_0057a48a = 32
 ;   float FLOAT_0057a492 = 0.2000000
 ;   float FLOAT_0057a496 = 1.5
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fb1b10
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.active_fog.temperature
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -63,8 +63,8 @@ section .text
     CMP dword ptr [EBX + 0x2618],0x0    ; 0042abdc
     JZ 0x0042abfb                       ; 0042abe3
         ;   XREF to: 0042abfb (CONDITIONAL_JUMP)  ; LAB_0042abfb
-    MOV EAX,[0x005be368]                ; 0042abe5 | DAT_005be368
-    FLD float ptr [EAX + 0x15a88c]      ; 0042abea | DAT_01fb1b10
+    MOV EAX,[0x005be368]                ; 0042abe5 | g_CDemonSet_PTR_005be368
+    FLD float ptr [EAX + 0x15a88c]      ; 0042abea | g_CDemonSet_01e57284.active_fog.temperature
     FCOMP double ptr [0x0057a48a]       ; 0042abf0 | DOUBLE_0057a48a
     FNSTSW AX                           ; 0042abf6
     SAHF                                ; 0042abf8
@@ -146,8 +146,8 @@ section .text
     ADD ESP,0xc                         ; 0042acb6
     LEA EAX,[EBP + -0x18]               ; 0042acb9
     PUSH EAX                            ; 0042acbc
-    MOV EDI,dword ptr [0x005be368]      ; 0042acbd | DAT_005be368
-    PUSH EDI                            ; 0042acc3 | DAT_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 0042acbd | g_CDemonSet_PTR_005be368
+    PUSH EDI                            ; 0042acc3 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50 ; 0042acc4
         ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0042acc9
@@ -237,7 +237,7 @@ section .text
     LEA EAX,[EBP + -0x24]               ; 0042adb4
     PUSH 0x3f000000                     ; 0042adb7
     PUSH EAX                            ; 0042adbc
-    MOV EAX,[0x005b80f0]                ; 0042adbd | DAT_005b80f0
+    MOV EAX,[0x005b80f0]                ; 0042adbd | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 0042adc2
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 0042adc3
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

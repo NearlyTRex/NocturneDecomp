@@ -22,8 +22,8 @@ void engine_2d_c_FUN_00401010(void)
   
   iVar3 = wincore_wddvmem_cpp_FUN_00552b40(DAT_005b761c,DAT_005b7620);
   if (iVar3 == 0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x84;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x84;
     core_main_c_FUN_004c8440("No room for frame buffer.  Please run SETUP");
   }
   wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
@@ -37,8 +37,8 @@ void engine_2d_c_FUN_00401010(void)
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60
                      ("startup","font.ndx","rb");
   if (p_Var4 == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0xa1;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0xa1;
     core_main_c_FUN_004c8440("Unable to open font.ndx");
   }
   puVar5 = &DAT_006afabc;
@@ -50,15 +50,15 @@ void engine_2d_c_FUN_00401010(void)
   size = engine_dosio_cpp_getFileSize_FUN_004568c0("startup","font.bin");
   DAT_006afa38 = malloc(size);
   if (DAT_006afa38 == (void *)0x0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0xaa;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0xaa;
     core_main_c_FUN_004c8440("Unable to malloc font memory");
   }
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60
                      ("startup","font.bin","rb");
   if (p_Var4 == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0xac;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0xac;
     core_main_c_FUN_004c8440("Unable to open font.bin");
   }
   _fread(DAT_006afa38,size,1,p_Var4);

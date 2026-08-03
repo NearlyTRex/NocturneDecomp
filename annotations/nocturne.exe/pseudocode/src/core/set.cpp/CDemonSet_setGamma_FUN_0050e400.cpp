@@ -16,8 +16,7 @@ void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_0050e400(CDemonSet *this_ptr,in
   int iVar5;
   float local_18;
   
-  core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70
-            ((CDemonCamera *)&DAT_01fb8508,gamma);
+  core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(&g_CDemonCamera_01fb8508,gamma);
   local_18 = (float)gamma * (float)1.52587890625e-05;
   iVar2 = 0;
   iVar1 = 0;

@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDynamite_0057e4c6
-;   CVector3f CVector3f_01bca0c4
-;   undefined4 CVector3f_01bca0c4.y
-;   undefined4 CVector3f_01bca0c4.z
+;   CVector3f g_CVector3f_01bca0c4
+;   undefined4 g_CVector3f_01bca0c4.y
+;   undefined4 g_CVector3f_01bca0c4.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040d3f0
@@ -29,8 +29,8 @@ section .text
     MOV ECX,0xc2000000                  ; 0046eb80
     XOR EDX,EDX                         ; 0046eb85
     ADD ESP,0x18                        ; 0046eb87
-    MOV dword ptr [0x01bca0c4],EDX      ; 0046eb8a | CVector3f_01bca0c4
-    MOV dword ptr [0x01bca0c8],ECX      ; 0046eb90 | CVector3f_01bca0c4.y
-    MOV dword ptr [0x01bca0cc],EDX      ; 0046eb96 | CVector3f_01bca0c4.z
+    MOV dword ptr [0x01bca0c4],EDX      ; 0046eb8a | g_CVector3f_01bca0c4
+    MOV dword ptr [0x01bca0c8],ECX      ; 0046eb90 | g_CVector3f_01bca0c4.y
+    MOV dword ptr [0x01bca0cc],EDX      ; 0046eb96 | g_CVector3f_01bca0c4.z
     RET                                 ; 0046eb9c
 

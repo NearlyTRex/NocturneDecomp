@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -66,18 +66,6 @@
         "column": 21,
         "line": 21,
         "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'CBitFont *')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 22,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 22,
-        "message": "assigning to 'int' from incompatible type 'const char[22]'"
       },
       {
         "category": "undeclared_identifier",
@@ -105,7 +93,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 49,
+        "column": 66,
         "line": 35,
         "message": "use of undeclared identifier '_DAT_01bcd9bc'"
       },
@@ -114,6 +102,18 @@
         "column": 5,
         "line": 40,
         "message": "no matching function for call to 'shape_edittool_cpp_FUN_004722b0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 66,
+        "line": 41,
+        "message": "use of undeclared identifier '_DAT_01c00c58'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 80,
+        "line": 41,
+        "message": "use of undeclared identifier '_DAT_01c00c5c'"
       }
     ],
     "success": false,
@@ -261,9 +261,9 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "005b761c",
@@ -279,9 +279,9 @@
     },
     {
       "addr": "005bac64",
-      "name": "INT_005bac64",
-      "type": "int",
-      "value": "0x1cc30e4"
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
     },
     {
       "addr": "005c168c",
@@ -321,19 +321,19 @@
     },
     {
       "addr": "01cc30e4",
-      "name": "DAT_01cc30e4",
-      "type": "undefined4",
+      "name": "g_CKeys_01cc30e4",
+      "type": "CKeys",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -539,7 +539,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01BCD074,(DAT_005b761c << 2) / 5,_DAT_01bcd9bc,param_1,0);",
+      "text": "(g_CEditorTools_PTR_005b6d50,(DAT_005b761c << 2) / 5,_DAT_01bcd9bc,param_1,0);",
       "type": "unnamed_param"
     },
     {
@@ -547,7 +547,7 @@
       "line": 28,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "(0x01BCD074,(DAT_005b761c << 2) / 5,_DAT_01bcd9bc,param_1,0);",
+      "text": "(g_CEditorTools_PTR_005b6d50,(DAT_005b761c << 2) / 5,_DAT_01bcd9bc,param_1,0);",
       "type": "undefined_data"
     },
     {

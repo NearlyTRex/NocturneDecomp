@@ -183,7 +183,7 @@ section .text
     LEA EAX,[ESP + 0x68]                ; 00494b27
     FSTP float ptr [ESP]                ; 00494b2b
     PUSH EAX                            ; 00494b2e
-    MOV EBP,dword ptr [0x005b80f0]      ; 00494b2f | DAT_005b80f0
+    MOV EBP,dword ptr [0x005b80f0]      ; 00494b2f | g_CFireEffect_PTR_005b80f0
     PUSH EBP                            ; 00494b35
     INC EBX                             ; 00494b36
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00494b37
@@ -251,7 +251,7 @@ section .text
     PUSH 0x0                            ; 00494c03
     LEA EAX,[ESP + 0x64]                ; 00494c05
     PUSH EAX                            ; 00494c09
-    MOV ECX,dword ptr [0x005b80f0]      ; 00494c0a | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 00494c0a | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 00494c10
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 00494c11
         ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
@@ -398,8 +398,8 @@ section .text
         ;   Label: default
     MOV ECX,0x13e                       ; 00494d9d
     PUSH 0x581cfa                       ; 00494da2 | = "WTF!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00494da7 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00494dad | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00494da7 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00494dad | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00494db3
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00494db8

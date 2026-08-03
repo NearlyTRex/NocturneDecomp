@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005850b8 = 2
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; *****************************************************************************
 
@@ -20,9 +20,9 @@ section .text
 
     MOV ECX,dword ptr [ESP + 0x4]       ; 004af130
         ;   Label: core_gore.cpp_CBloodSplat_processAge_FUN_004af130
-    MOV EDX,dword ptr [0x005b9354]      ; 004af134 | DAT_005b9354
+    MOV EDX,dword ptr [0x005b9354]      ; 004af134 | g_CGame_PTR_005b9354
     LEA EAX,[ECX + 0x24]                ; 004af13a
-    FLD float ptr [EDX + 0x264]         ; 004af13d | DAT_01c77850
+    FLD float ptr [EDX + 0x264]         ; 004af13d | g_CGame_01c775ec.delta_time_float
     FADD float ptr [EAX]                ; 004af143
     FSTP float ptr [EAX]                ; 004af145
     FLD float ptr [ECX + 0x24]          ; 004af147

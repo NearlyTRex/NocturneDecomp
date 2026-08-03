@@ -28,6 +28,8 @@ void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(CSound *this_pt
   if (_DAT_02dc9c94 == 0) {
     return;
   }
-  _DAT_02dc9c90 = core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,0x01E57284,&DAT_02dc9c68);
+  _DAT_02dc9c90 =
+       core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSet_PTR_005be368,&DAT_02dc9c68)
+  ;
   return;
 }

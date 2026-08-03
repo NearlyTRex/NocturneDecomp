@@ -12,8 +12,8 @@
 ;   TerminatedCString s_fog_0057720a
 ;   TerminatedCString s_engine_2d_c_0057720e
 ;   TerminatedCString s_Unable_to_write_light_ta_0057721d
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -57,8 +57,8 @@ section .text
     MOV ECX,0x57720e                    ; 0040353f | = "..\\engine\\2d.c"
     MOV ESI,0x738                       ; 00403544
     PUSH 0x57721d                       ; 00403549 | = "Unable to write light tab"
-    MOV dword ptr [0x01cc4800],ECX      ; 0040354e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00403554 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0040354e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00403554 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040355a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040355f

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,7 +58,7 @@
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 18,
+        "line": 17,
         "message": "no matching function for call to 'core_script_cpp_FUN_004febd0'"
       }
     ],
@@ -68,15 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 10,
+    "complexity_score": 24,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 34
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -125,8 +127,8 @@
     },
     {
       "addr": "01e56da0",
-      "name": "DAT_01e56da0",
-      "type": "undefined4",
+      "name": "g_CScript_01e56da0",
+      "type": "CScript",
       "value": null
     }
   ],
@@ -203,5 +205,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 10,
+      "match": "0x1e56da0",
+      "severity": "moderate",
+      "text": "iVar1 = core_script_cpp_FUN_004febd0(0x01E56DA0,local_104,is_loading);",
+      "type": "raw_address_constant"
+    }
+  ]
 }

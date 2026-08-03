@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 57,
+        "line": 58,
         "message": "use of undeclared identifier '_DAT_01cea3f8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 134,
+        "line": 135,
         "message": "use of undeclared identifier '_DAT_01cea3fc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 148,
+        "line": 149,
         "message": "use of undeclared identifier '_DAT_01cea404'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 155,
+        "line": 156,
         "message": "use of undeclared identifier '_DAT_01cea3fc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 187,
+        "line": 188,
         "message": "use of undeclared identifier '_DAT_01cea3f8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 196,
+        "line": 197,
         "message": "use of undeclared identifier '_DAT_01cea3f8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 201,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_0077ad0c'?"
+        "line": 202,
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 209,
+        "line": 211,
         "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 211,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_0077ad0c'?"
+        "line": 213,
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 87,
-        "line": 224,
+        "line": 226,
         "message": "use of undeclared identifier '_DAT_01d06610'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1085,
-    "complexity_score": 694,
+    "complexity_score": 696,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 414,
+    "pseudocode_lines": 416,
     "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
@@ -139,7 +139,7 @@
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 1499
+    "total_lines": 1501
   },
   "cross_references": [
     {
@@ -315,13 +315,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -357,7 +357,7 @@
     },
     {
       "addr": "01cea538",
-      "name": "DAT_01cea538",
+      "name": "g_SChatHistory_ARRAY_01cea410[1].message_id",
       "type": "undefined4",
       "value": null
     },
@@ -715,7 +715,7 @@
         {
           "check_id": "objectIndex",
           "column": 17,
-          "line": 118,
+          "line": 119,
           "message": "The address of local variable 'uStack_77' might be accessed at non-zero index.",
           "severity": "warning"
         }
@@ -743,39 +743,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 116,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar9 * -8 + iVar5 * 0x78 + 0x40) =",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 117,
       "match": "(uint *)((int)local_28",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_28 + (uint)bVar9 * -8 + 9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 139,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar9 * -8 + iVar5 * 0x78 + 0x40) =",
+      "text": "*(uint *)((int)local_28 + (uint)bVar10 * -8 + 9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 140,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar5 * 0x78 + 0x40) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
       "match": "(uint *)((int)packet",
       "severity": "moderate",
-      "text": "*(uint *)((int)packet + (uint)bVar9 * -8 + 0x6d);",
+      "text": "*(uint *)((int)packet + (uint)bVar10 * -8 + 0x6d);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 222,
+      "line": 224,
       "match": "DAT_01d06618",
       "severity": "mild",
       "text": "while (*(uint *)(&DAT_01d06618 + iVar5) == (packet->player_announce).addr.ip_address) {",
@@ -783,7 +783,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 223,
+      "line": 225,
       "match": "DAT_01d0661c",
       "severity": "mild",
       "text": "(&DAT_01d0661c)[iVar5 + uVar2] = 1;",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 339,
+      "line": 341,
       "match": "DAT_02dd10c4",
       "severity": "mild",
       "text": "support_trisock_cpp_createNetworkAddr_FUN_00548d30(&local_34,(uint32_t *)&DAT_02dd10c4,0);",
@@ -799,47 +799,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 391,
-      "match": "(SPlayerInput *)((int)pSVar6",
+      "line": 393,
+      "match": "(SPlayerInput *)((int)pSVar7",
       "severity": "moderate",
-      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
+      "text": "pSVar7 = (SPlayerInput *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 412,
-      "match": "(SPlayerInput *)((int)pSVar6",
+      "line": 414,
+      "match": "(SPlayerInput *)((int)pSVar7",
       "severity": "moderate",
-      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
+      "text": "pSVar7 = (SPlayerInput *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Pointer value `local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
+      "line": 117,
       "match": "(int)local_28",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_28 + (uint)bVar9 * -8 + 9);",
+      "text": "*(uint *)((int)local_28 + (uint)bVar10 * -8 + 9);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 391,
-      "match": "(int)pSVar6",
+      "description": "Pointer value `pSVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 393,
+      "match": "(int)pSVar7",
       "severity": "moderate",
-      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
+      "text": "pSVar7 = (SPlayerInput *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 412,
-      "match": "(int)pSVar6",
+      "description": "Pointer value `pSVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 414,
+      "match": "(int)pSVar7",
       "severity": "moderate",
-      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
+      "text": "pSVar7 = (SPlayerInput *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -847,7 +847,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 90,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -855,7 +855,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 101,
+      "line": 102,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -863,7 +863,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 128,
+      "line": 129,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -871,7 +871,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 284,
+      "line": 286,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -879,7 +879,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 389,
+      "line": 391,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -887,7 +887,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 409,
+      "line": 411,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -895,7 +895,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 395,
+      "line": 397,
       "match": "local_18 = (T *)((local_18->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x13);",
@@ -919,10 +919,10 @@
     },
     {
       "description": "The address of local variable 'uStack_77' might be accessed at non-zero index.",
-      "line": 118,
+      "line": 119,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
-      "text": "(&uStack_77)[(uint)bVar9 * -2] = *(uint *)&source_addr[-(uint)bVar9].port;",
+      "text": "(&uStack_77)[(uint)bVar10 * -2] = *(uint *)&source_addr[-(uint)bVar10].port;",
       "type": "static_object_index"
     }
   ]

@@ -53,7 +53,7 @@ undefined4 CTrigger::processActionButton(int param_1);
 
 // Original: core_trigger.cpp_CTrigger_onLaserHit_FUN_00548530
 // Address: 00548530
-void CTrigger::onLaserHit(int param_1,int param_2);
+void CTrigger::onLaserHit(CDemonActor *param_1,SLaserInfo *param_2);
 
 // Original: core_trigger.cpp_CTrigger_onProjectileHit_FUN_00548580
 // Address: 00548580

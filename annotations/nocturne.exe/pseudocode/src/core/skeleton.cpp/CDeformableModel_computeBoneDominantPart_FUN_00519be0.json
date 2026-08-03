@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -60,18 +60,6 @@
         "column": 42,
         "line": 46,
         "message": "use of undeclared identifier 'FUN_0056497c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 52,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 52,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
       },
       {
         "category": "undeclared_identifier",
@@ -98,19 +86,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 210,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 125,
+    "pseudocode_lines": 124,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 389
+    "total_lines": 388
   },
   "cross_references": [
     {
@@ -195,13 +183,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -492,7 +480,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_3c` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_3c`. Replace those `local_3c->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 119,
+      "line": 118,
       "match": "local_3c = (T *)(local_3c->tri_count + CONST)",
       "severity": "moderate",
       "text": "local_3c = (CDeformableModel *)(local_3c->tri_count + 3);",

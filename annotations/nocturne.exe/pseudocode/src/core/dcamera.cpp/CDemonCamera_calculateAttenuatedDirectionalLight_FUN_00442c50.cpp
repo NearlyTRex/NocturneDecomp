@@ -22,9 +22,9 @@ int core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c
     iVar7 = 0xaaaa;
   }
   else {
-    fVar4 = (float)param_2->x * 0.00390625f - *(float *)((param_3->base).camera_name + 0xc4);
-    fVar5 = (float)param_2->y * 0.00390625f - *(float *)((param_3->base).camera_name + 200);
-    fVar6 = (float)param_2->z * 0.00390625f - *(float *)((param_3->base).camera_name + 0xcc);
+    fVar4 = (float)param_2->x * 0.00390625f - (param_3->base).position.x;
+    fVar5 = (float)param_2->y * 0.00390625f - (param_3->base).position.y;
+    fVar6 = (float)param_2->z * 0.00390625f - (param_3->base).position.z;
     fVar8 = (float)((int)CVector3f_01c70708.z -
                    ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));
     lVar1 = (longlong)(int)ROUND(fVar4 * fVar8 * 65536.0f) * (longlong)*param_4;

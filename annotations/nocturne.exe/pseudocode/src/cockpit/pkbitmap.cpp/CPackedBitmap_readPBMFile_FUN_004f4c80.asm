@@ -19,8 +19,8 @@
 ;   TerminatedCString s_Corrupt_data_detected_re_0058d2b0
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d2d3
 ;   TerminatedCString s_Out_of_memory_reading_PB_0058d2eb
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_FUN_004f3f50
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_004f4cca
     MOV ECX,0x4b1                       ; 004f4ccf
     PUSH 0x58d2b0                       ; 004f4cd4 | = "Corrupt data detected reading PBM."
-    MOV dword ptr [0x01cc4800],EDX      ; 004f4cd9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f4cdf | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004f4cd9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f4cdf | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f4ce5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4cea
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_004f4ced
     MOV EDI,0x4b2                       ; 004f4cf2
     PUSH 0x58d2eb                       ; 004f4cf7 | = "Out of memory reading PBM"
-    MOV dword ptr [0x01cc4800],ESI      ; 004f4cfc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f4d02 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004f4cfc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004f4d02 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f4d08
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     JMP 0x004f4c95                      ; 004f4d0d
@@ -94,8 +94,8 @@ section .text
         ;   Label: LAB_004f4d0f
     MOV EAX,0x4b0                       ; 004f4d14
     PUSH 0x58d26a                       ; 004f4d19 | = "IO error reading PBM (possibly corrup..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004f4d1e | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f4d24 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004f4d1e | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f4d24 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f4d29
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4d2e

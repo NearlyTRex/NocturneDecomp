@@ -9,30 +9,31 @@
 int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004d2c80(void)
 
 {
-  int iVar1;
+  EInputCodeType EVar1;
   int iVar2;
-  int iVar3;
+  EInputCodeType key_code;
+  EInputCodeType EVar3;
   
-  if (0x01C775EC->game_control == CONTROL_MODE_GAMEPAD) {
-    core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(0x01C775EC);
+  if (g_CGame_PTR_005b9354->game_control == CONTROL_MODE_GAMEPAD) {
+    core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGame_PTR_005b9354);
   }
-  iVar1 = 0;
-  iVar3 = -1;
+  EVar1 = 0;
+  EVar3 = 0xffffffff;
   while( true ) {
     while( true ) {
-      iVar2 = iVar1;
-      iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,iVar2);
-      if (iVar1 != 0) break;
-      iVar1 = iVar2 + 1;
-      if (599 < iVar2 + 1) {
-        return iVar3;
+      key_code = EVar1;
+      iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,key_code);
+      if (iVar2 != 0) break;
+      EVar1 = key_code + DIK_ESCAPE;
+      if (599 < (int)(key_code + DIK_ESCAPE)) {
+        return EVar3;
       }
     }
-    if (-1 < iVar3) break;
-    iVar1 = iVar2 + 1;
-    iVar3 = iVar2;
-    if (599 < iVar2 + 1) {
-      return iVar2;
+    if (-1 < (int)EVar3) break;
+    EVar1 = key_code + DIK_ESCAPE;
+    EVar3 = key_code;
+    if (599 < (int)(key_code + DIK_ESCAPE)) {
+      return key_code;
     }
   }
   return -2;

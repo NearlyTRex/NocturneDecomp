@@ -12,12 +12,12 @@
 ;   TerminatedCString s_gb_hit_1_6_wav_00582272
 ;   float FLOAT_00582282 = 50
 ;   float FLOAT_0059dcb4 = 0.5
-;   undefined4 DAT_005b9354
-;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c776ac
-;   undefined4 DAT_01c777bc
-;   undefined4 DAT_01c77818
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.hero_number
+;   undefined4 g_CGame_01c775ec.god_mode_enabled
+;   undefined4 g_CGame_01c775ec.allow_damage_flag
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -43,15 +43,15 @@ section .text
     TEST dword ptr [EBX + 0xbc8c],0x7fffffff ; 004996bf
     JNZ 0x00499817                      ; 004996c9
         ;   XREF to: 00499817 (CONDITIONAL_JUMP)  ; LAB_00499817
-    MOV EAX,[0x005b9354]                ; 004996cf | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004996cf | g_CGame_PTR_005b9354
         ;   Label: LAB_004996cf
-    CMP dword ptr [EAX + 0x1d0],0x0     ; 004996d4 | DAT_01c777bc
+    CMP dword ptr [EAX + 0x1d0],0x0     ; 004996d4 | g_CGame_01c775ec.god_mode_enabled
     JZ 0x004996e4                       ; 004996db
         ;   XREF to: 004996e4 (CONDITIONAL_JUMP)  ; LAB_004996e4
     MOV dword ptr [ESI + 0x4],0x0       ; 004996dd
-    MOV EAX,[0x005b9354]                ; 004996e4 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004996e4 | g_CGame_PTR_005b9354
         ;   Label: LAB_004996e4
-    MOV EDI,dword ptr [EAX + 0x22c]     ; 004996e9 | DAT_01c77818
+    MOV EDI,dword ptr [EAX + 0x22c]     ; 004996e9 | g_CGame_01c775ec.allow_damage_flag
     TEST EDI,EDI                        ; 004996ef
     JZ 0x00499823                       ; 004996f1
         ;   XREF to: 00499823 (CONDITIONAL_JUMP)  ; LAB_00499823
@@ -105,8 +105,8 @@ section .text
     PUSH EAX                            ; 00499794
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00499795
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
-    MOV EAX,[0x005b9354]                ; 0049979a | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0xc0]      ; 0049979f | DAT_01c776ac
+    MOV EAX,[0x005b9354]                ; 0049979a | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0xc0]      ; 0049979f | g_CGame_01c775ec.hero_number
     ADD ESP,0xc                         ; 004997a5
     CMP ECX,0x2                         ; 004997a8
     JZ 0x004997dd                       ; 004997ab
@@ -130,7 +130,7 @@ section .text
     PUSH 0x42480000                     ; 004997df
     PUSH 0x32                           ; 004997e4
     PUSH EBX                            ; 004997e6
-    MOV EDI,dword ptr [0x005b96c4]      ; 004997e7 | INT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 004997e7 | g_CGore_PTR_005b96c4
     PUSH EDI                            ; 004997ed
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 004997ee
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
@@ -173,9 +173,9 @@ section .text
     CMP dword ptr [EBX + 0x1fa14],0x0   ; 00499837
     JZ 0x00499883                       ; 0049983e
         ;   XREF to: 00499883 (CONDITIONAL_JUMP)  ; LAB_00499883
-    MOV EAX,[0x005b9354]                ; 00499840 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00499840 | g_CGame_PTR_005b9354
         ;   Label: LAB_00499840
-    CMP dword ptr [EAX + 0xc0],0x2      ; 00499845 | DAT_01c776ac
+    CMP dword ptr [EAX + 0xc0],0x2      ; 00499845 | g_CGame_01c775ec.hero_number
     JZ 0x004997f6                       ; 0049984c
         ;   XREF to: 004997f6 (CONDITIONAL_JUMP)  ; LAB_004997f6
     PUSH 0x3ecccccd                     ; 0049984e
@@ -203,9 +203,9 @@ section .text
     ADD ESP,0xc                         ; 0049988d
     JMP 0x00499840                      ; 00499890
         ;   XREF to: 00499840 (UNCONDITIONAL_JUMP)  ; LAB_00499840
-    MOV EAX,[0x005b9354]                ; 00499892 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00499892 | g_CGame_PTR_005b9354
         ;   Label: LAB_00499892
-    PUSH EAX                            ; 00499897 | DAT_01c775ec
+    PUSH EAX                            ; 00499897 | g_CGame_01c775ec
     CALL core_game.cpp_FUN_004a3a90     ; 00499898
         ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3a90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0049989d

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,24 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 7,
-        "line": 32,
-        "message": "indirection requires pointer operand ('int' invalid)"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 33,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 33,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
       },
       {
         "category": "undeclared_identifier",
@@ -114,6 +96,24 @@
         "column": 3,
         "line": 58,
         "message": "use of undeclared identifier '_DAT_01cc90a8'; did you mean 'DAT_005c50a8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 60,
+        "message": "use of undeclared identifier '_DAT_01cc90ac'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 62,
+        "message": "use of undeclared identifier '_DAT_01cc90b0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 64,
+        "message": "use of undeclared identifier '_DAT_01cc90b4'; did you mean 'DAT_005c50b4'?"
       }
     ],
     "success": false,
@@ -370,9 +370,9 @@
     },
     {
       "addr": "005bdee0",
-      "name": "DAT_005bdee0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CNetGame_PTR_005bdee0",
+      "type": "CNetGame*",
+      "value": "01cea280"
     },
     {
       "addr": "01bcdef4",
@@ -388,13 +388,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -502,8 +502,8 @@
     },
     {
       "addr": "01cea280",
-      "name": "DAT_01cea280",
-      "type": "undefined4",
+      "name": "g_CNetGame_01cea280",
+      "type": "CNetGame",
       "value": null
     }
   ],

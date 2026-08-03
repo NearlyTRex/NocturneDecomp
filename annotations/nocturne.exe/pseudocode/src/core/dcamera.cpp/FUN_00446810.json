@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -110,10 +110,10 @@
         "message": "format specifies type 'char *' but the argument has type 'CDemonCamera *' [-Werror,-Wformat]"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "incompatible_types",
         "column": 5,
-        "line": 72,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
+        "line": 74,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 450,
-    "complexity_score": 382,
+    "complexity_score": 381,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 202,
+    "pseudocode_lines": 201,
     "suspect_count": 16,
     "suspect_types": [
       "raw_address_constant",
@@ -135,7 +135,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 652
+    "total_lines": 651
   },
   "cross_references": [
     {
@@ -420,13 +420,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -711,14 +711,14 @@
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 194,
+          "line": 193,
           "message": "Uninitialized variable: iStack_120",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 17,
-          "line": 101,
+          "line": 100,
           "message": "Uninitialized variable: unaff_EDI",
           "severity": "error"
         }
@@ -746,7 +746,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 94,
+      "line": 93,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (1 < unaff_EDI->display_height) {",
@@ -754,7 +754,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 99,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "puVar4 = &DAT_012ceb78 + local_40;",
@@ -762,7 +762,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 103,
+      "line": 102,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (1 < unaff_EDI->display_width) {",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 121,
+      "line": 120,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (iVar10 < unaff_EDI->display_width);",
@@ -778,7 +778,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 127,
+      "line": 126,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (local_34 < unaff_EDI->display_height);",
@@ -786,7 +786,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 129,
+      "line": 128,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(unaff_EDI,local_20);",
@@ -794,7 +794,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 131,
+      "line": 130,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (0 < unaff_EDI->display_height) {",
@@ -802,7 +802,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 140,
+      "line": 139,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (0 < unaff_EDI->display_width) {",
@@ -810,7 +810,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 156,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "(&DAT_012ceb78)[iVar6] = (char)iVar2;",
@@ -818,7 +818,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 167,
+      "line": 166,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (iVar11 < unaff_EDI->display_width);",
@@ -826,7 +826,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 172,
+      "line": 171,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (local_38 < unaff_EDI->display_height);",
@@ -834,7 +834,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 175,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "((CCodec *)auStack_a0,&DAT_012ceb78,&local_58,(_ostream *)auStack_13c);",
@@ -850,7 +850,7 @@
     },
     {
       "description": "Raw hex address 0x4469b4 assigned to bare local `iVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 81,
+      "line": 80,
       "match": "0x4469b4",
       "severity": "moderate",
       "text": "iVar10 = 0x4469b4;",
@@ -866,7 +866,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_120",
-      "line": 194,
+      "line": 193,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (iStack_120 != 0) {",
@@ -874,7 +874,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_EDI",
-      "line": 101,
+      "line": 100,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (1 < unaff_EDI->display_height) {",

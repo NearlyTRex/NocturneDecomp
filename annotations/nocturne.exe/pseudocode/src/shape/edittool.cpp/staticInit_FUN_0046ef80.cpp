@@ -9,7 +9,7 @@
 void __cdecl shape_edittool_cpp_staticInit_FUN_0046ef80(void)
 
 {
-  shape_edittool_cpp_CEditorTools_ctor_FUN_0046f9f0((CEditorTools *)&DAT_01bcd074);
+  shape_edittool_cpp_CEditorTools_ctor_FUN_0046f9f0(&g_CEditorTools_01bcd074);
   _atexit(&g_WatcomStaticDestructorNode_005b6d40);
   return;
 }

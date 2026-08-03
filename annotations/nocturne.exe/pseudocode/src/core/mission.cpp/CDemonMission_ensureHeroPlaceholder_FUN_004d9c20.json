@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,40 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 26,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fe60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 29,
-        "message": "no matching function for call to 'shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 35,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 28,
-        "line": 35,
-        "message": "assigning to 'int' from incompatible type 'const char[20]'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 45,
-        "line": 39,
+        "line": 40,
         "message": "use of undeclared identifier 'FUN_0056497c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 58,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fe60'"
       }
     ],
     "success": false,
@@ -98,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 189,
-    "complexity_score": 92,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 69,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 256
+    "total_lines": 258
   },
   "cross_references": [
     {
@@ -246,9 +216,9 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "01cae160",
@@ -258,13 +228,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -346,13 +316,6 @@
         {
           "check_id": "nullPointer",
           "column": 11,
-          "line": 44,
-          "message": "Possible null pointer dereference: actor",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointer",
-          "column": 12,
           "line": 45,
           "message": "Possible null pointer dereference: actor",
           "severity": "warning"
@@ -374,7 +337,14 @@
         {
           "check_id": "nullPointer",
           "column": 12,
-          "line": 49,
+          "line": 48,
+          "message": "Possible null pointer dereference: actor",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointer",
+          "column": 12,
+          "line": 50,
           "message": "Possible null pointer dereference: actor",
           "severity": "warning"
         }
@@ -386,7 +356,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 38,
+      "line": 39,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(actor->base).location.position.x = (pCVar3->location).position.x;",
@@ -394,7 +364,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 44,
+      "line": 45,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar4->vec).x = (pCVar3->orient).vec.x;",
@@ -402,7 +372,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 44,
+      "line": 45,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "actor->index = 0;",
@@ -410,7 +380,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 45,
+      "line": 46,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "(actor->base).location.position.x = (pCVar3->location).position.x;",
@@ -418,7 +388,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 46,
+      "line": 47,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "(actor->base).location.position.y = (pCVar3->location).position.y;",
@@ -426,7 +396,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 47,
+      "line": 48,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "(actor->base).location.position.z = (pCVar3->location).position.z;",
@@ -434,7 +404,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 49,
+      "line": 50,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "(actor->base).location.area_id = (pCVar3->location).area_id;",

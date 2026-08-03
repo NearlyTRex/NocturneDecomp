@@ -260,7 +260,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
     else {
       iVar7 = _stricmp(local_150,"hasItem");
       if (iVar7 == 0) {
-        if (*0x01CEA280 != 0) {
+        if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
           pcVar17 = "Can't use hasItem condition in multi-player";
           pcVar18 = &DAT_01c08b60;
           do {
@@ -417,7 +417,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
         }
         iVar7 = _stricmp(local_150,"hasKeyMask");
         if (iVar7 == 0) {
-          if (*0x01CEA280 != 0) {
+          if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
             pcVar17 = "Can't use hasKeyMask condition in multi-player";
             pcVar18 = &DAT_01c08b60;
             do {
@@ -575,11 +575,11 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
               return -1;
             }
             local_dc = 0;
-            if ((-1 < (int)0x01E57284->renderable_actors[0x773]) &&
+            if ((-1 < g_CDemonSet_PTR_005be368->selected_camera_index) &&
                (iVar7 = _stricmp
-                                  (0x01E57284->cameras[0].name +
-                                   (int)0x01E57284->renderable_actors[0x773] * 0x1a0,local_858),
-               iVar7 == 0)) {
+                                  (g_CDemonSet_PTR_005be368->cameras
+                                   [g_CDemonSet_PTR_005be368->selected_camera_index].name,local_858)
+               , iVar7 == 0)) {
               local_dc = 1;
             }
             *parse_position = *parse_position + local_94;
@@ -628,7 +628,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
             if (iVar7 == 0) {
               local_8c = -1;
               sscanf(expression + *parse_position," ( )%n");
-              this_ptr_00 = 0x01C775EC;
+              this_ptr_00 = g_CGame_PTR_005b9354;
               if (local_8c < 2) {
                 pcVar17 = "Error parsing isFadeFinished function.";
                 pcVar18 = &DAT_01c08b60;
@@ -992,7 +992,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                     return -1;
                   }
                   core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
-                            (0x01E57284,local_920,&local_4c,&local_48);
+                            (g_CDemonSet_PTR_005be368,local_920,&local_4c,&local_48);
                   if (local_4c == (C3DSLight *)0x0) {
                     _sprintf(local_a84,"Spotlight %s doesn't exist.",local_920);
                     pcVar17 = local_a84;
@@ -1034,7 +1034,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                       } while (cVar1 != '\0');
                       return -1;
                     }
-                    local_dc = (uint)(0x01C775EC->nudity_flag != 0);
+                    local_dc = (uint)(g_CGame_PTR_005b9354->nudity_flag != 0);
                     *parse_position = *parse_position + local_44;
                   }
                   else {
@@ -1161,9 +1161,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                               if (local_b4 != 0x0FFFFFFF) {
                                 local_34 = &(local_b4->base).base.location;
                                 local_14 = 0;
-                                for (iVar7 = 0; iVar7 < (int)0x01E57284->characters[0x6d6];
+                                for (iVar7 = 0; iVar7 < g_CDemonSet_PTR_005be368->enemy_count;
                                     iVar7 = iVar7 + 1) {
-                                  iVar8 = *(int *)((int)0x01E57284->characters + local_14 + 0x1b5c
+                                  iVar8 = *(int *)((int)g_CDemonSet_PTR_005be368->enemies + local_14
                                                   );
                                   if ((((local_b4 == *(CHero **)(iVar8 + 0xbca4)) &&
                                        (iVar9 = (**(code **)(*(int *)(iVar8 + 0x14c) + 0x104))
@@ -1536,8 +1536,8 @@ switchD_0047e565_caseD_5:
       break;
     default:
 switchD_0047e565_default:
-      PTR_01cc4800 = "..\\core\\event.cpp";
-      INT_01cc4804 = 0x765;
+      g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+      g_INT_01cc4804 = 0x765;
       core_main_c_FUN_004c8440("Hell froze.");
     }
 LAB_0047e580:

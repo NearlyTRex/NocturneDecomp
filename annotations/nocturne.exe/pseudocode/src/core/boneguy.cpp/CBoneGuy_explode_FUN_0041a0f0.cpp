@@ -38,15 +38,15 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(CBoneGuy *this_ptr)
   this_ptr->recombine_interpolation = 0.0;
   local_24 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
                        (&(this_ptr->base).base.model);
-  iVar2 = local_24->texture_sets[0].textures[0x28].textures[0].base.type;
+  iVar2 = local_24->num_parts;
   this_ptr->box_count = iVar2;
   if (0x14 < iVar2) {
-    PTR_01cc4800 = "..\\core\\boneguy.cpp";
-    INT_01cc4804 = 0x443;
+    g_CHAR_PTR_01cc4800 = "..\\core\\boneguy.cpp";
+    g_INT_01cc4804 = 0x443;
     core_main_c_FUN_004c8440("CBoneGuy::explode - Not enough containers");
   }
   local_18 = 0;
-  if (0 < local_24->texture_sets[0].textures[0x28].textures[0].base.type) {
+  if (0 < local_24->num_parts) {
     local_20 = this_ptr->boxes;
     local_2c = &(this_ptr->base).base.base.orient;
     local_28 = &(this_ptr->base).base.base.location.position;
@@ -93,7 +93,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(CBoneGuy *this_ptr)
             ((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +
             ((uint)bVar9 * -2 + 1) * 4);
       local_1c = pCVar4;
-    } while (local_18 < local_24->texture_sets[0].textures[0x28].textures[0].base.type);
+    } while (local_18 < local_24->num_parts);
   }
   (*((this_ptr->base).base.base.vtable._ub)->playSound)
             ((CDemonActor *)this_ptr,"boneguy-fallapart.wav");

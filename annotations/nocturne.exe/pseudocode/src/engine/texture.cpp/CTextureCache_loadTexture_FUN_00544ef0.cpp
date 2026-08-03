@@ -52,8 +52,8 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCa
     }
   }
   _sprintf(local_114,"CTextureCache::load - Bad texture length : %s,%d",texture_name,local_14);
-  INT_01cc4804 = 0xf3;
-  PTR_01cc4800 = "..\\engine\\texture.cpp";
+  g_INT_01cc4804 = 0xf3;
+  g_CHAR_PTR_01cc4800 = "..\\engine\\texture.cpp";
   core_main_c_FUN_004c8440(local_114);
 LAB_00544f38:
   pcVar11 = local_114;
@@ -81,8 +81,8 @@ LAB_00544f38:
   pcVar7 = (char *)0x0;
 LAB_00544f77:
   if (pcVar7 == (char *)0x0) {
-    PTR_01cc4800 = "..\\engine\\texture.cpp";
-    INT_01cc4804 = 0xfa;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\texture.cpp";
+    g_INT_01cc4804 = 0xfa;
     core_main_c_FUN_004c8440("CTextureCache::load - Can't find extension");
   }
   _sprintf(pcVar7,".act");
@@ -134,8 +134,8 @@ LAB_00544f77:
     cache->texture_data_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] = puVar4;
     pcVar11 = local_114;
     if (cache->texture_data_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] == (uchar *)0x0) {
-      PTR_01cc4800 = "..\\engine\\texture.cpp";
-      INT_01cc4804 = 0x115;
+      g_CHAR_PTR_01cc4800 = "..\\engine\\texture.cpp";
+      g_INT_01cc4804 = 0x115;
       core_main_c_FUN_004c8440("CTextureCache::load - Out of memory.  Heap is probably trashed or you're out of VM");
       pcVar11 = local_114;
     }

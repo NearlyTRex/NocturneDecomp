@@ -11,8 +11,8 @@ void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00474010(CStrList *this_ptr,in
 {
   if (sort_type < sort_order) {
     if ((sort_type < 0) || (this_ptr->item_count <= sort_order)) {
-      PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      INT_01cc4804 = 0xa32;
+      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+      g_INT_01cc4804 = 0xa32;
       core_main_c_FUN_004c8440("CStrList::sort - invalid range!");
     }
     _qsort

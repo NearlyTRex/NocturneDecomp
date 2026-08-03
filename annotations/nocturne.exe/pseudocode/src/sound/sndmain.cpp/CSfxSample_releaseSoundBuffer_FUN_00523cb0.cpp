@@ -11,13 +11,14 @@
 void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample *sample)
 
 {
-  if (sample->ref_count != 0) {
-    if ((sample->loop_endpoints[2] != 0) && (_DAT_02dc8318 != (int *)0x0)) {
+  if (sample->locked_length != 0) {
+    if ((sample->buffer_id != 0) && (_DAT_02dc8318 != (int *)0x0)) {
       (**(code **)(*_DAT_02dc8318 + 0x38))
-                (_DAT_02dc8318,sample->loop_endpoints[2],sample->taken,sample->ref_count,sample);
+                (_DAT_02dc8318,sample->buffer_id,sample->locked_offset,sample->locked_length,sample)
+      ;
     }
-    sample->ref_count = 0;
-    sample->taken = 0;
+    sample->locked_length = 0;
+    sample->locked_offset = 0;
   }
   return;
 }

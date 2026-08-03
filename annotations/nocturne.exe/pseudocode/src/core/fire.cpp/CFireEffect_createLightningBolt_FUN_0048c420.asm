@@ -16,9 +16,9 @@
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 at 00554f0a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01c6750c
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_fire.cpp_CLightningBolt_activate_FUN_00488b10
@@ -70,9 +70,9 @@ section .text
         ;   Label: LAB_0048c481
     PUSH 0x0                            ; 0048c486
     PUSH 0x0                            ; 0048c488
-    MOV EBP,dword ptr [0x005be368]      ; 0048c48a | DAT_005be368
+    MOV EBP,dword ptr [0x005be368]      ; 0048c48a | g_CDemonSet_PTR_005be368
     PUSH 0x42c80000                     ; 0048c490
-    PUSH EBP                            ; 0048c495 | DAT_01e57284
+    PUSH EBP                            ; 0048c495 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050e660      ; 0048c496
         ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
     ADD ESP,0x14                        ; 0048c49b

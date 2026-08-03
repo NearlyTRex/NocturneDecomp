@@ -1,17 +1,15 @@
 // Name: core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0
 // Address: 0040d9f0
 // Address Range: [[0040d9f0, 0040db08]]
-// Convention: unknown
-// Signature: int core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *param_1,CVector3f *param_2,float param_3)
+// Convention: __cdecl
+// Signature: int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *this_ptr,CVector3f *location,float volume)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *param_1,CVector3f *param_2,float param_3)
+int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *this_ptr,CVector3f *location,float volume)
 
 {
-  int iVar1;
+  uint uVar1;
   EGroundType ground_type;
   CVector3f local_34;
   float local_28;
@@ -21,28 +19,31 @@ int core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *param
   float local_18;
   float local_8;
   
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&local_34,param_2);
-  local_28 = _DAT_01fb860c;
-  local_24 = _DAT_01fb8610;
-  local_20 = _DAT_01fb8614;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(this_ptr,&local_34,location);
+  local_28 = g_CDemonCamera_01fb8508.position.x;
+  local_24 = g_CDemonCamera_01fb8508.position.y;
+  local_20 = g_CDemonCamera_01fb8508.position.z;
   if (10000.0f <
-      (local_34.z - _DAT_01fb8614) * (local_34.z - _DAT_01fb8614) +
-      (local_34.y - _DAT_01fb8610) * (local_34.y - _DAT_01fb8610) +
-      (local_34.x - _DAT_01fb860c) * (local_34.x - _DAT_01fb860c)) {
+      (local_34.z - g_CDemonCamera_01fb8508.position.z) *
+      (local_34.z - g_CDemonCamera_01fb8508.position.z) +
+      (local_34.y - g_CDemonCamera_01fb8508.position.y) *
+      (local_34.y - g_CDemonCamera_01fb8508.position.y) +
+      (local_34.x - g_CDemonCamera_01fb8508.position.x) *
+      (local_34.x - g_CDemonCamera_01fb8508.position.x)) {
     return 0;
   }
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,this_ptr);
   local_1c = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                       (0x01E57284,&local_34,0.0);
-  ground_type = *(EGroundType *)(0x01E57284->lights[199].filter_names[0x13] + 8);
+                       (g_CDemonSet_PTR_005be368,&local_34,0.0);
+  ground_type = g_CDemonSet_PTR_005be368->ground_type;
   local_8 = local_1c;
   local_18 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                       (0x01E57284,&(param_1->location).position,0.0);
+                       (g_CDemonSet_PTR_005be368,&(this_ptr->location).position,0.0);
   local_8 = local_18;
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   if (local_1c < local_18 + (float)-1) {
-    ground_type = *(EGroundType *)(0x01E57284->lights[199].filter_names[0x13] + 8);
+    ground_type = g_CDemonSet_PTR_005be368->ground_type;
   }
-  iVar1 = (*((param_1->vtable)._ub)->handleFootstep)(param_1,&local_34,ground_type,param_3);
-  return iVar1;
+  uVar1 = (*((this_ptr->vtable)._ub)->handleFootstep)(this_ptr,&local_34,ground_type,volume);
+  return uVar1;
 }

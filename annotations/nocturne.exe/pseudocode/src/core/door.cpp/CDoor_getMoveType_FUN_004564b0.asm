@@ -18,10 +18,10 @@
 ;   TerminatedCString s_The_door_is_locked_from_0057d255
 ;   TerminatedCString s_core_door_cpp_0057d27d
 ;   TerminatedCString s_CDoor_getMoveType_invali_0057d28e
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c775ec
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame g_CGame_01c775ec
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
@@ -75,8 +75,8 @@ section .text
     ADD ESP,0x4                         ; 0045650b
     PUSH 0x40a00000                     ; 0045650e
     PUSH ESI                            ; 00456513
-    MOV EAX,[0x005b9354]                ; 00456514 | DAT_005b9354
-    PUSH EAX                            ; 00456519 | DAT_01c775ec
+    MOV EAX,[0x005b9354]                ; 00456514 | g_CGame_PTR_005b9354
+    PUSH EAX                            ; 00456519 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 0045651a
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 0045651f
@@ -100,8 +100,8 @@ section .text
     ADD ESP,0x4                         ; 00456546
     PUSH 0x40a00000                     ; 00456549
     PUSH ESI                            ; 0045654e
-    MOV ECX,dword ptr [0x005b9354]      ; 0045654f | DAT_005b9354
-    PUSH ECX                            ; 00456555 | DAT_01c775ec
+    MOV ECX,dword ptr [0x005b9354]      ; 0045654f | g_CGame_PTR_005b9354
+    PUSH ECX                            ; 00456555 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 00456556
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 0045655b
@@ -207,8 +207,8 @@ section .text
         ;   Label: default
     MOV ESI,0x39e                       ; 00456617
     PUSH 0x57d28e                       ; 0045661c | = "CDoor::getMoveType - invalid door!"
-    MOV dword ptr [0x01cc4800],EBX      ; 00456621 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00456627 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 00456621 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00456627 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045662d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00456632

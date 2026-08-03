@@ -30,20 +30,20 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
   local_c = local_28.z;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (DAT_005ae704,&local_28,(CVector3f *)0x0);
-  *(uint *)(0x01E57284 + 0x15a898) = 1;
+  g_CDemonSet_PTR_005be368->lighting_quality_mode = 1;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
   uVar1 = rand();
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (DAT_005ae704,(uVar1 & 0x3fff) + 0x1800);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-            ((CKeyFramedModelInstance *)0x1c09338,0.0,99);
+            (&g_CKeyFramedModelInstance_01c09338,0.0,99);
   local_1c.x = 0.0;
   local_1c.y = 0.0;
   local_1c.z = 1.5707964;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (DAT_005ae704,&local_1c,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-            ((CKeyFramedModelInstance *)0x1c09338,0.0,99);
+            (&g_CKeyFramedModelInstance_01c09338,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   local_34.x = 0.0;
   local_34.y = 0.0;
@@ -51,9 +51,9 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (DAT_005ae704,&local_34,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-            ((CKeyFramedModelInstance *)0x1c09338,0.0,99);
+            (&g_CKeyFramedModelInstance_01c09338,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-  *(uint *)(0x01E57284 + 0x15a898) = 0;
+  g_CDemonSet_PTR_005be368->lighting_quality_mode = 0;
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);

@@ -35,7 +35,7 @@ void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005be680);
-  if (*(int *)(0x01C775EC + 500) == 2) {
+  if (g_CGame_PTR_005b9354->render_mode == 2) {
     alpha = DAT_005b763c << 8;
   }
   else {
@@ -62,7 +62,7 @@ void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data
       SStack_118.vertices[0].texture_v = (uint)face_data->v_coord_0 << 8;
       SStack_118.vertices[1].texture_v = (uint)face_data->v_coord_1 << 8;
       SStack_118.vertices[2].texture_v = (uint)face_data->v_coord_2 << 8;
-      if (this_ptr->renderable_actors[0x76b] != (CDemonActor *)0x0) {
+      if (this_ptr->skip_normal_normalization != 0) {
         engine_keyframe_c_calculateSurfaceNormal_FUN_004c3920
                   ((CVector3i *)0x200b130,(SMRGLPrimitiveTriangle *)&SStack_118);
       }
@@ -72,7 +72,7 @@ void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data
         local_14 = 0;
         do {
           iVar4 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_1c) * 0xc;
-          if ((((this_ptr->renderable_actors[0x76b] == (CDemonActor *)0x0) ||
+          if ((((this_ptr->skip_normal_normalization == 0) ||
                (1.0 <= ABS(*(float *)(&DAT_02045ab0 + iVar4)))) ||
               (1.0 <= ABS(*(float *)(&DAT_02045ab4 + iVar4)))) ||
              (1.0 <= ABS(*(float *)(&DAT_02045ab8 + iVar4)))) {
@@ -136,7 +136,7 @@ void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data
           iVar5 = iVar5 + 0xc;
         } while (iVar4 < SStack_118.base.base.count);
       }
-      if (this_ptr->renderable_actors[0x76b] != (CDemonActor *)0x0) {
+      if (this_ptr->skip_normal_normalization != 0) {
         SStack_118.base.surface_normal.C.i = 0;
         SStack_118.base.surface_normal.B.i = 0;
         SStack_118.base.surface_normal.A.i = 0;

@@ -26,16 +26,16 @@ void cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0(CPackedBit
   local_18 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_2,"rb");
   if (local_18 == (_FILE *)0x0) {
     _sprintf(local_1a8,"Unable to open %s in CPackedBitmapSet::loadJoinedRAW",param_2);
-    PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
-    INT_01cc4804 = 0xb9;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01cc4804 = 0xb9;
     core_main_c_FUN_004c8440(local_1a8);
   }
   local_14 = param_3 * param_4;
   iVar3 = iVar2 / (int)local_14;
   if (local_14 * iVar3 - iVar2 != 0) {
     _sprintf(local_144,"Size of %s is %lu, must be a multiple of frame size %ux%u in CPackedBitmapSet::loadJoinedRAW",param_2,iVar2,param_3,param_4);
-    INT_01cc4804 = 0xc6;
-    PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01cc4804 = 0xc6;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_FUN_004c8440(local_144);
   }
   cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(param_1,iVar3);
@@ -45,8 +45,8 @@ void cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0(CPackedBit
   buffer = malloc(local_14);
   if (buffer == (void *)0x0) {
     _sprintf(local_e0,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",uVar1);
-    PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
-    INT_01cc4804 = 0xd7;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01cc4804 = 0xd7;
     core_main_c_FUN_004c8440(local_e0);
   }
   iVar2 = 0;
@@ -56,8 +56,8 @@ void cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0(CPackedBit
       SVar4 = _fread(buffer,local_14,1,local_18);
       if (SVar4 != 1) {
         _sprintf(local_7c,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",param_2);
-        PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
-        INT_01cc4804 = 0xe1;
+        g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
+        g_INT_01cc4804 = 0xe1;
         core_main_c_FUN_004c8440(local_7c);
       }
       iVar2 = iVar2 + 1;

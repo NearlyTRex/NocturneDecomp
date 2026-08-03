@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,36 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 43,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 98,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 100,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 104,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 108,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
       }
     ],
     "success": false,
@@ -92,16 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 289,
-    "complexity_score": 194,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 119,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "preinc_loop_idiom",
-      "raw_address_constant",
       "unrolled_memcpy"
     ],
     "total_lines": 408
@@ -158,14 +127,14 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -443,38 +412,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 36,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 93,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 97,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 101,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 30,

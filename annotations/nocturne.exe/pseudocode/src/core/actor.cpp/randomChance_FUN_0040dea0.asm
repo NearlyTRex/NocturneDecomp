@@ -25,8 +25,8 @@
 ; Referenced Globals:
 ;   float FLOAT_00578061 = 0.00003051851
 ;   float FLOAT_00578065 = 5.960465E-8
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77828
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.is_processing
 ;
 ; Called Functions:
 ;   core_actor.cpp_generateRandomValue_FUN_0040dd30
@@ -38,8 +38,8 @@ section .text
 
     SUB ESP,0x8                         ; 0040dea0
         ;   Label: core_actor.cpp_randomChance_FUN_0040dea0
-    MOV EAX,[0x005b9354]                ; 0040dea3 | DAT_005b9354
-    CMP dword ptr [EAX + 0x23c],0x0     ; 0040dea8 | DAT_01c77828
+    MOV EAX,[0x005b9354]                ; 0040dea3 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x23c],0x0     ; 0040dea8 | g_CGame_01c775ec.is_processing
     JZ 0x0040dedd                       ; 0040deaf
         ;   XREF to: 0040dedd (CONDITIONAL_JUMP)  ; LAB_0040dedd
     CALL core_actor.cpp_generateRandomValue_FUN_0040dd30 ; 0040deb1

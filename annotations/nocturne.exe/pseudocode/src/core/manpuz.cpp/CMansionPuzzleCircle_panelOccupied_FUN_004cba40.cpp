@@ -12,8 +12,8 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(CMan
   int iVar1;
   
   if ((panel_index < 0) || (0xb < panel_index)) {
-    PTR_01cc4800 = "..\\core\\manpuz.cpp";
-    INT_01cc4804 = 0x5e6;
+    g_CHAR_PTR_01cc4800 = "..\\core\\manpuz.cpp";
+    g_INT_01cc4804 = 0x5e6;
     core_main_c_FUN_004c8440("CMansionPuzzleCircle::panelOccupied - invalid index: %d",panel_index);
   }
   if (this_ptr->panels[panel_index].exists == 0) {

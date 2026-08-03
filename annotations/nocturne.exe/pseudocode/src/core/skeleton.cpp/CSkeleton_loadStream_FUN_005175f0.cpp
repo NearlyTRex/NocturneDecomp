@@ -29,15 +29,15 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton *this
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   _fscanf(file_handle,"%d\n");
-  PTR_01cc4800 = "..\\core\\skeleton.cpp";
-  INT_01cc4804 = 0x10d;
+  g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+  g_INT_01cc4804 = 0x10d;
   core_main_c_FUN_004c8440("Invalid skeleton version");
-  PTR_01cc4800 = "..\\core\\skeleton.cpp";
-  INT_01cc4804 = 0x10e;
+  g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+  g_INT_01cc4804 = 0x10e;
   core_main_c_FUN_004c8440("Old skeleton version %d not supported",0xffffffff);
   if (0x00000003 < -1) {
-    PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    INT_01cc4804 = 0x10f;
+    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    g_INT_01cc4804 = 0x10f;
     core_main_c_FUN_004c8440("Skeleton version %d is newer than .EXE, which can only process up to version %d",0xffffffff,0x00000003);
   }
   do {
@@ -97,16 +97,16 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton *this
     } while (iVar1 < this_ptr->frame_count);
   }
   if ((file_handle->_flag & 0x20) != 0) {
-    PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    INT_01cc4804 = 0x144;
+    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    g_INT_01cc4804 = 0x144;
     core_main_c_FUN_004c8440("CSkeleton::loadStream - error reading file.");
   }
   core_motion_cpp_CMotionList_load_FUN_004e0920(&this_ptr->motion_list,file_handle);
   if ((file_handle->_flag & 0x20) == 0) {
     return;
   }
-  PTR_01cc4800 = "..\\core\\skeleton.cpp";
-  INT_01cc4804 = 0x15f;
+  g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+  g_INT_01cc4804 = 0x15f;
   core_main_c_FUN_004c8440("CSkeleton::loadStream - error reading file.");
   return;
 }

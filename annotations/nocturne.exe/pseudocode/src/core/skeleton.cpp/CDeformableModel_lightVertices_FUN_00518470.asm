@@ -12,8 +12,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0051db20 at 0051db4a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
@@ -41,8 +41,8 @@ section .text
     PUSH ESI                            ; 00518491
     MOV EDI,dword ptr [EAX + 0x2c]      ; 00518492
     PUSH EDI                            ; 00518495
-    MOV EBP,dword ptr [0x005be368]      ; 00518496 | DAT_005be368
-    PUSH EBP                            ; 0051849c | DAT_01e57284
+    MOV EBP,dword ptr [0x005be368]      ; 00518496 | g_CDemonSet_PTR_005be368
+    PUSH EBP                            ; 0051849c | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 0051849d
         ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 005184a2

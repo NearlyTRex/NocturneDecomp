@@ -11,7 +11,7 @@
 ;   core_door.cpp_CDoor_process_FUN_00455640 at 004556e4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90
@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 00511af0
     ADD EBX,0x20                        ; 00511af1
     PUSH EBX                            ; 00511af4
-    PUSH 0x1fba938                      ; 00511af5 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00511af5 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90 ; 00511afa
         ;   XREF to: 0046bd90 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90(CDemonRaytrace * this_ptr, CVector3f * offset, CVector3f * rotation, CVector3f * start, ...)
     ADD ESP,0x14                        ; 00511aff

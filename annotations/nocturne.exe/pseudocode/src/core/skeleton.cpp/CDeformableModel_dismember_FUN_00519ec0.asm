@@ -41,8 +41,8 @@
 ;   TerminatedCString s_CDeformableModel_dismemb_005919a2
 ;   TerminatedCString s_core_skeleton_cpp_005919ce
 ;   TerminatedCString s_CDeformableModel_dismemb_005919e3
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_00417c90
@@ -123,8 +123,8 @@ section .text
     MOV EAX,0x591947                    ; 00519f82 | = "..\\core\\skeleton.cpp"
     MOV EDX,0x652                       ; 00519f87
     PUSH 0x59195c                       ; 00519f8c | = "CDeformableModel::dismember - too man..."
-    MOV [0x01cc4800],EAX                ; 00519f91 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00519f96 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00519f91 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00519f96 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00519f9c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00519fa1
@@ -231,8 +231,8 @@ section .text
         ;   Label: LAB_0051a0c6
     MOV ESI,0x63d                       ; 0051a0cb
     PUSH 0x59190d                       ; 0051a0d0 | = "CDeformableModel::dismember - can't d..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0051a0d5 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051a0db | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0051a0d5 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0051a0db | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051a0e1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051a0e6
@@ -308,8 +308,8 @@ section .text
     MOV EDX,0x59198d                    ; 0051a1a4 | = "..\\core\\skeleton.cpp"
     MOV ECX,0x688                       ; 0051a1a9
     PUSH 0x5919a2                       ; 0051a1ae | = "CDeformableModel::dismember - Hell fr..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0051a1b3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0051a1b9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0051a1b3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0051a1b9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051a1bf
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051a1c4
@@ -516,8 +516,8 @@ section .text
         ;   Label: LAB_0051a440
     MOV EDI,0x6bf                       ; 0051a445
     PUSH 0x5919e3                       ; 0051a44a | = "CDeformableModel::dismember - Hell fr..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0051a44f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0051a455 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0051a44f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0051a455 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051a45b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051a460

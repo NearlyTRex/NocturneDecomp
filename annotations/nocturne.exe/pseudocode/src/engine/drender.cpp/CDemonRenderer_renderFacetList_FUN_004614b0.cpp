@@ -72,8 +72,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDem
               *(SMRGLPrimitiveQuad **)(&DAT_005ae70c + local_18) = primitive_array;
               local_18 = iVar2;
               if (1999 < iVar3) {
-                PTR_01cc4800 = "..\\engine\\drender.cpp";
-                INT_01cc4804 = 0x967;
+                g_CHAR_PTR_01cc4800 = "..\\engine\\drender.cpp";
+                g_INT_01cc4804 = 0x967;
                 core_main_c_FUN_004c8440("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar3);
               }
             }

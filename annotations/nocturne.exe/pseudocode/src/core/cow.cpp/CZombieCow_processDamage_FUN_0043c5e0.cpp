@@ -32,7 +32,8 @@ void core_cow_cpp_CZombieCow_processDamage_FUN_0043c5e0(CZombieCow *param_1,SDam
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
             (&this_ptr->motion_controller,iVar4,1);
 LAB_0043c620:
-  iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(0x02DC9450,param_1->sfx_handle);
+  iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
+                    (g_CSound_PTR_005bed68,param_1->sfx_handle);
   if (iVar4 != 0) {
     core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);
     return;

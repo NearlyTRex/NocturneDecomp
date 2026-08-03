@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,50 +58,38 @@
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 25,
+        "line": 24,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 45,
-        "message": "use of undeclared identifier 'DAT_01fb8618'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 74,
-        "line": 55,
-        "message": "use of undeclared identifier 'DAT_01fb8508'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 59,
-        "message": "use of undeclared identifier 'DAT_01fb8508'"
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 52,
+        "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_01fb9b54'; did you mean 'DAT_005b9354'?"
+        "line": 53,
+        "message": "use of undeclared identifier '_DAT_01fb9b54'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 63,
+        "line": 56,
         "message": "use of undeclared identifier 'DAT_01fb9b58'; did you mean 'DAT_005b9258'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 67,
-        "message": "use of undeclared identifier '_DAT_01fb9b54'; did you mean 'DAT_005b9354'?"
+        "line": 60,
+        "message": "use of undeclared identifier '_DAT_01fb9b54'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 68,
-        "message": "use of undeclared identifier '_DAT_01fb9b54'; did you mean 'DAT_005b9354'?"
+        "line": 61,
+        "message": "use of undeclared identifier '_DAT_01fb9b54'"
       }
     ],
     "success": false,
@@ -110,23 +98,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 455,
+    "complexity_score": 273,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 36,
+    "pseudocode_lines": 53,
+    "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast",
-      "pointer_truncation",
       "suspect_float",
       "undefined_data",
       "unnamed_param",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 188
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -201,7 +188,7 @@
     },
     {
       "addr": "01fb8618",
-      "name": "DAT_01fb8618",
+      "name": "g_CDemonCamera_01fb8508.rotation_matrix.m[0].x",
       "type": "undefined4",
       "value": null
     },
@@ -351,7 +338,7 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 3,
-          "line": 37,
+          "line": 32,
           "message": "Return value of function atan2() is not used.",
           "severity": "warning"
         }
@@ -379,119 +366,103 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)(iVar4 + 0x20) - param_1->cameras[param_1->selected_camera_index].position.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)(iVar4 + 0x20) - param_1->cameras[param_1->selected_camera_index].position.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix +",
+      "text": "(*(float *)(iVar4 + 0x24) - param_1->cameras[param_1->selected_camera_index].position.y) +",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "(int)param_1->renderable_actors[0x773] * 0x1a0 + -0x18);",
+      "text": "(*(float *)(iVar4 + 0x24) - param_1->cameras[param_1->selected_camera_index].position.y) +",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix +",
+      "text": "(float10)param_1->cameras[param_1->selected_camera_index].position.z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "(int)param_1->renderable_actors[0x773] * 0x1a0 + -0x14)) + (float)4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float10)*(float *)((int)&param_1->cameras[0].rotation_matrix +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)param_1->renderable_actors[0x773] * 0x1a0 + -0x10);",
+      "text": "(float10)param_1->cameras[param_1->selected_camera_index].position.z;",
       "type": "unnamed_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 31,
+      "line": 26,
       "match": "7.40862e-39",
       "severity": "mild",
-      "text": "fVar8 = SQRT((float10)7.40862e-39 * (float10)7.40862e-39 +",
+      "text": "fVar7 = SQRT((float10)7.40862e-39 * (float10)7.40862e-39 +",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 31,
+      "line": 26,
       "match": "7.40862e-39",
       "severity": "mild",
-      "text": "fVar8 = SQRT((float10)7.40862e-39 * (float10)7.40862e-39 +",
+      "text": "fVar7 = SQRT((float10)7.40862e-39 * (float10)7.40862e-39 +",
       "type": "suspect_float"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = param_1->selected_camera_index;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = &param_1->cameras[iVar4].orientation;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 38,
-      "match": "DAT_01fb8618",
+      "match": "param_1",
       "severity": "mild",
-      "text": "((CMatrix3x3f *)&DAT_01fb8618,local_2c);",
-      "type": "undefined_data"
+      "text": "param_1->cameras[iVar4].orientation.y = local_2c[0].y;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar3 = param_1->renderable_actors[0x773];",
+      "text": "param_1->cameras[iVar4].orientation.z = local_2c[0].z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = (CVector3f *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -8) = local_2c[0].y",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -4) = local_2c[0].z",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290((CDemonCamera *)&DAT_01fb8508,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(param_1,0x10);",
@@ -499,7 +470,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(param_1);",
@@ -507,139 +478,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "iVar5 = core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&DAT_01fb8508,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
+      "line": 49,
       "match": "DAT_01fb9b58",
       "severity": "mild",
-      "text": "puVar2 = (uint *)(&DAT_01fb9b58 + iVar7);",
+      "text": "puVar2 = (uint *)(&DAT_01fb9b58 + iVar6);",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `&param_1->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
-      "match": "(int)&param_1->cameras[0].rotation_matrix",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 37,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix +",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&param_1->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
-      "match": "(int)&param_1->cameras[0].rotation_matrix",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix +",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&param_1->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
-      "match": "(int)&param_1->cameras[0].rotation_matrix",
-      "severity": "moderate",
-      "text": "(float10)*(float *)((int)&param_1->cameras[0].rotation_matrix +",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&param_1->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
-      "match": "(int)&param_1->cameras[0].rotation_matrix",
-      "severity": "moderate",
-      "text": "pCVar1 = (CVector3f *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -0xc);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
-      "match": "(int)pCVar3",
-      "severity": "moderate",
-      "text": "pCVar1 = (CVector3f *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -0xc);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&param_1->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
-      "match": "(int)&param_1->cameras[0].rotation_matrix",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -8) = local_2c[0].y",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
-      "match": "(int)pCVar3",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -8) = local_2c[0].y",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&param_1->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
-      "match": "(int)&param_1->cameras[0].rotation_matrix",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -4) = local_2c[0].z",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
-      "match": "(int)pCVar3",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -4) = local_2c[0].z",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 20,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 24,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 27,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "(float10)*(float *)((int)&param_1->cameras[0].rotation_matrix +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 40,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pCVar1 = (CVector3f *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -8) = local_2c[0].y",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 45,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -4) = local_2c[0].z",
-      "type": "pointer_cast"
+      "text": "pCVar1->x = local_2c[0].x;",
+      "type": "unrolled_memcpy"
     },
     {
       "call_site_count": 1,

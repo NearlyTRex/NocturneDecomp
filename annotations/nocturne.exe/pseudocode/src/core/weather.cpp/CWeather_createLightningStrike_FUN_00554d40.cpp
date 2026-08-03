@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeather *this_ptr,float flash_timer,int play_sound)
 
 {
@@ -38,8 +36,8 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
   this_ptr->flash_timer = flash_timer;
   this_ptr->lightning_active = 1;
   this_ptr->sub_flash_interval = local_14;
-  core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0((CDemonRaytrace *)&DAT_01fba938,&local_30);
-  core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0((CDemonRaytrace *)&DAT_01fba938,&local_54);
+  core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(&g_CDemonRaytrace_01fba938,&local_30);
+  core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(&g_CDemonRaytrace_01fba938,&local_54);
   local_20 = (float)0.5;
   local_60 = (local_30.x + local_54.x) * local_20;
   local_58 = (local_30.z + local_54.z) * local_20;
@@ -72,11 +70,11 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
   }
   if (play_sound != 0) {
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420
-              (0x01C08D04,&local_6c,local_18,0,0.0);
+              (g_CFireEffect_PTR_005b80f0,&local_6c,local_18,0,0.0);
   }
   this_ptr_00 = 0x01C03A10;
-  local_14 = (float)_DAT_01fb96f0;
-  fVar2 = (float)_DAT_01fb96f0;
+  local_14 = (float)g_CDemonCamera_01fb8508.corona_blend_factor;
+  fVar2 = (float)g_CDemonCamera_01fb8508.corona_blend_factor;
   fVar1 = (float)1.5259021896696401e-05;
   this_ptr->base_ambient = fVar2 * fVar1;
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -86,8 +84,8 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
     if (1.0 < local_98) {
       local_98 = 1.0;
     }
-    core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-              ((CDemonCamera *)&DAT_01fb8508,local_98);
+    core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(&g_CDemonCamera_01fb8508,local_98)
+    ;
     if (play_sound == 0) {
       return;
     }
@@ -96,6 +94,6 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
     return;
   }
   core_sound_cpp_CSound_playActorSound_FUN_0052ea60
-            (0x02DC9450,(CDemonActor *)this_ptr,"light?.wav",&local_6c);
+            (g_CSound_PTR_005bed68,(CDemonActor *)this_ptr,"light?.wav",&local_6c);
   return;
 }

@@ -82,7 +82,7 @@
 ;   double DOUBLE_00578c97 = 5
 ;   float FLOAT_0059a14c = 3.5
 ;   float FLOAT_0059a158 = 1
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -320,8 +320,8 @@ section .text
     PUSH EBX                            ; 00413a71
     MOV EAX,0x578c00                    ; 00413a72 | = "%s confused while walking to scriptDe..."
     PUSH EAX                            ; 00413a77 | = "%s confused while walking to scriptDe..."
-    MOV EAX,[0x005ad350]                ; 00413a78 | PTR_DAT_005ad350
-    PUSH EAX                            ; 00413a7d | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00413a78 | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 00413a7d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00413a7e
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x004138e3                      ; 00413a83
@@ -387,7 +387,7 @@ section .text
     LEA EAX,[EBP + 0xffffff3e]          ; 00413b2b
     PUSH 0x3f000000                     ; 00413b31
     PUSH EAX                            ; 00413b36
-    MOV EAX,[0x005b80f0]                ; 00413b37 | DAT_005b80f0
+    MOV EAX,[0x005b80f0]                ; 00413b37 | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 00413b3c
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00413b3d
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -407,14 +407,14 @@ section .text
     MOV dword ptr [EBP + 0x5a],ECX      ; 00413b65
     MOV dword ptr [EBP + 0x72],ESI      ; 00413b68
     MOV dword ptr [EBP + 0x6e],ESI      ; 00413b6b
-    MOV EAX,[0x005be368]                ; 00413b6e | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00413b6e | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00413b6e
     MOV ESI,dword ptr [EBP + 0x72]      ; 00413b73
-    CMP ESI,dword ptr [EAX + 0x14ecb0]  ; 00413b76 | DAT_01fa5f34
+    CMP ESI,dword ptr [EAX + 0x14ecb0]  ; 00413b76 | g_CDemonSet_01e57284.character_count
     JGE 0x00413bf6                      ; 00413b7c
         ;   XREF to: 00413bf6 (CONDITIONAL_JUMP)  ; LAB_00413bf6
     ADD EAX,dword ptr [EBP + 0x6e]      ; 00413b82
-    MOV ESI,dword ptr [EAX + 0x14ecb4]  ; 00413b85 | DAT_01fa5f38 | DAT_01fa5f3c
+    MOV ESI,dword ptr [EAX + 0x14ecb4]  ; 00413b85 | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1]
     TEST ESI,ESI                        ; 00413b8b
     JNZ 0x00413ba1                      ; 00413b8d
         ;   XREF to: 00413ba1 (CONDITIONAL_JUMP)  ; LAB_00413ba1
@@ -554,7 +554,7 @@ section .text
     LEA EAX,[EBP + 0xffffff56]          ; 00413cec
     PUSH 0x3f000000                     ; 00413cf2
     PUSH EAX                            ; 00413cf7
-    MOV EDX,dword ptr [0x005b80f0]      ; 00413cf8 | DAT_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 00413cf8 | g_CFireEffect_PTR_005b80f0
     PUSH EDX                            ; 00413cfe
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00413cff
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -627,7 +627,7 @@ section .text
     PUSH ESI                            ; 00413dc0
     LEA EAX,[EBP + 0x16]                ; 00413dc1
     PUSH EAX                            ; 00413dc4
-    MOV EDI,dword ptr [0x005b96c4]      ; 00413dc5 | INT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 00413dc5 | g_CGore_PTR_005b96c4
     PUSH EDI                            ; 00413dcb
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004b0480 ; 00413dcc
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004b0480(CGore * this_ptr, CVector3f * position, int blood_type)
@@ -869,9 +869,9 @@ section .text
         ;   XREF to: 00413fb1 (CONDITIONAL_JUMP)  ; LAB_00413fb1
     XOR EDI,EDI                         ; 00414066
     XOR ESI,ESI                         ; 00414068
-    MOV EAX,[0x005be368]                ; 0041406a | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0041406a | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0041406a
-    CMP ESI,dword ptr [EAX + 0x150bf4]  ; 0041406f | DAT_01fa7e78
+    CMP ESI,dword ptr [EAX + 0x150bf4]  ; 0041406f | g_CDemonSet_01e57284.enemy_count
     JGE 0x004140a1                      ; 00414075
         ;   XREF to: 004140a1 (CONDITIONAL_JUMP)  ; LAB_004140a1
     MOV EDX,dword ptr [0x00764670]      ; 00414077 | g_CBatmanActorType_00764638.name_hash
@@ -893,9 +893,9 @@ section .text
         ;   Label: LAB_00414098
     JZ 0x00414092                       ; 0041409f
         ;   XREF to: 00414092 (CONDITIONAL_JUMP)  ; LAB_00414092
-    MOV EAX,[0x005be368]                ; 004140a1 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004140a1 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004140a1
-    CMP ESI,dword ptr [EAX + 0x150bf4]  ; 004140a6 | DAT_01fa7e78
+    CMP ESI,dword ptr [EAX + 0x150bf4]  ; 004140a6 | g_CDemonSet_01e57284.enemy_count
     JNZ 0x00413fb1                      ; 004140ac
         ;   XREF to: 00413fb1 (CONDITIONAL_JUMP)  ; LAB_00413fb1
     PUSH 0x1                            ; 004140b2

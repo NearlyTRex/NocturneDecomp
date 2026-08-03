@@ -19,17 +19,16 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcar
   
   index = 0;
   _DAT_02dc9620 = 0;
-  if (_DAT_02dc9610 < 1) {
+  if (g_CStrList_02dc9610.item_count < 1) {
     _DAT_02dc9620 = 0;
     return;
   }
   do {
     iVar4 = 0;
-    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080((CStrList *)&DAT_02dc9610,index);
+    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,index);
     iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(wildcard_pattern,pcVar2,iVar4);
     if (iVar4 != 0) {
-      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080((CStrList *)&DAT_02dc9610,index)
-      ;
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,index);
       pcVar3 = (char *)(_DAT_02dc9620 * 0x28 + 0x2dc9628);
       do {
         cVar1 = *pcVar2;
@@ -46,7 +45,7 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcar
       }
     }
     index = index + 1;
-    if (_DAT_02dc9610 <= index) {
+    if (g_CStrList_02dc9610.item_count <= index) {
       return;
     }
   } while( true );

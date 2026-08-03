@@ -28,8 +28,8 @@ void engine_matrix_c_FUN_004ceae0(int param_1,int param_2,int param_3)
   if (_DAT_01cc5174 < 10) {
     return;
   }
-  PTR_01cc4800 = "..\\engine\\matrix.c";
-  INT_01cc4804 = 0x5c9;
+  g_CHAR_PTR_01cc4800 = "..\\engine\\matrix.c";
+  g_INT_01cc4804 = 0x5c9;
   core_main_c_FUN_004c8440("Matrix unbalance3");
   return;
 }

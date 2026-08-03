@@ -13,20 +13,20 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c0a140
-;   undefined4 DAT_01c0a16c
+;   CSmokeParticle[2048] g_CSmokeParticle_ARRAY_01c0a140
+;   undefined4 g_CSmokeParticle_ARRAY_01c0a140[1].active
 ;   undefined4 DAT_01c20140
 ;   undefined4 DAT_01c23d48
-;   undefined4 DAT_01c49d6c
-;   undefined4 DAT_01c49d88
-;   undefined4 DAT_01c49db8
-;   undefined4 DAT_01c49dd4
-;   undefined4 DAT_01c4e958
-;   undefined4 DAT_01c4e9b4
-;   undefined4 DAT_01c4f0a4
-;   undefined4 DAT_01c4f0c0
+;   undefined4 g_CSpark_ARRAY_01c49d54[0].base.lifetime_remaining
+;   undefined4 g_CSpark_ARRAY_01c49d54[0].base.vtable
+;   undefined4 g_CSpark_ARRAY_01c49d54[1].base.lifetime_remaining
+;   undefined4 g_CSpark_ARRAY_01c49d54[1].base.vtable
+;   CMuzzleFlash[20] g_CMuzzleFlash_ARRAY_01c4e958
+;   undefined4 g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining
+;   undefined4 g_CGlassParticle_ARRAY_01c4f08c[0].base.lifetime_remaining
+;   undefined4 g_CGlassParticle_ARRAY_01c4f08c[0].base.vtable
 ;   ... and 27 more
 ;
 ; Called Functions:
@@ -78,7 +78,7 @@ section .text
     MOV EBX,0x1c5b500                   ; 0048a685
         ;   Label: LAB_0048a685
     LEA ESI,[EBX + 0x1200]              ; 0048a68a
-    FLD float ptr [EBX + 0x18]          ; 0048a690 | DAT_01c5b518 | DAT_01c5b560
+    FLD float ptr [EBX + 0x18]          ; 0048a690 | g_CRock_ARRAY_01c5b500[0].base.lifetime_remaining | g_CRock_ARRAY_01c5b500[1].base.lifetime_remaining
         ;   Label: LAB_0048a690
     FLDZ                                ; 0048a693
     FCOMPP                              ; 0048a695
@@ -87,7 +87,7 @@ section .text
     JNC 0x0048a6a6                      ; 0048a69a
         ;   XREF to: 0048a6a6 (CONDITIONAL_JUMP)  ; LAB_0048a6a6
     PUSH EBX                            ; 0048a69c
-    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a69d | DAT_01c5b534 | DAT_01c5b57c
+    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a69d | g_CRock_ARRAY_01c5b500[0].base.vtable | g_CRock_ARRAY_01c5b500[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 0048a6a0
     ADD ESP,0x4                         ; 0048a6a3
     ADD EBX,0x48                        ; 0048a6a6
@@ -101,7 +101,7 @@ section .text
         ;   XREF to: 004842a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireball_setupRenderState_FUN_004842a0(CFireball * this_ptr)
     ADD ESP,0x4                         ; 0048a6bc
     LEA ESI,[EBX + 0x2700]              ; 0048a6bf
-    FLD float ptr [EBX + 0x18]          ; 0048a6c5 | DAT_01c58e14 | DAT_01c58eb0
+    FLD float ptr [EBX + 0x18]          ; 0048a6c5 | g_CFireball_ARRAY_01c58dfc[0].base.lifetime_remaining | g_CFireball_ARRAY_01c58dfc[1].base.lifetime_remaining
         ;   Label: LAB_0048a6c5
     FLDZ                                ; 0048a6c8
     FCOMPP                              ; 0048a6ca
@@ -110,7 +110,7 @@ section .text
     JNC 0x0048a6db                      ; 0048a6cf
         ;   XREF to: 0048a6db (CONDITIONAL_JUMP)  ; LAB_0048a6db
     PUSH EBX                            ; 0048a6d1
-    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a6d2 | DAT_01c58e30 | DAT_01c58ecc
+    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a6d2 | g_CFireball_ARRAY_01c58dfc[0].base.vtable | g_CFireball_ARRAY_01c58dfc[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 0048a6d5
     ADD ESP,0x4                         ; 0048a6d8
     ADD EBX,0x9c                        ; 0048a6db
@@ -122,7 +122,7 @@ section .text
     LEA ESI,[EBX + 0x1130]              ; 0048a6ea
     PUSH EBX                            ; 0048a6f0
         ;   Label: LAB_0048a6f0
-    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a6f1 | DAT_01c68514 | DAT_01c6856c
+    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a6f1 | g_CShell_ARRAY_01c684e0[0].base.vtable | g_CShell_ARRAY_01c684e0[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 0048a6f4
     ADD EBX,0x58                        ; 0048a6f7
     ADD ESP,0x4                         ; 0048a6fa
@@ -142,8 +142,8 @@ section .text
     PUSH EAX                            ; 0048a719
     PUSH EAX                            ; 0048a71a
     PUSH EAX                            ; 0048a71b
-    MOV EDX,dword ptr [0x005be368]      ; 0048a71c | DAT_005be368
-    PUSH EDX                            ; 0048a722 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 0048a71c | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 0048a722 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 0048a723
         ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 0048a728
@@ -174,19 +174,19 @@ section .text
     CMP ESI,EDI                         ; 0048a769
     JL 0x0048a746                       ; 0048a76b
         ;   XREF to: 0048a746 (CONDITIONAL_JUMP)  ; LAB_0048a746
-    PUSH 0x1c0a140                      ; 0048a76d | DAT_01c0a140
+    PUSH 0x1c0a140                      ; 0048a76d | g_CSmokeParticle_ARRAY_01c0a140
         ;   Label: LAB_0048a76d
     MOV EBX,0x1c0a140                   ; 0048a772
     CALL core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680 ; 0048a777
         ;   XREF to: 00482680 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0048a77c
     LEA ESI,[EBX + 0x16000]             ; 0048a77f
-    MOV EAX,dword ptr [EBX]             ; 0048a785 | DAT_01c0a140 | DAT_01c0a16c
+    MOV EAX,dword ptr [EBX]             ; 0048a785 | g_CSmokeParticle_ARRAY_01c0a140 | g_CSmokeParticle_ARRAY_01c0a140[1].active
         ;   Label: LAB_0048a785
     TEST EAX,EAX                        ; 0048a787
     JZ 0x0048a794                       ; 0048a789
         ;   XREF to: 0048a794 (CONDITIONAL_JUMP)  ; LAB_0048a794
-    PUSH EBX                            ; 0048a78b | DAT_01c0a140 | DAT_01c0a16c
+    PUSH EBX                            ; 0048a78b | g_CSmokeParticle_ARRAY_01c0a140 | g_CSmokeParticle_ARRAY_01c0a140[1].active
     CALL core_fire.cpp_CSmokeParticle_render_FUN_00482950 ; 0048a78c
         ;   XREF to: 00482950 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0048a791
@@ -197,12 +197,12 @@ section .text
         ;   XREF to: 0048a785 (CONDITIONAL_JUMP)  ; LAB_0048a785
     MOV EBX,0x1c4e958                   ; 0048a79b
     LEA ESI,[EBX + 0x730]               ; 0048a7a0
-    MOV EAX,dword ptr [EBX]             ; 0048a7a6 | DAT_01c4e958 | DAT_01c4e9b4
+    MOV EAX,dword ptr [EBX]             ; 0048a7a6 | g_CMuzzleFlash_ARRAY_01c4e958 | g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining
         ;   Label: LAB_0048a7a6
     TEST EAX,EAX                        ; 0048a7a8
     JZ 0x0048a7b5                       ; 0048a7aa
         ;   XREF to: 0048a7b5 (CONDITIONAL_JUMP)  ; LAB_0048a7b5
-    PUSH EBX                            ; 0048a7ac | DAT_01c4e958 | DAT_01c4e9b4
+    PUSH EBX                            ; 0048a7ac | g_CMuzzleFlash_ARRAY_01c4e958 | g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining
     CALL core_fire.cpp_CMuzzleFlash_render_FUN_00484f00 ; 0048a7ad
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash * this_ptr)
     ADD ESP,0x4                         ; 0048a7b2
@@ -237,7 +237,7 @@ section .text
         ;   XREF to: 004837a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSpark_setupRenderState_FUN_004837a0(CSpark * this_ptr)
     ADD ESP,0x4                         ; 0048a7ff
     LEA ESI,[EBX + 0x4c00]              ; 0048a802
-    FLD float ptr [EBX + 0x18]          ; 0048a808 | DAT_01c49d6c | DAT_01c49db8
+    FLD float ptr [EBX + 0x18]          ; 0048a808 | g_CSpark_ARRAY_01c49d54[0].base.lifetime_remaining | g_CSpark_ARRAY_01c49d54[1].base.lifetime_remaining
         ;   Label: LAB_0048a808
     FLDZ                                ; 0048a80b
     FCOMPP                              ; 0048a80d
@@ -246,7 +246,7 @@ section .text
     JNC 0x0048a81e                      ; 0048a812
         ;   XREF to: 0048a81e (CONDITIONAL_JUMP)  ; LAB_0048a81e
     PUSH EBX                            ; 0048a814
-    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a815 | DAT_01c49d88 | DAT_01c49dd4
+    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a815 | g_CSpark_ARRAY_01c49d54[0].base.vtable | g_CSpark_ARRAY_01c49d54[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 0048a818
     ADD ESP,0x4                         ; 0048a81b
     ADD EBX,0x4c                        ; 0048a81e
@@ -256,7 +256,7 @@ section .text
         ;   XREF to: 0048a808 (CONDITIONAL_JUMP)  ; LAB_0048a808
     MOV EBX,0x1c4f08c                   ; 0048a825
     LEA ESI,[EBX + 0x9c00]              ; 0048a82a
-    FLD float ptr [EBX + 0x18]          ; 0048a830 | DAT_01c4f0a4 | DAT_01c4f140
+    FLD float ptr [EBX + 0x18]          ; 0048a830 | g_CGlassParticle_ARRAY_01c4f08c[0].base.lifetime_remaining | g_CGlassParticle_ARRAY_01c4f08c[1].base.lifetime_remaining
         ;   Label: LAB_0048a830
     FLDZ                                ; 0048a833
     FCOMPP                              ; 0048a835
@@ -265,7 +265,7 @@ section .text
     JNC 0x0048a846                      ; 0048a83a
         ;   XREF to: 0048a846 (CONDITIONAL_JUMP)  ; LAB_0048a846
     PUSH EBX                            ; 0048a83c
-    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a83d | DAT_01c4f0c0 | DAT_01c4f15c
+    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a83d | g_CGlassParticle_ARRAY_01c4f08c[0].base.vtable | g_CGlassParticle_ARRAY_01c4f08c[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 0048a840
     ADD ESP,0x4                         ; 0048a843
     ADD EBX,0x9c                        ; 0048a846
@@ -275,7 +275,7 @@ section .text
         ;   XREF to: 0048a830 (CONDITIONAL_JUMP)  ; LAB_0048a830
     MOV EBX,0x1c58c90                   ; 0048a850
     LEA ESI,[EBX + 0x168]               ; 0048a855
-    MOV EAX,dword ptr [EBX + 0x20]      ; 0048a85b | DAT_01c58cb0 | DAT_01c58cd4
+    MOV EAX,dword ptr [EBX + 0x20]      ; 0048a85b | g_CBulletTrail_ARRAY_01c58c90[0].frames_remaining | g_CBulletTrail_ARRAY_01c58c90[1].frames_remaining
         ;   Label: LAB_0048a85b
     TEST EAX,EAX                        ; 0048a85e
     JZ 0x0048a86b                       ; 0048a860
@@ -291,7 +291,7 @@ section .text
         ;   XREF to: 0048a85b (CONDITIONAL_JUMP)  ; LAB_0048a85b
     MOV EBX,0x1c5d708                   ; 0048a872
     LEA ESI,[EBX + 0x118]               ; 0048a877
-    PUSH EBX                            ; 0048a87d | DAT_01c5d724
+    PUSH EBX                            ; 0048a87d | g_CExplosion_ARRAY_01c5d708[1].position.x
         ;   Label: LAB_0048a87d
     CALL core_fire.cpp_CExplosion_render_FUN_00486fe0 ; 0048a87e
         ;   XREF to: 00486fe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_render_FUN_00486fe0(CExplosion * this_ptr)
@@ -313,7 +313,7 @@ section .text
         ;   XREF to: 0048a898 (CONDITIONAL_JUMP)  ; LAB_0048a898
     MOV EBX,0x1c62ebc                   ; 0048a8ab
     LEA ESI,[EBX + 0x4650]              ; 0048a8b0
-    PUSH EBX                            ; 0048a8b6 | DAT_01c62ebc | DAT_01c62ee0
+    PUSH EBX                            ; 0048a8b6 | g_CGunFlame_ARRAY_01c62ebc | g_CGunFlame_ARRAY_01c62ebc[1].lifetime
         ;   Label: LAB_0048a8b6
     CALL core_fire.cpp_CGunFlame_render_FUN_00488580 ; 0048a8b7
         ;   XREF to: 00488580 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_render_FUN_00488580(CGunFlame * this_ptr)
@@ -346,7 +346,7 @@ section .text
         ;   XREF to: 0048a8ec (CONDITIONAL_JUMP)  ; LAB_0048a8ec
     MOV EBX,0x1c69614                   ; 0048a8fc
     LEA ESI,[EBX + 0x3800]              ; 0048a901
-    FLD float ptr [EBX + 0x18]          ; 0048a907 | DAT_01c6962c | DAT_01c69664
+    FLD float ptr [EBX + 0x18]          ; 0048a907 | g_CPopcorn_ARRAY_01c69614[0].base.lifetime_remaining | g_CPopcorn_ARRAY_01c69614[1].base.lifetime_remaining
         ;   Label: LAB_0048a907
     FLDZ                                ; 0048a90a
     FCOMPP                              ; 0048a90c
@@ -355,7 +355,7 @@ section .text
     JNC 0x0048a91d                      ; 0048a911
         ;   XREF to: 0048a91d (CONDITIONAL_JUMP)  ; LAB_0048a91d
     PUSH EBX                            ; 0048a913
-    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a914 | DAT_01c69648 | DAT_01c69680
+    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a914 | g_CPopcorn_ARRAY_01c69614[0].base.vtable | g_CPopcorn_ARRAY_01c69614[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 0048a917
     ADD ESP,0x4                         ; 0048a91a
     ADD EBX,0x38                        ; 0048a91d
@@ -365,7 +365,7 @@ section .text
         ;   XREF to: 0048a907 (CONDITIONAL_JUMP)  ; LAB_0048a907
     MOV EBX,0x1c6ce18                   ; 0048a924
     LEA ESI,[EBX + 0x3800]              ; 0048a929
-    FLD float ptr [EBX + 0x18]          ; 0048a92f | DAT_01c6ce30 | DAT_01c6ce68
+    FLD float ptr [EBX + 0x18]          ; 0048a92f | g_CRainDrop_ARRAY_01c6ce18[0].base.lifetime_remaining | g_CRainDrop_ARRAY_01c6ce18[1].base.lifetime_remaining
         ;   Label: LAB_0048a92f
     FLDZ                                ; 0048a932
     FCOMPP                              ; 0048a934
@@ -374,7 +374,7 @@ section .text
     JNC 0x0048a945                      ; 0048a939
         ;   XREF to: 0048a945 (CONDITIONAL_JUMP)  ; LAB_0048a945
     PUSH EBX                            ; 0048a93b
-    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a93c | DAT_01c6ce4c | DAT_01c6ce84
+    MOV EAX,dword ptr [EBX + 0x34]      ; 0048a93c | g_CRainDrop_ARRAY_01c6ce18[0].base.vtable | g_CRainDrop_ARRAY_01c6ce18[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 0048a93f
     ADD ESP,0x4                         ; 0048a942
     ADD EBX,0x38                        ; 0048a945

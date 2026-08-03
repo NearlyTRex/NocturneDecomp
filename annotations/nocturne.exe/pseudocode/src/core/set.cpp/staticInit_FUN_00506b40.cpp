@@ -9,14 +9,14 @@
 void __cdecl core_set_cpp_staticInit_FUN_00506b40(void)
 
 {
-  core_set_cpp_CDemonSet_ctor_FUN_00506bc0((CDemonSet *)&DAT_01e57284);
+  core_set_cpp_CDemonSet_ctor_FUN_00506bc0(&g_CDemonSet_01e57284);
   _atexit(&g_WatcomStaticDestructorNode_005be328);
-  core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0((CDemonCamera *)&DAT_01fb8508);
+  core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0(&g_CDemonCamera_01fb8508);
   _atexit(&g_WatcomStaticDestructorNode_005be338);
-  core_dtrace_cpp_CDemonRaytrace_ctor_FUN_004671e0((CDemonRaytrace *)&DAT_01fba938);
+  core_dtrace_cpp_CDemonRaytrace_ctor_FUN_004671e0(&g_CDemonRaytrace_01fba938);
   _atexit(&g_WatcomStaticDestructorNode_005be348);
-  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590((CKeyFramedModel *)&DAT_01fbacc8);
+  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(&g_CKeyFramedModel_01fbacc8);
   _atexit(&g_WatcomStaticDestructorNode_005be358);
-  __arrinit(&DAT_01fff5b0,4000,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_CVector3f_ARRAY_01fff5b0,4000,&g_CVectorTypeInfo_005993b0);
   return;
 }

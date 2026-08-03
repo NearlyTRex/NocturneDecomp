@@ -36,7 +36,7 @@
 ;   float FLOAT_0058bd12 = 1000
 ;   double DOUBLE_0058bd1a = 30
 ;   double DOUBLE_0058bd22 = 0.100000000000000
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea400
@@ -97,7 +97,7 @@ section .text
     RET                                 ; 004e9f04
     PUSH 0x58bc84                       ; 004e9f05 | = "Disconnecting from server..."
         ;   Label: LAB_004e9f05
-    MOV EBX,dword ptr [0x005b6d50]      ; 004e9f0a | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004e9f0a | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004e9f10
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 ; 004e9f11
         ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools * this_ptr, char * message_text)
@@ -176,12 +176,12 @@ section .text
         ;   XREF to: 004ea023 (CONDITIONAL_JUMP)  ; LAB_004ea023
     PUSH 0x58bca1                       ; 004e9ff0 | = "Couldn't contact server to disconnect."
         ;   Label: LAB_004e9ff0
-    MOV EBX,dword ptr [0x005b6d50]      ; 004e9ff5 | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004e9ff5 | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004e9ffb
     CALL shape_edittool.cpp_FUN_0046fe60 ; 004e9ffc
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
     ADD ESP,0x8                         ; 004ea001
-    MOV EDI,dword ptr [0x005b6d50]      ; 004ea004 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004ea004 | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_004ea004
     PUSH EDI                            ; 004ea00a
     CALL shape_edittool.cpp_FUN_004720c0 ; 004ea00b
@@ -205,7 +205,7 @@ section .text
     FMUL float ptr [0x0058bd12]         ; 004ea031 | FLOAT_0058bd12
     PUSH 0x453b8000                     ; 004ea037
     SUB ESP,0x4                         ; 004ea03c
-    MOV ECX,dword ptr [0x005b6d50]      ; 004ea03f | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004ea03f | g_CEditorTools_PTR_005b6d50
     FSTP float ptr [ESP]                ; 004ea045
     PUSH ECX                            ; 004ea048
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 ; 004ea049
@@ -288,7 +288,7 @@ section .text
     TEST ECX,ECX                        ; 004ea108
     JGE 0x004e9f79                      ; 004ea10a
         ;   XREF to: 004e9f79 (CONDITIONAL_JUMP)  ; LAB_004e9f79
-    MOV EDI,dword ptr [0x005b6d50]      ; 004ea110 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004ea110 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004ea116
     CALL shape_edittool.cpp_FUN_004720c0 ; 004ea117
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
@@ -297,7 +297,7 @@ section .text
         ;   XREF to: 004e9eaa (UNCONDITIONAL_JUMP)  ; LAB_004e9eaa
     PUSH 0x58bcc8                       ; 004ea124 | = "Disconnecting..."
         ;   Label: LAB_004ea124
-    MOV EBX,dword ptr [0x005b6d50]      ; 004ea129 | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004ea129 | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004ea12f
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 ; 004ea130
         ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools * this_ptr, char * message_text)
@@ -377,12 +377,12 @@ section .text
         ;   XREF to: 004ea246 (CONDITIONAL_JUMP)  ; LAB_004ea246
     PUSH 0x58bcd9                       ; 004ea213 | = "Couldn't connect to all clients to di..."
         ;   Label: LAB_004ea213
-    MOV EDX,dword ptr [0x005b6d50]      ; 004ea218 | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004ea218 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004ea21e
     CALL shape_edittool.cpp_FUN_0046fe60 ; 004ea21f
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
     ADD ESP,0x8                         ; 004ea224
-    MOV ECX,dword ptr [0x005b6d50]      ; 004ea227 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004ea227 | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_004ea227
     PUSH ECX                            ; 004ea22d
     CALL shape_edittool.cpp_FUN_004720c0 ; 004ea22e
@@ -406,7 +406,7 @@ section .text
     FMUL float ptr [0x0058bd12]         ; 004ea254 | FLOAT_0058bd12
     PUSH 0x459c4000                     ; 004ea25a
     SUB ESP,0x4                         ; 004ea25f
-    MOV EAX,[0x005b6d50]                ; 004ea262 | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004ea262 | g_CEditorTools_PTR_005b6d50
     FSTP float ptr [ESP]                ; 004ea267
     PUSH EAX                            ; 004ea26a
     MOV EDI,0x20000                     ; 004ea26b
@@ -506,7 +506,7 @@ section .text
     CMP EDI,0x1                         ; 004ea346
     JG 0x004ea198                       ; 004ea349
         ;   XREF to: 004ea198 (CONDITIONAL_JUMP)  ; LAB_004ea198
-    MOV ECX,dword ptr [0x005b6d50]      ; 004ea34f | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004ea34f | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004ea355
     CALL shape_edittool.cpp_FUN_004720c0 ; 004ea356
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()

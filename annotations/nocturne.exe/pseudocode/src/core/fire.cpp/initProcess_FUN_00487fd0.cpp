@@ -19,15 +19,15 @@ void __cdecl core_fire_cpp_initProcess_FUN_00487fd0(void)
   
   iVar4 = 0;
   _DAT_01c09e08 = 0;
-  for (iVar5 = 0; iVar5 < *(int *)(0x01E57284 + 0x14ecb0); iVar5 = iVar5 + 1) {
-    iVar1 = *(int *)(iVar4 + 0x14ecb4 + 0x01E57284);
+  for (iVar5 = 0; iVar5 < g_CDemonSet_PTR_005be368->character_count; iVar5 = iVar5 + 1) {
+    iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);
     iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x104))(iVar1);
     if (iVar2 == 0) {
       iVar2 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0((CVector3f *)(iVar1 + 0x20),50.0);
       if (iVar2 != 0) {
         if (0x31 < _DAT_01c09e08) {
-          PTR_01cc4800 = "..\\core\\fire.cpp";
-          INT_01cc4804 = 0xd03;
+          g_CHAR_PTR_01cc4800 = "..\\core\\fire.cpp";
+          g_INT_01cc4804 = 0xd03;
           core_main_c_FUN_004c8440("CGunFlame::initProcess - too many characters!");
         }
         *(int *)(&DAT_01c09e0c + _DAT_01c09e08 * 4) = iVar1;
@@ -38,9 +38,9 @@ void __cdecl core_fire_cpp_initProcess_FUN_00487fd0(void)
   }
   iVar5 = 0;
   _DAT_01c09ed4 = 0;
-  for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
+  for (iVar4 = 0; iVar4 < g_CDemonSet_PTR_005be368->actor_count; iVar4 = iVar4 + 1) {
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (*(CDemonActor **)(iVar5 + 0x14cd70 + 0x01E57284),
+                       (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar5),
                         g_CFlameCanActorType_01c70654.name_hash);
     if ((pCVar3 != (CDemonActor *)0x0) && (_DAT_01c09ed4 < 0x96)) {
       *(CDemonActor **)(&DAT_01c09ed8 + _DAT_01c09ed4 * 4) = pCVar3;

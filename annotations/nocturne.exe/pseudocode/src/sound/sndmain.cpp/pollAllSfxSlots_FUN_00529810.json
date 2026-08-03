@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -60,18 +60,6 @@
         "column": 7,
         "line": 19,
         "message": "use of undeclared identifier '_DAT_02dc84bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 20,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
       },
       {
         "category": "undeclared_identifier",
@@ -104,16 +92,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 96,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 36,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -199,19 +185,19 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dbd494",
-      "name": "DAT_02dbd494",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index",
       "type": "undefined4",
       "value": null
     },
@@ -342,22 +328,6 @@
       "severity": "mild",
       "text": "} while (this_ptr != (CSfxSlot *)&DAT_02dc1b74);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&this_ptr->prev_hardware_playback_pos` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(int)&this_ptr->prev_hardware_playback_pos",
-      "severity": "moderate",
-      "text": "this_ptr = (CSfxSlot *)((int)&this_ptr->prev_hardware_playback_pos + 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 37,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "this_ptr = (CSfxSlot *)((int)&this_ptr->prev_hardware_playback_pos + 4);",
-      "type": "pointer_cast"
     }
   ]
 }

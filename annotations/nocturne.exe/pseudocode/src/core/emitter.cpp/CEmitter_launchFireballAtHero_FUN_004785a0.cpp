@@ -71,7 +71,7 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004785a0(CEmitte
       local_4c.z = local_58.z;
     }
     core_fire_cpp_CFireEffect_createFireball_FUN_0048b270
-              (0x01C08D04,&(this_ptr->base).location.position,&local_4c,0,0);
+              (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).location.position,&local_4c,0,0);
   }
   return;
 }

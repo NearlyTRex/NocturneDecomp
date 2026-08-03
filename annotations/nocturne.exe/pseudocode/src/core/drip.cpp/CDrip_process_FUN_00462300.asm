@@ -16,13 +16,13 @@
 ;   double DOUBLE_0057de70 = 32
 ;   double DOUBLE_0057de78 = 0.850000000000000
 ;   float FLOAT_0057de80 = 20
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa5f34
-;   undefined4 DAT_01fa5f38
-;   undefined4 DAT_01fa5f3c
-;   undefined4 DAT_01fba938
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.character_count
+;   undefined4 g_CDemonSet_01e57284.characters[0]
+;   undefined4 g_CDemonSet_01e57284.characters[1]
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -87,7 +87,7 @@ section .text
     FLD float ptr [ESP + 0x78]          ; 00462386
     PUSH EAX                            ; 0046238a
     FADD float ptr [0x0057de6c]         ; 0046238b | FLOAT_0057de6c
-    PUSH 0x1fba938                      ; 00462391 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00462391 | g_CDemonRaytrace_01fba938
     FSTP float ptr [ESP + 0x80]         ; 00462396
     CALL core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00467930 ; 0046239d
         ;   XREF to: 00467930 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00467930(CDemonRaytrace * this_ptr, CVector3f * output_point, CVector3f * ray_start, CVector3f * ray_end)
@@ -127,12 +127,12 @@ section .text
     XOR EDI,EDI                         ; 00462414
     XOR ESI,ESI                         ; 00462416
     MOV dword ptr [ESP + 0x94],EAX      ; 00462418
-    MOV EAX,[0x005be368]                ; 0046241f | DAT_005be368 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 0046241f | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
         ;   Label: LAB_0046241f
-    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 00462424 | DAT_01fa5f34
+    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 00462424 | g_CDemonSet_01e57284.character_count
     JGE 0x00462353                      ; 0046242a
         ;   XREF to: 00462353 (CONDITIONAL_JUMP)  ; LAB_00462353
-    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14ecb4] ; 00462430 | DAT_01fa5f38 | DAT_01fa5f3c
+    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14ecb4] ; 00462430 | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1]
     MOV EAX,ESP                         ; 00462437
     PUSH EAX                            ; 00462439
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 0046243a
@@ -162,9 +162,9 @@ section .text
     PUSH 0x3f800000                     ; 00462483
     PUSH 0x0                            ; 00462488
     PUSH 0x0                            ; 0046248a
-    MOV EBP,dword ptr [0x005be368]      ; 0046248c | DAT_005be368
+    MOV EBP,dword ptr [0x005be368]      ; 0046248c | g_CDemonSet_PTR_005be368
     PUSH 0x42c80000                     ; 00462492
-    PUSH EBP                            ; 00462497 | DAT_01e57284
+    PUSH EBP                            ; 00462497 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050e660      ; 00462498
         ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
     ADD ESP,0x14                        ; 0046249d
@@ -205,7 +205,7 @@ section .text
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00462522
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xa8],EAX      ; 00462527
-    MOV EDX,dword ptr [0x005b80f0]      ; 0046252e | DAT_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 0046252e | g_CFireEffect_PTR_005b80f0
     FLD float ptr [ESP + 0xa8]          ; 00462534
     ADD ESP,0x8                         ; 0046253b
     LEA EAX,[ESP + 0x54]                ; 0046253e
@@ -277,7 +277,7 @@ section .text
     LEA EAX,[ESP + 0x7c]                ; 00462630
     PUSH EAX                            ; 00462634
     PUSH ESI                            ; 00462635
-    MOV ECX,dword ptr [0x005b80f0]      ; 00462636 | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 00462636 | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 0046263c
     INC EDI                             ; 0046263d
     CALL core_fire.cpp_CFireEffect_createRock_FUN_0048b320 ; 0046263e

@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a1068
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -145,14 +145,14 @@ section .text
     JZ 0x004ef8f5                       ; 004ef9a8
         ;   XREF to: 004ef8f5 (CONDITIONAL_JUMP)  ; LAB_004ef8f5
     PUSH EDX                            ; 004ef9ae
-    MOV ESI,dword ptr [0x005baf90]      ; 004ef9af | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004ef9af | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 004ef9b5 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004ef9b6
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004ef9bb
     PUSH 0x1                            ; 004ef9be
     PUSH EBX                            ; 004ef9c0
-    MOV EAX,[0x005baf90]                ; 004ef9c1 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 004ef9c1 | g_CDemonMission_PTR_005baf90
     PUSH EAX                            ; 004ef9c6 | DAT_01cc9450
     MOV dword ptr [EBX + 0x1f678],0x0   ; 004ef9c7
     CALL core_mission.cpp_FUN_004d9110  ; 004ef9d1

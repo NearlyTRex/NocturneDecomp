@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,10 +62,10 @@
         "message": "use of undeclared identifier 'FUN_005638d0'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 36,
+        "category": "incompatible_types",
+        "column": 3,
         "line": 19,
-        "message": "use of undeclared identifier 'DAT_01e56c30'"
+        "message": "no matching function for call to 'shape_edittool_cpp_FUN_00476160'"
       }
     ],
     "success": false,
@@ -74,16 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 117,
+    "complexity_score": 102,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 44
@@ -232,7 +231,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_clear_FUN_00473c50((CStrList *)&param_1->parsed_line_count);",
+      "text": "shape_edittool_cpp_CStrList_clear_FUN_00473c50(&param_1->script_text);",
       "type": "unnamed_param"
     },
     {
@@ -274,14 +273,6 @@
       "severity": "mild",
       "text": "param_1->dialog_entry_count = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_01e56c30",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_00476160(&DAT_01e56c30);",
-      "type": "undefined_data"
     },
     {
       "call_site_count": 3,

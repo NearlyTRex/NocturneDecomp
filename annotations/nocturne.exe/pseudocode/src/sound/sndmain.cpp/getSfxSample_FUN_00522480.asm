@@ -89,7 +89,7 @@ section .text
     MOV EBX,ECX                         ; 005224cc
     IMUL EAX,EBX,0x168                  ; 005224ce
         ;   Label: LAB_005224ce
-    MOV EDI,dword ptr [EAX + 0x2dc2004] ; 005224d4 | DAT_02dc216c
+    MOV EDI,dword ptr [EAX + 0x2dc2004] ; 005224d4 | g_CSfxSample_ARRAY_02dc1edc[1].taken
     CMP ECX,EDI                         ; 005224da
     JZ 0x00522754                       ; 005224dc
         ;   XREF to: 00522754 (CONDITIONAL_JUMP)  ; LAB_00522754
@@ -207,8 +207,8 @@ section .text
     MOV ECX,0x592669                    ; 005225ff | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x300                       ; 00522604
     PUSH 0x59267e                       ; 00522609 | = "Can't open %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052260e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00522614 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0052260e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00522614 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052261a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052261f
@@ -313,7 +313,7 @@ section .text
     POP ESI                             ; 00522751
     POP EBX                             ; 00522752
     RET                                 ; 00522753
-    CMP EDI,dword ptr [EAX + 0x2dc2008] ; 00522754 | DAT_02dc2170
+    CMP EDI,dword ptr [EAX + 0x2dc2008] ; 00522754 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
         ;   Label: LAB_00522754
     JNZ 0x005224e2                      ; 0052275a
         ;   XREF to: 005224e2 (CONDITIONAL_JUMP)  ; LAB_005224e2
@@ -384,10 +384,10 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0 ; 0052280e
         ;   XREF to: 004e7df0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0()
     MOV dword ptr [EBP + 0x104],0x10    ; 00522813
-    MOV EAX,[0x02da8be4]                ; 0052281d | DAT_02da8be4
+    MOV EAX,[0x02da8be4]                ; 0052281d | g_CMP3Decoder_02da8ae0.num_channels
     MOV dword ptr [EBP + 0x108],EAX     ; 00522822
     ADD ESP,0x8                         ; 00522828
-    MOV EAX,[0x02da8be0]                ; 0052282b | DAT_02da8be0
+    MOV EAX,[0x02da8be0]                ; 0052282b | g_CMP3Decoder_02da8ae0.sample_rate
     MOV dword ptr [EBP + 0x110],0xffffffff ; 00522830
     PUSH EBP                            ; 0052283a
     MOV dword ptr [EBP + 0x10c],EAX     ; 0052283b
@@ -403,8 +403,8 @@ section .text
     MOV ESI,0x5926ca                    ; 0052285b | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x34f                       ; 00522860
     PUSH 0x5926df                       ; 00522865 | = "Don't know length of sample %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 0052286a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00522870 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0052286a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00522870 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00522876
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052287b
@@ -468,8 +468,8 @@ section .text
     MOV ESI,0x59273a                    ; 0052293b | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x37d                       ; 00522940
     PUSH 0x59274f                       ; 00522945 | = "Unknown sample file format extension: %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 0052294a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00522950 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0052294a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00522950 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00522956
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052295b

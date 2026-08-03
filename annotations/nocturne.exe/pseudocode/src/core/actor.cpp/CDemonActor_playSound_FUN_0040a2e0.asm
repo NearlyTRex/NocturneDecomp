@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_CDemonActor_playSound_FUN_0040a2e0(CDemonActor *param_1,char *param_2)
+; uint __cdecl core_actor_cpp_CDemonActor_playSound_FUN_0040a2e0(CDemonActor *this_ptr,char *sound_name)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   sound_name
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playActorSound_FUN_0052ea60
@@ -22,7 +25,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 0040a2e9
     PUSH ECX                            ; 0040a2ed
     PUSH EDX                            ; 0040a2ee
-    MOV EBX,dword ptr [0x005bed68]      ; 0040a2ef | DAT_005bed68
+    MOV EBX,dword ptr [0x005bed68]      ; 0040a2ef | g_CSound_PTR_005bed68
     PUSH EBX                            ; 0040a2f5
     CALL core_sound.cpp_CSound_playActorSound_FUN_0052ea60 ; 0040a2f6
         ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0052ea60(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

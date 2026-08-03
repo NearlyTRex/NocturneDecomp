@@ -10,7 +10,7 @@ void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int paused_mode)
 
 {
   double dVar1;
-  byte *puVar2;
+  CSfxSample *pCVar2;
   float local_18;
   float local_14;
   
@@ -22,11 +22,11 @@ void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int paused_mode)
     dVar1 = -0.20000000000000001;
   }
   local_14 = 2.0f + (float)dVar1;
-  puVar2 = &DAT_02dc1edc;
+  pCVar2 = g_CSfxSample_ARRAY_02dc1edc;
   do {
-    sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(puVar2,local_14,local_18);
-    puVar2 = puVar2 + 0x168;
-  } while (puVar2 != (byte *)0x2dc78dc);
+    sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(pCVar2,local_14,local_18);
+    pCVar2 = pCVar2 + 1;
+  } while (pCVar2 != (CSfxSample *)0x2dc78dc);
   sound_sndmain_cpp_unlockSound_FUN_00528890();
   return;
 }

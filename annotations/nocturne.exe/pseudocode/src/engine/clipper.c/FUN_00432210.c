@@ -186,8 +186,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
           break;
         case 1:
           if (0xb < DAT_00767b38) {
-            PTR_01cc4800 = "..\\engine\\clipper.c";
-            INT_01cc4804 = 0x5e;
+            g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+            g_INT_01cc4804 = 0x5e;
             core_main_c_FUN_004c8440();
           }
           iVar9 = DAT_00767b38 * 0x30;
@@ -202,8 +202,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
           iVar9 = uVar8 + 1;
           *(SRenderVertex **)(local_4c + uVar8 * 4) = pSVar12;
           if (0xb < iVar4) {
-            PTR_01cc4800 = "..\\engine\\clipper.c";
-            INT_01cc4804 = 0x5e;
+            g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+            g_INT_01cc4804 = 0x5e;
             core_main_c_FUN_004c8440();
           }
           iVar4 = DAT_00767b38 * 0x30;
@@ -241,8 +241,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
             break;
           case 1:
             if (0xb < DAT_00767b38) {
-              PTR_01cc4800 = "..\\engine\\clipper.c";
-              INT_01cc4804 = 0x5e;
+              g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+              g_INT_01cc4804 = 0x5e;
               core_main_c_FUN_004c8440();
             }
             iVar4 = DAT_00767b38 * 0x30;
@@ -255,8 +255,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
           case 2:
             auStack_d0[uVar13 + 1] = pSVar12;
             if (0xb < DAT_00767b38) {
-              PTR_01cc4800 = "..\\engine\\clipper.c";
-              INT_01cc4804 = 0x5e;
+              g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+              g_INT_01cc4804 = 0x5e;
               core_main_c_FUN_004c8440();
             }
             iVar4 = DAT_00767b38 * 0x30;
@@ -298,8 +298,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
               break;
             case 1:
               if (0xb < DAT_00767b38) {
-                PTR_01cc4800 = "..\\engine\\clipper.c";
-                INT_01cc4804 = 0x5e;
+                g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+                g_INT_01cc4804 = 0x5e;
                 core_main_c_FUN_004c8440();
               }
               iVar4 = DAT_00767b38 * 0x30;
@@ -312,8 +312,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
             case 2:
               local_14c[uVar15] = pSVar12;
               if (0xb < DAT_00767b38) {
-                PTR_01cc4800 = "..\\engine\\clipper.c";
-                INT_01cc4804 = 0x5e;
+                g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+                g_INT_01cc4804 = 0x5e;
                 core_main_c_FUN_004c8440();
               }
               iVar4 = DAT_00767b38 * 0x30;
@@ -354,8 +354,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
                 break;
               case 1:
                 if (0xb < DAT_00767b38) {
-                  PTR_01cc4800 = "..\\engine\\clipper.c";
-                  INT_01cc4804 = 0x5e;
+                  g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+                  g_INT_01cc4804 = 0x5e;
                   core_main_c_FUN_004c8440();
                 }
                 iVar4 = DAT_00767b38 * 0x30;
@@ -368,8 +368,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
               case 2:
                 auStack_d0[uVar13 + 1] = pSVar12;
                 if (0xb < DAT_00767b38) {
-                  PTR_01cc4800 = "..\\engine\\clipper.c";
-                  INT_01cc4804 = 0x5e;
+                  g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
+                  g_INT_01cc4804 = 0x5e;
                   core_main_c_FUN_004c8440();
                 }
                 iVar4 = DAT_00767b38 * 0x30;

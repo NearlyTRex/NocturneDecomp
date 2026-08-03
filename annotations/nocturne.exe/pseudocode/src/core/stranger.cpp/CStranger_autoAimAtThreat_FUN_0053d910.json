@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -78,42 +78,6 @@
         "column": 14,
         "line": 96,
         "message": "use of undeclared identifier '_DAT_02dc9f60'"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 177,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 180,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 187,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 219,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 220,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 221,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
       }
     ],
     "success": false,
@@ -122,12 +86,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 348,
+    "complexity_score": 350,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 268,
+    "pseudocode_lines": 270,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +99,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 975
+    "total_lines": 977
   },
   "cross_references": [
     {
@@ -294,9 +258,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "00765a98",
@@ -306,13 +270,13 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa9dbc",
-      "name": "DAT_01fa9dbc",
+      "name": "g_CDemonSet_01e57284.threat_count",
       "type": "undefined4",
       "value": null
     },
@@ -511,18 +475,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 173,
-      "match": "(CDemonActor **)((int)0x01E57284",
+      "line": 174,
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)0x01E57284->enemies + iStack_3c + 0x1b5c),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 180,
-      "match": "(CDemonActor **)((int)0x01E57284",
+      "line": 181,
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "pCStack_1c = *(CDemonActor **)((int)0x01E57284->enemies + iStack_3c + 0x1b5c);",
+      "text": "pCStack_1c = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c);",
       "type": "pointer_cast"
     },
     {

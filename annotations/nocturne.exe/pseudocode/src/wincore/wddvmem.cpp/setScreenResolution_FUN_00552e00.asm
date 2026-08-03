@@ -32,7 +32,7 @@
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01bd4260
-;   char* PTR_01cc4800
+;   char* g_CHAR_PTR_01cc4800
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -141,8 +141,8 @@ section .text
     MOV ESI,0x5977c5                    ; 00552ef0 | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0xea                        ; 00552ef5
     PUSH 0x5977dc                       ; 00552efa | = "WDDVMEM: Fatal - out of frame buffer ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00552eff | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00552f05 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00552eff | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00552f05 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00552f0b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00552f10
@@ -162,8 +162,8 @@ section .text
     MOV EAX,0x597808                    ; 00552f37 | = "..\\wincore\\wddvmem.cpp"
     MOV EDX,0xef                        ; 00552f3c
     PUSH 0x59781f                       ; 00552f41 | = "WDDVMEM: Fatal - out of Z buffer memory"
-    MOV [0x01cc4800],EAX                ; 00552f46 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00552f4b | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00552f46 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00552f4b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00552f51
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00552f56
@@ -362,8 +362,8 @@ section .text
         ;   Label: LAB_00553162
     MOV EBX,0x1d7                       ; 00553167
     PUSH 0x59785e                       ; 0055316c | = "setScreenResolution - Create back buf..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00553171 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00553177 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00553171 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00553177 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0055317d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00553182

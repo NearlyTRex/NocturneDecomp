@@ -17,8 +17,8 @@ void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(CMotionControll
   iVar1 = _fscanf(file_handle,"%d,%f");
   if ((iVar1 != 2) &&
      (iVar1 = _fscanf(file_handle,"\"%[^\"]\" , %f"), iVar1 != 2)) {
-    PTR_01cc4800 = "..\\core\\motion.cpp";
-    INT_01cc4804 = 0x51e;
+    g_CHAR_PTR_01cc4800 = "..\\core\\motion.cpp";
+    g_INT_01cc4804 = 0x51e;
     core_main_c_FUN_004c8440("CMotionController::load - error parsing file");
   }
   do {

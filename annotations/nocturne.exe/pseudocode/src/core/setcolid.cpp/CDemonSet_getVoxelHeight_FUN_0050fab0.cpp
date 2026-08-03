@@ -12,6 +12,6 @@ float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_0050fab0(CDemonSet 
   float fVar1;
   
   fVar1 = core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0
-                    ((CDemonRaytrace *)&DAT_01fba938,world_position);
+                    (&g_CDemonRaytrace_01fba938,world_position);
   return fVar1;
 }

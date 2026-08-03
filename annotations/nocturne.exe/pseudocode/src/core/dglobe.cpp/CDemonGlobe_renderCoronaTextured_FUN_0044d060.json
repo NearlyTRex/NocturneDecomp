@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,10 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 22,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 23,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
         "category": "undeclared_identifier",
@@ -98,22 +98,22 @@
         "message": "use of undeclared identifier '_DAT_0059bff0'"
       },
       {
-        "category": "other",
-        "column": 36,
-        "line": 34,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 45,
+        "line": 33,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
-        "category": "incompatible_types",
+        "category": "undeclared_identifier",
         "column": 14,
-        "line": 36,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'int'"
+        "line": 34,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
-        "category": "other",
-        "column": 35,
-        "line": 37,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 35,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 371,
+    "complexity_score": 205,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 30,
+    "pseudocode_lines": 45,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 159
+    "total_lines": 158
   },
   "cross_references": [],
   "function": {
@@ -343,9 +342,9 @@
     },
     {
       "addr": "005ae700",
-      "name": "DAT_005ae700",
-      "type": "undefined4",
-      "value": null
+      "name": "PTR_DAT_005ae700",
+      "type": "void*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -516,7 +515,7 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 5,
-          "line": 53,
+          "line": 51,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         }
@@ -560,15 +559,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005ae700",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_005ae700->vertex_buffer_ptr->u + iVar3) = 0x800000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
+      "line": 37,
       "match": "DAT_005ad57c",
       "severity": "mild",
       "text": "engine_texture_cpp_ensureTextureLoaded_FUN_00545920((SMRGLTextureBasic *)&DAT_005ad57c);",
@@ -576,7 +567,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_005ad88c",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)&DAT_005ad88c + iVar3);",
@@ -607,76 +598,12 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_005ae700->vertex_buffer_ptr->u` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
-      "match": "(int)&DAT_005ae700->vertex_buffer_ptr->u",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_005ae700->vertex_buffer_ptr->u + iVar3) = 0x800000;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar2->vertex_buffer_ptr->v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)&pCVar2->vertex_buffer_ptr->v",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar3) = 0x800000;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar2->vertex_buffer_ptr->a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
-      "match": "(int)&pCVar2->vertex_buffer_ptr->a",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->a + iVar3) = 0x8000;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar2->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
-      "match": "(int)&pCVar2->vertex_buffer_ptr->r",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->r + iVar3) = 0xffff;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar2->vertex_buffer_ptr->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
-      "match": "(int)&pCVar2->vertex_buffer_ptr->g",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0xffff;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar2->vertex_buffer_ptr->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
-      "match": "(int)&pCVar2->vertex_buffer_ptr->b",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0xffff;",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `&DAT_005ad88c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&DAT_005ad88c",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&DAT_005ad88c + iVar3);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 29,
-      "match": "0x1b4d738",
-      "severity": "moderate",
-      "text": "pCVar2 = 0x01B4D738;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 42,
-      "match": "0x1b4d738",
-      "severity": "moderate",
-      "text": "pCVar2 = 0x01B4D738;",
-      "type": "raw_address_constant"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
@@ -704,63 +631,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 27,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(0x01B4D738->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_005ae700->vertex_buffer_ptr->u + iVar3) = 0x800000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 31,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar3) = 0x800000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 32,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->a + iVar3) = 0x8000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->r + iVar3) = 0xffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 34,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0xffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0xffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&DAT_005ad88c + iVar3);",

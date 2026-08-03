@@ -82,8 +82,8 @@ CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(CDoor *this
     }
     break;
   default:
-    PTR_01cc4800 = "..\\core\\door.cpp";
-    INT_01cc4804 = 0x340;
+    g_CHAR_PTR_01cc4800 = "..\\core\\door.cpp";
+    g_INT_01cc4804 = 0x340;
     core_main_c_FUN_004c8440("CDoor::getOpenStandPos - invalid doorType");
     out_pos->y = (this_ptr->base).location.position.y;
     return out_pos;

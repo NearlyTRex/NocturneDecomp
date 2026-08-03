@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 32,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_02dc84bc'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 33,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 33,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 5,
-        "line": 35,
+        "line": 34,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 37,
+        "line": 36,
         "message": "use of undeclared identifier '_DAT_02dc8328'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 38,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 38,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 5,
-        "line": 40,
+        "line": 39,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 43,
+        "line": 42,
         "message": "use of undeclared identifier '_DAT_02dc8330'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
+        "line": 49,
+        "message": "use of undeclared identifier '_DAT_02dc8330'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
         "line": 50,
+        "message": "use of undeclared identifier '_DAT_02dc8334'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 56,
+        "message": "use of undeclared identifier '_DAT_02dc8334'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 60,
+        "line": 56,
+        "message": "use of undeclared identifier '_DAT_02dc8330'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_02dc8330'"
       }
     ],
@@ -122,24 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 312,
+    "complexity_score": 286,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
-    "suspect_count": 19,
+    "pseudocode_lines": 81,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
-      "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 227
+    "total_lines": 226
   },
   "cross_references": [],
   "function": {
@@ -220,13 +219,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -349,7 +348,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 36,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "if (0 < DAT_005bea68) {",
@@ -357,7 +356,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 42,
+      "line": 41,
       "match": "*(void **)(iVar2 + 0x2dc8360",
       "severity": "moderate",
       "text": "(*(void **)(iVar2 + 0x2dc8360),",
@@ -365,7 +364,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 43,
+      "line": 42,
       "match": "*(void **)(iVar2 + 0x2dc8360",
       "severity": "moderate",
       "text": "(void *)(_DAT_02dc8330 * 4 + (int)*(void **)(iVar2 + 0x2dc8360)),",
@@ -373,7 +372,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 50,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "} while (iVar5 < DAT_005bea68);",
@@ -381,7 +380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "iStack_1c = DAT_005bea68;",
@@ -389,7 +388,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 54,
       "match": "DAT_005bea6c",
       "severity": "mild",
       "text": "iStack_18 = DAT_005bea6c;",
@@ -397,7 +396,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "if (0 < DAT_005bea68) {",
@@ -405,7 +404,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(uint *)((int)auStack_40",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_40 + iVar5) = *(uint *)(iVar5 + 0x2dc8360);",
@@ -413,7 +412,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 61,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "} while (iVar2 < DAT_005bea68 * 4);",
@@ -421,7 +420,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 63,
       "match": "DAT_005bea6c",
       "severity": "mild",
       "text": "fStack_14 = (float)_DAT_02dc8330 / (float)DAT_005bea6c;",
@@ -429,31 +428,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 68,
       "match": "DAT_02dc1b74",
       "severity": "mild",
-      "text": "} while (this_ptr != (CSfxSlot *)&DAT_02dc1b74);",
+      "text": "} while (pCVar3 != (CSfxSlot *)&DAT_02dc1b74);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_02dc1b74",
       "severity": "mild",
-      "text": "} while (puVar3 != &DAT_02dc1b74);",
+      "text": "} while (pCVar3 != (CSfxSlot *)&DAT_02dc1b74);",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `&this_ptr->prev_hardware_playback_pos` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
-      "match": "(int)&this_ptr->prev_hardware_playback_pos",
-      "severity": "moderate",
-      "text": "this_ptr = (CSfxSlot *)((int)&this_ptr->prev_hardware_playback_pos + 4);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Raw hex address 0x5231e8 assigned to bare local `uStack_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 40,
+      "line": 39,
       "match": "0x5231e8",
       "severity": "moderate",
       "text": "uStack_50 = 0x5231e8;",
@@ -461,7 +452,7 @@
     },
     {
       "description": "Raw hex address 0x523216 assigned to bare local `uStack_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 48,
+      "line": 47,
       "match": "0x523216",
       "severity": "moderate",
       "text": "uStack_50 = 0x523216;",
@@ -469,23 +460,15 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 74,
+      "line": 73,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 68,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "this_ptr = (CSfxSlot *)((int)&this_ptr->prev_hardware_playback_pos + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "mem* byte count hardcodes an element stride (count = count * N) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 49,
+      "line": 48,
       "match": "memset",
       "severity": "moderate",
       "text": "memset",

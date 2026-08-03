@@ -75,8 +75,8 @@ section .text
     MOV EDX,0x57739b                    ; 00404168 | = "..\\engine\\2d.c"
     MOV ECX,0x9a0                       ; 0040416d
     PUSH 0x5773aa                       ; 00404172 | = "mapFrameBuffer - invalid bits/pixel"
-    MOV dword ptr [0x01cc4800],EDX      ; 00404177 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040417d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00404177 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0040417d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00404183
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00404188
@@ -99,8 +99,8 @@ section .text
     MOV EAX,0x5773ce                    ; 004041aa | = "..\\engine\\2d.c"
     MOV EDX,0x9a1                       ; 004041af
     PUSH 0x5773dd                       ; 004041b4 | = "mapFrameBuffer - invalid stride"
-    MOV [0x01cc4800],EAX                ; 004041b9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004041be | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004041b9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004041be | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004041c4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004041c9
@@ -112,8 +112,8 @@ section .text
         ;   Label: LAB_004041d5
     MOV EAX,0x9a2                       ; 004041da
     PUSH 0x57740c                       ; 004041df | = "mapFrameBuffer - invalid size"
-    MOV dword ptr [0x01cc4800],ECX      ; 004041e4 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004041ea | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004041e4 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004041ea | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004041ef
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004041f4
@@ -124,8 +124,8 @@ section .text
     MOV EDX,0x57742a                    ; 004041ff | = "..\\engine\\2d.c"
     MOV ECX,0x9a3                       ; 00404204
     PUSH 0x577439                       ; 00404209 | = "mapFrameBuffer - ySize too big!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040420e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00404214 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0040420e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00404214 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040421a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040421f
@@ -136,8 +136,8 @@ section .text
     MOV EDX,0x577459                    ; 00404229 | = "..\\engine\\2d.c"
     MOV ECX,0x9a4                       ; 0040422e
     PUSH 0x577468                       ; 00404233 | = "mapFrameBuffer - invalid buffer!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00404238 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040423e | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00404238 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0040423e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00404244
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00404249
@@ -196,8 +196,8 @@ section .text
         ;   Label: LAB_00404305
     MOV EAX,0x998                       ; 0040430a
     PUSH 0x57737a                       ; 0040430f | = "mapFrameBuffer - already mapped!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00404314 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0040431a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00404314 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0040431a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040431f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00404324

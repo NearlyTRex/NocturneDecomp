@@ -17,20 +17,20 @@ int sound_sndmain_cpp_FUN_00521bf0(void)
   int iVar3;
   
   if (_DAT_02dc84bc < 1) {
-    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    INT_01cc4804 = 0x1f6;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    g_INT_01cc4804 = 0x1f6;
     core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   iVar3 = 0;
   iVar2 = 0;
-  iVar1 = _DAT_02dbd3e4;
+  iVar1 = g_CSfxSlot_ARRAY_02dbd374[0].playback_state;
   while( true ) {
     if (iVar1 == 0) {
       return iVar3;
     }
     iVar3 = iVar3 + 1;
     if (0x47ff < iVar2 + 0x120) break;
-    iVar1 = *(int *)(&DAT_02dbd504 + iVar2);
+    iVar1 = *(int *)((int)g_CSfxSlot_ARRAY_02dbd374[1].distance_to_speakers + iVar2 + -0xc);
     iVar2 = iVar2 + 0x120;
   }
   return -1;

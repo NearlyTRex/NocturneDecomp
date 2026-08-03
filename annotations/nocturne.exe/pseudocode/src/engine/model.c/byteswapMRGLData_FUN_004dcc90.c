@@ -88,8 +88,8 @@ joined_r0x004dcc9d:
     case 0x40:
       goto switchD_004dccb6_caseD_d;
     default:
-      PTR_01cc4800 = "..\\engine\\model.c";
-      INT_01cc4804 = 0xce;
+      g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
+      g_INT_01cc4804 = 0xce;
       core_main_c_FUN_004c8440("Need a new byteswap!");
       data_size = data_size - uVar1;
       mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);

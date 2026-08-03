@@ -39,8 +39,8 @@
 ;   undefined4 DAT_014b8488
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -266,8 +266,8 @@ section .text
     MOV EBX,0x57bd80                    ; 0044b204 | = "..\\core\\dcube.cpp"
     MOV ESI,0x7bb                       ; 0044b209
     PUSH 0x57bd92                       ; 0044b20e | = "CDemonCube::rotateVerticies - tried t..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0044b213 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044b219 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0044b213 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044b219 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044b21f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0044b224

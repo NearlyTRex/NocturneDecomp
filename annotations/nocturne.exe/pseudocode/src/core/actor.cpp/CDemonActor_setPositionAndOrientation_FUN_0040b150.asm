@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *param_1,float *param_2,float *param_3)
+; void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   new_position
+; CVector3f *      Stack[0xc]:4   new_orientation
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0 at 00424700

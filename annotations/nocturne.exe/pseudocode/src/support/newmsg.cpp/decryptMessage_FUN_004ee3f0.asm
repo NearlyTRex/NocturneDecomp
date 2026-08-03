@@ -21,8 +21,8 @@
 ;   TerminatedCString s_decryptMessage_error_dec_0058ca2d
 ;   TerminatedCString s_support_newmsg_cpp_0058ca55
 ;   TerminatedCString s_decryptMessage_premature_0058ca6b
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -79,8 +79,8 @@ section .text
         ;   Label: LAB_004ee447
     MOV EBX,0xca                        ; 004ee44c
     PUSH 0x58c9ea                       ; 004ee451 | = "decryptMessage - invalid initial mask..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004ee456 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004ee45c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004ee456 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004ee45c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ee462
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ee467
@@ -99,8 +99,8 @@ section .text
     MOV EAX,0x58ca17                    ; 004ee486 | = "..\\support\\newmsg.cpp"
     MOV EDX,0xd5                        ; 004ee48b
     PUSH 0x58ca2d                       ; 004ee490 | = "decryptMessage - error decrypting text!"
-    MOV [0x01cc4800],EAX                ; 004ee495 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ee49a | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004ee495 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004ee49a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ee4a0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ee4a5
@@ -110,8 +110,8 @@ section .text
         ;   Label: LAB_004ee4aa
     MOV EBX,0xe8                        ; 004ee4af
     PUSH 0x58ca6b                       ; 004ee4b4 | = "decryptMessage - premature null termi..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004ee4b9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004ee4bf | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004ee4b9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004ee4bf | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ee4c5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ee4ca

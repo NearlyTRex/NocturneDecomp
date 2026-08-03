@@ -12,7 +12,7 @@ float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,
 
 {
   int iVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -29,23 +29,24 @@ float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,
   
   if ((DAT_02684230 & 1) == 0) {
     DAT_02684230 = DAT_02684230 | 1;
-    __arrinit(&DAT_026757d0,5000,&g_CVectorTypeInfo_005993b0);
+    __arrinit(g_CVector3f_ARRAY_026757d0,5000,&g_CVectorTypeInfo_005993b0)
+    ;
   }
   if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {
-    PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    INT_01cc4804 = 0x6d2;
+    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    g_INT_01cc4804 = 0x6d2;
     core_main_c_FUN_004c8440();
   }
   iVar1 = param_2 * 4 + param_1;
-  pfVar2 = (float *)&DAT_026757d0;
+  pCVar2 = g_CVector3f_ARRAY_026757d0;
   iVar5 = 0;
   if (0 < *(int *)(iVar1 + 0x2c)) {
     do {
-      *pfVar2 = (float)*param_5 * _DAT_005a1eb0;
-      pfVar2[1] = (float)param_5[1] * _DAT_005a1eb0;
-      pfVar2[2] = (float)param_5[2] * _DAT_005a1eb0;
+      pCVar2->x = (float)*param_5 * _DAT_005a1eb0;
+      pCVar2->y = (float)param_5[1] * _DAT_005a1eb0;
+      pCVar2->z = (float)param_5[2] * _DAT_005a1eb0;
       iVar5 = iVar5 + 1;
-      pfVar2 = pfVar2 + 3;
+      pCVar2 = pCVar2 + 1;
       param_5 = param_5 + 3;
     } while (iVar5 < *(int *)(iVar1 + 0x2c));
   }
@@ -65,15 +66,15 @@ float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,
         do {
           iVar5 = *(int *)(local_1c + 0x7c);
           core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
-                    (&local_6c,(CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + iVar5) * 0xc)
-                     ,(CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + 2 + iVar5) * 0xc),
-                     (CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + 4 + iVar5) * 0xc));
+                    (&local_6c,g_CVector3f_ARRAY_026757d0 + *(ushort *)(iVar4 + iVar5),
+                     g_CVector3f_ARRAY_026757d0 + *(ushort *)(iVar4 + 2 + iVar5),
+                     g_CVector3f_ARRAY_026757d0 + *(ushort *)(iVar4 + 4 + iVar5));
           local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(&local_6c,param_3,param_4);
           if (((local_14 < local_18) && (0.0 <= local_14)) && (local_14 <= 1.0)) {
             local_34 = -local_6c.normal.x;
             local_30 = -local_6c.normal.y;
             local_2c = -local_6c.normal.z;
-            if (&stack0x00000000 != (byte *)0x268cf10) {
+            if ((SLod *)&stack0x00000000 != g_CDeformableModel_ARRAY_0268cef4[0].lod_info + 3) {
               _DAT_0268cedc = local_34;
               _DAT_0268cee0 = local_30;
               _DAT_0268cee4 = local_2c;

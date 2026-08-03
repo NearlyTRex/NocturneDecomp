@@ -50,8 +50,8 @@ void __cdecl core_texlist_cpp_CTextureList_load_FUN_00544950(CTextureList *this_
   pcVar7 = (char *)0x0;
 LAB_005449a0:
   if (pcVar7 == (char *)0x0) {
-    PTR_01cc4800 = "..\\core\\texlist.cpp";
-    INT_01cc4804 = 0x61;
+    g_CHAR_PTR_01cc4800 = "..\\core\\texlist.cpp";
+    g_INT_01cc4804 = 0x61;
     core_main_c_FUN_004c8440("CTextureList::load - No extension found");
   }
   pcVar6 = ".tex";
@@ -66,8 +66,8 @@ LAB_005449a0:
   } while (cVar1 != '\0');
   local_2c = engine_dosio_cpp_getFile_FUN_00456a60("data",local_12c,"rt");
   if (local_2c == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\core\\texlist.cpp";
-    INT_01cc4804 = 0x6a;
+    g_CHAR_PTR_01cc4800 = "..\\core\\texlist.cpp";
+    g_INT_01cc4804 = 0x6a;
     core_main_c_FUN_004c8440("CTextureList::load - Bad filename!");
   }
   _fscanf(local_2c,"%d\n");

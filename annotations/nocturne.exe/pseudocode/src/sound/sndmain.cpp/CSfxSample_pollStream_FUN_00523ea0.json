@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -63,42 +63,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 5,
-        "line": 42,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 42,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 48,
-        "message": "use of undeclared identifier 'DAT_02dbd3e4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 49,
-        "message": "use of undeclared identifier 'DAT_02dbd3e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 50,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 50,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 9,
         "line": 54,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
@@ -110,10 +74,34 @@
         "message": "C-style cast from 'CSfxSample *' to 'float' is not allowed"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "incompatible_types",
         "column": 11,
-        "line": 98,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
+        "line": 100,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 135,
+        "message": "use of undeclared identifier 'DAT_02db1118'; did you mean 'DAT_02DF1118'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 187,
+        "message": "use of undeclared identifier 'DAT_02db1118'; did you mean 'DAT_02DF1118'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 205,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 228,
+        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
       }
     ],
     "success": false,
@@ -122,13 +110,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 500,
-    "complexity_score": 947,
+    "complexity_score": 915,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 227,
-    "suspect_count": 68,
+    "pseudocode_lines": 225,
+    "suspect_count": 65,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -139,7 +127,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 727
+    "total_lines": 725
   },
   "cross_references": [
     {
@@ -339,13 +327,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -369,7 +357,7 @@
     },
     {
       "addr": "02dbd3e4",
-      "name": "DAT_02dbd3e4",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[0].playback_state",
       "type": "undefined4",
       "value": null
     },
@@ -558,7 +546,7 @@
         },
         {
           "check_id": "legacyUninitvar",
-          "column": 77,
+          "column": 78,
           "line": 73,
           "message": "Uninitialized variable: local_28",
           "severity": "error"
@@ -598,40 +586,16 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (-1 < param_1->loop_endpoints[3]) {",
+      "text": "iVar15 = param_1->streaming_slot_index;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar15 = param_1->loop_endpoints[3] * 0x120;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_02dbd3e4",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_02dbd3e4 + iVar15) == 0) ||",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 != *(CSfxSample **)(&DAT_02dbd3e8 + iVar15))) {",
+      "text": "(param_1 != g_CSfxSlot_ARRAY_02dbd374[iVar15].sample)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_02dbd3e8",
-      "severity": "mild",
-      "text": "(param_1 != *(CSfxSample **)(&DAT_02dbd3e8 + iVar15))) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -654,7 +618,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "((double)(param_1->sample_info).sample_count <= *(double *)(iVar15 + 0x2dbd3d4)))",
+      "text": "((double)(param_1->sample_info).sample_count <=",
       "type": "unnamed_param"
     },
     {
@@ -678,7 +642,7 @@
       "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "((double)param_1->loop_destinations[1] - *(double *)(local_28 + 0x118));",
+      "text": "((double)param_1->stream_write_position - *(double *)(local_28 + 0x118));",
       "type": "unnamed_param"
     },
     {
@@ -686,7 +650,7 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = local_34 + param_1->loop_endpoints[4];",
+      "text": "local_34 = local_34 + param_1->streaming_buffer_size;",
       "type": "unnamed_param"
     },
     {
@@ -694,7 +658,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->loop_endpoints[2] != 0) {",
+      "text": "if (param_1->buffer_id != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -710,7 +674,7 @@
       "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_1->loop_endpoints[4] + -1;",
+      "text": "iVar5 = param_1->streaming_buffer_size + -1;",
       "type": "unnamed_param"
     },
     {
@@ -734,7 +698,7 @@
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_1->loop_destinations[1] < 0) ||",
+      "text": "if ((param_1->stream_write_position < 0) ||",
       "type": "unnamed_param"
     },
     {
@@ -742,7 +706,7 @@
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->loop_endpoints[4] <= param_1->loop_destinations[1])) {",
+      "text": "(param_1->streaming_buffer_size <= param_1->stream_write_position)) {",
       "type": "unnamed_param"
     },
     {
@@ -750,7 +714,7 @@
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->loop_endpoints[4] <= param_1->loop_destinations[1])) {",
+      "text": "(param_1->streaming_buffer_size <= param_1->stream_write_position)) {",
       "type": "unnamed_param"
     },
     {
@@ -758,7 +722,7 @@
       "line": 94,
       "match": "param_1",
       "severity": "mild",
-      "text": "(\"nextLoadSampleDest = %d, allocLength = %d\",param_1->loop_destinations[1],",
+      "text": "(\"nextLoadSampleDest = %d, allocLength = %d\",param_1->stream_write_position,",
       "type": "unnamed_param"
     },
     {
@@ -766,7 +730,7 @@
       "line": 95,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->loop_endpoints[4],iVar4,uVar14);",
+      "text": "param_1->streaming_buffer_size,iVar4,uVar14);",
       "type": "unnamed_param"
     },
     {
@@ -774,7 +738,7 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "samples_requested = param_1->loop_endpoints[4] - param_1->loop_destinations[1];",
+      "text": "samples_requested = param_1->streaming_buffer_size - param_1->stream_write_position;",
       "type": "unnamed_param"
     },
     {
@@ -782,7 +746,7 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "samples_requested = param_1->loop_endpoints[4] - param_1->loop_destinations[1];",
+      "text": "samples_requested = param_1->streaming_buffer_size - param_1->stream_write_position;",
       "type": "unnamed_param"
     },
     {
@@ -798,7 +762,7 @@
       "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->loop_destinations[0] < iVar15) {",
+      "text": "if (param_1->stream_read_position < iVar15) {",
       "type": "unnamed_param"
     },
     {
@@ -806,7 +770,7 @@
       "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "SVar7 = iVar15 - param_1->loop_destinations[0];",
+      "text": "SVar7 = iVar15 - param_1->stream_read_position;",
       "type": "unnamed_param"
     },
     {
@@ -814,7 +778,7 @@
       "line": 117,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->loop_endpoints[2] == 0) {",
+      "text": "if (param_1->buffer_id == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -822,7 +786,7 @@
       "line": 124,
       "match": "param_1",
       "severity": "mild",
-      "text": "(this_ptr,0,param_1->loop_destinations[1]);",
+      "text": "(this_ptr,0,param_1->stream_write_position);",
       "type": "unnamed_param"
     },
     {
@@ -838,7 +802,7 @@
       "line": 131,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->loop_endpoints[2] == 0) break;",
+      "text": "if (param_1->buffer_id == 0) break;",
       "type": "unnamed_param"
     },
     {
@@ -846,7 +810,7 @@
       "line": 151,
       "match": "param_1",
       "severity": "mild",
-      "text": "else if ((CMP3Decoder *)param_1->loop_destinations[2] == (CMP3Decoder *)0x0) {",
+      "text": "else if (param_1->mp3_data == (CMP3Decoder *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -854,7 +818,7 @@
       "line": 152,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->loop_destinations[4] == 0) {",
+      "text": "if (param_1->file_handle == (_FILE *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -862,7 +826,7 @@
       "line": 157,
       "match": "param_1",
       "severity": "mild",
-      "text": "file = (_FILE *)param_1->loop_destinations[4];",
+      "text": "file = param_1->file_handle;",
       "type": "unnamed_param"
     },
     {
@@ -878,7 +842,7 @@
       "line": 161,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(byte *)(param_1->loop_destinations[4] + 0xc) & 0x20) != 0) {",
+      "text": "if ((param_1->file_handle->_flag & 0x20) != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -894,28 +858,28 @@
       "line": 169,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMP3Decoder *)param_1->loop_destinations[2],output_buffer,",
+      "text": "(param_1->mp3_data,output_buffer,samples_requested);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 174,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,param_1->loop_destinations[1],local_20);",
+      "text": "(param_1,param_1->stream_write_position,local_20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 174,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,param_1->loop_destinations[1],local_20);",
+      "text": "(param_1,param_1->stream_write_position,local_20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 180,
+      "line": 179,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar15 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(param_1);",
@@ -923,7 +887,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 181,
+      "line": 180,
       "match": "DAT_02db1118",
       "severity": "mild",
       "text": "puVar10 = (uint *)&DAT_02db1118;",
@@ -931,7 +895,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 188,
       "match": "(uint *)((int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
@@ -939,7 +903,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 189,
       "match": "(uint *)((int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
@@ -947,7 +911,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 192,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(param_1);",
@@ -955,18 +919,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 201,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->sample_info).sample_count = param_1->loop_destinations[0] + local_20;",
+      "text": "(param_1->sample_info).sample_count = param_1->stream_read_position + local_20;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 201,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->sample_info).sample_count = param_1->loop_destinations[0] + local_20;",
+      "text": "(param_1->sample_info).sample_count = param_1->stream_read_position + local_20;",
       "type": "unnamed_param"
     },
     {
@@ -974,7 +938,23 @@
       "line": 204,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar15 = param_1->loop_endpoints[4];",
+      "text": "iVar15 = param_1->stream_write_position + local_20;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 205,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->stream_read_position = param_1->stream_read_position + local_20;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 205,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->stream_read_position = param_1->stream_read_position + local_20;",
       "type": "unnamed_param"
     },
     {
@@ -982,7 +962,7 @@
       "line": 206,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_1->loop_destinations[1] + local_20;",
+      "text": "param_1->stream_write_position = iVar15;",
       "type": "unnamed_param"
     },
     {
@@ -990,15 +970,7 @@
       "line": 207,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->loop_destinations[0] = param_1->loop_destinations[0] + local_20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 207,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->loop_destinations[0] = param_1->loop_destinations[0] + local_20;",
+      "text": "if (param_1->streaming_buffer_size <= iVar15) {",
       "type": "unnamed_param"
     },
     {
@@ -1006,36 +978,28 @@
       "line": 208,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->loop_destinations[1] = iVar5;",
+      "text": "param_1->stream_write_position = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 210,
+      "line": 213,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->loop_destinations[1] = 0;",
+      "text": "(param_1,param_1->stream_write_position,samples_requested);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 215,
+      "line": 213,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,param_1->loop_destinations[1],samples_requested);",
+      "text": "(param_1,param_1->stream_write_position,samples_requested);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 215,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_1->loop_destinations[1],samples_requested);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 223,
+      "line": 221,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_FUN_00529980(pcVar13,param_1);",
@@ -1043,7 +1007,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 226,
+      "line": 224,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(param_1);",
@@ -1051,7 +1015,7 @@
     },
     {
       "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 189,
+      "line": 188,
       "match": "(int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
@@ -1059,7 +1023,7 @@
     },
     {
       "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 190,
+      "line": 189,
       "match": "(int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
@@ -1083,7 +1047,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 182,
+      "line": 181,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar9 = local_20 * iVar15 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
@@ -1091,7 +1055,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 187,
+      "line": 186,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar9 = local_20 * iVar15 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {",
@@ -1121,7 +1085,7 @@
       "line": 73,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "((double)param_1->loop_destinations[1] - *(double *)(local_28 + 0x118));",
+      "text": "((double)param_1->stream_write_position - *(double *)(local_28 + 0x118));",
       "type": "static_legacy_uninitvar"
     }
   ]

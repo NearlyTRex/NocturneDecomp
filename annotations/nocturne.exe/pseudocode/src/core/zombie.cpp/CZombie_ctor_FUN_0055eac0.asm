@@ -21,7 +21,7 @@
 ;   float FLOAT_005a453c = 50
 ;   float FLOAT_005a4540 = 100
 ;   CEnemy_full_vtable g_CZombieVTable
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -97,7 +97,7 @@ section .text
     MOV dword ptr [EBX + 0xbd40],0x0    ; 0055eb97
     ADD ESP,0x8                         ; 0055eba1
     MOV dword ptr [EBX + 0xbd28],EAX    ; 0055eba4
-    MOV EAX,[0x005be368]                ; 0055ebaa | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0055ebaa | g_CDemonSet_PTR_005be368
     PUSH 0x5983f7                       ; 0055ebaf | = "mine.geo"
     ADD EAX,0x14cd08                    ; 0055ebb4
     MOV dword ptr [EBX + 0xbda8],0x0    ; 0055ebb9

@@ -17,15 +17,15 @@ void __cdecl core_set_cpp_FUN_0050ddd0(CDemonSet *this_ptr,SMRGLPrimitiveQuad *p
   int local_18;
   int local_14;
   
-  if (*(int *)(0x01C775EC + 0x1f0) == 0) {
-    if ((*(int *)(0x01C775EC + 500) != 0) &&
+  if (g_CGame_PTR_005b9354->scripted_sequence_active == 0) {
+    if ((g_CGame_PTR_005b9354->render_mode != 0) &&
        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),
        iVar2 == 0)) {
       core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670
                 (this_ptr,&primitive_array->base,primitive_count,0xffff);
       return;
     }
-    if ((this_ptr->renderable_actors[0x6e8] != (CDemonActor *)0x0) &&
+    if ((this_ptr->per_pixel_lighting_enabled != 0) &&
        (iVar2 = 0, pSVar1 = primitive_array, 0 < primitive_count)) {
       do {
         local_38.base.count = (pSVar1->base).base.count;

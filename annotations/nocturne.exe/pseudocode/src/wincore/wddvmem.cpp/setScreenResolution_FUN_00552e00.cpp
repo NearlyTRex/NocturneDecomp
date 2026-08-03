@@ -66,16 +66,16 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(int width,int h
                                   (uint)((DAT_005b7624 >> 0x1f) << 2 < 0)) >> 3) *
                             DAT_005b7620 * DAT_005b761c);
   if (DAT_005c5010 == (void *)0x0) {
-    PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    INT_01cc4804 = 0xea;
+    g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01cc4804 = 0xea;
     iStack_8c = 0x552f10;
     core_main_c_FUN_004c8440();
   }
   iStack_8c = 0x552f2b;
   _DAT_02ddf560 = malloc(DAT_005b761c * DAT_005b7620 * 4 + 0x40);
   if (_DAT_02ddf560 == (void *)0x0) {
-    PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    INT_01cc4804 = 0xef;
+    g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+    g_INT_01cc4804 = 0xef;
     iStack_8c = 0x552f56;
     core_main_c_FUN_004c8440();
   }
@@ -144,8 +144,8 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(int width,int h
     } while (iVar3 < 3);
     return 1;
   }
-  PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-  INT_01cc4804 = 0x1d7;
+  g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+  g_INT_01cc4804 = 0x1d7;
   core_main_c_FUN_004c8440("setScreenResolution - Create back buffer failed!");
   return 0;
 }

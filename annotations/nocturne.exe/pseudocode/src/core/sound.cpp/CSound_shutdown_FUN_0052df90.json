@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -80,14 +80,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 32,
+    "complexity_score": 62,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
     "total_lines": 48
@@ -253,6 +255,22 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer value `&g_STrainNoise_ARRAY_02dc9ca4[0].sfx_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)&g_STrainNoise_ARRAY_02dc9ca4[0].sfx_handle",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&g_STrainNoise_ARRAY_02dc9ca4[0].sfx_handle + iVar2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 13,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&g_STrainNoise_ARRAY_02dc9ca4[0].sfx_handle + iVar2);",
+      "type": "pointer_cast"
     }
   ]
 }

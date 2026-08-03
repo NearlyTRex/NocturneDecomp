@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(int param_1,float *param_2)
+; void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -30,7 +30,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 004ca310
     PUSH EDX                            ; 004ca313
     CALL core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10 ; 004ca314
-        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10()
+        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10(CDemonActor * this_ptr, SLaserInfo * laser_info)
     ADD ESP,0x8                         ; 004ca319
     XOR ESI,ESI                         ; 004ca31c
     MOV EDX,dword ptr [EBP + 0x14]      ; 004ca31e

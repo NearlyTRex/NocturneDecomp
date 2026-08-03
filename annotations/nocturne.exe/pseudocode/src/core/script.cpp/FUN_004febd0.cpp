@@ -27,7 +27,7 @@ uint core_script_cpp_FUN_004febd0(CScript *param_1,char *param_2,int param_3)
   CStrList *local_14;
   
   bVar11 = 0;
-  local_14 = (CStrList *)&param_1->parsed_line_count;
+  local_14 = &param_1->script_text;
   do {
     core_script_cpp_FUN_004fe500(param_1);
     iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("world",param_2);
@@ -72,10 +72,10 @@ uint core_script_cpp_FUN_004febd0(CScript *param_1,char *param_2,int param_3)
           if (iVar7 == 10) goto LAB_004fecd4;
           if (iVar7 == 0) {
             _fclose(file_handle);
-            iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660
-                              ((CStrList *)&param_1->parsed_line_count);
+            iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(&param_1->script_text);
             shape_edittool_cpp_FUN_0046fcd0
-                      (0x01BCD074,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1);
+                      (g_CEditorTools_PTR_005b6d50,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,
+                       iVar3 + 1);
             core_script_cpp_FUN_004fe500(param_1);
             return 0;
           }
@@ -96,10 +96,10 @@ LAB_004fee03:
       return 1;
     }
     pcVar6 = core_script_cpp_FUN_004fef60(param_1,&local_18);
-    shape_edittool_cpp_FUN_00476160(&DAT_01e56c30);
+    shape_edittool_cpp_FUN_00476160(&g_CPickList_01e56c30);
     if (pcVar6 == (char *)0x0) goto LAB_004fee03;
-    PTR_01cc4800 = "..\\core\\script.cpp";
-    INT_01cc4804 = 0x372;
+    g_CHAR_PTR_01cc4800 = "..\\core\\script.cpp";
+    g_INT_01cc4804 = 0x372;
     core_main_c_FUN_004c8440("%s failed syntax check on line %d: %s",param_2,local_18 + 1,pcVar6);
   } while( true );
 }

@@ -22,7 +22,7 @@
 ;   double DOUBLE_0058fa9a = 1.29193225731028E-319
 ;   double DOUBLE_0058faa2 = 0.0200000000000000
 ;   double DOUBLE_0058faaa = 0.400000000000000
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   CDemonActorType g_CCharacterActorType_00765a60
 ;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;   undefined4 DAT_01e56418
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 005049de (CONDITIONAL_JUMP)  ; LAB_005049de
     MOV EDI,dword ptr [EBP + 0x1c]      ; 00504a36
     PUSH EDI                            ; 00504a39
-    MOV EAX,[0x005bed68]                ; 00504a3a | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 00504a3a | g_CSound_PTR_005bed68
     PUSH EAX                            ; 00504a3f
     CALL core_sound.cpp_FUN_0052ebc0    ; 00504a40
         ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_FUN_0052ebc0()
@@ -199,7 +199,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00504b1e
     PUSH ECX                            ; 00504b21
     PUSH EBX                            ; 00504b22
-    MOV ESI,dword ptr [0x005bed68]      ; 00504b23 | DAT_005bed68
+    MOV ESI,dword ptr [0x005bed68]      ; 00504b23 | g_CSound_PTR_005bed68
     PUSH ESI                            ; 00504b29
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 00504b2a
         ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)

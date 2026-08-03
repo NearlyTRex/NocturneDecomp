@@ -21,15 +21,15 @@
 ;   double DOUBLE_005969af = 65536
 ;   undefined4 DAT_005a3640
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_005be368
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 CVector3f_01c70708.y
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 DAT_01cc9450
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -151,7 +151,7 @@ section .text
         ;   XREF to: 00547c64 (CONDITIONAL_JUMP)  ; LAB_00547c64
     LEA EAX,[ESI + 0x170]               ; 00547c48
     PUSH EAX                            ; 00547c4e
-    MOV EDI,dword ptr [0x005baf90]      ; 00547c4f | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 00547c4f | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 00547c55 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 00547c56
         ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)
@@ -274,8 +274,8 @@ section .text
     PUSH 0x0                            ; 00547da7
     LEA EAX,[ESP + 0x48]                ; 00547da9
     PUSH EAX                            ; 00547dad
-    MOV EDX,dword ptr [0x005be368]      ; 00547dae | DAT_005be368
-    PUSH EDX                            ; 00547db4 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00547dae | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 00547db4 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 ; 00547db5
         ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)
     FLD float ptr [ESI + 0x214]         ; 00547dba
@@ -360,7 +360,7 @@ section .text
     ADD EAX,EDI                         ; 00547ec6
     PUSH EAX                            ; 00547ec8
     PUSH EBX                            ; 00547ec9
-    MOV EAX,[0x005b80f0]                ; 00547eca | DAT_005b80f0
+    MOV EAX,[0x005b80f0]                ; 00547eca | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 00547ecf
     CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160 ; 00547ed0
         ;   XREF to: 0048c160 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
@@ -380,13 +380,13 @@ section .text
         ;   XREF to: 00547bc9 (CONDITIONAL_JUMP)  ; default
     XOR EDI,EDI                         ; 00547efe
     MOV dword ptr [ESP + 0x98],EDI      ; 00547f00
-    MOV EAX,[0x005be368]                ; 00547f07 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00547f07 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00547f07
-    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 00547f0c | DAT_01fa3ff0
+    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 00547f0c | g_CDemonSet_01e57284.actor_count
     JGE 0x00547bc9                      ; 00547f12
         ;   XREF to: 00547bc9 (CONDITIONAL_JUMP)  ; default
     ADD EAX,dword ptr [ESP + 0x98]      ; 00547f18
-    MOV EBX,dword ptr [EAX + 0x14cd70]  ; 00547f1f | DAT_01fa3ff4 | DAT_01fa3ff8
+    MOV EBX,dword ptr [EAX + 0x14cd70]  ; 00547f1f | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
     PUSH EBX                            ; 00547f25
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00547f26
     CALL dword ptr [EAX + 0x54]         ; 00547f2c
@@ -432,13 +432,13 @@ section .text
     LEA EAX,[ESI + 0x1c0]               ; 00547f9f
     MOV dword ptr [ESP + 0x9c],EDI      ; 00547fa5
     MOV dword ptr [ESP + 0x94],EAX      ; 00547fac
-    MOV EAX,[0x005be368]                ; 00547fb3 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00547fb3 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00547fb3
-    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 00547fb8 | DAT_01fa3ff0
+    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 00547fb8 | g_CDemonSet_01e57284.actor_count
     JGE 0x00547bc9                      ; 00547fbe
         ;   XREF to: 00547bc9 (CONDITIONAL_JUMP)  ; default
     ADD EAX,dword ptr [ESP + 0x9c]      ; 00547fc4
-    MOV EBX,dword ptr [EAX + 0x14cd70]  ; 00547fcb | DAT_01fa3ff4 | DAT_01fa3ff8
+    MOV EBX,dword ptr [EAX + 0x14cd70]  ; 00547fcb | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
     LEA EAX,[EBX + 0x20]                ; 00547fd1
     MOV EDX,dword ptr [ESP + 0xa0]      ; 00547fd4
     FLD float ptr [EAX]                 ; 00547fdb

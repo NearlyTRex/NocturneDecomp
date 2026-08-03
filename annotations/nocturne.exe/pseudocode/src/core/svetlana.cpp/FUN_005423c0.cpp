@@ -225,15 +225,14 @@ void __cdecl core_svetlana_cpp_FUN_005423c0(CSvetlana *this_ptr,float delta_time
     if (fStack_8c < -local_24) {
       fStack_8c = -local_24;
     }
-    fStack_98 = fStack_8c - (float)(this_ptr->hair_cloth).vertices[0x2b5].connected_indices[8];
+    fStack_98 = fStack_8c - (this_ptr->head_euler_angles).y;
     if (delta_time * (float)3.1415926535000001 < fStack_98) {
       fStack_98 = delta_time * (float)3.1415926535000001;
     }
     if (fStack_98 < delta_time * (float)-3.1415926535000001) {
       fStack_98 = delta_time * (float)-3.1415926535000001;
     }
-    (this_ptr->hair_cloth).vertices[0x2b5].connected_indices[8] =
-         (int)((float)(this_ptr->hair_cloth).vertices[0x2b5].connected_indices[8] + fStack_98);
+    (this_ptr->head_euler_angles).y = (this_ptr->head_euler_angles).y + fStack_98;
   }
   return;
 }

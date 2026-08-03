@@ -20,7 +20,7 @@
 ;   core_path.cpp_CPathMap_searchGrid_FUN_004f20a0 at 004f219f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0
@@ -83,7 +83,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004f0511
     MOV EAX,ESP                         ; 004f0515
     PUSH EAX                            ; 004f0517
-    PUSH 0x1fba938                      ; 004f0518 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004f0518 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0 ; 004f051d
         ;   XREF to: 0046b8d0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0(CDemonRaytrace * this_ptr, CVector3i * voxel_coords)
     MOV dword ptr [EBX + 0x30],EAX      ; 004f0522

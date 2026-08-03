@@ -85,16 +85,16 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_FUN_004f4f90(CPackedBitmapSet *bitm
       }
     }
     else {
-      PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-      INT_01cc4804 = 0x556;
+      g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+      g_INT_01cc4804 = 0x556;
       core_main_c_FUN_004c8440();
 LAB_004f4fd1:
-      PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-      INT_01cc4804 = 0x557;
+      g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+      g_INT_01cc4804 = 0x557;
       core_main_c_FUN_004c8440();
     }
-    PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-    INT_01cc4804 = 0x558;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+    g_INT_01cc4804 = 0x558;
     core_main_c_FUN_004c8440();
   } while( true );
 }

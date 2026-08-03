@@ -19,7 +19,7 @@ struct CVampireBoss_ptr_581200 {
     template<typename T> CVampireBoss_ptr_581200(T* p) : _raw((void*)p) {}
     template<typename T> CVampireBoss_ptr_581200& operator=(T* p) { _raw = (void*)p; return *this; }
     CVampireBoss* operator->() const { return (CVampireBoss*)_raw; }
-    CVampireBoss* adj() const { return (CVampireBoss*)((char*)_raw - offsetof(CVampireBoss, skirt_cloth.model.texture_list[1].textures[1].texture_name[12])); }
+    CVampireBoss* adj() const { return (CVampireBoss*)((char*)_raw - offsetof(CVampireBoss, skirt_cloth.vertices[148].connected_indices[7])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

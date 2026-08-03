@@ -18,9 +18,9 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005861b2 = 2
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;   undefined4 g_CTommyGunActorType_02dd0fd0.name_hash
 ;
 ; Called Functions:
@@ -61,9 +61,9 @@ section .text
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004ba8ef
     XOR EDI,EDI                         ; 004ba8f2
-    MOV EAX,[0x005be368]                ; 004ba8f4 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004ba8f4 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004ba8f4
-    CMP ESI,dword ptr [EAX + 0x14cd6c]  ; 004ba8f9 | DAT_01fa3ff0
+    CMP ESI,dword ptr [EAX + 0x14cd6c]  ; 004ba8f9 | g_CDemonSet_01e57284.actor_count
     JL 0x004ba91b                       ; 004ba8ff
         ;   XREF to: 004ba91b (CONDITIONAL_JUMP)  ; LAB_004ba91b
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ba901
@@ -78,7 +78,7 @@ section .text
     POP ESI                             ; 004ba918
     POP EBX                             ; 004ba919
     RET                                 ; 004ba91a
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 004ba91b | DAT_01fa3ff4
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 004ba91b | g_CDemonSet_01e57284.actors[0]
         ;   Label: LAB_004ba91b
     PUSH EBX                            ; 004ba922
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004ba923

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,58 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 84,
-        "message": "use of undeclared identifier 'DAT_01fba938'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 88,
-        "message": "use of undeclared identifier 'DAT_01fba938'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 163,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 36,
-        "line": 163,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 21,
-        "line": 165,
+        "line": 145,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 338,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 36,
-        "line": 338,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 381,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 27,
-        "line": 381,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -116,22 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 883,
-    "complexity_score": 836,
+    "complexity_score": 484,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 376,
-    "suspect_count": 43,
+    "pseudocode_lines": 339,
+    "suspect_count": 13,
     "suspect_types": [
-      "pointer_cast",
       "shadow_pointer_walk",
-      "undefined_data",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 1259
+    "total_lines": 1222
   },
   "cross_references": [
     {
@@ -321,20 +270,20 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01fba938",
-      "name": "DAT_01fba938",
-      "type": "undefined4",
+      "name": "g_CDemonRaytrace_01fba938",
+      "type": "CDemonRaytrace",
       "value": null
     },
     {
@@ -656,256 +605,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,position,radius,(int *)hit_flag,pCVar20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,position,(int *)hit_flag,pCVar20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 93,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x18) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 94,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x19) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 95,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1a) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 96,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1b) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 98,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1c) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 99,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1d) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 100,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1e) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 101,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1f) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 104,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x20) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 105,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x21) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 106,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x22) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 107,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x23) = -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 176,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 0) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 177,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 178,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 2) = -0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 179,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 3) = '?';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 181,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 4) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 182,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 5) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 183,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 6) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 184,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 7) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 352,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 0) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 353,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 354,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 2) = -0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 355,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 3) = '?';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 357,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 4) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 358,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 5) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 359,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 6) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 360,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 7) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 374,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar19 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x3c))(iVar4);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 87,
+      "line": 83,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_e8.x = position->x;",
@@ -913,7 +614,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 111,
+      "line": 94,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_100.max.x = local_e8.x;",
@@ -921,7 +622,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 120,
+      "line": 103,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_100.min.y = local_100.max.y;",
@@ -929,15 +630,15 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 201,
+      "line": 172,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar18->x = pCVar6->x;",
+      "text": "pCVar17->x = pCVar5->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 221,
+      "line": 192,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_a0.x;",
@@ -945,7 +646,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 239,
+      "line": 210,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_40.x;",
@@ -953,7 +654,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 257,
+      "line": 228,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_34.x;",
@@ -961,7 +662,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 275,
+      "line": 246,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_dc.x;",
@@ -969,7 +670,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 293,
+      "line": 264,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_94.x;",
@@ -977,15 +678,23 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 311,
+      "line": 282,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_c4.x;",
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 294,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar1->x = pCVar17->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 368,
+      "line": 331,
       "match": "local_18 = (T *)local_18->ARRAY",
       "severity": "moderate",
       "text": "local_18 = (CDemonSet *)local_18->cameras;",

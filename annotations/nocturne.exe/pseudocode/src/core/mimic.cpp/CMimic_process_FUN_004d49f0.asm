@@ -8,11 +8,11 @@
 ;   TerminatedCString s_core_mimic_cpp_005893d1
 ;   TerminatedCString s_CMimic_setup_can_t_use_m_005893e3
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005bdee0
+;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
 ;   undefined4 DAT_01cae0e8
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01cea280
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   CNetGame g_CNetGame_01cea280
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0
@@ -33,8 +33,8 @@ section .text
         ;   Label: core_mimic.cpp_CMimic_process_FUN_004d49f0
     PUSH EDI                            ; 004d49f1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004d49f2
-    MOV EAX,[0x005bdee0]                ; 004d49f6 | DAT_005bdee0
-    CMP dword ptr [EAX],0x0             ; 004d49fb | DAT_01cea280
+    MOV EAX,[0x005bdee0]                ; 004d49f6 | g_CNetGame_PTR_005bdee0
+    CMP dword ptr [EAX],0x0             ; 004d49fb | g_CNetGame_01cea280
     JNZ 0x004d4a86                      ; 004d49fe
         ;   XREF to: 004d4a86 (CONDITIONAL_JUMP)  ; LAB_004d4a86
     MOV EAX,[0x01cae0e8]                ; 004d4a04 | DAT_01cae0e8
@@ -86,8 +86,8 @@ section .text
     MOV ECX,0x5893d1                    ; 004d4a87 | = "..\\core\\mimic.cpp"
     MOV ESI,0x130                       ; 004d4a8c
     PUSH 0x5893e3                       ; 004d4a91 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d4a96 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d4a9c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d4a96 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d4a9c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d4aa2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d4aa7

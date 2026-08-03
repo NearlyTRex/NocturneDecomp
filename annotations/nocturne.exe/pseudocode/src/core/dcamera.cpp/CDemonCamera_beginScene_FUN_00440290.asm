@@ -20,12 +20,12 @@
 ;   TerminatedCString s_Decay_0057b6b8
 ;   TerminatedCString s_core_dcamera_cpp_0057b6c1
 ;   TerminatedCString s_CDemonCamera_beginScene_0057b6d5
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ad444
 ;   undefined4 DAT_005ad448
 ;   undefined4 DAT_005ad44c
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_012ceb58
 ;   undefined4 DAT_012ceb5c
 ;   undefined4 DAT_012ceb60
@@ -90,8 +90,8 @@ section .text
     MOV EBX,EAX                         ; 00440301
     PUSH 0x57b6a3                       ; 00440303 | = "Attack : "
         ;   Label: LAB_00440303
-    MOV EAX,[0x005ad350]                ; 00440308 | PTR_DAT_005ad350
-    PUSH EAX                            ; 0044030d | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00440308 | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 0044030d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0044030e
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
         ;   Label: LAB_0044030e
@@ -144,8 +144,8 @@ section .text
     MOV ECX,0x57b6c1                    ; 004403b2 | = "..\\core\\dcamera.cpp"
     MOV EBX,0x2f3                       ; 004403b7
     PUSH 0x57b6d5                       ; 004403bc | = "CDemonCamera::beginScene - Scene alre..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004403c1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004403c7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004403c1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004403c7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004403cd
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004403d2
@@ -262,8 +262,8 @@ section .text
     MOV [0x012ceb68],EAX                ; 00440535 | DAT_012ceb68
     PUSH 0x57b6ad                       ; 0044053a | = "Sustain : "
         ;   Label: LAB_0044053a
-    MOV ECX,dword ptr [0x005ad350]      ; 0044053f | PTR_DAT_005ad350
-    PUSH ECX                            ; 00440545 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 0044053f | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 00440545 | g_CConsole_0077ad0c
     MOV EBX,dword ptr [0x005ad444]      ; 00440546 | DAT_005ad444
     JMP 0x0044030e                      ; 0044054c
         ;   XREF to: 0044030e (UNCONDITIONAL_JUMP)  ; LAB_0044030e
@@ -288,8 +288,8 @@ section .text
     MOV EBX,EAX                         ; 00440583
     PUSH 0x57b6b8                       ; 00440585 | = "Decay : "
         ;   Label: LAB_00440585
-    MOV ECX,dword ptr [0x005ad350]      ; 0044058a | PTR_DAT_005ad350
-    PUSH ECX                            ; 00440590 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 0044058a | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 00440590 | g_CConsole_0077ad0c
     JMP 0x0044030e                      ; 00440591
         ;   XREF to: 0044030e (UNCONDITIONAL_JUMP)  ; LAB_0044030e
     MOV EAX,0x3                         ; 00440596

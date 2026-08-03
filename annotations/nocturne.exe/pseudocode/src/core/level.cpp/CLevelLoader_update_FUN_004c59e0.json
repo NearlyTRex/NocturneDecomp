@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -98,22 +98,22 @@
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
       },
       {
-        "category": "other",
-        "column": 17,
-        "line": 60,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 79,
+        "message": "use of undeclared identifier '_DAT_0059fbfc'; did you mean 'DAT_005bbbfc'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 63,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 80,
+        "message": "use of undeclared identifier '_DAT_0059fbfc'; did you mean 'DAT_005bbbfc'?"
       },
       {
-        "category": "other",
-        "column": 17,
-        "line": 64,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 81,
+        "message": "use of undeclared identifier '_DAT_0059fbfc'; did you mean 'DAT_005bbbfc'?"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 469,
-    "complexity_score": 559,
+    "complexity_score": 522,
     "cross_reference_count": 5,
     "function_call_count": 18,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 164,
-    "suspect_count": 37,
+    "pseudocode_lines": 162,
+    "suspect_count": 34,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 633
+    "total_lines": 631
   },
   "cross_references": [
     {
@@ -307,14 +306,14 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "014b9900",
-      "name": "DAT_014b9900",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b9900",
+      "type": "CBitFont*",
       "value": null
     },
     {
@@ -325,37 +324,37 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fb1d0c",
-      "name": "DAT_01fb1d0c",
+      "name": "g_CDemonSet_01e57284.rendering_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d10",
-      "name": "DAT_01fb1d10",
+      "name": "g_CDemonSet_01e57284.light_direction.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d14",
-      "name": "DAT_01fb1d14",
+      "name": "g_CDemonSet_01e57284.light_direction.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d18",
-      "name": "DAT_01fb1d18",
+      "name": "g_CDemonSet_01e57284.light_direction.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d1c",
-      "name": "DAT_01fb1d1c",
+      "name": "g_CDemonSet_01e57284.ambient_base_quick",
       "type": "undefined4",
       "value": null
     },
@@ -859,7 +858,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 76,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_60);",
@@ -867,7 +866,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 82,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_54);",
@@ -875,7 +874,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 88,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_3c);",
@@ -883,7 +882,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 94,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_48);",
@@ -891,7 +890,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 95,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar1 = DAT_005ae704;",
@@ -899,7 +898,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 96,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "DAT_005ae704->vertex_buffer_ptr->u = 0x1000000;",
@@ -907,7 +906,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 104,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar1 = DAT_005ae704;",
@@ -915,7 +914,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 109,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "DAT_005ae704->vertex_buffer_ptr->a = 0;",
@@ -923,7 +922,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 115,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar1 = DAT_005ae704;",
@@ -931,7 +930,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 116,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "*(int *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar3) = (this_ptr->color).r << 8;",
@@ -939,7 +938,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 133,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005baca4);",
@@ -947,7 +946,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 133,
       "match": "DAT_005baca4",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005baca4);",
@@ -955,7 +954,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 135,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&local_88,0x327);",
@@ -963,7 +962,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 136,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
@@ -971,15 +970,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_01cc3290",
-      "severity": "mild",
-      "text": "((CKeyFramedModel *)&DAT_01cc3290,0,(CKeyFramedModelInstance *)0x0,0x205);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 146,
+      "line": 144,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "iVar3 = (DAT_005b761c * 0x240) / 0x280;",
@@ -987,7 +978,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 145,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar6 = (DAT_005b7620 * 0x18) / 0x1e0;",
@@ -995,7 +986,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 146,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "iVar4 = (DAT_005b761c << 5) / 0x280;",
@@ -1003,7 +994,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 149,
+      "line": 147,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "local_14 = (DAT_005b7620 * 0x1c0) / 0x1e0;",
@@ -1011,7 +1002,7 @@
     },
     {
       "description": "Pointer value `&DAT_005ae704->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 118,
+      "line": 116,
       "match": "(int)&DAT_005ae704->vertex_buffer_ptr->r",
       "severity": "moderate",
       "text": "*(int *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar3) = (this_ptr->color).r << 8;",
@@ -1019,7 +1010,7 @@
     },
     {
       "description": "Pointer value `&pCVar1->vertex_buffer_ptr->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 119,
+      "line": 117,
       "match": "(int)&pCVar1->vertex_buffer_ptr->g",
       "severity": "moderate",
       "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = (this_ptr->color).g << 8;",
@@ -1027,31 +1018,15 @@
     },
     {
       "description": "Pointer value `&pCVar1->vertex_buffer_ptr->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 121,
+      "line": 119,
       "match": "(int)&pCVar1->vertex_buffer_ptr->b",
       "severity": "moderate",
       "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = (this_ptr->color).b << 8;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 56,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar2 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 63,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar2 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 118,
+      "line": 116,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar3) = (this_ptr->color).r << 8;",
@@ -1059,7 +1034,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 119,
+      "line": 117,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = (this_ptr->color).g << 8;",
@@ -1067,7 +1042,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 121,
+      "line": 119,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = (this_ptr->color).b << 8;",

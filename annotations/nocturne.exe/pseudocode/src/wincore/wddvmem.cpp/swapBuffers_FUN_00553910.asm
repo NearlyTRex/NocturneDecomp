@@ -37,8 +37,8 @@
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01c02594
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02ddf554
 ;   undefined4 DAT_02ddf564
 ;   ... and 1 more
@@ -181,8 +181,8 @@ section .text
     MOV EDI,0x597ae0                    ; 00553a41 | = "..\\wincore\\wddvmem.cpp"
     MOV EAX,0x346                       ; 00553a46
     PUSH 0x597af7                       ; 00553a4b | = "Unable to lock front buffer"
-    MOV dword ptr [0x01cc4800],EDI      ; 00553a50 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00553a56 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00553a50 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00553a56 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00553a5b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00553a60
@@ -240,8 +240,8 @@ section .text
     MOV ESI,0x597b13                    ; 00553af8 | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x368                       ; 00553afd
     PUSH 0x597b2a                       ; 00553b02 | = "Unable to unlock front buffer"
-    MOV dword ptr [0x01cc4800],ESI      ; 00553b07 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00553b0d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00553b07 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00553b0d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00553b13
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00553b18

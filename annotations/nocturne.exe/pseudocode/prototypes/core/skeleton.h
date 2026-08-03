@@ -137,7 +137,7 @@ void __cdecl CDeformableModel::loadStream(CDeformableModel *this_ptr,_FILE *file
 
 // Original: core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00519ae0
 // Address: 00519ae0
-void CDeformableModel::bindSkeleton(CDeformableModel *param_1,undefined4 param_2);
+void CDeformableModel::bindSkeleton(CDeformableModel *param_1,CSkeleton *param_2);
 
 // Original: core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_00519b10
 // Address: 00519b10
@@ -451,13 +451,13 @@ SVert * __cdecl SVert::ctor(SVert *this_ptr);
 // Address: 0051f860
 SVert * __cdecl SVert::dtor(SVert *this_ptr,uint flags);
 
-// Original: core_skeleton.cpp_FUN_0051f880
+// Original: core_skeleton.cpp_CSkeleton_arrdtor_FUN_0051f880
 // Address: 0051f880
-void FUN_0051f880(void *param_1);
+CSkeleton * __cdecl CSkeleton::arrdtor(CSkeleton *this_ptr,uint flags);
 
-// Original: core_skeleton.cpp_FUN_0051f8a0
+// Original: core_skeleton.cpp_CDeformableModel_arrdtor_FUN_0051f8a0
 // Address: 0051f8a0
-void FUN_0051f8a0(void *param_1);
+CDeformableModel * __cdecl CDeformableModel::arrdtor(CDeformableModel *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_FUN_0051f900
 // Address: 0051f900

@@ -41,9 +41,9 @@
 ;   float FLOAT_0058cb88 = 0.8000000
 ;   float FLOAT_0058cb8c = 2
 ;   float FLOAT_0058cb90 = -0.7000000
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
-;   undefined4 DAT_01fba938
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
@@ -83,8 +83,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x20]      ; 004ef159
         ;   Label: LAB_004ef159
     MOV dword ptr [EBX + 0x30],EAX      ; 004ef15c
-    MOV EAX,[0x005b9354]                ; 004ef15f | DAT_005b9354
-    MOV EAX,dword ptr [EAX + 0x264]     ; 004ef164 | DAT_01c77850
+    MOV EAX,[0x005b9354]                ; 004ef15f | g_CGame_PTR_005b9354
+    MOV EAX,dword ptr [EAX + 0x264]     ; 004ef164 | g_CGame_01c775ec.delta_time_float
     MOV dword ptr [ESP + 0x90],EAX      ; 004ef16a
     FLD float ptr [EBX + 0x1c]          ; 004ef171
     FMUL float ptr [ESP + 0x90]         ; 004ef174
@@ -113,7 +113,7 @@ section .text
     FXCH                                ; 004ef1cd
     FSTP float ptr [EBX + 0x4]          ; 004ef1cf
     FADD float ptr [ESP + 0x24]         ; 004ef1d2
-    PUSH 0x1fba938                      ; 004ef1d6 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004ef1d6 | g_CDemonRaytrace_01fba938
     FSTP float ptr [EBX + 0x8]          ; 004ef1db
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004ef1de
         ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700()
@@ -122,7 +122,7 @@ section .text
     PUSH EAX                            ; 004ef1ea
     LEA EDI,[ESP + 0x40]                ; 004ef1eb
     LEA ESI,[ESP + 0x7c]                ; 004ef1ef
-    PUSH 0x1fba938                      ; 004ef1f3 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004ef1f3 | g_CDemonRaytrace_01fba938
     MOVSD ES:EDI,ESI                    ; 004ef1f8
     MOVSD ES:EDI,ESI                    ; 004ef1f9
     MOVSD ES:EDI,ESI                    ; 004ef1fa
@@ -140,7 +140,7 @@ section .text
     PUSH EBX                            ; 004ef218
     LEA ESI,[EBX + 0x24]                ; 004ef219
     PUSH ESI                            ; 004ef21c
-    PUSH 0x1fba938                      ; 004ef21d | DAT_01fba938
+    PUSH 0x1fba938                      ; 004ef21d | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 004ef222
         ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0xb0],EAX      ; 004ef227

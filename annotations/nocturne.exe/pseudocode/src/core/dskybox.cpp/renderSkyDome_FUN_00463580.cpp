@@ -49,8 +49,8 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_te
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   (sky_texture->base).type = brightness_factor;
-  core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0((CDemonRaytrace *)&DAT_01fba938,&local_60);
-  core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0((CDemonRaytrace *)&DAT_01fba938,&local_54);
+  core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(&g_CDemonRaytrace_01fba938,&local_60);
+  core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(&g_CDemonRaytrace_01fba938,&local_54);
   fVar4 = (float)0.5;
   _DAT_01b7b728 = (local_60.x + local_54.x) * fVar4;
   _DAT_01b7b730 = (local_60.z + local_54.z) * fVar4;

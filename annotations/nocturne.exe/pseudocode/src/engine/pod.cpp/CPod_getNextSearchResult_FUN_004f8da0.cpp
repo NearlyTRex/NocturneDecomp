@@ -12,9 +12,10 @@ int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod *this_ptr,
   char cVar1;
   CPodFile *pCVar2;
   int iVar3;
-  uint *puVar4;
-  char *pcVar5;
-  CPodSearchContext *pCVar6;
+  CPodDirectoryEntry *pCVar4;
+  int iVar5;
+  char *pcVar6;
+  CPodSearchContext *pCVar7;
   
   if (search_context->current_pod_index < this_ptr->pod_file_count) {
     do {
@@ -26,14 +27,14 @@ int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod *this_ptr,
         if (search_context->current_file_index < 0) {
           search_context->current_file_index = 0;
         }
-        if (*(int *)pCVar2->author_info <= search_context->current_file_index) break;
-        puVar4 = (uint *)
-                 (*(int *)(pCVar2->author_info + 4) + search_context->current_file_index * 0x14);
-        iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0
-                          (search_context->search_pattern,(char *)*puVar4,0);
-        if (iVar3 != 0) {
-          pcVar5 = (char *)*puVar4;
-          pCVar6 = search_context;
+        iVar3 = search_context->current_file_index;
+        if (pCVar2->file_count <= iVar3) break;
+        pCVar4 = pCVar2->directory_entries;
+        iVar5 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0
+                          (search_context->search_pattern,pCVar4[iVar3].name,0);
+        if (iVar5 != 0) {
+          pcVar6 = pCVar4[iVar3].name;
+          pCVar7 = search_context;
           goto LAB_004f8e64;
         }
         search_context->current_file_index = search_context->current_file_index + 1;
@@ -45,14 +46,14 @@ int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod *this_ptr,
   (search_context->current_file_info).found_path[0] = '\0';
   return 0;
   while( true ) {
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    (pCVar6->current_file_info).found_path[1] = cVar1;
-    pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).found_path + 2);
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    (pCVar7->current_file_info).found_path[1] = cVar1;
+    pCVar7 = (CPodSearchContext *)((pCVar7->current_file_info).found_path + 2);
     if (cVar1 == '\0') break;
 LAB_004f8e64:
-    cVar1 = *pcVar5;
-    (pCVar6->current_file_info).found_path[0] = cVar1;
+    cVar1 = *pcVar6;
+    (pCVar7->current_file_info).found_path[0] = cVar1;
     if (cVar1 == '\0') break;
   }
   engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0

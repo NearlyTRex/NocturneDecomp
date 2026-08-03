@@ -19,9 +19,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
@@ -108,8 +108,8 @@ section .text
     PUSH EAX                            ; 0048367e
     PUSH ESI                            ; 0048367f
     PUSH EBX                            ; 00483680
-    MOV EBX,dword ptr [0x005be368]      ; 00483681 | DAT_005be368
-    PUSH EBX                            ; 00483687 | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 00483681 | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 00483687 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 00483688
         ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 0048368d

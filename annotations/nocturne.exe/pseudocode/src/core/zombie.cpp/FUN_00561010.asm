@@ -28,10 +28,10 @@
 ;   double DOUBLE_00598866 = 5
 ;   double DOUBLE_0059886e = 0.400000000000000
 ;   float FLOAT_00598876 = 15
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005be368
-;   undefined4 DAT_0077ad0c
-;   char* PTR_01cc4800
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CConsole g_CConsole_0077ad0c
+;   char* g_CHAR_PTR_01cc4800
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -133,14 +133,14 @@ section .text
     MOV dword ptr [ESP + 0x14c],EDI     ; 005610e0
     MOV dword ptr [ESP + 0x148],EBX     ; 005610e7
     XOR EDI,EDI                         ; 005610ee
-    MOV EAX,[0x005be368]                ; 005610f0 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 005610f0 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_005610f0
     MOV EDX,dword ptr [ESP + 0x150]     ; 005610f5
-    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 005610fc | DAT_01fa3ff0
+    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 005610fc | g_CDemonSet_01e57284.actor_count
     JGE 0x00561762                      ; 00561102
         ;   XREF to: 00561762 (CONDITIONAL_JUMP)  ; LAB_00561762
     ADD EAX,dword ptr [ESP + 0x148]     ; 00561108
-    MOV EBX,dword ptr [EAX + 0x14cd70]  ; 0056110f | DAT_01fa3ff4 | DAT_01fa3ff8
+    MOV EBX,dword ptr [EAX + 0x14cd70]  ; 0056110f | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
     PUSH EBX                            ; 00561115
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00561116
     CALL dword ptr [EAX + 0x8c]         ; 0056111c
@@ -353,8 +353,8 @@ section .text
     PUSH EAX                            ; 005613f0
     PUSH ESI                            ; 005613f1
     PUSH 0x59878e                       ; 005613f2 | = "%s can't pick up %s, sombody else bea..."
-    MOV EDX,dword ptr [0x005ad350]      ; 005613f7 | PTR_DAT_005ad350
-    PUSH EDX                            ; 005613fd | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 005613f7 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 005613fd | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005613fe
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x10                        ; 00561403
@@ -446,8 +446,8 @@ section .text
     PUSH EBX                            ; 00561531
     PUSH ESI                            ; 00561532
     PUSH 0x5987c0                       ; 00561533 | = "%s can't pick up %s, giving up\n"
-    MOV EDI,dword ptr [0x005ad350]      ; 00561538 | PTR_DAT_005ad350
-    PUSH EDI                            ; 0056153e | DAT_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 00561538 | g_CConsole_PTR_005ad350
+    PUSH EDI                            ; 0056153e | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0056153f
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x10                        ; 00561544
@@ -490,8 +490,8 @@ section .text
     PUSH EDI                            ; 00561598
     PUSH ESI                            ; 00561599
     PUSH 0x5987e0                       ; 0056159a | = "%s beginning to pickup %s\n"
-    MOV EAX,[0x005ad350]                ; 0056159f | PTR_DAT_005ad350
-    PUSH EAX                            ; 005615a4 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 0056159f | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 005615a4 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005615a5
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     MOV EAX,dword ptr [ESI + 0xbd38]    ; 005615aa
@@ -514,8 +514,8 @@ section .text
         ;   Label: LAB_005615c6
     MOV ECX,0x5d0                       ; 005615cb
     PUSH 0x59880e                       ; 005615d0 | = "Invalid zombie object shape!"
-    MOV dword ptr [0x01cc4800],EDX      ; 005615d5 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005615db | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 005615d5 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005615db | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005615e1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005615e6
@@ -654,8 +654,8 @@ section .text
     MOV dword ptr [ESI + 0xbd38],EAX    ; 005617a7
     PUSH 0x598835                       ; 005617ad | = "%s is going to try to pick up %s\n"
     MOV dword ptr [ESI + 0xbd28],ECX    ; 005617b2
-    MOV ESI,dword ptr [0x005ad350]      ; 005617b8 | PTR_DAT_005ad350
-    PUSH ESI                            ; 005617be | DAT_0077ad0c
+    MOV ESI,dword ptr [0x005ad350]      ; 005617b8 | g_CConsole_PTR_005ad350
+    PUSH ESI                            ; 005617be | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005617bf
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     MOV EAX,0x1                         ; 005617c4

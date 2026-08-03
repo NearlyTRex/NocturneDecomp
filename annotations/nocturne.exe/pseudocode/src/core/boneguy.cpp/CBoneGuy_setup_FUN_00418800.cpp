@@ -53,11 +53,11 @@ void core_boneguy_cpp_CBoneGuy_setup_FUN_00418800(CEnemy *param_1)
   DAT_007647bc = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
                            (this_ptr_00,"Bip01 Spine2",1);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr);
-  iVar1 = pCVar3->texture_sets[0].textures[0x28].textures[0].base.type;
+  iVar1 = pCVar3->num_parts;
   *(int *)(param_1[1].base.base.create_event + 4) = iVar1;
   if (0x14 < iVar1) {
-    PTR_01cc4800 = "..\\core\\boneguy.cpp";
-    INT_01cc4804 = 0x12f;
+    g_CHAR_PTR_01cc4800 = "..\\core\\boneguy.cpp";
+    g_INT_01cc4804 = 0x12f;
     core_main_c_FUN_004c8440("CBoneGuy::explode - Not enough containers");
   }
   (param_1->base).carry_hands[0].bone_index = DAT_00764798;

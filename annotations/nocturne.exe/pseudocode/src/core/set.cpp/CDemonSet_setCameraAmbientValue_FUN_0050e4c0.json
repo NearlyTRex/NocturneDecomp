@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 16,
-        "message": "use of undeclared identifier 'DAT_01fb8508'"
       }
     ],
     "success": false,
@@ -68,19 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 55,
+    "complexity_score": 9,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 10,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
-    ],
-    "total_lines": 33
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 32
   },
   "cross_references": [
     {
@@ -224,30 +214,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740((CDemonCamera *)&DAT_01fb8508,value)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&this_ptr->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 5,
-      "match": "(int)&this_ptr->cameras[0].rotation_matrix",
-      "severity": "moderate",
-      "text": "*(float *)((int)&this_ptr->cameras[0].rotation_matrix + index * 0x1a0 + 0x2c) = value;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 5,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&this_ptr->cameras[0].rotation_matrix + index * 0x1a0 + 0x2c) = value;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

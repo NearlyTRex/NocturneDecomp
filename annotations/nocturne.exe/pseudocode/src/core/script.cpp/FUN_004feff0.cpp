@@ -12,51 +12,46 @@ void __cdecl core_script_cpp_FUN_004feff0(CScript *this_ptr)
 
 {
   char cVar1;
-  char *pcVar2;
+  CGame *pCVar2;
   int iVar3;
   char *pcVar4;
   char *pcVar5;
-  byte bVar6;
+  char *pcVar6;
+  byte bVar7;
   char local_70 [100];
   
-  bVar6 = 0;
-  (this_ptr->script_text).data_array = (char **)0x0;
-  *(byte *)&this_ptr->cmd_timer = 0;
-  (this_ptr->script_text).vtable._us = (CStrList_vtable *)0xbf800000;
-  this_ptr->next_cmd = -0x40800000;
+  bVar7 = 0;
+  this_ptr->next_cmd = 0;
+  this_ptr->current_message[0] = '\0';
+  this_ptr->cmd_timer = -1.0;
+  this_ptr->dialog_wav_time = -1.0;
   this_ptr->script_pause_flag = 0;
   iVar3 = _DAT_01cae0e8;
   this_ptr->who_is_speaking = (CDemonActor *)0x0;
   this_ptr->focus_actor = *(CDemonActor **)(iVar3 * 4 + 0x1cae0d8);
-  iVar3 = 0x01C775EC;
+  pCVar2 = g_CGame_PTR_005b9354;
   this_ptr->focus_actor_changed = 1;
-  *(uint *)(iVar3 + 0x22c) = 1;
-  *(uint *)(iVar3 + 0x230) = 1;
-  *(uint *)(iVar3 + 0x228) = 0;
+  pCVar2->allow_damage_flag = 1;
+  pCVar2->allow_enemy_attack_flag = 1;
+  pCVar2->letterbox_mode = 0;
   _DAT_01e56c20 = 0;
-  this_ptr->current_message[0x3f8] = '\0';
-  this_ptr->current_message[0x3f9] = '\0';
-  this_ptr->current_message[0x3fa] = -0x80;
-  this_ptr->current_message[0x3fb] = -0x41;
-  this_ptr->current_message[0x3fc] = -1;
-  this_ptr->current_message[0x3fd] = -1;
-  this_ptr->current_message[0x3fe] = -1;
-  this_ptr->current_message[0x3ff] = -1;
-  pcVar2 = (char *)(0x01E57284 + 0x14cd08);
-  this_ptr->message_duration = 0.0;
+  this_ptr->message_duration = -1.0;
+  this_ptr->saved_cmd_index = -1;
+  pcVar6 = g_CDemonSet_PTR_005be368->geometry_filename;
+  this_ptr->call_stack_count = 0;
   _DAT_01e56c28 = 0;
   this_ptr->focus_actor_locked = 0;
-  splitpath(pcVar2,(char *)0x0,(char *)0x0,local_70,(char *)0x0);
+  splitpath(pcVar6,(char *)0x0,(char *)0x0,local_70,(char *)0x0);
   pcVar4 = ".wav";
   iVar3 = -1;
-  pcVar2 = local_70;
+  pcVar6 = local_70;
   do {
-    pcVar5 = pcVar2;
+    pcVar5 = pcVar6;
     if (iVar3 == 0) break;
     iVar3 = iVar3 + -1;
-    pcVar5 = pcVar2 + (uint)bVar6 * -2 + 1;
-    cVar1 = *pcVar2;
-    pcVar2 = pcVar5;
+    pcVar5 = pcVar6 + (uint)bVar7 * -2 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar5;
   } while (cVar1 != '\0');
   pcVar5 = pcVar5 + -1;
   do {
@@ -72,14 +67,14 @@ void __cdecl core_script_cpp_FUN_004feff0(CScript *this_ptr)
   if (iVar3 == 0) {
     pcVar4 = "@0.85";
     iVar3 = -1;
-    pcVar2 = local_70;
+    pcVar6 = local_70;
     do {
-      pcVar5 = pcVar2;
+      pcVar5 = pcVar6;
       if (iVar3 == 0) break;
       iVar3 = iVar3 + -1;
-      pcVar5 = pcVar2 + (uint)bVar6 * -2 + 1;
-      cVar1 = *pcVar2;
-      pcVar2 = pcVar5;
+      pcVar5 = pcVar6 + (uint)bVar7 * -2 + 1;
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar5;
     } while (cVar1 != '\0');
     pcVar5 = pcVar5 + -1;
     do {
@@ -96,14 +91,14 @@ void __cdecl core_script_cpp_FUN_004feff0(CScript *this_ptr)
   if (iVar3 == 0) {
     pcVar4 = "@0.85";
     iVar3 = -1;
-    pcVar2 = local_70;
+    pcVar6 = local_70;
     do {
-      pcVar5 = pcVar2;
+      pcVar5 = pcVar6;
       if (iVar3 == 0) break;
       iVar3 = iVar3 + -1;
-      pcVar5 = pcVar2 + (uint)bVar6 * -2 + 1;
-      cVar1 = *pcVar2;
-      pcVar2 = pcVar5;
+      pcVar5 = pcVar6 + (uint)bVar7 * -2 + 1;
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar5;
     } while (cVar1 != '\0');
     pcVar5 = pcVar5 + -1;
     do {
@@ -116,7 +111,7 @@ void __cdecl core_script_cpp_FUN_004feff0(CScript *this_ptr)
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
   }
-  core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(0x02DC9450,local_70);
+  core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(g_CSound_PTR_005bed68,local_70);
   this_ptr->script_state = 0;
   return;
 }

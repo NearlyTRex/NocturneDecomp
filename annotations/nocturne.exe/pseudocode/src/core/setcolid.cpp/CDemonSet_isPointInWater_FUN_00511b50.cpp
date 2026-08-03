@@ -19,11 +19,10 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet *t
      (*(float *)(0x02DD1210 + 4) <= point->y)) {
     iVar1 = 0;
     pCVar2 = this_ptr;
-    if (0 < *(int *)this_ptr->lights[199].filter_names[0x14]) {
+    if (0 < this_ptr->actor_count) {
       do {
         this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                (*(CDemonActor **)(pCVar2->lights[199].filter_names[0x14] + 4),
-                                 g_CWaterActorActorType_02ddd598.name_hash);
+                                (pCVar2->actors[0],g_CWaterActorActorType_02ddd598.name_hash);
         if (this_ptr_00 != (CDemonActor *)0x0) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(this_ptr_00,&local_1c,point);
           (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_34);
@@ -37,7 +36,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet *t
         }
         iVar1 = iVar1 + 1;
         pCVar2 = (CDemonSet *)pCVar2->cameras;
-      } while (iVar1 < *(int *)this_ptr->lights[199].filter_names[0x14]);
+      } while (iVar1 < this_ptr->actor_count);
     }
     iVar1 = 0;
   }

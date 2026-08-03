@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 32,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
       }
     ],
     "success": false,
@@ -68,15 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 156,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
-      "raw_address_constant",
       "unnamed_param"
     ],
     "total_lines": 81
@@ -137,14 +130,14 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -322,14 +315,6 @@
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2f4) = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 25,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01E57284;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",

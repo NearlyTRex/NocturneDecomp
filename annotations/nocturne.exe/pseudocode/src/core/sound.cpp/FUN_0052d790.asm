@@ -15,11 +15,11 @@
 ;   float FLOAT_00594b42 = 20
 ;   double DOUBLE_00594b46 = 1.5
 ;   double DOUBLE_00594b5e = 510
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   void* PTR_s_int_005bed60 = 00594af1
 ;   void* PTR_s_x_005bed64 = 00594af5
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -52,14 +52,14 @@ section .text
     MOV EBP,ESP                         ; 0052d794
     SUB ESP,0x110                       ; 0052d796
     AND ESP,0xfffffff8                  ; 0052d79c
-    MOV EAX,[0x005b9354]                ; 0052d79f | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0052d79f | g_CGame_PTR_005b9354
     FLD float ptr [EAX + 0x264]         ; 0052d7a4
     MOV EDX,dword ptr [EAX + 0x240]     ; 0052d7aa
     FSTP float ptr [ESP + 0x108]        ; 0052d7b0
     TEST EDX,EDX                        ; 0052d7b7
     JNZ 0x0052da3c                      ; 0052d7b9
         ;   XREF to: 0052da3c (CONDITIONAL_JUMP)  ; LAB_0052da3c
-    MOV EAX,[0x005be368]                ; 0052d7bf | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0052d7bf | g_CDemonSet_PTR_005be368
     MOV ECX,dword ptr [0x02dc9d54]      ; 0052d7c4 | DAT_02dc9d54
     CMP ECX,dword ptr [EAX + 0x15aabc]  ; 0052d7ca
     JZ 0x0052d8ae                       ; 0052d7d0
@@ -68,7 +68,7 @@ section .text
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0052d7d7
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0052d7dc
-    MOV EBX,dword ptr [0x005be368]      ; 0052d7df | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 0052d7df | g_CDemonSet_PTR_005be368
     PUSH EBX                            ; 0052d7e5
     CALL core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0 ; 0052d7e6
         ;   XREF to: 005117e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0(CDemonSet * this_ptr)
@@ -80,7 +80,7 @@ section .text
     XOR ESI,ESI                         ; 0052d804
     MOV dword ptr [ESP + 0xd4],EAX      ; 0052d806
     MOV EAX,[0x02dc9464]                ; 0052d80d | DAT_02dc9464
-    MOV EDX,dword ptr [0x005be368]      ; 0052d812 | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 0052d812 | g_CDemonSet_PTR_005be368
     MOV dword ptr [ESP + 0xd8],EAX      ; 0052d818
     MOV EAX,dword ptr [ESP + 0xd0]      ; 0052d81f
     MOV dword ptr [ESP + 0xe8],ESI      ; 0052d826
@@ -104,12 +104,12 @@ section .text
     JZ 0x0052da56                       ; 0052d87f
         ;   XREF to: 0052da56 (CONDITIONAL_JUMP)  ; LAB_0052da56
     MOV dword ptr [0x005bed60],0x594afb ; 0052d885 | PTR_s_int_005bed60 | = "int"
-    MOV ESI,dword ptr [0x005be368]      ; 0052d88f | DAT_005be368
+    MOV ESI,dword ptr [0x005be368]      ; 0052d88f | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0052d88f
     PUSH ESI                            ; 0052d895
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0052d896
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
-    MOV EAX,[0x005be368]                ; 0052d89b | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0052d89b | g_CDemonSet_PTR_005be368
     MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0052d8a0
     ADD ESP,0x4                         ; 0052d8a6
     MOV [0x02dc9d54],EAX                ; 0052d8a9 | DAT_02dc9d54
@@ -354,7 +354,7 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 0052dbdb
     PUSH EAX                            ; 0052dbdf
     PUSH 0x0                            ; 0052dbe0
-    MOV ECX,dword ptr [0x005bed68]      ; 0052dbe2 | DAT_005bed68
+    MOV ECX,dword ptr [0x005bed68]      ; 0052dbe2 | g_CSound_PTR_005bed68
     PUSH ECX                            ; 0052dbe8
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 0052dbe9
         ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)

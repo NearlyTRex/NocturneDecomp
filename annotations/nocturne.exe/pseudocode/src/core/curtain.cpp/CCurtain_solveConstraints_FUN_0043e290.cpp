@@ -48,24 +48,33 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *t
     pfVar10 = &(vertex->world_position).z;
     iVar11 = 0;
     pSVar12 = &this_ptr->mesh;
-    local_1c = (float *)&DAT_0077c288;
+    local_1c = &g_SCollisionInfo_ARRAY_0077c26c[0].cylinder_radius;
     do {
       if (((((float)-0.5 <= (vertex->velocity).y) ||
-           (fVar7 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],
+           (fVar7 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) +
+                    g_SCollisionInfo_ARRAY_0077c26c[local_18].cylinder_top_y,
            fVar7 <= (vertex->world_position).y)) ||
-          ((vertex->world_position).y <= *(float *)((int)&DAT_0077bdc0 + iVar11))) ||
-         (fVar5 = (vertex->world_position).x - *(float *)((int)&DAT_0077bdbc + iVar11),
-         fVar3 = (vertex->world_position).z - *(float *)((int)&DAT_0077bdc4 + iVar11),
-         (float)(&DAT_0077c288)[local_18 * 10] <= SQRT(fVar3 * fVar3 + fVar5 * fVar5))) {
-        if ((*(float *)((int)&DAT_0077bdc0 + iVar11) <= (vertex->world_position).y) &&
-           (fVar7 = *(float *)((int)&DAT_0077bdc0 + iVar11) + (float)(&DAT_0077c284)[local_18 * 10],
+          ((vertex->world_position).y <= *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11))
+          ) || (fVar5 = (vertex->world_position).x -
+                        *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11),
+               fVar3 = (vertex->world_position).z -
+                       *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11),
+               g_SCollisionInfo_ARRAY_0077c26c[local_18].cylinder_radius <=
+               SQRT(fVar3 * fVar3 + fVar5 * fVar5))) {
+        if ((*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) <=
+             (vertex->world_position).y) &&
+           (fVar7 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) +
+                    g_SCollisionInfo_ARRAY_0077c26c[local_18].cylinder_top_y,
            (vertex->world_position).y <= fVar7)) {
-          local_104[0] = (vertex->world_position).x - *(float *)((int)&DAT_0077bdbc + iVar11);
-          local_fc = (vertex->world_position).z - *(float *)((int)&DAT_0077bdc4 + iVar11);
+          local_104[0] = (vertex->world_position).x -
+                         *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11);
+          local_fc = (vertex->world_position).z -
+                     *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11);
           fVar5 = SQRT(local_104[0] * local_104[0] + local_fc * local_fc);
-          if (fVar5 <= (float)(&DAT_0077c288)[local_18 * 10]) {
+          if (fVar5 <= g_SCollisionInfo_ARRAY_0077c26c[local_18].cylinder_radius) {
             if ((vertex->last_world_position).y < fVar7) {
-              if (*(float *)((int)&DAT_0077bdc0 + iVar11) < (vertex->last_world_position).y) {
+              if (*(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11) <
+                  (vertex->last_world_position).y) {
                 if (fVar5 <= 0.0) {
                   local_104[0] = 0.0;
                   local_fc = 0.0;
@@ -74,9 +83,11 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *t
                   local_104[0] = local_104[0] * (1.0 / fVar5);
                   local_fc = local_fc * (1.0 / fVar5);
                 }
-                fVar8 = local_104[0] * *local_1c + *(float *)((int)&DAT_0077bdbc + iVar11);
+                fVar8 = local_104[0] * *local_1c +
+                        *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].x + iVar11);
                 fVar6 = (vertex->world_position).y;
-                fVar9 = local_fc * *local_1c + *(float *)((int)&DAT_0077bdc4 + iVar11);
+                fVar9 = local_fc * *local_1c +
+                        *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].z + iVar11);
                 fVar7 = (vertex->world_position).y;
                 fVar5 = (vertex->world_position).z;
                 fVar3 = pSVar12->inv_delta_time;
@@ -94,7 +105,7 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *t
               else {
                 fVar6 = pCVar1->x;
                 fVar8 = *pfVar10;
-                fVar9 = *(float *)((int)&DAT_0077bdc0 + iVar11);
+                fVar9 = *(float *)((int)&g_CVector3f_ARRAY_0077bdbc[0].y + iVar11);
                 fVar7 = (vertex->world_position).y;
                 fVar5 = (vertex->world_position).z;
                 fVar3 = pSVar12->inv_delta_time;

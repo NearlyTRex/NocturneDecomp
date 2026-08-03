@@ -17,7 +17,7 @@
 ;   float FLOAT_005a216c = 20
 ;   float FLOAT_005a2170 = 10000
 ;   undefined4 DAT_005bea88
-;   undefined4 DAT_02dbd370
+;   float g_FLOAT_02dbd370
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -37,7 +37,7 @@ section .text
     FLD double ptr [0x005bea88]         ; 00525b82 | DAT_005bea88
     FLD float ptr [0x005a216c]          ; 00525b88 | FLOAT_005a216c
     FMUL ST1                            ; 00525b8e
-    FLD float ptr [0x02dbd370]          ; 00525b90 | DAT_02dbd370
+    FLD float ptr [0x02dbd370]          ; 00525b90 | g_FLOAT_02dbd370
     FMUL ST2                            ; 00525b96
     FLD float ptr [0x005a2170]          ; 00525b98 | FLOAT_005a2170
     FMULP ST3                           ; 00525b9e

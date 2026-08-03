@@ -97,8 +97,8 @@ section .text
     MOV EBX,0x57ca38                    ; 004529df | = "..\\core\\dmodel.cpp"
     MOV ESI,0x128                       ; 004529e4
     PUSH 0x57ca4b                       ; 004529e9 | = "KFM file is invalid version %d"
-    MOV dword ptr [0x01cc4800],EBX      ; 004529ee | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004529f4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 004529ee | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004529f4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004529fa
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004529ff
@@ -324,8 +324,8 @@ section .text
     MOV EDX,0x57ca6a                    ; 00452bd0 | = "..\\core\\dmodel.cpp"
     MOV ECX,0x12b                       ; 00452bd5
     PUSH 0x57ca7d                       ; 00452bda | = "KFM file is version %d, this .exe can..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00452bdf | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00452be5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00452bdf | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00452be5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00452beb
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00452bf0
@@ -542,8 +542,8 @@ section .text
     MOV EBX,0x57cb43                    ; 00452e06 | = "..\\core\\dmodel.cpp"
     MOV ESI,0x197                       ; 00452e0b
     PUSH 0x57cb56                       ; 00452e10 | = "Error reading KFM model"
-    MOV dword ptr [0x01cc4800],EBX      ; 00452e15 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00452e1b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 00452e15 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00452e1b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00452e21
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00452e26
@@ -618,8 +618,8 @@ section .text
         ;   Label: LAB_00452ec6
     MOV EDX,0x178                       ; 00452ecb
     PUSH 0x57cb10                       ; 00452ed0 | = "Out of memory for envMapOpacList"
-    MOV [0x01cc4800],EAX                ; 00452ed5 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00452eda | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00452ed5 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00452eda | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00452ee0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00452ee5

@@ -18,12 +18,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_mobster_cheese_c_c_d_wav_0058a4ad
 ;   float FLOAT_0058a4c9 = 5
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
-;   undefined4 DAT_005bed68
-;   undefined4 DAT_01c77608
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
+;   undefined4 g_CGame_01c775ec.foul_language_flag
 ;   undefined4 g_CMobsterActorType_01ccdbd8.name_hash
-;   undefined4 DAT_01fa7e78
+;   undefined4 g_CDemonSet_01e57284.enemy_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -60,9 +60,9 @@ section .text
     MOV EDX,dword ptr [EBX + 0x1ccdb94] ; 004dc970
         ;   Label: LAB_004dc970
     INC EDX                             ; 004dc976
-    MOV EAX,[0x005b9354]                ; 004dc977 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004dc977 | g_CGame_PTR_005b9354
     MOV dword ptr [EBX + 0x1ccdb94],EDX ; 004dc97c
-    CMP dword ptr [EAX + 0x1c],0x0      ; 004dc982 | DAT_01c77608
+    CMP dword ptr [EAX + 0x1c],0x0      ; 004dc982 | g_CGame_01c775ec.foul_language_flag
     JNZ 0x004dc9af                      ; 004dc986
         ;   XREF to: 004dc9af (CONDITIONAL_JUMP)  ; LAB_004dc9af
     CMP dword ptr [EBP + 0x18],0x1      ; 004dc988
@@ -107,7 +107,7 @@ section .text
     ADD ESP,0x14                        ; 004dc9d3
     MOV EAX,ESP                         ; 004dc9d6
     PUSH EAX                            ; 004dc9d8
-    MOV EDX,dword ptr [0x005bed68]      ; 004dc9d9 | DAT_005bed68
+    MOV EDX,dword ptr [0x005bed68]      ; 004dc9d9 | g_CSound_PTR_005bed68
     PUSH EDX                            ; 004dc9df
     CALL core_sound.cpp_FUN_0052ebc0    ; 004dc9e0
         ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_FUN_0052ebc0()
@@ -141,9 +141,9 @@ section .text
     MOV dword ptr [ESP + 0x68],EAX      ; 004dca38
     XOR EDI,EDI                         ; 004dca3c
     XOR EBX,EBX                         ; 004dca3e
-    MOV EAX,[0x005be368]                ; 004dca40 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004dca40 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004dca40
-    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 004dca45 | DAT_01fa7e78
+    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 004dca45 | g_CDemonSet_01e57284.enemy_count
     JGE 0x004dca9a                      ; 004dca4b
         ;   XREF to: 004dca9a (CONDITIONAL_JUMP)  ; LAB_004dca9a
     MOV EDX,dword ptr [ESP + 0x68]      ; 004dca4d

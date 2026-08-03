@@ -17,12 +17,12 @@ CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_00480b30(C
   iVar1 = core_event_cpp_CEventList_findActorVariable_FUN_00480ba0(this_ptr,name);
   if (-1 < iVar1) {
     iVar3 = 0;
-    for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
+    for (iVar4 = 0; iVar4 < g_CDemonSet_PTR_005be368->actor_count; iVar4 = iVar4 + 1) {
       iVar2 = _stricmp
-                        (*(char **)(iVar3 + 0x14cd70 + 0x01E57284),
+                        (*(char **)((int)g_CDemonSet_PTR_005be368->actors + iVar3),
                          (this_ptr->actor_vars).actor_names[iVar1]);
       if (iVar2 == 0) {
-        return *(CDemonActor **)(iVar3 + 0x14cd70 + 0x01E57284);
+        return *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar3);
       }
       iVar3 = iVar3 + 4;
     }

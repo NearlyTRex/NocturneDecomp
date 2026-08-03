@@ -26,12 +26,11 @@ void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004d9680
     cVar1 = *pcVar6;
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
-  for (pcVar6 = *(char **)(this_ptr->set_names[3] + 0xcc); pcVar6 != (char *)0x0;
-      pcVar6 = *(char **)(pcVar6 + 0x144)) {
-    iVar2 = _strnicmp(pcVar6,base_name,~uVar4 - 1);
+  for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor) {
+    iVar2 = _strnicmp(pCVar3->actor_name,base_name,~uVar4 - 1);
     if (((iVar2 == 0) &&
-        (iVar2 = sscanf(pcVar6 + (~uVar4 - 1),"%d"), iVar2 == 1))
-       && (iVar5 < local_14)) {
+        (iVar2 = sscanf(pCVar3->actor_name + (~uVar4 - 1),"%d"),
+        iVar2 == 1)) && (iVar5 < local_14)) {
       iVar5 = local_14;
     }
   }

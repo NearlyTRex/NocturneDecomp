@@ -12,19 +12,18 @@ void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004b06b0(CGore *this_ptr,CVe
 
 {
   int iVar1;
-  int iVar2;
+  CFootstep *this_ptr_00;
   
-  iVar2 = _DAT_01c9e53c + 1;
-  iVar1 = _DAT_01c9e53c * 0x40;
-  _DAT_01c9e53c = iVar2;
-  if (999 < iVar2) {
+  iVar1 = _DAT_01c9e53c + 1;
+  this_ptr_00 = g_CFootstep_ARRAY_01c9e544 + _DAT_01c9e53c;
+  _DAT_01c9e53c = iVar1;
+  if (999 < iVar1) {
     _DAT_01c9e53c = 0;
   }
   if (_DAT_01c9e540 < 1000) {
     _DAT_01c9e540 = _DAT_01c9e540 + 1;
   }
   core_gore_cpp_CFootstep_init_FUN_004af8a0
-            ((CFootstep *)(&DAT_01c9e544 + iVar1),position,orientation,(uint)(surface_type == 0xb),
-             alpha,blood_type);
+            (this_ptr_00,position,orientation,(uint)(surface_type == 0xb),alpha,blood_type);
   return;
 }

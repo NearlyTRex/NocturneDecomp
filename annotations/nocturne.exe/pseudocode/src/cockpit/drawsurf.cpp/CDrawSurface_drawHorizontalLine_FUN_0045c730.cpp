@@ -29,8 +29,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(C
     }
     if (start_x_00 <= end_x_00) {
       if (_DAT_01b4d71c != 0) {
-        cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20
-                  (start_x_00,end_x_00,iVar3);
+        cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0045bc20(start_x_00,end_x_00,iVar3);
         return;
       }
       iVar3 = iVar3 * 4;
@@ -62,8 +61,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(C
           return;
         }
       }
-      PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
-      INT_01cc4804 = 0x3a5;
+      g_CHAR_PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
+      g_INT_01cc4804 = 0x3a5;
       core_main_c_FUN_004c8440("Invalid bitsPerPixel!");
       return;
     }

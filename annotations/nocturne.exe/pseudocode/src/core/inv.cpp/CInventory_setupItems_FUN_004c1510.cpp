@@ -13,8 +13,8 @@ void __cdecl core_inv_cpp_CInventory_setupItems_FUN_004c1510(CInventory *this_pt
   CInventory *pCVar2;
   
   if (this_ptr->preserve_items != 0) {
-    PTR_01cc4800 = "..\\core\\inv.cpp";
-    INT_01cc4804 = 0x56e;
+    g_CHAR_PTR_01cc4800 = "..\\core\\inv.cpp";
+    g_INT_01cc4804 = 0x56e;
     core_main_c_FUN_004c8440("CInventory::setupItems - we should own the items at this point!");
   }
   iVar1 = 0;

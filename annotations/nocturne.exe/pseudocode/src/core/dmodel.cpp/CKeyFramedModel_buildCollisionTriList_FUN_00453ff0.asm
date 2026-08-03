@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057ce07
 ;   TerminatedCString s_CKeyFramedModel_buildCol_0057ce1a
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -92,8 +92,8 @@ section .text
     MOV ESI,0x57ce07                    ; 004540ac | = "..\\core\\dmodel.cpp"
     MOV EDI,0x470                       ; 004540b1
     PUSH 0x57ce1a                       ; 004540b6 | = "CKeyFramedModel::buildCollisionTriLis..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004540bb | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004540c1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004540bb | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004540c1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004540c7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004540cc

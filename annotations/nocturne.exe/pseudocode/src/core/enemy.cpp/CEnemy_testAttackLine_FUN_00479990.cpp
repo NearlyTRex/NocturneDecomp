@@ -25,8 +25,8 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_00479990(CEnemy *this_ptr,C
       dVar1 = round((double)auStack_28 * 1.2 * 0.25);
       local_20.z = (float)(int)ROUND(dVar1);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                ((CGore *)INT_005b96c4,(CVector3f *)(auStack_28 + 4),(CVector3f *)0x0,
-                 (int)local_20.z,blood_type);
+                (g_CGore_PTR_005b96c4,(CVector3f *)(auStack_28 + 4),(CVector3f *)0x0,(int)local_20.z
+                 ,blood_type);
       return 1;
     }
   }

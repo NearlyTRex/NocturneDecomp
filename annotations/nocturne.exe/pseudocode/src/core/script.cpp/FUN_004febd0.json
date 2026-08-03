@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,26 +58,14 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 77,
+        "line": 76,
         "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 99,
-        "message": "use of undeclared identifier 'DAT_01e56c30'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 101,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
         "category": "incompatible_types",
-        "column": 20,
-        "line": 101,
-        "message": "assigning to 'int' from incompatible type 'const char[19]'"
+        "column": 5,
+        "line": 99,
+        "message": "no matching function for call to 'shape_edittool_cpp_FUN_00476160'"
       },
       {
         "category": "incompatible_types",
@@ -92,16 +80,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 224,
-    "complexity_score": 345,
+    "complexity_score": 330,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 22,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unrolled_strcat",
       "unrolled_strcpy",
@@ -274,19 +261,19 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -420,7 +407,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CStrList *)&param_1->parsed_line_count;",
+      "text": "local_14 = &param_1->script_text;",
       "type": "unnamed_param"
     },
     {
@@ -465,18 +452,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CStrList *)&param_1->parsed_line_count);",
+      "text": "iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(&param_1->script_text);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 70,
       "match": "param_2",
       "severity": "mild",
-      "text": "(0x01BCD074,\"Probable non-text file %s detected near line %d.  Cannot use script.\",param_2,iVar3 + 1);",
+      "text": "(g_CEditorTools_PTR_005b6d50,\"Probable non-text file %s detected near line %d.  Cannot use script.\",param_2,",
       "type": "unnamed_param"
     },
     {
@@ -518,14 +505,6 @@
       "severity": "mild",
       "text": "pcVar6 = core_script_cpp_FUN_004fef60(param_1,&local_18);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_01e56c30",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_00476160(&DAT_01e56c30);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

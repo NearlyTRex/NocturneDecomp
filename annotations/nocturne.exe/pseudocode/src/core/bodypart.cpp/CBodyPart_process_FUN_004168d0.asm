@@ -17,8 +17,8 @@
 ;   TerminatedCString s_disableBodyPartDamage_00579070
 ;   double DOUBLE_0057908a = 3
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 DAT_02dd1184
 ;   undefined4 DAT_02dd1188
 ;   undefined4 DAT_02dd118c
@@ -225,8 +225,8 @@ section .text
     PUSH EAX                            ; 00416ac5
     LEA EAX,[ESP + 0x48]                ; 00416ac6
     PUSH EAX                            ; 00416aca
-    MOV ESI,dword ptr [0x005be368]      ; 00416acb | DAT_005be368
-    PUSH ESI                            ; 00416ad1 | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 00416acb | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 00416ad1 | g_CDemonSet_01e57284
     FSTP float ptr [ESP + 0x18]         ; 00416ad2
     CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880 ; 00416ad6
         ;   XREF to: 00511880 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)

@@ -25,7 +25,7 @@
 ;   double DOUBLE_0057e4b6 = 65536
 ;   double DOUBLE_0057e4be = 256
 ;   undefined4 DAT_0059c8e0
-;   undefined4 DAT_005ae700
+;   void* PTR_DAT_005ae700 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x7c]      ; 0046e9f6
     LEA EBX,[ESP + 0x48]                ; 0046e9fa
     MOV EAX,ESI                         ; 0046e9fe
-    MOV EDX,dword ptr [0x005ae700]      ; 0046ea00 | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0046ea00 | PTR_DAT_005ae700
     FLD float ptr [EAX]                 ; 0046ea06
     FMUL float ptr [0x0059c8e0]         ; 0046ea08 | DAT_0059c8e0
     FISTP dword ptr [EBX]               ; 0046ea0e
@@ -64,7 +64,7 @@ section .text
     LEA EBX,[ESP + 0x68]                ; 0046ea35
     ADD ESP,0x8                         ; 0046ea39
     LEA EAX,[ESI + 0xc]                 ; 0046ea3c
-    MOV EDX,dword ptr [0x005ae700]      ; 0046ea3f | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0046ea3f | PTR_DAT_005ae700
     FLD float ptr [EAX]                 ; 0046ea45
     FMUL float ptr [0x0059c8e0]         ; 0046ea47 | DAT_0059c8e0
     FISTP dword ptr [EBX]               ; 0046ea4d
@@ -84,7 +84,7 @@ section .text
     LEA EBX,[ESP + 0x5c]                ; 0046ea77
     ADD ESP,0x8                         ; 0046ea7b
     LEA EAX,[ESI + 0x18]                ; 0046ea7e
-    MOV EDX,dword ptr [0x005ae700]      ; 0046ea81 | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0046ea81 | PTR_DAT_005ae700
     FLD float ptr [EAX]                 ; 0046ea87
     FMUL float ptr [0x0059c8e0]         ; 0046ea89 | DAT_0059c8e0
     FISTP dword ptr [EBX]               ; 0046ea8f
@@ -125,7 +125,7 @@ section .text
     MOV EAX,ESP                         ; 0046eb02
     MOV EBX,0x1                         ; 0046eb04
     PUSH EAX                            ; 0046eb09
-    MOV EDI,dword ptr [0x005ae700]      ; 0046eb0a | DAT_005ae700
+    MOV EDI,dword ptr [0x005ae700]      ; 0046eb0a | PTR_DAT_005ae700
     XOR ECX,ECX                         ; 0046eb10
     PUSH EDI                            ; 0046eb12 | DAT_01b4d738
     MOV ESI,0x2                         ; 0046eb13

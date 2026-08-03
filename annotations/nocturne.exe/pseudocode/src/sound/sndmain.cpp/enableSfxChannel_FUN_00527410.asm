@@ -18,9 +18,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0059368b
 ;   TerminatedCString s_enableSfxChannel_invalid_005936a0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_02dbd494
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -48,8 +48,8 @@ section .text
     MOV EDX,0x59368b                    ; 00527424 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xf52                       ; 00527429
     PUSH 0x5936a0                       ; 0052742e | = "enableSfxChannel - invalid channel in..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00527433 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00527439 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00527433 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00527439 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052743f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00527444
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 00527482 (CONDITIONAL_JUMP)  ; LAB_00527482
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 00527452
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
-    CMP ESI,dword ptr [EBX + 0x2dbd374] ; 00527457 | DAT_02dbd494
+    CMP ESI,dword ptr [EBX + 0x2dbd374] ; 00527457 | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
         ;   Label: LAB_00527457
     JNZ 0x0052746f                      ; 0052745d
         ;   XREF to: 0052746f (CONDITIONAL_JUMP)  ; LAB_0052746f

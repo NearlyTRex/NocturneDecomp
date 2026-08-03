@@ -68,19 +68,19 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a4290
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_005c15bc
 ;   undefined4 DAT_005c15d4
 ;   undefined4 DAT_005c15ec
 ;   undefined4 DAT_00780000
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_02ddfa28
-;   undefined4 DAT_02ddfa2c
-;   undefined4 DAT_02ddfa30
-;   undefined4 DAT_02ddfa34
-;   undefined4 DAT_02ddfa38
-;   undefined4 DAT_02ddfa3c
+;   CDemonSet g_CDemonSet_01e57284
+;   CVector3f[200] g_CVector3f_ARRAY_02ddfa28
+;   undefined4 g_CVector3f_ARRAY_02ddfa28[0].y
+;   undefined4 g_CVector3f_ARRAY_02ddfa28[0].z
+;   undefined4 g_CVector3f_ARRAY_02ddfa28[1].x
+;   undefined4 g_CVector3f_ARRAY_02ddfa28[1].y
+;   undefined4 g_CVector3f_ARRAY_02ddfa28[1].z
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50
@@ -163,8 +163,8 @@ section .text
     PUSH 0x0                            ; 005550df
     PUSH 0x0                            ; 005550e1
     PUSH 0x0                            ; 005550e3
-    MOV EDX,dword ptr [0x005be368]      ; 005550e5 | DAT_005be368
-    PUSH EDX                            ; 005550eb | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 005550e5 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 005550eb | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 005550ec
         ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 005550f1
@@ -211,13 +211,13 @@ section .text
     LEA EBX,[ESP + 0xa4]                ; 00555185
     MOV EAX,ESI                         ; 0055518c
     MOV EBP,dword ptr [EBP]             ; 0055518e | DAT_01b4d738
-    FLD float ptr [EAX]                 ; 00555191 | DAT_02ddfa28 | DAT_02ddfa34
+    FLD float ptr [EAX]                 ; 00555191 | g_CVector3f_ARRAY_02ddfa28 | g_CVector3f_ARRAY_02ddfa28[1].x
     FMUL float ptr [0x005a4290]         ; 00555193 | DAT_005a4290
     FISTP dword ptr [EBX]               ; 00555199
-    FLD float ptr [EAX + 0x4]           ; 0055519b | DAT_02ddfa2c | DAT_02ddfa38
+    FLD float ptr [EAX + 0x4]           ; 0055519b | g_CVector3f_ARRAY_02ddfa28[0].y | g_CVector3f_ARRAY_02ddfa28[1].y
     FMUL float ptr [0x005a4290]         ; 0055519e | DAT_005a4290
     FISTP dword ptr [EBX + 0x4]         ; 005551a4
-    FLD float ptr [EAX + 0x8]           ; 005551a7 | DAT_02ddfa30 | DAT_02ddfa3c
+    FLD float ptr [EAX + 0x8]           ; 005551a7 | g_CVector3f_ARRAY_02ddfa28[0].z | g_CVector3f_ARRAY_02ddfa28[1].z
     FMUL float ptr [0x005a4290]         ; 005551aa | DAT_005a4290
     FISTP dword ptr [EBX + 0x8]         ; 005551b0
     LEA EAX,[ESP + 0xa4]                ; 005551b3
@@ -235,7 +235,7 @@ section .text
     TEST EAX,EAX                        ; 005551d4
     JZ 0x00555484                       ; 005551d6
         ;   XREF to: 00555484 (CONDITIONAL_JUMP)  ; LAB_00555484
-    PUSH ESI                            ; 005551dc | DAT_02ddfa28
+    PUSH ESI                            ; 005551dc | g_CVector3f_ARRAY_02ddfa28
     MOV EAX,[0x005ae704]                ; 005551dd | DAT_005ae704
     PUSH EAX                            ; 005551e2 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 005551e3
@@ -251,13 +251,13 @@ section .text
     ADD ESP,0xc                         ; 005551fe
     LEA EBX,[ESP + 0x74]                ; 00555201
     MOV EAX,ESI                         ; 00555205
-    FLD float ptr [EAX]                 ; 00555207 | DAT_02ddfa28
+    FLD float ptr [EAX]                 ; 00555207 | g_CVector3f_ARRAY_02ddfa28
     FMUL float ptr [0x005a4290]         ; 00555209 | DAT_005a4290
     FISTP dword ptr [EBX]               ; 0055520f
-    FLD float ptr [EAX + 0x4]           ; 00555211 | DAT_02ddfa2c
+    FLD float ptr [EAX + 0x4]           ; 00555211 | g_CVector3f_ARRAY_02ddfa28[0].y
     FMUL float ptr [0x005a4290]         ; 00555214 | DAT_005a4290
     FISTP dword ptr [EBX + 0x4]         ; 0055521a
-    FLD float ptr [EAX + 0x8]           ; 0055521d | DAT_02ddfa30
+    FLD float ptr [EAX + 0x8]           ; 0055521d | g_CVector3f_ARRAY_02ddfa28[0].z
     FMUL float ptr [0x005a4290]         ; 00555220 | DAT_005a4290
     FISTP dword ptr [EBX + 0x8]         ; 00555226
     PUSH 0x4                            ; 00555229
@@ -265,8 +265,8 @@ section .text
     PUSH 0x0                            ; 0055522d
     LEA EAX,[ESP + 0x80]                ; 0055522f
     PUSH EAX                            ; 00555236
-    MOV ECX,dword ptr [0x005be368]      ; 00555237 | DAT_005be368
-    PUSH ECX                            ; 0055523d | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 00555237 | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 0055523d | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50 ; 0055523e
         ;   XREF to: 0050bb50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 00555243
@@ -497,11 +497,11 @@ section .text
     IMUL EAX,ESI,0xc                    ; 00555581
         ;   Label: LAB_00555581
     ADD EAX,0x2ddfa28                   ; 00555584
-    MOV EAX,dword ptr [EAX]             ; 00555589 | DAT_02ddfa34
+    MOV EAX,dword ptr [EAX]             ; 00555589 | g_CVector3f_ARRAY_02ddfa28[1].x
     MOV dword ptr [ESP + 0xc8],EAX      ; 0055558b
-    MOV EAX,dword ptr [EDI]             ; 00555592 | DAT_02ddfa38
+    MOV EAX,dword ptr [EDI]             ; 00555592 | g_CVector3f_ARRAY_02ddfa28[1].y
     MOV dword ptr [ESP + 0xcc],EAX      ; 00555594
-    MOV EAX,dword ptr [EDI + 0x4]       ; 0055559b | DAT_02ddfa3c
+    MOV EAX,dword ptr [EDI + 0x4]       ; 0055559b | g_CVector3f_ARRAY_02ddfa28[1].z
     MOV dword ptr [ESP + 0xd0],EAX      ; 0055559e
     MOV EAX,dword ptr [EBP + 0x2de0388] ; 005555a5
     MOV dword ptr [ESP + 0xcc],EAX      ; 005555ab

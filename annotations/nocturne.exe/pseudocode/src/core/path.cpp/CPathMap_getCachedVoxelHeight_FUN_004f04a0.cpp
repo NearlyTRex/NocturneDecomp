@@ -21,7 +21,7 @@ int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap *t
       local_18.y = current_height + 5;
       local_18.z = (this_ptr->grid_origin).z + grid_z;
       iVar1 = core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0
-                        ((CDemonRaytrace *)&DAT_01fba938,&local_18);
+                        (&g_CDemonRaytrace_01fba938,&local_18);
       this_ptr->height_cache[grid_z][grid_x] = iVar1;
       this_ptr->height_cache_tags[grid_z][grid_x] = current_height;
       return iVar1;

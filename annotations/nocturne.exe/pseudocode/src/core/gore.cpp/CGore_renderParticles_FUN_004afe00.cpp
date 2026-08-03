@@ -10,22 +10,22 @@ void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(CGore *this_ptr)
 
 {
   int iVar1;
-  byte *puVar2;
+  CBloodParticle *this_ptr_00;
   
-  if ((*(int *)(0x01C775EC + 0x14) != 0) &&
+  if ((g_CGame_PTR_005b9354->blood_flag != 0) &&
      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar1 == 0)
      ) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-              (0x01E57284,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
+              (g_CDemonSet_PTR_005be368,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
                (CVector3f *)0x0,(CMatrix3x3f *)0x0);
-    puVar2 = &DAT_01c78cec;
-    core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0((CBloodParticle *)&DAT_01c78cec);
+    this_ptr_00 = g_CBloodParticle_ARRAY_01c78cec;
+    core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(g_CBloodParticle_ARRAY_01c78cec);
     do {
-      if (0.0 < *(float *)(puVar2 + 0x18)) {
-        (**(code **)(*(int *)(puVar2 + 0x34) + 8))(puVar2);
+      if (0.0 < (this_ptr_00->base).lifetime_remaining) {
+        (*((this_ptr_00->base).vtable)->render)(&this_ptr_00->base);
       }
-      puVar2 = puVar2 + 0x40;
-    } while (puVar2 != &DAT_01c7ccec);
+      this_ptr_00 = this_ptr_00 + 1;
+    } while (this_ptr_00 != (CBloodParticle *)&DAT_01c7ccec);
   }
   return;
 }

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,50 +58,50 @@
       {
         "category": "undeclared_identifier",
         "column": 60,
-        "line": 42,
+        "line": 45,
         "message": "use of undeclared identifier 'DAT_02dd10c4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 52,
+        "line": 56,
         "message": "use of undeclared identifier '_DAT_01cea3f8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 58,
+        "line": 62,
         "message": "use of undeclared identifier '_DAT_01cea3fc'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 63,
+        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 66,
+        "line": 70,
         "message": "use of undeclared identifier '_DAT_01cea3f8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 67,
+        "line": 71,
         "message": "use of undeclared identifier '_DAT_01cea3f8'"
       },
       {
         "category": "type_error",
         "column": 19,
-        "line": 80,
+        "line": 84,
         "message": "member reference base type 'byte[15]' (aka 'unsigned char[15]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_01cea3f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
         "line": 98,
-        "message": "use of undeclared identifier '_DAT_01cea3fc'"
+        "message": "use of undeclared identifier '_DAT_01cea3f8'"
       },
       {
         "category": "undeclared_identifier",
@@ -111,8 +111,8 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
-        "line": 103,
+        "column": 11,
+        "line": 106,
         "message": "use of undeclared identifier '_DAT_01cea3fc'"
       }
     ],
@@ -122,22 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 249,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 119,
-    "suspect_count": 10,
+    "pseudocode_lines": 126,
+    "suspect_count": 7,
     "suspect_types": [
-      "raw_address_constant",
       "undefined_data",
       "unknown_field",
-      "unresolved_funcptr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 397
+    "total_lines": 404
   },
   "cross_references": [
     {
@@ -258,21 +256,21 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005bac64",
-      "name": "INT_005bac64",
-      "type": "int",
-      "value": "0x1cc30e4"
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
     },
     {
       "addr": "005c1664",
@@ -406,7 +404,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 38,
       "match": "DAT_02dd10c4",
       "severity": "mild",
       "text": "((SNetworkAddr *)(auStack_33 + 3),(uint32_t *)&DAT_02dd10c4,0x1ddf);",
@@ -414,7 +412,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 58,
       "match": "DAT_005c1664",
       "severity": "mild",
       "text": "uStack_18 = DAT_005c1664;",
@@ -422,7 +420,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 59,
       "match": "DAT_005c1664",
       "severity": "mild",
       "text": "DAT_005c1664 = 0;",
@@ -430,7 +428,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 77,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_33._0_4_ = this_ptr->players[this_ptr->local_player_index].aim_mode;",
@@ -438,39 +436,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 96,
       "match": "DAT_005c1664",
       "severity": "mild",
       "text": "DAT_005c1664 = uStack_18;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 113,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 29,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "iVar4 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1bcd074 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 47,
-      "match": "0x1bcd074",
-      "severity": "moderate",
-      "text": "uVar2 = 0x01BCD074;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 76,
+      "line": 80,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

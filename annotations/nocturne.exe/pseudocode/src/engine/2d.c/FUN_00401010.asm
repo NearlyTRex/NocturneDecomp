@@ -137,8 +137,8 @@ section .text
     MOV EDX,0x5770af                    ; 0040110e | = "..\\engine\\2d.c"
     MOV ECX,0xaa                        ; 00401113
     PUSH 0x5770be                       ; 00401118 | = "Unable to malloc font memory"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040111d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00401123 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0040111d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00401123 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00401129
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040112e
@@ -215,8 +215,8 @@ section .text
         ;   Label: LAB_004011fd
     MOV ESI,0x84                        ; 00401202
     PUSH 0x577013                       ; 00401207 | = "No room for frame buffer.  Please run..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0040120c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00401212 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0040120c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00401212 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00401218
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040121d
@@ -226,8 +226,8 @@ section .text
         ;   Label: LAB_00401225
     MOV EAX,0xa1                        ; 0040122a
     PUSH 0x577082                       ; 0040122f | = "Unable to open font.ndx"
-    MOV dword ptr [0x01cc4800],EDI      ; 00401234 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0040123a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00401234 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0040123a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040123f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00401244
@@ -237,8 +237,8 @@ section .text
         ;   Label: LAB_0040124c
     MOV EAX,0xac                        ; 00401251
     PUSH 0x5770fe                       ; 00401256 | = "Unable to open font.bin"
-    MOV dword ptr [0x01cc4800],EDI      ; 0040125b | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00401261 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 0040125b | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00401261 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00401266
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040126b

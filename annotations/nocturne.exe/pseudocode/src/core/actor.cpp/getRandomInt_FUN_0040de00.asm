@@ -29,8 +29,8 @@
 ;   double DOUBLE_00578051 = 0.999990000000000
 ;   float FLOAT_00578059 = 0.00003051851
 ;   float FLOAT_0057805d = 5.960465E-8
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77828
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.is_processing
 ;
 ; Called Functions:
 ;   core_actor.cpp_generateRandomValue_FUN_0040dd30
@@ -54,9 +54,9 @@ section .text
     SUB EAX,EBX                         ; 0040de13
     MOV dword ptr [ESP + 0x10],EAX      ; 0040de15
     FILD dword ptr [ESP + 0x10]         ; 0040de19
-    MOV EAX,[0x005b9354]                ; 0040de1d | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0040de1d | g_CGame_PTR_005b9354
     FADD double ptr [0x00578051]        ; 0040de22 | DOUBLE_00578051
-    MOV EDX,dword ptr [EAX + 0x23c]     ; 0040de28 | DAT_01c77828
+    MOV EDX,dword ptr [EAX + 0x23c]     ; 0040de28 | g_CGame_01c775ec.is_processing
     FSTP double ptr [ESP]               ; 0040de2e
     TEST EDX,EDX                        ; 0040de31
     JNZ 0x0040de7a                      ; 0040de33

@@ -113,8 +113,8 @@ section .text
     CMP dword ptr [ESP + 0x340],0x0     ; 004bf3f7
     JZ 0x004bff2e                       ; 004bf3ff
         ;   XREF to: 004bff2e (CONDITIONAL_JUMP)  ; LAB_004bff2e
-    MOV EAX,[0x005b9354]                ; 004bf405 | DAT_005b9354
-    CMP dword ptr [EAX + 0x228],0x0     ; 004bf40a | DAT_01c77814
+    MOV EAX,[0x005b9354]                ; 004bf405 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x228],0x0     ; 004bf40a | g_CGame_01c775ec.letterbox_mode
     JNZ 0x004bff2e                      ; 004bf411
         ;   XREF to: 004bff2e (CONDITIONAL_JUMP)  ; LAB_004bff2e
     MOV ECX,dword ptr [ESP + 0x33c]     ; 004bf417
@@ -248,8 +248,8 @@ section .text
         ;   XREF to: 004bf52e (CONDITIONAL_JUMP)  ; LAB_004bf52e
     POP EDI                             ; 004bf546
         ;   Label: LAB_004bf546
-    MOV EAX,[0x005b9354]                ; 004bf547 | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0x84]      ; 004bf54c | DAT_01c77670
+    MOV EAX,[0x005b9354]                ; 004bf547 | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0x84]      ; 004bf54c | g_CGame_01c775ec.key_next_item
     PUSH ECX                            ; 004bf552
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf553
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -304,8 +304,8 @@ section .text
         ;   XREF to: 004bf5a5 (CONDITIONAL_JUMP)  ; LAB_004bf5a5
     POP EDI                             ; 004bf5bd
         ;   Label: LAB_004bf5bd
-    MOV EAX,[0x005b9354]                ; 004bf5be | DAT_005b9354
-    MOV EBX,dword ptr [EAX + 0x88]      ; 004bf5c3 | DAT_01c77674
+    MOV EAX,[0x005b9354]                ; 004bf5be | g_CGame_PTR_005b9354
+    MOV EBX,dword ptr [EAX + 0x88]      ; 004bf5c3 | g_CGame_01c775ec.key_prev_item
     PUSH EBX                            ; 004bf5c9
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf5ca
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -360,8 +360,8 @@ section .text
         ;   XREF to: 004bf61c (CONDITIONAL_JUMP)  ; LAB_004bf61c
     POP EDI                             ; 004bf634
         ;   Label: LAB_004bf634
-    MOV EAX,[0x005b9354]                ; 004bf635 | DAT_005b9354
-    MOV ESI,dword ptr [EAX + 0x4c]      ; 004bf63a | DAT_01c77638
+    MOV EAX,[0x005b9354]                ; 004bf635 | g_CGame_PTR_005b9354
+    MOV ESI,dword ptr [EAX + 0x4c]      ; 004bf63a | g_CGame_01c775ec.key_use_item
     PUSH ESI                            ; 004bf63d
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf63e
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -448,8 +448,8 @@ section .text
         ;   XREF to: 004bf6dd (CONDITIONAL_JUMP)  ; LAB_004bf6dd
     POP EDI                             ; 004bf6f5
         ;   Label: LAB_004bf6f5
-    MOV EAX,[0x005b9354]                ; 004bf6f6 | DAT_005b9354
-    MOV EDX,dword ptr [EAX + 0x84]      ; 004bf6fb | DAT_01c77670
+    MOV EAX,[0x005b9354]                ; 004bf6f6 | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [EAX + 0x84]      ; 004bf6fb | g_CGame_01c775ec.key_next_item
     PUSH EDX                            ; 004bf701
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf702
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -504,8 +504,8 @@ section .text
         ;   XREF to: 004bf754 (CONDITIONAL_JUMP)  ; LAB_004bf754
     POP EDI                             ; 004bf76c
         ;   Label: LAB_004bf76c
-    MOV EAX,[0x005b9354]                ; 004bf76d | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0x88]      ; 004bf772 | DAT_01c77674
+    MOV EAX,[0x005b9354]                ; 004bf76d | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0x88]      ; 004bf772 | g_CGame_01c775ec.key_prev_item
     PUSH ECX                            ; 004bf778
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf779
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -560,8 +560,8 @@ section .text
         ;   XREF to: 004bf7cb (CONDITIONAL_JUMP)  ; LAB_004bf7cb
     POP EDI                             ; 004bf7e3
         ;   Label: LAB_004bf7e3
-    MOV EAX,[0x005b9354]                ; 004bf7e4 | DAT_005b9354
-    MOV EBX,dword ptr [EAX + 0x4c]      ; 004bf7e9 | DAT_01c77638
+    MOV EAX,[0x005b9354]                ; 004bf7e4 | g_CGame_PTR_005b9354
+    MOV EBX,dword ptr [EAX + 0x4c]      ; 004bf7e9 | g_CGame_01c775ec.key_use_item
     PUSH EBX                            ; 004bf7ec
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf7ed
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -648,8 +648,8 @@ section .text
         ;   XREF to: 004bf88c (CONDITIONAL_JUMP)  ; LAB_004bf88c
     POP EDI                             ; 004bf8a4
         ;   Label: LAB_004bf8a4
-    MOV EAX,[0x005b9354]                ; 004bf8a5 | DAT_005b9354
-    MOV EDI,dword ptr [EAX + 0x48]      ; 004bf8aa | DAT_01c77634
+    MOV EAX,[0x005b9354]                ; 004bf8a5 | g_CGame_PTR_005b9354
+    MOV EDI,dword ptr [EAX + 0x48]      ; 004bf8aa | g_CGame_01c775ec.key_fire
     PUSH EDI                            ; 004bf8ad
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf8ae
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -736,8 +736,8 @@ section .text
         ;   XREF to: 004bf94d (CONDITIONAL_JUMP)  ; LAB_004bf94d
     POP EDI                             ; 004bf965
         ;   Label: LAB_004bf965
-    MOV EAX,[0x005b9354]                ; 004bf966 | DAT_005b9354
-    MOV EDX,dword ptr [EAX + 0x84]      ; 004bf96b | DAT_01c77670
+    MOV EAX,[0x005b9354]                ; 004bf966 | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [EAX + 0x84]      ; 004bf96b | g_CGame_01c775ec.key_next_item
     PUSH EDX                            ; 004bf971
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf972
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -792,8 +792,8 @@ section .text
         ;   XREF to: 004bf9c4 (CONDITIONAL_JUMP)  ; LAB_004bf9c4
     POP EDI                             ; 004bf9dc
         ;   Label: LAB_004bf9dc
-    MOV EAX,[0x005b9354]                ; 004bf9dd | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0x88]      ; 004bf9e2 | DAT_01c77674
+    MOV EAX,[0x005b9354]                ; 004bf9dd | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0x88]      ; 004bf9e2 | g_CGame_01c775ec.key_prev_item
     PUSH ECX                            ; 004bf9e8
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bf9e9
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -848,8 +848,8 @@ section .text
         ;   XREF to: 004bfa3b (CONDITIONAL_JUMP)  ; LAB_004bfa3b
     POP EDI                             ; 004bfa53
         ;   Label: LAB_004bfa53
-    MOV EAX,[0x005b9354]                ; 004bfa54 | DAT_005b9354
-    MOV EBX,dword ptr [EAX + 0x4c]      ; 004bfa59 | DAT_01c77638
+    MOV EAX,[0x005b9354]                ; 004bfa54 | g_CGame_PTR_005b9354
+    MOV EBX,dword ptr [EAX + 0x4c]      ; 004bfa59 | g_CGame_01c775ec.key_use_item
     PUSH EBX                            ; 004bfa5c
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bfa5d
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -1056,8 +1056,8 @@ section .text
         ;   XREF to: 004bfbf4 (CONDITIONAL_JUMP)  ; LAB_004bfbf4
     POP EDI                             ; 004bfc0c
         ;   Label: LAB_004bfc0c
-    MOV EAX,[0x005b9354]                ; 004bfc0d | DAT_005b9354
-    MOV EDX,dword ptr [EAX + 0x7c]      ; 004bfc12 | DAT_01c77668
+    MOV EAX,[0x005b9354]                ; 004bfc0d | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [EAX + 0x7c]      ; 004bfc12 | g_CGame_01c775ec.key_next_weapon
     PUSH EDX                            ; 004bfc15
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bfc16
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -1112,8 +1112,8 @@ section .text
         ;   XREF to: 004bfc68 (CONDITIONAL_JUMP)  ; LAB_004bfc68
     POP EDI                             ; 004bfc80
         ;   Label: LAB_004bfc80
-    MOV EAX,[0x005b9354]                ; 004bfc81 | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0x80]      ; 004bfc86 | DAT_01c7766c
+    MOV EAX,[0x005b9354]                ; 004bfc81 | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0x80]      ; 004bfc86 | g_CGame_01c775ec.key_prev_weapon
     PUSH ECX                            ; 004bfc8c
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bfc8d
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -1269,8 +1269,8 @@ section .text
         ;   XREF to: 004bfdc0 (CONDITIONAL_JUMP)  ; LAB_004bfdc0
     POP EDI                             ; 004bfdd8
         ;   Label: LAB_004bfdd8
-    MOV EAX,[0x005b9354]                ; 004bfdd9 | DAT_005b9354
-    MOV EDX,dword ptr [EAX + 0x7c]      ; 004bfdde | DAT_01c77668
+    MOV EAX,[0x005b9354]                ; 004bfdd9 | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [EAX + 0x7c]      ; 004bfdde | g_CGame_01c775ec.key_next_weapon
     PUSH EDX                            ; 004bfde1
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bfde2
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -1325,8 +1325,8 @@ section .text
         ;   XREF to: 004bfe34 (CONDITIONAL_JUMP)  ; LAB_004bfe34
     POP EDI                             ; 004bfe4c
         ;   Label: LAB_004bfe4c
-    MOV EAX,[0x005b9354]                ; 004bfe4d | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0x80]      ; 004bfe52 | DAT_01c7766c
+    MOV EAX,[0x005b9354]                ; 004bfe4d | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0x80]      ; 004bfe52 | g_CGame_01c775ec.key_prev_weapon
     PUSH ECX                            ; 004bfe58
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 004bfe59
         ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
@@ -1385,8 +1385,8 @@ section .text
         ;   Label: LAB_004bfec4
     PUSH 0x41200000                     ; 004bfec6
     PUSH EAX                            ; 004bfecb
-    MOV EBX,dword ptr [0x005b9354]      ; 004bfecc | DAT_005b9354
-    PUSH EBX                            ; 004bfed2 | DAT_01c775ec
+    MOV EBX,dword ptr [0x005b9354]      ; 004bfecc | g_CGame_PTR_005b9354
+    PUSH EBX                            ; 004bfed2 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004bfed3
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004bfed8
@@ -1410,7 +1410,7 @@ section .text
     POP EDI                             ; 004bff03
         ;   Label: LAB_004bff03
     PUSH EBX                            ; 004bff04
-    MOV ESI,dword ptr [0x014b9904]      ; 004bff05 | DAT_014b9904
+    MOV ESI,dword ptr [0x014b9904]      ; 004bff05 | g_CBitFont_PTR_014b9904
     PUSH ESI                            ; 004bff0b
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004bff0c
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -1531,7 +1531,7 @@ section .text
         ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040d540(char * class_name)
     ADD ESP,0x4                         ; 004c0043
     PUSH EAX                            ; 004c0046
-    MOV ESI,dword ptr [0x005baf90]      ; 004c0047 | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004c0047 | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 004c004d
     MOV EBX,EAX                         ; 004c004e
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004c0050
@@ -1559,7 +1559,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x340]     ; 004c00a7
     MOV ECX,dword ptr [EBP + 0x8]       ; 004c00ae
     PUSH EAX                            ; 004c00b1
-    MOV EDX,dword ptr [0x005baf90]      ; 004c00b2 | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 004c00b2 | g_CDemonMission_PTR_005baf90
     INC ECX                             ; 004c00b8
     PUSH EDX                            ; 004c00b9
     MOV dword ptr [EBP + 0x8],ECX       ; 004c00ba
@@ -1567,8 +1567,8 @@ section .text
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
     ADD ESP,0xc                         ; 004c00c2
     PUSH 0x587088                       ; 004c00c5 | = "Found new type of ammo for existing w..."
-    MOV EBX,dword ptr [0x005ad350]      ; 004c00ca | PTR_DAT_005ad350
-    PUSH EBX                            ; 004c00d0 | DAT_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 004c00ca | g_CConsole_PTR_005ad350
+    PUSH EBX                            ; 004c00d0 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c00d1
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     MOV EAX,0x1                         ; 004c00d6
@@ -1600,15 +1600,15 @@ section .text
     ADD ECX,dword ptr [EAX + 0x30c]     ; 004c012d
     PUSH 0x587040                       ; 004c0133 | = "Found existing ammo, but no weapon\n"
     MOV dword ptr [EBX + 0x30c],ECX     ; 004c0138
-    MOV EBX,dword ptr [0x005ad350]      ; 004c013e | PTR_DAT_005ad350
-    PUSH EBX                            ; 004c0144 | DAT_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 004c013e | g_CConsole_PTR_005ad350
+    PUSH EBX                            ; 004c0144 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0145
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 004c014a
     PUSH 0x1                            ; 004c014d
     MOV ESI,dword ptr [ESP + 0x340]     ; 004c014f
     PUSH ESI                            ; 004c0156
-    MOV EDI,dword ptr [0x005baf90]      ; 004c0157 | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 004c0157 | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004c015d
     CALL core_mission.cpp_FUN_004d9110  ; 004c015e
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
@@ -1675,14 +1675,14 @@ section .text
         ;   Label: LAB_004c020f
     MOV EAX,dword ptr [ESP + 0x340]     ; 004c0211
     PUSH EAX                            ; 004c0218
-    MOV EDX,dword ptr [0x005baf90]      ; 004c0219 | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 004c0219 | g_CDemonMission_PTR_005baf90
     PUSH EDX                            ; 004c021f
     CALL core_mission.cpp_FUN_004d9110  ; 004c0220
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
     ADD ESP,0xc                         ; 004c0225
     PUSH 0x587064                       ; 004c0228 | = "Found weapon to put this ammo into\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 004c022d | PTR_DAT_005ad350
-    PUSH ECX                            ; 004c0233 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004c022d | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 004c0233 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0234
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     MOV EAX,0x1                         ; 004c0239
@@ -1719,7 +1719,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8]       ; 004c028a
     PUSH EDX                            ; 004c028d
     MOV dword ptr [EBP + EAX*0x4 + 0xc],EDX ; 004c028e
-    MOV ESI,dword ptr [0x005baf90]      ; 004c0292 | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004c0292 | g_CDemonMission_PTR_005baf90
     MOV EAX,dword ptr [EBP + 0x8]       ; 004c0298
     PUSH ESI                            ; 004c029b
     INC EAX                             ; 004c029c
@@ -1763,7 +1763,7 @@ section .text
         ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040d540(char * class_name)
     ADD ESP,0x4                         ; 004c02f2
     PUSH EAX                            ; 004c02f5
-    MOV ECX,dword ptr [0x005baf90]      ; 004c02f6 | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 004c02f6 | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004c02fc
     MOV EBX,EAX                         ; 004c02fd
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004c02ff
@@ -1788,8 +1788,8 @@ section .text
         ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_destroyActor_FUN_00409cd0(CDemonActor * actor)
     ADD ESP,0x4                         ; 004c0347
     PUSH 0x5870e3                       ; 004c034a | = "Found dynamite.  Creating weapon for ..."
-    MOV EAX,[0x005ad350]                ; 004c034f | PTR_DAT_005ad350
-    PUSH EAX                            ; 004c0354 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 004c034f | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 004c0354 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0355
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 004c035a
@@ -1882,7 +1882,7 @@ section .text
         ;   XREF to: 004c0283 (CONDITIONAL_JUMP)  ; LAB_004c0283
     PUSH 0x1                            ; 004c0447
     PUSH EDI                            ; 004c0449
-    MOV ECX,dword ptr [0x005baf90]      ; 004c044a | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 004c044a | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004c0450
     CALL core_mission.cpp_FUN_004d9110  ; 004c0451
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
@@ -1900,7 +1900,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8]       ; 004c0472
     PUSH EDX                            ; 004c0475
     MOV dword ptr [EBP + EAX*0x4 + 0xc],EDX ; 004c0476
-    MOV ESI,dword ptr [0x005baf90]      ; 004c047a | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004c047a | g_CDemonMission_PTR_005baf90
     MOV EDI,dword ptr [EBP + 0x8]       ; 004c0480
     PUSH ESI                            ; 004c0483
     INC EDI                             ; 004c0484
@@ -1963,15 +1963,15 @@ section .text
     MOV dword ptr [EAX + 0x560],0xc8    ; 004c051e
     PUSH 0x58710d                       ; 004c0528 | = "Found same weapon, increasing ammoCou..."
         ;   Label: LAB_004c0528
-    MOV EAX,[0x005ad350]                ; 004c052d | PTR_DAT_005ad350
-    PUSH EAX                            ; 004c0532 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 004c052d | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 004c0532 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0533
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 004c0538
     PUSH 0x1                            ; 004c053b
     MOV EDX,dword ptr [ESP + 0x340]     ; 004c053d
     PUSH EDX                            ; 004c0544
-    MOV ECX,dword ptr [0x005baf90]      ; 004c0545 | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 004c0545 | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004c054b
     CALL core_mission.cpp_FUN_004d9110  ; 004c054c
         ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
@@ -2006,7 +2006,7 @@ section .text
         ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040d540(char * class_name)
     ADD ESP,0x4                         ; 004c0594
     PUSH EAX                            ; 004c0597
-    MOV ECX,dword ptr [0x005baf90]      ; 004c0598 | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 004c0598 | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004c059e
     MOV EBX,EAX                         ; 004c059f
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004c05a1
@@ -2045,8 +2045,8 @@ section .text
     ADD ESP,0x4                         ; 004c0612
     PUSH EAX                            ; 004c0615
     PUSH 0x587136                       ; 004c0616 | = "Converting existing ammo for %s to we..."
-    MOV ECX,dword ptr [0x005ad350]      ; 004c061b | PTR_DAT_005ad350
-    PUSH ECX                            ; 004c0621 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004c061b | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 004c0621 | g_CConsole_0077ad0c
     MOV EBX,0x1                         ; 004c0622
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0627
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()

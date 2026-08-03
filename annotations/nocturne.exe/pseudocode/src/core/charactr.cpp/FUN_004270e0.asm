@@ -15,12 +15,12 @@
 ;   float FLOAT_0057a00a = 8388608
 ;   undefined4 DAT_005ad140
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_007658dc
 ;   undefined4 DAT_007658e0
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d758
-;   undefined4 DAT_01c77850
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -66,8 +66,8 @@ section .text
     CMP ESI,EBX                         ; 00427121
     JNZ 0x00427149                      ; 00427123
         ;   XREF to: 00427149 (CONDITIONAL_JUMP)  ; LAB_00427149
-    MOV EAX,[0x005b9354]                ; 00427125 | DAT_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0042712a | DAT_01c77850
+    MOV EAX,[0x005b9354]                ; 00427125 | g_CGame_PTR_005b9354
+    FLD float ptr [EAX + 0x264]         ; 0042712a | g_CGame_01c775ec.delta_time_float
     FMUL float ptr [0x0057a00a]         ; 00427130 | FLOAT_0057a00a
     FILD dword ptr [0x007658dc]         ; 00427136 | DAT_007658dc
     FADDP                               ; 0042713c

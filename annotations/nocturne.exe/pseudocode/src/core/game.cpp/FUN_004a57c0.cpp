@@ -42,15 +42,15 @@ void __cdecl core_game_cpp_FUN_004a57c0(CGame *this_ptr)
   this_ptr->cutscene_skippable = 0;
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",pcVar9);
   if (iVar2 < 0) {
-    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't open %s",pcVar9);
+    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,"Can't open %s",pcVar9);
     this_ptr->bitmap_filename[0] = '\0';
     return;
   }
   iVar3 = this_ptr->bitmap_width * this_ptr->bitmap_height;
   if (iVar2 != iVar3) {
     shape_edittool_cpp_FUN_0046fcd0
-              (0x01BCD074,"%s is %d bytes, but expected %dx%d=%d byte file",pcVar9,this_ptr->bitmap_width,
-               this_ptr->bitmap_height,iVar3);
+              (g_CEditorTools_PTR_005b6d50,"%s is %d bytes, but expected %dx%d=%d byte file",pcVar9,
+               this_ptr->bitmap_width,this_ptr->bitmap_height,iVar3);
     this_ptr->bitmap_filename[0] = '\0';
     return;
   }
@@ -78,7 +78,7 @@ void __cdecl core_game_cpp_FUN_004a57c0(CGame *this_ptr)
   } while (cVar1 != '\0');
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_130,"rb");
   if (p_Var4 == (_FILE *)0x0) {
-    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't open %s",local_130);
+    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,"Can't open %s",local_130);
   }
   else {
     _fread(local_630,1,0x300,p_Var4);
@@ -122,8 +122,8 @@ void __cdecl core_game_cpp_FUN_004a57c0(CGame *this_ptr)
       p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60
                          ("art",this_ptr->bitmap_filename,"rb");
       if (p_Var4 == (_FILE *)0x0) {
-        PTR_01cc4800 = "..\\core\\game.cpp";
-        INT_01cc4804 = 0x1028;
+        g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
+        g_INT_01cc4804 = 0x1028;
         core_main_c_FUN_004c8440("Can't open %s",this_ptr->bitmap_filename);
       }
       _fread(local_18,this_ptr->bitmap_width,this_ptr->bitmap_height,p_Var4)
@@ -166,11 +166,12 @@ void __cdecl core_game_cpp_FUN_004a57c0(CGame *this_ptr)
         }
         iVar2 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70();
       } while (((iVar2 == 0) &&
-               (iVar2 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,this_ptr->key_fire),
-               iVar2 == 0)) && (_DAT_01bd1d94 == 0));
+               (iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)
+                                  (g_CKeys_PTR_005bac64,this_ptr->key_fire), iVar2 == 0)) &&
+              (_DAT_01bd1d94 == 0));
       while ((_DAT_01bd1d94 != 0 ||
-             (iVar2 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,this_ptr->key_fire),
-             iVar2 != 0))) {
+             (iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)
+                                (g_CKeys_PTR_005bac64,this_ptr->key_fire), iVar2 != 0))) {
         if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(this_ptr);
           wincore_wddvmem_cpp_swapBuffers_FUN_00553910();

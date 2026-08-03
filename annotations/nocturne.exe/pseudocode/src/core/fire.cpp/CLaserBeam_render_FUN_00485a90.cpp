@@ -189,7 +189,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
     }
   }
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
-  if ((0.0 < local_2e8) && (*(int *)(0x01C775EC + 0xc) != 0)) {
+  if ((0.0 < local_2e8) && (g_CGame_PTR_005b9354->halo_mode != 0)) {
     fVar1 = this_ptr->beam_width;
     fVar2 = 1.0 - local_2e8 * (float)2;
     local_2e0._0_4_ = (float)local_2e0._0_4_ * fVar2;

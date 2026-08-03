@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -66,12 +66,6 @@
         "column": 15,
         "line": 30,
         "message": "use of undeclared identifier 'DAT_01c78598'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 50,
-        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550'"
       }
     ],
     "success": false,
@@ -80,18 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 109,
+    "complexity_score": 110,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 60,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 167
+    "total_lines": 168
   },
   "cross_references": [
     {
@@ -174,9 +168,9 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "01c78598",
@@ -360,7 +354,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 50,
+      "line": 51,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

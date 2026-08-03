@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,31 +58,19 @@
       {
         "category": "format_error",
         "column": 25,
-        "line": 16,
+        "line": 15,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 23,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 23,
-        "message": "assigning to 'int' from incompatible type 'const char[20]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 7,
-        "line": 25,
+        "line": 22,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "format_error",
         "column": 33,
-        "line": 31,
+        "line": 28,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -92,17 +80,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 41,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
-    "total_lines": 96
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -168,13 +154,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -253,14 +239,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
-      "match": "(int)pvVar2",
-      "severity": "moderate",
-      "text": "this_ptr->pvs_count = (int)pvVar2;",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

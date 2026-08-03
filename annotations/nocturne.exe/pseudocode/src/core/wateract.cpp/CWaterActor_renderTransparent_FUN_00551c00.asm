@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a3ed0
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_005c13cc
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 DAT_02dd1184
 ;   undefined4 DAT_02dda6b8
 ;   undefined4 DAT_02dda6bc
@@ -135,8 +135,8 @@ section .text
         ;   Label: LAB_00551d00
     MOV EDI,dword ptr [ESI + 0x290]     ; 00551d05
     PUSH EDI                            ; 00551d0b
-    MOV EBP,dword ptr [0x005be368]      ; 00551d0c | DAT_005be368
-    PUSH EBP                            ; 00551d12 | DAT_01e57284
+    MOV EBP,dword ptr [0x005be368]      ; 00551d0c | g_CDemonSet_PTR_005be368
+    PUSH EBP                            ; 00551d12 | g_CDemonSet_01e57284
     XOR EBX,EBX                         ; 00551d13
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 00551d15
         ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
@@ -151,8 +151,8 @@ section .text
         ;   Label: LAB_00551d33
     PUSH 0x2dd1184                      ; 00551d34 | DAT_02dd1184
     PUSH EBP                            ; 00551d39
-    MOV EDX,dword ptr [0x005be368]      ; 00551d3a | DAT_005be368
-    PUSH EDX                            ; 00551d40 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00551d3a | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 00551d40 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20 ; 00551d41
         ;   XREF to: 0050be20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
     MOV ECX,dword ptr [0x005ae704]      ; 00551d46 | DAT_005ae704
@@ -195,8 +195,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2b22c]   ; 00551dc6
     PUSH EAX                            ; 00551dcc
     PUSH EBX                            ; 00551dcd
-    MOV EDX,dword ptr [0x005be368]      ; 00551dce | DAT_005be368
-    PUSH EDX                            ; 00551dd4 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00551dce | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 00551dd4 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 00551dd5
         ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00551dda

@@ -11,8 +11,8 @@
 ;   TerminatedCString s_fog_00577196
 ;   TerminatedCString s_engine_2d_c_0057719a
 ;   TerminatedCString s_Unable_to_read_fog_table_005771a9
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -99,8 +99,8 @@ section .text
         ;   Label: LAB_0040310e
     MOV ECX,0x69c                       ; 00403113
     PUSH 0x5771a9                       ; 00403118 | = "Unable to read fog table."
-    MOV dword ptr [0x01cc4800],EDX      ; 0040311d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00403123 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0040311d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00403123 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00403129
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     JMP 0x004030b3                      ; 0040312e

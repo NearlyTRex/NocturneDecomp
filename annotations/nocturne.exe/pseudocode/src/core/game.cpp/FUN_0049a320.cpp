@@ -32,9 +32,9 @@ void core_game_cpp_FUN_0049a320(void)
   int iStack_14;
   
   if (_DAT_01c78ac8 != 0) {
-    iVar2 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
+    iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
     if (iVar2 != 0) {
-      iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x2f);
+      iVar2 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_V);
       if (iVar2 != 0) {
         iVar2 = _DAT_01c78acc;
         if (_DAT_01c78acc == 0) {

@@ -24,8 +24,8 @@
 ;   TerminatedCString s_Actor_s_is_of_type_s_thi_0057f429
 ;   undefined4 DAT_0059cf1c
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_005bdee0
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
 ;   undefined4 DAT_01c08b60
 ;   undefined4 DAT_01c08b61
 ;   undefined4 DAT_01c08b62
@@ -110,8 +110,8 @@ section .text
     TEST EAX,EAX                        ; 0047a400
     JNZ 0x0047a45d                      ; 0047a402
         ;   XREF to: 0047a45d (CONDITIONAL_JUMP)  ; LAB_0047a45d
-    MOV EAX,[0x005bdee0]                ; 0047a404 | DAT_005bdee0
-    CMP dword ptr [EAX],0x0             ; 0047a409 | DAT_01cea280
+    MOV EAX,[0x005bdee0]                ; 0047a404 | g_CNetGame_PTR_005bdee0
+    CMP dword ptr [EAX],0x0             ; 0047a409 | g_CNetGame_01cea280
     JNZ 0x0047a444                      ; 0047a40c
         ;   XREF to: 0047a444 (CONDITIONAL_JUMP)  ; LAB_0047a444
     MOV ESI,dword ptr [0x01cae0e8]      ; 0047a40e | DAT_01cae0e8
@@ -152,7 +152,7 @@ section .text
     RET                                 ; 0047a45c
     PUSH EBX                            ; 0047a45d
         ;   Label: LAB_0047a45d
-    MOV EDX,dword ptr [0x005baf90]      ; 0047a45e | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 0047a45e | g_CDemonMission_PTR_005baf90
     PUSH EDX                            ; 0047a464
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 0047a465
         ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)

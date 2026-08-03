@@ -17,8 +17,8 @@ uint sound_sndmain_cpp_FUN_00527190(void)
   uint in_stack_0000000c;
   
   if ((in_stack_00000008 < 0) || (1 < in_stack_00000008)) {
-    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    INT_01cc4804 = 0xef1;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    g_INT_01cc4804 = 0xef1;
     core_main_c_FUN_004c8440("setSfxUserData - invalid user data index: %d");
   }
   iVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(in_stack_00000004,1);

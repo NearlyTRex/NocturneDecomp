@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0059358d
 ;   TerminatedCString s_setSfxUserData_invalid_u_005935a2
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -34,8 +34,8 @@ section .text
     MOV EDX,0x59358d                    ; 005271a0 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xef1                       ; 005271a5
     PUSH 0x5935a2                       ; 005271aa | = "setSfxUserData - invalid user data in..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005271af | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005271b5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 005271af | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005271b5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005271bb
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 005271c0

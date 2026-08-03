@@ -2,19 +2,23 @@
 // Address: 004cef80
 // Address Range: [[004cef80, 004cefd3]]
 // Convention: unknown
-// Signature: void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(int param_1,undefined4 param_2,int param_3,undefined4 param_4)
+// Signature: void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)
 
 #include "nocturne.h"
 
-void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(int param_1,uint param_2,int param_3,uint param_4)
+void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)
 
 {
-  uint uVar1;
+  float fVar1;
+  int unaff_ESI;
+  CDemonActor *in_stack_fffffff4;
   
-  core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(param_1,param_2,param_3,param_4);
-  uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);
-  *(uint *)(param_3 + 4) = uVar1;
-  *(uint *)(param_3 + 0x2c) = *(uint *)(param_1 + 0x57c);
-  *(uint *)(param_3 + 0x28) = *(uint *)(param_1 + 0x594);
+  core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0
+            (&param_1->base,param_2,param_3,param_4);
+  fVar1 = (float)(*(((param_1->base).vtable._uc)->_uc).getGrabbed)
+                           (param_1,in_stack_fffffff4,unaff_ESI);
+  param_3->damage_amount = fVar1;
+  param_3->dismember_prob = (param_1->model).transformed_vertices[0x51].z;
+  param_3->ammo_type = (EAmmoType)(param_1->model).transformed_vertices[0x53].z;
   return;
 }

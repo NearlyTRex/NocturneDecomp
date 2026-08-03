@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,18 +62,6 @@
         "message": "use of undeclared identifier '_DAT_01e56418'; did you mean 'DAT_02DE6418'?"
       },
       {
-        "category": "other",
-        "column": 21,
-        "line": 24,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 28,
-        "message": "no matching function for call to 'core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 5,
         "line": 29,
@@ -82,38 +70,38 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 42,
+        "line": 41,
         "message": "use of undeclared identifier 'DAT_01e56420'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 49,
+        "line": 48,
         "message": "use of undeclared identifier '_DAT_01e56c28'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 50,
+        "line": 49,
         "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier '_DAT_01e56c28'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 56,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01e56c24'"
       },
       {
-        "category": "incompatible_types",
+        "category": "undeclared_identifier",
         "column": 7,
         "line": 57,
-        "message": "no matching function for call to 'core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0'"
+        "message": "use of undeclared identifier '_DAT_01e56c24'"
       }
     ],
     "success": false,
@@ -122,20 +110,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 159,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 58,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 204
+    "total_lines": 203
   },
   "cross_references": [
     {
@@ -200,25 +186,25 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01c776b8",
-      "name": "DAT_01c776b8",
+      "name": "g_CGame_01c775ec.cutscene_skippable",
       "type": "undefined4",
       "value": null
     },
@@ -363,60 +349,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(uint *)(this_ptr->xref_entries->name + (int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)(this_ptr->xref_entries->name + (int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8 + 4),",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 34,
       "match": "DAT_01e56420",
       "severity": "mild",
       "text": "&DAT_01e56420);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(uint *)(this_ptr->xref_entries->name + (int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
-      "match": "(int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8),",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
-      "match": "(int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8 + 4),",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
-      "match": "(int)ppcVar1",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8));",
-      "type": "pointer_truncation"
     }
   ]
 }

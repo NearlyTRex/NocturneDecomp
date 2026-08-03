@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 219,
-    "complexity_score": 456,
+    "complexity_score": 425,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 126,
-    "suspect_count": 29,
+    "pseudocode_lines": 125,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -139,7 +139,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 345
+    "total_lines": 344
   },
   "cross_references": [
     {
@@ -517,26 +517,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "(&DAT_01fb8508,world_position,*puVar7,surface_normal);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 65,
       "match": "DAT_01ffeefc",
       "severity": "mild",
       "text": "puVar7 = (uint *)(&DAT_01ffeefc + iVar4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "(&DAT_01fb8508,world_position,*puVar7,surface_normal);",
       "type": "undefined_data"
     },
     {
@@ -581,7 +565,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
+      "line": 100,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * 0xfffffffe * 4) =",
@@ -589,7 +573,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 102,
+      "line": 101,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);",
@@ -597,7 +581,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 102,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
@@ -605,7 +589,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 103,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
@@ -613,7 +597,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 115,
+      "line": 114,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "puVar7 = &stack0xffffffdc;",
@@ -621,19 +605,11 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 119,
+      "line": 118,
       "match": "&stack0xffffffb8",
       "severity": "moderate",
-      "text": "(&DAT_01fb8508,&stack0xffffffb8,uVar6,puVar7);",
+      "text": "(&g_CDemonCamera_01fb8508,&stack0xffffffb8,uVar6,puVar7);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "(&DAT_01fb8508,&stack0xffffffb8,uVar6,puVar7);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&stack0xffffffbc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -645,7 +621,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffe0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 101,
+      "line": 100,
       "match": "(int)&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * 0xfffffffe * 4) =",
@@ -661,7 +637,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 101,
+      "line": 100,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * 0xfffffffe * 4) =",
@@ -669,7 +645,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 125,
+      "line": 124,
       "match": "local_14 = (T *)local_14->ARRAY",
       "severity": "moderate",
       "text": "local_14 = (CDemonSet *)local_14->cameras;",

@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_0057c656
 ;   TerminatedCString s_CDemonLight_blitZBuffer_0057c669
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dstrender.cpp_memcpyMMX_FUN_00465341
@@ -92,8 +92,8 @@ section .text
         ;   Label: LAB_0044e6f5
     MOV EBX,0x147                       ; 0044e6fa
     PUSH 0x57c669                       ; 0044e6ff | = "CDemonLight::blitZBuffer - No master ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0044e704 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0044e70a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0044e704 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0044e70a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044e710
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044e715

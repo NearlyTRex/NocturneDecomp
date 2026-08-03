@@ -56,23 +56,23 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200(C
       *(int *)(iVar8 + 0x1cd8c38) = (1 << (*(byte *)(iVar8 + 0x1cd8c34) & 0x1f)) + -1;
       sscanf(pcVar13,"%u");
       if (iVar6 != local_38) {
-        PTR_01cc4800 = "..\\sound\\mp3.cpp";
-        INT_01cc4804 = 0xd6b;
+        g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+        g_INT_01cc4804 = 0xd6b;
         core_main_c_FUN_004c8440("wrong table number %u.  File: %s",iVar6,&DAT_01cd8b28);
       }
       iVar7 = *(int *)(&DAT_005bdbb0 + local_18);
       if (iVar7 < 0) {
         if (iVar7 != -1) {
-          PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          INT_01cc4804 = 0xd8d;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          g_INT_01cc4804 = 0xd8d;
           pcVar13 = "huffman decodertable error at table %d.  File: %s";
           goto LAB_004e5594;
         }
         uVar9 = *(uint *)(&DAT_01cd944c + iVar8);
         *(uint *)(iVar8 + 0x1cd8c3c) = 0xffffffff;
         if (0x400 < uVar9) {
-          PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          INT_01cc4804 = 0xd7e;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          g_INT_01cc4804 = 0xd7e;
           core_main_c_FUN_004c8440("MP3 Huffman tree overflow!  File: %s",&DAT_01cd8b28);
         }
         uVar9 = 0;
@@ -106,8 +106,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200(C
         *(uint *)(&DAT_01cd944c + iVar8) = *(uint *)(&DAT_01cd944c + iVar7);
         if ((*(int *)(iVar8 + 0x1cd8c2c) != *(int *)(iVar7 + 0x1cd8c2c)) ||
            (*(int *)(iVar7 + 0x1cd8c30) != *(int *)(iVar8 + 0x1cd8c30))) {
-          PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          INT_01cc4804 = 0xd76;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          g_INT_01cc4804 = 0xd76;
           pcVar13 = "wrong table %u reference.  File: %s";
 LAB_004e5594:
           core_main_c_FUN_004c8440(pcVar13,iVar6,&DAT_01cd8b28);
@@ -119,8 +119,8 @@ LAB_004e5594:
       local_1c = local_1c + 0x828;
     } while (iVar6 < 0x22);
     if (iVar6 != 0x22) {
-      PTR_01cc4800 = "..\\sound\\mp3.cpp";
-      INT_01cc4804 = 0xda1;
+      g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+      g_INT_01cc4804 = 0xda1;
       core_main_c_FUN_004c8440("decoder table read error.  File: %s",&DAT_01cd8b28);
     }
     _DAT_01cd6320 = 1;

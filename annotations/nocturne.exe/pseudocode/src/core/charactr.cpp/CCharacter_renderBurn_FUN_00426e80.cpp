@@ -72,7 +72,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *th
       if ((float)65535 <= (float)(&DAT_00765aa0)[iVar6]) {
         iVar8 = iVar8 + 1;
       }
-      if (*(int *)(pCVar12->texture_sets[1].textures[0x3d].textures[1].texture_name + 4) == -1) {
+      if (pCVar12->farthest_child_bone[0] == -1) {
         iVar8 = iVar8 + 1;
       }
       iVar6 = iVar6 + 1;

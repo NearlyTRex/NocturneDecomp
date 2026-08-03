@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   wildcard_pattern
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc9610
+;   CStrList g_CStrList_02dc9610
 ;   undefined4 DAT_02dc9620
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     XOR EDX,EDX                         ; 0052c938
     XOR EBX,EBX                         ; 0052c93a
     MOV dword ptr [0x02dc9620],EDX      ; 0052c93c | DAT_02dc9620
-    MOV EAX,[0x02dc9610]                ; 0052c942 | DAT_02dc9610
+    MOV EAX,[0x02dc9610]                ; 0052c942 | g_CStrList_02dc9610
     CMP EBX,EAX                         ; 0052c947
     JL 0x0052c950                       ; 0052c949
         ;   XREF to: 0052c950 (CONDITIONAL_JUMP)  ; LAB_0052c950
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 0052c94b (CONDITIONAL_JUMP)  ; LAB_0052c94b
     INC EBX                             ; 0052c9b7
         ;   Label: LAB_0052c9b7
-    MOV EAX,[0x02dc9610]                ; 0052c9b8 | DAT_02dc9610
+    MOV EAX,[0x02dc9610]                ; 0052c9b8 | g_CStrList_02dc9610
     CMP EBX,EAX                         ; 0052c9bd
     JL 0x0052c950                       ; 0052c9bf
         ;   XREF to: 0052c950 (CONDITIONAL_JUMP)  ; LAB_0052c950

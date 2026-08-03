@@ -28,9 +28,9 @@
 ;   int INT_005bab6c = 0x0
 ;   int INT_005babd0 = 0x0
 ;   int INT_005babd4 = 0x0
-;   undefined4 DAT_005baf90
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cc9450
 ;   ... and 2 more
 ;
@@ -156,7 +156,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 004c12dc | INT_005babd0 | INT_005babd4
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004c12de
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
-    MOV ESI,dword ptr [0x005baf90]      ; 004c12e3 | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004c12e3 | g_CDemonMission_PTR_005baf90
     MOV EDX,dword ptr [ESI + 0xc]       ; 004c12e9 | DAT_01cc945c
     ADD ESP,0x10                        ; 004c12ec
     TEST EDX,EDX                        ; 004c12ef
@@ -224,7 +224,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c13a2
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c13a7
-    MOV EAX,[0x005baf90]                ; 004c13aa | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 004c13aa | g_CDemonMission_PTR_005baf90
         ;   Label: LAB_004c13aa
     MOV EDX,dword ptr [ESP + 0x1e0]     ; 004c13af
     MOV EAX,dword ptr [EAX + 0xc]       ; 004c13b6 | DAT_01cc945c
@@ -313,8 +313,8 @@ section .text
     MOV ECX,0x5872d6                    ; 004c149e | = "..\\core\\inv.cpp"
     MOV EBX,0x54b                       ; 004c14a3
     PUSH 0x5872e6                       ; 004c14a8 | = "CInventory::load - Can't find your we..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004c14ad | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004c14b3 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004c14ad | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004c14b3 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004c14b9
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c14be

@@ -13,21 +13,23 @@ void __cdecl core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect *thi
 {
   int iVar1;
   int iVar2;
+  CSpark *this_ptr_00;
   
+  iVar1 = _DAT_01c49d50;
   iVar2 = _DAT_01c49d50 + 1;
-  iVar1 = _DAT_01c49d50 * 0x4c;
+  this_ptr_00 = g_CSpark_ARRAY_01c49d54 + _DAT_01c49d50;
   _DAT_01c49d50 = iVar2;
   if (0xff < iVar2) {
     _DAT_01c49d50 = 0;
   }
-  (*(code *)**(uint **)(&DAT_01c49d88 + iVar1))(&DAT_01c49d54 + iVar1,position,velocity);
+  (*(g_CSpark_ARRAY_01c49d54[iVar1].base.vtable)->setup)(&this_ptr_00->base,position,velocity);
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040de00(0xc000,0xffff);
-  *(uint *)(iVar1 + 0x1c49d94) = 0;
-  *(uint *)(iVar1 + 0x1c49d8c) =
+  g_CSpark_ARRAY_01c49d54[iVar1].first_update_flag = 0;
+  g_CSpark_ARRAY_01c49d54[iVar1].intensity_current =
        (uint)((longlong)intensity_scale * (longlong)iVar2) >> 0x10 |
        (int)((ulonglong)((longlong)intensity_scale * (longlong)iVar2) >> 0x20) << 0x10;
-  *(int *)(iVar1 + 0x1c49d90) = intensity_target;
-  *(int *)(iVar1 + 0x1c49d98) = spark_type;
-  *(int *)(iVar1 + 0x1c49d9c) = fade_rate;
+  g_CSpark_ARRAY_01c49d54[iVar1].intensity_target = intensity_target;
+  g_CSpark_ARRAY_01c49d54[iVar1].spark_type = spark_type;
+  g_CSpark_ARRAY_01c49d54[iVar1].fade_rate = fade_rate;
   return;
 }

@@ -31,7 +31,7 @@ void core_hiram_cpp_CHiram_process_FUN_004b6770(CCharacter *param_1,float param_
                 (&(param_1->model).motion_controller,1,1);
       class_name_hash = g_CGlassActorType_01c78c40.name_hash;
       actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
-                            (0x01CC9450,"GlassHiram");
+                            (g_CDemonMission_PTR_005baf90,"GlassHiram");
       this_ptr_00 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash)
       ;
       if (this_ptr_00 != (CGlass *)0x0) {
@@ -49,7 +49,7 @@ void core_hiram_cpp_CHiram_process_FUN_004b6770(CCharacter *param_1,float param_
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
                       (&this_ptr->motion_controller,local_18);
     if (iVar1 == 0x29a) {
-      core_mission_cpp_FUN_004d9110(0x01CC9450,param_1,1);
+      core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,param_1,1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,iVar1);

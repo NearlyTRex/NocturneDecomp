@@ -500,8 +500,8 @@ LAB_004e6377:
             }
             goto LAB_004e6377;
           }
-          PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          INT_01cc4804 = 0x9b8;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          g_INT_01cc4804 = 0x9b8;
           core_main_c_FUN_004c8440("Error in streo processing.  File: %s",&DAT_01cd8b28);
         }
         iVar9 = iVar9 + 1;

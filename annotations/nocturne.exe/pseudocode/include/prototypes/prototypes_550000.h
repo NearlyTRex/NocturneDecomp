@@ -112,7 +112,7 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_00553d90(CWeapon *this_ptr);
 CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(CWeapon *this_ptr,uint flags);
 void __cdecl core_weapon_cpp_CWeapon_setup_FUN_00553f10(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_00553f50(CWeapon *this_ptr);
-undefined4 * core_weapon_cpp_CWeapon_getBoundingBox_FUN_00553fe0(int param_1,undefined4 *param_2);
+float * core_weapon_cpp_CWeapon_getBoundingBox_FUN_00553fe0(int param_1,float *param_2);
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(CWeapon *this_ptr,float delta_time);
 void __cdecl core_weapon_cpp_CWeapon_archive_FUN_00554170(CWeapon *this_ptr);
 undefined4 core_weapon_cpp_CWeapon_getCollisionType_FUN_00554250(void);
@@ -166,7 +166,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFo
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005586a0(CWinFont *this_ptr);
 int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_00558710(CWinFont *this_ptr,char *text_string);
 int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_00558770(CWinFont *this_ptr,char *text_string);
-undefined4 engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005587e0(void);
+int __cdecl engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005587e0(CWinFont *this_ptr);
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005587f0(void);
 void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_00558a20(void);
 int __cdecl wincore_winrun_cpp_getTime_FUN_00558a30(void);

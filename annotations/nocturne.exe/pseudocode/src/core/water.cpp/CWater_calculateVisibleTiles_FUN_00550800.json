@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 56,
-        "message": "use of undeclared identifier 'DAT_01fba938'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 58,
-        "message": "use of undeclared identifier 'DAT_01fba938'"
       },
       {
         "category": "undeclared_identifier",
@@ -114,6 +102,18 @@
         "column": 56,
         "line": 62,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 63,
+        "message": "use of undeclared identifier '_DAT_02dd1224'; did you mean 'DAT_02DF1224'?"
+      },
+      {
+        "category": "type_error",
+        "column": 31,
+        "line": 68,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 490,
+    "complexity_score": 470,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 145,
-    "suspect_count": 32,
+    "suspect_count": 30,
     "suspect_types": [
       "sign_compare_idiom",
       "stack_ref",
@@ -243,8 +243,8 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
@@ -285,8 +285,8 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -303,20 +303,20 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01fba938",
-      "name": "DAT_01fba938",
-      "type": "undefined4",
+      "name": "g_CDemonRaytrace_01fba938",
+      "type": "CDemonRaytrace",
       "value": null
     },
     {
@@ -732,22 +732,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,(CVector3f *)local_44);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,(CVector3f *)local_8c);",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",

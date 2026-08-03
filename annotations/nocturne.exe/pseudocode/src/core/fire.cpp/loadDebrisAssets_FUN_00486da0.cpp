@@ -10,24 +10,24 @@ void __cdecl core_fire_cpp_loadDebrisAssets_FUN_00486da0(void)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            ((CKeyFramedModelInstance *)0x1c094bc,"debris01.kfm");
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc,"debris01.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            ((CKeyFramedModelInstance *)0x1c09638,"debris02.kfm");
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc + 1,"debris02.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            ((CKeyFramedModelInstance *)0x1c097b4,"debris03.kfm");
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc + 2,"debris03.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            ((CKeyFramedModelInstance *)0x1c09930,"debris04.kfm");
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc + 3,"debris04.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            ((CKeyFramedModelInstance *)0x1c09aac,"debris05.kfm");
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc + 4,"debris05.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)0x1c094bc);
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)0x1c09638);
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc + 1);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)0x1c097b4);
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc + 2);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)0x1c09930);
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc + 3);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)0x1c09aac);
+            (g_CKeyFramedModelInstance_ARRAY_01c094bc + 4);
   return;
 }

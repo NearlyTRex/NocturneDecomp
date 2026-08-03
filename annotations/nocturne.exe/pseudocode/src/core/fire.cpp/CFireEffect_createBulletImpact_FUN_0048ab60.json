@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 33,
-        "message": "use of undeclared identifier 'DAT_01c20148'"
       },
       {
         "category": "undeclared_identifier",
@@ -75,13 +69,13 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
-        "line": 62,
-        "message": "use of undeclared identifier 'DAT_01fb8508'"
+        "column": 15,
+        "line": 65,
+        "message": "use of undeclared identifier '_DAT_01c0a13c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
+        "column": 55,
         "line": 66,
         "message": "use of undeclared identifier '_DAT_01c0a13c'"
       },
@@ -93,27 +87,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 23,
-        "line": 67,
-        "message": "use of undeclared identifier '_DAT_01c0a13c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 68,
-        "message": "use of undeclared identifier '_DAT_01c0a13c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 9,
         "line": 69,
         "message": "use of undeclared identifier '_DAT_01c0a13c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 73,
-        "message": "use of undeclared identifier 'DAT_01c0a140'"
       }
     ],
     "success": false,
@@ -122,13 +98,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 228,
+    "complexity_score": 198,
     "cross_reference_count": 5,
     "function_call_count": 9,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 138,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "self_copy_guard",
       "undefined_data",
@@ -302,9 +278,9 @@
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "01c0a13c",
@@ -314,8 +290,8 @@
     },
     {
       "addr": "01c0a140",
-      "name": "DAT_01c0a140",
-      "type": "undefined4",
+      "name": "g_CSmokeParticle_ARRAY_01c0a140",
+      "type": "CSmokeParticle[2048]",
       "value": null
     },
     {
@@ -326,37 +302,37 @@
     },
     {
       "addr": "01c20148",
-      "name": "DAT_01c20148",
-      "type": "undefined4",
+      "name": "g_CBulletHole_ARRAY_01c20148",
+      "type": "CBulletHole[256]",
       "value": null
     },
     {
       "addr": "01c2014c",
-      "name": "DAT_01c2014c",
+      "name": "g_CBulletHole_ARRAY_01c20148[0].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c20150",
-      "name": "DAT_01c20150",
+      "name": "g_CBulletHole_ARRAY_01c20148[0].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c20184",
-      "name": "DAT_01c20184",
+      "name": "g_CBulletHole_ARRAY_01c20148[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c20188",
-      "name": "DAT_01c20188",
+      "name": "g_CBulletHole_ARRAY_01c20148[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c2018c",
-      "name": "DAT_01c2018c",
+      "name": "g_CBulletHole_ARRAY_01c20148[1].position.z",
       "type": "undefined4",
       "value": null
     }
@@ -614,30 +590,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_01c20148",
-      "severity": "mild",
-      "text": "pfVar4 = (float *)&DAT_01c20148;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "((CDemonCamera *)&DAT_01fb8508,impact_pos,0.5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_01c0a140",
-      "severity": "mild",
-      "text": "((CSmokeParticle *)(&DAT_01c0a140 + iVar2),impact_pos,0.3,(CVector3f *)0x0,0xffff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 80,
       "match": "DAT_005b8bd8",
       "severity": "mild",
@@ -649,7 +601,7 @@
       "line": 82,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

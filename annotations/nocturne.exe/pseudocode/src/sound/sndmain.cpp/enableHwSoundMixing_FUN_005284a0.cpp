@@ -16,8 +16,8 @@ void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_005284a0(int enable)
     DAT_005bea78 = enable;
     return;
   }
-  PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-  INT_01cc4804 = 0x1237;
+  g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+  g_INT_01cc4804 = 0x1237;
   core_main_c_FUN_004c8440("enableHwSoundMixing - Can't do this while the device is open.");
   DAT_005bea78 = enable;
   return;

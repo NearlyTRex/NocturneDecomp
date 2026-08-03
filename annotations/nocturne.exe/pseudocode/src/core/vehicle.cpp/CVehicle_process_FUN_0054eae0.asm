@@ -37,8 +37,8 @@
 ;   double DOUBLE_005973b8 = 200
 ;   double DOUBLE_005973c0 = 0.200000000000000
 ;   double DOUBLE_005973c8 = 30
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_005be368
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   ... and 13 more
 ;
 ; Called Functions:
@@ -257,16 +257,16 @@ section .text
     CALL dword ptr [EDX + 0x14]         ; 0054ed84
     ADD ESP,0x8                         ; 0054ed87
     MOV dword ptr [ESP + 0xf0],EDI      ; 0054ed8a
-    MOV ESI,dword ptr [0x005be368]      ; 0054ed91 | DAT_005be368
+    MOV ESI,dword ptr [0x005be368]      ; 0054ed91 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0054ed91
-    CMP EDI,dword ptr [ESI + 0x14ecb0]  ; 0054ed97 | DAT_01fa5f34
+    CMP EDI,dword ptr [ESI + 0x14ecb0]  ; 0054ed97 | g_CDemonSet_01e57284.character_count
     JGE 0x0054ef4a                      ; 0054ed9d
         ;   XREF to: 0054ef4a (CONDITIONAL_JUMP)  ; LAB_0054ef4a
     MOV ECX,dword ptr [ESP + 0xf0]      ; 0054eda3
     MOV EAX,[0x01ccdc10]                ; 0054edaa | g_CMobsterActorType_01ccdbd8.name_hash
     ADD ESI,ECX                         ; 0054edaf
     PUSH EAX                            ; 0054edb1
-    MOV ESI,dword ptr [ESI + 0x14ecb4]  ; 0054edb2 | DAT_01fa5f38 | DAT_01fa5f3c
+    MOV ESI,dword ptr [ESI + 0x14ecb4]  ; 0054edb2 | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1]
     PUSH ESI                            ; 0054edb8
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0054edb9
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
@@ -474,16 +474,16 @@ section .text
     SAHF                                ; 0054f00d
     JBE 0x0054ef54                      ; 0054f00e
         ;   XREF to: 0054ef54 (CONDITIONAL_JUMP)  ; LAB_0054ef54
-    CMP dword ptr [ESI + 0x14cd6c],0x672 ; 0054f014 | DAT_01fa3ff0
+    CMP dword ptr [ESI + 0x14cd6c],0x672 ; 0054f014 | g_CDemonSet_01e57284.actor_count
     JGE 0x0054ef54                      ; 0054f01e
         ;   XREF to: 0054ef54 (CONDITIONAL_JUMP)  ; LAB_0054ef54
     MOV dword ptr [ESP + 0xe8],ECX      ; 0054f024
     MOV dword ptr [ESP + 0xec],ECX      ; 0054f02b
     XOR EDI,EDI                         ; 0054f032
     XOR ESI,ESI                         ; 0054f034
-    MOV EAX,[0x005be368]                ; 0054f036 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0054f036 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0054f036
-    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 0054f03b | DAT_01fa7e78
+    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 0054f03b | g_CDemonSet_01e57284.enemy_count
     JL 0x0054f1f5                       ; 0054f041
         ;   XREF to: 0054f1f5 (CONDITIONAL_JUMP)  ; LAB_0054f1f5
     CMP dword ptr [ESP + 0xec],0x0      ; 0054f047
@@ -531,8 +531,8 @@ section .text
         ;   Label: LAB_0054f0b1
     MOV EDX,0x161                       ; 0054f0b6
     PUSH 0x597346                       ; 0054f0bb | = "CMobster::process - Out of memory!"
-    MOV [0x01cc4800],EAX                ; 0054f0c0 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0054f0c5 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0054f0c0 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0054f0c5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0054f0cb
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0054f0d0
@@ -561,13 +561,13 @@ section .text
     MOV dword ptr [EBX + 0x1068],ESI    ; 0054f119
     PUSH ESI                            ; 0054f11f
         ;   Label: LAB_0054f11f
-    MOV EAX,[0x005baf90]                ; 0054f120 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 0054f120 | g_CDemonMission_PTR_005baf90
     PUSH EAX                            ; 0054f125 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 0054f126
         ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0054f12b
     PUSH EDI                            ; 0054f12e
-    MOV EDX,dword ptr [0x005baf90]      ; 0054f12f | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 0054f12f | g_CDemonMission_PTR_005baf90
     PUSH EDX                            ; 0054f135 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 0054f136
         ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
@@ -632,13 +632,13 @@ section .text
         ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time)
     ADD ESP,0x10                        ; 0054f1cd
     PUSH ESI                            ; 0054f1d0
-    MOV ECX,dword ptr [0x005baf90]      ; 0054f1d1 | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 0054f1d1 | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 0054f1d7 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 0054f1d8
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0054f1dd
     PUSH EDI                            ; 0054f1e0
-    MOV ESI,dword ptr [0x005baf90]      ; 0054f1e1 | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 0054f1e1 | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 0054f1e7 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 0054f1e8
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)

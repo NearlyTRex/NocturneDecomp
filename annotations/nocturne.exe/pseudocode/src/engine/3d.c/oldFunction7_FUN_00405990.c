@@ -9,8 +9,8 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction7_FUN_00405990(SMRGLHeaderExtended *primitive)
 
 {
-  PTR_01cc4800 = "..\\engine\\3d.c";
-  INT_01cc4804 = 0x4ff;
+  g_CHAR_PTR_01cc4800 = "..\\engine\\3d.c";
+  g_INT_01cc4804 = 0x4ff;
   core_main_c_FUN_004c8440("old func");
   return (SMRGLHeaderExtended *)0x0;
 }

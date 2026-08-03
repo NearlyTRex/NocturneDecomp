@@ -332,7 +332,7 @@ LAB_0053f520:
       if ((pCVar10 != (CDemonActor *)0x0) && (iVar4 == 3)) {
         core_inv_cpp_CInventory_removeItem_FUN_004c07b0(local_18,pCVar10,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
-                  (0x01CC9450,(this_ptr->base).target_actor);
+                  (g_CDemonMission_PTR_005baf90,(this_ptr->base).target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40
                   ((CCharacter *)this_ptr,1,(this_ptr->base).target_actor,0.0);
         iVar6 = core_actor_cpp_isOfClass_FUN_0040d7e0
@@ -341,8 +341,8 @@ LAB_0053f520:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(local_28,0x16,1);
           if (this_ptr->action_pending != 0) {
             shape_edittool_cpp_FUN_0046fb40
-                      (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",this_ptr->action_pending,
-                       0x13ba);
+                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
+                       this_ptr->action_pending,0x13ba);
           }
           this_ptr->action_pending = 2;
         }
@@ -379,6 +379,6 @@ LAB_0053f61d:
     return;
   }
 LAB_0053fc23:
-  xxx_unk_c_FUN_004940d0(INT_005b9284);
+  xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
   return;
 }

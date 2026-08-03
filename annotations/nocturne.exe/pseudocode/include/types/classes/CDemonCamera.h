@@ -3,9 +3,10 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CCameraTransformState.h"
-#include "types/classes/CCameraView.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMatrix3x3i.h"
 #include "types/classes/CRect.h"
+#include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SProjectionParams.h"
 
@@ -13,8 +14,13 @@
 // Ghidra size: 0x14c8 (5320 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonCamera {
-    CCameraView base; // 0x0
-    char camera_name[256]; // 0x40
+    char camera_name[256]; // 0x0
+    float fixed_point_scale; // 0x100
+    CVector3f position; // 0x104
+    CMatrix3x3f rotation_matrix; // 0x110
+    int dead; // 0x134
+    float focal_length; // 0x138
+    int screen_width; // 0x13c
     float max_distance; // 0x140
     int framebuffer_width; // 0x144
     int framebuffer_height; // 0x148

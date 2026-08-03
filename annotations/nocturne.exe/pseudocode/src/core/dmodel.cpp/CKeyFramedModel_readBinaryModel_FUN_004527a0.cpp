@@ -23,8 +23,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFr
   if (SVar1 != 1) goto LAB_00452819;
   do {
     if ((local_2c < 3) || (4 < local_2c)) {
-      PTR_01cc4800 = "..\\core\\dmodel.cpp";
-      INT_01cc4804 = 0xed;
+      g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
+      g_INT_01cc4804 = 0xed;
       core_main_c_FUN_004c8440("KFM file is invalid version %d",local_2c);
     }
     local_14 = 0;
@@ -47,8 +47,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFr
             if (SVar1 != 1) goto LAB_00452819;
           }
         }
-        SVar1 = _fread(&this_ptr->texture_list[4].textures[0].base.count,
-                           this_ptr->texture_list[4].textures[0].base.type << 3,1,file);
+        SVar1 = _fread(this_ptr->part_list,this_ptr->part_count << 3,1,file)
+        ;
         if (SVar1 == 1) {
           if (local_14 != 0) {
             core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(this_ptr);
@@ -59,8 +59,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFr
       }
     }
 LAB_00452819:
-    PTR_01cc4800 = "..\\core\\dmodel.cpp";
-    INT_01cc4804 = 0xe7;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    g_INT_01cc4804 = 0xe7;
     core_main_c_FUN_004c8440("Error reading keyframed model file");
   } while( true );
 }

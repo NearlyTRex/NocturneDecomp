@@ -24,17 +24,17 @@
 ;   TerminatedCString s_s_can_see_hero_0057f377
 ;   float FLOAT_0057f38b = 3
 ;   undefined4 DAT_0059cda8
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
-;   undefined4 DAT_0077ad0c
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
 ;   undefined4 DAT_01bcdef8
 ;   undefined4 DAT_01bcdefc
 ;   undefined4 DAT_01bcfe34
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c777c0
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.freeze_enemies_enabled
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -81,12 +81,12 @@ section .text
         ;   Label: LAB_00479baf
     JMP 0x00479b94                      ; 00479bb5
         ;   XREF to: 00479b94 (UNCONDITIONAL_JUMP)  ; LAB_00479b94
-    MOV EAX,[0x005b9354]                ; 00479bb7 | DAT_005b9354 | DAT_01c775ec
+    MOV EAX,[0x005b9354]                ; 00479bb7 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
         ;   Label: LAB_00479bb7
-    CMP dword ptr [EAX + 0x1d4],0x0     ; 00479bbc | DAT_01c777c0
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 00479bbc | g_CGame_01c775ec.freeze_enemies_enabled
     JNZ 0x00479bce                      ; 00479bc3
         ;   XREF to: 00479bce (CONDITIONAL_JUMP)  ; LAB_00479bce
-    CMP dword ptr [EAX + 0x230],0x0     ; 00479bc5 | DAT_01c7781c
+    CMP dword ptr [EAX + 0x230],0x0     ; 00479bc5 | g_CGame_01c775ec.allow_enemy_attack_flag
     JNZ 0x00479bf3                      ; 00479bcc
         ;   XREF to: 00479bf3 (CONDITIONAL_JUMP)  ; LAB_00479bf3
     MOV dword ptr [EDI + 0xbc98],0x0    ; 00479bce
@@ -164,10 +164,10 @@ section .text
     LEA EAX,[ESI*0x4 + 0x0]             ; 00479cc1
     MOV dword ptr [ESP + 0x2c],EDX      ; 00479cc8
     MOV dword ptr [ESP + 0x38],EAX      ; 00479ccc
-    MOV EAX,[0x005be368]                ; 00479cd0 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00479cd0 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00479cd0
     MOV EDX,dword ptr [ESP + 0x34]      ; 00479cd5
-    CMP EDX,dword ptr [EAX + 0x14ecb0]  ; 00479cd9 | DAT_01fa5f34
+    CMP EDX,dword ptr [EAX + 0x14ecb0]  ; 00479cd9 | g_CDemonSet_01e57284.character_count
     JL 0x00479df6                       ; 00479cdf
         ;   XREF to: 00479df6 (CONDITIONAL_JUMP)  ; LAB_00479df6
     MOV EAX,dword ptr [EDI + 0xbca4]    ; 00479ce5
@@ -266,7 +266,7 @@ section .text
     ADD EAX,dword ptr [ESP + 0x2c]      ; 00479df6
         ;   Label: LAB_00479df6
     PUSH EDI                            ; 00479dfa
-    MOV EBX,dword ptr [EAX + 0x14ecb4]  ; 00479dfb | DAT_01fa5f38
+    MOV EBX,dword ptr [EAX + 0x14ecb4]  ; 00479dfb | g_CDemonSet_01e57284.characters[0]
     PUSH EBX                            ; 00479e01
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00479e02
     CALL dword ptr [EAX + 0xdc]         ; 00479e08
@@ -351,9 +351,9 @@ section .text
     PUSH EDI                            ; 00479ef4
         ;   Label: LAB_00479ef4
     PUSH 0x57f377                       ; 00479ef5 | = "%s can see hero\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 00479efa | PTR_DAT_005ad350
+    MOV ECX,dword ptr [0x005ad350]      ; 00479efa | g_CConsole_PTR_005ad350
     MOV EAX,dword ptr [ESP + 0x44]      ; 00479f00
-    PUSH ECX                            ; 00479f04 | DAT_0077ad0c
+    PUSH ECX                            ; 00479f04 | g_CConsole_0077ad0c
     MOV dword ptr [EDI + 0xbca4],EAX    ; 00479f05
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00479f0b
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()

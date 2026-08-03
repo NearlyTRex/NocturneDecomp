@@ -11,6 +11,6 @@
 void __cdecl sound_sndmain_cpp_FUN_00526120(float base_frequency)
 
 {
-  *(float *)(_DAT_02dc1b74 * 0x6c + 0x2dc1bc0) = base_frequency;
+  g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].base_frequency = base_frequency;
   return;
 }

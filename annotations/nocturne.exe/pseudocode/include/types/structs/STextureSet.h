@@ -5,10 +5,10 @@
 #include "types/structs/SMRGLTextureLod.h"
 
 // Structure: STextureSet
-// Ghidra size: 0x1680 (5760 bytes)
+// Ghidra size: 0x240 (576 bytes)
 #pragma pack(push, 1)
 typedef struct STextureSet {
-    SMRGLTextureLod textures[80]; // 0x0
+    SMRGLTextureLod textures[8]; // 0x0
 } STextureSet;
 #pragma pack(pop)
 

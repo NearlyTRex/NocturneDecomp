@@ -18,8 +18,8 @@
 ;   TerminatedCString s_engine_ini_cpp_00586530
 ;   TerminatedCString s_cIni_FindLineNumberOfVar_00586542
 ;   TerminatedCString s_s_00586577
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -188,8 +188,8 @@ section .text
         ;   Label: LAB_004bd3fe
     MOV ESI,0xf5                        ; 004bd403
     PUSH 0x586542                       ; 004bd408 | = "cIni::FindLineNumberOfVariable: Unabl..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004bd40d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004bd413 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004bd40d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004bd413 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004bd419
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd41e

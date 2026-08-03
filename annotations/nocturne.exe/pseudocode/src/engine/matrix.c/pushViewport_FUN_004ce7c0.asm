@@ -108,8 +108,8 @@ section .text
     MOV EBX,0x5882c3                    ; 004ce8f3 | = "..\\engine\\matrix.c"
     MOV ESI,0x53d                       ; 004ce8f8
     PUSH 0x5882d6                       ; 004ce8fd | = "Too many 3D windows"
-    MOV dword ptr [0x01cc4800],EBX      ; 004ce902 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004ce908 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 004ce902 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004ce908 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ce90e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ce913

@@ -14,7 +14,7 @@
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610 at 00513634
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae700
+;   void* PTR_DAT_005ae700 = 01b4d738
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd4260
@@ -86,14 +86,14 @@ section .text
         ;   Label: LAB_0051379c
     MOV EDI,dword ptr [ESP + 0x10]      ; 005137a2
     PUSH EDI                            ; 005137a6
-    MOV EAX,[0x005ae700]                ; 005137a7 | DAT_005ae700
+    MOV EAX,[0x005ae700]                ; 005137a7 | PTR_DAT_005ae700
     PUSH EAX                            ; 005137ac | DAT_01b4d738
     MOV ESI,dword ptr [ESP + 0xc]       ; 005137ad
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 005137b1
         ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005137b6
     ADD EBX,ESI                         ; 005137b9
-    MOV EDX,dword ptr [0x005ae700]      ; 005137bb | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 005137bb | PTR_DAT_005ae700
     PUSH dword ptr [EBX + 0x140]        ; 005137c1
     PUSH EDX                            ; 005137c7 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 ; 005137c8
@@ -101,13 +101,13 @@ section .text
     ADD ESP,0x8                         ; 005137cd
     MOV ECX,dword ptr [ESP + 0x8]       ; 005137d0
     PUSH ECX                            ; 005137d4
-    MOV EBX,dword ptr [0x005ae700]      ; 005137d5 | DAT_005ae700
+    MOV EBX,dword ptr [0x005ae700]      ; 005137d5 | PTR_DAT_005ae700
     PUSH EBX                            ; 005137db | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780 ; 005137dc
         ;   XREF to: 00460780 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005137e1
     PUSH 0x26635f8                      ; 005137e4
-    MOV ESI,dword ptr [0x005ae700]      ; 005137e9 | DAT_005ae700
+    MOV ESI,dword ptr [0x005ae700]      ; 005137e9 | PTR_DAT_005ae700
     PUSH ESI                            ; 005137ef | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 ; 005137f0
         ;   XREF to: 004609d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer * this_ptr, CVector3f * input_point)

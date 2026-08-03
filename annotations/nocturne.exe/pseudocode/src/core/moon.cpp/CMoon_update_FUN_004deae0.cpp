@@ -11,13 +11,14 @@
 void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta_time)
 
 {
-  float fVar1;
+  float *pfVar1;
   float fVar2;
-  int iVar3;
+  float fVar3;
+  int iVar4;
   
-  fVar1 = delta_time * (float)0.012500000000000001 + this_ptr->rotation_phase;
-  this_ptr->rotation_phase = fVar1;
-  if ((float)0.57999999999999996 < fVar1) {
+  fVar2 = delta_time * (float)0.012500000000000001 + this_ptr->rotation_phase;
+  this_ptr->rotation_phase = fVar2;
+  if ((float)0.57999999999999996 < fVar2) {
     this_ptr->rotation_phase = 0.58;
     DAT_005bb210 = 1;
   }
@@ -28,24 +29,29 @@ void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta
   _DAT_01ccdebc = _DAT_01ccdebc + _DAT_01bd1d80 * 0x20;
   _DAT_01ccdec0 = _DAT_01ccdec0 + _DAT_01bd1d80 * 0x10;
   if (DAT_005bb210 != 0) {
-    iVar3 = 0;
+    iVar4 = 0;
     do {
-      *(float *)(iVar3 + 0x1ccdef0) =
-           delta_time * (float)20 + *(float *)(iVar3 + 0x1ccdef0);
-      if ((float)*(int *)(&DAT_01ccdec8 + *(int *)(iVar3 + 0x1ccdeec) * 0xc) <=
-          *(float *)(iVar3 + 0x1ccdef0)) {
-        *(float *)(iVar3 + 0x1ccdef0) =
-             *(float *)(iVar3 + 0x1ccdef0) -
-             (float)*(int *)(&DAT_01ccdec8 + *(int *)(iVar3 + 0x1ccdeec) * 0xc);
+      *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) =
+           delta_time * (float)20 +
+           *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4);
+      if ((float)g_CCourse_ARRAY_01ccdec8
+                 [*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len <=
+          *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {
+        pfVar1 = (float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4);
+        *pfVar1 = *pfVar1 - (float)g_CCourse_ARRAY_01ccdec8
+                                   [*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].
+                                   len;
       }
-      fVar1 = (float)_DAT_01cce2bc;
-      fVar2 = delta_time * (float)30 + *(float *)(iVar3 + 0x1ccdef4);
-      *(float *)(iVar3 + 0x1ccdef4) = fVar2;
-      if (fVar1 <= fVar2) {
-        *(float *)(iVar3 + 0x1ccdef4) = *(float *)(iVar3 + 0x1ccdef4) - fVar1;
+      fVar2 = (float)g_CKeyFramedModel_01cce1bc.frame_count;
+      fVar3 = delta_time * (float)30 +
+              *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4);
+      *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4) = fVar3;
+      if (fVar2 <= fVar3) {
+        pfVar1 = (float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4);
+        *pfVar1 = *pfVar1 - fVar2;
       }
-      iVar3 = iVar3 + 0x18;
-    } while (iVar3 != 0x2d0);
+      iVar4 = iVar4 + 0x18;
+    } while (iVar4 != 0x2d0);
   }
   return;
 }

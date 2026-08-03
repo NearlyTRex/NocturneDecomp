@@ -27,8 +27,8 @@
 ;   TerminatedCString s_Cannot_read_or_write_mor_0058b5a2
 ;   undefined4 DAT_005bc010
 ;   undefined4 DAT_005bc030
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -104,8 +104,8 @@ section .text
     MOV ECX,0x58b591                    ; 004e2b40 | = "..\\sound\\mp3.cpp"
     MOV ESI,0x266                       ; 004e2b45
     PUSH 0x58b5a2                       ; 004e2b4a | = "Cannot read or write more than %d bit..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004e2b4f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e2b55 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004e2b4f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004e2b55 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e2b5b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004e2b60

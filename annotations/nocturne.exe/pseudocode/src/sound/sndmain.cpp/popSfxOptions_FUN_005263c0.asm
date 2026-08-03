@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005934ab
 ;   TerminatedCString s_popSfxOptions_stack_empt_005934c0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc1b74
 ;
 ; Called Functions:
@@ -45,8 +45,8 @@ section .text
     MOV EBX,0x5934ab                    ; 005263d4 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xd03                       ; 005263d9
     PUSH 0x5934c0                       ; 005263de | = "popSfxOptions - stack empty"
-    MOV dword ptr [0x01cc4800],EBX      ; 005263e3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005263e9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 005263e3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 005263e9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005263ef
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005263f4

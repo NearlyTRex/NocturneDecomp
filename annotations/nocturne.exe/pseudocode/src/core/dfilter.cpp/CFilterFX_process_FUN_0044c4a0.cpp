@@ -21,7 +21,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFX *this_ptr
                      (0x014B8DE8,"movscrn.raw");
   if ((pCVar1 != (CDemonFilter *)0x0) && (this_ptr->movie_data != (SMovieFrame *)0x0)) {
     this_ptr->current_frame =
-         *(float *)(0x01C775EC + 0x264) * (float)30 + this_ptr->current_frame;
+         g_CGame_PTR_005b9354->delta_time_float * (float)30 + this_ptr->current_frame;
     if ((float)this_ptr->frame_count <= this_ptr->current_frame) {
       this_ptr->current_frame = 0.0;
     }

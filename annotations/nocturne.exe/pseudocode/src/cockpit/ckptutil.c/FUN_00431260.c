@@ -27,8 +27,8 @@ void __cdecl cockpit_ckptutil_c_FUN_00431260(void *bitmap_buffer,char *filename,
   
   if (0xff < (uint)transparent_color_index) {
     _sprintf(local_130,"Invalid transparent color index: %d",transparent_color_index);
-    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-    INT_01cc4804 = 0x93a;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    g_INT_01cc4804 = 0x93a;
     core_main_c_FUN_004c8440(local_130);
   }
   local_20 = 0;
@@ -69,8 +69,8 @@ void __cdecl cockpit_ckptutil_c_FUN_00431260(void *bitmap_buffer,char *filename,
       }
       if (0xf < local_14) {
         _sprintf(local_130,"Too many spans: bitmap %s, spans %d, scanline %d",filename,local_14,local_20);
-        PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-        INT_01cc4804 = 0x96a;
+        g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+        g_INT_01cc4804 = 0x96a;
         core_main_c_FUN_004c8440(local_130);
       }
       if (bVar1) {

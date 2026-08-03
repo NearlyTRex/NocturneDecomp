@@ -36,12 +36,9 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(CBulletTrail *this_p
   local_64.z = (this_ptr->end_position).y - (this_ptr->start_position).y;
   local_58 = (this_ptr->end_position).z - (this_ptr->start_position).z;
   pCVar2 = this_ptr->model_ptr;
-  local_6c = *(float *)(pCVar2->texture_list[7].textures[1].texture_name + 8) -
-             (float)pCVar2->texture_list[7].textures[1].base.count;
-  local_68 = *(float *)(pCVar2->texture_list[7].textures[1].texture_name + 0xc) -
-             *(float *)pCVar2->texture_list[7].textures[1].texture_name;
-  local_64.x = (float)pCVar2->texture_list[7].textures[2].base.type -
-               *(float *)(pCVar2->texture_list[7].textures[1].texture_name + 4);
+  local_6c = (pCVar2->bounds).max.x - (pCVar2->bounds).min.x;
+  local_68 = (pCVar2->bounds).max.y - (pCVar2->bounds).min.y;
+  local_64.x = (pCVar2->bounds).max.z - (pCVar2->bounds).min.z;
   local_7c.x = SQRT(local_58 * local_58 + local_64.y * local_64.y + local_64.z * local_64.z) -
                local_64.x;
   if (0.0 < local_7c.x) {

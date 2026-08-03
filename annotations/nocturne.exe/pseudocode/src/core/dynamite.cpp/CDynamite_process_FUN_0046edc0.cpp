@@ -29,7 +29,7 @@ void core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CWeapon *param_1,float par
   if (0.0 <= *(float *)param_1[1].base.actor_name) {
     fVar1 = *(float *)param_1[1].base.actor_name - param_2;
     *(float *)param_1[1].base.actor_name = fVar1;
-    this_ptr = 0x02DC9450;
+    this_ptr = g_CSound_PTR_005bed68;
     if (fVar1 < 0.0) {
       sfx_handle = *(uint *)(param_1[1].base.actor_name + 0x10);
       param_1[1].base.actor_name[0] = '\0';
@@ -64,7 +64,7 @@ void core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CWeapon *param_1,float par
           CStack_30.z = pCVar4->z;
         }
         core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                  (0x01C08D04,&CStack_30,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
+                  (g_CFireEffect_PTR_005b80f0,&CStack_30,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
         return;
       }
     }

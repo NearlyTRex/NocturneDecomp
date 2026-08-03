@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSfxOptions * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_00529a20(CSfxOptions *this_ptr)
+; CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_00529a20(CSfxSlot *this_ptr)
 ;
 ; Parameters:
-; CSfxOptions *    Stack[0x4]:4   this_ptr
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0

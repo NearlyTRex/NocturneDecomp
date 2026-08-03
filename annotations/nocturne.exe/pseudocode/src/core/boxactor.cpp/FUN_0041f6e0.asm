@@ -20,7 +20,7 @@
 ;   float FLOAT_005799e1 = 0.5
 ;   double DOUBLE_005799e5 = 0.100000000000000
 ;   undefined4 DAT_007647fc
-;   undefined4 DAT_0076483c
+;   CDemonFilter[8] g_CDemonFilter_ARRAY_0076483c
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90
@@ -218,7 +218,7 @@ section .text
     TEST EDX,EDX                        ; 0041f990
     JNZ 0x0041f9cd                      ; 0041f992
         ;   XREF to: 0041f9cd (CONDITIONAL_JUMP)  ; LAB_0041f9cd
-    MOV ESI,0x76483c                    ; 0041f994 | DAT_0076483c
+    MOV ESI,0x76483c                    ; 0041f994 | g_CDemonFilter_ARRAY_0076483c
     XOR EBX,EBX                         ; 0041f999
     PUSH EBX                            ; 0041f99b
         ;   Label: LAB_0041f99b
@@ -230,7 +230,7 @@ section .text
     ADD ESP,0xc                         ; 0041f9ab
     MOV EAX,ESP                         ; 0041f9ae
     PUSH EAX                            ; 0041f9b0
-    PUSH ESI                            ; 0041f9b1 | DAT_0076483c
+    PUSH ESI                            ; 0041f9b1 | g_CDemonFilter_ARRAY_0076483c
     INC EBX                             ; 0041f9b2
     CALL core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 ; 0041f9b3
         ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90(CDemonFilter * this_ptr, char * filename)
@@ -244,7 +244,7 @@ section .text
         ;   Label: LAB_0041f9cd
     PUSH 0x0                            ; 0041f9cf
     PUSH 0x0                            ; 0041f9d1
-    PUSH 0x76483c                       ; 0041f9d3 | DAT_0076483c
+    PUSH 0x76483c                       ; 0041f9d3 | g_CDemonFilter_ARRAY_0076483c
     ADD EDI,0x668                       ; 0041f9d8
     PUSH EDI                            ; 0041f9de
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 0041f9df

@@ -12,8 +12,8 @@ int __cdecl engine_matrix_c_integerSquareRoot_FUN_004cdd30(int value)
   int iVar1;
   
   if (value < 1) {
-    PTR_01cc4800 = "..\\engine\\matrix.c";
-    INT_01cc4804 = 0x38e;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\matrix.c";
+    g_INT_01cc4804 = 0x38e;
     core_main_c_FUN_004c8440("sqrt out of domain!");
   }
   iVar1 = value / 200 + 2;

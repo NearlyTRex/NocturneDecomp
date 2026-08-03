@@ -11,13 +11,14 @@ CBoundingBox3D * core_turret_cpp_CTurret_getBoundingBox_FUN_00549cd0(CTurret *pa
 {
   CKeyFramedModelInstance *this_ptr;
   CKeyFramedModel *pCVar1;
-  float *pfVar2;
+  CBoundingBox3D *pCVar2;
   CVector3f *pCVar3;
   int iVar4;
   uint corner_index;
   float *pfVar5;
-  byte bVar6;
-  double dVar7;
+  float *pfVar6;
+  byte bVar7;
+  double dVar8;
   CMatrix3x4f *matrix;
   CMatrix3x4f CStack_d8;
   float afStack_a4 [12];
@@ -33,18 +34,18 @@ CBoundingBox3D * core_turret_cpp_CTurret_getBoundingBox_FUN_00549cd0(CTurret *pa
   float local_10;
   float local_c;
   
-  bVar6 = 0;
+  bVar7 = 0;
   local_c = core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(param_1,0);
-  dVar7 = round((double)local_c);
-  local_10 = (float)(int)ROUND(dVar7);
+  dVar8 = round((double)local_c);
+  local_10 = (float)(int)ROUND(dVar8);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&(param_1->base).model);
-  pfVar2 = (float *)((int)local_10 * 0x18 + pCVar1->texture_list[7].textures[2].base.count);
-  (param_2->min).x = *pfVar2;
-  (param_2->min).y = pfVar2[1];
-  (param_2->min).z = pfVar2[2];
-  (param_2->max).x = pfVar2[3];
-  (param_2->max).y = pfVar2[4];
-  (param_2->max).z = pfVar2[5];
+  pCVar2 = pCVar1->frame_bounds + (int)local_10;
+  (param_2->min).x = (pCVar2->min).x;
+  (param_2->min).y = (pCVar2->min).y;
+  (param_2->min).z = (pCVar2->min).z;
+  (param_2->max).x = (pCVar2->max).x;
+  (param_2->max).y = (pCVar2->max).y;
+  (param_2->max).z = (pCVar2->max).z;
   pCStack_14 = &param_1->model;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(pCStack_14);
   if (pCVar1->poly_count < 1) {
@@ -56,25 +57,25 @@ CBoundingBox3D * core_turret_cpp_CTurret_getBoundingBox_FUN_00549cd0(CTurret *pa
             ((CMatrix3x4f *)&stack0xfffffefc,(CVector3f *)&DAT_02dd1184,
              &(param_1->base).base.orient.vec);
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_74,&stack0xfffffefc);
-  pfVar2 = afStack_a4;
-  pfVar5 = &CStack_d8.m[0].x;
+  pfVar5 = afStack_a4;
+  pfVar6 = &CStack_d8.m[0].x;
   for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *pfVar5 = *pfVar2;
-    pfVar2 = pfVar2 + (uint)bVar6 * -2 + 1;
-    pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
+    *pfVar6 = *pfVar5;
+    pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
+    pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
   }
   local_10 = core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(param_1,1);
   this_ptr = pCStack_14;
-  dVar7 = round((double)local_10);
-  pCStack_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
+  dVar8 = round((double)local_10);
+  pCStack_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar8);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr);
-  pfVar2 = (float *)(pCVar1->texture_list[7].textures[2].base.count + (int)pCStack_14 * 0x18);
-  auStack_74._44_4_ = *pfVar2;
-  fStack_44 = pfVar2[1];
-  local_40 = pfVar2[2];
-  local_3c = pfVar2[3];
-  local_38 = pfVar2[4];
-  local_34 = pfVar2[5];
+  pCVar2 = pCVar1->frame_bounds + (int)pCStack_14;
+  auStack_74._44_4_ = (pCVar2->min).x;
+  fStack_44 = (pCVar2->min).y;
+  local_40 = (pCVar2->min).z;
+  local_3c = (pCVar2->max).x;
+  local_38 = (pCVar2->max).y;
+  local_34 = (pCVar2->max).z;
   corner_index = 0;
   do {
     matrix = &CStack_d8;

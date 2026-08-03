@@ -58,14 +58,14 @@
 ;   double DOUBLE_0059758f = 0.5
 ;   double DOUBLE_00597597 = 1.10000000000000
 ;   undefined4 DAT_005a3e8c
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005ae708
 ;   undefined4 DAT_005c5024
 ;   undefined4 DAT_005c5054
 ;   undefined4 DAT_005c5084
 ;   undefined4 DAT_005c50b4
-;   undefined4 DAT_0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_01b4d738
 ;   ... and 10 more
 ;
@@ -119,13 +119,13 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 00550861
         ;   Label: LAB_00550861
     PUSH EAX                            ; 00550865
-    PUSH 0x1fba938                      ; 00550866 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00550866 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0 ; 0055086b
         ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00550870
     LEA EAX,[ESP + 0x28]                ; 00550873
     PUSH EAX                            ; 00550877
-    PUSH 0x1fba938                      ; 00550878 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00550878 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0 ; 0055087d
         ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00550882
@@ -373,8 +373,8 @@ section .text
     FSTP double ptr [ESP]               ; 00550bd7
     PUSH ECX                            ; 00550bda
     PUSH 0x59756f                       ; 00550bdb | = "Vis water tiles : %d, SqFt : %f"
-    MOV EBX,dword ptr [0x005ad350]      ; 00550be0 | PTR_DAT_005ad350
-    PUSH EBX                            ; 00550be6 | DAT_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 00550be0 | g_CConsole_PTR_005ad350
+    PUSH EBX                            ; 00550be6 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00550be7
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x14                        ; 00550bec
@@ -418,8 +418,8 @@ section .text
     MOV EAX,0x59753f                    ; 00550c66 | = "..\\core\\water.cpp"
     MOV EDX,0x136                       ; 00550c6b
     PUSH 0x597551                       ; 00550c70 | = "Too many visible water tiles!"
-    MOV [0x01cc4800],EAX                ; 00550c75 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00550c7a | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00550c75 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00550c7a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00550c80
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00550c85

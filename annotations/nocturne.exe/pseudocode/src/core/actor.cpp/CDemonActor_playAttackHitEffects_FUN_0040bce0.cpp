@@ -16,11 +16,11 @@ void __cdecl core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0(CDemon
   pCVar1 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
   if ((pCVar1 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) && (attack_flags != 0)) {
     if ((uint)attack_flags < 2) {
-      xxx_unk_c_FUN_004940d0(INT_005b9284);
+      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
       return;
     }
     if (attack_flags == 2) {
-      xxx_unk_c_FUN_004940d0(INT_005b9284);
+      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
       return;
     }
   }

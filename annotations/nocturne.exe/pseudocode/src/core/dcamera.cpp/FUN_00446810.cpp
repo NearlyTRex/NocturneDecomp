@@ -69,8 +69,8 @@ void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)
   _sprintf(local_f8,"backdrop\\%s",local_274);
   crt_fstream_cpp_ofstream_ctor_FUN_0056511e(local_174,0,local_f8,0x110,0x000001A4);
   if (local_114 != (void *)0x0) {
-    PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    INT_01cc4804 = 0x12d0;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    g_INT_01cc4804 = 0x12d0;
     core_main_c_FUN_004c8440("Can't create %s",local_f8);
   }
   crt_fstream_cpp_ostream_write_FUN_00565a13
@@ -79,14 +79,13 @@ void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)
     local_50 = 0x00444645;
     crt_fstream_cpp_ostream_write_FUN_00565a13((_ostream *)(auStack_13c + 0xc),&local_50,3);
     dVar9 = 256;
-    dVar8 = round
-                      ((double)*(float *)(this_ptr->camera_name + 0xc4) * 256);
+    dVar8 = round((double)(this_ptr->position).x * 256);
     CStack_68.z = (int)ROUND(dVar8);
-    dVar8 = round((double)*(float *)(this_ptr->camera_name + 200) * dVar9);
+    dVar8 = round((double)(this_ptr->position).y * dVar9);
     CStack_68.z = (int)ROUND(dVar8);
     iVar11 = 0x10000;
     iVar10 = 0x4469b4;
-    dVar9 = round(dVar9 * (double)*(float *)(this_ptr->camera_name + 0xcc));
+    dVar9 = round(dVar9 * (double)(this_ptr->position).z);
     CStack_68.z = (int)ROUND(dVar9);
     support_codec_cpp_CLZWCompress_ctor_FUN_00439830((CLZWCompress *)(auStack_a0 + 4),iVar10,iVar11)
     ;
@@ -182,18 +181,18 @@ void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)
         iVar10 = support_codec_cpp_CCodec_processFromBuffer_FUN_004390b0
                            ((CCodec *)auStack_a0,&DAT_012ceb78,&local_58,(_ostream *)auStack_13c);
         if (iVar10 == 0) {
-          PTR_01cc4800 = "..\\core\\dcamera.cpp";
-          INT_01cc4804 = 0x133d;
+          g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+          g_INT_01cc4804 = 0x133d;
           core_main_c_FUN_004c8440("Error compressing %s",auStack_104);
         }
         if (local_58 != 0) {
-          PTR_01cc4800 = "..\\core\\dcamera.cpp";
-          INT_01cc4804 = 0x133f;
+          g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+          g_INT_01cc4804 = 0x133f;
           core_main_c_FUN_004c8440("Not all bytes consumed compressing %s",auStack_104);
         }
         if (iStack_120 != 0) {
-          PTR_01cc4800 = "..\\core\\dcamera.cpp";
-          INT_01cc4804 = 0x1340;
+          g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+          g_INT_01cc4804 = 0x1340;
           core_main_c_FUN_004c8440("Error writing compressed file %s",auStack_104);
         }
         local_50 = local_50 + 0x12c00;

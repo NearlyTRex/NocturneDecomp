@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -75,43 +75,43 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
+        "column": 42,
         "line": 33,
         "message": "use of undeclared identifier '_DAT_014b8924'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
+        "column": 38,
         "line": 34,
         "message": "use of undeclared identifier '_DAT_014b8924'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
+        "column": 38,
         "line": 35,
         "message": "use of undeclared identifier '_DAT_014b8924'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
+        "column": 38,
         "line": 36,
         "message": "use of undeclared identifier '_DAT_014b8924'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 88,
-        "line": 41,
+        "column": 49,
+        "line": 42,
         "message": "use of undeclared identifier '_DAT_014b8924'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
+        "column": 42,
         "line": 45,
         "message": "use of undeclared identifier '_DAT_014b8924'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
+        "column": 38,
         "line": 46,
         "message": "use of undeclared identifier '_DAT_014b8924'"
       }
@@ -178,31 +178,31 @@
     },
     {
       "addr": "014b8864",
-      "name": "CVector3f_ARRAY_014b8864",
+      "name": "g_CVector3f_ARRAY_014b8864",
       "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "014b8868",
-      "name": "CVector3f_ARRAY_014b8864[0].y",
+      "name": "g_CVector3f_ARRAY_014b8864[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "014b886c",
-      "name": "CVector3f_ARRAY_014b8864[0].z",
+      "name": "g_CVector3f_ARRAY_014b8864[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "014b8878",
-      "name": "CVector3f_ARRAY_014b8864[1].z",
+      "name": "g_CVector3f_ARRAY_014b8864[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "014b8884",
-      "name": "CVector3f_ARRAY_014b8864[2].z",
+      "name": "g_CVector3f_ARRAY_014b8864[2].z",
       "type": "undefined4",
       "value": null
     },
@@ -338,7 +338,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 < CVector3f_ARRAY_014b8864[uVar2].z) {",
+      "text": "if (param_1 < g_CVector3f_ARRAY_014b8864[uVar2].z) {",
       "type": "unnamed_param"
     },
     {
@@ -346,7 +346,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": ",0.0,0.0,-1.0,(double)param_1);",
+      "text": "g_CVector3f_ARRAY_014b8928 + _DAT_014b8924,0.0,0.0,-1.0,(double)param_1);",
       "type": "unnamed_param"
     },
     {
@@ -354,7 +354,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": ",0.0,0.0,-1.0,(double)param_1);",
+      "text": "g_CVector3f_ARRAY_014b8928 + _DAT_014b8924,0.0,0.0,-1.0,(double)param_1);",
       "type": "unnamed_param"
     },
     {
@@ -362,7 +362,7 @@
       "line": 27,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;",
+      "text": "g_CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -370,7 +370,7 @@
       "line": 39,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;",
+      "text": "g_CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;",
       "type": "unrolled_memcpy"
     }
   ]

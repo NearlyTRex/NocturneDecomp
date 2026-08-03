@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -110,10 +110,10 @@
         "message": "use of undeclared identifier '_DAT_0059de84'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 50,
-        "message": "use of undeclared identifier 'DAT_01fb8508'"
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 49,
+        "message": "no matching function for call to 'core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610'"
       }
     ],
     "success": false,
@@ -122,14 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 194,
+    "complexity_score": 209,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
+      "raw_address_constant",
       "raw_address_pointer_store",
       "stack_alignment_array",
       "undefined_data",
@@ -387,14 +388,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "(&DAT_01fb8508,&iStack_54);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 55,
       "match": "DAT_005b7620",
       "severity": "mild",
@@ -416,6 +409,22 @@
       "severity": "mild",
       "text": "_DAT_01c78b10 = (_DAT_01c78b10 * DAT_005b7620) / 0x1e0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 28,
+      "match": "0x1e56da0",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(0x01E56DA0 + 0xc);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 38,
+      "match": "0x1e56da0",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(0x01E56DA0 + 0xc),&CStack_48,&CStack_3c);",
+      "type": "raw_address_constant"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",

@@ -26,12 +26,12 @@
 ;   double DOUBLE_0058156f = -0.5
 ;   double DOUBLE_00581577 = 0.25
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005be368
-;   undefined4 DAT_005bed68
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa7e78
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.enemy_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -94,7 +94,7 @@ section .text
     PUSH 0x4000                         ; 0048d127
     PUSH 0x0                            ; 0048d12c
     PUSH EDI                            ; 0048d12e
-    MOV EAX,[0x005b80f0]                ; 0048d12f | DAT_005b80f0
+    MOV EAX,[0x005b80f0]                ; 0048d12f | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 0048d134
     INC EBX                             ; 0048d135
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 0048d136
@@ -139,7 +139,7 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 0048d1bb
     FSTP float ptr [ESP]                ; 0048d1be
     PUSH EAX                            ; 0048d1c1
-    MOV EDI,dword ptr [0x005b80f0]      ; 0048d1c2 | DAT_005b80f0
+    MOV EDI,dword ptr [0x005b80f0]      ; 0048d1c2 | g_CFireEffect_PTR_005b80f0
     PUSH EDI                            ; 0048d1c8
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 0048d1c9
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -172,7 +172,7 @@ section .text
         ;   XREF to: 0048d458 (CONDITIONAL_JUMP)  ; LAB_0048d458
     MOV EDX,dword ptr [ESI + 0x1a8]     ; 0048d23d
     PUSH EDX                            ; 0048d243
-    MOV ECX,dword ptr [0x005bed68]      ; 0048d244 | DAT_005bed68
+    MOV ECX,dword ptr [0x005bed68]      ; 0048d244 | g_CSound_PTR_005bed68
     PUSH ECX                            ; 0048d24a
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0 ; 0048d24b
         ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0(CSound * this_ptr, uint sfx_handle)
@@ -269,15 +269,15 @@ section .text
     CMP dword ptr [ESI + 0x294],0x0     ; 0048d38e
     JL 0x0048d484                       ; 0048d395
         ;   XREF to: 0048d484 (CONDITIONAL_JUMP)  ; LAB_0048d484
-    MOV EBX,dword ptr [0x005be368]      ; 0048d39b | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 0048d39b | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0048d39b
     MOV EAX,dword ptr [ESI + 0x294]     ; 0048d3a1
-    CMP EAX,dword ptr [EBX + 0x150bf4]  ; 0048d3a7 | DAT_01fa7e78
+    CMP EAX,dword ptr [EBX + 0x150bf4]  ; 0048d3a7 | g_CDemonSet_01e57284.enemy_count
     JGE 0x0048d493                      ; 0048d3ad
         ;   XREF to: 0048d493 (CONDITIONAL_JUMP)  ; LAB_0048d493
-    MOV EAX,[0x005be368]                ; 0048d3b3 | DAT_005be368 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 0048d3b3 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
         ;   Label: LAB_0048d3b3
-    CMP dword ptr [EAX + 0x150bf4],0x0  ; 0048d3b8 | DAT_01fa7e78
+    CMP dword ptr [EAX + 0x150bf4],0x0  ; 0048d3b8 | g_CDemonSet_01e57284.enemy_count
     JG 0x0048d4a2                       ; 0048d3bf
         ;   XREF to: 0048d4a2 (CONDITIONAL_JUMP)  ; LAB_0048d4a2
     MOV ESP,EBP                         ; 0048d3c5
@@ -335,7 +335,7 @@ section .text
     JZ 0x0048d25b                       ; 0048d460
         ;   XREF to: 0048d25b (CONDITIONAL_JUMP)  ; LAB_0048d25b
     PUSH EBX                            ; 0048d466
-    MOV EAX,[0x005bed68]                ; 0048d467 | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 0048d467 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0048d46c
     CALL core_sound.cpp_CSound_killSound_FUN_0052ebb0 ; 0048d46d
         ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0052ebb0(CSound * this_ptr, uint sfx_handle)

@@ -36,8 +36,8 @@
 ;   TerminatedCString s_core_skeleton_cpp_005918d5
 ;   TerminatedCString s_Out_of_memory_005918ea
 ;   undefined4 DAT_005a1eb0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -96,8 +96,8 @@ section .text
     MOV EAX,0x5918d5                    ; 00519c3b | = "..\\core\\skeleton.cpp"
     MOV EDX,0x5f0                       ; 00519c40
     PUSH 0x5918ea                       ; 00519c45 | = "Out of memory"
-    MOV [0x01cc4800],EAX                ; 00519c4a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00519c4f | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00519c4a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00519c4f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00519c55
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00519c5a

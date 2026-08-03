@@ -29,8 +29,8 @@
 ;   TerminatedCString s_act_005817f6
 ;   TerminatedCString s_rb_005817fa
 ;   TerminatedCString s_art_005817fd
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240
@@ -117,11 +117,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x5817a0                    ; 00490018 | = "..\\engine\\font.cpp"
     ADD ESP,0xc                         ; 0049001d
-    MOV [0x01cc4800],EAX                ; 00490020 | PTR_01cc4800
+    MOV [0x01cc4800],EAX                ; 00490020 | g_CHAR_PTR_01cc4800
     MOV EAX,ESP                         ; 00490025
     MOV EDX,0xec                        ; 00490027
     PUSH EAX                            ; 0049002c
-    MOV dword ptr [0x01cc4804],EDX      ; 0049002d | INT_01cc4804
+    MOV dword ptr [0x01cc4804],EDX      ; 0049002d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00490033
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00490038
@@ -145,11 +145,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0xf4                        ; 0049006a
     ADD ESP,0xc                         ; 0049006f
-    MOV [0x01cc4804],EAX                ; 00490072 | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 00490072 | g_INT_01cc4804
     MOV EAX,ESP                         ; 00490077
     MOV EDI,0x5817e3                    ; 00490079 | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 0049007e
-    MOV dword ptr [0x01cc4800],EDI      ; 0049007f | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EDI      ; 0049007f | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 00490085
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0049008a
@@ -255,8 +255,8 @@ section .text
         ;   Label: LAB_004901a0
     MOV ESI,0xd7                        ; 004901a5
     PUSH 0x58176e                       ; 004901aa | = "Too many bitmaps"
-    MOV dword ptr [0x01cc4800],ECX      ; 004901af | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004901b5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004901af | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004901b5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004901bb
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004901c0

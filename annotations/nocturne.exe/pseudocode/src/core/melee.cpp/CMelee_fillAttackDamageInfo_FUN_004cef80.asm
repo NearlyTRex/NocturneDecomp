@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(int param_1,undefined4 param_2,int param_3,undefined4 param_4)
+; void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)
 ;
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
     PUSH ECX                            ; 004cef97
     PUSH EBX                            ; 004cef98
     CALL core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0 ; 004cef99
-        ;   XREF to: 0040bca0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0()
+        ;   XREF to: 0040bca0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)
     ADD ESP,0x10                        ; 004cef9e
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004cefa1
     PUSH EBX                            ; 004cefa7

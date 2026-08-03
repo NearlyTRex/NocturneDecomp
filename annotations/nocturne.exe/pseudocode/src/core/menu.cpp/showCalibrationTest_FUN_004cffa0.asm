@@ -15,7 +15,7 @@
 ;   TerminatedCString s_s_3_Turn_down_the_bright_00588603
 ;   TerminatedCString s_s_4_Turn_your_contrast_a_0058864f
 ;   TerminatedCString s_You_re_done_with_calibra_00588675
-;   undefined4 DAT_014b9904
+;   CBitFont* g_CBitFont_PTR_014b9904
 ;
 ; Called Functions:
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_004cfe50
@@ -38,7 +38,7 @@ section .text
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004cffb9
     PUSH 0x58                           ; 004cffbc
-    MOV EDX,dword ptr [0x014b9904]      ; 004cffbe | DAT_014b9904
+    MOV EDX,dword ptr [0x014b9904]      ; 004cffbe | g_CBitFont_PTR_014b9904
     PUSH EDX                            ; 004cffc4
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004cffc5
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)

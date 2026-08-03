@@ -9,6 +9,6 @@
 void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(CDemonSet *this_ptr)
 
 {
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[1].z = -NAN;
+  this_ptr->ignore_list_count = -1;
   return;
 }

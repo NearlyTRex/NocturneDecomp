@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -100,20 +100,20 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 74,
-        "message": "no matching function for call to 'core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
         "line": 92,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 93,
-        "message": "use of undeclared identifier 'DAT_02ddfa28'"
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 95,
+        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 97,
+        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       }
     ],
     "success": false,
@@ -122,14 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 525,
-    "complexity_score": 580,
+    "complexity_score": 575,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 15,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 210,
-    "suspect_count": 36,
+    "suspect_count": 35,
     "suspect_types": [
+      "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -237,9 +238,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005c15bc",
@@ -273,43 +274,43 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "02ddfa28",
-      "name": "DAT_02ddfa28",
-      "type": "undefined4",
+      "name": "g_CVector3f_ARRAY_02ddfa28",
+      "type": "CVector3f[200]",
       "value": null
     },
     {
       "addr": "02ddfa2c",
-      "name": "DAT_02ddfa2c",
+      "name": "g_CVector3f_ARRAY_02ddfa28[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa30",
-      "name": "DAT_02ddfa30",
+      "name": "g_CVector3f_ARRAY_02ddfa28[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa34",
-      "name": "DAT_02ddfa34",
+      "name": "g_CVector3f_ARRAY_02ddfa28[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa38",
-      "name": "DAT_02ddfa38",
+      "name": "g_CVector3f_ARRAY_02ddfa28[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02ddfa3c",
-      "name": "DAT_02ddfa3c",
+      "name": "g_CVector3f_ARRAY_02ddfa28[1].z",
       "type": "undefined4",
       "value": null
     }
@@ -849,14 +850,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_02ddfa28",
-      "severity": "mild",
-      "text": "world_position = (CVector3f *)&DAT_02ddfa28;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 88,
       "match": "DAT_005ae704",
       "severity": "mild",
@@ -985,22 +978,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
-      "match": "DAT_02ddfa2c",
-      "severity": "mild",
-      "text": "puVar5 = &DAT_02ddfa2c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 171,
-      "match": "DAT_02ddfa28",
-      "severity": "mild",
-      "text": "local_2c.x = *(float *)(&DAT_02ddfa28 + iVar3 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 175,
       "match": "DAT_005ae704",
       "severity": "mild",
@@ -1062,6 +1039,22 @@
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex literal 0x2ddfa2c matches address of g_CVector3f_ARRAY_02ddfa28 (+4 bytes into) (type CVector3f[200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 167,
+      "match": "0x2ddfa2c",
+      "severity": "moderate",
+      "text": "iVar5 = 0x2ddfa2c;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x2ddfa2c assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 167,
+      "match": "0x2ddfa2c",
+      "severity": "moderate",
+      "text": "iVar5 = 0x2ddfa2c;",
+      "type": "raw_address_constant"
     }
   ]
 }

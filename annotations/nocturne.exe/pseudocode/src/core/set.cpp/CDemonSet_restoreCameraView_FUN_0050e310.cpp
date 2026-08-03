@@ -9,12 +9,11 @@
 void __cdecl core_set_cpp_CDemonSet_restoreCameraView_FUN_0050e310(CDemonSet *this_ptr)
 
 {
-  CDemonActor *pCVar1;
+  int iVar1;
   
-  pCVar1 = this_ptr->renderable_actors[0x774];
-  core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
-            (this_ptr,(int)this_ptr->renderable_actors[0x773]);
-  this_ptr->renderable_actors[0x775] = (CDemonActor *)0x0;
-  this_ptr->renderable_actors[0x774] = pCVar1;
+  iVar1 = this_ptr->previous_best_camera_index;
+  core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(this_ptr,this_ptr->selected_camera_index);
+  this_ptr->previous_best_camera_timer = 0.0;
+  this_ptr->previous_best_camera_index = iVar1;
   return;
 }

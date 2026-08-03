@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_CDemonActor_getCollisionType_FUN_0040a090(void)
+; ECollisionType __cdecl core_actor_cpp_CDemonActor_getCollisionType_FUN_0040a090(CDemonActor *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; XREF[1]:
 ;   core_actor.cpp_checkNameHash_FUN_0040d810 at 0040d821

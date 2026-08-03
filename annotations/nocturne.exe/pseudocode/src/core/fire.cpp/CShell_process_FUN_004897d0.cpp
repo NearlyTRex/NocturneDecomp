@@ -17,7 +17,7 @@ void __cdecl core_fire_cpp_CShell_process_FUN_004897d0(CShell *this_ptr)
     return;
   }
   core_particle_cpp_CParticle_process_FUN_004ef120(&this_ptr->base);
-  fVar3 = *(float *)(0x01C775EC + 0x264);
+  fVar3 = g_CGame_PTR_005b9354->delta_time_float;
   fVar1 = (this_ptr->angular_velocity).y;
   fVar2 = (this_ptr->angular_velocity).z;
   (this_ptr->euler_angles).x = (this_ptr->euler_angles).x + (this_ptr->angular_velocity).x * fVar3;

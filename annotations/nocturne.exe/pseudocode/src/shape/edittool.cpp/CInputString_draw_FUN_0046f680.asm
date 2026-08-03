@@ -23,8 +23,8 @@
 ;   undefined4 DAT_01bcdde0
 ;   undefined4 DAT_01bcdde4
 ;   undefined4 DAT_01c00c70
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -72,8 +72,8 @@ section .text
     MOV ESI,0x57e584                    ; 0046f6d8 | = "..\\shape\\edittool.cpp"
     MOV EAX,0x1a5                       ; 0046f6dd
     PUSH 0x57e59a                       ; 0046f6e2 | = "CInputString::draw - string too big f..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0046f6e7 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0046f6ed | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0046f6e7 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0046f6ed | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046f6f2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046f6f7

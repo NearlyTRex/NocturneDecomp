@@ -18,8 +18,8 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(CEventList *this_
   if (iVar2 < 0) {
     if (value != 0) {
       if (9 < (this_ptr->counters).count) {
-        PTR_01cc4800 = "..\\core\\event.cpp";
-        INT_01cc4804 = 0xab2;
+        g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+        g_INT_01cc4804 = 0xab2;
         core_main_c_FUN_004c8440("CEventList::setCounter - too many counters!");
       }
       pacVar4 = (this_ptr->counters).names + (this_ptr->counters).count;

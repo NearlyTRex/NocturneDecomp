@@ -17,17 +17,18 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(CNetGame *t
   char *pcStack00000010;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-            (0x01BCD074,"Initializing network...");
+            (g_CEditorTools_PTR_005b6d50,"Initializing network...");
   socket_handle = &this_ptr->socket;
   support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(socket_handle);
   iVar1 = support_trisock_cpp_createUDPSocket_FUN_00548f30(socket_handle);
   if (iVar1 == 0) {
-    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't create datagram socket");
+    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,"Can't create datagram socket")
+    ;
     return 0;
   }
   iVar1 = support_trisock_cpp_setSocketBlocking_FUN_00549240(socket_handle,0);
   if (iVar1 == 0) {
-    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't turn off blocking mode for socket");
+    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,"Can't turn off blocking mode for socket");
     return 0;
   }
   iVar1 = support_trisock_cpp_bindSocket_FUN_00548f70(socket_handle,0x1ddf);

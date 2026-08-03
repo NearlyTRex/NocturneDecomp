@@ -15,8 +15,8 @@
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -38,8 +38,8 @@ section .text
     MOV ECX,0x57e4fa                    ; 00477090 | = "..\\shape\\edittool.cpp"
     MOV ESI,0x8b                        ; 00477095
     PUSH 0x57e510                       ; 0047709a | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047709f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004770a5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0047709f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004770a5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004770ab
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004770b0

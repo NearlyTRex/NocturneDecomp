@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -66,6 +66,12 @@
         "column": 3,
         "line": 62,
         "message": "use of undeclared identifier '_DAT_01fba2ec'"
+      },
+      {
+        "category": "cast_error",
+        "column": 17,
+        "line": 63,
+        "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
       },
       {
         "category": "cast_error",
@@ -108,12 +114,6 @@
         "column": 49,
         "line": 109,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 112,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 553,
-    "complexity_score": 507,
+    "complexity_score": 493,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 257,
-    "suspect_count": 22,
+    "pseudocode_lines": 253,
+    "suspect_count": 21,
     "suspect_types": [
       "raw_address_pointer_store",
       "shadow_pointer_walk",
@@ -137,7 +137,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 810
+    "total_lines": 806
   },
   "cross_references": [
     {
@@ -255,21 +255,21 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "00763e44",
@@ -285,8 +285,8 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -297,13 +297,13 @@
     },
     {
       "addr": "01c777f8",
-      "name": "DAT_01c777f8",
+      "name": "g_CGame_01c775ec.profile_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77850",
-      "name": "DAT_01c77850",
+      "name": "g_CGame_01c775ec.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -538,16 +538,16 @@
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 23,
-          "line": 115,
-          "message": "Uninitialized variable: fStack_4c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
           "column": 21,
           "line": 117,
           "message": "Uninitialized variable: fStack_48",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 23,
+          "line": 115,
+          "message": "Uninitialized variable: fStack_4c",
           "severity": "error"
         },
         {
@@ -570,14 +570,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 56,
-      "match": "*(CPathMap **)(0x01C775EC",
-      "severity": "moderate",
-      "text": "damage_info = *(CPathMap **)(0x01C775EC + 0x264);",
-      "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
@@ -693,7 +685,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 147,
+      "line": 146,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff60);",
@@ -701,7 +693,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 154,
+      "line": 153,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "damage_info = (CPathMap *)&stack0xffffff60;",
@@ -709,7 +701,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 150,
+      "line": 149,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "aCStack_94[0].x = CStack_64.x;",
@@ -733,19 +725,11 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 197,
+      "line": 193,
       "match": "pCVar7 = (T *)pCVar7->ARRAY",
       "severity": "moderate",
       "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: fStack_4c",
-      "line": 115,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&",
-      "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_48",
@@ -754,6 +738,14 @@
       "severity": "major",
       "text": "(fStack_48 == (DAT_00763e44->orient).vec.z)) {",
       "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_4c",
+      "line": 115,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&",
+      "type": "static_legacy_uninitvar"
     },
     {
       "description": "Uninitialized variable: iStack_18",

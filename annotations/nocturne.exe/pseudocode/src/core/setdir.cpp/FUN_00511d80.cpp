@@ -55,7 +55,7 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
   uint local_18;
   
   bVar15 = 0;
-  if (param_5->vdir_zone != 0) {
+  if (param_5->enabled != 0) {
     fVar2 = (param_5->position).x - (param_1->location).position.x;
     fVar4 = (param_5->position).y - (param_1->location).position.y;
     fVar3 = (param_5->position).z - (param_1->location).position.z;
@@ -68,7 +68,7 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
                 (DAT_005ae704,&param_5->position);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-                (DAT_005ae704,(float)param_5->is_panning);
+                (DAT_005ae704,param_5->projection_scale);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
                 (DAT_005ae704,&param_5->orientation);
       local_38 = 0x800000ff;
@@ -146,7 +146,7 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
       if (0 < _DAT_026639ec) {
         local_48 = 100.0f * 100.0f;
         local_30 = 0;
-        local_2c = (CBoundingBox3D *)0x2665930;
+        local_2c = g_CBoundingBox3D_ARRAY_02665930;
         local_4c = (uint *)(&DAT_020875f8 + param_4 * 0x3000);
         local_34 = &param_5->position;
         do {
@@ -272,7 +272,7 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
           local_40 = local_40 + iVar8;
         } while (iVar6 < iVar10);
       }
-      if (*(int *)(0x01C775EC + 0x1e8) != 0) {
+      if (g_CGame_PTR_005b9354->debug_toggle_flag != 0) {
         puVar9 = (uint *)(param_4 * 0x3000 + 0x23755f8);
         iVar6 = 0;
         do {

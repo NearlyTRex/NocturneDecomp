@@ -14,9 +14,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c74a
 ;   TerminatedCString s_CNetGame_applySimFrameHi_0058c75e
-;   undefined4 DAT_005b9354
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_slamDT_FUN_004a5f00
@@ -40,7 +40,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x4]       ; 004ed999
     MOV dword ptr [EBP + 0x16c],EAX     ; 004ed99c
     MOV EAX,dword ptr [ESP + 0x18]      ; 004ed9a2
-    MOV ESI,dword ptr [0x005b9354]      ; 004ed9a6 | DAT_005b9354
+    MOV ESI,dword ptr [0x005b9354]      ; 004ed9a6 | g_CGame_PTR_005b9354
     PUSH dword ptr [EAX + 0x8]          ; 004ed9ac
     PUSH ESI                            ; 004ed9af
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 004ed9b0
@@ -87,8 +87,8 @@ section .text
         ;   Label: LAB_004eda10
     MOV EBX,0x9cd                       ; 004eda15
     PUSH 0x58c75e                       ; 004eda1a | = "CNetGame::applySimFrameHistory - I'm ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004eda1f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004eda25 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004eda1f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004eda25 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004eda2b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eda30

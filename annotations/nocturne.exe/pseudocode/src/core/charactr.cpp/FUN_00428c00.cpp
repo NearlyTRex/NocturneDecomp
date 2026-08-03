@@ -63,7 +63,7 @@ int __cdecl core_charactr_cpp_FUN_00428c00(CCharacter *this_ptr,float delta_time
                               ((CWayPoint *)this_ptr_00,start_waypoint),
        actor_ptr == (CWayPoint *)0x0)) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"%s can't figure out next waypoint trying to reach %s\n",this_ptr,
+                (g_CConsole_PTR_005ad350,"%s can't figure out next waypoint trying to reach %s\n",this_ptr,
                  this_ptr->walk_to_target);
       return 1;
     }

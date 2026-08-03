@@ -131,8 +131,8 @@ section .text
     MOV ECX,0x5906b9                    ; 0050c2f0 | = "..\\core\\set.cpp"
     MOV EBX,0xd26                       ; 0050c2f5
     PUSH 0x5906c9                       ; 0050c2fa | = "CDemonSet::lightVerticies - tried to ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0050c2ff | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050c305 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0050c2ff | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050c305 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050c30b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0050c310
@@ -872,8 +872,8 @@ section .text
     MOV ECX,0x59071e                    ; 0050cbab | = "..\\core\\set.cpp"
     MOV ESI,0xde8                       ; 0050cbb0
     PUSH 0x59072e                       ; 0050cbb5 | = "Too many normals on this packed tri list"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050cbba | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0050cbc0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0050cbba | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0050cbc0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050cbc6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050cbcb
@@ -884,8 +884,8 @@ section .text
     MOV EAX,0x590757                    ; 0050cbd7 | = "..\\core\\set.cpp"
     MOV EDX,0xdea                       ; 0050cbdc
     PUSH 0x590767                       ; 0050cbe1 | = "Need more normals for packed models"
-    MOV [0x01cc4800],EAX                ; 0050cbe6 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050cbeb | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0050cbe6 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0050cbeb | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050cbf1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050cbf6
@@ -1004,9 +1004,9 @@ section .text
     INC EDI                             ; 0050cde6
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0050cde7
     FXCH                                ; 0050cdea
-    FSTP float ptr [EDX + -0xc]         ; 0050cdec | DAT_01fff5b0
-    FSTP float ptr [EDX + -0x8]         ; 0050cdef | DAT_01fff5b4
-    FSTP float ptr [EDX + -0x4]         ; 0050cdf2 | DAT_01fff5b8
+    FSTP float ptr [EDX + -0xc]         ; 0050cdec | g_CVector3f_ARRAY_01fff5b0
+    FSTP float ptr [EDX + -0x8]         ; 0050cdef | g_CVector3f_ARRAY_01fff5b0[0].y
+    FSTP float ptr [EDX + -0x4]         ; 0050cdf2 | g_CVector3f_ARRAY_01fff5b0[0].z
     CMP EDI,EAX                         ; 0050cdf5
     JL 0x0050cc19                       ; 0050cdf7
         ;   XREF to: 0050cc19 (CONDITIONAL_JUMP)  ; LAB_0050cc19
@@ -1036,41 +1036,41 @@ section .text
     MOV AX,word ptr [EDX]               ; 0050ce44
     IMUL EAX,EAX,0xc                    ; 0050ce47
     ADD EAX,0x2045ab0                   ; 0050ce4a
-    FLD float ptr [ESI]                 ; 0050ce4f | DAT_01fff5b0 | DAT_01fff5bc
+    FLD float ptr [ESI]                 ; 0050ce4f | g_CVector3f_ARRAY_01fff5b0 | g_CVector3f_ARRAY_01fff5b0[1].x
     FADD float ptr [EAX]                ; 0050ce51 | DAT_02045ab0
     FSTP float ptr [EAX]                ; 0050ce53 | DAT_02045ab0
-    FLD float ptr [ESI + 0x4]           ; 0050ce55 | DAT_01fff5b4 | DAT_01fff5c0
+    FLD float ptr [ESI + 0x4]           ; 0050ce55 | g_CVector3f_ARRAY_01fff5b0[0].y | g_CVector3f_ARRAY_01fff5b0[1].y
     FADD float ptr [EAX + 0x4]          ; 0050ce58 | DAT_02045ab4
     FSTP float ptr [EAX + 0x4]          ; 0050ce5b | DAT_02045ab4
-    FLD float ptr [ESI + 0x8]           ; 0050ce5e | DAT_01fff5b8 | DAT_01fff5c4
+    FLD float ptr [ESI + 0x8]           ; 0050ce5e | g_CVector3f_ARRAY_01fff5b0[0].z | g_CVector3f_ARRAY_01fff5b0[1].z
     FADD float ptr [EAX + 0x8]          ; 0050ce61 | DAT_02045ab8
     FSTP float ptr [EAX + 0x8]          ; 0050ce64 | DAT_02045ab8
     XOR EAX,EAX                         ; 0050ce67
     MOV AX,word ptr [EDX + 0x2]         ; 0050ce69
     IMUL EAX,EAX,0xc                    ; 0050ce6d
     ADD EAX,0x2045ab0                   ; 0050ce70
-    FLD float ptr [ESI]                 ; 0050ce75 | DAT_01fff5b0
+    FLD float ptr [ESI]                 ; 0050ce75 | g_CVector3f_ARRAY_01fff5b0
     FADD float ptr [EAX]                ; 0050ce77 | DAT_02045ab0
     FSTP float ptr [EAX]                ; 0050ce79 | DAT_02045ab0
-    FLD float ptr [ESI + 0x4]           ; 0050ce7b | DAT_01fff5b4
+    FLD float ptr [ESI + 0x4]           ; 0050ce7b | g_CVector3f_ARRAY_01fff5b0[0].y
     FADD float ptr [EAX + 0x4]          ; 0050ce7e | DAT_02045ab4
     FSTP float ptr [EAX + 0x4]          ; 0050ce81 | DAT_02045ab4
-    FLD float ptr [ESI + 0x8]           ; 0050ce84 | DAT_01fff5b8
+    FLD float ptr [ESI + 0x8]           ; 0050ce84 | g_CVector3f_ARRAY_01fff5b0[0].z
     FADD float ptr [EAX + 0x8]          ; 0050ce87 | DAT_02045ab8
     FSTP float ptr [EAX + 0x8]          ; 0050ce8a | DAT_02045ab8
     XOR EAX,EAX                         ; 0050ce8d
     MOV AX,word ptr [EDX + 0x4]         ; 0050ce8f
     IMUL EAX,EAX,0xc                    ; 0050ce93
     ADD EAX,0x2045ab0                   ; 0050ce96
-    FLD float ptr [ESI]                 ; 0050ce9b | DAT_01fff5b0
+    FLD float ptr [ESI]                 ; 0050ce9b | g_CVector3f_ARRAY_01fff5b0
     FADD float ptr [EAX]                ; 0050ce9d | DAT_02045ab0
     ADD EDX,0x12                        ; 0050ce9f
     FSTP float ptr [EAX]                ; 0050cea2 | DAT_02045ab0
-    FLD float ptr [ESI + 0x4]           ; 0050cea4 | DAT_01fff5b4
+    FLD float ptr [ESI + 0x4]           ; 0050cea4 | g_CVector3f_ARRAY_01fff5b0[0].y
     FADD float ptr [EAX + 0x4]          ; 0050cea7 | DAT_02045ab4
     ADD ESI,0xc                         ; 0050ceaa
     FSTP float ptr [EAX + 0x4]          ; 0050cead | DAT_02045ab4
-    FLD float ptr [ESI + -0x4]          ; 0050ceb0 | DAT_01fff5b8
+    FLD float ptr [ESI + -0x4]          ; 0050ceb0 | g_CVector3f_ARRAY_01fff5b0[0].z
     FADD float ptr [EAX + 0x8]          ; 0050ceb3 | DAT_02045ab8
     INC EBX                             ; 0050ceb6
     FSTP float ptr [EAX + 0x8]          ; 0050ceb7 | DAT_02045ab8

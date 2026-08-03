@@ -18,9 +18,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
@@ -46,8 +46,8 @@ section .text
     PUSH EDX                            ; 00416041
     MOV ECX,dword ptr [ESI + 0x16c]     ; 00416042
     PUSH ECX                            ; 00416048
-    MOV EBX,dword ptr [0x005be368]      ; 00416049 | DAT_005be368
-    PUSH EBX                            ; 0041604f | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 00416049 | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 0041604f | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 00416050
         ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 00416055
@@ -62,8 +62,8 @@ section .text
     PUSH EDX                            ; 00416075
     MOV ECX,dword ptr [ESI + 0x16c]     ; 00416076
     PUSH ECX                            ; 0041607c
-    MOV EBX,dword ptr [0x005be368]      ; 0041607d | DAT_005be368
-    PUSH EBX                            ; 00416083 | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 0041607d | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 00416083 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 00416084
         ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     MOV EDI,dword ptr [ESI + 0x184]     ; 00416089

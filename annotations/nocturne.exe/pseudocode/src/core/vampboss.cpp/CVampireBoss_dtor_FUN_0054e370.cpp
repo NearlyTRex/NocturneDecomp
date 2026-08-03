@@ -24,16 +24,11 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_0054e370(CVampire
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return this_ptr;
   }
-  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070
-                     ((CMorph *)((this_ptr->skirt_cloth).vertices[0x26a].connected_indices + 4),0);
+  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070(&this_ptr->morph,0);
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160
                      ((CCloth *)&pCVar1[-0x4e].models[1].textures[0xd].textures[1].base.count,0);
-  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160
-                     ((CCloth *)
-                      (pCVar2[-1].model.texture_list[0x123].textures[2].texture_name + 0xc),0);
-  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160
-                     ((CCloth *)
-                      (pCVar2[-1].model.texture_list[0x123].textures[2].texture_name + 0xc),0);
+  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160(pCVar2 + -1,0);
+  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160(pCVar2 + -1,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)
                       (pCVar2[-1].collide_bones[0x13].world_matrix.m + 2),0);

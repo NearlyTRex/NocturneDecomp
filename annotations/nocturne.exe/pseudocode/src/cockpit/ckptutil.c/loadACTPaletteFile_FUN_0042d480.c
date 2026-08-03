@@ -85,8 +85,8 @@ LAB_0042d4f3:
   SVar2 = _fread(output_buffer,0x100,3,file);
   if (SVar2 != 3) {
     _sprintf(auStack_5c,"Error reading %s.",acStack_ac);
-    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-    INT_01cc4804 = 0x135;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    g_INT_01cc4804 = 0x135;
     core_main_c_FUN_004c8440(auStack_5c);
   }
   _fclose(file);

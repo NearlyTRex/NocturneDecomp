@@ -18,12 +18,12 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059dcbc = 0.5
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01c7139c
 ;   undefined4 DAT_01c713a0
 ;   undefined4 DAT_01c713d8
 ;   undefined4 DAT_01c713dc
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_gabriela.cpp_FUN_00499b00
@@ -77,8 +77,8 @@ section .text
     JZ 0x00499aaa                       ; 0049992b
         ;   XREF to: 00499aaa (CONDITIONAL_JUMP)  ; LAB_00499aaa
     PUSH EBX                            ; 00499931
-    MOV EBP,dword ptr [0x005be368]      ; 00499932 | DAT_005be368
-    PUSH EBP                            ; 00499938 | DAT_01e57284
+    MOV EBP,dword ptr [0x005be368]      ; 00499932 | g_CDemonSet_PTR_005be368
+    PUSH EBP                            ; 00499938 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00499939
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     MOV EAX,dword ptr [EBX + 0x24ac]    ; 0049993e
@@ -87,8 +87,8 @@ section .text
     JZ 0x0049995b                       ; 00499949
         ;   XREF to: 0049995b (CONDITIONAL_JUMP)  ; LAB_0049995b
     PUSH EAX                            ; 0049994b
-    MOV ECX,dword ptr [0x005be368]      ; 0049994c | DAT_005be368
-    PUSH ECX                            ; 00499952 | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0049994c | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 00499952 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00499953
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00499958
@@ -98,14 +98,14 @@ section .text
     JZ 0x00499975                       ; 00499963
         ;   XREF to: 00499975 (CONDITIONAL_JUMP)  ; LAB_00499975
     PUSH ESI                            ; 00499965
-    MOV EBP,dword ptr [0x005be368]      ; 00499966 | DAT_005be368
-    PUSH EBP                            ; 0049996c | DAT_01e57284
+    MOV EBP,dword ptr [0x005be368]      ; 00499966 | g_CDemonSet_PTR_005be368
+    PUSH EBP                            ; 0049996c | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0049996d
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00499972
-    MOV EAX,[0x005be368]                ; 00499975 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00499975 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00499975
-    PUSH EAX                            ; 0049997a | DAT_01e57284
+    PUSH EAX                            ; 0049997a | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0 ; 0049997b
         ;   XREF to: 005117e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00499980
@@ -185,8 +185,8 @@ section .text
     CALL core_gabriela.cpp_FUN_00499b00 ; 00499a66
         ;   XREF to: 00499b00 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_00499b00()
     ADD ESP,0x18                        ; 00499a6b
-    MOV EAX,[0x005be368]                ; 00499a6e | DAT_005be368
-    PUSH EAX                            ; 00499a73 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 00499a6e | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 00499a73 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 00499a74
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00499a79

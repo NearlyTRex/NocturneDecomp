@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 37,
-        "message": "no matching function for call to 'core_game_cpp_CGame_saveClockTime_FUN_0049a890'"
       },
       {
         "category": "undeclared_identifier",
@@ -104,16 +98,22 @@
         "message": "no matching function for call to 'engine_special_cpp_FUN_00532cd0'"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 61,
-        "message": "no matching function for call to 'core_game_cpp_CGame_updateDT_FUN_0049a8a0'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 66,
+        "message": "use of undeclared identifier '_DAT_01cc64a8'"
       },
       {
-        "category": "other",
-        "column": 80,
-        "line": 62,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 68,
+        "message": "use of undeclared identifier '_DAT_01cc64a4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 67,
+        "message": "use of undeclared identifier 'DAT_01cc652c'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1110,
-    "complexity_score": 1326,
+    "complexity_score": 1225,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 104,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 596,
-    "suspect_count": 68,
+    "pseudocode_lines": 600,
+    "suspect_count": 58,
     "suspect_types": [
       "dropped_loop_counter",
       "raw_address_constant",
       "undefined_data",
-      "unresolved_funcptr",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -141,7 +140,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 1706
+    "total_lines": 1710
   },
   "cross_references": [
     {
@@ -638,15 +637,15 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005bac64",
-      "name": "INT_005bac64",
-      "type": "int",
-      "value": "0x1cc30e4"
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
     },
     {
       "addr": "005c0e80",
@@ -674,68 +673,68 @@
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01c775f0",
-      "name": "DAT_01c775f0",
+      "name": "g_CGame_01c775ec.game_pixy",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c775f4",
-      "name": "DAT_01c775f4",
+      "name": "g_CGame_01c775ec.game_bpp",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c775f8",
-      "name": "DAT_01c775f8",
+      "name": "g_CGame_01c775ec.halo_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c775fc",
-      "name": "DAT_01c775fc",
+      "name": "g_CGame_01c775ec.subtitle_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77600",
-      "name": "DAT_01c77600",
+      "name": "g_CGame_01c775ec.blood_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77604",
-      "name": "DAT_01c77604",
+      "name": "g_CGame_01c775ec.nudity_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77608",
-      "name": "DAT_01c77608",
+      "name": "g_CGame_01c775ec.foul_language_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7760c",
-      "name": "DAT_01c7760c",
+      "name": "g_CGame_01c775ec.quimby_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77850",
-      "name": "DAT_01c77850",
+      "name": "g_CGame_01c775ec.delta_time_float",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc30e4",
-      "name": "DAT_01cc30e4",
-      "type": "undefined4",
+      "name": "g_CKeys_01cc30e4",
+      "type": "CKeys",
       "value": null
     },
     {
@@ -1069,23 +1068,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)&DAT_01cc5780,0x01C775EC->delta_time_float);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x121a) &&",
@@ -1093,7 +1076,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar6 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
@@ -1101,7 +1084,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "pcVar10 = &DAT_005c0e80;",
@@ -1109,7 +1092,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 85,
       "match": "DAT_01cc64a8",
       "severity": "mild",
       "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
@@ -1117,7 +1100,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 85,
       "match": "DAT_01cc64ec",
       "severity": "mild",
       "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
@@ -1125,7 +1108,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 85,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
@@ -1133,7 +1116,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 92,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar6 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
@@ -1141,7 +1124,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 96,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "pcVar10 = &DAT_005c0e80;",
@@ -1149,7 +1132,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 115,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x8086) &&",
@@ -1157,7 +1140,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 122,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x12d2) &&",
@@ -1165,7 +1148,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 129,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x12d2) &&",
@@ -1173,7 +1156,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 192,
+      "line": 193,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar5 = _stricmp(&DAT_005c0e80,\"trid3d.dll\");",
@@ -1181,7 +1164,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 197,
+      "line": 198,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tridx6.dll\");",
@@ -1189,7 +1172,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 202,
+      "line": 203,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tridx7.dll\");",
@@ -1197,7 +1180,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 208,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
@@ -1205,7 +1188,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 227,
+      "line": 228,
       "match": "DAT_01cc5f80",
       "severity": "mild",
       "text": "_sprintf(&DAT_01cc5f80,pcVar8);",
@@ -1213,7 +1196,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 231,
+      "line": 232,
       "match": "DAT_01cc5f80",
       "severity": "mild",
       "text": "pcVar10 = &DAT_01cc5f80;",
@@ -1221,7 +1204,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 241,
+      "line": 242,
       "match": "DAT_01cc64ec",
       "severity": "mild",
       "text": "pcVar8 = *(char **)(&DAT_01cc64ec + _DAT_01cc64a4 * 4);",
@@ -1229,7 +1212,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 243,
+      "line": 244,
       "match": "DAT_01cc5f80",
       "severity": "mild",
       "text": "pcVar10 = &DAT_01cc5f80;",
@@ -1237,7 +1220,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 264,
+      "line": 265,
       "match": "DAT_01cc6080",
       "severity": "mild",
       "text": "pcVar10 = &DAT_01cc6080;",
@@ -1245,7 +1228,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 276,
+      "line": 277,
       "match": "DAT_01cc6080",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc6080;",
@@ -1253,7 +1236,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 304,
+      "line": 305,
       "match": "DAT_01cc6280",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc6280;",
@@ -1261,7 +1244,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 317,
+      "line": 318,
       "match": "DAT_01cc6380",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc6380;",
@@ -1269,7 +1252,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 330,
+      "line": 331,
       "match": "DAT_01cc6380",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc6380;",
@@ -1277,7 +1260,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 350,
+      "line": 351,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar6 = _stricmp(&DAT_005c0e80,\"trid3d.dll\");",
@@ -1285,7 +1268,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 503,
+      "line": 507,
       "match": "DAT_01cc64a8",
       "severity": "mild",
       "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
@@ -1293,7 +1276,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 503,
+      "line": 507,
       "match": "DAT_01cc64ec",
       "severity": "mild",
       "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
@@ -1301,7 +1284,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 503,
+      "line": 507,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
@@ -1309,7 +1292,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 511,
+      "line": 515,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if (*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) != 0x121a) {",
@@ -1317,7 +1300,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 512,
+      "line": 516,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar5 = _stricmp(&DAT_005c0e80,\"trid3d.dll\");",
@@ -1325,7 +1308,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 516,
+      "line": 520,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "pcVar8 = &DAT_005c0e80;",
@@ -1333,7 +1316,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 528,
+      "line": 532,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tridx6.dll\");",
@@ -1341,7 +1324,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 533,
+      "line": 537,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tridx7.dll\");",
@@ -1349,19 +1332,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 538,
+      "line": 542,
       "match": "DAT_005c0e80",
       "severity": "mild",
       "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 595,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Raw hex address 0x1cc5b80 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
@@ -1372,64 +1347,8 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 57,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 113,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 120,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 127,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 135,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 351,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 357,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 69,
+      "line": 70,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1437,7 +1356,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 96,
+      "line": 97,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1445,7 +1364,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 232,
+      "line": 233,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1453,7 +1372,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 253,
+      "line": 254,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1461,7 +1380,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 265,
+      "line": 266,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1469,7 +1388,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 286,
+      "line": 287,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1477,7 +1396,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 305,
+      "line": 306,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1485,7 +1404,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 318,
+      "line": 319,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1493,7 +1412,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 331,
+      "line": 332,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1501,7 +1420,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 517,
+      "line": 521,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1509,7 +1428,7 @@
     },
     {
       "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
-      "line": 599,
+      "line": 603,
       "match": "} while( true );",
       "severity": "moderate",
       "text": "} while( true );",
@@ -1517,7 +1436,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 244,
+      "line": 245,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1525,7 +1444,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 277,
+      "line": 278,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1533,7 +1452,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 244,
+      "line": 245,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1541,7 +1460,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 277,
+      "line": 278,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

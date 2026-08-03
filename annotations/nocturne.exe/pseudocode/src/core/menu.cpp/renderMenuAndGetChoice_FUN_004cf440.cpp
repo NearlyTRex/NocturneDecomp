@@ -23,9 +23,10 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
   int local_20;
   char **local_1c;
   
-  this_ptr = _DAT_014b9900;
+  this_ptr = g_CBitFont_PTR_014b9900;
   if (title != (char *)0x0) {
-    engine_font_cpp_CBitFont_drawText_FUN_00490980(_DAT_014b9900,title,0xa0,y_position,7,0);
+    engine_font_cpp_CBitFont_drawText_FUN_00490980
+              (g_CBitFont_PTR_014b9900,title,0xa0,y_position,7,0);
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0x58);
     y_position = y_position + iVar1 * 2;
   }
@@ -37,7 +38,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
       iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0x58);
       local_24 = 0xf8;
       if (local_20 == *selected_index_ptr) {
-        iVar2 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170((CMoon *)&DAT_01cc5780);
+        iVar2 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(&g_CMoon_01cc5780);
         local_24 = 7;
         if (iVar2 == 0) {
           local_24 = 0xff;
@@ -71,22 +72,23 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   if (_DAT_01d16810 == 0) {
     iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                      (_DAT_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
+                      (g_CBitFont_PTR_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
     iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
-                      (_DAT_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
+                      (g_CBitFont_PTR_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
   }
   else {
     iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                      (_DAT_014b9904,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
+                      (g_CBitFont_PTR_014b9904,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
-                      (_DAT_014b9904,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
+                      (g_CBitFont_PTR_014b9904,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
   }
   engine_font_cpp_CBitFont_drawText_FUN_00490980
-            (_DAT_014b9904,pcVar7,0x27f - iVar1,0x1df - iVar2,0xf8,0);
+            (g_CBitFont_PTR_014b9904,pcVar7,0x27f - iVar1,0x1df - iVar2,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00408370(0x8000);
-  engine_font_cpp_CBitFont_drawText_FUN_00490980(_DAT_014b9904,"",0x206,99,0xf8,0);
+  engine_font_cpp_CBitFont_drawText_FUN_00490980
+            (g_CBitFont_PTR_014b9904,"",0x206,99,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   pcVar7 = menu_text_array[*selected_index_ptr];
   do {
@@ -100,7 +102,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
   pcVar6 = (char *)0x0;
 LAB_004cf677:
   _DAT_01cc5b68 = 0;
-  iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x48);
+  iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD8);
   if (iVar1 != 0) {
     _DAT_01cc5b68 = 1;
     iVar1 = *selected_index_ptr;
@@ -109,7 +111,7 @@ LAB_004cf677:
       *selected_index_ptr = menu_count + -1;
     }
   }
-  iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x50);
+  iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD2);
   if (iVar1 != 0) {
     iVar1 = *selected_index_ptr;
     _DAT_01cc5b68 = 1;
@@ -120,15 +122,15 @@ LAB_004cf677:
   }
   if (pcVar6 != (char *)0x0) {
     _DAT_01cc5b5c = 0;
-    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4b);
+    iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD4);
     if (iVar1 != 0) {
       _DAT_01cc5b5c = 1;
       return *selected_index_ptr;
     }
-    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4d);
+    iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD6);
     if (iVar1 != 0) goto LAB_004cf73d;
   }
-  iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
+  iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_RETURN);
   if (iVar1 == 0) {
     return -1;
   }

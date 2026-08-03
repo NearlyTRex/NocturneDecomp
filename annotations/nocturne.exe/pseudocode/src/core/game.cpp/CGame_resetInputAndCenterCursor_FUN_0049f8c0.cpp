@@ -17,11 +17,11 @@ void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame *t
   
   count = 0x2c;
   value = 0;
-  dest = core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(0x01CEA280);
+  dest = core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(g_CNetGame_PTR_005bdee0);
   memset(dest,value,count);
   memset(&DAT_01c781c0,0,600);
   _DAT_01c78418 = 0;
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60(DAT_005b761c / 2,DAT_005b7620 / 2);
-  _DAT_01c7841c = *(uint *)(0x01E57284 + 0x15aabc);
+  _DAT_01c7841c = g_CDemonSet_PTR_005be368->selected_camera_index;
   return;
 }

@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_allocate_u_byt_0057aaab
 ;   TerminatedCString s_cockpit_ckptutil_c_0057aae5
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -122,8 +122,8 @@ section .text
     MOV EAX,ESP                         ; 004304d4
     MOV ECX,0x57aae5                    ; 004304d6 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 004304db
-    MOV dword ptr [0x01cc4804],EBX      ; 004304dc | INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004304e2 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004304dc | g_INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004304e2 | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 004304e8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004304ed

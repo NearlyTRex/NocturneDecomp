@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,18 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 93,
+    "complexity_score": 92,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 42,
     "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
-    "total_lines": 130
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -365,7 +365,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 42,
+      "line": 41,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",

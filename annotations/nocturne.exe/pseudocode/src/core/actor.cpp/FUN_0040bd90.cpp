@@ -24,18 +24,18 @@ void core_actor_cpp_FUN_0040bd90(char *param_1,uint param_2,uint param_3)
   
   bVar6 = 0;
   if (param_1 == (char *)0x0) {
-    PTR_01cc4800 = "..\\core\\actor.cpp";
-    INT_01cc4804 = 0x719;
+    g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+    g_INT_01cc4804 = 0x719;
     core_main_c_FUN_004c8440();
   }
   if (((char *)0xfeffffff < param_1) || ((int)param_1 < 0x1000)) {
-    PTR_01cc4800 = "..\\core\\actor.cpp";
-    INT_01cc4804 = 0x71d;
+    g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+    g_INT_01cc4804 = 0x71d;
     core_main_c_FUN_004c8440("Invalid actor pointer %08X detected at %s, line %d",param_1,param_2);
   }
   if (*(byte **)(param_1 + 0x68) != &DAT_0078a123) {
-    PTR_01cc4800 = "..\\core\\actor.cpp";
-    INT_01cc4804 = 0x727;
+    g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+    g_INT_01cc4804 = 0x727;
     memset(&DAT_00763e10,0,0x32);
     pcVar2 = param_1;
     pcVar4 = (char *)&DAT_00763e10;
@@ -59,8 +59,8 @@ void core_actor_cpp_FUN_0040bd90(char *param_1,uint param_2,uint param_3)
     dVar9 = (double)*(float *)(param_1 + 0x28);
     dVar8 = (double)*(float *)(param_1 + 0x24);
     dVar7 = (double)*(float *)(param_1 + 0x20);
-    PTR_01cc4800 = "..\\core\\actor.cpp";
-    INT_01cc4804 = 0x732;
+    g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+    g_INT_01cc4804 = 0x732;
     memset(&DAT_00763e10,0,0x32);
     pcVar2 = param_1;
     pcVar4 = (char *)&DAT_00763e10;
@@ -86,8 +86,8 @@ void core_actor_cpp_FUN_0040bd90(char *param_1,uint param_2,uint param_3)
       dVar9 = (double)*(float *)(param_1 + 0x28);
       dVar8 = (double)*(float *)(param_1 + 0x24);
       dVar7 = (double)*(float *)(param_1 + 0x20);
-      PTR_01cc4800 = "..\\core\\actor.cpp";
-      INT_01cc4804 = 0x740;
+      g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+      g_INT_01cc4804 = 0x740;
       memset(&DAT_00763e10,0,0x32);
       if (param_1 != (char *)0x0) {
         pcVar4 = param_1;

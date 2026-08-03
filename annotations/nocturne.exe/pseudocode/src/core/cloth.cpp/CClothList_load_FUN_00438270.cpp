@@ -32,8 +32,8 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_00438270(CClothList *this_ptr)
       }
       pCVar3->cloths[0] = pCVar2;
       if (pCVar2 == (CCloth *)0x0) {
-        PTR_01cc4800 = "..\\core\\cloth.cpp";
-        INT_01cc4804 = 0x5a9;
+        g_CHAR_PTR_01cc4800 = "..\\core\\cloth.cpp";
+        g_INT_01cc4804 = 0x5a9;
         core_main_c_FUN_004c8440("CClothList::load - out of memory for CCloth object.");
       }
       ppCVar1 = pCVar3->cloths;

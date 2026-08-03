@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 46,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 46,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
       }
     ],
     "success": false,
@@ -82,7 +70,7 @@
     "pseudocode_lines": 82,
     "suspect_count": 2,
     "suspect_types": [
-      "raw_address_pointer_store",
+      "pointer_cast",
       "shadow_pointer_walk"
     ],
     "total_lines": 234
@@ -161,43 +149,43 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "DAT_01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "DAT_01fa5f38",
+      "name": "g_CDemonSet_01e57284.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "DAT_01fa5f3c",
+      "name": "g_CDemonSet_01e57284.characters[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f40",
-      "name": "DAT_01fa5f40",
+      "name": "g_CDemonSet_01e57284.characters[2]",
       "type": "undefined4",
       "value": null
     }
@@ -366,12 +354,12 @@
   },
   "suspects": [
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 67,
-      "match": "*(CSvetlana **)(iVar6 + 0x14ecb4 + 0x01E57284",
+      "match": "(CSvetlana **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "this_ptr_01 = *(CSvetlana **)(iVar6 + 0x14ecb4 + 0x01E57284);",
-      "type": "raw_address_pointer_store"
+      "text": "this_ptr_01 = *(CSvetlana **)((int)g_CDemonSet_PTR_005be368->characters + iVar6);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar5->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",

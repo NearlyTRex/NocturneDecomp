@@ -203,7 +203,7 @@ int __cdecl core_colonel_cpp_getCurrentMotionState_FUN_0043ab40(CMotionControlle
 CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_0043ab60(CColonel *this_ptr,uint flags);
 void __cdecl core_console_cpp_staticInit_FUN_0043abb0(void);
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_0043abe0(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
-undefined4 engine_console_cpp_FUN_0043ac50(undefined4 param_1);
+CConsole * __cdecl engine_console_cpp_CConsole_dtor_FUN_0043ac50(CConsole *this_ptr,uint flags);
 void engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *param_1,char *param_2);
 void __cdecl engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *this_ptr,char character);
 void __cdecl engine_console_cpp_CConsole_reset_FUN_0043ae00(CConsole *this_ptr);
@@ -257,7 +257,7 @@ int core_crate_cpp_CCrate_renderOpaque_FUN_0043cbc0(int param_1);
 void core_crate_cpp_CCrate_renderBackground_FUN_0043cc30(void);
 void core_crate_cpp_CCrate_archive_FUN_0043cc50(CDemonActor *param_1);
 undefined4 core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(int param_1);
-undefined4 * core_crate_cpp_CCrate_getBoundingBox_FUN_0043ccc0(int param_1,undefined4 *param_2);
+float * core_crate_cpp_CCrate_getBoundingBox_FUN_0043ccc0(int param_1,float *param_2);
 undefined4 core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(int param_1,float *param_2);
 void __cdecl core_crate_cpp_CCrate_explode_FUN_0043cdb0(CCrate *this_ptr);
 CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_0043ce60(CCrate *this_ptr,uint flags);

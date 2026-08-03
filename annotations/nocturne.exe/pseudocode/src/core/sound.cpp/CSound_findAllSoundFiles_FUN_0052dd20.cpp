@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_0052dd20(CSound *this_ptr)
 
 {
   uint uVar1;
   
-  if (_DAT_02dc9610 == 0) {
+  if (g_CStrList_02dc9610.item_count == 0) {
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0
-              ((CStrList *)&DAT_02dc9610,"sound","*.wav");
+              (&g_CStrList_02dc9610,"sound","*.wav");
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0
-              ((CStrList *)&DAT_02dc9610,"sound","*.mp3");
+              (&g_CStrList_02dc9610,"sound","*.mp3");
   }
   sound_sndmain_cpp_initializeSoundDevice_FUN_00528500();
   uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();

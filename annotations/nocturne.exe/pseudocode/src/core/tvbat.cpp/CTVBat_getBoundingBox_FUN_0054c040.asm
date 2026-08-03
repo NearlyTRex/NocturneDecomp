@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,undefined4 *param_2)
+; float * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

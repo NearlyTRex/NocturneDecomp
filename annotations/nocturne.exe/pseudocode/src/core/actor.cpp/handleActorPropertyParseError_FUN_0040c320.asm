@@ -30,8 +30,8 @@
 ;   TerminatedCString s_Error_sing_actor_propert_00577b91
 ;   undefined4 DAT_00763e88
 ;   undefined4 DAT_00763e8c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
@@ -75,8 +75,8 @@ section .text
     MOV EDI,0x577b7f                    ; 0040c363 | = "..\\core\\actor.cpp"
     MOV EBP,0x7fb                       ; 0040c368
     PUSH 0x577b91                       ; 0040c36d | = "Error %sing actor property.\nActor na..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0040c372 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0040c378 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 0040c372 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0040c378 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040c37e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x18                        ; 0040c383

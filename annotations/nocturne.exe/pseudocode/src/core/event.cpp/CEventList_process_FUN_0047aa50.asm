@@ -15,8 +15,8 @@
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a635c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_00566170
@@ -48,9 +48,9 @@ section .text
     AND CL,0x3                          ; 0047aa82
     MOVSB.REP ES:EDI,ESI                ; 0047aa85
     POP EDI                             ; 0047aa87
-    MOV EAX,[0x005b9354]                ; 0047aa88 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0047aa88 | g_CGame_PTR_005b9354
     MOV dword ptr [EBX],0x0             ; 0047aa8d
-    FLD float ptr [EAX + 0x264]         ; 0047aa93 | DAT_01c77850
+    FLD float ptr [EAX + 0x264]         ; 0047aa93 | g_CGame_01c775ec.delta_time_float
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047aa99
     FSTP float ptr [ESP]                ; 0047aa9c
     MOV EDX,dword ptr [EAX + 0x3210]    ; 0047aa9f

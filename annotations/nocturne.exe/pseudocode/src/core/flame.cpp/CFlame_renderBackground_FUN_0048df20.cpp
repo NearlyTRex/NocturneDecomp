@@ -39,9 +39,9 @@ void core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CDemonActor *param_1,in
     {
       iVar1 = 0;
       iStack_14 = 0;
-      for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
+      for (iVar4 = 0; iVar4 < g_CDemonSet_PTR_005be368->actor_count; iVar4 = iVar4 + 1) {
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (*(CDemonActor **)(iVar1 + 0x14cd70 + 0x01E57284),
+                           (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar1),
                             g_CFlameActorType_01c70618.name_hash);
         if (pCVar3 != (CDemonActor *)0x0) {
           fStack_20 = (param_1->location).position.x - (pCVar3->location).position.x;

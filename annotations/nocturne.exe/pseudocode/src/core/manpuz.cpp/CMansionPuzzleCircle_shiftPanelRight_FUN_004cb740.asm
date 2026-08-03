@@ -14,8 +14,8 @@
 ;   TerminatedCString s_core_manpuz_cpp_0058808a
 ;   TerminatedCString s_CMansionPuzzleCircle_shi_0058809d
 ;   TerminatedCString s_manpuz_doorslide_wav_005880ce
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -90,8 +90,8 @@ section .text
         ;   Label: LAB_004cb7cb
     MOV EAX,0x57d                       ; 004cb7d0
     PUSH 0x58809d                       ; 004cb7d5 | = "CMansionPuzzleCircle::shiftPanelRight..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004cb7da | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004cb7e0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004cb7da | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004cb7e0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004cb7e5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cb7ea

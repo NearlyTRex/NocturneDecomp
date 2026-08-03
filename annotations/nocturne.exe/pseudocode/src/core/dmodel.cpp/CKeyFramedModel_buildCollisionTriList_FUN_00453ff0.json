@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,25 +58,13 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 49,
+        "line": 35,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 57,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 57,
-        "message": "assigning to 'int' from incompatible type 'const char[19]'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 39,
-        "line": 62,
+        "line": 48,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       }
     ],
@@ -86,18 +74,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 85,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 2,
+    "pseudocode_lines": 41,
+    "suspect_count": 3,
     "suspect_types": [
+      "negative_offset",
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 145
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -162,13 +151,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -268,7 +257,7 @@
         {
           "check_id": "identicalInnerCondition",
           "column": 11,
-          "line": 37,
+          "line": 24,
           "message": "Identical inner 'if' condition is always true.",
           "severity": "warning"
         }
@@ -279,16 +268,24 @@
   },
   "suspects": [
     {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "collision_triangle_list[-1].",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_00564486(&this_ptr->collision_triangle_list[-1].dominant_axis);",
+      "type": "negative_offset"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 23,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->poly_vert_list->vertices + iVar7 + -0x14) + -2;",
+      "text": "*(int *)((int)this_ptr->poly_vert_list->vertices + iVar4 + -0x14) + -2;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 41,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(this_ptr,(CVector3f *)&DAT_02dd1184);",
@@ -296,10 +293,10 @@
     },
     {
       "description": "Identical inner 'if' condition is always true.",
-      "line": 37,
+      "line": 24,
       "match": "Cppcheck: inner condition identical to outer",
       "severity": "mild",
-      "text": "if (0 < iVar7) {",
+      "text": "if (0 < this_ptr->poly_count) {",
       "type": "static_identical_inner_condition"
     }
   ]

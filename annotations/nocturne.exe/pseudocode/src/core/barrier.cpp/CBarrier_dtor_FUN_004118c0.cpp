@@ -2,14 +2,14 @@
 // Address: 004118c0
 // Address Range: [[004118c0, 0041190d]]
 // Convention: __cdecl
-// Signature: CDemonActor * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CDemonActor *this_ptr,uint flags)
+// Signature: CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CBarrier *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CDemonActor *this_ptr,uint flags)
+CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CBarrier *this_ptr,uint flags)
 
 {
-  CDemonActor *pCVar1;
+  CBarrier *pCVar1;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -17,7 +17,7 @@ CDemonActor * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CDemonActor *t
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(this_ptr,1);
+  pCVar1 = (CBarrier *)core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

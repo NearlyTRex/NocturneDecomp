@@ -43,9 +43,9 @@
 ;   undefined4 DAT_008da184
 ;   undefined4 DAT_008da188
 ;   undefined4 DAT_008da18c
-;   undefined4 DAT_009bc084
-;   undefined4 DAT_009bc088
-;   undefined4 DAT_009bc08c
+;   undefined4 g_CVector3f_ARRAY_009bb178[321].x
+;   undefined4 g_CVector3f_ARRAY_009bb178[321].y
+;   undefined4 g_CVector3f_ARRAY_009bb178[321].z
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -194,13 +194,13 @@ section .text
     AND EDX,0xff                        ; 00442334
     MOV EAX,dword ptr [ESP + 0x5c]      ; 0044233a
     MOV DH,byte ptr [EBX]               ; 0044233e
-    FSTP float ptr [EAX + 0x9bb178]     ; 00442340 | DAT_009bc084
+    FSTP float ptr [EAX + 0x9bb178]     ; 00442340 | g_CVector3f_ARRAY_009bb178[321].x
     MOVSX AX,DL                         ; 00442346
     MOV dword ptr [ESP + 0x6c],EAX      ; 0044234a
     FILD word ptr [ESP + 0x6c]          ; 0044234e
     FMUL ST1                            ; 00442352
     MOV EAX,dword ptr [ESP + 0x5c]      ; 00442354
-    FSTP float ptr [EAX + 0x9bb17c]     ; 00442358 | DAT_009bc088
+    FSTP float ptr [EAX + 0x9bb17c]     ; 00442358 | g_CVector3f_ARRAY_009bb178[321].y
     MOVSX AX,DH                         ; 0044235e
     MOV dword ptr [ESP + 0x6c],EAX      ; 00442362
     FILD word ptr [ESP + 0x6c]          ; 00442366
@@ -214,7 +214,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x5c]      ; 00442382
     MOV EDX,dword ptr [EBP + 0x14]      ; 00442386
     LEA EDI,[EAX + 0xc]                 ; 00442389
-    FSTP float ptr [EAX + 0x9bb180]     ; 0044238c | DAT_009bc08c
+    FSTP float ptr [EAX + 0x9bb180]     ; 0044238c | g_CVector3f_ARRAY_009bb178[321].z
     MOV EAX,dword ptr [ESP + 0x58]      ; 00442392
     MOV dword ptr [ESP + 0x5c],EDI      ; 00442396
     INC EAX                             ; 0044239a

@@ -15,7 +15,7 @@ uint core_setdir_cpp_FUN_00513e20(CDemonSet *param_1,int param_2,CVector3f *para
   
   box_index = 0;
   iVar1 = core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(param_1,param_2);
-  if (0 < (int)param_1->rooms[5].extents.z) {
+  if (0 < param_1->vdir_box_count) {
     do {
       iVar2 = core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(param_1,box_index);
       if (iVar2 == iVar1) {
@@ -25,7 +25,7 @@ uint core_setdir_cpp_FUN_00513e20(CDemonSet *param_1,int param_2,CVector3f *para
         }
       }
       box_index = box_index + 1;
-    } while (box_index < (int)param_1->rooms[5].extents.z);
+    } while (box_index < param_1->vdir_box_count);
   }
   return 0;
 }

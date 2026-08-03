@@ -20,12 +20,12 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   float FLOAT_005a379c = -0.5235988
 ;   float FLOAT_005a37a0 = 1.221730
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005be368
-;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
-;   undefined4 DAT_01fa3ff8
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CConsole g_CConsole_0077ad0c
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
+;   undefined4 g_CDemonSet_01e57284.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -139,12 +139,12 @@ section .text
     FSTP float ptr [ESP + 0xa4]         ; 0054a25e
     XOR EDI,ECX                         ; 0054a265
     XOR EBP,EBP                         ; 0054a267
-    MOV EAX,[0x005be368]                ; 0054a269 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0054a269 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0054a269
-    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 0054a26e | DAT_01fa3ff0
+    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 0054a26e | g_CDemonSet_01e57284.actor_count
     JGE 0x0054a5c0                      ; 0054a274
         ;   XREF to: 0054a5c0 (CONDITIONAL_JUMP)  ; LAB_0054a5c0
-    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14cd70] ; 0054a27a | DAT_01fa3ff4 | DAT_01fa3ff8
+    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14cd70] ; 0054a27a | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
     MOV EAX,dword ptr [ESP + 0x148]     ; 0054a281
     PUSH EAX                            ; 0054a288
     PUSH EBX                            ; 0054a289
@@ -162,8 +162,8 @@ section .text
     PUSH ESI                            ; 0054a29c
         ;   Label: LAB_0054a29c
     PUSH 0x596e78                       ; 0054a29d | = "%s has no guard trigger!\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 0054a2a2 | PTR_DAT_005ad350
-    PUSH ECX                            ; 0054a2a8 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 0054a2a2 | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 0054a2a8 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0054a2a9
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 0054a2ae

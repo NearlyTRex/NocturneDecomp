@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 15,
-        "message": "use of undeclared identifier 'DAT_02dc1edc'; did you mean 'DAT_005c1ddc'?"
       }
     ],
     "success": false,
@@ -68,17 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 43,
+    "complexity_score": 13,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 2,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 36
   },
   "cross_references": [
@@ -194,22 +185,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_02dc1edc",
-      "severity": "mild",
-      "text": "this_ptr = (CSfxSample *)&DAT_02dc1edc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr->owner`). Replace `this_ptr->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 12,
-      "match": "this_ptr = (T *)&this_ptr->FIELD",
-      "severity": "moderate",
-      "text": "this_ptr = (CSfxSample *)&this_ptr->stream_write_position;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

@@ -9,7 +9,7 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 00428684
 ;
 ; Referenced Globals:
-;   int INT_005b9284 = 0x1c70f74
+;   void* PTR_DAT_005b9284 = 01c70f74
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     RET                                 ; 004286ec
     PUSH EBX                            ; 004286ed
         ;   Label: LAB_004286ed
-    MOV EBX,dword ptr [0x005b9284]      ; 004286ee | INT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 004286ee | PTR_DAT_005b9284
     PUSH dword ptr [ESP + 0xc]          ; 004286f4
     PUSH EBX                            ; 004286f8
     CALL xxx_unk.c_FUN_004940d0         ; 004286f9

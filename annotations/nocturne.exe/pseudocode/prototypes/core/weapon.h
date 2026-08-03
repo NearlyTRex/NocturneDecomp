@@ -25,7 +25,7 @@ int __cdecl CWeapon::renderOpaque(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_getBoundingBox_FUN_00553fe0
 // Address: 00553fe0
-undefined4 * CWeapon::getBoundingBox(int param_1,undefined4 *param_2);
+float * CWeapon::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_weapon.cpp_CWeapon_process_FUN_00554030
 // Address: 00554030

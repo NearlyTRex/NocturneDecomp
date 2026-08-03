@@ -16,8 +16,8 @@ uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_00548b40(uchar *de
   if (iVar1 != 0) {
     return dest_ip;
   }
-  PTR_01cc4800 = "..\\support\\trisock.cpp";
-  INT_01cc4804 = 0x41;
+  g_CHAR_PTR_01cc4800 = "..\\support\\trisock.cpp";
+  g_INT_01cc4804 = 0x41;
   core_main_c_FUN_004c8440("Invalid IP values: %d, %d, %d, %d",octet1,octet2,in_stack_00000024);
   return dest_ip;
 }

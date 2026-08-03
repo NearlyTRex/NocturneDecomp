@@ -16,22 +16,23 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMiss
   CHero *local_14;
   
   if (_DAT_01cae0d4 <= index) {
-    PTR_01cc4800 = "..\\core\\mission.cpp";
-    INT_01cc4804 = 0x5f3;
+    g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
+    g_INT_01cc4804 = 0x5f3;
     core_main_c_FUN_004c8440("CDemonMission::createOneHero - too many heros!");
   }
   if (*(int *)(index * 4 + 0x1cae0d8) != 0) {
-    PTR_01cc4800 = "..\\core\\mission.cpp";
-    INT_01cc4804 = 0x5f4;
+    g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
+    g_INT_01cc4804 = 0x5f4;
     core_main_c_FUN_004c8440("CDemonMission::createOneHero - hero already created!");
   }
-  actor_ptr = *(CDemonActor **)(this_ptr->set_names[3] + 0xcc);
+  actor_ptr = this_ptr->first_actor;
   local_14 = (CHero *)0x0;
   do {
     if (actor_ptr == (CDemonActor *)0x0) {
 LAB_004d999a:
       if (local_14 == (CHero *)0x0) {
-        shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't find hero placeholder for hero %d",index);
+        shape_edittool_cpp_FUN_0046fcd0
+                  (g_CEditorTools_PTR_005b6d50,"Can't find hero placeholder for hero %d",index);
         return 0;
       }
       *(CHero **)(index * 4 + 0x1cae0d8) = local_14;
@@ -56,7 +57,7 @@ LAB_004d999a:
                   (existing_actor,(CDemonActor *)0x0,0.0,0.0);
       }
       core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
-                (0x01CC9450,(CDemonActor *)local_14);
+                (g_CDemonMission_PTR_005baf90,(CDemonActor *)local_14);
       goto LAB_004d999a;
     }
     actor_ptr = actor_ptr->next_actor;

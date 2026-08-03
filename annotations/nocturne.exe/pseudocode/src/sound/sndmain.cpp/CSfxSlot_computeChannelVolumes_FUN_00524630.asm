@@ -23,8 +23,8 @@
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_00592d97
 ;   double DOUBLE_00592dbe = 0.0500000000000000
 ;   undefined4 DAT_005bea68
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
@@ -99,8 +99,8 @@ section .text
         ;   Label: LAB_005246cd
     MOV EDI,0x917                       ; 005246d2
     PUSH 0x592d97                       ; 005246d7 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 005246dc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005246e2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 005246dc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005246e2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005246e8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005246ed

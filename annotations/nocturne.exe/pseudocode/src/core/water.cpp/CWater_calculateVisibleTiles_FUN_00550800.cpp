@@ -53,9 +53,9 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
   this_ptr->visible_area_sqft = 0.0;
   if (ABS(this_ptr->water_level_y) != 0.0) {
     core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0
-              ((CDemonRaytrace *)&DAT_01fba938,(CVector3f *)local_44);
+              (&g_CDemonRaytrace_01fba938,(CVector3f *)local_44);
     core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0
-              ((CDemonRaytrace *)&DAT_01fba938,(CVector3f *)local_8c);
+              (&g_CDemonRaytrace_01fba938,(CVector3f *)local_8c);
     fVar2 = (float)0.5;
     _DAT_02dd1220 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar2;
     _DAT_02dd1228 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar2;
@@ -129,8 +129,8 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
                                 (DAT_005ae704,(SMRGLHeaderPrimitive *)&stack0xffffff48);
               if (iVar7 != 0) {
                 if (0xfff < _DAT_02dd1234) {
-                  PTR_01cc4800 = "..\\core\\water.cpp";
-                  INT_01cc4804 = 0x136;
+                  g_CHAR_PTR_01cc4800 = "..\\core\\water.cpp";
+                  g_INT_01cc4804 = 0x136;
                   core_main_c_FUN_004c8440();
                 }
                 *(int *)(&DAT_02dd1238 + _DAT_02dd1234 * 4) = iVar8;
@@ -149,7 +149,7 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
     fVar2 = (float)_DAT_02dd1234 * this_ptr->tile_size * this_ptr->tile_size;
     this_ptr->visible_area_sqft = fVar2;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"Vis water tiles : %d, SqFt : %f",iVar8,(double)fVar2);
+              (g_CConsole_PTR_005ad350,"Vis water tiles : %d, SqFt : %f",iVar8,(double)fVar2);
     return;
   }
   return;

@@ -12,7 +12,7 @@
 ;   core_moon.cpp_CMoon_dtor_FUN_004de830 at 004de836
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ccdc50
+;   CAlphaBitmap g_CAlphaBitmap_01ccdc50
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_free_FUN_0043b7c0
@@ -56,7 +56,7 @@ section .text
     POP ESI                             ; 004dea9e
     POP EBX                             ; 004dea9f
     RET                                 ; 004deaa0
-    PUSH 0x1ccdc50                      ; 004deaa1 | DAT_01ccdc50
+    PUSH 0x1ccdc50                      ; 004deaa1 | g_CAlphaBitmap_01ccdc50
         ;   Label: LAB_004deaa1
     MOV EBX,0x1ccdc64                   ; 004deaa6
     CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360 ; 004deaab

@@ -78,13 +78,13 @@ LAB_00428579:
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               (&this_ptr->base,output_world_point,pCVar5);
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-              ((CGore *)INT_005b96c4,(CVector3f *)(local_28 + 8),&damage_info->impact_point,
+              (g_CGore_PTR_005b96c4,(CVector3f *)(local_28 + 8),&damage_info->impact_point,
                (int)ROUND(dVar6) + 1,this_ptr->blood_type);
   }
   if ((this_ptr->health_bar_mode == 1) &&
      (this_ptr != *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8))) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
-              (0x01C775EC,this_ptr->descriptive_name,
+              (g_CGame_PTR_005b9354,this_ptr->descriptive_name,
                (int)(this_ptr->hit_points / this_ptr->max_hit_points),5.0);
   }
   if (0.0 < this_ptr->hit_points) {

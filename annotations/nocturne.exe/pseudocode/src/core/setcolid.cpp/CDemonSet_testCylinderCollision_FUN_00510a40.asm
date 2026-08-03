@@ -54,9 +54,9 @@
 ;   TerminatedCString s_core_setcolid_cpp_00590a8e
 ;   TerminatedCString s_Invalid_collision_type_00590aa3
 ;   double DOUBLE_00590abd = -0.00100000000000000
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01fba938
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
@@ -107,7 +107,7 @@ section .text
     LEA EAX,[ESP + 0x15c]               ; 00510a89
         ;   Label: LAB_00510a89
     PUSH EAX                            ; 00510a90
-    PUSH 0x1fba938                      ; 00510a91 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00510a91 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0 ; 00510a96
         ;   XREF to: 00468af0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0(CDemonRaytrace * this_ptr, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00510a9b
@@ -314,8 +314,8 @@ section .text
     MOV ECX,0x590a2d                    ; 00510d8c | = "..\\core\\setcolid.cpp"
     MOV EDX,0x389                       ; 00510d91
     PUSH 0x590a42                       ; 00510d96 | = "info.keyFramedModelInstancePtr != NUL..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00510d9b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00510da1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00510d9b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00510da1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00510da7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00510dac
@@ -709,8 +709,8 @@ section .text
         ;   Label: LAB_0051133f
     MOV EDX,0x3f1                       ; 00511344
     PUSH 0x590aa3                       ; 00511349 | = "Invalid collision type!"
-    MOV [0x01cc4800],EAX                ; 0051134e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00511353 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0051134e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00511353 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00511359
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051135e

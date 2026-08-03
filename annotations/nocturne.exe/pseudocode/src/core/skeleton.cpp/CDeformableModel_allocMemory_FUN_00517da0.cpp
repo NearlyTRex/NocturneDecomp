@@ -14,27 +14,27 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0(CDeform
   
   core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(this_ptr);
   if (5 < num_texture_sets) {
-    PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    INT_01cc4804 = 0x261;
+    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    g_INT_01cc4804 = 0x261;
     core_main_c_FUN_004c8440("Too many texture sets in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,num_texture_sets);
   }
   if (8 < num_textures) {
-    PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    INT_01cc4804 = 0x265;
+    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    g_INT_01cc4804 = 0x265;
     core_main_c_FUN_004c8440("Too many textures in CDeformableModel::allocMemory.  Max is %d, requested %d.",8,num_textures);
   }
   if (0x1e < num_parts) {
-    PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    INT_01cc4804 = 0x269;
+    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    g_INT_01cc4804 = 0x269;
     core_main_c_FUN_004c8440("Too many parts in CDeformableModel::allocMemory.  Max is %d, requested %d.",0x1e,num_parts);
   }
   if (5 < num_lods) {
-    PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    INT_01cc4804 = 0x26d;
+    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    g_INT_01cc4804 = 0x26d;
     core_main_c_FUN_004c8440("Too many LODs in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,num_lods);
   }
   this_ptr->num_textures = num_textures;
-  this_ptr->texture_sets[0].textures[0x28].textures[0].base.type = num_parts;
+  this_ptr->num_parts = num_parts;
   this_ptr->num_lods = num_lods;
   iVar2 = 0;
   this_ptr->num_texture_sets = num_texture_sets;

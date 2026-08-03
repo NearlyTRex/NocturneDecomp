@@ -29,7 +29,7 @@ int core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CDemonActor *param_1)
   *(int *)(param_1[0xc].create_event + 0x2c) = iStack_18;
   if (iStack_18 != 0) {
     iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
-    if ((iVar2 == 0) || (*(int *)(0x01C775EC + 0x240) != 0)) {
+    if ((iVar2 == 0) || (g_CGame_PTR_005b9354->goggles_active != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                 ((CKeyFramedModelInstance *)(param_1 + 1),0.0,-1);
       iVar2 = 0;

@@ -10,12 +10,12 @@ int __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_00476040(CPickList *t
 
 {
   if ((item_index < 0) || ((this_ptr->base).item_count <= item_index)) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0xe12;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0xe12;
     core_main_c_FUN_004c8440("CPickList::isItemEnabled - invalid index");
   }
-  if (*(int *)(this_ptr->search_text_buffer + 0x24) <= item_index) {
+  if (this_ptr->enabled_capacity <= item_index) {
     return 1;
   }
-  return (uint)(*(int *)(*(int *)(this_ptr->search_text_buffer + 0x28) + item_index * 4) != 0);
+  return (uint)(this_ptr->enabled_array[item_index] != 0);
 }

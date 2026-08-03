@@ -15,11 +15,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_swarming_on_s_at_LOD_d_00579d8d
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_00764d98
 ;   undefined4 DAT_00764d9c
 ;   undefined4 DAT_00764da0
-;   undefined4 DAT_0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
 ;   undefined4 g_CHeroActorType_01cae0ec.name_hash
 ;
@@ -106,8 +106,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x24]      ; 00423871
     PUSH EBP                            ; 00423875
     PUSH 0x579d8d                       ; 00423876 | = "%s swarming on %s at LOD %d\n"
-    MOV EAX,[0x005ad350]                ; 0042387b | PTR_DAT_005ad350
-    PUSH EAX                            ; 00423880 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 0042387b | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 00423880 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00423881
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x14                        ; 00423886

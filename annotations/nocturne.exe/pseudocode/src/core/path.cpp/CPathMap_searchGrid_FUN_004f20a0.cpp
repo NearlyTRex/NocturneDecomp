@@ -34,8 +34,8 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(CPathMap *this_ptr,i
       return 1;
     }
     if (_DAT_01e4008c == _DAT_01e40090) {
-      PTR_01cc4800 = "..\\core\\path.cpp";
-      INT_01cc4804 = 0xdf;
+      g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
+      g_INT_01cc4804 = 0xdf;
       core_main_c_FUN_004c8440("queuePop - empty queue?!");
     }
     iVar1 = _DAT_01e4008c * 0xc;

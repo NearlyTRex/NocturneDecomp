@@ -33,7 +33,7 @@ int CSimBox::renderOpaque(CDemonActor *param_1);
 
 // Original: core_simbox.cpp_CSimBox_getBoundingBox_FUN_00516fc0
 // Address: 00516fc0
-undefined4 * CSimBox::getBoundingBox(int param_1,undefined4 *param_2);
+float * CSimBox::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_simbox.cpp_CSimBox_archive_FUN_00517010
 // Address: 00517010

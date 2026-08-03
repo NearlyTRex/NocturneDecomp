@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -66,12 +66,6 @@
         "column": 3,
         "line": 20,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 32,
-        "message": "no matching function for call to 'core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0'"
       }
     ],
     "success": false,
@@ -80,17 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 55,
+    "complexity_score": 71,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data"
+      "undefined_data",
+      "unrolled_memcpy"
     ],
-    "total_lines": 115
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -164,9 +159,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01b4d738",
@@ -176,8 +171,8 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -312,6 +307,14 @@
       "severity": "mild",
       "text": "(DAT_005ae704,orientation,(CVector3f *)0x0);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 17,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_24.min.x = (pCVar1->bounds).min.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

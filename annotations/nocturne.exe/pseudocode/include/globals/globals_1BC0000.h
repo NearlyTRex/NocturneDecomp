@@ -3,6 +3,8 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonTriangle.h"
+#include "types/classes/CEditorTools.h"
 #include "types/classes/CVector3f.h"
 
 // =============================================================================
@@ -15,15 +17,21 @@ extern CDemonActorType g_CElephantGunActorType_01bcde44;
 extern CDemonActorType g_CEmitterActorType_01bcde80;
 extern CDemonActorType g_CEnemyActorType_01bcdebc;
 
+// CDemonTriangle[8]
+extern CDemonTriangle g_CDemonTriangle_ARRAY_01bc9ec8[8];
+
+// CEditorTools
+extern CEditorTools g_CEditorTools_01bcd074;
+
 // CVector3f
-extern CVector3f CVector3f_01bca0c4;
+extern CVector3f g_CVector3f_01bca0c4;
 
 // CVector3f[16]
-extern CVector3f CVector3f_ARRAY_01bc9970[16];
-extern CVector3f CVector3f_ARRAY_01bc9a34[16];
-extern CVector3f CVector3f_ARRAY_01bc9af8[16];
-extern CVector3f CVector3f_ARRAY_01bc9bbc[16];
-extern CVector3f CVector3f_ARRAY_01bc9c80[16];
-extern CVector3f CVector3f_ARRAY_01bc9d44[16];
-extern CVector3f CVector3f_ARRAY_01bc9e08[16];
+extern CVector3f g_CVector3f_ARRAY_01bc9970[16];
+extern CVector3f g_CVector3f_ARRAY_01bc9a34[16];
+extern CVector3f g_CVector3f_ARRAY_01bc9af8[16];
+extern CVector3f g_CVector3f_ARRAY_01bc9bbc[16];
+extern CVector3f g_CVector3f_ARRAY_01bc9c80[16];
+extern CVector3f g_CVector3f_ARRAY_01bc9d44[16];
+extern CVector3f g_CVector3f_ARRAY_01bc9e08[16];
 

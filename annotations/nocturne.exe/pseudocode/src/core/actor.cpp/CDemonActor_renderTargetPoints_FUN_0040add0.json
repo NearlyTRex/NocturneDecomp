@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,51 +57,39 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 26,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 26,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 25,
         "line": 31,
         "message": "use of undeclared identifier 'DAT_01bff320'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 42,
+        "column": 44,
         "line": 32,
         "message": "use of undeclared identifier '_DAT_005992b0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 44,
+        "column": 62,
         "line": 33,
         "message": "use of undeclared identifier '_DAT_005992b0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 44,
+        "column": 62,
         "line": 34,
         "message": "use of undeclared identifier '_DAT_005992b0'"
       },
       {
-        "category": "other",
-        "column": 39,
+        "category": "undeclared_identifier",
+        "column": 47,
         "line": 36,
-        "message": "indirection requires pointer operand ('int' invalid)"
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
-        "category": "other",
-        "column": 15,
+        "category": "undeclared_identifier",
+        "column": 23,
         "line": 37,
-        "message": "indirection requires pointer operand ('int' invalid)"
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
         "category": "undeclared_identifier",
@@ -116,17 +104,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 340,
+    "complexity_score": 370,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 80,
-    "suspect_count": 24,
+    "suspect_count": 27,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 360
@@ -140,9 +128,9 @@
         "0040b08e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0",
-    "signature": "void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)"
+    "signature": "void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonActor *this_ptr)"
   },
   "function_calls": [
     {
@@ -176,9 +164,9 @@
     },
     {
       "addr": "005ae700",
-      "name": "DAT_005ae700",
-      "type": "undefined4",
-      "value": null
+      "name": "PTR_DAT_005ae700",
+      "type": "void*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b761c",
@@ -215,9 +203,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -256,18 +244,25 @@
     "pcode_op_count": 1012
   },
   "stack_frame": {
-    "frame_size": 160,
+    "frame_size": 164,
     "local_size": 160,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
         "name": "local_9c",
         "offset": -156,
-        "size": 1,
-        "type": "undefined"
+        "size": 120,
+        "type": "CVector3f[10]"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
       }
     ]
   },
@@ -298,38 +293,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x4c))(param_1,local_9c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x4c))(param_1,local_9c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x4c))(param_1,local_9c);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 24,
       "match": "DAT_01bff320",
@@ -338,6 +301,22 @@
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(float *)((int)pCVar6",
+      "severity": "moderate",
+      "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * _DAT_005992b0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(float *)((int)pCVar6",
+      "severity": "moderate",
+      "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * _DAT_005992b0);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 35,
       "match": "DAT_005b761c",
@@ -480,6 +459,46 @@
       "severity": "mild",
       "text": "if (((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005b761c && (iVar5 < DAT_005b7620)))) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(CVector3f *)((int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CVector3f *)((int)pCVar6 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * _DAT_005992b0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * _DAT_005992b0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CVector3f *)((int)pCVar6 + 0xc);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 80,
+      "match": "(CVector3f *)((int)pCVar6 + 0xc)",
+      "severity": "moderate",
+      "text": "pCVar6 = (CVector3f *)((int)pCVar6 + 0xc);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

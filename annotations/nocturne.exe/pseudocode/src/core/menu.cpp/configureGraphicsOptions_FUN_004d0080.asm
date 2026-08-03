@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 004d0082
     PUSH EBP                            ; 004d0083
     SUB ESP,0x110                       ; 004d0084
-    MOV ECX,dword ptr [0x005b9354]      ; 004d008a | DAT_005b9354
+    MOV ECX,dword ptr [0x005b9354]      ; 004d008a | g_CGame_PTR_005b9354
     XOR EDX,EDX                         ; 004d0090
     PUSH ECX                            ; 004d0092
     MOV dword ptr [ESP + 0x104],EDX     ; 004d0093
@@ -121,15 +121,15 @@ section .text
     CMP ESI,EAX                         ; 004d0154
     JZ 0x004d064e                       ; 004d0156
         ;   XREF to: 004d064e (CONDITIONAL_JUMP)  ; LAB_004d064e
-    MOV ECX,dword ptr [0x005b9354]      ; 004d015c | DAT_005b9354
+    MOV ECX,dword ptr [0x005b9354]      ; 004d015c | g_CGame_PTR_005b9354
         ;   Label: LAB_004d015c
-    PUSH ECX                            ; 004d0162 | DAT_01c775ec
+    PUSH ECX                            ; 004d0162 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_updateDT_FUN_0049a8a0 ; 004d0163
         ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_0049a8a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d0168
-    MOV EAX,[0x005b9354]                ; 004d016b | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d016b | g_CGame_PTR_005b9354
     SUB ESP,0x4                         ; 004d0170
-    MOV EDX,dword ptr [EAX + 0x264]     ; 004d0173 | DAT_01c77850
+    MOV EDX,dword ptr [EAX + 0x264]     ; 004d0173 | g_CGame_01c775ec.delta_time_float
     MOV dword ptr [ESP],EDX             ; 004d0179
     PUSH 0x1cc5780                      ; 004d017c
     CALL core_moon.cpp_CMoon_update_FUN_004deae0 ; 004d0181
@@ -154,12 +154,12 @@ section .text
     CMP dword ptr [EAX + 0x1cc656c],0x5 ; 004d01c9
     JG 0x004d0662                       ; 004d01d0
         ;   XREF to: 004d0662 (CONDITIONAL_JUMP)  ; LAB_004d0662
-    MOV EAX,[0x005b9354]                ; 004d01d6 | DAT_005b9354
-    MOV dword ptr [EAX + 0x8],0x10      ; 004d01db | DAT_01c775f4
+    MOV EAX,[0x005b9354]                ; 004d01d6 | g_CGame_PTR_005b9354
+    MOV dword ptr [EAX + 0x8],0x10      ; 004d01db | g_CGame_01c775ec.game_bpp
     PUSH 0x5886ac                       ; 004d01e2 | = "tri3dfx.dll"
-    MOV dword ptr [EAX],0x280           ; 004d01e7 | DAT_01c775ec
+    MOV dword ptr [EAX],0x280           ; 004d01e7 | g_CGame_01c775ec
     PUSH 0x5c0e80                       ; 004d01ed | DAT_005c0e80
-    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d01f2 | DAT_01c775f0
+    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d01f2 | g_CGame_01c775ec.game_pixy
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d01f9
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d01fe
@@ -221,10 +221,10 @@ section .text
     CMP dword ptr [EAX + 0x1cc656c],0x7800 ; 004d029e
     JNZ 0x004d02c3                      ; 004d02a8
         ;   XREF to: 004d02c3 (CONDITIONAL_JUMP)  ; LAB_004d02c3
-    MOV EAX,[0x005b9354]                ; 004d02aa | DAT_005b9354
-    MOV dword ptr [EAX + 0x8],0x10      ; 004d02af | DAT_01c775f4
-    MOV dword ptr [EAX],0x280           ; 004d02b6 | DAT_01c775ec
-    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d02bc | DAT_01c775f0
+    MOV EAX,[0x005b9354]                ; 004d02aa | g_CGame_PTR_005b9354
+    MOV dword ptr [EAX + 0x8],0x10      ; 004d02af | g_CGame_01c775ec.game_bpp
+    MOV dword ptr [EAX],0x280           ; 004d02b6 | g_CGame_01c775ec
+    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d02bc | g_CGame_01c775ec.game_pixy
     MOV EAX,[0x01cc64a4]                ; 004d02c3 | DAT_01cc64a4
         ;   Label: LAB_004d02c3
     SHL EAX,0x2                         ; 004d02c8
@@ -234,10 +234,10 @@ section .text
     CMP dword ptr [EAX + 0x1cc656c],0x18 ; 004d02d7
     JNZ 0x004d02f9                      ; 004d02de
         ;   XREF to: 004d02f9 (CONDITIONAL_JUMP)  ; LAB_004d02f9
-    MOV EAX,[0x005b9354]                ; 004d02e0 | DAT_005b9354
-    MOV dword ptr [EAX + 0x8],0x10      ; 004d02e5 | DAT_01c775f4
-    MOV dword ptr [EAX],0x280           ; 004d02ec | DAT_01c775ec
-    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d02f2 | DAT_01c775f0
+    MOV EAX,[0x005b9354]                ; 004d02e0 | g_CGame_PTR_005b9354
+    MOV dword ptr [EAX + 0x8],0x10      ; 004d02e5 | g_CGame_01c775ec.game_bpp
+    MOV dword ptr [EAX],0x280           ; 004d02ec | g_CGame_01c775ec
+    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d02f2 | g_CGame_01c775ec.game_pixy
     MOV EAX,[0x01cc64a4]                ; 004d02f9 | DAT_01cc64a4
         ;   Label: LAB_004d02f9
     SHL EAX,0x2                         ; 004d02fe
@@ -247,23 +247,23 @@ section .text
     CMP dword ptr [EAX + 0x1cc656c],0x19 ; 004d030d
     JNZ 0x004d032f                      ; 004d0314
         ;   XREF to: 004d032f (CONDITIONAL_JUMP)  ; LAB_004d032f
-    MOV EAX,[0x005b9354]                ; 004d0316 | DAT_005b9354
-    MOV dword ptr [EAX + 0x8],0x10      ; 004d031b | DAT_01c775f4
-    MOV dword ptr [EAX],0x280           ; 004d0322 | DAT_01c775ec
-    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d0328 | DAT_01c775f0
+    MOV EAX,[0x005b9354]                ; 004d0316 | g_CGame_PTR_005b9354
+    MOV dword ptr [EAX + 0x8],0x10      ; 004d031b | g_CGame_01c775ec.game_bpp
+    MOV dword ptr [EAX],0x280           ; 004d0322 | g_CGame_01c775ec
+    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d0328 | g_CGame_01c775ec.game_pixy
     CMP dword ptr [0x02dc9d60],0x0      ; 004d032f | INT_02dc9d60
         ;   Label: LAB_004d032f
     JNZ 0x004d0353                      ; 004d0336
         ;   XREF to: 004d0353 (CONDITIONAL_JUMP)  ; LAB_004d0353
-    MOV EAX,[0x005b9354]                ; 004d0338 | DAT_005b9354
-    CMP dword ptr [EAX + 0x4],0x1e0     ; 004d033d | DAT_01c775f0
+    MOV EAX,[0x005b9354]                ; 004d0338 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x4],0x1e0     ; 004d033d | g_CGame_01c775ec.game_pixy
     JLE 0x004d0353                      ; 004d0344
         ;   XREF to: 004d0353 (CONDITIONAL_JUMP)  ; LAB_004d0353
-    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d0346 | DAT_01c775f0
-    MOV dword ptr [EAX],0x280           ; 004d034d | DAT_01c775ec
-    MOV EAX,[0x005b9354]                ; 004d0353 | DAT_005b9354
+    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d0346 | g_CGame_01c775ec.game_pixy
+    MOV dword ptr [EAX],0x280           ; 004d034d | g_CGame_01c775ec
+    MOV EAX,[0x005b9354]                ; 004d0353 | g_CGame_PTR_005b9354
         ;   Label: LAB_004d0353
-    MOV ECX,dword ptr [EAX + 0x4]       ; 004d0358 | DAT_01c775f0
+    MOV ECX,dword ptr [EAX + 0x4]       ; 004d0358 | g_CGame_01c775ec.game_pixy
     CMP ECX,0xf0                        ; 004d035b
     JNZ 0x004d06c8                      ; 004d0361
         ;   XREF to: 004d06c8 (CONDITIONAL_JUMP)  ; LAB_004d06c8
@@ -277,8 +277,8 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d037a
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0x8                         ; 004d037f
-    MOV EAX,[0x005b9354]                ; 004d0382 | DAT_005b9354
-    MOV EAX,dword ptr [EAX + 0xc]       ; 004d0387 | DAT_01c775f8
+    MOV EAX,[0x005b9354]                ; 004d0382 | g_CGame_PTR_005b9354
+    MOV EAX,dword ptr [EAX + 0xc]       ; 004d0387 | g_CGame_01c775ec.halo_mode
     CMP EAX,0x1                         ; 004d038a
     JNC 0x004d0752                      ; 004d038d
         ;   XREF to: 004d0752 (CONDITIONAL_JUMP)  ; LAB_004d0752
@@ -368,8 +368,8 @@ section .text
         ;   XREF to: 004d045d (CONDITIONAL_JUMP)  ; LAB_004d045d
     POP EDI                             ; 004d0475
         ;   Label: LAB_004d0475
-    MOV EAX,[0x005b9354]                ; 004d0476 | DAT_005b9354
-    MOV EDI,dword ptr [EAX + 0x8]       ; 004d047b | DAT_01c775f4
+    MOV EAX,[0x005b9354]                ; 004d0476 | g_CGame_PTR_005b9354
+    MOV EDI,dword ptr [EAX + 0x8]       ; 004d047b | g_CGame_01c775ec.game_bpp
     PUSH EDI                            ; 004d047e
     PUSH 0x588902                       ; 004d047f | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004d0484
@@ -408,8 +408,8 @@ section .text
     PUSH 0x1cc6180                      ; 004d04c8
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d04cd
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
-    MOV EAX,[0x005b9354]                ; 004d04d2 | DAT_005b9354
-    MOV EDX,dword ptr [EAX + 0x10]      ; 004d04d7 | DAT_01c775fc
+    MOV EAX,[0x005b9354]                ; 004d04d2 | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [EAX + 0x10]      ; 004d04d7 | g_CGame_01c775ec.subtitle_mode
     ADD ESP,0x8                         ; 004d04da
     TEST EDX,EDX                        ; 004d04dd
     JZ 0x004d085f                       ; 004d04df
@@ -437,13 +437,13 @@ section .text
         ;   XREF to: 004d04fa (CONDITIONAL_JUMP)  ; LAB_004d04fa
     POP EDI                             ; 004d0512
         ;   Label: LAB_004d0512
-    MOV EAX,[0x005b9354]                ; 004d0513 | DAT_005b9354
-    CMP dword ptr [EAX + 0x20],0x0      ; 004d0518 | DAT_01c7760c
+    MOV EAX,[0x005b9354]                ; 004d0513 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x20],0x0      ; 004d0518 | g_CGame_01c775ec.quimby_flag
     JZ 0x004d0869                       ; 004d051c
         ;   XREF to: 004d0869 (CONDITIONAL_JUMP)  ; LAB_004d0869
-    MOV EAX,[0x005b9354]                ; 004d0522 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d0522 | g_CGame_PTR_005b9354
         ;   Label: LAB_004d0522
-    MOV EDI,dword ptr [EAX + 0x20]      ; 004d0527 | DAT_01c7760c
+    MOV EDI,dword ptr [EAX + 0x20]      ; 004d0527 | g_CGame_01c775ec.quimby_flag
     MOV ESI,0x9                         ; 004d052a
     TEST EDI,EDI                        ; 004d052f
     JZ 0x004d0538                       ; 004d0531
@@ -479,12 +479,12 @@ section .text
     TEST EDX,EDX                        ; 004d0585
     JZ 0x004d05a5                       ; 004d0587
         ;   XREF to: 004d05a5 (CONDITIONAL_JUMP)  ; LAB_004d05a5
-    MOV EDX,dword ptr [0x005b9354]      ; 004d0589 | DAT_005b9354
-    CMP dword ptr [EDX + 0x4],0x1e0     ; 004d058f | DAT_01c775f0
+    MOV EDX,dword ptr [0x005b9354]      ; 004d0589 | g_CGame_PTR_005b9354
+    CMP dword ptr [EDX + 0x4],0x1e0     ; 004d058f | g_CGame_01c775ec.game_pixy
     JLE 0x004d05a5                      ; 004d0596
         ;   XREF to: 004d05a5 (CONDITIONAL_JUMP)  ; LAB_004d05a5
-    MOV dword ptr [EDX + 0x4],0x1e0     ; 004d0598 | DAT_01c775f0
-    MOV dword ptr [EDX],0x280           ; 004d059f | DAT_01c775ec
+    MOV dword ptr [EDX + 0x4],0x1e0     ; 004d0598 | g_CGame_01c775ec.game_pixy
+    MOV dword ptr [EDX],0x280           ; 004d059f | g_CGame_01c775ec
     CMP ESI,0x8                         ; 004d05a5
         ;   Label: LAB_004d05a5
     JA 0x004d062b                       ; 004d05a8
@@ -495,8 +495,8 @@ section .text
         ;   Label: caseD_0
     JNZ 0x004d096d                      ; 004d05bc
         ;   XREF to: 004d096d (CONDITIONAL_JUMP)  ; LAB_004d096d
-    MOV EDX,dword ptr [0x005b9354]      ; 004d05c2 | DAT_005b9354
-    CMP dword ptr [EDX + 0x4],0xf0      ; 004d05c8 | DAT_01c775f0
+    MOV EDX,dword ptr [0x005b9354]      ; 004d05c2 | g_CGame_PTR_005b9354
+    CMP dword ptr [EDX + 0x4],0xf0      ; 004d05c8 | g_CGame_01c775ec.game_pixy
     JNZ 0x004d05e6                      ; 004d05cf
         ;   XREF to: 004d05e6 (CONDITIONAL_JUMP)  ; LAB_004d05e6
     CMP dword ptr [ESP + 0x104],0x16e3600 ; 004d05d1
@@ -505,9 +505,9 @@ section .text
     TEST EAX,EAX                        ; 004d05de
     JZ 0x004d08d5                       ; 004d05e0
         ;   XREF to: 004d08d5 (CONDITIONAL_JUMP)  ; LAB_004d08d5
-    MOV EDX,dword ptr [0x005b9354]      ; 004d05e6 | DAT_005b9354
+    MOV EDX,dword ptr [0x005b9354]      ; 004d05e6 | g_CGame_PTR_005b9354
         ;   Label: LAB_004d05e6
-    CMP dword ptr [EDX + 0x4],0xf0      ; 004d05ec | DAT_01c775f0
+    CMP dword ptr [EDX + 0x4],0xf0      ; 004d05ec | g_CGame_01c775ec.game_pixy
     JNZ 0x004d060a                      ; 004d05f3
         ;   XREF to: 004d060a (CONDITIONAL_JUMP)  ; LAB_004d060a
     CMP dword ptr [ESP + 0x104],0xb71b00 ; 004d05f5
@@ -516,20 +516,20 @@ section .text
     TEST EAX,EAX                        ; 004d0602
     JZ 0x004d08e7                       ; 004d0604
         ;   XREF to: 004d08e7 (CONDITIONAL_JUMP)  ; LAB_004d08e7
-    MOV EAX,[0x005b9354]                ; 004d060a | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d060a | g_CGame_PTR_005b9354
         ;   Label: LAB_004d060a
-    MOV ESI,dword ptr [EAX + 0x4]       ; 004d060f | DAT_01c775f0
+    MOV ESI,dword ptr [EAX + 0x4]       ; 004d060f | g_CGame_01c775ec.game_pixy
     CMP ESI,0xf0                        ; 004d0612
     JNZ 0x004d08f9                      ; 004d0618
         ;   XREF to: 004d08f9 (CONDITIONAL_JUMP)  ; LAB_004d08f9
-    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d061e | DAT_01c775f0
+    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d061e | g_CGame_01c775ec.game_pixy
         ;   Label: LAB_004d061e
-    MOV dword ptr [EAX],0x280           ; 004d0625 | DAT_01c775ec
+    MOV dword ptr [EAX],0x280           ; 004d0625 | g_CGame_01c775ec
     PUSH 0x1                            ; 004d062b
         ;   Label: default
-    MOV EAX,[0x005bac64]                ; 004d062d | INT_005bac64
-    PUSH EAX                            ; 004d0632 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004d0633 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004d062d | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004d0632 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004d0633 | g_CKeys_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004d0635
     ADD ESP,0x8                         ; 004d0638
     TEST EAX,EAX                        ; 004d063b
@@ -765,7 +765,7 @@ section .text
         ;   Label: LAB_004d085f
     JMP 0x004d04ea                      ; 004d0864
         ;   XREF to: 004d04ea (UNCONDITIONAL_JUMP)  ; LAB_004d04ea
-    CMP dword ptr [EAX + 0x18],0x0      ; 004d0869 | DAT_01c77604
+    CMP dword ptr [EAX + 0x18],0x0      ; 004d0869 | g_CGame_01c775ec.nudity_flag
         ;   Label: LAB_004d0869
     JZ 0x004d08a2                       ; 004d086d
         ;   XREF to: 004d08a2 (CONDITIONAL_JUMP)  ; LAB_004d08a2
@@ -818,39 +818,39 @@ section .text
         ;   Label: LAB_004d08cf
     JMP 0x004d0522                      ; 004d08d0
         ;   XREF to: 004d0522 (UNCONDITIONAL_JUMP)  ; LAB_004d0522
-    MOV dword ptr [EDX],0x500           ; 004d08d5 | DAT_01c775ec
+    MOV dword ptr [EDX],0x500           ; 004d08d5 | g_CGame_01c775ec
         ;   Label: LAB_004d08d5
-    MOV dword ptr [EDX + 0x4],0x400     ; 004d08db | DAT_01c775f0
+    MOV dword ptr [EDX + 0x4],0x400     ; 004d08db | g_CGame_01c775ec.game_pixy
     JMP 0x004d062b                      ; 004d08e2
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV dword ptr [EDX + 0x4],0x300     ; 004d08e7 | DAT_01c775f0
+    MOV dword ptr [EDX + 0x4],0x300     ; 004d08e7 | g_CGame_01c775ec.game_pixy
         ;   Label: LAB_004d08e7
-    MOV dword ptr [EDX],0x400           ; 004d08ee | DAT_01c775ec
+    MOV dword ptr [EDX],0x400           ; 004d08ee | g_CGame_01c775ec
     JMP 0x004d062b                      ; 004d08f4
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP ESI,0x12c                       ; 004d08f9
         ;   Label: LAB_004d08f9
     JNZ 0x004d0913                      ; 004d08ff
         ;   XREF to: 004d0913 (CONDITIONAL_JUMP)  ; LAB_004d0913
-    MOV dword ptr [EAX + 0x4],0xf0      ; 004d0901 | DAT_01c775f0
-    MOV dword ptr [EAX],0x140           ; 004d0908 | DAT_01c775ec
+    MOV dword ptr [EAX + 0x4],0xf0      ; 004d0901 | g_CGame_01c775ec.game_pixy
+    MOV dword ptr [EAX],0x140           ; 004d0908 | g_CGame_01c775ec
     JMP 0x004d062b                      ; 004d090e
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP ESI,0x180                       ; 004d0913
         ;   Label: LAB_004d0913
     JNZ 0x004d092d                      ; 004d0919
         ;   XREF to: 004d092d (CONDITIONAL_JUMP)  ; LAB_004d092d
-    MOV dword ptr [EAX + 0x4],0xf0      ; 004d091b | DAT_01c775f0
+    MOV dword ptr [EAX + 0x4],0xf0      ; 004d091b | g_CGame_01c775ec.game_pixy
         ;   Label: LAB_004d091b
-    MOV dword ptr [EAX],0x140           ; 004d0922 | DAT_01c775ec
+    MOV dword ptr [EAX],0x140           ; 004d0922 | g_CGame_01c775ec
     JMP 0x004d062b                      ; 004d0928
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP ESI,0x1e0                       ; 004d092d
         ;   Label: LAB_004d092d
     JNZ 0x004d0947                      ; 004d0933
         ;   XREF to: 004d0947 (CONDITIONAL_JUMP)  ; LAB_004d0947
-    MOV dword ptr [EAX + 0x4],0x180     ; 004d0935 | DAT_01c775f0
-    MOV dword ptr [EAX],0x200           ; 004d093c | DAT_01c775ec
+    MOV dword ptr [EAX + 0x4],0x180     ; 004d0935 | g_CGame_01c775ec.game_pixy
+    MOV dword ptr [EAX],0x200           ; 004d093c | g_CGame_01c775ec
     JMP 0x004d062b                      ; 004d0942
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP ESI,0x258                       ; 004d0947
@@ -860,41 +860,41 @@ section .text
     CMP ESI,0x300                       ; 004d0953
     JNZ 0x004d091b                      ; 004d0959
         ;   XREF to: 004d091b (CONDITIONAL_JUMP)  ; LAB_004d091b
-    MOV dword ptr [EAX + 0x4],0x258     ; 004d095b | DAT_01c775f0
-    MOV dword ptr [EAX],0x320           ; 004d0962 | DAT_01c775ec
+    MOV dword ptr [EAX + 0x4],0x258     ; 004d095b | g_CGame_01c775ec.game_pixy
+    MOV dword ptr [EAX],0x320           ; 004d0962 | g_CGame_01c775ec
     JMP 0x004d062b                      ; 004d0968
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV EDX,dword ptr [0x005b9354]      ; 004d096d | DAT_005b9354
+    MOV EDX,dword ptr [0x005b9354]      ; 004d096d | g_CGame_PTR_005b9354
         ;   Label: LAB_004d096d
-    MOV ESI,dword ptr [EDX + 0x4]       ; 004d0973 | DAT_01c775f0
+    MOV ESI,dword ptr [EDX + 0x4]       ; 004d0973 | g_CGame_01c775ec.game_pixy
     CMP ESI,0xf0                        ; 004d0976
     JNZ 0x004d0990                      ; 004d097c
         ;   XREF to: 004d0990 (CONDITIONAL_JUMP)  ; LAB_004d0990
-    MOV dword ptr [EDX],0x200           ; 004d097e | DAT_01c775ec
-    MOV dword ptr [EDX + 0x4],0x180     ; 004d0984 | DAT_01c775f0
+    MOV dword ptr [EDX],0x200           ; 004d097e | g_CGame_01c775ec
+    MOV dword ptr [EDX + 0x4],0x180     ; 004d0984 | g_CGame_01c775ec.game_pixy
     JMP 0x004d062b                      ; 004d098b
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP ESI,0x12c                       ; 004d0990
         ;   Label: LAB_004d0990
     JNZ 0x004d09aa                      ; 004d0996
         ;   XREF to: 004d09aa (CONDITIONAL_JUMP)  ; LAB_004d09aa
-    MOV dword ptr [EDX],0x200           ; 004d0998 | DAT_01c775ec
-    MOV dword ptr [EDX + 0x4],0x180     ; 004d099e | DAT_01c775f0
+    MOV dword ptr [EDX],0x200           ; 004d0998 | g_CGame_01c775ec
+    MOV dword ptr [EDX + 0x4],0x180     ; 004d099e | g_CGame_01c775ec.game_pixy
     JMP 0x004d062b                      ; 004d09a5
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP ESI,0x180                       ; 004d09aa
         ;   Label: LAB_004d09aa
     JNZ 0x004d09c4                      ; 004d09b0
         ;   XREF to: 004d09c4 (CONDITIONAL_JUMP)  ; LAB_004d09c4
-    MOV dword ptr [EDX],0x280           ; 004d09b2 | DAT_01c775ec
-    MOV dword ptr [EDX + 0x4],0x1e0     ; 004d09b8 | DAT_01c775f0
+    MOV dword ptr [EDX],0x280           ; 004d09b2 | g_CGame_01c775ec
+    MOV dword ptr [EDX + 0x4],0x1e0     ; 004d09b8 | g_CGame_01c775ec.game_pixy
     JMP 0x004d062b                      ; 004d09bf
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP dword ptr [ESP + 0x104],0xb71b00 ; 004d09c4
         ;   Label: LAB_004d09c4
     JLE 0x004d09de                      ; 004d09cf
         ;   XREF to: 004d09de (CONDITIONAL_JUMP)  ; LAB_004d09de
-    CMP dword ptr [EDX + 0x4],0x1e0     ; 004d09d1 | DAT_01c775f0
+    CMP dword ptr [EDX + 0x4],0x1e0     ; 004d09d1 | g_CGame_01c775ec.game_pixy
     JNZ 0x004d09de                      ; 004d09d8
         ;   XREF to: 004d09de (CONDITIONAL_JUMP)  ; LAB_004d09de
     TEST EAX,EAX                        ; 004d09da
@@ -904,8 +904,8 @@ section .text
         ;   Label: LAB_004d09de
     JLE 0x004d0a02                      ; 004d09e9
         ;   XREF to: 004d0a02 (CONDITIONAL_JUMP)  ; LAB_004d0a02
-    MOV EDX,dword ptr [0x005b9354]      ; 004d09eb | DAT_005b9354
-    CMP dword ptr [EDX + 0x4],0x258     ; 004d09f1 | DAT_01c775f0
+    MOV EDX,dword ptr [0x005b9354]      ; 004d09eb | g_CGame_PTR_005b9354
+    CMP dword ptr [EDX + 0x4],0x258     ; 004d09f1 | g_CGame_01c775ec.game_pixy
     JNZ 0x004d0a02                      ; 004d09f8
         ;   XREF to: 004d0a02 (CONDITIONAL_JUMP)  ; LAB_004d0a02
     TEST EAX,EAX                        ; 004d09fa
@@ -915,27 +915,27 @@ section .text
         ;   Label: LAB_004d0a02
     JLE 0x004d0a22                      ; 004d0a0d
         ;   XREF to: 004d0a22 (CONDITIONAL_JUMP)  ; LAB_004d0a22
-    MOV EDX,dword ptr [0x005b9354]      ; 004d0a0f | DAT_005b9354
-    CMP dword ptr [EDX + 0x4],0x300     ; 004d0a15 | DAT_01c775f0
+    MOV EDX,dword ptr [0x005b9354]      ; 004d0a0f | g_CGame_PTR_005b9354
+    CMP dword ptr [EDX + 0x4],0x300     ; 004d0a15 | g_CGame_01c775ec.game_pixy
     JNZ 0x004d0a22                      ; 004d0a1c
         ;   XREF to: 004d0a22 (CONDITIONAL_JUMP)  ; LAB_004d0a22
     TEST EAX,EAX                        ; 004d0a1e
     JZ 0x004d0a4b                       ; 004d0a20
         ;   XREF to: 004d0a4b (CONDITIONAL_JUMP)  ; LAB_004d0a4b
-    MOV EAX,[0x005b9354]                ; 004d0a22 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d0a22 | g_CGame_PTR_005b9354
         ;   Label: LAB_004d0a22
-    MOV dword ptr [EAX],0x140           ; 004d0a27 | DAT_01c775ec
-    MOV dword ptr [EAX + 0x4],0xf0      ; 004d0a2d | DAT_01c775f0
+    MOV dword ptr [EAX],0x140           ; 004d0a27 | g_CGame_01c775ec
+    MOV dword ptr [EAX + 0x4],0xf0      ; 004d0a2d | g_CGame_01c775ec.game_pixy
     JMP 0x004d062b                      ; 004d0a34
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV dword ptr [EDX],0x320           ; 004d0a39 | DAT_01c775ec
+    MOV dword ptr [EDX],0x320           ; 004d0a39 | g_CGame_01c775ec
         ;   Label: LAB_004d0a39
-    MOV dword ptr [EDX + 0x4],0x258     ; 004d0a3f | DAT_01c775f0
+    MOV dword ptr [EDX + 0x4],0x258     ; 004d0a3f | g_CGame_01c775ec.game_pixy
     JMP 0x004d062b                      ; 004d0a46
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV dword ptr [EDX + 0x4],0x400     ; 004d0a4b | DAT_01c775f0
+    MOV dword ptr [EDX + 0x4],0x400     ; 004d0a4b | g_CGame_01c775ec.game_pixy
         ;   Label: LAB_004d0a4b
-    MOV dword ptr [EDX],0x500           ; 004d0a52 | DAT_01c775ec
+    MOV dword ptr [EDX],0x500           ; 004d0a52 | g_CGame_01c775ec
     JMP 0x004d062b                      ; 004d0a58
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     MOV EDX,dword ptr [0x01cc5b5c]      ; 004d0a5d | DAT_01cc5b5c
@@ -943,40 +943,40 @@ section .text
     CMP EDX,0x1                         ; 004d0a63
     JNZ 0x004d0a98                      ; 004d0a66
         ;   XREF to: 004d0a98 (CONDITIONAL_JUMP)  ; LAB_004d0a98
-    MOV EAX,[0x005b9354]                ; 004d0a68 | DAT_005b9354
-    MOV EDI,dword ptr [EAX + 0xc]       ; 004d0a6d | DAT_01c775f8
+    MOV EAX,[0x005b9354]                ; 004d0a68 | g_CGame_PTR_005b9354
+    MOV EDI,dword ptr [EAX + 0xc]       ; 004d0a6d | g_CGame_01c775ec.halo_mode
     TEST EDI,EDI                        ; 004d0a70
     JNZ 0x004d0a80                      ; 004d0a72
         ;   XREF to: 004d0a80 (CONDITIONAL_JUMP)  ; LAB_004d0a80
-    MOV dword ptr [EAX + 0xc],0x2       ; 004d0a74 | DAT_01c775f8
+    MOV dword ptr [EAX + 0xc],0x2       ; 004d0a74 | g_CGame_01c775ec.halo_mode
     JMP 0x004d062b                      ; 004d0a7b
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP EDI,EDX                         ; 004d0a80
         ;   Label: LAB_004d0a80
     JNZ 0x004d0a90                      ; 004d0a82
         ;   XREF to: 004d0a90 (CONDITIONAL_JUMP)  ; LAB_004d0a90
-    MOV dword ptr [EAX + 0xc],0x0       ; 004d0a84 | DAT_01c775f8
+    MOV dword ptr [EAX + 0xc],0x0       ; 004d0a84 | g_CGame_01c775ec.halo_mode
         ;   Label: LAB_004d0a84
     JMP 0x004d062b                      ; 004d0a8b
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV dword ptr [EAX + 0xc],EDX       ; 004d0a90 | DAT_01c775f8
+    MOV dword ptr [EAX + 0xc],EDX       ; 004d0a90 | g_CGame_01c775ec.halo_mode
         ;   Label: LAB_004d0a90
     JMP 0x004d062b                      ; 004d0a93
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x005b9354]                ; 004d0a98 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d0a98 | g_CGame_PTR_005b9354
         ;   Label: LAB_004d0a98
-    MOV ECX,dword ptr [EAX + 0xc]       ; 004d0a9d | DAT_01c775f8
+    MOV ECX,dword ptr [EAX + 0xc]       ; 004d0a9d | g_CGame_01c775ec.halo_mode
     TEST ECX,ECX                        ; 004d0aa0
     JNZ 0x004d0ab0                      ; 004d0aa2
         ;   XREF to: 004d0ab0 (CONDITIONAL_JUMP)  ; LAB_004d0ab0
-    MOV dword ptr [EAX + 0xc],0x1       ; 004d0aa4 | DAT_01c775f8
+    MOV dword ptr [EAX + 0xc],0x1       ; 004d0aa4 | g_CGame_01c775ec.halo_mode
     JMP 0x004d062b                      ; 004d0aab
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     CMP ECX,0x1                         ; 004d0ab0
         ;   Label: LAB_004d0ab0
     JNZ 0x004d0a84                      ; 004d0ab3
         ;   XREF to: 004d0a84 (CONDITIONAL_JUMP)  ; LAB_004d0a84
-    MOV dword ptr [EAX + 0xc],0x2       ; 004d0ab5 | DAT_01c775f8
+    MOV dword ptr [EAX + 0xc],0x2       ; 004d0ab5 | g_CGame_01c775ec.halo_mode
     JMP 0x004d062b                      ; 004d0abc
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,0x1                         ; 004d0ac1
@@ -1130,15 +1130,15 @@ section .text
     ADD ESP,0x4                         ; 004d0c57
     JMP 0x004d062b                      ; 004d0c5a
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x005b9354]                ; 004d0c5f | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d0c5f | g_CGame_PTR_005b9354
         ;   Label: caseD_5
-    CMP dword ptr [EAX + 0x8],0x10      ; 004d0c64 | DAT_01c775f4
+    CMP dword ptr [EAX + 0x8],0x10      ; 004d0c64 | g_CGame_01c775ec.game_bpp
     JNZ 0x004d0c76                      ; 004d0c68
         ;   XREF to: 004d0c76 (CONDITIONAL_JUMP)  ; LAB_004d0c76
-    MOV dword ptr [EAX + 0x8],0x20      ; 004d0c6a | DAT_01c775f4
+    MOV dword ptr [EAX + 0x8],0x20      ; 004d0c6a | g_CGame_01c775ec.game_bpp
     JMP 0x004d062b                      ; 004d0c71
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV dword ptr [EAX + 0x8],0x10      ; 004d0c76 | DAT_01c775f4
+    MOV dword ptr [EAX + 0x8],0x10      ; 004d0c76 | g_CGame_01c775ec.game_bpp
         ;   Label: LAB_004d0c76
     JMP 0x004d062b                      ; 004d0c7d
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
@@ -1147,22 +1147,22 @@ section .text
         ;   Label: caseD_6
     JMP 0x004d062b                      ; 004d0c87
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x005b9354]                ; 004d0c8c | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d0c8c | g_CGame_PTR_005b9354
         ;   Label: caseD_7
-    CMP dword ptr [EAX + 0x10],0x0      ; 004d0c91 | DAT_01c775fc
+    CMP dword ptr [EAX + 0x10],0x0      ; 004d0c91 | g_CGame_01c775ec.subtitle_mode
     SETZ DL                             ; 004d0c95
     AND EDX,0xff                        ; 004d0c98
-    MOV dword ptr [EAX + 0x10],EDX      ; 004d0c9e | DAT_01c775fc
+    MOV dword ptr [EAX + 0x10],EDX      ; 004d0c9e | g_CGame_01c775ec.subtitle_mode
     JMP 0x004d062b                      ; 004d0ca1
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x005b9354]                ; 004d0ca6 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d0ca6 | g_CGame_PTR_005b9354
         ;   Label: caseD_8
-    CMP dword ptr [EAX + 0x18],0x0      ; 004d0cab | DAT_01c77604
+    CMP dword ptr [EAX + 0x18],0x0      ; 004d0cab | g_CGame_01c775ec.nudity_flag
     SETZ DL                             ; 004d0caf
     AND EDX,0xff                        ; 004d0cb2
-    MOV dword ptr [EAX + 0x18],EDX      ; 004d0cb8 | DAT_01c77604
-    MOV dword ptr [EAX + 0x14],EDX      ; 004d0cbb | DAT_01c77600
-    MOV dword ptr [EAX + 0x1c],EDX      ; 004d0cbe | DAT_01c77608
+    MOV dword ptr [EAX + 0x18],EDX      ; 004d0cb8 | g_CGame_01c775ec.nudity_flag
+    MOV dword ptr [EAX + 0x14],EDX      ; 004d0cbb | g_CGame_01c775ec.blood_flag
+    MOV dword ptr [EAX + 0x1c],EDX      ; 004d0cbe | g_CGame_01c775ec.foul_language_flag
     JMP 0x004d062b                      ; 004d0cc1
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
 

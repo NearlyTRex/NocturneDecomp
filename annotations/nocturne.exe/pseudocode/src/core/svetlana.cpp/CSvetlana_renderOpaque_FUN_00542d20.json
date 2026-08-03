@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,25 +58,25 @@
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 35,
+        "line": 34,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 36,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_01c038f4'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 44,
+        "line": 43,
         "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 49,
+        "line": 48,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
       }
     ],
@@ -86,12 +86,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 304,
+    "complexity_score": 303,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 63,
     "suspect_count": 22,
     "suspect_types": [
       "shadow_pointer_walk",
@@ -99,7 +99,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 190
+    "total_lines": 189
   },
   "cross_references": [],
   "function": {
@@ -160,15 +160,15 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01b4d738",
@@ -184,13 +184,13 @@
     },
     {
       "addr": "01c777e0",
-      "name": "DAT_01c777e0",
+      "name": "g_CGame_01c775ec.render_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d20",
-      "name": "DAT_01fb1d20",
+      "name": "g_CDemonSet_01e57284.skip_normal_normalization",
       "type": "undefined4",
       "value": null
     }
@@ -267,34 +267,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar6 = param_1;",
+      "text": "pCVar5 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);",
+      "text": "iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
+      "text": "iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar6 = param_1;",
+      "text": "pCVar5 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (pCVar6 != (CCharacter *)(param_1->base).create_event);",
       "type": "unnamed_param"
     },
     {
@@ -302,20 +310,12 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (pCVar7 != (CCharacter *)(param_1->base).create_event);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
       "text": "(param_1->model).part_data.visibility_flags[param_1[0xc].flames[0x1a].texture_flip] = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->model).part_data.visibility_flags[param_1[0xc].flames[0x1a].texture_flip] = 1;",
@@ -323,7 +323,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 36,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "this_ptr = DAT_005ae704;",
@@ -331,7 +331,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->model).part_data.visibility_flags[param_1[0xc].flames[0x1a].do_visibility_check] = 1;",
@@ -339,7 +339,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->model).part_data.visibility_flags[param_1[0xc].flames[0x1a].do_visibility_check] = 1;",
@@ -347,7 +347,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 41,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,48000);",
@@ -355,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);",
@@ -363,15 +363,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar6 = param_1;",
+      "text": "pCVar5 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
@@ -379,7 +379,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "((CCloth *)(param_1[2].flames[0x1d].on_event + 0xc),(CDeformableModelInstance *)0x0);",
@@ -387,7 +387,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "((CCloth *)(param_1[7].flames[0x1c].base.create_event + 0x54),",
@@ -395,34 +395,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
       "type": "unnamed_param"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 23,
-      "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 22,
+      "match": "pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar6 = (CCharacter *)((pCVar6->base).actor_name + 4);",
+      "text": "pCVar5 = (CCharacter *)((pCVar5->base).actor_name + 4);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar6` is advanced into scratch `pCVar7`, then rebound via a later `pCVar6 = pCVar7;`. Functionally identical to the single-line self-update; replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
-      "line": 32,
-      "match": "pCVar7 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar6 = pCVar7",
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar5` is advanced into scratch `pCVar6`, then rebound via a later `pCVar5 = pCVar6;`. Functionally identical to the single-line self-update; replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 31,
+      "match": "pCVar6 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar5 = pCVar6",
       "severity": "moderate",
-      "text": "pCVar7 = (CCharacter *)((pCVar6->base).actor_name + 4);",
+      "text": "pCVar6 = (CCharacter *)((pCVar5->base).actor_name + 4);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 53,
-      "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 52,
+      "match": "pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar6 = (CCharacter *)((pCVar6->base).actor_name + 4);",
+      "text": "pCVar5 = (CCharacter *)((pCVar5->base).actor_name + 4);",
       "type": "shadow_pointer_walk"
     }
   ],

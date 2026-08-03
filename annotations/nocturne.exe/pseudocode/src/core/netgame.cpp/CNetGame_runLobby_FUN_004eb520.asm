@@ -181,7 +181,7 @@ section .text
     MOV EBX,0x37                        ; 004eb6a8
     MOV dword ptr [ESP + 0x118],EAX     ; 004eb6ad
     MOV dword ptr [ESP + 0x114],EAX     ; 004eb6b4
-    MOV ESI,dword ptr [0x005bdee0]      ; 004eb6bb | DAT_005bdee0
+    MOV ESI,dword ptr [0x005bdee0]      ; 004eb6bb | g_CNetGame_PTR_005bdee0
         ;   Label: LAB_004eb6bb
     MOV EAX,dword ptr [ESP + 0x118]     ; 004eb6c1
     CMP EAX,dword ptr [ESI + 0x1c]      ; 004eb6c8
@@ -230,7 +230,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb736
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004eb73b
-    MOV EAX,[0x005bdee0]                ; 004eb73e | DAT_005bdee0
+    MOV EAX,[0x005bdee0]                ; 004eb73e | g_CNetGame_PTR_005bdee0
     MOV EDX,dword ptr [ESP + 0x118]     ; 004eb743
     CMP EDX,dword ptr [EAX + 0x114]     ; 004eb74a
     JNZ 0x004eb8a1                      ; 004eb750
@@ -333,7 +333,7 @@ section .text
         ;   XREF to: 004eb59b (UNCONDITIONAL_JUMP)  ; LAB_004eb59b
     PUSH 0x58c160                       ; 004eb84d | = "You have been disconnected from the g..."
         ;   Label: LAB_004eb84d
-    MOV ECX,dword ptr [0x005b6d50]      ; 004eb852 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004eb852 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004eb858
     CALL shape_edittool.cpp_FUN_0046fe60 ; 004eb859
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
@@ -592,7 +592,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10c]     ; 004ebaf9
     PUSH EDI                            ; 004ebb00
     PUSH 0x58c202                       ; 004ebb01 | = "Loading %s"
-    MOV EAX,[0x005b6d50]                ; 004ebb06 | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004ebb06 | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 004ebb0b
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004ebb0c
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
@@ -609,13 +609,13 @@ section .text
     ADD ESP,0x4                         ; 004ebb2f
     PUSH 0x0                            ; 004ebb32
     PUSH EDI                            ; 004ebb34
-    MOV ESI,dword ptr [0x005baf90]      ; 004ebb35 | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 004ebb35 | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 004ebb3b
     CALL core_mission.cpp_CDemonMission_load_FUN_004d7ee0 ; 004ebb3c
         ;   XREF to: 004d7ee0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_004d7ee0(CDemonMission * this_ptr, char * mission_filename, int load_flags)
     ADD ESP,0xc                         ; 004ebb41
     PUSH 0x0                            ; 004ebb44
-    MOV EDI,dword ptr [0x005baf90]      ; 004ebb46 | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 004ebb46 | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004ebb4c
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 ; 004ebb4d
         ;   XREF to: 004d9a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission * this_ptr, CCharacter * existing_hero)
@@ -623,7 +623,7 @@ section .text
     TEST EAX,EAX                        ; 004ebb55
     JZ 0x004ebb7d                       ; 004ebb57
         ;   XREF to: 004ebb7d (CONDITIONAL_JUMP)  ; LAB_004ebb7d
-    MOV EAX,[0x005baf90]                ; 004ebb59 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 004ebb59 | g_CDemonMission_PTR_005baf90
     PUSH EAX                            ; 004ebb5e
     CALL core_mission.cpp_CDemonMission_startMission_FUN_004d9780 ; 004ebb5f
         ;   XREF to: 004d9780 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_004d9780(CDemonMission * this_ptr)
@@ -654,7 +654,7 @@ section .text
     CMP dword ptr [EAX],0x2             ; 004ebb9d
     JNZ 0x004ebc1d                      ; 004ebba0
         ;   XREF to: 004ebc1d (CONDITIONAL_JUMP)  ; LAB_004ebc1d
-    CMP dword ptr [0x005bdee4],0x0      ; 004ebba6 | DAT_005bdee4
+    CMP dword ptr [0x005bdee4],0x0      ; 004ebba6 | g_INT_005bdee4
     JZ 0x004ebc1d                       ; 004ebbad
         ;   XREF to: 004ebc1d (CONDITIONAL_JUMP)  ; LAB_004ebc1d
     IMUL EAX,dword ptr [EAX + 0x114],0x78 ; 004ebbaf
@@ -696,7 +696,7 @@ section .text
     ADD ESP,0x4                         ; 004ebc1a
     PUSH 0x1                            ; 004ebc1d
         ;   Label: LAB_004ebc1d
-    MOV EAX,[0x005bac64]                ; 004ebc1f | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ebc1f | g_CKeys_PTR_005bac64
     PUSH EAX                            ; 004ebc24
     MOV EDX,dword ptr [EAX]             ; 004ebc25
     CALL dword ptr [EDX + 0x4]          ; 004ebc27
@@ -705,7 +705,7 @@ section .text
     JNZ 0x004eb861                      ; 004ebc2f
         ;   XREF to: 004eb861 (CONDITIONAL_JUMP)  ; LAB_004eb861
     PUSH 0x1c                           ; 004ebc35
-    MOV EAX,[0x005bac64]                ; 004ebc37 | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ebc37 | g_CKeys_PTR_005bac64
     PUSH EAX                            ; 004ebc3c
     MOV EDX,dword ptr [EAX]             ; 004ebc3d
     CALL dword ptr [EDX + 0x4]          ; 004ebc3f
@@ -731,7 +731,7 @@ section .text
         ;   Label: LAB_004ebc78
     PUSH 0x1f                           ; 004ebc7b
         ;   Label: LAB_004ebc7b
-    MOV EAX,[0x005bac64]                ; 004ebc7d | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ebc7d | g_CKeys_PTR_005bac64
     PUSH EAX                            ; 004ebc82
     MOV EDX,dword ptr [EAX]             ; 004ebc83
     CALL dword ptr [EDX + 0x4]          ; 004ebc85
@@ -741,7 +741,7 @@ section .text
         ;   XREF to: 004ebdc9 (CONDITIONAL_JUMP)  ; LAB_004ebdc9
     XOR EBX,EBX                         ; 004ebc93
         ;   Label: LAB_004ebc93
-    MOV EAX,[0x005bdee0]                ; 004ebc95 | DAT_005bdee0
+    MOV EAX,[0x005bdee0]                ; 004ebc95 | g_CNetGame_PTR_005bdee0
         ;   Label: LAB_004ebc95
     CMP EBX,dword ptr [EAX + 0x1c]      ; 004ebc9a
     JGE 0x004eb5ad                      ; 004ebc9d
@@ -772,7 +772,7 @@ section .text
         ;   Label: LAB_004ebccb
     PUSH EBX                            ; 004ebcd1
     PUSH 0x58c20d                       ; 004ebcd2 | = "Loading %s"
-    MOV ECX,dword ptr [0x005b6d50]      ; 004ebcd7 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004ebcd7 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004ebcdd
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004ebcde
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
@@ -791,13 +791,13 @@ section .text
     ADD ESP,0x4                         ; 004ebd07
     PUSH 0x0                            ; 004ebd0a
     PUSH EBX                            ; 004ebd0c
-    MOV EAX,[0x005baf90]                ; 004ebd0d | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 004ebd0d | g_CDemonMission_PTR_005baf90
     PUSH EAX                            ; 004ebd12
     CALL core_mission.cpp_CDemonMission_load_FUN_004d7ee0 ; 004ebd13
         ;   XREF to: 004d7ee0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_004d7ee0(CDemonMission * this_ptr, char * mission_filename, int load_flags)
     ADD ESP,0xc                         ; 004ebd18
     PUSH 0x0                            ; 004ebd1b
-    MOV EDX,dword ptr [0x005baf90]      ; 004ebd1d | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 004ebd1d | g_CDemonMission_PTR_005baf90
     PUSH EDX                            ; 004ebd23
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 ; 004ebd24
         ;   XREF to: 004d9a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission * this_ptr, CCharacter * existing_hero)
@@ -805,7 +805,7 @@ section .text
     TEST EAX,EAX                        ; 004ebd2c
     JZ 0x004ebdaf                       ; 004ebd2e
         ;   XREF to: 004ebdaf (CONDITIONAL_JUMP)  ; LAB_004ebdaf
-    MOV ECX,dword ptr [0x005baf90]      ; 004ebd34 | DAT_005baf90
+    MOV ECX,dword ptr [0x005baf90]      ; 004ebd34 | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004ebd3a
     CALL core_mission.cpp_CDemonMission_startMission_FUN_004d9780 ; 004ebd3b
         ;   XREF to: 004d9780 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_004d9780(CDemonMission * this_ptr)
@@ -869,7 +869,7 @@ section .text
     PUSH 0x100                          ; 004ebdcb
     PUSH 0x1cea180                      ; 004ebdd0
     PUSH 0x58c218                       ; 004ebdd5 | = "Send chat"
-    MOV EAX,[0x005b6d50]                ; 004ebdda | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004ebdda | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 004ebddf
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 004ebde0
         ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)

@@ -13,9 +13,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cheat_1_wav_00582b89
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005bed68
-;   undefined4 DAT_01c775ec
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
+;   CGame g_CGame_01c775ec
 ;   undefined4 DAT_01c78af0
 ;
 ; Called Functions:
@@ -93,14 +93,14 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 004a04a4
     PUSH 0x40a00000                     ; 004a04a8
     PUSH ESI                            ; 004a04ad
-    MOV EDI,dword ptr [0x005b9354]      ; 004a04ae | DAT_005b9354
-    PUSH EDI                            ; 004a04b4 | DAT_01c775ec
+    MOV EDI,dword ptr [0x005b9354]      ; 004a04ae | g_CGame_PTR_005b9354
+    PUSH EDI                            ; 004a04b4 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a04b5
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a04ba
     PUSH 0x582b89                       ; 004a04bd | = "cheat-1.wav"
     PUSH 0x0                            ; 004a04c2
-    MOV EBP,dword ptr [0x005bed68]      ; 004a04c4 | DAT_005bed68
+    MOV EBP,dword ptr [0x005bed68]      ; 004a04c4 | g_CSound_PTR_005bed68
     PUSH EBP                            ; 004a04ca
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 004a04cb
         ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)

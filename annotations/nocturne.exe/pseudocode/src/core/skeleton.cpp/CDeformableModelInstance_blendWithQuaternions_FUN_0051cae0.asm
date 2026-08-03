@@ -38,8 +38,8 @@
 ;   TerminatedCString s_core_skeleton_cpp_00591b93
 ;   TerminatedCString s_Write_me_00591ba8
 ;   double DOUBLE_00591bb3 = 0.00100000000000000
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -353,8 +353,8 @@ section .text
         ;   Label: LAB_0051cf36
     MOV EAX,0xad5                       ; 0051cf3b
     PUSH 0x591ba8                       ; 0051cf40 | = "Write me!"
-    MOV dword ptr [0x01cc4800],EBP      ; 0051cf45 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0051cf4b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 0051cf45 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0051cf4b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051cf50
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051cf55

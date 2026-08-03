@@ -9,5 +9,5 @@
 SPart * __cdecl core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_00519b10(CDeformableModel *this_ptr,int part_index)
 
 {
-  return (SPart *)((int)this_ptr->texture_sets[0].textures + part_index * 0x60 + 0xb44);
+  return this_ptr->parts + part_index;
 }

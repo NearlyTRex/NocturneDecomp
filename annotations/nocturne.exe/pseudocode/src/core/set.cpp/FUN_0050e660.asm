@@ -15,7 +15,7 @@
 ;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484bd2
 ;
 ; Referenced Globals:
-;   int INT_005b9284 = 0x1c70f74
+;   void* PTR_DAT_005b9284 = 01c70f74
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80
@@ -39,7 +39,7 @@ section .text
     FADD float ptr [ESP + 0x14]         ; 0050e685
     SUB ESP,0x4                         ; 0050e689
     FSTP float ptr [ESP]                ; 0050e68c
-    MOV EDX,dword ptr [0x005b9284]      ; 0050e68f | INT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0050e68f | PTR_DAT_005b9284
     PUSH 0x3f800000                     ; 0050e695
     PUSH EDX                            ; 0050e69a
     CALL xxx_unk.c_FUN_004940d0         ; 0050e69b

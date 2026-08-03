@@ -116,8 +116,8 @@ __asm {
         mov EDI,0x597ae0
         mov EAX,0x346
         push 0x597af7
-        mov dword ptr [PTR_01cc4800],EDI
-        mov [INT_01cc4804],EAX
+        mov dword ptr [g_CHAR_PTR_01cc4800],EDI
+        mov [g_INT_01cc4804],EAX
         call core_main_c_FUN_004c8440
         add ESP,0x4
     LAB_00553a63:
@@ -170,8 +170,8 @@ __asm {
         mov ESI,0x597b13
         mov EDI,0x368
         push 0x597b2a
-        mov dword ptr [PTR_01cc4800],ESI
-        mov dword ptr [INT_01cc4804],EDI
+        mov dword ptr [g_CHAR_PTR_01cc4800],ESI
+        mov dword ptr [g_INT_01cc4804],EDI
         call core_main_c_FUN_004c8440
         add ESP,0x4
         xor ESI,ESI

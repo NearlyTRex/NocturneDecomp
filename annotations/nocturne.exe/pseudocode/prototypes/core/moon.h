@@ -51,10 +51,10 @@ SBat * __cdecl SBat::dtor(SBat *this_ptr,uint flags);
 // Address: 004df1b0
 void FUN_004df1b0(void);
 
-// Original: core_moon.cpp_FUN_004df1d0
+// Original: core_moon.cpp_CCourse_arrdtor_FUN_004df1d0
 // Address: 004df1d0
-void FUN_004df1d0(void *param_1);
+CCourse * __cdecl CCourse::arrdtor(CCourse *this_ptr,uint flags);
 
-// Original: core_moon.cpp_FUN_004df1f0
+// Original: core_moon.cpp_CAlphaBitmap_arrdtor_FUN_004df1f0
 // Address: 004df1f0
-void FUN_004df1f0(void *param_1);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *this_ptr,uint flags);

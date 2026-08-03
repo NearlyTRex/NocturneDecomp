@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c78ce8
-;   undefined4 DAT_01c78d04
-;   undefined4 DAT_01c78d44
+;   undefined4 g_CBloodParticle_ARRAY_01c78cec[0].base.lifetime_remaining
+;   undefined4 g_CBloodParticle_ARRAY_01c78cec[1].base.lifetime_remaining
 ;   undefined4 DAT_01c7ccec
 ;   undefined4 DAT_01c7ccf0
 ;   undefined4 DAT_01c9e034
@@ -38,7 +38,7 @@ section .text
     LEA EDX,[EAX + 0x4000]              ; 004afdd6
     ADD EAX,0x40                        ; 004afddc
         ;   Label: LAB_004afddc
-    MOV dword ptr [EAX + -0x28],0x0     ; 004afddf | DAT_01c78d04 | DAT_01c78d44
+    MOV dword ptr [EAX + -0x28],0x0     ; 004afddf | g_CBloodParticle_ARRAY_01c78cec[0].base.lifetime_remaining | g_CBloodParticle_ARRAY_01c78cec[1].base.lifetime_remaining
     CMP EAX,EDX                         ; 004afde6
     JNZ 0x004afddc                      ; 004afde8
         ;   XREF to: 004afddc (CONDITIONAL_JUMP)  ; LAB_004afddc

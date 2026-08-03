@@ -27,13 +27,13 @@
 ;   TerminatedCString s_Can_t_find_svetlana_s_pa_00596416
 ;   TerminatedCString s_svetlana_attack_wav_00596438
 ;   TerminatedCString s_svetlana_miss_wav_0059644d
-;   undefined4 DAT_005be368
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01fa5f34
-;   undefined4 DAT_01fa5f38
-;   undefined4 DAT_01fa5f3c
-;   undefined4 DAT_01fa5f40
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   undefined4 g_CDemonSet_01e57284.character_count
+;   undefined4 g_CDemonSet_01e57284.characters[0]
+;   undefined4 g_CDemonSet_01e57284.characters[1]
+;   undefined4 g_CDemonSet_01e57284.characters[2]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -116,12 +116,12 @@ section .text
     XOR ECX,ECX                         ; 00542c18
     XOR EDI,EDI                         ; 00542c1a
     MOV dword ptr [ESP + 0x70],ECX      ; 00542c1c
-    MOV EAX,[0x005be368]                ; 00542c20 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00542c20 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00542c20
-    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 00542c25 | DAT_01fa5f34
+    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 00542c25 | g_CDemonSet_01e57284.character_count
     JGE 0x00542cdb                      ; 00542c2b
         ;   XREF to: 00542cdb (CONDITIONAL_JUMP)  ; LAB_00542cdb
-    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14ecb4] ; 00542c31 | DAT_01fa5f38 | DAT_01fa5f3c | DAT_01fa5f40
+    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14ecb4] ; 00542c31 | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1] | g_CDemonSet_01e57284.characters[2]
     CMP EBX,EBP                         ; 00542c38
     JNZ 0x00542c72                      ; 00542c3a
         ;   XREF to: 00542c72 (CONDITIONAL_JUMP)  ; LAB_00542c72
@@ -138,8 +138,8 @@ section .text
         ;   Label: LAB_00542c4b
     MOV EAX,0x2f0                       ; 00542c50
     PUSH 0x596416                       ; 00542c55 | = "Can't find svetlana's parent bone"
-    MOV dword ptr [0x01cc4800],ESI      ; 00542c5a | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00542c60 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00542c5a | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00542c60 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00542c65
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00542c6a

@@ -109,7 +109,7 @@ void core_drip_cpp_CDrip_archive_FUN_004621d0(CDemonActor *param_1);
 void core_drip_cpp_CDrip_process_FUN_00462300(CDemonActor *param_1,float param_2);
 void __cdecl core_drip_cpp_FUN_00462710(CDrip *this_ptr);
 int core_drip_cpp_CDrip_renderOpaque_FUN_00462720(CDemonActor *param_1);
-undefined4 * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,undefined4 *param_2);
+float * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,float *param_2);
 undefined4 core_drip_cpp_CDrip_getCollisionType_FUN_00462880(void);
 CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_00462890(CDrip *this_ptr,uint flags);
 void __cdecl core_drone_cpp_staticInit_FUN_004628e0(void);

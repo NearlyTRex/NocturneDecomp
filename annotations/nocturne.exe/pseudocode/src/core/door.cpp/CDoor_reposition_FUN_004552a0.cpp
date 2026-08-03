@@ -104,8 +104,8 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(CDoor *this_ptr)
                        (&this_ptr->base,&CStack_38,&CStack_5c);
     break;
   default:
-    PTR_01cc4800 = "..\\core\\door.cpp";
-    INT_01cc4804 = 0xf8;
+    g_CHAR_PTR_01cc4800 = "..\\core\\door.cpp";
+    g_INT_01cc4804 = 0xf8;
     core_main_c_FUN_004c8440("CDoor::reposition - Unknown type");
     goto LAB_00455399;
   }

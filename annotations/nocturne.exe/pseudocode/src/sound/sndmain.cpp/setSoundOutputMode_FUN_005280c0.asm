@@ -23,8 +23,8 @@
 ;   undefined4 DAT_005bea64
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_00528100
     MOV ECX,0x1168                      ; 00528105
     PUSH 0x5937e1                       ; 0052810a | = "setSoundOutputMode - can't do this wh..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0052810f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00528115 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0052810f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00528115 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052811b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00528120

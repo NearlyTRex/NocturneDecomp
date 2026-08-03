@@ -24,7 +24,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cbcb6
     PUSH EDX                            ; 004cbcba
     CALL core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10 ; 004cbcbb
-        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10()
+        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10(CDemonActor * this_ptr, SLaserInfo * laser_info)
     FLD float ptr [EBX + 0x34]          ; 004cbcc0
     ADD ESP,0x8                         ; 004cbcc3
     FCOMP double ptr [0x00588182]       ; 004cbcc6 | DOUBLE_00588182

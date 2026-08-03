@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,24 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 17,
-        "message": "use of undeclared identifier 'DAT_02dbd3e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 17,
-        "message": "use of undeclared identifier 'DAT_02dbd3e4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 24,
-        "message": "use of undeclared identifier 'DAT_02dbd3e4'; did you mean 'DAT_005bdee4'?"
       }
     ],
     "success": false,
@@ -80,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 50,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 43
+    "total_lines": 46
   },
   "cross_references": [
     {
@@ -116,13 +98,13 @@
   "globals": [
     {
       "addr": "02dbd3e4",
-      "name": "DAT_02dbd3e4",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[0].playback_state",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dbd504",
-      "name": "DAT_02dbd504",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[1].playback_state",
       "type": "undefined4",
       "value": null
     }
@@ -164,28 +146,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_02dbd3e8",
-      "severity": "mild",
-      "text": "while ((*(int *)(&DAT_02dbd3e8 + iVar1) == 0 || (*(int *)(&DAT_02dbd3e4 + iVar1) == 0))) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02dbd374",
+      "severity": "moderate",
+      "text": "while ((*(int *)((int)g_CSfxSlot_ARRAY_02dbd374[0].distance_to_speakers + iVar2 + -8) == 0 ||",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_02dbd3e4",
-      "severity": "mild",
-      "text": "while ((*(int *)(&DAT_02dbd3e8 + iVar1) == 0 || (*(int *)(&DAT_02dbd3e4 + iVar1) == 0))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_02dbd3e4",
-      "severity": "mild",
-      "text": "return *(int *)(&DAT_02dbd3e4 + iVar1) << 6 | uVar2;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02dbd374",
+      "severity": "moderate",
+      "text": "(iVar1 = *(int *)((int)g_CSfxSlot_ARRAY_02dbd374[0].distance_to_speakers + iVar2 + -0xc),",
+      "type": "pointer_cast"
     }
   ]
 }

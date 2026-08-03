@@ -867,13 +867,13 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c10c8 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a3270,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x02DCA21C
+    .object_instance = (void *)&g_CTextureList_02dca21c
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c11dc = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a3e80,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x02DD1210
+    .object_instance = (void *)&g_CWater_02dd1210
 };
 
 // int
@@ -885,7 +885,7 @@ int INT_005c1174 = 0x5;
 int INT_005c1188 = 0x4;
 int INT_005c11a0 = 0x3;
 int g_INT_005c11c4 = 0x4;
-int INT_005c154c = 0x6;
+int g_INT_005c154c = 0x6;
 int INT_005c1578 = 0x2;
 int INT_005c1590 = 0x7;
 int INT_005c1614 = 0x6;

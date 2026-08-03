@@ -58,8 +58,8 @@ void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
         else {
 LAB_004091a2:
           _sprintf(local_110,"Unknown primitive : %d",(char)(param_1->base).type);
-          INT_01cc4804 = 0xdd3;
-          PTR_01cc4800 = "..\\engine\\3d.c";
+          g_INT_01cc4804 = 0xdd3;
+          g_CHAR_PTR_01cc4800 = "..\\engine\\3d.c";
           core_main_c_FUN_004c8440(local_110);
         }
       }
@@ -100,8 +100,8 @@ LAB_004091a2:
         iVar4 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);
         if (iVar4 != 0) {
           if (1999 < DAT_00761ec4) {
-            PTR_01cc4800 = "..\\engine\\3d.c";
-            INT_01cc4804 = 0xd89;
+            g_CHAR_PTR_01cc4800 = "..\\engine\\3d.c";
+            g_INT_01cc4804 = 0xd89;
             core_main_c_FUN_004c8440("renderFaceList - too many faces");
           }
           (&DAT_00761ec8)[DAT_00761ec4] = param_1;

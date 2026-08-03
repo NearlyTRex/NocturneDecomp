@@ -54,7 +54,7 @@ int __cdecl core_curtain_cpp_FUN_0043f330(CCurtain *this_ptr)
     } while (iVar3 < this_ptr->vertex_count);
   }
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-            (0x01E57284,this_ptr->vertex_count,(CVector3i *)input_vertices);
+            (g_CDemonSet_PTR_005be368,this_ptr->vertex_count,(CVector3i *)input_vertices);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
   bVar1 = 0 < _DAT_01c039c0;
   if (this_ptr->cinched_top == 0) {
@@ -62,7 +62,7 @@ int __cdecl core_curtain_cpp_FUN_0043f330(CCurtain *this_ptr)
 LAB_0043f474:
     pSVar6 = (SMRGLPrimitivePoly *)(this_ptr->mesh).front_faces;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-              (0x01E57284,this_ptr->vertex_count,
+              (g_CDemonSet_PTR_005be368,this_ptr->vertex_count,
                (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,pSVar6,
                (CVector3i *)(this_ptr->mesh).vertex_positions_fixed,4,(CVector3i *)0x0);
     if (this_ptr->opacity < 0xfde9) {
@@ -74,7 +74,7 @@ LAB_0043f474:
     }
     else {
       core_set_cpp_FUN_0050ddd0
-                (0x01E57284,(SMRGLPrimitiveQuad *)pSVar6,
+                (g_CDemonSet_PTR_005be368,(SMRGLPrimitiveQuad *)pSVar6,
                  (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,-1);
     }
   }
@@ -82,7 +82,7 @@ LAB_0043f474:
   if (bVar1) {
     pSVar6 = (SMRGLPrimitivePoly *)(this_ptr->mesh).back_faces;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-              (0x01E57284,this_ptr->vertex_count,
+              (g_CDemonSet_PTR_005be368,this_ptr->vertex_count,
                (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,pSVar6,
                (CVector3i *)(this_ptr->mesh).vertex_positions_fixed,4,(CVector3i *)0x0);
     if (this_ptr->opacity < 0xfde9) {
@@ -94,7 +94,7 @@ LAB_0043f474:
     }
     else {
       core_set_cpp_FUN_0050ddd0
-                (0x01E57284,(SMRGLPrimitiveQuad *)pSVar6,
+                (g_CDemonSet_PTR_005be368,(SMRGLPrimitiveQuad *)pSVar6,
                  (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,-1);
     }
   }

@@ -21,14 +21,14 @@
 ;   TerminatedCString s_CGhoul_findDarkWayPoint_00584bf6
 ;   TerminatedCString s_darkPoint_00584ead
 ;   void* PTR_s_darkPoint_00584ead_005b9654 = 00584ead
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CGhoulActorType_01c78bd8.name_hash
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
-;   undefined4 DAT_01fa7e78
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
+;   undefined4 g_CDemonSet_01e57284.enemy_count
 ;   undefined4 g_CWayPointActorType_02ddf514.name_hash
 ;
 ; Called Functions:
@@ -84,17 +84,17 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 004a909e
     MOV dword ptr [ESP + 0x14],ECX      ; 004a90a2
     FSTP float ptr [EBP + 0xbd88]       ; 004a90a6
-    MOV EAX,[0x005be368]                ; 004a90ac | DAT_005be368 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 004a90ac | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
         ;   Label: LAB_004a90ac
     MOV EBX,dword ptr [ESP + 0x18]      ; 004a90b1
-    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 004a90b5 | DAT_01fa3ff0
+    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 004a90b5 | g_CDemonSet_01e57284.actor_count
     JGE 0x004a906d                      ; 004a90bb
         ;   XREF to: 004a906d (CONDITIONAL_JUMP)  ; LAB_004a906d
     MOV EDX,dword ptr [ESP + 0x14]      ; 004a90bd
     MOV EDI,dword ptr [0x02ddf54c]      ; 004a90c1 | g_CWayPointActorType_02ddf514.name_hash
     ADD EAX,EDX                         ; 004a90c7
     PUSH EDI                            ; 004a90c9
-    MOV ECX,dword ptr [EAX + 0x14cd70]  ; 004a90ca | DAT_01fa3ff4
+    MOV ECX,dword ptr [EAX + 0x14cd70]  ; 004a90ca | g_CDemonSet_01e57284.actors[0]
     PUSH ECX                            ; 004a90d0
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004a90d1
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
@@ -127,9 +127,9 @@ section .text
     XOR EBX,EBX                         ; 004a9110
     MOV dword ptr [ESP + 0x10],ESI      ; 004a9112
     XOR ESI,ESI                         ; 004a9116
-    MOV EAX,[0x005be368]                ; 004a9118 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004a9118 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004a9118
-    CMP ESI,dword ptr [EAX + 0x150bf4]  ; 004a911d | DAT_01fa7e78
+    CMP ESI,dword ptr [EAX + 0x150bf4]  ; 004a911d | g_CDemonSet_01e57284.enemy_count
     JL 0x004a91b0                       ; 004a9123
         ;   XREF to: 004a91b0 (CONDITIONAL_JUMP)  ; LAB_004a91b0
     CMP dword ptr [ESP + 0x10],0x0      ; 004a9129
@@ -150,8 +150,8 @@ section .text
     MOV ESI,0x584be4                    ; 004a914e | = "..\\core\\ghoul.cpp"
     MOV EAX,0x12c                       ; 004a9153
     PUSH 0x584bf6                       ; 004a9158 | = "CGhoul::findDarkWayPoint - Can't get ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004a915d | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004a9163 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004a915d | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004a9163 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004a9168
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004a916d

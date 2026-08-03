@@ -12,7 +12,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a
   CDemonActor *str1;
   int iVar1;
   
-  str1 = *(CDemonActor **)(this_ptr->set_names[3] + 0xcc);
+  str1 = this_ptr->first_actor;
   while( true ) {
     if (str1 == (CDemonActor *)0x0) {
       return (CDemonActor *)0x0;

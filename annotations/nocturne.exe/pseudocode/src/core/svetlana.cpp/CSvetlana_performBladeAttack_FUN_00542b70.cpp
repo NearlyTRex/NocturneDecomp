@@ -43,8 +43,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetla
   }
   local_18 = iVar6;
   if (local_18 == -1) {
-    PTR_01cc4800 = "..\\core\\svetlana.cpp";
-    INT_01cc4804 = 0x2f0;
+    g_CHAR_PTR_01cc4800 = "..\\core\\svetlana.cpp";
+    g_INT_01cc4804 = 0x2f0;
     core_main_c_FUN_004c8440("Can't find svetlana's parent bone");
   }
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -61,7 +61,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetla
   local_14 = 0;
   do {
     while( true ) {
-      if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar4) {
+      if (g_CDemonSet_PTR_005be368->character_count <= iVar4) {
         if (local_14 == 0) {
           sound_name = "svetlana-miss?.wav";
         }
@@ -71,7 +71,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetla
         (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
         return;
       }
-      this_ptr_01 = *(CSvetlana **)(iVar6 + 0x14ecb4 + 0x01E57284);
+      this_ptr_01 = *(CSvetlana **)((int)g_CDemonSet_PTR_005be368->characters + iVar6);
       if (this_ptr_01 != this_ptr) break;
 LAB_00542c3c:
       iVar4 = iVar4 + 1;

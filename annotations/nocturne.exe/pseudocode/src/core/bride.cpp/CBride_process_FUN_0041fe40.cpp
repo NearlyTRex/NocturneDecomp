@@ -301,7 +301,7 @@ void core_bride_cpp_CBride_process_FUN_0041fe40(CEnemy *param_1,float param_2)
                          (pCVar1,&local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)param_1,&local_d4,pCVar6);
-      core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_d4,0);
+      core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_d4,0);
       (*((param_1->base).base.vtable._ub)->spawnFlies)((CDemonActor *)param_1,0x32,25.0);
       param_1->pool_me = 1;
     }

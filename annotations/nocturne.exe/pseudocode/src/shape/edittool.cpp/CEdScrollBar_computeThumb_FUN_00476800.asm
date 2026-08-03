@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057f0b4
 ;   TerminatedCString s_CEdScrollBar_computeThum_0057f0ca
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -126,8 +126,8 @@ section .text
         ;   Label: LAB_004768ca
     MOV EAX,0xefb                       ; 004768cf
     PUSH 0x57f0ca                       ; 004768d4 | = "CEdScrollBar::computeThumb - invalid ..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004768d9 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004768df | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004768d9 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004768df | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004768e4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004768e9

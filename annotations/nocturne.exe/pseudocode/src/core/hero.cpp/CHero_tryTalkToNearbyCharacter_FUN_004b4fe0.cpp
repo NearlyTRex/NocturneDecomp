@@ -27,10 +27,10 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(CHero *thi
             ((CDemonActor *)this_ptr,&local_38,&local_50);
   local_14 = 0;
   do {
-    if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar3) {
+    if (g_CDemonSet_PTR_005be368->character_count <= iVar3) {
       return 0;
     }
-    pCVar1 = *(CHero **)(0x01E57284 + local_14 + 0x14ecb4);
+    pCVar1 = *(CHero **)((int)g_CDemonSet_PTR_005be368->characters + local_14);
     if (((pCVar1->base).talk_to_me_event[0] != '\0') && (pCVar1 != this_ptr)) {
       local_20.x = (pCVar1->base).base.location.position.x -
                    (this_ptr->base).base.location.position.x;

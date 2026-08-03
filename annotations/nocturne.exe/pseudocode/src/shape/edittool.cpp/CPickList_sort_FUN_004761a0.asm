@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057efb6
 ;   TerminatedCString s_CPickList_sort_can_t_do_0057efcc
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -52,8 +52,8 @@ section .text
     MOV ECX,0x57efb6                    ; 004761cc | = "..\\shape\\edittool.cpp"
     MOV EBX,0xe30                       ; 004761d1
     PUSH 0x57efcc                       ; 004761d6 | = "CPickList::sort - can't do this after..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004761db | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004761e1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004761db | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004761e1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004761e7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004761ec

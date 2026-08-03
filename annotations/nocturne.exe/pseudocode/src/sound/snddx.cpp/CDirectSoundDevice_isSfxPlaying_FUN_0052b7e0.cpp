@@ -17,7 +17,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(CDirect
   byte bStack_c;
   byte local_4 [4];
   
-  iVar1 = (slot->options).dead;
+  iVar1 = slot->hardware_buffer_handle;
   if ((((0 < iVar1) && (iVar1 < 0x1f)) && (*(int *)(iVar1 * 4 + 0x2dc92a8) != 0)) &&
      (*(int *)(iVar1 * 4 + 0x2dc9324) != 0)) {
     puStack_198 = local_4;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(int param_1,undefined4 *param_2)
+; void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CDemonActor *param_1,SInteractionInfo *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 0054a80a
     PUSH ESI                            ; 0054a80b
     CALL core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0 ; 0054a80c
-        ;   XREF to: 0040b1b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0()
+        ;   XREF to: 0040b1b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0(CDemonActor * this_ptr, SInteractionInfo * out_info)
     MOV EDX,dword ptr [ESI + 0x850]     ; 0054a811
     ADD ESP,0x8                         ; 0054a817
     TEST EDX,EDX                        ; 0054a81a

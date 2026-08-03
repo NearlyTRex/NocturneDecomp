@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_simbox_cpp_CSimBox_getBoundingBox_FUN_00516fc0(int param_1,undefined4 *param_2)
+; float * core_simbox_cpp_CSimBox_getBoundingBox_FUN_00516fc0(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

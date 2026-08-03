@@ -105,9 +105,9 @@ section .text
         ;   XREF to: 0054b4c6 (CONDITIONAL_JUMP)  ; LAB_0054b4c6
     XOR ESI,ESI                         ; 0054b484
     XOR EDI,EDI                         ; 0054b486
-    MOV EAX,[0x005be368]                ; 0054b488 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0054b488 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0054b488
-    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 0054b48d | DAT_01fa7e78
+    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 0054b48d | g_CDemonSet_01e57284.enemy_count
     JGE 0x0054b4c6                      ; 0054b493
         ;   XREF to: 0054b4c6 (CONDITIONAL_JUMP)  ; LAB_0054b4c6
     PUSH 0x596f65                       ; 0054b495 | = "CVampireBoss"
@@ -123,7 +123,7 @@ section .text
     ADD ESI,0x4                         ; 0054b4af
     JMP 0x0054b488                      ; 0054b4b2
         ;   XREF to: 0054b488 (UNCONDITIONAL_JUMP)  ; LAB_0054b488
-    MOV EAX,[0x005be368]                ; 0054b4b4 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0054b4b4 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0054b4b4
     MOV EAX,dword ptr [ESI + EAX*0x1 + 0x150bf8] ; 0054b4b9
     MOV dword ptr [EBX + 0xbf58],EAX    ; 0054b4c0
@@ -254,16 +254,16 @@ section .text
     JBE 0x0054b68f                      ; 0054b683
         ;   XREF to: 0054b68f (CONDITIONAL_JUMP)  ; LAB_0054b68f
     MOV dword ptr [EBX + 0xbed0],0x0    ; 0054b685
-    MOV EAX,[0x005bdee0]                ; 0054b68f | DAT_005bdee0
+    MOV EAX,[0x005bdee0]                ; 0054b68f | g_CNetGame_PTR_005bdee0
         ;   Label: LAB_0054b68f
-    CMP dword ptr [EAX],0x0             ; 0054b694 | DAT_01cea280
+    CMP dword ptr [EAX],0x0             ; 0054b694 | g_CNetGame_01cea280
     JZ 0x0054b6bc                       ; 0054b697
         ;   XREF to: 0054b6bc (CONDITIONAL_JUMP)  ; LAB_0054b6bc
     MOV ECX,0x596f72                    ; 0054b699 | = "..\\core\\tvbat.cpp"
     MOV ESI,0x10a                       ; 0054b69e
     PUSH 0x596f84                       ; 0054b6a3 | = "CTVBat::process - can't follow orders..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0054b6a8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0054b6ae | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0054b6a8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0054b6ae | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0054b6b4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0054b6b9
@@ -426,7 +426,7 @@ section .text
     PUSH 0x0                            ; 0054b913
     LEA EAX,[EBX + 0x20]                ; 0054b915
     PUSH EAX                            ; 0054b918
-    MOV ECX,dword ptr [0x005b96c4]      ; 0054b919 | INT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 0054b919 | g_CGore_PTR_005b96c4
     PUSH ECX                            ; 0054b91f
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 0054b920
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
@@ -648,7 +648,7 @@ section .text
     FMUL float ptr [0x0059700d]         ; 0054bc45 | FLOAT_0059700d
     PUSH EAX                            ; 0054bc4b
     FADD float ptr [EBX + 0x38]         ; 0054bc4c
-    PUSH 0x1fba938                      ; 0054bc4f | DAT_01fba938
+    PUSH 0x1fba938                      ; 0054bc4f | g_CDemonRaytrace_01fba938
     FSTP float ptr [EBX + 0x38]         ; 0054bc54
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0054bc57
         ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)

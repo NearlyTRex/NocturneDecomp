@@ -98,17 +98,17 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f18e6
         ;   Label: LAB_004f18e6
     FILD dword ptr [EAX + 0x24]         ; 004f18e9
-    FMUL float ptr [0x01fba96c]         ; 004f18ec | DAT_01fba96c
+    FMUL float ptr [0x01fba96c]         ; 004f18ec | g_CDemonRaytrace_01fba938.adjusted_size.x
     XOR ECX,ECX                         ; 004f18f2
-    FADD float ptr [0x01fba948]         ; 004f18f4 | DAT_01fba948
+    FADD float ptr [0x01fba948]         ; 004f18f4 | g_CDemonRaytrace_01fba938.bbox_min.x
     MOV dword ptr [ESP + 0x10],ECX      ; 004f18fa
     FSTP float ptr [ESP + 0xc]          ; 004f18fe
     FILD dword ptr [EAX + 0x2c]         ; 004f1902
-    FMUL float ptr [0x01fba974]         ; 004f1905 | DAT_01fba974
+    FMUL float ptr [0x01fba974]         ; 004f1905 | g_CDemonRaytrace_01fba938.adjusted_size.z
     LEA EAX,[ESP + 0xc]                 ; 004f190b
     MOV EBX,dword ptr [0x005ae704]      ; 004f190f | DAT_005ae704
     PUSH EAX                            ; 004f1915
-    FADD float ptr [0x01fba950]         ; 004f1916 | DAT_01fba950
+    FADD float ptr [0x01fba950]         ; 004f1916 | g_CDemonRaytrace_01fba938.bbox_min.z
     PUSH EBX                            ; 004f191c | DAT_01b4d738
     FSTP float ptr [ESP + 0x1c]         ; 004f191d
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 004f1921
@@ -213,13 +213,13 @@ section .text
     JG 0x004f1a20                       ; 004f1a73
         ;   XREF to: 004f1a20 (CONDITIONAL_JUMP)  ; LAB_004f1a20
     FLD float ptr [0x0058ce2f]          ; 004f1a75 | DAT_0058ce2f
-    FLD float ptr [0x01fba96c]          ; 004f1a7b | DAT_01fba96c
+    FLD float ptr [0x01fba96c]          ; 004f1a7b | g_CDemonRaytrace_01fba938.adjusted_size.x
     FMUL ST1                            ; 004f1a81
-    FLD float ptr [0x01fba970]          ; 004f1a83 | DAT_01fba970
+    FLD float ptr [0x01fba970]          ; 004f1a83 | g_CDemonRaytrace_01fba938.adjusted_size.y
     FMUL ST2                            ; 004f1a89
-    FLD float ptr [0x01fba974]          ; 004f1a8b | DAT_01fba974
+    FLD float ptr [0x01fba974]          ; 004f1a8b | g_CDemonRaytrace_01fba938.adjusted_size.z
     FMULP ST3                           ; 004f1a91
-    FLD float ptr [0x01fba94c]          ; 004f1a93 | DAT_01fba94c
+    FLD float ptr [0x01fba94c]          ; 004f1a93 | g_CDemonRaytrace_01fba938.bbox_min.y
     LEA EDI,[ESP + 0x24]                ; 004f1a99
     MOV EAX,dword ptr [EAX + 0x30]      ; 004f1a9d
     LEA ESI,[ESP + 0x18]                ; 004f1aa0

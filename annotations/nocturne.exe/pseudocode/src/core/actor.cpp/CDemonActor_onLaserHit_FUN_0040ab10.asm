@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(undefined4 param_1,int param_2)
+; void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(CDemonActor *this_ptr,SLaserInfo *laser_info)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; XREF[5]:
 ;   core_glass.cpp_CGlass_onLaserHit_FUN_004add80 at 004add91

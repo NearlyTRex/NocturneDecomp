@@ -24,30 +24,30 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_p
        (CVector3f *)(*(((this_ptr->base).vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             (&this_ptr->base,(CVector3f *)auStack_1c,input_local_point);
-  _DAT_01c762f4 = 1;
-  _DAT_01c762fc = 1;
-  if (&stack0x00000000 != (byte *)0x1c74760) {
-    _DAT_01c74744 = (float)auStack_1c._0_4_;
-    _DAT_01c74748 = (float)auStack_1c._4_4_;
-    _DAT_01c7474c = fStack_14;
+  g_CDemonLight_01c74640.light_enabled_flag = 1;
+  g_CDemonLight_01c74640.volumetric_enabled = 1;
+  if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {
+    g_CDemonLight_01c74640.base.position.x = (float)auStack_1c._0_4_;
+    g_CDemonLight_01c74640.base.position.y = (float)auStack_1c._4_4_;
+    g_CDemonLight_01c74640.base.position.z = fStack_14;
   }
   CStack_28.y = (this_ptr->base).orient.vec.y;
   CStack_28.z = (this_ptr->base).orient.vec.z;
   CStack_28.x = (this_ptr->base).orient.vec.x + 0.3490658f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
-            ((CMatrix3x3f *)&DAT_01c74750,&CStack_28);
-  _DAT_01c74740 = 0x42000000;
-  _DAT_01c74778 = 0x42000000;
-  _DAT_01c76310 = 1;
+            (&g_CDemonLight_01c74640.base.rotation_matrix,&CStack_28);
+  g_CDemonLight_01c74640.base.fixed_point_scale = 32.0;
+  g_CDemonLight_01c74640.base.focal_length = 32.0;
+  g_CDemonLight_01c74640.antialiasing_enabled = 1;
   pCVar2 = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,in_stack_ffffffcc);
   if ((pCVar2 != (CDemonActor *)0x0) &&
      (fVar1 = pCVar2[0x17e].orient_matrix.m[0].y, fVar1 < 15.0f)) {
     unaff_ESI = fVar1 * 0.06666667f;
   }
-  core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080
-            ((CDemonLight *)&DAT_01c74640,unaff_ESI);
-  if (*(int *)(0x01C775EC + 0x244) == 0) {
+  core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(&g_CDemonLight_01c74640,unaff_ESI)
+  ;
+  if (g_CGame_PTR_005b9354->flashlight_active == 0) {
     return;
   }
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90
@@ -56,6 +56,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_p
   DAT_02ddf9c8 = 0x20;
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0((CDemonGlobe *)0x2ddf9ac,3.0);
   _DAT_02ddf9cc = 0;
-  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(0x01E57284,(CDemonGlobe *)0x2ddf9ac);
+  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0
+            (g_CDemonSet_PTR_005be368,(CDemonGlobe *)0x2ddf9ac);
   return;
 }

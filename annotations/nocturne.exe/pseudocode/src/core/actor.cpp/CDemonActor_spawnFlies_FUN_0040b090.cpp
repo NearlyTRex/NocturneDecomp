@@ -16,6 +16,6 @@ void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_0040b090(CDemonActor *thi
     return;
   }
   core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-            ((CGore *)INT_005b96c4,this_ptr,fly_count,spawn_radius,(CVector3f *)0x0);
+            (g_CGore_PTR_005b96c4,this_ptr,fly_count,spawn_radius,(CVector3f *)0x0);
   return;
 }

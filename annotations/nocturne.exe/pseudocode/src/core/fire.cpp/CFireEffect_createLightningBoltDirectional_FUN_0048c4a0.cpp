@@ -12,8 +12,8 @@ void __cdecl core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4
 
 {
   core_fire_cpp_CLightningBolt_activateDirectional_FUN_00488b50
-            ((CLightningBolt *)(_DAT_01c6750c * 0x2c + 0x1c67510),start_position,end_position,
-             end_width,end_spread);
+            (g_CLightningBolt_ARRAY_01c67510 + _DAT_01c6750c,start_position,end_position,end_width,
+             end_spread);
   _DAT_01c6750c = _DAT_01c6750c + 1;
   if (_DAT_01c6750c < 10) {
     if (enable_camera_shake == 0) {
@@ -26,6 +26,6 @@ void __cdecl core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4
       return;
     }
   }
-  core_set_cpp_FUN_0050e660(0x01E57284,0x42c80000,0,0,0x3f800000);
+  core_set_cpp_FUN_0050e660(g_CDemonSet_PTR_005be368,0x42c80000,0,0,0x3f800000);
   return;
 }

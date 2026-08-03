@@ -49,10 +49,10 @@ void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *param_1,float p
   iVar1 = 0;
   do {
     while( true ) {
-      if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar1) {
+      if (g_CDemonSet_PTR_005be368->character_count <= iVar1) {
         return;
       }
-      actor_ptr = *(CDemonActor **)(iVar3 + 0x14ecb4 + 0x01E57284);
+      actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->characters + iVar3);
       if ((param_1->kill_hero == 0) ||
          (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
                              (actor_ptr,g_CHeroActorType_01cae0ec.name_hash),

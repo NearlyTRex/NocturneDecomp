@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_pendulum_cpp_CPendulum_getBoundingBox_FUN_004f3c00(int param_1,undefined4 *param_2)
+; float * core_pendulum_cpp_CPendulum_getBoundingBox_FUN_004f3c00(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

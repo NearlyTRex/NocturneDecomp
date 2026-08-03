@@ -15,5 +15,5 @@ int sound_sndmain_cpp_FUN_00529a00(void)
   CSfxSample *in_stack_00000004;
   
   iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(in_stack_00000004);
-  return iVar1 * in_stack_00000004->loop_endpoints[4];
+  return iVar1 * in_stack_00000004->streaming_buffer_size;
 }

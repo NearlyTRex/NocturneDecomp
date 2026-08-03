@@ -9,6 +9,6 @@
 void __cdecl core_setcolid_cpp_FUN_005117f0(CDemonSet *this_ptr)
 
 {
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[2].x = 1.4013e-45;
+  this_ptr->collision_flag = 1;
   return;
 }

@@ -40,37 +40,37 @@ LAB_004dcd36:
   size = engine_dosio_cpp_getFileSize_FUN_004568c0("models",filename);
   if (size == 0) {
     _sprintf(local_5c,"Unable to get file size: %s",filename);
-    PTR_01cc4800 = "..\\engine\\model.c";
-    INT_01cc4804 = 0xf0;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
+    g_INT_01cc4804 = 0xf0;
     core_main_c_FUN_004c8440(local_5c);
   }
   file = engine_dosio_cpp_getFile_FUN_00456a60("models",filename,"rb");
   if (file == (_FILE *)0x0) {
     _sprintf(local_5c,"Unable to open model: %s",filename);
-    INT_01cc4804 = 0xf5;
-    PTR_01cc4800 = "..\\engine\\model.c";
+    g_INT_01cc4804 = 0xf5;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
     core_main_c_FUN_004c8440(local_5c);
   }
   pSVar2 = (SMRGLHeaderExtended *)malloc(size);
   if (pSVar2 == (SMRGLHeaderExtended *)0x0) {
     _sprintf(local_5c,"Out of model memory: %s",filename);
-    PTR_01cc4800 = "..\\engine\\model.c";
-    INT_01cc4804 = 0x100;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
+    g_INT_01cc4804 = 0x100;
     core_main_c_FUN_004c8440(local_5c);
   }
   SVar3 = _fread(pSVar2,1,size,file);
   if (SVar3 != size) {
     _sprintf(local_5c,"Model file read error: %s",filename);
-    INT_01cc4804 = 0x107;
-    PTR_01cc4800 = "..\\engine\\model.c";
+    g_INT_01cc4804 = 0x107;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
     core_main_c_FUN_004c8440(local_5c);
   }
   _fclose(file);
   cVar1 = (char)(pSVar2->base).type;
   if ((cVar1 != '\x14') && (cVar1 != ' ')) {
     _sprintf(local_5c,"Invalid model: %s",filename);
-    PTR_01cc4800 = "..\\engine\\model.c";
-    INT_01cc4804 = 0x10d;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
+    g_INT_01cc4804 = 0x10d;
     core_main_c_FUN_004c8440(local_5c);
   }
   return pSVar2;

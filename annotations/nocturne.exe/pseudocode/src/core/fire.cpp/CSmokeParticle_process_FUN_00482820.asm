@@ -20,12 +20,12 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00581074 = 30
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01c77850
-;   undefined4 DAT_01fb1afc
-;   undefined4 DAT_01fb1b00
-;   undefined4 DAT_01fb1b04
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CGame_01c775ec.delta_time_float
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.x
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.y
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -38,8 +38,8 @@ section .text
         ;   Label: core_fire.cpp_CSmokeParticle_process_FUN_00482820
     SUB ESP,0x20                        ; 00482821
     MOV EBX,dword ptr [ESP + 0x28]      ; 00482824
-    MOV EAX,[0x005b9354]                ; 00482828 | DAT_005b9354
-    MOV EAX,dword ptr [EAX + 0x264]     ; 0048282d | DAT_01c77850
+    MOV EAX,[0x005b9354]                ; 00482828 | g_CGame_PTR_005b9354
+    MOV EAX,dword ptr [EAX + 0x264]     ; 0048282d | g_CGame_01c775ec.delta_time_float
     MOV dword ptr [ESP + 0x18],EAX      ; 00482833
     FLD float ptr [ESP + 0x18]          ; 00482837
     FMUL float ptr [0x00581074]         ; 0048283b | FLOAT_00581074
@@ -99,15 +99,15 @@ section .text
     FXCH                                ; 004828ed
     FSTP float ptr [EAX + 0x4]          ; 004828ef
     FADD float ptr [ESP + 0x14]         ; 004828f2
-    MOV EBX,dword ptr [0x005be368]      ; 004828f6 | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 004828f6 | g_CDemonSet_PTR_005be368
     FSTP float ptr [EAX + 0x8]          ; 004828fc
-    FLD float ptr [EBX + 0x15a878]      ; 004828ff | DAT_01fb1afc
+    FLD float ptr [EBX + 0x15a878]      ; 004828ff | g_CDemonSet_01e57284.active_fog.scroll.x
     FMUL float ptr [ESP + 0x18]         ; 00482905
     FSTP float ptr [ESP]                ; 00482909
-    FLD float ptr [EBX + 0x15a87c]      ; 0048290c | DAT_01fb1b00
+    FLD float ptr [EBX + 0x15a87c]      ; 0048290c | g_CDemonSet_01e57284.active_fog.scroll.y
     FMUL float ptr [ESP + 0x18]         ; 00482912
     FSTP float ptr [ESP + 0x4]          ; 00482916
-    FLD float ptr [EBX + 0x15a880]      ; 0048291a | DAT_01fb1b04
+    FLD float ptr [EBX + 0x15a880]      ; 0048291a | g_CDemonSet_01e57284.active_fog.scroll.z
     FMUL float ptr [ESP + 0x18]         ; 00482920
     FSTP float ptr [ESP + 0x8]          ; 00482924
     FLD float ptr [EAX]                 ; 00482928

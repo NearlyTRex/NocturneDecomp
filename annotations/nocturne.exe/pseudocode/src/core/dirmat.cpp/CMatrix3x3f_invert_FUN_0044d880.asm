@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dirmat_cpp_0057c4a6
 ;   TerminatedCString s_CMatrix_invert_Singular_0057c4b9
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -174,8 +174,8 @@ section .text
         ;   Label: LAB_0044da0b
     MOV ESI,0x69                        ; 0044da10
     PUSH 0x57c4b9                       ; 0044da15 | = "CMatrix::invert - Singular matrix"
-    MOV dword ptr [0x01cc4800],ECX      ; 0044da1a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044da20 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0044da1a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044da20 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0044da26
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044da2b

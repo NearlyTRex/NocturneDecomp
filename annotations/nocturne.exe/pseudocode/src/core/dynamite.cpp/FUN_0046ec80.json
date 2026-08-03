@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 21,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createToss_FUN_0048c2a0'"
       }
     ],
     "success": false,
@@ -68,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 197,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 16,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 71
+    "total_lines": 72
   },
   "cross_references": [],
   "function": {
@@ -108,9 +102,9 @@
   "globals": [
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     }
   ],
   "param_estimates": {
@@ -182,7 +176,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,&(param_1->base).location.position,&(param_1->base).orient,velocity,",
+      "text": "(g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,&(param_1->base).orient,",
       "type": "unnamed_param"
     },
     {
@@ -190,7 +184,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,&(param_1->base).location.position,&(param_1->base).orient,velocity,",
+      "text": "(g_CFireEffect_PTR_005b80f0,&(param_1->base).location.position,&(param_1->base).orient,",
       "type": "unnamed_param"
     },
     {
@@ -198,15 +192,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)param_1[1].base.actor_name,*(uint *)(param_1[1].base.actor_name + 0x10));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)param_1[1].base.actor_name,*(uint *)(param_1[1].base.actor_name + 0x10));",
+      "text": "velocity,*(float *)param_1[1].base.actor_name,",
       "type": "unnamed_param"
     },
     {
@@ -214,15 +200,15 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = param_1 + 1;",
+      "text": "*(uint *)(param_1[1].base.actor_name + 0x10));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[0] = '\\0';",
+      "text": "pCVar1 = param_1 + 1;",
       "type": "unnamed_param"
     },
     {
@@ -230,7 +216,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[1] = '\\0';",
+      "text": "param_1[1].base.actor_name[0] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -238,7 +224,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[2] = -0x80;",
+      "text": "param_1[1].base.actor_name[1] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -246,7 +232,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[3] = -0x41;",
+      "text": "param_1[1].base.actor_name[2] = -0x80;",
       "type": "unnamed_param"
     },
     {
@@ -254,15 +240,15 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = param_1 + 1;",
+      "text": "param_1[1].base.actor_name[3] = -0x41;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1[1].base.actor_name + 8) =",
+      "text": "pCVar1 = param_1 + 1;",
       "type": "unnamed_param"
     },
     {
@@ -270,12 +256,20 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1[1].base.actor_name + 0xc);",
+      "text": "*(uint *)(param_1[1].base.actor_name + 8) =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1[1].base.actor_name + 0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "velocity->x = *(float *)(param_1[1].base.actor_name + 8);",

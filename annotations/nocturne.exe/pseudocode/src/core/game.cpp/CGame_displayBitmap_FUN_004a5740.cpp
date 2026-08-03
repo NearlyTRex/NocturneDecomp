@@ -13,8 +13,8 @@ void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(CGame *this_ptr,char
   char *pcVar2;
   
   if (this_ptr->bitmap_filename[0] != '\0') {
-    PTR_01cc4800 = "..\\core\\game.cpp";
-    INT_01cc4804 = 0xfcf;
+    g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
+    g_INT_01cc4804 = 0xfcf;
     core_main_c_FUN_004c8440("CGame::displayBitmap - tried to queue %s, but %s already queued!",filename,this_ptr->bitmap_filename)
     ;
   }

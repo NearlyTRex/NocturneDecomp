@@ -35,7 +35,7 @@
 ;   TerminatedCString s_d_0057e751
 ;   undefined4 s_d_0057e751+1
 ;   undefined4 DAT_005b7630
-;   int INT_005bac64 = 0x1cc30e4
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
@@ -80,8 +80,8 @@ section .text
     MOV ESI,0x57e4fa                    ; 00470ed8 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x8b                        ; 00470edd
     PUSH 0x57e510                       ; 00470ee2 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ESI      ; 00470ee7 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00470eed | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00470ee7 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00470eed | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00470ef3
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00470ef8
@@ -323,9 +323,9 @@ section .text
     POP ESI                             ; 00471192
     POP EBX                             ; 00471193
     RET                                 ; 00471194
-    MOV EBX,dword ptr [0x005bac64]      ; 00471195 | INT_005bac64
+    MOV EBX,dword ptr [0x005bac64]      ; 00471195 | g_CKeys_PTR_005bac64
         ;   Label: LAB_00471195
-    PUSH EBX                            ; 0047119b | DAT_01cc30e4
+    PUSH EBX                            ; 0047119b | g_CKeys_01cc30e4
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0047119c
         ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0(CKeys * this_ptr)
     ADD ESP,0x4                         ; 004711a1

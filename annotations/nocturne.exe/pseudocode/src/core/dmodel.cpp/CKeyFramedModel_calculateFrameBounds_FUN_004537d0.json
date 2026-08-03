@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -59,7 +59,7 @@
         "category": "cast_error",
         "column": 22,
         "line": 20,
-        "message": "C-style cast from 'int *' to 'float' is not allowed"
+        "message": "C-style cast from 'CBoundingBox3D *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
@@ -331,11 +331,11 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 16,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "this_ptr_00 = (CBoundingBox3D *)",
+      "text": "this_ptr_00 = (CBoundingBox3D *)((int)&(model_ptr->frame_bounds->min).x + (int)local_28.max.x)",
       "type": "pointer_cast"
     }
   ]

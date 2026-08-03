@@ -12,15 +12,15 @@
 ;   undefined1* PTR_caseD_1_0046daa0 = 0046db62
 ;   undefined1* PTR_caseD_3_0046daa8 = 0046db47
 ;   undefined4 DAT_01bc9bb8
-;   CVector3f[16] CVector3f_ARRAY_01bc9bbc
-;   undefined4 CVector3f_ARRAY_01bc9bbc[0].y
-;   undefined4 CVector3f_ARRAY_01bc9bbc[0].z
-;   undefined4 CVector3f_ARRAY_01bc9bbc[1].x
-;   undefined4 CVector3f_ARRAY_01bc9bbc[2].x
+;   CVector3f[16] g_CVector3f_ARRAY_01bc9bbc
+;   undefined4 g_CVector3f_ARRAY_01bc9bbc[0].y
+;   undefined4 g_CVector3f_ARRAY_01bc9bbc[0].z
+;   undefined4 g_CVector3f_ARRAY_01bc9bbc[1].x
+;   undefined4 g_CVector3f_ARRAY_01bc9bbc[2].x
 ;   undefined4 DAT_01bc9c7c
-;   CVector3f[16] CVector3f_ARRAY_01bc9c80
-;   undefined4 CVector3f_ARRAY_01bc9c80[0].y
-;   undefined4 CVector3f_ARRAY_01bc9c80[0].z
+;   CVector3f[16] g_CVector3f_ARRAY_01bc9c80
+;   undefined4 g_CVector3f_ARRAY_01bc9c80[0].y
+;   undefined4 g_CVector3f_ARRAY_01bc9c80[0].z
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_0046d4e0
@@ -56,10 +56,10 @@ section .text
     IMUL ECX,ECX,0xc                    ; 0046daeb
         ;   Label: LAB_0046daeb
     MOV EAX,0x1bc9bbc                   ; 0046daee
-    FLD float ptr [ESI]                 ; 0046daf3 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9bbc[1].x
+    FLD float ptr [ESI]                 ; 0046daf3 | g_CVector3f_ARRAY_01bc9bbc | g_CVector3f_ARRAY_01bc9bbc[1].x
     ADD EAX,ECX                         ; 0046daf5
     MOV EDX,ESI                         ; 0046daf7
-    MOV dword ptr [ESP + 0x4],EAX       ; 0046daf9 | CVector3f_ARRAY_01bc9bbc[2].x
+    MOV dword ptr [ESP + 0x4],EAX       ; 0046daf9 | g_CVector3f_ARRAY_01bc9bbc[2].x
     XOR ECX,ECX                         ; 0046dafd
     FCOMP float ptr [ESP]               ; 0046daff
     FNSTSW AX                           ; 0046db02
@@ -69,7 +69,7 @@ section .text
     MOV ECX,0x1                         ; 0046db07
     MOV EAX,dword ptr [ESP + 0x4]       ; 0046db0c
         ;   Label: LAB_0046db0c
-    FLD float ptr [EAX]                 ; 0046db10 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9bbc[2].x
+    FLD float ptr [EAX]                 ; 0046db10 | g_CVector3f_ARRAY_01bc9bbc | g_CVector3f_ARRAY_01bc9bbc[2].x
     FCOMP float ptr [ESP]               ; 0046db12
     FNSTSW AX                           ; 0046db15
     SAHF                                ; 0046db17
@@ -88,12 +88,12 @@ section .text
     CMP ECX,EDX                         ; 0046db32
     JZ 0x0046db46                       ; 0046db34
         ;   XREF to: 0046db46 (CONDITIONAL_JUMP)  ; LAB_0046db46
-    MOV EAX,dword ptr [EDX]             ; 0046db36 | CVector3f_ARRAY_01bc9bbc
-    MOV dword ptr [ECX],EAX             ; 0046db38 | CVector3f_ARRAY_01bc9c80
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046db3a | CVector3f_ARRAY_01bc9bbc[0].y
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046db3d | CVector3f_ARRAY_01bc9c80[0].y
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046db40 | CVector3f_ARRAY_01bc9bbc[0].z
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046db43 | CVector3f_ARRAY_01bc9c80[0].z
+    MOV EAX,dword ptr [EDX]             ; 0046db36 | g_CVector3f_ARRAY_01bc9bbc
+    MOV dword ptr [ECX],EAX             ; 0046db38 | g_CVector3f_ARRAY_01bc9c80
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046db3a | g_CVector3f_ARRAY_01bc9bbc[0].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046db3d | g_CVector3f_ARRAY_01bc9c80[0].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046db40 | g_CVector3f_ARRAY_01bc9bbc[0].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046db43 | g_CVector3f_ARRAY_01bc9c80[0].z
     INC EBX                             ; 0046db46
         ;   Label: LAB_0046db46
     MOV ECX,dword ptr [0x01bc9bb8]      ; 0046db47 | DAT_01bc9bb8
@@ -124,7 +124,7 @@ section .text
     PUSH 0x0                            ; 0046db7b
     ADD ECX,0x1bc9c80                   ; 0046db7d
     PUSH ECX                            ; 0046db83
-    PUSH EDX                            ; 0046db84 | CVector3f_ARRAY_01bc9bbc
+    PUSH EDX                            ; 0046db84 | g_CVector3f_ARRAY_01bc9bbc
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0046db85
     PUSH EAX                            ; 0046db89
     MOV dword ptr [0x01bc9c7c],EBX      ; 0046db8a | DAT_01bc9c7c
@@ -140,12 +140,12 @@ section .text
     CMP ECX,EDX                         ; 0046dba9
     JZ 0x0046dbbd                       ; 0046dbab
         ;   XREF to: 0046dbbd (CONDITIONAL_JUMP)  ; LAB_0046dbbd
-    MOV EAX,dword ptr [EDX]             ; 0046dbad | CVector3f_ARRAY_01bc9bbc
-    MOV dword ptr [ECX],EAX             ; 0046dbaf | CVector3f_ARRAY_01bc9c80
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046dbb1 | CVector3f_ARRAY_01bc9bbc[0].y
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046dbb4 | CVector3f_ARRAY_01bc9c80[0].y
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046dbb7 | CVector3f_ARRAY_01bc9bbc[0].z
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046dbba | CVector3f_ARRAY_01bc9c80[0].z
+    MOV EAX,dword ptr [EDX]             ; 0046dbad | g_CVector3f_ARRAY_01bc9bbc
+    MOV dword ptr [ECX],EAX             ; 0046dbaf | g_CVector3f_ARRAY_01bc9c80
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046dbb1 | g_CVector3f_ARRAY_01bc9bbc[0].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046dbb4 | g_CVector3f_ARRAY_01bc9c80[0].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046dbb7 | g_CVector3f_ARRAY_01bc9bbc[0].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046dbba | g_CVector3f_ARRAY_01bc9c80[0].z
     INC EBX                             ; 0046dbbd
         ;   Label: LAB_0046dbbd
     IMUL ECX,EBX,0xc                    ; 0046dbbe
@@ -162,7 +162,7 @@ section .text
     PUSH ECX                            ; 0046dbdf
     MOV ECX,dword ptr [ESP + 0x28]      ; 0046dbe0
     PUSH ECX                            ; 0046dbe4
-    PUSH EDX                            ; 0046dbe5 | CVector3f_ARRAY_01bc9bbc
+    PUSH EDX                            ; 0046dbe5 | g_CVector3f_ARRAY_01bc9bbc
     MOV dword ptr [0x01bc9c7c],EBX      ; 0046dbe6 | DAT_01bc9c7c
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046dbec
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)

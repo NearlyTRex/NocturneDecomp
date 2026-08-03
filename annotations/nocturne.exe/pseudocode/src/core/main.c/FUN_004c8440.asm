@@ -20,8 +20,8 @@
 ;   ... and 521 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bed68
-;   char* PTR_01cc4800
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
+;   char* g_CHAR_PTR_01cc4800
 ;   undefined4 DAT_01cc4808
 ;
 ; Called Functions:
@@ -62,7 +62,7 @@ section .text
     MOV dword ptr [ESP + 0x4],ESI       ; 004c8481
     MOV DL,DH                           ; 004c8485
     POP EBX                             ; 004c8487
-    MOV ESI,dword ptr [0x01cc4800]      ; 004c8488 | PTR_01cc4800
+    MOV ESI,dword ptr [0x01cc4800]      ; 004c8488 | g_CHAR_PTR_01cc4800
         ;   Label: LAB_004c8488
     MOV AL,byte ptr [ESI]               ; 004c848e
         ;   Label: LAB_004c848e
@@ -87,7 +87,7 @@ section .text
         ;   Label: LAB_004c84a6
     JNZ 0x004c84e0                      ; 004c84a8
         ;   XREF to: 004c84e0 (CONDITIONAL_JUMP)  ; LAB_004c84e0
-    MOV EDI,dword ptr [0x005bed68]      ; 004c84aa | DAT_005bed68
+    MOV EDI,dword ptr [0x005bed68]      ; 004c84aa | g_CSound_PTR_005bed68
     PUSH EDI                            ; 004c84b0
     CALL core_sound.cpp_FUN_00527e10    ; 004c84b1
         ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_00527e10(CSound * this_ptr)
@@ -109,7 +109,7 @@ section .text
         ;   Label: LAB_004c84d6
     JMP 0x004c8452                      ; 004c84db
         ;   XREF to: 004c8452 (UNCONDITIONAL_JUMP)  ; LAB_004c8452
-    MOV ESI,dword ptr [0x01cc4800]      ; 004c84e0 | PTR_01cc4800
+    MOV ESI,dword ptr [0x01cc4800]      ; 004c84e0 | g_CHAR_PTR_01cc4800
         ;   Label: LAB_004c84e0
     MOV AL,byte ptr [ESI]               ; 004c84e6
         ;   Label: LAB_004c84e6
@@ -132,7 +132,7 @@ section .text
         ;   Label: LAB_004c84fc
     INC ESI                             ; 004c84fe
         ;   Label: LAB_004c84fe
-    MOV dword ptr [0x01cc4800],ESI      ; 004c84ff | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],ESI      ; 004c84ff | g_CHAR_PTR_01cc4800
     JMP 0x004c8488                      ; 004c8505
         ;   XREF to: 004c8488 (UNCONDITIONAL_JUMP)  ; LAB_004c8488
 

@@ -28,15 +28,14 @@ float core_setcolid_cpp_FUN_0050f910(CDemonSet *param_1,CVector3f *param_2)
   local_20.y = local_20.y + -1.0f;
   local_2c.y = local_2c.y + 150.0f;
   local_10 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                       ((CDemonRaytrace *)&DAT_01fba938,&local_20,&local_2c,
-                        (CVector3f *)(param_1->lights[199].filter_names[0x12] + 0x24),
-                        (int *)(param_1->lights[199].filter_names[0x13] + 8));
+                       (&g_CDemonRaytrace_01fba938,&local_20,&local_2c,&param_1->collision_normal,
+                        &param_1->ground_type);
   local_30 = local_10;
   if (local_10 < 0.0) {
     local_30 = 1.01;
   }
-  if ((local_30 < 1.0) && (*(int *)(param_1->lights[199].filter_names[0x13] + 8) == 0)) {
-    *(float *)(param_1->lights[199].filter_names[0x13] + 8) = param_1->vdir_boxes[0xeb].extents.z;
+  if ((local_30 < 1.0) && (param_1->ground_type == 0)) {
+    param_1->ground_type = param_1->default_ground_type;
   }
   fVar1 = core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0
                     (param_1,-1.0,&local_20,&local_2c,local_30);

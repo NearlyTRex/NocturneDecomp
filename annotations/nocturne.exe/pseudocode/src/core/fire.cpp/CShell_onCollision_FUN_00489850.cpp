@@ -39,13 +39,15 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_00489850(CShell *this_ptr,CVect
                         (this_ptr->model_ptr->model_filename,"shell.kfm");
       if (iVar4 == 0) {
         uVar3 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60
-                          (0x02DC9450,0x01C08D04,"sh-sh?c @ .15",(CVector3f *)this_ptr);
+                          (g_CSound_PTR_005bed68,(CDemonActor *)g_CFireEffect_PTR_005b80f0,
+                           "sh-sh?c @ .15",(CVector3f *)this_ptr);
         *(uint *)(iVar5 * 4 + 0x1c0a130) = uVar3;
         this_ptr->bounce_count = this_ptr->bounce_count + 1;
         return 0;
       }
       uVar3 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60
-                        (0x02DC9450,0x01C08D04,"44-sh?c @ .2",(CVector3f *)this_ptr);
+                        (g_CSound_PTR_005bed68,(CDemonActor *)g_CFireEffect_PTR_005b80f0,
+                         "44-sh?c @ .2",(CVector3f *)this_ptr);
       *(uint *)(iVar5 * 4 + 0x1c0a130) = uVar3;
       this_ptr->bounce_count = this_ptr->bounce_count + 1;
       return 0;

@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_00590b04
 ;   TerminatedCString s_CDemonSet_popRaytraceSta_00590b19
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_020842d0
 ;
 ; Called Functions:
@@ -153,8 +153,8 @@ section .text
         ;   Label: LAB_00511705
     MOV ESI,0x42a                       ; 0051170a
     PUSH 0x590b19                       ; 0051170f | = "CDemonSet::popRaytraceState - stack e..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00511714 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051171a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00511714 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0051171a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00511720
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00511725

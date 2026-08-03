@@ -10,8 +10,8 @@ void shape_edittool_cpp_CPickList_swap_FUN_00476200(CStrList *param_1,int param_
 
 {
   if (0 < param_1[0x13].item_count) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0xe35;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0xe35;
     core_main_c_FUN_004c8440("CPickList::swap - can't do this after enableing/disabling items (yet)");
   }
   shape_edittool_cpp_CStrList_swap_FUN_00474300(param_1,param_2,param_3);

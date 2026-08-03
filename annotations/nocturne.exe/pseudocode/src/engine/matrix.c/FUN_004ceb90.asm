@@ -10,8 +10,8 @@
 ;   undefined4 DAT_01c039b8
 ;   undefined4 DAT_01c039bc
 ;   undefined4 DAT_01c039c0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cc5174
 ;
 ; Called Functions:
@@ -43,8 +43,8 @@ section .text
     MOV EBX,0x588336                    ; 004cebcf | = "..\\engine\\matrix.c"
     MOV ESI,0x5d6                       ; 004cebd4
     PUSH 0x588349                       ; 004cebd9 | = "Matrix unbalance4"
-    MOV dword ptr [0x01cc4800],EBX      ; 004cebde | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004cebe4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 004cebde | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004cebe4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004cebea
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cebef

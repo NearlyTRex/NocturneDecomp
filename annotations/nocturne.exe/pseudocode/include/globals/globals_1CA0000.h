@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CGround.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CA0000
@@ -21,4 +22,7 @@ extern CDemonActorType g_CHotDemonActorType_01cae210;
 extern CDemonActorType g_CHighPriestOfGardathActorType_01cae24c;
 extern CDemonActorType g_CIcePickActorType_01cae2d0;
 extern CDemonActorType g_CImpActorType_01cae33c;
+
+// CGround
+extern CGround g_CGround_01cadf80;
 

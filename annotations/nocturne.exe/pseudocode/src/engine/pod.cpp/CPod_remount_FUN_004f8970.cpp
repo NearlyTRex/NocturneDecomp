@@ -34,8 +34,8 @@ void __cdecl engine_pod_cpp_CPod_remount_FUN_004f8970(CPod *this_ptr)
       } while (cVar1 != '\0');
       iVar2 = engine_pod_cpp_FUN_004f7ae0(pCVar3->pod_files[0],local_110);
       if (iVar2 == 0) {
-        INT_01cc4804 = 0x280;
-        PTR_01cc4800 = "..\\engine\\pod.cpp";
+        g_INT_01cc4804 = 0x280;
+        g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
         core_main_c_FUN_004c8440("Can't re-mount %s",local_110);
       }
       iVar4 = iVar4 + 1;

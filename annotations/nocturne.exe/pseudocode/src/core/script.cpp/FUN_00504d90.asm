@@ -15,11 +15,11 @@
 ;   TerminatedCString s_Error_processing_script_0058faf7
 ;   TerminatedCString s_core_script_cpp_0058fb46
 ;   TerminatedCString s_Infinite_loop_detected_t_0058fb59
-;   undefined4 DAT_005b6d50
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77814
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.letterbox_mode
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -54,9 +54,9 @@ section .text
     MOV EAX,dword ptr [EBX + 0x450]     ; 00504db4
     ADD ESP,0x4                         ; 00504dba
     MOV dword ptr [EBX + 0x40],EAX      ; 00504dbd
-    MOV EAX,[0x005b9354]                ; 00504dc0 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00504dc0 | g_CGame_PTR_005b9354
         ;   Label: LAB_00504dc0
-    CMP dword ptr [EAX + 0x228],0x0     ; 00504dc5 | DAT_01c77814
+    CMP dword ptr [EAX + 0x228],0x0     ; 00504dc5 | g_CGame_01c775ec.letterbox_mode
     JZ 0x00504e57                       ; 00504dcc
         ;   XREF to: 00504e57 (CONDITIONAL_JUMP)  ; LAB_00504e57
     CMP dword ptr [EBX],0x0             ; 00504dd2
@@ -82,9 +82,9 @@ section .text
     MOV EBP,0x58fb46                    ; 00504e02 | = "..\\core\\script.cpp"
     MOV EAX,0xea5                       ; 00504e07
     MOV EDI,dword ptr [EBX + 0x40]      ; 00504e0c
-    MOV [0x01cc4804],EAX                ; 00504e0f | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 00504e0f | g_INT_01cc4804
     MOV EAX,dword ptr [EBX + 0x2c]      ; 00504e14
-    MOV dword ptr [0x01cc4800],EBP      ; 00504e17 | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EBP      ; 00504e17 | g_CHAR_PTR_01cc4800
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00504e1d
     PUSH EDX                            ; 00504e20
     PUSH 0x58fb59                       ; 00504e21 | = "Infinite loop detected trying to skip..."
@@ -101,7 +101,7 @@ section .text
     MOV ECX,dword ptr [EAX + EDI*0x8]   ; 00504e3d
     PUSH ECX                            ; 00504e40
     PUSH 0x58faf7                       ; 00504e41 | = "Error processing script to skip cinem..."
-    MOV EDI,dword ptr [0x005b6d50]      ; 00504e46 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 00504e46 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 00504e4c
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 00504e4d
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()

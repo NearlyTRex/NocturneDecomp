@@ -11,8 +11,8 @@
 ;   TerminatedCString s_Out_of_memory_0058dbdd
 ;   TerminatedCString s_engine_pod_cpp_0058dbec
 ;   TerminatedCString s_Can_t_mount_s_0058dbfe
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -54,8 +54,8 @@ section .text
     MOV EBP,0x58dbcb                    ; 004f88d5 | = "..\\engine\\pod.cpp"
     MOV EAX,0x26d                       ; 004f88da
     PUSH 0x58dbdd                       ; 004f88df | = "Out of memory!"
-    MOV dword ptr [0x01cc4800],EBP      ; 004f88e4 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f88ea | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004f88e4 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f88ea | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f88ef
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f88f4
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_004f8915
     MOV ESI,0x267                       ; 004f891a
     PUSH 0x58dbae                       ; 004f891f | = "Too many .POD files at once!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f8924 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f892a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f8924 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f892a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f8930
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f8935
@@ -94,8 +94,8 @@ section .text
     MOV ESI,0x58dbec                    ; 004f8943 | = "..\\engine\\pod.cpp"
     MOV EDI,0x26e                       ; 004f8948
     PUSH 0x58dbfe                       ; 004f894d | = "Can't mount %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 004f8952 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f8958 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004f8952 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004f8958 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f895e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004f8963

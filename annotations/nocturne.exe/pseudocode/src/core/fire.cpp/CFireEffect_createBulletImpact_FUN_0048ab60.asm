@@ -36,9 +36,9 @@
 ;   double DOUBLE_005814b4 = 0.0578000000000000
 ;   undefined4 DAT_005b8bd8
 ;   undefined2 DAT_005b8bdc
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_01c0a13c
-;   undefined4 DAT_01c0a140
+;   CSmokeParticle[2048] g_CSmokeParticle_ARRAY_01c0a140
 ;   undefined4 DAT_01c20140
 ;   ... and 6 more
 ;
@@ -106,14 +106,14 @@ section .text
         ;   XREF to: 0048ad07 (CONDITIONAL_JUMP)  ; LAB_0048ad07
     FLD float ptr [EBX]                 ; 0048abe0
         ;   Label: LAB_0048abe0
-    FSUB float ptr [ESI]                ; 0048abe2 | DAT_01c20148 | DAT_01c20184
+    FSUB float ptr [ESI]                ; 0048abe2 | g_CBulletHole_ARRAY_01c20148 | g_CBulletHole_ARRAY_01c20148[1].position.x
     FSTP float ptr [ESP + 0x48]         ; 0048abe4
     FLD float ptr [EBX + 0x4]           ; 0048abe8
-    FSUB float ptr [ESI + 0x4]          ; 0048abeb | DAT_01c2014c | DAT_01c20188
+    FSUB float ptr [ESI + 0x4]          ; 0048abeb | g_CBulletHole_ARRAY_01c20148[0].position.y | g_CBulletHole_ARRAY_01c20148[1].position.y
     LEA ECX,[ESP + 0x48]                ; 0048abee
     FSTP float ptr [ESP + 0x4c]         ; 0048abf2
     FLD float ptr [EBX + 0x8]           ; 0048abf6
-    FSUB float ptr [ESI + 0x8]          ; 0048abf9 | DAT_01c20150 | DAT_01c2018c
+    FSUB float ptr [ESI + 0x8]          ; 0048abf9 | g_CBulletHole_ARRAY_01c20148[0].position.z | g_CBulletHole_ARRAY_01c20148[1].position.z
     LEA EAX,[ESP + 0x3c]                ; 0048abfc
     FSTP float ptr [ESP + 0x50]         ; 0048ac00
     CMP EAX,ECX                         ; 0048ac04
@@ -166,7 +166,7 @@ section .text
     PUSH 0x0                            ; 0048ac8a
     PUSH 0x3e99999a                     ; 0048ac8c
     PUSH EBX                            ; 0048ac91
-    PUSH EAX                            ; 0048ac92 | DAT_01c0a140
+    PUSH EAX                            ; 0048ac92 | g_CSmokeParticle_ARRAY_01c0a140
     INC ESI                             ; 0048ac93
     CALL core_fire.cpp_CSmokeParticle_init_FUN_00482780 ; 0048ac94
         ;   XREF to: 00482780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_init_FUN_00482780(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -365,7 +365,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0048ae66
     PUSH EAX                            ; 0048ae6a
     PUSH 0x0                            ; 0048ae6b
-    MOV EAX,[0x005bed68]                ; 0048ae6d | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 0048ae6d | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0048ae72
     CALL core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00 ; 0048ae73
         ;   XREF to: 0052eb00 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)

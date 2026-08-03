@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_0058dc0d
 ;   TerminatedCString s_Can_t_re_mount_s_0058dc1f
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -81,13 +81,13 @@ section .text
     POP ESI                             ; 004f89d9
     POP EBX                             ; 004f89da
     RET                                 ; 004f89db
-    MOV dword ptr [0x01cc4804],0x280    ; 004f89dc | INT_01cc4804
+    MOV dword ptr [0x01cc4804],0x280    ; 004f89dc | g_INT_01cc4804
         ;   Label: LAB_004f89dc
     MOV EAX,ESP                         ; 004f89e6
     PUSH EAX                            ; 004f89e8
     MOV EDI,0x58dc0d                    ; 004f89e9 | = "..\\engine\\pod.cpp"
     PUSH 0x58dc1f                       ; 004f89ee | = "Can't re-mount %s"
-    MOV dword ptr [0x01cc4800],EDI      ; 004f89f3 | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EDI      ; 004f89f3 | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 004f89f9
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004f89fe

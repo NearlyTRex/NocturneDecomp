@@ -11,27 +11,29 @@
 void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(int channel_index,float volume)
 
 {
-  uint uVar1;
-  int *piVar2;
+  int *piVar1;
+  uint uVar2;
+  CSfxSlot *pCVar3;
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
-    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    INT_01cc4804 = 0xf32;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    g_INT_01cc4804 = 0xf32;
     core_main_c_FUN_004c8440("setSfxChannelVol - invalid channel index: %d",channel_index);
   }
-  piVar2 = _DAT_02dc8318;
+  piVar1 = _DAT_02dc8318;
   *(float *)(channel_index * 4 + 0x2dc7958) = volume;
-  if (piVar2 != (int *)0x0) {
-    uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();
-    if (uVar1 != 0) {
-      piVar2 = (int *)0x2dbd374;
+  if (piVar1 != (int *)0x0) {
+    uVar2 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();
+    if (uVar2 != 0) {
+      pCVar3 = g_CSfxSlot_ARRAY_02dbd374;
       sound_sndmain_cpp_lockSound_FUN_00528800();
       do {
-        if (((piVar2[0x1c] != 0) && (piVar2[0x1b] != 0)) && (channel_index == *piVar2)) {
-          (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,piVar2,8);
+        if (((pCVar3->playback_state != 0) && (pCVar3->hardware_buffer_handle != 0)) &&
+           (channel_index == (pCVar3->options).channel_index)) {
+          (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,pCVar3,8);
         }
-        piVar2 = piVar2 + 0x48;
-      } while (piVar2 != (int *)&DAT_02dc1b74);
+        pCVar3 = pCVar3 + 1;
+      } while (pCVar3 != (CSfxSlot *)&DAT_02dc1b74);
       sound_sndmain_cpp_unlockSound_FUN_00528890();
       return;
     }

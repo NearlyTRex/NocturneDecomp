@@ -16,13 +16,14 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70(CDemonRa
   int iVar2;
   
   iVar1 = 0;
-  engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(0x01B4D738,0xff,0xff,0xff);
+  engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
+            ((CDemonRenderer *)PTR_DAT_005ae700,0xff,0xff,0xff);
   if (0 < _DAT_01b7b744) {
-    world_position = CVector3f_ARRAY_01b8efcc;
+    world_position = g_CVector3f_ARRAY_01b8efcc;
     iVar2 = 0;
     do {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                (0x01B4D738,world_position);
+                ((CDemonRenderer *)PTR_DAT_005ae700,world_position);
       core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(*(CDemonCube **)(iVar2 + 0x1b7b74c),0);
       iVar2 = iVar2 + 4;
       iVar1 = iVar1 + 1;

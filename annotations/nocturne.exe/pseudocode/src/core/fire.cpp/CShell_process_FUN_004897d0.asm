@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_process_FUN_004ef120
@@ -40,9 +40,9 @@ section .text
         ;   Label: LAB_004897e9
     CALL core_particle.cpp_CParticle_process_FUN_004ef120 ; 004897ea
         ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_004ef120(CParticle * this_ptr)
-    MOV EAX,[0x005b9354]                ; 004897ef | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004897ef | g_CGame_PTR_005b9354
     ADD ESP,0x4                         ; 004897f4
-    MOV EAX,dword ptr [EAX + 0x264]     ; 004897f7 | DAT_01c77850
+    MOV EAX,dword ptr [EAX + 0x264]     ; 004897f7 | g_CGame_01c775ec.delta_time_float
     MOV dword ptr [ESP + 0xc],EAX       ; 004897fd
     LEA EAX,[EBX + 0x44]                ; 00489801
     FLD float ptr [EAX]                 ; 00489804

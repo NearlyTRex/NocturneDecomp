@@ -255,7 +255,7 @@ void core_smiley_cpp_CSmiley_process_FUN_005200c0(CEnemy *param_1,float param_2)
                             (pCVar2,local_40,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)param_1,&local_4c,pCVar10);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_4c,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_4c,0);
         param_1->pool_me = 1;
       }
       break;
@@ -319,7 +319,7 @@ LAB_0052044e:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(param_1->base).model.motion_controller,1,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   (param_1->base).model.accumulated_root_motion.z = 0.0;
   (param_1->base).model.accumulated_root_motion.y = (param_1->base).model.accumulated_root_motion.z;
@@ -348,7 +348,8 @@ switchD_00520915_caseD_3:
       if ((pCVar3 != (CCharacter *)0x0) &&
          (pCVar11 = (CEnemy *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
          pCVar11 == param_1)) {
-        core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&param_1->victim->base);
+        core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                  (g_CDemonSet_PTR_005be368,&param_1->victim->base);
       }
       (param_1->base).velocity.y = (param_1->base).velocity.y - param_2 * (float)32;
       local_64 = (param_1->base).velocity.x * param_2;

@@ -108,7 +108,7 @@
 ;   double DOUBLE_0057e24e = 0.00390625
 ;   double DOUBLE_0057e256 = 5.59510608945921E-315
 ;   double DOUBLE_0057e25e = 256
-;   undefined4 DAT_005ae700
+;   void* PTR_DAT_005ae700 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b7b734
 ;   undefined4 DAT_01b7b738
@@ -156,7 +156,7 @@ section .text
     MOV dword ptr [0x01b7b73c],ESI      ; 00469d13 | DAT_01b7b73c
     MOV dword ptr [0x01b7b740],ESI      ; 00469d19 | DAT_01b7b740
     MOV dword ptr [0x01b7b744],ESI      ; 00469d1f | DAT_01b7b744
-    MOV ESI,dword ptr [0x005ae700]      ; 00469d25 | DAT_005ae700
+    MOV ESI,dword ptr [0x005ae700]      ; 00469d25 | PTR_DAT_005ae700
     PUSH ESI                            ; 00469d2b | DAT_01b4d738
     LEA ESI,[ESP + 0x64]                ; 00469d2c
     LEA EDI,[ESP + 0x7c]                ; 00469d30
@@ -559,7 +559,7 @@ section .text
     MOV dword ptr [EBX + 0x68],EAX      ; 0046a25b
     PUSH 0x1bc9950                      ; 0046a25e
         ;   Label: LAB_0046a25e
-    MOV EDI,dword ptr [0x005ae700]      ; 0046a263 | DAT_005ae700
+    MOV EDI,dword ptr [0x005ae700]      ; 0046a263 | PTR_DAT_005ae700
     XOR ESI,ESI                         ; 0046a269
     PUSH EDI                            ; 0046a26b | DAT_01b4d738
     MOV dword ptr [0x01e52ef8],ESI      ; 0046a26c | DAT_01e52ef8
@@ -569,7 +569,7 @@ section .text
     PUSH 0xff                           ; 0046a27a
     PUSH 0xff                           ; 0046a27f
     PUSH 0xff                           ; 0046a284
-    MOV EAX,[0x005ae700]                ; 0046a289 | DAT_005ae700
+    MOV EAX,[0x005ae700]                ; 0046a289 | PTR_DAT_005ae700
     PUSH EAX                            ; 0046a28e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0046a28f
         ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)

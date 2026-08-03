@@ -31,9 +31,9 @@ void __cdecl core_main_c_waitWithSkip_FUN_004c8e10(int duration_ms)
         _DAT_01bd1d80 = 0x4000;
       }
       duration_ms = duration_ms - _DAT_01bd1d80;
-      iVar2 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);
+      iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LSHIFT);
       if (iVar2 == 0) break;
-      iVar2 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1);
+      iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
       if (iVar2 != 0) {
         return;
       }

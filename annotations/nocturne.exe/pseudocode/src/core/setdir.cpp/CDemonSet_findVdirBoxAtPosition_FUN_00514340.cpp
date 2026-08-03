@@ -13,7 +13,7 @@ int core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet *para
   int iVar2;
   
   iVar2 = 0;
-  if (0 < (int)param_1->rooms[5].extents.z) {
+  if (0 < param_1->vdir_box_count) {
     do {
       iVar1 = core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(param_1,iVar2,param_2);
       if (iVar1 != 0) {
@@ -21,7 +21,7 @@ int core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet *para
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-    } while (iVar2 < (int)param_1->rooms[5].extents.z);
+    } while (iVar2 < param_1->vdir_box_count);
   }
   return -1;
 }

@@ -32,7 +32,7 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeathe
     (this_ptr->rotation).z = rotation->z;
   }
   if (this_ptr->weather_type != WEATHER_TYPE_NONE) {
-    pCVar2 = (CVector3f *)&DAT_02ddfa28;
+    pCVar2 = g_CVector3f_ARRAY_02ddfa28;
     iVar3 = 0;
     do {
       local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(5.0,50.0);
@@ -57,9 +57,10 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeathe
       }
       local_50.y = local_50.y + 50.0f;
       local_44.y = local_44.y + -50.0f;
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(0x01E57284);
-      local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(0x01E57284,&local_50,&local_44);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSet_PTR_005be368);
+      local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
+                           (g_CDemonSet_PTR_005be368,&local_50,&local_44);
       fVar1 = (local_44.y - local_50.y) * local_14 + local_50.y;
       *(float *)(iVar3 + 0x2de0388) = fVar1;
       local_24 = (double)fVar1;

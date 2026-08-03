@@ -15,8 +15,8 @@ SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_00548d50(SNetworkA
   
   if (src_addr->sin_family != 2) {
     apcStack_10[0] = "sockaddr is not of AF_INET family!";
-    PTR_01cc4800 = "..\\support\\trisock.cpp";
-    INT_01cc4804 = 0xa5;
+    g_CHAR_PTR_01cc4800 = "..\\support\\trisock.cpp";
+    g_INT_01cc4804 = 0xa5;
     core_main_c_FUN_004c8440();
   }
   apcStack_10[0] = (char *)(uint)src_addr->sin_port;

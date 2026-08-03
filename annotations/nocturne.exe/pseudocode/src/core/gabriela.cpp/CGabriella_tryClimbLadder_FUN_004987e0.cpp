@@ -37,12 +37,12 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004987e0(CGabriella 
   local_1c = 0;
   (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
   do {
-    if (*(int *)(0x01E57284 + 0x14cd6c) <= iVar2) {
+    if (g_CDemonSet_PTR_005be368->actor_count <= iVar2) {
       return 0;
     }
     this_ptr_00 = (CLadder *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(CDemonActor **)(0x01E57284 + local_1c + 0x14cd70),
+                            (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_1c),
                              g_CLadderActorType_01cc30e8.name_hash);
     local_24 = this_ptr_00;
     if (this_ptr_00 != (CLadder *)0x0) {

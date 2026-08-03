@@ -10,11 +10,12 @@ void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0044b810(CActorDestinatio
 
 {
   int iVar1;
+  CDemonMission *pCVar2;
   
   core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
-  iVar1 = 0x01CC9450;
+  pCVar2 = g_CDemonMission_PTR_005baf90;
   (this_ptr->base).is_renderable = 0;
-  iVar1 = *(int *)(iVar1 + 4);
+  iVar1 = pCVar2->is_in_editor;
   this_ptr->triggered = 0;
   this_ptr->needs_actor_search = 1;
   (this_ptr->base).is_transparent = iVar1;

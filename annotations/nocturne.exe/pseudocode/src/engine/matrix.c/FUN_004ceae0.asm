@@ -10,8 +10,8 @@
 ;   undefined4 DAT_01c039b8
 ;   undefined4 DAT_01c039bc
 ;   undefined4 DAT_01c039c0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cc5174
 ;
 ; Called Functions:
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_004ceb5b
     MOV EAX,0x5c9                       ; 004ceb60
     PUSH 0x588324                       ; 004ceb65 | = "Matrix unbalance3"
-    MOV dword ptr [0x01cc4800],EBP      ; 004ceb6a | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004ceb70 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004ceb6a | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004ceb70 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ceb75
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ceb7a

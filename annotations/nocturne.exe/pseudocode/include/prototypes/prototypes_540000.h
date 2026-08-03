@@ -40,6 +40,8 @@
 #include "types/enums/EDeathState.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SInteractionInfo.h"
+#include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SNetworkAddr.h"
@@ -212,7 +214,7 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_00548170(CTrigger *this_ptr);
 undefined4 core_trigger_cpp_CTrigger_getCollisionType_FUN_00548410(int param_1,int *param_2);
 undefined4 core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_00548460(CDemonActor *param_1,undefined4 param_2,CVector3f *param_3);
 undefined4 core_trigger_cpp_CTrigger_processActionButton_FUN_00548500(int param_1);
-void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(int param_1,int param_2);
+void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(CDemonActor *param_1,SLaserInfo *param_2);
 void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0(CTrigger *this_ptr,CDemonActor *actor);
 void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(CTrigger *this_ptr,float hit_points);
@@ -266,7 +268,7 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(CTurret *this_ptr
 void core_turret_cpp_CTurret_archive_FUN_0054a000(CWeapon *param_1);
 void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0054a110(CTurret *this_ptr,float delta_time);
 undefined4 core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3);
-void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(int param_1,undefined4 *param_2);
+void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CDemonActor *param_1,SInteractionInfo *param_2);
 undefined4 core_turret_cpp_CTurret_startInteraction_FUN_0054a870(int param_1,undefined4 param_2);
 undefined4 core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CCharacter *param_1,float *param_2,int param_3);
 void core_turret_cpp_CTurret_stopUsing_FUN_0054a900(int param_1,int param_2);
@@ -286,7 +288,7 @@ void core_tvbat_cpp_CTVBat_archive_FUN_0054b310(CEnemy *param_1);
 void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float delta_time);
 void __cdecl core_tvbat_cpp_FUN_0054bfc0(CTVBat *this_ptr);
 int core_tvbat_cpp_CTVBat_renderOpaque_FUN_0054bfd0(CDemonActor *param_1);
-undefined4 * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,undefined4 *param_2);
+float * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,float *param_2);
 undefined4 core_tvbat_cpp_CTVBat_getCollisionType_FUN_0054c0c0(int param_1);
 undefined4 core_tvbat_cpp_CTVBat_getTargetPoints_FUN_0054c0e0(void);
 int core_tvbat_cpp_CTVBat_getDeathState_FUN_0054c0f0(int param_1);
@@ -322,7 +324,7 @@ CDemonActorType * core_vehicle_cpp_CVehicle_getActorType_FUN_0054e590(void);
 CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(CVehicle *this_ptr);
 void core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0(CDemonActor *param_1);
 uint core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *param_1,float param_2);
-undefined4 * core_vehicle_cpp_CVehicle_getBoundingBox_FUN_0054f320(int param_1,undefined4 *param_2);
+float * core_vehicle_cpp_CVehicle_getBoundingBox_FUN_0054f320(int param_1,float *param_2);
 void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CDemonActor *param_1);
 undefined4 core_vehicle_cpp_CVehicle_getCollisionType_FUN_0054f500(void);
 int core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CDemonActor *param_1);

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,18 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 100,
+    "complexity_score": 97,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 57,
     "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
-    "total_lines": 191
+    "total_lines": 188
   },
   "cross_references": [
     {
@@ -274,7 +274,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 43,
+      "line": 40,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar3->x = pCVar2->x;",
@@ -282,7 +282,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `motion_list` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `motion_list->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 53,
+      "line": 50,
       "match": "motion_list = (T *)((motion_list->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
       "text": "motion_list = (CSkeleton *)((motion_list->motion_list).state_names[1] + 2);",
@@ -290,7 +290,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 55,
+      "line": 52,
       "match": "local_18 = (T *)&(local_18->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).current_motion_index;",

@@ -50,7 +50,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_004fe180(char *actor_specifie
   else {
     iVar2 = _stricmp(actor_specifier,"$");
     if (iVar2 == 0) {
-      if (*0x01CEA280 != 0) {
+      if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
         _sprintf(&DAT_01e56420,"Can't use '$' actor specifier in multi-player");
         return (CDemonActor *)0x0;
       }
@@ -63,7 +63,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_004fe180(char *actor_specifie
     }
     else {
       actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
-                            (0x01CC9450,actor_specifier);
+                            (g_CDemonMission_PTR_005baf90,actor_specifier);
       if (actor_ptr == (CDemonActor *)0x0) {
         _sprintf(&DAT_01e56420,"Actor \"%s\" does not exist.",actor_specifier);
         return (CDemonActor *)0x0;

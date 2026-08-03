@@ -17,7 +17,7 @@ void FUN_004d7e00(int param_1);
 
 // Original: core_mission.cpp_FUN_004d7e90
 // Address: 004d7e90
-void FUN_004d7e90(undefined4 param_1);
+void __cdecl FUN_004d7e90(void *param_1);
 
 // Original: core_mission.cpp_FUN_004d7ea0
 // Address: 004d7ea0

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,27 +56,9 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 19,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 46,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
-      },
-      {
         "category": "incompatible_types",
         "column": 3,
-        "line": 48,
+        "line": 49,
         "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
@@ -86,15 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 181,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 13,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
     "total_lines": 122
@@ -162,25 +144,25 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -267,100 +249,28 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 16,
-      "match": "(int *)((int)(this_ptr->cloth).vertices",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(int *)((int)(this_ptr->cloth).vertices[0x30b].rest_lengths[3] + 0x108) =",
-      "type": "pointer_cast"
+      "text": "(this_ptr->morph_target_actor->scale).x = (this_ptr->base).base.base.scale.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(int *)((int)(this_ptr->cloth).vertices",
-      "severity": "moderate",
-      "text": "*(int *)((int)(this_ptr->cloth).vertices[0x30b].rest_lengths[3] + 0x10c) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(int *)((int)(this_ptr->cloth).vertices",
-      "severity": "moderate",
-      "text": "*(int *)((int)(this_ptr->cloth).vertices[0x30b].rest_lengths[3] + 0x110) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint *)((int)(this_ptr->cloth).vertices",
-      "severity": "moderate",
-      "text": "*(uint *)((int)(this_ptr->cloth).vertices[0x30b].rest_lengths[3] + 0xbd14) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(float *)((int)fVar2",
-      "severity": "moderate",
-      "text": "*(float *)((int)fVar2 + 0x20) = (this_ptr->base).base.base.location.position.x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 25,
-      "match": "(float *)((int)fVar2",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(float *)((int)fVar2 + 0x24) = (this_ptr->base).base.base.location.position.y;",
-      "type": "pointer_cast"
+      "text": "(pCVar2->location).position.x = (this_ptr->base).base.base.location.position.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(float *)((int)fVar2",
-      "severity": "moderate",
-      "text": "*(float *)((int)fVar2 + 0x28) = (this_ptr->base).base.base.location.position.z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(int *)((int)fVar2",
-      "severity": "moderate",
-      "text": "*(int *)((int)fVar2 + 0x2c) = (this_ptr->base).base.base.location.area_id;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(UOrientationVector *)((int)fVar2",
-      "severity": "moderate",
-      "text": "if ((UOrientationVector *)((int)fVar2 + 0x30) != pUVar1) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(float *)((int)fVar2",
-      "severity": "moderate",
-      "text": "*(float *)((int)fVar2 + 0x30) = (pUVar1->vec).x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 32,
-      "match": "(float *)((int)fVar2",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(float *)((int)fVar2 + 0x34) = (this_ptr->base).base.base.orient.vec.y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(float *)((int)fVar2",
-      "severity": "moderate",
-      "text": "*(float *)((int)fVar2 + 0x38) = (this_ptr->base).base.base.orient.vec.z;",
-      "type": "pointer_cast"
+      "text": "(pCVar2->orient).vec.x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

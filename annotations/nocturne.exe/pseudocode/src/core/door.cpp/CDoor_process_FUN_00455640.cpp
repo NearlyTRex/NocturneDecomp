@@ -56,7 +56,7 @@ void core_door_cpp_CDoor_process_FUN_00455640(CDoor *param_1,float param_2)
       if (param_1->open_sound[0] != '\0') {
         (*((param_1->base).vtable._ub)->playSound)(&param_1->base,param_1->open_sound);
       }
-      core_setcolid_cpp_FUN_00511aa0(0x01E57284,&param_1->base);
+      core_setcolid_cpp_FUN_00511aa0(g_CDemonSet_PTR_005be368,&param_1->base);
     }
     param_1->param = 0.0;
     break;
@@ -97,7 +97,7 @@ void core_door_cpp_CDoor_process_FUN_00455640(CDoor *param_1,float param_2)
         if (param_1->one_shot != 0) {
           param_1->one_shot = 2;
         }
-        core_setcolid_cpp_FUN_00511a10(0x01E57284,&param_1->base);
+        core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&param_1->base);
       }
     }
     else if (param_1->param < 0.0) {
@@ -106,7 +106,7 @@ void core_door_cpp_CDoor_process_FUN_00455640(CDoor *param_1,float param_2)
       if (param_1->one_shot != 0) {
         param_1->one_shot = 2;
       }
-      core_setcolid_cpp_FUN_00511a10(0x01E57284,&param_1->base);
+      core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&param_1->base);
     }
   }
   if (param_1->door_state == DOOR_STATE_CLOSED) {
@@ -128,8 +128,8 @@ LAB_00455728:
     pCStack_4c = &(param_1->base).orient_matrix;
     iStack_18 = 0;
     while( true ) {
-      if ((int)0x01E57284->actors[0x6d6] <= iStack_18) break;
-      iVar1 = *(int *)((int)0x01E57284->actors + iVar4 + 0x1b5c);
+      if (g_CDemonSet_PTR_005be368->character_count <= iStack_18) break;
+      iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_d0);
       iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x34))(iVar1,&SStack_d0);
       if (((iVar2 == 2) &&

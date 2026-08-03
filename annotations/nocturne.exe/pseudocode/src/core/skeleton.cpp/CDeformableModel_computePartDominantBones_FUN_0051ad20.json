@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,31 +58,43 @@
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 86,
+        "line": 81,
         "message": "use of undeclared identifier 'FUN_0056497c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 92,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 92,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 43,
-        "line": 124,
+        "line": 118,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 43,
-        "line": 125,
+        "line": 119,
+        "message": "use of undeclared identifier '_DAT_005a1eb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 120,
+        "message": "use of undeclared identifier '_DAT_005a1eb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 122,
+        "message": "use of undeclared identifier '_DAT_005a1eb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 123,
+        "message": "use of undeclared identifier '_DAT_005a1eb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 124,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
       },
       {
@@ -94,25 +106,13 @@
       {
         "category": "undeclared_identifier",
         "column": 43,
+        "line": 127,
+        "message": "use of undeclared identifier '_DAT_005a1eb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
         "line": 128,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 129,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 130,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 132,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 384,
-    "complexity_score": 332,
+    "complexity_score": 326,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 202,
+    "pseudocode_lines": 196,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +135,7 @@
       "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 586
+    "total_lines": 580
   },
   "cross_references": [
     {
@@ -230,13 +230,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -592,23 +592,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 100,
       "match": "(uint *)((int)local_230",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_230 + iVar13) = 0;",
+      "text": "*(uint *)((int)local_230 + iVar12) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
+      "line": 170,
       "match": "(float *)((int)local_230",
       "severity": "moderate",
-      "text": "if (local_230[iVar11] < *(float *)((int)local_230 + iVar13)) {",
+      "text": "if (local_230[iVar10] < *(float *)((int)local_230 + iVar12)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_a0 != &local_58)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 131,
+      "line": 125,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_a0 != &local_58) {",
@@ -616,7 +616,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_88 != &local_7c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 139,
+      "line": 133,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_88 != &local_7c) {",
@@ -624,7 +624,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_64 != &local_94)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 147,
+      "line": 141,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_64 != &local_94) {",
@@ -632,42 +632,42 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 115,
+      "line": 109,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_1c);",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar10` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 162,
-      "match": "pSVar10 = (T *)pSVar10->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar9` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 156,
+      "match": "pSVar9 = (T *)pSVar9->ARRAY",
       "severity": "moderate",
-      "text": "pSVar10 = (SVert *)pSVar10->bone_weights;",
+      "text": "pSVar9 = (SVert *)pSVar9->bone_weights;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar12` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 163,
-      "match": "pSVar12 = (T *)pSVar12->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar11` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 157,
+      "match": "pSVar11 = (T *)pSVar11->ARRAY",
       "severity": "moderate",
-      "text": "pSVar12 = (SVert *)pSVar12->bone_indices;",
+      "text": "pSVar11 = (SVert *)pSVar11->bone_indices;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_2c`. Replace those `local_2c->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 185,
+      "line": 179,
       "match": "local_2c = (T *)(local_2c->tri_count + CONST)",
       "severity": "moderate",
       "text": "local_2c = (CDeformableModel *)(local_2c->tri_count + 3);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 200,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 194,
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
       "severity": "moderate",
-      "text": "pCVar4 = (CDeformableModel *)pCVar4->lod_info;",
+      "text": "pCVar3 = (CDeformableModel *)pCVar3->lod_info;",
       "type": "shadow_pointer_walk"
     }
   ]

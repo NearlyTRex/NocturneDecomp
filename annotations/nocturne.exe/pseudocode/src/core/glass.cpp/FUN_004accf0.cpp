@@ -373,8 +373,8 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
   local_1a4.y = param_4[1];
   local_1a4.z = param_4[2];
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
-            (0x01C08D04,&local_1e4,&local_1b4,&local_1a4,(SMRGLTextureBasic *)(param_1 + 0x15c),
-             *(int *)(param_1 + 0x174));
+            (g_CFireEffect_PTR_005b80f0,&local_1e4,&local_1b4,&local_1a4,
+             (SMRGLTextureBasic *)(param_1 + 0x15c),*(int *)(param_1 + 0x174));
   if (local_1e4.vertices + 1 != (CVector3f *)(param_2 + 6)) {
     local_1e4.vertices[1].x = param_2[6];
     local_1e4.vertices[1].y = param_2[7];
@@ -390,7 +390,7 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
   local_1a4.y = param_4[2];
   local_1a4.z = param_4[3];
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
-            (0x01C08D04,&local_1e4,&local_1b4,&local_1a4,(SMRGLTextureBasic *)(param_1 + 0x15c),
-             *(int *)(param_1 + 0x174));
+            (g_CFireEffect_PTR_005b80f0,&local_1e4,&local_1b4,&local_1a4,
+             (SMRGLTextureBasic *)(param_1 + 0x15c),*(int *)(param_1 + 0x174));
   return;
 }

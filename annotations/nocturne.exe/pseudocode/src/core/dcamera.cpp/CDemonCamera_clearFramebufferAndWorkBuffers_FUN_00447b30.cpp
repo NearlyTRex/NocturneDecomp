@@ -18,12 +18,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00
   if (0 < (int)this_ptr->max_distance) {
     do {
       iVar1 = 0;
-      if (0 < *(int *)(this_ptr->camera_name + 0xfc)) {
+      if (0 < this_ptr->screen_width) {
         do {
-          *(int *)((int)this_ptr->framebuffer_aligned +
-                  (*(int *)(this_ptr->camera_name + 0xfc) * iVar4 + iVar1) * 4) = clear_color;
+          *(int *)((int)this_ptr->framebuffer_aligned + (this_ptr->screen_width * iVar4 + iVar1) * 4
+                  ) = clear_color;
           iVar1 = iVar1 + 1;
-        } while (iVar1 < *(int *)(this_ptr->camera_name + 0xfc));
+        } while (iVar1 < this_ptr->screen_width);
       }
       iVar4 = iVar4 + 1;
     } while (iVar4 < (int)this_ptr->max_distance);

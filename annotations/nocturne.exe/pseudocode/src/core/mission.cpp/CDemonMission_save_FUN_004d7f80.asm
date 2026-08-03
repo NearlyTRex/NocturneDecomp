@@ -9,8 +9,8 @@
 ;   TerminatedCString s_world_0058966c
 ;   TerminatedCString s_core_mission_cpp_00589672
 ;   TerminatedCString s_CDemonMission_save_Unabl_00589686
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -55,8 +55,8 @@ section .text
     MOV ECX,0x589672                    ; 004d7fba | = "..\\core\\mission.cpp"
     MOV ESI,0xb6                        ; 004d7fbf
     PUSH 0x589686                       ; 004d7fc4 | = "CDemonMission::save - Unable to open ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d7fc9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d7fcf | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d7fc9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d7fcf | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d7fd5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d7fda

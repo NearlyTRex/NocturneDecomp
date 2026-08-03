@@ -14,8 +14,8 @@ void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_0044e340(int pixel_count)
   int iVar1;
   
   if (0x300060U - pixel_count < _DAT_01ab99ec) {
-    PTR_01cc4800 = "..\\core\\dlight.cpp";
-    INT_01cc4804 = 0xa3;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
+    g_INT_01cc4804 = 0xa3;
     core_main_c_FUN_004c8440("getRestoreMemory - Need more static memory");
   }
   iVar1 = _DAT_01ab99ec * 2;

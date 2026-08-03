@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,61 +57,55 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 28,
-        "line": 50,
-        "message": "use of undeclared identifier 'DAT_01c23d50'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
+        "column": 42,
         "line": 50,
         "message": "use of undeclared identifier '_DAT_01c23d4c'"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 54,
-        "message": "no matching function for call to 'core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 28,
-        "line": 57,
-        "message": "use of undeclared identifier 'DAT_01c23d50'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 57,
+        "column": 42,
+        "line": 56,
         "message": "use of undeclared identifier '_DAT_01c23d4c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 59,
+        "line": 58,
         "message": "use of undeclared identifier '_DAT_01c23d4c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 59,
+        "line": 58,
         "message": "use of undeclared identifier '_DAT_01c23d4c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 60,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_01c23d4c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 61,
+        "line": 60,
         "message": "use of undeclared identifier '_DAT_01c23d4c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
+        "line": 62,
+        "message": "use of undeclared identifier '_DAT_01c23d48'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 63,
+        "message": "use of undeclared identifier '_DAT_01c23d48'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
         "line": 63,
         "message": "use of undeclared identifier '_DAT_01c23d48'"
       }
@@ -122,18 +116,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 98,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
-    "suspect_count": 3,
+    "pseudocode_lines": 57,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 186
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -197,9 +190,9 @@
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "01c23d48",
@@ -377,22 +370,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01c23d50",
-      "severity": "mild",
-      "text": "((CStake *)(&DAT_01c23d50 + _DAT_01c23d4c * 0x260),&local_1c,orientation_angles,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_01c23d50",
-      "severity": "mild",
-      "text": "((CStake *)(&DAT_01c23d50 + _DAT_01c23d4c * 0x260),&local_1c,orientation_angles);",
-      "type": "undefined_data"
     }
   ]
 }

@@ -28,8 +28,8 @@ void engine_font_cpp_setShadowColor_FUN_00490ff0(uint param_1,uint param_2,uint 
          param_2 << (DAT_01c00630 & 0x1f) | param_1 << (DAT_01c00624 & 0x1f);
   }
   else {
-    PTR_01cc4800 = "..\\engine\\font.cpp";
-    INT_01cc4804 = 0x399;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
+    g_INT_01cc4804 = 0x399;
     core_main_c_FUN_004c8440("Invalid bitsPerPixel in CBitFont::setTrueColor");
   }
   _DAT_01c70f68 = param_2;

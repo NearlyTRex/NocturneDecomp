@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_fl_throw_wav_005816a9
 ;   float FLOAT_0059d7a0 = 4
-;   int INT_005b9284 = 0x1c70f74
-;   undefined4 DAT_005bed68
+;   void* PTR_DAT_005b9284 = 01c70f74
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     JZ 0x0048eb79                       ; 0048eb5d
         ;   XREF to: 0048eb79 (CONDITIONAL_JUMP)  ; LAB_0048eb79
     PUSH ECX                            ; 0048eb5f
-    MOV EDI,dword ptr [0x005bed68]      ; 0048eb60 | DAT_005bed68
+    MOV EDI,dword ptr [0x005bed68]      ; 0048eb60 | g_CSound_PTR_005bed68
     PUSH EDI                            ; 0048eb66
     CALL core_sound.cpp_CSound_killSound_FUN_0052ebb0 ; 0048eb67
         ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0052ebb0(CSound * this_ptr, uint sfx_handle)
@@ -75,7 +75,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x574]     ; 0048ebbb
         ;   Label: LAB_0048ebbb
     PUSH EDI                            ; 0048ebc1
-    MOV EAX,[0x005bed68]                ; 0048ebc2 | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 0048ebc2 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0048ebc7
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0 ; 0048ebc8
         ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0(CSound * this_ptr, uint sfx_handle)
@@ -118,7 +118,7 @@ section .text
     MOV dword ptr [EBX + 0x574],EAX     ; 0048ec37
     JMP 0x0048ebd4                      ; 0048ec3d
         ;   XREF to: 0048ebd4 (UNCONDITIONAL_JUMP)  ; LAB_0048ebd4
-    MOV ESI,dword ptr [0x005b9284]      ; 0048ec3f | INT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0048ec3f | PTR_DAT_005b9284
         ;   Label: LAB_0048ec3f
     PUSH ESI                            ; 0048ec45
     CALL xxx_unk.c_FUN_004940d0         ; 0048ec46

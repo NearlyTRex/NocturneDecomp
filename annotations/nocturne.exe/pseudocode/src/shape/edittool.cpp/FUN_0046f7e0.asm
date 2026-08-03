@@ -14,19 +14,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7630
-;   int INT_005bac64 = 0x1cc30e4
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01cc30e4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CKeys g_CKeys_01cc30e4
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -98,7 +98,7 @@ section .text
     SAR EDX,0x1f                        ; 0046f871
     IDIV EBX                            ; 0046f874
     PUSH EAX                            ; 0046f876
-    MOV ECX,dword ptr [0x005b6d50]      ; 0046f877 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 0046f877 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 0046f87d
     MOV ESI,0x8                         ; 0046f87e
     MOV EBX,0x7f                        ; 0046f883
@@ -107,7 +107,7 @@ section .text
     MOV EBP,dword ptr [0x005b7630]      ; 0046f88d | DAT_005b7630
     ADD ESP,0x14                        ; 0046f893
     MOV dword ptr [0x005b7630],EBX      ; 0046f896 | DAT_005b7630
-    MOV EAX,[0x005b6d50]                ; 0046f89c | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 0046f89c | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_0046f89c
     PUSH EAX                            ; 0046f8a1
     CALL shape_edittool.cpp_FUN_004722b0 ; 0046f8a2
@@ -141,8 +141,8 @@ section .text
         ;   Label: LAB_0046f8e0
     MOV EBP,0x8b                        ; 0046f8e5
     PUSH 0x57e510                       ; 0046f8ea | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046f8ef | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0046f8f5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0046f8ef | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0046f8f5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046f8fb
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046f900
@@ -154,9 +154,9 @@ section .text
     PUSH 0x0                            ; 0046f90a
     JMP 0x0046f843                      ; 0046f90c
         ;   XREF to: 0046f843 (UNCONDITIONAL_JUMP)  ; LAB_0046f843
-    MOV EBX,dword ptr [0x005bac64]      ; 0046f911 | INT_005bac64
+    MOV EBX,dword ptr [0x005bac64]      ; 0046f911 | g_CKeys_PTR_005bac64
         ;   Label: LAB_0046f911
-    PUSH EBX                            ; 0046f917 | DAT_01cc30e4
+    PUSH EBX                            ; 0046f917 | g_CKeys_01cc30e4
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0046f918
         ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0(CKeys * this_ptr)
     MOV EBX,EAX                         ; 0046f91d
@@ -177,7 +177,7 @@ section .text
     ADD ESP,0x4                         ; 0046f939
     JMP 0x0046f8ca                      ; 0046f93c
         ;   XREF to: 0046f8ca (UNCONDITIONAL_JUMP)  ; LAB_0046f8ca
-    MOV EDI,dword ptr [0x005b6d50]      ; 0046f93e | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 0046f93e | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_0046f93e
     PUSH EDI                            ; 0046f944
     CALL shape_edittool.cpp_FUN_004720c0 ; 0046f945
@@ -212,7 +212,7 @@ section .text
         ;   XREF to: 0046f968 (CONDITIONAL_JUMP)  ; LAB_0046f968
     POP EDI                             ; 0046f980
         ;   Label: LAB_0046f980
-    MOV ESI,dword ptr [0x005b6d50]      ; 0046f981 | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 0046f981 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 0046f987
     CALL shape_edittool.cpp_FUN_004720c0 ; 0046f988
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()

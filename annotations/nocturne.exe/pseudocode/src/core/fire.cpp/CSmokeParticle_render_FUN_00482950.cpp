@@ -37,8 +37,8 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle *th
     dVar3 = round((double)this_ptr->age);
     local_1c = (int)ROUND(dVar3);
     if ((local_1c < 0) || (0x27 < local_1c)) {
-      PTR_01cc4800 = "..\\core\\fire.cpp";
-      INT_01cc4804 = 0x11d;
+      g_CHAR_PTR_01cc4800 = "..\\core\\fire.cpp";
+      g_INT_01cc4804 = 0x11d;
       core_main_c_FUN_004c8440("CSmokeParticle::render - Frame out of range");
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
@@ -91,7 +91,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle *th
     local_44.y = (int)ROUND((this_ptr->position).y * 256.0f);
     local_44.z = (int)ROUND((this_ptr->position).z * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-              (0x01E57284,&local_44,(CVector3i *)&DAT_01c08d14,0,4);
+              (g_CDemonSet_PTR_005be368,&local_44,(CVector3i *)&DAT_01c08d14,0,4);
     core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
               (_DAT_007f7370,world_position,0);
     lVar1 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)this_ptr->alpha_value;

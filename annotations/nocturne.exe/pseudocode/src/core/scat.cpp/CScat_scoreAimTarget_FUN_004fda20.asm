@@ -22,10 +22,10 @@
 ;   double DOUBLE_0058df9e = 1.57079632675000
 ;   float FLOAT_0058dfa6 = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa3fe0
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -226,14 +226,14 @@ section .text
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004fdc4a
     PUSH 0x1                            ; 004fdc4d
-    MOV EAX,[0x005be368]                ; 004fdc4f | DAT_005be368
-    PUSH EAX                            ; 004fdc54 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 004fdc4f | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 004fdc54 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800 ; 004fdc55
         ;   XREF to: 00511800 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800(CDemonSet * this_ptr, int ray_type)
     ADD ESP,0x8                         ; 004fdc5a
     PUSH EDI                            ; 004fdc5d
-    MOV EDX,dword ptr [0x005be368]      ; 004fdc5e | DAT_005be368
-    PUSH EDX                            ; 004fdc64 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004fdc5e | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 004fdc64 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 004fdc65
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004fdc6a
@@ -241,15 +241,15 @@ section .text
     PUSH EAX                            ; 004fdc74
     LEA EAX,[ESP + 0xb8]                ; 004fdc75
     PUSH EAX                            ; 004fdc7c
-    MOV ECX,dword ptr [0x005be368]      ; 004fdc7d | DAT_005be368
-    PUSH ECX                            ; 004fdc83 | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004fdc7d | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 004fdc83 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 004fdc84
         ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x108],EAX     ; 004fdc89
     FLD float ptr [ESP + 0x108]         ; 004fdc90
     ADD ESP,0xc                         ; 004fdc97
-    MOV EBX,dword ptr [0x005be368]      ; 004fdc9a | DAT_005be368
-    PUSH EBX                            ; 004fdca0 | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 004fdc9a | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 004fdca0 | g_CDemonSet_01e57284
     FSTP float ptr [ESP + 0xf8]         ; 004fdca1
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004fdca8
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
@@ -261,8 +261,8 @@ section .text
     SAHF                                ; 004fdcbd
     JC 0x004fda89                       ; 004fdcbe
         ;   XREF to: 004fda89 (CONDITIONAL_JUMP)  ; LAB_004fda89
-    MOV EAX,[0x005be368]                ; 004fdcc4 | DAT_005be368
-    CMP ESI,dword ptr [EAX + 0x14cd5c]  ; 004fdcc9 | DAT_01fa3fe0
+    MOV EAX,[0x005be368]                ; 004fdcc4 | g_CDemonSet_PTR_005be368
+    CMP ESI,dword ptr [EAX + 0x14cd5c]  ; 004fdcc9 | g_CDemonSet_01e57284.collision_actor
     JNZ 0x004fda89                      ; 004fdccf
         ;   XREF to: 004fda89 (CONDITIONAL_JUMP)  ; LAB_004fda89
     MOV EAX,dword ptr [ESP + 0xf0]      ; 004fdcd5

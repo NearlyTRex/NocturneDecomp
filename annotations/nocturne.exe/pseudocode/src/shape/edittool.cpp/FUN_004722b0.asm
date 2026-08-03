@@ -31,8 +31,8 @@
 ;   undefined4 DAT_01bcddd0
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c70
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -76,8 +76,8 @@ section .text
     MOV EDI,0x57e9f6                    ; 004722f0 | = "..\\shape\\edittool.cpp"
     MOV EBP,0x749                       ; 004722f5
     PUSH 0x57ea0c                       ; 004722fa | = "CEditorTools::paintWindow() called bu..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004722ff | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00472305 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004722ff | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00472305 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0047230b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472310
@@ -145,8 +145,8 @@ section .text
         ;   Label: LAB_0047239e
     MOV EBX,0x8b                        ; 004723a3
     PUSH 0x57e510                       ; 004723a8 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 004723ad | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004723b3 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004723ad | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004723b3 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004723b9
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004723be

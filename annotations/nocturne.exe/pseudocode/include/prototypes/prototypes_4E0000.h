@@ -256,7 +256,7 @@ CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_004eefa0(CNPC *this_ptr);
 CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_004eefb0(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_004eefc0(CFont *this_ptr,uint flags);
 int __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color);
-undefined4 engine_palette_cpp_CFont_getLineSpacing_FUN_004ef000(void);
+int __cdecl engine_palette_cpp_CFont_getLineSpacing_FUN_004ef000(CFont *this_ptr);
 CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_004ef010(CParticle *this_ptr);
 CParticle * __cdecl core_particle_cpp_CParticle_dtor_FUN_004ef030(CParticle *this_ptr,uint flags);
 void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cc9454
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     TEST EAX,EAX                        ; 00544452
     JZ 0x00544465                       ; 00544454
         ;   XREF to: 00544465 (CONDITIONAL_JUMP)  ; LAB_00544465
-    MOV EAX,[0x005baf90]                ; 00544456 | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 00544456 | g_CDemonMission_PTR_005baf90
     CMP dword ptr [EAX + 0x4],0x0       ; 0054445b | DAT_01cc9454
     JNZ 0x00544465                      ; 0054445f
         ;   XREF to: 00544465 (CONDITIONAL_JUMP)  ; LAB_00544465

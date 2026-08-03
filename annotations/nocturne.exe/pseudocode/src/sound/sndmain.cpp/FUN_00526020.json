@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -60,6 +60,12 @@
         "column": 11,
         "line": 23,
         "message": "use of undeclared identifier '_DAT_02dc1b74'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_02dc1b74'"
       }
     ],
     "success": false,
@@ -68,14 +74,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 162,
+    "complexity_score": 232,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 13,
+    "suspect_count": 19,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_param",
       "warning_overlapping_globals"
     ],
@@ -209,7 +217,7 @@
       "line": 17,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x2dc1b9c) = in_stack_00000004;",
+      "text": "*(uint *)&g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].velocity.x = in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -217,7 +225,7 @@
       "line": 18,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x2dc1ba0) = in_stack_00000008;",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.x + 4) = in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -225,7 +233,7 @@
       "line": 19,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x2dc1ba4) = in_stack_0000000c;",
+      "text": "*(uint *)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.y = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -233,7 +241,7 @@
       "line": 20,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x2dc1ba8) = in_stack_00000010;",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.y + 4) = in_stack_00000010;",
       "type": "stack_param"
     },
     {
@@ -241,7 +249,7 @@
       "line": 21,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x2dc1bac) = in_stack_00000014;",
+      "text": "*(uint *)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.z = in_stack_00000014;",
       "type": "stack_param"
     },
     {
@@ -249,8 +257,56 @@
       "line": 22,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x2dc1bb0) = in_stack_00000018;",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.z + 4) = in_stack_00000018;",
       "type": "stack_param"
+    },
+    {
+      "description": "Pointer value `&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.x",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.x + 4) = in_stack_00000008;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.y",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.y + 4) = in_stack_00000010;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.z",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.z + 4) = in_stack_00000018;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 18,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.x + 4) = in_stack_00000008;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 20,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.y + 4) = in_stack_00000010;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity.z + 4) = in_stack_00000018;",
+      "type": "pointer_cast"
     }
   ]
 }

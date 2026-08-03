@@ -91,26 +91,27 @@ uint core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *param_1)
       start_pos = &(param_1->weapon->base).location.position;
     }
     if (start_pos != (CVector3f *)0x0) {
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-      core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,1);
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,(CDemonActor *)param_1);
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&param_1->weapon->base);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+      core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (0x01E57284,(param_1->base).base.carry_hands[1].carry_actor);
+                (g_CDemonSet_PTR_005be368,(CDemonActor *)param_1);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                (g_CDemonSet_PTR_005be368,&param_1->weapon->base);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                (g_CDemonSet_PTR_005be368,(param_1->base).base.carry_hands[1].carry_actor);
       input = core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(param_1,&local_70);
       core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
                 ((CDemonActor *)param_1,&local_7c,input);
       local_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0
-                           (0x01E57284,start_pos,&local_7c);
+                           (g_CDemonSet_PTR_005be368,start_pos,&local_7c);
       local_18 = local_14;
       if (local_14 < 0.0) {
         local_18 = 10.0;
       }
       core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440
-                (0x01C08D04,start_pos,&local_7c,1.0,1.0,
-                 (CVector3f *)(0x01E57284->lights[199].filter_names[0x12] + 0x24),local_18,0xff,0,
-                 0);
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+                (g_CFireEffect_PTR_005b80f0,start_pos,&local_7c,1.0,1.0,
+                 &g_CDemonSet_PTR_005be368->collision_normal,local_18,0xff,0,0);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
     }
   }
   pCVar2 = param_1->weapon;

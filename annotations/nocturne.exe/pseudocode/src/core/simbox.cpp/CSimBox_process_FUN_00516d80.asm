@@ -12,8 +12,8 @@
 ;   double DOUBLE_00591125 = 3.14159265350000
 ;   double DOUBLE_0059112d = 2
 ;   undefined4 DAT_005b7650
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_01cc30e4
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
+;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041acb0
@@ -95,9 +95,9 @@ section .text
     JNZ 0x00516eef                      ; 00516e47
         ;   XREF to: 00516eef (CONDITIONAL_JUMP)  ; LAB_00516eef
     PUSH 0x13                           ; 00516e4d
-    MOV EAX,[0x005bac64]                ; 00516e4f | INT_005bac64
-    PUSH EAX                            ; 00516e54 | DAT_01cc30e4
-    MOV ESI,dword ptr [EAX]             ; 00516e55 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 00516e4f | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 00516e54 | g_CKeys_01cc30e4
+    MOV ESI,dword ptr [EAX]             ; 00516e55 | g_CKeys_01cc30e4
     CALL dword ptr [ESI]                ; 00516e57
     ADD ESP,0x8                         ; 00516e59
     TEST EAX,EAX                        ; 00516e5c

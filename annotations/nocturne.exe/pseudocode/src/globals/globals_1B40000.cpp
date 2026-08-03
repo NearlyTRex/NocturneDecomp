@@ -12,3 +12,6 @@ CVector3f CVector3f_01b4d200 = {};
 CVector3f CVector3f_01b4d20c = {};
 CVector3f CVector3f_01b4d218 = {};
 
+// SFreaky[6]
+SFreaky g_SFreaky_ARRAY_01b4d280[6] = {};
+

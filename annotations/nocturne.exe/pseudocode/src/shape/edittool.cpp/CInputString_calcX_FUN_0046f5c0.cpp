@@ -33,8 +33,8 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0046f5c0(CInputString *thi
       return iVar2;
     }
     if (0x3ff < (uint)char_index) {
-      PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      INT_01cc4804 = 0x187;
+      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+      g_INT_01cc4804 = 0x187;
       core_main_c_FUN_004c8440("CInputString::calcX - string too big for hidden text!");
     }
     memset((void *)0x1bcd9c8,0x2a,char_index);

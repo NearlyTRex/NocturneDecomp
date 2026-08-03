@@ -59,7 +59,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
         piVar10 = piVar10 + (uint)bVar11 * -2 + 1;
       }
       _fscanf(file_handle," %s \"%[^\"]\"\n");
-      if (0x01CC9450->has_inventory_actors == 0) {
+      if (g_CDemonMission_PTR_005baf90->has_inventory_actors == 0) {
         pcVar9 = (char *)&local_78;
         pCVar3 = core_actor_cpp_createActorByName_FUN_0040d540((char *)local_dc);
         pCVar2 = pCVar3;
@@ -76,7 +76,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
       }
       else {
         pCVar2 = core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640
-                           (0x01CC9450,(char *)&local_78);
+                           (g_CDemonMission_PTR_005baf90,(char *)&local_78);
         pCVar6->items[0] = pCVar2;
       }
       iVar7 = iVar7 + 1;
@@ -96,7 +96,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
   if (1 < this_ptr->save_version) {
     _fgets(local_1dc,0xff,file_handle);
   }
-  iVar7 = 0x01CC9450->has_inventory_actors;
+  iVar7 = g_CDemonMission_PTR_005baf90->has_inventory_actors;
   this_ptr->selected_weapon = (CWeapon *)0x0;
   this_ptr->preserve_items = iVar7;
   if (-1 < local_14) {
@@ -105,8 +105,8 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
                        (this_ptr->items[local_14],g_CWeaponActorType_02ddf970.name_hash);
     this_ptr->selected_weapon = pCVar4;
     if (this_ptr->selected_weapon == (CWeapon *)0x0) {
-      PTR_01cc4800 = "..\\core\\inv.cpp";
-      INT_01cc4804 = 0x54b;
+      g_CHAR_PTR_01cc4800 = "..\\core\\inv.cpp";
+      g_INT_01cc4804 = 0x54b;
       core_main_c_FUN_004c8440("CInventory::load - Can't find your weapon");
     }
   }

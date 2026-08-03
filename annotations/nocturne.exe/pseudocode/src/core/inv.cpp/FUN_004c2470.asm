@@ -95,8 +95,8 @@ section .text
     MOV EBP,ESP                         ; 004c2474
     SUB ESP,0x678                       ; 004c2476
     AND ESP,0xfffffff8                  ; 004c247c
-    MOV EAX,[0x005b9354]                ; 004c247f | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0x228],0x0     ; 004c2484 | DAT_01c77814
+    MOV EAX,[0x005b9354]                ; 004c247f | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0x228],0x0     ; 004c2484 | g_CGame_01c775ec.letterbox_mode
     JNZ 0x004c2dcc                      ; 004c248b
         ;   XREF to: 004c2dcc (CONDITIONAL_JUMP)  ; LAB_004c2dcc
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c2491
@@ -114,7 +114,7 @@ section .text
     MOV EDI,dword ptr [0x005b7620]      ; 004c24c1 | DAT_005b7620
     XOR ESI,ESI                         ; 004c24c7
     MOV dword ptr [ESP + 0x61c],EAX     ; 004c24c9
-    MOV EAX,[0x014b9904]                ; 004c24d0 | DAT_014b9904
+    MOV EAX,[0x014b9904]                ; 004c24d0 | g_CBitFont_PTR_014b9904
     MOV dword ptr [0x01c02594],ESI      ; 004c24d5 | DAT_01c02594
     MOV dword ptr [ESP + 0x644],EAX     ; 004c24db
     CMP EDI,0x180                       ; 004c24e2
@@ -545,9 +545,9 @@ section .text
     JL 0x004c2a42                       ; 004c2a7c
         ;   XREF to: 004c2a42 (CONDITIONAL_JUMP)  ; LAB_004c2a42
     MOV EAX,EAX                         ; 004c2a7e
-    MOV EAX,[0x005b9354]                ; 004c2a80 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004c2a80 | g_CGame_PTR_005b9354
         ;   Label: LAB_004c2a80
-    CMP dword ptr [EAX + 0x244],0x0     ; 004c2a85 | DAT_01c77830
+    CMP dword ptr [EAX + 0x244],0x0     ; 004c2a85 | g_CGame_01c775ec.flashlight_active
     JZ 0x004c317d                       ; 004c2a8c
         ;   XREF to: 004c317d (CONDITIONAL_JUMP)  ; LAB_004c317d
     MOV EAX,[0x005b7620]                ; 004c2a92 | DAT_005b7620
@@ -727,7 +727,7 @@ section .text
     PUSH EBX                            ; 004c2cbf
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004c2cc0
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
-    MOV EAX,[0x014b9904]                ; 004c2cc5 | DAT_014b9904
+    MOV EAX,[0x014b9904]                ; 004c2cc5 | g_CBitFont_PTR_014b9904
     MOV EDX,dword ptr [0x005bab64]      ; 004c2cca | INT_005bab64
     ADD ESP,0x4                         ; 004c2cd0
     MOV ESI,dword ptr [0x005b7620]      ; 004c2cd3 | DAT_005b7620
@@ -740,7 +740,7 @@ section .text
     SUB EAX,EDX                         ; 004c2ced
     SAR EAX,0x1                         ; 004c2cef
     MOV EDX,EAX                         ; 004c2cf1
-    MOV EAX,[0x014b990c]                ; 004c2cf3 | DAT_014b990c
+    MOV EAX,[0x014b990c]                ; 004c2cf3 | g_CBitFont_PTR_014b990c
     MOV dword ptr [ESP + 0x670],EAX     ; 004c2cf8
     MOV EAX,[0x005b761c]                ; 004c2cff | DAT_005b761c
         ;   Label: LAB_004c2cff
@@ -769,7 +769,7 @@ section .text
     IMUL EAX,EBX                        ; 004c2d4a
     MOV EDI,dword ptr [0x005b7620]      ; 004c2d4d | DAT_005b7620
     SUB EDI,0x4                         ; 004c2d53
-    MOV EDX,dword ptr [0x014b990c]      ; 004c2d56 | DAT_014b990c
+    MOV EDX,dword ptr [0x014b990c]      ; 004c2d56 | g_CBitFont_PTR_014b990c
     SUB EDI,EAX                         ; 004c2d5c
     CMP EDX,dword ptr [ESP + 0x670]     ; 004c2d5e
     JNZ 0x004c2d70                      ; 004c2d65
@@ -820,7 +820,7 @@ section .text
         ;   Label: LAB_004c2dd3
     JMP 0x004c24bc                      ; 004c2dd8
         ;   XREF to: 004c24bc (UNCONDITIONAL_JUMP)  ; LAB_004c24bc
-    MOV EAX,[0x014b990c]                ; 004c2ddd | DAT_014b990c
+    MOV EAX,[0x014b990c]                ; 004c2ddd | g_CBitFont_PTR_014b990c
         ;   Label: LAB_004c2ddd
     MOV dword ptr [ESP + 0x644],EAX     ; 004c2de2
     JMP 0x004c24fa                      ; 004c2de9
@@ -1148,7 +1148,7 @@ section .text
     MOV ESI,EAX                         ; 004c3176
     JMP 0x004c2805                      ; 004c3178
         ;   XREF to: 004c2805 (UNCONDITIONAL_JUMP)  ; LAB_004c2805
-    CMP dword ptr [EAX + 0x240],0x0     ; 004c317d | DAT_01c7782c
+    CMP dword ptr [EAX + 0x240],0x0     ; 004c317d | g_CGame_01c775ec.goggles_active
         ;   Label: LAB_004c317d
     JNZ 0x004c2a92                      ; 004c3184
         ;   XREF to: 004c2a92 (CONDITIONAL_JUMP)  ; LAB_004c2a92

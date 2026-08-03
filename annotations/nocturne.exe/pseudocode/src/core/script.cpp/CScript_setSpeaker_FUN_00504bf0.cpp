@@ -13,6 +13,6 @@ void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(CScript *this_ptr,C
     return;
   }
   this_ptr->who_is_speaking = (CDemonActor *)0x0;
-  *(byte *)&this_ptr->cmd_timer = 0;
+  this_ptr->current_message[0] = '\0';
   return;
 }

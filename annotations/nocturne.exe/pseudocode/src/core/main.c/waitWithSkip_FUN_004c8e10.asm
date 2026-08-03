@@ -7,9 +7,9 @@
 ; int              Stack[0x4]:4   duration_ms
 ;
 ; Referenced Globals:
-;   int INT_005bac64 = 0x1cc30e4
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01cc30e4
+;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
@@ -58,9 +58,9 @@ section .text
         ;   Label: LAB_004c8e61
     PUSH 0x2a                           ; 004c8e66
     SUB EBX,EAX                         ; 004c8e68
-    MOV EAX,[0x005bac64]                ; 004c8e6a | INT_005bac64
-    PUSH EAX                            ; 004c8e6f | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004c8e70 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004c8e6a | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004c8e6f | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004c8e70 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004c8e72
     ADD ESP,0x8                         ; 004c8e74
     TEST EAX,EAX                        ; 004c8e77
@@ -82,9 +82,9 @@ section .text
         ;   XREF to: 004c8e4b (UNCONDITIONAL_JUMP)  ; LAB_004c8e4b
     PUSH 0x1                            ; 004c8e8e
         ;   Label: LAB_004c8e8e
-    MOV EAX,[0x005bac64]                ; 004c8e90 | INT_005bac64
-    PUSH EAX                            ; 004c8e95 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004c8e96 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004c8e90 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004c8e95 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004c8e96 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004c8e98
     ADD ESP,0x8                         ; 004c8e9a
     TEST EAX,EAX                        ; 004c8e9d

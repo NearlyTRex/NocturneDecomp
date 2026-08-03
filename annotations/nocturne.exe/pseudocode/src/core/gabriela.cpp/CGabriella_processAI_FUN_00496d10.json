@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,62 +58,26 @@
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 67,
+        "line": 66,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 77,
+        "line": 76,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 91,
+        "line": 90,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "incompatible_types",
-        "column": 17,
+        "column": 23,
         "line": 111,
         "message": "no matching function for call to 'core_hero_cpp_CHero_closestEnemy_FUN_004b5d00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 111,
-        "message": "incompatible pointer to integer conversion assigning to 'int' from 'CCharacter *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 160,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 40,
-        "line": 160,
-        "message": "expected expression"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 196,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 197,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 25,
-        "line": 198,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
       }
     ],
     "success": false,
@@ -122,17 +86,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 324,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 204,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "raw_address_constant",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -263,9 +224,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01cae0e8",
@@ -275,13 +236,13 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "DAT_01fa3fe0",
+      "name": "g_CDemonSet_01e57284.collision_actor",
       "type": "undefined4",
       "value": null
     }
@@ -567,21 +528,21 @@
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 100,
+          "line": 99,
           "message": "Uninitialized variable: local_94",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 40,
-          "line": 100,
+          "line": 99,
           "message": "Uninitialized variable: local_9c",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 62,
-          "line": 100,
+          "line": 99,
           "message": "Uninitialized variable: local_98",
           "severity": "warning"
         }
@@ -608,56 +569,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pfVar6 = (float *)(**(code **)(*(int *)(iVar8 + 0x14c) + 0x14))(iVar8,auStack_114);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 193,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x18) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 194,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x19) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 195,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1a) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 196,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1b) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 191,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 185,
+      "line": 188,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_48.x = CStack_a8.x;",
@@ -665,7 +578,7 @@
     },
     {
       "description": "Uninitialized variable: local_94",
-      "line": 100,
+      "line": 99,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {",
@@ -673,7 +586,7 @@
     },
     {
       "description": "Uninitialized variable: local_9c",
-      "line": 100,
+      "line": 99,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {",
@@ -681,7 +594,7 @@
     },
     {
       "description": "Uninitialized variable: local_98",
-      "line": 100,
+      "line": 99,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {",

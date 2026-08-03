@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -68,28 +68,10 @@
         "message": "use of undeclared identifier '_DAT_01cc64a4'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 27,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 27,
-        "message": "assigning to 'int' from incompatible type 'const char[17]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 7,
         "line": 29,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 35,
-        "message": "use of undeclared identifier 'DAT_01fb8508'"
       },
       {
         "category": "undeclared_identifier",
@@ -98,10 +80,10 @@
         "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "incompatible_types",
         "column": 21,
         "line": 37,
-        "message": "use of undeclared identifier '_DAT_014b9904'; did you mean 'DAT_02DE9904'?"
+        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
       }
     ],
     "success": false,
@@ -110,13 +92,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 100,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 30,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -197,8 +179,8 @@
     },
     {
       "addr": "014b9904",
-      "name": "DAT_014b9904",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b9904",
+      "type": "CBitFont*",
       "value": null
     },
     {
@@ -209,13 +191,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -328,17 +310,9 @@
     {
       "description": "Undefined global data reference",
       "line": 28,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "core_dcamera_cpp_CDemonCamera_init_FUN_00440010((CDemonCamera *)&DAT_01fb8508,DAT_005b7620);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
       "match": "DAT_005b7620",
       "severity": "mild",
-      "text": "core_dcamera_cpp_CDemonCamera_init_FUN_00440010((CDemonCamera *)&DAT_01fb8508,DAT_005b7620);",
+      "text": "core_dcamera_cpp_CDemonCamera_init_FUN_00440010(&g_CDemonCamera_01fb8508,DAT_005b7620);",
       "type": "undefined_data"
     },
     {

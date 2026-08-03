@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -94,26 +94,26 @@
       {
         "category": "cast_error",
         "column": 18,
-        "line": 186,
+        "line": 187,
         "message": "cannot cast from type 'float' to pointer type 'CVehicle *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 212,
+        "line": 213,
         "message": "use of undeclared identifier 'FUN_0056497c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 217,
+        "line": 218,
         "message": "use of undeclared identifier 'FUN_0056497c'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 223,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
+        "category": "type_error",
+        "column": 70,
+        "line": 290,
+        "message": "called object type 'float' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -122,16 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 1385,
+    "complexity_score": 1388,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 28,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 285,
+    "pseudocode_lines": 288,
     "suspect_count": 106,
     "suspect_types": [
       "nan_function_artifact",
-      "raw_address_pointer_store",
+      "pointer_cast",
       "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
@@ -139,7 +139,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 967
+    "total_lines": 970
   },
   "cross_references": [],
   "function": {
@@ -328,15 +328,15 @@
     },
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01cae0e8",
@@ -346,13 +346,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -370,31 +370,31 @@
     },
     {
       "addr": "01fa3ff0",
-      "name": "DAT_01fa3ff0",
+      "name": "g_CDemonSet_01e57284.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "DAT_01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "DAT_01fa5f38",
+      "name": "g_CDemonSet_01e57284.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "DAT_01fa5f3c",
+      "name": "g_CDemonSet_01e57284.characters[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa7e78",
-      "name": "DAT_01fa7e78",
+      "name": "g_CDemonSet_01e57284.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -1080,12 +1080,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 130,
-      "match": "*(CCharacter **)(0x01E57284 + iStack_18 + 0x14ecb4",
+      "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "pCVar7 = *(CCharacter **)(0x01E57284 + iStack_18 + 0x14ecb4);",
-      "type": "raw_address_pointer_store"
+      "text": "pCVar7 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_18);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -1176,16 +1176,16 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 176,
-      "match": "*(CDemonActor **)(iVar15 + 0x150bf8 + 0x01E57284",
+      "description": "Complex pointer cast",
+      "line": 177,
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)(iVar15 + 0x150bf8 + 0x01E57284),",
-      "type": "raw_address_pointer_store"
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar15),",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 179,
+      "line": 180,
       "match": "param_1",
       "severity": "mild",
       "text": "(pCVar9 = (CVehicle *)pCVar10[0x90].orient_matrix.m[1].x, param_1 == pCVar9)) {",
@@ -1193,7 +1193,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 194,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar7 = (CCharacter *)param_1->last_mobster_left;",
@@ -1201,7 +1201,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 201,
+      "line": 202,
       "match": "param_1",
       "severity": "mild",
       "text": "(pCVar7 = (CCharacter *)param_1->last_mobster_right, pCVar7 != (CCharacter *)0x0)) {",
@@ -1209,7 +1209,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 229,
+      "line": 230,
       "match": "param_1",
       "severity": "mild",
       "text": "this_ptr_00->vehicle = &param_1->base;",
@@ -1217,7 +1217,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 232,
+      "line": 233,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->last_mobster_left = (CDemonActor *)this_ptr_00;",
@@ -1225,7 +1225,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 236,
+      "line": 237,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->last_mobster_right = (CDemonActor *)this_ptr_00;",
@@ -1233,7 +1233,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 241,
+      "line": 243,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr_00->base).base.base.location.position.x = (param_1->base).location.position.x;",
@@ -1241,7 +1241,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 242,
+      "line": 244,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr_00->base).base.base.location.position.y = (param_1->base).location.position.y;",
@@ -1249,7 +1249,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 245,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr_00->base).base.base.location.position.z = (param_1->base).location.position.z;",
@@ -1257,7 +1257,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 244,
+      "line": 246,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr_00->base).base.base.location.area_id = (param_1->base).location.area_id;",
@@ -1265,7 +1265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 246,
+      "line": 248,
       "match": "param_1",
       "severity": "mild",
       "text": "pUVar1 = &(param_1->base).orient;",
@@ -1273,7 +1273,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 249,
+      "line": 251,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr_00->base).base.base.orient.vec.y = (param_1->base).orient.vec.y;",
@@ -1281,7 +1281,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 250,
+      "line": 252,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr_00->base).base.base.orient.vec.z = (param_1->base).orient.vec.z;",
@@ -1289,7 +1289,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 252,
+      "line": 254,
       "match": "param_1",
       "severity": "mild",
       "text": "(actor->base).base.location.position.x = (param_1->base).location.position.x;",
@@ -1297,7 +1297,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 253,
+      "line": 255,
       "match": "param_1",
       "severity": "mild",
       "text": "(actor->base).base.location.position.y = (param_1->base).location.position.y;",
@@ -1305,7 +1305,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 254,
+      "line": 256,
       "match": "param_1",
       "severity": "mild",
       "text": "(actor->base).base.location.position.z = (param_1->base).location.position.z;",
@@ -1313,7 +1313,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 255,
+      "line": 257,
       "match": "param_1",
       "severity": "mild",
       "text": "(actor->base).base.location.area_id = (param_1->base).location.area_id;",
@@ -1321,7 +1321,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 257,
+      "line": 259,
       "match": "param_1",
       "severity": "mild",
       "text": "pUVar1 = &(param_1->base).orient;",
@@ -1329,7 +1329,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 260,
+      "line": 262,
       "match": "param_1",
       "severity": "mild",
       "text": "(actor->base).base.orient.vec.y = (param_1->base).orient.vec.y;",
@@ -1337,7 +1337,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 261,
+      "line": 263,
       "match": "param_1",
       "severity": "mild",
       "text": "(actor->base).base.orient.vec.z = (param_1->base).orient.vec.z;",
@@ -1345,7 +1345,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 271,
+      "line": 274,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar15 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handles[1]);",
@@ -1353,7 +1353,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 274,
+      "line": 277,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,\"ext-modelt-fast_??.wav\");",
@@ -1361,7 +1361,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 275,
+      "line": 278,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->sfx_handles[1] = uVar13;",
@@ -1369,7 +1369,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 277,
+      "line": 280,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(param_1->sfx_handles[1],1.0);",
@@ -1377,7 +1377,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 278,
+      "line": 281,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = ABS((param_1->local_velocity).x);",
@@ -1385,7 +1385,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 280,
+      "line": 283,
       "match": "NAN(",
       "severity": "severe",
       "text": "uVar13 = (uint)(ushort)((ushort)(fVar3 < fVar4) << 8 | (ushort)(NAN(fVar3) || NAN(fVar4)) << 10 |",
@@ -1393,7 +1393,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 280,
+      "line": 283,
       "match": "NAN(",
       "severity": "severe",
       "text": "uVar13 = (uint)(ushort)((ushort)(fVar3 < fVar4) << 8 | (ushort)(NAN(fVar3) || NAN(fVar4)) << 10 |",
@@ -1401,7 +1401,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 283,
+      "line": 286,
       "match": "param_1",
       "severity": "mild",
       "text": "(uVar13 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handles[2]), uVar13 == 0)) {",
@@ -1409,7 +1409,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 284,
+      "line": 287,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar13 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_0054f7a0(param_1,\"skid_??.wav\");",
@@ -1417,7 +1417,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 285,
+      "line": 288,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->sfx_handles[2] = uVar13;",
@@ -1433,7 +1433,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 241,
+      "line": 243,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr_00->base).base.base.location.position.x = (param_1->base).location.position.x;",
@@ -1441,7 +1441,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 248,
+      "line": 250,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar2->vec).x = (pUVar1->vec).x;",
@@ -1449,7 +1449,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 252,
+      "line": 254,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(actor->base).base.location.position.x = (param_1->base).location.position.x;",
@@ -1457,7 +1457,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 259,
+      "line": 261,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar2->vec).x = (pUVar1->vec).x;",

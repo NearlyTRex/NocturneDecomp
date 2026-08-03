@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -82,7 +82,7 @@
     "pseudocode_lines": 65,
     "suspect_count": 1,
     "suspect_types": [
-      "raw_address_pointer_store"
+      "pointer_cast"
     ],
     "total_lines": 242
   },
@@ -155,19 +155,19 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01fa3ff0",
-      "name": "DAT_01fa3ff0",
+      "name": "g_CDemonSet_01e57284.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "DAT_01fa3ff4",
+      "name": "g_CDemonSet_01e57284.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -333,12 +333,12 @@
   },
   "suspects": [
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 29,
-      "match": "*(CHero **)(0x01E57284 + local_1c + 0x14cd70",
+      "match": "(CHero **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CHero **)(0x01E57284 + local_1c + 0x14cd70);",
-      "type": "raw_address_pointer_store"
+      "text": "this_ptr_00 = *(CHero **)((int)g_CDemonSet_PTR_005be368->actors + local_1c);",
+      "type": "pointer_cast"
     }
   ]
 }

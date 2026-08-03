@@ -18,8 +18,8 @@ void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs *this_ptr,
     this_ptr->swarm_vertex_count = vertex_index + 1;
   }
   if (700 < this_ptr->swarm_vertex_count) {
-    PTR_01cc4800 = "..\\core\\bugs.cpp";
-    INT_01cc4804 = 0x1b8;
+    g_CHAR_PTR_01cc4800 = "..\\core\\bugs.cpp";
+    g_INT_01cc4804 = 0x1b8;
     core_main_c_FUN_004c8440("CBugs::addSwarmGraphEdge - Too many verts in swarm graph.");
   }
   pSVar3 = this_ptr->swarm_vertices + vertex_index;

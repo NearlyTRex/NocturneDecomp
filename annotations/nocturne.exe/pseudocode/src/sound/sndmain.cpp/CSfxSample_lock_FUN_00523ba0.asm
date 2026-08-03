@@ -15,8 +15,8 @@
 ;   TerminatedCString s_SfxSample_lock_invalid_r_005929e6
 ;   TerminatedCString s_sound_sndmain_cpp_00592a07
 ;   TerminatedCString s_SfxSample_lock_nothing_a_00592a1c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
@@ -51,8 +51,8 @@ section .text
         ;   Label: LAB_00523bce
     MOV EBP,0x752                       ; 00523bd3
     PUSH 0x5929e6                       ; 00523bd8 | = "SfxSample::lock - invalid region"
-    MOV dword ptr [0x01cc4800],ECX      ; 00523bdd | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00523be3 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00523bdd | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00523be3 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00523be9
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00523bee
@@ -66,8 +66,8 @@ section .text
     MOV EAX,0x592a07                    ; 00523c07 | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x759                       ; 00523c0c
     PUSH 0x592a1c                       ; 00523c11 | = "SfxSample::lock - nothing allocated!"
-    MOV [0x01cc4800],EAX                ; 00523c16 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00523c1b | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00523c16 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00523c1b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00523c21
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00523c26
@@ -95,8 +95,8 @@ section .text
         ;   Label: LAB_00523c52
     MOV EBP,0x74d                       ; 00523c57
     PUSH 0x5929af                       ; 00523c5c | = "SfxSample::lock - already locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00523c61 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00523c67 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00523c61 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00523c67 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00523c6d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00523c72

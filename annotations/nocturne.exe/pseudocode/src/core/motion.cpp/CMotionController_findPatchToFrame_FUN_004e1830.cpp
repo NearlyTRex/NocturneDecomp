@@ -9,8 +9,8 @@
 int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_004e1830(CMotionController *this_ptr)
 
 {
-  PTR_01cc4800 = "..\\core\\motion.cpp";
-  INT_01cc4804 = 0x2ca;
+  g_CHAR_PTR_01cc4800 = "..\\core\\motion.cpp";
+  g_INT_01cc4804 = 0x2ca;
   core_main_c_FUN_004c8440("CMotionController::findPatchToFrame should never be called for this base class!");
   return 0;
 }

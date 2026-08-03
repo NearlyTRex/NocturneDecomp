@@ -19,12 +19,12 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fb1afc
-;   undefined4 DAT_01fb1b00
-;   undefined4 DAT_01fb1b04
-;   undefined4 DAT_01fb1b44
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.x
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.y
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.z
+;   undefined4 g_CDemonSet_01e57284.player_on_train
 ;   undefined4 DAT_02dc945c
 ;   undefined4 DAT_02dc9460
 ;   undefined4 DAT_02dc9464
@@ -136,8 +136,8 @@ section .text
         ;   XREF to: 005261b0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_005261b0(int channel_index)
     ADD ESP,0x4                         ; 0052ded1
     PUSH 0x2dc9c68                      ; 0052ded4 | DAT_02dc9c68
-    MOV ESI,dword ptr [0x005be368]      ; 0052ded9 | DAT_005be368
-    PUSH ESI                            ; 0052dedf | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 0052ded9 | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 0052dedf | g_CDemonSet_01e57284
     MOV EDI,dword ptr [ESP + 0x28]      ; 0052dee0
     PUSH EDI                            ; 0052dee4
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 0052dee5
@@ -146,17 +146,17 @@ section .text
     MOV [0x02dc9c90],EAX                ; 0052deed | DAT_02dc9c90
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 0052def2
         ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
-    MOV EAX,[0x005be368]                ; 0052def7 | DAT_005be368
-    CMP dword ptr [EAX + 0x15a8c0],0x0  ; 0052defc | DAT_01fb1b44
+    MOV EAX,[0x005be368]                ; 0052def7 | g_CDemonSet_PTR_005be368
+    CMP dword ptr [EAX + 0x15a8c0],0x0  ; 0052defc | g_CDemonSet_01e57284.player_on_train
     JZ 0x0052df59                       ; 0052df03
         ;   XREF to: 0052df59 (CONDITIONAL_JUMP)  ; LAB_0052df59
-    FLD float ptr [EAX + 0x15a878]      ; 0052df05 | DAT_01fb1afc
+    FLD float ptr [EAX + 0x15a878]      ; 0052df05 | g_CDemonSet_01e57284.active_fog.scroll.x
     FCHS                                ; 0052df0b
     FSTP float ptr [ESP + 0x8]          ; 0052df0d
-    FLD float ptr [EAX + 0x15a87c]      ; 0052df11 | DAT_01fb1b00
+    FLD float ptr [EAX + 0x15a87c]      ; 0052df11 | g_CDemonSet_01e57284.active_fog.scroll.y
     FCHS                                ; 0052df17
     FSTP float ptr [ESP + 0xc]          ; 0052df19
-    FLD float ptr [EAX + 0x15a880]      ; 0052df1d | DAT_01fb1b04
+    FLD float ptr [EAX + 0x15a880]      ; 0052df1d | g_CDemonSet_01e57284.active_fog.scroll.z
     FCHS                                ; 0052df23
     LEA EAX,[ESP + 0x8]                 ; 0052df25
     FSTP float ptr [ESP + 0x10]         ; 0052df29

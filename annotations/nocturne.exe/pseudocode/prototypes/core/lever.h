@@ -41,7 +41,7 @@ int CLever::renderOpaque(CDemonActor *param_1);
 
 // Original: core_lever.cpp_CLever_getBoundingBox_FUN_004c65f0
 // Address: 004c65f0
-undefined4 * CLever::getBoundingBox(int param_1,undefined4 *param_2);
+float * CLever::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_lever.cpp_CLever_getHandlePosition_FUN_004c6640
 // Address: 004c6640

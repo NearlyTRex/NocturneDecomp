@@ -17,7 +17,7 @@ void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_0049b420(EInputCodeType key_c
   pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(key_code);
   _sprintf(local_110,"%s = %s",pcVar1,action_name);
   engine_font_cpp_CBitFont_drawText_FUN_00490980
-            (_DAT_014b9900,local_110,_DAT_01c78adc,_DAT_01c78ae0,7,-1);
+            (g_CBitFont_PTR_014b9900,local_110,_DAT_01c78adc,_DAT_01c78ae0,7,-1);
   _DAT_01c78ae0 = _DAT_01c78ae0 + _DAT_01c78ae4;
   if (_DAT_01c78ae0 <= DAT_005b7620 + _DAT_01c78ae4 * -4) {
     return;

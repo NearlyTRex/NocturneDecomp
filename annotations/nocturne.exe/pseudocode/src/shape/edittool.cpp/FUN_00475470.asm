@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ee2a
 ;   TerminatedCString s_Too_many_picklist_column_0057ee40
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01bcd070
@@ -24,8 +24,8 @@
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -122,8 +122,8 @@ section .text
     MOV EAX,0x57ee2a                    ; 0047553c | = "..\\shape\\edittool.cpp"
     MOV EDX,0xd01                       ; 00475541
     PUSH 0x57ee40                       ; 00475546 | = "Too many picklist columns!"
-    MOV [0x01cc4800],EAX                ; 0047554b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00475550 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0047554b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00475550 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00475556
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0047555b
@@ -317,7 +317,7 @@ section .text
     PUSH EDX                            ; 004757fc
     PUSH ESI                            ; 004757fd
     PUSH EBP                            ; 004757fe
-    MOV ECX,dword ptr [0x005b6d50]      ; 004757ff | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004757ff | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 00475805
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 00475806
         ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)

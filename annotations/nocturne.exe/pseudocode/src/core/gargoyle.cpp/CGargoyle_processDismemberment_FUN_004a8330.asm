@@ -17,8 +17,8 @@
 ;   double DOUBLE_00584a58 = 7
 ;   double DOUBLE_00584a60 = 0.5
 ;   double DOUBLE_00584a68 = 2.5
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c777cc
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.gratuitous_dismemberment
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040dea0
@@ -85,9 +85,9 @@ section .text
     JNZ 0x004a83b0                      ; 004a83a6
         ;   XREF to: 004a83b0 (CONDITIONAL_JUMP)  ; LAB_004a83b0
     MOV dword ptr [ESP + 0x8],0x3ca3d70a ; 004a83a8
-    MOV EAX,[0x005b9354]                ; 004a83b0 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004a83b0 | g_CGame_PTR_005b9354
         ;   Label: LAB_004a83b0
-    CMP dword ptr [EAX + 0x1e0],0x0     ; 004a83b5 | DAT_01c777cc
+    CMP dword ptr [EAX + 0x1e0],0x0     ; 004a83b5 | g_CGame_01c775ec.gratuitous_dismemberment
     JZ 0x004a83c6                       ; 004a83bc
         ;   XREF to: 004a83c6 (CONDITIONAL_JUMP)  ; LAB_004a83c6
     MOV dword ptr [ESP + 0x8],0x3f800000 ; 004a83be

@@ -20,11 +20,11 @@
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d71c
 ;   undefined4 DAT_01bd2fa0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20
+;   cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0045bc20
 ;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;
@@ -101,8 +101,8 @@ section .text
         ;   Label: LAB_0045c7c5
     PUSH ECX                            ; 0045c7c6
     PUSH EAX                            ; 0045c7c7
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20 ; 0045c7c8
-        ;   XREF to: 0045bc20 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20(int start_x, int end_x, int y)
+    CALL cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0045bc20 ; 0045c7c8
+        ;   XREF to: 0045bc20 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0045bc20(int start_x, int end_x, int y)
     ADD ESP,0xc                         ; 0045c7cd
     POP EBP                             ; 0045c7d0
     POP EDI                             ; 0045c7d1
@@ -153,8 +153,8 @@ section .text
         ;   Label: LAB_0045c824
     MOV EAX,0x3a5                       ; 0045c829
     PUSH 0x57d9d7                       ; 0045c82e | = "Invalid bitsPerPixel!"
-    MOV dword ptr [0x01cc4800],EBP      ; 0045c833 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0045c839 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 0045c833 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0045c839 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045c83e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045c843

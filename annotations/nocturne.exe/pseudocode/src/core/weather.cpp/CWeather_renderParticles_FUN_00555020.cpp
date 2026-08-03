@@ -17,7 +17,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
   CVector3f *world_position;
   int iVar3;
   uint uVar4;
-  byte *puVar5;
+  int iVar5;
   SMRGLHeaderPrimitive local_f0;
   uint local_d8;
   uint local_d4;
@@ -72,7 +72,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
               (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005c15ec);
   }
   core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-            (0x01E57284,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
+            (g_CDemonSet_PTR_005be368,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
              (CVector3f *)0x0,(CMatrix3x3f *)0x0);
   local_14 = 0.1;
   local_10 = 0.1;
@@ -90,7 +90,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
   local_d0 = 2;
   local_cc = 3;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
-  world_position = (CVector3f *)&DAT_02ddfa28;
+  world_position = g_CVector3f_ARRAY_02ddfa28;
   uVar4 = 0;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0x8000);
   do {
@@ -109,7 +109,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
       local_80.y = (int)ROUND(world_position->y * _DAT_005a4290);
       local_80.z = (int)ROUND(world_position->z * _DAT_005a4290);
       core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                (0x01E57284,&local_80,(CVector3i *)0x0,0,4);
+                (g_CDemonSet_PTR_005be368,&local_80,(CVector3i *)0x0,0,4);
       pCVar1 = DAT_005ae704;
       if (this_ptr->weather_type == WEATHER_TYPE_SNOW) {
         local_20 = (uVar4 & 3) * 0x400000;
@@ -171,12 +171,12 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
     iVar3 = 0;
     pCVar1->vertex_buffer_ptr[3].u = 0x80000;
     iVar2 = 0;
-    puVar5 = &DAT_02ddfa2c;
+    iVar5 = 0x2ddfa2c;
     pCVar1->vertex_buffer_ptr[3].v = 0xf80000;
     do {
       if (*(char *)(iVar3 + 0x2de06a8) != '\0') {
-        local_2c.x = *(float *)(&DAT_02ddfa28 + iVar3 * 0xc);
-        local_2c.z = *(float *)(puVar5 + 4);
+        local_2c.x = g_CVector3f_ARRAY_02ddfa28[iVar3].x;
+        local_2c.z = *(float *)(iVar5 + 4);
         local_2c.y = *(float *)(iVar2 + 0x2de0388);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (DAT_005ae704,&local_2c);
@@ -211,7 +211,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&local_f0);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
       }
-      puVar5 = puVar5 + 0xc;
+      iVar5 = iVar5 + 0xc;
       iVar3 = iVar3 + 1;
       iVar2 = iVar2 + 4;
     } while (iVar3 < 200);

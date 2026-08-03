@@ -14,8 +14,8 @@ CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590(CWeapon 
   CKeyFramedModel *pCVar3;
   
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
-  fVar1 = *(float *)(pCVar3->texture_list[7].textures[1].texture_name + 0xc);
-  fVar2 = (float)pCVar3->texture_list[7].textures[2].base.type;
+  fVar1 = (pCVar3->bounds).max.y;
+  fVar2 = (pCVar3->bounds).max.z;
   out_point->x = 0.0;
   out_point->y = fVar1;
   out_point->z = fVar2;

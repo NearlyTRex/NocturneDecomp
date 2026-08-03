@@ -53,8 +53,8 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
                          ((this_ptr->base).base.carry_hands[1].carry_actor,
                           g_CWeaponActorType_02ddf970.name_hash);
       if (pCVar3 == (CDemonActor *)0x0) {
-        PTR_01cc4800 = "..\\core\\mobster.cpp";
-        INT_01cc4804 = 0x323;
+        g_CHAR_PTR_01cc4800 = "..\\core\\mobster.cpp";
+        g_INT_01cc4804 = 0x323;
         core_main_c_FUN_004c8440("CMobster::aimTommyGun - I'm not carrying one!");
       }
       local_88 = 0.7853982;

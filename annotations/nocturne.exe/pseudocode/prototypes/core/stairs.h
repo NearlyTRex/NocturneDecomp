@@ -13,7 +13,7 @@ CStairs * __cdecl factoryFunc(void);
 
 // Original: core_stairs.cpp_CStairs_getActorType_FUN_005347a0
 // Address: 005347a0
-CDemonActorType * CStairs::getActorType(void);
+CDemonActorType * __cdecl CStairs::getActorType(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_ctor_FUN_005347b0
 // Address: 005347b0

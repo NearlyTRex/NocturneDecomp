@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -60,12 +60,6 @@
         "column": 48,
         "line": 22,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 28,
-        "message": "no matching function for call to 'core_mission_cpp_CDemonMission_FUN_004d90e0'"
       }
     ],
     "success": false,
@@ -74,19 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 128,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 24,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 103
+    "total_lines": 104
   },
   "cross_references": [],
   "function": {
@@ -116,9 +110,9 @@
   "globals": [
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "01cae0e8",
@@ -244,10 +238,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01CC9450,(CLocation *)(*(int *)(param_1[1].actor_name + 0xc) + 0x20));",
+      "text": "(CLocation *)(*(int *)(param_1[1].actor_name + 0xc) + 0x20));",
       "type": "unnamed_param"
     },
     {
@@ -260,10 +254,10 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 22,
+      "line": 23,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
-      "text": "(0x01CC9450,(CLocation *)(*(int *)(param_1[1].actor_name + 0xc) + 0x20));",
+      "text": "(CLocation *)(*(int *)(param_1[1].actor_name + 0xc) + 0x20));",
       "type": "pointer_cast"
     }
   ],

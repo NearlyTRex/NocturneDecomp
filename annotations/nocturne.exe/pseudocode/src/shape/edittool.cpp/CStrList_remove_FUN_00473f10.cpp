@@ -13,8 +13,8 @@ void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(CStrList *this_ptr,
   int iVar2;
   
   if (((start_index < 0) || (this_ptr->item_count <= end_index)) || (end_index < start_index)) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0xa03;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0xa03;
     core_main_c_FUN_004c8440("CStrList::remove - invalid range");
   }
   if (start_index <= end_index) {

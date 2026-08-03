@@ -19,8 +19,8 @@ void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *input_s
   local_30 = output_buffer;
   if ((uint)bits_per_sample < 8) {
 LAB_0052347d:
-    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    INT_01cc4804 = 0x554;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    g_INT_01cc4804 = 0x554;
     core_main_c_FUN_004c8440("convertMixBufToOutput - invalid bits: %d",bits_per_sample);
     return;
   }

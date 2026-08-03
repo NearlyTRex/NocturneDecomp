@@ -20,10 +20,10 @@
 ;   TerminatedCString s_core_set_cpp_005903e6
 ;   TerminatedCString s_CDemonSet_initScene_Too_005903f6
 ;   undefined4 DAT_005ad54c
-;   int INT_005baca0 = 0x1cc3160
+;   CLevelLoader* g_CLevelLoader_PTR_005baca0 = 01cc3160
 ;   undefined4 DAT_005c15b8
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01fb99d0
 ;   undefined4 DAT_01fb99d4
 ;   undefined4 DAT_01fb99d8
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 005084d7
     PUSH EAX                            ; 005084da
-    MOV EDX,dword ptr [0x005baca0]      ; 005084db | INT_005baca0
+    MOV EDX,dword ptr [0x005baca0]      ; 005084db | g_CLevelLoader_PTR_005baca0
     PUSH EDX                            ; 005084e1
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 005084e2
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
@@ -131,8 +131,8 @@ section .text
         ;   XREF to: 005085b7 (CONDITIONAL_JUMP)  ; LAB_005085b7
     MOV EAX,0x35b                       ; 0050859a
     PUSH 0x5903a5                       ; 0050859f | = "CDemonSet::initScene - Memory leakage..."
-    MOV dword ptr [0x01cc4800],EBP      ; 005085a4 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 005085aa | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 005085a4 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 005085aa | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005085af
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005085b4
@@ -272,8 +272,8 @@ section .text
     MOV EBP,0x5903e6                    ; 00508727 | = "..\\core\\set.cpp"
     MOV EAX,0x372                       ; 0050872c
     PUSH 0x5903f6                       ; 00508731 | = "CDemonSet::initScene - Too many spotl..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00508736 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0050873c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 00508736 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0050873c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00508741
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00508746

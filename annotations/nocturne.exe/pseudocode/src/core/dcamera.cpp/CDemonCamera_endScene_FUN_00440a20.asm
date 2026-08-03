@@ -17,8 +17,8 @@
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd4260
 ;   undefined4 DAT_01c02594
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   int INT_02dc9d60
 ;
 ; Called Functions:
@@ -104,8 +104,8 @@ section .text
         ;   Label: LAB_00440adc
     MOV ESI,0x3f9                       ; 00440ae1
     PUSH 0x57b718                       ; 00440ae6 | = "CDemonCamera::endScene - Scene not open!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00440aeb | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00440af1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00440aeb | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00440af1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00440af7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00440afc

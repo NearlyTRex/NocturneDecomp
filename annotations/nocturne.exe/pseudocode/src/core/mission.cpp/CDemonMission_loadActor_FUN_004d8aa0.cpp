@@ -39,8 +39,8 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDem
           ;
           if (unaff_ESI == (CDemonActor *)0x0) {
             shape_edittool_cpp_FUN_0046fcd0
-                      (0x01BCD074,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,current_actor,
-                       property_description);
+                      (g_CEditorTools_PTR_005b6d50,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,
+                       current_actor,property_description);
           }
         }
         iVar2 = _fgetc(file);
@@ -56,8 +56,8 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDem
     if (iVar2 == 1) goto LAB_004d8b28;
   }
   do {
-    PTR_01cc4800 = "..\\core\\mission.cpp";
-    INT_01cc4804 = 0x22d;
+    g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
+    g_INT_01cc4804 = 0x22d;
     core_main_c_FUN_004c8440("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor,property_description)
     ;
     pCVar1 = unaff_ESI;

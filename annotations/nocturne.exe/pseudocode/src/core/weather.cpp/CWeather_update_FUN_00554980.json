@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -63,57 +63,27 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_01fb96f0'; did you mean 'DAT_005b06f0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01fb96f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 47,
-        "message": "use of undeclared identifier 'DAT_01fb8508'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 52,
-        "message": "use of undeclared identifier 'DAT_01fb8508'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 44,
-        "line": 58,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_02de0770'; did you mean 'DAT_02DF0770'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 66,
-        "message": "use of undeclared identifier 'DAT_02ddfa2c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 67,
-        "message": "use of undeclared identifier 'DAT_02ddfa2c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 69,
-        "message": "use of undeclared identifier 'DAT_02ddfa2c'"
+        "category": "incompatible_types",
+        "column": 23,
+        "line": 108,
+        "message": "incompatible integer to pointer conversion assigning to 'CEventList *' from 'int'"
       },
       {
         "category": "undeclared_identifier",
         "column": 57,
-        "line": 69,
-        "message": "use of undeclared identifier 'DAT_02ddfa2c'"
+        "line": 143,
+        "message": "use of undeclared identifier '_DAT_02de0770'; did you mean 'DAT_02DF0770'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 145,
+        "message": "use of undeclared identifier '_DAT_02de0770'; did you mean 'DAT_02DF0770'?"
       }
     ],
     "success": false,
@@ -122,19 +92,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 263,
+    "complexity_score": 301,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 138,
-    "suspect_count": 11,
+    "pseudocode_lines": 141,
+    "suspect_count": 14,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 481
+    "total_lines": 484
   },
   "cross_references": [
     {
@@ -266,31 +237,31 @@
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "01c77850",
-      "name": "DAT_01c77850",
+      "name": "g_CGame_01c775ec.delta_time_float",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb96f0",
-      "name": "DAT_01fb96f0",
+      "name": "g_CDemonCamera_01fb8508.corona_blend_factor",
       "type": "undefined4",
       "value": null
     },
@@ -476,84 +447,108 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "((CDemonCamera *)&DAT_01fb8508,local_18);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "((CDemonCamera *)&DAT_01fb8508,this_ptr->base_ambient);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_02ddfa2c",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(&DAT_02ddfa2c + iVar4) - this_ptr->particle_speed * fVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 60,
-      "match": "DAT_02ddfa2c",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_02ddfa2c + iVar4) = fVar2;",
-      "type": "undefined_data"
+      "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].y",
+      "severity": "moderate",
+      "text": "fVar2 = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) -",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 62,
-      "match": "DAT_02ddfa2c",
-      "severity": "mild",
-      "text": "(*(float *)(&DAT_02ddfa2c + iVar4) = *(float *)(&DAT_02ddfa2c + iVar4) + 100.0f,",
-      "type": "undefined_data"
+      "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].y",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) = fVar2;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_02ddfa2c",
-      "severity": "mild",
-      "text": "(*(float *)(&DAT_02ddfa2c + iVar4) = *(float *)(&DAT_02ddfa2c + iVar4) + 100.0f,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 64,
-      "match": "DAT_02ddfa28",
-      "severity": "mild",
-      "text": "local_28.x = *(float *)(&DAT_02ddfa28 + iVar4);",
-      "type": "undefined_data"
+      "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].y",
+      "severity": "moderate",
+      "text": "(*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 65,
-      "match": "DAT_02ddfa30",
-      "severity": "mild",
-      "text": "local_28.z = *(float *)(&DAT_02ddfa30 + iVar4);",
-      "type": "undefined_data"
+      "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].y",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) + 100.0f,",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_01fb8508",
-      "severity": "mild",
-      "text": "((CDemonCamera *)&DAT_01fb8508,local_2c);",
-      "type": "undefined_data"
+      "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].x",
+      "severity": "moderate",
+      "text": "local_28.x = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].x + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].z",
+      "severity": "moderate",
+      "text": "local_28.z = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].z + iVar4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x1c03a10 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 98,
+      "line": 101,
       "match": "0x1c03a10",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01C03A10;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 60,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "fVar2 = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 62,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) = fVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 64,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 65,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) + 100.0f,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 67,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_28.x = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].x + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 68,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_28.z = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].z + iVar4);",
+      "type": "pointer_cast"
     }
   ]
 }

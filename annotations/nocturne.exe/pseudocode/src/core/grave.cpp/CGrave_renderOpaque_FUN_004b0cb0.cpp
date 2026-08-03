@@ -14,8 +14,8 @@ int core_grave_cpp_CGrave_renderOpaque_FUN_004b0cb0(CDemonActor *param_1)
   CBoundingBox3D local_1c;
   
   if ((param_1[2].orient.vec.y == 0.0) &&
-     (((*(int *)(0x01CC9450 + 4) != 0 || (param_1[2].orient_matrix.m[0].x == 0.0)) ||
-      (param_1[2].orient.vec.z != 0.0)))) {
+     (((g_CDemonMission_PTR_005baf90->is_in_editor != 0 || (param_1[2].orient_matrix.m[0].x == 0.0))
+      || (param_1[2].orient.vec.z != 0.0)))) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
     this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_1c);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr);

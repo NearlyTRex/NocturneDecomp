@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_00577c89
 ;   undefined1 DAT_005acc90
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88
 ;   undefined4 DAT_00763e8c
@@ -51,7 +51,7 @@ section .text
     PUSH ECX                            ; 0040c997
     MOV EBX,dword ptr [0x00763e84]      ; 0040c998 | DAT_00763e84
     PUSH EBX                            ; 0040c99e
-    MOV ESI,dword ptr [0x005baf90]      ; 0040c99f | DAT_005baf90
+    MOV ESI,dword ptr [0x005baf90]      ; 0040c99f | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 0040c9a5 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 ; 0040c9a6
         ;   XREF to: 004d8aa0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0(CDemonMission * this_ptr, _FILE * file, CDemonActor * current_actor, char * property_description)
@@ -80,7 +80,7 @@ section .text
     PUSH EDI                            ; 0040c9e8
     MOV EBP,dword ptr [EAX]             ; 0040c9e9
     PUSH EBP                            ; 0040c9eb
-    MOV EAX,[0x005baf90]                ; 0040c9ec | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 0040c9ec | g_CDemonMission_PTR_005baf90
     PUSH EAX                            ; 0040c9f1 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_saveActor_FUN_004d8c00 ; 0040c9f2
         ;   XREF to: 004d8c00 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_saveActor_FUN_004d8c00(CDemonMission * this_ptr, CDemonActor * actor_ptr, _FILE * file, CDemonActor * current_actor, ...)

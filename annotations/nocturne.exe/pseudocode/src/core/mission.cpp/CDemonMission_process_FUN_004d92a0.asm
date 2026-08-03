@@ -13,10 +13,10 @@
 ;   TerminatedCString s_Changing_sets_00589da6
 ;   TerminatedCString s_Insert_wipe_here_00589db7
 ;   undefined4 DAT_005be220
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01e56db0
-;   undefined4 DAT_01e57284
+;   undefined4 g_CScript_01e56da0.focus_actor_changed
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
@@ -125,18 +125,18 @@ section .text
     CALL core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 ; 004d9396
         ;   XREF to: 004d9020 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_004d9020(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 004d939b
-    MOV EAX,[0x005be368]                ; 004d939e | DAT_005be368
-    PUSH EAX                            ; 004d93a3 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 004d939e | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 004d93a3 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_0050ad20      ; 004d93a4
         ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ad20(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d93a9
-    MOV EDX,dword ptr [0x005be368]      ; 004d93ac | DAT_005be368
-    PUSH EDX                            ; 004d93b2 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004d93ac | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 004d93b2 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_initScene_FUN_005084c0 ; 004d93b3
         ;   XREF to: 005084c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet * this_ptr)
     MOV EBX,dword ptr [0x005be220]      ; 004d93b8 | DAT_005be220
     ADD ESP,0x4                         ; 004d93be
-    MOV dword ptr [EBX + 0x10],0x2      ; 004d93c1 | DAT_01e56db0
+    MOV dword ptr [EBX + 0x10],0x2      ; 004d93c1 | g_CScript_01e56da0.focus_actor_changed
     JMP 0x004d9331                      ; 004d93c8
         ;   XREF to: 004d9331 (UNCONDITIONAL_JUMP)  ; LAB_004d9331
 

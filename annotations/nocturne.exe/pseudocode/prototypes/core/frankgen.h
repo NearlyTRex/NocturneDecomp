@@ -45,7 +45,7 @@ int CFrankenstienMachine::renderOpaque(CFrankenstienMachine *param_1);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000
 // Address: 00495000
-undefined4 * CFrankenstienMachine::getBoundingBox(int param_1,undefined4 *param_2);
+float * CFrankenstienMachine::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0
 // Address: 004950a0

@@ -10,9 +10,9 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_0053577c = 005357ee
 ;   double DOUBLE_005954cf = 0.25
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c77850
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
 ;   core_charactr.cpp_FUN_004259f0
@@ -70,9 +70,9 @@ section .text
     CALL core_stranger.cpp_FUN_00535900 ; 0053583a
         ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0053583f
-    MOV ECX,dword ptr [0x005b9354]      ; 00535842 | DAT_005b9354
+    MOV ECX,dword ptr [0x005b9354]      ; 00535842 | g_CGame_PTR_005b9354
     PUSH dword ptr [ESP + 0x8]          ; 00535848
-    PUSH ECX                            ; 0053584c | DAT_01c775ec
+    PUSH ECX                            ; 0053584c | g_CGame_01c775ec
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 0053584d
         ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004a5f00(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535852
@@ -82,8 +82,8 @@ section .text
     RET                                 ; 0053585a
     PUSH ESI                            ; 0053585b
         ;   Label: LAB_0053585b
-    MOV EAX,[0x005b9354]                ; 0053585c | DAT_005b9354
-    FLD float ptr [EAX + 0x264]         ; 00535861 | DAT_01c77850
+    MOV EAX,[0x005b9354]                ; 0053585c | g_CGame_PTR_005b9354
+    FLD float ptr [EAX + 0x264]         ; 00535861 | g_CGame_01c775ec.delta_time_float
     LEA EAX,[EBX + 0x150]               ; 00535867
     PUSH EAX                            ; 0053586d
     FSTP float ptr [ESP + 0xc]          ; 0053586e

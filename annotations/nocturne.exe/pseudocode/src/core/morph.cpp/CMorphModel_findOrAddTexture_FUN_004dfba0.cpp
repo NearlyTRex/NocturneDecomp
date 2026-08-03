@@ -27,8 +27,8 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(CMorphModel
     } while (iVar3 < this_ptr->num_textures);
   }
   if (0x13 < this_ptr->num_textures) {
-    PTR_01cc4800 = "..\\core\\morph.cpp";
-    INT_01cc4804 = 0x1d0;
+    g_CHAR_PTR_01cc4800 = "..\\core\\morph.cpp";
+    g_INT_01cc4804 = 0x1d0;
     core_main_c_FUN_004c8440("CMorphModel::findOrAddTexture - too many textures!");
   }
   memset(this_ptr->textures + this_ptr->num_textures,0,0x48);

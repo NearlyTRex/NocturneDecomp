@@ -21,8 +21,8 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(CDemonLight *this_ptr
                      (this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2 + 0x210);
   this_ptr->shadow_buffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    PTR_01cc4800 = "..\\core\\dlight.cpp";
-    INT_01cc4804 = 0x6c;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
+    g_INT_01cc4804 = 0x6c;
     core_main_c_FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
   }
   this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);

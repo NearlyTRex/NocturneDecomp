@@ -11,6 +11,7 @@ void sound_sndmain_cpp_FUN_00527950(char *param_1,int param_2)
 {
   int iVar1;
   int iVar2;
+  CSfxSample *this_ptr;
   
   sound_sndmain_cpp_lockSound_FUN_00528800();
   if (param_2 != 0) {
@@ -18,10 +19,11 @@ void sound_sndmain_cpp_FUN_00527950(char *param_1,int param_2)
   }
   iVar2 = 0;
   do {
-    if (*(int *)(iVar2 + 0x2dc2008) == 0) {
-      iVar1 = _stricmp((char *)(&DAT_02dc1edc + iVar2),param_1);
+    if (*(int *)((int)(&g_CSfxSample_ARRAY_02dc1edc[0].sample_info + 1) + iVar2 + 0xc) == 0) {
+      this_ptr = (CSfxSample *)(g_CSfxSample_ARRAY_02dc1edc[0].sample_info.name + iVar2);
+      iVar1 = _stricmp((char *)this_ptr,param_1);
       if (iVar1 == 0) {
-        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60((CSfxSample *)(&DAT_02dc1edc + iVar2));
+        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);
       }
     }
     iVar2 = iVar2 + 0x168;

@@ -37,7 +37,7 @@ uint core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(CMarquee *param_1)
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
               (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);
     this_ptr = &param_1->course;
-    if (*(int *)(0x01CC9450 + 4) == 0) {
+    if (g_CDemonMission_PTR_005baf90->is_in_editor == 0) {
       if (param_1->type == 1) {
         dVar4 = round((double)param_1->param);
         iVar2 = (int)ROUND(dVar4);

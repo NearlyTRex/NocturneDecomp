@@ -23,8 +23,8 @@
 ;   TerminatedCString s_CNetGame_sendSimFrameAck_0058c8a5
 ;   TerminatedCString s_core_netgame_cpp_0058c8db
 ;   TerminatedCString s_CNetGame_sendSimFrameAck_0058c8ef
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea408
 ;
@@ -53,8 +53,8 @@ section .text
     MOV EBP,0x58c83a                    ; 004edb0a | = "..\\core\\netgame.cpp"
     MOV EAX,0xa2a                       ; 004edb0f
     PUSH 0x58c84e                       ; 004edb14 | = "CNetGame::sendSimFrameAck - should on..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004edb19 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004edb1f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004edb19 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004edb1f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004edb24
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004edb29
@@ -108,8 +108,8 @@ section .text
         ;   Label: LAB_004edbb2
     MOV ESI,0xa29                       ; 004edbb7
     PUSH 0x58c7f9                       ; 004edbbc | = "CNetGame::sendSimFrameAck - should on..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004edbc1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004edbc7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004edbc1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004edbc7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004edbcd
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004edbd2
@@ -119,8 +119,8 @@ section .text
         ;   Label: LAB_004edbda
     MOV ESI,0xa2b                       ; 004edbdf
     PUSH 0x58c8a5                       ; 004edbe4 | = "CNetGame::sendSimFrameAck - server no..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004edbe9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004edbef | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004edbe9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004edbef | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004edbf5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004edbfa
@@ -130,8 +130,8 @@ section .text
         ;   Label: LAB_004edc02
     MOV EAX,0xa2c                       ; 004edc07
     PUSH 0x58c8ef                       ; 004edc0c | = "CNetGame::sendSimFrameAck - I'm not i..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004edc11 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004edc17 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004edc11 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004edc17 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004edc1c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004edc21

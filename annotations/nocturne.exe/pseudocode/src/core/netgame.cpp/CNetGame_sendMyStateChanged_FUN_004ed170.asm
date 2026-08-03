@@ -22,9 +22,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c525
 ;   TerminatedCString s_CNetGame_sendMyStateChan_0058c539
-;   undefined4 DAT_005bdee4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   int g_INT_005bdee4 = 0x1
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_004ed186
     MOV EDI,0x8d0                       ; 004ed18b
     PUSH 0x58c539                       ; 004ed190 | = "CNetGame::sendMyStateChanged - should..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004ed195 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004ed19b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004ed195 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004ed19b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ed1a1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ed1a6
@@ -148,7 +148,7 @@ section .text
     ADD ESP,0xc                         ; 004ed2a3
     ADD EBX,EAX                         ; 004ed2a6
     MOV EAX,[0x01cea3f8]                ; 004ed2a8 | DAT_01cea3f8
-    MOV dword ptr [0x005bdee4],EDI      ; 004ed2ad | DAT_005bdee4
+    MOV dword ptr [0x005bdee4],EDI      ; 004ed2ad | g_INT_005bdee4
     MOV dword ptr [EBX + 0x60],EAX      ; 004ed2b3
     ADD ESP,0x2c                        ; 004ed2b6
     POP EBP                             ; 004ed2b9

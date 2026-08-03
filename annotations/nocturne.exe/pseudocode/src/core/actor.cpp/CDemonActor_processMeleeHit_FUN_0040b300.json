@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -104,16 +104,16 @@
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
-        "category": "other",
-        "column": 48,
-        "line": 98,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "cast_error",
+        "column": 72,
+        "line": 118,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 101,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "incompatible_types",
+        "column": 37,
+        "line": 121,
+        "message": "assigning to 'char *' from incompatible type 'byte[52]' (aka 'unsigned char[52]')"
       }
     ],
     "success": false,
@@ -122,27 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 761,
-    "complexity_score": 1392,
+    "complexity_score": 793,
     "cross_reference_count": 0,
     "function_call_count": 20,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 317,
-    "suspect_count": 102,
+    "pseudocode_lines": 308,
+    "suspect_count": 44,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
-      "raw_address_pointer_store",
       "self_copy_guard",
       "stack_param",
       "stack_ref",
       "suspect_float",
       "unknown_field",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 1078
+    "total_lines": 1069
   },
   "cross_references": [],
   "function": {
@@ -153,10 +151,10 @@
         "0040bc93"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300",
-    "signature": "undefined4 core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_1,float param_2)"
+    "signature": "int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *this_ptr,int hit_type)"
   },
   "function_calls": [
     {
@@ -299,21 +297,21 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005b96c4",
-      "name": "INT_005b96c4",
-      "type": "int",
-      "value": "0x1c78c7c"
+      "name": "g_CGore_PTR_005b96c4",
+      "type": "CGore*",
+      "value": "01c78c7c"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "00765a98",
@@ -323,8 +321,8 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -347,73 +345,73 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fac",
-      "name": "DAT_01fa3fac",
+      "name": "g_CDemonSet_01e57284.ray_origin.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb0",
-      "name": "DAT_01fa3fb0",
+      "name": "g_CDemonSet_01e57284.ray_origin.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb4",
-      "name": "DAT_01fa3fb4",
+      "name": "g_CDemonSet_01e57284.ray_origin.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb8",
-      "name": "DAT_01fa3fb8",
+      "name": "g_CDemonSet_01e57284.ray_target.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fbc",
-      "name": "DAT_01fa3fbc",
+      "name": "g_CDemonSet_01e57284.ray_target.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc0",
-      "name": "DAT_01fa3fc0",
+      "name": "g_CDemonSet_01e57284.ray_target.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "DAT_01fa3fe0",
+      "name": "g_CDemonSet_01e57284.collision_actor",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe4",
-      "name": "DAT_01fa3fe4",
+      "name": "g_CDemonSet_01e57284.collision_part_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff0",
-      "name": "DAT_01fa3ff0",
+      "name": "g_CDemonSet_01e57284.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "DAT_01fa3ff4",
+      "name": "g_CDemonSet_01e57284.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff8",
-      "name": "DAT_01fa3ff8",
+      "name": "g_CDemonSet_01e57284.actors[1]",
       "type": "undefined4",
       "value": null
     },
@@ -428,9 +426,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -478,10 +476,10 @@
     "pcode_op_count": 2949
   },
   "stack_frame": {
-    "frame_size": 276,
+    "frame_size": 284,
     "local_size": 276,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -511,6 +509,20 @@
         "offset": -68,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -539,7 +551,7 @@
         {
           "check_name": "cert-flp30-c",
           "column": 21,
-          "line": 99,
+          "line": 98,
           "message": "loop induction expression should not have floating-point type"
         }
       ],
@@ -551,21 +563,21 @@
         {
           "check_id": "pointerOutOfBounds",
           "column": 87,
-          "line": 264,
+          "line": 259,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
-          "column": 71,
-          "line": 266,
+          "column": 68,
+          "line": 261,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
           "column": 39,
-          "line": 308,
+          "line": 300,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x14' is out of bounds.",
           "severity": "portability"
         },
@@ -591,22 +603,6 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_fffffd6c",
@@ -624,54 +620,6 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 57,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (param_2 == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 1.4013e-45) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_44 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = (*((param_1->vtable)._ub)->getBoundingBox)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(CBoundingBox3D *)(auStack_148 + 0x38));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(CVector3f *)auStack_c0,&CStack_cc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
       "line": 67,
       "match": "1.4013e-45",
       "severity": "mild",
@@ -685,14 +633,6 @@
       "severity": "mild",
       "text": "auStack_ec._20_4_ = 0.0;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(CVector3f *)auStack_9c,(CVector3f *)(auStack_ec + 0x14));",
-      "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
@@ -751,40 +691,16 @@
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(CVector3f *)(auStack_68 + 8),(CVector3f *)auStack_a8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCStack_1c = (*((param_1->vtable)._ub)->getCarrier)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCStack_1c = (*((param_1->vtable)._ub)->getCarrier)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 != pCStack_18) && (pCStack_18 != pCStack_1c)) {",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "pCStack_18 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + (int)fStack_24);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 111,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
       "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);",
@@ -792,10 +708,18 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 111,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 114,
+      "match": "in_stack_fffffd6c",
+      "severity": "moderate",
+      "text": "in_stack_fffffd6c = auStack_240;",
       "type": "stack_param"
     },
     {
@@ -803,84 +727,20 @@
       "line": 116,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
-      "text": "in_stack_fffffd6c = auStack_240;",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)in_stack_fffffd6c,(CDemonActor *)pCVar6)",
       "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->fillAttackDamageInfo)",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 118,
-      "match": "in_stack_fffffd6c",
-      "severity": "moderate",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)in_stack_fffffd6c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)in_stack_fffffd6c,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)in_stack_fffffd6c,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 120,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "in_stack_fffffd70 = (CVector3f *)0x40b783;",
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->playAttackHitEffects)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_240 + 0x10),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_240 + 0x10),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0(pCVar5,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 138,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
       "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);",
@@ -888,7 +748,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 138,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);",
@@ -896,63 +756,31 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 142,
+      "line": 140,
       "match": "&stack0xfffffd84",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffd84);",
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 143,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->fillAttackDamageInfo)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 144,
+      "line": 142,
       "match": "&stack0xfffffd84",
       "severity": "moderate",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)&stack0xfffffd84,",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&stack0xfffffd84,(CDemonActor *)pCVar5);",
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 144,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)&stack0xfffffd84,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 144,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)&stack0xfffffd84,",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 146,
+      "line": 143,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
-      "text": "in_stack_fffffd6c = PTR_DAT_005ad350;",
+      "text": "in_stack_fffffd6c = (char *)g_CConsole_PTR_005ad350;",
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 148,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s causing %5.2f damage to %s\\n\",param_1,",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 146,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(double)uStack_26c._4_4_,pCVar5);",
@@ -960,7 +788,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 150,
+      "line": 147,
       "match": "._4_4_",
       "severity": "mild",
       "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,uStack_26c._4_4_);",
@@ -968,71 +796,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 148,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "in_stack_fffffd70 = (CVector3f *)0x40b6e4;",
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 152,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->playAttackHitEffects)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)&uStack_26c,(CDemonActor *)pCVar5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)&uStack_26c,(CDemonActor *)pCVar5);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 158,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
       "text": "in_stack_fffffd6c = \"CHero\";",
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->fillAttackDamageInfo)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 167,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)auStack_194,(CDemonActor *)pCVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 167,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)auStack_194,(CDemonActor *)pCVar3);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 165,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "in_stack_fffffd70 = (CVector3f *)(auStack_b0 + 4);",
@@ -1040,7 +820,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 166,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
       "text": "in_stack_fffffd6c = (char *)pCVar3;",
@@ -1048,7 +828,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 171,
+      "line": 168,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "(pCVar3,in_stack_fffffd70,2.0,(SDamageInfo *)(auStack_194 + 0x10));",
@@ -1056,7 +836,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 172,
+      "line": 169,
       "match": "._8_4_",
       "severity": "mild",
       "text": "uStack_26c = (double)(float)auStack_178._8_4_;",
@@ -1064,119 +844,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 176,
+      "line": 173,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "in_stack_fffffd70 = (CVector3f *)0x40b5ee;",
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 180,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->playAttackHitEffects)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 181,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)auStack_178,(CDemonActor *)pCVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 181,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)auStack_178,(CDemonActor *)pCVar3);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 189,
+      "line": 186,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if (CStack_40.z == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 191,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 202,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 210,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 223,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 240,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0(pCStack_14,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 243,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->fillAttackDamageInfo)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 244,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_178 + 0x20),&pCVar5->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 244,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_178 + 0x20),&pCVar5->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 246,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s causing %5.2f damage to %s\\n\",param_1,",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 247,
+      "line": 242,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(double)(float)auStack_148._4_4_,pCVar5);",
@@ -1184,119 +868,23 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 248,
+      "line": 243,
       "match": "._4_4_",
       "severity": "mild",
       "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,(float)auStack_148._4_4_);",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 249,
-      "match": "param_1",
+      "description": "Unknown/mangled field access",
+      "line": 270,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->playAttackHitEffects)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 250,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_178 + 0x30),unaff_retaddr);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 250,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_178 + 0x30),unaff_retaddr);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 258,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->fillAttackDamageInfo)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 259,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_1f4 + 0x24),(CDemonActor *)pCVar6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 259,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_1f4 + 0x24),(CDemonActor *)pCVar6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 261,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->playAttackHitEffects)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 262,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_1d0 + 0x10),(CDemonActor *)pCVar6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 262,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)(auStack_1d0 + 0x10),(CDemonActor *)pCVar6)",
-      "type": "unnamed_param"
+      "text": "auStack_20c._0_4_ = g_CDemonSet_PTR_005be368->collision_part_index;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 277,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_20c._0_4_ = *(uint *)(0x01E57284->lights[199].filter_names[0x13] + 0x1c);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 278,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->fillAttackDamageInfo)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 279,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)auStack_20c,&pCVar3->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 279,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)auStack_20c,&pCVar3->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 284,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_68._0_4_ =",
@@ -1304,7 +892,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 288,
+      "line": 280,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
@@ -1312,7 +900,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 288,
+      "line": 280,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
@@ -1320,7 +908,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 292,
+      "line": 284,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_40.z = (float)auStack_68._0_4_ * CStack_40.z;",
@@ -1328,47 +916,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 294,
+      "line": 286,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_1f4._4_4_ = CStack_40.x;",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 308,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->playAttackHitEffects)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 309,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)auStack_1f4,&pCVar3->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 309,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,(int)param_2,(SDamageInfo *)auStack_1f4,&pCVar3->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 312,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18));",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Raw hex address 0x40b5c3 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 174,
+      "line": 171,
       "match": "0x40b5c3",
       "severity": "moderate",
       "text": "iVar4 = 0x40b5c3;",
@@ -1376,7 +932,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 302,
+      "line": 294,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_1e0.x = pCVar2->x;",
@@ -1389,14 +945,6 @@
       "severity": "moderate",
       "text": "if (&fStack_b4 != &fStack_90) {",
       "type": "self_copy_guard"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 93,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": "pCStack_18 = *(CDemonActor **)",
-      "type": "pointer_cast"
     },
     {
       "description": "Uninitialized variable: fStack_b8",

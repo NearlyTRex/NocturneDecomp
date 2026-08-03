@@ -49,9 +49,11 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
   if (iVar8 != 0) {
     return;
   }
-  local_64.x = (float)(this_ptr->grid_origin).x * _DAT_01fba96c + _DAT_01fba948;
+  local_64.x = (float)(this_ptr->grid_origin).x * g_CDemonRaytrace_01fba938.adjusted_size.x +
+               g_CDemonRaytrace_01fba938.bbox_min.x;
   local_64.y = 0.0;
-  local_64.z = (float)(this_ptr->grid_origin).z * _DAT_01fba974 + _DAT_01fba950;
+  local_64.z = (float)(this_ptr->grid_origin).z * g_CDemonRaytrace_01fba938.adjusted_size.z +
+               g_CDemonRaytrace_01fba938.bbox_min.z;
   local_7c = 0x4f1926;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,&local_64)
   ;
@@ -89,11 +91,11 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
     do {
       pCVar7 = DAT_005ae704;
       if ((-1000 < *(int *)(local_18 + 0x9c70)) && (*(int *)(local_18 + 0x9c70) < 1000)) {
-        fVar2 = _DAT_01fba970 * _DAT_0058ce2f;
-        fVar3 = _DAT_01fba974 * _DAT_0058ce2f;
+        fVar2 = g_CDemonRaytrace_01fba938.adjusted_size.y * _DAT_0058ce2f;
+        fVar3 = g_CDemonRaytrace_01fba938.adjusted_size.z * _DAT_0058ce2f;
         local_54 = *(float *)(local_18 + 0x30);
         fVar6 = (float)_DAT_0058ce37;
-        fVar4 = _DAT_01fba94c * fVar6;
+        fVar4 = g_CDemonRaytrace_01fba938.bbox_min.y * fVar6;
         local_4c = local_58;
         (&local_48)[(uint)bVar9 * -2] = (&local_54)[(uint)bVar9 * -2];
         (&local_44)[(uint)bVar9 * -2 + (uint)bVar9 * -2] =
@@ -101,11 +103,12 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
         fVar5 = (float)(int)local_48;
         local_14 = local_44;
         fVar1 = (float)local_44;
-        local_40 = _DAT_01fba96c * _DAT_0058ce2f;
+        local_40 = g_CDemonRaytrace_01fba938.adjusted_size.x * _DAT_0058ce2f;
         local_3c = fVar2;
         local_38 = fVar3;
         round
-                  ((double)((float)(int)local_4c * _DAT_01fba96c * _DAT_0058ce2f));
+                  ((double)((float)(int)local_4c *
+                           g_CDemonRaytrace_01fba938.adjusted_size.x * _DAT_0058ce2f));
         local_7c = 0x4f1b13;
         round((double)(fVar1 * fVar3));
         pCVar12 = (CVector3i *)0x4f1b22;

@@ -10,8 +10,8 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a5a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; *****************************************************************************
 
@@ -26,9 +26,9 @@ section .text
     SAHF                                ; 00488bbd
     JNC 0x00488bdf                      ; 00488bbe
         ;   XREF to: 00488bdf (CONDITIONAL_JUMP)  ; LAB_00488bdf
-    MOV ECX,dword ptr [0x005b9354]      ; 00488bc0 | DAT_005b9354
+    MOV ECX,dword ptr [0x005b9354]      ; 00488bc0 | g_CGame_PTR_005b9354
     LEA EAX,[EDX + 0x14]                ; 00488bc6
-    FLD float ptr [ECX + 0x264]         ; 00488bc9 | DAT_01c77850
+    FLD float ptr [ECX + 0x264]         ; 00488bc9 | g_CGame_01c775ec.delta_time_float
     FSUBR float ptr [EAX]               ; 00488bcf
     FSTP float ptr [EAX]                ; 00488bd1
     FLD float ptr [EDX + 0x14]          ; 00488bd3

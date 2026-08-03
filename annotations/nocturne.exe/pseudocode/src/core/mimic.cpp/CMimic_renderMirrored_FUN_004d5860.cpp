@@ -37,7 +37,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
                             ((CDemonActor *)this_ptr,&local_64);
     local_1c = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_01);
     if (local_1c != 0) {
-      if ((this_ptr->cloth).vertices[0x30b].rest_lengths[2] < 0.0) {
+      if (this_ptr->morph_blend < 0.0) {
         local_18 = DAT_005ae704->advanced_culling_enabled;
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0
                   (DAT_005ae704,(uint)(local_18 == 0));
@@ -95,9 +95,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(DAT_005ae704,local_18);
       }
       else {
-        core_morph_cpp_CMorph_render_FUN_004e0820
-                  ((CMorph *)((this_ptr->cloth).vertices[0x300].rest_lengths + 4),
-                   (this_ptr->cloth).vertices[0x30b].rest_lengths[2]);
+        core_morph_cpp_CMorph_render_FUN_004e0820(&this_ptr->morph,this_ptr->morph_blend);
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);

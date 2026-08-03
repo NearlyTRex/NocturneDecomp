@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,39 +57,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 6,
+        "column": 33,
         "line": 16,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 12,
-        "line": 16,
-        "message": "expected expression"
+        "message": "use of undeclared identifier '_DAT_01c6ce14'; did you mean 'DAT_00763e14'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 26,
-        "line": 16,
-        "message": "use of undeclared identifier 'DAT_01c6ce4c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01c6ce14'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
+        "column": 42,
         "line": 17,
-        "message": "use of undeclared identifier 'DAT_01c6ce18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01c6ce14'"
+        "message": "use of undeclared identifier '_DAT_01c6ce14'; did you mean 'DAT_00763e14'?"
       },
       {
         "category": "undeclared_identifier",
@@ -99,15 +75,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 14,
+        "column": 30,
         "line": 19,
-        "message": "use of undeclared identifier 'DAT_01c6ce30'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c6ce14'"
+        "message": "use of undeclared identifier '_DAT_01c6ce14'; did you mean 'DAT_00763e14'?"
       },
       {
         "category": "undeclared_identifier",
@@ -122,16 +92,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 79,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 48
@@ -166,13 +134,13 @@
     },
     {
       "addr": "01c6ce30",
-      "name": "DAT_01c6ce30",
+      "name": "g_CRainDrop_ARRAY_01c6ce18[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6ce4c",
-      "name": "DAT_01c6ce4c",
+      "name": "g_CRainDrop_ARRAY_01c6ce18[0].base.vtable",
       "type": "undefined4",
       "value": null
     }
@@ -298,38 +266,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)(&DAT_01c6ce4c + _DAT_01c6ce14 * 0x38))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_01c6ce4c",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)(&DAT_01c6ce4c + _DAT_01c6ce14 * 0x38))",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_01c6ce18",
-      "severity": "mild",
-      "text": "(&DAT_01c6ce18 + _DAT_01c6ce14 * 0x38,position,velocity);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_01c6ce30",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c6ce30 + _DAT_01c6ce14 * 0x38) = 0x3e800000;",
-      "type": "undefined_data"
     }
   ]
 }

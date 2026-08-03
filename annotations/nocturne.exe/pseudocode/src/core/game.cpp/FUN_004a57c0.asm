@@ -36,7 +36,7 @@
 ;   TerminatedCString s_art_005843db
 ;   TerminatedCString s_core_game_cpp_005843df
 ;   TerminatedCString s_Can_t_open_s_005843f0
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -238,8 +238,8 @@ section .text
     MOV EAX,0x5843df                    ; 004a59f7 | = "..\\core\\game.cpp"
     MOV EDX,0x1028                      ; 004a59fc
     PUSH 0x5843f0                       ; 004a5a01 | = "Can't open %s"
-    MOV [0x01cc4800],EAX                ; 004a5a06 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004a5a0b | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004a5a06 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004a5a0b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004a5a11
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004a5a16
@@ -372,7 +372,7 @@ section .text
     PUSH ESI                            ; 004a5bc4
         ;   Label: LAB_004a5bc4
     PUSH 0x584380                       ; 004a5bc5 | = "Can't open %s"
-    MOV EBX,dword ptr [0x005b6d50]      ; 004a5bca | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004a5bca | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a5bd0
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a5bd1
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -392,7 +392,7 @@ section .text
     PUSH EDX                            ; 004a5bfa
     PUSH ESI                            ; 004a5bfb
     PUSH 0x58438e                       ; 004a5bfc | = "%s is %d bytes, but expected %dx%d=%d..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 004a5c01 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004a5c01 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004a5c07
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a5c08
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -409,7 +409,7 @@ section .text
         ;   Label: LAB_004a5c29
     PUSH EAX                            ; 004a5c30
     PUSH 0x5843ca                       ; 004a5c31 | = "Can't open %s"
-    MOV EDI,dword ptr [0x005b6d50]      ; 004a5c36 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004a5c36 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004a5c3c
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a5c3d
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -467,10 +467,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0xa34]     ; 004a5ce4
         ;   Label: LAB_004a5ce4
     MOV EBP,dword ptr [ECX + 0x48]      ; 004a5ceb
-    MOV EAX,[0x005bac64]                ; 004a5cee | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a5cee | g_CKeys_PTR_005bac64
     PUSH EBP                            ; 004a5cf3
-    MOV EDX,dword ptr [EAX]             ; 004a5cf4 | DAT_01cc30e4
-    PUSH EAX                            ; 004a5cf6 | DAT_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004a5cf4 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004a5cf6 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004a5cf7
     ADD ESP,0x8                         ; 004a5cf9
     TEST EAX,EAX                        ; 004a5cfc
@@ -484,10 +484,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0xa34]     ; 004a5d15
         ;   Label: LAB_004a5d15
     MOV ESI,dword ptr [ECX + 0x48]      ; 004a5d1c
-    MOV EAX,[0x005bac64]                ; 004a5d1f | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a5d1f | g_CKeys_PTR_005bac64
     PUSH ESI                            ; 004a5d24
-    MOV EDX,dword ptr [EAX]             ; 004a5d25 | DAT_01cc30e4
-    PUSH EAX                            ; 004a5d27 | DAT_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004a5d25 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004a5d27 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004a5d28
     ADD ESP,0x8                         ; 004a5d2a
     TEST EAX,EAX                        ; 004a5d2d

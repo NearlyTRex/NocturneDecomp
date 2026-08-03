@@ -47,8 +47,8 @@
 ;   double DOUBLE_0058b2b5 = 0.5
 ;   double DOUBLE_0058b2bd = 0.499900000000000
 ;   double DOUBLE_0058b2c5 = 0.000100000000000000
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -312,8 +312,8 @@ section .text
     MOV ECX,0x58b1f2                    ; 004e13e3 | = "..\\core\\motion.cpp"
     MOV EAX,0x17e                       ; 004e13e8
     PUSH 0x58b205                       ; 004e13ed | = "CMotionController::advance: Tweening ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004e13f2 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e13f8 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004e13f2 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004e13f8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e13fd
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e1402
@@ -376,8 +376,8 @@ section .text
     MOV EDI,0x58b24b                    ; 004e1493 | = "..\\core\\motion.cpp"
     MOV EAX,0x1b7                       ; 004e1498
     PUSH 0x58b25e                       ; 004e149d | = "Invalid transition command returned b..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004e14a2 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e14a8 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004e14a2 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004e14a8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e14ad
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e14b2

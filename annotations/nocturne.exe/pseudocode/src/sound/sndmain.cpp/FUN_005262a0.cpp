@@ -14,7 +14,7 @@ void sound_sndmain_cpp_FUN_005262a0(void)
 {
   uint in_stack_00000004;
   
-  *(uint *)(_DAT_02dc1b74 * 0x6c + 0x2dc1bd4) =
-       *(uint *)(_DAT_02dc1b74 * 0x6c + 0x2dc1bd4) & ~in_stack_00000004;
+  g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].flags =
+       g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].flags & ~in_stack_00000004;
   return;
 }

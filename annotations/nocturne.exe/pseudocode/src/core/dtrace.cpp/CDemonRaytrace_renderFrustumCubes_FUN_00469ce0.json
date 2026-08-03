@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1395,
-    "complexity_score": 885,
+    "complexity_score": 886,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 710,
+    "pseudocode_lines": 711,
     "suspect_count": 14,
     "suspect_types": [
       "bitcast_double_pair",
@@ -138,7 +138,7 @@
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2105
+    "total_lines": 2106
   },
   "cross_references": [
     {
@@ -214,9 +214,9 @@
     },
     {
       "addr": "005ae700",
-      "name": "DAT_005ae700",
-      "type": "undefined4",
-      "value": null
+      "name": "PTR_DAT_005ae700",
+      "type": "void*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -1108,13 +1108,6 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 52,
-          "line": 328,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 47,
           "line": 329,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
@@ -1123,6 +1116,13 @@
           "check_id": "shiftTooManyBitsSigned",
           "column": 47,
           "line": 330,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 47,
+          "line": 331,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
@@ -1233,7 +1233,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 410,
+      "line": 411,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar13 = SBORROW4(local_ac,iVar7);",
@@ -1241,7 +1241,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 418,
+      "line": 419,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar13 = SBORROW4(iVar8,iVar7);",
@@ -1249,7 +1249,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 540,
+      "line": 541,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar13 = SBORROW4(local_9c,iVar7);",
@@ -1257,7 +1257,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 548,
+      "line": 549,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar13 = SBORROW4(iVar8,iVar7);",
@@ -1281,7 +1281,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 328,
+      "line": 329,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iStack_118 = (_DAT_01cc5130 ^ (int)_DAT_01cc5130 >> 0x1f) - ((int)_DAT_01cc5130 >> 0x1f);",
@@ -1289,7 +1289,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 329,
+      "line": 330,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar9 = (_DAT_01cc5134 ^ (int)_DAT_01cc5134 >> 0x1f) - ((int)_DAT_01cc5134 >> 0x1f);",
@@ -1297,7 +1297,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 330,
+      "line": 331,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar7 = (_DAT_01cc5138 ^ (int)_DAT_01cc5138 >> 0x1f) - ((int)_DAT_01cc5138 >> 0x1f);",

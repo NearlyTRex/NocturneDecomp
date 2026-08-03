@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_vehicle_cpp_CVehicle_getBoundingBox_FUN_0054f320(int param_1,undefined4 *param_2)
+; float * core_vehicle_cpp_CVehicle_getBoundingBox_FUN_0054f320(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 15,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 15,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
       },
       {
         "category": "incompatible_types",
@@ -80,15 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 22,
+    "complexity_score": 50,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 22,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 71
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -177,19 +167,19 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dbd494",
-      "name": "DAT_02dbd494",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index",
       "type": "undefined4",
       "value": null
     }
@@ -363,5 +353,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02dbd374",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CSfxSlot_ARRAY_02dbd374[0].options.userdata + iVar1 + -0x54)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CSfxSlot *)((int)g_CSfxSlot_ARRAY_02dbd374",
+      "severity": "moderate",
+      "text": "((CSfxSlot *)((int)g_CSfxSlot_ARRAY_02dbd374[0].options.userdata + iVar1 + -0x54))",
+      "type": "pointer_cast"
+    }
+  ]
 }

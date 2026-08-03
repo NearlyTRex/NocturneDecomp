@@ -15,8 +15,8 @@
 ;   undefined4 s_our_weapon_0058581b+1
 ;   undefined4 s_ur_weapon_0058581b+2
 ;   undefined4 s_r_weapon_0058581b+3
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_004b4e5c
     MOV ESI,0x1b2                       ; 004b4e61
     PUSH 0x58580c                       ; 004b4e66 | = "Out of memory!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004b4e6b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004b4e71 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004b4e6b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004b4e71 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004b4e77
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b4e7c

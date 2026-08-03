@@ -15,8 +15,8 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501ced
 ;
 ; Called Functions:
-;   engine_ini.cpp_CIniFile_init_FUN_004bd890
 ;   engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0
+;   engine_ini.cpp_initIniFile_FUN_004bd890
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004bd865
     PUSH EDX                            ; 004bd869
     PUSH EBX                            ; 004bd86a
-    CALL engine_ini.cpp_CIniFile_init_FUN_004bd890 ; 004bd86b
-        ;   XREF to: 004bd890 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_init_FUN_004bd890(char * dest, char * source)
+    CALL engine_ini.cpp_initIniFile_FUN_004bd890 ; 004bd86b
+        ;   XREF to: 004bd890 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_initIniFile_FUN_004bd890(char * dest, char * source)
     ADD ESP,0x8                         ; 004bd870
     MOV ECX,dword ptr [ESP + 0x10]      ; 004bd873
     PUSH ECX                            ; 004bd877

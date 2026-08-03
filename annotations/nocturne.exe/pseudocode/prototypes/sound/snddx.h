@@ -77,7 +77,7 @@ void CDirectSoundDevice::freeSample(undefined4 param_1,int param_2);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0
 // Address: 0052adc0
-int CDirectSoundDevice::lockSample(undefined4 param_1,int param_2,int param_3,int param_4,CSfxSample *param_5);
+void * CDirectSoundDevice::lockSample(undefined4 param_1,int param_2,int param_3,int param_4,CSfxSample *param_5);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90
 // Address: 0052ae90

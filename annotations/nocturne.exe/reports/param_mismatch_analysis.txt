@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5377
-Functions with no callers: 2657
-Parameter mismatches detected: 358
-Signature accuracy rate: 86.8%
+Functions with parameter estimates: 5388
+Functions with no callers: 2669
+Parameter mismatches detected: 353
+Signature accuracy rate: 87.0%
 
 Mismatches by confidence:
   High confidence:   17 (multiple call sites agree)
-  Medium confidence: 77 (some agreement)
-  Low confidence:    264 (limited data)
+  Medium confidence: 76 (some agreement)
+  Low confidence:    260 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -209,7 +209,6 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d      declared:0 est:8 (+8) [2 calls]
   shape_edittool.cpp_FUN_0046f7e0                    declared:0 est:8 (+8) [2 calls]
   sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2e declared:0 est:8 (+8) [2 calls]
-  core_actor.cpp_CDemonActor_fillAttackDamageInfo_FU declared:0 est:7 (+7) [2 calls]
   crt_unknown.c_FUN_00567560                         declared:0 est:7 (+7) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:0 est:6 (+6) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:0 est:6 (+6) [2 calls]
@@ -251,14 +250,15 @@ MEDIUM CONFIDENCE MISMATCHES
   core_skeleton.cpp_FUN_005174e0                     declared:0 est:2 (+2) [4 calls]
   core_skeleton.cpp_FUN_0051b7d0                     declared:0 est:2 (+2) [2 calls]
   core_xform.cpp_buildZFlipMatrix_FUN_0055ca90       declared:0 est:2 (+2) [2 calls]
+  core_xform.cpp_matrixToQuaternion_FUN_0055cf10     declared:0 est:2 (+2) [4 calls]
 
-  ... and 27 more
+  ... and 26 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  264 functions with low-confidence mismatches
+  260 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_004012d0                      declared:0 est:5 (+5)
     engine_2d.c_FUN_004013d0                      declared:0 est:8 (+8)
@@ -278,7 +278,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 36
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 322
+Functions where declaration has FEWER params than estimated: 317
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -289,12 +289,12 @@ Distribution of differences (estimated - declared):
   -2 params: 6 functions
   -1 params: 24 functions
   +1 params: 58 functions
-  +2 params: 66 functions
+  +2 params: 65 functions
   +3 params: 57 functions
-  +4 params: 45 functions
-  +5 params: 39 functions
+  +4 params: 43 functions
+  +5 params: 38 functions
   +6 params: 24 functions
-  +7 params: 11 functions
+  +7 params: 10 functions
   +8 params: 15 functions
   +9 params: 3 functions
   +10 params: 3 functions

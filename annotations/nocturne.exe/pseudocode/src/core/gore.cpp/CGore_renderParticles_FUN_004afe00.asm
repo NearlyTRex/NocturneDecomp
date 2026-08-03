@@ -13,15 +13,15 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c77600
-;   undefined4 DAT_01c78d04
-;   undefined4 DAT_01c78d20
-;   undefined4 DAT_01c78d44
-;   undefined4 DAT_01c78d60
-;   undefined4 DAT_01e57284
+;   undefined4 g_CGame_01c775ec.blood_flag
+;   undefined4 g_CBloodParticle_ARRAY_01c78cec[0].base.lifetime_remaining
+;   undefined4 g_CBloodParticle_ARRAY_01c78cec[0].base.vtable
+;   undefined4 g_CBloodParticle_ARRAY_01c78cec[1].base.lifetime_remaining
+;   undefined4 g_CBloodParticle_ARRAY_01c78cec[1].base.vtable
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0
@@ -38,8 +38,8 @@ section .text
     PUSH EBP                            ; 004afe02
     MOV EBP,ESP                         ; 004afe03
     AND ESP,0xfffffff8                  ; 004afe05
-    MOV EAX,[0x005b9354]                ; 004afe08 | DAT_005b9354
-    CMP dword ptr [EAX + 0x14],0x0      ; 004afe0d | DAT_01c77600
+    MOV EAX,[0x005b9354]                ; 004afe08 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x14],0x0      ; 004afe0d | g_CGame_01c775ec.blood_flag
     JNZ 0x004afe19                      ; 004afe11
         ;   XREF to: 004afe19 (CONDITIONAL_JUMP)  ; LAB_004afe19
     MOV ESP,EBP                         ; 004afe13
@@ -62,8 +62,8 @@ section .text
     PUSH EAX                            ; 004afe2e
     PUSH EAX                            ; 004afe2f
     PUSH EAX                            ; 004afe30
-    MOV EBX,dword ptr [0x005be368]      ; 004afe31 | DAT_005be368
-    PUSH EBX                            ; 004afe37 | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 004afe31 | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 004afe37 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 004afe38
         ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 004afe3d
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 004ae0a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle * this_ptr)
     LEA ESI,[EBX + 0x4000]              ; 004afe4f
     ADD ESP,0x4                         ; 004afe55
-    FLD float ptr [EBX + 0x18]          ; 004afe58 | DAT_01c78d04 | DAT_01c78d44
+    FLD float ptr [EBX + 0x18]          ; 004afe58 | g_CBloodParticle_ARRAY_01c78cec[0].base.lifetime_remaining | g_CBloodParticle_ARRAY_01c78cec[1].base.lifetime_remaining
         ;   Label: LAB_004afe58
     FLDZ                                ; 004afe5b
     FCOMPP                              ; 004afe5d
@@ -82,7 +82,7 @@ section .text
     JNC 0x004afe6e                      ; 004afe62
         ;   XREF to: 004afe6e (CONDITIONAL_JUMP)  ; LAB_004afe6e
     PUSH EBX                            ; 004afe64
-    MOV EAX,dword ptr [EBX + 0x34]      ; 004afe65 | DAT_01c78d20 | DAT_01c78d60
+    MOV EAX,dword ptr [EBX + 0x34]      ; 004afe65 | g_CBloodParticle_ARRAY_01c78cec[0].base.vtable | g_CBloodParticle_ARRAY_01c78cec[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004afe68
     ADD ESP,0x4                         ; 004afe6b
     ADD EBX,0x40                        ; 004afe6e

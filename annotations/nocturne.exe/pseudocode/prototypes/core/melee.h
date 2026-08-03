@@ -45,7 +45,7 @@ undefined4 CMelee::getAllowedMeleeAttackTypes(int param_1);
 
 // Original: core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_004cef80
 // Address: 004cef80
-void CMelee::fillAttackDamageInfo(int param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void CMelee::fillAttackDamageInfo(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4);
 
 // Original: core_melee.cpp_CMelee_playAttackHitEffects_FUN_004cefe0
 // Address: 004cefe0

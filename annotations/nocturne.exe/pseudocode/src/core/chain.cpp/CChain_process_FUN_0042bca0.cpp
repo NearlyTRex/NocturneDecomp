@@ -251,7 +251,7 @@ void core_chain_cpp_CChain_process_FUN_0042bca0(CChain *param_1,float param_2)
     iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->pull_wav_handle);
     if (iVar6 == 0) {
       uVar5 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                        (0x02DC9450,&param_1->base,param_1->pull_wav_name,
+                        (g_CSound_PTR_005bed68,&param_1->base,param_1->pull_wav_name,
                          &param_1->vertices[param_1->vertex_count + -1].position);
       param_1->move_wav_handle = uVar5;
     }
@@ -270,7 +270,7 @@ void core_chain_cpp_CChain_process_FUN_0042bca0(CChain *param_1,float param_2)
     iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->move_wav_handle);
     if (iVar6 == 0) {
       uVar5 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                        (0x02DC9450,&param_1->base,param_1->move_wav_name,
+                        (g_CSound_PTR_005bed68,&param_1->base,param_1->move_wav_name,
                          &param_1->vertices[param_1->vertex_count + -1].position);
       param_1->move_wav_handle = uVar5;
     }

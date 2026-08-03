@@ -59,8 +59,8 @@
 ;   double DOUBLE_00584a08 = 32
 ;   float FLOAT_0059df3c = 3
 ;   float FLOAT_0059df48 = 10
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_01bd1d80
 ;   undefined4 DAT_01c78b20
 ;   undefined4 DAT_02dd1184
@@ -367,8 +367,8 @@ section .text
     ADD ESP,0xc                         ; 004a7ba2
     PUSH EBX                            ; 004a7ba5
     PUSH 0x584990                       ; 004a7ba6 | = "%s confused while walking to scriptDe..."
-    MOV ECX,dword ptr [0x005ad350]      ; 004a7bab | PTR_DAT_005ad350
-    PUSH ECX                            ; 004a7bb1 | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004a7bab | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 004a7bb1 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a7bb2
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x004a7982                      ; 004a7bb7

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 41,
-        "message": "use of undeclared identifier 'DAT_01fba938'"
       }
     ],
     "success": false,
@@ -68,18 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 104,
+    "complexity_score": 96,
     "cross_reference_count": 17,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 2,
+    "pseudocode_lines": 61,
+    "suspect_count": 3,
     "suspect_types": [
-      "primitive_walker_cast",
-      "undefined_data"
+      "unrolled_memcpy"
     ],
-    "total_lines": 219
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -212,8 +205,8 @@
   "globals": [
     {
       "addr": "01fba938",
-      "name": "DAT_01fba938",
-      "type": "undefined4",
+      "name": "g_CDemonRaytrace_01fba938",
+      "type": "CDemonRaytrace",
       "value": null
     }
   ],
@@ -475,77 +468,30 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_raycast_FUN_0050fb00.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 7,
-          "line": 46,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 6,
-          "line": 47,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 8,
-          "line": 75,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Undefined global data reference",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 19,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->ray_origin).x = ray_origin->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->ray_target).x = ray_target->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 34,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,ray_origin,ray_target,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 36,
-      "match": "(int *)&this_ptr->vdir_boxes[",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(int *)&this_ptr->vdir_boxes[0xec].rotation_matrix.m[1].z);",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 46,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "if ((float *)pcVar2 != out_intersection_point) {",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 47,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)pcVar2 = *out_intersection_point;",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 75,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)pcVar2 = ray_origin->x + (ray_target->x - ray_origin->x) * pCVar3->m[0].x;",
-      "type": "static_invalid_pointer_cast"
+      "text": "(this_ptr->collision_normal).x = out_intersection_point->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

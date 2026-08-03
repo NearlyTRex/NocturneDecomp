@@ -24,7 +24,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004d4450(CMimic *this_ptr)
   pCVar7 = core_cloth_cpp_CCloth_ctor_FUN_00435100
                      ((CCloth *)(pCVar6[1].base.base.create_event + 0x50));
   pCVar8 = core_morph_cpp_CMorph_ctor_FUN_004e0050
-                     ((CMorph *)(pCVar7->vertices[0x300].rest_lengths + 4));
+                     ((CMorph *)(pCVar7[1].model.model_filename + 0x30));
   pCVar8[-0x5d].models[0].textures[0xc].textures[2].base.count = (int)&g_CMimicVTable;
   pSVar2 = pCVar8[-0x5a].models[1].textures + 0x13;
   pSVar2->textures[2].texture_name[0] = '\0';

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,16 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 104,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00511840'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 27,
+        "category": "cast_error",
+        "column": 18,
         "line": 113,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00'"
+        "message": "cannot cast from type 'float' to pointer type 'float *'"
       },
       {
         "category": "cast_error",
@@ -92,28 +86,10 @@
         "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
-        "category": "other",
-        "column": 44,
-        "line": 151,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 154,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 155,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 158,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "type_error",
+        "column": 100,
+        "line": 233,
+        "message": "invalid suffix '._0_4_' on floating constant"
       }
     ],
     "success": false,
@@ -122,19 +98,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 485,
+    "complexity_score": 478,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 340,
+    "pseudocode_lines": 338,
     "suspect_count": 13,
     "suspect_types": [
-      "raw_address_pointer_store",
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 1157
+    "total_lines": 1155
   },
   "cross_references": [
     {
@@ -247,9 +222,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "00765a98",
@@ -259,37 +234,37 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fc4",
-      "name": "DAT_01fa3fc4",
+      "name": "g_CDemonSet_01e57284.collision_normal.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc8",
-      "name": "DAT_01fa3fc8",
+      "name": "g_CDemonSet_01e57284.collision_normal.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fcc",
-      "name": "DAT_01fa3fcc",
+      "name": "g_CDemonSet_01e57284.collision_normal.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fd4",
-      "name": "DAT_01fa3fd4",
+      "name": "g_CDemonSet_01e57284.collision_impact_position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "DAT_01fa3fe0",
+      "name": "g_CDemonSet_01e57284.collision_actor",
       "type": "undefined4",
       "value": null
     }
@@ -1484,16 +1459,8 @@
   },
   "suspects": [
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 151,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18);",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 228,
+      "line": 226,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_a4.x * direction->x + local_a4.y * direction->y) * 5.3049894774131808e-315._0_4_;",
@@ -1517,7 +1484,15 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 160,
+      "line": 145,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_a4.x = (g_CDemonSet_PTR_005be368->collision_normal).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 159,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_20->x = pCVar2->x;",
@@ -1525,7 +1500,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 168,
+      "line": 167,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_1c->x = pCVar2->x;",
@@ -1533,7 +1508,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 176,
+      "line": 174,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_18->x = pCVar2->x;",
@@ -1541,7 +1516,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 239,
+      "line": 237,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_bc.x = local_f8.x;",
@@ -1549,7 +1524,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 249,
+      "line": 247,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_23c.intensity = laser_info->intensity;",
@@ -1557,7 +1532,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 266,
+      "line": 264,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_23c.incidence_angle = laser_info->incidence_angle;",
@@ -1565,7 +1540,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 279,
+      "line": 277,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_104.x = direction->x;",
@@ -1573,7 +1548,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 313,
+      "line": 311,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_1e8.intensity = laser_info->intensity;",
@@ -1581,7 +1556,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 330,
+      "line": 328,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_1e8.incidence_angle = laser_info->incidence_angle;",

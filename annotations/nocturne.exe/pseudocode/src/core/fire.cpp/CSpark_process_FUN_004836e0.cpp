@@ -30,13 +30,13 @@ void __cdecl core_fire_cpp_CSpark_process_FUN_004836e0(CSpark *this_ptr)
       this_ptr->intensity_current = 0;
     }
   }
-  delta_time = 0x01C775EC->delta_time_float;
+  delta_time = g_CGame_PTR_005b9354->delta_time_float;
   lVar1 = (longlong)this_ptr->fade_rate * (longlong)_DAT_01bd1d80;
   core_game_cpp_CGame_slamDT_FUN_004a5f00
-            (0x01C775EC,
+            (g_CGame_PTR_005b9354,
              (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
              (float)1.52587890625e-05);
   core_particle_cpp_CParticle_process_FUN_004ef120(&this_ptr->base);
-  core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,delta_time);
+  core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGame_PTR_005b9354,delta_time);
   return;
 }

@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592902
 ;   TerminatedCString s_generateSilence_invalid_00592917
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_00523580
     MOV ECX,0x5c4                       ; 00523585
     PUSH 0x592917                       ; 0052358a | = "generateSilence - invalid bit depth!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0052358f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00523595 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0052358f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00523595 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052359b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005235a0

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,18 +62,6 @@
         "message": "use of undeclared identifier '_DAT_02dc84bc'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 32,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 32,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 5,
         "line": 34,
@@ -81,39 +69,51 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 53,
-        "line": 41,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+        "column": 48,
+        "line": 61,
+        "message": "use of undeclared identifier '_DAT_005a2148'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 63,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 68,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 74,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_005a2148'"
+        "line": 79,
+        "message": "use of undeclared identifier '_DAT_02dc78e0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 57,
-        "line": 62,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+        "column": 48,
+        "line": 80,
+        "message": "use of undeclared identifier '_DAT_02dc78e8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 18,
-        "line": 68,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+        "column": 48,
+        "line": 81,
+        "message": "use of undeclared identifier '_DAT_02dc78f0'"
       },
       {
-        "category": "cast_error",
-        "column": 24,
-        "line": 71,
-        "message": "cannot cast from type 'float' to pointer type 'CSfxSample *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 62,
-        "line": 74,
-        "message": "C-style cast from 'struct CSfxSample *' to 'float' is not allowed"
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 85,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
     "success": false,
@@ -122,23 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 378,
+    "complexity_score": 268,
     "cross_reference_count": 13,
     "function_call_count": 8,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 143,
-    "suspect_count": 20,
+    "pseudocode_lines": 148,
+    "suspect_count": 9,
     "suspect_types": [
       "bitcast_double_pair",
       "shadow_pointer_walk",
       "sub84_truncation",
-      "suspect_float",
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 607
+    "total_lines": 612
   },
   "cross_references": [
     {
@@ -392,8 +391,8 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
@@ -410,19 +409,19 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -785,64 +784,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 33,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 54,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 59,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 65,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 74,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 75,
+      "line": 77,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
       "type": "sub84_truncation"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 89,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 93,
+      "line": 95,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));",
@@ -850,7 +801,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 97,
+      "line": 99,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158)) < local_60) {",
@@ -858,71 +809,31 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 98,
+      "line": 100,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 100,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 106,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "else if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 111,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 116,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if ((this_ptr->stop_after_fade == 1.4013e-45) &&",
-      "type": "suspect_float"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 119,
       "match": "DAT_005bea68",
       "severity": "mild",
-      "text": "(iVar11 = 0, pCVar13 = this_ptr, 0 < DAT_005bea68)) {",
+      "text": "if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < DAT_005bea68)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 128,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "} while (iVar12 < DAT_005bea68);",
       "type": "undefined_data"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 134,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (this_ptr->stop_after_fade == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 139,
+      "line": 143,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,local_18);",
@@ -930,7 +841,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 125,
+      "line": 127,
       "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",

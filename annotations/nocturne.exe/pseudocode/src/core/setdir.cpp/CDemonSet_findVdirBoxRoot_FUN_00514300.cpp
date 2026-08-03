@@ -9,18 +9,18 @@
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet *this_ptr,int box_index)
 
 {
-  float fVar1;
-  float fVar2;
+  int iVar1;
+  int iVar2;
   
-  fVar1 = (float)box_index;
+  iVar1 = box_index;
   do {
-    fVar2 = fVar1;
-    fVar1 = this_ptr->rooms[(int)fVar2 + 6].extents.z;
-  } while (-1 < (int)fVar1);
-  while ((float)box_index != fVar2) {
-    fVar1 = this_ptr->rooms[box_index + 6].extents.z;
-    this_ptr->rooms[box_index + 6].extents.z = fVar2;
-    box_index = (int)fVar1;
+    iVar2 = iVar1;
+    iVar1 = this_ptr->vdir_boxes[iVar2].parent_index;
+  } while (-1 < iVar1);
+  while (box_index != iVar2) {
+    iVar1 = this_ptr->vdir_boxes[box_index].parent_index;
+    this_ptr->vdir_boxes[box_index].parent_index = iVar2;
+    box_index = iVar1;
   }
-  return (int)fVar2;
+  return iVar2;
 }

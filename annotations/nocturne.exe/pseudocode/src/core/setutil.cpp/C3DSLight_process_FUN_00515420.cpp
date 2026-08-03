@@ -16,14 +16,14 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00515420(C3DSLight *this_ptr
   int iVar3;
   
   if (light == (CDemonLight *)0x0) {
-    PTR_01cc4800 = "..\\core\\setutil.cpp";
-    INT_01cc4804 = 0x31e;
+    g_CHAR_PTR_01cc4800 = "..\\core\\setutil.cpp";
+    g_INT_01cc4804 = 0x31e;
     core_main_c_FUN_004c8440("C3DSLight::process - NULL CDemonLight pointer!");
   }
   if (this_ptr->filter_count != 0) {
     if (0.0 < this_ptr->filter_durations[this_ptr->current_filter_frame]) {
       this_ptr->filter_frame_elapsed =
-           *(float *)(0x01C775EC + 0x264) + this_ptr->filter_frame_elapsed;
+           g_CGame_PTR_005b9354->delta_time_float + this_ptr->filter_frame_elapsed;
       if (this_ptr->filter_durations[this_ptr->current_filter_frame] <
           this_ptr->filter_frame_elapsed) {
         iVar3 = this_ptr->current_filter_frame + 1;
@@ -53,7 +53,7 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00515420(C3DSLight *this_ptr
     }
   }
   if (this_ptr->on_time < 1.0) {
-    this_ptr->cycle_elapsed = *(float *)(0x01C775EC + 0x264) + this_ptr->cycle_elapsed;
+    this_ptr->cycle_elapsed = g_CGame_PTR_005b9354->delta_time_float + this_ptr->cycle_elapsed;
     if (this_ptr->cycle_time < this_ptr->cycle_elapsed) {
       this_ptr->cycle_elapsed = this_ptr->cycle_elapsed - this_ptr->cycle_time;
     }
@@ -64,7 +64,7 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00515420(C3DSLight *this_ptr
       light->light_enabled_flag = 0;
     }
   }
-  if (*(int *)(0x01E57284 + 0x15aab8) != 0) {
+  if (g_CDemonSet_PTR_005be368->camera_enabled_flag != 0) {
     return;
   }
   light->light_enabled_flag = 0;

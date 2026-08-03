@@ -6,10 +6,10 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059b568 = 0.5
-;   undefined4 DAT_005b9354
-;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 DAT_01c777bc
-;   undefined4 DAT_01c77818
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   undefined4 g_CGame_01c775ec.god_mode_enabled
+;   undefined4 g_CGame_01c775ec.allow_damage_flag
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510
@@ -31,15 +31,15 @@ section .text
     TEST dword ptr [EBX + 0xbc8c],0x7fffffff ; 0043aa0c
     JNZ 0x0043aa84                      ; 0043aa16
         ;   XREF to: 0043aa84 (CONDITIONAL_JUMP)  ; LAB_0043aa84
-    MOV EAX,[0x005b9354]                ; 0043aa18 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0043aa18 | g_CGame_PTR_005b9354
         ;   Label: LAB_0043aa18
-    CMP dword ptr [EAX + 0x1d0],0x0     ; 0043aa1d | DAT_01c777bc
+    CMP dword ptr [EAX + 0x1d0],0x0     ; 0043aa1d | g_CGame_01c775ec.god_mode_enabled
     JZ 0x0043aa2d                       ; 0043aa24
         ;   XREF to: 0043aa2d (CONDITIONAL_JUMP)  ; LAB_0043aa2d
     MOV dword ptr [ESI + 0x4],0x0       ; 0043aa26
-    MOV EAX,[0x005b9354]                ; 0043aa2d | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0043aa2d | g_CGame_PTR_005b9354
         ;   Label: LAB_0043aa2d
-    MOV EDI,dword ptr [EAX + 0x22c]     ; 0043aa32 | DAT_01c77818
+    MOV EDI,dword ptr [EAX + 0x22c]     ; 0043aa32 | g_CGame_01c775ec.allow_damage_flag
     TEST EDI,EDI                        ; 0043aa38
     JZ 0x0043aa8d                       ; 0043aa3a
         ;   XREF to: 0043aa8d (CONDITIONAL_JUMP)  ; LAB_0043aa8d
@@ -111,7 +111,7 @@ section .text
     PUSH 0x42480000                     ; 0043aad7
     PUSH 0x32                           ; 0043aadc
     PUSH EBX                            ; 0043aade
-    MOV EBP,dword ptr [0x005b96c4]      ; 0043aadf | INT_005b96c4
+    MOV EBP,dword ptr [0x005b96c4]      ; 0043aadf | g_CGore_PTR_005b96c4
     PUSH EBP                            ; 0043aae5
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 0043aae6
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)

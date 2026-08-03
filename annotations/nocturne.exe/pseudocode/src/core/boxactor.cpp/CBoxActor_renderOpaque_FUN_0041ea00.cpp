@@ -27,9 +27,9 @@ int core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041ea00(int param_1)
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (0x01B4D738,(CVector3f *)(param_1 + 0x20));
+            ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3f *)(param_1 + 0x20));
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (0x01B4D738,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);
+            ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);
   this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr);
   if (iVar2 != 0) {

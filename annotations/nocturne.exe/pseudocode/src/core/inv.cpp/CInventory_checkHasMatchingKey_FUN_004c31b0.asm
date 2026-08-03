@@ -16,8 +16,8 @@
 ;   TerminatedCString s_You_used_a_key_005874f9
 ;   TerminatedCString s_key_unlock_wav_00587509
 ;   TerminatedCString s_You_need_the_right_key_00587518
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c775ec
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame g_CGame_01c775ec
 ;   undefined4 g_CKeyActorActorType_01cc30a8.name_hash
 ;
 ; Called Functions:
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c3207
     PUSH EAX                            ; 004c320a
-    MOV ESI,dword ptr [0x005b9354]      ; 004c320b | DAT_005b9354
-    PUSH ESI                            ; 004c3211 | DAT_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004c320b | g_CGame_PTR_005b9354
+    PUSH ESI                            ; 004c3211 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004c3212
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     MOV EBP,dword ptr [EDI + 0x4]       ; 004c3217
@@ -106,8 +106,8 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c325e
     PUSH EAX                            ; 004c3261
-    MOV ESI,dword ptr [0x005b9354]      ; 004c3262 | DAT_005b9354
-    PUSH ESI                            ; 004c3268 | DAT_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004c3262 | g_CGame_PTR_005b9354
+    PUSH ESI                            ; 004c3268 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004c3269
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004c326e

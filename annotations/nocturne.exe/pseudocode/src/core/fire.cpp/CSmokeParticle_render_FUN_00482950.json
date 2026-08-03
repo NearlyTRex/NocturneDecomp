@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -66,18 +66,6 @@
         "column": 11,
         "line": 35,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 40,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 40,
-        "message": "assigning to 'int' from incompatible type 'const char[17]'"
       },
       {
         "category": "incompatible_types",
@@ -114,6 +102,18 @@
         "column": 31,
         "line": 60,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 65,
+        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 83,
+        "line": 65,
+        "message": "use of undeclared identifier 'stack0xffffff8c'"
       }
     ],
     "success": false,
@@ -257,9 +257,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005c502c",
@@ -335,13 +335,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -706,7 +706,7 @@
       "line": 87,
       "match": "DAT_01c08d14",
       "severity": "mild",
-      "text": "(0x01E57284,&local_44,(CVector3i *)&DAT_01c08d14,0,4);",
+      "text": "(g_CDemonSet_PTR_005be368,&local_44,(CVector3i *)&DAT_01c08d14,0,4);",
       "type": "undefined_data"
     },
     {

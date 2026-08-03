@@ -43,8 +43,8 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f09
       _DAT_01c00c7c = core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00464075;
     }
     else {
-      PTR_01cc4800 = "..\\engine\\drender.cpp";
-      INT_01cc4804 = 0x29c;
+      g_CHAR_PTR_01cc4800 = "..\\engine\\drender.cpp";
+      g_INT_01cc4804 = 0x29c;
       core_main_c_FUN_004c8440("Can't use demonZFacetCount in shadow mode!");
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80

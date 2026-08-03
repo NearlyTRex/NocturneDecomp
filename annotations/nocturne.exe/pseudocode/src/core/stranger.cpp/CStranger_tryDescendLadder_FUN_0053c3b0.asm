@@ -26,12 +26,12 @@
 ;   double DOUBLE_00595b6f = 4
 ;   double DOUBLE_00595b77 = -1
 ;   double DOUBLE_00595b7f = 0.261799387791667
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005be368
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 g_CLadderActorType_01cc30e8.name_hash
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -79,10 +79,10 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 0053c40a
     MOV dword ptr [ESP + 0xd8],EDX      ; 0053c40d
     MOV dword ptr [ESP + 0xd0],EAX      ; 0053c414
-    MOV EAX,[0x005be368]                ; 0053c41b | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0053c41b | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0053c41b
     MOV EDX,dword ptr [ESP + 0xdc]      ; 0053c420
-    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 0053c427 | DAT_01fa3ff0
+    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 0053c427 | g_CDemonSet_01e57284.actor_count
     JL 0x0053c45a                       ; 0053c42d
         ;   XREF to: 0053c45a (CONDITIONAL_JUMP)  ; LAB_0053c45a
     XOR EAX,EAX                         ; 0053c42f
@@ -107,7 +107,7 @@ section .text
     MOV ESI,dword ptr [0x01cc3120]      ; 0053c461 | g_CLadderActorType_01cc30e8.name_hash
     ADD EAX,EBX                         ; 0053c467
     PUSH ESI                            ; 0053c469
-    MOV EAX,dword ptr [EAX + 0x14cd70]  ; 0053c46a | DAT_01fa3ff4
+    MOV EAX,dword ptr [EAX + 0x14cd70]  ; 0053c46a | g_CDemonSet_01e57284.actors[0]
     PUSH EAX                            ; 0053c470
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0053c471
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
@@ -295,8 +295,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 0053c6c4
     PUSH ECX                            ; 0053c6c8
     PUSH 0x595b3f                       ; 0053c6c9 | = "Ladder dot : %f\n"
-    MOV EBX,dword ptr [0x005ad350]      ; 0053c6ce | PTR_DAT_005ad350
-    PUSH EBX                            ; 0053c6d4 | DAT_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 0053c6ce | g_CConsole_PTR_005ad350
+    PUSH EBX                            ; 0053c6d4 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053c6d5
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x10                        ; 0053c6da

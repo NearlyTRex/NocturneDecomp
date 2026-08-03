@@ -19,8 +19,8 @@
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c
 ;   undefined4 DAT_005bea80
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
@@ -78,8 +78,8 @@ section .text
         ;   Label: LAB_0052457d
     MOV EBX,0x8e8                       ; 00524582
     PUSH 0x592d62                       ; 00524587 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052458c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00524592 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0052458c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00524592 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00524598
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052459d

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -68,16 +68,10 @@
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50'"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 75,
-        "message": "no matching function for call to 'core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 58,
+        "column": 72,
         "line": 76,
-        "message": "use of undeclared identifier 'DAT_02dd1184'"
+        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "incompatible_types",
@@ -114,6 +108,12 @@
         "column": 5,
         "line": 89,
         "message": "use of undeclared identifier '_DAT_005c5090'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 90,
+        "message": "use of undeclared identifier '_DAT_005c50bc'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 580,
-    "complexity_score": 1224,
+    "complexity_score": 1234,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 234,
-    "suspect_count": 96,
+    "suspect_count": 97,
     "suspect_types": [
       "raw_address_constant",
       "suspect_float",
@@ -259,9 +259,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005c502c",
@@ -433,8 +433,8 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
@@ -956,7 +956,7 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01E57284,param_1,(UOrientationVector *)&DAT_02dd1184,&local_e0.min,&local_e0.max,",
+      "text": "(g_CDemonSet_PTR_005be368,param_1,(UOrientationVector *)&DAT_02dd1184,&local_e0.min,",
       "type": "unnamed_param"
     },
     {
@@ -964,7 +964,7 @@
       "line": 69,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(0x01E57284,param_1,(UOrientationVector *)&DAT_02dd1184,&local_e0.min,&local_e0.max,",
+      "text": "(g_CDemonSet_PTR_005be368,param_1,(UOrientationVector *)&DAT_02dd1184,&local_e0.min,",
       "type": "undefined_data"
     },
     {
@@ -1614,6 +1614,14 @@
       "severity": "moderate",
       "text": "_DAT_005c508c = 0xf80000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 60,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_e0.min.x = (pCVar1->min).x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",

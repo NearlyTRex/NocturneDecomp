@@ -24,7 +24,7 @@ void __cdecl core_charactr_cpp_FUN_004270e0(CCharacter *this_ptr)
   if (this_ptr == *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
     dVar4 = round
                       ((double)((float)DAT_007658dc +
-                               *(float *)(0x01C775EC + 0x264) * 8388608.0f));
+                               g_CGame_PTR_005b9354->delta_time_float * 8388608.0f));
     DAT_007658dc = (int)ROUND(dVar4);
   }
   iVar2 = rand();

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -60,24 +60,6 @@
         "column": 57,
         "line": 43,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 46,
-        "message": "use of undeclared identifier '_DAT_01c775e8'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 47,
-        "message": "no matching function for call to 'core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 86,
-        "line": 47,
-        "message": "use of undeclared identifier 'DAT_01c74640'"
       }
     ],
     "success": false,
@@ -86,16 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 112,
+    "complexity_score": 97,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_pointer_store",
-      "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -189,37 +170,37 @@
   "globals": [
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01c74640",
-      "name": "DAT_01c74640",
-      "type": "undefined4",
+      "name": "g_CDemonLight_01c74640",
+      "type": "CDemonLight",
       "value": null
     },
     {
       "addr": "01c775e8",
-      "name": "DAT_01c775e8",
+      "name": "g_CDemonLight_01c74640.volumetric_intensity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01c77830",
-      "name": "DAT_01c77830",
+      "name": "g_CGame_01c775ec.flashlight_active",
       "type": "undefined4",
       "value": null
     },
@@ -231,8 +212,8 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -422,14 +403,6 @@
       "severity": "moderate",
       "text": "if (((this_ptr->carried_by_actor == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) &&",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01c74640",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(0x01E57284,(CDemonLight *)&DAT_01c74640)",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",

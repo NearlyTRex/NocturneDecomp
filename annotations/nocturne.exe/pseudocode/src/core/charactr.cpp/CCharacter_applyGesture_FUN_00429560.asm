@@ -18,8 +18,8 @@
 ;   TerminatedCString s_CCharacter_applyGesture_0057a225
 ;   float FLOAT_0057a26a = 0.3000000
 ;   float FLOAT_0057a26e = 0.8500000
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -102,8 +102,8 @@ section .text
     MOV ESI,0x57a210                    ; 00429635 | = "..\\core\\charactr.cpp"
     MOV EDI,0xcdb                       ; 0042963a
     PUSH 0x57a225                       ; 0042963f | = "CCharacter::applyGesture - never set ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00429644 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0042964a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00429644 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0042964a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00429650
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00429655

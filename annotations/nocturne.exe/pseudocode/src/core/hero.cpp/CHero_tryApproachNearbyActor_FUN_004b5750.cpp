@@ -32,8 +32,8 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004b5750(CHero *this_
     }
     input_world_point = &(this_ptr->base).base.location;
     local_1c = 0;
-    for (local_20 = 0; local_20 < *(int *)(0x01E57284 + 0x14cd6c); local_20 = local_20 + 1) {
-      this_ptr_00 = *(CHero **)(0x01E57284 + local_1c + 0x14cd70);
+    for (local_20 = 0; local_20 < g_CDemonSet_PTR_005be368->actor_count; local_20 = local_20 + 1) {
+      this_ptr_00 = *(CHero **)((int)g_CDemonSet_PTR_005be368->actors + local_1c);
       local_60.x = (this_ptr_00->base).base.location.position.x - (input_world_point->position).x;
       local_60.z = (this_ptr_00->base).base.location.position.z -
                    (this_ptr->base).base.location.position.z;

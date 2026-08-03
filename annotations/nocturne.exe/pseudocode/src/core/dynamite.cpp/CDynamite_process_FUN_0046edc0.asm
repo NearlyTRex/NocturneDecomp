@@ -12,8 +12,8 @@
 ;   double DOUBLE_0057e4ee = 5
 ;   float FLOAT_0057e4f6 = 0.5
 ;   undefined4 DAT_0059c91c
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005bed68
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -78,7 +78,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x580]     ; 0046ee31
         ;   Label: LAB_0046ee31
     PUSH ECX                            ; 0046ee37
-    MOV ESI,dword ptr [0x005bed68]      ; 0046ee38 | DAT_005bed68
+    MOV ESI,dword ptr [0x005bed68]      ; 0046ee38 | g_CSound_PTR_005bed68
     PUSH ESI                            ; 0046ee3e
     MOV dword ptr [EBX + 0x570],0x0     ; 0046ee3f
     CALL core_sound.cpp_CSound_killSound_FUN_0052ebb0 ; 0046ee49
@@ -153,7 +153,7 @@ section .text
     PUSH 0x0                            ; 0046ef0f
     LEA EAX,[ESP + 0x4c]                ; 0046ef11
     PUSH EAX                            ; 0046ef15
-    MOV EDX,dword ptr [0x005b80f0]      ; 0046ef16 | DAT_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 0046ef16 | g_CFireEffect_PTR_005b80f0
     PUSH EDX                            ; 0046ef1c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 0046ef1d
         ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

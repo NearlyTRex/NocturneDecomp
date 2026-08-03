@@ -26,12 +26,12 @@
 ;   double DOUBLE_00595b27 = 4
 ;   double DOUBLE_00595b2f = -1
 ;   double DOUBLE_00595b37 = 0.261799387791667
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005be368
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 g_CLadderActorType_01cc30e8.name_hash
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -79,10 +79,10 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 0053bfea
     MOV dword ptr [ESP + 0xd0],EDX      ; 0053bfed
     MOV dword ptr [ESP + 0xc8],EAX      ; 0053bff4
-    MOV EAX,[0x005be368]                ; 0053bffb | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0053bffb | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0053bffb
     MOV EDX,dword ptr [ESP + 0xcc]      ; 0053c000
-    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 0053c007 | DAT_01fa3ff0
+    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 0053c007 | g_CDemonSet_01e57284.actor_count
     JL 0x0053c03a                       ; 0053c00d
         ;   XREF to: 0053c03a (CONDITIONAL_JUMP)  ; LAB_0053c03a
     XOR EAX,EAX                         ; 0053c00f
@@ -107,7 +107,7 @@ section .text
     MOV ESI,dword ptr [0x01cc3120]      ; 0053c041 | g_CLadderActorType_01cc30e8.name_hash
     ADD EAX,EBX                         ; 0053c047
     PUSH ESI                            ; 0053c049
-    MOV EAX,dword ptr [EAX + 0x14cd70]  ; 0053c04a | DAT_01fa3ff4
+    MOV EAX,dword ptr [EAX + 0x14cd70]  ; 0053c04a | g_CDemonSet_01e57284.actors[0]
     PUSH EAX                            ; 0053c050
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0053c051
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
@@ -349,10 +349,10 @@ section .text
         ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 0053c36c
     PUSH ESI                            ; 0053c36f
-    MOV EDX,dword ptr [0x005ad350]      ; 0053c370 | PTR_DAT_005ad350
+    MOV EDX,dword ptr [0x005ad350]      ; 0053c370 | g_CConsole_PTR_005ad350
     PUSH 0x595af7                       ; 0053c376 | = "Climbing ladder %s\n"
     FLD float ptr [EAX + 0x4]           ; 0053c37b
-    PUSH EDX                            ; 0053c37e | DAT_0077ad0c
+    PUSH EDX                            ; 0053c37e | g_CConsole_0077ad0c
     FSTP float ptr [EDI + 0x1fcc8]      ; 0053c37f
     MOV dword ptr [EDI + 0x1fccc],0x3f800000 ; 0053c385
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053c38f

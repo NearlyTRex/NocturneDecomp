@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -93,7 +93,7 @@
     ],
     "convention": "unknown",
     "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00519ae0",
-    "signature": "void core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel *param_1,undefined4 param_2)"
+    "signature": "void core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel *param_1,CSkeleton *param_2)"
   },
   "function_calls": [
     {
@@ -165,7 +165,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel *param_1,uint param_2)",
+      "text": "void core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel *param_1,CSkeleton *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -173,7 +173,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel *param_1,uint param_2)",
+      "text": "void core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel *param_1,CSkeleton *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -181,7 +181,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1->texture_sets[1].textures[0x44].textures[0].texture_name + 4) = param_2;",
+      "text": "param_1->skeleton_ptr = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -189,7 +189,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_1->texture_sets[1].textures[0x44].textures[0].texture_name + 4) = param_2;",
+      "text": "param_1->skeleton_ptr = param_2;",
       "type": "unnamed_param"
     },
     {

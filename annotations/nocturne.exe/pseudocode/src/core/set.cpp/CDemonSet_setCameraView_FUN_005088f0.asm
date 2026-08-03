@@ -41,15 +41,15 @@
 ;   TerminatedCString s_core_set_cpp_00590466
 ;   TerminatedCString s_CDemonSet_setCameraView_00590476
 ;   undefined4 DAT_005b0674
-;   undefined4 DAT_005b80f0
-;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 DAT_005bed68
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_005c11ec
 ;   undefined4 DAT_005c15b8
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_01c038f4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   ... and 18 more
 ;
 ; Called Functions:
@@ -94,8 +94,8 @@ section .text
     MOV EBX,0x590422                    ; 00508919 | = "..\\core\\set.cpp"
     MOV ESI,0x3ed                       ; 0050891e
     PUSH 0x590432                       ; 00508923 | = "CDemonSet::setCameraView - invalid in..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00508928 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0050892e | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 00508928 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0050892e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00508934
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00508939
@@ -231,7 +231,7 @@ section .text
     ADD ESP,0x8                         ; 00508abe
     XOR EAX,EAX                         ; 00508ac1
     MOV EDX,dword ptr [EBP + 0x14cd6c]  ; 00508ac3
-    MOV [0x01fba938],EAX                ; 00508ac9 | DAT_01fba938
+    MOV [0x01fba938],EAX                ; 00508ac9 | g_CDemonRaytrace_01fba938
     TEST EDX,EDX                        ; 00508ace
     JLE 0x00508b00                      ; 00508ad0
         ;   XREF to: 00508b00 (CONDITIONAL_JUMP)  ; LAB_00508b00
@@ -335,13 +335,13 @@ section .text
     CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 ; 00508be6
         ;   XREF to: 00507c80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet * this_ptr, float frustum_param, int render_mode)
     MOV EAX,[0x005c11ec]                ; 00508beb | DAT_005c11ec
-    MOV EBX,dword ptr [EAX]             ; 00508bf0 | DAT_02dd1210
+    MOV EBX,dword ptr [EAX]             ; 00508bf0 | g_CWater_02dd1210
     ADD ESP,0xc                         ; 00508bf2
     TEST EBX,EBX                        ; 00508bf5
     JNZ 0x00508c03                      ; 00508bf7
         ;   XREF to: 00508c03 (CONDITIONAL_JUMP)  ; LAB_00508c03
     PUSH EBX                            ; 00508bf9
-    PUSH EAX                            ; 00508bfa | DAT_02dd1210
+    PUSH EAX                            ; 00508bfa | g_CWater_02dd1210
     CALL core_water.cpp_CWater_render_FUN_00550cb0 ; 00508bfb
         ;   XREF to: 00550cb0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_00550cb0(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 00508c00
@@ -396,24 +396,24 @@ section .text
         ;   XREF to: 00508750 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 00508c8d
     PUSH 0x1                            ; 00508c90
-    MOV ECX,dword ptr [0x005b96c4]      ; 00508c92 | INT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 00508c92 | g_CGore_PTR_005b96c4
     PUSH ECX                            ; 00508c98
     CALL core_gore.cpp_CGore_renderDecals_FUN_004afe80 ; 00508c99
         ;   XREF to: 004afe80 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_renderDecals_FUN_004afe80()
     ADD ESP,0x8                         ; 00508c9e
     PUSH 0x1                            ; 00508ca1
-    MOV EBX,dword ptr [0x005b80f0]      ; 00508ca3 | DAT_005b80f0
+    MOV EBX,dword ptr [0x005b80f0]      ; 00508ca3 | g_CFireEffect_PTR_005b80f0
     PUSH EBX                            ; 00508ca9
     CALL core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970 ; 00508caa
         ;   XREF to: 0048a970 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970()
     MOV EAX,[0x005c11ec]                ; 00508caf | DAT_005c11ec
-    MOV ESI,dword ptr [EAX]             ; 00508cb4 | DAT_02dd1210
+    MOV ESI,dword ptr [EAX]             ; 00508cb4 | g_CWater_02dd1210
     ADD ESP,0x8                         ; 00508cb6
     TEST ESI,ESI                        ; 00508cb9
     JNZ 0x00508cc7                      ; 00508cbb
         ;   XREF to: 00508cc7 (CONDITIONAL_JUMP)  ; LAB_00508cc7
     PUSH ESI                            ; 00508cbd
-    PUSH EAX                            ; 00508cbe | DAT_02dd1210
+    PUSH EAX                            ; 00508cbe | g_CWater_02dd1210
     CALL core_water.cpp_CWater_render_FUN_00550cb0 ; 00508cbf
         ;   XREF to: 00550cb0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_00550cb0(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 00508cc4
@@ -445,19 +445,19 @@ section .text
         ;   XREF to: 00509088 (CONDITIONAL_JUMP)  ; LAB_00509088
     MOV EBX,dword ptr [EBP + 0x15a894]  ; 00508d1f
     PUSH EBX                            ; 00508d25
-    MOV ESI,dword ptr [0x005bed68]      ; 00508d26 | DAT_005bed68
+    MOV ESI,dword ptr [0x005bed68]      ; 00508d26 | g_CSound_PTR_005bed68
     PUSH ESI                            ; 00508d2c
     CALL core_sound.cpp_CSound_setReverbPreset_FUN_0052ece0 ; 00508d2d
         ;   XREF to: 0052ece0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_setReverbPreset_FUN_0052ece0(CSound * this_ptr, int index)
         ;   Label: LAB_00508d2d
     ADD ESP,0x8                         ; 00508d32
-    MOV EAX,[0x01fb860c]                ; 00508d35 | DAT_01fb860c
+    MOV EAX,[0x01fb860c]                ; 00508d35 | g_CDemonCamera_01fb8508.position.x
     MOV dword ptr [ESP + 0xc4],EAX      ; 00508d3a
     MOV EAX,0x1fb860c                   ; 00508d41
-    MOV EAX,dword ptr [EAX + 0x4]       ; 00508d46 | DAT_01fb8610
+    MOV EAX,dword ptr [EAX + 0x4]       ; 00508d46 | g_CDemonCamera_01fb8508.position.y
     MOV dword ptr [ESP + 0xc8],EAX      ; 00508d49
     MOV EAX,0x1fb860c                   ; 00508d50
-    MOV EAX,dword ptr [EAX + 0x8]       ; 00508d55 | DAT_01fb8614
+    MOV EAX,dword ptr [EAX + 0x8]       ; 00508d55 | g_CDemonCamera_01fb8508.position.z
     LEA EDX,[ESP + 0xc4]                ; 00508d58
     MOV dword ptr [ESP + 0xcc],EAX      ; 00508d5f
     LEA EAX,[ESP + 0xac]                ; 00508d66
@@ -475,7 +475,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 00508da0
     MOV ESI,0x1fb8618                   ; 00508da4
     LEA EAX,[ESP + 0xa0]                ; 00508da9
-    MOVSD.REP ES:EDI,ESI                ; 00508db0 | DAT_01fb8618 | DAT_01fb861c
+    MOVSD.REP ES:EDI,ESI                ; 00508db0 | g_CDemonCamera_01fb8508.rotation_matrix.m[0].x | g_CDemonCamera_01fb8508.rotation_matrix.m[0].y
     PUSH EAX                            ; 00508db2
     MOV ECX,0xa                         ; 00508db3
     LEA EDI,[ESP + 0x7c]                ; 00508db8
@@ -598,8 +598,8 @@ section .text
     MOV EDX,0x590466                    ; 00508f2d | = "..\\core\\set.cpp"
     MOV ECX,0x460                       ; 00508f32
     PUSH 0x590476                       ; 00508f37 | = "CDemonSet::setCameraView - Too many o..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00508f3c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00508f42 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00508f3c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00508f42 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00508f48
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00508f4d
@@ -709,7 +709,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x178]     ; 00509088
         ;   Label: LAB_00509088
     PUSH EDX                            ; 0050908e
-    MOV ECX,dword ptr [0x005bed68]      ; 0050908f | DAT_005bed68
+    MOV ECX,dword ptr [0x005bed68]      ; 0050908f | g_CSound_PTR_005bed68
     PUSH ECX                            ; 00509095
     JMP 0x00508d2d                      ; 00509096
         ;   XREF to: 00508d2d (UNCONDITIONAL_JUMP)  ; LAB_00508d2d

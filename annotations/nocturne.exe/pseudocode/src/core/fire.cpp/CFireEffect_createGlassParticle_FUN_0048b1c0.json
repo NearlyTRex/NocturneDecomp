@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,38 +58,26 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01c4f088'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
         "line": 17,
         "message": "use of undeclared identifier '_DAT_01c4f088'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01c4f088'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
+        "column": 51,
         "line": 18,
         "message": "use of undeclared identifier '_DAT_01c4f088'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 5,
+        "column": 3,
         "line": 19,
         "message": "use of undeclared identifier '_DAT_01c4f088'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 34,
-        "line": 22,
-        "message": "use of undeclared identifier 'DAT_01c4f08c'"
+        "column": 5,
+        "line": 21,
+        "message": "use of undeclared identifier '_DAT_01c4f088'"
       }
     ],
     "success": false,
@@ -98,18 +86,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 44,
+    "complexity_score": 30,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 2,
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 53
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -294,14 +281,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c4f08c",
-      "severity": "mild",
-      "text": "((CGlassParticle *)(&DAT_01c4f08c + iVar1),triangle_vertices,uv_u_per_vertex,",
-      "type": "undefined_data"
     }
   ]
 }

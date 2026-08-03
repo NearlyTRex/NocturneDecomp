@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -86,34 +86,22 @@
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 55,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 37,
         "line": 58,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 60,
-        "message": "incompatible integer to pointer conversion assigning to 'CFireEffect *' from 'int'"
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 100,
+        "message": "use of undeclared identifier 'code'"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 65,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 67,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90'"
+        "category": "syntax_error",
+        "column": 16,
+        "line": 100,
+        "message": "expected expression"
       }
     ],
     "success": false,
@@ -122,20 +110,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 158,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 5,
+    "pseudocode_lines": 92,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 296
+    "total_lines": 300
   },
   "cross_references": [],
   "function": {
@@ -190,15 +177,15 @@
   "globals": [
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01bd1d80",
@@ -208,19 +195,19 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "DAT_01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "DAT_01fa5f38",
+      "name": "g_CDemonSet_01e57284.characters[0]",
       "type": "undefined4",
       "value": null
     }
@@ -344,35 +331,19 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(int *)((int)0x01E57284",
+      "line": 88,
+      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)0x01E57284->actors + iVar4 + 0x1b5c);",
+      "text": "iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 89,
+      "line": 93,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0xf8))(iVar1,this_ptr,local_14,&SStack_54);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `this_ptr_02`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_02` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 48,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "this_ptr_02 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c08d04 assigned to bare local `this_ptr_01`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_01` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 53,
-      "match": "0x1c08d04",
-      "severity": "moderate",
-      "text": "this_ptr_01 = 0x01C08D04;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",

@@ -21,7 +21,7 @@
 ;   TerminatedCString s_m_gun_t_wav_005968e7
 ;   float FLOAT_005968f5 = 6
 ;   float FLOAT_005968f9 = 0.1666667
-;   int INT_005b9284 = 0x1c70f74
+;   void* PTR_DAT_005b9284 = 01c70f74
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -126,7 +126,7 @@ section .text
     POP ESI                             ; 0054658d
     POP EBX                             ; 0054658e
     RET                                 ; 0054658f
-    MOV EBX,dword ptr [0x005b9284]      ; 00546590 | INT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 00546590 | PTR_DAT_005b9284
         ;   Label: LAB_00546590
     PUSH EBX                            ; 00546596
     CALL xxx_unk.c_FUN_004940d0         ; 00546597
@@ -243,7 +243,7 @@ section .text
     CMP EAX,ECX                         ; 00546706
     JNZ 0x00546589                      ; 00546708
         ;   XREF to: 00546589 (CONDITIONAL_JUMP)  ; LAB_00546589
-    MOV EBX,dword ptr [0x005b9284]      ; 0054670e | INT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 0054670e | PTR_DAT_005b9284
     PUSH EBX                            ; 00546714
     CALL xxx_unk.c_FUN_004940d0         ; 00546715
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()

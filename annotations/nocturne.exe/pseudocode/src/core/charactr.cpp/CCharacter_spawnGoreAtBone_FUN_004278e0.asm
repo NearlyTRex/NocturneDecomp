@@ -22,7 +22,7 @@
 ;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 0055fa63
 ;
 ; Referenced Globals:
-;   int INT_005b96c4 = 0x1c78c7c
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -92,7 +92,7 @@ section .text
     PUSH EAX                            ; 00427966
     LEA EAX,[ESP + 0x34]                ; 00427967
     PUSH EAX                            ; 0042796b
-    MOV EDX,dword ptr [0x005b96c4]      ; 0042796c | INT_005b96c4
+    MOV EDX,dword ptr [0x005b96c4]      ; 0042796c | g_CGore_PTR_005b96c4
     PUSH EDX                            ; 00427972
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 00427973
         ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)

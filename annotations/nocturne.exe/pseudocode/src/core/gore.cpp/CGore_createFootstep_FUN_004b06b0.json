@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -63,7 +63,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 11,
+        "column": 46,
         "line": 18,
         "message": "use of undeclared identifier '_DAT_01c9e53c'; did you mean 'DAT_005ad53c'?"
       },
@@ -96,12 +96,6 @@
         "column": 21,
         "line": 24,
         "message": "use of undeclared identifier '_DAT_01c9e540'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 27,
-        "message": "use of undeclared identifier 'DAT_01c9e544'"
       }
     ],
     "success": false,
@@ -110,18 +104,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 49,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 2,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 70
+    "total_lines": 69
   },
   "cross_references": [
     {
@@ -285,14 +278,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01c9e544",
-      "severity": "mild",
-      "text": "((CFootstep *)(&DAT_01c9e544 + iVar1),position,orientation,(uint)(surface_type == 0xb),",
-      "type": "undefined_data"
     }
   ]
 }

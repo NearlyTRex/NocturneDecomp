@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -74,15 +74,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 225,
+    "complexity_score": 240,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
-      "raw_address_pointer_store",
+      "pointer_cast",
+      "suspect_float",
       "unnamed_param"
     ],
     "total_lines": 183
@@ -126,37 +127,37 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3ff0",
-      "name": "DAT_01fa3ff0",
+      "name": "g_CDemonSet_01e57284.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "DAT_01fa3ff4",
+      "name": "g_CDemonSet_01e57284.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff8",
-      "name": "DAT_01fa3ff8",
+      "name": "g_CDemonSet_01e57284.actors[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ffc",
-      "name": "DAT_01fa3ffc",
+      "name": "g_CDemonSet_01e57284.actors[2]",
       "type": "undefined4",
       "value": null
     }
@@ -286,15 +287,23 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C03A10,param_1[1].base.actor_name + 0x14);",
+      "text": "(0x01C03A10,param_1[1].base.actor_name + 0x18);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 19,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "param_1[1].base.platform_position_delta.x = 1.4013e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.standing_platform = (CPlatform *)0x1;",
+      "text": "param_1[1].base.platform_position_delta.x = 1.4013e-45;",
       "type": "unnamed_param"
     },
     {
@@ -302,7 +311,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C03A10,param_1[1].base.create_event);",
+      "text": "(0x01C03A10,param_1[1].base.create_event + 4);",
       "type": "unnamed_param"
     },
     {
@@ -310,7 +319,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[1].base.standing_platform != (CPlatform *)0x0) {",
+      "text": "if (param_1[1].base.platform_position_delta.x != 0.0) {",
       "type": "unnamed_param"
     },
     {
@@ -318,7 +327,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = (CVector3f *)(param_1[1].base.actor_name + 8);",
+      "text": "local_18 = (CVector3f *)(param_1[1].base.actor_name + 0xc);",
       "type": "unnamed_param"
     },
     {
@@ -326,16 +335,16 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = &param_1[1].base.platform_position_delta;",
+      "text": "local_14 = &param_1[1].base.platform_position_delta.y;",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 30,
-      "match": "*(CDemonActor **)(0x01E57284 + 0x14cd70",
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "actor_ptr = *(CDemonActor **)(0x01E57284 + 0x14cd70 + iVar1);",
-      "type": "raw_address_pointer_store"
+      "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar1);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -382,7 +391,7 @@
       "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.standing_platform = (CPlatform *)0x0;",
+      "text": "param_1[1].base.platform_position_delta.x = 0.0;",
       "type": "unnamed_param"
     }
   ],

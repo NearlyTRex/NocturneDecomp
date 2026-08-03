@@ -17,11 +17,11 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
-;   undefined4 DAT_005bdee0
-;   undefined4 DAT_005be368
+;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01c78418
 ;   undefined4 DAT_01c7841c
-;   undefined4 DAT_01fb1d40
+;   undefined4 g_CDemonSet_01e57284.selected_camera_index
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40
@@ -35,7 +35,7 @@ section .text
     PUSH 0x2c                           ; 0049f8c0
         ;   Label: core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
     PUSH 0x0                            ; 0049f8c2
-    MOV EDX,dword ptr [0x005bdee0]      ; 0049f8c4 | DAT_005bdee0
+    MOV EDX,dword ptr [0x005bdee0]      ; 0049f8c4 | g_CNetGame_PTR_005bdee0
     PUSH EDX                            ; 0049f8ca
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40 ; 0049f8cb
         ;   XREF to: 004eda40 (UNCONDITIONAL_CALL)  ; SPlayerInput * core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40(CNetGame * this_ptr)
@@ -66,8 +66,8 @@ section .text
     MOV dword ptr [0x01c78418],ECX      ; 0049f910 | DAT_01c78418
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 0049f916
         ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
-    MOV EAX,[0x005be368]                ; 0049f91b | DAT_005be368
-    MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049f920 | DAT_01fb1d40
+    MOV EAX,[0x005be368]                ; 0049f91b | g_CDemonSet_PTR_005be368
+    MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049f920 | g_CDemonSet_01e57284.selected_camera_index
     ADD ESP,0x8                         ; 0049f926
     MOV [0x01c7841c],EAX                ; 0049f929 | DAT_01c7841c
     RET                                 ; 0049f92e

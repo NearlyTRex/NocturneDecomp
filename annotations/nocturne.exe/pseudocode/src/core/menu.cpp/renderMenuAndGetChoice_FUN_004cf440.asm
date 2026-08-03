@@ -29,10 +29,10 @@
 ;   TerminatedCString s_Nocturne_c_1999_Terminal_0058847b
 ;   TerminatedCString s_Nocturne_1999_Terminal_R_005884b4
 ;   TerminatedCString s_anon_005884ea
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_014b9900
-;   undefined4 DAT_014b9904
-;   undefined4 DAT_01cc30e4
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
+;   CBitFont* g_CBitFont_PTR_014b9900
+;   CBitFont* g_CBitFont_PTR_014b9904
+;   CKeys g_CKeys_01cc30e4
 ;   undefined4 DAT_01cc5b5c
 ;   undefined4 DAT_01cc5b68
 ;   undefined4 DAT_01d16810
@@ -57,7 +57,7 @@ section .text
     PUSH EBP                            ; 004cf443
     SUB ESP,0x1c                        ; 004cf444
     MOV EBP,dword ptr [ESP + 0x3c]      ; 004cf447
-    MOV EAX,[0x014b9900]                ; 004cf44b | DAT_014b9900
+    MOV EAX,[0x014b9900]                ; 004cf44b | g_CBitFont_PTR_014b9900
     MOV EDX,dword ptr [ESP + 0x40]      ; 004cf450
     MOV dword ptr [ESP + 0x18],EAX      ; 004cf454
     TEST EDX,EDX                        ; 004cf458
@@ -193,13 +193,13 @@ section .text
     JZ 0x004cf784                       ; 004cf5b3
         ;   XREF to: 004cf784 (CONDITIONAL_JUMP)  ; LAB_004cf784
     PUSH 0x58847b                       ; 004cf5b9 | = "Nocturne (c) 1999 Terminal Reality In..."
-    MOV EDX,dword ptr [0x014b9904]      ; 004cf5be | DAT_014b9904
+    MOV EDX,dword ptr [0x014b9904]      ; 004cf5be | g_CBitFont_PTR_014b9904
     PUSH EDX                            ; 004cf5c4
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf5c5
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004cf5ca
     PUSH 0x58847b                       ; 004cf5cd | = "Nocturne (c) 1999 Terminal Reality In..."
-    MOV ECX,dword ptr [0x014b9904]      ; 004cf5d2 | DAT_014b9904
+    MOV ECX,dword ptr [0x014b9904]      ; 004cf5d2 | g_CBitFont_PTR_014b9904
     PUSH ECX                            ; 004cf5d8
     MOV EBX,EAX                         ; 004cf5d9
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 004cf5db
@@ -214,7 +214,7 @@ section .text
     SUB EAX,EBX                         ; 004cf5f7
     PUSH EAX                            ; 004cf5f9
     PUSH 0x58847b                       ; 004cf5fa | = "Nocturne (c) 1999 Terminal Reality In..."
-    MOV EBX,dword ptr [0x014b9904]      ; 004cf5ff | DAT_014b9904
+    MOV EBX,dword ptr [0x014b9904]      ; 004cf5ff | g_CBitFont_PTR_014b9904
     PUSH EBX                            ; 004cf605
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cf606
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -229,7 +229,7 @@ section .text
     PUSH 0x63                           ; 004cf622
     PUSH 0x206                          ; 004cf624
     PUSH 0x5884ea                       ; 004cf629 | = ""
-    MOV ESI,dword ptr [0x014b9904]      ; 004cf62e | DAT_014b9904
+    MOV ESI,dword ptr [0x014b9904]      ; 004cf62e | g_CBitFont_PTR_014b9904
     PUSH ESI                            ; 004cf634
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cf635
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -272,10 +272,10 @@ section .text
     MOV EBX,0x1                         ; 004cf67b
     PUSH 0x48                           ; 004cf680
         ;   Label: LAB_004cf680
-    MOV EAX,[0x005bac64]                ; 004cf682 | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004cf682 | g_CKeys_PTR_005bac64
     XOR EBP,EBP                         ; 004cf687
-    PUSH EAX                            ; 004cf689 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cf68a | DAT_01cc30e4
+    PUSH EAX                            ; 004cf689 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004cf68a | g_CKeys_01cc30e4
     MOV dword ptr [0x01cc5b68],EBP      ; 004cf68c | DAT_01cc5b68
     CALL dword ptr [EDX + 0x4]          ; 004cf692
     ADD ESP,0x8                         ; 004cf695
@@ -292,9 +292,9 @@ section .text
         ;   XREF to: 004cf7d4 (CONDITIONAL_JUMP)  ; LAB_004cf7d4
     PUSH 0x50                           ; 004cf6b7
         ;   Label: LAB_004cf6b7
-    MOV EAX,[0x005bac64]                ; 004cf6b9 | INT_005bac64
-    PUSH EAX                            ; 004cf6be | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cf6bf | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004cf6b9 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004cf6be | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004cf6bf | g_CKeys_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cf6c1
     ADD ESP,0x8                         ; 004cf6c4
     TEST EAX,EAX                        ; 004cf6c7
@@ -318,18 +318,18 @@ section .text
     XOR EAX,EAX                         ; 004cf6f2
     PUSH 0x4b                           ; 004cf6f4
     MOV [0x01cc5b5c],EAX                ; 004cf6f6 | DAT_01cc5b5c
-    MOV EAX,[0x005bac64]                ; 004cf6fb | INT_005bac64
-    PUSH EAX                            ; 004cf700 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cf701 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004cf6fb | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004cf700 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004cf701 | g_CKeys_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cf703
     ADD ESP,0x8                         ; 004cf706
     TEST EAX,EAX                        ; 004cf709
     JNZ 0x004cf7e4                      ; 004cf70b
         ;   XREF to: 004cf7e4 (CONDITIONAL_JUMP)  ; LAB_004cf7e4
     PUSH 0x4d                           ; 004cf711
-    MOV EAX,[0x005bac64]                ; 004cf713 | INT_005bac64
-    PUSH EAX                            ; 004cf718 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cf719 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004cf713 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004cf718 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004cf719 | g_CKeys_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cf71b
     ADD ESP,0x8                         ; 004cf71e
     TEST EAX,EAX                        ; 004cf721
@@ -337,9 +337,9 @@ section .text
         ;   XREF to: 004cf73d (CONDITIONAL_JUMP)  ; LAB_004cf73d
     PUSH 0x1c                           ; 004cf725
         ;   Label: LAB_004cf725
-    MOV EAX,[0x005bac64]                ; 004cf727 | INT_005bac64
-    PUSH EAX                            ; 004cf72c | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cf72d | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004cf727 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004cf72c | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004cf72d | g_CKeys_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cf72f
     ADD ESP,0x8                         ; 004cf732
     TEST EAX,EAX                        ; 004cf735
@@ -381,13 +381,13 @@ section .text
         ;   XREF to: 004cf540 (UNCONDITIONAL_JUMP)  ; LAB_004cf540
     PUSH 0x5884b4                       ; 004cf784 | = "Nocturne 1999 Terminal Reality Inc.  ..."
         ;   Label: LAB_004cf784
-    MOV EDI,dword ptr [0x014b9904]      ; 004cf789 | DAT_014b9904
+    MOV EDI,dword ptr [0x014b9904]      ; 004cf789 | g_CBitFont_PTR_014b9904
     PUSH EDI                            ; 004cf78f
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf790
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004cf795
     PUSH 0x5884b4                       ; 004cf798 | = "Nocturne 1999 Terminal Reality Inc.  ..."
-    MOV EBP,dword ptr [0x014b9904]      ; 004cf79d | DAT_014b9904
+    MOV EBP,dword ptr [0x014b9904]      ; 004cf79d | g_CBitFont_PTR_014b9904
     PUSH EBP                            ; 004cf7a3
     MOV EBX,EAX                         ; 004cf7a4
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 004cf7a6
@@ -402,7 +402,7 @@ section .text
     SUB EAX,EBX                         ; 004cf7c1
     PUSH EAX                            ; 004cf7c3
     PUSH 0x5884b4                       ; 004cf7c4 | = "Nocturne 1999 Terminal Reality Inc.  ..."
-    MOV EAX,[0x014b9904]                ; 004cf7c9 | DAT_014b9904
+    MOV EAX,[0x014b9904]                ; 004cf7c9 | g_CBitFont_PTR_014b9904
     PUSH EAX                            ; 004cf7ce
     JMP 0x004cf606                      ; 004cf7cf
         ;   XREF to: 004cf606 (UNCONDITIONAL_JUMP)  ; LAB_004cf606

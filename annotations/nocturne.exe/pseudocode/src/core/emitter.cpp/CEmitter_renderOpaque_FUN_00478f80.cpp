@@ -20,8 +20,8 @@ uint core_emitter_cpp_CEmitter_renderOpaque_FUN_00478f80(CDemonActor *param_1)
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (((iVar1 == 0) && (*(int *)param_1[1].actor_name == 3)) &&
      (*(int *)(param_1[1].actor_name + 0x10) != 0)) {
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,param_1);
     core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_cc);
     local_cc.laser_type = (int)param_1[1].platform_position_delta.x;
     local_cc.color.r = (int)param_1[1].platform_position_delta.y;
@@ -59,8 +59,8 @@ uint core_emitter_cpp_CEmitter_renderOpaque_FUN_00478f80(CDemonActor *param_1)
     direction = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&local_24,&local_18)
     ;
     core_fire_cpp_FUN_0048b6f0
-              (0x01C08D04,&(param_1->location).position,direction,laser_info,iVar1);
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+              (g_CFireEffect_PTR_005b80f0,&(param_1->location).position,direction,laser_info,iVar1);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
     return 1;
   }
   return 0;

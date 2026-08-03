@@ -9,11 +9,10 @@
 #include "types/classes/CVector3f.h"
 #include "types/enums/EGroundType.h"
 #include "types/enums/EPlatformStateType.h"
-#include "types/enums/EPlatformType.h"
 #include "types/structs/SPlatformAttachment.h"
 
 // Structure: CPlatform
-// Ghidra size: 0x724 (1828 bytes)
+// Ghidra size: 0x720 (1824 bytes)
 #pragma pack(push, 1)
 typedef struct CPlatform {
     CDemonActor base; // 0x0
@@ -47,8 +46,7 @@ typedef struct CPlatform {
     int recompute_fog; // 0x50c
     int plot_in_shadow_flag; // 0x510
     SPlatformAttachment attach_actors[10]; // 0x514
-    EPlatformType platform_type; // 0x71c
-    int rendered_in_background; // 0x720
+    int rendered_in_background; // 0x71c
 } CPlatform;
 #pragma pack(pop)
 

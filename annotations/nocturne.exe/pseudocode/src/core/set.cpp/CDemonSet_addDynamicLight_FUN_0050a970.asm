@@ -18,8 +18,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_0059058a
 ;   TerminatedCString s_Too_many_dynamic_lights_0059059a
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01fba2d8
 ;
 ; Called Functions:
@@ -69,8 +69,8 @@ section .text
     MOV ECX,0x59058a                    ; 0050a9c4 | = "..\\core\\set.cpp"
     MOV EDI,0x865                       ; 0050a9c9
     PUSH 0x59059a                       ; 0050a9ce | = "Too many dynamic lights!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050a9d3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0050a9d9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0050a9d3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0050a9d9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050a9df
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050a9e4

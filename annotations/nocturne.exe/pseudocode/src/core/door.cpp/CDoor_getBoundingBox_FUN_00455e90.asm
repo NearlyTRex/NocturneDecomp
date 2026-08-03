@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_door_cpp_CDoor_getBoundingBox_FUN_00455e90(int param_1,undefined4 *param_2)
+; float * core_door_cpp_CDoor_getBoundingBox_FUN_00455e90(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

@@ -42,9 +42,9 @@
 ;   float FLOAT_00590a0d = 2
 ;   float FLOAT_00590a11 = -10
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01fba938
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;   undefined4 g_CSpikeActorType_02dc9e28.name_hash
 ;
 ; Called Functions:
@@ -90,7 +90,7 @@ section .text
     PUSH EDX                            ; 0050ecbf
     PUSH ESI                            ; 0050ecc0
     PUSH EBX                            ; 0050ecc1
-    PUSH 0x1fba938                      ; 0050ecc2 | DAT_01fba938
+    PUSH 0x1fba938                      ; 0050ecc2 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580 ; 0050ecc7
         ;   XREF to: 00468580 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)
     MOV dword ptr [ESP + 0x304],EAX     ; 0050eccc
@@ -234,7 +234,7 @@ section .text
     PUSH ESI                            ; 0050ef16
     PUSH dword ptr [ESP + 0x31c]        ; 0050ef17
     PUSH EBX                            ; 0050ef1e
-    PUSH 0x1fba938                      ; 0050ef1f | DAT_01fba938
+    PUSH 0x1fba938                      ; 0050ef1f | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0 ; 0050ef24
         ;   XREF to: 004687e0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(CDemonRaytrace * this_ptr, CVector3f * pos, float radius, int * hit_flag, ...)
     MOV dword ptr [ESP + 0x308],EAX     ; 0050ef29
@@ -818,8 +818,8 @@ section .text
     MOV ESI,0x59097d                    ; 0050f6ed | = "..\\core\\setcolid.cpp"
     MOV EDX,0xcb                        ; 0050f6f2
     PUSH 0x590992                       ; 0050f6f7 | = "info.keyFramedModelInstancePtr != NUL..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0050f6fc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050f702 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0050f6fc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0050f702 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050f708
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0050f70d
@@ -931,8 +931,8 @@ section .text
         ;   Label: LAB_0050f8bc
     MOV EBX,0x12b                       ; 0050f8c1
     PUSH 0x5909f3                       ; 0050f8c6 | = "Invalid collision type!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050f8cb | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050f8d1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0050f8cb | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050f8d1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050f8d7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050f8dc

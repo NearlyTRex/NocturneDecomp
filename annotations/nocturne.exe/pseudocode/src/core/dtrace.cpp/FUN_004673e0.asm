@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Consolidating_raytrace_g_0057e055
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00467560
@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x10                        ; 004673e4
     MOV EBX,dword ptr [ESP + 0x24]      ; 004673e7
     PUSH 0x57e055                       ; 004673eb | = "Consolidating raytrace geometry array..."
-    MOV EDX,dword ptr [0x005b6d50]      ; 004673f0 | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004673f0 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004673f6
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 ; 004673f7
         ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools * this_ptr, char * message_text)
@@ -154,7 +154,7 @@ section .text
     FSTP float ptr [ESP]                ; 00467519
     FILD dword ptr [ESP + 0x10]         ; 0046751c
     SUB ESP,0x4                         ; 00467520
-    MOV ECX,dword ptr [0x005b6d50]      ; 00467523 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 00467523 | g_CEditorTools_PTR_005b6d50
     FSTP float ptr [ESP]                ; 00467529
     PUSH ECX                            ; 0046752c
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 ; 0046752d
@@ -166,7 +166,7 @@ section .text
     MOV dword ptr [ESP],ESI             ; 0046753f
     JMP 0x0046744e                      ; 00467542
         ;   XREF to: 0046744e (UNCONDITIONAL_JUMP)  ; LAB_0046744e
-    MOV EDI,dword ptr [0x005b6d50]      ; 00467547 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 00467547 | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_00467547
     PUSH EDI                            ; 0046754d
     CALL shape_edittool.cpp_FUN_004720c0 ; 0046754e

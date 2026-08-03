@@ -9,7 +9,7 @@ struct CDemonActor;
 #include "types/classes/CHero.h"
 
 // Structure: CGabriella
-// Ghidra size: 0x5f8f0 (391408 bytes)
+// Ghidra size: 0x5a5b0 (370096 bytes)
 #pragma pack(push, 1)
 typedef struct CGabriella {
     CHero base; // 0x0
@@ -30,7 +30,7 @@ typedef struct CGabriella {
     float fire_cooldown_timer; // 0x1fa74
     float aim_weight; // 0x1fa78
     CCloth coat_cloth; // 0x1fa7c
-    float dynamite_charge_power; // 0x5f8ec
+    float dynamite_charge_power; // 0x5a5ac
 } CGabriella;
 #pragma pack(pop)
 

@@ -104,7 +104,7 @@ void core_gore_cpp_CBloodParticle_render_FUN_004ae190(CVector3f *param_1)
   _DAT_005c50bc = DAT_005c502c;
   _DAT_005c50c0 = _DAT_005c5090;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-            (0x01E57284,&local_7c,(CVector3i *)&DAT_01c78cb4,0,4);
+            (g_CDemonSet_PTR_005be368,&local_7c,(CVector3i *)&DAT_01c78cb4,0,4);
   fVar1 = param_1[4].z;
   if (fVar1 != 0.0) {
     if ((uint)fVar1 < 2) {
@@ -201,7 +201,7 @@ LAB_004ae466:
     local_7c.y = (int)ROUND(local_dc.y * 256.0f);
     local_7c.z = (int)ROUND(local_dc.z * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-              (0x01E57284,&local_7c,(CVector3i *)&DAT_01c78cb4,0,4);
+              (g_CDemonSet_PTR_005be368,&local_7c,(CVector3i *)&DAT_01c78cb4,0,4);
     iVar3 = 0;
     do {
       lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);

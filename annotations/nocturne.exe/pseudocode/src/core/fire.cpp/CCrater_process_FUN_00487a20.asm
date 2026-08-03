@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   double DOUBLE_005812ac = 0.200000000000000
 ;   float FLOAT_005812b4 = -0.2000000
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
@@ -43,10 +43,10 @@ section .text
     SAHF                                ; 00487a3c
     JC 0x00487ab7                       ; 00487a3d
         ;   XREF to: 00487ab7 (CONDITIONAL_JUMP)  ; LAB_00487ab7
-    MOV ESI,dword ptr [0x005b9354]      ; 00487a43 | DAT_005b9354
+    MOV ESI,dword ptr [0x005b9354]      ; 00487a43 | g_CGame_PTR_005b9354
         ;   Label: LAB_00487a43
     LEA EAX,[EBX + 0x18]                ; 00487a49
-    FLD float ptr [ESI + 0x264]         ; 00487a4c | DAT_01c77850
+    FLD float ptr [ESI + 0x264]         ; 00487a4c | g_CGame_01c775ec.delta_time_float
     FADD float ptr [EAX]                ; 00487a52
     FSTP float ptr [EAX]                ; 00487a54
     FLD float ptr [EBX + 0x18]          ; 00487a56
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 00487a93
     PUSH 0x3f800000                     ; 00487a94
     PUSH EBX                            ; 00487a99
-    MOV EBP,dword ptr [0x005b80f0]      ; 00487a9a | DAT_005b80f0
+    MOV EBP,dword ptr [0x005b80f0]      ; 00487a9a | g_CFireEffect_PTR_005b80f0
     PUSH EBP                            ; 00487aa0
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00487aa1
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -87,10 +87,10 @@ section .text
     POP ESI                             ; 00487ab4
     POP EBX                             ; 00487ab5
     RET                                 ; 00487ab6
-    MOV ESI,dword ptr [0x005b9354]      ; 00487ab7 | DAT_005b9354
+    MOV ESI,dword ptr [0x005b9354]      ; 00487ab7 | g_CGame_PTR_005b9354
         ;   Label: LAB_00487ab7
     LEA EAX,[EBX + 0x8]                 ; 00487abd
-    FLD float ptr [ESI + 0x264]         ; 00487ac0 | DAT_01c77850
+    FLD float ptr [ESI + 0x264]         ; 00487ac0 | g_CGame_01c775ec.delta_time_float
     FSUBR float ptr [EAX]               ; 00487ac6
     FSTP float ptr [EAX]                ; 00487ac8
     FLD float ptr [EBX + 0x8]           ; 00487aca

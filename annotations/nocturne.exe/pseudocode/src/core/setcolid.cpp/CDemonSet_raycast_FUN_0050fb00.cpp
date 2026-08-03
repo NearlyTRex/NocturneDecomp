@@ -9,76 +9,63 @@
 float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet *this_ptr,CVector3f *ray_origin,CVector3f *ray_target)
 
 {
-  CVector3f *pCVar1;
-  float *out_intersection_point;
-  char *pcVar2;
-  CMatrix3x3f *pCVar3;
+  CVector3f *out_intersection_point;
+  float *pfVar1;
+  float fVar2;
+  float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
   float fVar7;
   float fVar8;
   float fVar9;
-  float fVar10;
-  float fVar11;
-  char local_20 [12];
+  float local_20 [3];
   float local_14;
   
-  pCVar1 = (CVector3f *)(this_ptr->lights[199].filter_names[0x12] + 0xc);
-  if (pCVar1 != ray_origin) {
-    pCVar1->x = ray_origin->x;
-    *(float *)(this_ptr->lights[199].filter_names[0x12] + 0x10) = ray_origin->y;
-    *(float *)(this_ptr->lights[199].filter_names[0x12] + 0x14) = ray_origin->z;
+  if (&this_ptr->ray_origin != ray_origin) {
+    (this_ptr->ray_origin).x = ray_origin->x;
+    (this_ptr->ray_origin).y = ray_origin->y;
+    (this_ptr->ray_origin).z = ray_origin->z;
   }
-  pCVar1 = (CVector3f *)(this_ptr->lights[199].filter_names[0x12] + 0x18);
-  if (pCVar1 != ray_target) {
-    pCVar1->x = ray_target->x;
-    *(float *)(this_ptr->lights[199].filter_names[0x12] + 0x1c) = ray_target->y;
-    *(float *)(this_ptr->lights[199].filter_names[0x12] + 0x20) = ray_target->z;
+  if (&this_ptr->ray_target != ray_target) {
+    (this_ptr->ray_target).x = ray_target->x;
+    (this_ptr->ray_target).y = ray_target->y;
+    (this_ptr->ray_target).z = ray_target->z;
   }
-  out_intersection_point = &this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].z;
+  out_intersection_point = &this_ptr->voxel_hit_point;
   local_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                       ((CDemonRaytrace *)&DAT_01fba938,ray_origin,ray_target,
-                        (CVector3f *)out_intersection_point,
-                        (int *)&this_ptr->vdir_boxes[0xec].rotation_matrix.m[1].z);
-  pcVar2 = this_ptr->lights[199].filter_names[0x12] + 0x24;
-  this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].y = local_14;
-  if ((float *)pcVar2 != out_intersection_point) {
-    *(float *)pcVar2 = *out_intersection_point;
-    *(float *)this_ptr->lights[199].filter_names[0x13] =
-         this_ptr->vdir_boxes[0xec].rotation_matrix.m[1].x;
-    *(float *)(this_ptr->lights[199].filter_names[0x13] + 4) =
-         this_ptr->vdir_boxes[0xec].rotation_matrix.m[1].y;
+                       (&g_CDemonRaytrace_01fba938,ray_origin,ray_target,out_intersection_point,
+                        &this_ptr->voxel_surface_type);
+  this_ptr->voxel_distance = local_14;
+  if (&this_ptr->collision_normal != out_intersection_point) {
+    (this_ptr->collision_normal).x = out_intersection_point->x;
+    (this_ptr->collision_normal).y = (this_ptr->voxel_hit_point).y;
+    (this_ptr->collision_normal).z = (this_ptr->voxel_hit_point).z;
   }
-  fVar11 = this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].y;
-  *(float *)(this_ptr->lights[199].filter_names[0x13] + 8) =
-       this_ptr->vdir_boxes[0xec].rotation_matrix.m[1].z;
-  if (fVar11 < 0.0) {
-    this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].y = 1.01;
+  this_ptr->ground_type = this_ptr->voxel_surface_type;
+  if (this_ptr->voxel_distance < 0.0) {
+    this_ptr->voxel_distance = 1.01;
   }
-  fVar11 = core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0
-                     (this_ptr,-1.0,ray_origin,ray_target,
-                      this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].y);
-  this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].x = fVar11;
-  if (this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].x <= 1.0) {
-    fVar11 = ray_target->y;
-    fVar4 = ray_origin->y;
-    pCVar3 = &this_ptr->vdir_boxes[0xec].rotation_matrix;
-    fVar5 = ray_target->z;
-    fVar6 = ray_origin->z;
-    fVar7 = pCVar3->m[0].x;
-    fVar8 = pCVar3->m[0].x;
-    fVar9 = ray_origin->y;
-    fVar10 = ray_origin->z;
-    pcVar2 = this_ptr->lights[199].filter_names[0x13] + 0xc;
-    if (pcVar2 != local_20) {
-      *(float *)pcVar2 = ray_origin->x + (ray_target->x - ray_origin->x) * pCVar3->m[0].x;
-      *(float *)(this_ptr->lights[199].filter_names[0x13] + 0x10) = fVar9 + (fVar11 - fVar4) * fVar7
-      ;
-      *(float *)(this_ptr->lights[199].filter_names[0x13] + 0x14) = fVar10 + (fVar5 - fVar6) * fVar8
-      ;
-      return this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].x;
+  fVar9 = core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0
+                    (this_ptr,-1.0,ray_origin,ray_target,this_ptr->voxel_distance);
+  this_ptr->raycast_distance = fVar9;
+  if (this_ptr->raycast_distance <= 1.0) {
+    fVar9 = ray_target->y;
+    fVar2 = ray_origin->y;
+    pfVar1 = &this_ptr->raycast_distance;
+    fVar3 = ray_target->z;
+    fVar4 = ray_origin->z;
+    fVar5 = *pfVar1;
+    fVar6 = *pfVar1;
+    fVar7 = ray_origin->y;
+    fVar8 = ray_origin->z;
+    if (&this_ptr->collision_impact_position != (CVector3f *)local_20) {
+      (this_ptr->collision_impact_position).x =
+           ray_origin->x + (ray_target->x - ray_origin->x) * *pfVar1;
+      (this_ptr->collision_impact_position).y = fVar7 + (fVar9 - fVar2) * fVar5;
+      (this_ptr->collision_impact_position).z = fVar8 + (fVar3 - fVar4) * fVar6;
+      return this_ptr->raycast_distance;
     }
   }
-  return this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].x;
+  return this_ptr->raycast_distance;
 }

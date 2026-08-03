@@ -8,14 +8,14 @@
 ;   double DOUBLE_0058d080 = -1
 ;   double DOUBLE_0058d088 = 0.100000000000000
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
 ;   undefined4 g_CHeroActorType_01cae0ec.name_hash
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fa5f34
-;   undefined4 DAT_01fa5f38
-;   undefined4 DAT_01fa5f3c
-;   undefined4 DAT_01fa5f40
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.character_count
+;   undefined4 g_CDemonSet_01e57284.characters[0]
+;   undefined4 g_CDemonSet_01e57284.characters[1]
+;   undefined4 g_CDemonSet_01e57284.characters[2]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -83,13 +83,13 @@ section .text
     XOR EDI,EDI                         ; 004f3ac3
         ;   Label: LAB_004f3ac3
     XOR EBP,EBP                         ; 004f3ac5
-    MOV EAX,[0x005be368]                ; 004f3ac7 | DAT_005be368 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 004f3ac7 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
         ;   Label: LAB_004f3ac7
-    CMP EBP,dword ptr [EAX + 0x14ecb0]  ; 004f3acc | DAT_01fa5f34
+    CMP EBP,dword ptr [EAX + 0x14ecb0]  ; 004f3acc | g_CDemonSet_01e57284.character_count
     JGE 0x004f3b26                      ; 004f3ad2
         ;   XREF to: 004f3b26 (CONDITIONAL_JUMP)  ; LAB_004f3b26
     MOV ECX,dword ptr [ESI + 0x420]     ; 004f3ad4
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14ecb4] ; 004f3ada | DAT_01fa5f38 | DAT_01fa5f3c | DAT_01fa5f40
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14ecb4] ; 004f3ada | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1] | g_CDemonSet_01e57284.characters[2]
     TEST ECX,ECX                        ; 004f3ae1
     JNZ 0x004f3b2b                      ; 004f3ae3
         ;   XREF to: 004f3b2b (CONDITIONAL_JUMP)  ; LAB_004f3b2b

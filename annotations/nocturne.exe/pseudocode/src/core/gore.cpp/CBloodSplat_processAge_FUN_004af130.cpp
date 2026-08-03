@@ -9,7 +9,7 @@
 void __cdecl core_gore_cpp_CBloodSplat_processAge_FUN_004af130(CBloodSplat *this_ptr)
 
 {
-  this_ptr->age = *(float *)(0x01C775EC + 0x264) + this_ptr->age;
+  this_ptr->age = g_CGame_PTR_005b9354->delta_time_float + this_ptr->age;
   if (this_ptr->age <= (float)2) {
     return;
   }

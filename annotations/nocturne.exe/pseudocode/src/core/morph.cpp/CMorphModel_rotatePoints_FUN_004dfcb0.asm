@@ -30,14 +30,14 @@
 ;   TerminatedCString s_CMorphModel_rotatePoints_0058ad3e
 ;   undefined4 DAT_005a0cc0
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cce554
 ;   undefined4 DAT_01cce558
 ;   undefined4 DAT_01cce55c
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -173,8 +173,8 @@ section .text
         ;   Label: LAB_004dfe0a
     MOV EBX,0x1f8                       ; 004dfe0f
     PUSH 0x58ad3e                       ; 004dfe14 | = "CMorphModel::rotatePoints - too many ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004dfe19 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004dfe1f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004dfe19 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004dfe1f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004dfe25
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dfe2a
@@ -189,8 +189,8 @@ section .text
         ;   Label: LAB_004dfe3a
     MOV EDI,dword ptr [EAX + 0x54]      ; 004dfe3e
     PUSH EDI                            ; 004dfe41
-    MOV EBP,dword ptr [0x005be368]      ; 004dfe42 | DAT_005be368
-    PUSH EBP                            ; 004dfe48 | DAT_01e57284
+    MOV EBP,dword ptr [0x005be368]      ; 004dfe42 | g_CDemonSet_PTR_005be368
+    PUSH EBP                            ; 004dfe48 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010 ; 004dfe49
         ;   XREF to: 0050c010 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemonSet * this_ptr, int vertex_count)
     ADD ESP,0x8                         ; 004dfe4e
@@ -204,8 +204,8 @@ section .text
     PUSH ECX                            ; 004dfe64
     MOV EBX,dword ptr [EAX + 0x54]      ; 004dfe65
     PUSH EBX                            ; 004dfe68
-    MOV ESI,dword ptr [0x005be368]      ; 004dfe69 | DAT_005be368
-    PUSH ESI                            ; 004dfe6f | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 004dfe69 | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 004dfe6f | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 004dfe70
         ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 004dfe75

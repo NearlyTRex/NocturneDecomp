@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,7 +58,7 @@
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 117,
+        "line": 118,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       }
     ],
@@ -68,19 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 165,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 120,
+    "pseudocode_lines": 121,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_pointer_store",
       "undefined_data"
     ],
-    "total_lines": 386
+    "total_lines": 387
   },
   "cross_references": [
     {
@@ -144,13 +143,13 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01fabd00",
-      "name": "DAT_01fabd00",
+      "name": "g_CDemonSet_01e57284.waypoint_count",
       "type": "undefined4",
       "value": null
     },
@@ -290,13 +289,6 @@
         {
           "check_id": "invalidPointerCast",
           "column": 45,
-          "line": 66,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 44,
           "line": 67,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
@@ -307,6 +299,13 @@
           "line": 68,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 44,
+          "line": 69,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
         }
       ],
       "error": null
@@ -315,16 +314,16 @@
   },
   "suspects": [
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 55,
-      "match": "*(char **)(0x01E57284 + local_24 + 0x154a80",
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(char **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "target_string = *(char **)(0x01E57284 + local_24 + 0x154a80);",
-      "type": "raw_address_pointer_store"
+      "text": "target_string = *(char **)((int)g_CDemonSet_PTR_005be368->waypoints + local_24);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 66,
       "match": "(char **)((int)local_1f80",
       "severity": "moderate",
       "text": "*(char **)((int)local_1f80 + iVar5) = target_string;",
@@ -332,7 +331,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 111,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "direction = (CVector3f *)&DAT_02dd1184;",
@@ -340,7 +339,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 66,
+      "line": 67,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "(fVar6 = (local_1c->position).x - *(float *)(target_string + 0x20),",
@@ -348,7 +347,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 67,
+      "line": 68,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "fVar1 = (local_1c->position).y - *(float *)(target_string + 0x24),",
@@ -356,7 +355,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 68,
+      "line": 69,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "fVar7 = (local_1c->position).z - *(float *)(target_string + 0x28),",

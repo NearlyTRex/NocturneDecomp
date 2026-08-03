@@ -19,9 +19,9 @@
 ;   double DOUBLE_0058bbba = 0.0000152587890625
 ;   double DOUBLE_0058bbc2 = 30
 ;   double DOUBLE_0058bbca = 0.200000000000000
-;   undefined4 DAT_005b6d50
-;   undefined4 DAT_005b9354
-;   int INT_005bac64 = 0x1cc30e4
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_005c1664
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea3fc
@@ -54,7 +54,7 @@ section .text
     PUSH EBX                            ; 004e9aa1
     CALL core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 ; 004e9aa2
         ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame * this_ptr, int perform_handshake)
-    MOV EAX,[0x005b9354]                ; 004e9aa7 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004e9aa7 | g_CGame_PTR_005b9354
     MOV dword ptr [EBX + 0x1c],0x0      ; 004e9aac
     ADD ESP,0x8                         ; 004e9ab3
     MOV EDX,dword ptr [EAX + 0xc4]      ; 004e9ab6
@@ -109,7 +109,7 @@ section .text
     MOV EDI,dword ptr [0x01cea3f8]      ; 004e9b2d | DAT_01cea3f8
     ADD ESP,0x14                        ; 004e9b33
     MOV dword ptr [EBX],0x2             ; 004e9b36
-    MOV EDX,dword ptr [0x005b6d50]      ; 004e9b3c | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004e9b3c | g_CEditorTools_PTR_005b6d50
     MOV dword ptr [EBX + 0x4],0x1       ; 004e9b42
     PUSH 0x58bb15                       ; 004e9b49 | = "Contacting server.  Press ESC to give..."
     MOV dword ptr [EBX + 0x110],EAX     ; 004e9b4e
@@ -219,7 +219,7 @@ section .text
         ;   XREF to: 004e9cad (CONDITIONAL_JUMP)  ; LAB_004e9cad
     PUSH 0x1                            ; 004e9c74
         ;   Label: LAB_004e9c74
-    MOV EAX,[0x005bac64]                ; 004e9c76 | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004e9c76 | g_CKeys_PTR_005bac64
     PUSH EAX                            ; 004e9c7b
     MOV EDX,dword ptr [EAX]             ; 004e9c7c
     CALL dword ptr [EDX + 0x4]          ; 004e9c7e
@@ -245,7 +245,7 @@ section .text
     RET                                 ; 004e9cac
     PUSH 0x58bb41                       ; 004e9cad | = "Connection refused - computer is not ..."
         ;   Label: LAB_004e9cad
-    MOV ESI,dword ptr [0x005b6d50]      ; 004e9cb2 | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 004e9cb2 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 004e9cb8
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9cb9
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -264,7 +264,7 @@ section .text
     RET                                 ; 004e9cd4
     PUSH 0x58bb6f                       ; 004e9cd5 | = "Connection refused - game is full"
         ;   Label: LAB_004e9cd5
-    MOV ECX,dword ptr [0x005b6d50]      ; 004e9cda | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004e9cda | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004e9ce0
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9ce1
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -283,7 +283,7 @@ section .text
     RET                                 ; 004e9cfc
     PUSH 0x58bb91                       ; 004e9cfd | = "Connection refused - already in the game"
         ;   Label: LAB_004e9cfd
-    MOV EDX,dword ptr [0x005b6d50]      ; 004e9d02 | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004e9d02 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004e9d08
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9d09
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()

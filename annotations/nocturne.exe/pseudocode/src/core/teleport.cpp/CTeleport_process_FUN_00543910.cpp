@@ -26,7 +26,8 @@ void core_teleport_cpp_CTeleport_process_FUN_00543910(CDemonActor *param_1)
        (((pCVar1->x <= (pCVar2->max).x && (pCVar1->y <= (pCVar2->max).y)) &&
         (pCVar1->z <= (pCVar2->max).z)))) {
       core_mission_cpp_CDemonMission_FUN_004d90e0
-                (0x01CC9450,(CLocation *)(*(int *)(param_1[1].actor_name + 0xc) + 0x20));
+                (g_CDemonMission_PTR_005baf90,
+                 (CLocation *)(*(int *)(param_1[1].actor_name + 0xc) + 0x20));
       return;
     }
   }

@@ -75,7 +75,7 @@ void core_larva_cpp_CLarva_processDamage_FUN_004c5310(CEnemy *param_1,SDamageInf
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)param_1,&CStack_20,&param_2->impact_direction);
   core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-            ((CGore *)INT_005b96c4,&CStack_20,(CVector3f *)0x0,10,(param_1->base).blood_type);
+            (g_CGore_PTR_005b96c4,&CStack_20,(CVector3f *)0x0,10,(param_1->base).blood_type);
   core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
   return;
 }

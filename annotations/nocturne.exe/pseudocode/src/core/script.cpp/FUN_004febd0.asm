@@ -24,9 +24,9 @@
 ;   TerminatedCString s_Probable_non_text_file_s_0058e279
 ;   TerminatedCString s_core_script_cpp_0058e2be
 ;   TerminatedCString s_s_failed_syntax_check_on_0058e2d1
-;   undefined4 DAT_005b6d50
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -191,7 +191,7 @@ section .text
     TEST EBX,EBX                        ; 004fed37
     JZ 0x004fee03                       ; 004fed39
         ;   XREF to: 004fee03 (CONDITIONAL_JUMP)  ; LAB_004fee03
-    MOV dword ptr [0x01cc4800],0x58e2be ; 004fed3f | PTR_01cc4800 | = "..\\core\\script.cpp"
+    MOV dword ptr [0x01cc4800],0x58e2be ; 004fed3f | g_CHAR_PTR_01cc4800 | = "..\\core\\script.cpp"
     MOV EAX,dword ptr [ESP + 0x304]     ; 004fed49
     PUSH EBX                            ; 004fed50
     INC EAX                             ; 004fed51
@@ -200,7 +200,7 @@ section .text
     PUSH ECX                            ; 004fed5a
     MOV EDX,0x372                       ; 004fed5b
     PUSH 0x58e2d1                       ; 004fed60 | = "%s failed syntax check on line %d: %s"
-    MOV dword ptr [0x01cc4804],EDX      ; 004fed65 | INT_01cc4804
+    MOV dword ptr [0x01cc4804],EDX      ; 004fed65 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004fed6b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 004fed70
@@ -244,7 +244,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x328]     ; 004fedca
     PUSH EAX                            ; 004fedd1
     PUSH 0x58e279                       ; 004fedd2 | = "Probable non-text file %s detected ne..."
-    MOV EDX,dword ptr [0x005b6d50]      ; 004fedd7 | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004fedd7 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004feddd
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004fedde
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()

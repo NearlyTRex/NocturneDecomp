@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,12 +58,6 @@
       {
         "category": "cast_error",
         "column": 14,
-        "line": 47,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 14,
         "line": 48,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
@@ -71,48 +65,54 @@
         "category": "cast_error",
         "column": 14,
         "line": 49,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 14,
+        "line": 50,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "incompatible_types",
+        "column": 27,
+        "line": 68,
+        "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 68,
+        "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
+      },
+      {
+        "category": "cast_error",
+        "column": 57,
+        "line": 68,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 73,
+        "line": 68,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "incompatible_types",
         "column": 26,
-        "line": 67,
+        "line": 70,
         "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
       },
       {
         "category": "incompatible_types",
         "column": 41,
-        "line": 67,
+        "line": 70,
         "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
       },
       {
         "category": "cast_error",
         "column": 56,
-        "line": 67,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 72,
-        "line": 67,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 26,
-        "line": 69,
-        "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 41,
-        "line": 69,
-        "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
-      },
-      {
-        "category": "cast_error",
-        "column": 56,
-        "line": 69,
+        "line": 70,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 219,
-    "complexity_score": 1043,
+    "complexity_score": 1044,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 128,
+    "pseudocode_lines": 129,
     "suspect_count": 90,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
       "unnamed_param"
     ],
-    "total_lines": 347
+    "total_lines": 348
   },
   "cross_references": [],
   "function": {
@@ -310,7 +310,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);",
@@ -318,18 +318,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)param_1[7].actor_name) {",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
       "type": "unnamed_param"
     },
     {
@@ -337,20 +329,28 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
+      "text": "if (0 < *(int *)param_1[7].actor_name) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
       "text": "this_ptr = (CKeyFramedModelInstance *)(param_1[7].actor_name + 0x18);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar15 < *(int *)param_1[7].actor_name);",
+      "text": "} while (iVar16 < *(int *)param_1[7].actor_name);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
@@ -358,7 +358,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "if (&param_1[6].next_actor != &local_1c) {",
@@ -366,7 +366,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].next_actor = local_1c;",
@@ -374,7 +374,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].prev_actor = local_18;",
@@ -382,7 +382,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].vtable = local_14;",
@@ -390,18 +390,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar9 = param_1[6].previous_transform_state.position.z * (float)0.03125;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = param_1[6].prev_actor;",
+      "text": "fVar10 = param_1[6].previous_transform_state.position.z * (float)0.03125;",
       "type": "unnamed_param"
     },
     {
@@ -409,7 +401,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = param_1[6].next_actor;",
+      "text": "pCVar1 = param_1[6].prev_actor;",
       "type": "unnamed_param"
     },
     {
@@ -417,7 +409,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar3 = param_1[6].next_actor;",
+      "text": "pCVar2 = param_1[6].next_actor;",
       "type": "unnamed_param"
     },
     {
@@ -425,7 +417,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "UVar4 = param_1[6].vtable;",
+      "text": "pCVar3 = param_1[6].next_actor;",
       "type": "unnamed_param"
     },
     {
@@ -433,7 +425,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "UVar5 = param_1[6].vtable;",
+      "text": "UVar4 = param_1[6].vtable;",
       "type": "unnamed_param"
     },
     {
@@ -441,7 +433,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar6 = param_1[6].prev_actor;",
+      "text": "UVar5 = param_1[6].vtable;",
       "type": "unnamed_param"
     },
     {
@@ -449,15 +441,15 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6].previous_transform_state.orientation.vec.x = fVar9;",
+      "text": "pCVar6 = param_1[6].prev_actor;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar7 = param_1[6].previous_transform_state.orientation.vec.x;",
+      "text": "param_1[6].previous_transform_state.orientation.vec.x = fVar10;",
       "type": "unnamed_param"
     },
     {
@@ -465,7 +457,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar8 = param_1[6].previous_transform_state.orientation.vec.x;",
+      "text": "fVar7 = param_1[6].previous_transform_state.orientation.vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -473,12 +465,20 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
+      "text": "fVar8 = param_1[6].previous_transform_state.orientation.vec.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[6].previous_transform_state.orientation.vec.y =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].previous_transform_state.orientation.vec.z =",
@@ -486,7 +486,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].previous_transform_state.dirty_flags =",
@@ -494,7 +494,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].scale.x = 0;",
@@ -502,15 +502,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[6].process_disabled = param_1[6].scale.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].process_disabled = param_1[6].scale.x;",
@@ -521,12 +513,12 @@
       "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6].collision_disabled = param_1[6].process_disabled;",
+      "text": "param_1[6].process_disabled = param_1[6].scale.x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].collision_disabled = param_1[6].process_disabled;",
@@ -537,20 +529,20 @@
       "line": 68,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[6].collision_disabled = param_1[6].process_disabled;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[6].previous_transform_state.position.y = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[6].previous_transform_state.position.x = param_1[6].previous_transform_state.position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].previous_transform_state.position.x = param_1[6].previous_transform_state.position.y;",
@@ -561,12 +553,12 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6].dead2 = (int)param_1[6].previous_transform_state.position.x;",
+      "text": "param_1[6].previous_transform_state.position.x = param_1[6].previous_transform_state.position.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].dead2 = (int)param_1[6].previous_transform_state.position.x;",
@@ -577,20 +569,20 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[6].dead2 = (int)param_1[6].previous_transform_state.position.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[6].platform_orientation_delta.y = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[6].platform_orientation_delta.x = param_1[6].platform_orientation_delta.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].platform_orientation_delta.x = param_1[6].platform_orientation_delta.y;",
@@ -601,12 +593,12 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6].platform_position_delta.z = param_1[6].platform_orientation_delta.x;",
+      "text": "param_1[6].platform_orientation_delta.x = param_1[6].platform_orientation_delta.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].platform_position_delta.z = param_1[6].platform_orientation_delta.x;",
@@ -617,20 +609,20 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[6].platform_position_delta.z = param_1[6].platform_orientation_delta.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[6].blood_effect_timer = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[6].scale.z = param_1[6].blood_effect_timer;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].scale.z = param_1[6].blood_effect_timer;",
@@ -641,12 +633,12 @@
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6].scale.y = param_1[6].scale.z;",
+      "text": "param_1[6].scale.z = param_1[6].blood_effect_timer;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].scale.y = param_1[6].scale.z;",
@@ -657,20 +649,20 @@
       "line": 77,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[6].scale.y = param_1[6].scale.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[6].is_transparent = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[6].is_renderable = param_1[6].is_transparent;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 79,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].is_renderable = param_1[6].is_transparent;",
@@ -681,12 +673,12 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6].platform_orientation_delta.z = (float)param_1[6].is_renderable;",
+      "text": "param_1[6].is_renderable = param_1[6].is_transparent;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].platform_orientation_delta.z = (float)param_1[6].is_renderable;",
@@ -697,20 +689,20 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[6].platform_orientation_delta.z = (float)param_1[6].is_renderable;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[6].dead1 = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)param_1[6].footstep_sound_code = param_1[6].dead1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)param_1[6].footstep_sound_code = param_1[6].dead1;",
@@ -721,12 +713,12 @@
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6].blood_effect_color = *(uint *)param_1[6].footstep_sound_code;",
+      "text": "*(int *)param_1[6].footstep_sound_code = param_1[6].dead1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].blood_effect_color = *(uint *)param_1[6].footstep_sound_code;",
@@ -737,20 +729,20 @@
       "line": 83,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[6].blood_effect_color = *(uint *)param_1[6].footstep_sound_code;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[6].platform_position_delta.y = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[6].platform_position_delta.x = param_1[6].platform_position_delta.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].platform_position_delta.x = param_1[6].platform_position_delta.y;",
@@ -761,12 +753,12 @@
       "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6].standing_platform = (CPlatform *)param_1[6].platform_position_delta.x;",
+      "text": "param_1[6].platform_position_delta.x = param_1[6].platform_position_delta.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[6].standing_platform = (CPlatform *)param_1[6].platform_position_delta.x;",
@@ -774,10 +766,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)param_1[7].actor_name) {",
+      "text": "param_1[6].standing_platform = (CPlatform *)param_1[6].platform_position_delta.x;",
       "type": "unnamed_param"
     },
     {
@@ -785,7 +777,7 @@
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar14 = &param_1[8].orient_matrix.m[1].z;",
+      "text": "if (0 < *(int *)param_1[7].actor_name) {",
       "type": "unnamed_param"
     },
     {
@@ -793,39 +785,39 @@
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar12 = &param_1[8].orient_matrix.m[0].z;",
+      "text": "pfVar15 = &param_1[8].orient_matrix.m[1].z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pfVar13 = &param_1[8].orient_matrix.m[0].z;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 92,
       "match": "(float *)((int)param_1",
       "severity": "moderate",
-      "text": "pfVar13 = (float *)((int)param_1 + iVar15 * 0x1b4 + 0x934);",
+      "text": "pfVar14 = (float *)((int)param_1 + iVar16 * 0x1b4 + 0x934);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar13 = (float *)((int)param_1 + iVar15 * 0x1b4 + 0x934);",
+      "text": "pfVar14 = (float *)((int)param_1 + iVar16 * 0x1b4 + 0x934);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar15 < *(int *)param_1[7].actor_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0xc].orient_matrix.m[0].z = 0.0;",
+      "text": "} while (iVar16 < *(int *)param_1[7].actor_name);",
       "type": "unnamed_param"
     },
     {
@@ -833,7 +825,7 @@
       "line": 109,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].orient_matrix.m[1].x = 1.0;",
+      "text": "param_1[0xc].orient_matrix.m[0].z = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -841,7 +833,7 @@
       "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].orient_matrix.m[1].y = 0.0;",
+      "text": "param_1[0xc].orient_matrix.m[1].x = 1.0;",
       "type": "unnamed_param"
     },
     {
@@ -849,20 +841,20 @@
       "line": 111,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[0xc].orient_matrix.m[1].y = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[0xc].orient_matrix.m[1].z = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CCourse *)&param_1[0xc].orient_matrix.m[2].y,(char *)&param_1[0xc].direction_hint);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "((CCourse *)&param_1[0xc].orient_matrix.m[2].y,(char *)&param_1[0xc].direction_hint);",
@@ -873,7 +865,7 @@
       "line": 114,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x2c] = '\\x01';",
+      "text": "((CCourse *)&param_1[0xc].orient_matrix.m[2].y,(char *)&param_1[0xc].direction_hint);",
       "type": "unnamed_param"
     },
     {
@@ -881,7 +873,7 @@
       "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x2d] = '\\0';",
+      "text": "param_1[0xc].create_event[0x2c] = '\\x01';",
       "type": "unnamed_param"
     },
     {
@@ -889,7 +881,7 @@
       "line": 116,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x2e] = '\\0';",
+      "text": "param_1[0xc].create_event[0x2d] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -897,7 +889,7 @@
       "line": 117,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x2f] = '\\0';",
+      "text": "param_1[0xc].create_event[0x2e] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -905,7 +897,7 @@
       "line": 118,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x14] = '\\0';",
+      "text": "param_1[0xc].create_event[0x2f] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -913,7 +905,7 @@
       "line": 119,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x15] = '\\0';",
+      "text": "param_1[0xc].create_event[0x14] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -921,7 +913,7 @@
       "line": 120,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x16] = '\\0';",
+      "text": "param_1[0xc].create_event[0x15] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -929,7 +921,7 @@
       "line": 121,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x17] = '\\0';",
+      "text": "param_1[0xc].create_event[0x16] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -937,7 +929,7 @@
       "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x18] = '\\0';",
+      "text": "param_1[0xc].create_event[0x17] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -945,7 +937,7 @@
       "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x19] = '\\0';",
+      "text": "param_1[0xc].create_event[0x18] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -953,7 +945,7 @@
       "line": 124,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x1a] = '\\0';",
+      "text": "param_1[0xc].create_event[0x19] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -961,7 +953,7 @@
       "line": 125,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x1b] = '\\0';",
+      "text": "param_1[0xc].create_event[0x1a] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -969,7 +961,7 @@
       "line": 126,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x1c] = '\\0';",
+      "text": "param_1[0xc].create_event[0x1b] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -977,7 +969,7 @@
       "line": 127,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x1d] = '\\0';",
+      "text": "param_1[0xc].create_event[0x1c] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -985,7 +977,7 @@
       "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xc].create_event[0x1e] = '\\0';",
+      "text": "param_1[0xc].create_event[0x1d] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -993,12 +985,20 @@
       "line": 129,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[0xc].create_event[0x1e] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 130,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[0xc].create_event[0x1f] = '\\0';",
       "type": "unnamed_param"
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 30,
+      "line": 31,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "this_ptr = (CKeyFramedModelInstance *)(param_1[7].actor_name + 0x18);",
@@ -1006,7 +1006,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "this_ptr = (CKeyFramedModelInstance *)(this_ptr[1].part_visibility_flags + 0xe);",
@@ -1014,7 +1014,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates by self-indexing a constant element step, dereferencing a sibling array field (which decays to a pointer), then adding a constant; the sum equals the larger struct stride being walked. Replace `this_ptr->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 34,
+      "line": 35,
       "match": "this_ptr = (T *)(this_ptr[N].FIELD + CONST)",
       "severity": "moderate",
       "text": "this_ptr = (CKeyFramedModelInstance *)(this_ptr[1].part_visibility_flags + 0xe);",

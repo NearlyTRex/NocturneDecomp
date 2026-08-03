@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * sound_sndmain_cpp_FUN_00521c50(void)
+; CSfxSample * sound_sndmain_cpp_FUN_00521c50(void)
 ;
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc1ed8
-;   undefined4 DAT_02dc216c
-;   undefined4 DAT_02dc2170
+;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].taken
+;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].ref_count
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
     XOR EDX,EDX                         ; 00521c5e
     IMUL ECX,EDX,0x168                  ; 00521c60
         ;   Label: LAB_00521c60
-    CMP dword ptr [ECX + 0x2dc2004],0x0 ; 00521c66 | DAT_02dc216c
+    CMP dword ptr [ECX + 0x2dc2004],0x0 ; 00521c66 | g_CSfxSample_ARRAY_02dc1edc[1].taken
     JZ 0x00521c7e                       ; 00521c6d
         ;   XREF to: 00521c7e (CONDITIONAL_JUMP)  ; LAB_00521c7e
     INC EAX                             ; 00521c6f
@@ -35,7 +35,7 @@ section .text
     XOR EAX,EAX                         ; 00521c75
     MOV dword ptr [0x02dc1ed8],EDX      ; 00521c77 | DAT_02dc1ed8
     RET                                 ; 00521c7d
-    CMP dword ptr [ECX + 0x2dc2008],0x0 ; 00521c7e | DAT_02dc2170
+    CMP dword ptr [ECX + 0x2dc2008],0x0 ; 00521c7e | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
         ;   Label: LAB_00521c7e
     JNZ 0x00521c6f                      ; 00521c85
         ;   XREF to: 00521c6f (CONDITIONAL_JUMP)  ; LAB_00521c6f

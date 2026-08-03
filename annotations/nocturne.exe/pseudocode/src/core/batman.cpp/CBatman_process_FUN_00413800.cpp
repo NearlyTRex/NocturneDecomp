@@ -116,16 +116,17 @@ void core_batman_cpp_CBatman_process_FUN_00413800(CBatman *param_1,float param_2
                               (&((param_1->base).victim)->base,"CHero"), iVar6 != 0)) {
           iVar8 = 0;
           iVar6 = 0;
-          while ((iVar6 < *(int *)(0x01E57284 + 0x150bf4) &&
+          while ((iVar6 < g_CDemonSet_PTR_005be368->enemy_count &&
                  ((pCVar12 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                       (*(CDemonActor **)(iVar8 + 0x150bf8 + 0x01E57284),
+                                       (*(CDemonActor **)
+                                         ((int)g_CDemonSet_PTR_005be368->enemies + iVar8),
                                         g_CBatmanActorType_00764638.name_hash),
                   pCVar12 == (CDemonActor *)0x0 ||
                   (*(int *)(pCVar12[0x90].create_event + 0x48) == 0))))) {
             iVar6 = iVar6 + 1;
             iVar8 = iVar8 + 4;
           }
-          if (iVar6 == *(int *)(0x01E57284 + 0x150bf4)) {
+          if (iVar6 == g_CDemonSet_PTR_005be368->enemy_count) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                       (&(param_1->base).base.model.motion_controller,0xd,1);
             pCVar5 = (param_1->base).victim;
@@ -262,7 +263,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(CBatman *param_1,float param_2
                             (pCVar2,&local_ec,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)param_1,&local_74,pCVar10);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_74,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_74,0);
         (param_1->base).pool_me = 1;
       }
       break;
@@ -318,7 +319,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(CBatman *param_1,float param_2
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                       ((CDemonActor *)param_1,&local_14c,pCVar10);
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                      (0x01C08D04,&local_14c,0.5,&local_bc,0xffff);
+                      (g_CFireEffect_PTR_005b80f0,&local_14c,0.5,&local_bc,0xffff);
             iVar6 = iVar6 + 1;
           } while (iVar6 < local_20->bone_count);
         }
@@ -326,9 +327,9 @@ void core_batman_cpp_CBatman_process_FUN_00413800(CBatman *param_1,float param_2
       case 2:
         local_30 = 1;
         local_1c = 0;
-        for (local_18 = 0; fVar14 = 1.0f, local_18 < *(int *)(0x01E57284 + 0x14ecb0);
-            local_18 = local_18 + 1) {
-          this_ptr = *(CBatman **)(0x01E57284 + local_1c + 0x14ecb4);
+        for (local_18 = 0; fVar14 = 1.0f,
+            local_18 < g_CDemonSet_PTR_005be368->character_count; local_18 = local_18 + 1) {
+          this_ptr = *(CBatman **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);
           if (((this_ptr != (CBatman *)0x0) && (this_ptr != param_1)) &&
              (EVar9 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
                                 ((CCharacter *)this_ptr), (int)EVar9 < 1)) {
@@ -382,7 +383,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(CBatman *param_1,float param_2
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                       ((CDemonActor *)param_1,&local_134,pCVar10);
             core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                      (0x01C08D04,&local_134,0.5,&local_68,0xffff);
+                      (g_CFireEffect_PTR_005b80f0,&local_134,0.5,&local_68,0xffff);
             iVar6 = iVar6 + 1;
           } while (iVar6 < local_24->bone_count);
         }
@@ -416,7 +417,7 @@ LAB_00413a93:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(param_1->base).base.model.motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   (param_1->base).base.model.accumulated_root_motion.z = 0.0;
   (param_1->base).base.model.accumulated_root_motion.y =

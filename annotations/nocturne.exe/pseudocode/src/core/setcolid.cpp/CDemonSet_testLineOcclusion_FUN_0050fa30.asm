@@ -20,7 +20,7 @@
 ;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 0055f1f6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0
@@ -42,7 +42,7 @@ section .text
     PUSH EDX                            ; 0050fa3f
     MOV ECX,dword ptr [EBP + 0x18]      ; 0050fa40
     PUSH ECX                            ; 0050fa43
-    PUSH 0x1fba938                      ; 0050fa44 | DAT_01fba938
+    PUSH 0x1fba938                      ; 0050fa44 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0 ; 0050fa49
         ;   XREF to: 004680b0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0(CDemonRaytrace * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 0050fa4e

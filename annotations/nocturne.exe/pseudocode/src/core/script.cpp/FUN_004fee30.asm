@@ -16,8 +16,8 @@
 ;   TerminatedCString s_Out_of_memory_loading_sc_0058e30a
 ;   TerminatedCString s_core_script_cpp_0058e332
 ;   TerminatedCString s_Out_of_memory_loading_sc_0058e345
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01e55c18
 ;   undefined4 DAT_01e55c19
 ;   undefined4 DAT_01e55c1a
@@ -94,12 +94,12 @@ section .text
     TEST EAX,EAX                        ; 004feea5
     JNZ 0x004feecf                      ; 004feea7
         ;   XREF to: 004feecf (CONDITIONAL_JUMP)  ; LAB_004feecf
-    MOV dword ptr [0x01cc4800],0x58e2f7 ; 004feea9 | PTR_01cc4800 | = "..\\core\\script.cpp"
+    MOV dword ptr [0x01cc4800],0x58e2f7 ; 004feea9 | g_CHAR_PTR_01cc4800 | = "..\\core\\script.cpp"
     LEA EAX,[EBP + 0x1]                 ; 004feeb3
     PUSH EAX                            ; 004feeb6
     MOV EDX,0x398                       ; 004feeb7
     PUSH 0x58e30a                       ; 004feebc | = "Out of memory loading script at line %d"
-    MOV dword ptr [0x01cc4804],EDX      ; 004feec1 | INT_01cc4804
+    MOV dword ptr [0x01cc4804],EDX      ; 004feec1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004feec7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004feecc
@@ -131,8 +131,8 @@ section .text
     MOV EDI,0x58e332                    ; 004fef06 | = "..\\core\\script.cpp"
     MOV EAX,0x39b                       ; 004fef0b
     PUSH 0x58e345                       ; 004fef10 | = "Out of memory loading script at line %d"
-    MOV dword ptr [0x01cc4800],EDI      ; 004fef15 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004fef1b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004fef15 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004fef1b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004fef20
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004fef25

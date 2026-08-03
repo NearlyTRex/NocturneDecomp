@@ -25,7 +25,7 @@ void __cdecl core_setcolid_cpp_FUN_00511aa0(CDemonSet *this_ptr,CDemonActor *act
     CStack_1c.max.z = (pCVar1->max).z;
   }
   core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90
-            ((CDemonRaytrace *)&DAT_01fba938,&(actor->location).position,&(actor->orient).vec,
+            (&g_CDemonRaytrace_01fba938,&(actor->location).position,&(actor->orient).vec,
              &CStack_1c.min,&CStack_1c.max);
   core_path_cpp_resetAllPathMaps_FUN_004f1e90();
   return;

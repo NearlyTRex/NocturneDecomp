@@ -27,8 +27,8 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   uint local_14;
   
   if (2000 < this_ptr->num_points) {
-    PTR_01cc4800 = "..\\core\\morph.cpp";
-    INT_01cc4804 = 0x1f8;
+    g_CHAR_PTR_01cc4800 = "..\\core\\morph.cpp";
+    g_INT_01cc4804 = 0x1f8;
     core_main_c_FUN_004c8440("CMorphModel::rotatePoints - too many points!");
   }
   local_20 = 0;
@@ -72,9 +72,10 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   if (local_14 != 0) {
     return;
   }
-  core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(0x01E57284,this_ptr->num_points);
+  core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010
+            (g_CDemonSet_PTR_005be368,this_ptr->num_points);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-            (0x01E57284,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
+            (g_CDemonSet_PTR_005be368,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
              (CVector3i *)&DAT_01cce554,3,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,local_20);
   return;

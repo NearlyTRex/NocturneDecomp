@@ -20,8 +20,8 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057a032 = 5
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -82,10 +82,10 @@ section .text
     FST float ptr [EBP + -0x1c]         ; 004281c7
     FMUL float ptr [EBP + -0x1c]        ; 004281ca
     XOR ECX,ECX                         ; 004281cd
-    MOV EAX,[0x005b9354]                ; 004281cf | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004281cf | g_CGame_PTR_005b9354
     MOV dword ptr [EBP + -0x20],ECX     ; 004281d4
     FADDP                               ; 004281d7
-    FLD float ptr [EAX + 0x264]         ; 004281d9 | DAT_01c77850
+    FLD float ptr [EAX + 0x264]         ; 004281d9 | g_CGame_01c775ec.delta_time_float
     FXCH                                ; 004281df
     FSQRT                               ; 004281e1
     FXCH                                ; 004281e3

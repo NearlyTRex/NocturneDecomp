@@ -24,7 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter
   CVector3f local_1c;
   
   if ((this_ptr->was_rendered_opaque != 0) &&
-     ((float)0x01E57284->renderable_actors[0x6e7] < (float)32)) {
+     ((g_CDemonSet_PTR_005be368->active_fog).temperature < (float)32)) {
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                        (&(this_ptr->model).motion_controller);
     if (pSVar2->state_index == 0) {
@@ -50,7 +50,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     (&this_ptr->base,&local_34,pCVar5);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                    (0x01C08D04,&local_34,0.5,&local_1c,0x8000);
+                    (g_CFireEffect_PTR_005b80f0,&local_34,0.5,&local_1c,0x8000);
         }
       }
       fVar1 = this_ptr->smoke_check_timer - delta_time;
@@ -69,7 +69,8 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter
                               (this_ptr->model).bone_transform.bone_world_matrices + iVar4);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     (&this_ptr->base,&local_28,pCVar5);
-          iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(0x01E57284,&local_28);
+          iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50
+                            (g_CDemonSet_PTR_005be368,&local_28);
           if (iVar4 == 0) {
             this_ptr->smoke_occluded = (uint)(this_ptr->smoke_occluded == 0);
             return;

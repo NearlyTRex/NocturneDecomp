@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae700
+;   void* PTR_DAT_005ae700 = 01b4d738
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;
@@ -64,7 +64,7 @@ section .text
         ;   Label: LAB_0041ea54
     LEA EAX,[EBX + 0x20]                ; 0041ea55
     PUSH EAX                            ; 0041ea58
-    MOV EAX,[0x005ae700]                ; 0041ea59 | DAT_005ae700
+    MOV EAX,[0x005ae700]                ; 0041ea59 | PTR_DAT_005ae700
     PUSH EAX                            ; 0041ea5e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0041ea5f
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -72,7 +72,7 @@ section .text
     PUSH 0x0                            ; 0041ea67
     LEA EAX,[EBX + 0x30]                ; 0041ea69
     PUSH EAX                            ; 0041ea6c
-    MOV EDX,dword ptr [0x005ae700]      ; 0041ea6d | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0041ea6d | PTR_DAT_005ae700
     PUSH EDX                            ; 0041ea73 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0041ea74
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -99,7 +99,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 0041eaae
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0041eab3
-    MOV ECX,dword ptr [0x005ae700]      ; 0041eab6 | DAT_005ae700
+    MOV ECX,dword ptr [0x005ae700]      ; 0041eab6 | PTR_DAT_005ae700
         ;   Label: LAB_0041eab6
     PUSH ECX                            ; 0041eabc | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0041eabd

@@ -134,8 +134,8 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0045c440(CDrawSurface
     iStack_20 = iStack_20 + 1;
   } while (iStack_20 < 100);
   if (iStack_20 == 100) {
-    PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
-    INT_01cc4804 = 0x369;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
+    g_INT_01cc4804 = 0x369;
     core_main_c_FUN_004c8440("2d line clipping exceeded max iterations");
     return iStack_40;
   }

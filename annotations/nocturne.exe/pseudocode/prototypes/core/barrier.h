@@ -45,4 +45,4 @@ void CBarrier::updateCollisionData(CDemonActor *param_1);
 
 // Original: core_barrier.cpp_CBarrier_dtor_FUN_004118c0
 // Address: 004118c0
-CDemonActor * __cdecl CBarrier::dtor(CDemonActor *this_ptr,uint flags);
+CBarrier * __cdecl CBarrier::dtor(CBarrier *this_ptr,uint flags);

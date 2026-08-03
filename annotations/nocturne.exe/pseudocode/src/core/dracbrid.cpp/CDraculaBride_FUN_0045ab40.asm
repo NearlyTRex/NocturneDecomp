@@ -39,21 +39,21 @@
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 00458fe7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_01b4d260
-;   undefined4 DAT_01b4d280
-;   undefined4 DAT_01b4d284
-;   undefined4 DAT_01b4d288
-;   undefined4 DAT_01b4d28c
-;   undefined4 DAT_01b4d290
-;   undefined4 DAT_01b4d294
-;   undefined4 DAT_01b4d298
-;   undefined4 DAT_01b4d29c
-;   undefined4 DAT_01b4d2a0
-;   undefined4 DAT_01b4d2a4
-;   undefined4 DAT_01b4d2a8
-;   undefined4 DAT_01b4d2ac
-;   undefined4 DAT_01b4d2b0
+;   SFreaky[6] g_SFreaky_ARRAY_01b4d280
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].position.x
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].position.y
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].position.z
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].tangent.x
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].tangent.y
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].tangent.z
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].t
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].control_points[0].x
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].control_points[0].y
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].control_points[0].z
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].control_points[1].x
+;   undefined4 g_SFreaky_ARRAY_01b4d280[0].control_points[1].y
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 0045aba1 (CONDITIONAL_JUMP)  ; LAB_0045aba1
     MOV EBX,0x1b4d280                   ; 0045ab80
     XOR ESI,ESI                         ; 0045ab85
-    MOV EDX,dword ptr [EBX]             ; 0045ab87 | DAT_01b4d280 | DAT_01b4d2d4
+    MOV EDX,dword ptr [EBX]             ; 0045ab87 | g_SFreaky_ARRAY_01b4d280 | g_SFreaky_ARRAY_01b4d280[1].sfx_handle
         ;   Label: LAB_0045ab87
     PUSH EDX                            ; 0045ab89
     MOV EDI,EBX                         ; 0045ab8a
@@ -124,7 +124,7 @@ section .text
     MOV ECX,dword ptr [0x01b4d260]      ; 0045abac | DAT_01b4d260
         ;   Label: LAB_0045abac
     PUSH ECX                            ; 0045abb2
-    MOV dword ptr [EBX + 0x1c],EAX      ; 0045abb3 | DAT_01b4d29c
+    MOV dword ptr [EBX + 0x1c],EAX      ; 0045abb3 | g_SFreaky_ARRAY_01b4d280[0].t
     LEA EAX,[ESP + 0x134]               ; 0045abb6
     PUSH EAX                            ; 0045abbd
     LEA EAX,[EBP + 0x150]               ; 0045abbe
@@ -144,21 +144,21 @@ section .text
     JZ 0x0045abf6                       ; 0045abe4
         ;   XREF to: 0045abf6 (CONDITIONAL_JUMP)  ; LAB_0045abf6
     MOV EDX,dword ptr [EAX]             ; 0045abe6
-    MOV dword ptr [EBX],EDX             ; 0045abe8 | DAT_01b4d2ac
+    MOV dword ptr [EBX],EDX             ; 0045abe8 | g_SFreaky_ARRAY_01b4d280[0].control_points[1].x
     MOV EDX,dword ptr [EAX + 0x4]       ; 0045abea
-    MOV dword ptr [EBX + 0x4],EDX       ; 0045abed | DAT_01b4d2b0
+    MOV dword ptr [EBX + 0x4],EDX       ; 0045abed | g_SFreaky_ARRAY_01b4d280[0].control_points[1].y
     MOV EDX,dword ptr [EAX + 0x8]       ; 0045abf0
-    MOV dword ptr [EBX + 0x8],EDX       ; 0045abf3 | DAT_01b4d2b4
+    MOV dword ptr [EBX + 0x8],EDX       ; 0045abf3 | g_SFreaky_ARRAY_01b4d280[0].control_points[1].z
     LEA EBX,[EDI + 0x2c]                ; 0045abf6
         ;   Label: LAB_0045abf6
-    MOV EAX,dword ptr [EBX]             ; 0045abf9 | DAT_01b4d2ac
+    MOV EAX,dword ptr [EBX]             ; 0045abf9 | g_SFreaky_ARRAY_01b4d280[0].control_points[1].x
     MOV dword ptr [ESP + 0x148],EAX     ; 0045abfb
     LEA EAX,[EBX + 0x4]                 ; 0045ac02
-    MOV EAX,dword ptr [EAX]             ; 0045ac05 | DAT_01b4d2b0
+    MOV EAX,dword ptr [EAX]             ; 0045ac05 | g_SFreaky_ARRAY_01b4d280[0].control_points[1].y
     MOV dword ptr [ESP + 0x14c],EAX     ; 0045ac07
     LEA EAX,[EBX + 0x8]                 ; 0045ac0e
     PUSH 0x40a00000                     ; 0045ac11
-    MOV EAX,dword ptr [EAX]             ; 0045ac16 | DAT_01b4d2b4
+    MOV EAX,dword ptr [EAX]             ; 0045ac16 | g_SFreaky_ARRAY_01b4d280[0].control_points[1].z
     PUSH 0xc0a00000                     ; 0045ac18
     MOV dword ptr [ESP + 0x158],EAX     ; 0045ac1d
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045ac24
@@ -200,21 +200,21 @@ section .text
     JZ 0x0045acff                       ; 0045ace0
         ;   XREF to: 0045acff (CONDITIONAL_JUMP)  ; LAB_0045acff
     MOV EAX,dword ptr [ESP + 0x100]     ; 0045ace2
-    MOV dword ptr [EBX],EAX             ; 0045ace9 | DAT_01b4d2a0
+    MOV dword ptr [EBX],EAX             ; 0045ace9 | g_SFreaky_ARRAY_01b4d280[0].control_points[0].x
     MOV EAX,dword ptr [ESP + 0x104]     ; 0045aceb
-    MOV dword ptr [EBX + 0x4],EAX       ; 0045acf2 | DAT_01b4d2a4
+    MOV dword ptr [EBX + 0x4],EAX       ; 0045acf2 | g_SFreaky_ARRAY_01b4d280[0].control_points[0].y
     MOV EAX,dword ptr [ESP + 0x108]     ; 0045acf5
-    MOV dword ptr [EBX + 0x8],EAX       ; 0045acfc | DAT_01b4d2a8
+    MOV dword ptr [EBX + 0x8],EAX       ; 0045acfc | g_SFreaky_ARRAY_01b4d280[0].control_points[0].z
     LEA EBX,[EDI + 0x2c]                ; 0045acff
         ;   Label: LAB_0045acff
-    MOV EAX,dword ptr [EBX]             ; 0045ad02 | DAT_01b4d2ac
+    MOV EAX,dword ptr [EBX]             ; 0045ad02 | g_SFreaky_ARRAY_01b4d280[0].control_points[1].x
     MOV dword ptr [ESP + 0xf4],EAX      ; 0045ad04
     LEA EAX,[EBX + 0x4]                 ; 0045ad0b
-    MOV EAX,dword ptr [EAX]             ; 0045ad0e | DAT_01b4d2b0
+    MOV EAX,dword ptr [EAX]             ; 0045ad0e | g_SFreaky_ARRAY_01b4d280[0].control_points[1].y
     MOV dword ptr [ESP + 0xf8],EAX      ; 0045ad10
     LEA EAX,[EBX + 0x8]                 ; 0045ad17
     PUSH 0x40a00000                     ; 0045ad1a
-    MOV EAX,dword ptr [EAX]             ; 0045ad1f | DAT_01b4d2b4
+    MOV EAX,dword ptr [EAX]             ; 0045ad1f | g_SFreaky_ARRAY_01b4d280[0].control_points[1].z
     PUSH 0xc0a00000                     ; 0045ad21
     MOV dword ptr [ESP + 0x104],EAX     ; 0045ad26
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045ad2d
@@ -256,20 +256,20 @@ section .text
     JZ 0x0045ae08                       ; 0045ade9
         ;   XREF to: 0045ae08 (CONDITIONAL_JUMP)  ; LAB_0045ae08
     MOV EAX,dword ptr [ESP + 0x118]     ; 0045adeb
-    MOV dword ptr [EBX],EAX             ; 0045adf2 | DAT_01b4d2b8
+    MOV dword ptr [EBX],EAX             ; 0045adf2 | g_SFreaky_ARRAY_01b4d280[0].control_points[2].x
     MOV EAX,dword ptr [ESP + 0x11c]     ; 0045adf4
-    MOV dword ptr [EBX + 0x4],EAX       ; 0045adfb | DAT_01b4d2bc
+    MOV dword ptr [EBX + 0x4],EAX       ; 0045adfb | g_SFreaky_ARRAY_01b4d280[0].control_points[2].y
     MOV EAX,dword ptr [ESP + 0x120]     ; 0045adfe
-    MOV dword ptr [EBX + 0x8],EAX       ; 0045ae05 | DAT_01b4d2c0
-    MOV EAX,[0x01fb860c]                ; 0045ae08 | DAT_01fb860c
+    MOV dword ptr [EBX + 0x8],EAX       ; 0045ae05 | g_SFreaky_ARRAY_01b4d280[0].control_points[2].z
+    MOV EAX,[0x01fb860c]                ; 0045ae08 | g_CDemonCamera_01fb8508.position.x
         ;   Label: LAB_0045ae08
     MOV dword ptr [ESP + 0x10c],EAX     ; 0045ae0d
     MOV EAX,0x1fb860c                   ; 0045ae14
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0045ae19 | DAT_01fb8610
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0045ae19 | g_CDemonCamera_01fb8508.position.y
     MOV dword ptr [ESP + 0x110],EAX     ; 0045ae1c
     MOV EAX,0x1fb860c                   ; 0045ae23
     PUSH 0x40a00000                     ; 0045ae28
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0045ae2d | DAT_01fb8614
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0045ae2d | g_CDemonCamera_01fb8508.position.z
     PUSH 0xc0a00000                     ; 0045ae30
     MOV dword ptr [ESP + 0x11c],EAX     ; 0045ae35
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045ae3c
@@ -311,27 +311,27 @@ section .text
     JZ 0x0045af17                       ; 0045aef8
         ;   XREF to: 0045af17 (CONDITIONAL_JUMP)  ; LAB_0045af17
     MOV EAX,dword ptr [ESP + 0x13c]     ; 0045aefa
-    MOV dword ptr [EBX],EAX             ; 0045af01 | DAT_01b4d2c4
+    MOV dword ptr [EBX],EAX             ; 0045af01 | g_SFreaky_ARRAY_01b4d280[0].control_points[3].x
     MOV EAX,dword ptr [ESP + 0x140]     ; 0045af03
-    MOV dword ptr [EBX + 0x4],EAX       ; 0045af0a | DAT_01b4d2c8
+    MOV dword ptr [EBX + 0x4],EAX       ; 0045af0a | g_SFreaky_ARRAY_01b4d280[0].control_points[3].y
     MOV EAX,dword ptr [ESP + 0x144]     ; 0045af0d
-    MOV dword ptr [EBX + 0x8],EAX       ; 0045af14 | DAT_01b4d2cc
+    MOV dword ptr [EBX + 0x8],EAX       ; 0045af14 | g_SFreaky_ARRAY_01b4d280[0].control_points[3].z
     PUSH 0x0                            ; 0045af17
         ;   Label: LAB_0045af17
     LEA EAX,[ESP + 0xcc]                ; 0045af19
-    PUSH dword ptr [EDI + 0x1c]         ; 0045af20 | DAT_01b4d29c
+    PUSH dword ptr [EDI + 0x1c]         ; 0045af20 | g_SFreaky_ARRAY_01b4d280[0].t
     PUSH EAX                            ; 0045af23
     CALL core_spline.cpp_computeSplineBasis_FUN_00533ce0 ; 0045af24
         ;   XREF to: 00533ce0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_00533ce0(float * out_basis, float t, float tension)
     ADD ESP,0xc                         ; 0045af29
     LEA EAX,[EDI + 0x44]                ; 0045af2c
-    PUSH EAX                            ; 0045af2f | DAT_01b4d2c4
+    PUSH EAX                            ; 0045af2f | g_SFreaky_ARRAY_01b4d280[0].control_points[3].x
     LEA EAX,[EDI + 0x38]                ; 0045af30
-    PUSH EAX                            ; 0045af33 | DAT_01b4d2b8
+    PUSH EAX                            ; 0045af33 | g_SFreaky_ARRAY_01b4d280[0].control_points[2].x
     LEA EAX,[EDI + 0x2c]                ; 0045af34
-    PUSH EAX                            ; 0045af37 | DAT_01b4d2ac
+    PUSH EAX                            ; 0045af37 | g_SFreaky_ARRAY_01b4d280[0].control_points[1].x
     LEA EAX,[EDI + 0x20]                ; 0045af38
-    PUSH EAX                            ; 0045af3b | DAT_01b4d2a0
+    PUSH EAX                            ; 0045af3b | g_SFreaky_ARRAY_01b4d280[0].control_points[0].x
     LEA EAX,[ESP + 0xf8]                ; 0045af3c
     PUSH EAX                            ; 0045af43
     LEA EAX,[ESP + 0xdc]                ; 0045af44
@@ -344,20 +344,20 @@ section .text
     JZ 0x0045af6b                       ; 0045af59
         ;   XREF to: 0045af6b (CONDITIONAL_JUMP)  ; LAB_0045af6b
     MOV EDX,dword ptr [EAX]             ; 0045af5b
-    MOV dword ptr [EBX],EDX             ; 0045af5d | DAT_01b4d284
+    MOV dword ptr [EBX],EDX             ; 0045af5d | g_SFreaky_ARRAY_01b4d280[0].position.x
     MOV EDX,dword ptr [EAX + 0x4]       ; 0045af5f
-    MOV dword ptr [EBX + 0x4],EDX       ; 0045af62 | DAT_01b4d288
+    MOV dword ptr [EBX + 0x4],EDX       ; 0045af62 | g_SFreaky_ARRAY_01b4d280[0].position.y
     MOV EDX,dword ptr [EAX + 0x8]       ; 0045af65
-    MOV dword ptr [EBX + 0x8],EDX       ; 0045af68 | DAT_01b4d28c
+    MOV dword ptr [EBX + 0x8],EDX       ; 0045af68 | g_SFreaky_ARRAY_01b4d280[0].position.z
     LEA EAX,[EDI + 0x44]                ; 0045af6b
         ;   Label: LAB_0045af6b
-    PUSH EAX                            ; 0045af6e | DAT_01b4d2c4
+    PUSH EAX                            ; 0045af6e | g_SFreaky_ARRAY_01b4d280[0].control_points[3].x
     LEA EAX,[EDI + 0x38]                ; 0045af6f
-    PUSH EAX                            ; 0045af72 | DAT_01b4d2b8
+    PUSH EAX                            ; 0045af72 | g_SFreaky_ARRAY_01b4d280[0].control_points[2].x
     LEA EAX,[EDI + 0x2c]                ; 0045af73
-    PUSH EAX                            ; 0045af76 | DAT_01b4d2ac
+    PUSH EAX                            ; 0045af76 | g_SFreaky_ARRAY_01b4d280[0].control_points[1].x
     LEA EAX,[EDI + 0x20]                ; 0045af77
-    PUSH EAX                            ; 0045af7a | DAT_01b4d2a0
+    PUSH EAX                            ; 0045af7a | g_SFreaky_ARRAY_01b4d280[0].control_points[0].x
     LEA EAX,[ESP + 0x164]               ; 0045af7b
     PUSH EAX                            ; 0045af82
     LEA EAX,[ESP + 0xdc]                ; 0045af83
@@ -370,21 +370,21 @@ section .text
     JZ 0x0045afaa                       ; 0045af98
         ;   XREF to: 0045afaa (CONDITIONAL_JUMP)  ; LAB_0045afaa
     MOV EDX,dword ptr [EAX]             ; 0045af9a
-    MOV dword ptr [EBX],EDX             ; 0045af9c | DAT_01b4d290
+    MOV dword ptr [EBX],EDX             ; 0045af9c | g_SFreaky_ARRAY_01b4d280[0].tangent.x
     MOV EDX,dword ptr [EAX + 0x4]       ; 0045af9e
-    MOV dword ptr [EBX + 0x4],EDX       ; 0045afa1 | DAT_01b4d294
+    MOV dword ptr [EBX + 0x4],EDX       ; 0045afa1 | g_SFreaky_ARRAY_01b4d280[0].tangent.y
     MOV EDX,dword ptr [EAX + 0x8]       ; 0045afa4
-    MOV dword ptr [EBX + 0x8],EDX       ; 0045afa7 | DAT_01b4d298
+    MOV dword ptr [EBX + 0x8],EDX       ; 0045afa7 | g_SFreaky_ARRAY_01b4d280[0].tangent.z
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 0045afaa
         ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
         ;   Label: LAB_0045afaa
     LEA EAX,[EDI + 0x4]                 ; 0045afaf
-    PUSH EAX                            ; 0045afb2 | DAT_01b4d284
+    PUSH EAX                            ; 0045afb2 | g_SFreaky_ARRAY_01b4d280[0].position.x
     CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0 ; 0045afb3
         ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 0045afb8
     LEA EAX,[EDI + 0x10]                ; 0045afbb
-    PUSH EAX                            ; 0045afbe | DAT_01b4d290
+    PUSH EAX                            ; 0045afbe | g_SFreaky_ARRAY_01b4d280[0].tangent.x
     CALL sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00526090 ; 0045afbf
         ;   XREF to: 00526090 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00526090(CVector3f * velocity_source_ptr)
     ADD ESP,0x4                         ; 0045afc4
@@ -396,7 +396,7 @@ section .text
     PUSH EBX                            ; 0045afdd
     LEA EAX,[ESP + 0x4]                 ; 0045afde
     PUSH EAX                            ; 0045afe2
-    MOV ESI,dword ptr [0x005bed68]      ; 0045afe3 | DAT_005bed68
+    MOV ESI,dword ptr [0x005bed68]      ; 0045afe3 | g_CSound_PTR_005bed68
     PUSH ESI                            ; 0045afe9
     CALL core_sound.cpp_FUN_0052d030    ; 0045afea
         ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052d030(CSound * this_ptr, char * out_result, char * wildcard_pattern)
@@ -406,10 +406,10 @@ section .text
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 0045aff5
         ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005265a0(char * filename)
     ADD ESP,0x4                         ; 0045affa
-    MOV dword ptr [EDI],EAX             ; 0045affd | DAT_01b4d280
+    MOV dword ptr [EDI],EAX             ; 0045affd | g_SFreaky_ARRAY_01b4d280
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 0045afff
         ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
-    MOV dword ptr [EDI + 0x50],EBP      ; 0045b004 | DAT_01b4d2d0
+    MOV dword ptr [EDI + 0x50],EBP      ; 0045b004 | g_SFreaky_ARRAY_01b4d280[0].owner
     ADD ESP,0x164                       ; 0045b007
     POP EBP                             ; 0045b00d
     POP EDI                             ; 0045b00e

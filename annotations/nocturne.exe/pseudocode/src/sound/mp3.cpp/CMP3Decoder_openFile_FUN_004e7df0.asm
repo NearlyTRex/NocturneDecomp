@@ -20,8 +20,8 @@
 ;   TerminatedCString s_Can_t_open_s_0058b977
 ;   TerminatedCString s_sound_mp3_cpp_0058b985
 ;   TerminatedCString s_Error_preparing_to_decod_0058b996
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -64,8 +64,8 @@ section .text
     MOV EAX,0x58b966                    ; 004e7e2a | = "..\\sound\\mp3.cpp"
     MOV EDX,0xe0f                       ; 004e7e2f
     PUSH 0x58b977                       ; 004e7e34 | = "Can't open %s"
-    MOV [0x01cc4800],EAX                ; 004e7e39 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004e7e3e | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004e7e39 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004e7e3e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e7e44
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e7e49
@@ -106,8 +106,8 @@ section .text
     MOV EDX,0x58b93e                    ; 004e7e7b | = "..\\sound\\mp3.cpp"
     MOV ECX,0xe0a                       ; 004e7e80
     PUSH 0x58b94f                       ; 004e7e85 | = "Can't open %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 004e7e8a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004e7e90 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004e7e8a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004e7e90 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e7e96
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e7e9b
@@ -118,8 +118,8 @@ section .text
     MOV ECX,0x58b985                    ; 004e7ea4 | = "..\\sound\\mp3.cpp"
     MOV EBX,0xe14                       ; 004e7ea9
     PUSH 0x58b996                       ; 004e7eae | = "Error preparing to decode %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 004e7eb3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004e7eb9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004e7eb3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004e7eb9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e7ebf
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e7ec4

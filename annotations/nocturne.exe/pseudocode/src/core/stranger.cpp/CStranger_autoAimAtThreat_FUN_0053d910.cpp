@@ -174,17 +174,18 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&CStack_128,&CStack_d0,&CStack_ac);
     fStack_20 = 1e+30;
     iStack_3c = 0;
-    for (iStack_40 = 0; iStack_40 < (int)0x01E57284->enemies[0x6d6]; iStack_40 = iStack_40 + 1) {
+    for (iStack_40 = 0; iStack_40 < g_CDemonSet_PTR_005be368->threat_count;
+        iStack_40 = iStack_40 + 1) {
       pCVar7 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (*(CDemonActor **)((int)0x01E57284->enemies + iStack_3c + 0x1b5c),
+                         (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c),
                           g_CCharacterActorType_00765a60.name_hash);
       if ((pCVar7 == (CCharacter *)0x0) ||
          ((EVar8 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7),
           EVar8 == DEATH_STATE_ALIVE &&
           (iVar9 = (*((pCVar7->base).vtable._ub)->shouldIgnoreForTargeting)((CDemonActor *)pCVar7),
           iVar9 == 0)))) {
-        pCStack_1c = *(CDemonActor **)((int)0x01E57284->enemies + iStack_3c + 0x1b5c);
+        pCStack_1c = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c);
         __arrinit(aCStack_1a0,10,&g_CVectorTypeInfo_005993b0);
         iStack_28 = (*((pCStack_1c->vtable)._ub)->getTargetPoints)(pCStack_1c,aCStack_1a0);
         if ((0 < iStack_28) && (iVar9 = 0, 0 < iStack_28)) {
@@ -216,14 +217,15 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
                          (CStack_b8.z * CStack_d0.z +
                          CStack_b8.x * CStack_d0.x + CStack_b8.y * CStack_d0.y));
                 if (fVar11 < fStack_20) {
-                  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-                  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,2);
+                  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+                  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,2);
                   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                            (0x01E57284,(CDemonActor *)this_ptr);
-                  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,pCStack_1c);
+                            (g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+                  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                            (g_CDemonSet_PTR_005be368,pCStack_1c);
                   iVar10 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                                     (0x01E57284,&CStack_94,&CStack_88);
-                  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+                                     (g_CDemonSet_PTR_005be368,&CStack_94,&CStack_88);
+                  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
                   if (iVar10 == 0) {
                     fStack_38 = aCStack_f4[0].y;
                     fStack_34 = aCStack_f4[0].x;

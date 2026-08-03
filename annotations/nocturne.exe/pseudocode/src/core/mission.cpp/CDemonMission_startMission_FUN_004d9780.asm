@@ -16,18 +16,18 @@
 ;   TerminatedCString s_Can_t_run_mission_no_her_00589e67
 ;   TerminatedCString s_Can_t_run_mission_no_loc_00589e84
 ;   TerminatedCString s_Loading_script_00589ea6
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b9354
-;   int INT_005baca0 = 0x1cc3160
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CLevelLoader* g_CLevelLoader_PTR_005baca0 = 01cc3160
 ;   undefined4 DAT_005be220
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01c77814
-;   undefined4 DAT_01c77820
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CGame_01c775ec.letterbox_mode
+;   undefined4 g_CGame_01c775ec.is_loading
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01e56da0
-;   undefined4 DAT_01e57284
+;   CScript g_CScript_01e56da0
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_0047aa00
@@ -73,8 +73,8 @@ section .text
     MOV dword ptr [EAX],EDX             ; 004d97d8
     CALL core_event.cpp_CEventList_reset_FUN_0047aa00 ; 004d97da
         ;   XREF to: 0047aa00 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_0047aa00(CEventList * this_ptr)
-    MOV EAX,[0x005b9354]                ; 004d97df | DAT_005b9354
-    MOV dword ptr [EAX + 0x228],0x0     ; 004d97e4 | DAT_01c77814
+    MOV EAX,[0x005b9354]                ; 004d97df | g_CGame_PTR_005b9354
+    MOV dword ptr [EAX + 0x228],0x0     ; 004d97e4 | g_CGame_01c775ec.letterbox_mode
     MOV EAX,[0x01cae0e8]                ; 004d97ee | DAT_01cae0e8
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d97f3
     ADD ESP,0x4                         ; 004d97fa
@@ -90,13 +90,13 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d9816
     PUSH EAX                            ; 004d9819
-    MOV EBP,dword ptr [0x005baca0]      ; 004d981a | INT_005baca0
+    MOV EBP,dword ptr [0x005baca0]      ; 004d981a | g_CLevelLoader_PTR_005baca0
     PUSH EBP                            ; 004d9820
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d9821
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
-    MOV EAX,[0x005b9354]                ; 004d9826 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d9826 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004d982b
-    MOV EDX,dword ptr [EAX + 0x234]     ; 004d982e | DAT_01c77820
+    MOV EDX,dword ptr [EAX + 0x234]     ; 004d982e | g_CGame_01c775ec.is_loading
     PUSH EDX                            ; 004d9834
     PUSH EBX                            ; 004d9835
     CALL core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0 ; 004d9836
@@ -112,7 +112,7 @@ section .text
     RET                                 ; 004d9846
     PUSH 0x589e67                       ; 004d9847 | = "Can't run mission - no heros"
         ;   Label: LAB_004d9847
-    MOV EBP,dword ptr [0x005b6d50]      ; 004d984c | DAT_005b6d50
+    MOV EBP,dword ptr [0x005b6d50]      ; 004d984c | g_CEditorTools_PTR_005b6d50
     PUSH EBP                            ; 004d9852
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d9853
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -125,7 +125,7 @@ section .text
     RET                                 ; 004d9861
     PUSH 0x589e84                       ; 004d9862 | = "Can't run mission - no local hero"
         ;   Label: LAB_004d9862
-    MOV EDI,dword ptr [0x005b6d50]      ; 004d9867 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004d9867 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004d986d
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d986e
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -138,17 +138,17 @@ section .text
     RET                                 ; 004d987c
     MOV ECX,dword ptr [0x005be220]      ; 004d987d | DAT_005be220
         ;   Label: LAB_004d987d
-    PUSH ECX                            ; 004d9883 | DAT_01e56da0
+    PUSH ECX                            ; 004d9883 | g_CScript_01e56da0
     CALL core_script.cpp_FUN_004feff0   ; 004d9884
         ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_004feff0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004d9889
     MOV EBX,dword ptr [0x005be220]      ; 004d988c | DAT_005be220
-    PUSH EBX                            ; 004d9892 | DAT_01e56da0
+    PUSH EBX                            ; 004d9892 | g_CScript_01e56da0
     CALL core_script.cpp_CScript_executeInitSection_FUN_004ff170 ; 004d9893
         ;   XREF to: 004ff170 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_executeInitSection_FUN_004ff170(CScript * this_ptr)
     ADD ESP,0x4                         ; 004d9898
-    MOV ESI,dword ptr [0x005be368]      ; 004d989b | DAT_005be368
-    PUSH ESI                            ; 004d98a1 | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 004d989b | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 004d98a1 | g_CDemonSet_01e57284
     CALL core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0 ; 004d98a2
         ;   XREF to: 005135f0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(CDemonSet * this_ptr)
     MOV EAX,0x1                         ; 004d98a7

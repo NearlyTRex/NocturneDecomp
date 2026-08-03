@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_0040fff0(int param_1,undefined4 *param_2)
+; float * core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_0040fff0(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

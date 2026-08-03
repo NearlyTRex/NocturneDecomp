@@ -23,8 +23,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Capture_0057f38f
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c777c0
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.freeze_enemies_enabled
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0
@@ -37,8 +37,8 @@ section .text
     PUSH EBX                            ; 0047a030
         ;   Label: core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
     MOV EBX,dword ptr [ESP + 0x8]       ; 0047a031
-    MOV EAX,[0x005b9354]                ; 0047a035 | DAT_005b9354
-    CMP dword ptr [EAX + 0x1d4],0x0     ; 0047a03a | DAT_01c777c0
+    MOV EAX,[0x005b9354]                ; 0047a035 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 0047a03a | g_CGame_01c775ec.freeze_enemies_enabled
     JNZ 0x0047a05b                      ; 0047a041
         ;   XREF to: 0047a05b (CONDITIONAL_JUMP)  ; LAB_0047a05b
     PUSH 0x57f38f                       ; 0047a043 | = "Capture"

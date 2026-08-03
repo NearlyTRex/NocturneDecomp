@@ -18,8 +18,8 @@
 ;   TerminatedCString s_Unable_to_allocate_u_byt_0058d45d
 ;   TerminatedCString s_cockpit_pkbmpset_cpp_0058d4aa
 ;   WatcomTypeInfo g_CPackedBitmapTypeInfo_005a1340
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_FUN_004f5320
@@ -81,8 +81,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004f53c4
     MOV ECX,0x58d4aa                    ; 004f53c8 | = "..\\cockpit\\pkbmpset.cpp"
     PUSH EAX                            ; 004f53cd
-    MOV dword ptr [0x01cc4804],EDI      ; 004f53ce | INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004f53d4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004f53ce | g_INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f53d4 | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 004f53da
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f53df

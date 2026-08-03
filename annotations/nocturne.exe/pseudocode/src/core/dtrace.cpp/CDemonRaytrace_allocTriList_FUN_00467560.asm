@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_0057e07f
 ;   TerminatedCString s_CDemonRaytrace_allocTriL_0057e092
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -70,8 +70,8 @@ section .text
     MOV EDI,0x57e07f                    ; 004675b2 | = "..\\core\\dtrace.cpp"
     MOV EBP,0xf9                        ; 004675b7
     PUSH 0x57e092                       ; 004675bc | = "CDemonRaytrace::allocTriList - Out of..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004675c1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004675c7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004675c1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004675c7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004675cd
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004675d2

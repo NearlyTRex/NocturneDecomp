@@ -12,7 +12,7 @@ void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(
 
 {
   uint uVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   byte bVar3;
   int aiStackY_1028 [1016];
   int local_40;
@@ -31,10 +31,10 @@ void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(
   local_1c = (uint *)(scanline_y * 0x500 + 0x146ba10 + x_start * 4);
   local_20 = (uint *)(*(int *)(&DAT_01bd4260 + (scanline_y << (DAT_012b0660 & 0x1f)) * 4) +
                      (x_start << (DAT_012b0660 & 0x1f)) * 4);
-  pfVar2 = (float *)(x_start * 0xc + scanline_y * 0xf00 + 0x9bb178);
+  pCVar2 = g_CVector3f_ARRAY_009bb178 + scanline_y * 0x140 + x_start;
   for (; x_start < x_end; x_start = x_start + 1) {
     if ((*local_20 < *local_1c) &&
-       (0.0 <= pfVar2[2] * _DAT_012b0658 + *pfVar2 * _DAT_012b0640 + pfVar2[1] * _DAT_012b064c)) {
+       (0.0 <= pCVar2->z * _DAT_012b0658 + pCVar2->x * _DAT_012b0640 + pCVar2->y * _DAT_012b064c)) {
       core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
                 (_DAT_012b0634,local_24);
       local_40 = local_34;
@@ -60,7 +60,7 @@ void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(
                           (DAT_00b0e600 & 0x1f));
       }
     }
-    pfVar2 = pfVar2 + 3;
+    pCVar2 = pCVar2 + 1;
     local_1c = local_1c + 1;
     local_24 = local_24 + 0xc;
     local_20 = local_20 + (1 << (DAT_012b0660 & 0x1f));

@@ -15,8 +15,8 @@
 ;   TerminatedCString s_CNetGame_sendGameSetting_0058c49d
 ;   TerminatedCString s_core_netgame_cpp_0058c4eb
 ;   TerminatedCString s_CNetGame_send_invalid_pl_0058c4ff
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea404
@@ -49,8 +49,8 @@ section .text
         ;   Label: LAB_004ecf6d
     MOV ESI,0x8a8                       ; 004ecf72
     PUSH 0x58c49d                       ; 004ecf77 | = "CNetGame::sendGameSettingsPacket - sh..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004ecf7c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004ecf82 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 004ecf7c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004ecf82 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ecf88
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ecf8d
@@ -67,8 +67,8 @@ section .text
         ;   Label: LAB_004ecfa7
     MOV EDX,0x8ae                       ; 004ecfac
     PUSH 0x58c4ff                       ; 004ecfb1 | = "CNetGame::send - invalid player index"
-    MOV [0x01cc4800],EAX                ; 004ecfb6 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ecfbb | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004ecfb6 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004ecfbb | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ecfc1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ecfc6

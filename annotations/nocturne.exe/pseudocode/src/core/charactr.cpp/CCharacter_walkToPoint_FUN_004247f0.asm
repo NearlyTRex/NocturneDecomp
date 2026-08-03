@@ -88,8 +88,8 @@
 ;   double DOUBLE_00579f2a = 1.5
 ;   double DOUBLE_00579f32 = 0.5
 ;   double DOUBLE_00579f3a = 4
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -407,8 +407,8 @@ section .text
     RET                                 ; 00424b81
     PUSH 0x579ed8                       ; 00424b82 | = "CCharacter::walkToPoint - go somewher..."
         ;   Label: LAB_00424b82
-    MOV ECX,dword ptr [0x005ad350]      ; 00424b87 | PTR_DAT_005ad350
-    PUSH ECX                            ; 00424b8d | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 00424b87 | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 00424b8d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00424b8e
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     MOV EAX,0xffffffff                  ; 00424b93

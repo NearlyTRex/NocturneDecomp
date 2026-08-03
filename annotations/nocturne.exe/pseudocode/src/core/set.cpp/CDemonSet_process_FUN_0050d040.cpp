@@ -20,9 +20,9 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(CDemonSet *this_ptr)
   int local_14;
   
   iVar2 = 0;
-  if (0 < (int)this_ptr->cameras[0xf7].position.y) {
+  if (0 < this_ptr->light_count) {
     local_14 = 0;
-    this_ptr_00 = (C3DSLight *)&this_ptr->cameras[0xf7].position.z;
+    this_ptr_00 = this_ptr->lights;
     do {
       if (this_ptr_00->light_type == 0) {
         light = *(CDemonLight **)(&DAT_01fb99d4 + local_14);
@@ -53,7 +53,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(CDemonSet *this_ptr)
         }
         iVar1 = _strnicmp(this_ptr_00->name,"moon",4);
         if (iVar1 == 0) {
-          if (this_ptr->renderable_actors[0x75c] == (CDemonActor *)0x0) {
+          if (this_ptr->last_switch_area_invalid == 0) {
             light->light_enabled_flag = 0;
             local_14 = local_14 + 4;
             goto LAB_0050d072;
@@ -65,7 +65,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(CDemonSet *this_ptr)
 LAB_0050d072:
       iVar2 = iVar2 + 1;
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar2 < (int)this_ptr->cameras[0xf7].position.y);
+    } while (iVar2 < this_ptr->light_count);
   }
   return;
 }

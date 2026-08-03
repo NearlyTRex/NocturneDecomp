@@ -79,9 +79,11 @@ void core_cloth_cpp_FUN_00437ab0(int param_1,int param_2,int param_3)
     local_18 = local_18 + 1;
   } while (vertex_index1 < 0xd);
   if (param_3 != 0) {
-    text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(0x01BCD074);
+    text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490
+                           (g_CEditorTools_PTR_005b6d50);
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
-              (0x01BCD074,*(float *)(iVar1 + 0x14) + *(float *)(iVar1 + 0x18),text_color);
+              (g_CEditorTools_PTR_005b6d50,*(float *)(iVar1 + 0x14) + *(float *)(iVar1 + 0x18),
+               text_color);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   return;

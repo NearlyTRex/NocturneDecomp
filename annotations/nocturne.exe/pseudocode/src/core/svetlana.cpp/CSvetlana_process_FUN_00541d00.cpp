@@ -184,7 +184,7 @@ LAB_00542097:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&(param_1->base).base.model.motion_controller,0,1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+                    (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
           goto switchD_005420d7_caseD_4;
         }
         goto LAB_00542097;
@@ -278,10 +278,9 @@ LAB_00541f87:
   EVar7 = (*(((param_1->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)param_1);
   if (EVar7 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_FUN_0051b650;
-    fVar12 = (float)(param_1->hair_cloth).vertices[0x2b5].connected_indices[10];
+    fVar12 = param_1->head_blend_weight;
     iVar4 = _DAT_02dca058;
-    core_xform_cpp_eulerToQuaternion_FUN_0055d610
-              ((param_1->hair_cloth).vertices[0x2b5].connected_indices + 7);
+    core_xform_cpp_eulerToQuaternion_FUN_0055d610(&param_1->head_euler_angles);
     CStack_94.w = fStack_84;
     pfVar10 = (float *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
     *(float *)((int)&CStack_94 + (uint)bVar11 * -8 + 4) = afStack_80[(uint)bVar11 * -2];
@@ -299,8 +298,7 @@ LAB_00541f87:
             (&param_1->cape_cloth,(CVector3f *)local_14,&euler->vec,param_2,
              (param_1->base).base.closest_distance_threshold,model_ptr);
   core_cloth_cpp_CCloth_process_FUN_00436e50
-            ((CCloth *)((param_1->cape_cloth).vertices[0x300].connected_indices + 9),
-             (CVector3f *)local_14,&euler->vec,param_2,
+            (&param_1->hair_cloth,(CVector3f *)local_14,&euler->vec,param_2,
              (param_1->base).base.closest_distance_threshold,model_ptr);
   return;
 }

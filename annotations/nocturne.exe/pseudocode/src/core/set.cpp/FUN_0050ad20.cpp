@@ -34,15 +34,15 @@ void __cdecl core_set_cpp_FUN_0050ad20(CDemonSet *this_ptr)
   }
   iVar4 = 0;
   _DAT_01fb99d0 = 0;
-  if (0 < (int)this_ptr->cameras[0xf7].position.y) {
-    this_ptr_00 = (C3DSLight *)&this_ptr->cameras[0xf7].position.z;
+  if (0 < this_ptr->light_count) {
+    this_ptr_00 = this_ptr->lights;
     do {
       core_setutil_cpp_FUN_00515410(this_ptr_00);
       iVar4 = iVar4 + 1;
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar4 < (int)this_ptr->cameras[0xf7].position.y);
+    } while (iVar4 < this_ptr->light_count);
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0();
-  core_dcamera_cpp_CDemonCamera_free_FUN_004401d0((CDemonCamera *)&DAT_01fb8508);
+  core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(&g_CDemonCamera_01fb8508);
   return;
 }

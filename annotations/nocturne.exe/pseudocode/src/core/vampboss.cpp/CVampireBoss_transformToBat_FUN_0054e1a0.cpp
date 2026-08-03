@@ -11,10 +11,10 @@ void __cdecl core_vampboss_cpp_CVampireBoss_transformToBat_FUN_0054e1a0(CVampire
 {
   CDemonActor_vtable *pCVar1;
   
-  (this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] = 1;
-  (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] = 1;
+  this_ptr->form = 1;
+  this_ptr->bat_ai_state = 1;
   pCVar1 = (this_ptr->base).base.base.vtable._ub;
-  (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = 0x40000000;
+  this_ptr->action_timer = 2.0;
   (*pCVar1->playSound)((CDemonActor *)this_ptr,"voicubat.wav");
   return;
 }

@@ -41,18 +41,18 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 00428671
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fa3fac
-;   undefined4 DAT_01fa3fb0
-;   undefined4 DAT_01fa3fb4
-;   undefined4 DAT_01fa3fb8
-;   undefined4 DAT_01fa3fbc
-;   undefined4 DAT_01fa3fc0
-;   undefined4 DAT_01fa3fd4
-;   undefined4 DAT_01fa3fd8
-;   undefined4 DAT_01fa3fdc
-;   undefined4 DAT_01fa3fe4
-;   undefined4 DAT_01fa3fe8
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.ray_origin.x
+;   undefined4 g_CDemonSet_01e57284.ray_origin.y
+;   undefined4 g_CDemonSet_01e57284.ray_origin.z
+;   undefined4 g_CDemonSet_01e57284.ray_target.x
+;   undefined4 g_CDemonSet_01e57284.ray_target.y
+;   undefined4 g_CDemonSet_01e57284.ray_target.z
+;   undefined4 g_CDemonSet_01e57284.collision_impact_position.x
+;   undefined4 g_CDemonSet_01e57284.collision_impact_position.y
+;   undefined4 g_CDemonSet_01e57284.collision_impact_position.z
+;   undefined4 g_CDemonSet_01e57284.collision_part_index
+;   undefined4 g_CDemonSet_01e57284.collision_bone_index
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -81,8 +81,8 @@ section .text
     CMP EDX,0x5                         ; 00427328
     JGE 0x004276e6                      ; 0042732b
         ;   XREF to: 004276e6 (CONDITIONAL_JUMP)  ; LAB_004276e6
-    MOV ECX,dword ptr [0x005be368]      ; 00427331 | DAT_005be368
-    CMP dword ptr [ECX + 0x14cd60],0x0  ; 00427337 | DAT_01fa3fe4
+    MOV ECX,dword ptr [0x005be368]      ; 00427331 | g_CDemonSet_PTR_005be368
+    CMP dword ptr [ECX + 0x14cd60],0x0  ; 00427337 | g_CDemonSet_01e57284.collision_part_index
     JL 0x004276e6                       ; 0042733e
         ;   XREF to: 004276e6 (CONDITIONAL_JUMP)  ; LAB_004276e6
     LEA EAX,[EDX*0x8 + 0x0]             ; 00427344
@@ -94,26 +94,26 @@ section .text
     LEA EDX,[EBX + 0x2df0]              ; 00427359
     MOV dword ptr [EBX + 0x2dec],EDI    ; 0042735f
     ADD EDX,EAX                         ; 00427365
-    MOV EAX,dword ptr [ECX + 0x14cd60]  ; 00427367 | DAT_01fa3fe4
+    MOV EAX,dword ptr [ECX + 0x14cd60]  ; 00427367 | g_CDemonSet_01e57284.collision_part_index
     MOV dword ptr [EDX],EAX             ; 0042736d
-    MOV EAX,dword ptr [ECX + 0x14cd64]  ; 0042736f | DAT_01fa3fe8
+    MOV EAX,dword ptr [ECX + 0x14cd64]  ; 0042736f | g_CDemonSet_01e57284.collision_bone_index
     MOV dword ptr [ESP + 0x2d8],EDX     ; 00427375
     MOV dword ptr [EDX + 0x4],EAX       ; 0042737c
     TEST EAX,EAX                        ; 0042737f
     JL 0x004276ed                       ; 00427381
         ;   XREF to: 004276ed (CONDITIONAL_JUMP)  ; LAB_004276ed
-    MOV EDX,dword ptr [0x005be368]      ; 00427387 | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 00427387 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00427387
     LEA EAX,[EDX + 0x14cd34]            ; 0042738d
-    FLD float ptr [EAX]                 ; 00427393 | DAT_01fa3fb8
-    FSUB float ptr [EDX + 0x14cd28]     ; 00427395 | DAT_01fa3fac
+    FLD float ptr [EAX]                 ; 00427393 | g_CDemonSet_01e57284.ray_target.x
+    FSUB float ptr [EDX + 0x14cd28]     ; 00427395 | g_CDemonSet_01e57284.ray_origin.x
     FSTP float ptr [ESP + 0x2a4]        ; 0042739b
-    FLD float ptr [EAX + 0x4]           ; 004273a2 | DAT_01fa3fbc
-    FSUB float ptr [EDX + 0x14cd2c]     ; 004273a5 | DAT_01fa3fb0
+    FLD float ptr [EAX + 0x4]           ; 004273a2 | g_CDemonSet_01e57284.ray_target.y
+    FSUB float ptr [EDX + 0x14cd2c]     ; 004273a5 | g_CDemonSet_01e57284.ray_origin.y
     FSTP float ptr [ESP + 0x2a8]        ; 004273ab
-    FLD float ptr [EAX + 0x8]           ; 004273b2 | DAT_01fa3fc0
+    FLD float ptr [EAX + 0x8]           ; 004273b2 | g_CDemonSet_01e57284.ray_target.z
     MOV EAX,dword ptr [ESP + 0x2a4]     ; 004273b5
-    FSUB float ptr [EDX + 0x14cd30]     ; 004273bc | DAT_01fa3fb4
+    FSUB float ptr [EDX + 0x14cd30]     ; 004273bc | g_CDemonSet_01e57284.ray_origin.z
     MOV dword ptr [ESP + 0x2bc],EAX     ; 004273c2
     MOV EAX,dword ptr [ESP + 0x2a8]     ; 004273c9
     MOV dword ptr [ESP + 0x2c0],EAX     ; 004273d0
@@ -167,18 +167,18 @@ section .text
     FMUL float ptr [ESP + 0x2d4]        ; 00427498
     FLD float ptr [ESP + 0x2c4]         ; 0042749f
     FMUL float ptr [ESP + 0x2d4]        ; 004274a6
-    MOV EAX,[0x005be368]                ; 004274ad | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004274ad | g_CDemonSet_PTR_005be368
     FXCH ST2                            ; 004274b2
     FSTP float ptr [ESP + 0x2bc]        ; 004274b4
     FSTP float ptr [ESP + 0x2c0]        ; 004274bb
     FSTP float ptr [ESP + 0x2c4]        ; 004274c2
-    FLD float ptr [EAX + 0x14cd50]      ; 004274c9 | DAT_01fa3fd4
+    FLD float ptr [EAX + 0x14cd50]      ; 004274c9 | g_CDemonSet_01e57284.collision_impact_position.x
     FSUB float ptr [ESP + 0x2bc]        ; 004274cf
     FSTP float ptr [ESP + 0x2c8]        ; 004274d6
-    FLD float ptr [EAX + 0x14cd54]      ; 004274dd | DAT_01fa3fd8
+    FLD float ptr [EAX + 0x14cd54]      ; 004274dd | g_CDemonSet_01e57284.collision_impact_position.y
     FSUB float ptr [ESP + 0x2c0]        ; 004274e3
     FSTP float ptr [ESP + 0x2cc]        ; 004274ea
-    FLD float ptr [EAX + 0x14cd58]      ; 004274f1 | DAT_01fa3fdc
+    FLD float ptr [EAX + 0x14cd58]      ; 004274f1 | g_CDemonSet_01e57284.collision_impact_position.z
     FSUB float ptr [ESP + 0x2c4]        ; 004274f7
     FSTP float ptr [ESP + 0x2d0]        ; 004274fe
     LEA EAX,[ESP + 0x2a4]               ; 00427505

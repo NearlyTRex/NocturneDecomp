@@ -30,10 +30,11 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_p
   local_1c.x = 0.0;
   local_1c.y = 0.0;
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&this_ptr->base,&local_34,&local_1c);
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&this_ptr->base);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,&this_ptr->base);
   if (this_ptr->carried_by_actor != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,this_ptr->carried_by_actor);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+              (g_CDemonSet_PTR_005be368,this_ptr->carried_by_actor);
   }
   core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_94);
   local_94.laser_type = 1;
@@ -66,7 +67,7 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_p
   local_94.is_damaging = 1;
   local_e8.is_damaging = 1;
   local_94.is_hero_weapon = local_e8.is_hero_weapon;
-  core_fire_cpp_FUN_0048b6f0(0x01C08D04,&local_28,&local_34,&local_e8,0);
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+  core_fire_cpp_FUN_0048b6f0(g_CFireEffect_PTR_005b80f0,&local_28,&local_34,&local_e8,0);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   return;
 }

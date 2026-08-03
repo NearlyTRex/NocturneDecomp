@@ -116,8 +116,8 @@ section .text
     MOV EDX,0x596753                    ; 00544f7d | = "..\\engine\\texture.cpp"
     MOV ECX,0xfa                        ; 00544f82
     PUSH 0x596769                       ; 00544f87 | = "CTextureCache::load - Can't find exte..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00544f8c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00544f92 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00544f8c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00544f92 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00544f98
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00544f9d
@@ -220,8 +220,8 @@ section .text
     MOV ECX,0x5967a0                    ; 005450b9 | = "..\\engine\\texture.cpp"
     MOV ESI,0x115                       ; 005450be
     PUSH 0x5967b6                       ; 005450c3 | = "CTextureCache::load - Out of memory. ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 005450c8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005450ce | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 005450c8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 005450ce | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005450d4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005450d9
@@ -436,11 +436,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0xf3                        ; 005452b5
     ADD ESP,0x10                        ; 005452ba
-    MOV [0x01cc4804],EAX                ; 005452bd | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 005452bd | g_INT_01cc4804
     MOV EAX,ESP                         ; 005452c2
     MOV EDI,0x59673d                    ; 005452c4 | = "..\\engine\\texture.cpp"
     PUSH EAX                            ; 005452c9
-    MOV dword ptr [0x01cc4800],EDI      ; 005452ca | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EDI      ; 005452ca | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 005452d0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005452d5

@@ -132,8 +132,8 @@ section .text
     MOV ESI,0x58fbe9                    ; 00504f3d | = "..\\core\\script.cpp"
     MOV EDI,0xed6                       ; 00504f42
     PUSH 0x58fbfc                       ; 00504f47 | = "SCScipt::dbLoad - error parsing %s re..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00504f4c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00504f52 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00504f4c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00504f52 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00504f58
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00504f5d
@@ -223,7 +223,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00505026
     PUSH EAX                            ; 0050502a
     PUSH 0x58fc34                       ; 0050502b | = "Warning! Duplicate wav string %s dete..."
-    MOV ESI,dword ptr [0x005b6d50]      ; 00505030 | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 00505030 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 00505036
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 00505037
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -279,8 +279,8 @@ section .text
     MOV ESI,0x58fbab                    ; 005050ba | = "..\\core\\script.cpp"
     MOV EDI,0xec2                       ; 005050bf
     PUSH 0x58fbbe                       ; 005050c4 | = "Can't open world\\%s"
-    MOV dword ptr [0x01cc4800],ESI      ; 005050c9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005050cf | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 005050c9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005050cf | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005050d5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 005050da
@@ -328,8 +328,8 @@ section .text
         ;   Label: LAB_0050513a
     MOV EAX,0xefb                       ; 0050513f
     PUSH 0x58fc91                       ; 00505144 | = "SCScipt::dbLoad - out of memory"
-    MOV dword ptr [0x01cc4800],EDI      ; 00505149 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0050514f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00505149 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0050514f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00505154
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00505159

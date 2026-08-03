@@ -42,14 +42,14 @@
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005be220
-;   undefined4 DAT_014b98f8
-;   undefined4 DAT_014b98fc
-;   undefined4 DAT_014b9900
-;   undefined4 DAT_014b9904
+;   CBitFont* g_CBitFont_PTR_014b98f8
+;   CBitFont* g_CBitFont_PTR_014b98fc
+;   CBitFont* g_CBitFont_PTR_014b9900
+;   CBitFont* g_CBitFont_PTR_014b9904
 ;   undefined4 DAT_01c789c0
 ;   undefined4 DAT_01c78ac0
 ;   undefined4 DAT_01c78ac4
-;   undefined4 DAT_01e56da0
+;   CScript g_CScript_01e56da0
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -98,15 +98,15 @@ section .text
     JNC 0x0049ac66                      ; 0049abad
         ;   XREF to: 0049ac66 (CONDITIONAL_JUMP)  ; LAB_0049ac66
     MOV EDX,dword ptr [0x005b7620]      ; 0049abb3 | DAT_005b7620
-    MOV EBX,dword ptr [0x014b98f8]      ; 0049abb9 | DAT_014b98f8
+    MOV EBX,dword ptr [0x014b98f8]      ; 0049abb9 | g_CBitFont_PTR_014b98f8
     CMP EDX,0x1e0                       ; 0049abbf
     JGE 0x0049abdb                      ; 0049abc5
         ;   XREF to: 0049abdb (CONDITIONAL_JUMP)  ; LAB_0049abdb
-    MOV EBX,dword ptr [0x014b98fc]      ; 0049abc7 | DAT_014b98fc
+    MOV EBX,dword ptr [0x014b98fc]      ; 0049abc7 | g_CBitFont_PTR_014b98fc
     CMP EDX,0x180                       ; 0049abcd
     JGE 0x0049abdb                      ; 0049abd3
         ;   XREF to: 0049abdb (CONDITIONAL_JUMP)  ; LAB_0049abdb
-    MOV EBX,dword ptr [0x014b9904]      ; 0049abd5 | DAT_014b9904
+    MOV EBX,dword ptr [0x014b9904]      ; 0049abd5 | g_CBitFont_PTR_014b9904
     PUSH 0x58                           ; 0049abdb
         ;   Label: LAB_0049abdb
     PUSH EBX                            ; 0049abdd
@@ -121,12 +121,12 @@ section .text
     ADD ESP,0x8                         ; 0049abf0
     MOV ESI,EAX                         ; 0049abf3
     MOV EAX,[0x005be220]                ; 0049abf5 | DAT_005be220
-    PUSH EAX                            ; 0049abfa | DAT_01e56da0
+    PUSH EAX                            ; 0049abfa | g_CScript_01e56da0
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049abfb
         ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     ADD ESP,0x4                         ; 0049ac00
     MOV EDX,dword ptr [0x005be220]      ; 0049ac03 | DAT_005be220
-    PUSH EDX                            ; 0049ac09 | DAT_01e56da0
+    PUSH EDX                            ; 0049ac09 | g_CScript_01e56da0
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049ac0a
         ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     MOV EDX,dword ptr [0x005b7620]      ; 0049ac0f | DAT_005b7620
@@ -181,7 +181,7 @@ section .text
     SAR EDX,0x1f                        ; 0049aca7
     IDIV ESI                            ; 0049acaa
     MOV dword ptr [ESP + 0x12c],EAX     ; 0049acac
-    MOV EAX,[0x014b9904]                ; 0049acb3 | DAT_014b9904
+    MOV EAX,[0x014b9904]                ; 0049acb3 | g_CBitFont_PTR_014b9904
     MOV EDI,dword ptr [0x005b761c]      ; 0049acb8 | DAT_005b761c
     MOV dword ptr [ESP + 0x130],EAX     ; 0049acbe
     CMP EDI,0x280                       ; 0049acc5
@@ -191,7 +191,7 @@ section .text
         ;   Label: LAB_0049acd1
     JLE 0x0049ace9                      ; 0049acdb
         ;   XREF to: 0049ace9 (CONDITIONAL_JUMP)  ; LAB_0049ace9
-    MOV EAX,[0x014b98f8]                ; 0049acdd | DAT_014b98f8
+    MOV EAX,[0x014b98f8]                ; 0049acdd | g_CBitFont_PTR_014b98f8
     MOV dword ptr [ESP + 0x130],EAX     ; 0049ace2
     PUSH 0x58                           ; 0049ace9
         ;   Label: LAB_0049ace9
@@ -366,15 +366,15 @@ section .text
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
         ;   Label: LAB_0049af41
     ADD ESP,0x4                         ; 0049af46
-    MOV EAX,[0x014b9900]                ; 0049af49 | DAT_014b9900
+    MOV EAX,[0x014b9900]                ; 0049af49 | g_CBitFont_PTR_014b9900
     MOV dword ptr [ESP + 0x138],EAX     ; 0049af4e
-    MOV EAX,[0x01fb8644]                ; 0049af55 | DAT_01fb8644
+    MOV EAX,[0x01fb8644]                ; 0049af55 | g_CDemonCamera_01fb8508.screen_width
     CMP EAX,0x1e0                       ; 0049af5a
     JGE 0x0049af6d                      ; 0049af5f
         ;   XREF to: 0049af6d (CONDITIONAL_JUMP)  ; LAB_0049af6d
-    MOV EAX,[0x014b9904]                ; 0049af61 | DAT_014b9904
+    MOV EAX,[0x014b9904]                ; 0049af61 | g_CBitFont_PTR_014b9904
     MOV dword ptr [ESP + 0x138],EAX     ; 0049af66
-    MOV EDX,dword ptr [0x01fb8644]      ; 0049af6d | DAT_01fb8644
+    MOV EDX,dword ptr [0x01fb8644]      ; 0049af6d | g_CDemonCamera_01fb8508.screen_width
         ;   Label: LAB_0049af6d
     LEA EAX,[EDX*0x8 + 0x0]             ; 0049af73
     ADD EDX,EAX                         ; 0049af7a
@@ -408,13 +408,13 @@ section .text
     MOV EAX,[0x005b7620]                ; 0049afd4 | DAT_005b7620
     MOV EDI,dword ptr [0x005be220]      ; 0049afd9 | DAT_005be220
     SUB EAX,EBX                         ; 0049afdf
-    PUSH EDI                            ; 0049afe1 | DAT_01e56da0
+    PUSH EDI                            ; 0049afe1 | g_CScript_01e56da0
     MOV EBX,EAX                         ; 0049afe2
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049afe4
         ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     SUB EBX,EAX                         ; 0049afe9
     MOV EAX,EBX                         ; 0049afeb
-    MOV EDX,dword ptr [0x014b9904]      ; 0049afed | DAT_014b9904
+    MOV EDX,dword ptr [0x014b9904]      ; 0049afed | g_CBitFont_PTR_014b9904
     SUB EAX,ESI                         ; 0049aff3
     ADD ESP,0x4                         ; 0049aff5
     MOV ESI,EAX                         ; 0049aff8
@@ -469,7 +469,7 @@ section .text
         ;   Label: LAB_0049b086
     JMP 0x0049af41                      ; 0049b08b
         ;   XREF to: 0049af41 (UNCONDITIONAL_JUMP)  ; LAB_0049af41
-    MOV EAX,[0x014b98fc]                ; 0049b090 | DAT_014b98fc
+    MOV EAX,[0x014b98fc]                ; 0049b090 | g_CBitFont_PTR_014b98fc
         ;   Label: LAB_0049b090
     MOV dword ptr [ESP + 0x130],EAX     ; 0049b095
     JMP 0x0049acd1                      ; 0049b09c

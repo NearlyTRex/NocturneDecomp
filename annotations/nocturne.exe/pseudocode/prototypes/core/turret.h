@@ -53,7 +53,7 @@ undefined4 CTurret::aimAtTarget(CDemonActor *param_1,float *param_2,float param_
 
 // Original: core_turret.cpp_CTurret_getInteractionInfo_FUN_0054a800
 // Address: 0054a800
-void CTurret::getInteractionInfo(int param_1,undefined4 *param_2);
+void CTurret::getInteractionInfo(CDemonActor *param_1,SInteractionInfo *param_2);
 
 // Original: core_turret.cpp_CTurret_startInteraction_FUN_0054a870
 // Address: 0054a870

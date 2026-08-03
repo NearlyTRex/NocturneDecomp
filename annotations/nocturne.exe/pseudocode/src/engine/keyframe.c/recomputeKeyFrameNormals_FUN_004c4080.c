@@ -31,13 +31,13 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004c4080(SMRGLPrimit
     iVar1 = (primitive_list->base).base.type;
   }
   if (vertex_data == (CVector3i *)0x0) {
-    PTR_01cc4800 = "..\\engine\\keyframe.c";
-    INT_01cc4804 = 0x1f5;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\keyframe.c";
+    g_INT_01cc4804 = 0x1f5;
     core_main_c_FUN_004c8440("recomputeKeyFrameNormals: Cannot find vptr");
   }
   if (pSVar3 == (SMRGLPrimitiveTriangle *)0x0) {
-    PTR_01cc4800 = "..\\engine\\keyframe.c";
-    INT_01cc4804 = 0x1f6;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\keyframe.c";
+    g_INT_01cc4804 = 0x1f6;
     core_main_c_FUN_004c8440("recomputeKeyFrameNormals: Cannot find fptr");
   }
   do {

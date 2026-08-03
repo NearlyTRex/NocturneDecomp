@@ -18,8 +18,8 @@ void engine_drender_cpp_FUN_0045ed40(void)
   if (in_stack_00000008 != 1) {
     return;
   }
-  PTR_01cc4800 = "..\\engine\\drender.cpp";
-  INT_01cc4804 = 0x9b;
+  g_CHAR_PTR_01cc4800 = "..\\engine\\drender.cpp";
+  g_INT_01cc4804 = 0x9b;
   core_main_c_FUN_004c8440("Ortho isn't supported any more");
   return;
 }

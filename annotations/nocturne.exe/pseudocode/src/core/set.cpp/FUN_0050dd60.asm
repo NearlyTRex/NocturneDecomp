@@ -6,11 +6,11 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c777dc
-;   undefined4 DAT_01c777e0
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.scripted_sequence_active
+;   undefined4 g_CGame_01c775ec.render_mode
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0050d640
@@ -24,11 +24,11 @@ section .text
     PUSH EBX                            ; 0050dd60
         ;   Label: core_set.cpp_FUN_0050dd60
     PUSH EBP                            ; 0050dd61
-    MOV EAX,[0x005b9354]                ; 0050dd62 | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0x1f0],0x0     ; 0050dd67 | DAT_01c777dc
+    MOV EAX,[0x005b9354]                ; 0050dd62 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0x1f0],0x0     ; 0050dd67 | g_CGame_01c775ec.scripted_sequence_active
     JNZ 0x0050ddaa                      ; 0050dd6e
         ;   XREF to: 0050ddaa (CONDITIONAL_JUMP)  ; LAB_0050ddaa
-    CMP dword ptr [EAX + 0x1f4],0x0     ; 0050dd70 | DAT_01c777e0
+    CMP dword ptr [EAX + 0x1f4],0x0     ; 0050dd70 | g_CGame_01c775ec.render_mode
     JZ 0x0050dd8c                       ; 0050dd77
         ;   XREF to: 0050dd8c (CONDITIONAL_JUMP)  ; LAB_0050dd8c
     MOV EBX,dword ptr [0x005ae704]      ; 0050dd79 | DAT_005ae704

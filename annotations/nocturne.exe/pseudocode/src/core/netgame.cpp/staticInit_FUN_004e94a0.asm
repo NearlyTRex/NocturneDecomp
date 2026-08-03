@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d16408
+;   int g_INT_01d16408
 ;   undefined4 DAT_01d1640c
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     MOV EDX,0x405                       ; 004e94ce
     ADD ESP,0xc                         ; 004e94d3
     XOR AH,AH                           ; 004e94d6
-    MOV dword ptr [0x01d16408],EDX      ; 004e94d8 | DAT_01d16408
+    MOV dword ptr [0x01d16408],EDX      ; 004e94d8 | g_INT_01d16408
     MOV byte ptr [0x01d1640c],AH        ; 004e94de | DAT_01d1640c
     RET                                 ; 004e94e4
 

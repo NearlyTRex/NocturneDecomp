@@ -25,13 +25,13 @@ int sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(uint param_1,int
   byte auStack_1ac [412];
   
   if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {
-    PTR_01cc4800 = "..\\sound\\snddx.cpp";
-    INT_01cc4804 = 0x2be;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
+    g_INT_01cc4804 = 0x2be;
     core_main_c_FUN_004c8440("DirectSoundDevice::allocateSfx - Invalid sample handle: %d",param_2);
   }
   if (_DAT_02dc9214 == (int *)0x0) {
-    PTR_01cc4800 = "..\\sound\\snddx.cpp";
-    INT_01cc4804 = 0x2bf;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
+    g_INT_01cc4804 = 0x2bf;
     core_main_c_FUN_004c8440("DirectSoundDevice::allocateSfx - dSound not allocated?");
   }
   iVar7 = 1;
@@ -45,7 +45,7 @@ int sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(uint param_1,int
   }
   if (0x1e < iVar7) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"DirectSoundDevice::allocateSfx - no free buffers\n");
+              (g_CConsole_PTR_005ad350,"DirectSoundDevice::allocateSfx - no free buffers\n");
     return 0;
   }
   piVar2 = *(int **)(iVar7 * 4 + 0x2dc92a8);

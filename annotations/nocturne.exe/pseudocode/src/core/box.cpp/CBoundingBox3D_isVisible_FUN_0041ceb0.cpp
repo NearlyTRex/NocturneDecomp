@@ -60,7 +60,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *t
     }
     else {
       core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
-                (&DAT_01fb8508,&local_14,local_74);
+                (&g_CDemonCamera_01fb8508,&local_14,local_74);
       if (65000 < _DAT_01c038f4) {
         return 0;
       }

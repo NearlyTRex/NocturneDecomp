@@ -29,6 +29,6 @@ int __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_00479ab0(CEnemy *this_ptr,CDe
   pCVar1 = core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(&CStack_5c,&CStack_20,pCVar1);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(target,&CStack_44,pCVar1);
   iVar2 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0
-                    (0x01E57284,&CStack_38,&CStack_44);
+                    (g_CDemonSet_PTR_005be368,&CStack_38,&CStack_44);
   return (uint)(iVar2 == 0);
 }

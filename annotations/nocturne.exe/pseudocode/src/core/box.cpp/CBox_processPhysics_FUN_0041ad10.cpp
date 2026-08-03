@@ -131,7 +131,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(CBox *this_ptr,float 
          local_344.scrape_points[7].previous_position.x + 1.0;
     local_344.position.y = local_344.position.y + 1.6145507525740408e-314._0_4_;
     local_18 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                         ((CDemonRaytrace *)&DAT_01fba938,
+                         (&g_CDemonRaytrace_01fba938,
                           (CVector3f *)&local_344.scrape_points[7].transformed_position.z,
                           &local_344.position,&local_344.scrape_points[3].local_position,(int *)0x0)
     ;
@@ -317,7 +317,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(CBox *this_ptr,float 
           if ((float)0.01 <
               SQRT(local_78 * local_78 + local_80 * local_80 + local_7c * local_7c)) {
             local_18 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                                 ((CDemonRaytrace *)&DAT_01fba938,local_6c,pCVar9,
+                                 (&g_CDemonRaytrace_01fba938,local_6c,pCVar9,
                                   &local_28->raytrace_normal,(int *)0x0);
             pCVar13->scrape_points[0].raytrace_intersection = local_18;
             fVar1 = pCVar13->scrape_points[0].raytrace_intersection;

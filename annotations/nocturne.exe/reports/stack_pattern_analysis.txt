@@ -7,7 +7,7 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 535 / 5626
+Functions with stack patterns: 535 / 5637
 
 Pattern type counts:
   stack_alignment                  416
@@ -85,11 +85,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0040a429: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740
-    File: core/actor.cpp, Suspects: 10
+    File: core/actor.cpp, Suspects: 9
     - [stack_alignment] at 0040a74c: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0
-    File: core/actor.cpp, Suspects: 24
+    File: core/actor.cpp, Suspects: 27
     - [alt_frame_pointer] at 0040ae12: MOV EDI,ESP
 
   core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040b200
@@ -97,7 +97,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0040b207: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
-    File: core/actor.cpp, Suspects: 102
+    File: core/actor.cpp, Suspects: 44
     - [stack_alignment] at 0040b30c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040c7f0
@@ -206,7 +206,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0041acb7: AND ESP,0xfffffff8
 
   core_box.cpp_CBox_processPhysics_FUN_0041ad10
-    File: core/box.cpp, Suspects: 34
+    File: core/box.cpp, Suspects: 32
     - [stack_alignment] at 0041ad1c: AND ESP,0xfffffff8
 
   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450
@@ -230,7 +230,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0041ef98: AND ESP,0xfffffff8
 
   core_boxactor.cpp_FUN_0041f6e0
-    File: core/boxactor.cpp, Suspects: 6
+    File: core/boxactor.cpp, Suspects: 4
     - [stack_alignment] at 0041f6ec: AND ESP,0xfffffff8
 
   core_bride.cpp_CBride_processDismemberment_FUN_00420a10
@@ -265,5 +265,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 21.4 suspects/function
-  Without stack patterns: avg 7.6 suspects/function
+  With stack patterns:    avg 20.5 suspects/function
+  Without stack patterns: avg 7.4 suspects/function

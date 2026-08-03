@@ -15,8 +15,8 @@
 ;   TerminatedCString s_sound_snddx_cpp_005946ae
 ;   TerminatedCString s_DirectSoundDevice_getSfx_005946c1
 ;   TerminatedCString s_Get_playback_cursor_of_h_005946f7
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -49,8 +49,8 @@ section .text
         ;   Label: LAB_0052b8a2
     MOV EDI,0x3a7                       ; 0052b8a7
     PUSH 0x5946c1                       ; 0052b8ac | = "DirectSoundDevice::getSfxPlaybackPos ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0052b8b1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0052b8b7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0052b8b1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0052b8b7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052b8bd
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052b8c2

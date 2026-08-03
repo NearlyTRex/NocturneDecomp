@@ -32,7 +32,7 @@ void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CEnemy *param_1,SDamageI
             (&this_ptr->motion_controller,iVar4,1);
 LAB_00454e65:
   iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
-                    (0x02DC9450,*(uint *)(param_1[1].base.base.actor_name + 8));
+                    (g_CSound_PTR_005bed68,*(uint *)(param_1[1].base.base.actor_name + 8));
   if (iVar4 != 0) {
     core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
     return;

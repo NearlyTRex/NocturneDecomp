@@ -70,7 +70,7 @@ void core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CDemonActor *param
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
       return;
     }
-    *(uint *)(0x01E57284 + 0x15a890) = 1;
+    g_CDemonSet_PTR_005be368->per_pixel_lighting_enabled = 1;
     CStack_14.x = (int)ROUND((param_1->location).position.x * _DAT_005a1360);
     CStack_14.y = (int)ROUND((param_1->location).position.y * _DAT_005a1360);
     CStack_14.z = (int)ROUND((param_1->location).position.z * _DAT_005a1360);
@@ -79,7 +79,7 @@ void core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CDemonActor *param
                    (_DAT_007f7370,&CStack_14,(SProjectedVertex *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               ((CKeyFramedModelInstance *)(param_1 + 1),0.0,-1);
-    *(uint *)(0x01E57284 + 0x15a890) = 0;
+    g_CDemonSet_PTR_005be368->per_pixel_lighting_enabled = 0;
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
   return;

@@ -41,14 +41,14 @@ uint core_box_cpp_FUN_0041d050(CBoundingBox3D *param_1)
     local_20.y = (int)ROUND(local_2c.y * _DAT_0059aa80);
     local_20.z = (int)ROUND(local_2c.z * _DAT_0059aa80);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              ((SProjectedVertex *)(*0x01B4D738 + iVar2),&local_20);
+              ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + iVar2),&local_20);
     if ((*(byte *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x + iVar2 + 3) &
         0x80) == 0) {
       uVar1 = 0;
     }
     else {
       local_14 = 1;
-      uVar1 = uVar1 & *(uint *)(iVar2 + 0x10 + *0x01B4D738);
+      uVar1 = uVar1 & *(uint *)(iVar2 + 0x10 + *(int *)PTR_DAT_005ae700);
     }
     corner_index = corner_index + 1;
     iVar2 = iVar2 + 0x30;
@@ -77,7 +77,8 @@ uint core_box_cpp_FUN_0041d050(CBoundingBox3D *param_1)
     local_54 = 0;
     local_50 = 4;
     local_4c = 6;
-    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,&SStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
+                      (g_CDemonSet_PTR_005be368,&SStack_6c);
     uVar3 = uVar4;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -92,7 +93,8 @@ uint core_box_cpp_FUN_0041d050(CBoundingBox3D *param_1)
     local_50 = 3;
     local_4c = 7;
     local_48 = 5;
-    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,&SStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
+                      (g_CDemonSet_PTR_005be368,&SStack_6c);
     uVar3 = uVar4;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -107,7 +109,8 @@ uint core_box_cpp_FUN_0041d050(CBoundingBox3D *param_1)
     local_54 = 0;
     local_50 = 1;
     local_4c = 5;
-    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,&SStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
+                      (g_CDemonSet_PTR_005be368,&SStack_6c);
     uVar3 = uVar4;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -122,7 +125,8 @@ uint core_box_cpp_FUN_0041d050(CBoundingBox3D *param_1)
     local_50 = 6;
     local_4c = 7;
     local_48 = 3;
-    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,&SStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
+                      (g_CDemonSet_PTR_005be368,&SStack_6c);
     uVar3 = uVar4;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -137,7 +141,8 @@ uint core_box_cpp_FUN_0041d050(CBoundingBox3D *param_1)
     local_54 = 0;
     local_50 = 2;
     local_4c = 3;
-    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,&SStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
+                      (g_CDemonSet_PTR_005be368,&SStack_6c);
     uVar3 = uVar4;
     if (iVar2 != 0) goto LAB_0041d3f6;
     uVar3 = 0;
@@ -152,7 +157,8 @@ uint core_box_cpp_FUN_0041d050(CBoundingBox3D *param_1)
     local_50 = 5;
     local_4c = 7;
     local_48 = 6;
-    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(0x01E57284,&SStack_6c);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
+                      (g_CDemonSet_PTR_005be368,&SStack_6c);
     uVar3 = uVar4;
     if (iVar2 == 0) {
       uVar3 = 0;

@@ -12,8 +12,8 @@
 ;   TerminatedCString s_Old_func_d_005774c8
 ;   TerminatedCString s_engine_3d_c_005774d6
 ;   undefined4 DAT_006b0288
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -39,8 +39,8 @@ section .text
     MOV EAX,ESP                         ; 004063e2
     MOV ECX,0x5774d6                    ; 004063e4 | = "..\\engine\\3d.c"
     PUSH EAX                            ; 004063e9
-    MOV dword ptr [0x01cc4804],EBX      ; 004063ea | INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004063f0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004063ea | g_INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004063f0 | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 004063f6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     MOV EAX,0x6b0288                    ; 004063fb | DAT_006b0288

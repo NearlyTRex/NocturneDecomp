@@ -13,7 +13,6 @@ int sound_sndmain_cpp_FUN_00522e00(uint param_1,uint param_2,uint param_3,uint p
 {
   int iVar1;
   int iVar2;
-  int iVar3;
   
   if (_DAT_02dc8318 != (int *)0x0) {
     do {
@@ -21,23 +20,22 @@ int sound_sndmain_cpp_FUN_00522e00(uint param_1,uint param_2,uint param_3,uint p
       if (iVar1 != 0) {
         return iVar1;
       }
-      iVar3 = 0;
+      iVar2 = 0;
       iVar1 = _DAT_02dc1ed8;
       do {
         iVar1 = iVar1 + 1;
         if (0x3f < iVar1) {
           iVar1 = 0;
         }
-        iVar2 = iVar1 * 0x168;
-        if (((*(int *)(iVar2 + 0x2dc2008) == 0) && (*(int *)(iVar2 + 0x2dc200c) != 0)) &&
-           (*(int *)(iVar2 + 0x2dc2004) == 0)) {
-          sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60
-                    ((CSfxSample *)(&DAT_02dc1edc + iVar2));
+        if (((g_CSfxSample_ARRAY_02dc1edc[iVar1].ref_count == 0) &&
+            (g_CSfxSample_ARRAY_02dc1edc[iVar1].buffer_id != 0)) &&
+           (g_CSfxSample_ARRAY_02dc1edc[iVar1].taken == 0)) {
+          sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(g_CSfxSample_ARRAY_02dc1edc + iVar1);
           break;
         }
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < 0x40);
-    } while (iVar3 < 0x40);
+        iVar2 = iVar2 + 1;
+      } while (iVar2 < 0x40);
+    } while (iVar2 < 0x40);
     sound_sndmain_cpp_FUN_00529980("allocateHwSample - failed\n");
   }
   return 0;

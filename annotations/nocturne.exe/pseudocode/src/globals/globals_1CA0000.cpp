@@ -18,3 +18,6 @@ CDemonActorType g_CHighPriestOfGardathActorType_01cae24c = {};
 CDemonActorType g_CIcePickActorType_01cae2d0 = {};
 CDemonActorType g_CImpActorType_01cae33c = {};
 
+// CGround
+CGround g_CGround_01cadf80 = {};
+

@@ -22,7 +22,7 @@ uint sound_sndmain_cpp_FUN_00526f00(void)
   (this_ptr->options).position_format = 2;
   (this_ptr->options).position_source_ptr = in_stack_00000008;
   sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(this_ptr,0.0);
-  if (((this_ptr->options).dead != 0) && (_DAT_02dc8318 != (int *)0x0)) {
+  if ((this_ptr->hardware_buffer_handle != 0) && (_DAT_02dc8318 != (int *)0x0)) {
     (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,2);
   }
   sound_sndmain_cpp_unlockSound_FUN_00528890();

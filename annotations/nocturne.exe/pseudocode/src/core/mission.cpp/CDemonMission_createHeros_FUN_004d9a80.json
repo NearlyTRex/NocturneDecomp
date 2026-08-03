@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 7,
-        "line": 26,
-        "message": "indirection requires pointer operand ('int' invalid)"
       },
       {
         "category": "undeclared_identifier",
@@ -74,14 +68,8 @@
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
-        "category": "other",
-        "column": 21,
-        "line": 28,
-        "message": "indirection requires pointer operand ('int' invalid)"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 24,
+        "column": 28,
         "line": 34,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
@@ -92,12 +80,6 @@
         "message": "use of undeclared identifier '_DAT_01cae0d4'; did you mean 'DAT_005ae4d4'?"
       },
       {
-        "category": "other",
-        "column": 31,
-        "line": 38,
-        "message": "subscripted value is not an array, pointer, or vector"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 13,
         "line": 39,
@@ -105,15 +87,27 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 40,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
+        "column": 13,
+        "line": 45,
+        "message": "use of undeclared identifier '_DAT_01cae0d4'; did you mean 'DAT_005ae4d4'?"
       },
       {
-        "category": "incompatible_types",
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 62,
+        "message": "use of undeclared identifier '_DAT_01cae0d4'; did you mean 'DAT_005ae4d4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 64,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 22,
-        "line": 40,
-        "message": "assigning to 'int' from incompatible type 'const char[20]'"
+        "line": 66,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
     "success": false,
@@ -122,18 +116,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 108,
+    "complexity_score": 84,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 69,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 210
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -215,25 +208,25 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005bdee0",
-      "name": "DAT_005bdee0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CNetGame_PTR_005bdee0",
+      "type": "CNetGame*",
+      "value": "01cea280"
     },
     {
       "addr": "01c776ac",
-      "name": "DAT_01c776ac",
+      "name": "g_CGame_01c775ec.hero_number",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776b0",
-      "name": "DAT_01c776b0",
+      "name": "g_CGame_01c775ec.aim_mode",
       "type": "undefined4",
       "value": null
     },
@@ -251,37 +244,37 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea280",
-      "name": "DAT_01cea280",
-      "type": "undefined4",
+      "name": "g_CNetGame_01cea280",
+      "type": "CNetGame",
       "value": null
     },
     {
       "addr": "01cea29c",
-      "name": "DAT_01cea29c",
+      "name": "g_CNetGame_01cea280.player_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cea2b8",
-      "name": "DAT_01cea2b8",
+      "name": "g_CNetGame_01cea280.players[0].aim_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cea394",
-      "name": "DAT_01cea394",
+      "name": "g_CNetGame_01cea280.local_player_index",
       "type": "undefined4",
       "value": null
     }
@@ -400,22 +393,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(int *)(iVar3 + 0x34 + (int)0x01CEA280",
-      "severity": "moderate",
-      "text": "(this_ptr,iVar4,*(int *)(iVar3 + 0x34 + (int)0x01CEA280),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(uint *)((int)0x01CEA280",
-      "severity": "moderate",
-      "text": "*(uint *)((int)0x01CEA280 + iVar3 + 0x38);",
-      "type": "pointer_cast"
     }
   ]
 }

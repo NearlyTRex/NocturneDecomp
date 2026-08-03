@@ -74,12 +74,12 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
   
   if ((this_ptr->follow_orders != 0) && (this_ptr->boss_actor == (CDemonActor *)0x0)) {
     iVar16 = 0;
-    for (iVar17 = 0; iVar17 < *(int *)(0x01E57284 + 0x150bf4); iVar17 = iVar17 + 1) {
+    for (iVar17 = 0; iVar17 < g_CDemonSet_PTR_005be368->enemy_count; iVar17 = iVar17 + 1) {
       iVar12 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                         (*(CDemonActor **)(iVar16 + 0x150bf8 + 0x01E57284),
+                         (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16),
                           "CVampireBoss");
       if (iVar12 != 0) {
-        this_ptr->boss_actor = *(CDemonActor **)(iVar16 + 0x150bf8 + 0x01E57284);
+        this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16);
         break;
       }
       iVar16 = iVar16 + 4;
@@ -121,8 +121,8 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
          delta_time * this_ptr->rot_speed * 2.0f + (this_ptr->base).base.base.orient.vec.z
     ;
     fVar15 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                       ((CDemonRaytrace *)&DAT_01fba938,&local_dc,&pCVar3->position,&local_a0,
-                        (int *)0x0);
+                       (&g_CDemonRaytrace_01fba938,&local_dc,&pCVar3->position,&local_a0,(int *)0x0)
+    ;
     if ((0.0 <= fVar15) && (fVar15 < 1.0)) {
       fVar4 = ((this_ptr->base).base.base.location.position.y - local_dc.y) * fVar15 *
               0.8f;
@@ -197,9 +197,9 @@ LAB_0054b592:
     if (fVar15 < 0.0) {
       this_ptr->attack_timer = 0.0;
     }
-    if (*0x01CEA280 != 0) {
-      PTR_01cc4800 = "..\\core\\tvbat.cpp";
-      INT_01cc4804 = 0x10a;
+    if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+      g_CHAR_PTR_01cc4800 = "..\\core\\tvbat.cpp";
+      g_INT_01cc4804 = 0x10a;
       core_main_c_FUN_004c8440("CTVBat::process - can't follow orders in network game!");
     }
     iVar16 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
@@ -248,7 +248,7 @@ LAB_0054b592:
       (*(((pCVar11->base).vtable._uc)->_uc).processDamage)(pCVar11,&local_16c);
       if (0.0 < local_16c.damage_amount) {
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                  ((CGore *)INT_005b96c4,&(this_ptr->base).base.base.location.position,
+                  (g_CGore_PTR_005b96c4,&(this_ptr->base).base.base.location.position,
                    (CVector3f *)0x0,3,0);
       }
     }

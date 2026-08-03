@@ -15,7 +15,7 @@ CBloodSplat * __cdecl core_gore_cpp_CGore_allocateBloodSplat_FUN_004b0140(CGore 
   int iVar2;
   
   iVar2 = _DAT_01c7ccec + 1;
-  pCVar1 = (CBloodSplat *)(_DAT_01c7ccec * 0x44 + 0x1c7ccf4);
+  pCVar1 = g_CBloodSplat_ARRAY_01c7ccf4 + _DAT_01c7ccec;
   if (1999 < iVar2) {
     iVar2 = 0;
   }

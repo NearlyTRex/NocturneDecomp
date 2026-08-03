@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e52a64
+;   undefined4 g_CDemonPod_01e528d0.vtable
 ;
 ; Called Functions:
 ;   crt_unknown.c__atexit_FUN_00564bb0
@@ -22,7 +22,7 @@ section .text
     ADD ESP,0x4                         ; 004f928a
     MOV EDX,0x5a14f4                    ; 004f928d
     PUSH 0x5be1bc                       ; 004f9292
-    MOV dword ptr [0x01e52a64],EDX      ; 004f9297 | DAT_01e52a64
+    MOV dword ptr [0x01e52a64],EDX      ; 004f9297 | g_CDemonPod_01e528d0.vtable
     CALL crt_unknown.c__atexit_FUN_00564bb0 ; 004f929d
         ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004f92a2

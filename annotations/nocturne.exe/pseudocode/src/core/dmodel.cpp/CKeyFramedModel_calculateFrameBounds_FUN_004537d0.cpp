@@ -17,11 +17,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(C
   
   local_28.max.y = 0.0;
   if (0 < model_ptr->frame_count) {
-    local_28.max.z = (float)&model_ptr->texture_list[7].textures[1].base.count;
+    local_28.max.z = (float)&model_ptr->bounds;
     local_28.max.x = 0.0;
     do {
-      this_ptr_00 = (CBoundingBox3D *)
-                    (model_ptr->texture_list[7].textures[2].base.count + (int)local_28.max.x);
+      this_ptr_00 = (CBoundingBox3D *)((int)&(model_ptr->frame_bounds->min).x + (int)local_28.max.x)
+      ;
       pCVar1 = model_ptr->vertex_list + (int)local_28.max.y * model_ptr->vertex_count;
       local_28.min.z = (float)0.00390625;
       local_28.min.x = (float)pCVar1->x * local_28.min.z;

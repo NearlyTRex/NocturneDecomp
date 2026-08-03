@@ -20,9 +20,9 @@
 ;   TerminatedCString s_engine_pod_cpp_0058dcb8
 ;   TerminatedCString s_Invalid_pod_version_for_0058dcca
 ;   TerminatedCString s_rb_0058dce9
-;   undefined4 DAT_005b6d50
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01e428d0
 ;   undefined4 DAT_01e428d1
 ;
@@ -54,7 +54,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x248]     ; 004f8eba
     PUSH EDX                            ; 004f8ec1
     PUSH 0x58dc61                       ; 004f8ec2 | = "Computing CRC over entire pod: %s..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 004f8ec7 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004f8ec7 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004f8ecd
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004f8ece
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
@@ -78,8 +78,8 @@ section .text
     MOV ESI,0x58dc86                    ; 004f8efb | = "..\\engine\\pod.cpp"
     MOV EDI,0x37a                       ; 004f8f00
     PUSH 0x58dc98                       ; 004f8f05 | = "Can't mount %s to check version"
-    MOV dword ptr [0x01cc4800],ESI      ; 004f8f0a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f8f10 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004f8f0a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004f8f10 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f8f16
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004f8f1b
@@ -244,8 +244,8 @@ section .text
     MOV EAX,0x58dcb8                    ; 004f90ca | = "..\\engine\\pod.cpp"
     MOV EDX,0x385                       ; 004f90cf
     PUSH 0x58dcca                       ; 004f90d4 | = "Invalid pod version for %s: %d"
-    MOV [0x01cc4800],EAX                ; 004f90d9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004f90de | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004f90d9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004f90de | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f90e4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004f90e9

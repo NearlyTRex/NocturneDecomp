@@ -53,10 +53,10 @@ switchD_004bca56_default:
     if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
       local_14 = 0.02;
     }
-    if (*(int *)(0x01C775EC + 0x1e0) != 0) {
+    if (g_CGame_PTR_005b9354->gratuitous_dismemberment != 0) {
       local_14 = 1.0;
     }
-    if (*(int *)(0x01C775EC + 0x14) == 0) {
+    if (g_CGame_PTR_005b9354->blood_flag == 0) {
       local_14 = 0.0;
     }
     iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(local_14);

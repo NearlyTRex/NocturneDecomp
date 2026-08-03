@@ -36,7 +36,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e
       if (0x300 < iVar4) {
         return 1;
       }
-      light_source = (CDemonLight *)&(light_source->base).base.position;
+      light_source = (CDemonLight *)((light_source->base).camera_name + 4);
       ppuStack_18 = ppuStack_18 + 0x140;
       piStack_14 = piStack_14 + 0x140;
       iStack_1c = iStack_1c + 1;

@@ -63,12 +63,12 @@
 ;   double DOUBLE_00592095 = 0.523598775583333
 ;   double DOUBLE_0059209d = 32
 ;   float FLOAT_005a1f98 = 2.5
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b7650
-;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 DAT_005be368
-;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01e57284
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CConsole g_CConsole_0077ad0c
+;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 DAT_02da8a7c
 ;   ... and 1 more
 ;
@@ -406,8 +406,8 @@ section .text
     PUSH EBX                            ; 0052042b
     MOV EAX,0x592052                    ; 0052042c | = "%s confused while walking to scriptDe..."
     PUSH EAX                            ; 00520431 | = "%s confused while walking to scriptDe..."
-    MOV EDX,dword ptr [0x005ad350]      ; 00520432 | PTR_DAT_005ad350
-    PUSH EDX                            ; 00520438 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00520432 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 00520438 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00520439
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x00520360                      ; 0052043e
@@ -622,7 +622,7 @@ section .text
     PUSH EDI                            ; 00520685
     LEA EAX,[EBP + 0x3e]                ; 00520686
     PUSH EAX                            ; 00520689
-    MOV EAX,[0x005b96c4]                ; 0052068a | INT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 0052068a | g_CGore_PTR_005b96c4
     PUSH EAX                            ; 0052068f
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004b0480 ; 00520690
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004b0480(CGore * this_ptr, CVector3f * position, int blood_type)
@@ -875,8 +875,8 @@ section .text
         ;   XREF to: 00520960 (CONDITIONAL_JUMP)  ; LAB_00520960
     MOV EDI,dword ptr [EBX + 0xbca4]    ; 0052094b
     PUSH EDI                            ; 00520951
-    MOV EAX,[0x005be368]                ; 00520952 | DAT_005be368
-    PUSH EAX                            ; 00520957 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 00520952 | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 00520957 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00520958
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0052095d

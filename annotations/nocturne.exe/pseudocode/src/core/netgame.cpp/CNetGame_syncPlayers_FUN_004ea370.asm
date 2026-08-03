@@ -35,10 +35,10 @@
 ;   double DOUBLE_0058be3a = 0.0000152587890625
 ;   double DOUBLE_0058be42 = 30
 ;   double DOUBLE_0058be4a = 0.100000000000000
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_01cc30e4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
+;   CKeys g_CKeys_01cc30e4
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -261,9 +261,9 @@ section .text
         ;   XREF to: 004ea594 (CONDITIONAL_JUMP)  ; LAB_004ea594
     PUSH 0x1                            ; 004ea5bd
         ;   Label: LAB_004ea5bd
-    MOV EAX,[0x005bac64]                ; 004ea5bf | INT_005bac64
-    PUSH EAX                            ; 004ea5c4 | DAT_01cc30e4
-    MOV EBX,dword ptr [EAX]             ; 004ea5c5 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004ea5bf | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004ea5c4 | g_CKeys_01cc30e4
+    MOV EBX,dword ptr [EAX]             ; 004ea5c5 | g_CKeys_01cc30e4
     CALL dword ptr [EBX + 0x4]          ; 004ea5c7
     ADD ESP,0x8                         ; 004ea5ca
     TEST EAX,EAX                        ; 004ea5cd
@@ -283,8 +283,8 @@ section .text
         ;   Label: LAB_004ea5e3
     MOV EBX,0x337                       ; 004ea5e8
     PUSH 0x58bd3e                       ; 004ea5ed | = "CNetGame::syncPlayers - don't use 0!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004ea5f2 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004ea5f8 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004ea5f2 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004ea5f8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ea5fe
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ea603
@@ -346,10 +346,10 @@ section .text
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 ; 004ea682
         ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004ea687
-    MOV EAX,[0x005bac64]                ; 004ea68a | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ea68a | g_CKeys_PTR_005bac64
     PUSH 0x1                            ; 004ea68f
-    MOV EBX,dword ptr [EAX]             ; 004ea691 | DAT_01cc30e4
-    PUSH EAX                            ; 004ea693 | DAT_01cc30e4
+    MOV EBX,dword ptr [EAX]             ; 004ea691 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004ea693 | g_CKeys_01cc30e4
     CALL dword ptr [EBX + 0x4]          ; 004ea694
     ADD ESP,0x8                         ; 004ea697
     TEST EAX,EAX                        ; 004ea69a
@@ -368,8 +368,8 @@ section .text
         ;   Label: LAB_004ea6ac
     MOV ECX,0x3c0                       ; 004ea6b1
     PUSH 0x58be10                       ; 004ea6b6 | = "CNetGame::syncPlayers - invalid mode"
-    MOV dword ptr [0x01cc4800],EDX      ; 004ea6bb | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004ea6c1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004ea6bb | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004ea6c1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ea6c7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ea6cc

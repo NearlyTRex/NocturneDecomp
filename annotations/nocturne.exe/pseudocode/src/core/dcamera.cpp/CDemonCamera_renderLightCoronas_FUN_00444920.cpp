@@ -16,9 +16,9 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
   uint uVar3;
   int iVar4;
   int iVar5;
-  float *pfVar6;
-  char *pcVar7;
-  uint *puVar8;
+  CVector3f *pCVar6;
+  CMatrix3x3f *pCVar7;
+  float *pfVar8;
   byte bVar9;
   bool bVar10;
   double dVar11;
@@ -30,7 +30,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
   int local_54;
   int iStack_48;
   int iStack_44;
-  int local_40;
+  CVector3f *local_40;
   int local_3c;
   int local_38;
   int local_34;
@@ -43,12 +43,12 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
   
   bVar9 = 0;
   _DAT_012b0634 = param_2;
-  pcVar7 = (param_2->base).camera_name + 0xd0;
-  puVar8 = (uint *)&DAT_012b0638;
+  pCVar7 = &(param_2->base).rotation_matrix;
+  pfVar8 = (float *)&DAT_012b0638;
   for (iVar5 = 10; iVar4 = 0, iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar8 = *(uint *)pcVar7;
-    pcVar7 = pcVar7 + 4;
-    puVar8 = puVar8 + 1;
+    *pfVar8 = pCVar7->m[0].x;
+    pCVar7 = (CMatrix3x3f *)&pCVar7->m[0].y;
+    pfVar8 = pfVar8 + 1;
   }
   do {
     iVar5 = iVar4 + 4;
@@ -68,7 +68,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
   }
   iStack_68 = 0x4449a9;
   core_dlight_cpp_FUN_0044f0b0(param_2);
-  fVar1 = *(float *)((param_2->base).camera_name + 0xc0) * (float)256;
+  fVar1 = (param_2->base).fixed_point_scale * (float)256;
   fVar2 = (float)3.3219280948900001;
   dVar11 = round((double)fVar1);
   iStack_68 = 0x4449d6;
@@ -79,7 +79,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
   _DAT_00b0e600 = _DAT_00b0e600 + -1;
   if (0 < *(int *)(param_1 + 0x154)) {
     local_34 = 0;
-    local_40 = 0x9bb178;
+    local_40 = g_CVector3f_ARRAY_009bb178;
     iStack_44 = 0x146ba10;
     iStack_48 = 0xa9d078;
     local_3c = 0x8d9278;
@@ -92,13 +92,13 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
         local_2c = (uint *)(iStack_44 + local_20 * 4);
         local_28 = (uint *)(*(int *)(&DAT_01bd4260 + (local_38 << (DAT_012b0660 & 0x1f)) * 4) +
                            (local_20 << (DAT_012b0660 & 0x1f)) * 4);
-        pfVar6 = (float *)(local_20 * 0xc + local_40);
+        pCVar6 = local_40 + local_20;
         iVar5 = local_20 - local_30;
         bVar10 = SBORROW4(local_20,local_30);
         while (bVar10 != iVar5 < 0) {
           if ((*local_28 < *local_2c) &&
-             (0.0 <= pfVar6[2] * _DAT_012b0658 + *pfVar6 * _DAT_012b0640 + pfVar6[1] * _DAT_012b064c
-             )) {
+             (0.0 <= pCVar6->z * _DAT_012b0658 +
+                     pCVar6->x * _DAT_012b0640 + pCVar6->y * _DAT_012b064c)) {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
                       (_DAT_012b0634,local_24);
             iStack_5c = iStack_68;
@@ -124,7 +124,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
                                 (DAT_00b0e600 & 0x1f));
             }
           }
-          pfVar6 = pfVar6 + 3;
+          pCVar6 = pCVar6 + 1;
           local_2c = local_2c + 1;
           local_24 = local_24 + 0xc;
           local_20 = local_20 + 1;
@@ -135,7 +135,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
         }
       }
       local_34 = local_34 + 4;
-      local_40 = local_40 + 0xf00;
+      local_40 = local_40 + 0x140;
       iStack_44 = iStack_44 + 0x500;
       iStack_48 = iStack_48 + 0x140;
       local_3c = local_3c + 0xf00;

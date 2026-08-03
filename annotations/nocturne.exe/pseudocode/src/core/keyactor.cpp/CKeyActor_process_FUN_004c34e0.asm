@@ -10,8 +10,8 @@
 ;   double DOUBLE_0058758c = 3.14159265350000
 ;   double DOUBLE_00587594 = 8192
 ;   double DOUBLE_0058759c = 16384
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 004c3564
     PUSH EBX                            ; 004c3567
-    MOV EDX,dword ptr [0x005be368]      ; 004c3568 | DAT_005be368
-    PUSH EDX                            ; 004c356e | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004c3568 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 004c356e | g_CDemonSet_01e57284
     MOV dword ptr [EBX + 0x20],0x0      ; 004c356f
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 004c3576
         ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)

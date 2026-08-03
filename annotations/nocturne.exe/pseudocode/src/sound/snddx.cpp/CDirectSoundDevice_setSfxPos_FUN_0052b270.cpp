@@ -37,11 +37,11 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSou
   uint uStack_1c;
   float local_18;
   
-  iVar1 = (slot->options).dead;
+  iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
      (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
-    PTR_01cc4800 = "..\\sound\\snddx.cpp";
-    INT_01cc4804 = 0x2f3;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
+    g_INT_01cc4804 = 0x2f3;
     core_main_c_FUN_004c8440();
   }
   uVar7 = 1;
@@ -52,8 +52,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSou
     return 0;
   }
   if ((update_flags & 0x88U) != 0) {
-    local_2c = (float)slot->channel_current_buffer_offsets[7];
-    local_28 = slot->min_distance;
+    local_2c = slot->reference_distance;
+    local_28 = slot->max_distance;
     local_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380((slot->options).channel_index);
     local_cb8 = local_18;
     if ((((slot->options).flags & 1) == 0) && (0.0 < local_18)) {
@@ -123,7 +123,7 @@ LAB_0052b3c8:
   }
   if ((update_flags & 0x10U) != 0) {
     dVar8 = round
-                      ((double)((float)*(int *)(slot->playback_state + 0x10c) *
+                      ((double)((float)(slot->sample->sample_info).sample_rate *
                                (slot->options).base_frequency));
     uStack_38 = (longlong)ROUND(dVar8);
     uVar4 = (**(code **)(*local_24 + 0x44))(local_24,(uint)uStack_38);
@@ -176,8 +176,8 @@ LAB_0052b3c8:
     }
 LAB_0052b4a2:
     if (_DAT_02dc9220 == (int *)0x0) {
-      PTR_01cc4800 = "..\\sound\\snddx.cpp";
-      INT_01cc4804 = 0x37c;
+      g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
+      g_INT_01cc4804 = 0x37c;
       core_main_c_FUN_004c8440();
     }
     uVar4 = (**(code **)(*_DAT_02dc9220 + 0x44))();

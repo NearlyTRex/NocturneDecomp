@@ -72,11 +72,11 @@
 ;   double DOUBLE_0059696b = 0.900000000000000
 ;   double DOUBLE_00596973 = 1.5
 ;   float FLOAT_0059697b = 0.7000000
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fb1afc
-;   undefined4 DAT_01fb1b00
-;   undefined4 DAT_01fb1b04
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.x
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.y
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.z
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -146,18 +146,18 @@ section .text
     ADD ESP,0x8                         ; 00546ec2
     FSTP float ptr [ESI]                ; 00546ec5
     MOV dword ptr [ESP + 0xe8],EDX      ; 00546ec7
-    MOV EDX,dword ptr [0x005be368]      ; 00546ece | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 00546ece | g_CDemonSet_PTR_005be368
     MOV dword ptr [ESP + 0xec],ECX      ; 00546ed4
     ADD EDX,0x15a878                    ; 00546edb
     MOV dword ptr [ESP + 0xf0],ECX      ; 00546ee1
     CMP EDX,EAX                         ; 00546ee8
     JZ 0x00546f06                       ; 00546eea
         ;   XREF to: 00546f06 (CONDITIONAL_JUMP)  ; LAB_00546f06
-    MOV dword ptr [EDX],0x40800000      ; 00546eec | DAT_01fb1afc
+    MOV dword ptr [EDX],0x40800000      ; 00546eec | g_CDemonSet_01e57284.active_fog.scroll.x
     MOV EAX,dword ptr [ESP + 0xec]      ; 00546ef2
-    MOV dword ptr [EDX + 0x4],EAX       ; 00546ef9 | DAT_01fb1b00
+    MOV dword ptr [EDX + 0x4],EAX       ; 00546ef9 | g_CDemonSet_01e57284.active_fog.scroll.y
     MOV EAX,dword ptr [ESP + 0xf0]      ; 00546efc
-    MOV dword ptr [EDX + 0x8],EAX       ; 00546f03 | DAT_01fb1b04
+    MOV dword ptr [EDX + 0x8],EAX       ; 00546f03 | g_CDemonSet_01e57284.active_fog.scroll.z
     FLD float ptr [EBX + 0x30c]         ; 00546f06
         ;   Label: LAB_00546f06
     FSUB float ptr [EBP + 0x18]         ; 00546f0c
@@ -168,17 +168,17 @@ section .text
     SAHF                                ; 00546f1b
     JC 0x00546ff0                       ; 00546f1c
         ;   XREF to: 00546ff0 (CONDITIONAL_JUMP)  ; LAB_00546ff0
-    MOV EAX,[0x005be368]                ; 00546f22 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00546f22 | g_CDemonSet_PTR_005be368
     LEA EDX,[EBX + 0x310]               ; 00546f27
     ADD EAX,0x15a878                    ; 00546f2d
     CMP EDX,EAX                         ; 00546f32
     JZ 0x00546f46                       ; 00546f34
         ;   XREF to: 00546f46 (CONDITIONAL_JUMP)  ; LAB_00546f46
-    MOV ECX,dword ptr [EAX]             ; 00546f36 | DAT_01fb1afc
+    MOV ECX,dword ptr [EAX]             ; 00546f36 | g_CDemonSet_01e57284.active_fog.scroll.x
     MOV dword ptr [EDX],ECX             ; 00546f38
-    MOV ECX,dword ptr [EAX + 0x4]       ; 00546f3a | DAT_01fb1b00
+    MOV ECX,dword ptr [EAX + 0x4]       ; 00546f3a | g_CDemonSet_01e57284.active_fog.scroll.y
     MOV dword ptr [EDX + 0x4],ECX       ; 00546f3d
-    MOV ECX,dword ptr [EAX + 0x8]       ; 00546f40 | DAT_01fb1b04
+    MOV ECX,dword ptr [EAX + 0x8]       ; 00546f40 | g_CDemonSet_01e57284.active_fog.scroll.z
     MOV dword ptr [EDX + 0x8],ECX       ; 00546f43
     PUSH 0x41200000                     ; 00546f46
         ;   Label: LAB_00546f46
@@ -216,13 +216,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1ac]     ; 00546fe0
     MOV dword ptr [EBX + 0x30c],EAX     ; 00546fe7
     ADD ESP,0x8                         ; 00546fed
-    MOV EDX,dword ptr [0x005be368]      ; 00546ff0 | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 00546ff0 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00546ff0
     LEA EAX,[EBX + 0x310]               ; 00546ff6
-    FLD float ptr [EDX + 0x15a878]      ; 00546ffc | DAT_01fb1afc
+    FLD float ptr [EDX + 0x15a878]      ; 00546ffc | g_CDemonSet_01e57284.active_fog.scroll.x
     FSUB float ptr [EAX]                ; 00547002
     FST float ptr [ESP + 0x190]         ; 00547004
-    FLD float ptr [EDX + 0x15a87c]      ; 0054700b | DAT_01fb1b00
+    FLD float ptr [EDX + 0x15a87c]      ; 0054700b | g_CDemonSet_01e57284.active_fog.scroll.y
     FSUB float ptr [EAX + 0x4]          ; 00547011
     FXCH                                ; 00547014
     FLD float ptr [0x00596953]          ; 00547016 | FLOAT_00596953
@@ -230,7 +230,7 @@ section .text
     FMUL ST1                            ; 0054701e
     FXCH ST2                            ; 00547020
     FST float ptr [ESP + 0x194]         ; 00547022
-    FLD float ptr [EDX + 0x15a880]      ; 00547029 | DAT_01fb1b04
+    FLD float ptr [EDX + 0x15a880]      ; 00547029 | g_CDemonSet_01e57284.active_fog.scroll.z
     FSUB float ptr [EAX + 0x8]          ; 0054702f
     FXCH                                ; 00547032
     FMUL ST2                            ; 00547034
@@ -456,9 +456,9 @@ section .text
     PUSH dword ptr [ESP + 0x174]        ; 00547385
     PUSH dword ptr [ESP + 0x170]        ; 0054738c
     PUSH dword ptr [EBX + 0x28]         ; 00547393
-    MOV EDX,dword ptr [0x005be368]      ; 00547396 | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 00547396 | g_CDemonSet_PTR_005be368
     PUSH dword ptr [EBX + 0x20]         ; 0054739c
-    PUSH EDX                            ; 0054739f | DAT_01e57284
+    PUSH EDX                            ; 0054739f | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 ; 005473a0
         ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0x1c4],EAX     ; 005473a5
@@ -510,8 +510,8 @@ section .text
     SUB ESP,0x4                         ; 00547448
     FSTP float ptr [ESP]                ; 0054744b
     PUSH ESI                            ; 0054744e
-    MOV ECX,dword ptr [0x005be368]      ; 0054744f | DAT_005be368
-    PUSH ECX                            ; 00547455 | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0054744f | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 00547455 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 00547456
         ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x1b0],EAX     ; 0054745b

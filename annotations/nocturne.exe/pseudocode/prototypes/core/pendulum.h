@@ -45,7 +45,7 @@ int CPendulum::renderOpaque(CDemonActor *param_1);
 
 // Original: core_pendulum.cpp_CPendulum_getBoundingBox_FUN_004f3c00
 // Address: 004f3c00
-undefined4 * CPendulum::getBoundingBox(int param_1,undefined4 *param_2);
+float * CPendulum::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_pendulum.cpp_CPendulum_archive_FUN_004f3c50
 // Address: 004f3c50

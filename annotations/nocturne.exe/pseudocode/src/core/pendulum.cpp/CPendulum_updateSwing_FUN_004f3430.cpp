@@ -108,7 +108,8 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *thi
       }
       if (fVar1 < local_5c) {
         core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                  (0x02DC9450,&this_ptr->base,this_ptr->swoosh_sound,&this_ptr->swing_tip_world);
+                  (g_CSound_PTR_005bed68,&this_ptr->base,this_ptr->swoosh_sound,
+                   &this_ptr->swing_tip_world);
       }
     }
     local_44 = local_3c;
@@ -160,7 +161,8 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *thi
       }
       if (local_30.x < local_60) {
         core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                  (0x02DC9450,&this_ptr->base,this_ptr->swoosh_sound,&this_ptr->swing_tip_world);
+                  (g_CSound_PTR_005bed68,&this_ptr->base,this_ptr->swoosh_sound,
+                   &this_ptr->swing_tip_world);
         return;
       }
     }

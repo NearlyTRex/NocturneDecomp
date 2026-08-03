@@ -11,8 +11,8 @@
 ;   TerminatedCString s_engine_dosio_c_0057d2b7
 ;   TerminatedCString s_addGetFileInfoHook_too_m_0057d2c9
 ;   undefined4 DAT_01af4ed8
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -39,8 +39,8 @@ section .text
     MOV ECX,0x57d2b7                    ; 00456776 | = "..\\engine\\dosio.c"
     MOV EBX,0x4d                        ; 0045677b
     PUSH 0x57d2c9                       ; 00456780 | = "addGetFileInfoHook - too many!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00456785 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0045678b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00456785 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0045678b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00456791
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00456796

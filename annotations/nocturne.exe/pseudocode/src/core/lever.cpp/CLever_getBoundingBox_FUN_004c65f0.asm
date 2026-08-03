@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_lever_cpp_CLever_getBoundingBox_FUN_004c65f0(int param_1,undefined4 *param_2)
+; float * core_lever_cpp_CLever_getBoundingBox_FUN_004c65f0(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

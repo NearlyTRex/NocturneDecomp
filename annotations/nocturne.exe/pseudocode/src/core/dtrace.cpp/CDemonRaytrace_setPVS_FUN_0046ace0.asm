@@ -24,11 +24,11 @@
 ;   undefined4 DAT_01b7b744
 ;   undefined4 DAT_01b7b748
 ;   undefined4 DAT_01b7b750
-;   CVector3f[20000] CVector3f_ARRAY_01b8efcc
-;   undefined4 CVector3f_ARRAY_01b8efcc[0].y
-;   undefined4 CVector3f_ARRAY_01b8efcc[0].z
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CVector3f[20000] g_CVector3f_ARRAY_01b8efcc
+;   undefined4 g_CVector3f_ARRAY_01b8efcc[0].y
+;   undefined4 g_CVector3f_ARRAY_01b8efcc[0].z
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -118,11 +118,11 @@ section .text
     JZ 0x0046ade2                       ; 0046adcc
         ;   XREF to: 0046ade2 (CONDITIONAL_JUMP)  ; LAB_0046ade2
     MOV EAX,dword ptr [ESP + 0x8]       ; 0046adce
-    MOV dword ptr [ESI],EAX             ; 0046add2 | CVector3f_ARRAY_01b8efcc
+    MOV dword ptr [ESI],EAX             ; 0046add2 | g_CVector3f_ARRAY_01b8efcc
     MOV EAX,dword ptr [ESP + 0xc]       ; 0046add4
-    MOV dword ptr [ESI + 0x4],EAX       ; 0046add8 | CVector3f_ARRAY_01b8efcc[0].y
+    MOV dword ptr [ESI + 0x4],EAX       ; 0046add8 | g_CVector3f_ARRAY_01b8efcc[0].y
     MOV EAX,dword ptr [ESP + 0x10]      ; 0046addb
-    MOV dword ptr [ESI + 0x8],EAX       ; 0046addf | CVector3f_ARRAY_01b8efcc[0].z
+    MOV dword ptr [ESI + 0x8],EAX       ; 0046addf | g_CVector3f_ARRAY_01b8efcc[0].z
     MOV EDX,dword ptr [0x01b7b744]      ; 0046ade2 | DAT_01b7b744
         ;   Label: LAB_0046ade2
     ADD ESI,0xc                         ; 0046ade8
@@ -144,8 +144,8 @@ section .text
         ;   Label: LAB_0046ae09
     MOV ESI,0x8c9                       ; 0046ae0e
     PUSH 0x57e279                       ; 0046ae13 | = "CDemonRaytrace::setPVS - Too many dra..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046ae18 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0046ae1e | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0046ae18 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0046ae1e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046ae24
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046ae29

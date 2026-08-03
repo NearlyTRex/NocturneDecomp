@@ -61,7 +61,7 @@ undefined4 CCrate::getCollisionType(int param_1);
 
 // Original: core_crate.cpp_CCrate_getBoundingBox_FUN_0043ccc0
 // Address: 0043ccc0
-undefined4 * CCrate::getBoundingBox(int param_1,undefined4 *param_2);
+float * CCrate::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_crate.cpp_CCrate_getTargetPoints_FUN_0043cd10
 // Address: 0043cd10

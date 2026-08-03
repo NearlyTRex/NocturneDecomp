@@ -316,7 +316,7 @@ LAB_004a7bc7:
     if (uVar8 != 3) goto LAB_004a7bc7;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",param_1);
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",param_1);
   }
   (param_1->base).base.model.accumulated_root_motion.z = 0.0;
   (param_1->base).base.model.accumulated_root_motion.y =

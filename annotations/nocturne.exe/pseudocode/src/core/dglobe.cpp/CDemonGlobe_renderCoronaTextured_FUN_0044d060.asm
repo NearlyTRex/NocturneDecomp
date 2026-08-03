@@ -59,7 +59,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x54]      ; 0044d067
     LEA EAX,[EBP + 0x24]                ; 0044d06b
     PUSH EAX                            ; 0044d06e
-    MOV EDX,dword ptr [0x005ae700]      ; 0044d06f | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0044d06f | PTR_DAT_005ae700
     PUSH EDX                            ; 0044d075 | DAT_01b4d738
     XOR ESI,ESI                         ; 0044d076
     XOR EDI,EDI                         ; 0044d078
@@ -82,7 +82,7 @@ section .text
     FMUL float ptr [EBP + 0x30]         ; 0044d0b8
     LEA EBX,[ESP + 0x34]                ; 0044d0bb
     LEA EAX,[ESP + 0x28]                ; 0044d0bf
-    MOV EDX,dword ptr [0x005ae700]      ; 0044d0c3 | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0044d0c3 | PTR_DAT_005ae700
     FSTP float ptr [ESP + 0x30]         ; 0044d0c9
     FLD float ptr [EAX]                 ; 0044d0cd
     FMUL float ptr [0x0059bff0]         ; 0044d0cf | DAT_0059bff0
@@ -100,7 +100,7 @@ section .text
     PUSH EAX                            ; 0044d0f8
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044d0f9
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x005ae700]                ; 0044d0fe | DAT_005ae700
+    MOV EAX,[0x005ae700]                ; 0044d0fe | PTR_DAT_005ae700
     MOV EBX,dword ptr [EAX]             ; 0044d103 | DAT_01b4d738
     MOV dword ptr [ESI + EBX*0x1 + 0x18],0x800000 ; 0044d105
     MOV EBX,dword ptr [EAX]             ; 0044d10d | DAT_01b4d738
@@ -142,7 +142,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x5ad898]  ; 0044d1a8 | DAT_005ad898 | DAT_005ad8bc
     MOV dword ptr [ESP + 0x20],EAX      ; 0044d1ae
     MOV EAX,dword ptr [EBX + 0x5ad89c]  ; 0044d1b2 | DAT_005ad89c | DAT_005ad8c0
-    MOV ECX,dword ptr [0x005ae700]      ; 0044d1b8 | DAT_005ae700
+    MOV ECX,dword ptr [0x005ae700]      ; 0044d1b8 | PTR_DAT_005ae700
     MOV dword ptr [ESP + 0x24],EAX      ; 0044d1be
     MOV EAX,ESP                         ; 0044d1c2
     ADD EBX,0x24                        ; 0044d1c4

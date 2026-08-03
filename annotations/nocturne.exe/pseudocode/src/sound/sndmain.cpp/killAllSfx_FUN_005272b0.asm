@@ -9,7 +9,7 @@
 ;   sound_sndmain.cpp_resetSoundDevice_FUN_00528080 at 00528080
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dbd494
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570
@@ -27,7 +27,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 005272b7
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
     LEA ESI,[EBX + 0x4800]              ; 005272bc
-    PUSH EBX                            ; 005272c2 | DAT_02dbd494
+    PUSH EBX                            ; 005272c2 | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
         ;   Label: LAB_005272c2
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 005272c3
         ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)

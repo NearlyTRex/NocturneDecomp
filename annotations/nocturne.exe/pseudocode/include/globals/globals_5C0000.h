@@ -36,7 +36,7 @@ extern int INT_005c1174;
 extern int INT_005c1188;
 extern int INT_005c11a0;
 extern int g_INT_005c11c4;
-extern int INT_005c154c;
+extern int g_INT_005c154c;
 extern int INT_005c1578;
 extern int INT_005c1590;
 extern int INT_005c1614;

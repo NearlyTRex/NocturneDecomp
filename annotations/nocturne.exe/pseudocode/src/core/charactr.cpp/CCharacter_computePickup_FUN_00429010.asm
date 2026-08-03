@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a1d1
 ;   TerminatedCString s_CCharacter_computePickup_0057a1e6
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -141,8 +141,8 @@ section .text
         ;   Label: LAB_0042912f
     MOV ESI,0xc14                       ; 00429134
     PUSH 0x57a1e6                       ; 00429139 | = "CCharacter::computePickup - invalid b..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0042913e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00429144 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0042913e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00429144 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0042914a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042914f

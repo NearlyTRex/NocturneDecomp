@@ -173,7 +173,7 @@ CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_0044c2d0(CFilterFX *this
 void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFX *this_ptr);
 void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX *this_ptr,char *filename);
 void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFX *this_ptr);
-void core_dfilter_cpp_FUN_0044c540(void *param_1);
+CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_0044c540(CDemonFilter *this_ptr,uint flags);
 void __cdecl core_dfont_cpp_FUN_0044c560(void);
 void __cdecl core_dfont_cpp_FUN_0044cc00(void);
 void core_dfont_cpp_FUN_0044cd80(void);

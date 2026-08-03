@@ -20,7 +20,7 @@
 ;   TerminatedCString s_CBodyPart_00595e9c
 ;   double DOUBLE_00595ea7 = 0.999900000000000
 ;   double DOUBLE_00595eaf = 0.990000000000000
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
@@ -109,7 +109,7 @@ section .text
         ;   XREF to: 0053fd06 (CONDITIONAL_JUMP)  ; LAB_0053fd06
     PUSH EDX                            ; 0053fcf1
     PUSH 0x595e54                       ; 0053fcf2 | = "eDoorMoveNone returned by checkDoorOp..."
-    MOV ESI,dword ptr [0x005b6d50]      ; 0053fcf7 | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 0053fcf7 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 0053fcfd
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 0053fcfe
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
@@ -142,7 +142,7 @@ section .text
     PUSH EDI                            ; 0053fd43
         ;   Label: LAB_0053fd43
     PUSH 0x595e17                       ; 0053fd44 | = "eDoorMoveNone returned by checkDoorOp..."
-    MOV EAX,[0x005b6d50]                ; 0053fd49 | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 0053fd49 | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 0053fd4e
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 0053fd4f
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()

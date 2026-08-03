@@ -30,7 +30,7 @@
 ;   float FLOAT_005ba82c = 1
 ;   float FLOAT_005ba830 = -1
 ;   float FLOAT_005ba83c = 1
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
@@ -115,7 +115,7 @@ section .text
     PUSH EAX                            ; 004af967
     FXCH                                ; 004af968
     FSTP float ptr [ESP + 0x14]         ; 004af96a
-    PUSH 0x1fba938                      ; 004af96e | DAT_01fba938
+    PUSH 0x1fba938                      ; 004af96e | g_CDemonRaytrace_01fba938
     FSTP float ptr [ESP + 0x24]         ; 004af973
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 004af977
         ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)

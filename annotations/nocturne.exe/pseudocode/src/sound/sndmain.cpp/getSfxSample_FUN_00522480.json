@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 34,
-        "message": "use of undeclared identifier 'DAT_02dc1edc'; did you mean 'DAT_005c1ddc'?"
       },
       {
         "category": "undeclared_identifier",
@@ -87,15 +81,21 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
+        "column": 38,
         "line": 50,
         "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 32,
+        "column": 37,
+        "line": 51,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 46,
         "line": 52,
-        "message": "use of undeclared identifier 'DAT_02dc1edc'; did you mean 'DAT_005c1ddc'?"
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
       },
       {
         "category": "undeclared_identifier",
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 421,
-    "complexity_score": 348,
+    "complexity_score": 276,
     "cross_reference_count": 2,
     "function_call_count": 23,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 183,
-    "suspect_count": 14,
+    "pseudocode_lines": 181,
+    "suspect_count": 7,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
@@ -136,7 +136,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 604
+    "total_lines": 602
   },
   "cross_references": [
     {
@@ -380,25 +380,25 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "02da8be0",
-      "name": "DAT_02da8be0",
+      "name": "g_CMP3Decoder_02da8ae0.sample_rate",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02da8be4",
-      "name": "DAT_02da8be4",
+      "name": "g_CMP3Decoder_02da8ae0.num_channels",
       "type": "undefined4",
       "value": null
     },
@@ -416,13 +416,13 @@
     },
     {
       "addr": "02dc216c",
-      "name": "DAT_02dc216c",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].taken",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc2170",
-      "name": "DAT_02dc2170",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].ref_count",
       "type": "undefined4",
       "value": null
     }
@@ -558,22 +558,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_02dc1edc",
-      "severity": "mild",
-      "text": "pCVar6 = (CSfxSample *)&DAT_02dc1edc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_02dc1edc",
-      "severity": "mild",
-      "text": "pCVar6 = (CSfxSample *)(&DAT_02dc1edc + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 58,
       "match": "DAT_02db1110",
       "severity": "mild",
@@ -597,52 +581,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_02da8ae0",
-      "severity": "mild",
-      "text": "sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90((CMP3Decoder *)&DAT_02da8ae0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_02da8ae0",
-      "severity": "mild",
-      "text": "sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(&DAT_02da8ae0,filename);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 170,
-      "match": "DAT_02da8ae0",
-      "severity": "mild",
-      "text": "((CMP3Decoder *)&DAT_02da8ae0,output_buffer,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 181,
-      "match": "DAT_02da8ae0",
-      "severity": "mild",
-      "text": "sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260((CMP3Decoder *)&DAT_02da8ae0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 68,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 35,
-      "match": "pCVar6 = (T *)&pCVar6->FIELD",
-      "severity": "moderate",
-      "text": "pCVar6 = (CSfxSample *)&pCVar6->stream_write_position;",
-      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

@@ -32,7 +32,7 @@
 ;   TerminatedCString s_gb_fall1_wav_005820d4
 ;   double DOUBLE_005820e2 = 0.200000000000000
 ;   double DOUBLE_005820ea = 0.400000000000000
-;   int INT_005b96c4 = 0x1c78c7c
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;   undefined4 g_CLightActorActorType_00764a9c.name_hash
 ;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
 ;   undefined4 DAT_01c713b4
@@ -359,7 +359,7 @@ section .text
     PUSH 0x0                            ; 00497737
     LEA EAX,[ESP + 0x50]                ; 00497739
     PUSH EAX                            ; 0049773d
-    MOV ECX,dword ptr [0x005b96c4]      ; 0049773e | INT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 0049773e | g_CGore_PTR_005b96c4
     PUSH ECX                            ; 00497744
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 00497745
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)

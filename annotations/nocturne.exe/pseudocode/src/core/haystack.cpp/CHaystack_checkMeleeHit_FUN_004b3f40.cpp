@@ -25,8 +25,8 @@ void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CHaystack *t
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&local_1c,input_local_point);
   while( true ) {
-    if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar2) break;
-    this_ptr_00 = *(CHaystack **)(iVar1 + 0x14ecb4 + 0x01E57284);
+    if (g_CDemonSet_PTR_005be368->character_count <= iVar2) break;
+    this_ptr_00 = *(CHaystack **)((int)g_CDemonSet_PTR_005be368->characters + iVar1);
     if (this_ptr_00 != this_ptr) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_64);
       SStack_64.damage_amount = 10.0;

@@ -13,10 +13,10 @@ void sound_sndmain_cpp_FUN_005260c0(void)
 
 {
   int iVar1;
-  uint in_stack_00000004;
+  void *in_stack_00000004;
   
-  iVar1 = _DAT_02dc1b74 * 0x6c;
-  *(uint *)(iVar1 + 0x2dc1bb8) = 2;
-  *(uint *)(iVar1 + 0x2dc1bb4) = in_stack_00000004;
+  iVar1 = _DAT_02dc1b74;
+  g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].velocity_format = 2;
+  g_CSfxOptions_ARRAY_02dc1b78[iVar1].velocity_source_ptr = in_stack_00000004;
   return;
 }

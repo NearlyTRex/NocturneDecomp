@@ -48,8 +48,8 @@ int sound_mp3_cpp_FUN_004e2480(int *param_1)
   else if (param_1[3] == 4) {
     return iVar4;
   }
-  PTR_01cc4800 = "..\\sound\\mp3.cpp";
-  INT_01cc4804 = 0x1a1;
+  g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
+  g_INT_01cc4804 = 0x1a1;
   core_main_c_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28,uVar7);
   return iVar4;
 }

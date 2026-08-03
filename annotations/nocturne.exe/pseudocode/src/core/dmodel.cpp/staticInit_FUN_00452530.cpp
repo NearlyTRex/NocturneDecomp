@@ -9,7 +9,8 @@
 void __cdecl core_dmodel_cpp_staticInit_FUN_00452530(void)
 
 {
-  __arrinit(&DAT_01abb65c,0x100,&g_CKeyFramedModelTypeInfo_0059c0a0);
+  __arrinit
+            (g_CKeyFramedModel_ARRAY_01abb65c,0x100,&g_CKeyFramedModelTypeInfo_0059c0a0);
   _atexit(&g_WatcomStaticDestructorNode_005ae638);
   return;
 }

@@ -50,8 +50,8 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *s
         local_34 = -1;
         sscanf(local_14,"[%d,%d]%n");
         if ((local_34 < 5) || (local_2c < local_30)) {
-          PTR_01cc4800 = "..\\core\\sound.cpp";
-          INT_01cc4804 = 0x137;
+          g_CHAR_PTR_01cc4800 = "..\\core\\sound.cpp";
+          g_INT_01cc4804 = 0x137;
           core_main_c_FUN_004c8440("Invalid sfx string: %s");
         }
         iVar2 = _sprintf(pcVar7);
@@ -124,7 +124,7 @@ LAB_0052d1a2:
     pcVar6 = (char *)0x0;
 LAB_0052d202:
     if (pcVar6 == (char *)0x0) {
-      core_sound_cpp_FUN_0052d030(0x02DC9450,local_a8,local_170);
+      core_sound_cpp_FUN_0052d030(g_CSound_PTR_005bed68,local_a8,local_170);
     }
     else {
       local_44.x = x;
@@ -136,7 +136,7 @@ LAB_0052d202:
         local_44.z = z + position_tracker->z;
       }
       local_28 = core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0
-                           (0x01E57284,&local_44);
+                           (g_CDemonSet_PTR_005be368,&local_44);
       local_1c = local_28;
       local_18 = (int)local_28 + 5;
       do {
@@ -164,7 +164,7 @@ LAB_0052d202:
               cVar5 = *pcVar9;
             }
             *pcVar6 = '\0';
-            core_sound_cpp_FUN_0052d030(0x02DC9450,local_a8,local_10c);
+            core_sound_cpp_FUN_0052d030(g_CSound_PTR_005bed68,local_a8,local_10c);
             if (local_a8[0] != '\0') break;
           }
           iVar2 = iVar2 + 1;
@@ -185,8 +185,8 @@ LAB_0052d202:
           local_24 = -1;
           sscanf(local_14,"@%f%n");
           if (local_24 < 2) {
-            PTR_01cc4800 = "..\\core\\sound.cpp";
-            INT_01cc4804 = 0x1a4;
+            g_CHAR_PTR_01cc4800 = "..\\core\\sound.cpp";
+            g_INT_01cc4804 = 0x1a4;
             core_main_c_FUN_004c8440("Invalid sfx string: %s");
             local_14 = local_14 + local_24;
           }
@@ -198,8 +198,8 @@ LAB_0052d202:
           local_20 = -1;
           sscanf(local_14,"*%f%n");
           if (local_20 < 2) {
-            PTR_01cc4800 = "..\\core\\sound.cpp";
-            INT_01cc4804 = 0x1aa;
+            g_CHAR_PTR_01cc4800 = "..\\core\\sound.cpp";
+            g_INT_01cc4804 = 0x1aa;
             core_main_c_FUN_004c8440("Invalid sfx string: %s");
             local_14 = local_14 + local_20;
           }
@@ -208,8 +208,8 @@ LAB_0052d202:
           }
         }
         else {
-          PTR_01cc4800 = "..\\core\\sound.cpp";
-          INT_01cc4804 = 0x1ad;
+          g_CHAR_PTR_01cc4800 = "..\\core\\sound.cpp";
+          g_INT_01cc4804 = 0x1ad;
           core_main_c_FUN_004c8440("Invalid sfx string: %s");
         }
       }

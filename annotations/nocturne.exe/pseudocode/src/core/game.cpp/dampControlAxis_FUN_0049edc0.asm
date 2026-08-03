@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     SUB ESP,0x4                         ; 0049edc0
         ;   Label: core_game.cpp_dampControlAxis_FUN_0049edc0
     MOV EDX,dword ptr [ESP + 0x8]       ; 0049edc3
-    MOV EAX,[0x005b9354]                ; 0049edc7 | DAT_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049edcc | DAT_01c77850
+    MOV EAX,[0x005b9354]                ; 0049edc7 | g_CGame_PTR_005b9354
+    FLD float ptr [EAX + 0x264]         ; 0049edcc | g_CGame_01c775ec.delta_time_float
     FMUL float ptr [ESP + 0x10]         ; 0049edd2
     FDIV float ptr [ESP + 0xc]          ; 0049edd6
     FLDZ                                ; 0049edda

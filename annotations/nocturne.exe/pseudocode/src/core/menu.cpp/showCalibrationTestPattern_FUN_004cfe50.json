@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,42 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 55,
-        "message": "use of undeclared identifier '_DAT_014b9904'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 56,
-        "message": "use of undeclared identifier '_DAT_014b9904'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 74,
-        "line": 58,
-        "message": "use of undeclared identifier 'DAT_01cc5b6c'; did you mean 'DAT_005c506c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_014b9904'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_014b9904'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 64,
-        "message": "use of undeclared identifier '_DAT_014b9904'"
       }
     ],
     "success": false,
@@ -98,21 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 143,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 6,
+    "pseudocode_lines": 57,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 196
+    "total_lines": 195
   },
   "cross_references": [
     {
@@ -196,8 +158,8 @@
     },
     {
       "addr": "014b9904",
-      "name": "DAT_014b9904",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b9904",
+      "type": "CBitFont*",
       "value": null
     }
   ],
@@ -351,24 +313,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_01cc5b6c",
-      "severity": "mild",
-      "text": "engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710((CAlphaBitmap *)&DAT_01cc5b6c,0,0,0xffff);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -376,7 +322,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 39,
+      "line": 37,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -384,7 +330,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 30,
+      "line": 28,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -392,7 +338,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 30,
+      "line": 28,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

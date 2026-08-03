@@ -12,7 +12,7 @@
 ;   TerminatedCString s_batman_die_wav_00578a67
 ;   TerminatedCString s_batman_hurt_wav_00578a76
 ;   double DOUBLE_00578a87 = 2
-;   undefined4 DAT_005b80f0
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -182,7 +182,7 @@ section .text
     PUSH 0x0                            ; 00413199
     LEA EAX,[ESP + 0x20]                ; 0041319b
     PUSH EAX                            ; 0041319f
-    MOV EAX,[0x005b80f0]                ; 004131a0 | DAT_005b80f0
+    MOV EAX,[0x005b80f0]                ; 004131a0 | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 004131a5
     INC EBX                             ; 004131a6
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 004131a7

@@ -13,11 +13,11 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
 ;   undefined4 DAT_01c02594
-;   undefined4 DAT_01c777dc
+;   undefined4 g_CGame_01c775ec.scripted_sequence_active
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760
@@ -36,8 +36,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 0050dfe4
     MOV EAX,dword ptr [ESP + 0x18]      ; 0050dfe8
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0050dfec
-    MOV EBX,dword ptr [0x005b9354]      ; 0050dff0 | DAT_005b9354
-    CMP dword ptr [EBX + 0x1f0],0x0     ; 0050dff6 | DAT_01c777dc
+    MOV EBX,dword ptr [0x005b9354]      ; 0050dff0 | g_CGame_PTR_005b9354
+    CMP dword ptr [EBX + 0x1f0],0x0     ; 0050dff6 | g_CGame_01c775ec.scripted_sequence_active
     JNZ 0x0050e039                      ; 0050dffd
         ;   XREF to: 0050e039 (CONDITIONAL_JUMP)  ; LAB_0050e039
     MOV EBX,dword ptr [0x005ae704]      ; 0050dfff | DAT_005ae704

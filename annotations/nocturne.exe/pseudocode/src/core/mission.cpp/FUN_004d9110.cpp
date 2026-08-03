@@ -18,8 +18,8 @@ void core_mission_cpp_FUN_004d9110(int param_1,uint param_2,uint param_3)
   if (iVar1 < 100) {
     return;
   }
-  PTR_01cc4800 = "..\\core\\mission.cpp";
-  INT_01cc4804 = 0x408;
+  g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
+  g_INT_01cc4804 = 0x408;
   core_main_c_FUN_004c8440("CDemonMission::markActorToDelete - Too many of them!");
   return;
 }

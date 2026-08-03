@@ -8,12 +8,12 @@
 ;   core_main.c_FUN_004c90e0 at 004c9375
 ;
 ; Referenced Globals:
-;   undefined4 DAT_014b98f8
-;   undefined4 DAT_014b98fc
-;   undefined4 DAT_014b9900
-;   undefined4 DAT_014b9904
-;   undefined4 DAT_014b9908
-;   undefined4 DAT_014b990c
+;   CBitFont* g_CBitFont_PTR_014b98f8
+;   CBitFont* g_CBitFont_PTR_014b98fc
+;   CBitFont* g_CBitFont_PTR_014b9900
+;   CBitFont* g_CBitFont_PTR_014b9904
+;   CBitFont* g_CBitFont_PTR_014b9908
+;   CBitFont* g_CBitFont_PTR_014b990c
 ;   undefined4 DAT_014b9910
 ;   undefined4 DAT_014b9914
 ;   undefined4 DAT_014b9918
@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_00564494
-;   engine_font.cpp_FUN_0048fe30
+;   engine_font.cpp_CBitFont_FUN_0048fe30
 ;
 ; *****************************************************************************
 
@@ -34,21 +34,21 @@ section .text
     PUSH ESI                            ; 0044cc01
     PUSH EDI                            ; 0044cc02
     PUSH EBP                            ; 0044cc03
-    MOV EDX,dword ptr [0x014b98f8]      ; 0044cc04 | DAT_014b98f8
+    MOV EDX,dword ptr [0x014b98f8]      ; 0044cc04 | g_CBitFont_PTR_014b98f8
     TEST EDX,EDX                        ; 0044cc0a
     JNZ 0x0044cd50                      ; 0044cc0c
         ;   XREF to: 0044cd50 (CONDITIONAL_JUMP)  ; LAB_0044cd50
     XOR EBX,EBX                         ; 0044cc12
         ;   Label: LAB_0044cc12
-    MOV ESI,dword ptr [0x014b98fc]      ; 0044cc14 | DAT_014b98fc
-    MOV dword ptr [0x014b98f8],EBX      ; 0044cc1a | DAT_014b98f8
+    MOV ESI,dword ptr [0x014b98fc]      ; 0044cc14 | g_CBitFont_PTR_014b98fc
+    MOV dword ptr [0x014b98f8],EBX      ; 0044cc1a | g_CBitFont_PTR_014b98f8
     TEST ESI,ESI                        ; 0044cc20
     JZ 0x0044cc37                       ; 0044cc22
         ;   XREF to: 0044cc37 (CONDITIONAL_JUMP)  ; LAB_0044cc37
     PUSH EBX                            ; 0044cc24
     PUSH ESI                            ; 0044cc25
-    CALL engine_font.cpp_FUN_0048fe30   ; 0044cc26
-        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_FUN_0048fe30(CBitFont * this_ptr, uint flags)
+    CALL engine_font.cpp_CBitFont_FUN_0048fe30 ; 0044cc26
+        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cc2b
     PUSH EAX                            ; 0044cc2e
     CALL crt_unknown.c_FUN_00564494     ; 0044cc2f
@@ -56,15 +56,15 @@ section .text
     ADD ESP,0x4                         ; 0044cc34
     XOR EBP,EBP                         ; 0044cc37
         ;   Label: LAB_0044cc37
-    MOV EAX,[0x014b9900]                ; 0044cc39 | DAT_014b9900
-    MOV dword ptr [0x014b98fc],EBP      ; 0044cc3e | DAT_014b98fc
+    MOV EAX,[0x014b9900]                ; 0044cc39 | g_CBitFont_PTR_014b9900
+    MOV dword ptr [0x014b98fc],EBP      ; 0044cc3e | g_CBitFont_PTR_014b98fc
     TEST EAX,EAX                        ; 0044cc44
     JZ 0x0044cc5b                       ; 0044cc46
         ;   XREF to: 0044cc5b (CONDITIONAL_JUMP)  ; LAB_0044cc5b
     PUSH EBP                            ; 0044cc48
     PUSH EAX                            ; 0044cc49
-    CALL engine_font.cpp_FUN_0048fe30   ; 0044cc4a
-        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_FUN_0048fe30(CBitFont * this_ptr, uint flags)
+    CALL engine_font.cpp_CBitFont_FUN_0048fe30 ; 0044cc4a
+        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cc4f
     PUSH EAX                            ; 0044cc52
     CALL crt_unknown.c_FUN_00564494     ; 0044cc53
@@ -72,15 +72,15 @@ section .text
     ADD ESP,0x4                         ; 0044cc58
     XOR ECX,ECX                         ; 0044cc5b
         ;   Label: LAB_0044cc5b
-    MOV EBX,dword ptr [0x014b9904]      ; 0044cc5d | DAT_014b9904
-    MOV dword ptr [0x014b9900],ECX      ; 0044cc63 | DAT_014b9900
+    MOV EBX,dword ptr [0x014b9904]      ; 0044cc5d | g_CBitFont_PTR_014b9904
+    MOV dword ptr [0x014b9900],ECX      ; 0044cc63 | g_CBitFont_PTR_014b9900
     TEST EBX,EBX                        ; 0044cc69
     JZ 0x0044cc80                       ; 0044cc6b
         ;   XREF to: 0044cc80 (CONDITIONAL_JUMP)  ; LAB_0044cc80
     PUSH ECX                            ; 0044cc6d
     PUSH EBX                            ; 0044cc6e
-    CALL engine_font.cpp_FUN_0048fe30   ; 0044cc6f
-        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_FUN_0048fe30(CBitFont * this_ptr, uint flags)
+    CALL engine_font.cpp_CBitFont_FUN_0048fe30 ; 0044cc6f
+        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cc74
     PUSH EAX                            ; 0044cc77
     CALL crt_unknown.c_FUN_00564494     ; 0044cc78
@@ -88,15 +88,15 @@ section .text
     ADD ESP,0x4                         ; 0044cc7d
     XOR EDI,EDI                         ; 0044cc80
         ;   Label: LAB_0044cc80
-    MOV EBP,dword ptr [0x014b9908]      ; 0044cc82 | DAT_014b9908
-    MOV dword ptr [0x014b9904],EDI      ; 0044cc88 | DAT_014b9904
+    MOV EBP,dword ptr [0x014b9908]      ; 0044cc82 | g_CBitFont_PTR_014b9908
+    MOV dword ptr [0x014b9904],EDI      ; 0044cc88 | g_CBitFont_PTR_014b9904
     TEST EBP,EBP                        ; 0044cc8e
     JZ 0x0044cca5                       ; 0044cc90
         ;   XREF to: 0044cca5 (CONDITIONAL_JUMP)  ; LAB_0044cca5
     PUSH EDI                            ; 0044cc92
     PUSH EBP                            ; 0044cc93
-    CALL engine_font.cpp_FUN_0048fe30   ; 0044cc94
-        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_FUN_0048fe30(CBitFont * this_ptr, uint flags)
+    CALL engine_font.cpp_CBitFont_FUN_0048fe30 ; 0044cc94
+        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cc99
     PUSH EAX                            ; 0044cc9c
     CALL crt_unknown.c_FUN_00564494     ; 0044cc9d
@@ -104,16 +104,16 @@ section .text
     ADD ESP,0x4                         ; 0044cca2
     XOR EDX,EDX                         ; 0044cca5
         ;   Label: LAB_0044cca5
-    MOV EBX,dword ptr [0x014b990c]      ; 0044cca7 | DAT_014b990c
+    MOV EBX,dword ptr [0x014b990c]      ; 0044cca7 | g_CBitFont_PTR_014b990c
     MOV dword ptr [0x01bcd070],EDX      ; 0044ccad | DAT_01bcd070
-    MOV dword ptr [0x014b9908],EDX      ; 0044ccb3 | DAT_014b9908
+    MOV dword ptr [0x014b9908],EDX      ; 0044ccb3 | g_CBitFont_PTR_014b9908
     TEST EBX,EBX                        ; 0044ccb9
     JZ 0x0044ccd0                       ; 0044ccbb
         ;   XREF to: 0044ccd0 (CONDITIONAL_JUMP)  ; LAB_0044ccd0
     PUSH EDX                            ; 0044ccbd
     PUSH EBX                            ; 0044ccbe
-    CALL engine_font.cpp_FUN_0048fe30   ; 0044ccbf
-        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_FUN_0048fe30(CBitFont * this_ptr, uint flags)
+    CALL engine_font.cpp_CBitFont_FUN_0048fe30 ; 0044ccbf
+        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044ccc4
     PUSH EAX                            ; 0044ccc7
     CALL crt_unknown.c_FUN_00564494     ; 0044ccc8
@@ -122,7 +122,7 @@ section .text
     XOR EDI,EDI                         ; 0044ccd0
         ;   Label: LAB_0044ccd0
     MOV EBP,dword ptr [0x01d16810]      ; 0044ccd2 | DAT_01d16810
-    MOV dword ptr [0x014b990c],EDI      ; 0044ccd8 | DAT_014b990c
+    MOV dword ptr [0x014b990c],EDI      ; 0044ccd8 | g_CBitFont_PTR_014b990c
     TEST EBP,EBP                        ; 0044ccde
     JZ 0x0044cd4b                       ; 0044cce0
         ;   XREF to: 0044cd4b (CONDITIONAL_JUMP)  ; LAB_0044cd4b
@@ -178,8 +178,8 @@ section .text
     PUSH 0x0                            ; 0044cd50
         ;   Label: LAB_0044cd50
     PUSH EDX                            ; 0044cd52
-    CALL engine_font.cpp_FUN_0048fe30   ; 0044cd53
-        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_FUN_0048fe30(CBitFont * this_ptr, uint flags)
+    CALL engine_font.cpp_CBitFont_FUN_0048fe30 ; 0044cd53
+        ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cd58
     PUSH EAX                            ; 0044cd5b
     CALL crt_unknown.c_FUN_00564494     ; 0044cd5c

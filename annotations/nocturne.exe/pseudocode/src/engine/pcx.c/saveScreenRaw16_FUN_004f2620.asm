@@ -126,8 +126,8 @@ section .text
     MOV EBX,0x58cf1c                    ; 004f26a4 | = "..\\engine\\pcx.c"
     MOV ESI,0x6e                        ; 004f26a9
     PUSH 0x58cf2c                       ; 004f26ae | = "saveScreenRaw16 - Unable to open output"
-    MOV dword ptr [0x01cc4800],EBX      ; 004f26b3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f26b9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 004f26b3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f26b9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f26bf
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f26c4
@@ -217,8 +217,8 @@ section .text
         ;   Label: LAB_004f27b7
     MOV ECX,0x68                        ; 004f27bc
     PUSH 0x58cef5                       ; 004f27c1 | = "saveScreenRaw16 - No ext found"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f27c6 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f27cc | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004f27c6 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f27cc | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f27d2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f27d7

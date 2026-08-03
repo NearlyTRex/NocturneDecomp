@@ -15,7 +15,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370(CFireEffe
     return;
   }
   core_fire_cpp_CLaserBeam_init_FUN_004858f0
-            ((CLaserBeam *)(_DAT_01c5c700 * 0x40 + 0x1c5c704),origin,hit_position,beam_width,
+            (g_CLaserBeam_ARRAY_01c5c704 + _DAT_01c5c700,origin,hit_position,beam_width,
              reticle_intensity,reflection_normal,red,green,blue,halo_spread,0.0);
   _DAT_01c5c700 = _DAT_01c5c700 + 1;
   return;

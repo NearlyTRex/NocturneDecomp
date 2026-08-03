@@ -15,12 +15,12 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(char *class_name)
   CDemonActor *pCVar1;
   
   actor = core_actor_cpp_createActorByName_FUN_0040d540(class_name);
-  core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,actor);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(g_CDemonMission_PTR_005baf90,actor);
   (*((actor->vtable)._ub)->setup)(actor);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(actor,g_CWeaponActorType_02ddf970.name_hash);
   if (pCVar1 == (CDemonActor *)0x0) {
-    PTR_01cc4800 = "..\\core\\game.cpp";
-    INT_01cc4804 = 0xa0b;
+    g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
+    g_INT_01cc4804 = 0xa0b;
     core_main_c_FUN_004c8440("giveHeroWeapon - This is not a weapon");
   }
   pCVar1[4].location.position.x = 7.00649e-43;

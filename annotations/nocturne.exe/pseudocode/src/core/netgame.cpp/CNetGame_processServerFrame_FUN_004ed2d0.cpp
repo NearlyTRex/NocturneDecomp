@@ -58,13 +58,13 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(CNetGame 
   if ((this_ptr->connection_type == CONNECTION_HOST) && (this_ptr->network_mode == NET_MODE_PLAYING)
      ) {
     if (this_ptr->local_player_index < 0) {
-      PTR_01cc4800 = "..\\core\\netgame.cpp";
-      INT_01cc4804 = 0x8f6;
+      g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+      g_INT_01cc4804 = 0x8f6;
       core_main_c_FUN_004c8440("CNetGame::processServerFrame - I'm not in player list!");
     }
     if (this_ptr->local_player_index != this_ptr->server_player_index) {
-      PTR_01cc4800 = "..\\core\\netgame.cpp";
-      INT_01cc4804 = 0x8f7;
+      g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+      g_INT_01cc4804 = 0x8f7;
       core_main_c_FUN_004c8440("CNetGame::processServerFrame - I'm not the server in the player list!");
     }
     iVar2 = 0;
@@ -122,8 +122,8 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(CNetGame 
       } while (iVar3 < _DAT_01d09c00 * 100);
     }
     if (0x1ff < _DAT_01d09c00) {
-      PTR_01cc4800 = "..\\core\\netgame.cpp";
-      INT_01cc4804 = 299;
+      g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+      g_INT_01cc4804 = 299;
       core_main_c_FUN_004c8440("allocSimFrame - sim history list full");
     }
     sim_frame = (SSimFrame *)(_DAT_01d09c00 * 100 + 0x1d09c04);
@@ -133,7 +133,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(CNetGame 
 LAB_004ed475:
     iVar2 = rand();
     sim_frame->random_seed = iVar2;
-    sim_frame->delta_time = *(float *)(0x01C775EC + 0x264);
+    sim_frame->delta_time = g_CGame_PTR_005b9354->delta_time_float;
     iVar2 = 0;
     pCVar4 = this_ptr;
     pSVar7 = sim_frame;
@@ -162,8 +162,8 @@ LAB_004ed475:
           iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index -
                   local_14->sim_frame_index;
           if (iVar2 < 1) {
-            PTR_01cc4800 = "..\\core\\netgame.cpp";
-            INT_01cc4804 = 0x93b;
+            g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+            g_INT_01cc4804 = 0x93b;
             core_main_c_FUN_004c8440("CNetGame::processServerFrame - player is ahead of the server!?!!");
           }
           if (5 < iVar2) {
@@ -183,8 +183,8 @@ LAB_004ed475:
             iVar6 = -1;
 LAB_004ed65e:
             if (iVar6 < 0) {
-              PTR_01cc4800 = "..\\core\\netgame.cpp";
-              INT_01cc4804 = 0x94d;
+              g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+              g_INT_01cc4804 = 0x94d;
               core_main_c_FUN_004c8440("CNetGame::processServerFrame - client needs frame, but we don't have it in history!");
             }
             iVar6 = iVar6 * 100;

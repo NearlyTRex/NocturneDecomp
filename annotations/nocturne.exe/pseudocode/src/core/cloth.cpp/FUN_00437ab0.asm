@@ -31,7 +31,7 @@
 ;   double DOUBLE_0057ae45 = 0.0833333333333333
 ;   undefined4 DAT_0059b360
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -213,7 +213,7 @@ section .text
     ADD ESP,0xc                         ; 00437c85
     JMP 0x00437bf0                      ; 00437c88
         ;   XREF to: 00437bf0 (UNCONDITIONAL_JUMP)  ; LAB_00437bf0
-    MOV ESI,dword ptr [0x005b6d50]      ; 00437c8d | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 00437c8d | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_00437c8d
     PUSH ESI                            ; 00437c93
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490 ; 00437c94
@@ -223,7 +223,7 @@ section .text
     PUSH EAX                            ; 00437c9f
     FADD float ptr [EDI + 0x18]         ; 00437ca0
     SUB ESP,0x4                         ; 00437ca3
-    MOV EDI,dword ptr [0x005b6d50]      ; 00437ca6 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 00437ca6 | g_CEditorTools_PTR_005b6d50
     FSTP float ptr [ESP]                ; 00437cac
     PUSH EDI                            ; 00437caf
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 ; 00437cb0

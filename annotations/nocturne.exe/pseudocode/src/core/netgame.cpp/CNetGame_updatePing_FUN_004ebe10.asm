@@ -29,8 +29,8 @@
 ;   double DOUBLE_0058c28a = 30
 ;   double DOUBLE_0058c292 = 0.400000000000000
 ;   double DOUBLE_0058c29a = 5
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;
@@ -63,8 +63,8 @@ section .text
         ;   Label: LAB_004ebe2b
     MOV EDI,0x735                       ; 004ebe30
     PUSH 0x58c256                       ; 004ebe35 | = "CNetGame::updatePing - invalid player..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004ebe3a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004ebe40 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004ebe3a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004ebe40 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004ebe46
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ebe4b

@@ -3,6 +3,10 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWater.h"
+#include "types/classes/CWeather.h"
+#include "types/structs/SCollisionInfo.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2DD0000
@@ -21,4 +25,19 @@ extern CDemonActorType g_CCryptVesselActorType_02dd11cc;
 extern CDemonActorType g_CWaterActorActorType_02ddd598;
 extern CDemonActorType g_CWayPointActorType_02ddf514;
 extern CDemonActorType g_CWeaponActorType_02ddf970;
+
+// CVector3f[100]
+extern CVector3f g_CVector3f_ARRAY_02dd9268[100];
+
+// CVector3f[200]
+extern CVector3f g_CVector3f_ARRAY_02ddfa28[200];
+
+// CWater
+extern CWater g_CWater_02dd1210;
+
+// CWeather
+extern CWeather g_CWeather_02ddf9f0;
+
+// SCollisionInfo[100]
+extern SCollisionInfo g_SCollisionInfo_ARRAY_02dd9718[100];
 

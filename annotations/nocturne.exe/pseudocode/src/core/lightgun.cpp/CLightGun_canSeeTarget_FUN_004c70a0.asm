@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_CTrigger_CGlass_00587a48
 ;   float FLOAT_00587a5d = 0.5
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -29,7 +29,7 @@ section .text
     SUB ESP,0x3c                        ; 004c70a4
     MOV EDI,dword ptr [ESP + 0x50]      ; 004c70a7
     MOV ESI,dword ptr [ESP + 0x54]      ; 004c70ab
-    MOV EDX,dword ptr [0x005be368]      ; 004c70af | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 004c70af | g_CDemonSet_PTR_005be368
     PUSH EDX                            ; 004c70b5
     CALL core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0 ; 004c70b6
         ;   XREF to: 005113e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0(CDemonSet * this_ptr)
@@ -78,11 +78,11 @@ section .text
         ;   Label: LAB_004c712a
     PUSH EAX                            ; 004c712e
     PUSH EDI                            ; 004c712f
-    MOV ECX,dword ptr [0x005be368]      ; 004c7130 | DAT_005be368
+    MOV ECX,dword ptr [0x005be368]      ; 004c7130 | g_CDemonSet_PTR_005be368
     PUSH ECX                            ; 004c7136
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 004c7137
         ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
-    MOV EAX,[0x005be368]                ; 004c713c | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004c713c | g_CDemonSet_PTR_005be368
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 004c7141
     ADD ESP,0xc                         ; 004c7147
     TEST EDX,EDX                        ; 004c714a
@@ -99,7 +99,7 @@ section .text
     TEST EAX,EAX                        ; 004c7160
     JZ 0x004c717f                       ; 004c7162
         ;   XREF to: 004c717f (CONDITIONAL_JUMP)  ; LAB_004c717f
-    MOV EAX,[0x005be368]                ; 004c7164 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004c7164 | g_CDemonSet_PTR_005be368
     MOV ECX,dword ptr [EAX + 0x14cd5c]  ; 004c7169
     PUSH ECX                            ; 004c716f
     PUSH EAX                            ; 004c7170
@@ -110,7 +110,7 @@ section .text
     CMP EBX,0x3                         ; 004c717a
     JL 0x004c712a                       ; 004c717d
         ;   XREF to: 004c712a (CONDITIONAL_JUMP)  ; LAB_004c712a
-    MOV EBX,dword ptr [0x005be368]      ; 004c717f | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 004c717f | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004c717f
     PUSH EBX                            ; 004c7185
     CALL core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00511590 ; 004c7186

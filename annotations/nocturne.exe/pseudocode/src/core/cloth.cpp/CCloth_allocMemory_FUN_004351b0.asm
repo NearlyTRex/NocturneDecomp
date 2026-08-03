@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057ac75
 ;   TerminatedCString s_CCloth_allocMemory_Out_o_0057ac87
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_cloth.cpp_FUN_00435210
@@ -47,8 +47,8 @@ section .text
         ;   Label: LAB_004351dc
     MOV EBX,0x77                        ; 004351e1
     PUSH 0x57ac87                       ; 004351e6 | = "CCloth::allocMemory - Out of memory"
-    MOV dword ptr [0x01cc4800],ECX      ; 004351eb | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004351f1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004351eb | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004351f1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004351f7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004351fc

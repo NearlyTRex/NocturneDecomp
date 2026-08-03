@@ -17,7 +17,8 @@ uint __cdecl core_vehicle_cpp_CVehicle_playTrackedSound_FUN_0054f7a0(CVehicle *t
   sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(&position_source_ptr->position);
   sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090(&this_ptr->sound_velocity);
   uVar1 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                    (0x02DC9450,&this_ptr->base,sound_name,&position_source_ptr->position);
+                    (g_CSound_PTR_005bed68,&this_ptr->base,sound_name,&position_source_ptr->position
+                    );
   sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   return uVar1;
 }

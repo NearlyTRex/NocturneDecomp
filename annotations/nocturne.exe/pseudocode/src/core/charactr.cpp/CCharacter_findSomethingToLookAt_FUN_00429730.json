@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 59,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 60,
-        "message": "member reference type 'int' is not a pointer"
       },
       {
         "category": "type_error",
@@ -80,40 +68,22 @@
         "message": "cannot cast from type 'float' to pointer type 'CCharacter *'"
       },
       {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 119,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
+        "category": "type_error",
+        "column": 58,
+        "line": 174,
+        "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 120,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
+        "category": "type_error",
+        "column": 49,
+        "line": 208,
+        "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 121,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 122,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 23,
-        "line": 123,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 135,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
+        "category": "type_error",
+        "column": 74,
+        "line": 220,
+        "message": "invalid suffix '._0_4_' on floating constant"
       }
     ],
     "success": false,
@@ -122,12 +92,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 357,
+    "complexity_score": 359,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 217,
+    "pseudocode_lines": 219,
     "suspect_count": 12,
     "suspect_types": [
       "bit_int_float_compare",
@@ -135,7 +105,7 @@
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 799
+    "total_lines": 801
   },
   "cross_references": [
     {
@@ -306,9 +276,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "00765a98",
@@ -324,25 +294,25 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "DAT_01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
       "type": "undefined4",
       "value": null
     }
@@ -463,9 +433,9 @@
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(CCharacter **)((int)0x01E57284",
+      "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "pCVar4 = *(CCharacter **)((int)0x01E57284->actors + iStack_18 + 0x1b5c);",
+      "text": "pCVar4 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_18);",
       "type": "pointer_cast"
     },
     {
@@ -478,7 +448,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 165,
+      "line": 167,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_74.y = CStack_74.y + 5.3619766690650802e-315._0_4_;",
@@ -486,7 +456,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 199,
+      "line": 201,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar6 = delta_time / 5.2220990168285998e-315._0_4_ + this_ptr->look_at_weight;",
@@ -494,7 +464,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 211,
+      "line": 213,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar6 = this_ptr->look_at_weight - delta_time / 5.2220990168285998e-315._0_4_;",
@@ -518,7 +488,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 119,
+      "line": 121,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_d4.x = CStack_44.x;",
@@ -526,7 +496,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 161,
+      "line": 163,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_74.x = (pCVar7->position).x;",
@@ -534,7 +504,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 173,
+      "line": 175,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_74.x = pCVar5->x;",
@@ -542,7 +512,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 186,
+      "line": 188,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_d4.x = pCVar5->x;",

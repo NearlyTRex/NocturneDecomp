@@ -16,7 +16,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoun
   int *piVar4;
   byte auStack_1a0 [400];
   
-  iVar1 = (slot->options).dead;
+  iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
      (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
     sound_sndmain_cpp_FUN_00529980("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");

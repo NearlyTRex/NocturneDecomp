@@ -102,8 +102,8 @@ void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,
     local_58 = &origin->z;
     while( true ) {
       core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00511840
-                (0x01E57284,laser_info->laser_type,(laser_info->color).r,(laser_info->color).g,
-                 (laser_info->color).b);
+                (g_CDemonSet_PTR_005be368,laser_info->laser_type,(laser_info->color).r,
+                 (laser_info->color).g,(laser_info->color).b);
       local_e0.x = origin->x;
       local_e0.y = *local_80;
       local_e0.z = *local_58;
@@ -111,7 +111,7 @@ void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,
       local_134.y = local_e0.y + direction->y;
       local_134.z = local_e0.z + direction->z;
       local_24 = (float *)core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
-                                    (0x01E57284,&local_e0,&local_134);
+                                    (g_CDemonSet_PTR_005be368,&local_e0,&local_134);
       local_90 = (double)(float)local_24;
       if ((local_90 < 0.0) || (1.0 <= local_90)) {
         local_110.x = -direction->x;
@@ -148,14 +148,13 @@ void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,
           local_134.y = local_140.y;
           local_134.z = local_140.z;
         }
-        pCVar2 = (CVector3f *)(0x01E57284->lights[199].filter_names[0x12] + 0x24);
-        if (&local_a4 != pCVar2) {
-          local_a4.x = pCVar2->x;
-          local_a4.y = *(float *)0x01E57284->lights[199].filter_names[0x13];
-          local_a4.z = *(float *)(0x01E57284->lights[199].filter_names[0x13] + 4);
+        if (&local_a4 != &g_CDemonSet_PTR_005be368->collision_normal) {
+          local_a4.x = (g_CDemonSet_PTR_005be368->collision_normal).x;
+          local_a4.y = (g_CDemonSet_PTR_005be368->collision_normal).y;
+          local_a4.z = (g_CDemonSet_PTR_005be368->collision_normal).z;
         }
       }
-      this_ptr_00 = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18);
+      this_ptr_00 = g_CDemonSet_PTR_005be368->collision_actor;
       laser_info->reflectivity = 0.0;
       laser_info->stored_angle = 0.0;
       laser_info->transparency = 0.0;
@@ -170,15 +169,14 @@ void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,
         }
         pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                            (this_ptr_00,&local_b0,
-                            (CVector3f *)(0x01E57284->lights[199].filter_names[0x13] + 0xc));
+                            &g_CDemonSet_PTR_005be368->collision_impact_position);
         if (pCVar2 != local_1c) {
           local_1c->x = pCVar2->x;
           local_1c->y = pCVar2->y;
           local_1c->z = pCVar2->z;
         }
         pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
-                           (this_ptr_00,&local_11c,
-                            (CVector3f *)(0x01E57284->lights[199].filter_names[0x12] + 0x24));
+                           (this_ptr_00,&local_11c,&g_CDemonSet_PTR_005be368->collision_normal);
         if (pCVar2 != local_18) {
           local_18->x = pCVar2->x;
           local_18->y = pCVar2->y;
@@ -251,8 +249,8 @@ void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,
         local_3c = &local_1c->z;
         local_38 = &local_18->y;
         local_44 = &local_18->z;
-        core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(0x01E57284);
-        core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+        core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
+        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
         local_23c.intensity = laser_info->intensity;
         local_23c.beam_width = laser_info->beam_width;
         local_23c.laser_type = laser_info->laser_type;
@@ -275,13 +273,13 @@ void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,
         local_23c.stored_angle = laser_info->stored_angle;
         local_23c.transparency = laser_info->transparency;
         core_fire_cpp_FUN_0048b6f0(this_ptr,&local_134,&local_bc,&local_23c,local_54);
-        core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(0x01E57284);
+        core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSet_PTR_005be368);
         local_28 = (1.0 - laser_info->transparency) * (float)0.25 * local_28;
       }
       if (laser_info->reflectivity <= 0.0) goto LAB_0048bfa9;
       if ((laser_info->reflectivity != 1.0) ||
          (laser_info->stored_angle != laser_info->incidence_angle)) break;
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,this_ptr_00);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,this_ptr_00);
     }
     local_104.x = direction->x;
     local_104.y = direction->y;
@@ -315,8 +313,8 @@ void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,
     local_148 = laser_info->stored_angle;
     local_144 = laser_info->transparency;
     local_194 = laser_info->intensity * laser_info->reflectivity;
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,this_ptr_00);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,this_ptr_00);
     local_1e8.intensity = laser_info->intensity;
     local_1e8.beam_width = laser_info->beam_width;
     local_1e8.laser_type = laser_info->laser_type;

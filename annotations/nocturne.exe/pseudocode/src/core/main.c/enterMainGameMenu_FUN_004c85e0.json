@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,30 +56,6 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 23,
-        "message": "incompatible integer to pointer conversion assigning to 'CGame *' from 'int'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 27,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 28,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_01cc56e0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 42,
         "line": 35,
@@ -87,33 +63,33 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 31,
-        "line": 41,
-        "message": "use of undeclared identifier 'DAT_01cc5b20'"
+        "column": 15,
+        "line": 59,
+        "message": "use of undeclared identifier 'DAT_01cc7d10'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 31,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_01cc5b34'"
+        "column": 15,
+        "line": 70,
+        "message": "use of undeclared identifier 'DAT_01cc7e10'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 31,
-        "line": 45,
-        "message": "use of undeclared identifier 'DAT_01cc5b48'"
+        "column": 15,
+        "line": 81,
+        "message": "use of undeclared identifier 'DAT_01cc7f10'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 51,
-        "line": 50,
-        "message": "use of undeclared identifier 'DAT_01cc5780'"
+        "column": 15,
+        "line": 91,
+        "message": "use of undeclared identifier 'DAT_01cc8010'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 52,
-        "message": "no matching function for call to 'core_game_cpp_CGame_saveClockTime_FUN_0049a890'"
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 93,
+        "message": "use of undeclared identifier 'DAT_01cc7d10'"
       }
     ],
     "success": false,
@@ -122,23 +98,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 582,
+    "complexity_score": 337,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 177,
-    "suspect_count": 37,
+    "pseudocode_lines": 182,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "raw_address_pointer_store",
       "undefined_data",
-      "unresolved_funcptr",
       "unrolled_strcpy"
     ],
-    "total_lines": 180
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -233,63 +207,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01cc56e0",
-      "severity": "mild",
-      "text": "this_ptr = (CAlphaBitmap *)&DAT_01cc56e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01cc5b20",
-      "severity": "mild",
-      "text": "((CAlphaBitmap *)&DAT_01cc5b20,\"fblurl\",0x68,0x46);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01cc5b34",
-      "severity": "mild",
-      "text": "((CAlphaBitmap *)&DAT_01cc5b34,\"fblurm\",0x20,0x46);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01cc5b48",
-      "severity": "mild",
-      "text": "((CAlphaBitmap *)&DAT_01cc5b48,\"fblurr\",0x68,0x46);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)&DAT_01cc5780,0x01C775EC->delta_time_float);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_01cc7d10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7d10;",
@@ -297,7 +215,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 63,
       "match": "DAT_01cc7e10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7e10;",
@@ -305,7 +223,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 74,
       "match": "DAT_01cc7f10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7f10;",
@@ -313,7 +231,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_01cc8010",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc8010;",
@@ -321,7 +239,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_01cc7d10",
       "severity": "mild",
       "text": "puVar5 = &DAT_01cc7d10;",
@@ -329,139 +247,11 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 97,
+      "line": 98,
       "match": "*(byte **)(iVar4 + 0x1cc8110",
       "severity": "moderate",
       "text": "*(byte **)(iVar4 + 0x1cc8110) = puVar5;",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 113,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d), iVar4 == 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 114,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 134,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 146,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 150,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 152,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x32), iVar4 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 157,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 159,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x20), iVar4 != 0 ||",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 160,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x26), iVar4 != 0)))) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 165,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 167,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x21);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 176,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&PTR_s_f0100_005baf18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -472,16 +262,8 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 16,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar2 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 52,
+      "line": 53,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -489,7 +271,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 63,
+      "line": 64,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -497,7 +279,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 74,
+      "line": 75,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -505,7 +287,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 86,
+      "line": 87,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

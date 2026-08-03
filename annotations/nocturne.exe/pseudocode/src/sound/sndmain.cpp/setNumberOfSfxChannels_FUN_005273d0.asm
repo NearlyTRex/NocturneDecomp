@@ -13,8 +13,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_00593653
 ;   TerminatedCString s_setNumberOfSfxChannels_t_00593668
 ;   undefined4 DAT_005bea60
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -35,8 +35,8 @@ section .text
     MOV ECX,0x593653                    ; 005273e2 | = "..\\sound\\sndmain.cpp"
     MOV EBX,0xf4c                       ; 005273e7
     PUSH 0x593668                       ; 005273ec | = "setNumberOfSfxChannels - too many!"
-    MOV dword ptr [0x01cc4800],ECX      ; 005273f1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 005273f7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 005273f1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 005273f7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005273fd
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00527402

@@ -9,16 +9,16 @@
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_004351b0(CCloth *this_ptr)
 
 {
-  void *pvVar1;
+  int *piVar1;
   
   core_cloth_cpp_FUN_00435210(this_ptr);
-  pvVar1 = shape_memdbg_cpp_malloc_FUN_00564c18((this_ptr->model).vertex_count << 2);
-  this_ptr->vertices[0x300].secondary_velocity.x = (float)pvVar1;
-  if (pvVar1 != (void *)0x0) {
+  piVar1 = shape_memdbg_cpp_malloc_FUN_00564c18((this_ptr->model).vertex_count << 2);
+  this_ptr->vertex_sort_buffer = piVar1;
+  if (piVar1 != (int *)0x0) {
     return;
   }
-  PTR_01cc4800 = "..\\core\\cloth.cpp";
-  INT_01cc4804 = 0x77;
+  g_CHAR_PTR_01cc4800 = "..\\core\\cloth.cpp";
+  g_INT_01cc4804 = 0x77;
   core_main_c_FUN_004c8440("CCloth::allocMemory - Out of memory");
   return;
 }

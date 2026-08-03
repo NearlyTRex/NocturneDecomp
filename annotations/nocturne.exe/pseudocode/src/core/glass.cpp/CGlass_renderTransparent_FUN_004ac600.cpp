@@ -47,13 +47,13 @@ int core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CDemonActor *param_1)
       } while (iVar2 < *(int *)(param_1[8].create_event + 0x34));
     }
     core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-              (0x01E57284,*(int *)(param_1[8].create_event + 0x34),input_vertices);
+              (g_CDemonSet_PTR_005be368,*(int *)(param_1[8].create_event + 0x34),input_vertices);
     lVar1 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)(int)param_1[1].location.position.y;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
               (DAT_005ae704,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     poly = (SMRGLPrimitivePoly *)(param_1[5].actor_name + 0x14);
     core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-              (0x01E57284,*(int *)(param_1[8].create_event + 0x34),
+              (g_CDemonSet_PTR_005be368,*(int *)(param_1[8].create_event + 0x34),
                *(int *)(param_1[8].create_event + 0x38),poly,input_vertices,4,(CVector3i *)0x0);
     iVar2 = 0;
     pCVar5 = param_1;

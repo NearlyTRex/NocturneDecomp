@@ -34,7 +34,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
     local_44 = local_14;
   }
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
-            (0x01B4D738,(CVector3f *)0x1bc9950);
+            ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3f *)0x1bc9950);
   local_dc.vertices[5].vertex_index = (int)ROUND(world_pos->x * _DAT_0059c8a0);
   local_dc.vertices[5].texture_u = (int)ROUND(world_pos->y * _DAT_0059c8a0);
   local_dc.vertices[5].texture_v = (int)ROUND(world_pos->z * _DAT_0059c8a0);

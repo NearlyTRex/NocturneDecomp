@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,30 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 17,
-        "message": "no matching function for call to 'core_game_cpp_CGame_resetKeyState_FUN_0049e8b0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 24,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 24,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -86,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 44,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
-    "total_lines": 82
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -121,32 +95,32 @@
   "globals": [
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005bac64",
-      "name": "INT_005bac64",
-      "type": "int",
-      "value": "0x1cc30e4"
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01c776a8",
-      "name": "DAT_01c776a8",
+      "name": "g_CGame_01c775ec.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc30e4",
-      "name": "DAT_01cc30e4",
-      "type": "undefined4",
+      "name": "g_CKeys_01cc30e4",
+      "type": "CKeys",
       "value": null
     }
   ],
@@ -194,14 +168,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,iVar2);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

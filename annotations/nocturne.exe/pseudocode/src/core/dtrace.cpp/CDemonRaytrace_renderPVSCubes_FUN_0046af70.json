@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,27 +56,27 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 19,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20'"
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 20,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 20,
+        "line": 21,
         "message": "use of undeclared identifier '_DAT_01b7b744'"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 24,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 26,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 31,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_01b7b744'"
       }
     ],
@@ -86,18 +86,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 53,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 24,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_pointer_store",
       "warning_overlapping_globals"
     ],
-    "total_lines": 71
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -144,9 +144,9 @@
   "globals": [
     {
       "addr": "005ae700",
-      "name": "DAT_005ae700",
-      "type": "undefined4",
-      "value": null
+      "name": "PTR_DAT_005ae700",
+      "type": "void*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -162,7 +162,7 @@
     },
     {
       "addr": "01b8efcc",
-      "name": "CVector3f_ARRAY_01b8efcc",
+      "name": "g_CVector3f_ARRAY_01b8efcc",
       "type": "CVector3f[20000]",
       "value": null
     }
@@ -241,7 +241,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 19,
+      "line": 20,
       "match": "*(CDemonCube **)(iVar2 + 0x1b7b74c",
       "severity": "moderate",
       "text": "core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(*(CDemonCube **)(iVar2 + 0x1b7b74c),0);",

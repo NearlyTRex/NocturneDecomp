@@ -79,7 +79,8 @@ void core_bodypart_cpp_CBodyPart_process_FUN_004168d0(CBodyPart *param_1,float p
           local_54.wielder = &param_1->base;
           local_c = local_54.damage_amount;
           core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880
-                    (0x01E57284,&local_18,&(param_1->base).location.position,&local_54);
+                    (g_CDemonSet_PTR_005be368,&local_18,&(param_1->base).location.position,&local_54
+                    );
           core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(param_1,param_2);
           return;
         }

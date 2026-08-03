@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,16 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 63,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "bit_int_float_compare",
-      "raw_address_constant"
+      "bit_int_float_compare"
     ],
     "total_lines": 123
   },
@@ -111,37 +110,37 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01c77850",
-      "name": "DAT_01c77850",
+      "name": "g_CGame_01c775ec.delta_time_float",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1afc",
-      "name": "DAT_01fb1afc",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1b00",
-      "name": "DAT_01fb1b00",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1b04",
-      "name": "DAT_01fb1b04",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.z",
       "type": "undefined4",
       "value": null
     }
@@ -267,14 +266,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 28,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "iVar4 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x421fffff is the IEEE 754 bit pattern of 40f. Rewrite in a .keep as a plain float compare against 40f.",
       "line": 13,

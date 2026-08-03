@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -63,12 +63,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 34,
-        "line": 20,
-        "message": "use of undeclared identifier 'DAT_01abb65c'; did you mean 'DAT_005b765c'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 22,
         "line": 28,
         "message": "use of undeclared identifier '_DAT_01abb658'; did you mean 'DAT_005b7658'?"
@@ -80,18 +74,6 @@
         "message": "use of undeclared identifier '_DAT_01abb658'; did you mean 'DAT_005b7658'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 31,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 31,
-        "message": "assigning to 'int' from incompatible type 'const char[19]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 5,
         "line": 33,
@@ -99,19 +81,19 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 33,
-        "line": 35,
-        "message": "use of undeclared identifier 'DAT_01abb65c'; did you mean 'DAT_005b765c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
+        "column": 47,
         "line": 35,
         "message": "use of undeclared identifier '_DAT_01abb658'; did you mean 'DAT_005b7658'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
+        "line": 36,
+        "message": "use of undeclared identifier '_DAT_01abb658'; did you mean 'DAT_005b7658'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
         "line": 36,
         "message": "use of undeclared identifier '_DAT_01abb658'; did you mean 'DAT_005b7658'?"
       }
@@ -122,16 +104,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 84,
+    "complexity_score": 44,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 29,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 93
@@ -230,13 +210,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -370,30 +350,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01abb65c",
-      "severity": "mild",
-      "text": "pCVar2 = (CKeyFramedModel *)&DAT_01abb65c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01abb65c",
-      "severity": "mild",
-      "text": "pCVar2 = (CKeyFramedModel *)(&DAT_01abb65c + _DAT_01abb658 * 0x398);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 20,
-      "match": "pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar2 = (CKeyFramedModel *)&pCVar2->texture_list[8].textures[2].base.count;",
-      "type": "shadow_pointer_walk"
     }
   ]
 }

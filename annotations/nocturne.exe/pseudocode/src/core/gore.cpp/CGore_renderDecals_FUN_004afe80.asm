@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gore_cpp_CGore_renderDecals_FUN_004afe80(undefined4 param_1,int param_2)
+; CGame * core_gore_cpp_CGore_renderDecals_FUN_004afe80(undefined4 param_1,int param_2)
 ;
 ;
 ; XREF[2]:
@@ -9,8 +9,8 @@
 ;   core_set.cpp_FUN_00509a80 at 00509ea7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77600
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.blood_flag
 ;   undefined4 DAT_01c7ccf0
 ;   undefined4 DAT_01c9e038
 ;   undefined4 DAT_01c9e540
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 004afe82
     PUSH EBP                            ; 004afe83
     MOV EDI,dword ptr [ESP + 0x18]      ; 004afe84
-    MOV EAX,[0x005b9354]                ; 004afe88 | DAT_005b9354
-    CMP dword ptr [EAX + 0x14],0x0      ; 004afe8d | DAT_01c77600
+    MOV EAX,[0x005b9354]                ; 004afe88 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x14],0x0      ; 004afe8d | g_CGame_01c775ec.blood_flag
     JNZ 0x004afea5                      ; 004afe91
         ;   XREF to: 004afea5 (CONDITIONAL_JUMP)  ; LAB_004afea5
     LEA EAX,[EAX]                       ; 004afe93

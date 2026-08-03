@@ -9,8 +9,8 @@
 int __cdecl support_trisock_cpp_shouldNeverBeCalled2_FUN_00548ea0(int unknown1,int unknown2)
 
 {
-  PTR_01cc4800 = "..\\support\\trisock.cpp";
-  INT_01cc4804 = 0xd1;
+  g_CHAR_PTR_01cc4800 = "..\\support\\trisock.cpp";
+  g_INT_01cc4804 = 0xd1;
   core_main_c_FUN_004c8440("Should never be called!");
   return unknown1;
 }

@@ -28,7 +28,8 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *th
     }
     this_ptr->cached_ammo_count = this_ptr->selected_weapon->ammo_count;
   }
-  if ((*(int *)(0x01C775EC + 0x244) == 0) && (*(int *)(0x01C775EC + 0x240) == 0)) {
+  if ((g_CGame_PTR_005b9354->flashlight_active == 0) && (g_CGame_PTR_005b9354->goggles_active == 0))
+  {
     local_20 = 1.0 / 120.0f;
     iVar4 = 0;
     pCVar5 = this_ptr;
@@ -44,7 +45,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *th
       } while (iVar4 < this_ptr->item_count);
     }
     fVar2 = (float)100;
-    fVar1 = *(float *)(0x01C775EC + 0x264) * fVar2 * local_20 + this_ptr->battery_charge;
+    fVar1 = g_CGame_PTR_005b9354->delta_time_float * fVar2 * local_20 + this_ptr->battery_charge;
     this_ptr->battery_charge = fVar1;
     if (fVar2 < fVar1) {
       this_ptr->battery_charge = 100.0;
@@ -66,7 +67,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *th
       } while (iVar4 < this_ptr->item_count);
     }
     fVar1 = this_ptr->battery_charge -
-            (*(float *)(0x01C775EC + 0x264) * (float)100) / local_1c;
+            (g_CGame_PTR_005b9354->delta_time_float * (float)100) / local_1c;
     this_ptr->battery_charge = fVar1;
     if (fVar1 < 0.0) {
       this_ptr->battery_charge = 0.0;
@@ -79,34 +80,35 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *th
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
                          (pCVar5->items[0],g_CLightGunActorType_01cc3688.name_hash);
       if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.area_id != 2)) {
-        (*((pCVar3->vtable)._ub)->process)(pCVar3,*(float *)(0x01C775EC + 0x264));
+        (*((pCVar3->vtable)._ub)->process)(pCVar3,g_CGame_PTR_005b9354->delta_time_float);
       }
       iVar4 = iVar4 + 1;
       pCVar5 = (CInventory *)&pCVar5->owner;
     } while (iVar4 < this_ptr->item_count);
   }
   this_ptr->weapon_highlight_timer =
-       this_ptr->weapon_highlight_timer - *(float *)(0x01C775EC + 0x264);
+       this_ptr->weapon_highlight_timer - g_CGame_PTR_005b9354->delta_time_float;
   if (this_ptr->weapon_highlight_timer <= 0.0) {
     this_ptr->weapon_highlight_timer = 0.0;
   }
-  this_ptr->item_highlight_timer = this_ptr->item_highlight_timer - *(float *)(0x01C775EC + 0x264)
-  ;
+  this_ptr->item_highlight_timer =
+       this_ptr->item_highlight_timer - g_CGame_PTR_005b9354->delta_time_float;
   if (this_ptr->item_highlight_timer <= 0.0) {
     this_ptr->item_highlight_timer = 0.0;
   }
   this_ptr->inventory_display_timer =
-       this_ptr->inventory_display_timer - *(float *)(0x01C775EC + 0x264);
+       this_ptr->inventory_display_timer - g_CGame_PTR_005b9354->delta_time_float;
   if (this_ptr->inventory_display_timer <= 0.0) {
     this_ptr->inventory_display_timer = 0.0;
   }
   this_ptr->message_display_timer =
-       this_ptr->message_display_timer - *(float *)(0x01C775EC + 0x264);
+       this_ptr->message_display_timer - g_CGame_PTR_005b9354->delta_time_float;
   if (this_ptr->message_display_timer <= 0.0) {
     this_ptr->message_text[0] = '\0';
     this_ptr->message_display_timer = 0.0;
   }
-  this_ptr->ammo_detail_timer = this_ptr->ammo_detail_timer - *(float *)(0x01C775EC + 0x264);
+  this_ptr->ammo_detail_timer = this_ptr->ammo_detail_timer - g_CGame_PTR_005b9354->delta_time_float
+  ;
   if (this_ptr->ammo_detail_timer < 0.0) {
     this_ptr->ammo_detail_timer = 0.0;
     return;

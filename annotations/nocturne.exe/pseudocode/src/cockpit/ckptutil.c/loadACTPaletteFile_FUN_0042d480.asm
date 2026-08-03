@@ -16,8 +16,8 @@
 ;   TerminatedCString s_art_0057a6ea
 ;   TerminatedCString s_Error_reading_s_0057a6ee
 ;   TerminatedCString s_cockpit_ckptutil_c_0057a700
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -154,8 +154,8 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0042d55f
     MOV ECX,0x135                       ; 0042d563
     PUSH EAX                            ; 0042d568
-    MOV dword ptr [0x01cc4800],EDX      ; 0042d569 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0042d56f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0042d569 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0042d56f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0042d575
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042d57a

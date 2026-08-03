@@ -51,8 +51,8 @@
 ;   TerminatedCString s_core_skeleton_cpp_00591a9d
 ;   TerminatedCString s_CDeformableModel_compute_00591ab2
 ;   undefined4 DAT_005a1eb0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -127,8 +127,8 @@ section .text
     MOV ECX,0x591a9d                    ; 0051adaf | = "..\\core\\skeleton.cpp"
     MOV EBX,0x7d3                       ; 0051adb4
     PUSH 0x591ab2                       ; 0051adb9 | = "CDeformableModel::computePartDominant..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051adbe | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0051adc4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0051adbe | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0051adc4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051adca
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051adcf

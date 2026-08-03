@@ -56,8 +56,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCh
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 (&this_ptr->base,&CStack_5c,&CStack_a4);
       iStack_18 = 0;
-      for (iVar8 = 0; iVar8 < (int)0x01E57284->actors[0x6d6]; iVar8 = iVar8 + 1) {
-        pCVar4 = *(CCharacter **)((int)0x01E57284->actors + iStack_18 + 0x1b5c);
+      for (iVar8 = 0; iVar8 < g_CDemonSet_PTR_005be368->character_count; iVar8 = iVar8 + 1) {
+        pCVar4 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_18);
         if ((pCVar4 != this_ptr) &&
            (iVar2 = (*((pCVar4->base).vtable._ub)->shouldIgnoreForTargeting)(&pCVar4->base),
            iVar2 == 0)) {
@@ -116,12 +116,14 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCh
               fStack_100 = fStack_100 * (float)1.1000000000000001;
             }
             if (-1.0f <= fStack_100) {
-              core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-              core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&this_ptr->base);
-              core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&pCVar4->base);
-              core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,2);
+              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+              core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                        (g_CDemonSet_PTR_005be368,&this_ptr->base);
+              core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                        (g_CDemonSet_PTR_005be368,&pCVar4->base);
+              core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,2);
               iVar2 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                                (0x01E57284,&CStack_5c,&CStack_ec);
+                                (g_CDemonSet_PTR_005be368,&CStack_5c,&CStack_ec);
               if ((iVar2 == 0) && (pCStack_20 = pCVar4, &CStack_d4 != &CStack_44)) {
                 CStack_d4.x = CStack_44.x;
                 CStack_d4.y = CStack_44.y;
@@ -132,7 +134,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCh
         }
         iStack_18 = iStack_18 + 4;
       }
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(1.0,2.0);
       this_ptr->look_at_search_timer = fStack_14;
     }
@@ -157,8 +159,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCh
                        (&this_ptr->look_at_candidate->base,g_CCharacterActorType_00765a60.name_hash)
     ;
     if (pCVar4 == (CCharacter *)0x0) {
-      PTR_01cc4800 = "..\\core\\charactr.cpp";
-      INT_01cc4804 = 0xdb4;
+      g_CHAR_PTR_01cc4800 = "..\\core\\charactr.cpp";
+      g_INT_01cc4804 = 0xdb4;
       core_main_c_FUN_004c8440("CCharacter::findSomethingToLookAt - Should be a character");
     }
     EVar1 = (*(((pCVar4->base).vtable._uc)->_uc).getDeathState)(pCVar4);

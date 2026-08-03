@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 17,
-        "message": "no matching function for call to 'core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10'"
       }
     ],
     "success": false,
@@ -68,18 +62,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 328,
+    "complexity_score": 309,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
-    "suspect_count": 28,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 24,
     "suspect_types": [
-      "suspect_float",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "unnamed_param"
     ],
-    "total_lines": 152
+    "total_lines": 163
   },
   "cross_references": [],
   "function": {
@@ -93,7 +89,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300",
-    "signature": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(int param_1,float *param_2)"
+    "signature": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2)"
   },
   "function_calls": [
     {
@@ -200,13 +196,72 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CMansionPuzzleCircle_onLaserHit_FUN_004ca300.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 7,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 10,
+          "line": 44,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 64,
+          "line": 45,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 15,
+          "line": 46,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 10,
+          "line": 47,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 64,
+          "line": 48,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 15,
+          "line": 49,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 64,
+          "line": 51,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(int param_1,float *param_2)",
+      "text": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -214,12 +269,12 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(int param_1,float *param_2)",
+      "text": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(param_1,param_2);",
@@ -227,7 +282,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(param_1,param_2);",
@@ -235,58 +290,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar2 = (float *)(param_1 + 0x1354);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((pfVar2[2] - param_2[0xd]) * (pfVar2[2] - param_2[0xd]) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((pfVar2[2] - param_2[0xd]) * (pfVar2[2] - param_2[0xd]) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pfVar2[1] - param_2[0xc]) * (pfVar2[1] - param_2[0xc]) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pfVar2[1] - param_2[0xc]) * (pfVar2[1] - param_2[0xc]) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*pfVar2 - param_2[0xb]) * (*pfVar2 - param_2[0xb]) < 1.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*pfVar2 - param_2[0xb]) * (*pfVar2 - param_2[0xb]) < 1.0) {",
+      "text": "pfVar5 = &param_1[0xe].platform_orientation_delta.z;",
       "type": "unnamed_param"
     },
     {
@@ -294,87 +301,55 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[0x14] = 1.0;",
+      "text": "fVar1 = *pfVar5 - (param_2->local_hit_position).x;",
       "type": "unnamed_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 23,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "if (param_2[2] == 2.8026e-45) {",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2[2] == 2.8026e-45) {",
+      "text": "fVar3 = pfVar5[1] - (param_2->local_hit_position).y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
+      "line": 19,
+      "match": "param_2",
       "severity": "mild",
-      "text": "pfVar2 = (float *)(param_1 + 0xabc);",
+      "text": "fVar2 = pfVar5[2] - (param_2->local_hit_position).z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2->transparency = 1.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2->laser_type == 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar3 = (float *)(iVar4 * 0xb8 + param_1 + 0xa98);",
+      "text": "pCVar4 = &param_1[8].orient_matrix;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((pfVar2[2] - param_2[0xd]) * (pfVar2[2] - param_2[0xd]) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((pfVar2[2] - param_2[0xd]) * (pfVar2[2] - param_2[0xd]) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pfVar2[1] - param_2[0xc]) * (pfVar2[1] - param_2[0xc]) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pfVar2[1] - param_2[0xc]) * (pfVar2[1] - param_2[0xc]) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*pfVar2 - param_2[0xb]) * (*pfVar2 - param_2[0xb]) < (float)0.25) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*pfVar2 - param_2[0xb]) * (*pfVar2 - param_2[0xb]) < (float)0.25) {",
+      "text": "fVar1 = pCVar4->m[0].x - (param_2->local_hit_position).x;",
       "type": "unnamed_param"
     },
     {
@@ -382,15 +357,7 @@
       "line": 32,
       "match": "param_2",
       "severity": "mild",
-      "text": "pfVar3[6] = (float)(int)param_2[3] * *param_2 * *pfVar3 * fVar1 + pfVar3[6];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3[6] = (float)(int)param_2[3] * *param_2 * *pfVar3 * fVar1 + pfVar3[6];",
+      "text": "fVar3 = pCVar4->m[0].y - (param_2->local_hit_position).y;",
       "type": "unnamed_param"
     },
     {
@@ -398,32 +365,144 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "pfVar3[7] = (float)(int)param_2[4] * *param_2 * pfVar3[1] * fVar1 + pfVar3[7];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3[7] = (float)(int)param_2[4] * *param_2 * pfVar3[1] * fVar1 + pfVar3[7];",
+      "text": "fVar2 = pCVar4->m[0].z - (param_2->local_hit_position).z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 34,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "pfVar3[8] = (float)(int)param_2[5] * *param_2 * pfVar3[2] * fVar1 + pfVar3[8];",
+      "text": "pcVar6 = param_1[8].actor_name + iVar7 * 0xb8 + 0x18;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "pfVar3[8] = (float)(int)param_2[5] * *param_2 * pfVar3[2] * fVar1 + pfVar3[8];",
+      "text": "(float)(param_2->color).r * param_2->intensity * *(float *)pcVar6 * fVar1 +",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(float)(param_2->color).r * param_2->intensity * *(float *)pcVar6 * fVar1 +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(float)(param_2->color).g * param_2->intensity * *(float *)(pcVar6 + 4) * fVar1 +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(float)(param_2->color).g * param_2->intensity * *(float *)(pcVar6 + 4) * fVar1 +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(float)(param_2->color).b * param_2->intensity * *(float *)(pcVar6 + 8) * fVar1 +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(float)(param_2->color).b * param_2->intensity * *(float *)(pcVar6 + 8) * fVar1 +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 48,
+      "match": "(CMatrix3x3f *)((int)(pCVar4 + 5) +",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x3f *)((int)(pCVar4 + 5) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `(pCVar4 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)(pCVar4 + 5)",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x3f *)((int)(pCVar4 + 5) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via element-arithmetic `(int)(pCVar4 + N) + M`, where `N*sizeof(*pCVar4) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar4->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 48,
+      "match": "pCVar4 = (T *)((int)(pCVar4 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x3f *)((int)(pCVar4 + 5) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 44,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar6 + 0x18) =",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 45,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(float)(param_2->color).r * param_2->intensity * *(float *)pcVar6 * fVar1 +",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 46,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar6 + 0x18);",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 47,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar6 + 0x1c) =",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 48,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(float)(param_2->color).g * param_2->intensity * *(float *)(pcVar6 + 4) * fVar1 +",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 49,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar6 + 0x1c);",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 51,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(float)(param_2->color).b * param_2->intensity * *(float *)(pcVar6 + 8) * fVar1 +",
+      "type": "static_invalid_pointer_cast"
     }
   ],
   "vtable_info": {

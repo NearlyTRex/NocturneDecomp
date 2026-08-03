@@ -22,7 +22,7 @@ int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(CDemonSet *this
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = (C3DSCamera *)&str1->enabled;
+      str1 = str1 + 1;
     } while (iVar2 < this_ptr->camera_count);
   }
   return -1;

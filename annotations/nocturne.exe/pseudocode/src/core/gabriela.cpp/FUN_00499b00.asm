@@ -23,8 +23,8 @@
 ;   float FLOAT_00582286 = -0.3000000
 ;   double DOUBLE_0058228a = 0.5
 ;   float FLOAT_0059dcb8 = 0.05000000
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -145,8 +145,8 @@ section .text
     PUSH EAX                            ; 00499c39
     LEA EAX,[ESP + 0x1b28]              ; 00499c3a
     PUSH EAX                            ; 00499c41
-    MOV EAX,[0x005be368]                ; 00499c42 | DAT_005be368
-    PUSH EAX                            ; 00499c47 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 00499c42 | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 00499c47 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30 ; 00499c48
         ;   XREF to: 0050fa30 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 00499c4d

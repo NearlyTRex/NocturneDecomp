@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_005be368
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01cc9450
 ;   undefined4 DAT_01cc9454
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_reposition_FUN_004552a0
@@ -22,7 +22,7 @@ section .text
     PUSH EBX                            ; 00456460
         ;   Label: core_door.cpp_CDoor_updateCollisionData_FUN_00456460
     MOV EBX,dword ptr [ESP + 0x8]       ; 00456461
-    MOV EAX,[0x005baf90]                ; 00456465 | DAT_005baf90 | DAT_01cc9450
+    MOV EAX,[0x005baf90]                ; 00456465 | g_CDemonMission_PTR_005baf90 | DAT_01cc9450
     CMP dword ptr [EAX + 0x4],0x0       ; 0045646a | DAT_01cc9454
     JNZ 0x00456479                      ; 0045646e
         ;   XREF to: 00456479 (CONDITIONAL_JUMP)  ; LAB_00456479
@@ -38,8 +38,8 @@ section .text
         ;   XREF to: 004552a0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_004552a0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00456481
     PUSH EBX                            ; 00456484
-    MOV EBX,dword ptr [0x005be368]      ; 00456485 | DAT_005be368
-    PUSH EBX                            ; 0045648b | DAT_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 00456485 | g_CDemonSet_PTR_005be368
+    PUSH EBX                            ; 0045648b | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_FUN_00511a10 ; 0045648c
         ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00456491

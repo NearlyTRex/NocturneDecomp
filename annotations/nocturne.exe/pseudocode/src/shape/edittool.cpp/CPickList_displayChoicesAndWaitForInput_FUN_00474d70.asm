@@ -22,15 +22,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_005b7630
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -60,8 +60,8 @@ section .text
     MOV ECX,0x57e4fa                    ; 00474d84 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 00474d89
     PUSH 0x57e510                       ; 00474d8e | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00474d93 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00474d99 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00474d93 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00474d99 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00474d9f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00474da4
@@ -117,7 +117,7 @@ section .text
     ADD ESP,0x8                         ; 00474e2f
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 00474e32
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
-    MOV EDI,dword ptr [0x005b6d50]      ; 00474e37 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 00474e37 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 00474e3d
     CALL shape_edittool.cpp_FUN_004720c0 ; 00474e3e
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()

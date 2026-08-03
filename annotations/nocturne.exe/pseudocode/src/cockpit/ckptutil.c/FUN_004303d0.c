@@ -34,8 +34,8 @@ void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint
   puStack_24 = (uint *)malloc(size);
   if (puStack_24 == (uint *)0x0) {
     _sprintf(auStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.",size);
-    INT_01cc4804 = 0x802;
-    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    g_INT_01cc4804 = 0x802;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     core_main_c_FUN_004c8440(auStack_78);
   }
   if (param_4 == 1) {

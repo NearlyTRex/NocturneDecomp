@@ -12,6 +12,6 @@ void core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CDemonActor *par
   if (*(int *)(param_1[1].actor_name + 0xc) == 0) {
     return;
   }
-  core_setcolid_cpp_FUN_00511a10(0x01E57284,param_1);
+  core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,param_1);
   return;
 }

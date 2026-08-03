@@ -9,5 +9,5 @@
 int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00481920(CDemonSet *set_ptr)
 
 {
-  return (int)set_ptr->renderable_actors[0x773];
+  return set_ptr->selected_camera_index;
 }

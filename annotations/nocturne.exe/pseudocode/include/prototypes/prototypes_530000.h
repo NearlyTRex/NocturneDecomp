@@ -95,7 +95,7 @@ CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00533020(CSpike *this_ptr);
 void core_spike_cpp_CSpike_setup_FUN_00533160(CDemonActor *param_1);
 void core_spike_cpp_CSpike_process_FUN_00533210(CSpike *param_1,float param_2);
 int core_spike_cpp_CSpike_renderOpaque_FUN_00533530(CDemonActor *param_1);
-undefined4 * core_spike_cpp_CSpike_getBoundingBox_FUN_005335a0(int param_1,undefined4 *param_2);
+float * core_spike_cpp_CSpike_getBoundingBox_FUN_005335a0(int param_1,float *param_2);
 void core_spike_cpp_CSpike_archive_FUN_005335f0(CDemonActor *param_1);
 undefined4 core_spike_cpp_CSpike_getCollisionType_FUN_00533740(void);
 void __cdecl core_spike_cpp_FUN_00533750(CSpike *this_ptr);
@@ -115,7 +115,7 @@ void __cdecl shape_spotview_cpp_CSpotView_clampValues_FUN_00534590(CSpotView *th
 CSpotView * __cdecl shape_spotview_cpp_CSpotView_dtor_FUN_00534740(CSpotView *this_ptr,uint flags);
 void __cdecl core_stairs_cpp_staticInit_FUN_00534750(void);
 CStairs * __cdecl core_stairs_cpp_factoryFunc_FUN_00534780(void);
-CDemonActorType * core_stairs_cpp_CStairs_getActorType_FUN_005347a0(void);
+CDemonActorType * __cdecl core_stairs_cpp_CStairs_getActorType_FUN_005347a0(CStairs *this_ptr);
 CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1);
 void core_stairs_cpp_CStairs_setup_FUN_00534820(CStairs *param_1);
 void core_stairs_cpp_CStairs_process_FUN_00534840(void);

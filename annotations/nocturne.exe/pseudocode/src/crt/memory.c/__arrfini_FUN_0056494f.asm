@@ -21,7 +21,7 @@
 ;   core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110 at 0041811c
 ;   core_boneguy.cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0 at 0041a4fc
 ;   core_box.cpp_SScrape_arrdtor_FUN_0041cbe0 at 0041cbec
-;   core_boxactor.cpp_FUN_0041fb00 at 0041fb0c
+;   core_boxactor.cpp_CDemonFilter_arrdtor_FUN_0041fb00 at 0041fb0c
 ;   core_bugs.cpp_FUN_00423e80 at 00423e8f
 ;   ... and 71 more
 ;

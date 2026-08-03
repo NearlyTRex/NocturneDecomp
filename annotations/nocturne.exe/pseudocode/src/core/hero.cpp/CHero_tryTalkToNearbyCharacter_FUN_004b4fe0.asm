@@ -30,8 +30,8 @@
 ;   double DOUBLE_00585833 = 5
 ;   double DOUBLE_0058583b = 0.349065850388889
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fa5f34
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.character_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220
@@ -68,9 +68,9 @@ section .text
     ADD ESP,0xc                         ; 004b5012
     ADD ESI,0x20                        ; 004b5015
     MOV dword ptr [ESP + 0x3c],EDI      ; 004b5018
-    MOV EAX,[0x005be368]                ; 004b501c | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004b501c | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004b501c
-    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 004b5021 | DAT_01fa5f34
+    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 004b5021 | g_CDemonSet_01e57284.character_count
     JGE 0x004b50fe                      ; 004b5027
         ;   XREF to: 004b50fe (CONDITIONAL_JUMP)  ; LAB_004b50fe
     ADD EAX,dword ptr [ESP + 0x3c]      ; 004b502d

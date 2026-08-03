@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dog2_wav_0057cff9
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
@@ -43,7 +43,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0xbd2c]    ; 00454e65
         ;   Label: LAB_00454e65
     PUSH EDX                            ; 00454e6b
-    MOV ECX,dword ptr [0x005bed68]      ; 00454e6c | DAT_005bed68
+    MOV ECX,dword ptr [0x005bed68]      ; 00454e6c | g_CSound_PTR_005bed68
     PUSH ECX                            ; 00454e72
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0 ; 00454e73
         ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0(CSound * this_ptr, uint sfx_handle)

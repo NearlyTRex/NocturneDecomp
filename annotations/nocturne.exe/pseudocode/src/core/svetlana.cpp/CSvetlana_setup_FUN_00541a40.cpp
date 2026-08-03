@@ -21,7 +21,7 @@ void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(CHero *param_1)
   int iVar3;
   char *model_name;
   
-  if (*(int *)(0x01C775EC + 0x18) == 0) {
+  if (g_CGame_PTR_005b9354->nudity_flag == 0) {
     model_name = "svetlanax.dfm";
   }
   else {

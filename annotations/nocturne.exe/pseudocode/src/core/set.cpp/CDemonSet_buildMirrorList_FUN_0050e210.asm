@@ -17,8 +17,8 @@
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;   undefined4 g_CGlassActorType_01c78c40.name_hash
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -89,8 +89,8 @@ section .text
     MOV EBX,0x590832                    ; 0050e2ad | = "..\\core\\set.cpp"
     MOV EAX,0x1118                      ; 0050e2b2
     PUSH 0x590842                       ; 0050e2b7 | = "CDemonSet::buildMirrorList - Too many..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0050e2bc | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0050e2c2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0050e2bc | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0050e2c2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050e2c7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050e2cc

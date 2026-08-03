@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Press_any_key_to_continu_0058854b
 ;   TerminatedCString s_Monitor_calibration_00588568
-;   undefined4 DAT_014b9904
+;   CBitFont* g_CBitFont_PTR_014b9904
 ;
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
@@ -84,7 +84,7 @@ section .text
     POP EDI                             ; 004cfeaf
         ;   Label: LAB_004cfeaf
     PUSH 0x58                           ; 004cfeb0
-    MOV EDX,dword ptr [0x014b9904]      ; 004cfeb2 | DAT_014b9904
+    MOV EDX,dword ptr [0x014b9904]      ; 004cfeb2 | g_CBitFont_PTR_014b9904
     PUSH EDX                            ; 004cfeb8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004cfeb9
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
@@ -92,7 +92,7 @@ section .text
     MOV EDI,EAX                         ; 004cfec1
     MOV EAX,ESP                         ; 004cfec3
     PUSH EAX                            ; 004cfec5
-    MOV ECX,dword ptr [0x014b9904]      ; 004cfec6 | DAT_014b9904
+    MOV ECX,dword ptr [0x014b9904]      ; 004cfec6 | g_CBitFont_PTR_014b9904
     PUSH ECX                            ; 004cfecc
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cfecd
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -125,7 +125,7 @@ section .text
     PUSH EDX                            ; 004cff1e
     LEA EAX,[ESP + 0x10]                ; 004cff1f
     PUSH EAX                            ; 004cff23
-    MOV EBX,dword ptr [0x014b9904]      ; 004cff24 | DAT_014b9904
+    MOV EBX,dword ptr [0x014b9904]      ; 004cff24 | g_CBitFont_PTR_014b9904
     PUSH EBX                            ; 004cff2a
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cff2b
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004cff3d
     PUSH EAX                            ; 004cff40
-    MOV EBP,dword ptr [0x014b9904]      ; 004cff41 | DAT_014b9904
+    MOV EBP,dword ptr [0x014b9904]      ; 004cff41 | g_CBitFont_PTR_014b9904
     PUSH EBP                            ; 004cff47
     MOV ESI,EAX                         ; 004cff48
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cff4a
@@ -153,7 +153,7 @@ section .text
     SUB EDX,EAX                         ; 004cff6a
     PUSH EDX                            ; 004cff6c
     PUSH ESI                            ; 004cff6d
-    MOV EAX,[0x014b9904]                ; 004cff6e | DAT_014b9904
+    MOV EAX,[0x014b9904]                ; 004cff6e | g_CBitFont_PTR_014b9904
     PUSH EAX                            ; 004cff73
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cff74
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)

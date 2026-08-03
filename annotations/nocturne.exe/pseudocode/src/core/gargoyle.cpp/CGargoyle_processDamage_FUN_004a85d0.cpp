@@ -22,7 +22,7 @@ void core_gargoyle_cpp_CGargoyle_processDamage_FUN_004a85d0(CGargoyle *param_1,S
   do {
     iVar4 = iVar4 + 1;
     core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-              (0x01C08D04,&local_1c,(CVector3f *)0x0,0x10000,0x8000,0,0xffff);
+              (g_CFireEffect_PTR_005b80f0,&local_1c,(CVector3f *)0x0,0x10000,0x8000,0,0xffff);
   } while (iVar4 < 3);
   this_ptr = &(param_1->base).base.model;
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660

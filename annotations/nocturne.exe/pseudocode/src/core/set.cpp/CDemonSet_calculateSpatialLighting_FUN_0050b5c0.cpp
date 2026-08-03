@@ -61,7 +61,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
       iVar4 = iVar4 + 4;
       iVar3 = iVar3 + 1;
       iVar1 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-                        (&DAT_01fb8508,world_position,*puVar7,surface_normal);
+                        (&g_CDemonCamera_01fb8508,world_position,*puVar7,surface_normal);
       iVar2 = iVar2 + iVar1;
     } while (iVar3 < _DAT_01fff07c);
   }
@@ -73,7 +73,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
       iVar4 = iVar4 + 4;
       iVar3 = iVar3 + 1;
       iVar1 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-                        (&DAT_01fb8508,world_position,*puVar7,surface_normal);
+                        (&g_CDemonCamera_01fb8508,world_position,*puVar7,surface_normal);
       iVar2 = iVar2 + iVar1;
     } while (iVar3 < _DAT_01ffeef8);
   }
@@ -90,11 +90,11 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
     } while (iVar3 < _DAT_01fff090);
   }
   local_18 = 0;
-  if (0 < (int)this_ptr->renderable_actors[0x6f7]) {
+  if (0 < this_ptr->mirror_glass_actor_count) {
     local_14 = this_ptr;
     do {
       core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30
-                (local_14->renderable_actors[0x6f8][1].create_event + 0x1c,world_position);
+                (&local_14->mirror_glass_actors[0]->mirror,world_position);
       local_48 = local_3c;
       *(uint *)((int)&stack0xffffffbc + (uint)bVar5 * 0xfffffffe * 4) =
            *(uint *)(&stack0xffffffc8 + (uint)bVar5 * -8);
@@ -102,8 +102,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
            *(uint *)(&stack0xffffffcc + (uint)bVar5 * -8 + (uint)bVar5 * -8);
       if (surface_normal != (CVector3i *)0x0) {
         core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0
-                  (local_14->renderable_actors[0x6f8][1].create_event + 0x1c,world_position,
-                   surface_normal);
+                  (&local_14->mirror_glass_actors[0]->mirror,world_position,surface_normal);
         local_24 = local_30;
         *(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * 0xfffffffe * 4) =
              *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);
@@ -123,7 +122,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
             uVar6 = *(uint *)(iVar4 + 0x1fba2dc);
           }
           iVar1 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-                            (&DAT_01fb8508,&stack0xffffffb8,uVar6,puVar7);
+                            (&g_CDemonCamera_01fb8508,&stack0xffffffb8,uVar6,puVar7);
           iVar2 = iVar2 + iVar1;
           iVar3 = iVar3 + 1;
           iVar4 = iVar4 + 4;
@@ -131,7 +130,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
       }
       local_14 = (CDemonSet *)local_14->cameras;
       local_18 = local_18 + 1;
-    } while (local_18 < (int)this_ptr->renderable_actors[0x6f7]);
+    } while (local_18 < this_ptr->mirror_glass_actor_count);
   }
   return iVar2;
 }

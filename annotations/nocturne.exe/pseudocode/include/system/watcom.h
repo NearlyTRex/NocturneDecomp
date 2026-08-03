@@ -76,7 +76,7 @@ typedef void WATCOM_VIRTUAL_DESTRUCTOR_FUNC(void* object_ptr, int flags);
 // Structure: WatcomDestructorCall
 typedef struct WatcomDestructorCall {
     int delete_flags;
-    void* destructor_func;
+    WATCOM_VIRTUAL_DESTRUCTOR_FUNC* destructor_func;
     void* object_instance;
 } WatcomDestructorCall;
 

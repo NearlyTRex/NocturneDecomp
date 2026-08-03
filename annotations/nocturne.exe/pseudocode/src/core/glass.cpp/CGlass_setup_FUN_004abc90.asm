@@ -154,8 +154,8 @@ section .text
     MOV EDX,0x584edc                    ; 004abd82 | = "..\\core\\glass.cpp"
     MOV ECX,0x86                        ; 004abd87
     PUSH 0x584eee                       ; 004abd8c | = "CGlass::setup - Too many verticies(%d..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004abd91 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004abd97 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004abd91 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004abd97 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004abd9d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004abda2

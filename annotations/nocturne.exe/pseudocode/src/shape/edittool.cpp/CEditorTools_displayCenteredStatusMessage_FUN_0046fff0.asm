@@ -25,8 +25,8 @@
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
 ;   undefined4 DAT_01bcdde8
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -111,8 +111,8 @@ section .text
         ;   Label: LAB_0047009f
     MOV EBX,0x8b                        ; 004700a4
     PUSH 0x57e510                       ; 004700a9 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 004700ae | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004700b4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004700ae | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004700b4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004700ba
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004700bf

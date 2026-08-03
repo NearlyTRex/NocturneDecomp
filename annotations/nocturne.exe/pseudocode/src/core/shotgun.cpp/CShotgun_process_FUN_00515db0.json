@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c762f4'; did you mean 'DAT_007672f4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c762fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 25,
+        "column": 19,
+        "line": 23,
         "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c74744'; did you mean 'DAT_02DF4744'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01c74748'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01c7474c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_01c74750'; did you mean 'DAT_02DF4750'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01c74740'; did you mean 'DAT_02DF4740'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c74778'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 35,
-        "message": "use of undeclared identifier 'DAT_01c74640'; did you mean 'DAT_02DF4640'?"
       }
     ],
     "success": false,
@@ -122,20 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 121,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 7,
+    "pseudocode_lines": 30,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
       "stack_ref",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 108
+    "total_lines": 107
   },
   "cross_references": [],
   "function": {
@@ -180,74 +125,74 @@
   "globals": [
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01c74640",
-      "name": "DAT_01c74640",
-      "type": "undefined4",
+      "name": "g_CDemonLight_01c74640",
+      "type": "CDemonLight",
       "value": null
     },
     {
       "addr": "01c74740",
-      "name": "DAT_01c74740",
+      "name": "g_CDemonLight_01c74640.base.fixed_point_scale",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74744",
-      "name": "DAT_01c74744",
+      "name": "g_CDemonLight_01c74640.base.position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74748",
-      "name": "DAT_01c74748",
+      "name": "g_CDemonLight_01c74640.base.position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7474c",
-      "name": "DAT_01c7474c",
+      "name": "g_CDemonLight_01c74640.base.position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74750",
-      "name": "DAT_01c74750",
+      "name": "g_CDemonLight_01c74640.base.rotation_matrix.m[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74778",
-      "name": "DAT_01c74778",
+      "name": "g_CDemonLight_01c74640.base.focal_length",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c762f4",
-      "name": "DAT_01c762f4",
+      "name": "g_CDemonLight_01c74640.light_enabled_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c762fc",
-      "name": "DAT_01c762fc",
+      "name": "g_CDemonLight_01c74640.volumetric_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c76310",
-      "name": "DAT_01c76310",
+      "name": "g_CDemonLight_01c74640.antialiasing_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -320,16 +265,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "float in_stack_0000000c;",
@@ -337,43 +274,27 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 18,
+      "line": 16,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x1c74760) {",
+      "text": "if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01c74750",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&DAT_01c74750,&(this_ptr->base).base.orient.vec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01c74640",
-      "severity": "mild",
-      "text": "((CDemonLight *)&DAT_01c74640,1.0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01c74640",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(0x01E57284,(CDemonLight *)&DAT_01c74640);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 17,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CDemonLight_01c74640.base.position.x = CStack_1c.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

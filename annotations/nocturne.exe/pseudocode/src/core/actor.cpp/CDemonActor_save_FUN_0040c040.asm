@@ -25,8 +25,8 @@
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88
 ;   undefined4 DAT_00763e8c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
@@ -62,8 +62,8 @@ section .text
     MOV EDX,0x5779d9                    ; 0040c066 | = "..\\core\\actor.cpp"
     MOV ECX,0x787                       ; 0040c06b
     PUSH 0x5779eb                       ; 0040c070 | = "CDemonActor::save - tried to save act..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0040c075 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040c07b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0040c075 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0040c07b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040c081
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0040c086
@@ -126,8 +126,8 @@ section .text
     MOV EDX,0x577a46                    ; 0040c12d | = "..\\core\\actor.cpp"
     MOV ECX,0x7a9                       ; 0040c132
     PUSH 0x577a58                       ; 0040c137 | = "IO Error after writing actor of type %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040c13c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040c142 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0040c13c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0040c142 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040c148
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0040c14d

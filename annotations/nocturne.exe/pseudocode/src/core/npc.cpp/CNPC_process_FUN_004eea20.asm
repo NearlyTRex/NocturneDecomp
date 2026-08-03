@@ -21,9 +21,9 @@
 ;   double DOUBLE_0058cb1b = 3.14159265350000
 ;   double DOUBLE_0058cb23 = 0.5
 ;   double DOUBLE_0058cb2b = 32
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CConsole g_CConsole_0077ad0c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -142,7 +142,7 @@ section .text
     PUSH EDI                            ; 004eeae7
     LEA EAX,[ESP + 0x2c]                ; 004eeae8
     PUSH EAX                            ; 004eeaec
-    MOV EAX,[0x005b96c4]                ; 004eeaed | INT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004eeaed | g_CGore_PTR_005b96c4
     PUSH EAX                            ; 004eeaf2
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004b0480 ; 004eeaf3
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004b0480(CGore * this_ptr, CVector3f * position, int blood_type)
@@ -275,8 +275,8 @@ section .text
     ADD ESP,0xc                         ; 004eec7c
     PUSH EBX                            ; 004eec7f
     PUSH 0x58cadc                       ; 004eec80 | = "%s confused while walking to scriptDe..."
-    MOV EDX,dword ptr [0x005ad350]      ; 004eec85 | PTR_DAT_005ad350
-    PUSH EDX                            ; 004eec8b | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 004eec85 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 004eec8b | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004eec8c
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x004eeb61                      ; 004eec91

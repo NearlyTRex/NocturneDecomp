@@ -26,8 +26,8 @@
 ;   TerminatedCString s_engine_ini_cpp_005864e8
 ;   TerminatedCString s_cIni_getProfileString_Un_005864fa
 ;   TerminatedCString s_s_00586527
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -131,8 +131,8 @@ section .text
         ;   Label: LAB_004bd164
     MOV ESI,0x57                        ; 004bd169
     PUSH 0x5864fa                       ; 004bd16e | = "cIni::getProfileString: Unable to ope..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004bd173 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004bd179 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004bd173 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004bd179 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004bd17f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd184

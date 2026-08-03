@@ -16,8 +16,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSample
       }
       else if (input_type == 2) {
         if (this_ptr->sample_count < 1) {
-          PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-          INT_01cc4804 = 0xc37;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+          g_INT_01cc4804 = 0xc37;
           core_main_c_FUN_004c8440("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr);
           position = (double)this_ptr->sample_count * position;
         }
@@ -26,8 +26,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSample
         }
       }
       else {
-        PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-        INT_01cc4804 = 0xc3c;
+        g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+        g_INT_01cc4804 = 0xc3c;
         core_main_c_FUN_004c8440("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }
@@ -37,8 +37,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSample
       }
       else if (output_type == 2) {
         if (this_ptr->sample_count < 1) {
-          PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-          INT_01cc4804 = 0xc4a;
+          g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+          g_INT_01cc4804 = 0xc4a;
           core_main_c_FUN_004c8440("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr);
           position = position / (double)this_ptr->sample_count;
         }
@@ -47,8 +47,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSample
         }
       }
       else {
-        PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-        INT_01cc4804 = 0xc4f;
+        g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+        g_INT_01cc4804 = 0xc4f;
         core_main_c_FUN_004c8440("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }

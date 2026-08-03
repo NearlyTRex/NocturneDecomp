@@ -29,11 +29,13 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_004f16d0(int grid_x,int grid_y,int
   
   pCVar4 = DAT_005ae704;
   dVar3 = _DAT_0058ce27;
-  fVar1 = _DAT_01fba970 * _DAT_0058ce1f;
-  fVar2 = _DAT_01fba974 * _DAT_0058ce1f;
-  dVar10 = (double)_DAT_01fba94c * _DAT_0058ce27;
+  fVar1 = g_CDemonRaytrace_01fba938.adjusted_size.y * _DAT_0058ce1f;
+  fVar2 = g_CDemonRaytrace_01fba938.adjusted_size.z * _DAT_0058ce1f;
+  dVar10 = (double)g_CDemonRaytrace_01fba938.bbox_min.y * _DAT_0058ce27;
   local_38 = 7.263381e-39;
-  dVar8 = round((double)((float)grid_x * _DAT_01fba96c * _DAT_0058ce1f));
+  dVar8 = round
+                    ((double)((float)grid_x *
+                             g_CDemonRaytrace_01fba938.adjusted_size.x * _DAT_0058ce1f));
   local_3c = 0x4f1761;
   dVar9 = round((double)((float)grid_z * fVar2));
   local_38 = (float)(int)ROUND(dVar8);

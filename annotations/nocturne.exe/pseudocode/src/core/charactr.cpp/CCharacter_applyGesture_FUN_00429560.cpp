@@ -17,8 +17,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *
   
   if (-1 < this_ptr->gesture_motion_index) {
     if (this_ptr->gesture_branch_root < -1) {
-      PTR_01cc4800 = "..\\core\\charactr.cpp";
-      INT_01cc4804 = 0xcdb;
+      g_CHAR_PTR_01cc4800 = "..\\core\\charactr.cpp";
+      g_INT_01cc4804 = 0xcdb;
       core_main_c_FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",this_ptr);
     }
     iVar1 = this_ptr->gesture_motion_index;

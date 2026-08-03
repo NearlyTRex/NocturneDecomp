@@ -137,7 +137,7 @@ void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(CPe
           CStack_a0.z = CStack_4c.z;
         }
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                  ((CGore *)INT_005b96c4,&CStack_a0,(CVector3f *)0x0,200,0);
+                  (g_CGore_PTR_005b96c4,&CStack_a0,(CVector3f *)0x0,200,0);
         return;
       }
     }

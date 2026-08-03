@@ -23,8 +23,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_00590b43
 ;   TerminatedCString s_CDemonSet_ignore_ignore_00590b58
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -61,8 +61,8 @@ section .text
     MOV EDI,0x590b43                    ; 005117b7 | = "..\\core\\setcolid.cpp"
     MOV EBP,0x473                       ; 005117bc
     PUSH 0x590b58                       ; 005117c1 | = "CDemonSet::ignore - ignore list is full"
-    MOV dword ptr [0x01cc4800],EDI      ; 005117c6 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 005117cc | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 005117c6 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 005117cc | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005117d2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005117d7

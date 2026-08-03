@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,36 +56,6 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 20,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 26,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 26,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
-      },
-      {
-        "category": "cast_error",
-        "column": 12,
-        "line": 30,
-        "message": "cannot cast from type 'float' to pointer type 'CCloth *'"
-      },
-      {
         "category": "incompatible_types",
         "column": 16,
         "line": 36,
@@ -93,7 +63,7 @@
       },
       {
         "category": "other",
-        "column": 79,
+        "column": 68,
         "line": 38,
         "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
       }
@@ -184,13 +154,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -286,7 +256,7 @@
       "line": 31,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "pCVar2->vertices[0x2fb].bone_positions[1].z = *(float *)(iVar4 + 0x20 + *DAT_005ae704);",
+      "text": "pCVar2->locked_vertex_indices[600] = *(int *)(iVar4 + 0x20 + *DAT_005ae704);",
       "type": "undefined_data"
     },
     {

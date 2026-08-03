@@ -57,7 +57,7 @@ void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *pa
     input_local_point = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_48,param_6,&local_a8);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&local_3c,input_local_point);
     iVar1 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                      (0x01E57284,&local_24,&local_3c);
+                      (g_CDemonSet_PTR_005be368,&local_24,&local_3c);
     if (iVar1 == 0) {
       local_1b48 = *param_3;
     }

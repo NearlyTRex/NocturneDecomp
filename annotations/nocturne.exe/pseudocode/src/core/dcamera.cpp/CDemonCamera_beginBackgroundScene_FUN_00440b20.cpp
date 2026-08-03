@@ -19,8 +19,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
   
   bVar5 = 0;
   if (this_ptr->scene_open_flag == 0) {
-    PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    INT_01cc4804 = 0x43b;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    g_INT_01cc4804 = 0x43b;
     core_main_c_FUN_004c8440("CDemonCamera::beginBackgroundScene - Scene not open");
   }
   _DAT_0140efa8 = _DAT_0140efa8 + 1;
@@ -52,7 +52,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
       do {
         *(int *)(&DAT_01bd2fa0 + (this_ptr->framebuffer_height + iVar2) * 4) =
              (int)this_ptr->framebuffer_aligned +
-             this_ptr->framebuffer_width * -4 + *(int *)(this_ptr->camera_name + 0xfc) * iVar2 * 4;
+             this_ptr->framebuffer_width * -4 + this_ptr->screen_width * iVar2 * 4;
         iVar2 = iVar2 + 1;
       } while (iVar2 < (int)this_ptr->max_distance);
       return;

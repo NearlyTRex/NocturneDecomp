@@ -11,13 +11,13 @@
 void __cdecl sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_00523b20(CSfxSample *this_ptr)
 
 {
-  if (this_ptr->loop_endpoints[2] != 0) {
+  if (this_ptr->buffer_id != 0) {
     if (_DAT_02dc8318 != (int *)0x0) {
-      (**(code **)(*_DAT_02dc8318 + 0x30))(_DAT_02dc8318,this_ptr->loop_endpoints[2]);
-      this_ptr->loop_endpoints[2] = 0;
+      (**(code **)(*_DAT_02dc8318 + 0x30))(_DAT_02dc8318,this_ptr->buffer_id);
+      this_ptr->buffer_id = 0;
       return;
     }
-    this_ptr->loop_endpoints[2] = 0;
+    this_ptr->buffer_id = 0;
   }
   return;
 }

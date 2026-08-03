@@ -14,8 +14,8 @@ void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *param_1,i
   int iVar1;
   
   if (param_1->scene_open_flag == 0) {
-    PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    INT_01cc4804 = 0x3f9;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    g_INT_01cc4804 = 0x3f9;
     core_main_c_FUN_004c8440("CDemonCamera::endScene - Scene not open!");
   }
   else {
@@ -32,7 +32,7 @@ void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *param_1,i
     if (0 < (int)param_1->max_distance) {
       do {
         iVar1 = iVar1 + 1;
-        _memcpy(*(int *)(param_1->camera_name + 0xfc) << 2);
+        _memcpy(param_1->screen_width << 2);
       } while (iVar1 < (int)param_1->max_distance);
     }
   }

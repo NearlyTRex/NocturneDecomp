@@ -17,8 +17,8 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004bd790(char *section,char *ke
   iVar1 = engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0
                     ((CIni *)0x1cae378,section,key,local_10c,local_20c,0xff,filename);
   if (iVar1 == 0) {
-    PTR_01cc4800 = "..\\engine\\ini.cpp";
-    INT_01cc4804 = 0x22b;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\ini.cpp";
+    g_INT_01cc4804 = 0x22b;
     core_main_c_FUN_004c8440("Bad ini read!");
   }
   iVar1 = atoi(local_20c);

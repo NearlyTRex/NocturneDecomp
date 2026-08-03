@@ -17,10 +17,10 @@ uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00505820(CScript *this_
   
   local_14 = 0;
   iVar4 = 0;
-  if (0 < this_ptr->xref_count) {
+  if (0 < this_ptr->parsed_line_count) {
     iVar3 = 0;
     do {
-      pbVar2 = *(byte **)(this_ptr->xref_entries->name + iVar3 + 4);
+      pbVar2 = *(byte **)((int)&this_ptr->parsed_lines->text + iVar3);
       bVar1 = *pbVar2;
       while (bVar1 != 0) {
         bVar1 = *pbVar2;
@@ -30,7 +30,7 @@ uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00505820(CScript *this_
       }
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 8;
-    } while (iVar4 < this_ptr->xref_count);
+    } while (iVar4 < this_ptr->parsed_line_count);
   }
   return local_14;
 }

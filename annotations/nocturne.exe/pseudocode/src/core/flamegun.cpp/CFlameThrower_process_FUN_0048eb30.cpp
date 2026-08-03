@@ -22,7 +22,7 @@ void core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CWeapon *param_1,float
   if (*(int *)param_1[1].base.actor_name == 0) {
     uVar6 = *(uint *)(param_1[1].base.actor_name + 4);
     if (uVar6 != 0) {
-      core_sound_cpp_CSound_killSound_FUN_0052ebb0(0x02DC9450,uVar6);
+      core_sound_cpp_CSound_killSound_FUN_0052ebb0(g_CSound_PTR_005bed68,uVar6);
       pCVar3 = param_1 + 1;
       (pCVar3->base).actor_name[4] = '\0';
       (pCVar3->base).actor_name[5] = '\0';
@@ -31,12 +31,12 @@ void core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CWeapon *param_1,float
     }
     pCVar4 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);
     if (pCVar4 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0(INT_005b9284);
+      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
     }
   }
   else {
     iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
-                      (0x02DC9450,*(uint *)(param_1[1].base.actor_name + 4));
+                      (g_CSound_PTR_005bed68,*(uint *)(param_1[1].base.actor_name + 4));
     if (iVar5 == 0) {
       uVar6 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,"fl-throw.wav");
       *(uint *)(param_1[1].base.actor_name + 4) = uVar6;

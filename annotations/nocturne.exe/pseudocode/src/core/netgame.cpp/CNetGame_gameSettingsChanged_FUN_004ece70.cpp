@@ -17,8 +17,8 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(CNetGame
   CNetGame *pCVar4;
   
   if (this_ptr->connection_type != CONNECTION_HOST) {
-    PTR_01cc4800 = "..\\core\\netgame.cpp";
-    INT_01cc4804 = 0x88c;
+    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+    g_INT_01cc4804 = 0x88c;
     core_main_c_FUN_004c8440("CNetGame::gameSettingsChanged - should only call this in server mode");
   }
   _DAT_01cea404 = _DAT_01cea404 + 1;

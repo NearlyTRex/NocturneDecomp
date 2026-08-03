@@ -23,7 +23,7 @@
 ;   undefined4 DAT_005be0b8
 ;   undefined4 DAT_005be0bc
 ;   undefined4 DAT_01e312f0
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
@@ -55,7 +55,7 @@ section .text
     PUSH EBP                            ; 004f1cc0
         ;   Label: LAB_004f1cc0
     LEA ESI,[ESP + 0x4]                 ; 004f1cc1
-    PUSH 0x1fba938                      ; 004f1cc5 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004f1cc5 | g_CDemonRaytrace_01fba938
     LEA EDI,[ESP + 0x20]                ; 004f1cca
     XOR EBX,EBX                         ; 004f1cce
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f1cd0

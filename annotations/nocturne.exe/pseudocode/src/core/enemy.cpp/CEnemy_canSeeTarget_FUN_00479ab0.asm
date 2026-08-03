@@ -14,8 +14,8 @@
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db72a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -88,8 +88,8 @@ section .text
     PUSH EAX                            ; 00479b36
     LEA EAX,[ESP + 0x28]                ; 00479b37
     PUSH EAX                            ; 00479b3b
-    MOV EDX,dword ptr [0x005be368]      ; 00479b3c | DAT_005be368
-    PUSH EDX                            ; 00479b42 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00479b3c | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 00479b42 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0 ; 00479b43
         ;   XREF to: 0050fae0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 00479b48

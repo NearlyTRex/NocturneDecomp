@@ -16,8 +16,8 @@
 ;   TerminatedCString s_CStrList_insert_invalid_0057eb70
 ;   TerminatedCString s_shape_edittool_cpp_0057eb91
 ;   TerminatedCString s_CStrList_insert_out_of_m_0057eba7
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -46,8 +46,8 @@ section .text
         ;   Label: LAB_00473d04
     MOV ESI,0x9ba                       ; 00473d09
     PUSH 0x57eb70                       ; 00473d0e | = "CStrList::insert - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 00473d13 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00473d19 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00473d13 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00473d19 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00473d1f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00473d24
@@ -129,8 +129,8 @@ section .text
         ;   Label: LAB_00473db8
     MOV EDI,0x9c8                       ; 00473dbd
     PUSH 0x57eba7                       ; 00473dc2 | = "CStrList::insert - out of memory"
-    MOV dword ptr [0x01cc4800],ESI      ; 00473dc7 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00473dcd | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00473dc7 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00473dcd | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00473dd3
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00473dd8

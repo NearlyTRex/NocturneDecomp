@@ -18,25 +18,25 @@ void core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CPlatform *param_1,float p
   float local_20;
   float local_1c;
   CVector3f *local_18;
-  CVector3f *local_14;
+  float *local_14;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,param_1[1].base.actor_name + 0x14);
+                    (0x01C03A10,param_1[1].base.actor_name + 0x18);
   if (iVar1 != 0) {
-    param_1[1].base.standing_platform = (CPlatform *)0x1;
+    param_1[1].base.platform_position_delta.x = 1.4013e-45;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,param_1[1].base.create_event);
+                    (0x01C03A10,param_1[1].base.create_event + 4);
   if (iVar1 == 0) {
-    if (param_1[1].base.standing_platform != (CPlatform *)0x0) {
-      local_18 = (CVector3f *)(param_1[1].base.actor_name + 8);
+    if (param_1[1].base.platform_position_delta.x != 0.0) {
+      local_18 = (CVector3f *)(param_1[1].base.actor_name + 0xc);
       iVar3 = 0;
-      local_14 = &param_1[1].base.platform_position_delta;
+      local_14 = &param_1[1].base.platform_position_delta.y;
       iVar1 = 0;
-      while (iVar3 < *(int *)(0x01E57284 + 0x14cd6c)) {
-        actor_ptr = *(CDemonActor **)(0x01E57284 + 0x14cd70 + iVar1);
+      while (iVar3 < g_CDemonSet_PTR_005be368->actor_count) {
+        actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar1);
         if (param_1 == actor_ptr->standing_platform) {
-          if (*(char *)&actor_ptr->standing_platform[1].base.platform_position_delta.x == '\0') {
+          if (*(char *)&actor_ptr->standing_platform[1].base.platform_position_delta.y == '\0') {
 LAB_0043b24d:
             core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
                       (&param_1->base,&local_30,local_18);
@@ -69,7 +69,7 @@ LAB_0043b24d:
     }
   }
   else {
-    param_1[1].base.standing_platform = (CPlatform *)0x0;
+    param_1[1].base.platform_position_delta.x = 0.0;
   }
   return;
 }

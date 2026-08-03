@@ -15,8 +15,8 @@
 ;   TerminatedCString s_s_File_s_Line_d_00597f49
 ;   TerminatedCString s_Nocturne_00598156
 ;   void* PTR_s_Nocturne_005c1658 = 00598156
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02de0860
 ;   undefined4 DAT_02de2098
 ;
@@ -33,9 +33,9 @@ section .text
         ;   Label: wincore_winrun.cpp_FUN_00559500
     PUSH ESI                            ; 00559501
     PUSH EDI                            ; 00559502
-    MOV EDX,dword ptr [0x01cc4804]      ; 00559503 | INT_01cc4804
+    MOV EDX,dword ptr [0x01cc4804]      ; 00559503 | g_INT_01cc4804
     PUSH EDX                            ; 00559509
-    MOV ECX,dword ptr [0x01cc4800]      ; 0055950a | PTR_01cc4800
+    MOV ECX,dword ptr [0x01cc4800]      ; 0055950a | g_CHAR_PTR_01cc4800
     PUSH ECX                            ; 00559510
     MOV EBX,dword ptr [ESP + 0x18]      ; 00559511
     PUSH EBX                            ; 00559515

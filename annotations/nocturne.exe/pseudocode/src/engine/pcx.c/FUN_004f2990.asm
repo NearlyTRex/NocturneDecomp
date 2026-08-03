@@ -30,8 +30,8 @@
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -121,8 +121,8 @@ section .text
     MOV EBP,0x58cfc6                    ; 004f2a73 | = "..\\engine\\pcx.c"
     MOV EAX,0xee                        ; 004f2a78
     PUSH 0x58cfd6                       ; 004f2a7d | = "Cannot write .PCX"
-    MOV dword ptr [0x01cc4800],EBP      ; 004f2a82 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f2a88 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004f2a82 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f2a88 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f2a8d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f2a92

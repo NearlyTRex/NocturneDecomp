@@ -24,15 +24,15 @@ void cockpit_ckptutil_c_FUN_0042ee00(char *param_1,int param_2,int param_3)
   int local_14;
   
   if (param_2 == 0) {
-    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-    INT_01cc4804 = 0x4f8;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    g_INT_01cc4804 = 0x4f8;
     core_main_c_FUN_004c8440("Edge list array is empty!");
   }
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1,"wt");
   if (file_handle == (_FILE *)0x0) {
     _sprintf(local_6c,"Could not create output file (%s).",param_1);
-    INT_01cc4804 = 0x4ff;
-    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    g_INT_01cc4804 = 0x4ff;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     core_main_c_FUN_004c8440(local_6c);
   }
   _fprintf(file_handle,"%d\n",param_3);

@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   float FLOAT_00590bc1 = -10
 ;   undefined4 DAT_005c11ec
-;   undefined4 DAT_02dd1214
+;   undefined4 g_CWater_02dd1210.water_level_y
 ;   undefined4 g_CWaterActorActorType_02ddd598.name_hash
 ;
 ; Called Functions:
@@ -35,12 +35,12 @@ section .text
     SUB ESP,0x24                        ; 00511b54
     MOV EBP,dword ptr [ESP + 0x38]      ; 00511b57
     MOV EAX,[0x005c11ec]                ; 00511b5b | DAT_005c11ec
-    TEST dword ptr [EAX + 0x4],0x7fffffff ; 00511b60 | DAT_02dd1214
+    TEST dword ptr [EAX + 0x4],0x7fffffff ; 00511b60 | g_CWater_02dd1210.water_level_y
     JZ 0x00511b78                       ; 00511b67
         ;   XREF to: 00511b78 (CONDITIONAL_JUMP)  ; LAB_00511b78
     MOV EDX,dword ptr [ESP + 0x3c]      ; 00511b69
     FLD float ptr [EDX + 0x4]           ; 00511b6d
-    FCOMP float ptr [EAX + 0x4]         ; 00511b70 | DAT_02dd1214
+    FCOMP float ptr [EAX + 0x4]         ; 00511b70 | g_CWater_02dd1210.water_level_y
     FNSTSW AX                           ; 00511b73
     SAHF                                ; 00511b75
     JC 0x00511bb9                       ; 00511b76

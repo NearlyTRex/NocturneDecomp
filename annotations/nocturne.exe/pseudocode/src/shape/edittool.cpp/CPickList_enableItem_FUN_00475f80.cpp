@@ -9,32 +9,27 @@
 void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(CPickList *this_ptr,int item_index,int enable_flag)
 
 {
-  void *pvVar1;
+  int *piVar1;
   
   if ((item_index < 0) || ((this_ptr->base).item_count <= item_index)) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0xdfa;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0xdfa;
     core_main_c_FUN_004c8440("CPickList::enableItem - invalid index");
   }
-  if (*(int *)(this_ptr->search_text_buffer + 0x24) <= item_index) {
-    pvVar1 = realloc
-                       (*(void **)(this_ptr->search_text_buffer + 0x28),
-                        (this_ptr->base).item_count << 2);
-    *(void **)(this_ptr->search_text_buffer + 0x28) = pvVar1;
-    if (pvVar1 == (void *)0x0) {
-      PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      INT_01cc4804 = 0xe01;
+  if (this_ptr->enabled_capacity <= item_index) {
+    piVar1 = (int *)realloc
+                       (this_ptr->enabled_array,(this_ptr->base).item_count << 2);
+    this_ptr->enabled_array = piVar1;
+    if (piVar1 == (int *)0x0) {
+      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+      g_INT_01cc4804 = 0xe01;
       core_main_c_FUN_004c8440("Out of memory");
     }
-    while (*(int *)(this_ptr->search_text_buffer + 0x24) < (this_ptr->base).item_count) {
-      *(uint *)
-       (*(int *)(this_ptr->search_text_buffer + 0x28) +
-       *(int *)(this_ptr->search_text_buffer + 0x24) * 4) = 1;
-      *(int *)(this_ptr->search_text_buffer + 0x24) =
-           *(int *)(this_ptr->search_text_buffer + 0x24) + 1;
+    while (this_ptr->enabled_capacity < (this_ptr->base).item_count) {
+      this_ptr->enabled_array[this_ptr->enabled_capacity] = 1;
+      this_ptr->enabled_capacity = this_ptr->enabled_capacity + 1;
     }
   }
-  *(uint *)(*(int *)(this_ptr->search_text_buffer + 0x28) + item_index * 4) =
-       (uint)(enable_flag != 0);
+  this_ptr->enabled_array[item_index] = (uint)(enable_flag != 0);
   return;
 }

@@ -62,8 +62,8 @@ LAB_004950c9:
               (this_ptr,start_frame,end_frame);
     break;
   default:
-    PTR_01cc4800 = "..\\core\\frankgen.cpp";
-    INT_01cc4804 = 0x1bb;
+    g_CHAR_PTR_01cc4800 = "..\\core\\frankgen.cpp";
+    g_INT_01cc4804 = 0x1bb;
     core_main_c_FUN_004c8440();
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);

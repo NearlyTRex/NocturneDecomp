@@ -26,8 +26,8 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(CDemonActor *this_ptr,
   _fscanf(file_handle," { %s \"%[^\"]\"\n");
   iVar4 = _stricmp(str1,local_dc);
   if (iVar4 != 0) {
-    PTR_01cc4800 = "..\\core\\actor.cpp";
-    INT_01cc4804 = 0x7c6;
+    g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+    g_INT_01cc4804 = 0x7c6;
     core_main_c_FUN_004c8440("Start of actor file tag mismatch for class %s",str1);
   }
   pcVar5 = local_78;
@@ -54,13 +54,13 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(CDemonActor *this_ptr,
   iVar4 = _stricmp(str1,local_dc);
   if ((iVar4 != 0) ||
      (iVar4 = _stricmp(this_ptr->actor_name,local_78), iVar4 != 0)) {
-    PTR_01cc4800 = "..\\core\\actor.cpp";
-    INT_01cc4804 = 0x7e3;
+    g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+    g_INT_01cc4804 = 0x7e3;
     core_main_c_FUN_004c8440("End of actor file tag mismatch for class %s name \"%s\"",str1,this_ptr);
   }
   if ((file_handle->_flag & 0x20) != 0) {
-    PTR_01cc4800 = "..\\core\\actor.cpp";
-    INT_01cc4804 = 0x7e8;
+    g_CHAR_PTR_01cc4800 = "..\\core\\actor.cpp";
+    g_INT_01cc4804 = 0x7e8;
     core_main_c_FUN_004c8440("IO Error after reading %s \"%s\"",str1,this_ptr);
   }
   DAT_00763e8c = (CDemonActor *)uVar3;

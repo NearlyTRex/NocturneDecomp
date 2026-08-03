@@ -46,7 +46,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
               (DAT_005ae704,(SMRGLTextureBasic *)(&DAT_005c11f4 + _DAT_02dd1230 * 0x18));
     _DAT_01c038f4 = 0;
     _DAT_02dd9260 =
-         *(float *)(0x01C775EC + 0x264) * (float)3.1415926535000001 * (float)0.5 *
+         g_CGame_PTR_005b9354->delta_time_float * (float)3.1415926535000001 * (float)0.5 *
          (float)2 + _DAT_02dd9260;
     local_1c = 0;
     if (0 < _DAT_02dd1234) {
@@ -79,7 +79,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_60);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
-                  (0x01E57284,&local_6c,&local_30,0);
+                  (g_CDemonSet_PTR_005be368,&local_6c,&local_30,0);
         local_6c.x = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
           local_14 = iVar1 + 1;
@@ -94,7 +94,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_54);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
-                  (0x01E57284,&local_6c,&local_30,1);
+                  (g_CDemonSet_PTR_005be368,&local_6c,&local_30,1);
         local_6c.z = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
           local_14 = iVar1 + 1;
@@ -110,7 +110,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_48);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
-                  (0x01E57284,&local_6c,&local_30,2);
+                  (g_CDemonSet_PTR_005be368,&local_6c,&local_30,2);
         local_6c.x = 0.0;
         if (this_ptr->wave_animation_enabled != 0) {
           fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)3.1415926535000001 *
@@ -125,7 +125,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_3c);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
-                  (0x01E57284,&local_6c,&local_30,3);
+                  (g_CDemonSet_PTR_005be368,&local_6c,&local_30,3);
         if (this_ptr->wave_animation_enabled == 0) {
           if (_DAT_01c02594 == 0) {
             if (render_mode == 0) {

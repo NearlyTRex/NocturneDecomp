@@ -15,8 +15,8 @@
 ;   TerminatedCString s_core_setutil_cpp_00590ccb
 ;   TerminatedCString s_Out_of_memory_for_pvsLis_00590cdf
 ;   TerminatedCString s_d_00590cfe
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -90,8 +90,8 @@ section .text
     MOV ESI,0x590ccb                    ; 00514887 | = "..\\core\\setutil.cpp"
     MOV EAX,0xcf                        ; 0051488c
     PUSH 0x590cdf                       ; 00514891 | = "Out of memory for pvsList - %d"
-    MOV dword ptr [0x01cc4800],ESI      ; 00514896 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0051489c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 00514896 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0051489c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005148a1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 005148a6

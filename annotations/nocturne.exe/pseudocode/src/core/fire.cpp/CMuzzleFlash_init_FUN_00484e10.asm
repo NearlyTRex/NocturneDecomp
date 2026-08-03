@@ -17,8 +17,8 @@
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20 at 0048af5f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0
@@ -51,8 +51,8 @@ section .text
         ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 00484e41
     PUSH EBX                            ; 00484e44
-    MOV EDX,dword ptr [0x005be368]      ; 00484e45 | DAT_005be368
-    PUSH EDX                            ; 00484e4b | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00484e45 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 00484e4b | g_CDemonSet_01e57284
     MOV dword ptr [EBX + 0x20],0x0      ; 00484e4c
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 00484e53
         ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)

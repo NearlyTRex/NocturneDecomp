@@ -14,7 +14,7 @@ struct SMRGLPrimitiveQuad;
 #include "types/structs/SMRGLTextureLod.h"
 
 // Structure: CKeyFramedModel
-// Ghidra size: 0x56d8 (22232 bytes)
+// Ghidra size: 0x398 (920 bytes)
 #pragma pack(push, 1)
 typedef struct CKeyFramedModel {
     char model_filename[256]; // 0x0
@@ -27,18 +27,18 @@ typedef struct CKeyFramedModel {
     int* poly_texture_index_list; // 0x118
     uchar* env_map_opac_list; // 0x11c
     int texture_count; // 0x120, max=300
-    SMRGLTextureLod texture_list[300]; // 0x124
-    int part_count; // 0x5584, max=30
-    CKeyFramedModelPart part_list[30]; // 0x5588
-    CBoundingBox3D bounds; // 0x5678
-    struct CBoundingBox3D* frame_bounds; // 0x5690
-    int collision_triangle_count; // 0x5694
-    struct CDemonTriangle* collision_triangle_list; // 0x5698
-    int transparent_pixel_flag; // 0x569c
-    int disable_backface_culling; // 0x56a0
-    CVector3f transform_vector; // 0x56a4
-    CMatrix3x3f rotation_matrix_workspace; // 0x56b0
-    int dead; // 0x56d4
+    SMRGLTextureLod texture_list[4]; // 0x124
+    int part_count; // 0x244, max=30
+    CKeyFramedModelPart part_list[30]; // 0x248
+    CBoundingBox3D bounds; // 0x338
+    struct CBoundingBox3D* frame_bounds; // 0x350
+    int collision_triangle_count; // 0x354
+    struct CDemonTriangle* collision_triangle_list; // 0x358
+    int transparent_pixel_flag; // 0x35c
+    int disable_backface_culling; // 0x360
+    CVector3f transform_vector; // 0x364
+    CMatrix3x3f rotation_matrix_workspace; // 0x370
+    int dead; // 0x394
 } CKeyFramedModel;
 #pragma pack(pop)
 

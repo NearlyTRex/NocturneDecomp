@@ -13,7 +13,7 @@ void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CDemonActor *param_1)
   core_actor_cpp_archiveVector_FUN_0040c450((CVector3f *)(param_1 + 1),"size");
   core_actor_cpp_archiveInteger_FUN_0040c900
             ((int *)(param_1[1].actor_name + 0xc),"opacity");
-  if (INT_005c154c == 2) {
+  if (g_INT_005c154c == 2) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               ((float *)(param_1[1].actor_name + 0x10),"heightDelta");
     core_actor_cpp_archiveFloat_FUN_0040c880
@@ -23,7 +23,7 @@ void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CDemonActor *param_1)
               ((char *)&param_1[1].orient_matrix.m[2].z,"moveEvent");
     core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[1].dead2,"param");
   }
-  if (2 < INT_005c154c) {
+  if (2 < g_INT_005c154c) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               ((float *)(param_1[1].actor_name + 0x10),"heightDelta");
     core_actor_cpp_archiveFloat_FUN_0040c880
@@ -41,15 +41,15 @@ void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CDemonActor *param_1)
     core_actor_cpp_archiveInteger_FUN_0040c900
               ((int *)&param_1[1].previous_transform_state,"state");
   }
-  if (3 < INT_005c154c) {
+  if (3 < g_INT_005c154c) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&param_1[1].previous_transform_state.position.y,"patchSize");
   }
-  if (4 < INT_005c154c) {
+  if (4 < g_INT_005c154c) {
     core_actor_cpp_archiveInteger_FUN_0040c900
               ((int *)&param_1[1].previous_transform_state.position.z,"roundFlag");
   }
-  if (INT_005c154c < 6) {
+  if (g_INT_005c154c < 6) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900

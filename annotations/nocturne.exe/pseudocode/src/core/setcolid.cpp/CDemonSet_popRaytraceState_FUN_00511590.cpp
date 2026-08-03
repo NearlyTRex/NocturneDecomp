@@ -11,87 +11,84 @@
 void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(CDemonSet *this_ptr)
 
 {
-  char *pcVar1;
-  float fVar2;
+  int iVar1;
+  SRaytraceState *pSVar2;
   int iVar3;
-  int iVar4;
-  CDemonSet *pCVar5;
-  float *pfVar6;
+  CDemonSet *pCVar4;
+  int iVar5;
   
   if (_DAT_020842d0 < 1) {
-    PTR_01cc4800 = "..\\core\\setcolid.cpp";
-    INT_01cc4804 = 0x42a;
+    g_CHAR_PTR_01cc4800 = "..\\core\\setcolid.cpp";
+    g_INT_01cc4804 = 0x42a;
     core_main_c_FUN_004c8440("CDemonSet::popRaytraceState - stack empty");
   }
-  _DAT_020842d0 = _DAT_020842d0 + -1;
-  iVar3 = _DAT_020842d0 * 0xa0;
-  pfVar6 = (float *)(iVar3 + 0x20842d4);
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[0].x = *pfVar6;
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[0].y = *(float *)(iVar3 + 0x20842d8);
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[0].z = *(float *)(iVar3 + 0x20842dc);
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[1].x = *(float *)(iVar3 + 0x20842e0);
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[1].y = *(float *)(iVar3 + 0x20842e4);
-  fVar2 = *(float *)(iVar3 + 0x20842e8);
-  iVar4 = 0;
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[1].z = fVar2;
-  pCVar5 = this_ptr;
-  if (0 < (int)fVar2) {
+  iVar5 = _DAT_020842d0 + -1;
+  pSVar2 = g_SRaytraceState_ARRAY_020842d4 + iVar5;
+  _DAT_020842d0 = iVar5;
+  (this_ptr->ray_query).ray_type = (pSVar2->ray_query).ray_type;
+  (this_ptr->ray_query).laser_type = g_SRaytraceState_ARRAY_020842d4[iVar5].ray_query.laser_type;
+  (this_ptr->ray_query).laser_color.r =
+       g_SRaytraceState_ARRAY_020842d4[iVar5].ray_query.laser_color.r;
+  (this_ptr->ray_query).laser_color.g =
+       g_SRaytraceState_ARRAY_020842d4[iVar5].ray_query.laser_color.g;
+  (this_ptr->ray_query).laser_color.b =
+       g_SRaytraceState_ARRAY_020842d4[iVar5].ray_query.laser_color.b;
+  iVar1 = g_SRaytraceState_ARRAY_020842d4[iVar5].ignore_list_count;
+  iVar3 = 0;
+  this_ptr->ignore_list_count = iVar1;
+  pCVar4 = this_ptr;
+  if (0 < iVar1) {
     do {
-      pCVar5->vdir_boxes[0xeb].rotation_matrix.m[2].y = pfVar6[7];
-      iVar4 = iVar4 + 1;
-      pfVar6 = pfVar6 + 1;
-      pCVar5 = (CDemonSet *)pCVar5->cameras;
-    } while (iVar4 < (int)this_ptr->vdir_boxes[0xeb].rotation_matrix.m[1].z);
+      pCVar4->ignore_list[0] = pSVar2->ignore_list[0];
+      iVar3 = iVar3 + 1;
+      pSVar2 = (SRaytraceState *)&(pSVar2->ray_query).laser_type;
+      pCVar4 = (CDemonSet *)pCVar4->cameras;
+    } while (iVar3 < this_ptr->ignore_list_count);
   }
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[2].x = *(float *)(iVar3 + 0x20842ec);
-  pcVar1 = this_ptr->lights[199].filter_names[0x12] + 0xc;
-  if (pcVar1 != (char *)(iVar3 + 0x2084318)) {
-    *(uint *)pcVar1 = *(uint *)(iVar3 + 0x2084318);
-    *(uint *)(this_ptr->lights[199].filter_names[0x12] + 0x10) =
-         *(uint *)(iVar3 + 0x208431c);
-    *(uint *)(this_ptr->lights[199].filter_names[0x12] + 0x14) =
-         *(uint *)(iVar3 + 0x2084320);
+  this_ptr->collision_flag = g_SRaytraceState_ARRAY_020842d4[iVar5].collision_flag;
+  if (&this_ptr->ray_origin != &g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ray_origin) {
+    (this_ptr->ray_origin).x = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ray_origin.x;
+    (this_ptr->ray_origin).y = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ray_origin.y;
+    (this_ptr->ray_origin).z = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ray_origin.z;
   }
-  pcVar1 = this_ptr->lights[199].filter_names[0x12] + 0x18;
-  if (pcVar1 != (char *)(iVar3 + 0x2084324)) {
-    *(uint *)pcVar1 = *(uint *)(iVar3 + 0x2084324);
-    *(uint *)(this_ptr->lights[199].filter_names[0x12] + 0x1c) =
-         *(uint *)(iVar3 + 0x2084328);
-    *(uint *)(this_ptr->lights[199].filter_names[0x12] + 0x20) =
-         *(uint *)(iVar3 + 0x208432c);
+  if (&this_ptr->ray_target != &g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ray_target) {
+    (this_ptr->ray_target).x = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ray_target.x;
+    (this_ptr->ray_target).y = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ray_target.y;
+    (this_ptr->ray_target).z = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ray_target.z;
   }
-  pfVar6 = &this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].z;
-  this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].x = *(float *)(iVar3 + 0x2084330);
-  this_ptr->vdir_boxes[0xec].rotation_matrix.m[0].y = *(float *)(iVar3 + 0x2084334);
-  if (pfVar6 != (float *)(iVar3 + 0x2084338)) {
-    *pfVar6 = *(float *)(iVar3 + 0x2084338);
-    this_ptr->vdir_boxes[0xec].rotation_matrix.m[1].x = *(float *)(iVar3 + 0x208433c);
-    this_ptr->vdir_boxes[0xec].rotation_matrix.m[1].y = *(float *)(iVar3 + 0x2084340);
+  this_ptr->raycast_distance = g_SRaytraceState_ARRAY_020842d4[iVar5].raycast_distance;
+  this_ptr->voxel_distance = g_SRaytraceState_ARRAY_020842d4[iVar5].voxel_distance;
+  if (&this_ptr->voxel_hit_point != &g_SRaytraceState_ARRAY_020842d4[iVar5].voxel_hit_point) {
+    (this_ptr->voxel_hit_point).x = g_SRaytraceState_ARRAY_020842d4[iVar5].voxel_hit_point.x;
+    (this_ptr->voxel_hit_point).y = g_SRaytraceState_ARRAY_020842d4[iVar5].voxel_hit_point.y;
+    (this_ptr->voxel_hit_point).z = g_SRaytraceState_ARRAY_020842d4[iVar5].voxel_hit_point.z;
   }
-  this_ptr->vdir_boxes[0xec].rotation_matrix.m[1].z = *(float *)(iVar3 + 0x2084344);
-  pcVar1 = this_ptr->lights[199].filter_names[0x12] + 0x24;
-  if (pcVar1 != (char *)(iVar3 + 0x208434c)) {
-    *(uint *)pcVar1 = *(uint *)(iVar3 + 0x208434c);
-    *(uint *)this_ptr->lights[199].filter_names[0x13] = *(uint *)(iVar3 + 0x2084350);
-    *(uint *)(this_ptr->lights[199].filter_names[0x13] + 4) =
-         *(uint *)(iVar3 + 0x2084354);
+  this_ptr->voxel_surface_type = g_SRaytraceState_ARRAY_020842d4[iVar5].voxel_surface_type;
+  if (&this_ptr->collision_normal != &g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_normal)
+  {
+    (this_ptr->collision_normal).x = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_normal.x
+    ;
+    (this_ptr->collision_normal).y = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_normal.y
+    ;
+    (this_ptr->collision_normal).z = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_normal.z
+    ;
   }
-  pcVar1 = this_ptr->lights[199].filter_names[0x13] + 0xc;
-  *(uint *)(this_ptr->lights[199].filter_names[0x13] + 8) = *(uint *)(iVar3 + 0x2084358)
+  this_ptr->ground_type = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_ground_type;
+  if (&this_ptr->collision_impact_position !=
+      &g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_point) {
+    (this_ptr->collision_impact_position).x =
+         g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_point.x;
+    (this_ptr->collision_impact_position).y =
+         g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_point.y;
+    (this_ptr->collision_impact_position).z =
+         g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_point.z;
+  }
+  this_ptr->collision_actor = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_actor;
+  this_ptr->collision_part_index = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_part_index
   ;
-  if (pcVar1 != (char *)(iVar3 + 0x208435c)) {
-    *(uint *)pcVar1 = *(uint *)(iVar3 + 0x208435c);
-    *(uint *)(this_ptr->lights[199].filter_names[0x13] + 0x10) =
-         *(uint *)(iVar3 + 0x2084360);
-    *(uint *)(this_ptr->lights[199].filter_names[0x13] + 0x14) =
-         *(uint *)(iVar3 + 0x2084364);
-  }
-  *(uint *)(this_ptr->lights[199].filter_names[0x13] + 0x18) =
-       *(uint *)(iVar3 + 0x2084368);
-  *(uint *)(this_ptr->lights[199].filter_names[0x13] + 0x1c) =
-       *(uint *)(iVar3 + 0x208436c);
-  *(uint *)(this_ptr->lights[199].filter_names[0x13] + 0x20) =
-       *(uint *)(iVar3 + 0x2084370);
-  this_ptr->vdir_boxes[0xec].rotation_matrix.m[2].x = *(float *)(iVar3 + 0x2084348);
+  this_ptr->collision_bone_index = g_SRaytraceState_ARRAY_020842d4[iVar5].saved_collision_bone_index
+  ;
+  this_ptr->skip_exact_collisions =
+       g_SRaytraceState_ARRAY_020842d4[iVar5].saved_skip_exact_collision;
   return;
 }

@@ -20,8 +20,8 @@
 ;   TerminatedCString s_core_dmodel_cpp_0057cc8e
 ;   TerminatedCString s_CKeyFramedModel_calcNorm_0057cca1
 ;   double DOUBLE_0057cce6 = 65535
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -163,8 +163,8 @@ section .text
         ;   Label: LAB_0045375f
     MOV ESI,0x2f1                       ; 00453764
     PUSH 0x57cca1                       ; 00453769 | = "CKeyFramedModel::calcNormals() - vert..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0045376e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00453774 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0045376e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00453774 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045377a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045377f

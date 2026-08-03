@@ -15,9 +15,9 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057ed88
 ;   TerminatedCString s_CStrList_copyToClipboard_0057ed9e
 ;   TerminatedCString s_s_0057eddf
-;   undefined4 DAT_005b6d50
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -82,8 +82,8 @@ section .text
     MOV ESI,0x57ed88                    ; 004743d5 | = "..\\shape\\edittool.cpp"
     MOV EDI,0xad9                       ; 004743da
     PUSH 0x57ed9e                       ; 004743df | = "CStrList::copyToClipboard - out of me..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004743e4 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004743ea | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004743e4 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004743ea | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004743f0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004743f5
@@ -118,7 +118,7 @@ section .text
     MOV ECX,dword ptr [ESP]             ; 00474430
         ;   Label: LAB_00474430
     PUSH ECX                            ; 00474433
-    MOV EBX,dword ptr [0x005b6d50]      ; 00474434 | DAT_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 00474434 | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 0047443a
     MOV byte ptr [EDI],0x0              ; 0047443b
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10 ; 0047443e

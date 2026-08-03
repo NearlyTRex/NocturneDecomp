@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,6 +54,12 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 12,
+        "message": "no matching function for call to 'core_mission_cpp_FUN_004d7ea0'"
       }
     ],
     "success": false,
@@ -62,15 +68,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 45,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 5,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "unnamed_param"
     ],
     "total_lines": 12
@@ -91,9 +96,9 @@
         "004d7e9d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mission.cpp_FUN_004d7e90",
-    "signature": "void core_mission_cpp_FUN_004d7e90(undefined4 param_1)"
+    "signature": "void __cdecl core_mission_cpp_FUN_004d7e90(void *param_1)"
   },
   "function_calls": [
     {
@@ -110,21 +115,19 @@
         "call_addr": "004c933c",
         "call_type": "direct",
         "caller": "core_main.c_FUN_004c90e0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.2,
@@ -147,12 +150,20 @@
     "pcode_op_count": 21
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -160,7 +171,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_mission_cpp_FUN_004d7e90(uint param_1)",
+      "text": "void __cdecl core_mission_cpp_FUN_004d7e90(void *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -170,17 +181,6 @@
       "severity": "mild",
       "text": "core_mission_cpp_FUN_004d7ea0(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

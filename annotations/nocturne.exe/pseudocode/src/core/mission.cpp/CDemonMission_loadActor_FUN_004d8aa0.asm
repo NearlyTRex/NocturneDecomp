@@ -23,11 +23,11 @@
 ;   TerminatedCString s_anon_00589be4
 ;   TerminatedCString s_WARNING_Can_t_find_actor_00589bea
 ;   TerminatedCString s_x_00589c44
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   TerminatedCString s_none_005bb0d0
 ;   undefined4 DAT_005c168c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -87,8 +87,8 @@ section .text
     MOV EAX,0x589b98                    ; 004d8b06 | = "..\\core\\mission.cpp"
     MOV EDX,0x22d                       ; 004d8b0b
     PUSH 0x589bac                       ; 004d8b10 | = "Error reading actor pointer.\nOwner: ..."
-    MOV [0x01cc4800],EAX                ; 004d8b15 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004d8b1a | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004d8b15 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004d8b1a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d8b20
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004d8b25
@@ -163,7 +163,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004d8baf
     PUSH EAX                            ; 004d8bb3
     PUSH 0x589bea                       ; 004d8bb4 | = "WARNING.  Can't find actor '%s' in %s..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 004d8bb9 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004d8bb9 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004d8bbf
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d8bc0
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()

@@ -32,7 +32,7 @@
 ;   undefined4 DAT_01ccdebc
 ;   undefined4 DAT_01ccdec0
 ;   undefined4 DAT_01ccdec4
-;   undefined4 DAT_01cce2bc
+;   undefined4 g_CKeyFramedModel_01cce1bc.frame_count
 ;
 ; *****************************************************************************
 
@@ -104,7 +104,7 @@ section .text
     SAHF                                ; 004debbd
     JNC 0x004dec32                      ; 004debbe
         ;   XREF to: 004dec32 (CONDITIONAL_JUMP)  ; LAB_004dec32
-    MOV EAX,[0x01cce2bc]                ; 004debc0 | DAT_01cce2bc
+    MOV EAX,[0x01cce2bc]                ; 004debc0 | g_CKeyFramedModel_01cce1bc.frame_count
         ;   Label: LAB_004debc0
     FLD float ptr [ESP]                 ; 004debc5
     MOV dword ptr [ESP + 0x14],EAX      ; 004debc8

@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
 ;   undefined4 DAT_01c00c70
-;   char* PTR_01cc4800
+;   char* g_CHAR_PTR_01cc4800
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -769,8 +769,8 @@ section .text
         ;   Label: LAB_00472c59
     MOV EBP,0x7ba                       ; 00472c5e
     PUSH 0x57ea5f                       ; 00472c63 | = "CEditorTools::setMousePointerType - i..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00472c68 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00472c6e | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00472c68 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00472c6e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00472c74
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472c79

@@ -10,6 +10,6 @@ void __cdecl core_minecar_cpp_CMinecar_setup_FUN_004d6020(CMineCar *this_ptr)
 
 {
   core_platfrm_cpp_CPlatform_setup_FUN_004f5f60(&this_ptr->base);
-  (this_ptr->base).rendered_in_background = 0;
+  this_ptr->spark_timer = 0.0;
   return;
 }

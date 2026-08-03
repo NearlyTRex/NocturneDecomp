@@ -77,14 +77,12 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(CCharacter *t
           if ((float)65535 <= *(float *)((int)&DAT_00765aa0 + iVar5)) {
             iVar8 = iVar8 + 1;
           }
-          if (*(int *)(local_34->texture_sets[1].textures[0x3d].textures[1].texture_name + 4) == -1)
-          {
+          if (local_34->farthest_child_bone[0] == -1) {
             iVar8 = iVar8 + 1;
           }
           pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(local_44);
           if ((this_ptr->model).part_data.visibility_flags
-              [*(int *)(pCVar4->texture_sets[1].textures[0x37].textures[2].texture_name +
-                       iVar5 + 0xc)] == 0) {
+              [*(int *)((int)pCVar4->bone_to_part_map + iVar5)] == 0) {
             iVar8 = iVar8 + 1;
           }
           iVar5 = iVar5 + 4;

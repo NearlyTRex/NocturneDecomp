@@ -9,7 +9,7 @@
 void __cdecl core_fire_cpp_CExplosion_activate_FUN_00486e40(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier)
 
 {
-  uint uVar1;
+  CDemonSet *pCVar1;
   int iVar2;
   CKeyFramedModel *model_ptr;
   int iVar3;
@@ -27,10 +27,10 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_00486e40(CExplosion *this_ptr
     (this_ptr->position).y = position->y;
     (this_ptr->position).z = position->z;
   }
-  uVar1 = 0x01E57284;
+  pCVar1 = g_CDemonSet_PTR_005be368;
   this_ptr->lifetime = 1.0;
   this_ptr->scale = scale;
-  core_set_cpp_FUN_0050e660(uVar1,0x43480000,0,0,0x40000000);
+  core_set_cpp_FUN_0050e660(pCVar1,0x43480000,0,0,0x40000000);
   iVar3 = 0;
   iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
   this_ptr->flip_flag = iVar2;
@@ -50,9 +50,10 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_00486e40(CExplosion *this_ptr
     local_44[0].z = (this_ptr->position).z;
     local_44[0].y = (this_ptr->position).y + 1.0;
     model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                          ((CKeyFramedModelInstance *)((iVar3 % 5) * 0x17c + 0x1c094bc));
+                          (g_CKeyFramedModelInstance_ARRAY_01c094bc + iVar3 % 5);
     iVar3 = iVar3 + 1;
-    core_fire_cpp_CFireEffect_createRock_FUN_0048b320(0x01C08D04,local_44,&local_50,model_ptr);
+    core_fire_cpp_CFireEffect_createRock_FUN_0048b320
+              (g_CFireEffect_PTR_005b80f0,local_44,&local_50,model_ptr);
   } while (iVar3 < 10);
   return;
 }

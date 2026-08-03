@@ -37,8 +37,8 @@
 ;   TerminatedCString s_Out_of_memory_0058d9c1
 ;   TerminatedCString s_engine_pod_cpp_0058d9d0
 ;   TerminatedCString s_Out_of_memory_0058d9e2
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -237,8 +237,8 @@ section .text
     MOV ECX,0x58d9af                    ; 004f7cdc | = "..\\engine\\pod.cpp"
     MOV EBX,0xfe                        ; 004f7ce1
     PUSH 0x58d9c1                       ; 004f7ce6 | = "Out of memory!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f7ceb | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004f7cf1 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f7ceb | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004f7cf1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f7cf7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f7cfc
@@ -478,8 +478,8 @@ section .text
     MOV ECX,0x58d9d0                    ; 004f7fcd | = "..\\engine\\pod.cpp"
     MOV ESI,0x128                       ; 004f7fd2
     PUSH 0x58d9e2                       ; 004f7fd7 | = "Out of memory!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f7fdc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f7fe2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f7fdc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f7fe2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f7fe8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f7fed

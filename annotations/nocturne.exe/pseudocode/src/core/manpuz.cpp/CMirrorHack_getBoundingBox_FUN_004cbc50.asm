@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,int *param_2)
+; float * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

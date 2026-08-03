@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c776a8
-;   undefined4 DAT_01cc30e4
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.game_control
+;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetKeyState_FUN_0049e8b0
@@ -21,8 +21,8 @@ section .text
     PUSH EBX                            ; 004d2c80
         ;   Label: core_menu.cpp_getSinglePressedKey_FUN_004d2c80
     PUSH ESI                            ; 004d2c81
-    MOV EAX,[0x005b9354]                ; 004d2c82 | DAT_005b9354
-    CMP dword ptr [EAX + 0xbc],0x2      ; 004d2c87 | DAT_01c776a8
+    MOV EAX,[0x005b9354]                ; 004d2c82 | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0xbc],0x2      ; 004d2c87 | g_CGame_01c775ec.game_control
     JZ 0x004d2cb5                       ; 004d2c8e
         ;   XREF to: 004d2cb5 (CONDITIONAL_JUMP)  ; LAB_004d2cb5
     MOV ESI,0xffffffff                  ; 004d2c90
@@ -30,9 +30,9 @@ section .text
     XOR EBX,EBX                         ; 004d2c95
     PUSH EBX                            ; 004d2c97
         ;   Label: LAB_004d2c97
-    MOV EAX,[0x005bac64]                ; 004d2c98 | INT_005bac64
-    PUSH EAX                            ; 004d2c9d | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004d2c9e | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004d2c98 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004d2c9d | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004d2c9e | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004d2ca0
     ADD ESP,0x8                         ; 004d2ca2
     TEST EAX,EAX                        ; 004d2ca5
@@ -45,7 +45,7 @@ section .text
     POP ESI                             ; 004d2cb2
     POP EBX                             ; 004d2cb3
     RET                                 ; 004d2cb4
-    PUSH EAX                            ; 004d2cb5 | DAT_01c775ec
+    PUSH EAX                            ; 004d2cb5 | g_CGame_01c775ec
         ;   Label: LAB_004d2cb5
     CALL core_game.cpp_CGame_resetKeyState_FUN_0049e8b0 ; 004d2cb6
         ;   XREF to: 0049e8b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_0049e8b0(CGame * this_ptr)

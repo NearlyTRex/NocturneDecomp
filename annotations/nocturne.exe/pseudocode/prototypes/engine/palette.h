@@ -17,4 +17,4 @@ int __cdecl CFont::drawText(CFont *this_ptr,char *text,int x,int y,int foregroun
 
 // Original: engine_palette.cpp_CFont_getLineSpacing_FUN_004ef000
 // Address: 004ef000
-undefined4 CFont::getLineSpacing(void);
+int __cdecl CFont::getLineSpacing(CFont *this_ptr);

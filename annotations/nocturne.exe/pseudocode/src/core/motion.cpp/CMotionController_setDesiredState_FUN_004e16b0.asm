@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0058b2cd
 ;   TerminatedCString s_CMotionController_setDes_0058b2e0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -80,8 +80,8 @@ section .text
     MOV ECX,0x58b2cd                    ; 004e16fb | = "..\\core\\motion.cpp"
     MOV EDI,0x274                       ; 004e1700
     PUSH 0x58b2e0                       ; 004e1705 | = "CMotionController::setDesiredState - ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004e170a | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004e1710 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004e170a | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004e1710 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e1716
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004e171b

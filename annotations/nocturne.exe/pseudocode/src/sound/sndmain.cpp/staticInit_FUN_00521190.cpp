@@ -6,15 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_staticInit_FUN_00521190(void)
 
 {
-  _DAT_02dbd370 = 20.0f / 4.0f;
-  __arrinit((void *)0x2dbd374,0x40,&g_SSfxSlotTypeInfo_005a2180);
-  __arrinit((void *)0x2dc1b78,8,&g_SSfxOptionsTypeInfo_005a21a0);
-  __arrinit(&DAT_02dc1edc,0x40,&g_SSfxSampleTypeInfo_005a21c0);
+  g_FLOAT_02dbd370 = 20.0f / 4.0f;
+  __arrinit(g_CSfxSlot_ARRAY_02dbd374,0x40,&g_SSfxSlotTypeInfo_005a2180);
+  __arrinit
+            (g_CSfxOptions_ARRAY_02dc1b78,8,&g_SSfxOptionsTypeInfo_005a21a0);
+  __arrinit
+            (g_CSfxSample_ARRAY_02dc1edc,0x40,&g_SSfxSampleTypeInfo_005a21c0);
   _atexit(&g_WatcomStaticDestructorNode_005bea20);
   return;
 }

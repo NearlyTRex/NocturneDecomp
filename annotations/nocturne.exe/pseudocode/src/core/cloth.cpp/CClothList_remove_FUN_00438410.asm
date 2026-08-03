@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af5c
 ;   TerminatedCString s_CClothList_remove_invali_0057af6e
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_00435160
@@ -35,8 +35,8 @@ section .text
         ;   Label: LAB_00438423
     MOV EBX,0x5e4                       ; 00438428
     PUSH 0x57af6e                       ; 0043842d | = "CClothList::remove - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 00438432 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00438438 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00438432 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00438438 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0043843e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00438443

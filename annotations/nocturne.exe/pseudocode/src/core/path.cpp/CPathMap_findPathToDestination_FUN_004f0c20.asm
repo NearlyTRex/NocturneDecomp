@@ -72,8 +72,8 @@
 ;   TerminatedCString s_Out_of_bounds4_0058ce0b
 ;   undefined4 DAT_005be0e8
 ;   undefined4 DAT_005be10c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01e3161c
 ;   undefined4 DAT_01e31620
 ;   ... and 7 more
@@ -103,7 +103,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x128]     ; 004f0c31
     MOV EDX,dword ptr [ESP + 0x120]     ; 004f0c38
     PUSH EDX                            ; 004f0c3f
-    PUSH 0x1fba938                      ; 004f0c40 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004f0c40 | g_CDemonRaytrace_01fba938
     LEA ESI,[ESP + 0xc8]                ; 004f0c45
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f0c4c
         ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700()
@@ -395,13 +395,13 @@ section .text
     TEST EAX,EAX                        ; 004f0fb6
     JZ 0x004f113c                       ; 004f0fb8
         ;   XREF to: 004f113c (CONDITIONAL_JUMP)  ; LAB_004f113c
-    MOV EAX,[0x01fba96c]                ; 004f0fbe | DAT_01fba96c
+    MOV EAX,[0x01fba96c]                ; 004f0fbe | g_CDemonRaytrace_01fba938.adjusted_size.x
     MOV dword ptr [ESP + 0xe4],EAX      ; 004f0fc3
     MOV EAX,0x1fba96c                   ; 004f0fca
-    MOV EAX,dword ptr [EAX + 0x4]       ; 004f0fcf | DAT_01fba970
+    MOV EAX,dword ptr [EAX + 0x4]       ; 004f0fcf | g_CDemonRaytrace_01fba938.adjusted_size.y
     MOV dword ptr [ESP + 0xe8],EAX      ; 004f0fd2
     MOV EAX,0x1fba96c                   ; 004f0fd9
-    MOV EAX,dword ptr [EAX + 0x8]       ; 004f0fde | DAT_01fba974
+    MOV EAX,dword ptr [EAX + 0x8]       ; 004f0fde | g_CDemonRaytrace_01fba938.adjusted_size.z
     MOV dword ptr [ESP + 0xec],EAX      ; 004f0fe1
     LEA EAX,[ESP + 0x9c]                ; 004f0fe8
     CMP EAX,EBP                         ; 004f0fef
@@ -666,8 +666,8 @@ section .text
     MOV EAX,0x58cdd9                    ; 004f131e | = "..\\core\\path.cpp"
     MOV EDX,0x549                       ; 004f1323
     PUSH 0x58cdea                       ; 004f1328 | = "Out of bounds3!"
-    MOV [0x01cc4800],EAX                ; 004f132d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004f1332 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004f132d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004f1332 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f1338
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f133d
@@ -678,8 +678,8 @@ section .text
     MOV ECX,0x58cdfa                    ; 004f1345 | = "..\\core\\path.cpp"
     MOV EAX,0x54a                       ; 004f134a
     PUSH 0x58ce0b                       ; 004f134f | = "Out of bounds4!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f1354 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f135a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f1354 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f135a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f135f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f1364
@@ -789,8 +789,8 @@ section .text
         ;   Label: LAB_004f14b0
     MOV EAX,0x547                       ; 004f14b5
     PUSH 0x58cda8                       ; 004f14ba | = "Out of bounds1!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f14bf | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f14c5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f14bf | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f14c5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f14ca
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f14cf
@@ -800,8 +800,8 @@ section .text
         ;   Label: LAB_004f14d7
     MOV ECX,0x548                       ; 004f14dc
     PUSH 0x58cdc9                       ; 004f14e1 | = "Out of bounds2!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f14e6 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f14ec | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004f14e6 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f14ec | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f14f2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f14f7

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_crate_cpp_CCrate_getBoundingBox_FUN_0043ccc0(int param_1,undefined4 *param_2)
+; float * core_crate_cpp_CCrate_getBoundingBox_FUN_0043ccc0(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

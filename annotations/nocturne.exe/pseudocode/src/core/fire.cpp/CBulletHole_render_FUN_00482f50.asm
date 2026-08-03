@@ -39,7 +39,7 @@
 ;   float FLOAT_0059d1f8 = 256
 ;   float FLOAT_0059d1fc = 65536
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
@@ -312,8 +312,8 @@ section .text
     PUSH EAX                            ; 00483252
     LEA EAX,[ESP + 0x18]                ; 00483253
     PUSH EAX                            ; 00483257
-    MOV ECX,dword ptr [0x005be368]      ; 00483258 | DAT_005be368
-    PUSH ECX                            ; 0048325e | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 00483258 | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 0048325e | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50 ; 0048325f
         ;   XREF to: 0050bb50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 00483264

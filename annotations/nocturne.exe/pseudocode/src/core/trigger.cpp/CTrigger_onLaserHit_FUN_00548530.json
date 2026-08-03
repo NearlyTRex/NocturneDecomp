@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,17 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 136,
+    "complexity_score": 167,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 14,
     "suspect_types": [
+      "pointer_cast",
+      "suspect_float",
       "unnamed_param"
     ],
-    "total_lines": 41
+    "total_lines": 42
   },
   "cross_references": [],
   "function": {
@@ -85,7 +87,7 @@
     ],
     "convention": "unknown",
     "name": "core_trigger.cpp_CTrigger_onLaserHit_FUN_00548530",
-    "signature": "void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(int param_1,int param_2)"
+    "signature": "void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(CDemonActor *param_1,SLaserInfo *param_2)"
   },
   "function_calls": [
     {
@@ -143,7 +145,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(int param_1,int param_2)",
+      "text": "void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(CDemonActor *param_1,SLaserInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -151,7 +153,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(int param_1,int param_2)",
+      "text": "void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(CDemonActor *param_1,SLaserInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -175,23 +177,7 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x16c) == 5) && (*(int *)(param_1 + 0x2ec) == *(int *)(param_2 + 8))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x16c) == 5) && (*(int *)(param_1 + 0x2ec) == *(int *)(param_2 + 8))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x16c) == 5) && (*(int *)(param_1 + 0x2ec) == *(int *)(param_2 + 8))) {",
+      "text": "if ((*(int *)(param_1[1].actor_name + 0x1c) == 5) &&",
       "type": "unnamed_param"
     },
     {
@@ -199,15 +185,31 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2e8) = 1;",
+      "text": "(param_1[2].orient_matrix.m[1].y == (float)param_2->laser_type)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 7,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x50) = 0;",
+      "text": "(param_1[2].orient_matrix.m[1].y == (float)param_2->laser_type)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 8,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "param_1[2].orient_matrix.m[1].x = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].orient_matrix.m[1].x = 1.4013e-45;",
       "type": "unnamed_param"
     },
     {
@@ -215,7 +217,7 @@
       "line": 10,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x48) = 0x3f800000;",
+      "text": "param_2->transparency = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -223,16 +225,32 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x4c) = *(uint *)(param_2 + 0x44);",
+      "text": "param_2->reflectivity = 1.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x4c) = *(uint *)(param_2 + 0x44);",
+      "text": "param_2->stored_angle = param_2->incidence_angle;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2->stored_angle = param_2->incidence_angle;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 6,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if ((*(int *)(param_1[1].actor_name + 0x1c) == 5) &&",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

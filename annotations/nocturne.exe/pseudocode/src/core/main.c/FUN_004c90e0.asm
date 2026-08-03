@@ -17,14 +17,14 @@
 ;   TerminatedCString s_rb_00587ec4
 ;   TerminatedCString s_enemy_pod_00587ec7
 ;   undefined4 DAT_00587ed1
-;   int INT_005b9284 = 0x1c70f74
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_005bdee0
-;   undefined4 DAT_005be060
-;   undefined4 DAT_005be1cc
-;   undefined4 DAT_005bed68
-;   undefined4 DAT_014b98f8
+;   void* PTR_DAT_005b9284 = 01c70f74
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
+;   CMouse* g_CMouse_PTR_005be060 = 01d465c0
+;   CPod* g_CPod_PTR_005be1cc = 01e528d0
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
+;   CBitFont* g_CBitFont_PTR_014b98f8
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -65,7 +65,7 @@ section .text
     JNZ 0x004c939e                      ; 004c9103
         ;   XREF to: 004c939e (CONDITIONAL_JUMP)  ; LAB_004c939e
     PUSH 0x58                           ; 004c9109
-    MOV EDX,dword ptr [0x014b9900]      ; 004c910b | DAT_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 004c910b | g_CBitFont_PTR_014b9900
     PUSH EDX                            ; 004c9111
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004c9112
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
@@ -105,7 +105,7 @@ section .text
         ;   XREF to: 0040e710 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     ADD ESP,0x10                        ; 004c9178
     PUSH 0x587e7f                       ; 004c917b | = "In stores 10/26/99"
-    MOV ECX,dword ptr [0x014b98f8]      ; 004c9180 | DAT_014b98f8
+    MOV ECX,dword ptr [0x014b98f8]      ; 004c9180 | g_CBitFont_PTR_014b98f8
     PUSH ECX                            ; 004c9186
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c9187
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -121,7 +121,7 @@ section .text
     SUB EDX,EAX                         ; 004c91a6
     PUSH EDX                            ; 004c91a8
     PUSH 0x587e7f                       ; 004c91a9 | = "In stores 10/26/99"
-    MOV EBX,dword ptr [0x014b98f8]      ; 004c91ae | DAT_014b98f8
+    MOV EBX,dword ptr [0x014b98f8]      ; 004c91ae | g_CBitFont_PTR_014b98f8
     PUSH EBX                            ; 004c91b4
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004c91b5
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -129,7 +129,7 @@ section .text
     MOV EBX,0x1e0                       ; 004c91bd
     PUSH 0x587e92                       ; 004c91c2 | = "www.nocturnegame.com"
     SUB EBX,ESI                         ; 004c91c7
-    MOV ESI,dword ptr [0x014b98f8]      ; 004c91c9 | DAT_014b98f8
+    MOV ESI,dword ptr [0x014b98f8]      ; 004c91c9 | g_CBitFont_PTR_014b98f8
     PUSH ESI                            ; 004c91cf
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c91d0
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -145,7 +145,7 @@ section .text
     SUB EDX,EAX                         ; 004c91eb
     PUSH EDX                            ; 004c91ed
     PUSH 0x587e92                       ; 004c91ee | = "www.nocturnegame.com"
-    MOV EBP,dword ptr [0x014b98f8]      ; 004c91f3 | DAT_014b98f8
+    MOV EBP,dword ptr [0x014b98f8]      ; 004c91f3 | g_CBitFont_PTR_014b98f8
     PUSH EBP                            ; 004c91f9
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004c91fa
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -184,18 +184,18 @@ section .text
         ;   Label: LAB_004c9258
     PUSH 0x2a                           ; 004c925d
     SUB EBX,EAX                         ; 004c925f
-    MOV EAX,[0x005bac64]                ; 004c9261 | INT_005bac64
-    PUSH EAX                            ; 004c9266 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004c9267 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004c9261 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004c9266 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004c9267 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004c9269
     ADD ESP,0x8                         ; 004c926b
     TEST EAX,EAX                        ; 004c926e
     JZ 0x004c9285                       ; 004c9270
         ;   XREF to: 004c9285 (CONDITIONAL_JUMP)  ; LAB_004c9285
     PUSH 0x1                            ; 004c9272
-    MOV EAX,[0x005bac64]                ; 004c9274 | INT_005bac64
-    PUSH EAX                            ; 004c9279 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004c927a | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004c9274 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004c9279 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004c927a | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004c927c
     ADD ESP,0x8                         ; 004c927e
     TEST EAX,EAX                        ; 004c9281
@@ -215,7 +215,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c929f
     PUSH EAX                            ; 004c92a2
-    MOV EDX,dword ptr [0x014b98f8]      ; 004c92a3 | DAT_014b98f8
+    MOV EDX,dword ptr [0x014b98f8]      ; 004c92a3 | g_CBitFont_PTR_014b98f8
     PUSH EDX                            ; 004c92a9
     MOV EBX,EAX                         ; 004c92aa
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c92ac
@@ -232,7 +232,7 @@ section .text
     SUB EDX,EAX                         ; 004c92c7
     PUSH EDX                            ; 004c92c9
     PUSH EBX                            ; 004c92ca
-    MOV ECX,dword ptr [0x014b98f8]      ; 004c92cb | DAT_014b98f8
+    MOV ECX,dword ptr [0x014b98f8]      ; 004c92cb | g_CBitFont_PTR_014b98f8
     PUSH ECX                            ; 004c92d1
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004c92d2
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -254,27 +254,27 @@ section .text
         ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004c9305
         ;   Label: LAB_004c9305
-    MOV EBX,dword ptr [0x005bdee0]      ; 004c9308 | DAT_005bdee0
-    PUSH EBX                            ; 004c930e | DAT_01cea280
+    MOV EBX,dword ptr [0x005bdee0]      ; 004c9308 | g_CNetGame_PTR_005bdee0
+    PUSH EBX                            ; 004c930e | g_CNetGame_01cea280
     CALL core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0 ; 004c930f
         ;   XREF to: 004e99c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004c9314
-    MOV ESI,dword ptr [0x005b9284]      ; 004c9317 | INT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 004c9317 | PTR_DAT_005b9284
     PUSH ESI                            ; 004c931d
     CALL xxx_unk.c_FUN_004940d0         ; 004c931e
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
     ADD ESP,0x4                         ; 004c9323
-    MOV EDI,dword ptr [0x005be060]      ; 004c9326 | DAT_005be060
+    MOV EDI,dword ptr [0x005be060]      ; 004c9326 | g_CMouse_PTR_005be060
     PUSH EDI                            ; 004c932c
     CALL engine_ncursfx.cpp_FUN_004ee680 ; 004c932d
         ;   XREF to: 004ee680 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_FUN_004ee680(CMouse * this_ptr)
     ADD ESP,0x4                         ; 004c9332
-    MOV EBP,dword ptr [0x005baf90]      ; 004c9335 | DAT_005baf90
+    MOV EBP,dword ptr [0x005baf90]      ; 004c9335 | g_CDemonMission_PTR_005baf90
     PUSH EBP                            ; 004c933b
     CALL core_mission.cpp_FUN_004d7e90  ; 004c933c
-        ;   XREF to: 004d7e90 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d7e90()
+        ;   XREF to: 004d7e90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004d7e90(void * param_1)
     ADD ESP,0x4                         ; 004c9341
-    MOV EAX,[0x005bed68]                ; 004c9344 | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 004c9344 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 004c9349
     CALL core_sound.cpp_FUN_00527e10    ; 004c934a
         ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_00527e10(CSound * this_ptr)
@@ -297,7 +297,7 @@ section .text
         ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0044cc00()
     CALL wincore_winrun.cpp_FUN_00559e90 ; 004c937a
         ;   XREF to: 00559e90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00559e90()
-    MOV EDX,dword ptr [0x005be1cc]      ; 004c937f | DAT_005be1cc
+    MOV EDX,dword ptr [0x005be1cc]      ; 004c937f | g_CPod_PTR_005be1cc
     PUSH EDX                            ; 004c9385
     CALL engine_pod.cpp_CPod_cleanup_FUN_004f8b40 ; 004c9386
         ;   XREF to: 004f8b40 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_cleanup_FUN_004f8b40(CPod * this_ptr)

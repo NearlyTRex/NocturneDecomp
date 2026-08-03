@@ -25,8 +25,8 @@
 ;   TerminatedCString s_d_0057b29f
 ;   TerminatedCString s_d_d_0057b2a3
 ;   TerminatedCString s_f_f_f_f_f_f_f_0057b2aa
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_allocMemory_FUN_0043b610
@@ -176,8 +176,8 @@ section .text
     MOV EDX,0x57b269                    ; 0043b792 | = "..\\core\\course.cpp"
     MOV ECX,0x7c                        ; 0043b797
     PUSH 0x57b27c                       ; 0043b79c | = "CCourse::load - can't open data\\%s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0043b7a1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0043b7a7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0043b7a1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0043b7a7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0043b7ad
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0043b7b2

@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059d7a0 = 4
-;   undefined4 DAT_005b80f0
-;   int INT_005b9284 = 0x1c70f74
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   void* PTR_DAT_005b9284 = 01c70f74
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     PUSH EAX                            ; 0048eaa6
     LEA EAX,[ESP + 0x1c]                ; 0048eaa7
     PUSH EAX                            ; 0048eaab
-    MOV ECX,dword ptr [0x005b80f0]      ; 0048eaac | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 0048eaac | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 0048eab2
     CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0 ; 0048eab3
         ;   XREF to: 0048c3c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
@@ -74,7 +74,7 @@ section .text
     CMP EAX,EBP                         ; 0048eae2
     JNZ 0x0048eaf4                      ; 0048eae4
         ;   XREF to: 0048eaf4 (CONDITIONAL_JUMP)  ; LAB_0048eaf4
-    MOV EAX,[0x005b9284]                ; 0048eae6 | INT_005b9284
+    MOV EAX,[0x005b9284]                ; 0048eae6 | PTR_DAT_005b9284
     PUSH EAX                            ; 0048eaeb
     CALL xxx_unk.c_FUN_004940d0         ; 0048eaec
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()

@@ -10,7 +10,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_00518470(CDefo
 
 {
   core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-            (0x01E57284,this_ptr->vertex_count[lod_index],this_ptr->tri_count[lod_index],
-             this_ptr->tri_data_ptr[lod_index],skinned_vertices,-3,(CVector3i *)0x0);
+            (g_CDemonSet_PTR_005be368,this_ptr->vertex_count[lod_index],
+             this_ptr->tri_count[lod_index],this_ptr->tri_data_ptr[lod_index],skinned_vertices,-3,
+             (CVector3i *)0x0);
   return;
 }

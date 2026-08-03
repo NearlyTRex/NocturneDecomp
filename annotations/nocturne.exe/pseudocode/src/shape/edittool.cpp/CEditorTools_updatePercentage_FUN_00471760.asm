@@ -329,8 +329,8 @@ section .text
         ;   Label: LAB_00471a58
     MOV EBX,0x605                       ; 00471a5d
     PUSH 0x57e849                       ; 00471a62 | = "CEditorTools::updatePercentageWindow ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00471a67 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00471a6d | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00471a67 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00471a6d | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00471a73
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00471a78

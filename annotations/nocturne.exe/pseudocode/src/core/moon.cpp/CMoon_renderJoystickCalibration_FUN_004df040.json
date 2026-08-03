@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 255,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
@@ -212,9 +211,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01b4d738",
@@ -236,37 +235,37 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fb1d0c",
-      "name": "DAT_01fb1d0c",
+      "name": "g_CDemonSet_01e57284.rendering_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d10",
-      "name": "DAT_01fb1d10",
+      "name": "g_CDemonSet_01e57284.light_direction.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d14",
-      "name": "DAT_01fb1d14",
+      "name": "g_CDemonSet_01e57284.light_direction.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d18",
-      "name": "DAT_01fb1d18",
+      "name": "g_CDemonSet_01e57284.light_direction.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d1c",
-      "name": "DAT_01fb1d1c",
+      "name": "g_CDemonSet_01e57284.ambient_base_quick",
       "type": "undefined4",
       "value": null
     },
@@ -536,14 +535,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 35,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "iVar1 = 0x01E57284;",
-      "type": "raw_address_constant"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

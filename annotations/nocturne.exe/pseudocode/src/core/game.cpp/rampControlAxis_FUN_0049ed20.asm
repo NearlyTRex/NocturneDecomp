@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01c02598
-;   undefined4 DAT_01c77850
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; *****************************************************************************
 
@@ -38,9 +38,9 @@ section .text
     SAHF                                ; 0049ed49
     JNC 0x0049ed6c                      ; 0049ed4a
         ;   XREF to: 0049ed6c (CONDITIONAL_JUMP)  ; LAB_0049ed6c
-    MOV EAX,[0x005b9354]                ; 0049ed4c | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0049ed4c | g_CGame_PTR_005b9354
     FLD float ptr [ESP + 0x18]          ; 0049ed51
-    FLD float ptr [EAX + 0x264]         ; 0049ed55 | DAT_01c77850
+    FLD float ptr [EAX + 0x264]         ; 0049ed55 | g_CGame_01c775ec.delta_time_float
     FMUL ST1                            ; 0049ed5b
     FDIV float ptr [ESP + 0x14]         ; 0049ed5d
     FADD float ptr [EDX]                ; 0049ed61
@@ -63,8 +63,8 @@ section .text
     SAHF                                ; 0049ed80
     JBE 0x0049ed6c                      ; 0049ed81
         ;   XREF to: 0049ed6c (CONDITIONAL_JUMP)  ; LAB_0049ed6c
-    MOV EAX,[0x005b9354]                ; 0049ed83 | DAT_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049ed88 | DAT_01c77850
+    MOV EAX,[0x005b9354]                ; 0049ed83 | g_CGame_PTR_005b9354
+    FLD float ptr [EAX + 0x264]         ; 0049ed88 | g_CGame_01c775ec.delta_time_float
     FMUL float ptr [ESP + 0x18]         ; 0049ed8e
     FDIV float ptr [ESP + 0x14]         ; 0049ed92
     FSUBR float ptr [EDX]               ; 0049ed96

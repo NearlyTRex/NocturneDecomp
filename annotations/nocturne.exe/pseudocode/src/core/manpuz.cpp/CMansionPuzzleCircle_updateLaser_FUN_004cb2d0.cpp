@@ -63,7 +63,7 @@ LAB_004cb32e:
                   (this_ptr->gem_pos).z) * 4.0f;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(local_1c,&local_30,&local_60);
     core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&this_ptr->base,&local_54,&local_30);
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
     core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_114);
     local_114.beam_width = 0.08;
     local_114.laser_type = 2;
@@ -94,8 +94,8 @@ LAB_004cb32e:
     local_c0.color.r = local_114.color.r;
     local_c0.color.g = local_114.color.g;
     local_c0.color.b = local_114.color.b;
-    core_fire_cpp_FUN_0048b6f0(0x01C08D04,&local_3c,&local_54,&local_c0,0);
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+    core_fire_cpp_FUN_0048b6f0(g_CFireEffect_PTR_005b80f0,&local_3c,&local_54,&local_c0,0);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
     return;
   }
   this_ptr->laser_intensity[panel_index] = 0;

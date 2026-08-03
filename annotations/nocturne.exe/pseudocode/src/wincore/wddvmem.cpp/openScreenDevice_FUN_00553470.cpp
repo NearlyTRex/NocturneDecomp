@@ -23,8 +23,8 @@ void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_00553470(void)
     local_74[0] = 0x6c;
     iVar1 = (**(code **)(*_DAT_02ddf558 + 100))(_DAT_02ddf558,0,local_74,1);
     if (iVar1 != 0) {
-      PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-      INT_01cc4804 = 0x255;
+      g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+      g_INT_01cc4804 = 0x255;
       core_main_c_FUN_004c8440("openScreenDevice - Unable to lock screen!");
     }
     if (0 < DAT_005b7620) {

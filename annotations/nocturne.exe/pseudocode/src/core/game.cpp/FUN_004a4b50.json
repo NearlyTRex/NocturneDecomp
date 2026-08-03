@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,63 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 17,
+        "column": 14,
         "line": 47,
-        "message": "use of undeclared identifier 'DAT_01bcd070'; did you mean 'DAT_005c5070'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 48,
-        "message": "use of undeclared identifier 'DAT_01bcd070_1'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 49,
-        "message": "use of undeclared identifier 'DAT_01bcd070_1'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 50,
-        "message": "use of undeclared identifier 'DAT_01bcd070_1'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 51,
         "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 51,
-        "message": "use of undeclared identifier '_DAT_014b9900'"
+        "column": 3,
+        "line": 48,
+        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
       },
       {
         "category": "incompatible_types",
-        "column": 13,
-        "line": 85,
-        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550'"
+        "column": 19,
+        "line": 48,
+        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 91,
+        "line": 88,
         "message": "use of undeclared identifier '_DAT_01c78ac0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 92,
+        "line": 89,
         "message": "use of undeclared identifier '_DAT_01c78ac4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 93,
+        "line": 90,
         "message": "use of undeclared identifier 'DAT_01c789c0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 53,
+        "line": 117,
+        "message": "use of undeclared identifier 'DAT_005b9450'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 150,
+        "message": "no matching function for call to 'shape_edittool_cpp_FUN_00476160'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 53,
+        "line": 170,
+        "message": "use of undeclared identifier 'DAT_005b9450'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 53,
+        "line": 215,
+        "message": "use of undeclared identifier 'DAT_005b9450'"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1066,
-    "complexity_score": 646,
+    "complexity_score": 566,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 86,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 396,
-    "suspect_count": 23,
+    "pseudocode_lines": 391,
+    "suspect_count": 16,
     "suspect_types": [
       "undefined_data",
-      "unknown_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1462
+    "total_lines": 1457
   },
   "cross_references": [
     {
@@ -657,9 +656,9 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "005b7650",
@@ -705,20 +704,20 @@
     },
     {
       "addr": "005baca0",
-      "name": "INT_005baca0",
-      "type": "int",
-      "value": "0x1cc3160"
+      "name": "g_CLevelLoader_PTR_005baca0",
+      "type": "CLevelLoader*",
+      "value": "01cc3160"
     },
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "014b9900",
-      "name": "DAT_014b9900",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_014b9900",
+      "type": "CBitFont*",
       "value": null
     },
     {
@@ -999,31 +998,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01bcd070",
-      "severity": "mild",
-      "text": "local_1c[0] = DAT_01bcd070;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 42,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "local_1c[2] = DAT_01bcd070_1._1_1_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 43,
-      "match": "._2_1_",
-      "severity": "mild",
-      "text": "local_1c[3] = DAT_01bcd070_1._2_1_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
+      "line": 83,
       "match": "DAT_01c789c0",
       "severity": "mild",
       "text": "DAT_01c789c0 = 0;",
@@ -1031,7 +1006,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 110,
       "match": "DAT_005b9450",
       "severity": "mild",
       "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar3),\"rt\");",
@@ -1039,7 +1014,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 166,
+      "line": 163,
       "match": "DAT_005b9450",
       "severity": "mild",
       "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
@@ -1047,7 +1022,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 211,
+      "line": 208,
       "match": "DAT_005b9450",
       "severity": "mild",
       "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
@@ -1055,7 +1030,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 263,
+      "line": 260,
       "match": "DAT_005b9450",
       "severity": "mild",
       "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
@@ -1063,7 +1038,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 294,
+      "line": 291,
       "match": "DAT_005b9450",
       "severity": "mild",
       "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
@@ -1071,7 +1046,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 316,
+      "line": 313,
       "match": "DAT_005b9450",
       "severity": "mild",
       "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
@@ -1079,7 +1054,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 338,
+      "line": 335,
       "match": "DAT_005b9450",
       "severity": "mild",
       "text": "pcVar4 = *(char **)(&DAT_005b9450 + iVar3 * 0x34 + iVar6 * 4);",
@@ -1087,7 +1062,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 352,
+      "line": 349,
       "match": "DAT_01c789c0",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01c789c0;",
@@ -1095,7 +1070,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 354,
+      "line": 351,
       "match": "DAT_005b9554",
       "severity": "mild",
       "text": "_DAT_01c78ac0 = *(uint *)(&DAT_005b9554 + iVar3 * 4);",
@@ -1103,7 +1078,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 369,
+      "line": 366,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "iVar6 = _stricmp(&DAT_01c78598,local_144);",
@@ -1111,47 +1086,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 372,
+      "line": 369,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01c78598;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 395,
-      "match": "DAT_01bcd070",
-      "severity": "mild",
-      "text": "DAT_01bcd070 = local_1c[0];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 396,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "DAT_01bcd070_1._0_1_ = local_1c[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 397,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "DAT_01bcd070_1._1_1_ = local_1c[2];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 398,
-      "match": "._2_1_",
-      "severity": "mild",
-      "text": "DAT_01bcd070_1._2_1_ = local_1c[3];",
-      "type": "unknown_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 339,
+      "line": 336,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1159,7 +1102,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 356,
+      "line": 353,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1167,7 +1110,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 373,
+      "line": 370,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

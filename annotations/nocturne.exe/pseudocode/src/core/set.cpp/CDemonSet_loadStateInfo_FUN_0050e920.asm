@@ -23,9 +23,9 @@
 ;   TerminatedCString s_d_0059090f
 ;   TerminatedCString s_The_set_has_changed_sinc_00590913
 ;   TerminatedCString s_d_00590979
-;   undefined4 DAT_005b6d50
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -78,7 +78,7 @@ section .text
     JZ 0x0050e998                       ; 0050e982
         ;   XREF to: 0050e998 (CONDITIONAL_JUMP)  ; LAB_0050e998
     PUSH 0x590913                       ; 0050e984 | = "The set has changed since you saved y..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 0050e989 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 0050e989 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 0050e98f
     CALL shape_edittool.cpp_FUN_0046fb40 ; 0050e990
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
@@ -121,8 +121,8 @@ section .text
     MOV ECX,0x5908ce                    ; 0050e9d6 | = "..\\core\\set.cpp"
     MOV EBX,0x12af                      ; 0050e9db
     PUSH 0x5908de                       ; 0050e9e0 | = "Set saveState info is invalid version %d"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050e9e5 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050e9eb | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0050e9e5 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050e9eb | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050e9f1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0050e9f6

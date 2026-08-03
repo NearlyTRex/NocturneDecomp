@@ -17,12 +17,12 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
   uint uStack_20;
   char local_18 [8];
   
-  iVar1 = (slot->options).dead;
+  iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
      (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
     apcStack_1bc[0] = "DirectSoundDevice::getSfxPlaybackPos - invalid handle";
-    PTR_01cc4800 = "..\\sound\\snddx.cpp";
-    INT_01cc4804 = 0x3a7;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
+    g_INT_01cc4804 = 0x3a7;
     core_main_c_FUN_004c8440();
   }
   apcStack_1bc[0] = local_18;
@@ -35,7 +35,6 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
     sound_sndmain_cpp_FUN_00529980(apcStack_1bc);
     return -1.0;
   }
-  uVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-                    ((CSfxSample *)slot->playback_state);
+  uVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(slot->sample);
   return (double)(uStack_20 / uVar3);
 }

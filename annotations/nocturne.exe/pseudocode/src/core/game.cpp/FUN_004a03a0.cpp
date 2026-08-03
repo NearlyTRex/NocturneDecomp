@@ -22,7 +22,8 @@ void core_game_cpp_FUN_004a03a0(void)
   }
   pCVar1 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar1);
   if (pCVar1 != (CAmmo *)0x0) {
-    core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&pCVar1->base);
+    core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+              (g_CDemonMission_PTR_005baf90,&pCVar1->base);
     (*((pCVar1->base).vtable._ub)->setup)(&pCVar1->base);
     pCVar1->ammo_type = in_stack_00000008;
     core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar1,in_stack_00000004);

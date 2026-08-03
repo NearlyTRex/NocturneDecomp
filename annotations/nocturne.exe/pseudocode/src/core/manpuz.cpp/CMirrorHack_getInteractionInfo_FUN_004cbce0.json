@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -85,7 +85,7 @@
     ],
     "convention": "unknown",
     "name": "core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0",
-    "signature": "void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(int param_1,undefined4 *param_2)"
+    "signature": "void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(CDemonActor *param_1,SInteractionInfo *param_2)"
   },
   "function_calls": [
     {
@@ -138,7 +138,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(int param_1,uint *param_2)",
+      "text": "void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(CDemonActor *param_1,SInteractionInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -146,7 +146,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(int param_1,uint *param_2)",
+      "text": "void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(CDemonActor *param_1,SInteractionInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -170,7 +170,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = 1;",
+      "text": "param_2->can_interact = 1;",
       "type": "unnamed_param"
     },
     {
@@ -178,7 +178,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)(param_1 + 0x2cc);",
+      "text": "pCVar1 = (CDemonActor *)param_1[2].location.area_id;",
       "type": "unnamed_param"
     },
     {
@@ -186,7 +186,7 @@
       "line": 10,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[4] = 0x40c90fdb;",
+      "text": "param_2->yaw_max = 6.2831855;",
       "type": "unnamed_param"
     },
     {
@@ -194,7 +194,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[5] = 0xc0c90fdb;",
+      "text": "param_2->yaw_min = -6.2831855;",
       "type": "unnamed_param"
     },
     {
@@ -202,7 +202,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[2] = 0xbf800000;",
+      "text": "param_2->approach_offset = -1.0;",
       "type": "unnamed_param"
     },
     {
@@ -210,7 +210,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[3] = 0;",
+      "text": "param_2->distance_max = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -218,7 +218,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = uVar1;",
+      "text": "param_2->interacting_actor = pCVar1;",
       "type": "unnamed_param"
     }
   ],

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGroundType param_3,float param_4)
+; uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; EGroundType      Stack[0xc]:4   ground_type
+; float            Stack[0x10]:4   volume
 ; Local Variables:
 ; undefined8       Stack[-0x94]:8  local_94
 ; undefined        Stack[-0x8c]:1  local_8c
@@ -14,15 +19,15 @@
 ;   void* PTR_caseD_1_0040db24 = 0040dc6a
 ;   TerminatedCString s_footstep_s_s_wav_f_00578021
 ;   double DOUBLE_0057803d = 5.87890821882528E-39
-;   int INT_005b9284 = 0x1c70f74
-;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 DAT_005be368
-;   undefined4 DAT_005bed68
+;   void* PTR_DAT_005b9284 = 01c70f74
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fb860c
-;   undefined4 DAT_01fb8610
-;   undefined4 DAT_01fb8614
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonCamera_01fb8508.position.x
+;   undefined4 g_CDemonCamera_01fb8508.position.y
+;   undefined4 g_CDemonCamera_01fb8508.position.z
 ;
 ; Called Functions:
 ;   core_gore.cpp_CGore_createFootstep_FUN_004b06b0
@@ -46,13 +51,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x90]      ; 0040db57
     MOV ESI,dword ptr [ESP + 0x94]      ; 0040db5e
     MOV EDI,dword ptr [ESP + 0x98]      ; 0040db65
-    MOV EAX,[0x01fb860c]                ; 0040db6c | DAT_01fb860c
+    MOV EAX,[0x01fb860c]                ; 0040db6c | g_CDemonCamera_01fb8508.position.x
     MOV dword ptr [ESP + 0x64],EAX      ; 0040db71
     MOV EAX,0x1fb860c                   ; 0040db75
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0040db7a | DAT_01fb8610
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0040db7a | g_CDemonCamera_01fb8508.position.y
     MOV dword ptr [ESP + 0x68],EAX      ; 0040db7d
     MOV EAX,0x1fb860c                   ; 0040db81
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0040db86 | DAT_01fb8614
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0040db86 | g_CDemonCamera_01fb8508.position.z
     MOV dword ptr [ESP + 0x6c],EAX      ; 0040db89
     FLD float ptr [ESI]                 ; 0040db8d
     FSUB float ptr [ESP + 0x64]         ; 0040db8f
@@ -80,8 +85,8 @@ section .text
     RET                                 ; 0040dbc1
     PUSH ESI                            ; 0040dbc2
         ;   Label: LAB_0040dbc2
-    MOV EDX,dword ptr [0x005be368]      ; 0040dbc3 | DAT_005be368
-    PUSH EDX                            ; 0040dbc9 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 0040dbc3 | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 0040dbc9 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50 ; 0040dbca
         ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0040dbcf
@@ -93,7 +98,7 @@ section .text
         ;   Label: LAB_0040dbdb
     PUSH EAX                            ; 0040dbe1
     PUSH ESI                            ; 0040dbe2
-    MOV ECX,dword ptr [0x005b96c4]      ; 0040dbe3 | INT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 0040dbe3 | g_CGore_PTR_005b96c4
     PUSH ECX                            ; 0040dbe9
     CALL core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730 ; 0040dbea
         ;   XREF to: 004b0730 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(CGore * this_ptr, CVector3f * position, int * out_blood_type)
@@ -111,7 +116,7 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 0040dc14
     PUSH EAX                            ; 0040dc17
     PUSH ESI                            ; 0040dc18
-    MOV EBP,dword ptr [0x005b96c4]      ; 0040dc19 | INT_005b96c4
+    MOV EBP,dword ptr [0x005b96c4]      ; 0040dc19 | g_CGore_PTR_005b96c4
     PUSH EBP                            ; 0040dc1f
     CALL core_gore.cpp_CGore_createFootstep_FUN_004b06b0 ; 0040dc20
         ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004b06b0(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
@@ -132,7 +137,7 @@ section .text
         ;   XREF to: 0040dc5b (CONDITIONAL_JUMP)  ; caseD_d
     JMP dword ptr [EDI*0x4 + 0x40db0c]  ; 0040dc54 | caseD_d | caseD_b | caseD_5
         ;   Label: switchD
-    MOV EDX,dword ptr [0x005b9284]      ; 0040dc5b | INT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0040dc5b | PTR_DAT_005b9284
         ;   Label: caseD_0
     PUSH EDX                            ; 0040dc61
     CALL xxx_unk.c_FUN_004940d0         ; 0040dc62
@@ -160,7 +165,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0040dc9b
     PUSH EAX                            ; 0040dc9f
     PUSH EBX                            ; 0040dca0
-    MOV ECX,dword ptr [0x005bed68]      ; 0040dca1 | DAT_005bed68
+    MOV ECX,dword ptr [0x005bed68]      ; 0040dca1 | g_CSound_PTR_005bed68
     PUSH ECX                            ; 0040dca7
     CALL core_sound.cpp_CSound_playActorSound_FUN_0052ea60 ; 0040dca8
         ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0052ea60(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -184,7 +189,7 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 0040dcd5
     PUSH EAX                            ; 0040dcd8
     PUSH ESI                            ; 0040dcd9
-    MOV EAX,[0x005b96c4]                ; 0040dcda | INT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 0040dcda | g_CGore_PTR_005b96c4
     PUSH EAX                            ; 0040dcdf
     CALL core_gore.cpp_CGore_createFootstep_FUN_004b06b0 ; 0040dce0
         ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004b06b0(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
@@ -195,14 +200,14 @@ section .text
         ;   Label: LAB_0040dced
     JMP 0x0040dc41                      ; 0040dcf7
         ;   XREF to: 0040dc41 (UNCONDITIONAL_JUMP)  ; LAB_0040dc41
-    MOV EAX,[0x005b9284]                ; 0040dcfc | INT_005b9284
+    MOV EAX,[0x005b9284]                ; 0040dcfc | PTR_DAT_005b9284
         ;   Label: caseD_3
     PUSH EAX                            ; 0040dd01
     CALL xxx_unk.c_FUN_004940d0         ; 0040dd02
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
     JMP 0x0040dc67                      ; 0040dd07
         ;   XREF to: 0040dc67 (UNCONDITIONAL_JUMP)  ; LAB_0040dc67
-    MOV EBP,dword ptr [0x005b9284]      ; 0040dd0c | INT_005b9284
+    MOV EBP,dword ptr [0x005b9284]      ; 0040dd0c | PTR_DAT_005b9284
         ;   Label: caseD_7
     PUSH EBP                            ; 0040dd12
     CALL xxx_unk.c_FUN_004940d0         ; 0040dd13

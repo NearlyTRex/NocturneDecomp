@@ -16,7 +16,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   CDemonRenderer *this_ptr_00;
   CVector3f *pCVar3;
   int iVar4;
-  char *this_ptr_01;
+  CMatrix3x3f *this_ptr_01;
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
@@ -80,8 +80,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   
   bVar5 = 0;
   if (((this_ptr->volumetric_enabled != 0) &&
-      ((float)0.10000000000000001 <= *(float *)(0x01E57284 + 0x15a888))) &&
-     (*(int *)(0x01C775EC + 0xc) != 0)) {
+      ((float)0.10000000000000001 <= (g_CDemonSet_PTR_005be368->active_fog).density_multiplier)) &&
+     (g_CGame_PTR_005b9354->halo_mode != 0)) {
     engine_drender_cpp_FUN_00460d10(DAT_005ae704);
     local_9c = local_f0;
     (&local_98)[(uint)bVar5 * -2] = afStack_ec[(uint)bVar5 * -2];
@@ -90,9 +90,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
     local_114 = (float)local_9c * _DAT_0059c038;
     local_110 = (float)(int)local_98 * _DAT_0059c038;
     local_10c = (float)local_94 * _DAT_0059c038;
-    afStack_ec[2] = local_114 - *(float *)((this_ptr->base).camera_name + 0xc4);
-    afStack_ec[3] = local_110 - *(float *)((this_ptr->base).camera_name + 200);
-    local_dc = local_10c - *(float *)((this_ptr->base).camera_name + 0xcc);
+    afStack_ec[2] = local_114 - (this_ptr->base).position.x;
+    afStack_ec[3] = local_110 - (this_ptr->base).position.y;
+    local_dc = local_10c - (this_ptr->base).position.z;
     local_54 = SQRT(local_dc * local_dc +
                     afStack_ec[2] * afStack_ec[2] + afStack_ec[3] * afStack_ec[3]);
     if (0.0 < local_54) {
@@ -102,38 +102,36 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
       local_120.x = 0.0;
       local_120.y = 0.0;
       local_120.z = 1.0;
-      this_ptr_01 = (this_ptr->base).camera_name + 0xd0;
+      this_ptr_01 = &(this_ptr->base).rotation_matrix;
       local_dc = local_dc * fVar1;
-      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                ((CMatrix3x3f *)this_ptr_01,&local_108,&local_120);
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(this_ptr_01,&local_108,&local_120);
       engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(DAT_005ae704,&local_138);
-      local_138.x = local_138.x - *(float *)((this_ptr->base).camera_name + 0xc4);
-      local_138.y = local_138.y - *(float *)((this_ptr->base).camera_name + 200);
-      local_138.z = local_138.z - *(float *)((this_ptr->base).camera_name + 0xcc);
+      local_138.x = local_138.x - (this_ptr->base).position.x;
+      local_138.y = local_138.y - (this_ptr->base).position.y;
+      local_138.z = local_138.z - (this_ptr->base).position.z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                         ((CMatrix3x3f *)this_ptr_01,&local_cc,&local_138);
+                         (this_ptr_01,&local_cc,&local_138);
       if (&local_138 != pCVar3) {
         local_138.x = pCVar3->x;
         local_138.y = pCVar3->y;
         local_138.z = pCVar3->z;
       }
-      fVar1 = ((local_138.z * (float)18) /
-              *(float *)((this_ptr->base).camera_name + 0xf8)) * (float)2;
+      fVar1 = ((local_138.z * (float)18) / (this_ptr->base).focal_length) *
+              (float)2;
       fVar2 = local_138.x * local_138.x + local_138.y * local_138.y;
       fVar1 = fVar1 * fVar1;
       local_58 = 1.0 - fVar2 / fVar1;
       if ((fVar1 <= fVar2) || (local_58 <= (float)0.5)) {
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                  (DAT_005ae704,(CVector3f *)((this_ptr->base).camera_name + 0xc4));
+                  (DAT_005ae704,&(this_ptr->base).position);
         core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
-                  ((CMatrix3x3f *)((this_ptr->base).camera_name + 0xd0),&local_b4);
+                  (&(this_ptr->base).rotation_matrix,&local_b4);
         local_50 = 1;
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
                   (DAT_005ae704,&local_b4,(CVector3f *)0x0);
         do {
           fVar6 = (float10)local_50 *
-                  ((float10)18 /
-                  (float10)*(float *)((this_ptr->base).camera_name + 0xf8)) *
+                  ((float10)18 / (float10)(this_ptr->base).focal_length) *
                   (float10)0.0625;
           local_4c = (float)fVar6;
           Var10 = fpatan(fVar6,(float10)1);
@@ -171,7 +169,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
             local_38 = (float)(fVar9 * fVar11);
             local_28 = local_2c;
             do {
-              local_6c = *(float *)((this_ptr->base).camera_name + 0xc0);
+              local_6c = (this_ptr->base).fixed_point_scale;
               local_20 = (float)local_24 * local_40 * local_6c * 5.1806537865363094e-315._0_4_;
               local_14 = local_24 + 1;
               local_1c = (float)local_14 * local_40 * local_6c * 5.1806537865363094e-315._0_4_;

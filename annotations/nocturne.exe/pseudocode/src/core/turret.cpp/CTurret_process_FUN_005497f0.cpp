@@ -159,8 +159,8 @@ LAB_00549887:
     }
     break;
   default:
-    PTR_01cc4800 = "..\\core\\turret.cpp";
-    INT_01cc4804 = 0x15a;
+    g_CHAR_PTR_01cc4800 = "..\\core\\turret.cpp";
+    g_INT_01cc4804 = 0x15a;
     core_main_c_FUN_004c8440();
   }
   if (-1 < (this_ptr->base).muzzle_flash_color.r) {

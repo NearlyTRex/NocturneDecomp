@@ -83,9 +83,9 @@
 ;   double DOUBLE_00594a06 = 60
 ;   double DOUBLE_00594a0e = -60
 ;   float FLOAT_00594a16 = 0.2000000
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01c74744
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonLight_01c74640.base.position.x
 ;   ... and 17 more
 ;
 ; Called Functions:
@@ -109,17 +109,17 @@ section .text
     MOV EBP,ESP                         ; 0052c9d4
     SUB ESP,0x160                       ; 0052c9d6
     AND ESP,0xfffffff8                  ; 0052c9dc
-    MOV EAX,[0x005b9354]                ; 0052c9df | DAT_005b9354
-    CMP dword ptr [EAX + 0x240],0x0     ; 0052c9e4 | DAT_01c7782c
+    MOV EAX,[0x005b9354]                ; 0052c9df | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x240],0x0     ; 0052c9e4 | g_CGame_01c775ec.goggles_active
     JNZ 0x0052cc69                      ; 0052c9eb
         ;   XREF to: 0052cc69 (CONDITIONAL_JUMP)  ; LAB_0052cc69
-    MOV EAX,[0x01fb860c]                ; 0052c9f1 | DAT_01fb860c
+    MOV EAX,[0x01fb860c]                ; 0052c9f1 | g_CDemonCamera_01fb8508.position.x
     MOV dword ptr [ESP + 0x128],EAX     ; 0052c9f6
     MOV EAX,0x1fb860c                   ; 0052c9fd
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0052ca02 | DAT_01fb8610
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0052ca02 | g_CDemonCamera_01fb8508.position.y
     MOV dword ptr [ESP + 0x12c],EAX     ; 0052ca05
     MOV EAX,0x1fb860c                   ; 0052ca0c
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0052ca11 | DAT_01fb8614
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0052ca11 | g_CDemonCamera_01fb8508.position.z
     LEA EDX,[ESP + 0xa4]                ; 0052ca14
     MOV dword ptr [ESP + 0x130],EAX     ; 0052ca1b
     LEA EAX,[ESP + 0x128]               ; 0052ca22
@@ -160,7 +160,7 @@ section .text
     MOV ECX,0xa                         ; 0052cac5
     LEA EDI,[ESP + 0x64]                ; 0052caca
     MOV ESI,0x1fb8618                   ; 0052cace
-    MOVSD.REP ES:EDI,ESI                ; 0052cad3 | DAT_01fb8618 | DAT_01fb861c
+    MOVSD.REP ES:EDI,ESI                ; 0052cad3 | g_CDemonCamera_01fb8508.rotation_matrix.m[0].x | g_CDemonCamera_01fb8508.rotation_matrix.m[0].y
     MOV ECX,0xa                         ; 0052cad5
     LEA EDI,[ESP + 0x14]                ; 0052cada
     LEA ESI,[ESP + 0x64]                ; 0052cade
@@ -247,9 +247,9 @@ section .text
     FSTP double ptr [ESP]               ; 0052cc2c
     CALL sound_sndmain.cpp_set3DListenerOrient_FUN_00527690 ; 0052cc2f
         ;   XREF to: 00527690 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrient_FUN_00527690(double front_x, double front_y, double front_z, double up_x, ...)
-    MOV EAX,[0x005b9354]                ; 0052cc34 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0052cc34 | g_CGame_PTR_005b9354
     ADD ESP,0x48                        ; 0052cc39
-    MOV EDX,dword ptr [EAX + 0x240]     ; 0052cc3c | DAT_01c7782c
+    MOV EDX,dword ptr [EAX + 0x240]     ; 0052cc3c | g_CGame_01c775ec.goggles_active
     MOV dword ptr [0x02dc9468],EBX      ; 0052cc42 | DAT_02dc9468
     TEST EDX,EDX                        ; 0052cc48
     JZ 0x0052ccf1                       ; 0052cc4a
@@ -266,14 +266,14 @@ section .text
     POP ESI                             ; 0052cc66
     POP EBX                             ; 0052cc67
     RET                                 ; 0052cc68
-    MOV EAX,[0x01c74744]                ; 0052cc69 | DAT_01c74744
+    MOV EAX,[0x01c74744]                ; 0052cc69 | g_CDemonLight_01c74640.base.position.x
         ;   Label: LAB_0052cc69
     MOV dword ptr [ESP + 0xc8],EAX      ; 0052cc6e
     MOV EAX,0x1c74744                   ; 0052cc75
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0052cc7a | DAT_01c74748
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0052cc7a | g_CDemonLight_01c74640.base.position.y
     MOV dword ptr [ESP + 0xcc],EAX      ; 0052cc7d
     MOV EAX,0x1c74744                   ; 0052cc84
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0052cc89 | DAT_01c7474c
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0052cc89 | g_CDemonLight_01c74640.base.position.z
     LEA EDX,[ESP + 0xa4]                ; 0052cc8c
     MOV dword ptr [ESP + 0xd0],EAX      ; 0052cc93
     LEA EAX,[ESP + 0xc8]                ; 0052cc9a
@@ -290,7 +290,7 @@ section .text
         ;   Label: LAB_0052cccf
     LEA EDI,[ESP + 0x3c]                ; 0052ccd4
     MOV ESI,0x1c74750                   ; 0052ccd8
-    MOVSD.REP ES:EDI,ESI                ; 0052ccdd | DAT_01c74750 | DAT_01c74754
+    MOVSD.REP ES:EDI,ESI                ; 0052ccdd | g_CDemonLight_01c74640.base.rotation_matrix.m[0].x | g_CDemonLight_01c74640.base.rotation_matrix.m[0].y
     MOV ECX,0xa                         ; 0052ccdf
     LEA EDI,[ESP + 0x14]                ; 0052cce4
     LEA ESI,[ESP + 0x3c]                ; 0052cce8
@@ -298,7 +298,7 @@ section .text
         ;   XREF to: 0052cae2 (UNCONDITIONAL_JUMP)  ; LAB_0052cae2
     PUSH 0x6                            ; 0052ccf1
         ;   Label: LAB_0052ccf1
-    MOV EAX,[0x005be368]                ; 0052ccf3 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0052ccf3 | g_CDemonSet_PTR_005be368
     PUSH 0x5949c6                       ; 0052ccf8 | = "castle"
     ADD EAX,0x14cd08                    ; 0052ccfd
     PUSH EAX                            ; 0052cd02
@@ -313,7 +313,7 @@ section .text
         ;   Label: LAB_0052cd1e
     MOV EBX,0x1                         ; 0052cd25
     MOV dword ptr [ESP + 0x158],EAX     ; 0052cd2a
-    MOV EDX,dword ptr [0x01fb8644]      ; 0052cd31 | DAT_01fb8644
+    MOV EDX,dword ptr [0x01fb8644]      ; 0052cd31 | g_CDemonCamera_01fb8508.screen_width
         ;   Label: LAB_0052cd31
     IMUL EDX,EBX                        ; 0052cd37
     MOV EAX,EDX                         ; 0052cd3a
@@ -322,7 +322,7 @@ section .text
     SBB EAX,EDX                         ; 0052cd42
     SAR EAX,0x5                         ; 0052cd44
     MOV EDI,dword ptr [ESP + 0x158]     ; 0052cd47
-    MOV EDX,dword ptr [0x01fb8648]      ; 0052cd4e | DAT_01fb8648
+    MOV EDX,dword ptr [0x01fb8648]      ; 0052cd4e | g_CDemonCamera_01fb8508.max_distance
     IMUL EDX,EDI                        ; 0052cd54
     MOV ESI,EAX                         ; 0052cd57
     MOV EAX,EDX                         ; 0052cd59
@@ -482,9 +482,9 @@ section .text
         ;   Label: LAB_0052cf91
     FLD1                                ; 0052cf98
     PUSH EAX                            ; 0052cf9a
-    MOV EAX,[0x005be368]                ; 0052cf9b | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0052cf9b | g_CDemonSet_PTR_005be368
     FADD float ptr [ESP + 0xf4]         ; 0052cfa0
-    PUSH EAX                            ; 0052cfa7 | DAT_01e57284
+    PUSH EAX                            ; 0052cfa7 | g_CDemonSet_01e57284
     FSTP float ptr [ESP + 0xf8]         ; 0052cfa8
     CALL core_setcolid.cpp_FUN_0050f910 ; 0052cfaf
         ;   XREF to: 0050f910 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0050f910()

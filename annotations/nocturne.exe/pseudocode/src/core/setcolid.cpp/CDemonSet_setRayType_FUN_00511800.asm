@@ -23,8 +23,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_00590b80
 ;   TerminatedCString s_CDemonSet_setRayType_use_00590b95
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -46,8 +46,8 @@ section .text
     MOV ECX,0x590b80                    ; 00511815 | = "..\\core\\setcolid.cpp"
     MOV EBX,0x49a                       ; 0051181a
     PUSH 0x590b95                       ; 0051181f | = "CDemonSet::setRayType - use setRayTyp..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00511824 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0051182a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00511824 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0051182a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00511830
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00511835

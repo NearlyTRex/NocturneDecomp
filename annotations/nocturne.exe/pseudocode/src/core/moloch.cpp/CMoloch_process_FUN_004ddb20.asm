@@ -37,7 +37,7 @@
 ;   double DOUBLE_0058a802 = 1.59386252192652E-314
 ;   double DOUBLE_0058a80a = 3.14159265350000
 ;   undefined4 DAT_005a0ab8
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -138,10 +138,10 @@ section .text
         ;   Label: LAB_004ddbc2
     FMUL double ptr [0x0058a7d2]        ; 004ddbc5 | DOUBLE_0058a7d2
     FLD float ptr [EBX + 0x23ac]        ; 004ddbcb
-    MOV EAX,[0x005b9354]                ; 004ddbd1 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004ddbd1 | g_CGame_PTR_005b9354
     FSTP float ptr [EBX + 0x242c]       ; 004ddbd6
     FSTP float ptr [EBX + 0x2430]       ; 004ddbdc
-    CMP dword ptr [EAX + 0x228],0x0     ; 004ddbe2 | DAT_01c77814
+    CMP dword ptr [EAX + 0x228],0x0     ; 004ddbe2 | g_CGame_01c775ec.letterbox_mode
     JZ 0x004ddbfd                       ; 004ddbe9
         ;   XREF to: 004ddbfd (CONDITIONAL_JUMP)  ; LAB_004ddbfd
     FLD float ptr [EBX + 0x2430]        ; 004ddbeb
@@ -340,8 +340,8 @@ section .text
     ADD ESP,0xc                         ; 004dde15
     PUSH EBX                            ; 004dde18
     PUSH 0x58a76f                       ; 004dde19 | = "%s confused while walking to scriptDe..."
-    MOV EAX,[0x005ad350]                ; 004dde1e | PTR_DAT_005ad350
-    PUSH EAX                            ; 004dde23 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 004dde1e | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 004dde23 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004dde24
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x004ddc37                      ; 004dde29

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,34 +56,28 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_01e56c30'"
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 28,
+        "message": "no matching function for call to 'core_sound_cpp_FUN_0052ebc0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 43,
+        "line": 42,
         "message": "use of undeclared identifier '_DAT_01e56418'; did you mean 'DAT_02DE6418'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 56,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01e56c2c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 66,
+        "line": 65,
         "message": "use of undeclared identifier '_DAT_01e56418'; did you mean 'DAT_02DE6418'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 83,
-        "message": "no matching function for call to 'core_sound_cpp_CSound_playSound_FUN_0052ea40'"
       }
     ],
     "success": false,
@@ -92,17 +86,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 173,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 78,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
+      "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
@@ -192,9 +184,9 @@
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "00765a60",
@@ -414,48 +406,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01e56c30",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01e56c30,sound_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(char *)((int)pfVar7",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 60,
+      "match": "do {",
       "severity": "moderate",
-      "text": "*(char *)((int)pfVar7 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(float *)((int)pfVar7",
-      "severity": "moderate",
-      "text": "pfVar7 = (float *)((int)pfVar7 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `pfVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 67,
-      "match": "(int)pfVar7",
-      "severity": "moderate",
-      "text": "*(char *)((int)pfVar7 + 1) = cVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pfVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
-      "match": "(int)pfVar7",
-      "severity": "moderate",
-      "text": "pfVar7 = (float *)((int)pfVar7 + 2);",
-      "type": "pointer_truncation"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 27,
+      "line": 26,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

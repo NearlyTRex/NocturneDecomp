@@ -23,12 +23,12 @@
 ;   TerminatedCString s_menu3_pth_0058a8f0
 ;   TerminatedCString s_noc00000_0058a96e
 ;   TerminatedCString s_noc00001_0058a977
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   void* PTR_s_noc00000_005bb198 = 0058a96e
 ;   undefined1* PTR_s_noc00001_005bb19c = 0058a977
 ;   undefined4 DAT_005bb210
-;   undefined4 DAT_01c77800
-;   undefined4 DAT_01ccdc50
+;   undefined4 g_CGame_01c775ec.head_of_horror_cheat
+;   CAlphaBitmap g_CAlphaBitmap_01ccdc50
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -74,7 +74,7 @@ section .text
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004de8ad
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 004de8b2
-    MOV EDX,dword ptr [0x01cce2bc]      ; 004de8b6 | DAT_01cce2bc
+    MOV EDX,dword ptr [0x01cce2bc]      ; 004de8b6 | g_CKeyFramedModel_01cce1bc.frame_count
     FLD float ptr [ESP + 0x8]           ; 004de8bc
     ADD ESP,0x8                         ; 004de8c0
     MOV dword ptr [ESP],EDX             ; 004de8c3
@@ -127,9 +127,9 @@ section .text
     POP ESI                             ; 004de96d
     POP EBX                             ; 004de96e
     RET                                 ; 004de96f
-    MOV EDX,dword ptr [0x005b9354]      ; 004de970 | DAT_005b9354
+    MOV EDX,dword ptr [0x005b9354]      ; 004de970 | g_CGame_PTR_005b9354
         ;   Label: LAB_004de970
-    MOV ECX,dword ptr [EDX + 0x214]     ; 004de976 | DAT_01c77800
+    MOV ECX,dword ptr [EDX + 0x214]     ; 004de976 | g_CGame_01c775ec.head_of_horror_cheat
     LEA EAX,[EDI + 0x8]                 ; 004de97c
     CMP ECX,0x29a                       ; 004de97f
     JNZ 0x004dea43                      ; 004de985
@@ -138,9 +138,9 @@ section .text
     PUSH EAX                            ; 004de990
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 ; 004de991
         ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
-    MOV EAX,[0x005b9354]                ; 004de996 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004de996 | g_CGame_PTR_005b9354
     ADD ESP,0x8                         ; 004de99b
-    MOV dword ptr [EAX + 0x214],0x0     ; 004de99e | DAT_01c77800
+    MOV dword ptr [EAX + 0x214],0x0     ; 004de99e | g_CGame_01c775ec.head_of_horror_cheat
     PUSH 0x58a8c7                       ; 004de9a8 | = "menubat.kfm"
         ;   Label: LAB_004de9a8
     PUSH 0x1cce1bc                      ; 004de9ad
@@ -150,7 +150,7 @@ section .text
     PUSH 0x100                          ; 004de9ba
     PUSH 0x100                          ; 004de9bf
     PUSH 0x58a8d3                       ; 004de9c4 | = "menucld2"
-    PUSH 0x1ccdc50                      ; 004de9c9 | DAT_01ccdc50
+    PUSH 0x1ccdc50                      ; 004de9c9 | g_CAlphaBitmap_01ccdc50
     MOV ESI,0x1ccdc64                   ; 004de9ce
     XOR EBX,EBX                         ; 004de9d3
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004de9d5

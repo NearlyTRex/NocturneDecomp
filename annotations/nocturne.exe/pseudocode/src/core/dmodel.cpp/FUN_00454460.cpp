@@ -11,13 +11,13 @@
 void __cdecl core_dmodel_cpp_FUN_00454460(void)
 
 {
-  CDemonActorType *pCVar1;
+  CKeyFramedModel *pCVar1;
   
-  pCVar1 = (CDemonActorType *)&DAT_01abb65c;
+  pCVar1 = g_CKeyFramedModel_ARRAY_01abb65c;
   do {
     core_dmodel_cpp_FUN_00452f10(pCVar1);
-    pCVar1 = (CDemonActorType *)(pCVar1[0xf].class_name + 0x14);
-  } while (pCVar1 != &g_CZombieDogActorType_01af4e5c);
+    pCVar1 = pCVar1 + 1;
+  } while (pCVar1 != g_CKeyFramedModel_ARRAY_01abb65c + sizeof(g_CKeyFramedModel_ARRAY_01abb65c) / sizeof(g_CKeyFramedModel_ARRAY_01abb65c[0]));
   _DAT_01abb658 = 0;
   return;
 }

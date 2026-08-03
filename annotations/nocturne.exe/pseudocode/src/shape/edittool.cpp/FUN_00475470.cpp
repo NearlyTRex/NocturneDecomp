@@ -56,8 +56,8 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
         pCVar5 = (CStrList *)&pCVar5->capacity;
         if (*pcVar3 == '\0') break;
         if (9 < iVar10) {
-          PTR_01cc4800 = "..\\shape\\edittool.cpp";
-          INT_01cc4804 = 0xd01;
+          g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+          g_INT_01cc4804 = 0xd01;
           core_main_c_FUN_004c8440("Too many picklist columns!");
         }
       }
@@ -132,7 +132,7 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
     iVar9 = iVar9 + iVar7;
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
-            (0x01BCD074,iVar10,iVar9,param_2,param_3);
+            (g_CEditorTools_PTR_005b6d50,iVar10,iVar9,param_2,param_3);
   iVar10 = (_DAT_01c00c60 - _DAT_01c00c58) + 1;
   iVar9 = (_DAT_01c00c64 - _DAT_01c00c5c) + 1;
   if (param_1[0x16].vtable._us == (CStrList_vtable *)0x1) {

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -60,30 +60,6 @@
         "column": 7,
         "line": 19,
         "message": "use of undeclared identifier '_DAT_02dc84bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 20,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_02dbd3e4'; did you mean 'DAT_005bdee4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 33,
-        "message": "use of undeclared identifier 'DAT_02dbd504'"
       }
     ],
     "success": false,
@@ -96,11 +72,11 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
     "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
+      "pointer_cast",
       "warning_overlapping_globals"
     ],
     "total_lines": 68
@@ -140,25 +116,25 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dbd3e4",
-      "name": "DAT_02dbd3e4",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[0].playback_state",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dbd504",
-      "name": "DAT_02dbd504",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[1].playback_state",
       "type": "undefined4",
       "value": null
     },
@@ -224,12 +200,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 26,
-      "match": "DAT_02dbd504",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_02dbd504 + iVar2);",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02dbd374",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CSfxSlot_ARRAY_02dbd374[1].distance_to_speakers + iVar2 + -0xc);",
+      "type": "pointer_cast"
     }
   ]
 }

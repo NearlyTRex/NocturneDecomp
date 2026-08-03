@@ -35,10 +35,10 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(CHero *this_ptr)
   if (iVar1 == 0) {
     if (this_ptr->pushed_object == (CBoxActor *)0x0) {
       iVar1 = 0;
-      for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
+      for (iVar4 = 0; iVar4 < g_CDemonSet_PTR_005be368->actor_count; iVar4 = iVar4 + 1) {
         this_ptr_01 = (CBoxActor *)
                       core_actor_cpp_castToClassHash_FUN_0040d890
-                                (*(CDemonActor **)(iVar1 + 0x14cd70 + 0x01E57284),
+                                (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar1),
                                  g_CBoxActorActorType_00764800.name_hash);
         if (((this_ptr_01 != (CBoxActor *)0x0) && (this_ptr_01->can_be_pushed != 0)) &&
            (this_ptr_01->pushed_by_actor == (CDemonActor *)0x0)) {

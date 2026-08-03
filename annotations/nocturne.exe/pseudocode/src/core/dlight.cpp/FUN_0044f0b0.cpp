@@ -41,16 +41,16 @@ void __cdecl core_dlight_cpp_FUN_0044f0b0(CDemonLight *this_ptr)
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,(CVector3f *)((this_ptr->base).camera_name + 0xc4));
+            (DAT_005ae704,&(this_ptr->base).position);
   core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
-            ((CMatrix3x3f *)((this_ptr->base).camera_name + 0xd0),&local_4c);
+            (&(this_ptr->base).rotation_matrix,&local_4c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (DAT_005ae704,&local_4c,(CVector3f *)0x0);
   local_a8._0_4_ =
-       ((float)18 / *(float *)((this_ptr->base).camera_name + 0xf8)) *
-       *(float *)((this_ptr->base).camera_name + 0xc0);
+       ((float)18 / (this_ptr->base).focal_length) * (this_ptr->base).fixed_point_scale
+  ;
   iVar5 = 0;
-  local_38 = *(float *)((this_ptr->base).camera_name + 0xc0);
+  local_38 = (this_ptr->base).fixed_point_scale;
   iVar4 = 0;
   do {
     fVar6 = (float10)iVar5 * (float10)6.2831853070000001 * (float10)0.0625;
@@ -81,25 +81,22 @@ void __cdecl core_dlight_cpp_FUN_0044f0b0(CDemonLight *this_ptr)
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(pCVar1,1);
   pCVar2 = engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
                      (DAT_005ae704,&local_58);
-  local_34[0].x = pCVar2->x - *(float *)((this_ptr->base).camera_name + 0xc4);
-  local_34[0].y = pCVar2->y - *(float *)((this_ptr->base).camera_name + 200);
+  local_34[0].x = pCVar2->x - (this_ptr->base).position.x;
+  local_34[0].y = pCVar2->y - (this_ptr->base).position.y;
   bVar3 = false;
-  local_34[0].z = pCVar2->z - *(float *)((this_ptr->base).camera_name + 0xcc);
+  local_34[0].z = pCVar2->z - (this_ptr->base).position.z;
   pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                     ((CMatrix3x3f *)((this_ptr->base).camera_name + 0xd0),&local_70,local_34);
+                     (&(this_ptr->base).rotation_matrix,&local_70,local_34);
   if (local_34 != pCVar2) {
     local_34[0].x = pCVar2->x;
     local_34[0].y = pCVar2->y;
     local_34[0].z = pCVar2->z;
   }
-  local_34[0].x =
-       *(float *)((this_ptr->base).camera_name + 0xf8) * (float)0.055555555555555601 * local_34[0].x;
-  local_34[0].y =
-       (float)0.055555555555555601 * *(float *)((this_ptr->base).camera_name + 0xf8) * local_34[0].y;
+  local_34[0].x = (this_ptr->base).focal_length * (float)0.055555555555555601 * local_34[0].x;
+  local_34[0].y = (float)0.055555555555555601 * (this_ptr->base).focal_length * local_34[0].y;
   if ((((local_34[0].x < local_34[0].z) && (local_18 = -local_34[0].z, local_18 < local_34[0].x)) &&
       (local_34[0].y < local_34[0].z)) &&
-     ((local_18 < local_34[0].y && (local_34[0].z < *(float *)((this_ptr->base).camera_name + 0xc0))
-      ))) {
+     ((local_18 < local_34[0].y && (local_34[0].z < (this_ptr->base).fixed_point_scale)))) {
     bVar3 = true;
   }
   local_90 = 0;
@@ -132,8 +129,7 @@ void __cdecl core_dlight_cpp_FUN_0044f0b0(CDemonLight *this_ptr)
   local_98.i = 0;
   local_94.i = 0xffff;
   dVar8 = round
-                    ((double)(*(float *)((this_ptr->base).camera_name + 0xc0) *
-                             (float)256));
+                    ((double)((this_ptr->base).fixed_point_scale * (float)256));
   local_94.i = (int)ROUND(dVar8);
   iVar4 = 0;
   do {

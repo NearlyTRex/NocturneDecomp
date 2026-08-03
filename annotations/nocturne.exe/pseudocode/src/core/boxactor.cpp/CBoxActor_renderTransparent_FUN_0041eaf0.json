@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,16 +56,16 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 22,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 23,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 24,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 25,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
         "category": "undeclared_identifier",
@@ -159,9 +159,9 @@
   "globals": [
     {
       "addr": "005ae700",
-      "name": "DAT_005ae700",
-      "type": "undefined4",
-      "value": null
+      "name": "PTR_DAT_005ae700",
+      "type": "void*",
+      "value": "01b4d738"
     },
     {
       "addr": "005ae704",
@@ -171,9 +171,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01b4d738",
@@ -183,7 +183,7 @@
     },
     {
       "addr": "01fb1b24",
-      "name": "DAT_01fb1b24",
+      "name": "g_CDemonSet_01e57284.disable_directional_lighting",
       "type": "undefined4",
       "value": null
     }
@@ -260,7 +260,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01B4D738,(CVector3f *)(param_1 + 0x20));",
+      "text": "((CDemonRenderer *)PTR_DAT_005ae700,(CVector3f *)(param_1 + 0x20));",
       "type": "unnamed_param"
     },
     {
@@ -268,7 +268,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01B4D738,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);",
+      "text": "((CDemonRenderer *)PTR_DAT_005ae700,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);",
       "type": "unnamed_param"
     },
     {

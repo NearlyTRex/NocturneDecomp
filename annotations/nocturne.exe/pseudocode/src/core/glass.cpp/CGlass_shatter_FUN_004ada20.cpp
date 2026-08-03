@@ -66,7 +66,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004ada20(CGlass *this_ptr,CVector
         pcVar4[1] = cVar1;
         pcVar4 = pcVar4 + 2;
       } while (cVar1 != '\0');
-      core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(0x01E57284);
+      core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(g_CDemonSet_PTR_005be368);
     }
     __arrinit(&local_cc,4,&g_CVectorTypeInfo_005993b0);
     local_1c.x = (this_ptr->glass_size).x * (float)0.5;

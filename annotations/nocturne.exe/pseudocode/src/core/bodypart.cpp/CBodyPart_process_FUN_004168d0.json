@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -90,12 +90,6 @@
         "column": 21,
         "line": 74,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 81,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880'"
       }
     ],
     "success": false,
@@ -104,12 +98,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 714,
+    "complexity_score": 715,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 85,
     "suspect_count": 61,
     "suspect_types": [
       "undefined_data",
@@ -117,7 +111,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 287
+    "total_lines": 288
   },
   "cross_references": [],
   "function": {
@@ -200,14 +194,14 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
@@ -748,12 +742,12 @@
       "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01E57284,&local_18,&(param_1->base).location.position,&local_54);",
+      "text": "(g_CDemonSet_PTR_005be368,&local_18,&(param_1->base).location.position,&local_54",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(param_1,param_2);",
@@ -761,7 +755,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 77,
       "match": "param_2",
       "severity": "mild",
       "text": "core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(param_1,param_2);",
@@ -769,7 +763,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->physics_box).is_valid = 0;",
@@ -777,7 +771,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->physics_timer = 0.0;",
@@ -785,7 +779,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(param_1,param_2);",
@@ -793,7 +787,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 86,
       "match": "param_2",
       "severity": "mild",
       "text": "core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(param_1,param_2);",

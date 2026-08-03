@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,51 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 25,
-        "line": 30,
-        "message": "use of undeclared identifier 'DAT_02dc1edc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_02dc1edc'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 14,
-        "line": 64,
+        "line": 62,
         "message": "use of undeclared identifier 'DAT_02dbd348'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 65,
+        "line": 63,
         "message": "use of undeclared identifier 'DAT_02dbd348'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 65,
+        "line": 63,
         "message": "use of undeclared identifier 'DAT_02dbd348'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 66,
-        "message": "use of undeclared identifier 'DAT_02db4d18'"
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 67,
+        "message": "no matching function for call to 'sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 69,
-        "message": "use of undeclared identifier 'DAT_02db4d18'"
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 78,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 71,
-        "message": "use of undeclared identifier '_DAT_02db4e1c'"
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 81,
+        "message": "no matching function for call to 'sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 72,
-        "message": "use of undeclared identifier '_DAT_02db4e18'"
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 87,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 75,
-        "message": "use of undeclared identifier 'DAT_02db4d18'"
+        "category": "incompatible_types",
+        "column": 15,
+        "line": 94,
+        "message": "no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_00521830'"
       }
     ],
     "success": false,
@@ -122,21 +110,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 252,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
-    "suspect_count": 13,
+    "pseudocode_lines": 96,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
       "unrolled_memcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 327
+    "total_lines": 326
   },
   "cross_references": [
     {
@@ -303,25 +290,25 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "02db4e18",
-      "name": "DAT_02db4e18",
+      "name": "g_CMP3Decoder_02db4d18.sample_rate",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02db4e1c",
-      "name": "DAT_02db4e1c",
+      "name": "g_CMP3Decoder_02db4d18.num_channels",
       "type": "undefined4",
       "value": null
     },
@@ -442,32 +429,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_02dc1edc",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(&DAT_02dc1edc + iVar4,(char *)out_sample);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_02dc1edc",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_02dc1edc + iVar4;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(CSfxSample *)((int)out_sample",
       "severity": "moderate",
       "text": "out_sample = (CSfxSample *)((int)out_sample + (uint)bVar6 * -8 + 4);",
@@ -475,7 +438,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 55,
       "match": "DAT_02dbd348",
       "severity": "mild",
       "text": "if ((DAT_02dbd348 & 1) == 0) {",
@@ -483,7 +446,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_02dbd348",
       "severity": "mild",
       "text": "DAT_02dbd348 = DAT_02dbd348 | 1;",
@@ -491,47 +454,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_02dbd348",
       "severity": "mild",
       "text": "DAT_02dbd348 = DAT_02dbd348 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_02db4d18",
-      "severity": "mild",
-      "text": "sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90((CMP3Decoder *)&DAT_02db4d18);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_02db4d18",
-      "severity": "mild",
-      "text": "sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(&DAT_02db4d18,out_sample);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_02db4d18",
-      "severity": "mild",
-      "text": "sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260((CMP3Decoder *)&DAT_02db4d18);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0x4a; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar4 = 0x4a; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 45,
+      "line": 43,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

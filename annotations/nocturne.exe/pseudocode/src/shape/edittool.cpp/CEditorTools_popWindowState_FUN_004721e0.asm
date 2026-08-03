@@ -24,8 +24,8 @@
 ;   undefined4 DAT_01c00c64
 ;   undefined4 DAT_01c00c68
 ;   undefined4 DAT_01c00c6c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_00472270
     MOV EBX,0x718                       ; 00472275
     PUSH 0x57e9bb                       ; 0047227a | = "CEditorTools::popWindow() called but ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047227f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00472285 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0047227f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00472285 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0047228b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472290

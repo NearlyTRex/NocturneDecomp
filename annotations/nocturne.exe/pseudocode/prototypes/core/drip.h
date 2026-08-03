@@ -41,7 +41,7 @@ int CDrip::renderOpaque(CDemonActor *param_1);
 
 // Original: core_drip.cpp_CDrip_getBoundingBox_FUN_004627a0
 // Address: 004627a0
-undefined4 * CDrip::getBoundingBox(int param_1,undefined4 *param_2);
+float * CDrip::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_drip.cpp_CDrip_getCollisionType_FUN_00462880
 // Address: 00462880

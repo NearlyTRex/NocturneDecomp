@@ -17,12 +17,13 @@ void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(int *sensitivity_
   int iVar4;
   int iVar5;
   char *format_string;
-  int local_18;
+  CKeys *pCVar6;
   
   iVar3 = DAT_005b761c * 3 >> 0x1f;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
-            (0x01BCD074,(int)((DAT_005b761c * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2,0x2c,
-             window_title,0);
+            (g_CEditorTools_PTR_005b6d50,
+             (int)((DAT_005b761c * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2,0x2c,window_title,
+             0);
   iVar3 = *sensitivity_value_ptr;
   if (iVar3 < 0x4000) {
     *sensitivity_value_ptr = 0x4000;
@@ -42,18 +43,18 @@ LAB_004cfc23:
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60
             ((int)(((longlong)(DAT_005b761c + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),
              _DAT_01bd1d90);
-  local_18 = 0;
+  pCVar6 = (CKeys *)0x0;
   do {
-    shape_edittool_cpp_FUN_004722b0();
-    if (_DAT_01bd1d8c != local_18) {
-      iVar3 = (int)(((longlong)_DAT_01bd1d8c * 0x3c000) / (longlong)(DAT_005b761c + -1)) + 0x4000;
-      local_18 = _DAT_01bd1d8c;
+    shape_edittool_cpp_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
+    if (_DAT_01bd1d8c != pCVar6) {
+      iVar3 = (int)(((longlong)(int)_DAT_01bd1d8c * 0x3c000) / (longlong)(DAT_005b761c + -1)) +
+              0x4000;
     }
-    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);
+    iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD4);
     if (iVar1 != 0) {
       iVar3 = iVar3 + -700;
     }
-    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);
+    iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD6);
     if (iVar1 != 0) {
       iVar3 = iVar3 + 700;
     }
@@ -81,13 +82,15 @@ LAB_004cfc23:
               (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,(iVar2 - iVar1) / 2,iVar4,iVar5,
                format_string);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);
+    pCVar6 = g_CKeys_PTR_005bac64;
+    iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
     if (iVar1 != 0) goto LAB_004cfdf5;
-    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);
+    iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_RETURN);
   } while ((iVar1 == 0) &&
-          (iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar1 == 0));
+          (iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+                             (g_CKeys_PTR_005bac64,DIM_LBUTTON), iVar1 == 0));
   *sensitivity_value_ptr = iVar3;
 LAB_004cfdf5:
-  shape_edittool_cpp_FUN_004720c0();
+  shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
   return;
 }

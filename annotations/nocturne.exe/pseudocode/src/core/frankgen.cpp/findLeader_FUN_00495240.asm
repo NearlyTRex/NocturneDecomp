@@ -11,13 +11,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_00581d72
 ;   TerminatedCString s_CFrankenstienMachine_fin_00581d87
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CFrankenstienMachineActorType_01c71304.name_hash
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
-;   undefined4 DAT_01fa3ff8
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
+;   undefined4 g_CDemonSet_01e57284.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -34,14 +34,14 @@ section .text
     PUSH EBP                            ; 00495243
     XOR ESI,ESI                         ; 00495244
     XOR EBX,EBX                         ; 00495246
-    MOV EAX,[0x005be368]                ; 00495248 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00495248 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_00495248
-    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 0049524d | DAT_01fa3ff0
+    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 0049524d | g_CDemonSet_01e57284.actor_count
     JGE 0x0049527a                      ; 00495253
         ;   XREF to: 0049527a (CONDITIONAL_JUMP)  ; LAB_0049527a
     MOV EDI,dword ptr [0x01c7133c]      ; 00495255 | g_CFrankenstienMachineActorType_01c71304.name_hash
     PUSH EDI                            ; 0049525b
-    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0049525c | DAT_01fa3ff4 | DAT_01fa3ff8
+    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0049525c | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
     PUSH EBP                            ; 00495263
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00495264
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_0049527a
     MOV EBX,0x1cf                       ; 0049527f
     PUSH 0x581d87                       ; 00495284 | = "CFrankenstienMachine::findLeader - no..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00495289 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0049528f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00495289 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0049528f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00495295
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0049529a

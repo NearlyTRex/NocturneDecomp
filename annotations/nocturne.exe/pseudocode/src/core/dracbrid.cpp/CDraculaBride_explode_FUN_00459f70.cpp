@@ -33,7 +33,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(CDraculaBride 
   if ((this_ptr->base).base.model.model_name[0] != '\0') {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
                        (&(this_ptr->base).base.model);
-    local_24 = pCVar1->texture_sets[0].textures[0x28].textures[0].base.type;
+    local_24 = pCVar1->num_parts;
     if (1 < local_24) {
       if (spread_angle < 0.0) {
         local_b0 = 20.0;
@@ -77,7 +77,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(CDraculaBride 
             ((CDemonActor *)this_ptr,&CStack_60,&CStack_54);
   if ((this_ptr->base).base.is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-              ((CGore *)INT_005b96c4,&CStack_60,direction,100,(this_ptr->base).base.blood_type);
+              (g_CGore_PTR_005b96c4,&CStack_60,direction,100,(this_ptr->base).base.blood_type);
     return;
   }
   (this_ptr->base).base.fire_count = 0;

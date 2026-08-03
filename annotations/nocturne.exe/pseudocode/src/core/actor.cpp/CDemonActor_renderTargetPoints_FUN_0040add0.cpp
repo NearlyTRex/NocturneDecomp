@@ -1,14 +1,14 @@
 // Name: core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0
 // Address: 0040add0
 // Address Range: [[0040add0, 0040b08e]]
-// Convention: unknown
-// Signature: void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)
+void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonActor *this_ptr)
 
 {
   int iVar1;
@@ -16,25 +16,25 @@ void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  float *pfVar6;
-  float local_9c [30];
+  CVector3f *pCVar6;
+  CVector3f local_9c [10];
   CVector3i CStack_24;
   int iStack_18;
   uint uStack_14;
   
   __arrinit(local_9c,10,&g_CVectorTypeInfo_005993b0);
-  iStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x4c))(param_1,local_9c);
-  pfVar6 = local_9c;
+  iStack_18 = (*((this_ptr->vtable)._ub)->getTargetPoints)(this_ptr,local_9c);
+  pCVar6 = local_9c;
   iVar4 = 0;
   if (0 < iStack_18) {
     do {
       uStack_14 = (uint)DAT_01bff320;
-      CStack_24.x = (int)ROUND(*pfVar6 * _DAT_005992b0);
-      CStack_24.y = (int)ROUND(pfVar6[1] * _DAT_005992b0);
-      CStack_24.z = (int)ROUND(pfVar6[2] * _DAT_005992b0);
+      CStack_24.x = (int)ROUND(pCVar6->x * _DAT_005992b0);
+      CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * _DAT_005992b0);
+      CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * _DAT_005992b0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                ((SProjectedVertex *)(*0x01B4D738 + 0xea5d0),&CStack_24);
-      iVar5 = *0x01B4D738;
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0xea5d0),&CStack_24);
+      iVar5 = *(int *)PTR_DAT_005ae700;
       if ((*(byte *)(iVar5 + 0xea5e3) & 0x80) == 0) {
         iVar3 = *(int *)(iVar5 + 0xea5e0) >> 0x10;
         _DAT_01c00c70 = uStack_14;
@@ -84,7 +84,7 @@ void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)
         }
       }
       iVar4 = iVar4 + 1;
-      pfVar6 = pfVar6 + 3;
+      pCVar6 = (CVector3f *)((int)pCVar6 + 0xc);
     } while (iVar4 < iStack_18);
   }
   return;

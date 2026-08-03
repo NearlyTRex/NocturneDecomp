@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -92,18 +92,6 @@
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 417,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 434,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 31,
         "line": 491,
@@ -113,6 +101,18 @@
         "category": "undeclared_identifier",
         "column": 55,
         "line": 488,
+        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 31,
+        "line": 505,
+        "message": "use of undeclared identifier '_DAT_01ccdbb0'; did you mean 'DAT_005ad8b0'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 502,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       }
     ],
@@ -416,8 +416,8 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
@@ -428,20 +428,20 @@
     },
     {
       "addr": "005b96c4",
-      "name": "INT_005b96c4",
-      "type": "int",
-      "value": "0x1c78c7c"
+      "name": "g_CGore_PTR_005b96c4",
+      "type": "CGore*",
+      "value": "01c78c7c"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -464,8 +464,8 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
@@ -2825,7 +2825,7 @@
       "line": 548,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01E57284,&((param_1->base).victim)->base);",
+      "text": "(g_CDemonSet_PTR_005be368,&((param_1->base).victim)->base);",
       "type": "unnamed_param"
     },
     {

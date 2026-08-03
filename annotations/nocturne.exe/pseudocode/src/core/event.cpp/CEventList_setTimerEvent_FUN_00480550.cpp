@@ -15,16 +15,16 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(CEventList *th
   char (*pacVar4) [32];
   
   if ((double)duration < 0.0) {
-    PTR_01cc4800 = "..\\core\\event.cpp";
-    INT_01cc4804 = 0xa5d;
+    g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+    g_INT_01cc4804 = 0xa5d;
     core_main_c_FUN_004c8440("CEventList::setTimerEvent - invalid duration for %s: %f",name,(double)duration);
   }
   iVar2 = core_event_cpp_CEventList_findTimer_FUN_004808b0(this_ptr,name);
   if (iVar2 < 0) {
     if (0.0 < duration) {
       if (9 < (this_ptr->timers).count) {
-        PTR_01cc4800 = "..\\core\\event.cpp";
-        INT_01cc4804 = 0xa7e;
+        g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
+        g_INT_01cc4804 = 0xa7e;
         core_main_c_FUN_004c8440("CEventList::setTimerEvent - too many timers!");
       }
       pacVar4 = (this_ptr->timers).names + (this_ptr->timers).count;

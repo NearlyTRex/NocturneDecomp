@@ -27,7 +27,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a1ea8
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c00c70
 ;
@@ -182,7 +182,7 @@ section .text
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 005190ce
     PUSH 0xff                           ; 005190d1
-    MOV EAX,[0x005b6d50]                ; 005190d6 | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 005190d6 | g_CEditorTools_PTR_005b6d50
     PUSH 0x3f000000                     ; 005190db
     PUSH EAX                            ; 005190e0
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 ; 005190e1

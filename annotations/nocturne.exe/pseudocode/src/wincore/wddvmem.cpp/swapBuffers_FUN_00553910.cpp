@@ -46,8 +46,8 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
       local_8c[0] = 0x6c;
       iVar10 = (**(code **)(*_DAT_02ddf554 + 100))(_DAT_02ddf554,0,local_8c,1,0);
       if (iVar10 != 0) {
-        PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-        INT_01cc4804 = 0x346;
+        g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+        g_INT_01cc4804 = 0x346;
         core_main_c_FUN_004c8440("Unable to lock front buffer");
       }
       local_18 = local_68;
@@ -80,8 +80,8 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
       }
       iVar10 = (**(code **)(*_DAT_02ddf554 + 0x80))(_DAT_02ddf554,0);
       if (iVar10 != 0) {
-        PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-        INT_01cc4804 = 0x368;
+        g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+        g_INT_01cc4804 = 0x368;
         core_main_c_FUN_004c8440("Unable to unlock front buffer");
         _DAT_02ddf564 = 0;
         wincore_winrun_cpp_processWindowMessages_FUN_005591c0();

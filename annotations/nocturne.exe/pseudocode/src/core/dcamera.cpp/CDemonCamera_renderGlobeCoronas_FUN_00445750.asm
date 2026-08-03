@@ -45,7 +45,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad4b4
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_007f8284
 ;   undefined4 DAT_01216608
 ;   undefined4 DAT_012b0660
@@ -55,8 +55,8 @@
 ;   undefined4 DAT_014b8464
 ;   undefined4 DAT_014b8468
 ;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c775f8
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.halo_mode
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650
@@ -74,8 +74,8 @@ section .text
     PUSH EBP                            ; 00445753
     SUB ESP,0x84                        ; 00445754
     MOV EBX,dword ptr [ESP + 0xa0]      ; 0044575a
-    MOV EAX,[0x005b9354]                ; 00445761 | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0xc],0x0       ; 00445766 | DAT_01c775f8
+    MOV EAX,[0x005b9354]                ; 00445761 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0xc],0x0       ; 00445766 | g_CGame_01c775ec.halo_mode
     JNZ 0x00445785                      ; 0044576a
         ;   XREF to: 00445785 (CONDITIONAL_JUMP)  ; LAB_00445785
     TEST EBX,EBX                        ; 0044576c

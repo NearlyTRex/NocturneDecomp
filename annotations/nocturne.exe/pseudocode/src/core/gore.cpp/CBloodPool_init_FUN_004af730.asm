@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   float FLOAT_00585138 = 0.1000000
 ;   float FLOAT_0059e4d4 = 256
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
@@ -38,12 +38,12 @@ section .text
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004af741
         ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 004af746
-    MOV EDX,dword ptr [0x005be368]      ; 004af749 | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 004af749 | g_CDemonSet_PTR_005be368
     PUSH 0x0                            ; 004af74f
     MOV dword ptr [ESI + 0x14],EAX      ; 004af751
     PUSH EBX                            ; 004af754
     FLD float ptr [EBX]                 ; 004af755
-    PUSH EDX                            ; 004af757 | DAT_01e57284
+    PUSH EDX                            ; 004af757 | g_CDemonSet_01e57284
     FSTP float ptr [ESI + 0x4]          ; 004af758
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 004af75b
         ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)

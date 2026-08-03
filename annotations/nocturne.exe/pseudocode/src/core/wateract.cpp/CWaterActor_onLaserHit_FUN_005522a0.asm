@@ -21,7 +21,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005522a6
     PUSH EDX                            ; 005522aa
     CALL core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10 ; 005522ab
-        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10()
+        ;   XREF to: 0040ab10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10(CDemonActor * this_ptr, SLaserInfo * laser_info)
     MOV dword ptr [EBX + 0x50],0x3e99999a ; 005522b0
     ADD ESP,0x8                         ; 005522b7
     MOV dword ptr [EBX + 0x48],0x3f4ccccd ; 005522ba

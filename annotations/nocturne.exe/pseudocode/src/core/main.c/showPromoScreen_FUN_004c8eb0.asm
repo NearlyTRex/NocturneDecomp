@@ -11,11 +11,11 @@
 ;   TerminatedCString s_In_stores_10_26_99_00587e7f
 ;   TerminatedCString s_www_nocturnegame_com_00587e92
 ;   TerminatedCString s_Press_any_key_to_continu_00587ea7
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_014b98f8
-;   undefined4 DAT_014b9900
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
+;   CBitFont* g_CBitFont_PTR_014b98f8
+;   CBitFont* g_CBitFont_PTR_014b9900
 ;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01cc30e4
+;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -44,7 +44,7 @@ section .text
     PUSH EBP                            ; 004c8eb3
     SUB ESP,0x100                       ; 004c8eb4
     PUSH 0x58                           ; 004c8eba
-    MOV EDX,dword ptr [0x014b9900]      ; 004c8ebc | DAT_014b9900
+    MOV EDX,dword ptr [0x014b9900]      ; 004c8ebc | g_CBitFont_PTR_014b9900
     PUSH EDX                            ; 004c8ec2
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004c8ec3
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 0040e710 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     ADD ESP,0x10                        ; 004c8f29
     PUSH 0x587e7f                       ; 004c8f2c | = "In stores 10/26/99"
-    MOV ECX,dword ptr [0x014b98f8]      ; 004c8f31 | DAT_014b98f8
+    MOV ECX,dword ptr [0x014b98f8]      ; 004c8f31 | g_CBitFont_PTR_014b98f8
     PUSH ECX                            ; 004c8f37
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c8f38
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -100,7 +100,7 @@ section .text
     SUB EDX,EAX                         ; 004c8f57
     PUSH EDX                            ; 004c8f59
     PUSH 0x587e7f                       ; 004c8f5a | = "In stores 10/26/99"
-    MOV EBX,dword ptr [0x014b98f8]      ; 004c8f5f | DAT_014b98f8
+    MOV EBX,dword ptr [0x014b98f8]      ; 004c8f5f | g_CBitFont_PTR_014b98f8
     PUSH EBX                            ; 004c8f65
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004c8f66
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -108,7 +108,7 @@ section .text
     MOV EBX,0x1e0                       ; 004c8f6e
     PUSH 0x587e92                       ; 004c8f73 | = "www.nocturnegame.com"
     SUB EBX,ESI                         ; 004c8f78
-    MOV ESI,dword ptr [0x014b98f8]      ; 004c8f7a | DAT_014b98f8
+    MOV ESI,dword ptr [0x014b98f8]      ; 004c8f7a | g_CBitFont_PTR_014b98f8
     PUSH ESI                            ; 004c8f80
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c8f81
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -124,7 +124,7 @@ section .text
     SUB EDX,EAX                         ; 004c8f9c
     PUSH EDX                            ; 004c8f9e
     PUSH 0x587e92                       ; 004c8f9f | = "www.nocturnegame.com"
-    MOV EBP,dword ptr [0x014b98f8]      ; 004c8fa4 | DAT_014b98f8
+    MOV EBP,dword ptr [0x014b98f8]      ; 004c8fa4 | g_CBitFont_PTR_014b98f8
     PUSH EBP                            ; 004c8faa
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004c8fab
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -162,9 +162,9 @@ section .text
         ;   Label: LAB_004c9007
     PUSH 0x2a                           ; 004c900c
     SUB EBX,EAX                         ; 004c900e
-    MOV EAX,[0x005bac64]                ; 004c9010 | INT_005bac64
-    PUSH EAX                            ; 004c9015 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004c9016 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004c9010 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004c9015 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004c9016 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004c9018
     ADD ESP,0x8                         ; 004c901a
     TEST EAX,EAX                        ; 004c901d
@@ -184,7 +184,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c903f
     PUSH EAX                            ; 004c9042
-    MOV EDX,dword ptr [0x014b98f8]      ; 004c9043 | DAT_014b98f8
+    MOV EDX,dword ptr [0x014b98f8]      ; 004c9043 | g_CBitFont_PTR_014b98f8
     PUSH EDX                            ; 004c9049
     MOV EBX,EAX                         ; 004c904a
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c904c
@@ -201,7 +201,7 @@ section .text
     SUB EDX,EAX                         ; 004c9067
     PUSH EDX                            ; 004c9069
     PUSH EBX                            ; 004c906a
-    MOV ECX,dword ptr [0x014b98f8]      ; 004c906b | DAT_014b98f8
+    MOV ECX,dword ptr [0x014b98f8]      ; 004c906b | g_CBitFont_PTR_014b98f8
     PUSH ECX                            ; 004c9071
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004c9072
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -234,9 +234,9 @@ section .text
         ;   XREF to: 004c8fed (UNCONDITIONAL_JUMP)  ; LAB_004c8fed
     PUSH 0x1                            ; 004c90be
         ;   Label: LAB_004c90be
-    MOV EAX,[0x005bac64]                ; 004c90c0 | INT_005bac64
-    PUSH EAX                            ; 004c90c5 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004c90c6 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004c90c0 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004c90c5 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004c90c6 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004c90c8
     ADD ESP,0x8                         ; 004c90ca
     TEST EAX,EAX                        ; 004c90cd

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,8 +58,14 @@
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 68,
+        "line": 66,
         "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 79,
+        "message": "use of undeclared identifier 'FUN_00566570'"
       },
       {
         "category": "undeclared_identifier",
@@ -68,52 +74,46 @@
         "message": "use of undeclared identifier 'FUN_00566570'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 83,
-        "message": "use of undeclared identifier 'FUN_00566570'"
-      },
-      {
         "category": "format_error",
         "column": 34,
-        "line": 96,
+        "line": 94,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
+        "column": 13,
+        "line": 179,
+        "message": "no matching function for call to 'shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 192,
+        "message": "use of undeclared identifier 'FUN_00566570'"
+      },
+      {
+        "category": "incompatible_types",
         "column": 9,
-        "line": 106,
-        "message": "no matching function for call to 'splitpath'"
+        "line": 193,
+        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       },
       {
-        "category": "format_error",
-        "column": 65,
-        "line": 121,
-        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 194,
+        "message": "use of undeclared identifier 'FUN_00566570'"
       },
       {
-        "category": "type_error",
-        "column": 27,
-        "line": 128,
-        "message": "member reference base type 'byte[624]' (aka 'unsigned char[624]') is not a structure or union"
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 210,
+        "message": "use of undeclared identifier 'FUN_00566570'"
       },
       {
-        "category": "type_error",
-        "column": 30,
-        "line": 132,
-        "message": "member reference base type 'byte[624]' (aka 'unsigned char[624]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 41,
-        "line": 142,
-        "message": "member reference base type 'byte[624]' (aka 'unsigned char[624]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 26,
-        "line": 144,
-        "message": "member reference base type 'byte[624]' (aka 'unsigned char[624]') is not a structure or union"
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 216,
+        "message": "use of undeclared identifier 'FUN_00566570'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 617,
-    "complexity_score": 500,
+    "complexity_score": 429,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 215,
-    "suspect_count": 26,
+    "pseudocode_lines": 209,
+    "suspect_count": 20,
     "suspect_types": [
       "stack_param",
       "undefined_data",
-      "unknown_field",
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 832
+    "total_lines": 826
   },
   "cross_references": [],
   "function": {
@@ -698,7 +697,7 @@
         {
           "check_id": "uninitvar",
           "column": 9,
-          "line": 99,
+          "line": 97,
           "message": "Uninitialized variable: in_stack_0000000c",
           "severity": "error"
         }
@@ -750,15 +749,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 62,
       "match": "DAT_005b6d60",
       "severity": "mild",
-      "text": "puVar6 = &DAT_005b6d60;",
+      "text": "puVar7 = &DAT_005b6d60;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 69,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "if ((in_stack_00000014 & 1) != 0) {",
@@ -766,7 +765,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 70,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "splitpath(in_stack_00000010,local_c,local_bc4,local_ec4,local_3c4);",
@@ -774,7 +773,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 89,
+      "line": 87,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "_sprintf(local_1c90,\"%s\\n%s\",in_stack_00000008,local_17dc);",
@@ -782,7 +781,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 90,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "if (in_stack_0000000c == (char *)0x0) {",
@@ -790,7 +789,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 93,
+      "line": 91,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "in_stack_0000000c = \"*.*\";",
@@ -798,71 +797,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 93,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "((CFileFinder *)(local_1a60 + 0x170),in_stack_0000000c);",
+      "text": "engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(&local_18f0,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 121,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "sort_type = local_1a60._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 125,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (0 < (int)local_1a60._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 135,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "} while (iVar4 < (int)local_1a60._0_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 137,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if ((int)local_1a60._0_4_ <= iVar4) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 176,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "((CPickList *)local_1a60,sort_type,local_1a60._0_4_ + -1);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 181,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (local_1a60._0_4_ + -1 <= iVar4) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 182,
+      "line": 176,
       "match": "DAT_005b6f70",
       "severity": "mild",
-      "text": "puVar6 = &DAT_005b6f70;",
+      "text": "puVar7 = &DAT_005b6f70;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 190,
+      "line": 184,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "(in_stack_00000004,\"Enter new path\",local_16d8,0x104,1),",
@@ -870,7 +821,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 204,
+      "line": 198,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "makepath(in_stack_00000010,local_10,local_8c4,local_cc4,local_2c4);",
@@ -878,7 +829,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -886,7 +837,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -894,7 +845,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 184,
+      "line": 178,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -902,7 +853,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 104,
+      "line": 101,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -910,7 +861,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 158,
+      "line": 152,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -918,7 +869,7 @@
     },
     {
       "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 99,
+      "line": 97,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (in_stack_0000000c == (char *)0x0) {",

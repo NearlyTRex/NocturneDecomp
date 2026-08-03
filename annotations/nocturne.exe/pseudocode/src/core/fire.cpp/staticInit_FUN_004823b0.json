@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,66 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 20,
-        "message": "use of undeclared identifier 'DAT_01c0a140'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 21,
-        "message": "use of undeclared identifier 'DAT_01c20148'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 22,
-        "message": "use of undeclared identifier 'DAT_01c23d50'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 24,
-        "message": "use of undeclared identifier 'DAT_01c49d54'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_01c4e958'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 27,
-        "message": "use of undeclared identifier 'DAT_01c4f08c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 30,
-        "message": "use of undeclared identifier 'DAT_01c58dfc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_01c5b500'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 36,
-        "message": "use of undeclared identifier 'DAT_01c5d824'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 38,
-        "message": "use of undeclared identifier 'DAT_01c625f8'"
       }
     ],
     "success": false,
@@ -122,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 186,
-    "complexity_score": 186,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 14,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 227
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 238
   },
   "cross_references": [],
   "function": {
@@ -207,118 +145,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01c0a140",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c0a140,0x800,&g_CSmokeParticleTypeInfo_0059d300);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01c20148",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c20148,0x100,&g_CBulletHoleTypeInfo_0059d320);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c23d50",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c23d50,0x100,&g_CStakeTypeInfo_0059d340);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_01c49d54",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c49d54,0x100,&g_CSparkTypeInfo_0059d360);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01c4e958",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c4e958,0x14,&g_CMuzzleFlashTypeInfo_0059d380);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01c4f08c",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c4f08c,0x100,&g_CGlassParticleTypeInfo_0059d3a0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_01c58dfc",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c58dfc,0x40,&g_CFireballTypeInfo_0059d3e0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_01c5b500",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c5b500,0x40,&g_CRockTypeInfo_0059d400);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01c5d824",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c5d824,0x14,&g_CTossTypeInfo_0059d460);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_01c625f8",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c625f8,0x14,&g_CCraterTypeInfo_0059d480);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01c62ebc",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c62ebc,500,&g_CGunFlameTypeInfo_0059d4a0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01c684e0",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c684e0,0x32,&g_CShellTypeInfo_0059d500);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01c69614",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c69614,0x100,&g_CPopcornTypeInfo_0059d520);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01c6ce18",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c6ce18,0x100,&g_CRainDropTypeInfo_0059d540);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

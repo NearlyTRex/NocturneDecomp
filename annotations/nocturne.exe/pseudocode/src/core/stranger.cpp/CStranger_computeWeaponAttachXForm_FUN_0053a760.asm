@@ -204,8 +204,8 @@
 ;   double DOUBLE_005959b7 = 0.300000000000000
 ;   float FLOAT_005959bf = 0.3330000
 ;   undefined4 g_CLightActorActorType_00764a9c.name_hash
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc9f84
 ;   undefined4 DAT_02dc9f88
 ;   undefined4 DAT_02dd1184
@@ -1259,8 +1259,8 @@ section .text
     MOV EDI,0x59596f                    ; 0053b593 | = "..\\core\\stranger.cpp"
     MOV EAX,0xc44                       ; 0053b598
     PUSH 0x595984                       ; 0053b59d | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01cc4800],EDI      ; 0053b5a2 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0053b5a8 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 0053b5a2 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0053b5a8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0053b5ad
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0053b5b2

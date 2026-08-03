@@ -25,11 +25,11 @@
 ;   float FLOAT_00587469 = 65535
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   int INT_005bab60 = 0xd0
 ;   int INT_005bab64 = 0x60
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c77814
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.letterbox_mode
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01cc30a0
 ;
@@ -51,8 +51,8 @@ section .text
     PUSH EBP                            ; 004c2153
     SUB ESP,0x2c                        ; 004c2154
     MOV EBX,dword ptr [ESP + 0x40]      ; 004c2157
-    MOV EAX,[0x005b9354]                ; 004c215b | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0x228],0x0     ; 004c2160 | DAT_01c77814
+    MOV EAX,[0x005b9354]                ; 004c215b | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0x228],0x0     ; 004c2160 | g_CGame_01c775ec.letterbox_mode
     JNZ 0x004c23c9                      ; 004c2167
         ;   XREF to: 004c23c9 (CONDITIONAL_JUMP)  ; LAB_004c23c9
     MOV EDX,dword ptr [0x01cae0e8]      ; 004c216d | DAT_01cae0e8

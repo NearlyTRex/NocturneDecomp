@@ -14,7 +14,7 @@ struct CSkeleton;
 #include "types/structs/SVert.h"
 
 // Structure: CDeformableModel
-// Ghidra size: 0x9000 (36864 bytes)
+// Ghidra size: 0x2ac0 (10944 bytes)
 #pragma pack(push, 1)
 typedef struct CDeformableModel {
     int num_lods; // 0x0
@@ -29,18 +29,18 @@ typedef struct CDeformableModel {
     int num_texture_sets; // 0xb8
     int num_textures; // 0xbc
     STextureSet texture_sets[5]; // 0xc0
-    int num_parts; // 0x7140
-    SPart parts[30]; // 0x7144
-    CVector3f model_scale; // 0x7c84
-    CVector3f vertex_pool[100]; // 0x7c90
-    CBoundingBox3D bbox_pool[100]; // 0x8140
-    char dead[12]; // 0x8aa0
-    int bone_flags[100]; // 0x8aac
-    int bone_to_part_map[100]; // 0x8c3c
-    int farthest_child_bone[100]; // 0x8dcc
-    char model_name[80]; // 0x8f5c
-    struct CSkeleton* skeleton_ptr; // 0x8fac
-    char model_filename[80]; // 0x8fb0
+    int num_parts; // 0xc00
+    SPart parts[30]; // 0xc04
+    CVector3f model_scale; // 0x1744
+    CVector3f vertex_pool[100]; // 0x1750
+    CBoundingBox3D bbox_pool[100]; // 0x1c00
+    char dead[12]; // 0x2560
+    int bone_flags[100]; // 0x256c
+    int bone_to_part_map[100]; // 0x26fc
+    int farthest_child_bone[100]; // 0x288c
+    char model_name[80]; // 0x2a1c
+    struct CSkeleton* skeleton_ptr; // 0x2a6c
+    char model_filename[80]; // 0x2a70
 } CDeformableModel;
 #pragma pack(pop)
 

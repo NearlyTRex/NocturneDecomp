@@ -17,10 +17,10 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005965e8 = 3
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fa5f34
-;   undefined4 DAT_01fa5f38
-;   undefined4 DAT_01fa5f3c
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.character_count
+;   undefined4 g_CDemonSet_01e57284.characters[0]
+;   undefined4 g_CDemonSet_01e57284.characters[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
@@ -42,13 +42,13 @@ section .text
     XOR EDI,EDI                         ; 00544501
     ADD ESI,0x20                        ; 00544503
     MOV dword ptr [ESP + 0x14],EDX      ; 00544506
-    MOV EAX,[0x005be368]                ; 0054450a | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0054450a | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0054450a
     MOV EBX,dword ptr [ESP + 0x14]      ; 0054450f
-    CMP EBX,dword ptr [EAX + 0x14ecb0]  ; 00544513 | DAT_01fa5f34
+    CMP EBX,dword ptr [EAX + 0x14ecb0]  ; 00544513 | g_CDemonSet_01e57284.character_count
     JGE 0x005445b2                      ; 00544519
         ;   XREF to: 005445b2 (CONDITIONAL_JUMP)  ; LAB_005445b2
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14ecb4] ; 0054451f | DAT_01fa5f38 | DAT_01fa5f3c
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14ecb4] ; 0054451f | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1]
     CMP EBX,dword ptr [EBP + 0x14]      ; 00544526
     JNZ 0x00544539                      ; 00544529
         ;   XREF to: 00544539 (CONDITIONAL_JUMP)  ; LAB_00544539

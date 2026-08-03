@@ -32,7 +32,7 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(CEnemy *this_ptr
       fStack_1c = point->z;
       fStack_20 = fVar1;
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                ((CGore *)INT_005b96c4,(CVector3f *)(auStack_28 + 4),(CVector3f *)0x0,iStack_18,
+                (g_CGore_PTR_005b96c4,(CVector3f *)(auStack_28 + 4),(CVector3f *)0x0,iStack_18,
                  blood_type);
       return 1;
     }

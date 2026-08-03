@@ -16,8 +16,8 @@ int engine_2d_c_unmapFrameBuffer_FUN_00404360(void)
   int iVar3;
   
   if (DAT_006b023c == 0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x9e8;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x9e8;
     core_main_c_FUN_004c8440("unmapFrameBuffer - frame buffer was not mapped!");
   }
   DAT_005b761c = DAT_006b023c;

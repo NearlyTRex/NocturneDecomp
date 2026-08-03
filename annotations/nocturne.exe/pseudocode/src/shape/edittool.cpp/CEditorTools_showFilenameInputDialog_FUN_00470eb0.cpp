@@ -32,8 +32,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
     directory_path = &CHAR_00h_0057e72c;
   }
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0x8b;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0x8b;
     core_main_c_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
@@ -105,7 +105,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     if (local_14 != 0) break;
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar3 != 0) {
-      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0((CKeys *)INT_005bac64);
+      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(g_CKeys_PTR_005bac64);
       if (iVar3 == 0x1b) {
         *output_buffer = '\0';
         shape_edittool_cpp_FUN_004720c0(this_ptr);

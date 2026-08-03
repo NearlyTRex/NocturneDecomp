@@ -19,10 +19,11 @@ int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int reques
   iVar2 = 0;
   iVar4 = 0;
   do {
-    if (*(int *)(iVar2 + 0x2dc1ffc) != 0) {
+    if (*(int *)((int)(&g_CSfxSample_ARRAY_02dc1edc[0].sample_info + 1) + iVar2) != 0) {
       iVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-                        ((CSfxSample *)(&DAT_02dc1edc + iVar2));
-      iVar4 = iVar4 + iVar3 * *(int *)(iVar2 + 0x2dc2014);
+                        ((CSfxSample *)(g_CSfxSample_ARRAY_02dc1edc[0].sample_info.name + iVar2));
+      iVar4 = iVar4 + iVar3 * *(int *)((int)(&g_CSfxSample_ARRAY_02dc1edc[0].sample_info + 1) +
+                                      iVar2 + 0x18);
     }
     iVar2 = iVar2 + 0x168;
   } while (iVar2 != 0x5a00);
@@ -38,13 +39,14 @@ LAB_00521cc3:
       if (0x3f < iVar2) {
         iVar2 = 0;
       }
-      iVar1 = iVar2 * 0x168;
-      if ((((*(int *)(iVar1 + 0x2dc1ffc) != 0) && (0 < *(int *)(iVar1 + 0x2dc2014))) &&
-          (*(int *)(iVar1 + 0x2dc2008) == 0)) && (*(int *)(iVar1 + 0x2dc2004) == 0)) {
-        iVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-                          ((CSfxSample *)(&DAT_02dc1edc + iVar1));
-        iVar4 = iVar4 - iVar2 * *(int *)(iVar1 + 0x2dc2014);
-        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60((CSfxSample *)(&DAT_02dc1edc + iVar1));
+      if ((((g_CSfxSample_ARRAY_02dc1edc[iVar2].sample_data != (short *)0x0) &&
+           (0 < g_CSfxSample_ARRAY_02dc1edc[iVar2].streaming_buffer_size)) &&
+          (g_CSfxSample_ARRAY_02dc1edc[iVar2].ref_count == 0)) &&
+         (g_CSfxSample_ARRAY_02dc1edc[iVar2].taken == 0)) {
+        iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
+                          (g_CSfxSample_ARRAY_02dc1edc + iVar2);
+        iVar4 = iVar4 - iVar1 * g_CSfxSample_ARRAY_02dc1edc[iVar2].streaming_buffer_size;
+        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(g_CSfxSample_ARRAY_02dc1edc + iVar2);
         if (0x3f < iVar3) {
           return 0;
         }

@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0058cd8f = 4
 ;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
@@ -98,7 +98,7 @@ section .text
     MOV dword ptr [EBX + 0x8],EAX       ; 004f0401
     PUSH EBX                            ; 004f0404
         ;   Label: LAB_004f0404
-    PUSH 0x1fba938                      ; 004f0405 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004f0405 | g_CDemonRaytrace_01fba938
     LEA ESI,[ESP + 0x14]                ; 004f040a
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f040e
         ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700()

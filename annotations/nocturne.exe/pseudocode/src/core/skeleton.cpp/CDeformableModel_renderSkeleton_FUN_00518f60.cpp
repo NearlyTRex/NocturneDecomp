@@ -110,7 +110,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00518f60(CDef
       core_xform_cpp_getTranslation_FUN_0055bc00(bone_matrices,&local_34);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
                 (DAT_005ae704,&local_40,&local_34);
-      shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(0x01BCD074,0.5,0xff);
+      shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
+                (g_CEditorTools_PTR_005b6d50,0.5,0xff);
       iVar5 = iVar5 + 1;
       bone_matrices = bone_matrices + 1;
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();

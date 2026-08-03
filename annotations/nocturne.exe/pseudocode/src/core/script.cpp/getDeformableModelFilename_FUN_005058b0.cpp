@@ -9,5 +9,5 @@
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_005058b0(CDeformableModel *model_ptr)
 
 {
-  return model_ptr->texture_sets[1].textures[0x44].textures[0].texture_name + 8;
+  return model_ptr->model_filename;
 }

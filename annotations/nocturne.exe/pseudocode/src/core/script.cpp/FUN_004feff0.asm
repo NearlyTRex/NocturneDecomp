@@ -29,7 +29,7 @@
 ;   undefined4 s_s_0_85_0058e38b+1
 ;   undefined4 s_s_0_85_0058e38b+2
 ;   undefined4 s_s_0_85_0058e38b+3
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -56,20 +56,20 @@ section .text
     MOV dword ptr [EBX + 0x4],0x0       ; 004ff01e
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004ff025
     MOV dword ptr [EBX + 0xc],EAX       ; 004ff02c
-    MOV EAX,[0x005b9354]                ; 004ff02f | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004ff02f | g_CGame_PTR_005b9354
     MOV dword ptr [EBX + 0x10],0x1      ; 004ff034
-    MOV dword ptr [EAX + 0x22c],0x1     ; 004ff03b | DAT_01c77818
+    MOV dword ptr [EAX + 0x22c],0x1     ; 004ff03b | g_CGame_01c775ec.allow_damage_flag
     XOR EDX,EDX                         ; 004ff045
-    MOV dword ptr [EAX + 0x230],0x1     ; 004ff047 | DAT_01c7781c
+    MOV dword ptr [EAX + 0x230],0x1     ; 004ff047 | g_CGame_01c775ec.allow_enemy_attack_flag
     PUSH EDX                            ; 004ff051
-    MOV dword ptr [EAX + 0x228],EDX     ; 004ff052 | DAT_01c77814
+    MOV dword ptr [EAX + 0x228],EDX     ; 004ff052 | g_CGame_01c775ec.letterbox_mode
     LEA EAX,[ESP + 0x4]                 ; 004ff058
     PUSH EAX                            ; 004ff05c
     MOV dword ptr [0x01e56c20],EDX      ; 004ff05d | DAT_01e56c20
     MOV dword ptr [EBX + 0x44c],0xbf800000 ; 004ff063
     PUSH EDX                            ; 004ff06d
     MOV dword ptr [EBX + 0x450],0xffffffff ; 004ff06e
-    MOV EAX,[0x005be368]                ; 004ff078 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004ff078 | g_CDemonSet_PTR_005be368
     PUSH EDX                            ; 004ff07d
     ADD EAX,0x14cd08                    ; 004ff07e
     MOV dword ptr [EBX + 0x454],EDX     ; 004ff083
@@ -147,7 +147,7 @@ section .text
     MOV EAX,ESP                         ; 004ff119
         ;   Label: LAB_004ff119
     PUSH EAX                            ; 004ff11b
-    MOV ESI,dword ptr [0x005bed68]      ; 004ff11c | DAT_005bed68
+    MOV ESI,dword ptr [0x005bed68]      ; 004ff11c | g_CSound_PTR_005bed68
     PUSH ESI                            ; 004ff122
     CALL core_sound.cpp_CSound_playAmbientSound_FUN_0052e9d0 ; 004ff123
         ;   XREF to: 0052e9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playAmbientSound_FUN_0052e9d0(CSound * this_ptr, char * sound_name)

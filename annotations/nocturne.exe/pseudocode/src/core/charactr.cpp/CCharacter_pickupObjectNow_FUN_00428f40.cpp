@@ -12,8 +12,8 @@ void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacte
   SCarryHand *pSVar1;
   
   if ((hand_index < 0) || (1 < hand_index)) {
-    PTR_01cc4800 = "..\\core\\charactr.cpp";
-    INT_01cc4804 = 0xbe7;
+    g_CHAR_PTR_01cc4800 = "..\\core\\charactr.cpp";
+    g_INT_01cc4804 = 0xbe7;
     core_main_c_FUN_004c8440("CCharacter::pickupObjectNow - invalid hand index");
   }
   if (object != (CDemonActor *)0x0) {
@@ -22,8 +22,8 @@ void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacte
     if ((pSVar1->secondary_bone_index < 0) ||
        ((this_ptr->model).part_data.visibility_flags[pSVar1->secondary_bone_index] != 0)) {
       if (pSVar1->bone_index < 0) {
-        PTR_01cc4800 = "..\\core\\charactr.cpp";
-        INT_01cc4804 = 0xbff;
+        g_CHAR_PTR_01cc4800 = "..\\core\\charactr.cpp";
+        g_INT_01cc4804 = 0xbff;
         core_main_c_FUN_004c8440("CCharacter::pickupObjectNow - invalid bone!");
       }
       (*((object->vtable)._ub)->pickup)(object,&this_ptr->base);

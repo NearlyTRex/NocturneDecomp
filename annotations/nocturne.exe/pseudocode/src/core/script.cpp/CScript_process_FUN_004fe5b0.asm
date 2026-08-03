@@ -15,10 +15,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Error_processing_script_0058e1d6
 ;   TerminatedCString s_WARNING_Infinite_loop_de_0058e213
-;   undefined4 DAT_005b6d50
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c776b8
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.cutscene_skippable
 ;   undefined4 DAT_01e56418
 ;   undefined4 DAT_01e56420
 ;   undefined4 DAT_01e56c24
@@ -53,14 +53,14 @@ section .text
     CMP dword ptr [EBX + 0x2c],0x0      ; 004fe5d3
     JZ 0x004fe64e                       ; 004fe5d7
         ;   XREF to: 004fe64e (CONDITIONAL_JUMP)  ; LAB_004fe64e
-    MOV EAX,[0x005b9354]                ; 004fe5dd | DAT_005b9354
-    CMP dword ptr [EAX + 0xcc],0x0      ; 004fe5e2 | DAT_01c776b8
+    MOV EAX,[0x005b9354]                ; 004fe5dd | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0xcc],0x0      ; 004fe5e2 | g_CGame_01c775ec.cutscene_skippable
     JZ 0x004fe5ee                       ; 004fe5e9
         ;   XREF to: 004fe5ee (CONDITIONAL_JUMP)  ; LAB_004fe5ee
     MOV dword ptr [EBX + 0x18],EDX      ; 004fe5eb
-    MOV EAX,[0x005b9354]                ; 004fe5ee | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004fe5ee | g_CGame_PTR_005b9354
         ;   Label: LAB_004fe5ee
-    PUSH EAX                            ; 004fe5f3 | DAT_01c775ec
+    PUSH EAX                            ; 004fe5f3 | g_CGame_01c775ec
     XOR ESI,ESI                         ; 004fe5f4
     CALL core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0 ; 004fe5f6
         ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0(CGame * game_ptr)
@@ -85,8 +85,8 @@ section .text
         ;   Label: LAB_004fe623
     JZ 0x004fe643                       ; 004fe62a
         ;   XREF to: 004fe643 (CONDITIONAL_JUMP)  ; LAB_004fe643
-    MOV EDX,dword ptr [0x005b9354]      ; 004fe62c | DAT_005b9354
-    PUSH EDX                            ; 004fe632 | DAT_01c775ec
+    MOV EDX,dword ptr [0x005b9354]      ; 004fe62c | g_CGame_PTR_005b9354
+    PUSH EDX                            ; 004fe632 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0 ; 004fe633
         ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame * this_ptr)
     XOR ECX,ECX                         ; 004fe638
@@ -137,7 +137,7 @@ section .text
     MOV ECX,dword ptr [EAX + EDI*0x8]   ; 004fe691
     PUSH ECX                            ; 004fe694
     PUSH 0x58e213                       ; 004fe695 | = "!WARNING!  Infinite loop detected in ..."
-    MOV ESI,dword ptr [0x005b6d50]      ; 004fe69a | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 004fe69a | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 004fe6a0
     MOV EDI,0x1                         ; 004fe6a1
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004fe6a6
@@ -154,7 +154,7 @@ section .text
     MOV ECX,dword ptr [EAX + EDI*0x8]   ; 004fe6c6
     PUSH ECX                            ; 004fe6c9
     PUSH 0x58e1d6                       ; 004fe6ca | = "Error processing script.\nLine: %d\nT..."
-    MOV EAX,[0x005b6d50]                ; 004fe6cf | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004fe6cf | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 004fe6d4
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004fe6d5
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()

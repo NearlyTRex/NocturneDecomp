@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c4e958'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 24,
-        "message": "use of undeclared identifier 'DAT_01c4e9b4'; did you mean 'DAT_005ae4b4'?"
       }
     ],
     "success": false,
@@ -74,18 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 47,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 16,
     "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 34
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -111,8 +99,8 @@
   "globals": [
     {
       "addr": "01c4e958",
-      "name": "DAT_01c4e958",
-      "type": "undefined4",
+      "name": "g_CMuzzleFlash_ARRAY_01c4e958",
+      "type": "CMuzzleFlash[20]",
       "value": null
     }
   ],
@@ -178,20 +166,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Pointer value `&g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)&g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)&g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining + iVar2);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_01c4e9b4",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_01c4e9b4 + iVar2);",
-      "type": "undefined_data"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 15,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)&g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining + iVar2);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -56,7 +56,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
   char local_14;
   
   bVar1 = 0;
-  if ((*(int *)(0x01C775EC + 0xc) != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {
+  if ((g_CGame_PTR_005b9354->halo_mode != 0) || ((force_render == 0 && (globe->corona_mode != 0))))
+  {
     _DAT_014b8458 = globe;
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(this_ptr,globe);
     _DAT_014b8460 = local_94;
@@ -80,7 +81,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
     if (0 < this_ptr->display_height) {
       iVar2 = 0;
       do {
-        *(uint *)(iVar2 + 0x146b290) = *(uint *)(this_ptr->camera_name + 0xfc);
+        *(int *)(iVar2 + 0x146b290) = this_ptr->screen_width;
         *(uint *)(iVar2 + 0x146b650) = 0;
         iVar5 = iVar5 + 1;
         iVar2 = iVar2 + 4;
@@ -99,7 +100,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
               return;
             }
             do {
-              if (pSVar8->left_extents[0] != *(int *)(this_ptr->camera_name + 0xfc)) {
+              if (pSVar8->left_extents[0] != this_ptr->screen_width) {
                 core_dcamera_cpp_blendCoronaTextureSpan_FUN_00445650
                           (iVar2,pSVar8->left_extents[0],pSVar8->right_extents[0],
                            (SCoronaLightEntry *)(iVar5 + 0x121660c));
@@ -125,7 +126,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
           local_60 = local_80;
           do {
             iVar5 = local_54 * 4;
-            if (*(int *)(this_ptr->camera_name + 0xfc) != *(int *)(iVar5 + 0x146b290)) {
+            if (this_ptr->screen_width != *(int *)(iVar5 + 0x146b290)) {
               local_48 = local_54;
               local_88 = *(int *)(iVar5 + 0x146b290);
               local_50 = *(int *)(iVar5 + 0x146b650);
@@ -226,7 +227,7 @@ LAB_00445beb:
       local_7c = 0xa9d078;
       local_74 = 0x7f7378;
       do {
-        if (*(int *)(this_ptr->camera_name + 0xfc) != *(int *)(local_58 + 0x146b290)) {
+        if (this_ptr->screen_width != *(int *)(local_58 + 0x146b290)) {
           local_28 = *(int *)(local_58 + 0x146b290);
           iVar5 = *(int *)(local_58 + 0x146b650);
           pcVar11 = (char *)(local_7c + local_28);

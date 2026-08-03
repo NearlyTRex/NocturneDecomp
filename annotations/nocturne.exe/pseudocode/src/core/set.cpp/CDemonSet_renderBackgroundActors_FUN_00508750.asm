@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc9454
 ;
@@ -35,7 +35,7 @@ section .text
     PUSH EBP                            ; 00508753
     SUB ESP,0x30                        ; 00508754
     MOV ESI,dword ptr [ESP + 0x44]      ; 00508757
-    MOV EAX,[0x005baf90]                ; 0050875b | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 0050875b | g_CDemonMission_PTR_005baf90
     CMP dword ptr [EAX + 0x4],0x0       ; 00508760 | DAT_01cc9454
     JNZ 0x00508866                      ; 00508764
         ;   XREF to: 00508866 (CONDITIONAL_JUMP)  ; LAB_00508866

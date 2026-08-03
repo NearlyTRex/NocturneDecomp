@@ -25,16 +25,17 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(CActorDestinat
   
   if ((this_ptr->needs_actor_search != 0) && (this_ptr->dest_actor == (CDemonActor *)0x0)) {
     iVar3 = 0;
-    for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
-      iVar2 = *(int *)(0x01E57284 + iVar3 + 0x14cd70);
+    for (iVar4 = 0; iVar4 < g_CDemonSet_PTR_005be368->actor_count; iVar4 = iVar4 + 1) {
+      iVar2 = *(int *)((int)g_CDemonSet_PTR_005be368->actors + iVar3);
       local_2c = (this_ptr->base).location.position.x - *(float *)(iVar2 + 0x20);
       local_28 = (this_ptr->base).location.position.y - *(float *)(iVar2 + 0x24);
       local_24 = (this_ptr->base).location.position.z - *(float *)(iVar2 + 0x28);
       if ((SQRT(local_24 * local_24 + local_2c * local_2c + local_28 * local_28) <
            (float)0.10000000000000001) &&
          (iVar2 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
-                            (this_ptr,*(CDemonActor **)(0x01E57284 + iVar3 + 0x14cd70)),
-         iVar2 != 0)) break;
+                            (this_ptr,*(CDemonActor **)
+                                       ((int)g_CDemonSet_PTR_005be368->actors + iVar3)), iVar2 != 0)
+         ) break;
       iVar3 = iVar3 + 4;
     }
   }

@@ -17,10 +17,10 @@ void core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(CCharacter *param_1,
   if ((*(uint *)param_1[1].base.actor_name & 0x7fffffff) != 0) {
     param_2->damage_amount = 0.0;
   }
-  if (*(int *)(0x01C775EC + 0x1d0) != 0) {
+  if (g_CGame_PTR_005b9354->god_mode_enabled != 0) {
     param_2->damage_amount = 0.0;
   }
-  if (*(int *)(0x01C775EC + 0x22c) == 0) {
+  if (g_CGame_PTR_005b9354->allow_damage_flag == 0) {
     param_2->damage_amount = 0.0;
   }
   *(float *)param_1[1].base.actor_name = 0.5f;
@@ -39,7 +39,7 @@ void core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(CCharacter *param_1,
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&this_ptr->motion_controller,8,1);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-                  ((CGore *)INT_005b96c4,&param_1->base,0x32,50.0,(CVector3f *)0x0);
+                  (g_CGore_PTR_005b96c4,&param_1->base,0x32,50.0,(CVector3f *)0x0);
         core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);
         return;
       }

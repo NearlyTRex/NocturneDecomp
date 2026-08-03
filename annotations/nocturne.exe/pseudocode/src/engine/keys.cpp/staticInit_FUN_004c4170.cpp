@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keys_cpp_staticInit_FUN_004c4170(void)
 
 {
-  _DAT_01cc30e4 = &g_CKeysVTable;
+  g_CKeys_01cc30e4.vtable = &g_CKeysVTable;
   return;
 }

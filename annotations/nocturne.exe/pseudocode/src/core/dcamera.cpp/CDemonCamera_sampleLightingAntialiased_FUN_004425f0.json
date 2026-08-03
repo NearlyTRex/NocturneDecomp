@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 515,
-    "complexity_score": 387,
+    "complexity_score": 386,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 197,
+    "pseudocode_lines": 196,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +135,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 712
+    "total_lines": 711
   },
   "cross_references": [
     {
@@ -419,7 +419,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 97,
       "match": "DAT_01410280",
       "severity": "mild",
       "text": "piVar5 = (int *)&DAT_01410280;",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 108,
       "match": "DAT_02de5d80",
       "severity": "mild",
       "text": "piVar5 = (int *)&DAT_02de5d80;",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 128,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
@@ -443,7 +443,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 128,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
@@ -451,7 +451,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 163,
+      "match": "(short *)((int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
@@ -462,20 +470,12 @@
       "line": 164,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(short *)((int)piVar5",
-      "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 164,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
@@ -483,7 +483,7 @@
     },
     {
       "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 129,
+      "line": 128,
       "match": "(int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
@@ -491,7 +491,31 @@
     },
     {
       "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 129,
+      "line": 128,
+      "match": "(int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 163,
+      "match": "(int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 163,
+      "match": "(int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 164,
       "match": "(int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
@@ -500,30 +524,6 @@
     {
       "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 164,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 164,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 165,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 165,
       "match": "(int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",

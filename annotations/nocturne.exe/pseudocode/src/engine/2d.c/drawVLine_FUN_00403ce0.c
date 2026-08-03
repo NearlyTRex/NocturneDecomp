@@ -30,8 +30,8 @@ void __cdecl engine_2d_c_drawVLine_FUN_00403ce0(int x,int y1,int y2)
       if (DAT_005b7624 < 0x10) {
         if (DAT_005b7624 != 8) {
 LAB_00403dde:
-          PTR_01cc4800 = "..\\engine\\2d.c";
-          INT_01cc4804 = 0x8d6;
+          g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+          g_INT_01cc4804 = 0x8d6;
           core_main_c_FUN_004c8440("vLine - invalid bitsPerPixel");
           return;
         }

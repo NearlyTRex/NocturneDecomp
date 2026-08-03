@@ -19,7 +19,7 @@ void __cdecl core_dcamera_cpp_FUN_00447c60(CDemonCamera *this_ptr,int screen_x,i
              (this_ptr->framebuffer_width * 2 +
               *(int *)(&DAT_01bd2fa0 + (this_ptr->framebuffer_height + screen_y) * 4) + screen_x * 2
              ),(uint *)((int)this_ptr->framebuffer_aligned +
-                       screen_x * 4 + *(int *)(this_ptr->camera_name + 0xfc) * screen_y * 4),
+                       screen_x * 4 + this_ptr->screen_width * screen_y * 4),
              (byte *)(iVar2 + 0xaafdb8 + iVar1 + offset),&DAT_012ceb78 + offset + iVar1 + iVar2);
   return;
 }

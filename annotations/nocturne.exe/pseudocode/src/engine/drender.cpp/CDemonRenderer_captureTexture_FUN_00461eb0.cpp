@@ -20,8 +20,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemo
   if (this_ptr->texture_capture_enabled != 0) {
     _DAT_01b4d7b0 = _DAT_01b4d7b0 + 1;
     if (100 < _DAT_01b4d7b0) {
-      PTR_01cc4800 = "..\\engine\\drender.cpp";
-      INT_01cc4804 = 0xafc;
+      g_CHAR_PTR_01cc4800 = "..\\engine\\drender.cpp";
+      g_INT_01cc4804 = 0xafc;
       core_main_c_FUN_004c8440("CDR::texture - Too many captured textures");
     }
     iVar2 = _DAT_01b4d7b0 * 0x48;

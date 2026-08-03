@@ -10,17 +10,16 @@ struct CDemonSet;
 // Full base definition required for offsetof() in adj().
 #include "types/classes/CDemonSet.h"
 // Adjusted pointer: CDemonSet_ptr_1422356
-// Points to SVDBox at offset 0x15b414 in CDemonSet
+// Points to CDemonSet at offset 0x15b414 in CDemonSet
 // 32-bit pointer to CDemonSet
-struct SVDBox;
 struct CDemonSet_ptr_1422356 {
     void *_raw;
     typedef CDemonSet base_type;
     CDemonSet_ptr_1422356() : _raw(0) {}
     template<typename T> CDemonSet_ptr_1422356(T* p) : _raw((void*)p) {}
     template<typename T> CDemonSet_ptr_1422356& operator=(T* p) { _raw = (void*)p; return *this; }
-    SVDBox* operator->() const { return (SVDBox*)_raw; }
-    CDemonSet* adj() const { return (CDemonSet*)((char*)_raw - offsetof(CDemonSet, vdir_boxes)); }
+    CDemonSet* operator->() const { return (CDemonSet*)_raw; }
+    CDemonSet* adj() const { return (CDemonSet*)((char*)_raw - offsetof(CDemonSet, vdir_boxes[14].rotation_matrix.m[2])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

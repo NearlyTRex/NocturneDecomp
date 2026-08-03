@@ -60,8 +60,8 @@ section .text
     MOV EAX,0x577853                    ; 0040bdb9 | = "..\\core\\actor.cpp"
     MOV EDX,0x71d                       ; 0040bdbe
     PUSH 0x577865                       ; 0040bdc3 | = "Invalid actor pointer %08X detected a..."
-    MOV [0x01cc4800],EAX                ; 0040bdc8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0040bdcd | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0040bdc8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0040bdcd | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040bdd3
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 0040bdd8
@@ -77,8 +77,8 @@ section .text
     MOV EDX,0x727                       ; 0040bdf0
     MOV ESI,EBX                         ; 0040bdf5
     PUSH 0x763e10                       ; 0040bdf7 | DAT_00763e10
-    MOV [0x01cc4800],EAX                ; 0040bdfc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0040be01 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0040bdfc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0040be01 | g_INT_01cc4804
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040be07
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040be0c
@@ -133,8 +133,8 @@ section .text
     MOV EDX,0x732                       ; 0040be86
     MOV EDI,0x763e10                    ; 0040be8b | DAT_00763e10
     PUSH 0x763e10                       ; 0040be90 | DAT_00763e10
-    MOV [0x01cc4800],EAX                ; 0040be95 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0040be9a | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0040be95 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0040be9a | g_INT_01cc4804
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040bea0
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040bea5
@@ -185,8 +185,8 @@ section .text
     MOV ESI,0x577975                    ; 0040bf11 | = "..\\core\\actor.cpp"
     MOV EDI,0x740                       ; 0040bf16
     PUSH 0x763e10                       ; 0040bf1b | DAT_00763e10
-    MOV dword ptr [0x01cc4800],ESI      ; 0040bf20 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0040bf26 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0040bf20 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0040bf26 | g_INT_01cc4804
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040bf2c
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040bf31
@@ -241,8 +241,8 @@ section .text
     MOV EDX,0x577819                    ; 0040bf96 | = "..\\core\\actor.cpp"
     MOV ECX,0x719                       ; 0040bf9b
     PUSH 0x57782b                       ; 0040bfa0 | = "NULL actor pointer detected, %s line %d"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040bfa5 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040bfab | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0040bfa5 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0040bfab | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0040bfb1
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0040bfb6

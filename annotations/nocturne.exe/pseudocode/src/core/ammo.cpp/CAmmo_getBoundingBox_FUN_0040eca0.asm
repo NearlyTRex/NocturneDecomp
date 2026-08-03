@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040eca0(int param_1,undefined4 *param_2)
+; float * core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040eca0(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

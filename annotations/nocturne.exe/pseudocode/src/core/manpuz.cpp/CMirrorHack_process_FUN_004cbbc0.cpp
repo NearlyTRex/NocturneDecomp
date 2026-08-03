@@ -13,15 +13,15 @@ void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_004cbbc0(CMirrorHack *this_
   float local_10;
   
   local_10 = (delta_time * (float)6.2831853070000001) / (float)30;
-  iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x38);
+  iVar1 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LMENU);
   if (iVar1 != 0) {
     local_10 = local_10 * (float)0.20000000000000001;
   }
-  iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x33);
+  iVar1 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_COMMA);
   if (iVar1 != 0) {
     (this_ptr->base).orient.vec.y = (this_ptr->base).orient.vec.y - local_10;
   }
-  iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x34);
+  iVar1 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_PERIOD);
   if (iVar1 != 0) {
     (this_ptr->base).orient.vec.y = (this_ptr->base).orient.vec.y + local_10;
   }

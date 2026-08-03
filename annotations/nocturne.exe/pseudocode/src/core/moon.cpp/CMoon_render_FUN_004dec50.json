@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,62 +58,62 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 37,
+        "line": 38,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700'"
       },
       {
         "category": "undeclared_identifier",
         "column": 41,
-        "line": 38,
-        "message": "use of undeclared identifier 'DAT_02dd1184'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
         "line": 39,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00'"
+        "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
         "line": 40,
+        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 41,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780'"
       },
       {
         "category": "undeclared_identifier",
         "column": 41,
-        "line": 41,
+        "line": 42,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 45,
+        "line": 46,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
       },
       {
         "category": "incompatible_types",
-        "column": 12,
-        "line": 47,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 48,
-        "message": "member reference type 'int' is not a pointer"
+        "column": 9,
+        "line": 79,
+        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
       },
       {
         "category": "incompatible_types",
-        "column": 12,
-        "line": 56,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonSet *' from 'int'"
+        "column": 9,
+        "line": 81,
+        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
       },
       {
-        "category": "other",
-        "column": 15,
-        "line": 57,
-        "message": "member reference type 'int' is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 115,
+        "message": "use of undeclared identifier '_DAT_01ccdebc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 116,
+        "message": "use of undeclared identifier '_DAT_01ccdec0'"
       }
     ],
     "success": false,
@@ -122,22 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 459,
+    "complexity_score": 553,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 139,
-    "suspect_count": 29,
+    "pseudocode_lines": 148,
+    "suspect_count": 37,
     "suspect_types": [
       "concat_reconstruction",
+      "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "suspect_float",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 439
+    "total_lines": 448
   },
   "cross_references": [
     {
@@ -323,9 +324,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01b4d738",
@@ -347,8 +348,8 @@
     },
     {
       "addr": "01ccdc50",
-      "name": "DAT_01ccdc50",
-      "type": "undefined4",
+      "name": "g_CAlphaBitmap_01ccdc50",
+      "type": "CAlphaBitmap",
       "value": null
     },
     {
@@ -371,37 +372,37 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fb1d0c",
-      "name": "DAT_01fb1d0c",
+      "name": "g_CDemonSet_01e57284.rendering_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d10",
-      "name": "DAT_01fb1d10",
+      "name": "g_CDemonSet_01e57284.light_direction.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d14",
-      "name": "DAT_01fb1d14",
+      "name": "g_CDemonSet_01e57284.light_direction.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d18",
-      "name": "DAT_01fb1d18",
+      "name": "g_CDemonSet_01e57284.light_direction.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1d1c",
-      "name": "DAT_01fb1d1c",
+      "name": "g_CDemonSet_01e57284.ambient_base_quick",
       "type": "undefined4",
       "value": null
     },
@@ -671,16 +672,8 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
       "type": "undefined_data"
@@ -688,22 +681,6 @@
     {
       "description": "Undefined global data reference",
       "line": 32,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,112.0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
@@ -711,7 +688,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 33,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,112.0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_02dd1184",
+      "severity": "mild",
+      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,&local_5c)",
@@ -719,23 +720,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_005bb210",
       "severity": "mild",
-      "text": "iVar3 = DAT_005bb210;",
+      "text": "iVar4 = DAT_005bb210;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_01ccdec8",
-      "severity": "mild",
-      "text": "((CCourse *)(&DAT_01ccdec8 + *(int *)(iVar3 + 0x1ccdeec) * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
+      "line": 73,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&local_44);",
@@ -743,31 +736,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 75,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&local_50,(CVector3f *)0x0);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_01cce1bc",
-      "severity": "mild",
-      "text": "((CKeyFramedModel *)&DAT_01cce1bc,(int)local_14,(CKeyFramedModelInstance *)0x0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_01ccdec8",
-      "severity": "mild",
-      "text": "local_14 = *(CDemonActor **)(&DAT_01ccdec8 + *(int *)(iVar3 + 0x1ccdeec) * 0xc);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 87,
+      "line": 97,
       "match": "7.156918e-39",
       "severity": "mild",
       "text": "local_5c.x = 7.156918e-39;",
@@ -775,34 +752,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_01ccdc50",
-      "severity": "mild",
-      "text": "engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0((CAlphaBitmap *)&DAT_01ccdc50);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
+      "line": 113,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "local_20 = *(ulonglong **)(&DAT_01bd2fa0 + local_28 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_01c00024",
-      "severity": "mild",
-      "text": "(&DAT_01c00024 +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_01c00024",
-      "severity": "mild",
-      "text": "(&DAT_01c00024 +",
       "type": "undefined_data"
     },
     {
@@ -823,75 +776,187 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_01ccdc64",
+      "line": 128,
+      "match": "DAT_01c00024",
       "severity": "mild",
-      "text": "((CAlphaBitmap *)(&DAT_01ccdc64 + local_1c * 0x14),0,0,48000);",
+      "text": "(&DAT_01c00024 +",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 74,
-      "match": "(int)local_14",
+      "description": "Undefined global data reference",
+      "line": 132,
+      "match": "DAT_01c00024",
+      "severity": "mild",
+      "text": "(&DAT_01c00024 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_position",
       "severity": "moderate",
-      "text": "((CKeyFramedModel *)&DAT_01cce1bc,(int)local_14,(CKeyFramedModelInstance *)0x0,",
+      "text": "if (0.0 <= *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 79,
-      "match": "(int)local_14",
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_index",
       "severity": "moderate",
-      "text": "local_18 = *(float *)(iVar3 + 0x1ccdef0) / (float)(int)local_14;",
+      "text": "*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4),",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 40,
-      "match": "0x1e57284",
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 63,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_position",
       "severity": "moderate",
-      "text": "pCVar1 = 0x01E57284;",
-      "type": "raw_address_constant"
+      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4),&local_44,",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 49,
-      "match": "0x1e57284",
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].random_offset.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].random_offset.x",
       "severity": "moderate",
-      "text": "pCVar1 = 0x01E57284;",
-      "type": "raw_address_constant"
+      "text": "local_44.x = local_44.x + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.x + iVar4)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].random_offset.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].random_offset.y",
+      "severity": "moderate",
+      "text": "local_44.y = local_44.y + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.y + iVar4)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].random_offset.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].random_offset.z",
+      "severity": "moderate",
+      "text": "local_44.z = local_44.z + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.z + iVar4)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].animation_frame` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 78,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].animation_frame",
+      "severity": "moderate",
+      "text": "((double)*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 87,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_index",
+      "severity": "moderate",
+      "text": "[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SBat_ARRAY_01ccdeec[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 88,
+      "match": "(int)&g_SBat_ARRAY_01ccdeec[0].course_position",
+      "severity": "moderate",
+      "text": "local_18 = *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) /",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x4dee29 assigned to bare local `render_flags`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `render_flags` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 70,
+      "line": 76,
       "match": "0x4dee29",
       "severity": "moderate",
       "text": "render_flags = 0x4dee29;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 77,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar1 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 107,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar5 = paddusb(*puVar4,CONCAT44(*(uint *)",
-      "type": "concat_reconstruction"
-    },
-    {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 117,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "uVar5 = paddusb(uVar5,CONCAT44(*(uint *)",
+      "text": "uVar6 = paddusb(*puVar5,CONCAT44(*(uint *)",
       "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 127,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "uVar6 = paddusb(uVar6,CONCAT44(*(uint *)",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 59,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (0.0 <= *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 62,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 63,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4),&local_44,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 65,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_44.x = local_44.x + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.x + iVar4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 67,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_44.y = local_44.y + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.y + iVar4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 69,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_44.z = local_44.z + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.z + iVar4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 78,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((double)*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 87,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 88,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) /",
+      "type": "pointer_cast"
     }
   ]
 }

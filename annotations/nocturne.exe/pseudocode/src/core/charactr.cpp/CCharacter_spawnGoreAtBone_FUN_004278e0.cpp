@@ -29,7 +29,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacte
       local_34.z = 0.0;
       core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&this_ptr->base,&local_1c,&local_34);
       core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-                ((CGore *)INT_005b96c4,&local_10,&local_1c,this_ptr->blood_type);
+                (g_CGore_PTR_005b96c4,&local_10,&local_1c,this_ptr->blood_type);
       return;
     }
   }

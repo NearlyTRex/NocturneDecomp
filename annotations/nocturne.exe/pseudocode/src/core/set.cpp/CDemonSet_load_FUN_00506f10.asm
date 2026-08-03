@@ -92,7 +92,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 00506f34
     PUSH EAX                            ; 00506f37
-    MOV EDX,dword ptr [0x005baca0]      ; 00506f38 | INT_005baca0
+    MOV EDX,dword ptr [0x005baca0]      ; 00506f38 | g_CLevelLoader_PTR_005baca0
     PUSH EDX                            ; 00506f3e
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 00506f3f
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
@@ -274,7 +274,7 @@ section .text
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00507144
     MOV EDI,dword ptr [0x005c11ec]      ; 00507147 | DAT_005c11ec
-    PUSH EDI                            ; 0050714d | DAT_02dd1210
+    PUSH EDI                            ; 0050714d | g_CWater_02dd1210
     PUSH 0x590181                       ; 0050714e | = "%d\n"
     PUSH EBX                            ; 00507153
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00507154
@@ -781,7 +781,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 005077a5
     PUSH EAX                            ; 005077a8
-    MOV ECX,dword ptr [0x005baca0]      ; 005077a9 | INT_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 005077a9 | g_CLevelLoader_PTR_005baca0
     PUSH ECX                            ; 005077af
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 005077b0
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
@@ -828,7 +828,7 @@ section .text
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0050781b
     PUSH EBX                            ; 0050781e
-    PUSH 0x1fba938                      ; 0050781f | DAT_01fba938
+    PUSH 0x1fba938                      ; 0050781f | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_FUN_00467890   ; 00507824
         ;   XREF to: 00467890 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00467890()
     ADD ESP,0x8                         ; 00507829
@@ -842,7 +842,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0050783d
     PUSH EAX                            ; 00507840
-    MOV EBX,dword ptr [0x005baca0]      ; 00507841 | INT_005baca0
+    MOV EBX,dword ptr [0x005baca0]      ; 00507841 | g_CLevelLoader_PTR_005baca0
     PUSH EBX                            ; 00507847
     LEA EDI,[ESP + 0x170]               ; 00507848
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 0050784f
@@ -980,8 +980,8 @@ section .text
     MOV ECX,0x59010e                    ; 0050795c | = "..\\core\\set.cpp"
     MOV EDI,0x11b                       ; 00507961
     PUSH 0x59011e                       ; 00507966 | = "CDemonSet::Unable to open %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050796b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00507971 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0050796b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00507971 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00507977
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0050797c
@@ -1008,12 +1008,12 @@ section .text
     JNZ 0x005079bf                      ; 005079ad
         ;   XREF to: 005079bf (CONDITIONAL_JUMP)  ; LAB_005079bf
     MOV EAX,[0x005c11ec]                ; 005079af | DAT_005c11ec
-    MOV dword ptr [EAX],0x1             ; 005079b4 | DAT_02dd1210
+    MOV dword ptr [EAX],0x1             ; 005079b4 | g_CWater_02dd1210
     JMP 0x0050715c                      ; 005079ba
         ;   XREF to: 0050715c (UNCONDITIONAL_JUMP)  ; LAB_0050715c
     MOV EAX,[0x005c11ec]                ; 005079bf | DAT_005c11ec
         ;   Label: LAB_005079bf
-    MOV dword ptr [EAX],0x0             ; 005079c4 | DAT_02dd1210
+    MOV dword ptr [EAX],0x0             ; 005079c4 | g_CWater_02dd1210
     JMP 0x0050715c                      ; 005079ca
         ;   XREF to: 0050715c (UNCONDITIONAL_JUMP)  ; LAB_0050715c
     MOV dword ptr [EBP + 0x161240],0x1  ; 005079cf

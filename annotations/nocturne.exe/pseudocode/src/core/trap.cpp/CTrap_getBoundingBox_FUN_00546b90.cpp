@@ -9,16 +9,16 @@
 CBoundingBox3D * __cdecl core_trap_cpp_CTrap_getBoundingBox_FUN_00546b90(CTrap *this_ptr,CBoundingBox3D *out_box)
 
 {
-  float *pfVar1;
+  CBoundingBox3D *pCVar1;
   CKeyFramedModel *pCVar2;
   
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
-  pfVar1 = (float *)pCVar2->texture_list[7].textures[2].base.count;
-  (out_box->min).x = *pfVar1;
-  (out_box->min).y = pfVar1[1];
-  (out_box->min).z = pfVar1[2];
-  (out_box->max).x = pfVar1[3];
-  (out_box->max).y = pfVar1[4];
-  (out_box->max).z = pfVar1[5];
+  pCVar1 = pCVar2->frame_bounds;
+  (out_box->min).x = (pCVar1->min).x;
+  (out_box->min).y = (pCVar1->min).y;
+  (out_box->min).z = (pCVar1->min).z;
+  (out_box->max).x = (pCVar1->max).x;
+  (out_box->max).y = (pCVar1->max).y;
+  (out_box->max).z = (pCVar1->max).z;
   return out_box;
 }

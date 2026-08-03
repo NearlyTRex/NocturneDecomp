@@ -19,14 +19,14 @@
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005464a0 at 005464b6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01c74640
-;   undefined4 DAT_01c775e8
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c77830
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonLight g_CDemonLight_01c74640
+;   undefined4 g_CDemonLight_01c74640.volumetric_intensity
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.flashlight_active
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -109,8 +109,8 @@ section .text
     CMP EDX,ESI                         ; 005540ec
     JNZ 0x00554107                      ; 005540ee
         ;   XREF to: 00554107 (CONDITIONAL_JUMP)  ; LAB_00554107
-    MOV EAX,[0x005b9354]                ; 005540f0 | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0x244],0x0     ; 005540f5 | DAT_01c77830
+    MOV EAX,[0x005b9354]                ; 005540f0 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0x244],0x0     ; 005540f5 | g_CGame_01c775ec.flashlight_active
     JZ 0x00554107                       ; 005540fc
         ;   XREF to: 00554107 (CONDITIONAL_JUMP)  ; LAB_00554107
     CMP dword ptr [EBX + 0x2e8],0x0     ; 005540fe
@@ -137,7 +137,7 @@ section .text
         ;   Label: LAB_00554136
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00554137
     CALL dword ptr [EAX + 0xec]         ; 0055413d
-    FLD float ptr [0x01c775e8]          ; 00554143 | DAT_01c775e8
+    FLD float ptr [0x01c775e8]          ; 00554143 | g_CDemonLight_01c74640.volumetric_intensity
     FLDZ                                ; 00554149
     ADD ESP,0x4                         ; 0055414b
     FCOMPP                              ; 0055414e
@@ -145,9 +145,9 @@ section .text
     SAHF                                ; 00554152
     JNC 0x00554107                      ; 00554153
         ;   XREF to: 00554107 (CONDITIONAL_JUMP)  ; LAB_00554107
-    PUSH 0x1c74640                      ; 00554155 | DAT_01c74640
-    MOV EAX,[0x005be368]                ; 0055415a | DAT_005be368
-    PUSH EAX                            ; 0055415f | DAT_01e57284
+    PUSH 0x1c74640                      ; 00554155 | g_CDemonLight_01c74640
+    MOV EAX,[0x005be368]                ; 0055415a | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 0055415f | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970 ; 00554160
         ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 00554165

@@ -21,7 +21,7 @@ int __cdecl core_gore_cpp_CGore_load_FUN_004b0820(CGore *this_ptr,_FILE *file_ha
   iVar1 = 0;
   _fscanf(file_handle,"%d\n");
   if (0 < _DAT_01c9e038) {
-    this_ptr_00 = (CBloodPool *)0x1c9e03c;
+    this_ptr_00 = g_CBloodPool_ARRAY_01c9e03c;
     do {
       iVar1 = iVar1 + 1;
       core_gore_cpp_CBloodPool_load_FUN_004af7c0(this_ptr_00,file_handle);
@@ -31,7 +31,7 @@ int __cdecl core_gore_cpp_CGore_load_FUN_004b0820(CGore *this_ptr,_FILE *file_ha
   iVar2 = 0;
   iVar1 = _fscanf(file_handle,"%d\n");
   if (0 < _DAT_01c7ccf0) {
-    this_ptr_01 = (CBloodSplat *)0x1c7ccf4;
+    this_ptr_01 = g_CBloodSplat_ARRAY_01c7ccf4;
     do {
       iVar2 = iVar2 + 1;
       iVar1 = core_gore_cpp_CBloodSplat_load_FUN_004af160(this_ptr_01,file_handle);

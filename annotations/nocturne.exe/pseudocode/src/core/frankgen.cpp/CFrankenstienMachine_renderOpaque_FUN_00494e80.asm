@@ -15,7 +15,7 @@
 ;   float FLOAT_00581d4c = 200
 ;   float FLOAT_00581d50 = 99
 ;   float FLOAT_00581d54 = -1800
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cc9454
 ;
 ; Called Functions:
@@ -40,7 +40,7 @@ section .text
     SUB ESP,0x24                        ; 00494e86
     AND ESP,0xfffffff8                  ; 00494e89
     MOV EBX,dword ptr [EBP + 0x14]      ; 00494e8c
-    MOV EAX,[0x005baf90]                ; 00494e8f | DAT_005baf90
+    MOV EAX,[0x005baf90]                ; 00494e8f | g_CDemonMission_PTR_005baf90
     CMP dword ptr [EAX + 0x4],0x0       ; 00494e94 | DAT_01cc9454
     JZ 0x00494eb4                       ; 00494e98
         ;   XREF to: 00494eb4 (CONDITIONAL_JUMP)  ; LAB_00494eb4

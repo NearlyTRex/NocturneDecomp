@@ -55,7 +55,7 @@ void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *
   if (param_1->volumetric_enabled == 0) {
     return;
   }
-  world_position = (CVector3f *)((param_1->base).camera_name + 0xc4);
+  world_position = &(param_1->base).position;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (DAT_005ae704,world_position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
@@ -73,16 +73,16 @@ void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *
   afStack_78[3] = (float)(int)local_60 * local_68;
   local_68 = (float)local_5c * local_68;
   local_a0 = world_position->x - afStack_78[2];
-  local_9c = *(float *)((param_1->base).camera_name + 200) - afStack_78[3];
-  local_98.x = (int)(*(float *)((param_1->base).camera_name + 0xcc) - local_68);
+  local_9c = (param_1->base).position.y - afStack_78[3];
+  local_98.x = (int)((param_1->base).position.z - local_68);
   if (&local_58 != &local_a0) {
     local_58 = local_a0;
     local_54 = local_9c;
     local_50 = (float)local_98.x;
   }
-  local_4c = *(float *)((param_1->base).camera_name + 0xd8);
-  local_48 = *(float *)((param_1->base).camera_name + 0xe4);
-  local_44.x = *(int *)((param_1->base).camera_name + 0xf0);
+  local_4c = (param_1->base).rotation_matrix.m[0].z;
+  local_48 = (param_1->base).rotation_matrix.m[1].z;
+  local_44.x = (int)(param_1->base).rotation_matrix.m[2].z;
   local_d8.base.type = (int)SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);
   if ((float)local_d8.base.type <= 0.0) {
     local_54 = 0.0;

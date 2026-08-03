@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,36 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 20,
-        "message": "assigning to 'int' from incompatible type 'const char[19]'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 27,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 29,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 31,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "undeclared_identifier",
@@ -98,22 +68,22 @@
         "message": "no matching function for call to 'engine_ini_cpp_CIniFile_getString_FUN_004bd910'"
       },
       {
-        "category": "other",
-        "column": 85,
-        "line": 37,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 44,
+        "message": "use of undeclared identifier 'DAT_01cae37c'"
       },
       {
-        "category": "other",
-        "column": 60,
-        "line": 39,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 63,
+        "message": "use of undeclared identifier '_DAT_01cc64a4'"
       },
       {
-        "category": "other",
-        "column": 51,
-        "line": 41,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 65,
+        "message": "use of undeclared identifier 'DAT_01cc64a4'"
       }
     ],
     "success": false,
@@ -122,19 +92,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 604,
-    "complexity_score": 749,
+    "complexity_score": 205,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 92,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 144,
-    "suspect_count": 59,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 145,
+    "suspect_count": 5,
     "suspect_types": [
-      "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 748
+    "total_lines": 749
   },
   "cross_references": [
     {
@@ -567,15 +536,15 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005baa00",
@@ -615,103 +584,103 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
       "addr": "01c775f8",
-      "name": "DAT_01c775f8",
+      "name": "g_CGame_01c775ec.halo_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77600",
-      "name": "DAT_01c77600",
+      "name": "g_CGame_01c775ec.blood_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77604",
-      "name": "DAT_01c77604",
+      "name": "g_CGame_01c775ec.nudity_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77608",
-      "name": "DAT_01c77608",
+      "name": "g_CGame_01c775ec.foul_language_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7760c",
-      "name": "DAT_01c7760c",
+      "name": "g_CGame_01c775ec.quimby_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77610",
-      "name": "DAT_01c77610",
+      "name": "g_CGame_01c775ec.shadow_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77690",
-      "name": "DAT_01c77690",
+      "name": "g_CGame_01c775ec.x_center",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77694",
-      "name": "DAT_01c77694",
+      "name": "g_CGame_01c775ec.y_center",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77698",
-      "name": "DAT_01c77698",
+      "name": "g_CGame_01c775ec.x_stick_min",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7769c",
-      "name": "DAT_01c7769c",
+      "name": "g_CGame_01c775ec.x_stick_max",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776a0",
-      "name": "DAT_01c776a0",
+      "name": "g_CGame_01c775ec.y_stick_min",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776a4",
-      "name": "DAT_01c776a4",
+      "name": "g_CGame_01c775ec.y_stick_max",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776a8",
-      "name": "DAT_01c776a8",
+      "name": "g_CGame_01c775ec.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776ac",
-      "name": "DAT_01c776ac",
+      "name": "g_CGame_01c775ec.hero_number",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776b0",
-      "name": "DAT_01c776b0",
+      "name": "g_CGame_01c775ec.aim_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77800",
-      "name": "DAT_01c77800",
+      "name": "g_CGame_01c775ec.head_of_horror_cheat",
       "type": "undefined4",
       "value": null
     },
@@ -723,13 +692,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
@@ -826,30 +795,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"gamePIXX\",&DAT_005b9354->game_pixx);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"gamePIXY\",&DAT_005b9354->game_pixy);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"gameBPP\",&DAT_005b9354->game_bpp);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 27,
       "match": "DAT_02dc9d6c",
       "severity": "mild",
@@ -866,31 +811,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,\"gamma\",&DAT_005b9354->gamma);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"heroNumber\",(int *)&DAT_005b9354->hero_number);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"haloMode\",&DAT_005b9354->halo_mode);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_01cae37c",
       "severity": "mild",
       "text": "(&local_204,\"firstTimeFlag\",(int *)&DAT_01cae37c);",
@@ -898,395 +819,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"subtitleMode\",&DAT_005b9354->subtitle_mode);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"bloodFlag\",&DAT_005b9354->blood_flag);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"nudityFlag\",&DAT_005b9354->nudity_flag);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"foulLanguageFlag\",&DAT_005b9354->foul_language_flag);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"shadowFlag\",&DAT_005b9354->shadow_flag);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"quimbyFlag\",&DAT_005b9354->quimby_flag);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_01cc64a4",
       "severity": "mild",
       "text": "(&local_204,\"currentBoard\",(int *)&DAT_01cc64a4);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"gameControl\",(int *)&DAT_005b9354->game_control);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyWalk\",&DAT_005b9354->key_walk);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyBackup\",&DAT_005b9354->key_backup);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyRun\",&DAT_005b9354->key_run);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyStrafe\",&DAT_005b9354->key_strafe);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyStrafeLeft\",&DAT_005b9354->key_strafe_left);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyStrafeRight\",&DAT_005b9354->key_strafe_right);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyRight\",&DAT_005b9354->key_right);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyLeft\",&DAT_005b9354->key_left);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyFire\",&DAT_005b9354->key_fire);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyUseItem\",&DAT_005b9354->key_use_item);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyLight\",&DAT_005b9354->key_light);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyInfrared\",&DAT_005b9354->key_infrared);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyDraw\",&DAT_005b9354->key_draw);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyJump\",&DAT_005b9354->key_jump);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyPointUp\",&DAT_005b9354->key_point_up);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyPointDown\",&DAT_005b9354->key_point_down);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyWeapon1\",&DAT_005b9354->key_weapon_1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyWeapon2\",&DAT_005b9354->key_weapon_2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 101,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyWeapon3\",&DAT_005b9354->key_weapon_3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyWeapon4\",&DAT_005b9354->key_weapon_4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyWeapon5\",&DAT_005b9354->key_weapon_5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyNextWeapon\",&DAT_005b9354->key_next_weapon);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyPrevWeapon\",&DAT_005b9354->key_prev_weapon);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyNextItem\",&DAT_005b9354->key_next_item);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyPrevItem\",&DAT_005b9354->key_prev_item);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyItemDesc\",&DAT_005b9354->key_item_desc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"keyNextAmmo\",&DAT_005b9354->key_next_ammo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"invertMouseYAxis\",&DAT_005b9354->invert_mouse_y_axis);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"alwaysRun\",&DAT_005b9354->always_run);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"xMouseSensitivity\",&DAT_005b9354->x_mouse_sensitivity);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"yMouseSensitivity\",&DAT_005b9354->y_mouse_sensitivity);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"xCenter\",&DAT_005b9354->x_center);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"yCenter\",&DAT_005b9354->y_center);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"xStickMin\",&DAT_005b9354->x_stick_min);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 133,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"xStickMax\",&DAT_005b9354->x_stick_max);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"yStickMin\",&DAT_005b9354->y_stick_min);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"yStickMax\",&DAT_005b9354->y_stick_max);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"aimMode\",(int *)&DAT_005b9354->aim_mode);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"autoUseHealth\",&DAT_005b9354->auto_use_health);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 146,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "(&local_204,\"headOfHorrorCheat\",&DAT_005b9354->head_of_horror_cheat);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 49,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar1 = 0x01C775EC;",
-      "type": "raw_address_constant"
     }
   ]
 }

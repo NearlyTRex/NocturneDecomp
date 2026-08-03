@@ -124,10 +124,10 @@
 ;   double DOUBLE_0057ae2d = 0.0100000000000000
 ;   undefined4 DAT_0057ae35
 ;   undefined4 DAT_0059b360
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fb1afc
-;   undefined4 DAT_01fb1b00
-;   undefined4 DAT_01fb1b04
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.x
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.y
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
@@ -366,20 +366,20 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0043719f
     MOV dword ptr [ESP + 0xd0],EAX      ; 004371a3
     MOV EAX,dword ptr [ESP + 0x28]      ; 004371aa
-    MOV EDX,dword ptr [0x005be368]      ; 004371ae | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 004371ae | g_CDemonSet_PTR_005be368
     MOV dword ptr [ESP + 0xd4],EAX      ; 004371b4
-    MOV EAX,dword ptr [EDX + 0x15a878]  ; 004371bb | DAT_01fb1afc
+    MOV EAX,dword ptr [EDX + 0x15a878]  ; 004371bb | g_CDemonSet_01e57284.active_fog.scroll.x
     ADD EDX,0x15a878                    ; 004371c1
     MOV dword ptr [ESP + 0x150],EAX     ; 004371c7
     LEA EAX,[EDX + 0x4]                 ; 004371ce
-    MOV EAX,dword ptr [EAX]             ; 004371d1 | DAT_01fb1b00
+    MOV EAX,dword ptr [EAX]             ; 004371d1 | g_CDemonSet_01e57284.active_fog.scroll.y
     MOV dword ptr [ESP + 0x154],EAX     ; 004371d3
     FLD float ptr [ESP + 0x154]         ; 004371da
     FMUL ST0                            ; 004371e1
     LEA EAX,[EDX + 0x8]                 ; 004371e3
     FLD float ptr [ESP + 0x150]         ; 004371e6
     FMUL ST0                            ; 004371ed
-    MOV EAX,dword ptr [EAX]             ; 004371ef | DAT_01fb1b04
+    MOV EAX,dword ptr [EAX]             ; 004371ef | g_CDemonSet_01e57284.active_fog.scroll.z
     FADDP                               ; 004371f1
     MOV dword ptr [ESP + 0x158],EAX     ; 004371f3
     FLD float ptr [ESP + 0x158]         ; 004371fa
@@ -429,17 +429,17 @@ section .text
     MOV dword ptr [ESP],EAX             ; 0043729e
     FLD float ptr [ESP]                 ; 004372a1
         ;   Label: LAB_004372a1
-    MOV EAX,[0x005be368]                ; 004372a4 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004372a4 | g_CDemonSet_PTR_005be368
     FMUL double ptr [0x0057ae35]        ; 004372a9 | DAT_0057ae35
-    FLD float ptr [EAX + 0x15a878]      ; 004372af | DAT_01fb1afc
+    FLD float ptr [EAX + 0x15a878]      ; 004372af | g_CDemonSet_01e57284.active_fog.scroll.x
     FXCH                                ; 004372b5
     FSTP float ptr [ESP]                ; 004372b7
     FMUL float ptr [ESP]                ; 004372ba
     FSTP float ptr [ESP + 0x108]        ; 004372bd
-    FLD float ptr [EAX + 0x15a87c]      ; 004372c4 | DAT_01fb1b00
+    FLD float ptr [EAX + 0x15a87c]      ; 004372c4 | g_CDemonSet_01e57284.active_fog.scroll.y
     FMUL float ptr [ESP]                ; 004372ca
     FSTP float ptr [ESP + 0x10c]        ; 004372cd
-    FLD float ptr [EAX + 0x15a880]      ; 004372d4 | DAT_01fb1b04
+    FLD float ptr [EAX + 0x15a880]      ; 004372d4 | g_CDemonSet_01e57284.active_fog.scroll.z
     LEA EAX,[ESP + 0x108]               ; 004372da
     FMUL float ptr [ESP]                ; 004372e1
     PUSH EAX                            ; 004372e4

@@ -25,7 +25,7 @@ void core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CCharacter *param
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar2 < 5);
   }
   fVar1 = param_1[0x10].model.bone_transform.bone_world_matrices[0x2f].m[0].y;
@@ -48,7 +48,8 @@ void core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CCharacter *param
                              ((CInventory *)this_ptr,this_ptr_00->actor_name);
           if (pCVar4 == this_ptr_00) {
             core_inv_cpp_CInventory_removeItem_FUN_004c07b0((CInventory *)this_ptr,this_ptr_00,0);
-            core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(0x01CC9450,this_ptr_00);
+            core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
+                      (g_CDemonMission_PTR_005baf90,this_ptr_00);
           }
         }
       }
@@ -57,7 +58,7 @@ void core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CCharacter *param
                 (0x01C03A10,"VampireBossBitesIt");
       sound_sndmain_cpp_killSfx_FUN_00527230(param_1[0x10].carry_hands[1].bone_index);
       core_sound_cpp_CSound_playSound_FUN_0052ea40
-                (0x02DC9450,param_1,"voicudeath.wav @ 2.5");
+                (g_CSound_PTR_005bed68,param_1,"voicudeath.wav @ 2.5");
       param_1->hit_points = 0.0;
       return;
     }

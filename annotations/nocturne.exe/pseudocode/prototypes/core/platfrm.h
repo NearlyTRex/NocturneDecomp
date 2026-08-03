@@ -45,7 +45,7 @@ void CPlatform::renderBackground(CDemonActor *param_1,int param_2);
 
 // Original: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_004f6f50
 // Address: 004f6f50
-undefined4 * CPlatform::getBoundingBox(int param_1,undefined4 *param_2);
+float * CPlatform::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_platfrm.cpp_CPlatform_archive_FUN_004f6fa0
 // Address: 004f6fa0

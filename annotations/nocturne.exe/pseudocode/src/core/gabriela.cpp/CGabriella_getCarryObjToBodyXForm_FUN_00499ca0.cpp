@@ -74,8 +74,8 @@ void core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0(int param_
       local_1c.y = local_a0.max.y;
     }
     else {
-      PTR_01cc4800 = "..\\core\\gabriela.cpp";
-      INT_01cc4804 = 0x945;
+      g_CHAR_PTR_01cc4800 = "..\\core\\gabriela.cpp";
+      g_INT_01cc4804 = 0x945;
       core_main_c_FUN_004c8440("Don't know how to carry light %s",pCVar2);
     }
     goto LAB_00499d1a;

@@ -70,7 +70,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x68]      ; 0044ce85
     LEA EBX,[EBP + 0x24]                ; 0044ce89
     PUSH EBX                            ; 0044ce8c
-    MOV EDX,dword ptr [0x005ae700]      ; 0044ce8d | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0044ce8d | PTR_DAT_005ae700
     PUSH EDX                            ; 0044ce93 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0044ce94
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -128,7 +128,7 @@ section .text
     FMUL float ptr [ESP + 0x60]         ; 0044cf33
     LEA EBX,[ESP + 0x3c]                ; 0044cf37
     LEA EAX,[ESP + 0x30]                ; 0044cf3b
-    MOV EDX,dword ptr [0x005ae700]      ; 0044cf3f | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0044cf3f | PTR_DAT_005ae700
     FXCH ST2                            ; 0044cf45
     FSTP float ptr [ESP + 0x30]         ; 0044cf47
     FSTP float ptr [ESP + 0x34]         ; 0044cf4b
@@ -175,7 +175,7 @@ section .text
     PUSH 0x444180                       ; 0044cfe2
     MOV dword ptr [ESP + 0x2c],EAX      ; 0044cfe7
     MOV EAX,dword ptr [EBX + 0x5ad89c]  ; 0044cfeb | DAT_005ad89c
-    MOV ESI,dword ptr [0x005ae700]      ; 0044cff1 | DAT_005ae700
+    MOV ESI,dword ptr [0x005ae700]      ; 0044cff1 | PTR_DAT_005ae700
     MOV dword ptr [ESP + 0x30],EAX      ; 0044cff7
     LEA EAX,[ESP + 0xc]                 ; 0044cffb
     ADD EBX,0x24                        ; 0044cfff

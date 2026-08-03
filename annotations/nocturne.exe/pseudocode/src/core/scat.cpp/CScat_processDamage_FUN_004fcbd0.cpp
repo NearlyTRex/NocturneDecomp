@@ -17,10 +17,10 @@ void core_scat_cpp_CScat_processDamage_FUN_004fcbd0(CScat *param_1,SDamageInfo *
   if (ABS((param_1->base).invincibility_timer) != 0.0) {
     param_2->damage_amount = 0.0;
   }
-  if (*(int *)(0x01C775EC + 0x1d0) != 0) {
+  if (g_CGame_PTR_005b9354->god_mode_enabled != 0) {
     param_2->damage_amount = 0.0;
   }
-  if (*(int *)(0x01C775EC + 0x22c) == 0) {
+  if (g_CGame_PTR_005b9354->allow_damage_flag == 0) {
     param_2->damage_amount = 0.0;
   }
   (param_1->base).invincibility_timer = 0x3F000000;
@@ -57,7 +57,7 @@ void core_scat_cpp_CScat_processDamage_FUN_004fcbd0(CScat *param_1,SDamageInfo *
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&this_ptr->motion_controller,4,1);
       core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-                ((CGore *)INT_005b96c4,(CDemonActor *)param_1,0x32,50.0,(CVector3f *)0x0);
+                (g_CGore_PTR_005b96c4,(CDemonActor *)param_1,0x32,50.0,(CVector3f *)0x0);
     }
   }
   (*((param_1->base).base.base.vtable._ub)->playSound)

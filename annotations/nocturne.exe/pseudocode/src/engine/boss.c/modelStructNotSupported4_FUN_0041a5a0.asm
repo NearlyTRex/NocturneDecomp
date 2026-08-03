@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_boss_c_005795f7
 ;   TerminatedCString s_modelStruct_not_supporte_00579608
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -32,8 +32,8 @@ section .text
     PUSH 0x579608                       ; 0041a5b1 | = "modelStruct not supported"
     MOV EDI,ESI                         ; 0041a5b6
     LEA ESI,[ESP + 0x4]                 ; 0041a5b8
-    MOV dword ptr [0x01cc4800],EDX      ; 0041a5bc | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0041a5c2 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0041a5bc | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0041a5c2 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0041a5c8
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     MOV ECX,0xd                         ; 0041a5cd

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004c3600(int param_1,undefined4 *param_2)
+; float * core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_004c3600(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

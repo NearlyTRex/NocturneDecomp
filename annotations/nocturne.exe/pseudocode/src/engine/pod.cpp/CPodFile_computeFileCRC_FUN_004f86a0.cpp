@@ -17,14 +17,14 @@ uint engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(int param_1,int param_2
   SIZE_T size;
   
   if ((param_2 < 0) || (*(int *)(param_1 + 0x208) <= param_2)) {
-    PTR_01cc4800 = "..\\engine\\pod.cpp";
-    INT_01cc4804 = 0x221;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
+    g_INT_01cc4804 = 0x221;
     core_main_c_FUN_004c8440("CPodFile::computeOneFileCRC - invalid index");
   }
   file = _fopen((char *)(param_1 + 4),"rb");
   if (file == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\engine\\pod.cpp";
-    INT_01cc4804 = 0x226;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
+    g_INT_01cc4804 = 0x226;
     core_main_c_FUN_004c8440("CPodFile::computeOneFileCRC - can't open %s",(char *)(param_1 + 4));
   }
   _fseek(file,*(long *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x20c)),0);

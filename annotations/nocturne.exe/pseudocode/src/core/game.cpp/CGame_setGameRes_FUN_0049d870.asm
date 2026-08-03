@@ -14,10 +14,10 @@
 ;   TerminatedCString s_CGame_setGameRes_Unable_0058277b
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
-;   undefined4 DAT_014b9904
+;   CBitFont* g_CBitFont_PTR_014b9904
 ;   undefined4 DAT_01bcd070
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cc64a4
 ;
 ; Called Functions:
@@ -82,8 +82,8 @@ section .text
     MOV EBP,0x58276a                    ; 0049d8da | = "..\\core\\game.cpp"
     MOV EAX,0x497                       ; 0049d8df
     PUSH 0x58277b                       ; 0049d8e4 | = "CGame::setGameRes - Unable to set the..."
-    MOV dword ptr [0x01cc4800],EBP      ; 0049d8e9 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0049d8ef | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 0049d8e9 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0049d8ef | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0049d8f4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 0049d8f9
@@ -119,7 +119,7 @@ section .text
         ;   XREF to: 0049d894 (CONDITIONAL_JUMP)  ; LAB_0049d894
     JMP 0x0049d8fc                      ; 0049d945
         ;   XREF to: 0049d8fc (UNCONDITIONAL_JUMP)  ; LAB_0049d8fc
-    MOV EAX,[0x014b9904]                ; 0049d947 | DAT_014b9904
+    MOV EAX,[0x014b9904]                ; 0049d947 | g_CBitFont_PTR_014b9904
         ;   Label: LAB_0049d947
     MOV [0x01bcd070],EAX                ; 0049d94c | DAT_01bcd070
     POP EBP                             ; 0049d951

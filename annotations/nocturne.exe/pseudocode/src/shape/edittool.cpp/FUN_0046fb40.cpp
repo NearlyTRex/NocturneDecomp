@@ -18,8 +18,8 @@ void shape_edittool_cpp_FUN_0046fb40(CEditorTools *param_1,char *param_2)
   char *local_14;
   
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0x8b;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0x8b;
     core_main_c_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
@@ -43,7 +43,7 @@ void shape_edittool_cpp_FUN_0046fb40(CEditorTools *param_1,char *param_2)
              ((_DAT_01c00c5c + _DAT_01c00c64) - iVar3) / 2,_DAT_01bcddd4,-1);
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_2d_c_clearInputAndWait_FUN_00403f50();
-  engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0((CKeys *)INT_005bac64);
+  engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(g_CKeys_PTR_005bac64);
   shape_edittool_cpp_FUN_004720c0(param_1);
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_2d_c_clearInputAndWait_FUN_00403f50();

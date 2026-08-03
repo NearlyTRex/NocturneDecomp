@@ -24,10 +24,10 @@
 ;   TerminatedCString s_f_f_f_00590caf
 ;   TerminatedCString s_f_f_f_00590cb9
 ;   TerminatedCString s_d_00590cc3
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
-;   undefined4 DAT_01fb1acc
-;   undefined4 DAT_01fb1ad0
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
+;   undefined4 g_CDemonSet_01e57284.scene_fog.color_index.r
+;   undefined4 g_CDemonSet_01e57284.scene_fog.color_index.g
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -52,8 +52,8 @@ section .text
     PUSH EBX                            ; 005144f8
     CALL core_setutil.cpp_FUN_00514470  ; 005144f9
         ;   XREF to: 00514470 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_00514470()
-    MOV EAX,[0x005be368]                ; 005144fe | DAT_005be368
-    MOV EDX,dword ptr [EAX + 0x15a8c4]  ; 00514503 | DAT_01fb1b48
+    MOV EAX,[0x005be368]                ; 005144fe | g_CDemonSet_PTR_005be368
+    MOV EDX,dword ptr [EAX + 0x15a8c4]  ; 00514503 | g_CDemonSet_01e57284.set_file_version
     ADD ESP,0x4                         ; 00514509
     CMP EDX,0xb                         ; 0051450c
     JGE 0x0051474e                      ; 0051450f
@@ -72,8 +72,8 @@ section .text
     PUSH EAX                            ; 00514532
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00514533
         ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
-    MOV EAX,[0x005be368]                ; 00514538 | DAT_005be368
-    MOV ECX,dword ptr [EAX + 0x15a8c4]  ; 0051453d | DAT_01fb1b48
+    MOV EAX,[0x005be368]                ; 00514538 | g_CDemonSet_PTR_005be368
+    MOV ECX,dword ptr [EAX + 0x15a8c4]  ; 0051453d | g_CDemonSet_01e57284.set_file_version
     ADD ESP,0xc                         ; 00514543
     CMP ECX,0xb                         ; 00514546
     JL 0x0051455e                       ; 00514549
@@ -96,8 +96,8 @@ section .text
     PUSH ESI                            ; 00514578
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00514579
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
-    MOV EAX,[0x005be368]                ; 0051457e | DAT_005be368
-    MOV EDI,dword ptr [EAX + 0x15a8c4]  ; 00514583 | DAT_01fb1b48
+    MOV EAX,[0x005be368]                ; 0051457e | g_CDemonSet_PTR_005be368
+    MOV EDI,dword ptr [EAX + 0x15a8c4]  ; 00514583 | g_CDemonSet_01e57284.set_file_version
     ADD ESP,0x14                        ; 00514589
     CMP EDI,0xb                         ; 0051458c
     JL 0x005145a4                       ; 0051458f
@@ -120,8 +120,8 @@ section .text
     PUSH ESI                            ; 005145be
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 005145bf
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
-    MOV EAX,[0x005be368]                ; 005145c4 | DAT_005be368
-    MOV EBP,dword ptr [EAX + 0x15a8c4]  ; 005145c9 | DAT_01fb1b48
+    MOV EAX,[0x005be368]                ; 005145c4 | g_CDemonSet_PTR_005be368
+    MOV EBP,dword ptr [EAX + 0x15a8c4]  ; 005145c9 | g_CDemonSet_01e57284.set_file_version
     ADD ESP,0x14                        ; 005145cf
     CMP EBP,0xb                         ; 005145d2
     JL 0x005145ea                       ; 005145d5
@@ -180,9 +180,9 @@ section .text
     PUSH ESI                            ; 00514672
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00514673
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
-    MOV EAX,[0x005be368]                ; 00514678 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 00514678 | g_CDemonSet_PTR_005be368
     LEA EDI,[EBX + 0x150]               ; 0051467d
-    MOV EDX,dword ptr [EAX + 0x15a8c4]  ; 00514683 | DAT_01fb1b48
+    MOV EDX,dword ptr [EAX + 0x15a8c4]  ; 00514683 | g_CDemonSet_01e57284.set_file_version
     ADD ESP,0x14                        ; 00514689
     CMP EDX,0x12                        ; 0051468c
     JL 0x00514766                       ; 0051468f
@@ -198,17 +198,17 @@ section .text
     TEST ECX,ECX                        ; 005146b0
     JNZ 0x005146ca                      ; 005146b2
         ;   XREF to: 005146ca (CONDITIONAL_JUMP)  ; LAB_005146ca
-    MOV EAX,[0x005be368]                ; 005146b4 | DAT_005be368
-    MOV EBP,dword ptr [EAX + 0x15a8c4]  ; 005146b9 | DAT_01fb1b48
+    MOV EAX,[0x005be368]                ; 005146b4 | g_CDemonSet_PTR_005be368
+    MOV EBP,dword ptr [EAX + 0x15a8c4]  ; 005146b9 | g_CDemonSet_01e57284.set_file_version
     PUSH EBP                            ; 005146bf
     PUSH ESI                            ; 005146c0
     PUSH EDI                            ; 005146c1
     CALL core_dcamera.cpp_loadCameraFog_FUN_00447d10 ; 005146c2
         ;   XREF to: 00447d10 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_loadCameraFog_FUN_00447d10(SFog * fog, _FILE * file_handle, int file_version)
     ADD ESP,0xc                         ; 005146c7
-    MOV EAX,[0x005be368]                ; 005146ca | DAT_005be368
+    MOV EAX,[0x005be368]                ; 005146ca | g_CDemonSet_PTR_005be368
         ;   Label: LAB_005146ca
-    CMP dword ptr [EAX + 0x15a8c4],0x17 ; 005146cf | DAT_01fb1b48
+    CMP dword ptr [EAX + 0x15a8c4],0x17 ; 005146cf | g_CDemonSet_01e57284.set_file_version
     JL 0x00514731                       ; 005146d6
         ;   XREF to: 00514731 (CONDITIONAL_JUMP)  ; LAB_00514731
     PUSH ESI                            ; 005146d8
@@ -240,9 +240,9 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00514729
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0051472e
-    MOV EAX,[0x005be368]                ; 00514731 | DAT_005be368 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 00514731 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
         ;   Label: LAB_00514731
-    CMP dword ptr [EAX + 0x15a8c4],0x17 ; 00514736 | DAT_01fb1b48
+    CMP dword ptr [EAX + 0x15a8c4],0x17 ; 00514736 | g_CDemonSet_01e57284.set_file_version
     JGE 0x005147be                      ; 0051473d
         ;   XREF to: 005147be (CONDITIONAL_JUMP)  ; LAB_005147be
     ADD ESP,0x100                       ; 00514743
@@ -263,32 +263,32 @@ section .text
         ;   XREF to: 00514515 (UNCONDITIONAL_JUMP)  ; LAB_00514515
     MOV dword ptr [EBX + 0x14c],0x1     ; 00514766
         ;   Label: LAB_00514766
-    MOV EBP,dword ptr [EAX + 0x15a848]  ; 00514770 | DAT_01fb1acc
+    MOV EBP,dword ptr [EAX + 0x15a848]  ; 00514770 | g_CDemonSet_01e57284.scene_fog.color_index.r
     ADD EAX,0x15a848                    ; 00514776
     MOV dword ptr [EDI],EBP             ; 0051477b
     MOV ECX,EDI                         ; 0051477d
-    MOV EBP,dword ptr [EAX + 0x4]       ; 0051477f | DAT_01fb1ad0
+    MOV EBP,dword ptr [EAX + 0x4]       ; 0051477f | g_CDemonSet_01e57284.scene_fog.color_index.g
     MOV EDX,EAX                         ; 00514782
     MOV dword ptr [EDI + 0x4],EBP       ; 00514784
     ADD EDI,0xc                         ; 00514787
-    MOV EBP,dword ptr [EAX + 0x8]       ; 0051478a | DAT_01fb1ad4
+    MOV EBP,dword ptr [EAX + 0x8]       ; 0051478a | g_CDemonSet_01e57284.scene_fog.color_index.b
     ADD EAX,0xc                         ; 0051478d
     MOV dword ptr [EDI + -0x4],EBP      ; 00514790
     CMP EDI,EAX                         ; 00514793
     JZ 0x005147a7                       ; 00514795
         ;   XREF to: 005147a7 (CONDITIONAL_JUMP)  ; LAB_005147a7
-    MOV EBP,dword ptr [EAX]             ; 00514797 | DAT_01fb1ad8
+    MOV EBP,dword ptr [EAX]             ; 00514797 | g_CDemonSet_01e57284.scene_fog.scroll.x
     MOV dword ptr [EDI],EBP             ; 00514799
-    MOV EBP,dword ptr [EAX + 0x4]       ; 0051479b | DAT_01fb1adc
+    MOV EBP,dword ptr [EAX + 0x4]       ; 0051479b | g_CDemonSet_01e57284.scene_fog.scroll.y
     MOV dword ptr [EDI + 0x4],EBP       ; 0051479e
-    MOV EBP,dword ptr [EAX + 0x8]       ; 005147a1 | DAT_01fb1ae0
+    MOV EBP,dword ptr [EAX + 0x8]       ; 005147a1 | g_CDemonSet_01e57284.scene_fog.scroll.z
     MOV dword ptr [EDI + 0x8],EBP       ; 005147a4
-    MOV EAX,dword ptr [EDX + 0x18]      ; 005147a7 | DAT_01fb1ae4
+    MOV EAX,dword ptr [EDX + 0x18]      ; 005147a7 | g_CDemonSet_01e57284.scene_fog.height_threshold
         ;   Label: LAB_005147a7
     MOV dword ptr [ECX + 0x18],EAX      ; 005147aa
-    MOV EAX,dword ptr [EDX + 0x1c]      ; 005147ad | DAT_01fb1ae8
+    MOV EAX,dword ptr [EDX + 0x1c]      ; 005147ad | g_CDemonSet_01e57284.scene_fog.density_multiplier
     MOV dword ptr [ECX + 0x1c],EAX      ; 005147b0
-    MOV EAX,dword ptr [EDX + 0x20]      ; 005147b3 | DAT_01fb1aec
+    MOV EAX,dword ptr [EDX + 0x20]      ; 005147b3 | g_CDemonSet_01e57284.scene_fog.temperature
     MOV dword ptr [ECX + 0x20],EAX      ; 005147b6
     JMP 0x005146ca                      ; 005147b9
         ;   XREF to: 005146ca (UNCONDITIONAL_JUMP)  ; LAB_005146ca

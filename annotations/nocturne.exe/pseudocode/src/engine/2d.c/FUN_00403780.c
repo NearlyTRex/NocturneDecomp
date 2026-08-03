@@ -19,8 +19,8 @@ void engine_2d_c_FUN_00403780(int param_1,int param_2,int param_3)
     if (DAT_005b7620 < 400) {
       if (DAT_005b7620 != 200) {
 LAB_004038d6:
-        PTR_01cc4800 = "..\\engine\\2d.c";
-        INT_01cc4804 = 0x7dd;
+        g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+        g_INT_01cc4804 = 0x7dd;
         core_main_c_FUN_004c8440("draw320x200SizeDot: unknown graphics option");
         return;
       }

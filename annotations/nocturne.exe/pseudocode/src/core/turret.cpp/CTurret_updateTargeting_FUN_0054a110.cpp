@@ -45,7 +45,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0054a110(CTurret *this_
   pCVar6 = this_ptr->guard_zone_box_trigger;
   if (pCVar6 == (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s has no guard trigger!\n",this_ptr);
+              (g_CConsole_PTR_005ad350,"%s has no guard trigger!\n",this_ptr);
     return;
   }
   (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,(CBoundingBox3D *)local_b4);
@@ -85,7 +85,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0054a110(CTurret *this_
   iVar4 = 0;
   do {
     while( true ) {
-      if (*(int *)(0x01E57284 + 0x14cd6c) <= iVar5) {
+      if (g_CDemonSet_PTR_005be368->actor_count <= iVar5) {
         if ((int)CStack_88.y < 0x42c60001) {
           core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(this_ptr,aCStack_34,in_stack_00000010);
           if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
@@ -98,7 +98,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0054a110(CTurret *this_
         core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(this_ptr,in_stack_00000010);
         return;
       }
-      actor_ptr = *(CDemonActor **)(0x01E57284 + 0x14cd70 + iVar4);
+      actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar4);
       iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(actor_ptr,pCVar6->actor_name);
       if ((((iVar2 != 0) && ((float)auStack_d0._12_4_ <= (actor_ptr->location).position.x)) &&
           (fStack_c0 <= (actor_ptr->location).position.y)) &&

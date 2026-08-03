@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,17 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 53,
+    "complexity_score": 77,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
     "suspect_types": [
+      "raw_address_constant",
       "shadow_pointer_walk"
     ],
-    "total_lines": 157
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -127,7 +128,7 @@
     },
     {
       "addr": "02dd1214",
-      "name": "DAT_02dd1214",
+      "name": "g_CWater_02dd1210.water_level_y",
       "type": "undefined4",
       "value": null
     },
@@ -239,8 +240,24 @@
   },
   "suspects": [
     {
+      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 11,
+      "match": "0x2dd1210",
+      "severity": "moderate",
+      "text": "if (((*(uint *)(0x02DD1210 + 4) & 0x7fffffff) == 0) ||",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 12,
+      "match": "0x2dd1210",
+      "severity": "moderate",
+      "text": "(*(float *)(0x02DD1210 + 4) <= point->y)) {",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 32,
+      "line": 31,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",

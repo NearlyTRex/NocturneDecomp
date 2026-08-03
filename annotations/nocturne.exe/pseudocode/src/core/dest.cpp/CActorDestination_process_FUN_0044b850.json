@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,7 +58,7 @@
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 59,
+        "line": 60,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       }
     ],
@@ -68,18 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 85,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 2,
+    "pseudocode_lines": 56,
+    "suspect_count": 3,
     "suspect_types": [
-      "raw_address_pointer_store",
+      "pointer_cast",
       "self_copy_guard"
     ],
-    "total_lines": 218
+    "total_lines": 219
   },
   "cross_references": [
     {
@@ -135,25 +135,25 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01fa3ff0",
-      "name": "DAT_01fa3ff0",
+      "name": "g_CDemonSet_01e57284.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "DAT_01fa3ff4",
+      "name": "g_CDemonSet_01e57284.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff8",
-      "name": "DAT_01fa3ff8",
+      "name": "g_CDemonSet_01e57284.actors[1]",
       "type": "undefined4",
       "value": null
     }
@@ -324,20 +324,28 @@
   },
   "suspects": [
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 29,
-      "match": "*(CDemonActor **)(0x01E57284 + iVar3 + 0x14cd70",
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "(this_ptr,*(CDemonActor **)(0x01E57284 + iVar3 + 0x14cd70)),",
-      "type": "raw_address_pointer_store"
+      "text": "iVar2 = *(int *)((int)g_CDemonSet_PTR_005be368->actors + iVar3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_20 != &local_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 39,
+      "line": 40,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_20 != &local_38) {",
       "type": "self_copy_guard"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 29,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "(this_ptr,*(CDemonActor **)",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

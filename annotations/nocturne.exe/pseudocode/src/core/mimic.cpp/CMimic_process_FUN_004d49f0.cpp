@@ -16,15 +16,15 @@ void core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *param_1,float param_2)
   int iVar3;
   SMotion *pSVar4;
   
-  if (*0x01CEA280 != 0) {
-    PTR_01cc4800 = "..\\core\\mimic.cpp";
-    INT_01cc4804 = 0x130;
+  if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+    g_CHAR_PTR_01cc4800 = "..\\core\\mimic.cpp";
+    g_INT_01cc4804 = 0x130;
     core_main_c_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar3 = _DAT_01cae0e8;
   (param_1->base).base.base.scale.x = *(int *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x108);
   (param_1->base).base.base.scale.y = *(int *)(*(int *)(iVar3 * 4 + 0x1cae0d8) + 0x10c);
-  fVar1 = (param_1->cloth).vertices[0x30b].rest_lengths[2];
+  fVar1 = param_1->morph_blend;
   (param_1->base).base.base.scale.z = *(int *)(*(int *)(iVar3 * 4 + 0x1cae0d8) + 0x110);
   if (0.0 <= fVar1) {
     core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(param_1,param_2);
@@ -32,18 +32,15 @@ void core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *param_1,float param_2)
   }
   iVar3 = core_charactr_cpp_FUN_004259f0((CCharacter *)param_1,param_2);
   if (iVar3 != 0) {
-    iVar3 = (param_1->cloth).vertices[0x300].connected_indices[9];
-    if (iVar3 < 2) {
-      if ((iVar3 < 1) &&
+    if (param_1->attack_mode < 2) {
+      if ((param_1->attack_mode < 1) &&
          (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                             (0x01C03A10,param_1->attack_condition), iVar3 != 0)) {
-        (param_1->cloth).vertices[0x300].connected_indices[9] = 1;
+        param_1->attack_mode = 1;
       }
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                         (0x01C03A10,param_1->mirror_condition);
-      if ((iVar3 != 0) &&
-         (core_mimic_cpp_FUN_004d4ba0(param_1),
-         (param_1->cloth).vertices[0x300].connected_indices[9] == 1)) {
+      if ((iVar3 != 0) && (core_mimic_cpp_FUN_004d4ba0(param_1), param_1->attack_mode == 1)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                            ((CMotionController *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x150));
         uVar2 = pSVar4->state_index;

@@ -1,14 +1,14 @@
 // Name: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
 // Address: 0040b300
 // Address Range: [[0040b300, 0040bc93]]
-// Convention: unknown
-// Signature: undefined4 core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_1,float param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *this_ptr,int hit_type)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_1,float param_2)
+int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *this_ptr,int hit_type)
 
 {
   CBoundingBox3D *pCVar1;
@@ -19,7 +19,7 @@ uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_
   CGlass *pCVar6;
   float fVar7;
   EDeathState EVar8;
-  CFlameCan *this_ptr;
+  CFlameCan *this_ptr_00;
   double dVar9;
   CDemonActor *unaff_retaddr;
   char *in_stack_fffffd6c;
@@ -61,22 +61,22 @@ uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_
   CTrigger *pCStack_14;
   
   local_44 = 0.0;
-  if (param_2 == 1.4013e-45) {
-    local_44 = param_2;
+  if (hit_type == 1) {
+    local_44 = (float)hit_type;
   }
   local_d4 = 0.0;
   local_d0 = 0;
-  pCVar1 = (*((param_1->vtable)._ub)->getBoundingBox)
-                     (param_1,(CBoundingBox3D *)(auStack_148 + 0x38));
+  pCVar1 = (*((this_ptr->vtable)._ub)->getBoundingBox)
+                     (this_ptr,(CBoundingBox3D *)(auStack_148 + 0x38));
   CStack_cc.z = (pCVar1->max).z;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-            (param_1,(CVector3f *)auStack_c0,&CStack_cc);
+            (this_ptr,(CVector3f *)auStack_c0,&CStack_cc);
   if (CStack_40.y == 1.4013e-45) {
     local_d0 = -0x3fc00000;
     auStack_ec._20_4_ = 0.0;
     local_d4 = 0.0;
     pCVar2 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                       (param_1,(CVector3f *)auStack_9c,(CVector3f *)(auStack_ec + 0x14));
+                       (this_ptr,(CVector3f *)auStack_9c,(CVector3f *)(auStack_ec + 0x14));
     fStack_90 = (float)auStack_c0._0_4_ + pCVar2->x;
     fStack_8c = (float)auStack_c0._4_4_ + pCVar2->y;
     fStack_88 = fStack_b8 + pCVar2->z;
@@ -90,16 +90,14 @@ uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_
   auStack_a8._4_4_ = 0.0;
   auStack_a8._8_4_ = (CMotionController_vtable *)0x3f800000;
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-            (param_1,(CVector3f *)(auStack_68 + 8),(CVector3f *)auStack_a8);
-  pCStack_1c = (*((param_1->vtable)._ub)->getCarrier)(param_1);
+            (this_ptr,(CVector3f *)(auStack_68 + 8),(CVector3f *)auStack_a8);
+  pCStack_1c = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
   if (CStack_40.z == 0.0) {
     fStack_24 = CStack_40.z;
-    for (CStack_34.z = CStack_40.z;
-        (int)CStack_34.z < *(int *)0x01E57284->lights[199].filter_names[0x14];
+    for (CStack_34.z = CStack_40.z; (int)CStack_34.z < g_CDemonSet_PTR_005be368->actor_count;
         CStack_34.z = (float)((int)CStack_34.z + 1)) {
-      pCStack_18 = *(CDemonActor **)
-                    (0x01E57284->lights[199].filter_names[0x14] + (int)fStack_24 + 4);
-      if ((param_1 != pCStack_18) && (pCStack_18 != pCStack_1c)) {
+      pCStack_18 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + (int)fStack_24);
+      if ((this_ptr != pCStack_18) && (pCStack_18 != pCStack_1c)) {
         pCVar3 = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
                            (pCStack_18,g_CCharacterActorType_00765a60.name_hash);
@@ -121,12 +119,12 @@ uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_
               if (iVar4 != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)auStack_240);
                 in_stack_fffffd6c = auStack_240;
-                (*((param_1->vtable)._ub)->fillAttackDamageInfo)
-                          (param_1,(int)param_2,(SDamageInfo *)in_stack_fffffd6c,
-                           (CDemonActor *)pCVar6);
+                (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
+                          (this_ptr,hit_type,(SDamageInfo *)in_stack_fffffd6c,(CDemonActor *)pCVar6)
+                ;
                 in_stack_fffffd70 = (CVector3f *)0x40b783;
-                (*((param_1->vtable)._ub)->playAttackHitEffects)
-                          (param_1,(int)param_2,(SDamageInfo *)(auStack_240 + 0x10),
+                (*((this_ptr->vtable)._ub)->playAttackHitEffects)
+                          (this_ptr,hit_type,(SDamageInfo *)(auStack_240 + 0x10),
                            (CDemonActor *)pCVar6);
                 iVar4 = core_glass_cpp_FUN_004aded0(pCVar6);
                 if (iVar4 != 0) {
@@ -136,7 +134,7 @@ uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_
             }
           }
           else {
-            iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0(pCVar5,param_1);
+            iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0(pCVar5,this_ptr);
             if (iVar4 != 0) {
               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                         ((CDemonActor *)pCVar5,(CVector3f *)auStack_68,(CVector3f *)(auStack_c0 + 4)
@@ -147,17 +145,16 @@ uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_
                                 (pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);
               if (iVar4 != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffd84);
-                (*((param_1->vtable)._ub)->fillAttackDamageInfo)
-                          (param_1,(int)param_2,(SDamageInfo *)&stack0xfffffd84,
-                           (CDemonActor *)pCVar5);
-                in_stack_fffffd6c = PTR_DAT_005ad350;
+                (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
+                          (this_ptr,hit_type,(SDamageInfo *)&stack0xfffffd84,(CDemonActor *)pCVar5);
+                in_stack_fffffd6c = (char *)g_CConsole_PTR_005ad350;
                 engine_console_cpp_CConsole_printf_FUN_0043ac60
-                          (PTR_DAT_005ad350,"%s causing %5.2f damage to %s\n",param_1,
+                          (g_CConsole_PTR_005ad350,"%s causing %5.2f damage to %s\n",this_ptr,
                            (double)uStack_26c._4_4_,pCVar5);
                 core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,uStack_26c._4_4_);
                 in_stack_fffffd70 = (CVector3f *)0x40b6e4;
-                (*((param_1->vtable)._ub)->playAttackHitEffects)
-                          (param_1,(int)param_2,(SDamageInfo *)&uStack_26c,(CDemonActor *)pCVar5);
+                (*((this_ptr->vtable)._ub)->playAttackHitEffects)
+                          (this_ptr,hit_type,(SDamageInfo *)&uStack_26c,(CDemonActor *)pCVar5);
               }
             }
           }
@@ -170,8 +167,8 @@ uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_
             if (iVar4 != 0) goto LAB_0040b4bd;
           }
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)auStack_194);
-          (*((param_1->vtable)._ub)->fillAttackDamageInfo)
-                    (param_1,(int)param_2,(SDamageInfo *)auStack_194,(CDemonActor *)pCVar3);
+          (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
+                    (this_ptr,hit_type,(SDamageInfo *)auStack_194,(CDemonActor *)pCVar3);
           in_stack_fffffd70 = (CVector3f *)(auStack_b0 + 4);
           in_stack_fffffd6c = (char *)pCVar3;
           (*(((pCVar3->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
@@ -182,10 +179,10 @@ uint core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_
             dVar9 = round(uStack_26c * 0.5 + 1.0);
             in_stack_fffffd70 = (CVector3f *)0x40b5ee;
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                      ((CGore *)INT_005b96c4,(CVector3f *)(auStack_a8 + 8),&CStack_40,
+                      (g_CGore_PTR_005b96c4,(CVector3f *)(auStack_a8 + 8),&CStack_40,
                        (int)ROUND(dVar9),iVar4);
-            (*((param_1->vtable)._ub)->playAttackHitEffects)
-                      (param_1,(int)param_2,(SDamageInfo *)auStack_178,(CDemonActor *)pCVar3);
+            (*((this_ptr->vtable)._ub)->playAttackHitEffects)
+                      (this_ptr,hit_type,(SDamageInfo *)auStack_178,(CDemonActor *)pCVar3);
           }
         }
       }
@@ -194,19 +191,19 @@ LAB_0040b4bd:
     }
   }
   if (CStack_40.z == 1.4013e-45) {
-    core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,1);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
-    core_setcolid_cpp_FUN_00511740(0x01E57284);
+    core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,this_ptr);
+    core_setcolid_cpp_FUN_00511740(g_CDemonSet_PTR_005be368);
     if (pCStack_1c != (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,pCStack_1c);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCStack_1c);
     }
     fStack_28 = 0.0;
     while ((fVar7 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
-                              (0x01E57284,(CVector3f *)auStack_b0,(CVector3f *)(auStack_c0 + 4)),
-           0.0 <= fVar7 && (fVar7 <= 1.0))) {
+                              (g_CDemonSet_PTR_005be368,(CVector3f *)auStack_b0,
+                               (CVector3f *)(auStack_c0 + 4)), 0.0 <= fVar7 && (fVar7 <= 1.0))) {
       pCVar3 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                         (g_CDemonSet_PTR_005be368->collision_actor,
                           g_CCharacterActorType_00765a60.name_hash);
       if ((pCVar3 != (CCharacter *)0x0) &&
          (EVar8 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3), 0 < (int)EVar8)) {
@@ -214,66 +211,62 @@ LAB_0040b4bd:
       }
       pCVar6 = (CGlass *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                         (g_CDemonSet_PTR_005be368->collision_actor,
                           g_CGlassActorType_01c78c40.name_hash);
       CStack_34.x = (float)core_actor_cpp_castToClassHash_FUN_0040d890
-                                     (*(CDemonActor **)
-                                       (0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                                     (g_CDemonSet_PTR_005be368->collision_actor,
                                       g_CTriggerActorType_02dd1084.name_hash);
       pCStack_14 = (CTrigger *)CStack_34.x;
       CStack_34.y = (float)core_actor_cpp_castToClassHash_FUN_0040d890
-                                     (*(CDemonActor **)
-                                       (0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                                     (g_CDemonSet_PTR_005be368->collision_actor,
                                       g_CCrateActorType_0077bd40.name_hash);
-      this_ptr = (CFlameCan *)
-                 core_actor_cpp_castToClassHash_FUN_0040d890
-                           (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
-                            g_CFlameCanActorType_01c70654.name_hash);
+      this_ptr_00 = (CFlameCan *)
+                    core_actor_cpp_castToClassHash_FUN_0040d890
+                              (g_CDemonSet_PTR_005be368->collision_actor,
+                               g_CFlameCanActorType_01c70654.name_hash);
       pCVar5 = pCStack_14;
       if (pCVar3 == (CCharacter *)0x0) {
         if (pCVar6 == (CGlass *)0x0) {
           if (pCStack_14 == (CTrigger *)0x0) {
             if ((CCrate *)CStack_34.y == (CCrate *)0x0) {
-              if (this_ptr == (CFlameCan *)0x0) {
+              if (this_ptr_00 == (CFlameCan *)0x0) {
                 return 0;
               }
-              core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(this_ptr);
+              core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(this_ptr_00);
             }
             else {
               core_crate_cpp_CCrate_explode_FUN_0043cdb0((CCrate *)CStack_34.y);
             }
           }
           else {
-            iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0(pCStack_14,param_1);
+            iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0(pCStack_14,this_ptr);
             if (iVar4 != 0) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)(auStack_178 + 0x20));
-              (*((param_1->vtable)._ub)->fillAttackDamageInfo)
-                        (param_1,(int)param_2,(SDamageInfo *)(auStack_178 + 0x20),&pCVar5->base);
+              (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
+                        (this_ptr,hit_type,(SDamageInfo *)(auStack_178 + 0x20),&pCVar5->base);
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (PTR_DAT_005ad350,"%s causing %5.2f damage to %s\n",param_1,
+                        (g_CConsole_PTR_005ad350,"%s causing %5.2f damage to %s\n",this_ptr,
                          (double)(float)auStack_148._4_4_,pCVar5);
               core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,(float)auStack_148._4_4_);
-              (*((param_1->vtable)._ub)->playAttackHitEffects)
-                        (param_1,(int)param_2,(SDamageInfo *)(auStack_178 + 0x30),unaff_retaddr);
+              (*((this_ptr->vtable)._ub)->playAttackHitEffects)
+                        (this_ptr,hit_type,(SDamageInfo *)(auStack_178 + 0x30),unaff_retaddr);
             }
-            core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,(CDemonActor *)CStack_34.x)
-            ;
+            core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                      (g_CDemonSet_PTR_005be368,(CDemonActor *)CStack_34.x);
           }
         }
         else {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)(auStack_1f4 + 0x24));
-          (*((param_1->vtable)._ub)->fillAttackDamageInfo)
-                    (param_1,(int)param_2,(SDamageInfo *)(auStack_1f4 + 0x24),(CDemonActor *)pCVar6)
-          ;
-          (*((param_1->vtable)._ub)->playAttackHitEffects)
-                    (param_1,(int)param_2,(SDamageInfo *)(auStack_1d0 + 0x10),(CDemonActor *)pCVar6)
-          ;
+          (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
+                    (this_ptr,hit_type,(SDamageInfo *)(auStack_1f4 + 0x24),(CDemonActor *)pCVar6);
+          (*((this_ptr->vtable)._ub)->playAttackHitEffects)
+                    (this_ptr,hit_type,(SDamageInfo *)(auStack_1d0 + 0x10),(CDemonActor *)pCVar6);
           iVar4 = core_glass_cpp_FUN_004aded0(pCVar6);
           if (iVar4 == 0) {
             return 0;
           }
           core_glass_cpp_CGlass_shatter_FUN_004ada20
-                    (pCVar6,(CVector3f *)(0x01E57284->lights[199].filter_names[0x13] + 0xc));
+                    (pCVar6,&g_CDemonSet_PTR_005be368->collision_impact_position);
         }
       }
       else if (((pCStack_1c == (CDemonActor *)0x0) ||
@@ -281,16 +274,15 @@ LAB_0040b4bd:
               (iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(pCStack_18,"CHero"),
               iVar4 == 0)) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)auStack_20c);
-        auStack_20c._0_4_ = *(uint *)(0x01E57284->lights[199].filter_names[0x13] + 0x1c);
-        (*((param_1->vtable)._ub)->fillAttackDamageInfo)
-                  (param_1,(int)param_2,(SDamageInfo *)auStack_20c,&pCVar3->base);
-        CStack_74.y = *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x18) -
-                      *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0xc);
-        CStack_74.z = *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x1c) -
-                      *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x10);
+        auStack_20c._0_4_ = g_CDemonSet_PTR_005be368->collision_part_index;
+        (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
+                  (this_ptr,hit_type,(SDamageInfo *)auStack_20c,&pCVar3->base);
+        CStack_74.y = (g_CDemonSet_PTR_005be368->ray_target).x -
+                      (g_CDemonSet_PTR_005be368->ray_origin).x;
+        CStack_74.z = (g_CDemonSet_PTR_005be368->ray_target).y -
+                      (g_CDemonSet_PTR_005be368->ray_origin).y;
         auStack_68._0_4_ =
-             *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x20) -
-             *(float *)(0x01E57284->lights[199].filter_names[0x12] + 0x14);
+             (g_CDemonSet_PTR_005be368->ray_target).z - (g_CDemonSet_PTR_005be368->ray_origin).z;
         CStack_40.z = (float)10 /
                       SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +
                            CStack_74.y * CStack_74.y + CStack_74.z * CStack_74.z);
@@ -304,7 +296,7 @@ LAB_0040b4bd:
         }
         pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                            (&pCVar3->base,&CStack_34,
-                            (CVector3f *)(0x01E57284->lights[199].filter_names[0x13] + 0xc));
+                            &g_CDemonSet_PTR_005be368->collision_impact_position);
         if ((CVector3f *)(auStack_1f4 + 0x14) != pCVar2) {
           CStack_1e0.x = pCVar2->x;
           CStack_1e0.y = pCVar2->y;
@@ -312,11 +304,10 @@ LAB_0040b4bd:
         }
         (*(((pCVar3->base).vtable._uc)->_uc).processDamage)
                   (pCVar3,(SDamageInfo *)(auStack_20c + 0x10));
-        (*((param_1->vtable)._ub)->playAttackHitEffects)
-                  (param_1,(int)param_2,(SDamageInfo *)auStack_1f4,&pCVar3->base);
+        (*((this_ptr->vtable)._ub)->playAttackHitEffects)
+                  (this_ptr,hit_type,(SDamageInfo *)auStack_1f4,&pCVar3->base);
         core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                  (0x01E57284,
-                   *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18));
+                  (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->collision_actor);
       }
       fStack_28 = (float)((int)fStack_28 + 1);
       if (3 < (int)fStack_28) {

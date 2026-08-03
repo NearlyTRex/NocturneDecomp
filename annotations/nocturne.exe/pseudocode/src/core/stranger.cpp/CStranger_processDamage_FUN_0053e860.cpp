@@ -11,7 +11,7 @@ void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDama
 {
   CDeformableModelInstance *this_ptr;
   CCharacter_full_vtable *pCVar1;
-  byte *puVar2;
+  CConsole *pCVar2;
   CGame *pCVar3;
   int iVar4;
   CVector3f *pCVar5;
@@ -23,10 +23,10 @@ void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDama
   float local_18;
   float local_14;
   
-  if (0x01C775EC->god_mode_enabled != 0) {
+  if (g_CGame_PTR_005b9354->god_mode_enabled != 0) {
     param_2->damage_amount = 0.0;
   }
-  if (0x01C775EC->allow_damage_flag == 0) {
+  if (g_CGame_PTR_005b9354->allow_damage_flag == 0) {
     param_2->damage_amount = 0.0;
   }
   core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(param_1);
@@ -39,16 +39,17 @@ void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDama
   if (iVar4 != 0) {
     param_1->invincibility_timer = 0.15;
   }
-  pCVar3 = 0x01C775EC;
+  pCVar3 = g_CGame_PTR_005b9354;
   (param_1->base).hit_points = (param_1->base).hit_points - param_2->damage_amount;
-  puVar2 = PTR_DAT_005ad350;
+  pCVar2 = g_CConsole_PTR_005ad350;
   if (((pCVar3->auto_use_health != 0) && (0xb < (int)param_2->damage_type)) &&
      ((param_1->base).hit_points <= 0.0)) {
     (param_1->base).hit_points = 0.0;
-    engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar2);
+    engine_console_cpp_CConsole_printf_FUN_0043ac60(pCVar2);
     core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(&param_1->inventory);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"hit points: %3.2f\n",(double)(param_1->base).hit_points);
+              (g_CConsole_PTR_005ad350,"hit points: %3.2f\n",(double)(param_1->base).hit_points
+              );
   }
   local_28.y = 0.0;
   local_28.z = 1.0;
@@ -84,7 +85,7 @@ void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDama
   local_28.x = local_28.x * local_18;
   local_28.y = local_28.y * local_18;
   local_28.z = local_28.z * local_18;
-  xxx_unk_c_FUN_004940d0(INT_005b9284,local_28.x);
+  xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284,local_28.x);
   this_ptr = &(param_1->base).model;
   if ((param_1->base).hit_points <= 0.0) {
     pCVar1 = (param_1->base).base.vtable._uc;
@@ -124,7 +125,7 @@ void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDama
           param_1[1].base.model.transformed_vertices[0x13].z = fVar8;
         }
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-                  ((CGore *)INT_005b96c4,(CDemonActor *)param_1,0x32,50.0,(CVector3f *)0x0);
+                  (g_CGore_PTR_005b96c4,(CDemonActor *)param_1,0x32,50.0,(CVector3f *)0x0);
       }
     }
     if ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y ==
@@ -164,7 +165,7 @@ LAB_0053ec87:
   }
 LAB_0053eb7b:
   if (0.0 < param_2->damage_amount) {
-    core_game_cpp_FUN_004a3a90(0x01C775EC);
+    core_game_cpp_FUN_004a3a90(g_CGame_PTR_005b9354);
   }
   core_charactr_cpp_CCharacter_processDamage_FUN_00428510(&param_1->base,param_2);
   return;

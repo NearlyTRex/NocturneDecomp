@@ -45,7 +45,7 @@ void CDoor::renderBackground(CDemonActor *param_1,int param_2);
 
 // Original: core_door.cpp_CDoor_getBoundingBox_FUN_00455e90
 // Address: 00455e90
-undefined4 * CDoor::getBoundingBox(int param_1,undefined4 *param_2);
+float * CDoor::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_door.cpp_CDoor_archive_FUN_00455ee0
 // Address: 00455ee0

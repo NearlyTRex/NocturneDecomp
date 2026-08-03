@@ -31,11 +31,11 @@
 ;   TerminatedCString s_CGame_rollCredits_Out_of_005846a2
 ;   TerminatedCString s_faded_remix_mp3_005846c5
 ;   float FLOAT_005846d6 = 32
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_014b9900
-;   undefined4 DAT_01cc30e4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
+;   CBitFont* g_CBitFont_PTR_014b9900
+;   CKeys g_CKeys_01cc30e4
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01d16810
 ;
 ; Called Functions:
@@ -150,7 +150,7 @@ section .text
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
         ;   Label: LAB_004a6f8f
     PUSH 0x58                           ; 004a6f94
-    MOV EDI,dword ptr [0x014b9900]      ; 004a6f96 | DAT_014b9900
+    MOV EDI,dword ptr [0x014b9900]      ; 004a6f96 | g_CBitFont_PTR_014b9900
     PUSH EDI                            ; 004a6f9c
     MOV dword ptr [EDI + 0x3190],0x0    ; 004a6f9d
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004a6fa7
@@ -271,9 +271,9 @@ section .text
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
         ;   Label: LAB_004a7103
     PUSH 0x1                            ; 004a7108
-    MOV EAX,[0x005bac64]                ; 004a710a | INT_005bac64
-    PUSH EAX                            ; 004a710f | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004a7110 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004a710a | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004a710f | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 004a7110 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 004a7112
     ADD ESP,0x8                         ; 004a7114
     TEST EAX,EAX                        ; 004a7117
@@ -348,8 +348,8 @@ section .text
         ;   Label: LAB_004a71d0
     MOV EAX,0x1242                      ; 004a71d5
     PUSH 0x5846a2                       ; 004a71da | = "CGame::rollCredits - Out of memory"
-    MOV dword ptr [0x01cc4800],EDI      ; 004a71df | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004a71e5 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 004a71df | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004a71e5 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004a71ea
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004a71ef

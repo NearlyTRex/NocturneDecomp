@@ -46,8 +46,8 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlac
     class_name = "CMoloch";
     break;
   default:
-    PTR_01cc4800 = "..\\core\\hero.cpp";
-    INT_01cc4804 = 0x578;
+    g_CHAR_PTR_01cc4800 = "..\\core\\hero.cpp";
+    g_INT_01cc4804 = 0x578;
     core_main_c_FUN_004c8440("CHeroPlaceholder::createHero - invalid hero type.");
     goto LAB_004b60b9;
   }
@@ -56,11 +56,12 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlac
   actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash);
 LAB_004b60b9:
   if (actor == (CHero *)0x0) {
-    PTR_01cc4800 = "..\\core\\hero.cpp";
-    INT_01cc4804 = 0x57d;
+    g_CHAR_PTR_01cc4800 = "..\\core\\hero.cpp";
+    g_INT_01cc4804 = 0x57d;
     core_main_c_FUN_004c8440("CHeroPlaceholder::createHero - failed.");
   }
-  core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,(CDemonActor *)actor);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
+            (g_CDemonMission_PTR_005baf90,(CDemonActor *)actor);
   (actor->base).base.location.position.x = (this_ptr->base).location.position.x;
   (actor->base).base.location.position.y = (this_ptr->base).location.position.y;
   (actor->base).base.location.position.z = (this_ptr->base).location.position.z;

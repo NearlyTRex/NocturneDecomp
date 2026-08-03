@@ -39,14 +39,15 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *name,
   else {
     iVar2 = _stricmp(name,"$");
     if (iVar2 != 0) {
-      actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(0x01CC9450,name);
+      actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
+                            (g_CDemonMission_PTR_005baf90,name);
       if (actor_ptr == (CDemonActor *)0x0) {
         _sprintf(&DAT_01c08b60,"Actor \"%s\" does not exist.",name);
         return (CDemonActor *)0x0;
       }
       goto LAB_0047a41f;
     }
-    if (*0x01CEA280 != 0) {
+    if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
       _sprintf(&DAT_01c08b60,"Can't use '$' actor specifier in multi-player");
       return (CDemonActor *)0x0;
     }

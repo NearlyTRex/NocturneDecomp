@@ -9,25 +9,26 @@
 void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
-  int iVar1;
-  int *piVar2;
+  CDemonSet *pCVar1;
+  CVector3f *pCVar2;
+  CVector3f *pCVar3;
   char local_110 [256];
   
   core_setutil_cpp_FUN_00514470(this_ptr);
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
   _fgets(local_110,0xff,file_handle);
   sscanf(local_110,"%s\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
   _fscanf(file_handle,"%f,%f,%f\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
   _fscanf(file_handle,"%f,%f,%f\n");
-  if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
   _fscanf(file_handle,"%f\n");
@@ -35,35 +36,36 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(C3DSCamera *this_ptr,
   _fscanf(file_handle,"%f,%f,%f\n");
   _fscanf(file_handle,"%f,%f,%f\n");
   _fscanf(file_handle,"%f,%f,%f\n");
-  iVar1 = 0x01E57284;
-  if (*(int *)(0x01E57284 + 0x15a8c4) < 0x12) {
-    this_ptr->camera_group = 1;
-    this_ptr->fog_enabled = *(int *)(iVar1 + 0x15a848);
-    (this_ptr->fog).color_index.r = *(int *)(iVar1 + 0x15a84c);
-    piVar2 = &(this_ptr->fog).color_index.b;
-    (this_ptr->fog).color_index.g = *(int *)(iVar1 + 0x15a850);
-    if (piVar2 != (int *)(iVar1 + 0x15a854)) {
-      *piVar2 = *(int *)(iVar1 + 0x15a854);
-      (this_ptr->fog).scroll.x = *(float *)(iVar1 + 0x15a858);
-      (this_ptr->fog).scroll.y = *(float *)(iVar1 + 0x15a85c);
+  pCVar1 = g_CDemonSet_PTR_005be368;
+  if (g_CDemonSet_PTR_005be368->set_file_version < 0x12) {
+    this_ptr->fog_enabled = 1;
+    (this_ptr->fog).color_index.r = (pCVar1->scene_fog).color_index.r;
+    (this_ptr->fog).color_index.g = (pCVar1->scene_fog).color_index.g;
+    pCVar3 = &(this_ptr->fog).scroll;
+    pCVar2 = &(pCVar1->scene_fog).scroll;
+    (this_ptr->fog).color_index.b = (pCVar1->scene_fog).color_index.b;
+    if (pCVar3 != pCVar2) {
+      pCVar3->x = pCVar2->x;
+      (this_ptr->fog).scroll.y = (pCVar1->scene_fog).scroll.y;
+      (this_ptr->fog).scroll.z = (pCVar1->scene_fog).scroll.z;
     }
-    (this_ptr->fog).scroll.z = *(float *)(iVar1 + 0x15a860);
-    (this_ptr->fog).height_threshold = *(float *)(iVar1 + 0x15a864);
-    (this_ptr->fog).density_multiplier = *(float *)(iVar1 + 0x15a868);
+    (this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;
+    (this_ptr->fog).density_multiplier = (pCVar1->scene_fog).density_multiplier;
+    (this_ptr->fog).temperature = (pCVar1->scene_fog).temperature;
   }
   else {
     _fscanf(file_handle,"%d\n");
-    if (this_ptr->camera_group == 0) {
+    if (this_ptr->fog_enabled == 0) {
       core_dcamera_cpp_loadCameraFog_FUN_00447d10
-                ((SFog *)&this_ptr->fog_enabled,file_handle,*(int *)(0x01E57284 + 0x15a8c4));
+                (&this_ptr->fog,file_handle,g_CDemonSet_PTR_005be368->set_file_version);
     }
   }
-  if (0x16 < *(int *)(0x01E57284 + 0x15a8c4)) {
+  if (0x16 < g_CDemonSet_PTR_005be368->set_file_version) {
     _fgets(local_110,0xff,file_handle);
     _fscanf(file_handle,"%f,%f,%f\n");
     _fscanf(file_handle,"%f,%f,%f\n");
   }
-  if (*(int *)(0x01E57284 + 0x15a8c4) < 0x17) {
+  if (g_CDemonSet_PTR_005be368->set_file_version < 0x17) {
     return;
   }
   _fgets(local_110,0xff,file_handle);

@@ -29,7 +29,7 @@ uint core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,CD
     local_24 = local_18 - pCVar2->z;
     local_28 = 0.0;
     local_10 = SQRT(local_24 * local_24 + local_2c * local_2c);
-    local_14 = *(float *)(0x01C775EC + 0x264) * (float)5;
+    local_14 = g_CGame_PTR_005b9354->delta_time_float * (float)5;
     if (local_14 < local_10) {
       local_c = local_14 / local_10;
       local_2c = local_2c * local_c;

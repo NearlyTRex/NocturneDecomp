@@ -8,8 +8,8 @@
 ; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c777f0
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.big_hat_cheat
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_canPickup_FUN_00554260
@@ -18,9 +18,9 @@
 
 section .text
 
-    MOV EAX,[0x005b9354]                ; 0054b030 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 0054b030 | g_CGame_PTR_005b9354
         ;   Label: core_turret.cpp_CTurret_canPickup_FUN_0054b030
-    CMP dword ptr [EAX + 0x204],0x0     ; 0054b035 | DAT_01c777f0
+    CMP dword ptr [EAX + 0x204],0x0     ; 0054b035 | g_CGame_01c775ec.big_hat_cheat
     JNZ 0x0054b041                      ; 0054b03c
         ;   XREF to: 0054b041 (CONDITIONAL_JUMP)  ; LAB_0054b041
     XOR EAX,EAX                         ; 0054b03e

@@ -11,9 +11,8 @@ void __cdecl core_boxactor_cpp_FUN_0041f6e0(CLightActor *this_ptr)
 {
   CKeyFramedModelInstance *this_ptr_00;
   ELightActorType EVar1;
-  CDemonLight *pCVar2;
-  float fVar3;
-  int iVar4;
+  float fVar2;
+  int iVar3;
   CDemonFilter *this_ptr_01;
   char acStack_d0 [40];
   CBoundingBox3D local_a8;
@@ -41,23 +40,16 @@ void __cdecl core_boxactor_cpp_FUN_0041f6e0(CLightActor *this_ptr)
                 (this_ptr_00,"flashlit.kfm");
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(this_ptr_00);
       (*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,&local_90);
-      fVar3 = 0.5f;
+      fVar2 = 0.5f;
       (this_ptr->blight_pos).x = (local_90.min.x + local_90.max.x) * 0.5f;
-      (this_ptr->blight_pos).y = (local_90.min.y + local_90.max.y) * fVar3;
+      (this_ptr->blight_pos).y = (local_90.min.y + local_90.max.y) * fVar2;
       (this_ptr->blight_pos).z = local_90.max.z + (float)0.10000000000000001;
       (this_ptr->light_orient).vec.z = 0.0;
       (this_ptr->light_orient).vec.y = (this_ptr->light_orient).vec.z;
       (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
       (this_ptr->light).light_enabled_flag = 0;
-      (local_18->base).camera_name[0xf8] = '\0';
-      (local_18->base).camera_name[0xf9] = '\0';
-      (local_18->base).camera_name[0xfa] = '`';
-      (local_18->base).camera_name[0xfb] = 'B';
-      pCVar2 = &this_ptr->light;
-      (pCVar2->base).camera_name[0xc0] = '\0';
-      (pCVar2->base).camera_name[0xc1] = '\0';
-      (pCVar2->base).camera_name[0xc2] = '\0';
-      (pCVar2->base).camera_name[0xc3] = 'B';
+      (local_18->base).focal_length = 56.0;
+      (this_ptr->light).base.fixed_point_scale = 32.0;
       (this_ptr->base).pickup_type = 3;
       return;
     }
@@ -87,30 +79,23 @@ void __cdecl core_boxactor_cpp_FUN_0041f6e0(CLightActor *this_ptr)
       (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
       (this_ptr->light_orient).vec.x = 0.2617994;
       (this_ptr->light).light_enabled_flag = 0;
-      (local_18->base).camera_name[0xf8] = '\0';
-      (local_18->base).camera_name[0xf9] = '\0';
-      (local_18->base).camera_name[0xfa] = '`';
-      (local_18->base).camera_name[0xfb] = 'B';
-      pCVar2 = &this_ptr->light;
-      (pCVar2->base).camera_name[0xc0] = '\0';
-      iVar4 = DAT_007647fc;
-      (pCVar2->base).camera_name[0xc1] = '\0';
-      (pCVar2->base).camera_name[0xc2] = '\0';
-      (pCVar2->base).camera_name[0xc3] = 'B';
+      (local_18->base).focal_length = 56.0;
+      (this_ptr->light).base.fixed_point_scale = 32.0;
+      iVar3 = DAT_007647fc;
       (this_ptr->base).pickup_type = 3;
-      if (iVar4 == 0) {
-        this_ptr_01 = (CDemonFilter *)&DAT_0076483c;
-        iVar4 = 0;
+      if (iVar3 == 0) {
+        this_ptr_01 = g_CDemonFilter_ARRAY_0076483c;
+        iVar3 = 0;
         do {
-          _sprintf(acStack_d0,"lantern%d.raw",iVar4);
-          iVar4 = iVar4 + 1;
+          _sprintf(acStack_d0,"lantern%d.raw",iVar3);
+          iVar3 = iVar3 + 1;
           core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(this_ptr_01,acStack_d0);
           this_ptr_01 = this_ptr_01 + 1;
-        } while (iVar4 < 8);
+        } while (iVar3 < 8);
         DAT_007647fc = 1;
       }
       core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0
-                (&this_ptr->light,(CDemonFilter *)&DAT_0076483c,0,0,0);
+                (&this_ptr->light,g_CDemonFilter_ARRAY_0076483c,0,0,0);
       return;
     }
   }

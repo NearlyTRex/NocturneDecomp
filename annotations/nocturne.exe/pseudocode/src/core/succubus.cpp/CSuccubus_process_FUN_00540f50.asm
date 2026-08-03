@@ -42,7 +42,7 @@
 ;   float FLOAT_005a28c8 = 1.5
 ;   float FLOAT_005a28d4 = 15
 ;   float FLOAT_005a28d8 = 4
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b7650
 ;   ... and 3 more
 ;
@@ -328,7 +328,7 @@ section .text
     JZ 0x0054131f                       ; 00541211
         ;   XREF to: 0054131f (CONDITIONAL_JUMP)  ; LAB_0054131f
     PUSH ESI                            ; 00541217
-    MOV EDI,dword ptr [0x005baf90]      ; 00541218 | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 00541218 | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 0054121e | DAT_01cc9450
     MOV dword ptr [EBX + 0x70],0x2      ; 0054121f
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 00541226
@@ -401,7 +401,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10c]     ; 005412d9
     PUSH ESI                            ; 005412df
     MOV dword ptr [ESI + 0x10c],EAX     ; 005412e0
-    MOV EDI,dword ptr [0x005baf90]      ; 005412e6 | DAT_005baf90
+    MOV EDI,dword ptr [0x005baf90]      ; 005412e6 | g_CDemonMission_PTR_005baf90
     MOV EAX,dword ptr [EBX + 0x110]     ; 005412ec
     PUSH EDI                            ; 005412f2 | DAT_01cc9450
     MOV dword ptr [ESI + 0x110],EAX     ; 005412f3
@@ -474,8 +474,8 @@ section .text
     ADD ESP,0xc                         ; 005413ab
     PUSH EBX                            ; 005413ae
     PUSH 0x59614c                       ; 005413af | = "%s confused while walking to scriptDe..."
-    MOV ECX,dword ptr [0x005ad350]      ; 005413b4 | PTR_DAT_005ad350
-    PUSH ECX                            ; 005413ba | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 005413b4 | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 005413ba | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005413bb
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     JMP 0x00541075                      ; 005413c0

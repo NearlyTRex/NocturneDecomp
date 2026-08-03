@@ -25,9 +25,9 @@
 ;   core_svetlana.cpp_CSvetlana_processDamage_FUN_00542e90 at 00542f3b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 DAT_01c775ec
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CGame g_CGame_01c775ec
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -150,7 +150,7 @@ section .text
     PUSH ESI                            ; 004285e9
     LEA EAX,[ESP + 0x1c]                ; 004285ea
     PUSH EAX                            ; 004285ee
-    MOV EAX,[0x005b96c4]                ; 004285ef | INT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004285ef | g_CGore_PTR_005b96c4
     PUSH EAX                            ; 004285f4
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004285f5
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
@@ -171,8 +171,8 @@ section .text
     LEA EAX,[EBX + 0x2440]              ; 00428629
     FSTP float ptr [ESP]                ; 0042862f
     PUSH EAX                            ; 00428632
-    MOV ESI,dword ptr [0x005b9354]      ; 00428633 | DAT_005b9354
-    PUSH ESI                            ; 00428639 | DAT_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 00428633 | g_CGame_PTR_005b9354
+    PUSH ESI                            ; 00428639 | g_CGame_01c775ec
     CALL core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0 ; 0042863a
         ;   XREF to: 004a3ab0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame * this_ptr, char * name, int value, float duration)
     ADD ESP,0x10                        ; 0042863f

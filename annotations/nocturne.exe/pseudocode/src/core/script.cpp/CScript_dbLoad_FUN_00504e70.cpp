@@ -32,8 +32,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
   }
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60("world",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\core\\script.cpp";
-    INT_01cc4804 = 0xec2;
+    g_CHAR_PTR_01cc4800 = "..\\core\\script.cpp";
+    g_INT_01cc4804 = 0xec2;
     core_main_c_FUN_004c8440("Can't open world\\%s",filename);
   }
   lVar2 = _ftell(file_handle);
@@ -47,8 +47,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
     }
     iVar3 = _fscanf(file_handle,"%[^,], %[^,], %[^\n]\n");
     if (iVar3 != 3) {
-      PTR_01cc4800 = "..\\core\\script.cpp";
-      INT_01cc4804 = 0xed6;
+      g_CHAR_PTR_01cc4800 = "..\\core\\script.cpp";
+      g_INT_01cc4804 = 0xed6;
       core_main_c_FUN_004c8440
                 ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
     }
@@ -84,7 +84,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
     iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_00505180(this_ptr,local_334);
     if (-1 < iVar3) {
       shape_edittool_cpp_FUN_0046fcd0
-                (0x01BCD074,"Warning! Duplicate wav string %s detected in %s",local_334,filename);
+                (g_CEditorTools_PTR_005b6d50,"Warning! Duplicate wav string %s detected in %s",local_334,filename)
+      ;
     }
     _sprintf(local_2f8,"%s.wav",local_334);
     iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",local_2f8);
@@ -110,8 +111,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
     pSVar4 = (SDialogEntry *)realloc(this_ptr->dialog_entries,iVar3 * 0x226);
     this_ptr->dialog_entries = pSVar4;
     if (pSVar4 == (SDialogEntry *)0x0) {
-      PTR_01cc4800 = "..\\core\\script.cpp";
-      INT_01cc4804 = 0xefb;
+      g_CHAR_PTR_01cc4800 = "..\\core\\script.cpp";
+      g_INT_01cc4804 = 0xefb;
       core_main_c_FUN_004c8440("SCScipt::dbLoad - out of memory");
     }
     pcVar6 = local_334;

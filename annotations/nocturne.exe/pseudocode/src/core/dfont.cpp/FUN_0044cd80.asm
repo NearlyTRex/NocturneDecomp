@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_014b98f8
+;   CBitFont* g_CBitFont_PTR_014b98f8
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_remapPalette_FUN_004931b0
@@ -14,7 +14,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x014b98f8]      ; 0044cd80 | DAT_014b98f8
+    MOV EDX,dword ptr [0x014b98f8]      ; 0044cd80 | g_CBitFont_PTR_014b98f8
         ;   Label: core_dfont.cpp_FUN_0044cd80
     PUSH EDX                            ; 0044cd86
     CALL engine_font.cpp_CBitFont_remapPalette_FUN_004931b0 ; 0044cd87

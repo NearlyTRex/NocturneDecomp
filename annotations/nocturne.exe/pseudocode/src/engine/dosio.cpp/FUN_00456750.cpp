@@ -12,8 +12,8 @@ void engine_dosio_cpp_FUN_00456750(uint param_1)
 
 {
   if (4 < _DAT_01af4ed8) {
-    PTR_01cc4800 = "..\\engine\\dosio.c";
-    INT_01cc4804 = 0x4d;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\dosio.c";
+    g_INT_01cc4804 = 0x4d;
     core_main_c_FUN_004c8440("addGetFileInfoHook - too many!");
   }
   *(uint *)(_DAT_01af4ed8 * 4 + 0x1af4edc) = param_1;

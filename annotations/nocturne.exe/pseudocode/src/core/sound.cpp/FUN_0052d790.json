@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,64 +56,64 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "other",
-        "column": 38,
-        "line": 46,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 46,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_02dc9d54'"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 47,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
+        "category": "undeclared_identifier",
+        "column": 21,
         "line": 48,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0'"
+        "message": "use of undeclared identifier '_DAT_02dc945c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
         "line": 49,
-        "message": "use of undeclared identifier '_DAT_02dc945c'"
+        "message": "use of undeclared identifier '_DAT_02dc9460'; did you mean 'DAT_02DE9460'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
         "line": 50,
-        "message": "use of undeclared identifier '_DAT_02dc9460'; did you mean 'DAT_02DE9460'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 51,
         "message": "use of undeclared identifier '_DAT_02dc9464'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier '_DAT_02dc945c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 55,
+        "line": 54,
         "message": "use of undeclared identifier '_DAT_02dc9464'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 57,
+        "line": 56,
         "message": "use of undeclared identifier '_DAT_02dc9460'; did you mean 'DAT_02DE9460'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 60,
+        "message": "use of undeclared identifier 'PTR_s_int_005bed60'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 63,
+        "message": "use of undeclared identifier 'PTR_s_int_005bed60'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 66,
+        "message": "use of undeclared identifier '_DAT_02dc9d54'"
       }
     ],
     "success": false,
@@ -122,23 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 328,
+    "complexity_score": 292,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 25,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 183,
-    "suspect_count": 11,
+    "pseudocode_lines": 182,
+    "suspect_count": 8,
     "suspect_types": [
       "extra_output",
       "nan_function_artifact",
-      "shadow_pointer_walk",
       "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 535
+    "total_lines": 534
   },
   "cross_references": [],
   "function": {
@@ -317,15 +316,15 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005bed60",
@@ -341,9 +340,9 @@
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "02dc945c",
@@ -505,24 +504,8 @@
       "type": "extra_output"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_02dc9ca4",
-      "severity": "mild",
-      "text": "pCVar6 = (CVector3f *)&DAT_02dc9ca4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_02dc9cac",
-      "severity": "mild",
-      "text": "if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar9))) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 128,
+      "line": 127,
       "match": "NAN(",
       "severity": "severe",
       "text": "uVar5 = (uint)(ushort)((ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
@@ -530,7 +513,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 133,
       "match": "DAT_005bef88",
       "severity": "mild",
       "text": "puVar8 = &DAT_005bef88;",
@@ -538,7 +521,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 176,
       "match": "DAT_02dc9d44",
       "severity": "mild",
       "text": "sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);",
@@ -546,7 +529,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 183,
+      "line": 182,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "return extraout_EAX;",
@@ -554,7 +537,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 157,
+      "line": 156,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -562,19 +545,11 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 137,
+      "line": 136,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar6) + offsetof(subfield)` equals the real array stride. Replace `pCVar6->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 125,
-      "match": "pCVar6 = (T *)&pCVar6[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar6 = (CVector3f *)&pCVar6[1].y;",
-      "type": "shadow_pointer_walk"
     }
   ]
 }

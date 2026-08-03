@@ -33,8 +33,8 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube *t
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
   if (20000 < this_ptr->vertex_count) {
-    PTR_01cc4800 = "..\\core\\dcube.cpp";
-    INT_01cc4804 = 0x7bb;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcube.cpp";
+    g_INT_01cc4804 = 0x7bb;
     core_main_c_FUN_004c8440("CDemonCube::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",this_ptr->vertex_count,20000);
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);

@@ -17,8 +17,8 @@
 ;   TerminatedCString s_CPickList_enableItem_inv_0057ee71
 ;   TerminatedCString s_shape_edittool_cpp_0057ee97
 ;   TerminatedCString s_Out_of_memory_0057eead
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -45,8 +45,8 @@ section .text
         ;   Label: LAB_00475f94
     MOV EDI,0xdfa                       ; 00475f99
     PUSH 0x57ee71                       ; 00475f9e | = "CPickList::enableItem - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 00475fa3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00475fa9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00475fa3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00475fa9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00475faf
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00475fb4
@@ -93,8 +93,8 @@ section .text
         ;   Label: LAB_0047601a
     MOV EDI,0xe01                       ; 0047601f
     PUSH 0x57eead                       ; 00476024 | = "Out of memory"
-    MOV dword ptr [0x01cc4800],ECX      ; 00476029 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0047602f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00476029 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0047602f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00476035
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0047603a

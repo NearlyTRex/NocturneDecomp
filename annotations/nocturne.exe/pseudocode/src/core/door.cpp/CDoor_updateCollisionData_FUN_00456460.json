@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 14,
-        "message": "no matching function for call to 'core_setcolid_cpp_FUN_00511a10'"
       }
     ],
     "success": false,
@@ -68,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 54,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 10,
     "suspect_count": 4,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 35
+    "total_lines": 36
   },
   "cross_references": [],
   "function": {
@@ -108,15 +102,15 @@
   "globals": [
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01cc9450",
@@ -132,8 +126,8 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -189,18 +183,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(0x01CC9450 + 4) == 0) && (param_1->door_state == DOOR_STATE_CLOSED)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_door_cpp_CDoor_reposition_FUN_004552a0(param_1);",
+      "text": "(param_1->door_state == DOOR_STATE_CLOSED)) {",
       "type": "unnamed_param"
     },
     {
@@ -208,7 +194,15 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_setcolid_cpp_FUN_00511a10(0x01E57284,&param_1->base);",
+      "text": "core_door_cpp_CDoor_reposition_FUN_004552a0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&param_1->base);",
       "type": "unnamed_param"
     }
   ],

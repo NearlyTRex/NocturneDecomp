@@ -18,15 +18,15 @@
 ;   TerminatedCString s_CDemonMission_run_no_gLo_00589e18
 ;   TerminatedCString s_hq_geo_00589e3b
 ;   TerminatedCString s_Press_any_key_to_continu_00589e42
-;   undefined4 DAT_005b9354
-;   int INT_005baca0 = 0x1cc3160
-;   undefined4 DAT_005be368
-;   undefined4 DAT_014b9900
-;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01c77844
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CLevelLoader* g_CLevelLoader_PTR_005baca0 = 01cc3160
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CBitFont* g_CBitFont_PTR_014b9900
+;   CGame g_CGame_01c775ec
+;   undefined4 g_CGame_01c775ec.act_completion_state
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 DAT_01cae0e8
-;   char* PTR_01cc4800
+;   char* g_CHAR_PTR_01cc4800
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -70,8 +70,8 @@ section .text
     MOV EAX,0x589e04                    ; 004d9468 | = "..\\core\\mission.cpp"
     MOV EDX,0x4c8                       ; 004d946d
     PUSH 0x589e18                       ; 004d9472 | = "CDemonMission::run - no gLocalHero"
-    MOV [0x01cc4800],EAX                ; 004d9477 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004d947c | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004d9477 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004d947c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d9482
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d9487
@@ -90,8 +90,8 @@ section .text
     CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180 ; 004d94ac
         ;   XREF to: 004d9180 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180()
     ADD ESP,0x4                         ; 004d94b1
-    MOV ESI,dword ptr [0x005b9354]      ; 004d94b4 | DAT_005b9354
-    PUSH ESI                            ; 004d94ba | DAT_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004d94b4 | g_CGame_PTR_005b9354
+    PUSH ESI                            ; 004d94ba | g_CGame_01c775ec
     CALL core_game.cpp_CGame_runGameSession_FUN_0049da10 ; 004d94bb
         ;   XREF to: 0049da10 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_runGameSession_FUN_0049da10(CGame * this_ptr)
     MOV ESI,dword ptr [0x01cae0e8]      ; 004d94c0 | DAT_01cae0e8
@@ -124,9 +124,9 @@ section .text
     CALL core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90 ; 004d9506
         ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     ADD ESP,0xc                         ; 004d950b
-    MOV EAX,[0x005b9354]                ; 004d950e | DAT_005b9354 | DAT_01c775ec
+    MOV EAX,[0x005b9354]                ; 004d950e | g_CGame_PTR_005b9354 | g_CGame_01c775ec
         ;   Label: LAB_004d950e
-    CMP dword ptr [EAX + 0x258],0x0     ; 004d9513 | DAT_01c77844
+    CMP dword ptr [EAX + 0x258],0x0     ; 004d9513 | g_CGame_01c775ec.act_completion_state
     JNZ 0x004d9636                      ; 004d951a
         ;   XREF to: 004d9636 (CONDITIONAL_JUMP)  ; LAB_004d9636
     POP EBP                             ; 004d9520
@@ -138,14 +138,14 @@ section .text
         ;   Label: LAB_004d9525
     MOV ESI,0x4c7                       ; 004d952a
     PUSH 0x589ddf                       ; 004d952f | = "CDemonMission::run - hero list empty"
-    MOV dword ptr [0x01cc4800],ECX      ; 004d9534 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d953a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d9534 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d953a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d9540
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d9545
     JMP 0x004d9459                      ; 004d9548
         ;   XREF to: 004d9459 (UNCONDITIONAL_JUMP)  ; LAB_004d9459
-    MOV EAX,[0x005be368]                ; 004d954d | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004d954d | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d954d
     PUSH 0x589e3b                       ; 004d9552 | = "hq.geo"
     ADD EAX,0x14cd08                    ; 004d9557
@@ -160,7 +160,7 @@ section .text
     PUSH EBP                            ; 004d956f
     PUSH EAX                            ; 004d9570
     PUSH 0x9                            ; 004d9571
-    MOV ECX,dword ptr [0x005baca0]      ; 004d9573 | INT_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 004d9573 | g_CLevelLoader_PTR_005baca0
     PUSH ECX                            ; 004d9579
     MOV EDI,EBP                         ; 004d957a
     CALL core_level.cpp_CLevelLoader_show_FUN_004c5640 ; 004d957c
@@ -199,7 +199,7 @@ section .text
     PUSH EDI                            ; 004d95cd
     PUSH 0xf8                           ; 004d95ce
     PUSH 0x58                           ; 004d95d3
-    MOV ESI,dword ptr [0x014b9900]      ; 004d95d5 | DAT_014b9900
+    MOV ESI,dword ptr [0x014b9900]      ; 004d95d5 | g_CBitFont_PTR_014b9900
     PUSH ESI                            ; 004d95db
     MOV ESI,0x1df                       ; 004d95dc
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004d95e1
@@ -209,7 +209,7 @@ section .text
     LEA EAX,[ESI + -0x4]                ; 004d95eb
     PUSH EAX                            ; 004d95ee
     PUSH 0x27f                          ; 004d95ef
-    MOV EDI,dword ptr [0x014b9900]      ; 004d95f4 | DAT_014b9900
+    MOV EDI,dword ptr [0x014b9900]      ; 004d95f4 | g_CBitFont_PTR_014b9900
     PUSH EDI                            ; 004d95fa
     CALL engine_font.cpp_CBitFont_drawTextRight_FUN_00490be0 ; 004d95fb
         ;   XREF to: 00490be0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_00490be0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
@@ -222,20 +222,20 @@ section .text
         ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
     JMP 0x004d944d                      ; 004d9612
         ;   XREF to: 004d944d (UNCONDITIONAL_JUMP)  ; LAB_004d944d
-    MOV EAX,[0x005b9354]                ; 004d9617 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d9617 | g_CGame_PTR_005b9354
         ;   Label: LAB_004d9617
-    PUSH EAX                            ; 004d961c | DAT_01c775ec
+    PUSH EAX                            ; 004d961c | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayActStats_FUN_004a6680 ; 004d961d
         ;   XREF to: 004a6680 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayActStats_FUN_004a6680(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d9622
     PUSH -0x1                           ; 004d9625
     PUSH EBP                            ; 004d9627
     PUSH 0x9                            ; 004d9628
-    MOV EDX,dword ptr [0x005baca0]      ; 004d962a | INT_005baca0
+    MOV EDX,dword ptr [0x005baca0]      ; 004d962a | g_CLevelLoader_PTR_005baca0
     PUSH EDX                            ; 004d9630
     JMP 0x004d957c                      ; 004d9631
         ;   XREF to: 004d957c (UNCONDITIONAL_JUMP)  ; LAB_004d957c
-    PUSH EAX                            ; 004d9636 | DAT_01c775ec
+    PUSH EAX                            ; 004d9636 | g_CGame_01c775ec
         ;   Label: LAB_004d9636
     CALL core_game.cpp_CGame_finishAct_FUN_004a6a10 ; 004d9637
         ;   XREF to: 004a6a10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_finishAct_FUN_004a6a10(CGame * this_ptr)

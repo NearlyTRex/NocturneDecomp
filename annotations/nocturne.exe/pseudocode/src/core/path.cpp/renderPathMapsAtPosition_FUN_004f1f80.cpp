@@ -22,7 +22,8 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(CVector3f *posi
   int local_1c;
   
   bVar3 = 0;
-  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,position);
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
+            (&g_CDemonRaytrace_01fba938,position);
   local_28 = local_1c;
   *(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8) =
        *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
@@ -33,8 +34,8 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(CVector3f *posi
     iVar1 = 0;
     do {
       if (*(int *)(iVar1 + 0x1e312fc) == 0) {
-        PTR_01cc4800 = "..\\core\\path.cpp";
-        INT_01cc4804 = 0x6b5;
+        g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
+        g_INT_01cc4804 = 0x6b5;
         core_main_c_FUN_004c8440("Global pathmap list corruption");
       }
       this_ptr = *(CPathMap **)(iVar1 + 0x1e312fc);

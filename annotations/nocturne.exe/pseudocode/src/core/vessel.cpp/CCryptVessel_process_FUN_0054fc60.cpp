@@ -123,7 +123,7 @@ void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2
         if (0.0 <= param_2) {
           return;
         }
-        core_fire_cpp_FUN_0048c0d0(0x01C08D04,position,8.0,1500.0,4.0);
+        core_fire_cpp_FUN_0048c0d0(g_CFireEffect_PTR_005b80f0,position,8.0,1500.0,4.0);
         iVar8 = *(int *)(param_1 + 0x3a0);
         *(uint *)(param_1 + 0x3b4) = 0x3f800000;
         position->x = *(float *)(iVar8 + 0x20);

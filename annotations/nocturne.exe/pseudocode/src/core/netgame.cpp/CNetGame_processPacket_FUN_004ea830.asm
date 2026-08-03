@@ -58,8 +58,8 @@
 ;   double DOUBLE_0058c0d2 = 0.0000152587890625
 ;   double DOUBLE_0058c0da = -30
 ;   double DOUBLE_0058c0e2 = 30
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -550,7 +550,7 @@ section .text
     JNZ 0x004ead3e                      ; 004eaccd
         ;   XREF to: 004ead3e (CONDITIONAL_JUMP)  ; LAB_004ead3e
     MOV EDX,dword ptr [EDI + 0x5]       ; 004eaccf
-    CMP EDX,dword ptr [ESI + 0x1cea418] ; 004eacd2 | DAT_01cea538
+    CMP EDX,dword ptr [ESI + 0x1cea418] ; 004eacd2 | g_SChatHistory_ARRAY_01cea410[1].message_id
     JNZ 0x004ead3e                      ; 004eacd8
         ;   XREF to: 004ead3e (CONDITIONAL_JUMP)  ; LAB_004ead3e
     CMP EAX,dword ptr [0x01cea40c]      ; 004eacda | DAT_01cea40c
@@ -1049,8 +1049,8 @@ section .text
     MOV EAX,0x58c0a6                    ; 004eb1dd | = "..\\core\\netgame.cpp"
     MOV EDX,0x597                       ; 004eb1e2
     PUSH 0x58c0ba                       ; 004eb1e7 | = "Player list mismatch!"
-    MOV [0x01cc4800],EAX                ; 004eb1ec | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004eb1f1 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004eb1ec | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004eb1f1 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004eb1f7
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eb1fc
@@ -1085,8 +1085,8 @@ section .text
     MOV ESI,0x58ba54                    ; 004eb255 | = "..\\core\\netgame.cpp"
     MOV EAX,0x12b                       ; 004eb25a
     PUSH 0x58ba68                       ; 004eb25f | = "allocSimFrame - sim history list full"
-    MOV dword ptr [0x01cc4800],ESI      ; 004eb264 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004eb26a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004eb264 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004eb26a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004eb26f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eb274
@@ -1116,8 +1116,8 @@ section .text
         ;   Label: LAB_004eb2b9
     MOV EDI,0x596                       ; 004eb2be
     PUSH 0x58c06e                       ; 004eb2c3 | = "Player list mismatch processing SimFr..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004eb2c8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004eb2ce | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004eb2c8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004eb2ce | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004eb2d4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eb2d9

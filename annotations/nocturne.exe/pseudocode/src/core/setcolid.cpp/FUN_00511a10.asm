@@ -13,7 +13,7 @@
 ;   core_door.cpp_CDoor_updateCollisionData_FUN_00456460 at 0045648c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0
@@ -60,7 +60,7 @@ section .text
     PUSH EAX                            ; 00511a60
     ADD EBX,0x20                        ; 00511a61
     PUSH EBX                            ; 00511a64
-    PUSH 0x1fba938                      ; 00511a65 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00511a65 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0 ; 00511a6a
         ;   XREF to: 0046baa0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0(CDemonRaytrace * this_ptr, CVector3f * offset, CVector3f * rotation, CVector3f * extent, ...)
     ADD ESP,0x14                        ; 00511a6f

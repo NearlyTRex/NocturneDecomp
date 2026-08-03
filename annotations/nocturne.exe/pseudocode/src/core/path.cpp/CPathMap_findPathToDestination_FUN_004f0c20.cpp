@@ -174,17 +174,17 @@ LAB_004f0ce0:
   iVar2 = core_path_cpp_CPathMap_isLineWalkable_FUN_004f0540
                     (this_ptr,_DAT_01e3161c,_DAT_01e31620,iVar2,_DAT_01e31624,_DAT_01e31628,iVar3);
   if (iVar2 != 0) {
-    local_44 = _DAT_01fba96c;
-    local_40._0_4_ = _DAT_01fba970;
-    local_40._4_4_ = _DAT_01fba974;
+    local_44 = g_CDemonRaytrace_01fba938.adjusted_size.x;
+    local_40._0_4_ = g_CDemonRaytrace_01fba938.adjusted_size.y;
+    local_40._4_4_ = g_CDemonRaytrace_01fba938.adjusted_size.z;
     if ((CPathMap *)&local_8c != this_ptr) {
       local_8c = (this_ptr->current_position).x;
       local_88[0].x = (this_ptr->current_position).y;
       local_88[0].y = (this_ptr->current_position).z;
     }
     iStack_24 = iStack_a8;
-    local_8c = (float)local_b0 * _DAT_01fba96c + local_8c;
-    local_88[0].y = (float)iStack_a8 * _DAT_01fba974 + local_88[0].y;
+    local_8c = (float)local_b0 * g_CDemonRaytrace_01fba938.adjusted_size.x + local_8c;
+    local_88[0].y = (float)iStack_a8 * g_CDemonRaytrace_01fba938.adjusted_size.z + local_88[0].y;
     auStack_c8._0_4_ = (this_ptr->current_position).x - unaff_ESI->x;
     auStack_c8._4_4_ = (this_ptr->current_position).y - unaff_ESI->y;
     fStack_c0 = (this_ptr->current_position).z - unaff_ESI->z;
@@ -243,23 +243,23 @@ LAB_004f0ce0:
         iVar2 = iVar2 - *(int *)(&DAT_005be0e8 + uVar6 * 4);
         iVar3 = iVar3 - *(int *)(&DAT_005be10c + uVar6 * 4);
         if (iVar2 < 0) {
-          PTR_01cc4800 = "..\\core\\path.cpp";
-          INT_01cc4804 = 0x547;
+          g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
+          g_INT_01cc4804 = 0x547;
           core_main_c_FUN_004c8440("Out of bounds1!");
         }
         if (iVar3 < 0) {
-          PTR_01cc4800 = "..\\core\\path.cpp";
-          INT_01cc4804 = 0x548;
+          g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
+          g_INT_01cc4804 = 0x548;
           core_main_c_FUN_004c8440("Out of bounds2!");
         }
         if (99 < iVar2) {
-          PTR_01cc4800 = "..\\core\\path.cpp";
-          INT_01cc4804 = 0x549;
+          g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
+          g_INT_01cc4804 = 0x549;
           core_main_c_FUN_004c8440("Out of bounds3!");
         }
         if (99 < iVar3) {
-          PTR_01cc4800 = "..\\core\\path.cpp";
-          INT_01cc4804 = 0x54a;
+          g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
+          g_INT_01cc4804 = 0x54a;
           core_main_c_FUN_004c8440("Out of bounds4!");
         }
         uVar5 = uVar6;

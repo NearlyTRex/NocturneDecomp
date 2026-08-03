@@ -13,8 +13,8 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float latency)
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
   if (iVar1 != 0) {
-    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    INT_01cc4804 = 0x1329;
+    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    g_INT_01cc4804 = 0x1329;
     core_main_c_FUN_004c8440("setMaxSwSoundLatency - can't do this while sound is active");
   }
   if (latency < (float)0.050000000000000003) {

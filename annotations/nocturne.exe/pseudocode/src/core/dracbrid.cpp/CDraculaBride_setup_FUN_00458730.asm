@@ -44,9 +44,9 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00458734
     PUSH EDI                            ; 00458738
     PUSH ESI                            ; 00458739
-    MOV EDI,dword ptr [0x005b9354]      ; 0045873a | DAT_005b9354
+    MOV EDI,dword ptr [0x005b9354]      ; 0045873a | g_CGame_PTR_005b9354
     LEA EAX,[EBX + 0x23b0]              ; 00458740
-    MOV EDX,dword ptr [EDI + 0x18]      ; 00458746 | DAT_01c77604
+    MOV EDX,dword ptr [EDI + 0x18]      ; 00458746 | g_CGame_01c775ec.nudity_flag
     LEA ESI,[EBX + 0x150]               ; 00458749
     TEST EDX,EDX                        ; 0045874f
     JZ 0x004589a9                       ; 00458751

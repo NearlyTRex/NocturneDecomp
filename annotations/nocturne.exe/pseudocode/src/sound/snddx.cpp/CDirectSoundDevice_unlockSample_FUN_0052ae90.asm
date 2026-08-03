@@ -9,8 +9,8 @@
 ;   TerminatedCString s_sound_snddx_cpp_005942fe
 ;   TerminatedCString s_DirectSoundDevice_unlock_00594311
 ;   TerminatedCString s_Unlock_hw_sample_buffer_00594353
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc9244
 ;
 ; Called Functions:
@@ -42,8 +42,8 @@ section .text
     MOV ECX,0x5942fe                    ; 0052aeb2 | = "..\\sound\\snddx.cpp"
     MOV EDI,0x2b6                       ; 0052aeb7
     PUSH 0x594311                       ; 0052aebc | = "DirectSoundDevice::unlockSample - Can..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0052aec1 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0052aec7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0052aec1 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0052aec7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052aecd
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052aed2

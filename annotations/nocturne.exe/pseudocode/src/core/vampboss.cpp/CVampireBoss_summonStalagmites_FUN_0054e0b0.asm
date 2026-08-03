@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_voicusummon_wav_00597229
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CDripActorType_01b7b2f4.name_hash
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -38,9 +38,9 @@ section .text
     XOR EDI,EDI                         ; 0054e0c6
     CALL dword ptr [EAX + 0x24]         ; 0054e0c8
     ADD ESP,0x8                         ; 0054e0cb
-    MOV EBX,dword ptr [0x005be368]      ; 0054e0ce | DAT_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 0054e0ce | g_CDemonSet_PTR_005be368
         ;   Label: LAB_0054e0ce
-    CMP ESI,dword ptr [EBX + 0x14cd6c]  ; 0054e0d4 | DAT_01fa3ff0
+    CMP ESI,dword ptr [EBX + 0x14cd6c]  ; 0054e0d4 | g_CDemonSet_01e57284.actor_count
     JL 0x0054e0e1                       ; 0054e0da
         ;   XREF to: 0054e0e1 (CONDITIONAL_JUMP)  ; LAB_0054e0e1
     POP EBP                             ; 0054e0dc
@@ -51,7 +51,7 @@ section .text
     MOV ECX,dword ptr [0x01b7b32c]      ; 0054e0e1 | g_CDripActorType_01b7b2f4.name_hash
         ;   Label: LAB_0054e0e1
     PUSH ECX                            ; 0054e0e7
-    MOV EBP,dword ptr [EDI + EBX*0x1 + 0x14cd70] ; 0054e0e8 | DAT_01fa3ff4
+    MOV EBP,dword ptr [EDI + EBX*0x1 + 0x14cd70] ; 0054e0e8 | g_CDemonSet_01e57284.actors[0]
     PUSH EBP                            ; 0054e0ef
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0054e0f0
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)

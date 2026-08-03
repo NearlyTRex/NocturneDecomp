@@ -22,8 +22,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592956
 ;   TerminatedCString s_SfxSample_freeMemory_fre_0059296b
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -90,8 +90,8 @@ section .text
     MOV ECX,0x592956                    ; 00523ae1 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x70a                       ; 00523ae6
     PUSH 0x59296b                       ; 00523aeb | = "SfxSample::freeMemory - freeing sampl..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00523af0 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00523af6 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00523af0 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00523af6 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00523afc
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00523b01

@@ -17,8 +17,8 @@
 ;   undefined4 s_CMotionController_005bb246+0xa
 ;   undefined4 DAT_005bbc48
 ;   undefined4 DAT_005bbc88
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01cd8b28
 ;
 ; Called Functions:
@@ -68,8 +68,8 @@ section .text
     MOV EBP,0x58b52a                    ; 004e2685 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x1b1                       ; 004e268a
     PUSH 0x58b53b                       ; 004e268f | = "js_bound bad layer/modext (%d/%d)  Fi..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004e2694 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e269a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 004e2694 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004e269a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e269f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 004e26a4
@@ -142,8 +142,8 @@ section .text
     MOV EAX,0x58b4e0                    ; 004e2758 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1a1                       ; 004e275d
     PUSH 0x58b4f1                       ; 004e2762 | = "MPEG Layer 2 - pick_table - can't loa..."
-    MOV [0x01cc4800],EAX                ; 004e2767 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004e276c | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004e2767 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004e276c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004e2772
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e2777

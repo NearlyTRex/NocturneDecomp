@@ -14,7 +14,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,fl
   float fVar3;
   float fVar4;
   float fVar5;
-  byte *puVar6;
+  CConsole *pCVar6;
   int iVar7;
   EDeathState EVar8;
   CPathMap *this_ptr_00;
@@ -37,7 +37,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,fl
   fVar1 = this_ptr->victim_height;
   pCVar2 = this_ptr->script_victim;
   if (pCVar2 == (CCharacter *)0x0) {
-    if (((*(int *)(0x01C775EC + 0x1d4) != 0) || (*(int *)(0x01C775EC + 0x230) == 0)) ||
+    if (((g_CGame_PTR_005b9354->freeze_enemies_enabled != 0) ||
+        (g_CGame_PTR_005b9354->allow_enemy_attack_flag == 0)) ||
        (iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                           (0x01C03A10,"Capture"), iVar7 != 0)) {
       this_ptr->is_in_combat = 0;
@@ -60,8 +61,9 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,fl
       local_28 = &(this_ptr->base).base.location;
       local_2c = 0;
       local_20 = 0;
-      for (local_24 = 0; local_24 < *(int *)(0x01E57284 + 0x14ecb0); local_24 = local_24 + 1) {
-        iVar11 = *(int *)(0x01E57284 + local_2c + 0x14ecb4);
+      for (local_24 = 0; local_24 < g_CDemonSet_PTR_005be368->character_count;
+          local_24 = local_24 + 1) {
+        iVar11 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + local_2c);
         iVar10 = (**(code **)(*(int *)(iVar11 + 0x14c) + 0xdc))(iVar11,this_ptr);
         if (((iVar10 != 0) &&
             (iVar10 = (**(code **)(*(int *)(iVar11 + 0x14c) + 0x104))(iVar11), iVar10 == 0)) &&
@@ -102,10 +104,10 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,fl
         if (iVar11 < 0) break;
         local_1c = *(CCharacter **)(&DAT_01bcdef8 + iVar11 * 4);
         iVar10 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_00479ab0(this_ptr,&local_1c->base);
-        puVar6 = PTR_DAT_005ad350;
+        pCVar6 = g_CConsole_PTR_005ad350;
         if (iVar10 != 0) {
           this_ptr->victim = local_1c;
-          engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar6,"%s can see hero\n",this_ptr)
+          engine_console_cpp_CConsole_printf_FUN_0043ac60(pCVar6,"%s can see hero\n",this_ptr)
           ;
           return;
         }

@@ -86,7 +86,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(CBoxActor *this_pt
   cVar5 = this_ptr->loop_wav_name[0];
   (this_ptr->base).orient.vec.y = local_18;
   if (cVar5 != '\0') {
-    iVar7 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(0x02DC9450,this_ptr->sfx_handle);
+    iVar7 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
+                      (g_CSound_PTR_005bed68,this_ptr->sfx_handle);
     if (iVar7 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
       iVar7 = 2;
@@ -140,7 +141,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(CBoxActor *this_pt
       auStack_d0._52_4_ = this_ptr;
       pCStack_98 = this_ptr;
       core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880
-                (0x01E57284,&CStack_64,&actor_position->position,(SDamageInfo *)auStack_d0);
+                (g_CDemonSet_PTR_005be368,&CStack_64,&actor_position->position,
+                 (SDamageInfo *)auStack_d0);
       return;
     }
   }

@@ -18,9 +18,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00585827
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fa3ff0
-;   undefined4 DAT_01fa3ff4
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.actor_count
+;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -88,9 +88,9 @@ section .text
     XOR ESI,ESI                         ; 004b4f2b
     MOV dword ptr [ESP + 0x4c],EDI      ; 004b4f2d
     XOR EDI,EDI                         ; 004b4f31
-    MOV EAX,[0x005be368]                ; 004b4f33 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 004b4f33 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004b4f33
-    CMP ESI,dword ptr [EAX + 0x14cd6c]  ; 004b4f38 | DAT_01fa3ff0
+    CMP ESI,dword ptr [EAX + 0x14cd6c]  ; 004b4f38 | g_CDemonSet_01e57284.actor_count
     JL 0x004b4f72                       ; 004b4f3e
         ;   XREF to: 004b4f72 (CONDITIONAL_JUMP)  ; LAB_004b4f72
     TEST EDI,EDI                        ; 004b4f40
@@ -117,7 +117,7 @@ section .text
         ;   Label: LAB_004b4f72
     PUSH EDX                            ; 004b4f76
     MOV EDX,dword ptr [EBP + 0x14]      ; 004b4f77
-    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 004b4f7a | DAT_01fa3ff4
+    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 004b4f7a | g_CDemonSet_01e57284.actors[0]
     PUSH EDX                            ; 004b4f81
     MOV ECX,dword ptr [EAX + 0x14c]     ; 004b4f82
     PUSH EAX                            ; 004b4f88
@@ -140,8 +140,8 @@ section .text
         ;   XREF to: 004b4fc2 (CONDITIONAL_JUMP)  ; LAB_004b4fc2
     MOV EAX,dword ptr [ESP]             ; 004b4faf
     MOV dword ptr [ESP + 0x4c],EAX      ; 004b4fb2
-    MOV EAX,[0x005be368]                ; 004b4fb6 | DAT_005be368
-    MOV EDI,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 004b4fbb | DAT_01fa3ff4
+    MOV EAX,[0x005be368]                ; 004b4fb6 | g_CDemonSet_PTR_005be368
+    MOV EDI,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 004b4fbb | g_CDemonSet_01e57284.actors[0]
     INC ESI                             ; 004b4fc2
         ;   Label: LAB_004b4fc2
     ADD EBX,0x4                         ; 004b4fc3

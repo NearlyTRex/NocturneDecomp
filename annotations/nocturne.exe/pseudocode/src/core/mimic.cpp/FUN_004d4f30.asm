@@ -81,7 +81,7 @@
 ;   double DOUBLE_00589477 = 3.14159265350000
 ;   double DOUBLE_0058947f = 32
 ;   float FLOAT_005a05d8 = 2.5
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -271,7 +271,7 @@ section .text
     PUSH 0x0                            ; 004d50e9
     LEA EAX,[EBP + 0xe]                 ; 004d50eb
     PUSH EAX                            ; 004d50ee
-    MOV EDI,dword ptr [0x005b96c4]      ; 004d50ef | INT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 004d50ef | g_CGore_PTR_005b96c4
     PUSH EDI                            ; 004d50f5
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004b0480 ; 004d50f6
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004b0480(CGore * this_ptr, CVector3f * position, int blood_type)
@@ -288,8 +288,8 @@ section .text
     TEST EAX,EAX                        ; 004d5123
     JNZ 0x004d5024                      ; 004d5125
         ;   XREF to: 004d5024 (CONDITIONAL_JUMP)  ; LAB_004d5024
-    MOV EAX,[0x005b9354]                ; 004d512b | DAT_005b9354
-    CMP dword ptr [EAX + 0x1d4],0x0     ; 004d5130 | DAT_01c777c0
+    MOV EAX,[0x005b9354]                ; 004d512b | g_CGame_PTR_005b9354
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 004d5130 | g_CGame_01c775ec.freeze_enemies_enabled
     JNZ 0x004d5024                      ; 004d5137
         ;   XREF to: 004d5024 (CONDITIONAL_JUMP)  ; LAB_004d5024
     MOV EAX,[0x01cae0e8]                ; 004d513d | DAT_01cae0e8
@@ -375,8 +375,8 @@ section .text
     PUSH EAX                            ; 004d5226
     LEA EAX,[EBP + -0x6a]               ; 004d5227
     PUSH EAX                            ; 004d522a
-    MOV ECX,dword ptr [0x005be368]      ; 004d522b | DAT_005be368
-    PUSH ECX                            ; 004d5231 | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004d522b | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 004d5231 | g_CDemonSet_01e57284
     CALL core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0 ; 004d5232
         ;   XREF to: 0050fae0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 004d5237
@@ -397,9 +397,9 @@ section .text
     ADD ESP,0x8                         ; 004d5261
     JMP 0x004d5024                      ; 004d5264
         ;   XREF to: 004d5024 (UNCONDITIONAL_JUMP)  ; LAB_004d5024
-    MOV EAX,[0x005b9354]                ; 004d5269 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004d5269 | g_CGame_PTR_005b9354
         ;   Label: LAB_004d5269
-    CMP dword ptr [EAX + 0x1d4],0x0     ; 004d526e | DAT_01c777c0
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 004d526e | g_CGame_01c775ec.freeze_enemies_enabled
     JNZ 0x004d5011                      ; 004d5275
         ;   XREF to: 004d5011 (CONDITIONAL_JUMP)  ; LAB_004d5011
     LEA EAX,[EBX + 0x20]                ; 004d527b

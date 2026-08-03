@@ -45,8 +45,8 @@ section .text
     PUSH EBP                            ; 00541a43
     SUB ESP,0x4                         ; 00541a44
     MOV ESI,dword ptr [ESP + 0x18]      ; 00541a47
-    MOV EBX,dword ptr [0x005b9354]      ; 00541a4b | DAT_005b9354
-    MOV EDX,dword ptr [EBX + 0x18]      ; 00541a51 | DAT_01c77604
+    MOV EBX,dword ptr [0x005b9354]      ; 00541a4b | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [EBX + 0x18]      ; 00541a51 | g_CGame_01c775ec.nudity_flag
     LEA EAX,[ESI + 0x150]               ; 00541a54
     TEST EDX,EDX                        ; 00541a5a
     JZ 0x00541cc2                       ; 00541a5c

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -62,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 84,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 253
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 68,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 252
   },
   "cross_references": [
     {
@@ -128,7 +126,7 @@
     {
       "addr": "0045b5f0",
       "is_variadic": false,
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0"
+      "name": "cockpit_drawsurf.cpp_setColor_FUN_0045b5f0"
     },
     {
       "addr": "0045baa0",
@@ -309,14 +307,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(int *)(this_ptr->xref_entries->name + (int)(this_ptr->script_text).data_array",
-      "severity": "moderate",
-      "text": "local_20 = *(int *)(this_ptr->xref_entries->name + (int)(this_ptr->script_text).data_array * 8)",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

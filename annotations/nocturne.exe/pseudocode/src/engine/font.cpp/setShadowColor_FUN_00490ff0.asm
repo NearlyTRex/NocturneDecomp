@@ -139,8 +139,8 @@ section .text
         ;   Label: LAB_0049110c
     MOV EDX,0x399                       ; 00491111
     PUSH 0x581925                       ; 00491116 | = "Invalid bitsPerPixel in CBitFont::set..."
-    MOV [0x01cc4800],EAX                ; 0049111b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00491120 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0049111b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00491120 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00491126
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0049112b

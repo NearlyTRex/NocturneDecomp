@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
-;   undefined4 DAT_014b9900
+;   CBitFont* g_CBitFont_PTR_014b9900
 ;   undefined4 DAT_01c78adc
 ;   undefined4 DAT_01c78ae0
 ;   undefined4 DAT_01c78ae4
@@ -33,7 +33,7 @@ section .text
     PUSH ECX                            ; 0049b3b4
     MOV EBX,dword ptr [ESP + 0x20]      ; 0049b3b5
     PUSH EBX                            ; 0049b3b9
-    MOV ESI,dword ptr [0x014b9900]      ; 0049b3ba | DAT_014b9900
+    MOV ESI,dword ptr [0x014b9900]      ; 0049b3ba | g_CBitFont_PTR_014b9900
     PUSH ESI                            ; 0049b3c0
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b3c1
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)

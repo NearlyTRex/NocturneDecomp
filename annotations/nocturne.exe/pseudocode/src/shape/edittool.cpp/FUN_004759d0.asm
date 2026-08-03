@@ -21,7 +21,7 @@
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e13
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcde08
 ;   undefined4 DAT_01bcde0c
@@ -54,7 +54,7 @@ section .text
     PUSH EDI                            ; 004759d2
     PUSH EBP                            ; 004759d3
     SUB ESP,0x14c                       ; 004759d4
-    MOV EDX,dword ptr [0x005b6d50]      ; 004759da | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004759da | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004759e0
     CALL shape_edittool.cpp_FUN_004722b0 ; 004759e1
         ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
@@ -322,7 +322,7 @@ section .text
         ;   XREF to: 00475b2d (UNCONDITIONAL_JUMP)  ; LAB_00475b2d
     PUSH 0x1                            ; 00475d86
         ;   Label: LAB_00475d86
-    MOV ECX,dword ptr [0x005b6d50]      ; 00475d88 | DAT_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 00475d88 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 00475d8e
     CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 ; 00475d8f
         ;   XREF to: 004724e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEditorTools * this_ptr, int use_clipping)

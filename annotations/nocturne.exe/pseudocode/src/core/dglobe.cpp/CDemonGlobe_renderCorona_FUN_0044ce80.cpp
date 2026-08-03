@@ -12,7 +12,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(CDemonGlobe *
 
 {
   int *piVar1;
-  CDemonRenderer *this_ptr_00;
+  byte *this_ptr_00;
   int iVar2;
   int iVar3;
   double dVar4;
@@ -36,7 +36,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(CDemonGlobe *
   float local_c;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (0x01B4D738,&this_ptr->position);
+            ((CDemonRenderer *)PTR_DAT_005ae700,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(DAT_005ae704,&local_18);
   local_24.x = local_18.x - (this_ptr->position).x;
   local_24.y = local_18.y - (this_ptr->position).y;
@@ -60,14 +60,12 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(CDemonGlobe *
       local_30.z = (int)ROUND(local_34 * _DAT_0059bff0);
       iVar2 = iVar2 + 0xc;
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                ((SProjectedVertex *)
-                 ((int)&(0x01B4D738->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),
-                 &local_30);
+                ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + iVar3),&local_30);
       iVar3 = iVar3 + 0x30;
     } while (iVar2 != 0x2e8);
     iVar2 = 0;
     do {
-      this_ptr_00 = 0x01B4D738;
+      this_ptr_00 = PTR_DAT_005ae700;
       local_60 = *(uint *)((int)&DAT_005ad87c + iVar2);
       local_5c = *(uint *)((int)&DAT_005ad880 + iVar2);
       local_58 = *(uint *)((int)&DAT_005ad884 + iVar2);
@@ -83,7 +81,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(CDemonGlobe *
       dVar4 = round((double)((float)*piVar1 * this_ptr->radius));
       local_54 = (int)ROUND(dVar4);
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-                (this_ptr_00,prim,scanline_renderer);
+                ((CDemonRenderer *)this_ptr_00,prim,scanline_renderer);
     } while (iVar2 != 0xbd0);
     return;
   }

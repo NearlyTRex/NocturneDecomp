@@ -20,12 +20,12 @@
 ;   TerminatedCString s_core_mission_cpp_00589ef8
 ;   TerminatedCString s_CDemonMission_createOneH_00589f0c
 ;   TerminatedCString s_Can_t_find_hero_placehol_00589f41
-;   undefined4 DAT_005b6d50
-;   undefined4 DAT_005baf90
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 g_CHeroPlaceholderActorType_01cae128.name_hash
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -57,8 +57,8 @@ section .text
     MOV EAX,0x589ef8                    ; 004d9945 | = "..\\core\\mission.cpp"
     MOV EDX,0x5f4                       ; 004d994a
     PUSH 0x589f0c                       ; 004d994f | = "CDemonMission::createOneHero - hero a..."
-    MOV [0x01cc4800],EAX                ; 004d9954 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004d9959 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004d9954 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004d9959 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d995f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d9964
@@ -103,8 +103,8 @@ section .text
         ;   Label: LAB_004d99b9
     MOV EBX,0x5f3                       ; 004d99be
     PUSH 0x589ec9                       ; 004d99c3 | = "CDemonMission::createOneHero - too ma..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d99c8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004d99ce | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d99c8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004d99ce | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d99d4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d99d9
@@ -145,7 +145,7 @@ section .text
     MOV ECX,dword ptr [ESP]             ; 004d9a35
         ;   Label: LAB_004d9a35
     PUSH ECX                            ; 004d9a38
-    MOV EBX,dword ptr [0x005baf90]      ; 004d9a39 | DAT_005baf90
+    MOV EBX,dword ptr [0x005baf90]      ; 004d9a39 | g_CDemonMission_PTR_005baf90
     PUSH EBX                            ; 004d9a3f
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004d9a40
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
@@ -165,7 +165,7 @@ section .text
     PUSH EDI                            ; 004d9a60
         ;   Label: LAB_004d9a60
     PUSH 0x589f41                       ; 004d9a61 | = "Can't find hero placeholder for hero %d"
-    MOV EDI,dword ptr [0x005b6d50]      ; 004d9a66 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004d9a66 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004d9a6c
     CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d9a6d
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()

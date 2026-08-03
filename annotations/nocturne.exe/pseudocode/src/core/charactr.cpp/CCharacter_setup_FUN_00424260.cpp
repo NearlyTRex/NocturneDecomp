@@ -40,8 +40,8 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00424260(CCharacter *this_pt
         (*((this_ptr_01->vtable)._ub)->pickup)(this_ptr_01,&this_ptr->base);
       }
       else if (pCVar5 != this_ptr) {
-        PTR_01cc4800 = "..\\core\\charactr.cpp";
-        INT_01cc4804 = 0x10c;
+        g_CHAR_PTR_01cc4800 = "..\\core\\charactr.cpp";
+        g_INT_01cc4804 = 0x10c;
         core_main_c_FUN_004c8440
                   ("%s is carrying %s, but %s thinks it is being carried by %s",this_ptr,this_ptr_01,this_ptr_01,pCVar5);
       }

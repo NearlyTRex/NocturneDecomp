@@ -65,7 +65,7 @@ void __cdecl CGlass::shatter(CGlass *this_ptr,CVector3f *location);
 
 // Original: core_glass.cpp_CGlass_onLaserHit_FUN_004add80
 // Address: 004add80
-void CGlass::onLaserHit(int param_1,int param_2);
+void CGlass::onLaserHit(CDemonActor *param_1,SLaserInfo *param_2);
 
 // Original: core_glass.cpp_CGlass_getGroundType_FUN_004adec0
 // Address: 004adec0

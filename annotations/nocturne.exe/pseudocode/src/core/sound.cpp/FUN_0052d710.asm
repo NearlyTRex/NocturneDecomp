@@ -9,10 +9,10 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01fb1afc
-;   undefined4 DAT_01fb1b00
-;   undefined4 DAT_01fb1b04
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.x
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.y
+;   undefined4 g_CDemonSet_01e57284.active_fog.scroll.z
 ;   undefined4 DAT_02dc9d44
 ;   undefined4 DAT_02dc9d48
 ;   undefined4 DAT_02dc9d4c
@@ -24,14 +24,14 @@ section .text
 
     SUB ESP,0xc                         ; 0052d710
         ;   Label: core_sound.cpp_FUN_0052d710
-    MOV EAX,[0x005be368]                ; 0052d713 | DAT_005be368
-    FLD float ptr [EAX + 0x15a878]      ; 0052d718 | DAT_01fb1afc
+    MOV EAX,[0x005be368]                ; 0052d713 | g_CDemonSet_PTR_005be368
+    FLD float ptr [EAX + 0x15a878]      ; 0052d718 | g_CDemonSet_01e57284.active_fog.scroll.x
     FCHS                                ; 0052d71e
     FSTP float ptr [ESP]                ; 0052d720
-    FLD float ptr [EAX + 0x15a87c]      ; 0052d723 | DAT_01fb1b00
+    FLD float ptr [EAX + 0x15a87c]      ; 0052d723 | g_CDemonSet_01e57284.active_fog.scroll.y
     FCHS                                ; 0052d729
     FSTP float ptr [ESP + 0x4]          ; 0052d72b
-    FLD float ptr [EAX + 0x15a880]      ; 0052d72f | DAT_01fb1b04
+    FLD float ptr [EAX + 0x15a880]      ; 0052d72f | g_CDemonSet_01e57284.active_fog.scroll.z
     FCHS                                ; 0052d735
     MOV EAX,ESP                         ; 0052d737
     FSTP float ptr [ESP + 0x8]          ; 0052d739

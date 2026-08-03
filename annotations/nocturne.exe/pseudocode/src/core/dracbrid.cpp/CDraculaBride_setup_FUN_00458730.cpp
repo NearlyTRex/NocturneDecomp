@@ -21,7 +21,7 @@ void core_dracbrid_cpp_CDraculaBride_setup_FUN_00458730(CEnemy *param_1)
   
   pcVar5 = (param_1->base).model.model_name;
   pCVar1 = &(param_1->base).model;
-  if (*(int *)(0x01C775EC + 0x18) == 0) {
+  if (g_CGame_PTR_005b9354->nudity_flag == 0) {
     iVar3 = _stricmp(pcVar5,"nbride2.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(pCVar1,"nbride2x.dfm");

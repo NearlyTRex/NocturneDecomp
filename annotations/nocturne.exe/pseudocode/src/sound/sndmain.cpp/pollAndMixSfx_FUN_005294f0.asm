@@ -28,9 +28,9 @@
 ;   undefined4 DAT_005bea64
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
-;   undefined4 DAT_02dbd494
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
 ;   undefined4 DAT_02dc1b74
 ;   undefined4 DAT_02dc8328
 ;   undefined4 DAT_02dc832c
@@ -129,8 +129,8 @@ section .text
     MOV ESI,0x592860                    ; 005295ce | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x4e4                       ; 005295d3
     PUSH 0x592875                       ; 005295d8 | = "nextMixingBuffer - shouldn't have any..."
-    MOV dword ptr [0x01cc4800],ESI      ; 005295dd | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005295e3 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 005295dd | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005295e3 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005295e9
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005295ee
@@ -205,7 +205,7 @@ section .text
     FSTP float ptr [ESP + 0x58]         ; 005296b1
     PUSH dword ptr [ESP + 0x58]         ; 005296b5
         ;   Label: LAB_005296b5
-    PUSH EBX                            ; 005296b9 | DAT_02dbd494
+    PUSH EBX                            ; 005296b9 | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
     CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 ; 005296ba
         ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot * this_ptr, float delta_time)
     ADD EBX,0x120                       ; 005296bf
@@ -219,7 +219,7 @@ section .text
     MOV EDI,ESP                         ; 005296d4
     MOV ECX,0xb                         ; 005296d6
     LEA ESI,[ESP + 0x2c]                ; 005296db
-    PUSH EBX                            ; 005296df | DAT_02dbd494
+    PUSH EBX                            ; 005296df | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
     MOVSD.REP ES:EDI,ESI                ; 005296e0
     CALL sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 ; 005296e2
         ;   XREF to: 00524d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10()
@@ -289,8 +289,8 @@ section .text
         ;   Label: LAB_005297ab
     MOV EBX,0x1442                      ; 005297b0
     PUSH 0x593b0b                       ; 005297b5 | = "pollSfx - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 005297ba | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 005297c0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 005297ba | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 005297c0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005297c6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005297cb
@@ -300,8 +300,8 @@ section .text
         ;   Label: LAB_005297d3
     MOV ECX,0x4e0                       ; 005297d8
     PUSH 0x592840                       ; 005297dd | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],EDX      ; 005297e2 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005297e8 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 005297e2 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005297e8 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005297ee
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005297f3

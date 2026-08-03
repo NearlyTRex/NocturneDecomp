@@ -40,7 +40,7 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004876d0(CCrater *this_ptr,CVect
   }
   core_fire_cpp_CCrater_render_FUN_00487af0(this_ptr);
   this_ptr->active = 1;
-  pCVar3 = 0x01E57284;
+  pCVar3 = g_CDemonSet_PTR_005be368;
   this_ptr->has_smoke = 0;
   this_ptr->smoke_delay = 0.1;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
@@ -96,16 +96,16 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004876d0(CCrater *this_ptr,CVect
   }
   local_14 = local_30;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                       (0x01E57284,this_ptr->corner_positions,0.0);
-  pCVar3 = 0x01E57284;
+                       (g_CDemonSet_PTR_005be368,this_ptr->corner_positions,0.0);
+  pCVar3 = g_CDemonSet_PTR_005be368;
   this_ptr->corner_positions[0].y = local_14 + (float)0.14999999999999999;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
                        (pCVar3,this_ptr->corner_positions + 1,0.0);
-  pCVar3 = 0x01E57284;
+  pCVar3 = g_CDemonSet_PTR_005be368;
   this_ptr->corner_positions[1].y = local_14 + (float)0.14999999999999999;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
                        (pCVar3,this_ptr->corner_positions + 2,0.0);
-  pCVar3 = 0x01E57284;
+  pCVar3 = g_CDemonSet_PTR_005be368;
   this_ptr->corner_positions[2].y = local_14 + (float)0.14999999999999999;
   fVar4 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
                     (pCVar3,this_ptr->corner_positions + 3,0.0);

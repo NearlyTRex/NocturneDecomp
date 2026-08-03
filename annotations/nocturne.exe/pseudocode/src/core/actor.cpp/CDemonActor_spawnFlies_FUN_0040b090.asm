@@ -12,7 +12,7 @@
 ;   core_charactr.cpp_CCharacter_spawnFlies_FUN_0042a120 at 0042a138
 ;
 ; Referenced Globals:
-;   int INT_005b96c4 = 0x1c78c7c
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;
 ; Called Functions:
 ;   core_flies.cpp_findFliesByFollowActor_FUN_0048fbe0
@@ -41,7 +41,7 @@ section .text
     PUSH ECX                            ; 0040b0ad
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040b0ae
     PUSH EBX                            ; 0040b0b2
-    MOV ESI,dword ptr [0x005b96c4]      ; 0040b0b3 | INT_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 0040b0b3 | g_CGore_PTR_005b96c4
     PUSH ESI                            ; 0040b0b9
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 0040b0ba
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)

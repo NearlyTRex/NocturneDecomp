@@ -27,8 +27,8 @@ void core_inv_cpp_FUN_004c0640(void)
     this_ptr = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar2);
   }
   if (this_ptr == (CAmmo *)0x0) {
-    PTR_01cc4800 = "..\\core\\inv.cpp";
-    INT_01cc4804 = 0x2fd;
+    g_CHAR_PTR_01cc4800 = "..\\core\\inv.cpp";
+    g_INT_01cc4804 = 0x2fd;
     core_main_c_FUN_004c8440("Out of memory");
   }
   this_ptr->ammo_count = (int)in_stack_00000008[4].location.position.x;

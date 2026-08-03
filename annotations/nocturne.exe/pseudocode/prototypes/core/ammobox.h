@@ -41,7 +41,7 @@ int CAmmoBox::renderOpaque(CDemonActor *param_1);
 
 // Original: core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040f340
 // Address: 0040f340
-undefined4 * CAmmoBox::getBoundingBox(int param_1,undefined4 *param_2);
+float * CAmmoBox::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_ammobox.cpp_CAmmoBox_archive_FUN_0040f390
 // Address: 0040f390

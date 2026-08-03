@@ -16,10 +16,10 @@ int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(CScript *this_pt
   char *str2;
   
   iVar3 = 0;
-  if (0 < this_ptr->xref_count) {
+  if (0 < this_ptr->parsed_line_count) {
     iVar4 = 0;
     do {
-      pcVar1 = *(char **)(this_ptr->xref_entries->name + iVar4 + 4);
+      pcVar1 = *(char **)((int)&this_ptr->parsed_lines->text + iVar4);
       if (*pcVar1 == ':') {
         str2 = label_name;
         pcVar1 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar1 + 1);
@@ -30,7 +30,7 @@ int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(CScript *this_pt
       }
       iVar3 = iVar3 + 1;
       iVar4 = iVar4 + 8;
-    } while (iVar3 < this_ptr->xref_count);
+    } while (iVar3 < this_ptr->parsed_line_count);
   }
   return -1;
 }

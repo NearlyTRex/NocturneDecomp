@@ -21,21 +21,21 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042eb90(char *filename,SEd
   local_14 = engine_dosio_cpp_getFile_FUN_00456a60("art",filename,"rb");
   if (local_14 == (_FILE *)0x0) {
     _sprintf(local_68,"Unable to open edge list file (%s).",filename);
-    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-    INT_01cc4804 = 0x49f;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    g_INT_01cc4804 = 0x49f;
     core_main_c_FUN_004c8440(local_68);
   }
   SVar1 = _fread(&local_18,4,1,local_14);
   if (SVar1 != 1) {
     _sprintf(local_68,"Unable to read number of edge lists (%s).",filename);
-    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-    INT_01cc4804 = 0x4a8;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    g_INT_01cc4804 = 0x4a8;
     core_main_c_FUN_004c8440(local_68);
   }
   if (local_18 != expected_count) {
     _sprintf(local_68,"Invalid number of edge lists in file (%s).",filename);
-    INT_01cc4804 = 0x4af;
-    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    g_INT_01cc4804 = 0x4af;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     core_main_c_FUN_004c8440(local_68);
   }
   iVar3 = 0;
@@ -45,8 +45,8 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042eb90(char *filename,SEd
       SVar1 = _fread(buffer,4,1,local_14);
       if (SVar1 != 1) {
         _sprintf(local_68,"Unable to read number of edges (%s).",filename);
-        PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-        INT_01cc4804 = 0x4ba;
+        g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+        g_INT_01cc4804 = 0x4ba;
         core_main_c_FUN_004c8440(local_68);
       }
       if (edge_lists->edge_data != (SEdge *)0x0) {
@@ -58,15 +58,15 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042eb90(char *filename,SEd
         edge_lists->edge_data = pSVar2;
         if (pSVar2 == (SEdge *)0x0) {
           printf("\nUnable to allocate memory for edge list.\n");
-          PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-          INT_01cc4804 = 0x4ce;
+          g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+          g_INT_01cc4804 = 0x4ce;
           core_main_c_FUN_004c8440(local_68);
         }
         SVar1 = _fread(edge_lists->edge_data,size,1,local_14);
         if (SVar1 != 1) {
           _sprintf(local_68,"Unable to read edge list (%s).",filename);
-          PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-          INT_01cc4804 = 0x4d5;
+          g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+          g_INT_01cc4804 = 0x4d5;
           core_main_c_FUN_004c8440(local_68);
         }
       }

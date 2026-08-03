@@ -24,7 +24,7 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   bVar6 = 0;
   if ((DAT_01e312f0 & 1) == 0) {
     DAT_01e312f0 = DAT_01e312f0 | 1;
-    __arrinit(&DAT_01d468a0,0xc,&g_CPathMapTypeInfo_005a1200);
+    __arrinit(g_CPathMap_ARRAY_01d468a0,0xc,&g_CPathMapTypeInfo_005a1200);
     _atexit(&g_WatcomStaticDestructorNode_005be0a8);
   }
   if (DAT_005be0b8 < 0) {
@@ -37,7 +37,8 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
     } while (iVar1 < 0xc);
   }
   iVar4 = 0;
-  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,location);
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
+            (&g_CDemonRaytrace_01fba938,location);
   iVar2 = 0;
   local_1c = local_34;
   local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 * -8);
@@ -46,8 +47,16 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   iVar3 = 0;
   iVar1 = 0;
   do {
-    if (((local_1c == *(int *)(iVar3 + 0x1d5a150)) && (local_18[0] == *(int *)(iVar3 + 0x1d5a154)))
-       && (iVar5 = iVar2, local_18[1] == *(int *)(iVar3 + 0x1d5a158))) break;
+    if (((local_1c ==
+          *(int *)((int)&((CVector3i *)(g_CPathMap_ARRAY_01d468a0[0].height_cache_tags + 100))->x +
+                  iVar3)) &&
+        (local_18[0] ==
+         *(int *)((int)&((CVector3i *)(g_CPathMap_ARRAY_01d468a0[0].height_cache_tags + 100))->y +
+                 iVar3))) &&
+       (iVar5 = iVar2,
+       local_18[1] ==
+       *(int *)((int)&((CVector3i *)(g_CPathMap_ARRAY_01d468a0[0].height_cache_tags + 100))->z +
+               iVar3))) break;
     iVar5 = iVar1;
     if ((&DAT_005be0b8)[iVar1] < *(int *)((int)&DAT_005be0b8 + iVar4)) {
       iVar5 = iVar2;
@@ -68,7 +77,6 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   local_28.x = (location->position).x;
   local_28.y = (location->position).y;
   local_28.z = (location->position).z;
-  core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360
-            ((CPathMap *)(&DAT_01d468a0 + iVar5 * 0x138dc),&local_28,1);
-  return (CPathMap *)(&DAT_01d468a0 + iVar5 * 0x138dc);
+  core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360(g_CPathMap_ARRAY_01d468a0 + iVar5,&local_28,1);
+  return g_CPathMap_ARRAY_01d468a0 + iVar5;
 }

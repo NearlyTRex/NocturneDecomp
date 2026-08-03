@@ -42,7 +42,7 @@
 ;   double DOUBLE_00595807 = 0.400000000000000
 ;   float FLOAT_005a2710 = 10
 ;   float FLOAT_005a2718 = 8
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -200,7 +200,7 @@ section .text
     PUSH EAX                            ; 00537e4c
     MOV EAX,0x5956b3                    ; 00537e4d | = "actionPending = %d\nstranger.cpp line %d"
     PUSH EAX                            ; 00537e52 | = "actionPending = %d\nstranger.cpp line %d"
-    MOV EAX,[0x005b6d50]                ; 00537e53 | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 00537e53 | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 00537e58
     CALL shape_edittool.cpp_FUN_0046fb40 ; 00537e59
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
@@ -235,7 +235,7 @@ section .text
     PUSH ECX                            ; 00537ea6
     MOV EAX,0x5956db                    ; 00537ea7 | = "actionPending = %d\nstranger.cpp line %d"
     PUSH EAX                            ; 00537eac | = "actionPending = %d\nstranger.cpp line %d"
-    MOV EAX,[0x005b6d50]                ; 00537ead | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 00537ead | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 00537eb2
     CALL shape_edittool.cpp_FUN_0046fb40 ; 00537eb3
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
@@ -245,7 +245,7 @@ section .text
     PUSH 0x782                          ; 00537ebd
         ;   Label: LAB_00537ebd
     PUSH 0x595703                       ; 00537ec2 | = "Object to pick up is now NULL\nstrang..."
-    MOV EDX,dword ptr [0x005b6d50]      ; 00537ec7 | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 00537ec7 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 00537ecd
     CALL shape_edittool.cpp_FUN_0046fb40 ; 00537ece
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
@@ -268,7 +268,7 @@ section .text
     PUSH 0x7a0                          ; 00537ef4
     PUSH ECX                            ; 00537ef9
     PUSH 0x595736                       ; 00537efa | = "actionPending = %d\nstranger.cpp line %d"
-    MOV EAX,[0x005b6d50]                ; 00537eff | DAT_005b6d50
+    MOV EAX,[0x005b6d50]                ; 00537eff | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 00537f04
     CALL shape_edittool.cpp_FUN_0046fb40 ; 00537f05
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
@@ -321,7 +321,7 @@ section .text
         ;   Label: LAB_00537f95
     PUSH EDI                            ; 00537f9a
     PUSH 0x59575e                       ; 00537f9b | = "actionPending = %d\nstranger.cpp line %d"
-    MOV EDX,dword ptr [0x005b6d50]      ; 00537fa0 | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 00537fa0 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 00537fa6
     CALL shape_edittool.cpp_FUN_0046fb40 ; 00537fa7
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
@@ -516,7 +516,7 @@ section .text
     PUSH 0x0                            ; 005381e7
     LEA EAX,[ESP + 0x8c]                ; 005381e9
     PUSH EAX                            ; 005381f0
-    MOV EDI,dword ptr [0x005b96c4]      ; 005381f1 | INT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 005381f1 | g_CGore_PTR_005b96c4
     PUSH EDI                            ; 005381f7
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 005381f8
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
@@ -575,7 +575,7 @@ section .text
         ;   Label: LAB_0053828b
     PUSH EDX                            ; 00538290
     PUSH 0x5957ab                       ; 00538291 | = "actionPending = %d\nstranger.cpp line %d"
-    MOV EDI,dword ptr [0x005b6d50]      ; 00538296 | DAT_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 00538296 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 0053829c
     CALL shape_edittool.cpp_FUN_0046fb40 ; 0053829d
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
@@ -646,7 +646,7 @@ section .text
         ;   XREF to: 00538358 (CONDITIONAL_JUMP)  ; LAB_00538358
     PUSH 0x819                          ; 0053833f
     PUSH 0x5957d3                       ; 00538344 | = "doorToOpen == NULL\nstranger.cpp line %d"
-    MOV EDX,dword ptr [0x005b6d50]      ; 00538349 | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 00538349 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 0053834f
     CALL shape_edittool.cpp_FUN_0046fb40 ; 00538350
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()

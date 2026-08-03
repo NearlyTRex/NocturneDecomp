@@ -72,8 +72,8 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0(
   iVar5 = 0;
   local_24 = 4.0;
   local_2c = &(this_ptr->base).base.base.location.position;
-  for (local_18 = 0; local_18 < *(int *)(0x01E57284 + 0x14cd6c); local_18 = local_18 + 1) {
-    pCVar1 = *(CDemonActor **)(iVar5 + 0x14cd70 + 0x01E57284);
+  for (local_18 = 0; local_18 < g_CDemonSet_PTR_005be368->actor_count; local_18 = local_18 + 1) {
+    pCVar1 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar5);
     pCVar4 = (*((pCVar1->vtable)._ub)->getCarrier)(pCVar1);
     if (pCVar4 == (CDemonActor *)0x0) {
       uStack_20 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);
@@ -129,8 +129,8 @@ LAB_00498579:
   if (uStack_28 < 2) {
     if (uStack_28 != 1) {
 LAB_00498759:
-      PTR_01cc4800 = "..\\core\\gabriela.cpp";
-      INT_01cc4804 = 0x638;
+      g_CHAR_PTR_01cc4800 = "..\\core\\gabriela.cpp";
+      g_INT_01cc4804 = 0x638;
       core_main_c_FUN_004c8440("Hell froze - invalid pickUpType: %d",uStack_28);
       return 1;
     }

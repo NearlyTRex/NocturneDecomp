@@ -9,18 +9,18 @@
 int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(CDemonSet *this_ptr,int box_index,CVector3f *point)
 
 {
-  CMatrix3x3f *pCVar1;
+  SVDBox *pSVar1;
   CVector3f local_20;
   CVector3f local_14;
   
-  pCVar1 = &this_ptr->rooms[box_index + 5].rotation_matrix;
-  local_14.x = point->x - pCVar1->m[0].x;
-  local_14.y = point->y - pCVar1->m[0].y;
-  local_14.z = point->z - pCVar1->m[0].z;
+  pSVar1 = this_ptr->vdir_boxes + box_index;
+  local_14.x = point->x - (pSVar1->position).x;
+  local_14.y = point->y - (pSVar1->position).y;
+  local_14.z = point->z - (pSVar1->position).z;
   core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-            ((CMatrix3x3f *)(pCVar1->m + 2),&local_20,&local_14);
-  if (((ABS(local_20.x) <= pCVar1->m[1].x) && (ABS(local_20.y) <= pCVar1->m[1].y)) &&
-     (ABS(local_20.z) <= pCVar1->m[1].z)) {
+            (&pSVar1->rotation_matrix,&local_20,&local_14);
+  if (((ABS(local_20.x) <= (pSVar1->extents).x) && (ABS(local_20.y) <= (pSVar1->extents).y)) &&
+     (ABS(local_20.z) <= (pSVar1->extents).z)) {
     return 1;
   }
   return 0;

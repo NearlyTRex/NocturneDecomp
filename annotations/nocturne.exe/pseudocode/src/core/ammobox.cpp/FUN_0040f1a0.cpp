@@ -29,8 +29,8 @@ void __cdecl core_ammobox_cpp_FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *invent
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar2);
   }
   if (this_ptr_00 == (CAmmo *)0x0) {
-    PTR_01cc4800 = "..\\core\\ammobox.cpp";
-    INT_01cc4804 = 0xa2;
+    g_CHAR_PTR_01cc4800 = "..\\core\\ammobox.cpp";
+    g_INT_01cc4804 = 0xa2;
     core_main_c_FUN_004c8440("Out of memory");
   }
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(this_ptr_00,this_ptr->weapon_class_name);

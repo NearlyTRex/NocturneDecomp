@@ -320,7 +320,7 @@ section .text
     POP EDI                             ; 004a6944
         ;   Label: LAB_004a6944
     PUSH 0xffff                         ; 004a6945
-    MOV EBP,dword ptr [0x014b9900]      ; 004a694a | DAT_014b9900
+    MOV EBP,dword ptr [0x014b9900]      ; 004a694a | g_CBitFont_PTR_014b9900
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004a6950
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 004a6955

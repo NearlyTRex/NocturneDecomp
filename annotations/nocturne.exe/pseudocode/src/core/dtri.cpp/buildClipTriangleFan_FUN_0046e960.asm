@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   CVector3f[16] CVector3f_ARRAY_01bc9e08
-;   undefined4 CVector3f_ARRAY_01bc9e08[1].x
-;   undefined4 CVector3f_ARRAY_01bc9e08[2].x
+;   CVector3f[16] g_CVector3f_ARRAY_01bc9e08
+;   undefined4 g_CVector3f_ARRAY_01bc9e08[1].x
+;   undefined4 g_CVector3f_ARRAY_01bc9e08[2].x
 ;
 ; Called Functions:
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
@@ -42,10 +42,10 @@ section .text
     MOV EBX,0x1bc9ec8                   ; 0046e987
     ADD ESI,0xc                         ; 0046e98c
     ADD EDI,0x18                        ; 0046e98f
-    PUSH EDI                            ; 0046e992 | CVector3f_ARRAY_01bc9e08[2].x
+    PUSH EDI                            ; 0046e992 | g_CVector3f_ARRAY_01bc9e08[2].x
         ;   Label: LAB_0046e992
-    PUSH ESI                            ; 0046e993 | CVector3f_ARRAY_01bc9e08[1].x | CVector3f_ARRAY_01bc9e08[2].x
-    PUSH 0x1bc9e08                      ; 0046e994 | CVector3f_ARRAY_01bc9e08
+    PUSH ESI                            ; 0046e993 | g_CVector3f_ARRAY_01bc9e08[1].x | g_CVector3f_ARRAY_01bc9e08[2].x
+    PUSH 0x1bc9e08                      ; 0046e994 | g_CVector3f_ARRAY_01bc9e08
     PUSH EBX                            ; 0046e999
     INC EBP                             ; 0046e99a
     ADD EDI,0xc                         ; 0046e99b

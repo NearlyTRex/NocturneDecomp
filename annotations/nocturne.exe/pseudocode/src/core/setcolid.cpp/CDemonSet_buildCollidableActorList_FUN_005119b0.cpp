@@ -9,26 +9,21 @@
 void __cdecl core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(CDemonSet *this_ptr)
 
 {
-  int iVar1;
-  CWayPoint *pCVar2;
-  CDemonSet *pCVar3;
-  int iVar4;
+  CDemonSet *pCVar1;
+  int iVar2;
   
-  iVar1 = *(int *)this_ptr->lights[199].filter_names[0x14];
-  this_ptr->waypoints[0x6d6] = (CWayPoint *)0x0;
-  iVar4 = 0;
-  pCVar3 = this_ptr;
-  if (0 < iVar1) {
+  this_ptr->collidable_actor_count = 0;
+  iVar2 = 0;
+  pCVar1 = this_ptr;
+  if (0 < this_ptr->actor_count) {
     do {
-      pCVar2 = *(CWayPoint **)(pCVar3->lights[199].filter_names[0x14] + 4);
-      if ((pCVar2->base).base.collision_disabled == 0) {
-        this_ptr->waypoints[(int)(this_ptr->waypoints[0x6d6][1].base.actor_name + 0x17)] = pCVar2;
-        this_ptr->waypoints[0x6d6] =
-             (CWayPoint *)((this_ptr->waypoints[0x6d6]->base).base.actor_name + 1);
+      if (pCVar1->actors[0]->collision_disabled == 0) {
+        this_ptr->collidable_actors[this_ptr->collidable_actor_count] = pCVar1->actors[0];
+        this_ptr->collidable_actor_count = this_ptr->collidable_actor_count + 1;
       }
-      iVar4 = iVar4 + 1;
-      pCVar3 = (CDemonSet *)pCVar3->cameras;
-    } while (iVar4 < *(int *)this_ptr->lights[199].filter_names[0x14]);
+      iVar2 = iVar2 + 1;
+      pCVar1 = (CDemonSet *)pCVar1->cameras;
+    } while (iVar2 < this_ptr->actor_count);
   }
   return;
 }

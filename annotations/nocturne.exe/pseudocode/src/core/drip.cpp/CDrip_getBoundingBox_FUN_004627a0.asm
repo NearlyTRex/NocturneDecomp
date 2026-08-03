@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,undefined4 *param_2)
+; float * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30

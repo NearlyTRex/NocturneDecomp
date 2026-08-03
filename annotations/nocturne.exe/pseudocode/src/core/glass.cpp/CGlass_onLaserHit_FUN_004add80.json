@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,13 +58,13 @@
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 39,
+        "line": 40,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 56,
-        "line": 58,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_01c02580'; did you mean 'DAT_02DF2580'?"
       }
     ],
@@ -74,19 +74,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 298,
+    "complexity_score": 324,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 53,
-    "suspect_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 25,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 174
+    "total_lines": 175
   },
   "cross_references": [],
   "function": {
@@ -99,7 +100,7 @@
     ],
     "convention": "unknown",
     "name": "core_glass.cpp_CGlass_onLaserHit_FUN_004add80",
-    "signature": "void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)"
+    "signature": "void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CDemonActor *param_1,SLaserInfo *param_2)"
   },
   "function_calls": [
     {
@@ -254,7 +255,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)",
+      "text": "void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CDemonActor *param_1,SLaserInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -262,7 +263,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)",
+      "text": "void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CDemonActor *param_1,SLaserInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -286,7 +287,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1e0) == 0) {",
+      "text": "if (*(int *)(param_1[1].create_event + 0x18) == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -294,84 +295,84 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)1.5259021896696401e-05;",
+      "text": "param_2->reflectivity =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)1.5259021896696401e-05;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x178) == 0) {",
+      "text": "1.0 - (float)(int)param_1[1].location.position.y * (float)1.5259021896696401e-05;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 24,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x50) = 0x3f800000;",
+      "text": "if (param_1[1].location.position.z == 0.0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_2 + 0x30);",
+      "text": "param_2->transparency = 1.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 28,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x154);",
+      "text": "fVar1 = (param_2->local_hit_position).y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = *(float *)(param_2 + 0x2c);",
+      "text": "fVar2 = *(float *)(param_1[1].actor_name + 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 30,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "fVar4 = *(float *)(param_1 + 0x150);",
+      "text": "fVar3 = (param_2->local_hit_position).x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1 + 0x36c));",
+      "text": "fVar4 = *(float *)param_1[1].actor_name;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[2].create_event + 0x54));",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1 + 0x36c));",
+      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[2].create_event + 0x54));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 35,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "fVar6 = (float)DAT_005b762c;",
@@ -379,7 +380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 43,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "if (DAT_005b762c <= local_20) {",
@@ -387,7 +388,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "local_20 = DAT_005b762c + -1;",
@@ -395,7 +396,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "if (DAT_005b762c <= local_1c) {",
@@ -403,7 +404,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "local_1c = DAT_005b762c + -1;",
@@ -411,7 +412,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "if (*(char *)(local_20 + local_1c * DAT_005b762c + _DAT_01c02580) == '\\0') {",
@@ -419,11 +420,27 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x50) = 0x3f800000;",
+      "text": "param_2->transparency = 1.0;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 19,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if (*(int *)(param_1[1].create_event + 0x18) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 34,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[2].create_event + 0x54));",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

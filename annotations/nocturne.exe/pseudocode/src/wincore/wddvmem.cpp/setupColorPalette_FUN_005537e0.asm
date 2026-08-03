@@ -18,8 +18,8 @@
 ;   undefined4 DAT_01c0064c
 ;   undefined4 DAT_01c0064d
 ;   undefined4 DAT_01c02594
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc9ddc
 ;   undefined4 DAT_02ddf550
 ;   undefined4 DAT_02ddf554
@@ -79,8 +79,8 @@ section .text
     MOV EDI,0x597a5d                    ; 00553865 | = "..\\wincore\\wddvmem.cpp"
     MOV EBP,0x2f1                       ; 0055386a
     PUSH 0x597a74                       ; 0055386f | = "setpal - Unable to create palette object"
-    MOV dword ptr [0x01cc4800],EDI      ; 00553874 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0055387a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00553874 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0055387a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00553880
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00553885
@@ -98,8 +98,8 @@ section .text
     MOV EBX,0x597a9d                    ; 0055389f | = "..\\wincore\\wddvmem.cpp"
     MOV ESI,0x2f7                       ; 005538a4
     PUSH 0x597ab4                       ; 005538a9 | = "setpal - Unable to set front buffer p..."
-    MOV dword ptr [0x01cc4800],EBX      ; 005538ae | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005538b4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 005538ae | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 005538b4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005538ba
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005538bf

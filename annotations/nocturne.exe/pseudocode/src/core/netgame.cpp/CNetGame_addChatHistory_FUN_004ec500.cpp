@@ -13,42 +13,46 @@ void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame *thi
 {
   char cVar1;
   int iVar2;
-  char *pcVar3;
+  int iVar3;
   char *pcVar4;
-  byte bVar5;
+  char *pcVar5;
+  byte bVar6;
   
-  bVar5 = 0;
+  bVar6 = 0;
   if (399 < _DAT_01cea40c) {
     _DAT_01cea40c = _DAT_01cea40c + -1;
-    memmove((void *)0x1cea410,(void *)0x1cea530,_DAT_01cea40c * 0x120);
+    memmove
+              (g_SChatHistory_ARRAY_01cea410,g_SChatHistory_ARRAY_01cea410 + 1,_DAT_01cea40c * 0x120
+              );
   }
-  iVar2 = _DAT_01cea40c * 0x120;
-  *(uint *)(iVar2 + 0x1cea410) = sender_addr->ip_address;
-  *(uint *)(iVar2 + 0x1cea414 + (uint)bVar5 * -8) =
-       *(uint *)&sender_addr[-(uint)bVar5].port;
-  *(int *)(iVar2 + 0x1cea418) = message_id;
-  pcVar3 = (char *)(iVar2 + 0x1cea41c);
+  iVar2 = _DAT_01cea40c;
+  iVar3 = _DAT_01cea40c * 0x120;
+  g_SChatHistory_ARRAY_01cea410[_DAT_01cea40c].sender_addr.ip_address = sender_addr->ip_address;
+  *(uint *)(iVar3 + 0x1cea414 + (uint)bVar6 * -8) =
+       *(uint *)&sender_addr[-(uint)bVar6].port;
+  g_SChatHistory_ARRAY_01cea410[iVar2].message_id = message_id;
+  pcVar4 = g_SChatHistory_ARRAY_01cea410[iVar2].sender_name;
   do {
     cVar1 = *sender_name;
-    *pcVar3 = cVar1;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = sender_name[1];
     sender_name = sender_name + 2;
-    pcVar3[1] = cVar1;
-    pcVar3 = pcVar3 + 2;
-  } while (cVar1 != '\0');
-  pcVar4 = (char *)(_DAT_01cea40c * 0x120 + 0x1cea430);
-  pcVar3 = message;
-  do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
+  pcVar5 = g_SChatHistory_ARRAY_01cea410[_DAT_01cea40c].message;
+  pcVar4 = message;
+  do {
+    cVar1 = *pcVar4;
+    *pcVar5 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar4[1];
+    pcVar4 = pcVar4 + 2;
+    pcVar5[1] = cVar1;
+    pcVar5 = pcVar5 + 2;
+  } while (cVar1 != '\0');
   _DAT_01cea40c = _DAT_01cea40c + 1;
-  core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,message,5.0);
+  core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,message,5.0);
   return;
 }

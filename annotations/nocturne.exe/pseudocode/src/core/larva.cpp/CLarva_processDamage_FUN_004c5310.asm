@@ -19,7 +19,7 @@
 ;   TerminatedCString s_l_s_shot_wav_00587889
 ;   double DOUBLE_0058789c = 0.300000000000000
 ;   double DOUBLE_005878a4 = 0.700000000000000
-;   int INT_005b96c4 = 0x1c78c7c
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -124,7 +124,7 @@ section .text
     PUSH 0x0                            ; 004c53fc
     LEA EAX,[ESP + 0xec]                ; 004c53fe
     PUSH EAX                            ; 004c5405
-    MOV ECX,dword ptr [0x005b96c4]      ; 004c5406 | INT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 004c5406 | g_CGore_PTR_005b96c4
     PUSH ECX                            ; 004c540c
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004c540d
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)

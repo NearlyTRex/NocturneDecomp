@@ -69,18 +69,18 @@ section .text
     JZ 0x0049f9cb                       ; 0049f963
         ;   XREF to: 0049f9cb (CONDITIONAL_JUMP)  ; LAB_0049f9cb
     PUSH 0x1d                           ; 0049f965
-    MOV EAX,[0x005bac64]                ; 0049f967 | INT_005bac64
-    PUSH EAX                            ; 0049f96c | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049f96d | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049f967 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049f96c | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049f96d | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049f96f
     ADD ESP,0x8                         ; 0049f971
     TEST EAX,EAX                        ; 0049f974
     JZ 0x0049f9cb                       ; 0049f976
         ;   XREF to: 0049f9cb (CONDITIONAL_JUMP)  ; LAB_0049f9cb
     PUSH 0x15                           ; 0049f978
-    MOV EAX,[0x005bac64]                ; 0049f97a | INT_005bac64
-    PUSH EAX                            ; 0049f97f | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049f980 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049f97a | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049f97f | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049f980 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049f982
     ADD ESP,0x8                         ; 0049f985
     TEST EAX,EAX                        ; 0049f988
@@ -92,14 +92,14 @@ section .text
     MOV dword ptr [EBX + 0x1fc],EAX     ; 0049f999
     JZ 0x0049fea1                       ; 0049f99f
         ;   XREF to: 0049fea1 (CONDITIONAL_JUMP)  ; LAB_0049fea1
-    MOV ECX,dword ptr [0x005bed68]      ; 0049f9a5 | DAT_005bed68
+    MOV ECX,dword ptr [0x005bed68]      ; 0049f9a5 | g_CSound_PTR_005bed68
     XOR EDX,EDX                         ; 0049f9ab
     PUSH ECX                            ; 0049f9ad
     MOV dword ptr [0x01bd1d94],EDX      ; 0049f9ae | DAT_01bd1d94
     CALL core_sound.cpp_CSound_shutdown_FUN_0052df90 ; 0049f9b4
         ;   XREF to: 0052df90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0052df90(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049f9b9
-    MOV ESI,dword ptr [0x005b9284]      ; 0049f9bc | INT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0049f9bc | PTR_DAT_005b9284
     PUSH ESI                            ; 0049f9c2
     CALL xxx_unk.c_FUN_004940d0         ; 0049f9c3
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
@@ -111,18 +111,18 @@ section .text
         ;   XREF to: 0049fec0 (CONDITIONAL_JUMP)  ; LAB_0049fec0
     PUSH 0x1d                           ; 0049f9d8
         ;   Label: LAB_0049f9d8
-    MOV EAX,[0x005bac64]                ; 0049f9da | INT_005bac64
-    PUSH EAX                            ; 0049f9df | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049f9e0 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049f9da | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049f9df | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049f9e0 | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049f9e2
     ADD ESP,0x8                         ; 0049f9e4
     TEST EAX,EAX                        ; 0049f9e7
     JZ 0x0049fa12                       ; 0049f9e9
         ;   XREF to: 0049fa12 (CONDITIONAL_JUMP)  ; LAB_0049fa12
     PUSH 0x2c                           ; 0049f9eb
-    MOV EAX,[0x005bac64]                ; 0049f9ed | INT_005bac64
-    PUSH EAX                            ; 0049f9f2 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049f9f3 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049f9ed | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049f9f2 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049f9f3 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049f9f5
     ADD ESP,0x8                         ; 0049f9f8
     TEST EAX,EAX                        ; 0049f9fb
@@ -134,18 +134,18 @@ section .text
     MOV dword ptr [EBX + 0x1e4],EAX     ; 0049fa0c
     PUSH 0x38                           ; 0049fa12
         ;   Label: LAB_0049fa12
-    MOV EAX,[0x005bac64]                ; 0049fa14 | INT_005bac64
-    PUSH EAX                            ; 0049fa19 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fa1a | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fa14 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fa19 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fa1a | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fa1c
     ADD ESP,0x8                         ; 0049fa1e
     TEST EAX,EAX                        ; 0049fa21
     JZ 0x0049fa4d                       ; 0049fa23
         ;   XREF to: 0049fa4d (CONDITIONAL_JUMP)  ; LAB_0049fa4d
     PUSH 0x32                           ; 0049fa25
-    MOV EAX,[0x005bac64]                ; 0049fa27 | INT_005bac64
-    PUSH EAX                            ; 0049fa2c | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fa2d | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fa27 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fa2c | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fa2d | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fa2f
     ADD ESP,0x8                         ; 0049fa32
     TEST EAX,EAX                        ; 0049fa35
@@ -161,18 +161,18 @@ section .text
         ;   XREF to: 0049fee3 (CONDITIONAL_JUMP)  ; LAB_0049fee3
     PUSH 0x1d                           ; 0049fa5a
         ;   Label: LAB_0049fa5a
-    MOV EAX,[0x005bac64]                ; 0049fa5c | INT_005bac64
-    PUSH EAX                            ; 0049fa61 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fa62 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fa5c | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fa61 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fa62 | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fa64
     ADD ESP,0x8                         ; 0049fa66
     TEST EAX,EAX                        ; 0049fa69
     JZ 0x0049faa6                       ; 0049fa6b
         ;   XREF to: 0049faa6 (CONDITIONAL_JUMP)  ; LAB_0049faa6
     PUSH 0x32                           ; 0049fa6d
-    MOV EAX,[0x005bac64]                ; 0049fa6f | INT_005bac64
-    PUSH EAX                            ; 0049fa74 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fa75 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fa6f | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fa74 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fa75 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fa77
     ADD ESP,0x8                         ; 0049fa7a
     TEST EAX,EAX                        ; 0049fa7d
@@ -188,7 +188,7 @@ section .text
     CALL sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0 ; 0049fa90
         ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0(int enable)
     ADD ESP,0x4                         ; 0049fa95
-    MOV EAX,[0x005bed68]                ; 0049fa98 | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 0049fa98 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0049fa9d
     CALL core_sound.cpp_CSound_init_FUN_0052ddf0 ; 0049fa9e
         ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0052ddf0(CSound * this_ptr)
@@ -199,18 +199,18 @@ section .text
     JZ 0x0049fb0f                       ; 0049faad
         ;   XREF to: 0049fb0f (CONDITIONAL_JUMP)  ; LAB_0049fb0f
     PUSH 0x1d                           ; 0049faaf
-    MOV EAX,[0x005bac64]                ; 0049fab1 | INT_005bac64
-    PUSH EAX                            ; 0049fab6 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fab7 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fab1 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fab6 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fab7 | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fab9
     ADD ESP,0x8                         ; 0049fabb
     TEST EAX,EAX                        ; 0049fabe
     JZ 0x0049fb0f                       ; 0049fac0
         ;   XREF to: 0049fb0f (CONDITIONAL_JUMP)  ; LAB_0049fb0f
     PUSH 0x11                           ; 0049fac2
-    MOV EAX,[0x005bac64]                ; 0049fac4 | INT_005bac64
-    PUSH EAX                            ; 0049fac9 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049faca | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fac4 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fac9 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049faca | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049facc
     ADD ESP,0x8                         ; 0049facf
     TEST EAX,EAX                        ; 0049fad2
@@ -229,8 +229,8 @@ section .text
     PUSH ECX                            ; 0049fafd
     PUSH EAX                            ; 0049fafe
     PUSH EAX                            ; 0049faff
-    MOV ECX,dword ptr [0x005be368]      ; 0049fb00 | DAT_005be368
-    PUSH ECX                            ; 0049fb06 | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0049fb00 | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 0049fb06 | g_CDemonSet_01e57284
     CALL core_set.cpp_FUN_005090f0      ; 0049fb07
         ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_005090f0()
         ;   Label: LAB_0049fb07
@@ -244,18 +244,18 @@ section .text
         ;   XREF to: 0049ff2f (CONDITIONAL_JUMP)  ; LAB_0049ff2f
     PUSH 0x1d                           ; 0049fb25
         ;   Label: LAB_0049fb25
-    MOV EAX,[0x005bac64]                ; 0049fb27 | INT_005bac64
-    PUSH EAX                            ; 0049fb2c | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fb2d | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fb27 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fb2c | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fb2d | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fb2f
     ADD ESP,0x8                         ; 0049fb31
     TEST EAX,EAX                        ; 0049fb34
     JZ 0x0049fb5a                       ; 0049fb36
         ;   XREF to: 0049fb5a (CONDITIONAL_JUMP)  ; LAB_0049fb5a
     PUSH 0x1f                           ; 0049fb38
-    MOV EAX,[0x005bac64]                ; 0049fb3a | INT_005bac64
-    PUSH EAX                            ; 0049fb3f | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fb40 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fb3a | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fb3f | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fb40 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fb42
     ADD ESP,0x8                         ; 0049fb45
     TEST EAX,EAX                        ; 0049fb48
@@ -267,9 +267,9 @@ section .text
         ;   XREF to: 0049ff88 (CONDITIONAL_JUMP)  ; LAB_0049ff88
     PUSH 0x3c                           ; 0049fb5a
         ;   Label: LAB_0049fb5a
-    MOV EAX,[0x005bac64]                ; 0049fb5c | INT_005bac64
-    PUSH EAX                            ; 0049fb61 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fb62 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fb5c | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fb61 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fb62 | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fb64
     ADD ESP,0x8                         ; 0049fb66
     TEST EAX,EAX                        ; 0049fb69
@@ -281,9 +281,9 @@ section .text
         ;   XREF to: 0049ff97 (CONDITIONAL_JUMP)  ; LAB_0049ff97
     PUSH 0x3d                           ; 0049fb7b
         ;   Label: LAB_0049fb7b
-    MOV EAX,[0x005bac64]                ; 0049fb7d | INT_005bac64
-    PUSH EAX                            ; 0049fb82 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fb83 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fb7d | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fb82 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fb83 | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fb85
     ADD ESP,0x8                         ; 0049fb87
     TEST EAX,EAX                        ; 0049fb8a
@@ -295,9 +295,9 @@ section .text
     ADD ESP,0x4                         ; 0049fb94
     PUSH 0x40                           ; 0049fb97
         ;   Label: LAB_0049fb97
-    MOV EAX,[0x005bac64]                ; 0049fb99 | INT_005bac64
-    PUSH EAX                            ; 0049fb9e | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fb9f | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fb99 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fb9e | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fb9f | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fba1
     ADD ESP,0x8                         ; 0049fba3
     TEST EAX,EAX                        ; 0049fba6
@@ -312,9 +312,9 @@ section .text
         ;   XREF to: 0049ffd5 (CONDITIONAL_JUMP)  ; LAB_0049ffd5
     PUSH 0x3b                           ; 0049fbc4
         ;   Label: LAB_0049fbc4
-    MOV EAX,[0x005bac64]                ; 0049fbc6 | INT_005bac64
-    PUSH EAX                            ; 0049fbcb | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fbcc | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fbc6 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fbcb | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fbcc | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fbce
     ADD ESP,0x8                         ; 0049fbd1
     TEST EAX,EAX                        ; 0049fbd4
@@ -330,9 +330,9 @@ section .text
         ;   XREF to: 004a008a (CONDITIONAL_JUMP)  ; LAB_004a008a
     PUSH 0xf                            ; 0049fbfa
         ;   Label: LAB_0049fbfa
-    MOV EAX,[0x005bac64]                ; 0049fbfc | INT_005bac64
-    PUSH EAX                            ; 0049fc01 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fc02 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fbfc | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fc01 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fc02 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fc04
     ADD ESP,0x8                         ; 0049fc07
     TEST EAX,EAX                        ; 0049fc0a
@@ -348,9 +348,9 @@ section .text
         ;   XREF to: 004a00ad (CONDITIONAL_JUMP)  ; LAB_004a00ad
     PUSH 0x57                           ; 0049fc30
         ;   Label: LAB_0049fc30
-    MOV EAX,[0x005bac64]                ; 0049fc32 | INT_005bac64
-    PUSH EAX                            ; 0049fc37 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fc38 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fc32 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fc37 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fc38 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fc3a
     ADD ESP,0x8                         ; 0049fc3d
     TEST EAX,EAX                        ; 0049fc40
@@ -383,16 +383,16 @@ section .text
     ADD ESP,0xc                         ; 0049fc9c
     MOV EAX,dword ptr [EBX + 0x224]     ; 0049fc9f
     PUSH EAX                            ; 0049fca5
-    MOV EDX,dword ptr [0x005be368]      ; 0049fca6 | DAT_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 0049fca6 | g_CDemonSet_PTR_005be368
     PUSH EDX                            ; 0049fcac
     CALL core_set.cpp_CDemonSet_setGamma_FUN_0050e400 ; 0049fcad
         ;   XREF to: 0050e400 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setGamma_FUN_0050e400(CDemonSet * this_ptr, int gamma)
     ADD ESP,0x8                         ; 0049fcb2
     PUSH 0x58                           ; 0049fcb5
         ;   Label: LAB_0049fcb5
-    MOV EAX,[0x005bac64]                ; 0049fcb7 | INT_005bac64
-    PUSH EAX                            ; 0049fcbc | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fcbd | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fcb7 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fcbc | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fcbd | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fcbf
     ADD ESP,0x8                         ; 0049fcc2
     TEST EAX,EAX                        ; 0049fcc5
@@ -425,7 +425,7 @@ section .text
     ADD ESP,0xc                         ; 0049fd27
     MOV EDI,dword ptr [EBX + 0x224]     ; 0049fd2a
     PUSH EDI                            ; 0049fd30
-    MOV EAX,[0x005be368]                ; 0049fd31 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0049fd31 | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 0049fd36
     CALL core_set.cpp_CDemonSet_setGamma_FUN_0050e400 ; 0049fd37
         ;   XREF to: 0050e400 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setGamma_FUN_0050e400(CDemonSet * this_ptr, int gamma)
@@ -435,31 +435,31 @@ section .text
     JZ 0x0049fd92                       ; 0049fd46
         ;   XREF to: 0049fd92 (CONDITIONAL_JUMP)  ; LAB_0049fd92
     PUSH 0x1d                           ; 0049fd48
-    MOV EAX,[0x005bac64]                ; 0049fd4a | INT_005bac64
-    PUSH EAX                            ; 0049fd4f | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fd50 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fd4a | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fd4f | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fd50 | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fd52
     ADD ESP,0x8                         ; 0049fd54
     TEST EAX,EAX                        ; 0049fd57
     JZ 0x0049fd92                       ; 0049fd59
         ;   XREF to: 0049fd92 (CONDITIONAL_JUMP)  ; LAB_0049fd92
     PUSH 0x23                           ; 0049fd5b
-    MOV EAX,[0x005bac64]                ; 0049fd5d | INT_005bac64
-    PUSH EAX                            ; 0049fd62 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fd63 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fd5d | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fd62 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fd63 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fd65
     ADD ESP,0x8                         ; 0049fd68
     TEST EAX,EAX                        ; 0049fd6b
     JZ 0x0049fd92                       ; 0049fd6d
         ;   XREF to: 0049fd92 (CONDITIONAL_JUMP)  ; LAB_0049fd92
-    MOV EAX,[0x005be368]                ; 0049fd6f | DAT_005be368
-    MOV EAX,dword ptr [EAX + 0x15aab8]  ; 0049fd74 | DAT_01fb1d3c
+    MOV EAX,[0x005be368]                ; 0049fd6f | g_CDemonSet_PTR_005be368
+    MOV EAX,dword ptr [EAX + 0x15aab8]  ; 0049fd74 | g_CDemonSet_01e57284.camera_enabled_flag
     TEST EAX,EAX                        ; 0049fd7a
     SETZ AL                             ; 0049fd7c
     MOV EDI,EAX                         ; 0049fd7f
-    MOV EAX,[0x005be368]                ; 0049fd81 | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0049fd81 | g_CDemonSet_PTR_005be368
     AND EDI,0xff                        ; 0049fd86
-    MOV dword ptr [EAX + 0x15aab8],EDI  ; 0049fd8c | DAT_01fb1d3c
+    MOV dword ptr [EAX + 0x15aab8],EDI  ; 0049fd8c | g_CDemonSet_01e57284.camera_enabled_flag
     CMP dword ptr [EBX + 0x210],0x0     ; 0049fd92
         ;   Label: LAB_0049fd92
     JNZ 0x004a019b                      ; 0049fd99
@@ -476,18 +476,18 @@ section .text
     JZ 0x0049fe11                       ; 0049fdad
         ;   XREF to: 0049fe11 (CONDITIONAL_JUMP)  ; LAB_0049fe11
     PUSH 0x1d                           ; 0049fdaf
-    MOV EAX,[0x005bac64]                ; 0049fdb1 | INT_005bac64
-    PUSH EAX                            ; 0049fdb6 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fdb7 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fdb1 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fdb6 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fdb7 | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fdb9
     ADD ESP,0x8                         ; 0049fdbb
     TEST EAX,EAX                        ; 0049fdbe
     JZ 0x0049fe11                       ; 0049fdc0
         ;   XREF to: 0049fe11 (CONDITIONAL_JUMP)  ; LAB_0049fe11
     PUSH 0x12                           ; 0049fdc2
-    MOV EAX,[0x005bac64]                ; 0049fdc4 | INT_005bac64
-    PUSH EAX                            ; 0049fdc9 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fdca | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fdc4 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fdc9 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fdca | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fdcc
     ADD ESP,0x8                         ; 0049fdcf
     TEST EAX,EAX                        ; 0049fdd2
@@ -501,33 +501,33 @@ section .text
         ;   XREF to: 0049fe11 (CONDITIONAL_JUMP)  ; LAB_0049fe11
     MOV EAX,[0x005be220]                ; 0049fdeb | DAT_005be220
     PUSH 0x1                            ; 0049fdf0
-    MOV EDX,dword ptr [EAX + 0xc]       ; 0049fdf2 | DAT_01e56dac
+    MOV EDX,dword ptr [EAX + 0xc]       ; 0049fdf2 | g_CScript_01e56da0.focus_actor
     PUSH EDX                            ; 0049fdf5
-    MOV ECX,dword ptr [0x005be368]      ; 0049fdf6 | DAT_005be368
-    PUSH ECX                            ; 0049fdfc | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0049fdf6 | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 0049fdfc | g_CDemonSet_01e57284
     CALL core_setdir.cpp_FUN_005125a0   ; 0049fdfd
         ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005125a0()
     MOV EAX,[0x005be220]                ; 0049fe02 | DAT_005be220
     ADD ESP,0xc                         ; 0049fe07
-    MOV dword ptr [EAX + 0x10],0x0      ; 0049fe0a | DAT_01e56db0
+    MOV dword ptr [EAX + 0x10],0x0      ; 0049fe0a | g_CScript_01e56da0.focus_actor_changed
     MOV ESI,dword ptr [EBX + 0x274]     ; 0049fe11
         ;   Label: LAB_0049fe11
     TEST ESI,ESI                        ; 0049fe17
     JNZ 0x0049f95c                      ; 0049fe19
         ;   XREF to: 0049f95c (CONDITIONAL_JUMP)  ; LAB_0049f95c
     PUSH 0x2e                           ; 0049fe1f
-    MOV EAX,[0x005bac64]                ; 0049fe21 | INT_005bac64
-    PUSH EAX                            ; 0049fe26 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fe27 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fe21 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fe26 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fe27 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049fe29
     ADD ESP,0x8                         ; 0049fe2c
     TEST EAX,EAX                        ; 0049fe2f
     JZ 0x0049f95c                       ; 0049fe31
         ;   XREF to: 0049f95c (CONDITIONAL_JUMP)  ; LAB_0049f95c
     PUSH 0x2a                           ; 0049fe37
-    MOV EAX,[0x005bac64]                ; 0049fe39 | INT_005bac64
-    PUSH EAX                            ; 0049fe3e | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049fe3f | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fe39 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049fe3e | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049fe3f | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049fe41
     ADD ESP,0x8                         ; 0049fe43
     TEST EAX,EAX                        ; 0049fe46
@@ -539,15 +539,15 @@ section .text
     TEST ECX,ECX                        ; 0049fe57
     JGE 0x0049fe69                      ; 0049fe59
         ;   XREF to: 0049fe69 (CONDITIONAL_JUMP)  ; LAB_0049fe69
-    MOV EAX,[0x005be368]                ; 0049fe5b | DAT_005be368
-    MOV EAX,dword ptr [EAX]             ; 0049fe60 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 0049fe5b | g_CDemonSet_PTR_005be368
+    MOV EAX,dword ptr [EAX]             ; 0049fe60 | g_CDemonSet_01e57284
     DEC EAX                             ; 0049fe62
     MOV dword ptr [EBX + 0x270],EAX     ; 0049fe63
     MOV EDI,dword ptr [EBX + 0x270]     ; 0049fe69
         ;   Label: LAB_0049fe69
     PUSH EDI                            ; 0049fe6f
-    MOV EAX,[0x005be368]                ; 0049fe70 | DAT_005be368
-    PUSH EAX                            ; 0049fe75 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 0049fe70 | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 0049fe75 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 ; 0049fe76
         ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 0049fe7b
@@ -556,21 +556,21 @@ section .text
     MOV EDI,dword ptr [EBX + 0x270]     ; 0049fe83
         ;   Label: LAB_0049fe83
     INC EDI                             ; 0049fe89
-    MOV EAX,[0x005be368]                ; 0049fe8a | DAT_005be368
+    MOV EAX,[0x005be368]                ; 0049fe8a | g_CDemonSet_PTR_005be368
     MOV dword ptr [EBX + 0x270],EDI     ; 0049fe8f
-    CMP EDI,dword ptr [EAX]             ; 0049fe95 | DAT_01e57284
+    CMP EDI,dword ptr [EAX]             ; 0049fe95 | g_CDemonSet_01e57284
     JL 0x0049fe69                       ; 0049fe97
         ;   XREF to: 0049fe69 (CONDITIONAL_JUMP)  ; LAB_0049fe69
     MOV dword ptr [EBX + 0x270],ESI     ; 0049fe99
     JMP 0x0049fe69                      ; 0049fe9f
         ;   XREF to: 0049fe69 (UNCONDITIONAL_JUMP)  ; LAB_0049fe69
-    MOV EDI,dword ptr [0x005bed68]      ; 0049fea1 | DAT_005bed68
+    MOV EDI,dword ptr [0x005bed68]      ; 0049fea1 | g_CSound_PTR_005bed68
         ;   Label: LAB_0049fea1
     PUSH EDI                            ; 0049fea7
     CALL core_sound.cpp_CSound_init_FUN_0052ddf0 ; 0049fea8
         ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0052ddf0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049fead
-    MOV EAX,[0x005b9284]                ; 0049feb0 | INT_005b9284
+    MOV EAX,[0x005b9284]                ; 0049feb0 | PTR_DAT_005b9284
     PUSH EAX                            ; 0049feb5
     CALL xxx_unk.c_FUN_004940d0         ; 0049feb6
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
@@ -592,9 +592,9 @@ section .text
         ;   XREF to: 0049fa12 (UNCONDITIONAL_JUMP)  ; LAB_0049fa12
     PUSH 0x3f                           ; 0049fee3
         ;   Label: LAB_0049fee3
-    MOV EAX,[0x005bac64]                ; 0049fee5 | INT_005bac64
-    PUSH EAX                            ; 0049feea | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049feeb | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049fee5 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049feea | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049feeb | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049feed
     ADD ESP,0x8                         ; 0049fef0
     TEST EAX,EAX                        ; 0049fef3
@@ -602,7 +602,7 @@ section .text
         ;   XREF to: 0049fa81 (CONDITIONAL_JUMP)  ; LAB_0049fa81
     JMP 0x0049fa5a                      ; 0049fefb
         ;   XREF to: 0049fa5a (UNCONDITIONAL_JUMP)  ; LAB_0049fa5a
-    MOV EDI,dword ptr [0x005bed68]      ; 0049ff00 | DAT_005bed68
+    MOV EDI,dword ptr [0x005bed68]      ; 0049ff00 | g_CSound_PTR_005bed68
         ;   Label: LAB_0049ff00
     PUSH EDI                            ; 0049ff06
     CALL core_sound.cpp_CSound_shutdown_FUN_0052df90 ; 0049ff07
@@ -617,24 +617,24 @@ section .text
         ;   Label: LAB_0049ff1b
     PUSH 0x1                            ; 0049ff20
     PUSH 0x1                            ; 0049ff22
-    MOV EAX,[0x005be368]                ; 0049ff24 | DAT_005be368
-    PUSH EAX                            ; 0049ff29 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 0049ff24 | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 0049ff29 | g_CDemonSet_01e57284
     JMP 0x0049fb07                      ; 0049ff2a
         ;   XREF to: 0049fb07 (UNCONDITIONAL_JUMP)  ; LAB_0049fb07
     PUSH 0x1d                           ; 0049ff2f
         ;   Label: LAB_0049ff2f
-    MOV EAX,[0x005bac64]                ; 0049ff31 | INT_005bac64
-    PUSH EAX                            ; 0049ff36 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049ff37 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049ff31 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049ff36 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049ff37 | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049ff39
     ADD ESP,0x8                         ; 0049ff3b
     TEST EAX,EAX                        ; 0049ff3e
     JZ 0x0049fb25                       ; 0049ff40
         ;   XREF to: 0049fb25 (CONDITIONAL_JUMP)  ; LAB_0049fb25
     PUSH 0x2f                           ; 0049ff46
-    MOV EAX,[0x005bac64]                ; 0049ff48 | INT_005bac64
-    PUSH EAX                            ; 0049ff4d | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049ff4e | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049ff48 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049ff4d | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049ff4e | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 0049ff50
     ADD ESP,0x8                         ; 0049ff53
     TEST EAX,EAX                        ; 0049ff56
@@ -685,9 +685,9 @@ section .text
         ;   XREF to: 0049fbb7 (UNCONDITIONAL_JUMP)  ; LAB_0049fbb7
     PUSH 0x43                           ; 0049ffd5
         ;   Label: LAB_0049ffd5
-    MOV EAX,[0x005bac64]                ; 0049ffd7 | INT_005bac64
-    PUSH EAX                            ; 0049ffdc | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 0049ffdd | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049ffd7 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049ffdc | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 0049ffdd | g_CKeys_01cc30e4
     CALL dword ptr [EDI]                ; 0049ffdf
     ADD ESP,0x8                         ; 0049ffe1
     TEST EAX,EAX                        ; 0049ffe4
@@ -711,7 +711,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a001a
     PUSH EAX                            ; 004a001d
-    MOV EDX,dword ptr [0x005b6d50]      ; 004a001e | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004a001e | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004a0024
     CALL shape_edittool.cpp_FUN_00470230 ; 004a0025
         ;   XREF to: 00470230 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00470230()
@@ -769,13 +769,13 @@ section .text
         ;   XREF to: 0049fc23 (UNCONDITIONAL_JUMP)  ; LAB_0049fc23
     MOV EAX,[0x005be220]                ; 004a00ad | DAT_005be220
         ;   Label: LAB_004a00ad
-    CMP dword ptr [EAX + 0x18],0x2      ; 004a00b2 | DAT_01e56db8
+    CMP dword ptr [EAX + 0x18],0x2      ; 004a00b2 | g_CScript_01e56da0.script_state
     JZ 0x004a010c                       ; 004a00b6
         ;   XREF to: 004a010c (CONDITIONAL_JUMP)  ; LAB_004a010c
     PUSH 0x3f                           ; 004a00b8
-    MOV EAX,[0x005bac64]                ; 004a00ba | INT_005bac64
-    PUSH EAX                            ; 004a00bf | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 004a00c0 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004a00ba | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004a00bf | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 004a00c0 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 004a00c2
     ADD ESP,0x8                         ; 004a00c5
     TEST EAX,EAX                        ; 004a00c8
@@ -784,44 +784,44 @@ section .text
     PUSH 0xf0                           ; 004a00cc
     PUSH 0x0                            ; 004a00d1
     PUSH 0x0                            ; 004a00d3
-    MOV ECX,dword ptr [0x005be368]      ; 004a00d5 | DAT_005be368
-    PUSH ECX                            ; 004a00db | DAT_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004a00d5 | g_CDemonSet_PTR_005be368
+    PUSH ECX                            ; 004a00db | g_CDemonSet_01e57284
     MOV dword ptr [EBX + 0x278],0x1     ; 004a00dc
     CALL core_set.cpp_FUN_005090f0      ; 004a00e6
         ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_005090f0()
     MOV EAX,[0x005be220]                ; 004a00eb | DAT_005be220
     MOV dword ptr [EBX + 0x1dc],0x1     ; 004a00f0
-    MOV ESI,dword ptr [EAX + 0x18]      ; 004a00fa | DAT_01e56db8
+    MOV ESI,dword ptr [EAX + 0x18]      ; 004a00fa | g_CScript_01e56da0.script_state
     ADD ESP,0x10                        ; 004a00fd
     CMP ESI,0x1                         ; 004a0100
     JNZ 0x004a0170                      ; 004a0103
         ;   XREF to: 004a0170 (CONDITIONAL_JUMP)  ; LAB_004a0170
-    MOV dword ptr [EAX + 0x18],0x0      ; 004a0105 | DAT_01e56db8
+    MOV dword ptr [EAX + 0x18],0x0      ; 004a0105 | g_CScript_01e56da0.script_state
     CMP dword ptr [EBX + 0x1dc],0x0     ; 004a010c
         ;   Label: LAB_004a010c
     JZ 0x0049fc30                       ; 004a0113
         ;   XREF to: 0049fc30 (CONDITIONAL_JUMP)  ; LAB_0049fc30
     MOV EAX,[0x005be220]                ; 004a0119 | DAT_005be220
-    CMP dword ptr [EAX + 0x18],0x2      ; 004a011e | DAT_01e56db8
+    CMP dword ptr [EAX + 0x18],0x2      ; 004a011e | g_CScript_01e56da0.script_state
     JZ 0x004a0179                       ; 004a0122
         ;   XREF to: 004a0179 (CONDITIONAL_JUMP)  ; LAB_004a0179
     PUSH 0x3f                           ; 004a0124
         ;   Label: LAB_004a0124
-    MOV EAX,[0x005bac64]                ; 004a0126 | INT_005bac64
-    PUSH EAX                            ; 004a012b | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 004a012c | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004a0126 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004a012b | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 004a012c | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 004a012e
     ADD ESP,0x8                         ; 004a0131
     TEST EAX,EAX                        ; 004a0134
     JZ 0x004a0144                       ; 004a0136
         ;   XREF to: 004a0144 (CONDITIONAL_JUMP)  ; LAB_004a0144
     MOV EAX,[0x005be220]                ; 004a0138 | DAT_005be220
-    MOV dword ptr [EAX + 0x18],0x0      ; 004a013d | DAT_01e56db8
+    MOV dword ptr [EAX + 0x18],0x0      ; 004a013d | g_CScript_01e56da0.script_state
     PUSH 0x43                           ; 004a0144
         ;   Label: LAB_004a0144
-    MOV EAX,[0x005bac64]                ; 004a0146 | INT_005bac64
-    PUSH EAX                            ; 004a014b | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 004a014c | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004a0146 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004a014b | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 004a014c | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 004a014e
     ADD ESP,0x8                         ; 004a0151
     TEST EAX,EAX                        ; 004a0154
@@ -834,55 +834,55 @@ section .text
     ADD ESP,0x4                         ; 004a0168
     JMP 0x0049fc30                      ; 004a016b
         ;   XREF to: 0049fc30 (UNCONDITIONAL_JUMP)  ; LAB_0049fc30
-    MOV dword ptr [EAX + 0x18],0x1      ; 004a0170 | DAT_01e56db8
+    MOV dword ptr [EAX + 0x18],0x1      ; 004a0170 | g_CScript_01e56da0.script_state
         ;   Label: LAB_004a0170
     JMP 0x004a010c                      ; 004a0177
         ;   XREF to: 004a010c (UNCONDITIONAL_JUMP)  ; LAB_004a010c
     PUSH 0x44                           ; 004a0179
         ;   Label: LAB_004a0179
-    MOV EAX,[0x005bac64]                ; 004a017b | INT_005bac64
-    PUSH EAX                            ; 004a0180 | DAT_01cc30e4
-    MOV EDI,dword ptr [EAX]             ; 004a0181 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004a017b | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004a0180 | g_CKeys_01cc30e4
+    MOV EDI,dword ptr [EAX]             ; 004a0181 | g_CKeys_01cc30e4
     CALL dword ptr [EDI + 0x4]          ; 004a0183
     ADD ESP,0x8                         ; 004a0186
     TEST EAX,EAX                        ; 004a0189
     JZ 0x004a0124                       ; 004a018b
         ;   XREF to: 004a0124 (CONDITIONAL_JUMP)  ; LAB_004a0124
     MOV EAX,[0x005be220]                ; 004a018d | DAT_005be220
-    MOV dword ptr [EAX + 0x18],0x1      ; 004a0192 | DAT_01e56db8
+    MOV dword ptr [EAX + 0x18],0x1      ; 004a0192 | g_CScript_01e56da0.script_state
     JMP 0x004a0124                      ; 004a0199
         ;   XREF to: 004a0124 (UNCONDITIONAL_JUMP)  ; LAB_004a0124
     PUSH 0x38                           ; 004a019b
         ;   Label: LAB_004a019b
-    MOV EAX,[0x005bac64]                ; 004a019d | INT_005bac64
-    PUSH EAX                            ; 004a01a2 | DAT_01cc30e4
-    MOV EBX,dword ptr [EAX]             ; 004a01a3 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004a019d | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004a01a2 | g_CKeys_01cc30e4
+    MOV EBX,dword ptr [EAX]             ; 004a01a3 | g_CKeys_01cc30e4
     CALL dword ptr [EBX]                ; 004a01a5
     ADD ESP,0x8                         ; 004a01a7
     TEST EAX,EAX                        ; 004a01aa
     JZ 0x0049fd9f                       ; 004a01ac
         ;   XREF to: 0049fd9f (CONDITIONAL_JUMP)  ; LAB_0049fd9f
     PUSH 0x1e                           ; 004a01b2
-    MOV EAX,[0x005bac64]                ; 004a01b4 | INT_005bac64
-    PUSH EAX                            ; 004a01b9 | DAT_01cc30e4
-    MOV EBX,dword ptr [EAX]             ; 004a01ba | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 004a01b4 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 004a01b9 | g_CKeys_01cc30e4
+    MOV EBX,dword ptr [EAX]             ; 004a01ba | g_CKeys_01cc30e4
     CALL dword ptr [EBX + 0x4]          ; 004a01bc
     ADD ESP,0x8                         ; 004a01bf
     TEST EAX,EAX                        ; 004a01c2
     JZ 0x0049fd9f                       ; 004a01c4
         ;   XREF to: 0049fd9f (CONDITIONAL_JUMP)  ; LAB_0049fd9f
     PUSH 0x2a                           ; 004a01ca
-    MOV EAX,[0x005bac64]                ; 004a01cc | INT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a01cc | g_CKeys_PTR_005bac64
     MOV EBX,0x3ca3d70a                  ; 004a01d1
-    PUSH EAX                            ; 004a01d6 | DAT_01cc30e4
+    PUSH EAX                            ; 004a01d6 | g_CKeys_01cc30e4
     MOV dword ptr [ESP + 0x210],EBX     ; 004a01d7
-    MOV EBX,dword ptr [EAX]             ; 004a01de | DAT_01cc30e4
+    MOV EBX,dword ptr [EAX]             ; 004a01de | g_CKeys_01cc30e4
     CALL dword ptr [EBX]                ; 004a01e0
     ADD ESP,0x8                         ; 004a01e2
     TEST EAX,EAX                        ; 004a01e5
     JNZ 0x004a0245                      ; 004a01e7
         ;   XREF to: 004a0245 (CONDITIONAL_JUMP)  ; LAB_004a0245
-    MOV EAX,[0x01fb96f0]                ; 004a01e9 | DAT_01fb96f0
+    MOV EAX,[0x01fb96f0]                ; 004a01e9 | g_CDemonCamera_01fb8508.corona_blend_factor
         ;   Label: LAB_004a01e9
     MOV dword ptr [ESP + 0x204],EAX     ; 004a01ee
     FILD dword ptr [ESP + 0x204]        ; 004a01f5
@@ -907,14 +907,14 @@ section .text
         ;   XREF to: 004a0252 (CONDITIONAL_JUMP)  ; LAB_004a0252
     XOR EBX,EBX                         ; 004a0226
         ;   Label: LAB_004a0226
-    MOV EAX,[0x005be368]                ; 004a0228 | DAT_005be368 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 004a0228 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
         ;   Label: LAB_004a0228
-    CMP EBX,dword ptr [EAX]             ; 004a022d | DAT_01e57284
+    CMP EBX,dword ptr [EAX]             ; 004a022d | g_CDemonSet_01e57284
     JGE 0x0049fd9f                      ; 004a022f
         ;   XREF to: 0049fd9f (CONDITIONAL_JUMP)  ; LAB_0049fd9f
     PUSH dword ptr [ESP]                ; 004a0235
     PUSH EBX                            ; 004a0238
-    PUSH EAX                            ; 004a0239 | DAT_01e57284
+    PUSH EAX                            ; 004a0239 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0 ; 004a023a
         ;   XREF to: 0050e4c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet * this_ptr, int index, float value)
     INC EBX                             ; 004a023f

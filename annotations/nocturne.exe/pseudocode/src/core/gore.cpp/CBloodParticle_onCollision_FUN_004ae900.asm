@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005850a0 = 0.900000000000000
-;   int INT_005b96c4 = 0x1c78c7c
+;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;
 ; Called Functions:
 ;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004b0190
@@ -33,7 +33,7 @@ section .text
     MOV EDI,dword ptr [EDX + 0x38]      ; 004ae918
     PUSH EDI                            ; 004ae91b
     PUSH EDX                            ; 004ae91c
-    MOV EBP,dword ptr [0x005b96c4]      ; 004ae91d | INT_005b96c4
+    MOV EBP,dword ptr [0x005b96c4]      ; 004ae91d | g_CGore_PTR_005b96c4
     PUSH EBP                            ; 004ae923
     CALL core_gore.cpp_CGore_createGroundBloodSplat_FUN_004b0190 ; 004ae924
         ;   XREF to: 004b0190 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createGroundBloodSplat_FUN_004b0190(CGore * this_ptr, CVector3f * position, int blood_type)
@@ -49,7 +49,7 @@ section .text
     PUSH EBX                            ; 004ae939
     PUSH ECX                            ; 004ae93a
     PUSH EDX                            ; 004ae93b
-    MOV ESI,dword ptr [0x005b96c4]      ; 004ae93c | INT_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004ae93c | g_CGore_PTR_005b96c4
     PUSH ESI                            ; 004ae942
     CALL core_gore.cpp_CGore_createWallBloodSplat_FUN_004b01c0 ; 004ae943
         ;   XREF to: 004b01c0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createWallBloodSplat_FUN_004b01c0(CGore * this_ptr, CVector3f * position, CVector3f * normal, int blood_type)

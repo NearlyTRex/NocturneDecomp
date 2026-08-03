@@ -19,9 +19,9 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a537
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c77850
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;   undefined4 DAT_02dd1184
 ;   undefined4 DAT_02dd1188
 ;   undefined4 DAT_02dd118c
@@ -50,8 +50,8 @@ section .text
     SAHF                                ; 004874e5
     JNC 0x00487520                      ; 004874e6
         ;   XREF to: 00487520 (CONDITIONAL_JUMP)  ; LAB_00487520
-    MOV EAX,[0x005b9354]                ; 004874e8 | DAT_005b9354
-    MOV EAX,dword ptr [EAX + 0x264]     ; 004874ed | DAT_01c77850
+    MOV EAX,[0x005b9354]                ; 004874e8 | g_CGame_PTR_005b9354
+    MOV EAX,dword ptr [EAX + 0x264]     ; 004874ed | g_CGame_01c775ec.delta_time_float
     MOV dword ptr [ESP + 0x24],EAX      ; 004874f3
     FLD float ptr [EBX + 0x3dc]         ; 004874f7
     FSUB float ptr [ESP + 0x24]         ; 004874fd
@@ -77,7 +77,7 @@ section .text
     PUSH 0x42c80000                     ; 0048752b
     PUSH 0x41800000                     ; 00487530
     PUSH ESI                            ; 00487535
-    MOV ECX,dword ptr [0x005b80f0]      ; 00487536 | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 00487536 | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 0048753c
     CALL core_fire.cpp_FUN_0048c0d0     ; 0048753d
         ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
@@ -143,7 +143,7 @@ section .text
     PUSH 0x0                            ; 004875f3
     LEA EAX,[ESP + 0x14]                ; 004875f5
     PUSH EAX                            ; 004875f9
-    MOV EDX,dword ptr [0x005b80f0]      ; 004875fa | DAT_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 004875fa | g_CFireEffect_PTR_005b80f0
     PUSH EDX                            ; 00487600
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 00487601
         ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

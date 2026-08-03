@@ -36,7 +36,7 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
   if (this_ptr->letterbox_mode != 0) {
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Unable to save during cinematic")
     ;
-    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,pcVar4);
+    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar4);
     return;
   }
   remove("save\\$$SAVE$$.TMP");
@@ -68,7 +68,8 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
     directory_path = "save";
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Save game");
     iVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
-                      (0x01BCD074,pcVar3,directory_path,file_extension,output_buffer,flags);
+                      (g_CEditorTools_PTR_005b6d50,pcVar3,directory_path,file_extension,
+                       output_buffer,flags);
     if (iVar2 == 0) {
       return;
     }
@@ -93,13 +94,13 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
   if (file_handle == (_FILE *)0x0) {
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Warning!  Your game didn't save.")
     ;
-    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,pcVar4);
+    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar4);
     DAT_00763e90 = file_handle;
     return;
   }
   _fprintf(file_handle,"// .NOC file version\n");
   _fprintf();
-  core_mission_cpp_FUN_004d8720(0x01CC9450,file_handle);
+  core_mission_cpp_FUN_004d8720(g_CDemonMission_PTR_005baf90,file_handle);
   _fprintf(file_handle,"// Hero count, local hero index, hero list\n");
   _fprintf(file_handle,"%d, %d\n",_DAT_01cae0d4,_DAT_01cae0e8);
   iVar2 = 0;
@@ -111,9 +112,10 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
   }
   core_event_cpp_CEventList_saveState_FUN_00481330(0x01C03A10,file_handle);
   core_script_cpp_FUN_005055f0(0x01E56DA0,file_handle);
-  core_fire_cpp_CFireEffect_save_FUN_0048c850(0x01C08D04,file_handle);
+  core_fire_cpp_CFireEffect_save_FUN_0048c850(g_CFireEffect_PTR_005b80f0,file_handle);
   _fprintf(file_handle,"Light state\n");
-  core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(0x01E57284,(int *)&DAT_01c7869c);
+  core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860
+            (g_CDemonSet_PTR_005be368,(int *)&DAT_01c7869c);
   iVar2 = 1;
   _fprintf();
   if (0 < _DAT_01c7869c) {
@@ -126,7 +128,7 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
   _fprintf(file_handle,"%f,%f,%d,%d\n",(double)this_ptr->total_play_time,
              (double)this_ptr->total_game_time,this_ptr->damageable_enemy_count,
              this_ptr->total_kill_count);
-  core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(0x01E57284,file_handle);
+  core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(g_CDemonSet_PTR_005be368,file_handle);
   _fclose(file_handle);
   DAT_00763e90 = (_FILE *)0x0;
   if (local_14 != 0) {
@@ -139,7 +141,7 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
     buffer_size = 0x000001A4;
     crt_fstream_cpp_openFile_FUN_00565eb5(local_14c,"save\\$$SAVE$$.TMP",0x121,0x000001A4);
     if (local_108._ios.__enabled_exceptions != 0) {
-      shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,pcVar3);
+      shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar3);
       crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_cc,0);
       crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_14c,0);
       return;
@@ -147,7 +149,7 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
     _sprintf(local_350,"%s\\%s","save",local_558);
     crt_fstream_cpp_openFile_FUN_00565eb5(local_cc,local_350,0x112,buffer_size);
     if (local_88._ios.__enabled_exceptions != 0) {
-      shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,pcVar3);
+      shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar3);
       crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_cc,0);
       crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_14c,0);
       return;

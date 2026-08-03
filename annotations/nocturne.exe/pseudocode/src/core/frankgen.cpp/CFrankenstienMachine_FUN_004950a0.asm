@@ -26,8 +26,8 @@
 ;   TerminatedCString s_WTF_00581d6d
 ;   undefined4 DAT_0059db58
 ;   float FLOAT_0059db70 = 2300
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -178,8 +178,8 @@ section .text
         ;   Label: default
     MOV ECX,0x1bb                       ; 00495201
     PUSH 0x581d6d                       ; 00495206 | = "WTF!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0049520b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00495211 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0049520b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00495211 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00495217
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0049521c

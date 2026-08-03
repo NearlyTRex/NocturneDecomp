@@ -18,10 +18,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(CDemonLight 
   pCVar1->shadow_buffer_raw = (void *)0x0;
   pCVar1->master_zbuffer = (void *)0x0;
   (pCVar1->base).zbuffer_raw = (void *)0x0;
-  (pCVar1->base).camera_name[0xc0] = '\0';
-  (pCVar1->base).camera_name[0xc1] = '\0';
-  (pCVar1->base).camera_name[0xc2] = '\x7f';
-  (pCVar1->base).camera_name[0xc3] = 'C';
+  (pCVar1->base).fixed_point_scale = 255.0;
   pCVar1->lightmap_visibility_bits = (uchar *)0x0;
   pCVar1->filter_buffer = (uchar *)0x0;
   pCVar1->precomputed_lighting_textures = (uchar *)0x0;

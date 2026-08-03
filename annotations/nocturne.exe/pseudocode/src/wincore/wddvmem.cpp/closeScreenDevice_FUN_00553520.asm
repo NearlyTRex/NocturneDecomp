@@ -23,8 +23,8 @@
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01bd4260
 ;   undefined4 DAT_01c02594
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02ddf558
 ;   undefined4 DAT_02ddf564
 ;   ... and 1 more
@@ -92,8 +92,8 @@ section .text
     MOV ESI,0x597995                    ; 005535bb | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x27f                       ; 005535c0
     PUSH 0x5979ac                       ; 005535c5 | = "closeScreenDevice - Unable to unlock"
-    MOV dword ptr [0x01cc4800],ESI      ; 005535ca | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005535d0 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 005535ca | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005535d0 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005535d6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005535db

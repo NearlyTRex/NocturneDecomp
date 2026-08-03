@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(int param_1,undefined4 *param_2)
+; float * core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

@@ -20,8 +20,8 @@
 ;   TerminatedCString s_CIniFile_getString_filen_00586656
 ;   TerminatedCString s_engine_ini_cpp_00586680
 ;   TerminatedCString s_CIniFile_getString_secti_00586692
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -63,8 +63,8 @@ section .text
         ;   Label: LAB_004bd947
     MOV ECX,0x265                       ; 004bd94c
     PUSH 0x586656                       ; 004bd951 | = "CIniFile::getString - filename not wr..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004bd956 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004bd95c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004bd956 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004bd95c | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004bd962
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd967
@@ -76,8 +76,8 @@ section .text
     MOV ESI,0x586680                    ; 004bd96e | = "..\\engine\\ini.cpp"
     MOV EDI,0x266                       ; 004bd973
     PUSH 0x586692                       ; 004bd978 | = "CIniFile::getString - section not write!"
-    MOV dword ptr [0x01cc4800],ESI      ; 004bd97d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004bd983 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004bd97d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004bd983 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004bd989
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd98e

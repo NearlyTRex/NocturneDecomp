@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_trisock_cpp_00596bd8
 ;   TerminatedCString s_Invalid_IP_values_d_d_d_00596bef
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -64,8 +64,8 @@ section .text
     MOV EBP,0x596bd8                    ; 00548b7c | = "..\\support\\trisock.cpp"
     MOV EAX,0x41                        ; 00548b81
     PUSH 0x596bef                       ; 00548b86 | = "Invalid IP values: %d, %d, %d, %d"
-    MOV dword ptr [0x01cc4800],EBP      ; 00548b8b | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00548b91 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 00548b8b | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00548b91 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00548b96
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x14                        ; 00548b9b

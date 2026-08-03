@@ -12,8 +12,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0 at 0051dafa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
@@ -33,8 +33,8 @@ section .text
     PUSH EDX                            ; 00518453
     MOV EBX,dword ptr [EAX + 0x2c]      ; 00518454
     PUSH EBX                            ; 00518457
-    MOV ESI,dword ptr [0x005be368]      ; 00518458 | DAT_005be368
-    PUSH ESI                            ; 0051845e | DAT_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 00518458 | g_CDemonSet_PTR_005be368
+    PUSH ESI                            ; 0051845e | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 0051845f
         ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 00518464

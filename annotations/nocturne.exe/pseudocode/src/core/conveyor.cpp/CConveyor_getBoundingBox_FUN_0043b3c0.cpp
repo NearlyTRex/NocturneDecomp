@@ -12,13 +12,13 @@ CBoundingBox3D * __cdecl core_conveyor_cpp_CConveyor_getBoundingBox_FUN_0043b3c0
   float fVar1;
   float fVar2;
   
-  fVar1 = (float)(this_ptr->base).rendered_in_background;
+  fVar1 = (this_ptr->size).x;
   fVar2 = (float)0.5;
   (out_box->min).y = -0.1;
   (out_box->min).x = -fVar1 * fVar2;
-  (out_box->min).z = -(this_ptr->size).y * fVar2;
-  (out_box->max).x = (float)(this_ptr->base).rendered_in_background * fVar2;
-  (out_box->max).y = (this_ptr->size).x + (float)0.10000000000000001;
-  (out_box->max).z = fVar2 * (this_ptr->size).y;
+  (out_box->min).z = -(this_ptr->size).z * fVar2;
+  (out_box->max).x = (this_ptr->size).x * fVar2;
+  (out_box->max).y = (this_ptr->size).y + (float)0.10000000000000001;
+  (out_box->max).z = fVar2 * (this_ptr->size).z;
   return out_box;
 }

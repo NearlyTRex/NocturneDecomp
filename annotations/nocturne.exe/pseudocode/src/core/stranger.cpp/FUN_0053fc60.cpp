@@ -29,13 +29,15 @@ void __cdecl core_stranger_cpp_FUN_0053fc60(CStranger *this_ptr)
       case 0:
         pCVar2 = (this_ptr->base).door_to_open;
         if (pCVar2 != (CDoor *)0x0) {
-          shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",pCVar2);
+          shape_edittool_cpp_FUN_0046fcd0
+                    (g_CEditorTools_PTR_005b6d50,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",pCVar2);
         }
         break;
       case 1:
         pCVar2 = (this_ptr->base).door_to_open;
         if (pCVar2 != (CDoor *)0x0) {
-          shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",pCVar2);
+          shape_edittool_cpp_FUN_0046fcd0
+                    (g_CEditorTools_PTR_005b6d50,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",pCVar2);
           (this_ptr->base).player_input.action_state.fire = 0;
           return;
         }

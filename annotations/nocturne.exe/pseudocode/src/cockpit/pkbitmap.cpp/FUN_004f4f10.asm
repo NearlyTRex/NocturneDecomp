@@ -12,8 +12,8 @@
 ;   TerminatedCString s_Error_writing_PBG_header_0058d357
 ;   undefined4 DAT_005be180
 ;   undefined1 DAT_005be184
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -62,8 +62,8 @@ section .text
     MOV ECX,0x58d33f                    ; 004f4f60 | = "..\\cockpit\\pkbitmap.cpp"
     MOV EBX,0x53b                       ; 004f4f65
     PUSH 0x58d357                       ; 004f4f6a | = "Error writing PBG header"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f4f6f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004f4f75 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f4f6f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004f4f75 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f4f7b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4f80

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 21,
-        "message": "use of undeclared identifier 'DAT_02dc1edc'; did you mean 'DAT_005c1ddc'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 33,
-        "message": "use of undeclared identifier 'DAT_02dc1edc'; did you mean 'DAT_005c1ddc'?"
       }
     ],
     "success": false,
@@ -74,20 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 316,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 24,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 55,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
-      "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 174
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -125,19 +112,19 @@
     },
     {
       "addr": "02dc216c",
-      "name": "DAT_02dc216c",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].taken",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc2170",
-      "name": "DAT_02dc2170",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].ref_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc217c",
-      "name": "DAT_02dc217c",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].streaming_buffer_size",
       "type": "undefined4",
       "value": null
     }
@@ -275,24 +262,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_02dc1edc",
-      "severity": "mild",
-      "text": "this_ptr = (CSfxSample *)&DAT_02dc1edc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_02dc1edc",
-      "severity": "mild",
-      "text": "((CSfxSample *)(&DAT_02dc1edc + iVar1));",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 != (int *)0x0) {",
@@ -300,7 +271,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = local_18;",
@@ -308,7 +279,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 40,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 != (int *)0x0) {",
@@ -316,15 +287,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = iVar3;",
+      "text": "*param_2 = iVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 43,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != (int *)0x0) {",
@@ -332,7 +303,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 44,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = local_1c;",
@@ -340,7 +311,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 46,
       "match": "param_4",
       "severity": "mild",
       "text": "if (param_4 != (int *)0x0) {",
@@ -348,7 +319,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 47,
       "match": "param_4",
       "severity": "mild",
       "text": "*param_4 = local_14;",
@@ -356,7 +327,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_5",
       "severity": "mild",
       "text": "if (param_5 != (int *)0x0) {",
@@ -364,7 +335,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 50,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = 0x40 - (local_18 + local_1c);",
@@ -372,7 +343,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 52,
       "match": "param_6",
       "severity": "mild",
       "text": "if ((param_6 != (int *)0x0) &&",
@@ -380,35 +351,27 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 53,
       "match": "param_6",
       "severity": "mild",
-      "text": "(iVar3 = DAT_005bea94 - (iVar3 + local_14), *param_6 = iVar3, iVar3 < 0)) {",
+      "text": "(iVar2 = DAT_005bea94 - (iVar2 + local_14), *param_6 = iVar2, iVar2 < 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_005bea94",
       "severity": "mild",
-      "text": "(iVar3 = DAT_005bea94 - (iVar3 + local_14), *param_6 = iVar3, iVar3 < 0)) {",
+      "text": "(iVar2 = DAT_005bea94 - (iVar2 + local_14), *param_6 = iVar2, iVar2 < 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 54,
       "match": "param_6",
       "severity": "mild",
       "text": "*param_6 = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr->owner`). Replace `this_ptr->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 36,
-      "match": "this_ptr = (T *)&this_ptr->FIELD",
-      "severity": "moderate",
-      "text": "this_ptr = (CSfxSample *)&this_ptr->stream_write_position;",
-      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 1,

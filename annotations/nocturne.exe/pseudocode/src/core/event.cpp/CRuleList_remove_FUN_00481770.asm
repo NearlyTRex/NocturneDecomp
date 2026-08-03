@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00580f3f
 ;   TerminatedCString s_CRuleList_remove_invalid_00580f51
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -90,8 +90,8 @@ section .text
         ;   Label: LAB_0048180d
     MOV EDI,0xcef                       ; 00481812
     PUSH 0x580f51                       ; 00481817 | = "CRuleList::remove - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 0048181c | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00481822 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0048181c | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00481822 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00481828
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0048182d

@@ -9,8 +9,8 @@
 ;   TerminatedCString s_Invalid_height_array_siz_0057a72c
 ;   TerminatedCString s_cockpit_ckptutil_c_0057a747
 ;   TerminatedCString s_No_room_for_scroll_bitma_0057a75d
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -204,8 +204,8 @@ section .text
         ;   Label: LAB_0042e954
     MOV ESI,0x3f0                       ; 0042e959
     PUSH 0x57a72c                       ; 0042e95e | = "Invalid height array size."
-    MOV dword ptr [0x01cc4800],ECX      ; 0042e963 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0042e969 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0042e963 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0042e969 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0042e96f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042e974
@@ -215,8 +215,8 @@ section .text
         ;   Label: LAB_0042e97c
     MOV EDX,0x3f6                       ; 0042e981
     PUSH 0x57a75d                       ; 0042e986 | = "No room for scroll bitmap height table."
-    MOV [0x01cc4800],EAX                ; 0042e98b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0042e990 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0042e98b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0042e990 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0042e996
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042e99b

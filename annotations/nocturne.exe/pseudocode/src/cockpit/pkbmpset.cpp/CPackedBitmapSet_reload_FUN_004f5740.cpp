@@ -23,16 +23,16 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_004f5740(CPackedBi
   local_14 = engine_dosio_cpp_getFile_FUN_00456a60("art",this_ptr->filename,"rb");
   if (local_14 == (_FILE *)0x0) {
     _sprintf(local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW",this_ptr->filename);
-    PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
-    INT_01cc4804 = 0x107;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01cc4804 = 0x107;
     core_main_c_FUN_004c8440(local_e4);
   }
   size = this_ptr->width * this_ptr->height;
   local_18 = (uchar *)malloc(size);
   if (local_18 == (uchar *)0x0) {
     _sprintf(local_148,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",size);
-    INT_01cc4804 = 0x114;
-    PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
+    g_INT_01cc4804 = 0x114;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_FUN_004c8440(local_148);
   }
   iVar2 = 0;
@@ -44,8 +44,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_004f5740(CPackedBi
         SVar1 = _fread(local_18,size,1,local_14);
         if (SVar1 != 1) {
           _sprintf(local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",local_1c);
-          INT_01cc4804 = 0x127;
-          PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
+          g_INT_01cc4804 = 0x127;
+          g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
           core_main_c_FUN_004c8440(local_80);
         }
         cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700

@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_x_005884ec
-;   undefined4 DAT_014b98f8
+;   CBitFont* g_CBitFont_PTR_014b98f8
 ;   undefined4 DAT_01c038f8
 ;   undefined4 DAT_01c038fc
 ;   undefined4 DAT_01c03908
@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x100                       ; 004cf814
     MOV EDX,dword ptr [ESP + 0x114]     ; 004cf81a
     PUSH EDX                            ; 004cf821
-    MOV ECX,dword ptr [0x014b98f8]      ; 004cf822 | DAT_014b98f8
+    MOV ECX,dword ptr [0x014b98f8]      ; 004cf822 | g_CBitFont_PTR_014b98f8
     PUSH ECX                            ; 004cf828
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf829
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -45,7 +45,7 @@ section .text
     SAR EAX,0x1                         ; 004cf835
     ADD ESP,0x8                         ; 004cf837
     PUSH 0x58                           ; 004cf83a
-    MOV ESI,dword ptr [0x014b98f8]      ; 004cf83c | DAT_014b98f8
+    MOV ESI,dword ptr [0x014b98f8]      ; 004cf83c | g_CBitFont_PTR_014b98f8
     MOV EBX,0x140                       ; 004cf842
     PUSH ESI                            ; 004cf847
     SUB EBX,EAX                         ; 004cf848
@@ -64,7 +64,7 @@ section .text
     PUSH EBX                            ; 004cf867
     MOV EDI,dword ptr [ESP + 0x124]     ; 004cf868
     PUSH EDI                            ; 004cf86f
-    MOV EBP,dword ptr [0x014b98f8]      ; 004cf870 | DAT_014b98f8
+    MOV EBP,dword ptr [0x014b98f8]      ; 004cf870 | g_CBitFont_PTR_014b98f8
     PUSH EBP                            ; 004cf876
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cf877
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)

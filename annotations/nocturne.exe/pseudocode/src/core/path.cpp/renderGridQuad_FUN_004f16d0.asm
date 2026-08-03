@@ -28,10 +28,10 @@
 ;   undefined4 DAT_0058ce27
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01fba94c
-;   undefined4 DAT_01fba96c
-;   undefined4 DAT_01fba970
-;   undefined4 DAT_01fba974
+;   undefined4 g_CDemonRaytrace_01fba938.bbox_min.y
+;   undefined4 g_CDemonRaytrace_01fba938.adjusted_size.x
+;   undefined4 g_CDemonRaytrace_01fba938.adjusted_size.y
+;   undefined4 g_CDemonRaytrace_01fba938.adjusted_size.z
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -52,14 +52,14 @@ section .text
     MOV EDI,dword ptr [ESP + 0x48]      ; 004f16de
     PUSH EBX                            ; 004f16e2
     FLD float ptr [0x0058ce1f]          ; 004f16e3 | DAT_0058ce1f
-    FLD float ptr [0x01fba96c]          ; 004f16e9 | DAT_01fba96c
+    FLD float ptr [0x01fba96c]          ; 004f16e9 | g_CDemonRaytrace_01fba938.adjusted_size.x
     FMUL ST1                            ; 004f16ef
-    FLD float ptr [0x01fba970]          ; 004f16f1 | DAT_01fba970
+    FLD float ptr [0x01fba970]          ; 004f16f1 | g_CDemonRaytrace_01fba938.adjusted_size.y
     FMUL ST2                            ; 004f16f7
-    FLD float ptr [0x01fba974]          ; 004f16f9 | DAT_01fba974
+    FLD float ptr [0x01fba974]          ; 004f16f9 | g_CDemonRaytrace_01fba938.adjusted_size.z
     FMULP ST3                           ; 004f16ff
     FLD double ptr [0x0058ce27]         ; 004f1701 | DAT_0058ce27
-    FLD float ptr [0x01fba94c]          ; 004f1707 | DAT_01fba94c
+    FLD float ptr [0x01fba94c]          ; 004f1707 | g_CDemonRaytrace_01fba938.bbox_min.y
     FMUL ST1                            ; 004f170d
     FILD dword ptr [ESP + 0x38]         ; 004f170f
     FXCH ST4                            ; 004f1713

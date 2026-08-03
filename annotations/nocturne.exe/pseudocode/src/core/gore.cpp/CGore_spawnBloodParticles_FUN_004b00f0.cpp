@@ -11,16 +11,17 @@
 void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type)
 
 {
+  CBloodParticle *this_ptr_00;
   int iVar1;
   
   if (blood_type != 2) {
-    iVar1 = _DAT_01c78ce8 * 0x40;
-    _DAT_01c78ce8 = _DAT_01c78ce8 + 1;
-    if (0xff < _DAT_01c78ce8) {
+    iVar1 = _DAT_01c78ce8 + 1;
+    this_ptr_00 = g_CBloodParticle_ARRAY_01c78cec + _DAT_01c78ce8;
+    _DAT_01c78ce8 = iVar1;
+    if (0xff < iVar1) {
       _DAT_01c78ce8 = 0;
     }
-    core_gore_cpp_CBloodParticle_setup_FUN_004ae070
-              ((CBloodParticle *)(&DAT_01c78cec + iVar1),position,velocity,blood_type);
+    core_gore_cpp_CBloodParticle_setup_FUN_004ae070(this_ptr_00,position,velocity,blood_type);
   }
   return;
 }

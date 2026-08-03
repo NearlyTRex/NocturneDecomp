@@ -50,8 +50,8 @@ section .text
     PUSH EBP                            ; 004d4653
     SUB ESP,0x18                        ; 004d4654
     MOV EBX,dword ptr [ESP + 0x2c]      ; 004d4657
-    MOV EAX,[0x005bdee0]                ; 004d465b | DAT_005bdee0
-    CMP dword ptr [EAX],0x0             ; 004d4660 | DAT_01cea280
+    MOV EAX,[0x005bdee0]                ; 004d465b | g_CNetGame_PTR_005bdee0
+    CMP dword ptr [EAX],0x0             ; 004d4660 | g_CNetGame_01cea280
     JNZ 0x004d49ba                      ; 004d4663
         ;   XREF to: 004d49ba (CONDITIONAL_JUMP)  ; LAB_004d49ba
     MOV EAX,[0x01cae0e8]                ; 004d4669 | DAT_01cae0e8
@@ -235,8 +235,8 @@ section .text
     MOV EDX,0x589393                    ; 004d486c | = "..\\core\\mimic.cpp"
     MOV ECX,0x101                       ; 004d4871
     PUSH 0x5893a5                       ; 004d4876 | = "CMimic failed to create morph target ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004d487b | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004d4881 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004d487b | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004d4881 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d4887
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d488c
@@ -361,8 +361,8 @@ section .text
         ;   Label: LAB_004d49ba
     MOV ESI,0xb6                        ; 004d49bf
     PUSH 0x589257                       ; 004d49c4 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d49c9 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d49cf | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004d49c9 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d49cf | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004d49d5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d49da

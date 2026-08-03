@@ -11,8 +11,8 @@
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3fa8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c776a8
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.game_control
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 004d2b40
         ;   Label: core_menu.cpp_isKeyCodeValidForMode_FUN_004d2b40
-    MOV EAX,[0x005b9354]                ; 004d2b44 | DAT_005b9354
-    MOV ECX,dword ptr [EAX + 0xbc]      ; 004d2b49 | DAT_01c776a8
+    MOV EAX,[0x005b9354]                ; 004d2b44 | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [EAX + 0xbc]      ; 004d2b49 | g_CGame_01c775ec.game_control
     TEST ECX,ECX                        ; 004d2b4f
     JNZ 0x004d2bba                      ; 004d2b51
         ;   XREF to: 004d2bba (CONDITIONAL_JUMP)  ; LAB_004d2bba

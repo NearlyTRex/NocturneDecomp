@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,7 +58,7 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 55,
+        "line": 50,
         "message": "use of undeclared identifier 'FUN_00564494'"
       }
     ],
@@ -68,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 112,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 6,
+    "pseudocode_lines": 42,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 154
+    "total_lines": 149
   },
   "cross_references": [],
   "function": {
@@ -217,23 +217,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "(pCVar2[-1].model.texture_list[0x123].textures[2].texture_name + 0xc),0);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 29,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "(pCVar2[-1].model.texture_list[0x123].textures[2].texture_name + 0xc),0);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 32,
+      "line": 27,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "(pCVar2[-1].collide_bones[0x13].world_matrix.m + 2),0);",
@@ -241,7 +225,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 34,
+      "line": 29,
       "match": "pCVar3[-4].",
       "severity": "mild",
       "text": "((CFlame *)&pCVar3[-4].transformed_vertices[0x17].y,0);",
@@ -249,7 +233,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 36,
+      "line": 31,
       "match": "pCVar4[-2].",
       "severity": "mild",
       "text": "((SFire *)(pCVar4[-2].base.create_event + 0x10),0);",
@@ -257,7 +241,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 44,
+      "line": 39,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].part_data.visibility_flags + 9),1);",

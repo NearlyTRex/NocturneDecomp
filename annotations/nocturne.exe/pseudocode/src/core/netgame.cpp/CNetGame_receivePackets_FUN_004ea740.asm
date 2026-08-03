@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
-;   undefined4 DAT_01d16408
+;   int g_INT_01d16408
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830
@@ -89,8 +89,8 @@ section .text
     JLE 0x004ea7d4                      ; 004ea7b7
         ;   XREF to: 004ea7d4 (CONDITIONAL_JUMP)  ; LAB_004ea7d4
     INC EAX                             ; 004ea7b9
-    PUSH 0x1d16408                      ; 004ea7ba | DAT_01d16408
-    MOV [0x01d16408],EAX                ; 004ea7bf | DAT_01d16408
+    PUSH 0x1d16408                      ; 004ea7ba | g_INT_01d16408
+    MOV [0x01d16408],EAX                ; 004ea7bf | g_INT_01d16408
     LEA EAX,[ESP + 0x4]                 ; 004ea7c4
     PUSH EAX                            ; 004ea7c8
     PUSH ESI                            ; 004ea7c9

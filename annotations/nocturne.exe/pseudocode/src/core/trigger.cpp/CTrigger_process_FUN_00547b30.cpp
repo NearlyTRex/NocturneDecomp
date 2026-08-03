@@ -67,7 +67,7 @@ void core_trigger_cpp_CTrigger_process_FUN_00547b30(CTrigger *param_1,float para
   case 1:
     if (param_1->cached_actor == (CDemonActor *)0x0) {
       pCVar6 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
-                         (0x01CC9450,param_1->actor_name);
+                         (g_CDemonMission_PTR_005baf90,param_1->actor_name);
       param_1->cached_actor = pCVar6;
     }
     pCVar6 = param_1->cached_actor;
@@ -106,7 +106,7 @@ LAB_00547bbc:
       CStack_7c.y = (int)ROUND(aCStack_58[0].y * _DAT_005a3640);
       CStack_7c.z = (int)ROUND(aCStack_58[0].z * _DAT_005a3640);
       iStack_18 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
-                            (0x01E57284,&CStack_7c,(CVector3i *)0x0);
+                            (g_CDemonSet_PTR_005be368,&CStack_7c,(CVector3i *)0x0);
       if ((param_1->light_min * (float)65536 <= (float)iStack_18) &&
          ((float)iStack_18 <= param_1->light_max * (float)65536)) {
         local_34 = 1;
@@ -129,7 +129,7 @@ LAB_00547bbc:
       fVar4 = (param_1->trigger_size).z;
       local_1c = fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2;
       local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
-                           (0x01C08D04,&pCVar1->position,
+                           (g_CFireEffect_PTR_005b80f0,&pCVar1->position,
                             (float)(((int)local_1c >> 1) + (int)CVector3f_01c70708.y),
                             (CVector3f *)0x0,(float *)0x0);
     }
@@ -152,9 +152,8 @@ LAB_00547bbc:
                       (&(param_1->base).location.position,param_1->test_radius);
     if (iVar9 != 0) {
       local_28 = 0;
-      for (iVar9 = 0; iVar9 < *(int *)0x01E57284->lights[199].filter_names[0x14];
-          iVar9 = iVar9 + 1) {
-        pCVar6 = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x14] + local_28 + 4);
+      for (iVar9 = 0; iVar9 < g_CDemonSet_PTR_005be368->actor_count; iVar9 = iVar9 + 1) {
+        pCVar6 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_28);
         iVar10 = (*((pCVar6->vtable)._ub)->canLookAt)(pCVar6);
         if ((iVar10 != 0) &&
            (iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(param_1,pCVar6),
@@ -176,9 +175,8 @@ LAB_00547bbc:
       local_2c = param_1->actor_type;
       local_24 = 0;
       local_20 = pCVar1;
-      for (iVar9 = 0; iVar9 < *(int *)0x01E57284->lights[199].filter_names[0x14];
-          iVar9 = iVar9 + 1) {
-        actor_ptr = *(CTrigger **)(0x01E57284->lights[199].filter_names[0x14] + local_24 + 4);
+      for (iVar9 = 0; iVar9 < g_CDemonSet_PTR_005be368->actor_count; iVar9 = iVar9 + 1) {
+        actor_ptr = *(CTrigger **)((int)g_CDemonSet_PTR_005be368->actors + local_24);
         fVar2 = (actor_ptr->base).location.position.x - (local_20->position).x;
         fVar4 = (actor_ptr->base).location.position.y - (local_20->position).y;
         fVar3 = (actor_ptr->base).location.position.z - (local_20->position).z;

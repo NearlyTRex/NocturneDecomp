@@ -9,12 +9,12 @@
 void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(CDemonSet *this_ptr,int ray_type)
 
 {
-  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[0].x = (float)ray_type;
+  (this_ptr->ray_query).ray_type = ray_type;
   if (ray_type != 3) {
     return;
   }
-  PTR_01cc4800 = "..\\core\\setcolid.cpp";
-  INT_01cc4804 = 0x49a;
+  g_CHAR_PTR_01cc4800 = "..\\core\\setcolid.cpp";
+  g_INT_01cc4804 = 0x49a;
   core_main_c_FUN_004c8440("CDemonSet::setRayType - use setRayTypeLaser");
   return;
 }

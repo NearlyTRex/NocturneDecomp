@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 56,
-        "message": "no matching function for call to 'core_sound_cpp_CSound_playActorSound_FUN_0052ea60'"
       },
       {
         "category": "type_error",
@@ -92,28 +86,34 @@
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 75,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
+        "category": "pointer_type",
+        "column": 59,
+        "line": 140,
+        "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 76,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800'"
+        "category": "undeclared_identifier",
+        "column": 71,
+        "line": 167,
+        "message": "use of undeclared identifier 'stack0xfffffec0'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 77,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
+        "category": "type_error",
+        "column": 18,
+        "line": 168,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 80,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
+        "category": "type_error",
+        "column": 18,
+        "line": 171,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 20,
+        "line": 185,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 596,
-    "complexity_score": 602,
+    "complexity_score": 517,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 28,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 237,
-    "suspect_count": 32,
+    "suspect_count": 24,
     "suspect_types": [
-      "raw_address_constant",
       "raw_address_pointer_store",
       "stack_param",
       "stack_ref",
@@ -327,27 +326,27 @@
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005b9284",
-      "name": "INT_005b9284",
-      "type": "int",
-      "value": "0x1c70f74"
+      "name": "PTR_DAT_005b9284",
+      "type": "void*",
+      "value": "01c70f74"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "00765a98",
@@ -381,73 +380,73 @@
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fac",
-      "name": "DAT_01fa3fac",
+      "name": "g_CDemonSet_01e57284.ray_origin.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb0",
-      "name": "DAT_01fa3fb0",
+      "name": "g_CDemonSet_01e57284.ray_origin.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb4",
-      "name": "DAT_01fa3fb4",
+      "name": "g_CDemonSet_01e57284.ray_origin.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb8",
-      "name": "DAT_01fa3fb8",
+      "name": "g_CDemonSet_01e57284.ray_target.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fbc",
-      "name": "DAT_01fa3fbc",
+      "name": "g_CDemonSet_01e57284.ray_target.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc0",
-      "name": "DAT_01fa3fc0",
+      "name": "g_CDemonSet_01e57284.ray_target.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc4",
-      "name": "DAT_01fa3fc4",
+      "name": "g_CDemonSet_01e57284.collision_normal.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fd0",
-      "name": "DAT_01fa3fd0",
+      "name": "g_CDemonSet_01e57284.ground_type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fd4",
-      "name": "DAT_01fa3fd4",
+      "name": "g_CDemonSet_01e57284.collision_impact_position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "DAT_01fa3fe0",
+      "name": "g_CDemonSet_01e57284.collision_actor",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe4",
-      "name": "DAT_01fa3fe4",
+      "name": "g_CDemonSet_01e57284.collision_part_index",
       "type": "undefined4",
       "value": null
     },
@@ -608,54 +607,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 83,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 92,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 96,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 101,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 105,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 117,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18));",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 131,
       "match": "in_stack_fffffebc",
@@ -681,7 +632,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 159,
+      "line": 160,
       "match": "&stack0xfffffec0",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffec0);",
@@ -689,7 +640,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 161,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_130._0_4_ =",
@@ -697,7 +648,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 163,
       "match": "in_stack_fffffebc",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,pCVar3,(int)in_stack_fffffebc);",
@@ -705,7 +656,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 164,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_130._4_4_ = 0.4;",
@@ -713,7 +664,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 177,
+      "line": 178,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_130._8_4_ = CStack_a4.y;",
@@ -721,7 +672,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 178,
+      "line": 179,
       "match": "._12_4_",
       "severity": "mild",
       "text": "auStack_130._12_4_ = CStack_a4.z;",
@@ -729,7 +680,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 179,
+      "line": 180,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_130._16_4_ = CStack_98.x;",
@@ -737,7 +688,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 186,
       "match": "._24_4_",
       "severity": "mild",
       "text": "auStack_130._24_4_ = pCVar1->x;",
@@ -745,7 +696,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 192,
+      "line": 193,
       "match": "1.41531e-43",
       "severity": "mild",
       "text": "CStack_108.m[0].y = 1.41531e-43;",
@@ -753,7 +704,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 195,
+      "line": 196,
       "match": "in_stack_fffffebc",
       "severity": "moderate",
       "text": "in_stack_fffffebc = 6.904392e-39;",
@@ -761,19 +712,11 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 195,
+      "line": 196,
       "match": "6.904392e-39",
       "severity": "mild",
       "text": "in_stack_fffffebc = 6.904392e-39;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 200,
-      "match": "*(CDemonActor **)(0x01E57284",
-      "severity": "moderate",
-      "text": "(0x01E57284,*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18)",
-      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unknown/mangled field access",
@@ -790,14 +733,6 @@
       "severity": "moderate",
       "text": "if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 149,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01E57284;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",

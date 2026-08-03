@@ -9,7 +9,7 @@
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00427310(CCharacter *this_ptr)
 
 {
-  int iVar1;
+  CDemonSet *pCVar1;
   CVector3f *euler_angles;
   int iVar2;
   uint *puVar3;
@@ -43,23 +43,26 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00427310(CCharacter
   SDamageDecal *local_18;
   float local_14;
   
-  iVar1 = 0x01E57284;
+  pCVar1 = g_CDemonSet_PTR_005be368;
   bVar8 = 0;
   iVar2 = this_ptr->damage_decal_count;
-  if ((iVar2 < 5) && (-1 < *(int *)(0x01E57284 + 0x14cd60))) {
+  if ((iVar2 < 5) && (-1 < g_CDemonSet_PTR_005be368->collision_part_index)) {
     this_ptr->damage_decal_count = this_ptr->damage_decal_count + 1;
     local_18 = this_ptr->damage_decals + iVar2;
-    local_18->part_index = *(int *)(iVar1 + 0x14cd60);
-    iVar2 = *(int *)(iVar1 + 0x14cd64);
+    local_18->part_index = pCVar1->collision_part_index;
+    iVar2 = pCVar1->collision_bone_index;
     local_18->bone_index = iVar2;
     if (iVar2 < 0) {
       iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getPartDominantBone)
                         (this_ptr,local_18->part_index);
       local_18->bone_index = iVar2;
     }
-    local_4c.x = *(float *)(0x01E57284 + 0x14cd34) - *(float *)(0x01E57284 + 0x14cd28);
-    local_4c.y = *(float *)(0x01E57284 + 0x14cd38) - *(float *)(0x01E57284 + 0x14cd2c);
-    local_4c.z = *(float *)(0x01E57284 + 0x14cd3c) - *(float *)(0x01E57284 + 0x14cd30);
+    local_4c.x = (g_CDemonSet_PTR_005be368->ray_target).x - (g_CDemonSet_PTR_005be368->ray_origin).x
+    ;
+    local_4c.y = (g_CDemonSet_PTR_005be368->ray_target).y - (g_CDemonSet_PTR_005be368->ray_origin).y
+    ;
+    local_4c.z = (g_CDemonSet_PTR_005be368->ray_target).z - (g_CDemonSet_PTR_005be368->ray_origin).z
+    ;
     fVar9 = SQRT(local_4c.z * local_4c.z + local_4c.y * local_4c.y + local_4c.x * local_4c.x);
     if (fVar9 <= 0.0) {
       local_30 = 0.0;
@@ -76,9 +79,9 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00427310(CCharacter
     local_34 = local_34 * local_1c;
     local_30 = local_30 * local_1c;
     local_2c = local_2c * local_1c;
-    local_28.x = *(float *)(0x01E57284 + 0x14cd50) - local_34;
-    local_28.y = *(float *)(0x01E57284 + 0x14cd54) - local_30;
-    local_28.z = *(float *)(0x01E57284 + 0x14cd58) - local_2c;
+    local_28.x = (g_CDemonSet_PTR_005be368->collision_impact_position).x - local_34;
+    local_28.y = (g_CDemonSet_PTR_005be368->collision_impact_position).y - local_30;
+    local_28.z = (g_CDemonSet_PTR_005be368->collision_impact_position).z - local_2c;
     local_14 = local_1c;
     euler_angles = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                              (&local_40,&local_4c);

@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_0058810f
 ;   TerminatedCString s_CMansionPuzzleCircle_pan_00588122
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -41,8 +41,8 @@ section .text
     MOV EDX,0x58810f                    ; 004cba55 | = "..\\core\\manpuz.cpp"
     MOV ECX,0x5e6                       ; 004cba5a
     PUSH 0x588122                       ; 004cba5f | = "CMansionPuzzleCircle::panelOccupied -..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004cba64 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004cba6a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004cba64 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004cba6a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004cba70
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004cba75

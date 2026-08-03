@@ -13,8 +13,8 @@ void __cdecl sound_sndmain_cpp_setNumberOfSfxChannels_FUN_005273d0(int channel_c
     DAT_005bea60 = channel_count;
     return;
   }
-  PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-  INT_01cc4804 = 0xf4c;
+  g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+  g_INT_01cc4804 = 0xf4c;
   core_main_c_FUN_004c8440("setNumberOfSfxChannels - too many!");
   DAT_005bea60 = channel_count;
   return;

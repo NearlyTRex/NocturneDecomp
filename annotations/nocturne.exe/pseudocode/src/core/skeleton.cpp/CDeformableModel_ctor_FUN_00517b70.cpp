@@ -15,8 +15,7 @@ CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_00517b70(
   SLod *pSVar4;
   
   pvVar2 = __arrinit
-                     (this_ptr->texture_sets[1].textures[0].textures[0].texture_name + 8,100,
-                      &g_CVectorTypeInfo_005993b0);
+                     (this_ptr->vertex_pool,100,&g_CVectorTypeInfo_005993b0);
   pvVar2 = __arrinit
                      ((void *)((int)pvVar2 + 0x4bc),100,&g_CBoundingBox3D_005993f0);
   pCVar1 = (CDeformableModel *)((int)pvVar2 + -0x1c0c);

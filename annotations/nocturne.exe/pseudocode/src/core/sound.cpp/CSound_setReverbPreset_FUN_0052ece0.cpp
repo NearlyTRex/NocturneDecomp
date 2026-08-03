@@ -12,8 +12,8 @@ void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_0052ece0(CSound *this_ptr
   int iVar1;
   
   if ((index < 0) || (0x1a < index)) {
-    PTR_01cc4800 = "..\\core\\sound.cpp";
-    INT_01cc4804 = 0x402;
+    g_CHAR_PTR_01cc4800 = "..\\core\\sound.cpp";
+    g_INT_01cc4804 = 0x402;
     core_main_c_FUN_004c8440("CSound::setReverbPreset - invalid index");
   }
   iVar1 = index * 0x10;

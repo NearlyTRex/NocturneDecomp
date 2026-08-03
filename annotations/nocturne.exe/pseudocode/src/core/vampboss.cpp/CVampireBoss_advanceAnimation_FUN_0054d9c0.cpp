@@ -32,14 +32,14 @@ LAB_0054da79:
       }
       if (uVar1 == 0x65) {
         local_78 = 0.0;
-        if ((this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] == 1) {
-          local_78 = (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[2];
+        if (this_ptr->form == 1) {
+          local_78 = this_ptr->morph_t;
         }
-        if ((this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] == 2) {
+        if (this_ptr->form == 2) {
           local_78 = 1.0;
         }
-        if ((this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] == 3) {
-          local_78 = (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[2];
+        if (this_ptr->form == 3) {
+          local_78 = this_ptr->morph_t;
         }
         if (0.0 < (double)local_78) {
           _sprintf(local_74,"wing?.wav @%f",(double)local_78 * 2.5);

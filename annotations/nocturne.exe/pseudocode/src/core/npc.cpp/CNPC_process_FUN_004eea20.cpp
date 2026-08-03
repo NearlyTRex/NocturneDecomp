@@ -54,7 +54,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_t
                        (pCVar1,&CStack_48,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&CStack_30,pCVar8);
-    core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&CStack_30,0);
+    core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&CStack_30,0);
     this_ptr->pool_me = 1;
   }
   fVar5 = (float)3.1415926535000001;
@@ -93,7 +93,7 @@ LAB_004eecd2:
       core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740
                 (&pCVar1->motion_controller,"STAND",1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
     }
   }
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;

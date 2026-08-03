@@ -9,16 +9,19 @@
 void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(CCloth *this_ptr)
 
 {
-  int *piVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  int *piVar5;
-  int *piVar6;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  SClothVertex *pSVar4;
+  int iVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  bool bVar9;
-  int *local_2c;
+  SClothVertex *pSVar8;
+  SClothVertex *pSVar9;
+  int iVar10;
+  int iVar11;
+  bool bVar12;
+  SClothVertex *local_2c;
   CCloth *local_28;
   int local_24;
   int local_20;
@@ -26,78 +29,75 @@ void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(CCloth *th
   
   local_14 = 0;
   if (0 < (this_ptr->model).vertex_count) {
-    piVar1 = &(this_ptr->model).texture_list[8].textures[2].base.count;
+    pSVar4 = this_ptr->vertices;
     local_28 = this_ptr;
-    local_2c = piVar1;
+    local_2c = pSVar4;
     do {
-      (local_28->model).texture_list[9].textures[1].base.count = 0;
-      (local_28->model).texture_list[10].textures[1].base.type = 0;
+      local_28->vertices[0].connected_count = 0;
+      local_28->vertices[0].locked = 0;
       local_24 = 0;
       if (0 < (this_ptr->model).poly_count) {
-        piVar5 = piVar1 + local_14 * 0x47;
+        pSVar8 = pSVar4 + local_14;
         local_20 = 0;
         do {
-          iVar8 = (int)&(((SMRGLPrimitiveQuad *)(((this_ptr->model).poly_vert_list)->vertices + -2))
-                        ->base).base.type + local_20;
-          iVar2 = 0;
-          iVar7 = iVar8;
-          if (0 < *(int *)(iVar8 + 4)) {
+          iVar11 = (int)&(((SMRGLPrimitiveQuad *)(((this_ptr->model).poly_vert_list)->vertices + -2)
+                          )->base).base.type + local_20;
+          iVar5 = 0;
+          iVar10 = iVar11;
+          if (0 < *(int *)(iVar11 + 4)) {
             do {
-              if (local_14 == *(int *)(iVar7 + 0x18)) break;
-              iVar2 = iVar2 + 1;
-              iVar7 = iVar7 + 0xc;
-            } while (iVar2 < *(int *)(iVar8 + 4));
+              if (local_14 == *(int *)(iVar10 + 0x18)) break;
+              iVar5 = iVar5 + 1;
+              iVar10 = iVar10 + 0xc;
+            } while (iVar5 < *(int *)(iVar11 + 4));
           }
-          if ((iVar2 != *(int *)(iVar8 + 4)) && (iVar2 = 0, iVar7 = iVar8, 0 < *(int *)(iVar8 + 4)))
-          {
+          if ((iVar5 != *(int *)(iVar11 + 4)) &&
+             (iVar5 = 0, iVar10 = iVar11, 0 < *(int *)(iVar11 + 4))) {
 LAB_004358cb:
             do {
-              iVar4 = *(int *)(iVar8 + ((iVar2 + 1) % *(int *)(iVar8 + 4)) * 0xc + 0x18);
-              if ((*(int *)(iVar7 + 0x18) == local_14) ||
-                 (bVar9 = iVar4 == local_14, iVar4 = *(int *)(iVar7 + 0x18), bVar9)) {
-                iVar3 = 0;
-                piVar6 = local_2c;
-                if (0 < local_2c[0xc]) {
+              iVar7 = *(int *)(iVar11 + ((iVar5 + 1) % *(int *)(iVar11 + 4)) * 0xc + 0x18);
+              if ((*(int *)(iVar10 + 0x18) == local_14) ||
+                 (bVar12 = iVar7 == local_14, iVar7 = *(int *)(iVar10 + 0x18), bVar12)) {
+                iVar6 = 0;
+                pSVar9 = local_2c;
+                if (0 < local_2c->connected_count) {
                   do {
-                    if (iVar4 == piVar6[0xd]) break;
-                    iVar3 = iVar3 + 1;
-                    piVar6 = piVar6 + 1;
-                  } while (iVar3 < local_2c[0xc]);
+                    if (iVar7 == pSVar9->connected_indices[0]) break;
+                    iVar6 = iVar6 + 1;
+                    pSVar9 = (SClothVertex *)&(pSVar9->position).y;
+                  } while (iVar6 < local_2c->connected_count);
                 }
-                if ((iVar3 == local_2c[0xc]) &&
-                   ((float)local_2c[0x31] <=
-                    *(float *)((int)(this_ptr->model).texture_list + iVar4 * 0x11c + 0x338))) {
-                  local_2c[local_2c[0xc] + 0xd] = iVar4;
-                  piVar6 = piVar1 + iVar4 * 0x47;
-                  local_2c[local_2c[0xc] + 0x1e] =
-                       (int)SQRT(((float)piVar5[2] - (float)piVar6[2]) *
-                                 ((float)piVar5[2] - (float)piVar6[2]) +
-                                 ((float)*piVar5 - (float)*piVar6) *
-                                 ((float)*piVar5 - (float)*piVar6) +
-                                 ((float)piVar5[1] - (float)piVar6[1]) *
-                                 ((float)piVar5[1] - (float)piVar6[1]));
-                  iVar4 = local_2c[0xc];
-                  local_2c[0xc] = iVar4 + 1;
-                  if (0xf < iVar4 + 1) {
-                    PTR_01cc4800 = "..\\core\\cloth.cpp";
-                    INT_01cc4804 = 0x1c3;
+                if ((iVar6 == local_2c->connected_count) &&
+                   ((local_2c->offset_pos).y <= this_ptr->vertices[iVar7].offset_pos.y)) {
+                  local_2c->connected_indices[local_2c->connected_count] = iVar7;
+                  pSVar9 = pSVar4 + iVar7;
+                  fVar1 = (pSVar8->position).x - (pSVar9->position).x;
+                  fVar2 = (pSVar8->position).y - (pSVar9->position).y;
+                  fVar3 = (pSVar8->position).z - (pSVar9->position).z;
+                  local_2c->rest_lengths[local_2c->connected_count] =
+                       SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
+                  iVar7 = local_2c->connected_count + 1;
+                  local_2c->connected_count = iVar7;
+                  if (0xf < iVar7) {
+                    g_CHAR_PTR_01cc4800 = "..\\core\\cloth.cpp";
+                    g_INT_01cc4804 = 0x1c3;
                     core_main_c_FUN_004c8440("Too many connecting verticies");
-                    iVar2 = iVar2 + 1;
-                    iVar7 = iVar7 + 0xc;
-                    if (*(int *)(iVar8 + 4) <= iVar2) break;
+                    iVar5 = iVar5 + 1;
+                    iVar10 = iVar10 + 0xc;
+                    if (*(int *)(iVar11 + 4) <= iVar5) break;
                     goto LAB_004358cb;
                   }
                 }
               }
-              iVar2 = iVar2 + 1;
-              iVar7 = iVar7 + 0xc;
-            } while (iVar2 < *(int *)(iVar8 + 4));
+              iVar5 = iVar5 + 1;
+              iVar10 = iVar10 + 0xc;
+            } while (iVar5 < *(int *)(iVar11 + 4));
           }
           local_20 = local_20 + 0x48;
           local_24 = local_24 + 1;
         } while (local_24 < (this_ptr->model).poly_count);
       }
-      local_2c = local_2c + 0x47;
+      local_2c = local_2c + 1;
       local_28 = (CCloth *)&(local_28->model).env_map_opac_list;
       local_14 = local_14 + 1;
     } while (local_14 < (this_ptr->model).vertex_count);

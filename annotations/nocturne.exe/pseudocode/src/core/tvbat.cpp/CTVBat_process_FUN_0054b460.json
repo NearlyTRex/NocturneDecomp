@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,33 +57,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 44,
-        "line": 124,
-        "message": "use of undeclared identifier 'DAT_01fba938'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 32,
         "line": 155,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 200,
-        "message": "indirection requires pointer operand ('int' invalid)"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 201,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 201,
-        "message": "assigning to 'int' from incompatible type 'const char[18]'"
       },
       {
         "category": "undeclared_identifier",
@@ -104,17 +80,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 801,
-    "complexity_score": 480,
+    "complexity_score": 470,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 325,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
+      "pointer_cast",
       "raw_address_pointer_store",
       "self_copy_guard",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_overlapping_globals",
@@ -297,21 +273,21 @@
     },
     {
       "addr": "005b96c4",
-      "name": "INT_005b96c4",
-      "type": "int",
-      "value": "0x1c78c7c"
+      "name": "g_CGore_PTR_005b96c4",
+      "type": "CGore*",
+      "value": "01c78c7c"
     },
     {
       "addr": "005bdee0",
-      "name": "DAT_005bdee0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CNetGame_PTR_005bdee0",
+      "type": "CNetGame*",
+      "value": "01cea280"
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01cae0e8",
@@ -321,32 +297,32 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "01cea280",
-      "name": "DAT_01cea280",
-      "type": "undefined4",
+      "name": "g_CNetGame_01cea280",
+      "type": "CNetGame",
       "value": null
     },
     {
       "addr": "01fa7e78",
-      "name": "DAT_01fa7e78",
+      "name": "g_CDemonSet_01e57284.enemy_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba938",
-      "name": "DAT_01fba938",
-      "type": "undefined4",
+      "name": "g_CDemonRaytrace_01fba938",
+      "type": "CDemonRaytrace",
       "value": null
     }
   ],
@@ -821,28 +797,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 72,
-      "match": "*(CDemonActor **)(iVar16 + 0x150bf8 + 0x01E57284",
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)(iVar16 + 0x150bf8 + 0x01E57284),",
-      "type": "raw_address_pointer_store"
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 75,
-      "match": "*(CDemonActor **)(iVar16 + 0x150bf8 + 0x01E57284",
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "this_ptr->boss_actor = *(CDemonActor **)(iVar16 + 0x150bf8 + 0x01E57284);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,&local_dc,&pCVar3->position,&local_a0,",
-      "type": "undefined_data"
+      "text": "this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16);",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 39,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       },
       {
         "category": "undeclared_identifier",
@@ -75,45 +69,51 @@
       },
       {
         "category": "incompatible_types",
-        "column": 13,
-        "line": 70,
-        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 5,
-        "line": 76,
+        "line": 77,
         "message": "no matching function for call to '_sprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 90,
+        "line": 91,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from '_FILE *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 96,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 97,
+        "line": 98,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from '_FILE *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 101,
-        "message": "no matching function for call to '_fprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
         "line": 102,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d8720'"
+        "message": "no matching function for call to '_fprintf'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 105,
+        "message": "use of undeclared identifier '_DAT_01cae0d4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 105,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 107,
+        "message": "use of undeclared identifier '_DAT_01cae0d4'; did you mean 'DAT_005ae4d4'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 110,
+        "message": "no matching function for call to '_fprintf'"
       }
     ],
     "success": false,
@@ -122,19 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 305,
+    "complexity_score": 322,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 45,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 170,
-    "suspect_count": 12,
+    "pseudocode_lines": 172,
+    "suspect_count": 13,
     "suspect_types": [
+      "raw_address_constant",
       "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 705
+    "total_lines": 707
   },
   "cross_references": [
     {
@@ -472,9 +473,9 @@
     },
     {
       "addr": "005b6d50",
-      "name": "DAT_005b6d50",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
     },
     {
       "addr": "005b7650",
@@ -484,9 +485,9 @@
     },
     {
       "addr": "005b80f0",
-      "name": "DAT_005b80f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
     },
     {
       "addr": "005b9370",
@@ -502,9 +503,9 @@
     },
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "005be220",
@@ -514,9 +515,9 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "00763e90",
@@ -580,14 +581,14 @@
     },
     {
       "addr": "01e56da0",
-      "name": "DAT_01e56da0",
-      "type": "undefined4",
+      "name": "g_CScript_01e56da0",
+      "type": "CScript",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -874,7 +875,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_00763e90",
       "severity": "mild",
       "text": "DAT_00763e90 = (_FILE *)0x1;",
@@ -882,7 +883,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 91,
       "match": "DAT_00763e90",
       "severity": "mild",
       "text": "DAT_00763e90 = file_handle;",
@@ -890,15 +891,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 111,
       "match": "DAT_01c7869c",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(0x01E57284,(int *)&DAT_01c7869c);",
+      "text": "(g_CDemonSet_PTR_005be368,(int *)&DAT_01c7869c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 126,
       "match": "DAT_00763e90",
       "severity": "mild",
       "text": "DAT_00763e90 = (_FILE *)0x0;",
@@ -906,7 +907,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 150,
       "match": "DAT_005b9384",
       "severity": "mild",
       "text": "crt_fstream_cpp_ostream_write_FUN_00565a13(&local_88,&DAT_005b9384,4);",
@@ -914,11 +915,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 161,
+      "line": 163,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "pcVar3 = &DAT_01c78598;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 107,
+      "match": "0x1e56da0",
+      "severity": "moderate",
+      "text": "core_script_cpp_FUN_005055f0(0x01E56DA0,file_handle);",
+      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -930,7 +939,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -938,7 +947,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 162,
+      "line": 164,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

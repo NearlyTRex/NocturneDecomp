@@ -84,7 +84,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter *th
         return 1;
       }
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"CCharacter::walkToPoint - go somewhere failed\n");
+                (g_CConsole_PTR_005ad350,"CCharacter::walkToPoint - go somewhere failed\n");
       return -1;
     }
     pfVar1 = &(this_ptr->position_delta).z;

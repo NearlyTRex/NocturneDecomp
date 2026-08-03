@@ -11,7 +11,7 @@
 int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(CStranger *this_ptr)
 
 {
-  byte *puVar1;
+  CConsole *pCVar1;
   CLadder *this_ptr_00;
   CVector3f *pCVar2;
   float10 fVar3;
@@ -59,10 +59,10 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(CStranger *t
     local_1c = 0;
     local_18 = 0;
     while( true ) {
-      if (*(int *)(0x01E57284 + 0x14cd6c) <= local_1c) break;
+      if (g_CDemonSet_PTR_005be368->actor_count <= local_1c) break;
       this_ptr_00 = (CLadder *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
-                              (*(CDemonActor **)(0x01E57284 + local_18 + 0x14cd70),
+                              (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_18),
                                g_CLadderActorType_01cc30e8.name_hash);
       if ((this_ptr_00 != (CLadder *)0x0) &&
          (ABS((this_ptr->base).base.base.location.position.y -
@@ -135,11 +135,11 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(CStranger *t
               CStack_74.z = local_a4.z - (this_ptr->base).base.base.location.position.z;
               pCVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                                  (&CStack_80,&CStack_74);
-              puVar1 = PTR_DAT_005ad350;
+              pCVar1 = g_CConsole_PTR_005ad350;
               this_ptr->ladder_facing_angle = pCVar2->y;
               this_ptr->ladder_blend_time = 1.0;
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (puVar1,"Climbing ladder %s\n",this_ptr_00);
+                        (pCVar1,"Climbing ladder %s\n",this_ptr_00);
               return 1;
             }
           }

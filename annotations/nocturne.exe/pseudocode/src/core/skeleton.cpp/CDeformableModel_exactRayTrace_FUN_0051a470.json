@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -74,46 +74,46 @@
         "message": "use of undeclared identifier 'DAT_02684230'; did you mean 'DAT_02DF4230'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_026757d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 35,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 35,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 5,
-        "line": 37,
+        "line": 38,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 22,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_026757d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 44,
+        "column": 37,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 45,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 47,
+        "message": "use of undeclared identifier '_DAT_005a1eb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 77,
+        "message": "use of undeclared identifier 'stack0x00000000'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 78,
+        "message": "use of undeclared identifier '_DAT_0268cedc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 79,
+        "message": "use of undeclared identifier '_DAT_0268cee0'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 472,
+    "complexity_score": 423,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
-    "suspect_count": 36,
+    "pseudocode_lines": 88,
+    "suspect_count": 31,
     "suspect_types": [
       "param_count_too_few",
       "stack_ref",
@@ -136,7 +136,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 310
+    "total_lines": 311
   },
   "cross_references": [
     {
@@ -208,49 +208,49 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     },
     {
       "addr": "026757d0",
-      "name": "DAT_026757d0",
-      "type": "undefined4",
+      "name": "g_CVector3f_ARRAY_026757d0",
+      "type": "CVector3f[5000]",
       "value": null
     },
     {
       "addr": "026757d4",
-      "name": "DAT_026757d4",
+      "name": "g_CVector3f_ARRAY_026757d0[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026757d8",
-      "name": "DAT_026757d8",
+      "name": "g_CVector3f_ARRAY_026757d0[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026757dc",
-      "name": "DAT_026757dc",
+      "name": "g_CVector3f_ARRAY_026757d0[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026757e0",
-      "name": "DAT_026757e0",
+      "name": "g_CVector3f_ARRAY_026757d0[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "026757e4",
-      "name": "DAT_026757e4",
+      "name": "g_CVector3f_ARRAY_026757d0[1].z",
       "type": "undefined4",
       "value": null
     },
@@ -572,16 +572,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_026757d0",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_026757d0,5000,&g_CVectorTypeInfo_005993b0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
       "text": "if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {",
@@ -589,7 +581,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {",
@@ -597,34 +589,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = param_2 * 4 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_2 * 4 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 33,
-      "match": "DAT_026757d0",
+      "match": "param_2",
       "severity": "mild",
-      "text": "pfVar2 = (float *)&DAT_026757d0;",
-      "type": "undefined_data"
+      "text": "iVar1 = param_2 * 4 + param_1;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_5",
+      "line": 33,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*pfVar2 = (float)*param_5 * _DAT_005a1eb0;",
+      "text": "iVar1 = param_2 * 4 + param_1;",
       "type": "unnamed_param"
     },
     {
@@ -632,7 +608,7 @@
       "line": 38,
       "match": "param_5",
       "severity": "mild",
-      "text": "pfVar2[1] = (float)param_5[1] * _DAT_005a1eb0;",
+      "text": "pCVar2->x = (float)*param_5 * _DAT_005a1eb0;",
       "type": "unnamed_param"
     },
     {
@@ -640,12 +616,20 @@
       "line": 39,
       "match": "param_5",
       "severity": "mild",
-      "text": "pfVar2[2] = (float)param_5[2] * _DAT_005a1eb0;",
+      "text": "pCVar2->y = (float)param_5[1] * _DAT_005a1eb0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "pCVar2->z = (float)param_5[2] * _DAT_005a1eb0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 3;",
@@ -653,7 +637,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 43,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 3;",
@@ -661,7 +645,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0xc00)) {",
@@ -669,16 +653,8 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 50,
       "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = param_1 + param_2 * 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
       "severity": "mild",
       "text": "local_1c = param_1 + param_2 * 4;",
       "type": "unnamed_param"
@@ -688,13 +664,13 @@
       "line": 50,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_20 = param_2 * 4 + param_1;",
+      "text": "local_1c = param_1 + param_2 * 4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
+      "line": 51,
+      "match": "param_2",
       "severity": "mild",
       "text": "local_20 = param_2 * 4 + param_1;",
       "type": "unnamed_param"
@@ -702,38 +678,22 @@
     {
       "description": "Unnamed function parameter",
       "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = param_2 * 4 + param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
       "match": "param_6",
       "severity": "mild",
       "text": "local_24 = param_6;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_026757d0",
-      "severity": "mild",
-      "text": "(&local_6c,(CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + iVar5) * 0xc)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_026757d0",
-      "severity": "mild",
-      "text": ",(CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + 2 + iVar5) * 0xc),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_026757d0",
-      "severity": "mild",
-      "text": "(CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + 4 + iVar5) * 0xc));",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 65,
       "match": "param_3",
       "severity": "mild",
       "text": "local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(&local_6c,param_3,param_4);",
@@ -741,7 +701,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 65,
       "match": "param_4",
       "severity": "mild",
       "text": "local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(&local_6c,param_3,param_4);",
@@ -749,15 +709,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 69,
+      "line": 70,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x268cf10) {",
+      "text": "if ((SLod *)&stack0x00000000 != g_CDeformableModel_ARRAY_0268cef4[0].lod_info + 3) {",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 75,
       "match": "param_2",
       "severity": "mild",
       "text": "_DAT_0268cee8 = param_2;",
@@ -765,7 +725,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar1 < *(int *)(param_1 + 0xc00));",

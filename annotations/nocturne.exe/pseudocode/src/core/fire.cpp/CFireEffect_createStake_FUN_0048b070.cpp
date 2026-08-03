@@ -47,14 +47,13 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(CFireEffect *thi
   local_1c.z = impact_position->z - pCVar2->z;
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_00483320
-              ((CStake *)(&DAT_01c23d50 + _DAT_01c23d4c * 0x260),&local_1c,orientation_angles,
-               surface_normal);
+              (g_CStake_ARRAY_01c23d50 + _DAT_01c23d4c,&local_1c,orientation_angles,surface_normal);
   }
   else {
     core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00
-              (0x02DC9450,(CDemonActor *)this_ptr,"a-wood?.wav",&local_1c,0.23);
+              (g_CSound_PTR_005bed68,(CDemonActor *)this_ptr,"a-wood?.wav",&local_1c,0.23);
     core_fire_cpp_CStake_init_FUN_004832b0
-              ((CStake *)(&DAT_01c23d50 + _DAT_01c23d4c * 0x260),&local_1c,orientation_angles);
+              (g_CStake_ARRAY_01c23d50 + _DAT_01c23d4c,&local_1c,orientation_angles);
   }
   _DAT_01c23d4c = _DAT_01c23d4c + 1;
   if (0xff < _DAT_01c23d4c) {

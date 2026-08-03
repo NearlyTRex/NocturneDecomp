@@ -13,11 +13,11 @@ void __cdecl sound_sndmain_cpp_setNextSfxStaticPosition_FUN_00525f50(double pos_
 {
   int iVar1;
   
-  iVar1 = _DAT_02dc1b74 * 0x6c;
-  *(double *)(iVar1 + 0x2dc1b7c) = pos_x;
-  *(double *)(iVar1 + 0x2dc1b84) = pos_y;
-  *(double *)(iVar1 + 0x2dc1b8c) = pos_z;
-  *(uint *)(iVar1 + 0x2dc1b94) = 0;
-  *(uint *)(iVar1 + 0x2dc1b98) = 0;
+  iVar1 = _DAT_02dc1b74;
+  g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].position.x = pos_x;
+  g_CSfxOptions_ARRAY_02dc1b78[iVar1].position.y = pos_y;
+  g_CSfxOptions_ARRAY_02dc1b78[iVar1].position.z = pos_z;
+  g_CSfxOptions_ARRAY_02dc1b78[iVar1].position_source_ptr = (void *)0x0;
+  g_CSfxOptions_ARRAY_02dc1b78[iVar1].position_format = 0;
   return;
 }

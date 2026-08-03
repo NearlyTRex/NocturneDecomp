@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_0052b292
     MOV EAX,0x2f3                       ; 0052b297
     PUSH 0x59449b                       ; 0052b29c | = "DirectSoundDevice::setSfxPos - invali..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0052b2a1 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0052b2a7 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 0052b2a1 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0052b2a7 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052b2ac
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052b2b1
@@ -246,8 +246,8 @@ section .text
     MOV EAX,0x5945de                    ; 0052b4ab | = "..\\sound\\snddx.cpp"
     MOV EDX,0x37c                       ; 0052b4b0
     PUSH 0x5945f1                       ; 0052b4b5 | = "DirectSoundDevice::setSfxOpt - no 3d ..."
-    MOV [0x01cc4800],EAX                ; 0052b4ba | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0052b4bf | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0052b4ba | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0052b4bf | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052b4c5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052b4ca

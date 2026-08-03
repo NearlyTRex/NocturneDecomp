@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,45 @@
       },
       {
         "category": "incompatible_types",
-        "column": 3,
-        "line": 32,
-        "message": "no matching function for call to 'core_game_cpp_CGame_saveClockTime_FUN_0049a890'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 5,
-        "line": 42,
-        "message": "no matching function for call to 'core_game_cpp_CGame_updateDT_FUN_0049a8a0'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 43,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_01cc5780'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 44,
-        "message": "use of undeclared identifier 'DAT_01cc5780'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 45,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 48,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 61,
+        "line": 62,
         "message": "no matching function for call to '_sprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 63,
-        "message": "no matching function for call to '_sprintf'"
-      },
-      {
-        "category": "other",
-        "column": 21,
         "line": 64,
-        "message": "member reference type 'int' is not a pointer"
+        "message": "no matching function for call to '_sprintf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 72,
+        "message": "no matching function for call to '_sprintf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 89,
+        "message": "no matching function for call to '_sprintf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 97,
+        "message": "no matching function for call to '_sprintf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 174,
+        "message": "no matching function for call to '_sprintf'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 188,
+        "message": "use of undeclared identifier '_DAT_01cc5b5c'"
       }
     ],
     "success": false,
@@ -122,24 +104,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 505,
-    "complexity_score": 473,
+    "complexity_score": 418,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 233,
-    "suspect_count": 20,
+    "pseudocode_lines": 248,
+    "suspect_count": 14,
     "suspect_types": [
       "concat_reconstruction",
       "raw_address_constant",
-      "undefined_data",
-      "unresolved_funcptr",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 738
+    "total_lines": 753
   },
   "cross_references": [
     {
@@ -359,74 +339,74 @@
     },
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "005bac64",
-      "name": "INT_005bac64",
-      "type": "int",
-      "value": "0x1cc30e4"
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
     },
     {
       "addr": "01c77680",
-      "name": "DAT_01c77680",
+      "name": "g_CGame_01c775ec.invert_mouse_y_axis",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77684",
-      "name": "DAT_01c77684",
+      "name": "g_CGame_01c775ec.always_run",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77688",
-      "name": "DAT_01c77688",
+      "name": "g_CGame_01c775ec.x_mouse_sensitivity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7768c",
-      "name": "DAT_01c7768c",
+      "name": "g_CGame_01c775ec.y_mouse_sensitivity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77690",
-      "name": "DAT_01c77690",
+      "name": "g_CGame_01c775ec.x_center",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776a8",
-      "name": "DAT_01c776a8",
+      "name": "g_CGame_01c775ec.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776b0",
-      "name": "DAT_01c776b0",
+      "name": "g_CGame_01c775ec.aim_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776b4",
-      "name": "DAT_01c776b4",
+      "name": "g_CGame_01c775ec.auto_use_health",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77850",
-      "name": "DAT_01c77850",
+      "name": "g_CGame_01c775ec.delta_time_float",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc30e4",
-      "name": "DAT_01cc30e4",
-      "type": "undefined4",
+      "name": "g_CKeys_01cc30e4",
+      "type": "CKeys",
       "value": null
     },
     {
@@ -558,46 +538,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)&DAT_01cc5780,0x01C775EC->delta_time_float);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01cc5780",
-      "severity": "mild",
-      "text": "core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)&DAT_01cc5780);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 215,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(&DAT_005b9354->x_mouse_sensitivity,pcVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 220,
-      "match": "DAT_005b9354",
-      "severity": "mild",
-      "text": "core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(&DAT_005b9354->y_mouse_sensitivity,pcVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 230,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Raw hex address 0x1cc65b0 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 23,
       "match": "0x1cc65b0",
@@ -606,16 +546,8 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 177,
-      "match": "0x1c775ec",
-      "severity": "moderate",
-      "text": "pCVar3 = 0x01C775EC;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 92,
+      "line": 93,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -623,7 +555,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 114,
+      "line": 115,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -631,7 +563,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 125,
+      "line": 126,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -639,7 +571,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 148,
+      "line": 149,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -647,7 +579,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "_sprintf(CONCAT44(pcVar5,0x1cc65b0));",
@@ -655,7 +587,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar12 = CONCAT44(pcVar5,0x1cc68b0);",
@@ -663,7 +595,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 74,
+      "line": 75,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar12 = CONCAT44(pcVar5,0x1cc68b0);",
@@ -671,7 +603,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 79,
+      "line": 80,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar12 = CONCAT44(pcVar5,0x1cc68b0);",
@@ -679,7 +611,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 105,
+      "line": 106,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -687,7 +619,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 139,
+      "line": 140,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -695,7 +627,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 105,
+      "line": 106,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -703,7 +635,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 139,
+      "line": 140,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

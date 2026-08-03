@@ -13,8 +13,8 @@
 ;   TerminatedCString s_guul_flinch_d_00584e68
 ;   TerminatedCString s_ghoul_mad_wav_00584e76
 ;   double DOUBLE_00584e8d = 65536
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -222,8 +222,8 @@ section .text
     MOV dword ptr [EAX + 0x8],ECX       ; 004ab682
     PUSH 0x584e45                       ; 004ab685 | = "go berzerk\n"
         ;   Label: LAB_004ab685
-    MOV ESI,dword ptr [0x005ad350]      ; 004ab68a | PTR_DAT_005ad350
-    PUSH ESI                            ; 004ab690 | DAT_0077ad0c
+    MOV ESI,dword ptr [0x005ad350]      ; 004ab68a | g_CConsole_PTR_005ad350
+    PUSH ESI                            ; 004ab690 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004ab691
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0x8                         ; 004ab696

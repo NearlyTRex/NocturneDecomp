@@ -36,8 +36,8 @@
 ;   double DOUBLE_0057a54a = 2.40000000000000
 ;   float FLOAT_0057a552 = -1
 ;   undefined4 DAT_005ad1d0
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -371,8 +371,8 @@ section .text
         ;   XREF to: 0042b2b4 (CONDITIONAL_JUMP)  ; LAB_0042b2b4
     PUSH EDI                            ; 0042b36b
     PUSH 0x57a4ce                       ; 0042b36c | = "%s was in the way, but couldn't figur..."
-    MOV EDX,dword ptr [0x005ad350]      ; 0042b371 | PTR_DAT_005ad350
-    PUSH EDX                            ; 0042b377 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 0042b371 | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 0042b377 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0042b378
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 0042b37d

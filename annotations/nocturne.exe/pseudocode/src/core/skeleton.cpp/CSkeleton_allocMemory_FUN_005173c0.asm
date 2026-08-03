@@ -16,8 +16,8 @@
 ;   TerminatedCString s_Too_bony_00591188
 ;   TerminatedCString s_core_skeleton_cpp_00591192
 ;   TerminatedCString s_Out_of_hunk_in_CSkeleton_005911a7
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -103,8 +103,8 @@ section .text
         ;   Label: LAB_00517483
     MOV ECX,0xc6                        ; 00517488
     PUSH 0x591188                       ; 0051748d | = "Too bony!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00517492 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00517498 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00517492 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00517498 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0051749e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005174a3
@@ -118,8 +118,8 @@ section .text
     MOV EDX,0x591192                    ; 005174b9 | = "..\\core\\skeleton.cpp"
     MOV ECX,0xda                        ; 005174be
     PUSH 0x5911a7                       ; 005174c3 | = "Out of hunk in CSkeleton::allocMemory..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005174c8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005174ce | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 005174c8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005174ce | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005174d4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 005174d9

@@ -32,8 +32,8 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_0055268
     }
     if (0 < start_waypoint->num_adjacent_waypoints) {
       iVar4 = 0;
-      for (iVar8 = 0; iVar8 < *(int *)(0x01E57284 + 0x154a7c); iVar8 = iVar8 + 1) {
-        piVar1 = (int *)(0x01E57284 + 0x154a80 + iVar4);
+      for (iVar8 = 0; iVar8 < g_CDemonSet_PTR_005be368->waypoint_count; iVar8 = iVar8 + 1) {
+        piVar1 = (int *)((int)g_CDemonSet_PTR_005be368->waypoints + iVar4);
         iVar4 = iVar4 + 4;
         *(uint *)(*piVar1 + 0x54c) = 0x7149f2ca;
       }
@@ -78,8 +78,8 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_0055268
           pCVar7 = (CWayPoint *)0x0;
           local_18 = 1e+29;
           iVar4 = 0;
-          for (iVar8 = 0; iVar8 < *(int *)(0x01E57284 + 0x154a7c); iVar8 = iVar8 + 1) {
-            pCVar9 = *(CWayPoint **)(iVar4 + 0x154a80 + 0x01E57284);
+          for (iVar8 = 0; iVar8 < g_CDemonSet_PTR_005be368->waypoint_count; iVar8 = iVar8 + 1) {
+            pCVar9 = *(CWayPoint **)((int)g_CDemonSet_PTR_005be368->waypoints + iVar4);
             if ((pCVar9->pathfind_cost < local_18) &&
                (iVar5 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0
                                   (this_ptr,&(pCVar9->base).base.location,0), iVar5 != 0)) {

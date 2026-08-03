@@ -35,8 +35,9 @@ void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float 
         *(float *)(param_1[2].flames[0x20].off_event + 0x38) = fVar3, 1.0 <= fVar3 &&
         (actor = *(CDemonActor **)(param_1[2].flames[0x1c].base.create_event + 0x14),
         actor != (CDemonActor *)0x0)))) {
-      core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(0x01CC9450,actor);
-      pCVar5 = 0x01CC9450;
+      core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(g_CDemonMission_PTR_005baf90,actor)
+      ;
+      pCVar5 = g_CDemonMission_PTR_005baf90;
       pCVar4 = param_1[2].flames + 0x1c;
       (pCVar4->base).create_event[0x14] = '\0';
       (pCVar4->base).create_event[0x15] = '\0';

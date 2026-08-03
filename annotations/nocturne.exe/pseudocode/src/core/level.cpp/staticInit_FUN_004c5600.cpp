@@ -9,8 +9,8 @@
 void __cdecl core_level_cpp_staticInit_FUN_004c5600(void)
 
 {
-  core_level_cpp_FUN_004c5630(0x1cc3160);
-  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590((CKeyFramedModel *)&DAT_01cc3290);
+  core_level_cpp_FUN_004c5630(&g_CLevelLoader_01cc3160);
+  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(&g_CKeyFramedModel_01cc3290);
   _atexit(&g_WatcomStaticDestructorNode_005bac90);
   return;
 }

@@ -43,7 +43,8 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360(CPathMap *this_p
     (this_ptr->current_position).y = source_position->y;
     (this_ptr->current_position).z = source_position->z;
   }
-  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,this_ptr);
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
+            (&g_CDemonRaytrace_01fba938,this_ptr);
   puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);
   (this_ptr->voxel_coords).x = local_1c;
   *puVar3 = *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);

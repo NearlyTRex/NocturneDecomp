@@ -18,7 +18,7 @@
 ;   ... and 6 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dbd3e4
+;   undefined4 g_CSfxSlot_ARRAY_02dbd374[0].playback_state
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     MOV EBX,0x2dbd374                   ; 005234db
     SHL EAX,0x5                         ; 005234e0
     ADD EBX,EAX                         ; 005234e3
-    CMP ESI,dword ptr [EBX + 0x70]      ; 005234e5 | DAT_02dbd3e4
+    CMP ESI,dword ptr [EBX + 0x70]      ; 005234e5 | g_CSfxSlot_ARRAY_02dbd374[0].playback_state
     JNZ 0x005234f6                      ; 005234e8
         ;   XREF to: 005234f6 (CONDITIONAL_JUMP)  ; LAB_005234f6
     CMP dword ptr [ESP + 0x10],0x0      ; 005234ea
@@ -74,7 +74,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 005234fb
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
         ;   Label: LAB_005234fb
-    CMP ESI,dword ptr [EBX + 0x70]      ; 00523500 | DAT_02dbd3e4
+    CMP ESI,dword ptr [EBX + 0x70]      ; 00523500 | g_CSfxSlot_ARRAY_02dbd374[0].playback_state
     JNZ 0x0052352e                      ; 00523503
         ;   XREF to: 0052352e (CONDITIONAL_JUMP)  ; LAB_0052352e
     CMP dword ptr [EBX + 0x74],0x0      ; 00523505

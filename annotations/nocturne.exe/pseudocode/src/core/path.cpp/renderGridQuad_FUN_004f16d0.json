@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -69,51 +69,51 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 11,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01fba970'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
+        "column": 55,
         "line": 32,
         "message": "use of undeclared identifier '_DAT_0058ce1f'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 11,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01fba974'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
+        "column": 55,
         "line": 33,
         "message": "use of undeclared identifier '_DAT_0058ce1f'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01fba94c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
+        "column": 59,
         "line": 34,
         "message": "use of undeclared identifier '_DAT_0058ce27'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 42,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01fba96c'"
+        "column": 74,
+        "line": 38,
+        "message": "use of undeclared identifier '_DAT_0058ce1f'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_0058ce1f'"
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 47,
+        "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 53,
+        "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 59,
+        "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 67,
+        "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 199,
+    "complexity_score": 201,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 76,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_truncation",
@@ -136,7 +136,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 237
+    "total_lines": 239
   },
   "cross_references": [],
   "function": {
@@ -195,25 +195,25 @@
     },
     {
       "addr": "01fba94c",
-      "name": "DAT_01fba94c",
+      "name": "g_CDemonRaytrace_01fba938.bbox_min.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba96c",
-      "name": "DAT_01fba96c",
+      "name": "g_CDemonRaytrace_01fba938.adjusted_size.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba970",
-      "name": "DAT_01fba970",
+      "name": "g_CDemonRaytrace_01fba938.adjusted_size.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba974",
-      "name": "DAT_01fba974",
+      "name": "g_CDemonRaytrace_01fba938.adjusted_size.z",
       "type": "undefined4",
       "value": null
     }
@@ -397,21 +397,21 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 3,
-          "line": 48,
+          "line": 50,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "ignoredReturnValue",
           "column": 3,
-          "line": 59,
+          "line": 61,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 50,
-          "line": 53,
+          "line": 55,
           "message": "Uninitialized variable: local_2c",
           "severity": "error"
         }
@@ -447,7 +447,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar4 = DAT_005ae704;",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar4 = DAT_005ae704;",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 52,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar4 = DAT_005ae704;",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 60,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar4 = DAT_005ae704;",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 61,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "DAT_005ae704->vertex_buffer_ptr->r = iVar5;",
@@ -487,7 +487,7 @@
     },
     {
       "description": "Pointer value `piVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
+      "line": 54,
       "match": "(int)piVar12",
       "severity": "moderate",
       "text": "round((double)((float)(int)piVar12 - local_38));",
@@ -495,7 +495,7 @@
     },
     {
       "description": "Raw hex address 0x4f1761 assigned to bare local `local_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 30,
+      "line": 32,
       "match": "0x4f1761",
       "severity": "moderate",
       "text": "local_3c = 0x4f1761;",
@@ -503,7 +503,7 @@
     },
     {
       "description": "Uninitialized variable: local_2c",
-      "line": 53,
+      "line": 55,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "dVar10 = round((double)((float)(int)local_38 + local_2c));",

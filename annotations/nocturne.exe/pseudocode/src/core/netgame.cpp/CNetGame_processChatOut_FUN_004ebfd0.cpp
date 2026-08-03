@@ -19,8 +19,8 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_004ebfd0(CNetGame *thi
   int *piVar5;
   
   if (0x31 < _DAT_01d06610) {
-    PTR_01cc4800 = "..\\core\\netgame.cpp";
-    INT_01cc4804 = 0x76c;
+    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
+    g_INT_01cc4804 = 0x76c;
     core_main_c_FUN_004c8440("CNetGame::processChatOut - too many pending outgoing chat messages");
   }
   iVar1 = _DAT_01d06610 * 0x114;

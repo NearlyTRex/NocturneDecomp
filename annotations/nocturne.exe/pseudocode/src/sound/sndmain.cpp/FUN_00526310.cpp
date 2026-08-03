@@ -12,7 +12,6 @@
 void sound_sndmain_cpp_FUN_00526310(void)
 
 {
-  sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0
-            ((CSfxOptions *)(_DAT_02dc1b74 * 0x6c + 0x2dc1b78));
+  sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(g_CSfxOptions_ARRAY_02dc1b78 + _DAT_02dc1b74);
   return;
 }

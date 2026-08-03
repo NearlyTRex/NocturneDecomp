@@ -9,11 +9,11 @@
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key_code_ptr,char *description)
 
 {
-  int iVar1;
+  EControlMode EVar1;
   EInputCodeType EVar2;
   
-  iVar1 = *(int *)(0x01C775EC + 0xbc);
-  if (iVar1 == 0) {
+  EVar1 = g_CGame_PTR_005b9354->game_control;
+  if (EVar1 == CONTROL_MODE_KEYBOARD) {
     EVar2 = *key_code_ptr;
     if (EVar2 < DIJ_BUTTON8) {
       if (((EVar2 < DIJ_BUTTON3) && (EVar2 < DIM_RBUTTON)) && (EVar2 != DIM_LBUTTON)) {
@@ -34,8 +34,8 @@ int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key
     }
   }
   else {
-    if (iVar1 != 1) {
-      if (iVar1 == 2) {
+    if (EVar1 != CONTROL_MODE_MOUSE) {
+      if (EVar1 == CONTROL_MODE_GAMEPAD) {
         EVar2 = *key_code_ptr;
         if (DIJ_BUTTON10 < EVar2) {
           if (EVar2 < (DIM_MBUTTON|DIK_ESCAPE)) {

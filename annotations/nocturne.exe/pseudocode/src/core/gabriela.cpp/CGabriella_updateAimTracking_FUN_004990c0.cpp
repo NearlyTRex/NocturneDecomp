@@ -53,8 +53,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(CGabrie
       iVar4 = 0;
       local_24 = 1e+30;
       local_28 = (CDemonActor *)0x0;
-      for (local_20 = 0; local_20 < *(int *)(0x01E57284 + 0x14cd6c); local_20 = local_20 + 1) {
-        target_actor = *(CDemonActor **)(iVar4 + 0x14cd70 + 0x01E57284);
+      for (local_20 = 0; local_20 < g_CDemonSet_PTR_005be368->actor_count; local_20 = local_20 + 1)
+      {
+        target_actor = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar4);
         local_18 = core_gabriela_cpp_FUN_00498de0
                              (this_ptr,target_actor,(uint)(target_actor == this_ptr->aim_target));
         if ((0.0 <= local_18) && (local_18 < local_24)) {

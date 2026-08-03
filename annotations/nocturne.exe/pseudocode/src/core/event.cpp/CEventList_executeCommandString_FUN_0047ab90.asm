@@ -15,9 +15,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0057f57d
-;   void* PTR_DAT_005ad350 = 0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005c168c
-;   undefined4 DAT_0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_01c08b5c
 ;   undefined4 DAT_01c08b60
 ;
@@ -112,8 +112,8 @@ section .text
     PUSH 0x1c08b60                      ; 0047ac1f | DAT_01c08b60
         ;   Label: LAB_0047ac1f
     PUSH 0x57f57d                       ; 0047ac24 | = "%s\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 0047ac29 | PTR_DAT_005ad350
-    PUSH ECX                            ; 0047ac2f | DAT_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 0047ac29 | g_CConsole_PTR_005ad350
+    PUSH ECX                            ; 0047ac2f | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0047ac30
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 0047ac35

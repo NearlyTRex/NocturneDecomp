@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,28 +56,16 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 187,
-        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 186,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
         "line": 233,
         "message": "use of undeclared identifier 'FUN_0056497c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 238,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonMission *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 274,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonMission *' from 'int'"
       },
       {
         "category": "incompatible_types",
@@ -92,15 +80,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 642,
-    "complexity_score": 1923,
+    "complexity_score": 1898,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 298,
-    "suspect_count": 159,
+    "suspect_count": 157,
     "suspect_types": [
-      "raw_address_constant",
       "unnamed_param",
       "unrolled_memcpy",
       "unrolled_memset",
@@ -332,8 +319,8 @@
     },
     {
       "addr": "005ad350",
-      "name": "PTR_DAT_005ad350",
-      "type": "void*",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
@@ -344,14 +331,14 @@
     },
     {
       "addr": "005baf90",
-      "name": "DAT_005baf90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
     },
     {
       "addr": "0077ad0c",
-      "name": "DAT_0077ad0c",
-      "type": "undefined4",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -1147,7 +1134,7 @@
       "line": 180,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s confused while walking to scriptDest!\\n\",param_1);",
+      "text": "(g_CConsole_PTR_005ad350,\"%s confused while walking to scriptDest!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1765,22 +1752,6 @@
       "severity": "mild",
       "text": "sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1[1].base.descriptive_name + 0x30));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x1cc9450 assigned to bare local `pCVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 231,
-      "match": "0x1cc9450",
-      "severity": "moderate",
-      "text": "pCVar9 = 0x01CC9450;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1cc9450 assigned to bare local `pCVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 267,
-      "match": "0x1cc9450",
-      "severity": "moderate",
-      "text": "pCVar9 = 0x01CC9450;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

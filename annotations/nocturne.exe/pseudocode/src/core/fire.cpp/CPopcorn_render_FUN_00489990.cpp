@@ -104,7 +104,7 @@ void core_fire_cpp_CPopcorn_render_FUN_00489990(CVector3f *param_1)
   _DAT_005c50a0 = DAT_005c5040;
   _DAT_005c50d0 = DAT_005c5040;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-            (0x01E57284,&local_24,(CVector3i *)&DAT_01c08d14,0,4);
+            (g_CDemonSet_PTR_005be368,&local_24,(CVector3i *)&DAT_01c08d14,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
   local_a0.surface_normal.D.i = 0;
   local_a0.surface_normal.C.i = 0;

@@ -10,10 +10,10 @@
 ;   TerminatedCString s_CDemonSet_precomuputeLig_005902f5
 ;   TerminatedCString s_Light_d_Box_d_d_d_d_00590341
 ;   TerminatedCString s_Precomputing_lights_from_0059035d
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01fb99d0
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290
@@ -91,7 +91,7 @@ section .text
     PUSH 0x461c3f9a                     ; 00508050
     MOV ESI,0x1                         ; 00508055
     PUSH EDI                            ; 0050805a
-    MOV dword ptr [0x01fba938],ESI      ; 0050805b | DAT_01fba938
+    MOV dword ptr [0x01fba938],ESI      ; 0050805b | g_CDemonRaytrace_01fba938
     CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 ; 00508061
         ;   XREF to: 00507c80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 00508066
@@ -227,8 +227,8 @@ section .text
     MOV EDI,0x5902e5                    ; 00508222 | = "..\\core\\set.cpp"
     MOV EAX,0x2e8                       ; 00508227
     PUSH 0x5902f5                       ; 0050822c | = "CDemonSet::precomuputeLightVisibility..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00508231 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00508237 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00508231 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00508237 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0050823c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00508241
@@ -340,7 +340,7 @@ section .text
     JNZ 0x0050848e                      ; 005083ca
         ;   XREF to: 0050848e (CONDITIONAL_JUMP)  ; LAB_0050848e
     XOR ECX,ECX                         ; 005083d0
-    MOV dword ptr [0x01fba938],ECX      ; 005083d2 | DAT_01fba938
+    MOV dword ptr [0x01fba938],ECX      ; 005083d2 | g_CDemonRaytrace_01fba938
     ADD ESP,0x160                       ; 005083d8
     POP EBP                             ; 005083de
     POP EDI                             ; 005083df
@@ -398,7 +398,7 @@ section .text
         ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ad20(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0050849b
     XOR ECX,ECX                         ; 0050849e
-    MOV dword ptr [0x01fba938],ECX      ; 005084a0 | DAT_01fba938
+    MOV dword ptr [0x01fba938],ECX      ; 005084a0 | g_CDemonRaytrace_01fba938
     ADD ESP,0x160                       ; 005084a6
     POP EBP                             ; 005084ac
     POP EDI                             ; 005084ad

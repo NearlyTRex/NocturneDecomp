@@ -100,13 +100,16 @@ void __cdecl core_dcamera_cpp_FUN_004421b0(CDemonCamera *this_ptr)
           uVar10 = *puVar4;
           fVar1 = (float)0.0078740157480314994;
           uVar3 = *puVar4;
-          *(float *)(local_24 + 0x9bb178) = (float)(short)(char)(*puVar4 >> 0x10) * fVar1;
-          *(float *)(local_24 + 0x9bb17c) = (float)(short)(char)(uVar10 >> 8) * fVar1;
+          *(float *)((int)&g_CVector3f_ARRAY_009bb178[0].x + local_24) =
+               (float)(short)(char)(*puVar4 >> 0x10) * fVar1;
+          *(float *)((int)&g_CVector3f_ARRAY_009bb178[0].y + local_24) =
+               (float)(short)(char)(uVar10 >> 8) * fVar1;
           local_14 = CONCAT22((short)((uint)local_24 >> 0x10),(short)(char)uVar3);
           local_34 = local_34 + 0xc;
           local_2c = local_2c + 4;
           iVar5 = local_24 + 0xc;
-          *(float *)(local_24 + 0x9bb180) = (float)(short)(char)uVar3 * fVar1;
+          *(float *)((int)&g_CVector3f_ARRAY_009bb178[0].z + local_24) =
+               (float)(short)(char)uVar3 * fVar1;
           local_28 = local_28 + 1;
           local_24 = iVar5;
         } while (local_28 < this_ptr->display_width);
@@ -117,7 +120,7 @@ void __cdecl core_dcamera_cpp_FUN_004421b0(CDemonCamera *this_ptr)
     } while (local_38 < this_ptr->display_height);
   }
   local_18 = local_80;
-  *(float *)(this_ptr->camera_name + 0xc0) = (float)local_80 * (float)0.00390625;
+  this_ptr->fixed_point_scale = (float)local_80 * (float)0.00390625;
   core_dcamera_cpp_FUN_00446810(this_ptr);
   _DAT_00b0e604 = 0;
   _DAT_01216608 = 0;
@@ -126,8 +129,8 @@ void __cdecl core_dcamera_cpp_FUN_004421b0(CDemonCamera *this_ptr)
     for (local_1c = this_ptr->scale_factor; uVar10 = this_ptr->scale_factor,
         (int)local_1c < (int)((int)this_ptr->max_distance - uVar10); local_1c = local_1c + 1) {
       local_30 = uVar10 * 4;
-      for (; (int)uVar10 < *(int *)(this_ptr->camera_name + 0xfc) + this_ptr->scale_factor * -2;
-          uVar10 = uVar10 + 1) {
+      for (; (int)uVar10 < this_ptr->screen_width + this_ptr->scale_factor * -2; uVar10 = uVar10 + 1
+          ) {
         if ((_DAT_012b0664 < 10000) && (((uVar10 & 1) != 0 || ((local_1c & 1) != 0)))) {
           iVar5 = *(int *)(*(int *)(&DAT_01bd4260 + (local_1c + this_ptr->framebuffer_height) * 4) +
                            local_30 + this_ptr->framebuffer_width * 4);

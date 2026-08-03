@@ -15,8 +15,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Open_pct_f_0057835e
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
 ;
 ; Called Functions:
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
@@ -34,8 +34,8 @@ section .text
     SUB ESP,0x8                         ; 0040f143
     FSTP double ptr [ESP]               ; 0040f146
     PUSH 0x57835e                       ; 0040f149 | = "Open pct : %f\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 0040f14e | PTR_DAT_005ad350
-    PUSH EDX                            ; 0040f154 | DAT_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 0040f14e | g_CConsole_PTR_005ad350
+    PUSH EDX                            ; 0040f154 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0040f155
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     MOV ECX,dword ptr [EBX + 0x340]     ; 0040f15a

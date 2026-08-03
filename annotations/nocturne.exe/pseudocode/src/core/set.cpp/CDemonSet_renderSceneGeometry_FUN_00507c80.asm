@@ -29,8 +29,8 @@
 ;   undefined4 DAT_005c11ec
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c02594
-;   undefined4 DAT_01fba938
-;   undefined4 DAT_02dd1210
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
+;   CWater g_CWater_02dd1210
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040
@@ -102,7 +102,7 @@ section .text
     PUSH EAX                            ; 00507d04
         ;   Label: LAB_00507d04
     PUSH dword ptr [ESP + 0x28]         ; 00507d05
-    PUSH 0x1fba938                      ; 00507d09 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00507d09 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 ; 00507d0e
         ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDemonRaytrace * this_ptr, float fov_or_radius, int render_mode)
     ADD ESP,0xc                         ; 00507d13
@@ -121,7 +121,7 @@ section .text
     PUSH ESI                            ; 00507d3d
     ADD EAX,0x190                       ; 00507d3e
     PUSH EAX                            ; 00507d43
-    PUSH 0x1fba938                      ; 00507d44 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00507d44 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40 ; 00507d49
         ;   XREF to: 0046ae40 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array)
     ADD ESP,0xc                         ; 00507d4e
@@ -216,7 +216,7 @@ section .text
     ADD ESP,0xc                         ; 00507e32
     PUSH 0x0                            ; 00507e35
     PUSH dword ptr [ESP + 0x28]         ; 00507e37
-    PUSH 0x1fba938                      ; 00507e3b | DAT_01fba938
+    PUSH 0x1fba938                      ; 00507e3b | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 ; 00507e40
         ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDemonRaytrace * this_ptr, float fov_or_radius, int render_mode)
     ADD ESP,0xc                         ; 00507e45
@@ -244,7 +244,7 @@ section .text
         ;   XREF to: 00507cfd (CONDITIONAL_JUMP)  ; LAB_00507cfd
     PUSH ECX                            ; 00507e75
     PUSH EDX                            ; 00507e76
-    PUSH 0x1fba938                      ; 00507e77 | DAT_01fba938
+    PUSH 0x1fba938                      ; 00507e77 | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0 ; 00507e7c
         ;   XREF to: 0046ace0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace * this_ptr, int visible_cube_count, int * visible_cube_indices)
     ADD ESP,0xc                         ; 00507e81
@@ -272,17 +272,17 @@ section .text
         ;   XREF to: 00507dc8 (UNCONDITIONAL_JUMP)  ; LAB_00507dc8
     MOV ESI,dword ptr [0x005c11ec]      ; 00507ec3 | DAT_005c11ec
         ;   Label: LAB_00507ec3
-    PUSH ESI                            ; 00507ec9 | DAT_02dd1210
+    PUSH ESI                            ; 00507ec9 | g_CWater_02dd1210
     CALL core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800 ; 00507eca
         ;   XREF to: 00550800 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater * this_ptr)
     MOV EAX,[0x005c11ec]                ; 00507ecf | DAT_005c11ec
-    MOV EDI,dword ptr [EAX]             ; 00507ed4 | DAT_02dd1210
+    MOV EDI,dword ptr [EAX]             ; 00507ed4 | g_CWater_02dd1210
     ADD ESP,0x4                         ; 00507ed6
     TEST EDI,EDI                        ; 00507ed9
     JNZ 0x00507dd5                      ; 00507edb
         ;   XREF to: 00507dd5 (CONDITIONAL_JUMP)  ; LAB_00507dd5
     PUSH 0x1                            ; 00507ee1
-    PUSH EAX                            ; 00507ee3 | DAT_02dd1210
+    PUSH EAX                            ; 00507ee3 | g_CWater_02dd1210
     CALL core_water.cpp_CWater_render_FUN_00550cb0 ; 00507ee4
         ;   XREF to: 00550cb0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_00550cb0(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 00507ee9
@@ -323,7 +323,7 @@ section .text
     ADD ESP,0xc                         ; 00507f46
     PUSH 0x0                            ; 00507f49
     PUSH dword ptr [ESP + 0x28]         ; 00507f4b
-    PUSH 0x1fba938                      ; 00507f4f | DAT_01fba938
+    PUSH 0x1fba938                      ; 00507f4f | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 ; 00507f54
         ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDemonRaytrace * this_ptr, float fov_or_radius, int render_mode)
     ADD ESP,0xc                         ; 00507f59

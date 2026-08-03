@@ -19,7 +19,7 @@ struct CLightActor_ptr_1648 {
     template<typename T> CLightActor_ptr_1648(T* p) : _raw((void*)p) {}
     template<typename T> CLightActor_ptr_1648& operator=(T* p) { _raw = (void*)p; return *this; }
     CLightActor* operator->() const { return (CLightActor*)_raw; }
-    CLightActor* adj() const { return (CLightActor*)((char*)_raw - offsetof(CLightActor, light.base.base.position.f.y)); }
+    CLightActor* adj() const { return (CLightActor*)((char*)_raw - offsetof(CLightActor, light.base.camera_name[8])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

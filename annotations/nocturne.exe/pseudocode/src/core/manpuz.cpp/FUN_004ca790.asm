@@ -49,9 +49,9 @@
 ;   double DOUBLE_00587f6a = 0.0100000000000000
 ;   undefined4 DAT_005a0020
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
@@ -119,8 +119,8 @@ section .text
     FISTP dword ptr [ESP + 0x9c]        ; 004ca81f
     MOV EBP,dword ptr [ESP + 0x9c]      ; 004ca826
     PUSH EBP                            ; 004ca82d
-    MOV EAX,[0x005be368]                ; 004ca82e | DAT_005be368
-    PUSH EAX                            ; 004ca833 | DAT_01e57284
+    MOV EAX,[0x005be368]                ; 004ca82e | g_CDemonSet_PTR_005be368
+    PUSH EAX                            ; 004ca833 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340 ; 004ca834
         ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 004ca839
@@ -134,8 +134,8 @@ section .text
     PUSH 0x10000                        ; 004ca84f
     PUSH 0x10000                        ; 004ca854
     PUSH 0x10000                        ; 004ca859
-    MOV EDX,dword ptr [0x005be368]      ; 004ca85e | DAT_005be368
-    PUSH EDX                            ; 004ca864 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004ca85e | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 004ca864 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340 ; 004ca865
         ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 004ca86a

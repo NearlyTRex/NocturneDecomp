@@ -16,11 +16,11 @@
 ;   TerminatedCString s_rb_005927ba
 ;   TerminatedCString s_sound_005927bd
 ;   float FLOAT_005a2174 = 2
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc1ed8
-;   undefined4 DAT_02dc216c
-;   undefined4 DAT_02dc2170
+;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].taken
+;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].ref_count
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -61,7 +61,7 @@ section .text
     MOV EBX,EBP                         ; 00522a11
     IMUL EAX,EBX,0x168                  ; 00522a13
         ;   Label: LAB_00522a13
-    MOV ECX,dword ptr [EAX + 0x2dc2004] ; 00522a19 | DAT_02dc216c
+    MOV ECX,dword ptr [EAX + 0x2dc2004] ; 00522a19 | g_CSfxSample_ARRAY_02dc1edc[1].taken
     CMP EBP,ECX                         ; 00522a1f
     JZ 0x00522a56                       ; 00522a21
         ;   XREF to: 00522a56 (CONDITIONAL_JUMP)  ; LAB_00522a56
@@ -86,7 +86,7 @@ section .text
     POP ESI                             ; 00522a53
     POP EBX                             ; 00522a54
     RET                                 ; 00522a55
-    CMP ECX,dword ptr [EAX + 0x2dc2008] ; 00522a56 | DAT_02dc2170
+    CMP ECX,dword ptr [EAX + 0x2dc2008] ; 00522a56 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
         ;   Label: LAB_00522a56
     JNZ 0x00522a23                      ; 00522a5c
         ;   XREF to: 00522a23 (CONDITIONAL_JUMP)  ; LAB_00522a23
@@ -142,8 +142,8 @@ section .text
     MOV EDI,0x592796                    ; 00522ad4 | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x3c8                       ; 00522ad9
     PUSH 0x5927ab                       ; 00522ade | = "Out of memory."
-    MOV dword ptr [0x01cc4800],EDI      ; 00522ae3 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00522ae9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDI      ; 00522ae3 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00522ae9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00522aee
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00522af3

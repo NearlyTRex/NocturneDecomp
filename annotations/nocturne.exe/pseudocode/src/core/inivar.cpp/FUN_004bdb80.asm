@@ -69,14 +69,14 @@ section .text
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0 ; 004bdbc2
         ;   XREF to: 004bd8d0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0(CIniFile * this_ptr, char * section)
     ADD ESP,0x8                         ; 004bdbc7
-    MOV EBX,dword ptr [0x005b9354]      ; 004bdbca | DAT_005b9354
+    MOV EBX,dword ptr [0x005b9354]      ; 004bdbca | g_CGame_PTR_005b9354
     PUSH EBX                            ; 004bdbd0
     PUSH 0x58677f                       ; 004bdbd1 | = "gamePIXX"
     LEA EAX,[ESP + 0x14]                ; 004bdbd6
     PUSH EAX                            ; 004bdbda
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdbdb
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdbe0 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdbe0 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdbe5
     ADD EAX,0x4                         ; 004bdbe8
     PUSH EAX                            ; 004bdbeb
@@ -85,7 +85,7 @@ section .text
     PUSH EAX                            ; 004bdbf5
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdbf6
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdbfb | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdbfb | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdc00
     ADD EAX,0x8                         ; 004bdc03
     PUSH EAX                            ; 004bdc06
@@ -116,7 +116,7 @@ section .text
     PUSH EAX                            ; 004bdc5a
     CALL engine_ini.cpp_CIniFile_getString_FUN_004bd910 ; 004bdc5b
         ;   XREF to: 004bd910 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004bd910(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size)
-    MOV EAX,[0x005b9354]                ; 004bdc60 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdc60 | g_CGame_PTR_005b9354
     ADD ESP,0x10                        ; 004bdc65
     ADD EAX,0x224                       ; 004bdc68
     PUSH EAX                            ; 004bdc6d
@@ -125,10 +125,10 @@ section .text
     PUSH EAX                            ; 004bdc77
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdc78
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdc7d | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdc7d | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdc82
     ADD EAX,0xc0                        ; 004bdc85
-    PUSH EAX                            ; 004bdc8a | DAT_01c776ac
+    PUSH EAX                            ; 004bdc8a | g_CGame_01c775ec.hero_number
     PUSH 0x5867c6                       ; 004bdc8b | = "heroNumber"
     LEA EAX,[ESP + 0x14]                ; 004bdc90
     PUSH EAX                            ; 004bdc94
@@ -136,9 +136,9 @@ section .text
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004bdc9a
     POP EBX                             ; 004bdc9d
-    MOV EAX,[0x005b9354]                ; 004bdc9e | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdc9e | g_CGame_PTR_005b9354
     ADD EAX,0xc                         ; 004bdca3
-    PUSH EAX                            ; 004bdca6 | DAT_01c775f8
+    PUSH EAX                            ; 004bdca6 | g_CGame_01c775ec.halo_mode
     PUSH 0x5867d1                       ; 004bdca7 | = "haloMode"
     LEA EAX,[ESP + 0x10]                ; 004bdcac
     PUSH EAX                            ; 004bdcb0
@@ -151,7 +151,7 @@ section .text
     PUSH EAX                            ; 004bdcc7
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdcc8
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdccd | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdccd | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdcd2
     ADD EAX,0x10                        ; 004bdcd5
     PUSH EAX                            ; 004bdcd8
@@ -160,7 +160,7 @@ section .text
     PUSH EAX                            ; 004bdce2
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdce3
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdce8 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdce8 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdced
     ADD EAX,0x14                        ; 004bdcf0
     PUSH EAX                            ; 004bdcf3
@@ -169,7 +169,7 @@ section .text
     PUSH EAX                            ; 004bdcfd
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdcfe
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdd03 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdd03 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdd08
     ADD EAX,0x18                        ; 004bdd0b
     PUSH EAX                            ; 004bdd0e
@@ -178,7 +178,7 @@ section .text
     PUSH EAX                            ; 004bdd18
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdd19
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdd1e | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdd1e | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdd23
     ADD EAX,0x1c                        ; 004bdd26
     PUSH EAX                            ; 004bdd29
@@ -187,16 +187,16 @@ section .text
     PUSH EAX                            ; 004bdd33
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdd34
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdd39 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdd39 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdd3e
     ADD EAX,0x24                        ; 004bdd41
-    PUSH EAX                            ; 004bdd44 | DAT_01c77610
+    PUSH EAX                            ; 004bdd44 | g_CGame_01c775ec.shadow_flag
     PUSH 0x58681b                       ; 004bdd45 | = "shadowFlag"
     LEA EAX,[ESP + 0x10]                ; 004bdd4a
     PUSH EAX                            ; 004bdd4e
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdd4f
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdd54 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdd54 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdd59
     ADD EAX,0x20                        ; 004bdd5c
     PUSH EAX                            ; 004bdd5f
@@ -205,15 +205,15 @@ section .text
     PUSH EAX                            ; 004bdd69
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdd6a
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdd6f | DAT_005b9354
-    MOV ESI,dword ptr [EAX + 0x20]      ; 004bdd74 | DAT_01c7760c
+    MOV EAX,[0x005b9354]                ; 004bdd6f | g_CGame_PTR_005b9354
+    MOV ESI,dword ptr [EAX + 0x20]      ; 004bdd74 | g_CGame_01c775ec.quimby_flag
     ADD ESP,0xc                         ; 004bdd77
     TEST ESI,ESI                        ; 004bdd7a
     JZ 0x004bdd93                       ; 004bdd7c
         ;   XREF to: 004bdd93 (CONDITIONAL_JUMP)  ; LAB_004bdd93
-    MOV dword ptr [EAX + 0x18],0x0      ; 004bdd7e | DAT_01c77604
-    MOV dword ptr [EAX + 0x1c],0x0      ; 004bdd85 | DAT_01c77608
-    MOV dword ptr [EAX + 0x14],0x0      ; 004bdd8c | DAT_01c77600
+    MOV dword ptr [EAX + 0x18],0x0      ; 004bdd7e | g_CGame_01c775ec.nudity_flag
+    MOV dword ptr [EAX + 0x1c],0x0      ; 004bdd85 | g_CGame_01c775ec.foul_language_flag
+    MOV dword ptr [EAX + 0x14],0x0      ; 004bdd8c | g_CGame_01c775ec.blood_flag
     PUSH 0x1cc64a4                      ; 004bdd93 | DAT_01cc64a4
         ;   Label: LAB_004bdd93
     PUSH 0x586831                       ; 004bdd98 | = "currentBoard"
@@ -240,21 +240,21 @@ section .text
     PUSH EAX                            ; 004bddda
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0 ; 004bdddb
         ;   XREF to: 004bd8d0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0(CIniFile * this_ptr, char * section)
-    MOV EAX,[0x005b9354]                ; 004bdde0 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdde0 | g_CGame_PTR_005b9354
     ADD ESP,0x8                         ; 004bdde5
     ADD EAX,0xbc                        ; 004bdde8
-    PUSH EAX                            ; 004bdded | DAT_01c776a8
+    PUSH EAX                            ; 004bdded | g_CGame_01c775ec.game_control
     PUSH 0x58683e                       ; 004bddee | = "gameControl"
     LEA EAX,[ESP + 0x10]                ; 004bddf3
     PUSH EAX                            ; 004bddf7
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bddf8
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004bddfd
-    MOV EBP,dword ptr [0x005b9354]      ; 004bde00 | DAT_005b9354
+    MOV EBP,dword ptr [0x005b9354]      ; 004bde00 | g_CGame_PTR_005b9354
     PUSH EBP                            ; 004bde06
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610 ; 004bde07
         ;   XREF to: 0049e610 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610(CGame * this_ptr)
-    MOV EAX,[0x005b9354]                ; 004bde0c | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bde0c | g_CGame_PTR_005b9354
     ADD ESP,0x4                         ; 004bde11
     ADD EAX,0x28                        ; 004bde14
     PUSH EAX                            ; 004bde17
@@ -263,7 +263,7 @@ section .text
     PUSH EAX                            ; 004bde21
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bde22
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bde27 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bde27 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bde2c
     ADD EAX,0x2c                        ; 004bde2f
     PUSH EAX                            ; 004bde32
@@ -272,7 +272,7 @@ section .text
     PUSH EAX                            ; 004bde3c
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bde3d
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bde42 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bde42 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bde47
     ADD EAX,0x30                        ; 004bde4a
     PUSH EAX                            ; 004bde4d
@@ -281,7 +281,7 @@ section .text
     PUSH EAX                            ; 004bde57
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bde58
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bde5d | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bde5d | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bde62
     ADD EAX,0x34                        ; 004bde65
     PUSH EAX                            ; 004bde68
@@ -290,7 +290,7 @@ section .text
     PUSH EAX                            ; 004bde72
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bde73
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bde78 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bde78 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bde7d
     ADD EAX,0x38                        ; 004bde80
     PUSH EAX                            ; 004bde83
@@ -302,7 +302,7 @@ section .text
     ADD ESP,0xc                         ; 004bde93
     POP ESI                             ; 004bde96
     POP EDI                             ; 004bde97
-    MOV EAX,[0x005b9354]                ; 004bde98 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bde98 | g_CGame_PTR_005b9354
     ADD EAX,0x3c                        ; 004bde9d
     PUSH EAX                            ; 004bdea0
     PUSH 0x58687b                       ; 004bdea1 | = "keyStrafeRight"
@@ -310,7 +310,7 @@ section .text
     PUSH EAX                            ; 004bdeaa
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdeab
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdeb0 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdeb0 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdeb5
     ADD EAX,0x40                        ; 004bdeb8
     PUSH EAX                            ; 004bdebb
@@ -319,7 +319,7 @@ section .text
     PUSH EAX                            ; 004bdec5
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdec6
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdecb | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdecb | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bded0
     ADD EAX,0x44                        ; 004bded3
     PUSH EAX                            ; 004bded6
@@ -328,7 +328,7 @@ section .text
     PUSH EAX                            ; 004bdee0
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdee1
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdee6 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdee6 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdeeb
     ADD EAX,0x48                        ; 004bdeee
     PUSH EAX                            ; 004bdef1
@@ -337,7 +337,7 @@ section .text
     PUSH EAX                            ; 004bdefb
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdefc
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdf01 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdf01 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdf06
     ADD EAX,0x4c                        ; 004bdf09
     PUSH EAX                            ; 004bdf0c
@@ -346,7 +346,7 @@ section .text
     PUSH EAX                            ; 004bdf16
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdf17
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdf1c | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdf1c | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdf21
     ADD EAX,0x50                        ; 004bdf24
     PUSH EAX                            ; 004bdf27
@@ -355,7 +355,7 @@ section .text
     PUSH EAX                            ; 004bdf31
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdf32
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdf37 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdf37 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdf3c
     ADD EAX,0x54                        ; 004bdf3f
     PUSH EAX                            ; 004bdf42
@@ -364,7 +364,7 @@ section .text
     PUSH EAX                            ; 004bdf4c
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdf4d
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdf52 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdf52 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdf57
     ADD EAX,0x58                        ; 004bdf5a
     PUSH EAX                            ; 004bdf5d
@@ -373,7 +373,7 @@ section .text
     PUSH EAX                            ; 004bdf67
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdf68
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdf6d | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdf6d | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdf72
     ADD EAX,0x5c                        ; 004bdf75
     PUSH EAX                            ; 004bdf78
@@ -383,7 +383,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdf83
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004bdf88
-    MOV EAX,[0x005b9354]                ; 004bdf8b | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdf8b | g_CGame_PTR_005b9354
     ADD EAX,0x60                        ; 004bdf90
     PUSH EAX                            ; 004bdf93
     PUSH 0x5868d3                       ; 004bdf94 | = "keyPointUp"
@@ -391,7 +391,7 @@ section .text
     PUSH EAX                            ; 004bdf9d
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdf9e
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdfa3 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdfa3 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdfa8
     ADD EAX,0x64                        ; 004bdfab
     PUSH EAX                            ; 004bdfae
@@ -400,7 +400,7 @@ section .text
     PUSH EAX                            ; 004bdfb8
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdfb9
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdfbe | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdfbe | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdfc3
     ADD EAX,0x68                        ; 004bdfc6
     PUSH EAX                            ; 004bdfc9
@@ -409,7 +409,7 @@ section .text
     PUSH EAX                            ; 004bdfd3
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdfd4
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdfd9 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdfd9 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdfde
     ADD EAX,0x6c                        ; 004bdfe1
     PUSH EAX                            ; 004bdfe4
@@ -418,7 +418,7 @@ section .text
     PUSH EAX                            ; 004bdfee
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdfef
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004bdff4 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004bdff4 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004bdff9
     ADD EAX,0x70                        ; 004bdffc
     PUSH EAX                            ; 004bdfff
@@ -427,7 +427,7 @@ section .text
     PUSH EAX                            ; 004be009
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be00a
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be00f | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be00f | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be014
     ADD EAX,0x74                        ; 004be017
     PUSH EAX                            ; 004be01a
@@ -436,7 +436,7 @@ section .text
     PUSH EAX                            ; 004be024
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be025
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be02a | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be02a | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be02f
     ADD EAX,0x78                        ; 004be032
     PUSH EAX                            ; 004be035
@@ -445,7 +445,7 @@ section .text
     PUSH EAX                            ; 004be03f
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be040
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be045 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be045 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be04a
     ADD EAX,0x7c                        ; 004be04d
     PUSH EAX                            ; 004be050
@@ -454,7 +454,7 @@ section .text
     PUSH EAX                            ; 004be05a
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be05b
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be060 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be060 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be065
     ADD EAX,0x80                        ; 004be068
     PUSH EAX                            ; 004be06d
@@ -464,7 +464,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be078
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004be07d
-    MOV EAX,[0x005b9354]                ; 004be080 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be080 | g_CGame_PTR_005b9354
     ADD EAX,0x84                        ; 004be085
     PUSH EAX                            ; 004be08a
     PUSH 0x58693e                       ; 004be08b | = "keyNextItem"
@@ -472,7 +472,7 @@ section .text
     PUSH EAX                            ; 004be094
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be095
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be09a | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be09a | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be09f
     ADD EAX,0x88                        ; 004be0a2
     PUSH EAX                            ; 004be0a7
@@ -481,7 +481,7 @@ section .text
     PUSH EAX                            ; 004be0b1
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be0b2
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be0b7 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be0b7 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be0bc
     ADD EAX,0x8c                        ; 004be0bf
     PUSH EAX                            ; 004be0c4
@@ -490,7 +490,7 @@ section .text
     PUSH EAX                            ; 004be0ce
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be0cf
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be0d4 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be0d4 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be0d9
     ADD EAX,0x90                        ; 004be0dc
     PUSH EAX                            ; 004be0e1
@@ -499,7 +499,7 @@ section .text
     PUSH EAX                            ; 004be0eb
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be0ec
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be0f1 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be0f1 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be0f6
     ADD EAX,0x94                        ; 004be0f9
     PUSH EAX                            ; 004be0fe
@@ -508,7 +508,7 @@ section .text
     PUSH EAX                            ; 004be108
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be109
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be10e | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be10e | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be113
     ADD EAX,0x98                        ; 004be116
     PUSH EAX                            ; 004be11b
@@ -517,7 +517,7 @@ section .text
     PUSH EAX                            ; 004be125
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be126
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be12b | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be12b | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be130
     ADD EAX,0x9c                        ; 004be133
     PUSH EAX                            ; 004be138
@@ -526,7 +526,7 @@ section .text
     PUSH EAX                            ; 004be142
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be143
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be148 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be148 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be14d
     ADD EAX,0xa0                        ; 004be150
     PUSH EAX                            ; 004be155
@@ -535,70 +535,70 @@ section .text
     PUSH EAX                            ; 004be15f
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be160
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be165 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be165 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be16a
     ADD EAX,0xa4                        ; 004be16d
-    PUSH EAX                            ; 004be172 | DAT_01c77690
+    PUSH EAX                            ; 004be172 | g_CGame_01c775ec.x_center
     PUSH 0x5869ad                       ; 004be173 | = "xCenter"
     LEA EAX,[ESP + 0x8]                 ; 004be178
     PUSH EAX                            ; 004be17c
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be17d
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004be182
-    MOV EAX,[0x005b9354]                ; 004be185 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be185 | g_CGame_PTR_005b9354
     ADD EAX,0xa8                        ; 004be18a
-    PUSH EAX                            ; 004be18f | DAT_01c77694
+    PUSH EAX                            ; 004be18f | g_CGame_01c775ec.y_center
     PUSH 0x5869b5                       ; 004be190 | = "yCenter"
     LEA EAX,[ESP + 0x8]                 ; 004be195
     PUSH EAX                            ; 004be199
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be19a
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be19f | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be19f | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be1a4
     ADD EAX,0xac                        ; 004be1a7
-    PUSH EAX                            ; 004be1ac | DAT_01c77698
+    PUSH EAX                            ; 004be1ac | g_CGame_01c775ec.x_stick_min
     PUSH 0x5869bd                       ; 004be1ad | = "xStickMin"
     LEA EAX,[ESP + 0x8]                 ; 004be1b2
     PUSH EAX                            ; 004be1b6
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be1b7
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be1bc | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be1bc | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be1c1
     ADD EAX,0xb0                        ; 004be1c4
-    PUSH EAX                            ; 004be1c9 | DAT_01c7769c
+    PUSH EAX                            ; 004be1c9 | g_CGame_01c775ec.x_stick_max
     PUSH 0x5869c7                       ; 004be1ca | = "xStickMax"
     LEA EAX,[ESP + 0x8]                 ; 004be1cf
     PUSH EAX                            ; 004be1d3
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be1d4
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be1d9 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be1d9 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be1de
     ADD EAX,0xb4                        ; 004be1e1
-    PUSH EAX                            ; 004be1e6 | DAT_01c776a0
+    PUSH EAX                            ; 004be1e6 | g_CGame_01c775ec.y_stick_min
     PUSH 0x5869d1                       ; 004be1e7 | = "yStickMin"
     LEA EAX,[ESP + 0x8]                 ; 004be1ec
     PUSH EAX                            ; 004be1f0
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be1f1
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be1f6 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be1f6 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be1fb
     ADD EAX,0xb8                        ; 004be1fe
-    PUSH EAX                            ; 004be203 | DAT_01c776a4
+    PUSH EAX                            ; 004be203 | g_CGame_01c775ec.y_stick_max
     PUSH 0x5869db                       ; 004be204 | = "yStickMax"
     LEA EAX,[ESP + 0x8]                 ; 004be209
     PUSH EAX                            ; 004be20d
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be20e
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be213 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be213 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be218
     ADD EAX,0xc4                        ; 004be21b
-    PUSH EAX                            ; 004be220 | DAT_01c776b0
+    PUSH EAX                            ; 004be220 | g_CGame_01c775ec.aim_mode
     PUSH 0x5869e5                       ; 004be221 | = "aimMode"
     LEA EAX,[ESP + 0x8]                 ; 004be226
     PUSH EAX                            ; 004be22a
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be22b
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be230 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be230 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be235
     ADD EAX,0xc8                        ; 004be238
     PUSH EAX                            ; 004be23d
@@ -614,17 +614,17 @@ section .text
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0 ; 004be25a
         ;   XREF to: 004bd8d0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0(CIniFile * this_ptr, char * section)
     ADD ESP,0x8                         ; 004be25f
-    MOV EAX,[0x005ad350]                ; 004be262 | PTR_DAT_005ad350
-    PUSH EAX                            ; 004be267 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 004be262 | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 004be267 | g_CConsole_0077ad0c
     PUSH 0x5869fb                       ; 004be268 | = "logConsoleFlag"
     LEA EAX,[ESP + 0x8]                 ; 004be26d
     PUSH EAX                            ; 004be271
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004be272
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
-    MOV EAX,[0x005b9354]                ; 004be277 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004be277 | g_CGame_PTR_005b9354
     ADD ESP,0xc                         ; 004be27c
     ADD EAX,0x214                       ; 004be27f
-    PUSH EAX                            ; 004be284 | DAT_01c77800
+    PUSH EAX                            ; 004be284 | g_CGame_01c775ec.head_of_horror_cheat
     PUSH 0x586a0a                       ; 004be285 | = "headOfHorrorCheat"
     LEA EAX,[ESP + 0x8]                 ; 004be28a
     PUSH EAX                            ; 004be28e
@@ -638,8 +638,8 @@ section .text
         ;   Label: LAB_004be29f
     MOV ECX,0x54                        ; 004be2a4
     PUSH 0x586757                       ; 004be2a9 | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01cc4800],EDX      ; 004be2ae | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004be2b4 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004be2ae | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004be2b4 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004be2ba
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004be2bf

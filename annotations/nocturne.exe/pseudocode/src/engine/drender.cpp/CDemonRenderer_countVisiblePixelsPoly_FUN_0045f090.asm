@@ -22,8 +22,8 @@
 ;   undefined4 DAT_01c00c7c
 ;   undefined4 DAT_01c039a0
 ;   undefined4 DAT_01c039a4
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -88,8 +88,8 @@ section .text
     MOV EBX,0x57dbbe                    ; 0045f103 | = "..\\engine\\drender.cpp"
     MOV ESI,0x29c                       ; 0045f108
     PUSH 0x57dbd4                       ; 0045f10d | = "Can't use demonZFacetCount in shadow ..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0045f112 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0045f118 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0045f112 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0045f118 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0045f11e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045f123

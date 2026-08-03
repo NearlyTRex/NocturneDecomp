@@ -13,7 +13,7 @@
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b9364
 ;   undefined4 DAT_005b9368
-;   int INT_005bac64 = 0x1cc30e4
+;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01c78ac8
@@ -51,18 +51,18 @@ section .text
     RET                                 ; 0049a33d
     PUSH 0x1d                           ; 0049a33e
         ;   Label: LAB_0049a33e
-    MOV EAX,[0x005bac64]                ; 0049a340 | INT_005bac64
-    PUSH EAX                            ; 0049a345 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 0049a346 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049a340 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049a345 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 0049a346 | g_CKeys_01cc30e4
     CALL dword ptr [EDX]                ; 0049a348
     ADD ESP,0x8                         ; 0049a34a
     TEST EAX,EAX                        ; 0049a34d
     JZ 0x0049a37b                       ; 0049a34f
         ;   XREF to: 0049a37b (CONDITIONAL_JUMP)  ; LAB_0049a37b
     PUSH 0x2f                           ; 0049a351
-    MOV EAX,[0x005bac64]                ; 0049a353 | INT_005bac64
-    PUSH EAX                            ; 0049a358 | DAT_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 0049a359 | DAT_01cc30e4
+    MOV EAX,[0x005bac64]                ; 0049a353 | g_CKeys_PTR_005bac64
+    PUSH EAX                            ; 0049a358 | g_CKeys_01cc30e4
+    MOV EDX,dword ptr [EAX]             ; 0049a359 | g_CKeys_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0049a35b
     ADD ESP,0x8                         ; 0049a35e
     TEST EAX,EAX                        ; 0049a361

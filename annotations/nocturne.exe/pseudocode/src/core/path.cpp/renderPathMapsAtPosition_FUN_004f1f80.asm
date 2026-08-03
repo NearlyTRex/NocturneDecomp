@@ -18,10 +18,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058ce9f
 ;   TerminatedCString s_Global_pathmap_list_corr_0058ceb0
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_01e312f8
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
@@ -41,7 +41,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x34]      ; 004f1f87
     MOV EDX,dword ptr [ESP + 0x2c]      ; 004f1f8b
     PUSH EDX                            ; 004f1f8f
-    PUSH 0x1fba938                      ; 004f1f90 | DAT_01fba938
+    PUSH 0x1fba938                      ; 004f1f90 | g_CDemonRaytrace_01fba938
     LEA ESI,[ESP + 0x14]                ; 004f1f95
     LEA EDI,[ESP + 0x8]                 ; 004f1f99
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f1f9d
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_004f1feb
     MOV ECX,0x6b5                       ; 004f1ff0
     PUSH 0x58ceb0                       ; 004f1ff5 | = "Global pathmap list corruption"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f1ffa | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f2000 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004f1ffa | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f2000 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004f2006
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f200b

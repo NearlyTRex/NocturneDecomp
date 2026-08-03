@@ -42,8 +42,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurfa
         return;
       }
     }
-    PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
-    INT_01cc4804 = 0x18d;
+    g_CHAR_PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
+    g_INT_01cc4804 = 0x18d;
     core_main_c_FUN_004c8440("Invalid bitsPerPixel!");
     return;
   }
@@ -68,8 +68,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurfa
       return;
     }
   }
-  PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
-  INT_01cc4804 = 0x19e;
+  g_CHAR_PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
+  g_INT_01cc4804 = 0x19e;
   core_main_c_FUN_004c8440("Invalid bitsPerPixel!");
   return;
 }

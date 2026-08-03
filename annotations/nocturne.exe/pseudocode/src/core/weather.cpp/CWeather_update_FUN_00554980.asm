@@ -30,11 +30,11 @@
 ;   double DOUBLE_00597c61 = 0.100000000000000
 ;   float FLOAT_00597c69 = 100
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005bed68
-;   undefined4 DAT_01c77850
-;   undefined4 DAT_01fb96f0
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
+;   undefined4 g_CGame_01c775ec.delta_time_float
+;   undefined4 g_CDemonCamera_01fb8508.corona_blend_factor
 ;   undefined4 DAT_02de0770
 ;
 ; Called Functions:
@@ -61,8 +61,8 @@ section .text
     MOV EBP,ESP                         ; 00554984
     SUB ESP,0x28                        ; 00554986
     AND ESP,0xfffffff8                  ; 00554989
-    MOV EAX,[0x005b9354]                ; 0055498c | DAT_005b9354
-    MOV EAX,dword ptr [EAX + 0x264]     ; 00554991 | DAT_01c77850
+    MOV EAX,[0x005b9354]                ; 0055498c | g_CGame_PTR_005b9354
+    MOV EAX,dword ptr [EAX + 0x264]     ; 00554991 | g_CGame_01c775ec.delta_time_float
     MOV dword ptr [ESP + 0x1c],EAX      ; 00554997
     MOV dword ptr [ESP + 0x8],EAX       ; 0055499b
     MOV EAX,dword ptr [EBP + 0x14]      ; 0055499f
@@ -112,7 +112,7 @@ section .text
     MOV dword ptr [ESP + 0x18],EAX      ; 00554a30
     LEA EAX,[ESP + 0x14]                ; 00554a34
     PUSH EAX                            ; 00554a38
-    MOV ECX,dword ptr [0x005b80f0]      ; 00554a39 | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 00554a39 | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 00554a3f
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760 ; 00554a40
         ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -120,7 +120,7 @@ section .text
     PUSH 0x0                            ; 00554a48
     LEA EAX,[ESP + 0x14]                ; 00554a4a
     PUSH EAX                            ; 00554a4e
-    MOV EAX,[0x005b80f0]                ; 00554a4f | DAT_005b80f0
+    MOV EAX,[0x005b80f0]                ; 00554a4f | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 00554a54
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760 ; 00554a55
         ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -128,7 +128,7 @@ section .text
     PUSH 0x0                            ; 00554a5d
     LEA EAX,[ESP + 0x14]                ; 00554a5f
     PUSH EAX                            ; 00554a63
-    MOV EDX,dword ptr [0x005b80f0]      ; 00554a64 | DAT_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 00554a64 | g_CFireEffect_PTR_005b80f0
     PUSH EDX                            ; 00554a6a
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760 ; 00554a6b
         ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -136,7 +136,7 @@ section .text
     PUSH 0x0                            ; 00554a73
     LEA EAX,[ESP + 0x14]                ; 00554a75
     PUSH EAX                            ; 00554a79
-    MOV ECX,dword ptr [0x005b80f0]      ; 00554a7a | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 00554a7a | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 00554a80
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760 ; 00554a81
         ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
@@ -253,7 +253,7 @@ section .text
     TEST EAX,EAX                        ; 00554b9e
     JNZ 0x00554bf9                      ; 00554ba0
         ;   XREF to: 00554bf9 (CONDITIONAL_JUMP)  ; LAB_00554bf9
-    MOV EAX,[0x01fb96f0]                ; 00554ba2 | DAT_01fb96f0
+    MOV EAX,[0x01fb96f0]                ; 00554ba2 | g_CDemonCamera_01fb8508.corona_blend_factor
     MOV dword ptr [ESP + 0x24],EAX      ; 00554ba7
     FILD dword ptr [ESP + 0x24]         ; 00554bab
     FMUL double ptr [0x00597c49]        ; 00554baf | DOUBLE_00597c49
@@ -331,7 +331,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00554c71
         ;   Label: LAB_00554c71
     MOV dword ptr [EAX + 0x24],EBX      ; 00554c74
-    MOV EAX,[0x01fb96f0]                ; 00554c77 | DAT_01fb96f0
+    MOV EAX,[0x01fb96f0]                ; 00554c77 | g_CDemonCamera_01fb8508.corona_blend_factor
     MOV dword ptr [ESP + 0x24],EAX      ; 00554c7c
     FILD dword ptr [ESP + 0x24]         ; 00554c80
     FMUL double ptr [0x00597c49]        ; 00554c84 | DOUBLE_00597c49
@@ -384,7 +384,7 @@ section .text
         ;   Label: LAB_00554d1b
     MOV EBX,dword ptr [EBP + 0x14]      ; 00554d20
     PUSH EBX                            ; 00554d23
-    MOV ESI,dword ptr [0x005bed68]      ; 00554d24 | DAT_005bed68
+    MOV ESI,dword ptr [0x005bed68]      ; 00554d24 | g_CSound_PTR_005bed68
     PUSH ESI                            ; 00554d2a
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 00554d2b
         ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)

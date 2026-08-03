@@ -52,24 +52,28 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_00484050(CFireball *this_ptr)
     (this_ptr->light_globe).intensity.bytes[0] =
          (uchar)((int)(((iVar3 >> 8) + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2);
     core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(this_ptr_00,8.0);
-    this_ptr_02 = 0x01E57284;
+    this_ptr_02 = g_CDemonSet_PTR_005be368;
     (this_ptr->light_globe).corona_mode = 0;
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(this_ptr_02,this_ptr_00);
     iVar3 = this_ptr->spawn_timer + _DAT_01bd1d80;
     this_ptr->spawn_timer = iVar3;
-    this_ptr_01 = 0x01C08D04;
+    this_ptr_01 = g_CFireEffect_PTR_005b80f0;
     if (0x1000 < iVar3) {
       this_ptr->spawn_timer = iVar3 + -0x1000;
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
                 (this_ptr_01,(CVector3f *)this_ptr,2.0,(CVector3f *)0x0,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0
+                 ,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0
+                 ,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0
+                 ,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (0x01C08D04,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffect_PTR_005b80f0,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0
+                 ,0xffff);
     }
   }
   if (this_ptr->lighting_active == 0) {
@@ -87,8 +91,8 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_00484050(CFireball *this_ptr)
   iVar4 = 0;
   iVar3 = 0;
   while( true ) {
-    if ((int)0x01E57284->actors[0x6d6] <= iVar3) break;
-    iVar1 = *(int *)((int)0x01E57284->actors + iVar4 + 0x1b5c);
+    if (g_CDemonSet_PTR_005be368->character_count <= iVar3) break;
+    iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);
     core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_54);
     SStack_54.damage_amount = local_18;
     iVar4 = iVar4 + 4;

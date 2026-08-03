@@ -103,12 +103,12 @@ uint core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CDemonActor *param_1)
         CStack_6c.y = (int)ROUND((pUVar5->vec).y * _DAT_0059b220);
         CStack_6c.z = (int)ROUND((pUVar5->vec).z * _DAT_0059b220);
         core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                  (0x01E57284,&CStack_6c,(CVector3i *)0x0,0,2);
+                  (g_CDemonSet_PTR_005be368,&CStack_6c,(CVector3i *)0x0,0,2);
         CStack_6c.x = (int)ROUND((float)*piVar4 * _DAT_0059b220);
         CStack_6c.y = (int)ROUND((float)piVar4[1] * _DAT_0059b220);
         CStack_6c.z = (int)ROUND((float)piVar4[2] * _DAT_0059b220);
         core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                  (0x01E57284,&CStack_6c,(CVector3i *)0x0,2,2);
+                  (g_CDemonSet_PTR_005be368,&CStack_6c,(CVector3i *)0x0,2,2);
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&SStack_b8);
         CStack_30.x = (int)ROUND((pUVar5->vec).x * _DAT_0059b220);
         CStack_30.y = (int)ROUND((pUVar5->vec).y * _DAT_0059b220);
@@ -155,12 +155,12 @@ uint core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CDemonActor *param_1)
         CStack_6c.y = (int)ROUND((pUVar5->vec).y * _DAT_0059b220);
         CStack_6c.z = (int)ROUND((pUVar5->vec).z * _DAT_0059b220);
         core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                  (0x01E57284,&CStack_6c,(CVector3i *)0x0,0,2);
+                  (g_CDemonSet_PTR_005be368,&CStack_6c,(CVector3i *)0x0,0,2);
         CStack_6c.x = (int)ROUND((float)*piVar4 * _DAT_0059b220);
         CStack_6c.y = (int)ROUND((float)piVar4[1] * _DAT_0059b220);
         CStack_6c.z = (int)ROUND((float)piVar4[2] * _DAT_0059b220);
         core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                  (0x01E57284,&CStack_6c,(CVector3i *)0x0,2,2);
+                  (g_CDemonSet_PTR_005be368,&CStack_6c,(CVector3i *)0x0,2,2);
         pUVar5 = pUVar5 + 3;
         piVar4 = piVar4 + 9;
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&SStack_b8);

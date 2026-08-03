@@ -28,7 +28,7 @@ void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               (&param_1->base,&CStack_18,input_local_point);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-              ((CGore *)INT_005b96c4,&CStack_18,(CVector3f *)&DAT_02dd1184,
+              (g_CGore_PTR_005b96c4,&CStack_18,(CVector3f *)&DAT_02dd1184,
                (int)(param_1->model).transformed_vertices[0x52].y);
     return;
   }

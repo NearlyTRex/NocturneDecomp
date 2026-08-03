@@ -10,7 +10,7 @@ void __cdecl core_fire_cpp_CLightningBolt_process_FUN_00488bb0(CLightningBolt *t
 
 {
   if ((0.0 < this_ptr->lifetime) &&
-     (this_ptr->lifetime = this_ptr->lifetime - *(float *)(0x01C775EC + 0x264),
+     (this_ptr->lifetime = this_ptr->lifetime - g_CGame_PTR_005b9354->delta_time_float,
      this_ptr->lifetime < 0.0)) {
     this_ptr->lifetime = 0.0;
     return;

@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)
+; void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonActor *this_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x9c]:1  local_9c
+; CVector3f[10]    Stack[-0x9c]:120  local_9c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005992b0
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   undefined4 DAT_005ae700
+;   void* PTR_DAT_005ae700 = 01b4d738
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_01b4d738
@@ -57,7 +59,7 @@ section .text
     LEA EBX,[ESP + 0x78]                ; 0040ae1b
     MOV dword ptr [ESP + 0x88],EAX      ; 0040ae1f
     MOV EAX,EDI                         ; 0040ae26
-    MOV EDX,dword ptr [0x005ae700]      ; 0040ae28 | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0040ae28 | PTR_DAT_005ae700
     FLD float ptr [EAX]                 ; 0040ae2e
     FMUL float ptr [0x005992b0]         ; 0040ae30 | DAT_005992b0
     FISTP dword ptr [EBX]               ; 0040ae36
@@ -74,7 +76,7 @@ section .text
     PUSH EAX                            ; 0040ae5c
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0040ae5d
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
-    MOV ESI,dword ptr [0x005ae700]      ; 0040ae62 | DAT_005ae700
+    MOV ESI,dword ptr [0x005ae700]      ; 0040ae62 | PTR_DAT_005ae700
     MOV ESI,dword ptr [ESI]             ; 0040ae68 | DAT_01b4d738
     MOV AH,byte ptr [ESI + 0xea5e3]     ; 0040ae6a
     ADD ESP,0x8                         ; 0040ae70

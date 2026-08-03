@@ -11,10 +11,10 @@
 ; Referenced Globals:
 ;   float FLOAT_0059d1f8 = 256
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005be368
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_007f7370
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -104,8 +104,8 @@ section .text
     LEA EBX,[ESI + 0x38]                ; 0048976d
     PUSH EBX                            ; 00489770
     PUSH ESI                            ; 00489771
-    MOV EDI,dword ptr [0x005be368]      ; 00489772 | DAT_005be368
-    PUSH EDI                            ; 00489778 | DAT_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 00489772 | g_CDemonSet_PTR_005be368
+    PUSH EDI                            ; 00489778 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 00489779
         ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 0048977e

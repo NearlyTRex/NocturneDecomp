@@ -23,8 +23,8 @@
 ;   TerminatedCString s_core_morph_cpp_0058ab96
 ;   TerminatedCString s_CMorphModel_animate_inva_0058aba8
 ;   undefined4 DAT_005a0cc8
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -52,8 +52,8 @@ section .text
         ;   Label: LAB_004df67c
     MOV EAX,0x112                       ; 004df681
     PUSH 0x58ab6c                       ; 004df686 | = "CMorphModel::animate - invalid part i..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004df68b | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004df691 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004df68b | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004df691 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004df696
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004df69b
@@ -73,8 +73,8 @@ section .text
     MOV EAX,0x58ab96                    ; 004df6bb | = "..\\core\\morph.cpp"
     MOV EDX,0x119                       ; 004df6c0
     PUSH 0x58aba8                       ; 004df6c5 | = "CMorphModel::animate - invalid vertex..."
-    MOV [0x01cc4800],EAX                ; 004df6ca | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004df6cf | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 004df6ca | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004df6cf | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004df6d5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004df6da

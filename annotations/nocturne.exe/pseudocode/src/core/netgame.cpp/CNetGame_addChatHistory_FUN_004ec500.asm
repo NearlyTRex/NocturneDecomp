@@ -15,8 +15,8 @@
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eacfa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c775ec
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame g_CGame_01c775ec
 ;   undefined4 DAT_01cea40c
 ;
 ; Called Functions:
@@ -93,9 +93,9 @@ section .text
     PUSH 0x40a00000                     ; 004ec59f
     MOV ESI,dword ptr [0x01cea40c]      ; 004ec5a4 | DAT_01cea40c
     PUSH EBX                            ; 004ec5aa
-    MOV EBX,dword ptr [0x005b9354]      ; 004ec5ab | DAT_005b9354
+    MOV EBX,dword ptr [0x005b9354]      ; 004ec5ab | g_CGame_PTR_005b9354
     INC ESI                             ; 004ec5b1
-    PUSH EBX                            ; 004ec5b2 | DAT_01c775ec
+    PUSH EBX                            ; 004ec5b2 | g_CGame_01c775ec
     MOV dword ptr [0x01cea40c],ESI      ; 004ec5b3 | DAT_01cea40c
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004ec5b9
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)

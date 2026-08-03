@@ -13,28 +13,30 @@ void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect *
 {
   int iVar1;
   int iVar2;
+  CFireball *this_ptr_00;
   
-  iVar2 = _DAT_01c58df8 * 0x9c;
-  _DAT_01c58df8 = _DAT_01c58df8 + 1;
-  if (0x3f < _DAT_01c58df8) {
+  iVar1 = _DAT_01c58df8;
+  iVar2 = _DAT_01c58df8 + 1;
+  this_ptr_00 = g_CFireball_ARRAY_01c58dfc + _DAT_01c58df8;
+  _DAT_01c58df8 = iVar2;
+  if (0x3f < iVar2) {
     _DAT_01c58df8 = 0;
   }
-  (*(code *)**(uint **)(&DAT_01c58e30 + iVar2))
-            ((CVector3f *)(&DAT_01c58dfc + iVar2),position,velocity);
-  iVar1 = core_actor_cpp_getRandomInt_FUN_0040de00(0xc000,0xffff);
-  *(int *)(iVar2 + 0x1c58e34) = iVar1;
+  (*(g_CFireball_ARRAY_01c58dfc[iVar1].base.vtable)->setup)(&this_ptr_00->base,position,velocity);
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040de00(0xc000,0xffff);
+  g_CFireball_ARRAY_01c58dfc[iVar1].timer = iVar2;
   if (lighting_active == 0) {
-    *(uint *)(iVar2 + 0x1c58e38) = 0x2000;
+    g_CFireball_ARRAY_01c58dfc[iVar1].fade_rate = 0x2000;
   }
   else {
-    *(uint *)(iVar2 + 0x1c58e38) = 0x8000;
+    g_CFireball_ARRAY_01c58dfc[iVar1].fade_rate = 0x8000;
   }
-  *(int *)(iVar2 + 0x1c58e40) = lighting_active;
-  *(uint *)(iVar2 + 0x1c58e3c) = 0;
-  *(uint *)(iVar2 + 0x1c58e54) = sfx_handle;
-  sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00526ea0
-            (sfx_handle,(CVector3f *)(&DAT_01c58dfc + iVar2));
+  g_CFireball_ARRAY_01c58dfc[iVar1].lighting_active = lighting_active;
+  g_CFireball_ARRAY_01c58dfc[iVar1].first_update_flag = 0;
+  g_CFireball_ARRAY_01c58dfc[iVar1].sfx_handle = sfx_handle;
+  sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00526ea0(sfx_handle,(CVector3f *)this_ptr_00);
   sound_sndmain_cpp_setSfxTrackedFloatVelocity_FUN_00526ff0
-            (*(uint *)(iVar2 + 0x1c58e54),(CVector3f *)(iVar2 + 0x1c58e08));
+            (g_CFireball_ARRAY_01c58dfc[iVar1].sfx_handle,
+             &g_CFireball_ARRAY_01c58dfc[iVar1].base.velocity);
   return;
 }

@@ -34,13 +34,11 @@ void __cdecl core_set_cpp_FUN_0050e080(CDemonSet *this_ptr,int mirror_index,int 
        engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_00460e20(DAT_005ae704);
   local_14 = _DAT_020842cc;
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650
-            ((CMirrorReflection *)
-             (this_ptr->renderable_actors[mirror_index + 0x6f8][1].create_event + 0x1c),
+            (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,
              (CVector3f *)&DAT_020842b4,(CVector3f *)&DAT_020842c0,_DAT_020842cc);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(DAT_005ae704,1);
   core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0(_DAT_007f7370,mirror_index + 1);
   engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_004613a0(DAT_005ae704,mirror_index + 1);
-  this_ptr->sorted_render_actors[0x6e0] =
-       (CDemonActor *)(this_ptr->renderable_actors[mirror_index + 0x6f8][1].create_event + 0x1c);
+  this_ptr->active_mirror = &this_ptr->mirror_glass_actors[mirror_index]->mirror;
   return;
 }

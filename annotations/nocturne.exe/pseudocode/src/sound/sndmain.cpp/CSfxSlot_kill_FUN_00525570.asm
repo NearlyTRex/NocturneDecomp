@@ -29,10 +29,10 @@
 ;   TerminatedCString s_refCount_for_streaming_S_0059302b
 ;   TerminatedCString s_sound_sndmain_cpp_0059304d
 ;   TerminatedCString s_streaming_sample_sfx_ind_00593062
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_0077ad0c
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole g_CConsole_0077ad0c
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc8318
 ;   ... and 1 more
 ;
@@ -67,8 +67,8 @@ section .text
     PUSH EDX                            ; 0052559b | = "[NULLsamplePtr]"
         ;   Label: LAB_0052559b
     PUSH 0x592fc7                       ; 0052559c | = "Killing sfx %s\n"
-    MOV EAX,[0x005ad350]                ; 005255a1 | PTR_DAT_005ad350
-    PUSH EAX                            ; 005255a6 | DAT_0077ad0c
+    MOV EAX,[0x005ad350]                ; 005255a1 | g_CConsole_PTR_005ad350
+    PUSH EAX                            ; 005255a6 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005255a7
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
     ADD ESP,0xc                         ; 005255ac
@@ -112,8 +112,8 @@ section .text
     MOV EAX,0x593016                    ; 00525623 | = "..\\sound\\sndmain.cpp"
     MOV EDX,0xb42                       ; 00525628
     PUSH 0x59302b                       ; 0052562d | = "refCount for streaming Sfx %s > 1"
-    MOV [0x01cc4800],EAX                ; 00525632 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00525637 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00525632 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00525637 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052563d
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00525642
@@ -132,8 +132,8 @@ section .text
     MOV EBX,0x59304d                    ; 00525663 | = "..\\sound\\sndmain.cpp"
     MOV EDI,0xb43                       ; 00525668
     PUSH 0x593062                       ; 0052566d | = "streaming sample sfx index mismatch o..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00525672 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00525678 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 00525672 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00525678 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052567e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00525683
@@ -157,8 +157,8 @@ section .text
         ;   Label: LAB_0052569e
     MOV ESI,0xb14                       ; 005256a3
     PUSH 0x592f97                       ; 005256a8 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 005256ad | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005256b3 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 005256ad | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 005256b3 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005256b9
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005256be
@@ -168,8 +168,8 @@ section .text
         ;   Label: LAB_005256c6
     MOV EAX,0xb33                       ; 005256cb
     PUSH 0x592fec                       ; 005256d0 | = "SfxSlot::kill - ref count out of bala..."
-    MOV dword ptr [0x01cc4800],EBP      ; 005256d5 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 005256db | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBP      ; 005256d5 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 005256db | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 005256e0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005256e5

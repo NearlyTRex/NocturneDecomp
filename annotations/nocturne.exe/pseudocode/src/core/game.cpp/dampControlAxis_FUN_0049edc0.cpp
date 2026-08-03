@@ -11,7 +11,7 @@ void __cdecl core_game_cpp_dampControlAxis_FUN_0049edc0(float *axis_value,float 
 {
   float fVar1;
   
-  fVar1 = (*(float *)(0x01C775EC + 0x264) * damp_rate) / damp_time;
+  fVar1 = (g_CGame_PTR_005b9354->delta_time_float * damp_rate) / damp_time;
   if (0.0 <= *axis_value) {
     *axis_value = *axis_value - fVar1;
     if (*axis_value < 0.0) {

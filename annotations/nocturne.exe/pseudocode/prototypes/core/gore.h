@@ -101,7 +101,7 @@ void __cdecl CGore::renderParticles(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_renderDecals_FUN_004afe80
 // Address: 004afe80
-int CGore::renderDecals(undefined4 param_1,int param_2);
+CGame * CGore::renderDecals(undefined4 param_1,int param_2);
 
 // Original: core_gore.cpp_CGore_process_FUN_004b0030
 // Address: 004b0030
@@ -195,9 +195,9 @@ CBloodParticle * __cdecl CBloodParticle::ctor(CBloodParticle *this_ptr);
 // Address: 004b0a50
 CBloodParticle * __cdecl CBloodParticle::dtor(CBloodParticle *this_ptr,uint flags);
 
-// Original: core_gore.cpp_FUN_004b0a60
+// Original: core_gore.cpp_CFootstep_arrdtor_FUN_004b0a60
 // Address: 004b0a60
-void FUN_004b0a60(void *param_1);
+CFootstep * __cdecl CFootstep::arrdtor(CFootstep *this_ptr,uint flags);
 
 // Original: core_gore.cpp_FUN_004b0a80
 // Address: 004b0a80
@@ -207,6 +207,6 @@ void FUN_004b0a80(void *param_1);
 // Address: 004b0aa0
 void FUN_004b0aa0(void *param_1);
 
-// Original: core_gore.cpp_FUN_004b0ac0
+// Original: core_gore.cpp_CBloodParticle_arrdtor_FUN_004b0ac0
 // Address: 004b0ac0
-void FUN_004b0ac0(void *param_1);
+CBloodParticle * __cdecl CBloodParticle::arrdtor(CBloodParticle *this_ptr,uint flags);

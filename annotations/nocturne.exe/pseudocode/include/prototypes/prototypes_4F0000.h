@@ -52,7 +52,7 @@ void __cdecl core_path_cpp_renderAllPathMaps_FUN_004f1ef0(int depth,int red,int 
 void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(CVector3f *position,int depth,int red,int green,int fog);
 void __cdecl core_path_cpp_CPathMap_setupPathSearch_FUN_004f2050(CPathMap *this_ptr);
 uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(CPathMap *this_ptr,int start_height);
-void core_path_cpp_FUN_004f2530(void *param_1);
+CPathMap * __cdecl core_path_cpp_CPathMap_arrdtor_FUN_004f2530(CPathMap *this_ptr,uint flags);
 void __cdecl engine_pcx_c_writePCXScanline_FUN_004f2550(int row_index,_FILE *pcx_file);
 void __cdecl engine_pcx_c_saveScreenRaw16_FUN_004f2620(char *filename);
 void __cdecl engine_pcx_c_saveScreenRaw32_FUN_004f27e0(char *filename);
@@ -67,7 +67,7 @@ int __cdecl core_pendulum_cpp_didPhaseCross_FUN_004f3340(float threshold,float o
 void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *this_ptr,float delta_time);
 void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *param_1,float param_2);
 int core_pendulum_cpp_CPendulum_renderOpaque_FUN_004f3b90(CDemonActor *param_1);
-undefined4 * core_pendulum_cpp_CPendulum_getBoundingBox_FUN_004f3c00(int param_1,undefined4 *param_2);
+float * core_pendulum_cpp_CPendulum_getBoundingBox_FUN_004f3c00(int param_1,float *param_2);
 void core_pendulum_cpp_CPendulum_archive_FUN_004f3c50(CDemonActor *param_1);
 ECollisionType __cdecl core_pendulum_cpp_CPendulum_getCollisionType_FUN_004f3df0(CPendulum *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_004f3e30(CPendulum *this_ptr);
@@ -135,7 +135,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_004f6170(CPlatform *this_ptr
 void __cdecl core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0(CPlatform *this_ptr,float goal_param,float movement_rate);
 int core_platfrm_cpp_CPlatform_renderOpaque_FUN_004f6c60(CDemonActor *param_1);
 void core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CDemonActor *param_1,int param_2);
-undefined4 * core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(int param_1,undefined4 *param_2);
+float * core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(int param_1,float *param_2);
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor);
 undefined4 core_platfrm_cpp_CPlatform_getCollisionType_FUN_004f7560(int param_1,int param_2);

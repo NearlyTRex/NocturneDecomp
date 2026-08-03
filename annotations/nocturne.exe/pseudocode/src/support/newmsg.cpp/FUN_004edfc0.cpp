@@ -43,8 +43,8 @@ int support_newmsg_cpp_FUN_004edfc0(char *param_1)
       _fgets(local_31c,0xff,file_handle);
       _fscanf(file_handle,"%d\n");
       if (local_1c != 0) {
-        PTR_01cc4800 = "..\\support\\newmsg.cpp";
-        INT_01cc4804 = 0x52;
+        g_CHAR_PTR_01cc4800 = "..\\support\\newmsg.cpp";
+        g_INT_01cc4804 = 0x52;
         core_main_c_FUN_004c8440("Unknown message file version");
       }
       _fgets(local_31c,0xff,file_handle);
@@ -94,13 +94,13 @@ int support_newmsg_cpp_FUN_004edfc0(char *param_1)
         }
         iVar5 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n");
         if (iVar5 != 2) {
-          PTR_01cc4800 = "..\\support\\newmsg.cpp";
-          INT_01cc4804 = 99;
+          g_CHAR_PTR_01cc4800 = "..\\support\\newmsg.cpp";
+          g_INT_01cc4804 = 99;
           core_main_c_FUN_004c8440("Error reading %s",param_1);
         }
         if (499 < _DAT_01d16818) {
-          PTR_01cc4800 = "..\\support\\newmsg.cpp";
-          INT_01cc4804 = 0x68;
+          g_CHAR_PTR_01cc4800 = "..\\support\\newmsg.cpp";
+          g_INT_01cc4804 = 0x68;
           core_main_c_FUN_004c8440("Too many messages in %s",param_1);
         }
         pcVar9 = local_21c;

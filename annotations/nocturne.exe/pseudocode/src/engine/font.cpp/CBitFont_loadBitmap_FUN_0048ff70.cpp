@@ -23,8 +23,8 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(CBitFont *this_ptr
   char local_110 [256];
   
   if (3 < this_ptr->bitmap_count) {
-    PTR_01cc4800 = "..\\engine\\font.cpp";
-    INT_01cc4804 = 0xd7;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
+    g_INT_01cc4804 = 0xd7;
     core_main_c_FUN_004c8440("Too many bitmaps");
   }
   pacVar6 = this_ptr->bitmap_files + this_ptr->bitmap_count;
@@ -44,16 +44,16 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(CBitFont *this_ptr
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",filename);
   if (iVar2 < (int)size) {
     _sprintf(local_440,"Invalid font file size (%s).",filename);
-    PTR_01cc4800 = "..\\engine\\font.cpp";
-    INT_01cc4804 = 0xec;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
+    g_INT_01cc4804 = 0xec;
     core_main_c_FUN_004c8440(local_440);
   }
   pvVar3 = shape_memdbg_cpp_malloc_FUN_00564c18(size);
   this_ptr->bitmap_data[this_ptr->bitmap_count] = pvVar3;
   if (this_ptr->bitmap_data[this_ptr->bitmap_count] == (void *)0x0) {
     _sprintf(local_440,"Unable to allocate memory for font bitmap (%s).",filename);
-    INT_01cc4804 = 0xf4;
-    PTR_01cc4800 = "..\\engine\\font.cpp";
+    g_INT_01cc4804 = 0xf4;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
     core_main_c_FUN_004c8440(local_440);
   }
   cockpit_ckptutil_c_readBitmapFile_FUN_0042d240

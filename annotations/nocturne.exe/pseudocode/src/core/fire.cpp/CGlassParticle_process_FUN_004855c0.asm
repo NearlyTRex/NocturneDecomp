@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9354
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01c77850
+;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_process_FUN_004ef120
@@ -24,9 +24,9 @@ section .text
         ;   Label: core_fire.cpp_CGlassParticle_process_FUN_004855c0
     SUB ESP,0x4                         ; 004855c1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004855c4
-    MOV EAX,[0x005b9354]                ; 004855c8 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004855c8 | g_CGame_PTR_005b9354
     FLD float ptr [EBX + 0x54]          ; 004855cd
-    MOV EAX,dword ptr [EAX + 0x264]     ; 004855d0 | DAT_01c77850
+    MOV EAX,dword ptr [EAX + 0x264]     ; 004855d0 | g_CGame_01c775ec.delta_time_float
     FLD float ptr [EBX + 0x58]          ; 004855d6
     MOV dword ptr [ESP],EAX             ; 004855d9
     PUSH EBX                            ; 004855dc

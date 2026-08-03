@@ -14,7 +14,7 @@ void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(CBloodPool *this_ptr,CVe
   float fVar2;
   
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040de00(0,3);
-  this_ptr_00 = 0x01E57284;
+  this_ptr_00 = g_CDemonSet_PTR_005be368;
   this_ptr->texture_variant = iVar1;
   (this_ptr->position).x = position->x;
   fVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(this_ptr_00,position,0.0);

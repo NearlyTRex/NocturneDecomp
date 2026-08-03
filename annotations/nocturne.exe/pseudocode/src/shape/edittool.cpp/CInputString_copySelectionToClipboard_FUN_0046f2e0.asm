@@ -12,7 +12,7 @@
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390 at 0046f46e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6d50
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10
@@ -41,7 +41,7 @@ section .text
     ADD EAX,EDX                         ; 0046f304
     XOR ECX,ECX                         ; 0046f306
     PUSH EAX                            ; 0046f308
-    MOV ESI,dword ptr [0x005b6d50]      ; 0046f309 | DAT_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 0046f309 | g_CEditorTools_PTR_005b6d50
     MOV CL,byte ptr [EBX]               ; 0046f30f
     PUSH ESI                            ; 0046f311
     MOV dword ptr [ESP + 0x10],ECX      ; 0046f312

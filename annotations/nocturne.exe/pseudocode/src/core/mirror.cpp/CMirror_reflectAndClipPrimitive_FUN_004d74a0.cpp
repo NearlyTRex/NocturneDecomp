@@ -22,7 +22,7 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0(CMirro
   _DAT_01cc9120 = (primitive->base).count;
   iVar4 = 0;
   if (0 < _DAT_01cc9120) {
-    pCVar3 = CVector3f_ARRAY_01cc9124;
+    pCVar3 = g_CVector3f_ARRAY_01cc9124;
     pSVar5 = primitive;
     do {
       pSVar1 = pSVar5 + 1;
@@ -36,21 +36,21 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0(CMirro
     } while (iVar4 < (primitive->base).count);
   }
   core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
-            (this_ptr->clip_planes,CVector3f_ARRAY_01cc9124,_DAT_01cc9120,CVector3f_ARRAY_01cc92a8,
-             (int *)&DAT_01cc92a4);
+            (this_ptr->clip_planes,g_CVector3f_ARRAY_01cc9124,_DAT_01cc9120,
+             g_CVector3f_ARRAY_01cc92a8,(int *)&DAT_01cc92a4);
   if ((((2 < _DAT_01cc92a4) &&
        (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
-                  (this_ptr->clip_planes + 1,CVector3f_ARRAY_01cc92a8,_DAT_01cc92a4,
-                   CVector3f_ARRAY_01cc9124,(int *)&DAT_01cc9120), 2 < _DAT_01cc9120)) &&
+                  (this_ptr->clip_planes + 1,g_CVector3f_ARRAY_01cc92a8,_DAT_01cc92a4,
+                   g_CVector3f_ARRAY_01cc9124,(int *)&DAT_01cc9120), 2 < _DAT_01cc9120)) &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
-                 (this_ptr->clip_planes + 2,CVector3f_ARRAY_01cc9124,_DAT_01cc9120,
-                  CVector3f_ARRAY_01cc92a8,(int *)&DAT_01cc92a4), 2 < _DAT_01cc92a4)) &&
+                 (this_ptr->clip_planes + 2,g_CVector3f_ARRAY_01cc9124,_DAT_01cc9120,
+                  g_CVector3f_ARRAY_01cc92a8,(int *)&DAT_01cc92a4), 2 < _DAT_01cc92a4)) &&
      ((core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
-                 (this_ptr->clip_planes + 3,CVector3f_ARRAY_01cc92a8,_DAT_01cc92a4,
-                  CVector3f_ARRAY_01cc9124,(int *)&DAT_01cc9120), 2 < _DAT_01cc9120 &&
+                 (this_ptr->clip_planes + 3,g_CVector3f_ARRAY_01cc92a8,_DAT_01cc92a4,
+                  g_CVector3f_ARRAY_01cc9124,(int *)&DAT_01cc9120), 2 < _DAT_01cc9120 &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420
-                 (this_ptr->clip_planes + 4,CVector3f_ARRAY_01cc9124,_DAT_01cc9120,
-                  CVector3f_ARRAY_01cc92a8,(int *)&DAT_01cc92a4), 2 < _DAT_01cc92a4)))) {
+                 (this_ptr->clip_planes + 4,g_CVector3f_ARRAY_01cc9124,_DAT_01cc9120,
+                  g_CVector3f_ARRAY_01cc92a8,(int *)&DAT_01cc92a4), 2 < _DAT_01cc92a4)))) {
     (this_ptr->clip_primitive).base.base.count = _DAT_01cc92a4;
     (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
     (this_ptr->clip_primitive).base.surface_normal.B = (primitive->surface_normal).B;
@@ -58,7 +58,7 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0(CMirro
     (this_ptr->clip_primitive).base.surface_normal.D = (primitive->surface_normal).D;
     iVar4 = 0;
     if (0 < _DAT_01cc92a4) {
-      local_14 = CVector3f_ARRAY_01cc92a8;
+      local_14 = g_CVector3f_ARRAY_01cc92a8;
       iVar6 = 0xea000;
       do {
         piVar2 = (int *)(*DAT_005ae704 + iVar6);

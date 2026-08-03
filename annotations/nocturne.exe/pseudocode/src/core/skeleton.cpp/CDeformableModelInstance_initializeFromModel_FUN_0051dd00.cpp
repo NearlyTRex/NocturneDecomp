@@ -27,12 +27,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
             (&this_ptr->motion_controller,&motion_list->motion_list);
   local_14 = motion_list->bone_count;
   pCVar1 = this_ptr->model_ptr;
-  local_24 = (float)pCVar1->texture_sets[1].textures[0].textures[0].base.count *
-             this_ptr->scale_factor;
-  local_20 = *(float *)pCVar1->texture_sets[1].textures[0].textures[0].texture_name *
-             this_ptr->scale_factor;
-  local_1c = *(float *)(pCVar1->texture_sets[1].textures[0].textures[0].texture_name + 4) *
-             this_ptr->scale_factor;
+  local_24 = (pCVar1->model_scale).x * this_ptr->scale_factor;
+  local_20 = (pCVar1->model_scale).y * this_ptr->scale_factor;
+  local_1c = (pCVar1->model_scale).z * this_ptr->scale_factor;
   if (&this_ptr->scaled_model_dimensions != (CVector3f *)&local_24) {
     (this_ptr->scaled_model_dimensions).x = local_24;
     (this_ptr->scaled_model_dimensions).y = local_20;

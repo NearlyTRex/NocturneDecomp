@@ -21,8 +21,8 @@
 ;   void* switchdataD_004dd40c = 004dd53f
 ;   TerminatedCString s_MRGLSize_Bad_type_d_0058a637
 ;   TerminatedCString s_engine_model_c_0058a64f
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -143,8 +143,8 @@ section .text
     MOV EAX,ESP                         ; 004dd65d
     MOV ECX,0x25b                       ; 004dd65f
     PUSH EAX                            ; 004dd664
-    MOV dword ptr [0x01cc4800],EDX      ; 004dd665 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004dd66b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004dd665 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004dd66b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 004dd671
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     MOV EAX,0x4                         ; 004dd676

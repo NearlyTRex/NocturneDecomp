@@ -42,15 +42,15 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519
   local_48 = 1e+30;
   local_30 = 0;
   local_44 = 0;
-  if (1 < this_ptr->texture_sets[0].textures[0x28].textures[0].base.type) {
+  if (1 < this_ptr->num_parts) {
     pCVar1 = (CDeformableModelInstance *)FUN_0056497c(0x22b4);
     local_24 = (CDeformableModelInstance *)0x0;
     if (pCVar1 != (CDeformableModelInstance *)0x0) {
       local_24 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(pCVar1);
     }
     if (local_24 == (CDeformableModelInstance *)0x0) {
-      PTR_01cc4800 = "..\\core\\skeleton.cpp";
-      INT_01cc4804 = 0x5f0;
+      g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      g_INT_01cc4804 = 0x5f0;
       core_main_c_FUN_004c8440("Out of memory");
     }
     pCVar1 = local_24;
@@ -61,7 +61,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
               (pCVar1,&local_6c,bone_index);
     local_38 = 0;
-    if (0 < this_ptr->texture_sets[0].textures[0x28].textures[0].base.type) {
+    if (0 < this_ptr->num_parts) {
       local_3c = this_ptr;
       do {
         local_34 = local_3c;
@@ -70,7 +70,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519
         local_1c = 0;
         local_28 = 0;
         local_14 = 0.0;
-        if (0 < *(int *)(local_3c->texture_sets[0].textures[0x28].textures[1].texture_name + 4)) {
+        if (0 < local_3c->parts[0].tri_counts[0]) {
           do {
             puVar6 = (ushort *)
                      ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_2c);
@@ -106,8 +106,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519
             local_30 = local_30 + 1;
             local_28 = local_28 + 1;
             local_2c = local_2c + 0x12;
-          } while (local_28 <
-                   *(int *)(local_3c->texture_sets[0].textures[0x28].textures[1].texture_name + 4));
+          } while (local_28 < local_3c->parts[0].tri_counts[0]);
         }
         if (local_14 <= local_40) {
           if (ABS(local_40) == 0.0) {
@@ -125,7 +124,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_00519
         }
         local_3c = (CDeformableModel *)(local_3c->tri_count + 3);
         local_38 = local_38 + 1;
-      } while (local_38 < this_ptr->texture_sets[0].textures[0x28].textures[0].base.type);
+      } while (local_38 < this_ptr->num_parts);
     }
     if (local_24 != (CDeformableModelInstance *)0x0) {
       (*((local_24->motion_controller).vtable)->dtor)(&local_24->motion_controller,2);

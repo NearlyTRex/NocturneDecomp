@@ -45,8 +45,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592f4e
 ;   TerminatedCString s_SfxSlot_mix_must_be_lock_00592f63
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc8340
 ;   undefined4 DAT_02dc84bc
 ;
@@ -206,8 +206,8 @@ section .text
         ;   Label: LAB_00524e7e
     MOV EBX,0xa1a                       ; 00524e83
     PUSH 0x592f63                       ; 00524e88 | = "SfxSlot::mix - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00524e8d | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00524e93 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00524e8d | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00524e93 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00524e99
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00524e9e

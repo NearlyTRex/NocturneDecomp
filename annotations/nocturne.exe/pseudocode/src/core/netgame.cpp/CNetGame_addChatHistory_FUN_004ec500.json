@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -58,56 +58,62 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_0077ad0c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
         "line": 22,
         "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 21,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_0077ad0c'?"
+        "column": 5,
+        "line": 23,
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 49,
+        "column": 21,
         "line": 23,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_0077ad0c'?"
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 80,
+        "line": 25,
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_0077ad0c'?"
+        "line": 28,
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 21,
-        "line": 40,
+        "column": 11,
+        "line": 29,
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 33,
+        "line": 30,
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 44,
         "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 51,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01cea40c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 51,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_0077ad0c'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 52,
-        "message": "no matching function for call to 'core_game_cpp_CGame_displayMessage_FUN_0049aa30'"
+        "line": 55,
+        "message": "use of undeclared identifier '_DAT_01cea40c'"
       }
     ],
     "success": false,
@@ -116,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 98,
+    "complexity_score": 102,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 47,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_stride_bytecount",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 134
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -171,14 +177,14 @@
   "globals": [
     {
       "addr": "005b9354",
-      "name": "DAT_005b9354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
     },
     {
       "addr": "01c775ec",
-      "name": "DAT_01c775ec",
-      "type": "undefined4",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
       "value": null
     },
     {
@@ -317,7 +323,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 24,
+      "line": 28,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -325,7 +331,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 35,
+      "line": 39,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -333,10 +339,10 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride (_DAT_01cea40c * 0x120) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 16,
+      "line": 17,
       "match": "memmove",
       "severity": "moderate",
-      "text": "memmove((void *)0x1cea410,(void *)0x1cea530,_DAT_01cea40c * 0x120);",
+      "text": "memmove",
       "type": "pointer_stride_bytecount"
     }
   ]

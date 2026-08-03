@@ -10,10 +10,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Initializing_network_to_0058bae9
-;   undefined4 DAT_005b6d50
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_01c776ac
-;   undefined4 DAT_01c776b0
+;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   undefined4 g_CGame_01c775ec.hero_number
+;   undefined4 g_CGame_01c775ec.aim_mode
 ;   undefined4 DAT_02dd10c4
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
     SUB ESP,0x8                         ; 004e99f2
     MOV EBX,dword ptr [ESP + 0x14]      ; 004e99f5
     PUSH 0x58bae9                       ; 004e99f9 | = "Initializing network to host game"
-    MOV EDX,dword ptr [0x005b6d50]      ; 004e99fe | DAT_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004e99fe | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004e9a04
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004e9a05
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
@@ -42,12 +42,12 @@ section .text
     PUSH EBX                            ; 004e9a0f
     CALL core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 ; 004e9a10
         ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame * this_ptr, int perform_handshake)
-    MOV EAX,[0x005b9354]                ; 004e9a15 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 004e9a15 | g_CGame_PTR_005b9354
     MOV dword ptr [EBX + 0x1c],0x0      ; 004e9a1a
     ADD ESP,0x8                         ; 004e9a21
-    MOV ECX,dword ptr [EAX + 0xc4]      ; 004e9a24 | DAT_01c776b0
+    MOV ECX,dword ptr [EAX + 0xc4]      ; 004e9a24 | g_CGame_01c775ec.aim_mode
     PUSH ECX                            ; 004e9a2a
-    MOV ESI,dword ptr [EAX + 0xc0]      ; 004e9a2b | DAT_01c776ac
+    MOV ESI,dword ptr [EAX + 0xc0]      ; 004e9a2b | g_CGame_01c775ec.hero_number
     PUSH ESI                            ; 004e9a31
     LEA EAX,[EBX + 0x8]                 ; 004e9a32
     PUSH EAX                            ; 004e9a35

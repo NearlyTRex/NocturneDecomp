@@ -16,9 +16,9 @@ int __cdecl core_script_cpp_CScript_skipCommands_FUN_00504c70(CScript *this_ptr,
   
   iVar3 = 0;
   bVar1 = true;
-  if (direction < this_ptr->xref_count) {
+  if (direction < this_ptr->parsed_line_count) {
     do {
-      str1 = *(char **)(this_ptr->xref_entries->name + direction * 8 + 4);
+      str1 = this_ptr->parsed_lines[direction].text;
       if (*str1 == '{') {
         direction = direction + 1;
         iVar3 = iVar3 + 1;
@@ -52,7 +52,7 @@ int __cdecl core_script_cpp_CScript_skipCommands_FUN_00504c70(CScript *this_ptr,
       else {
         direction = core_script_cpp_CScript_skipCommands_FUN_00504c70(this_ptr,direction + 1,1);
       }
-    } while ((-1 < direction) && (bVar1 = false, direction < this_ptr->xref_count));
+    } while ((-1 < direction) && (bVar1 = false, direction < this_ptr->parsed_line_count));
   }
   return -1;
 }

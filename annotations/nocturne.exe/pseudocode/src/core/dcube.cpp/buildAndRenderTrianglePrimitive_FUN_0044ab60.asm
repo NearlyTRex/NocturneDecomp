@@ -21,8 +21,8 @@
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 at 0044b1ba
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be368
-;   undefined4 DAT_01e57284
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40
@@ -63,8 +63,8 @@ section .text
     MOV dword ptr [ESP + 0x24],EAX      ; 0044abb1
     LEA EAX,[ESP + 0x4]                 ; 0044abb5
     PUSH EAX                            ; 0044abb9
-    MOV EDX,dword ptr [0x005be368]      ; 0044abba | DAT_005be368
-    PUSH EDX                            ; 0044abc0 | DAT_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 0044abba | g_CDemonSet_PTR_005be368
+    PUSH EDX                            ; 0044abc0 | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40 ; 0044abc1
         ;   XREF to: 0050df40 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count)
     ADD ESP,0xc                         ; 0044abc6

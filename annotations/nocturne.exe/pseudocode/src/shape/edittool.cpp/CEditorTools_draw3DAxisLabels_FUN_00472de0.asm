@@ -180,8 +180,8 @@ section .text
         ;   Label: LAB_00472f4f
     MOV EBX,0x8b                        ; 00472f54
     PUSH 0x57e510                       ; 00472f59 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00472f5e | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00472f64 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00472f5e | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00472f64 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00472f6a
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472f6f

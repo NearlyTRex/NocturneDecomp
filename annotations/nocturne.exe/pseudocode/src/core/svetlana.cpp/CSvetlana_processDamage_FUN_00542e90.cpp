@@ -17,10 +17,10 @@ void core_svetlana_cpp_CSvetlana_processDamage_FUN_00542e90(CCharacter *param_1,
   if ((*(uint *)param_1[1].base.actor_name & 0x7fffffff) != 0) {
     param_2->damage_amount = 0.0;
   }
-  if (*(int *)(0x01C775EC + 0x1d0) != 0) {
+  if (g_CGame_PTR_005b9354->god_mode_enabled != 0) {
     param_2->damage_amount = 0.0;
   }
-  if (*(int *)(0x01C775EC + 0x22c) == 0) {
+  if (g_CGame_PTR_005b9354->allow_damage_flag == 0) {
     param_2->damage_amount = 0.0;
   }
   *(float *)param_1[1].base.actor_name = 3.0f;
@@ -39,7 +39,7 @@ void core_svetlana_cpp_CSvetlana_processDamage_FUN_00542e90(CCharacter *param_1,
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&this_ptr->motion_controller,8,1);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-                  ((CGore *)INT_005b96c4,&param_1->base,0x32,50.0,(CVector3f *)0x0);
+                  (g_CGore_PTR_005b96c4,&param_1->base,0x32,50.0,(CVector3f *)0x0);
         sound_sndmain_cpp_killSfx_FUN_00527230((uint)param_1[0xc].flames[0x1a].intensity);
         fVar2 = (float)(*((param_1->base).vtable._ub)->playSound)
                                  (&param_1->base,"svet-die.wav");

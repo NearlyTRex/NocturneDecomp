@@ -10,7 +10,7 @@ void __cdecl core_fire_cpp_CTrail_process_FUN_00489310(CTrail *this_ptr)
 
 {
   if (0.0 < this_ptr->lifetime) {
-    this_ptr->lifetime = this_ptr->lifetime - *(float *)(0x01C775EC + 0x264);
+    this_ptr->lifetime = this_ptr->lifetime - g_CGame_PTR_005b9354->delta_time_float;
     if (0.0 <= this_ptr->lifetime) {
       this_ptr->current_alpha =
            (1.0 - (this_ptr->initial_lifetime - this_ptr->lifetime) / this_ptr->initial_lifetime) *

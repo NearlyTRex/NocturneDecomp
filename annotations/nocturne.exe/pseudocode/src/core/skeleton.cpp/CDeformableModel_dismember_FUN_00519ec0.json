@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,58 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 38,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 38,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 60,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 60,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
         "category": "incompatible_types",
         "column": 5,
-        "line": 106,
+        "line": 102,
         "message": "no matching function for call to 'core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 136,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 136,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 210,
-        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 210,
-        "message": "assigning to 'int' from incompatible type 'const char[21]'"
       }
     ],
     "success": false,
@@ -116,19 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 473,
-    "complexity_score": 472,
+    "complexity_score": 426,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 207,
-    "suspect_count": 25,
+    "pseudocode_lines": 201,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation"
     ],
-    "total_lines": 680
+    "total_lines": 674
   },
   "cross_references": [
     {
@@ -223,13 +175,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "PTR_01cc4800",
+      "name": "g_CHAR_PTR_01cc4800",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "INT_01cc4804",
+      "name": "g_INT_01cc4804",
       "type": "int",
       "value": null
     }
@@ -462,39 +414,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->texture_sets[0].textures + iVar5 + part_index * 0x60 + 0xb64);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->texture_sets[0].textures + iVar5 + part_index * 0x60 + 0xb78);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->texture_sets[0].textures + iVar3 + 0xb64) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->texture_sets[0].textures + iVar3 + 0xb78));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
+      "line": 113,
       "match": "(int *)((int)skinned_vertices",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)skinned_vertices + (uint)bVar14 * -8 + 4);",
@@ -502,15 +422,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 153,
       "match": "(int *)(local_2c + (int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index])].textures",
+      "text": "[*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index])].textures",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 157,
       "match": "(int *)((int)body_part_ptr",
       "severity": "moderate",
       "text": "*(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar6;",
@@ -518,7 +438,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 183,
       "match": "(int *)(local_30 + (int)this_ptr",
       "severity": "moderate",
       "text": "piVar11 = (int *)(local_30 + (int)this_ptr->index_data_ptr[lod_index]);",
@@ -526,15 +446,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 189,
       "match": "(int *)((int)body_part_ptr",
       "severity": "moderate",
-      "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar8) = iVar7;",
+      "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar8) = iVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Pointer value `&body_part_ptr->vertices->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 109,
       "match": "(int)&body_part_ptr->vertices->x",
       "severity": "moderate",
       "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
@@ -542,26 +462,34 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 60,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x2671950)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar7) * 4 + 0x2671950)",
+      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x2671950)",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 66,
+      "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar7) * 4 + 0x2671950)",
+      "text": "puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 68,
+      "line": 75,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar4 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar7);",
+      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x2671950)",
       "type": "pointer_cast"
     },
     {
@@ -569,28 +497,20 @@
       "line": 78,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar7) * 4 + 0x2671950)",
+      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x2671950)",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 81,
+      "line": 80,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar7) * 4 + 0x2671950)",
+      "text": "puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 83,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "puVar4 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 114,
+      "line": 109,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
@@ -598,7 +518,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 142,
+      "line": 137,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
@@ -606,7 +526,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 177,
+      "line": 171,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
@@ -614,7 +534,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 139,
+      "line": 134,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "iVar6 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base",
@@ -622,15 +542,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 174,
+      "line": 168,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
-      "text": "iVar7 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base",
+      "text": "iVar3 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 37,
+      "line": 36,
       "match": "(int *)(iVar8 + 0x54)",
       "severity": "moderate",
       "text": "local_30 = *(int *)(iVar8 + 0x54);",
@@ -638,7 +558,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 43,
+      "line": 42,
       "match": "(int *)(iVar8 + 0xc24)",
       "severity": "moderate",
       "text": "local_2c = local_2c + *(int *)(iVar8 + 0xc24);",
@@ -646,7 +566,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 44,
+      "line": 43,
       "match": "(int *)(iVar8 + 0xc38)",
       "severity": "moderate",
       "text": "local_30 = local_30 + *(int *)(iVar8 + 0xc38);",
@@ -654,7 +574,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride (this_ptr->vertex_count[lod_index] << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 57,
+      "line": 54,
       "match": "memset",
       "severity": "moderate",
       "text": "memset((void *)0x2671950,0,this_ptr->vertex_count[lod_index] << 2);",

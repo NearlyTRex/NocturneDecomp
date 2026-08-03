@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_grave_cpp_CGrave_getBoundingBox_FUN_004b0f20(int param_1,int *param_2)
+; CBoundingBox3D * core_grave_cpp_CGrave_getBoundingBox_FUN_004b0f20(int param_1,CBoundingBox3D *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005baf90
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cc9454
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
     SUB ESP,0x4                         ; 004b0f22
     MOV ECX,dword ptr [ESP + 0x10]      ; 004b0f25
     MOV EBX,dword ptr [ESP + 0x14]      ; 004b0f29
-    MOV EDX,dword ptr [0x005baf90]      ; 004b0f2d | DAT_005baf90
+    MOV EDX,dword ptr [0x005baf90]      ; 004b0f2d | g_CDemonMission_PTR_005baf90
     MOV ESI,dword ptr [EDX + 0x4]       ; 004b0f33 | DAT_01cc9454
     LEA EAX,[ECX + 0x150]               ; 004b0f36
     TEST ESI,ESI                        ; 004b0f3c

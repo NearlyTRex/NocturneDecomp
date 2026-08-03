@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,28 +56,16 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 89,
-        "message": "no matching function for call to 'core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0'"
-      },
-      {
-        "category": "type_error",
-        "column": 17,
-        "line": 139,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
         "category": "type_error",
         "column": 17,
         "line": 140,
         "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 142,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880'"
+        "category": "type_error",
+        "column": 17,
+        "line": 141,
+        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
       }
     ],
     "success": false,
@@ -86,19 +74,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 193,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 138,
+    "pseudocode_lines": 140,
     "suspect_count": 4,
     "suspect_types": [
       "bitcast_double_pair",
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 462
+    "total_lines": 464
   },
   "cross_references": [
     {
@@ -220,20 +208,20 @@
     },
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "005bed68",
-      "name": "DAT_005bed68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     }
   ],
@@ -470,7 +458,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 132,
+      "line": 133,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_d0._4_4_ = fVar2 * this_ptr->weight_in_pounds * 0.2f;",
@@ -478,7 +466,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 133,
+      "line": 134,
       "match": "._52_4_",
       "severity": "mild",
       "text": "auStack_d0._52_4_ = this_ptr;",
@@ -486,7 +474,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 101,
+      "line": 102,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar1->vec).x = pCVar10->x;",

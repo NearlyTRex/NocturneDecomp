@@ -161,8 +161,8 @@ switchD_004eff7e_default:
     case 8:
       return local_a0 + (float)-2.356194490125;
     default:
-      PTR_01cc4800 = "..\\core\\path.cpp";
-      INT_01cc4804 = 0x183;
+      g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
+      g_INT_01cc4804 = 0x183;
       core_main_c_FUN_004c8440("CPathMap::getDirection - Should never get here either");
     }
   }

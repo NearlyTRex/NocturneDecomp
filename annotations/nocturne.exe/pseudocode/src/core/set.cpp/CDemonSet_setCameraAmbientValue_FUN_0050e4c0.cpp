@@ -9,11 +9,10 @@
 void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet *this_ptr,int index,float value)
 
 {
-  *(float *)((int)&this_ptr->cameras[0].rotation_matrix + index * 0x1a0 + 0x2c) = value;
-  if ((CDemonActor *)index != this_ptr->renderable_actors[0x773]) {
+  this_ptr->cameras[index].ambient_value = value;
+  if (index != this_ptr->selected_camera_index) {
     return;
   }
-  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740((CDemonCamera *)&DAT_01fb8508,value)
-  ;
+  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(&g_CDemonCamera_01fb8508,value);
   return;
 }

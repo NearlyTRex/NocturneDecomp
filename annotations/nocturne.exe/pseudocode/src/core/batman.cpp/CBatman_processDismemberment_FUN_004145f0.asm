@@ -24,11 +24,11 @@
 ;   double DOUBLE_00578d17 = 0.5
 ;   double DOUBLE_00578d1f = 2.5
 ;   double DOUBLE_00578d27 = 20
-;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01c77600
-;   undefined4 DAT_01c777cc
+;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CConsole g_CConsole_0077ad0c
+;   undefined4 g_CGame_01c775ec.blood_flag
+;   undefined4 g_CGame_01c775ec.gratuitous_dismemberment
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
@@ -99,15 +99,15 @@ section .text
     JNZ 0x00414670                      ; 00414666
         ;   XREF to: 00414670 (CONDITIONAL_JUMP)  ; LAB_00414670
     MOV dword ptr [ESP + 0x20],0x3ca3d70a ; 00414668
-    MOV EAX,[0x005b9354]                ; 00414670 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00414670 | g_CGame_PTR_005b9354
         ;   Label: LAB_00414670
-    CMP dword ptr [EAX + 0x1e0],0x0     ; 00414675 | DAT_01c777cc
+    CMP dword ptr [EAX + 0x1e0],0x0     ; 00414675 | g_CGame_01c775ec.gratuitous_dismemberment
     JZ 0x00414686                       ; 0041467c
         ;   XREF to: 00414686 (CONDITIONAL_JUMP)  ; LAB_00414686
     MOV dword ptr [ESP + 0x20],0x3f800000 ; 0041467e
-    MOV EAX,[0x005b9354]                ; 00414686 | DAT_005b9354
+    MOV EAX,[0x005b9354]                ; 00414686 | g_CGame_PTR_005b9354
         ;   Label: LAB_00414686
-    MOV EDX,dword ptr [EAX + 0x14]      ; 0041468b | DAT_01c77600
+    MOV EDX,dword ptr [EAX + 0x14]      ; 0041468b | g_CGame_01c775ec.blood_flag
     TEST EDX,EDX                        ; 0041468e
     JNZ 0x00414696                      ; 00414690
         ;   XREF to: 00414696 (CONDITIONAL_JUMP)  ; LAB_00414696
@@ -327,10 +327,10 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 004148ac
         ;   Label: LAB_004148ac
     PUSH 0x578cf5                       ; 004148af | = "Shot thru the heart\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 004148b4 | PTR_DAT_005ad350
+    MOV EDX,dword ptr [0x005ad350]      ; 004148b4 | g_CConsole_PTR_005ad350
     FLD ST0                             ; 004148ba
     FMUL double ptr [0x00578d27]        ; 004148bc | DOUBLE_00578d27
-    PUSH EDX                            ; 004148c2 | DAT_0077ad0c
+    PUSH EDX                            ; 004148c2 | g_CConsole_0077ad0c
     FSTP ST1                            ; 004148c3
     FSTP float ptr [ESI + 0x4]          ; 004148c5
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004148c8

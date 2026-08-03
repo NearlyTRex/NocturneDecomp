@@ -10,6 +10,6 @@ void __cdecl core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0(CFireEffe
 
 {
   core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-            (0x01C08D04,position,0.6,(CVector3f *)0x0,0xffff);
+            (g_CFireEffect_PTR_005b80f0,position,0.6,(CVector3f *)0x0,0xffff);
   return;
 }

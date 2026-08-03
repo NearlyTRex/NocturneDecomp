@@ -1,38 +1,36 @@
 // Name: core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140
 // Address: 0040a140
 // Address Range: [[0040a140, 0040a1fb]]
-// Convention: unknown
-// Signature: float core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140(CDemonActor *param_1,float param_2,char *param_3)
+// Convention: __cdecl
+// Signature: float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140(CDemonActor *this_ptr,float radius,CVector3f *out_normal)
 
 #include "nocturne.h"
 
-float core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140(CDemonActor *param_1,float param_2,char *param_3)
+float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140(CDemonActor *this_ptr,float radius,CVector3f *out_normal)
 
 {
   CDemonSet *pCVar1;
   float fVar2;
   CPlatform *pCVar3;
-  char *pcVar4;
   
-  core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(0x01E57284);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
-  core_setcolid_cpp_FUN_005117f0(0x01E57284);
+  core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,this_ptr);
+  core_setcolid_cpp_FUN_005117f0(g_CDemonSet_PTR_005be368);
   fVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                    (0x01E57284,&(param_1->location).position,param_2);
+                    (g_CDemonSet_PTR_005be368,&(this_ptr->location).position,radius);
   pCVar3 = (CPlatform *)
            core_actor_cpp_castToClassHash_FUN_0040d890
-                     (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
+                     (g_CDemonSet_PTR_005be368->collision_actor,
                       g_CPlatformActorType_01e42894.name_hash);
-  param_1->standing_platform = pCVar3;
-  pCVar1 = 0x01E57284;
-  if (param_3 != (char *)0x0) {
-    pcVar4 = 0x01E57284->lights[199].filter_names[0x12] + 0x24;
-    if (param_3 != pcVar4) {
-      *(uint *)param_3 = *(uint *)pcVar4;
-      *(uint *)(param_3 + 4) = *(uint *)pCVar1->lights[199].filter_names[0x13];
-      *(uint *)(param_3 + 8) = *(uint *)(pCVar1->lights[199].filter_names[0x13] + 4);
+  this_ptr->standing_platform = pCVar3;
+  pCVar1 = g_CDemonSet_PTR_005be368;
+  if (out_normal != (CVector3f *)0x0) {
+    if (out_normal != &g_CDemonSet_PTR_005be368->collision_normal) {
+      out_normal->x = (g_CDemonSet_PTR_005be368->collision_normal).x;
+      out_normal->y = (pCVar1->collision_normal).y;
+      out_normal->z = (pCVar1->collision_normal).z;
     }
   }
-  core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(0x01E57284);
+  core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSet_PTR_005be368);
   return fVar2;
 }

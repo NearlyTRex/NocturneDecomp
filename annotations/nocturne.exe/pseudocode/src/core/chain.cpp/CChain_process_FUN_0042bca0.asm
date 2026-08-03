@@ -58,7 +58,7 @@
 ;   double DOUBLE_0057a58e = 0.03125
 ;   double DOUBLE_0057a596 = 0.900000000000000
 ;   double DOUBLE_0057a59e = 0.100000000000000
-;   undefined4 DAT_005bed68
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;
 ; Called Functions:
 ;   core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0
@@ -667,7 +667,7 @@ section .text
     LEA EAX,[ESI + 0x1ac]               ; 0042c415
     PUSH EAX                            ; 0042c41b
     PUSH ESI                            ; 0042c41c
-    MOV EAX,[0x005bed68]                ; 0042c41d | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 0042c41d | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0042c422
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 0042c423
         ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)
@@ -703,7 +703,7 @@ section .text
     LEA EAX,[ESI + 0x214]               ; 0042c475
     PUSH EAX                            ; 0042c47b
     PUSH ESI                            ; 0042c47c
-    MOV EAX,[0x005bed68]                ; 0042c47d | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 0042c47d | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0042c482
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 0042c483
         ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)

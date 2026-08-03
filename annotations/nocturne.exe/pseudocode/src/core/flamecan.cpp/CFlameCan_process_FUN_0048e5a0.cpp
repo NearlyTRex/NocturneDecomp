@@ -40,7 +40,7 @@ void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *param_1,float p
   if (0.0 < param_2) {
     return;
   }
-  core_mission_cpp_FUN_004d9110(0x01CC9450,param_1,1);
+  core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,param_1,1);
   (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_40);
   fStack_10 = local_40.max.x - local_40.min.x;
   fStack_1c = fStack_10 * 0.5f;
@@ -51,6 +51,7 @@ void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *param_1,float p
   fStack_28 = (param_1->base).location.position.x + fStack_1c;
   fStack_24 = (param_1->base).location.position.y + fStack_18;
   fStack_20 = (param_1->base).location.position.z + fStack_14;
-  core_fire_cpp_FUN_0048c0d0(0x01C08D04,&(param_1->flame).base.location.position,16.0,1500.0,4.0);
+  core_fire_cpp_FUN_0048c0d0
+            (g_CFireEffect_PTR_005b80f0,&(param_1->flame).base.location.position,16.0,1500.0,4.0);
   return;
 }

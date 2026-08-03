@@ -22,8 +22,8 @@
 ;   TerminatedCString s_lockSound_unable_to_crea_0059391e
 ;   TerminatedCString s_sound_sndmain_cpp_00593948
 ;   TerminatedCString s_lockSound_lock_imbalance_0059395d
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;   undefined4 DAT_02dc84b8
 ;   undefined4 DAT_02dc84bc
 ;
@@ -52,8 +52,8 @@ section .text
     MOV ECX,0x593909                    ; 0052881a | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x12fc                      ; 0052881f
     PUSH 0x59391e                       ; 00528824 | = "lockSound - unable to create mutex ob..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00528829 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0052882f | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00528829 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0052882f | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00528835
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052883a
@@ -77,8 +77,8 @@ section .text
         ;   Label: LAB_00528862
     MOV EDX,0x1306                      ; 00528867
     PUSH 0x59395d                       ; 0052886c | = "lockSound - lock imbalance?"
-    MOV [0x01cc4800],EAX                ; 00528871 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00528876 | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 00528871 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00528876 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052887c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00528881

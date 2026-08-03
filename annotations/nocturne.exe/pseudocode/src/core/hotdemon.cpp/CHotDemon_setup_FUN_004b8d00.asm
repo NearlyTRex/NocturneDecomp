@@ -39,8 +39,8 @@ section .text
     PUSH ESI                            ; 004b8d01
     PUSH EDI                            ; 004b8d02
     MOV EDI,dword ptr [ESP + 0x10]      ; 004b8d03
-    MOV EBX,dword ptr [0x005b9354]      ; 004b8d07 | DAT_005b9354
-    MOV EDX,dword ptr [EBX + 0x18]      ; 004b8d0d | DAT_01c77604
+    MOV EBX,dword ptr [0x005b9354]      ; 004b8d07 | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [EBX + 0x18]      ; 004b8d0d | g_CGame_01c775ec.nudity_flag
     LEA EAX,[EDI + 0x150]               ; 004b8d10
     TEST EDX,EDX                        ; 004b8d16
     JZ 0x004b8ed5                       ; 004b8d18

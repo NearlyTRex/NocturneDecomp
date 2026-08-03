@@ -57,22 +57,20 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
     local_24.z = 36.0;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
               (DAT_005ae704,&local_24);
-    0x01E57284->renderable_actors[0x766] = (CDemonActor *)0x1;
+    g_CDemonSet_PTR_005be368->rendering_mode = 1;
     iVar6 = 0x8000 - (this_ptr->current_frame << 0xf) / this_ptr->total_frames;
     iVar3 = engine_matrix_c_interpolatedSin_FUN_004cca60(iVar6);
-    pCVar2 = 0x01E57284;
-    0x01E57284->renderable_actors[0x768] = (CDemonActor *)0xffff6f78;
-    pCVar2->renderable_actors[0x767] =
-         (CDemonActor *)
-         ((uint)((longlong)iVar3 * 37000) >> 0x10 |
-         (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10);
+    pCVar2 = g_CDemonSet_PTR_005be368;
+    (g_CDemonSet_PTR_005be368->light_direction).y = -37000;
+    (pCVar2->light_direction).x =
+         (uint)((longlong)iVar3 * 37000) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
     iVar3 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(iVar6);
-    pCVar2 = 0x01E57284;
-    0x01E57284->renderable_actors[0x76a] = (CDemonActor *)0x280;
-    pCVar2->renderable_actors[0x769] =
-         (CDemonActor *)
-         ((uint)((longlong)iVar3 * 37000) >> 0x10 |
-         (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10);
+    pCVar2 = g_CDemonSet_PTR_005be368;
+    g_CDemonSet_PTR_005be368->ambient_base_quick = 0x280;
+    (pCVar2->light_direction).z =
+         (uint)((longlong)iVar3 * 37000) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
     core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340
               (pCVar2,(this_ptr->color).r << 8,(this_ptr->color).g << 8,(this_ptr->color).b << 8);
     local_30 = 7.25;
@@ -144,12 +142,12 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
               (DAT_005ae704,&local_88,0x327);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-              ((CKeyFramedModel *)&DAT_01cc3290,0,(CKeyFramedModelInstance *)0x0,0x205);
+              (&g_CKeyFramedModel_01cc3290,0,(CKeyFramedModelInstance *)0x0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
     }
-    0x01E57284->renderable_actors[0x766] = (CDemonActor *)0x0;
-    local_10 = _DAT_014b9900;
+    g_CDemonSet_PTR_005be368->rendering_mode = 0;
+    local_10 = g_CBitFont_PTR_014b9900;
     iVar3 = (DAT_005b761c * 0x240) / 0x280;
     iVar6 = (DAT_005b7620 * 0x18) / 0x1e0;
     iVar4 = (DAT_005b761c << 5) / 0x280;

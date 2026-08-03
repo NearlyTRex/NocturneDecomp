@@ -31,8 +31,8 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(CMotionList *this_ptr
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   _fscanf(file_handle,"%d\n");
-  PTR_01cc4800 = "..\\core\\motion.cpp";
-  INT_01cc4804 = 0x5b;
+  g_CHAR_PTR_01cc4800 = "..\\core\\motion.cpp";
+  g_INT_01cc4804 = 0x5b;
   core_main_c_FUN_004c8440("Error reading motion list.");
   do {
     iVar1 = _fgetc(file_handle);

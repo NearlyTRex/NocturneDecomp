@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_scr_00589a49
 ;   undefined4 DAT_005be220
-;   undefined4 DAT_01e56da0
+;   CScript g_CScript_01e56da0
 ;
 ; Called Functions:
 ;   core_script.cpp_FUN_004febd0
@@ -43,7 +43,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004d86ff
     PUSH EAX                            ; 004d8703
     MOV ECX,dword ptr [0x005be220]      ; 004d8704 | DAT_005be220
-    PUSH ECX                            ; 004d870a | DAT_01e56da0
+    PUSH ECX                            ; 004d870a | g_CScript_01e56da0
     CALL core_script.cpp_FUN_004febd0   ; 004d870b
         ;   XREF to: 004febd0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_004febd0()
     ADD ESP,0xc                         ; 004d8710

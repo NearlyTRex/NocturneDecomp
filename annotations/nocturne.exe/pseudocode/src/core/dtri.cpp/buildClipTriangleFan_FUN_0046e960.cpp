@@ -18,17 +18,17 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int fla
   iVar1 = core_dtri_cpp_getClippedTriangleCount_FUN_0046e950(flags);
   iVar2 = 0;
   if (0 < iVar1) {
-    this_ptr = (CDemonTriangle *)0x1bc9ec8;
-    vertex2 = CVector3f_ARRAY_01bc9e08;
-    vertex3 = CVector3f_ARRAY_01bc9e08 + 2;
+    this_ptr = g_CDemonTriangle_ARRAY_01bc9ec8;
+    vertex2 = g_CVector3f_ARRAY_01bc9e08;
+    vertex3 = g_CVector3f_ARRAY_01bc9e08 + 2;
     do {
       vertex2 = vertex2 + 1;
       iVar2 = iVar2 + 1;
       core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
-                (this_ptr,CVector3f_ARRAY_01bc9e08,vertex2,vertex3);
+                (this_ptr,g_CVector3f_ARRAY_01bc9e08,vertex2,vertex3);
       this_ptr = this_ptr + 1;
       vertex3 = vertex3 + 1;
     } while (iVar2 < iVar1);
   }
-  return (CDemonTriangle *)0x1bc9ec8;
+  return g_CDemonTriangle_ARRAY_01bc9ec8;
 }

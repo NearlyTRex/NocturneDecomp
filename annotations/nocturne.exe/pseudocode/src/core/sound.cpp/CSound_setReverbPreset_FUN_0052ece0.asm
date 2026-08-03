@@ -16,8 +16,8 @@
 ;   undefined4 DAT_005bed70
 ;   undefined4 DAT_005bed74
 ;   undefined4 DAT_005bed78
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -53,8 +53,8 @@ section .text
         ;   Label: LAB_0052ed14
     MOV ECX,0x402                       ; 0052ed19
     PUSH 0x594c15                       ; 0052ed1e | = "CSound::setReverbPreset - invalid index"
-    MOV dword ptr [0x01cc4800],EDX      ; 0052ed23 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0052ed29 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 0052ed23 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0052ed29 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0052ed2f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052ed34

@@ -11,5 +11,5 @@
 CVector3f * core_dtri_cpp_FUN_0046e9e0(void)
 
 {
-  return CVector3f_ARRAY_01bc9e08;
+  return g_CVector3f_ARRAY_01bc9e08;
 }

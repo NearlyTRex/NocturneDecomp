@@ -32,13 +32,13 @@ void core_setdir_cpp_FUN_00513720(CDemonSet *param_1)
     local_18 = (uint *)&DAT_020875f8;
     do {
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-                (0x01B4D738,local_14);
+                ((CDemonRenderer *)PTR_DAT_005ae700,local_14);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-                (0x01B4D738,
-                 *(float *)((int)&param_1->cameras[0].rotation_matrix + iVar4 * 0x1a0 + 0x28));
-      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(0x01B4D738,local_1c);
+                ((CDemonRenderer *)PTR_DAT_005ae700,param_1->cameras[iVar4].projection_scale);
+      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
+                ((CDemonRenderer *)PTR_DAT_005ae700,local_1c);
       engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
-                (0x01B4D738,(CVector3f *)0x26635f8);
+                ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3f *)0x26635f8);
       engine_special_cpp_clearZBufferNative_FUN_0052eed4();
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,9999.9,0);
       iVar3 = 0;

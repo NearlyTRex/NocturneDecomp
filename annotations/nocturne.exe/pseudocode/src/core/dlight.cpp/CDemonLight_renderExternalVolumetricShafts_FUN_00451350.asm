@@ -94,8 +94,8 @@
 ;   undefined4 DAT_0059c030
 ;   undefined4 DAT_0059c038
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b9354
-;   undefined4 DAT_005be368
+;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -127,15 +127,15 @@ section .text
     CMP dword ptr [EAX + 0x1cbc],0x0    ; 00451365
     JZ 0x0045138f                       ; 0045136c
         ;   XREF to: 0045138f (CONDITIONAL_JUMP)  ; LAB_0045138f
-    MOV EAX,[0x005be368]                ; 0045136e | DAT_005be368
-    FLD float ptr [EAX + 0x15a888]      ; 00451373 | DAT_01fb1b0c
+    MOV EAX,[0x005be368]                ; 0045136e | g_CDemonSet_PTR_005be368
+    FLD float ptr [EAX + 0x15a888]      ; 00451373 | g_CDemonSet_01e57284.active_fog.density_multiplier
     FCOMP double ptr [0x0057c8c6]       ; 00451379 | DOUBLE_0057c8c6
     FNSTSW AX                           ; 0045137f
     SAHF                                ; 00451381
     JC 0x0045138f                       ; 00451382
         ;   XREF to: 0045138f (CONDITIONAL_JUMP)  ; LAB_0045138f
-    MOV EAX,[0x005b9354]                ; 00451384 | DAT_005b9354 | DAT_01c775ec
-    CMP dword ptr [EAX + 0xc],0x0       ; 00451389 | DAT_01c775f8
+    MOV EAX,[0x005b9354]                ; 00451384 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    CMP dword ptr [EAX + 0xc],0x0       ; 00451389 | g_CGame_01c775ec.halo_mode
     JNZ 0x00451397                      ; 0045138d
         ;   XREF to: 00451397 (CONDITIONAL_JUMP)  ; LAB_00451397
     LEA ESP,[EBP + 0x7e]                ; 0045138f

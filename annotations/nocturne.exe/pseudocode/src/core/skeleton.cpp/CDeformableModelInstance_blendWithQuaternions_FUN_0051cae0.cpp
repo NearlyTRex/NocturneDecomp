@@ -143,8 +143,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       }
     }
     else {
-      PTR_01cc4800 = "..\\core\\skeleton.cpp";
-      INT_01cc4804 = 0xad5;
+      g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      g_INT_01cc4804 = 0xad5;
       core_main_c_FUN_004c8440("Write me!");
     }
     if (bone_index < 0) {

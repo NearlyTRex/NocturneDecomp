@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mission_cpp_FUN_004d7e90(undefined4 param_1)
+; void __cdecl core_mission_cpp_FUN_004d7e90(void *param_1)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   param_1
 ;
 ; XREF[1]:
 ;   core_main.c_FUN_004c90e0 at 004c933c

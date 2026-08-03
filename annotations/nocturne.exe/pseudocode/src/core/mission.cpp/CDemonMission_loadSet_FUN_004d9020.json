@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 495,
+        "line": 526,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 495,
+        "line": 526,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 496,
+        "line": 527,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 496,
+        "line": 527,
         "message": "exponent has no digits"
       },
       {
@@ -56,33 +56,15 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 18,
-        "message": "no matching function for call to 'core_set_cpp_CDemonSet_load_FUN_00506f10'"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 25,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 27,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 29,
+        "line": 28,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 29,
+        "line": 28,
         "message": "expected expression"
       }
     ],
@@ -92,17 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 38,
+    "complexity_score": 52,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
+      "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -162,25 +145,25 @@
   "globals": [
     {
       "addr": "005be368",
-      "name": "DAT_005be368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "DAT_01e57284",
-      "type": "undefined4",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3ff0",
-      "name": "DAT_01fa3ff0",
+      "name": "g_CDemonSet_01e57284.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "DAT_01fa3ff4",
+      "name": "g_CDemonSet_01e57284.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -295,8 +278,16 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->actors + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
+      "line": 21,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0x48))(iVar1);",

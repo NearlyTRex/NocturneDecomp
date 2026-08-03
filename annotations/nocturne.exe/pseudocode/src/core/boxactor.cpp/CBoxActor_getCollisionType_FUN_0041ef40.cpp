@@ -14,7 +14,7 @@ uint core_boxactor_cpp_CBoxActor_getCollisionType_FUN_0041ef40(int param_1,int p
   if ((*(int *)(param_1 + 0x5f0) != 0) && (*(int *)(param_1 + 0x310) == 0)) {
     pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                        ((CKeyFramedModelInstance *)(param_1 + 0x150));
-    if (*(int *)(pCVar1->texture_list[7].textures[2].texture_name + 4) != 0) {
+    if (pCVar1->collision_triangle_list != (CDemonTriangle *)0x0) {
       *(int *)(param_2 + 0x24) = param_1 + 0x150;
     }
     return 1;

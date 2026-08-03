@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_spike_cpp_CSpike_getBoundingBox_FUN_005335a0(int param_1,undefined4 *param_2)
+; float * core_spike_cpp_CSpike_getBoundingBox_FUN_005335a0(int param_1,float *param_2)
 ;
 ;
 ; Called Functions:

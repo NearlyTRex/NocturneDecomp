@@ -19,8 +19,8 @@
 ;   TerminatedCString s_d_0057a968
 ;   TerminatedCString s_d_0057a96c
 ;   TerminatedCString s_s_3d_3d_3d_3d_d_0057a970
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -63,11 +63,11 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x4ff                       ; 0042ee43
     ADD ESP,0xc                         ; 0042ee48
-    MOV [0x01cc4804],EAX                ; 0042ee4b | INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 0042ee4b | g_INT_01cc4804
     MOV EAX,ESP                         ; 0042ee50
     MOV EBP,0x57a952                    ; 0042ee52 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 0042ee57
-    MOV dword ptr [0x01cc4800],EBP      ; 0042ee58 | PTR_01cc4800
+    MOV dword ptr [0x01cc4800],EBP      ; 0042ee58 | g_CHAR_PTR_01cc4800
     CALL core_main.c_FUN_004c8440       ; 0042ee5e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042ee63
@@ -137,8 +137,8 @@ section .text
         ;   Label: LAB_0042ef04
     MOV EDI,0x4f8                       ; 0042ef09
     PUSH 0x57a90e                       ; 0042ef0e | = "Edge list array is empty!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0042ef13 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0042ef19 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0042ef13 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0042ef19 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0042ef1f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042ef24

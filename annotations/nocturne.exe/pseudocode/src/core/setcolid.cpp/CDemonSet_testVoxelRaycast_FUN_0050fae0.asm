@@ -13,7 +13,7 @@
 ;   core_mimic.cpp_FUN_004d4f30 at 004d5232
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fba938
+;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0
@@ -27,7 +27,7 @@ section .text
     PUSH EDX                            ; 0050fae4
     MOV ECX,dword ptr [ESP + 0xc]       ; 0050fae5
     PUSH ECX                            ; 0050fae9
-    PUSH 0x1fba938                      ; 0050faea | DAT_01fba938
+    PUSH 0x1fba938                      ; 0050faea | g_CDemonRaytrace_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0 ; 0050faef
         ;   XREF to: 0046b1b0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(CDemonRaytrace * this_ptr, CVector3f * start_position, CVector3f * end_position)
     ADD ESP,0xc                         ; 0050faf4

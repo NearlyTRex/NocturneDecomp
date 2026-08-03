@@ -19,8 +19,8 @@
 ;   TerminatedCString s_Ran_out_of_clipped_verts_0057ac5b
 ;   undefined4 DAT_007678f8
 ;   undefined4 DAT_00767b38
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -101,8 +101,8 @@ section .text
     MOV ECX,0x57ac47                    ; 00431c19 | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 00431c1e
     PUSH 0x57ac5b                       ; 00431c23 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00431c28 | PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00431c2e | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00431c28 | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00431c2e | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00431c33
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00431c38
@@ -132,8 +132,8 @@ section .text
     MOV EDX,0x57ac47                    ; 00431c70 | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 00431c75
     PUSH 0x57ac5b                       ; 00431c7a | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00431c7f | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00431c85 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00431c7f | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00431c85 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00431c8b
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00431c90

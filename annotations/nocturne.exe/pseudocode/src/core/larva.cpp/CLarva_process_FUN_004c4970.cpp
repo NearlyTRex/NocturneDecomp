@@ -131,7 +131,8 @@ void core_larva_cpp_CLarva_process_FUN_004c4970(CEnemy *param_1,float param_2)
         local_11c.y = 0.5;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)param_1,&local_74,&local_11c);
-        core_fire_cpp_CFireEffect_createFireball_FUN_0048b270(0x01C08D04,&local_74,&local_b0,2,0);
+        core_fire_cpp_CFireEffect_createFireball_FUN_0048b270
+                  (g_CFireEffect_PTR_005b80f0,&local_74,&local_b0,2,0);
         (*((param_1->base).base.vtable._ub)->playSound)
                   ((CDemonActor *)param_1,"larva-blow1.wav");
       }
@@ -249,7 +250,7 @@ void core_larva_cpp_CLarva_process_FUN_004c4970(CEnemy *param_1,float param_2)
                          (this_ptr,&local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)param_1,&local_e0,pCVar9);
-      core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_e0,1);
+      core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_e0,1);
       param_1->pool_me = 1;
     }
     goto LAB_004c4a74;
@@ -309,7 +310,8 @@ LAB_004c4a74:
     if ((pCVar4 != (CCharacter *)0x0) &&
        (pCVar8 = (CEnemy *)(*(((pCVar4->base).vtable._uc)->_uc).getGrabber)(pCVar4),
        pCVar8 == param_1)) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&param_1->victim->base);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
+                (g_CDemonSet_PTR_005be368,&param_1->victim->base);
     }
     (param_1->base).velocity.y = (param_1->base).velocity.y - param_2 * (float)32;
     local_104 = (param_1->base).velocity.x * param_2;

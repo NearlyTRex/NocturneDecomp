@@ -58,7 +58,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
   default:
     goto switchD_004402a8_caseD_3;
   }
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,pcVar7);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,pcVar7);
 switchD_004402a8_caseD_3:
   _DAT_012ceb6c =
        _DAT_012ceb6c +
@@ -84,16 +84,16 @@ switchD_004402a8_caseD_3:
     this_ptr->scene_open_flag = 1;
   }
   else {
-    PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    INT_01cc4804 = 0x2f3;
+    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    g_INT_01cc4804 = 0x2f3;
     core_main_c_FUN_004c8440("CDemonCamera::beginScene - Scene already open!");
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(this_ptr,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
             (DAT_005ae704,this_ptr->framebuffer_width,this_ptr->framebuffer_height,
-             *(int *)(this_ptr->camera_name + 0xfc) + -1,(int)this_ptr->max_distance + -1);
+             this_ptr->screen_width + -1,(int)this_ptr->max_distance + -1);
   iVar5 = this_ptr->framebuffer_width;
-  iVar1 = *(int *)(this_ptr->camera_name + 0xfc);
+  iVar1 = this_ptr->screen_width;
   fVar2 = this_ptr->max_distance;
   this_ptr->rect_array_count = 0;
   (this_ptr->viewport_rect).x_min = this_ptr->framebuffer_width;
@@ -106,11 +106,11 @@ switchD_004402a8_caseD_3:
   this_ptr_00 = DAT_005ae704;
   this_ptr->skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-            (this_ptr_00,(CVector3f *)(this_ptr->camera_name + 0xc4));
+            (this_ptr_00,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-            (DAT_005ae704,*(float *)(this_ptr->camera_name + 0xf8));
+            (DAT_005ae704,this_ptr->focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
-            (DAT_005ae704,(CMatrix3x3f *)(this_ptr->camera_name + 0xd0));
+            (DAT_005ae704,&this_ptr->rotation_matrix);
   if (skip_clear_buffers == 0) {
     if (INT_02dc9d60 != 0) {
       engine_special_cpp_beginScene_FUN_00532340();

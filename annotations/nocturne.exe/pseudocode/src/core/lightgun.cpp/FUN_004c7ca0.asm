@@ -12,7 +12,7 @@
 ;   double DOUBLE_00587abd = 0.015625
 ;   float FLOAT_0059fd64 = 112
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b80f0
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -165,7 +165,7 @@ section .text
     PUSH EAX                            ; 004c7e23
     LEA EAX,[ESP + 0x6c]                ; 004c7e24
     PUSH EAX                            ; 004c7e28
-    MOV ECX,dword ptr [0x005b80f0]      ; 004c7e29 | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 004c7e29 | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 004c7e2f
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0 ; 004c7e30
         ;   XREF to: 0048b3e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
@@ -192,7 +192,7 @@ section .text
     PUSH EAX                            ; 004c7e8d
     LEA EAX,[ESP + 0x6c]                ; 004c7e8e
     PUSH EAX                            ; 004c7e92
-    MOV EDI,dword ptr [0x005b80f0]      ; 004c7e93 | DAT_005b80f0
+    MOV EDI,dword ptr [0x005b80f0]      ; 004c7e93 | g_CFireEffect_PTR_005b80f0
     PUSH EDI                            ; 004c7e99
     INC EBX                             ; 004c7e9a
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0 ; 004c7e9b
@@ -268,7 +268,7 @@ section .text
     PUSH ESI                            ; 004c7f85
     LEA EAX,[ESP + 0x2c]                ; 004c7f86
     PUSH EAX                            ; 004c7f8a
-    MOV EDI,dword ptr [0x005b80f0]      ; 004c7f8b | DAT_005b80f0
+    MOV EDI,dword ptr [0x005b80f0]      ; 004c7f8b | g_CFireEffect_PTR_005b80f0
     PUSH EDI                            ; 004c7f91
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 004c7f92
         ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

@@ -36,8 +36,8 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_004c5640(CLevelLoader *this_pt
   (this_ptr->color).r = 0xff;
   (this_ptr->color).g = 0xff;
   (this_ptr->color).b = 0xff;
-  core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650
-            ((CKeyFramedModel *)&DAT_01cc3290,"moon.kfm");
+  core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(&g_CKeyFramedModel_01cc3290,"moon.kfm")
+  ;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005baca4);
   if ((image_variant == -1) && (this_ptr->use_custom_viewport == 0)) {

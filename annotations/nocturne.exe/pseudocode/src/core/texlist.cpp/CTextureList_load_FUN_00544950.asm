@@ -34,8 +34,8 @@
 ;   TerminatedCString s_CTextureList_load_Bad_fi_00596652
 ;   TerminatedCString s_d_00596675
 ;   TerminatedCString s_s_00596679
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -132,8 +132,8 @@ section .text
     MOV EBX,0x59663e                    ; 005449eb | = "..\\core\\texlist.cpp"
     MOV ESI,0x6a                        ; 005449f0
     PUSH 0x596652                       ; 005449f5 | = "CTextureList::load - Bad filename!"
-    MOV dword ptr [0x01cc4800],EBX      ; 005449fa | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00544a00 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 005449fa | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00544a00 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00544a06
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00544a0b
@@ -252,8 +252,8 @@ section .text
         ;   Label: LAB_00544b26
     MOV ECX,0x61                        ; 00544b2b
     PUSH 0x596609                       ; 00544b30 | = "CTextureList::load - No extension found"
-    MOV dword ptr [0x01cc4800],EDX      ; 00544b35 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00544b3b | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00544b35 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00544b3b | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 00544b41
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00544b46

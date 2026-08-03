@@ -30,8 +30,8 @@ void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void)
   if (_DAT_01cc5174 < 10) {
     return;
   }
-  PTR_01cc4800 = "..\\engine\\matrix.c";
-  INT_01cc4804 = 0x348;
+  g_CHAR_PTR_01cc4800 = "..\\engine\\matrix.c";
+  g_INT_01cc4804 = 0x348;
   core_main_c_FUN_004c8440("Matrix unbalance");
   return;
 }

@@ -38,8 +38,8 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(CStrList *
   }
   pcVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(iVar5 + 1U);
   if (pcVar2 == (char *)0x0) {
-    PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    INT_01cc4804 = 0xad9;
+    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    g_INT_01cc4804 = 0xad9;
     core_main_c_FUN_004c8440("CStrList::copyToClipboard - out of memory for %d items, %d bytes",this_ptr->item_count,iVar5 + 1U);
   }
   iVar5 = 0;
@@ -52,7 +52,7 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(CStrList *
       pcVar7 = pcVar7 + iVar6;
     } while (iVar5 < this_ptr->item_count);
   }
-  this_ptr_00 = 0x01BCD074;
+  this_ptr_00 = g_CEditorTools_PTR_005b6d50;
   *pcVar7 = '\0';
   shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(this_ptr_00,pcVar2);
   shape_memdbg_cpp_free_FUN_00564486(pcVar2);

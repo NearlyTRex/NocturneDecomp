@@ -10,13 +10,13 @@
 ;   core_set.cpp_FUN_0050a260 at 0050a4dc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4e958
+;   CMuzzleFlash[20] g_CMuzzleFlash_ARRAY_01c4e958
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x01c4e958]      ; 0048c8a0 | DAT_01c4e958
+    MOV EDX,dword ptr [0x01c4e958]      ; 0048c8a0 | g_CMuzzleFlash_ARRAY_01c4e958
         ;   Label: core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0
     XOR EAX,EAX                         ; 0048c8a6
     CMP EDX,0x1                         ; 0048c8a8

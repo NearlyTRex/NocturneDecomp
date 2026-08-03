@@ -53,7 +53,7 @@ undefined4 CMansionPuzzleCircle::customGetFloorHeight(void);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300
 // Address: 004ca300
-void CMansionPuzzleCircle::onLaserHit(int param_1,float *param_2);
+void CMansionPuzzleCircle::onLaserHit(CDemonActor *param_1,SLaserInfo *param_2);
 
 // Original: core_manpuz.cpp_FUN_004ca410
 // Address: 004ca410
@@ -153,7 +153,7 @@ void __cdecl CMirrorHack::process(CMirrorHack *this_ptr,float delta_time);
 
 // Original: core_manpuz.cpp_CMirrorHack_getBoundingBox_FUN_004cbc50
 // Address: 004cbc50
-int * CMirrorHack::getBoundingBox(int param_1,int *param_2);
+float * CMirrorHack::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_manpuz.cpp_CMirrorHack_getCollisionType_FUN_004cbca0
 // Address: 004cbca0
@@ -165,7 +165,7 @@ void __cdecl CMirrorHack::onLaserHit(CMirrorHack *this_ptr,SLaserInfo *laser_inf
 
 // Original: core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0
 // Address: 004cbce0
-void CMirrorHack::getInteractionInfo(int param_1,undefined4 *param_2);
+void CMirrorHack::getInteractionInfo(CDemonActor *param_1,SInteractionInfo *param_2);
 
 // Original: core_manpuz.cpp_CMirrorHack_startInteraction_FUN_004cbd30
 // Address: 004cbd30

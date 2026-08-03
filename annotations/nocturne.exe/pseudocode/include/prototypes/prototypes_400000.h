@@ -27,6 +27,7 @@
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRuleList.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
 #include "types/structs/SActorRayHit.h"
@@ -35,6 +36,9 @@
 #include "types/structs/SCollisionReturnInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFire.h"
+#include "types/structs/SInteractionInfo.h"
+#include "types/structs/SIntersectXZCylinder.h"
+#include "types/structs/SLaserInfo.h"
 #include "types/structs/SLineStrip.h"
 #include "types/structs/SMRGLAnimatedTexture.h"
 #include "types/structs/SMRGLHeaderExtended.h"
@@ -226,50 +230,50 @@ void __cdecl core_actor_cpp_destroyActor_FUN_00409cd0(CDemonActor *actor);
 CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00409cf0(CDemonActorTransformState *transform_cache);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor *this_ptr);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor *this_ptr,uint flags);
-void core_actor_cpp_CDemonActor_process_FUN_00409ed0(void);
+void __cdecl core_actor_cpp_CDemonActor_process_FUN_00409ed0(CDemonActor *this_ptr,float delta_time);
 int __cdecl core_actor_cpp_CDemonActor_returnZero_FUN_00409f00(CDemonActor *this_ptr);
-void core_actor_cpp_CDemonActor_renderBackground_FUN_00409f10(void);
+void __cdecl core_actor_cpp_CDemonActor_renderBackground_FUN_00409f10(CDemonActor *this_ptr,int layer_flag);
 void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor *actor);
 void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor *this_ptr);
-undefined4 core_actor_cpp_CDemonActor_getActorType_FUN_00409f70(void);
+CDemonActorType * __cdecl core_actor_cpp_CDemonActor_getActorType_FUN_00409f70(CDemonActor *this_ptr);
 char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor *this_ptr);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_0040a060(CDemonActor *this_ptr,CBoundingBox3D *out_box);
-undefined4 core_actor_cpp_CDemonActor_getCollisionType_FUN_0040a090(void);
-undefined4 core_actor_cpp_CDemonActor_customRayIntersect_FUN_0040a0a0(void);
-void core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_0040a0d0(void);
-undefined4 core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_0040a100(void);
+ECollisionType __cdecl core_actor_cpp_CDemonActor_getCollisionType_FUN_0040a090(CDemonActor *this_ptr,SCollisionInfo *collision_info);
+float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_0040a0a0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
+void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_0040a0d0(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder);
+int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_0040a100(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height );
 int __cdecl core_actor_cpp_CDemonActor_returnZero_FUN_0040a130(CDemonActor *this_ptr);
-float core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140(CDemonActor *param_1,float param_2,char *param_3);
+float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140(CDemonActor *this_ptr,float radius,CVector3f *out_normal);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor *this_ptr,CVector3f *output,CVector3f *input);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor *this_ptr,CVector3f *output_vector,CVector3f *input_vector);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor *this_ptr,CVector3f *output_world_point,CVector3f *input_local_point);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point);
-void core_actor_cpp_CDemonActor_playSound_FUN_0040a2e0(CDemonActor *param_1,char *param_2);
-void core_actor_cpp_CDemonActor_playAmbientSound_FUN_0040a300(CDemonActor *param_1,char *param_2);
-void core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_0040a320(CDemonActor *param_1,char *param_2,float param_3);
-uint core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_0040a350(CDemonActor *param_1,char *param_2,float param_3);
+uint __cdecl core_actor_cpp_CDemonActor_playSound_FUN_0040a2e0(CDemonActor *this_ptr,char *sound_name);
+uint __cdecl core_actor_cpp_CDemonActor_playAmbientSound_FUN_0040a300(CDemonActor *this_ptr,char *sound_name);
+uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_0040a320(CDemonActor *this_ptr,char *sound_name,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_0040a350(CDemonActor *this_ptr,char *sound_name,float delay);
 void __cdecl core_actor_cpp_CDemonActor_doNothing_FUN_0040a380(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_0040a390(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_0040a420(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type);
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
-undefined8 core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(undefined4 param_1,int param_2);
-void core_actor_cpp_CDemonActor_updateCollisionData_FUN_0040ab30(void);
+void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(CDemonActor *this_ptr,SLaserInfo *laser_info);
+void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_0040ab30(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_draw3DPointMarker_FUN_0040ab70(CVector3f *world_position,int marker_color);
-void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1);
+void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_0040b090(CDemonActor *this_ptr,int fly_count,float spawn_radius);
 void __cdecl core_actor_cpp_CDemonActor_calculateChecksum_FUN_0040b0d0(CDemonActor *this_ptr,uint *out_crc);
-undefined4 core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_0040b110(void);
-undefined4 core_actor_cpp_CDemonActor_processActionButton_FUN_0040b120(void);
-void core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *param_1,float *param_2,float *param_3);
+float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_0040b110(CDemonActor *this_ptr,CDemonActor *querying_actor,CVector3f *query_position);
+int __cdecl core_actor_cpp_CDemonActor_processActionButton_FUN_0040b120(CDemonActor *this_ptr);
+void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 void __cdecl core_actor_cpp_CDemonActor_onPickup_FUN_0040b1a0(CDemonActor *this_ptr,CDemonActor *owner);
-undefined4 * core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0(undefined4 param_1,undefined4 *param_2);
-void core_actor_cpp_CDemonActor_stopUsing_FUN_0040b1f0(void);
+void __cdecl core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0(CDemonActor *this_ptr,SInteractionInfo *out_info);
+void __cdecl core_actor_cpp_CDemonActor_stopInteraction_FUN_0040b1f0(CDemonActor *this_ptr,CDemonActor *user);
 int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040b200(CDemonActor *this_ptr);
-undefined4 core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *param_1,float param_2);
-void core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(int param_1,undefined4 param_2,int param_3);
+int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor *this_ptr,int hit_type);
+void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 void __cdecl core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040bd40(char *source_string);
 void core_actor_cpp_FUN_0040bd90(char *param_1,undefined4 param_2,undefined4 param_3);
@@ -312,9 +316,9 @@ int __cdecl core_actor_cpp_isOfClassHash_FUN_0040d860(CDemonActor *actor_ptr,uin
 CDemonActor * __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(CDemonActor *actor_ptr,uint class_name_hash);
 void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040d8c0(void);
 void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040d8f0(void);
-int core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *param_1,float param_2);
-int core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *param_1,CVector3f *param_2,float param_3);
-uint core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGroundType param_3,float param_4);
+int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *this_ptr,float volume);
+int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *this_ptr,CVector3f *location,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040dd20(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040dd30(void);
 float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value,float max_value);
@@ -356,7 +360,7 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(CAmmo *this_ptr);
 void core_ammo_cpp_CAmmo_setup_FUN_0040ec00(CDemonActor *param_1);
 void core_ammo_cpp_CAmmo_process_FUN_0040ec20(void);
 int core_ammo_cpp_CAmmo_renderOpaque_FUN_0040ec30(CDemonActor *param_1);
-undefined4 * core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040eca0(int param_1,undefined4 *param_2);
+float * core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040eca0(int param_1,float *param_2);
 void core_ammo_cpp_CAmmo_archive_FUN_0040ecf0(CDemonActor *param_1);
 undefined4 core_ammo_cpp_CAmmo_getCollisionType_FUN_0040ed50(void);
 void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo *this_ptr,char *weapon_class_name);
@@ -372,7 +376,7 @@ void core_ammobox_cpp_CAmmoBox_process_FUN_0040f120(void);
 void __cdecl core_ammobox_cpp_CAmmoBox_openBox_FUN_0040f130(CAmmoBox *this_ptr,float open_pct);
 void __cdecl core_ammobox_cpp_FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *inventory);
 int core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_0040f2b0(CDemonActor *param_1);
-undefined4 * core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_0040f340(int param_1,undefined4 *param_2);
+float * core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_0040f340(int param_1,float *param_2);
 void core_ammobox_cpp_CAmmoBox_archive_FUN_0040f390(CDemonActor *param_1);
 bool core_ammobox_cpp_CAmmoBox_getCollisionType_FUN_0040f460(int param_1);
 undefined4 core_ammobox_cpp_CAmmoBox_canPickup_FUN_0040f480(int param_1,CDemonActor *param_2);
@@ -413,5 +417,5 @@ undefined8 core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CDemonActor *par
 void core_backgnd_cpp_CBackgroundActor_process_FUN_0040ff70(void);
 void core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_0040ff80(CDemonActor *param_1,int param_2);
 undefined4 core_backgnd_cpp_CBackgroundActor_renderOpaque_FUN_0040ffe0(void);
-undefined4 * core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_0040fff0(int param_1,undefined4 *param_2);
+float * core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_0040fff0(int param_1,float *param_2);
 

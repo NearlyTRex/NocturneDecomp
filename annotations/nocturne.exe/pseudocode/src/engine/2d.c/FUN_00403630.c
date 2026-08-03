@@ -38,8 +38,8 @@ void __cdecl engine_2d_c_FUN_00403630(char *filename)
   pcVar4 = (char *)0x0;
 LAB_00403672:
   if (pcVar4 == (char *)0x0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x76e;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x76e;
     core_main_c_FUN_004c8440("hose!");
   }
   _sprintf(pcVar4,".map");
@@ -52,8 +52,8 @@ LAB_00403672:
   engine_2d_c_buildColorLookupTable_FUN_00403570();
   p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"wb");
   if (p_Var2 == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\engine\\2d.c";
-    INT_01cc4804 = 0x775;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
+    g_INT_01cc4804 = 0x775;
     core_main_c_FUN_004c8440("Unable to write quick map!");
   }
   _fwrite(&DAT_01bf7720,1,0x8000,p_Var2);

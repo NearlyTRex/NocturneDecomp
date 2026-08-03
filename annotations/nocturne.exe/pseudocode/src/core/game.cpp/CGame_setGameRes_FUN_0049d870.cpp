@@ -24,17 +24,17 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(CGame *this_ptr)
     iVar1 = wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
                       (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp);
     if (iVar1 == 0) {
-      PTR_01cc4800 = "..\\core\\game.cpp";
-      INT_01cc4804 = 0x497;
+      g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
+      g_INT_01cc4804 = 0x497;
       core_main_c_FUN_004c8440
                 ("CGame::setGameRes - Unable to set the video mode to %dx%dx%d",this_ptr->game_pixx,this_ptr->game_pixy,
                  this_ptr->game_bpp);
     }
   }
   engine_2d_c_resetGraphicsSystem_FUN_00403760();
-  core_dcamera_cpp_CDemonCamera_init_FUN_00440010((CDemonCamera *)&DAT_01fb8508,DAT_005b7620);
+  core_dcamera_cpp_CDemonCamera_init_FUN_00440010(&g_CDemonCamera_01fb8508,DAT_005b7620);
   if (DAT_005b7620 < 0x180) {
-    _DAT_01bcd070 = _DAT_014b9904;
+    _DAT_01bcd070 = g_CBitFont_PTR_014b9904;
     return;
   }
   return;

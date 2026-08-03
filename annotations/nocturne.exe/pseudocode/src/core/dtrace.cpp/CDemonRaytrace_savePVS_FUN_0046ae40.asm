@@ -23,8 +23,8 @@
 ;   undefined4 DAT_01b7b744
 ;   undefined4 DAT_01b7b748
 ;   undefined4 DAT_01b7b750
-;   char* PTR_01cc4800
-;   int INT_01cc4804
+;   char* g_CHAR_PTR_01cc4800
+;   int g_INT_01cc4804
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
@@ -46,8 +46,8 @@ section .text
     MOV ECX,0x57e2af                    ; 0046ae51 | = "..\\core\\dtrace.cpp"
     MOV ESI,0x8ea                       ; 0046ae56
     PUSH 0x57e2c2                       ; 0046ae5b | = "CDemonRenderer::getPVS - PVS is not v..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046ae60 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0046ae66 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0046ae60 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0046ae66 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046ae6c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046ae71
@@ -70,8 +70,8 @@ section .text
     MOV EAX,0x57e2ed                    ; 0046ae99 | = "..\\core\\dtrace.cpp"
     MOV EDX,0x8f6                       ; 0046ae9e
     PUSH 0x57e300                       ; 0046aea3 | = "CDemonRaytrace::getPVS - no cubes ren..."
-    MOV [0x01cc4800],EAX                ; 0046aea8 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0046aead | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0046aea8 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0046aead | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046aeb3
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046aeb8
@@ -83,8 +83,8 @@ section .text
     MOV EBX,0x57e32e                    ; 0046aec4 | = "..\\core\\dtrace.cpp"
     MOV ESI,0x8fa                       ; 0046aec9
     PUSH 0x57e341                       ; 0046aece | = "CDemonRaytrace::getPVS - out of memory"
-    MOV dword ptr [0x01cc4800],EBX      ; 0046aed3 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0046aed9 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],EBX      ; 0046aed3 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0046aed9 | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046aedf
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046aee4
@@ -121,8 +121,8 @@ section .text
     MOV EAX,0x57e368                    ; 0046af26 | = "..\\core\\dtrace.cpp"
     MOV EDX,0x907                       ; 0046af2b
     PUSH 0x57e37b                       ; 0046af30 | = "CDemonRenderer::savePVS - can't find ..."
-    MOV [0x01cc4800],EAX                ; 0046af35 | PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0046af3a | INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0046af35 | g_CHAR_PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0046af3a | g_INT_01cc4804
     CALL core_main.c_FUN_004c8440       ; 0046af40
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046af45

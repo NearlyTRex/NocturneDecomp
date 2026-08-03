@@ -84,7 +84,7 @@ void __cdecl core_mimic_cpp_FUN_004d4f30(CMimic *this_ptr,float delta_time)
     if (uVar7 == 0) {
       iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
       iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);
-      if (((iVar6 == 0) && (*(int *)(0x01C775EC + 0x1d4) == 0)) &&
+      if (((iVar6 == 0) && (g_CGame_PTR_005b9354->freeze_enemies_enabled == 0)) &&
          (ABS((this_ptr->base).base.base.location.position.y -
               *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x24)) <= (float)15)
          ) {
@@ -110,7 +110,7 @@ void __cdecl core_mimic_cpp_FUN_004d4f30(CMimic *this_ptr,float delta_time)
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     ((CDemonActor *)this_ptr,&local_f4,pCVar4);
           iVar6 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0
-                            (0x01E57284,&local_f4,&local_94);
+                            (g_CDemonSet_PTR_005be368,&local_f4,&local_94);
           if (iVar6 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                       (&local_18->motion_controller,2,1);
@@ -124,13 +124,13 @@ void __cdecl core_mimic_cpp_FUN_004d4f30(CMimic *this_ptr,float delta_time)
 LAB_004d4fed:
     iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);
-    if ((iVar6 != 0) || (*(int *)(0x01C775EC + 0x1d4) != 0)) {
+    if ((iVar6 != 0) || (g_CGame_PTR_005b9354->freeze_enemies_enabled != 0)) {
       iVar6 = 0;
       goto LAB_004d5015;
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-              ((CDemonActor *)(this_ptr->cloth).vertices[0x300].connected_indices[10],&local_118,
-               &(this_ptr->base).base.base.location.position);
+              (this_ptr->mirror_plane_actor,&local_118,&(this_ptr->base).base.base.location.position
+              );
     pCVar8 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                        ((CDemonActor *)this_ptr,&local_148);
     local_dc = (pCVar8->max).x - (pCVar8->min).x;
@@ -224,7 +224,7 @@ LAB_004d4fed:
                            (local_18,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_7c,pCVar4);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480((CGore *)INT_005b96c4,&local_7c,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_7c,0);
         (this_ptr->base).pool_me = 1;
       }
       goto LAB_004d5024;

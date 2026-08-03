@@ -55,8 +55,8 @@ void __cdecl engine_pcx_c_FUN_004f2990(char *filename)
   }
   file = _fopen(filename,"wb");
   if (file == (_FILE *)0x0) {
-    PTR_01cc4800 = "..\\engine\\pcx.c";
-    INT_01cc4804 = 0xee;
+    g_CHAR_PTR_01cc4800 = "..\\engine\\pcx.c";
+    g_INT_01cc4804 = 0xee;
     core_main_c_FUN_004c8440("Cannot write .PCX");
   }
   iVar2 = 0;

@@ -13,9 +13,9 @@
 ;   double DOUBLE_00597205 = 2
 ;   double DOUBLE_0059720d = 25
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_005bed68
+;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
+;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 g_CHeroActorType_01cae0ec.name_hash
 ;   undefined4 g_CMeleeActorType_01cc56a4.name_hash
 ;   undefined4 DAT_01cc9450
@@ -129,7 +129,7 @@ section .text
     PUSH 0x0                            ; 0054de27
     LEA EAX,[ESP + 0x14]                ; 0054de29
     PUSH EAX                            ; 0054de2d
-    MOV ECX,dword ptr [0x005b80f0]      ; 0054de2e | DAT_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 0054de2e | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 0054de34
     INC EBX                             ; 0054de35
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 0054de36
@@ -227,7 +227,7 @@ section .text
         ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004c07b0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 0054df13
     PUSH EBX                            ; 0054df16
-    MOV EBX,dword ptr [0x005baf90]      ; 0054df17 | DAT_005baf90
+    MOV EBX,dword ptr [0x005baf90]      ; 0054df17 | g_CDemonMission_PTR_005baf90
     PUSH EBX                            ; 0054df1d | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 0054df1e
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
@@ -253,7 +253,7 @@ section .text
     ADD ESP,0x4                         ; 0054df57
     PUSH 0x5971ea                       ; 0054df5a | = "voicudeath.wav @ 2.5"
     PUSH ESI                            ; 0054df5f
-    MOV EAX,[0x005bed68]                ; 0054df60 | DAT_005bed68
+    MOV EAX,[0x005bed68]                ; 0054df60 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0054df65
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 0054df66
         ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)

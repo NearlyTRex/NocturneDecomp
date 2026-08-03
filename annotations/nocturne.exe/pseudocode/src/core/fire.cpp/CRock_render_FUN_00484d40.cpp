@@ -26,8 +26,8 @@ void core_fire_cpp_CRock_render_FUN_00484d40(CVector3f *param_1)
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(&local_20);
   if (iVar2 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-              (0x01E57284,param_1,(UOrientationVector *)&DAT_02dd1184,&local_20.min,&local_20.max,
-               (CMatrix3x3f *)0x0);
+              (g_CDemonSet_PTR_005be368,param_1,(UOrientationVector *)&DAT_02dd1184,&local_20.min,
+               &local_20.max,(CMatrix3x3f *)0x0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
               ((CKeyFramedModel *)param_1[5].z,0,(CKeyFramedModelInstance *)0x0,-1);
   }

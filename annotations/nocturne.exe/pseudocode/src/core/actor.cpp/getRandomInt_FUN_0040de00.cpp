@@ -15,7 +15,7 @@ int __cdecl core_actor_cpp_getRandomInt_FUN_0040de00(int min_value,int max_value
   double dVar4;
   
   dVar4 = (double)(max_value - min_value) + 0.99999000000000005;
-  if (*(int *)(0x01C775EC + 0x23c) == 0) {
+  if (g_CGame_PTR_005b9354->is_processing == 0) {
     iVar2 = rand();
     fVar1 = (float)iVar2 * 3.051851e-05f;
   }

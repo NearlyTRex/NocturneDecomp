@@ -14,7 +14,7 @@
 ;   TerminatedCString s_sound_005949b4
 ;   TerminatedCString s_mp3_005949ba
 ;   TerminatedCString s_sound_005949c0
-;   undefined4 DAT_02dc9610
+;   CStrList g_CStrList_02dc9610
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0
@@ -26,20 +26,20 @@
 
 section .text
 
-    MOV EAX,[0x02dc9610]                ; 0052dd20 | DAT_02dc9610
+    MOV EAX,[0x02dc9610]                ; 0052dd20 | g_CStrList_02dc9610
         ;   Label: core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20
     TEST EAX,EAX                        ; 0052dd25
     JNZ 0x0052dd57                      ; 0052dd27
         ;   XREF to: 0052dd57 (CONDITIONAL_JUMP)  ; LAB_0052dd57
     PUSH 0x5949ae                       ; 0052dd29 | = "*.wav"
     PUSH 0x5949b4                       ; 0052dd2e | = "sound"
-    PUSH 0x2dc9610                      ; 0052dd33 | DAT_02dc9610
+    PUSH 0x2dc9610                      ; 0052dd33 | g_CStrList_02dc9610
     CALL shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0 ; 0052dd38
         ;   XREF to: 004748b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(CStrList * this_ptr, char * directory_path, char * file_pattern)
     ADD ESP,0xc                         ; 0052dd3d
     PUSH 0x5949ba                       ; 0052dd40 | = "*.mp3"
     PUSH 0x5949c0                       ; 0052dd45 | = "sound"
-    PUSH 0x2dc9610                      ; 0052dd4a | DAT_02dc9610
+    PUSH 0x2dc9610                      ; 0052dd4a | g_CStrList_02dc9610
     CALL shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0 ; 0052dd4f
         ;   XREF to: 004748b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(CStrList * this_ptr, char * directory_path, char * file_pattern)
     ADD ESP,0xc                         ; 0052dd54

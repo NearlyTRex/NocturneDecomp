@@ -58,7 +58,7 @@
 ;   undefined4 DOUBLE_0057e1ee+4
 ;   undefined4 DAT_0057e1f6
 ;   undefined4 DAT_0059c8a0
-;   undefined4 DAT_005ae700
+;   void* PTR_DAT_005ae700 = 01b4d738
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;
@@ -104,7 +104,7 @@ section .text
     MOV dword ptr [ESP + 0x98],EAX      ; 00468d79
     PUSH 0x1bc9950                      ; 00468d80
         ;   Label: LAB_00468d80
-    MOV EDX,dword ptr [0x005ae700]      ; 00468d85 | DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 00468d85 | PTR_DAT_005ae700
     PUSH EDX                            ; 00468d8b | DAT_01b4d738
     LEA EBX,[ESP + 0x5c]                ; 00468d8c
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 ; 00468d90
