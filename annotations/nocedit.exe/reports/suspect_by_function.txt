@@ -5,35 +5,6 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6450 (99.9%)
-With suspects: 4
-Total suspects: 9
-
-====================================================================================================
-cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630 (6 suspects)
-  File: cockpit/drawsurf.cpp
-====================================================================================================
-  Line 10 [pointer_cast]: puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);
-  Line 10 [pointer_truncation]: puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);
-  Line 13 [pointer_cast]: puVar2 = (uint *)((int)puVar1 + 2);
-  Line 13 [pointer_truncation]: puVar2 = (uint *)((int)puVar1 + 2);
-  Line 29 [pointer_cast]: (puVar2 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {
-  Line 29 [pointer_truncation]: (puVar2 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {
-
-====================================================================================================
-cockpit_drawsurf.cpp_setColorRGB_FUN_00487220 (1 suspect)
-  File: cockpit/drawsurf.cpp
-====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00487331) */
-
-====================================================================================================
-cockpit_drawsurf.cpp_setColor_FUN_00487010 (1 suspect)
-  File: cockpit/drawsurf.cpp
-====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004871be) */
-
-====================================================================================================
-engine_ini.cpp_initIniFile_FUN_004fbaa0 (1 suspect)
-  File: engine/ini.cpp
-====================================================================================================
-  Line 11 [unrolled_strcpy]: do {
+Clean: 6454 (100.0%)
+With suspects: 0
+Total suspects: 0

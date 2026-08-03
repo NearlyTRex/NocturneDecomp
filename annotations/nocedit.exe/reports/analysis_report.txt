@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6450 (99.9%)
-Functions with suspects: 4 (0.1%)
+Clean functions: 6454 (100.0%)
+Functions with suspects: 0 (0.0%)
 
-Total suspect patterns: 9
+Total suspect patterns: 0
 Average suspects per function: 0.00
 
-Virtual files: 214 total, 212 at 100%, 214 at 90%+
+Virtual files: 214 total, 214 at 100%, 214 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -23,15 +23,11 @@ Average complexity score: 47.8
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6454
-Successful: 6443 (99.8%)
-Failed: 11
+Successful: 6454 (100.0%)
+Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              3
-  pointer_truncation        3
-  warning_unreachable       2
-  unrolled_strcpy           1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -85,7 +81,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00419000: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000 (4 lines)
   00419f50: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50 (4 lines)
   0041a040: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040 (4 lines)
-  ... and 6400 more
+  ... and 6404 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -122,16 +118,3 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
-
-  pointer_cast (1 functions):
-    00487630: cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630
-
-  pointer_truncation (1 functions):
-    00487630: cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630
-
-  warning_unreachable (2 functions):
-    00487010: cockpit_drawsurf.cpp_setColor_FUN_00487010
-    00487220: cockpit_drawsurf.cpp_setColorRGB_FUN_00487220
-
-  unrolled_strcpy (1 functions):
-    004fbaa0: engine_ini.cpp_initIniFile_FUN_004fbaa0

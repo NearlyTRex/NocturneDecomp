@@ -1,13 +1,13 @@
-// Name: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
+// Name: cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630
 // Address: 00487630
 // MANUAL RECONSTRUCTION
 // Address Range: [[00487630, 00487720]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630(int start_x,int end_x,int y)
+// Signature: void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00487630(int start_x,int end_x,int y)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630(int start_x,int end_x,int y)
+void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00487630(int start_x,int end_x,int y)
 
 {
   uint *puVar1;

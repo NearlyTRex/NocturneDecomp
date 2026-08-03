@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[004708e0, 00470970]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr)
+// Signature: void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFX *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr)
+void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFX *this_ptr)
 
 {
   CDemonFilter *pCVar1;
@@ -22,7 +22,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr
     }
     memcpy((char *)pCVar1->data_buffer + 0x1000,
            &this_ptr->movie_data[(int)ROUND(ROUND(this_ptr->current_frame))],
-           0x2000);
+           sizeof(SMovieFrame));
   }
   return;
 }

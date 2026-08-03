@@ -158,6 +158,6 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   core_netgame_cpp_CNetGame_init_FUN_0053f780(g_CNetGamePtr);
   wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290
             ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",1179);
+  shape_memdbg_cpp_checkAllMemory_FUN_0050efe0("..\\core\\main.c",1179);
   return;
 }

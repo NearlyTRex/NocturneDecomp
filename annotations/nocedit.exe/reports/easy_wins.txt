@@ -10,37 +10,13 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  engine/ini.cpp (1 remaining of 18)
-    - engine_ini.cpp_initIniFile_FUN_004fbaa0
-      Suspects: unrolled_strcpy
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [unrolled_strcpy] - 1 functions
-    engine_ini.cpp_initIniFile_FUN_004fbaa0                                ( 20 lines)
-
-  [warning_unreachable] - 1 functions
-    cockpit_drawsurf.cpp_setColorRGB_FUN_00487220                          ( 40 lines)
-
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
-
-  cockpit/drawsurf.cpp (96.8% complete)
-    3 functions remaining:
-      cockpit_drawsurf.cpp_setColor_FUN_00487010 (53 lines)
-        Types: ['warning_unreachable']
-      cockpit_drawsurf.cpp_setColorRGB_FUN_00487220 (40 lines)
-        Types: ['warning_unreachable']
-      cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630 (36 lines)
-        Types: ['pointer_cast', 'pointer_truncation']
-
-  engine/ini.cpp (94.4% complete)
-    1 functions remaining:
-      engine_ini.cpp_initIniFile_FUN_004fbaa0 (20 lines)
-        Types: ['unrolled_strcpy']
 
 ====================================================================================================
 ALL REMAINING FILES

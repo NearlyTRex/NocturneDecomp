@@ -1,13 +1,13 @@
-// Name: cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
+// Name: cockpit_drawsurf.cpp_setColorRGB_FUN_00487220
 // Address: 00487220
 // MANUAL RECONSTRUCTION
 // Address Range: [[00487220, 0048737f]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(int red,int green,int blue)
+// Signature: void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_00487220(int red,int green,int blue)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(int red,int green,int blue)
+void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_00487220(int red,int green,int blue)
 
 {
   uint uVar1;
