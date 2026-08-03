@@ -70,7 +70,7 @@ CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(CBoundin
 int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);
 void __cdecl core_boxactor_cpp_staticInit_FUN_00421650(void);
 CBoxActor * __cdecl core_boxactor_cpp_factoryFuncBoxActor_FUN_004216c0(void);
-CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_004216f0(void);
+CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_004216f0(CBoxActor *this_ptr);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_00421830(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_004218d0(CBoxActor *this_ptr);

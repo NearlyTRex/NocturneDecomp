@@ -60,7 +60,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860(CWinFo
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(CWinFont *this_ptr);
 int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_005f2aa0(CWinFont *this_ptr,char *text_string);
 int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_005f2b00(CWinFont *this_ptr,char *text_string);
-int __cdecl engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005f2b70(void);
+int __cdecl engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005f2b70(CWinFont *this_ptr);
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80(void);
 void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_005f2db0(void);
 int __cdecl wincore_winrun_cpp_getTime_FUN_005f2dc0(void);

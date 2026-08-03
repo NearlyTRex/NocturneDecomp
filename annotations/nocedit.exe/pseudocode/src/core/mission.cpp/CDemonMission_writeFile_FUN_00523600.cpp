@@ -22,7 +22,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   int *piVar1;
   CDemonActor *pCVar2;
   
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",430);
+  shape_memdbg_cpp_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",430);
   if (this_ptr->actors_prepared == 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Preparing actors...");

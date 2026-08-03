@@ -23,7 +23,7 @@
 ;   double DOUBLE_0062d4b5 = 0.0000152587890625
 ;   double DOUBLE_0062d4bd = 1000
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CFilterFx* g_CFilterFXPtr = 020a570c
+;   CFilterFX* g_CFilterFXPtr = 020a570c
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   ... and 31 more
 ;
@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_004e31f1
     PUSH EAX                            ; 004e31f6 | g_CFilterFXInstance
     CALL core_dfilter.cpp_CFilterFX_process_FUN_004708e0 ; 004e31f7
-        ;   XREF to: 004708e0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_process_FUN_004708e0(CFilterFx * this_ptr)
+        ;   XREF to: 004708e0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_process_FUN_004708e0(CFilterFX * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e31fc | g_CGameInstance | g_CGamePtr
     MOV EDX,dword ptr [EAX + 0x20c]     ; 004e3201 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e3207

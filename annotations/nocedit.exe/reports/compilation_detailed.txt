@@ -5,5 +5,42 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6454 (100.0%)
-Failed: 0
+Successful: 6443 (99.8%)
+Failed: 11
+
+ERROR CATEGORIES
+--------------------------------------------------
+  undeclared_identifier             14
+  other                              2
+
+====================================================================================================
+CATEGORY: undeclared_identifier (14 errors)
+====================================================================================================
+
+  cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
+    Line 31: use of undeclared identifier 'cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630'; did you mean 'cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00487630'?
+  cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0
+    Line 75: use of undeclared identifier 'cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630'; did you mean 'cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00487630'?
+  core_game.cpp_CGame_runGameSession_FUN_004daf80
+    Line 125: use of undeclared identifier 'shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0'; did you mean 'shape_memdbg_cpp_checkAllMemory_FUN_0050efe0'?
+  core_main.c_finalizeGameSystems_FUN_00508570
+    Line 23: use of undeclared identifier 'shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0'; did you mean 'shape_memdbg_cpp_checkAllMemory_FUN_0050efe0'?
+  core_main.c_initializeGameSystems_FUN_00507a60
+    Line 161: use of undeclared identifier 'shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0'; did you mean 'shape_memdbg_cpp_checkAllMemory_FUN_0050efe0'?
+  core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30
+    Line 13: use of undeclared identifier 'shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0'; did you mean 'shape_memdbg_cpp_checkAllMemory_FUN_0050efe0'?
+  core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
+    Line 23: use of undeclared identifier 'shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0'; did you mean 'shape_memdbg_cpp_checkAllMemory_FUN_0050efe0'?
+  core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0
+    Line 205: use of undeclared identifier 'shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0'; did you mean 'shape_memdbg_cpp_checkAllMemory_FUN_0050efe0'?
+  core_mission.cpp_CDemonMission_writeFile_FUN_00523600
+    Line 23: use of undeclared identifier 'shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0'; did you mean 'shape_memdbg_cpp_checkAllMemory_FUN_0050efe0'?
+
+====================================================================================================
+CATEGORY: other (2 errors)
+====================================================================================================
+
+  core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
+    Line 10: unknown type name 'CFilterFx'
+  core_dfilter.cpp_CFilterFX_process_FUN_004708e0
+    Line 10: unknown type name 'CFilterFx'

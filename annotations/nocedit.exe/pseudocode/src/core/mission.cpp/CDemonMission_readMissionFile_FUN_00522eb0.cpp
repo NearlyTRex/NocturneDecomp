@@ -239,7 +239,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::load - actor list count mismatch #4!");
   }
   this_ptr->actor_lookup_count = 0;
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",351);
+  shape_memdbg_cpp_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",351);
   if (this_ptr->skip_gore_load_flag == 0) {
     if (this_ptr->mission_version_num < 4) {
       do {

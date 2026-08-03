@@ -5543,7 +5543,7 @@ WatcomTypeInfo g_CFilterFXTypeInfo = {
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_dfilter_cpp_CFilterFX_ctor_FUN_004706c0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005fee9f,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_dfilter_cpp_CFilterFX_dtor_FUN_004706e0,
-    .instance_size = 0x0000000C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .instance_size = (int)sizeof(CFilterFX),
     .class_name = (char *)s_CFilterFX_0066efd8
 };
 WatcomTypeInfo g_CDemonLight = {

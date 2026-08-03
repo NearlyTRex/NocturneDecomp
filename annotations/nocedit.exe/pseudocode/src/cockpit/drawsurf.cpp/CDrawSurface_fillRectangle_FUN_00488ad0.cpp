@@ -93,8 +93,7 @@ LAB_00488c3e:
       else {
         do {
           iVar5 = iVar4 + 1;
-          cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
-                    (start_x,end_x,iVar4);
+          cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00487630(start_x,end_x,iVar4);
           iVar4 = iVar5;
         } while (iVar5 <= iVar3);
       }

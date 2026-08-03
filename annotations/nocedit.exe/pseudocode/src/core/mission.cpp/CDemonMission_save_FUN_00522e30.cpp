@@ -11,7 +11,7 @@ void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *thi
 {
   _FILE *file_handle;
   
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",176);
+  shape_memdbg_cpp_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",176);
   file_handle = engine_dosio_cpp_getFile_FUN_00481a50("world",filename,"wt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\mission.cpp";

@@ -126,7 +126,7 @@
 #include "types/classes/CFilmProjector.h"
 #include "types/classes/CFilmReel.h"
 #include "types/classes/CFilterCache.h"
-#include "types/classes/CFilterFx.h"
+#include "types/classes/CFilterFX.h"
 #include "types/classes/CFireEffect.h"
 #include "types/classes/CFireball.h"
 #include "types/classes/CFlame.h"

@@ -15,7 +15,7 @@
 #include "types/classes/CEnemy_full_vtable.h"
 #include "types/classes/CFileManager_vtable.h"
 #include "types/classes/CFilterCache.h"
-#include "types/classes/CFilterFx.h"
+#include "types/classes/CFilterFX.h"
 #include "types/classes/CFont_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
 #include "types/classes/CKeys_vtable.h"
@@ -110,8 +110,8 @@ extern CFileManager_vtable g_CDemonFileManagerVTable;
 // CFilterCache*
 extern CFilterCache* g_CFilterCachePtr;
 
-// CFilterFx*
-extern CFilterFx* g_CFilterFXPtr;
+// CFilterFX*
+extern CFilterFX* g_CFilterFXPtr;
 
 // CFont_vtable
 extern CFont_vtable g_CFontVTable;

@@ -828,8 +828,8 @@ section .text
     ADD ESP,0xc                         ; 005081e7
     PUSH 0x49b                          ; 005081ea
     PUSH 0x6355bc                       ; 005081ef | = "..\\core\\main.c"
-    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 005081f4
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
+    CALL shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 ; 005081f4
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 005081f9
     MOV ESP,EBP                         ; 005081fc
     POP EBP                             ; 005081fe

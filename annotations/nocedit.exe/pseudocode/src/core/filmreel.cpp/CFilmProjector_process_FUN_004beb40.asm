@@ -14,9 +14,9 @@
 ;   TerminatedCString s_s_35_start_wav_00629ba8
 ;   TerminatedCString s_s_35_end_wav_00629bb5
 ;   double DOUBLE_00629bc5 = 3.14159265350000
-;   CFilterFx* g_CFilterFXPtr = 020a570c
+;   CFilterFX* g_CFilterFXPtr = 020a570c
 ;   CEventList* g_CEventListPtr = 02d05310
-;   CFilterFx g_CFilterFXInstance
+;   CFilterFX g_CFilterFXInstance
 ;   CEventList g_CEventListInstance
 ;   undefined4 g_CFilmReelClassInfo.name_hash
 ;   char* g_CurrentFilename
@@ -138,7 +138,7 @@ section .text
     MOV EBP,dword ptr [0x0066efd0]      ; 004bec56 | g_CFilterFXPtr
     PUSH EBP                            ; 004bec5c | g_CFilterFXInstance
     CALL core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 ; 004bec5d
-        ;   XREF to: 00470730 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx * this_ptr, char * filename)
+        ;   XREF to: 00470730 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730(CFilterFX * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004bec62
     MOV EAX,dword ptr [EBX + 0x3e0]     ; 004bec65
     PUSH EAX                            ; 004bec6b
@@ -158,7 +158,7 @@ section .text
     MOV ESI,dword ptr [0x0066efd0]      ; 004bec92 | g_CFilterFXPtr
     PUSH ESI                            ; 004bec98 | g_CFilterFXInstance
     CALL core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 ; 004bec99
-        ;   XREF to: 00470730 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx * this_ptr, char * filename)
+        ;   XREF to: 00470730 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730(CFilterFX * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004bec9e
     MOV EDI,dword ptr [EBX + 0x3e0]     ; 004beca1
     PUSH EDI                            ; 004beca7

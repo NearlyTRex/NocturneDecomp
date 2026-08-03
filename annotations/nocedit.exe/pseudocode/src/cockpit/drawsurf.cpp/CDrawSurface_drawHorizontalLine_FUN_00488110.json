@@ -1,21 +1,28 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 31,
+        "message": "use of undeclared identifier 'cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630'; did you mean 'cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00487630'?"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 59,
+    "complexity_score": 58,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 58,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 190
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -47,7 +54,7 @@
     {
       "addr": "00487630",
       "is_variadic": false,
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630"
+      "name": "cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630"
     },
     {
       "addr": "00506f10",
@@ -187,7 +194,7 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(void *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -196,7 +203,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(ushort *)(start_x_00 * 2 + (int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -205,7 +212,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(int *)(start_x_00 * 4 + (int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -214,7 +221,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[y_00]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
+      "line": 29,
       "match": "(int)g_ScreenBufferArray[y_00]",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -223,7 +230,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[y_00]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 36,
       "match": "(int)g_ScreenBufferArray[y_00]",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -232,7 +239,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[y_00]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 45,
       "match": "(int)g_ScreenBufferArray[y_00]",
       "resolution_source": "keep",
       "severity": "moderate",

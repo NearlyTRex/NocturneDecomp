@@ -2768,8 +2768,8 @@ CFileManager_vtable g_CDemonFileManagerVTable = {.extractPodFile = (CFileManager
 // CFilterCache*
 CFilterCache* g_CFilterCachePtr = (CFilterCache*)&g_CFilterCacheInstance;
 
-// CFilterFx*
-CFilterFx* g_CFilterFXPtr = (CFilterFx*)&g_CFilterFXInstance;
+// CFilterFX*
+CFilterFX* g_CFilterFXPtr = (CFilterFX*)&g_CFilterFXInstance;
 
 // CFont_vtable
 CFont_vtable g_CFontVTable = {
@@ -3278,7 +3278,7 @@ CHero_full_vtable g_CSvetlanaVTable = {
 CKeys_vtable g_CKeysVTable = {
     .getKeyState = (CKeys_getKeyState *)engine_keys_cpp_CKeys_getKeyState_FUN_00502420,
     .getAndClearKeyState = (CKeys_getAndClearKeyState *)engine_keys_cpp_CKeys_getAndClearKeyState_FUN_00502430,
-    .clearKeyPresses = (CKeys_clearKeypresses *)engine_keys_cpp_CKeys_clearKeypresses_FUN_00502450
+    .clearKeyPresses = (CKeys_clearKeypresses *)engine_keys_cpp_clearKeypresses_FUN_00502450
 };
 
 // CMatrix3x4f

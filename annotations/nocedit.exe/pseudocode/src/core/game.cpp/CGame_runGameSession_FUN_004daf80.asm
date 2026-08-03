@@ -309,8 +309,8 @@ section .text
     ADD ESP,0x4                         ; 004db31b
     PUSH 0x581                          ; 004db31e
     PUSH 0x62b6d1                       ; 004db323 | = "..\\core\\game.cpp"
-    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 004db328
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
+    CALL shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 ; 004db328
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     MOV EAX,[0x02db87d0]                ; 004db32d | g_LocalHeroIndex
     MOV EDX,dword ptr [EAX*0x4 + 0x2db87c0] ; 004db332 | g_HeroActors
     MOV EAX,dword ptr [EBX + 0xc4]      ; 004db339
@@ -480,8 +480,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 004db50d
     PUSH 0x62b809                       ; 004db510 | = "..\\core\\game.cpp"
     MOV dword ptr [EDX + 0x24c],EAX     ; 004db515
-    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 004db51b
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
+    CALL shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 ; 004db51b
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 004db520
     PUSH 0x0                            ; 004db523
     MOV ESI,dword ptr [0x0067cf44]      ; 004db525 | g_CKeysPtr
@@ -519,8 +519,8 @@ section .text
         ;   XREF to: 004fd510 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_freeInventory_FUN_004fd510()
     PUSH 0x6a7                          ; 004db58b
     PUSH 0x62b81a                       ; 004db590 | = "..\\core\\game.cpp"
-    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 004db595
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
+    CALL shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 ; 004db595
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     MOV EAX,dword ptr [EBP + -0xc]      ; 004db59a
     ADD ESP,0x8                         ; 004db59d
     MOV ESP,EBP                         ; 004db5a0

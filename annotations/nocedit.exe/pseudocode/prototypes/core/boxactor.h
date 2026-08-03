@@ -13,7 +13,7 @@ CBoxActor * __cdecl factoryFuncBoxActor(void);
 
 // Original: core_boxactor.cpp_CBoxActor_getActorType_FUN_004216f0
 // Address: 004216f0
-CDemonActorType * __cdecl CBoxActor::getActorType(void);
+CDemonActorType * __cdecl CBoxActor::getActorType(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_ctor_FUN_00421700
 // Address: 00421700

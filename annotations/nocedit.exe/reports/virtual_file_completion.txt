@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6454 (100.0%)
-Files at 100%: 214
+Clean functions: 6450 (99.9%)
+Files at 100%: 212
 Files at 90%+: 214
 Files at 50%+: 214
 
@@ -15,7 +15,6 @@ Files at 50%+: 214
 FILES AT 100% (COMPLETE)
 ====================================================================================================
   cockpit/ckptutil.c: 55 functions, 2686 lines
-  cockpit/drawsurf.cpp: 93 functions, 1966 lines
   cockpit/pkbitmap.cpp: 33 functions, 953 lines
   cockpit/pkbmpset.cpp: 21 functions, 423 lines
   core/actor.cpp: 183 functions, 5512 lines
@@ -194,7 +193,6 @@ FILES AT 100% (COMPLETE)
   engine/drender.cpp: 88 functions, 3032 lines
   engine/fileio.cpp: 73 functions, 6920 lines
   engine/font.cpp: 49 functions, 2198 lines
-  engine/ini.cpp: 18 functions, 453 lines
   engine/keyframe.c: 5 functions, 417 lines
   engine/keys.cpp: 9 functions, 56 lines
   engine/light.cpp: 10 functions, 185 lines
@@ -229,12 +227,22 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 214 files
+Total: 212 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-Total: 0 files
+   96.8% | cockpit/drawsurf.cpp
+         90/93 clean, 3 remaining
+           - cockpit_drawsurf.cpp_setColor_FUN_00487010 (53 lines) [warning_unreachable]
+           - cockpit_drawsurf.cpp_setColorRGB_FUN_00487220 (40 lines) [warning_unreachable]
+           - cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630 (36 lines) [pointer_cast, pointer_truncation]
+
+   94.4% | engine/ini.cpp
+         17/18 clean, 1 remaining
+           - engine_ini.cpp_initIniFile_FUN_004fbaa0 (20 lines) [unrolled_strcpy]
+
+Total: 2 files
 
 ====================================================================================================
 FILES AT 50-89%

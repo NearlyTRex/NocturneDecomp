@@ -1,0 +1,225 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 99,
+    "complexity_score": 106,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 135
+  },
+  "cross_references": [
+    {
+      "addr": "00488110",
+      "from_addr": "004881a8",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00488ad0",
+      "from_addr": "00488b36",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00487630",
+    "address_range": [
+      [
+        "00487630",
+        "00487720"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630",
+    "signature": "void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00487630(int start_x,int end_x,int y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02c6d560",
+      "name": "g_OriginalColorValue",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d570",
+      "name": "g_PackedPixelColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d574",
+      "name": "g_DuplicatedPixelColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004881a8",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00488b36",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.219512195121951,
+    "instruction_count": 82,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 28,
+      "BOOL_OR": 1,
+      "CBRANCH": 9,
+      "COPY": 79,
+      "INT_ADD": 30,
+      "INT_AND": 116,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 59,
+      "INT_LEFT": 2,
+      "INT_LESS": 7,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 25,
+      "INT_RIGHT": 8,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 32,
+      "INT_SUB": 15,
+      "INT_XOR": 3,
+      "LOAD": 21,
+      "POPCOUNT": 26,
+      "RETURN": 3,
+      "STORE": 7
+    },
+    "pcode_op_count": 510
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "start_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(uint *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(uint *)((int)puVar1",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar1 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(uint *)(start_x * 4 + (int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "(puVar2 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 10,
+      "match": "(int)g_ScreenBufferArray[y]",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)puVar1",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar1 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)g_ScreenBufferArray[y]",
+      "severity": "moderate",
+      "text": "(puVar2 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {",
+      "type": "pointer_truncation"
+    }
+  ]
+}

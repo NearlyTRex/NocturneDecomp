@@ -1,0 +1,281 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 10,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "004daf80",
+      "from_addr": "004db328",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00508570",
+      "from_addr": "00508584",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00507a60",
+      "from_addr": "005081f4",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522d30",
+      "from_addr": "00522d83",
+      "name": "core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005248e0",
+      "from_addr": "005248ea",
+      "name": "core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523cf0",
+      "from_addr": "00523d01",
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522eb0",
+      "from_addr": "00523345",
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522e30",
+      "from_addr": "00522e3c",
+      "name": "core_mission.cpp_CDemonMission_save_FUN_00522e30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523600",
+      "from_addr": "00523615",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050efe0",
+    "address_range": [
+      [
+        "0050efe0",
+        "0050f01f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_memdbg.cpp_checkAllMemory_FUN_0050efe0",
+    "signature": "void __cdecl shape_memdbg_cpp_checkAllMemory_FUN_0050efe0(char *source_filename,int source_line)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f020",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067d1fc",
+      "name": "g_MemCheckLastFile",
+      "type": "char*",
+      "value": "00636540"
+    },
+    {
+      "addr": "02f0d938",
+      "name": "g_MemoryListHead",
+      "type": "SMemHead*",
+      "value": null
+    },
+    {
+      "addr": "02f0d940",
+      "name": "g_MemCheckLastLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "00523d01",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00522d83",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30",
+        "estimated_params": 2,
+        "instructions_analyzed": 9,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00508584",
+        "call_type": "direct",
+        "caller": "core_main.c_finalizeGameSystems_FUN_00508570",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00523345",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004db328",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005248ea",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00523e4b",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00508830",
+        "call_type": "direct",
+        "caller": "core_main.c_finalizeGameSystems_FUN_00508570",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00524910",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005081f4",
+        "call_type": "direct",
+        "caller": "core_main.c_initializeGameSystems_FUN_00507a60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3333333333333335,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 24,
+      "INT_ADD": 8,
+      "INT_AND": 8,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 80
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "source_filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "source_line",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

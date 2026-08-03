@@ -70,7 +70,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_004a2d80(CStrList *this
 void __cdecl shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(CStrList *this_ptr,int index);
 void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004a2e00(CStrList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(CStrList *this_ptr);
-int __cdecl shape_edittool_cpp_CStrList_qsortByString_FUN_004a2ee0(char *a,char *b);
+int __cdecl shape_edittool_cpp_qsortByString_FUN_004a2ee0(char *a,char *b);
 void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2f00(CStrList *this_ptr,int sort_type,int sort_order);
 char * __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(CStrList *this_ptr,int index);
 void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,char *output_buffer,int string_index,int field_number);

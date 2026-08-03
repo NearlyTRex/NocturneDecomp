@@ -311,9 +311,9 @@ void __cdecl CStrList::remove(CStrList *this_ptr,int start_index,int end_index);
 // Address: 004a2ec0
 void __cdecl CStrList::sortAll(CStrList *this_ptr);
 
-// Original: shape_edittool.cpp_CStrList_qsortByString_FUN_004a2ee0
+// Original: shape_edittool.cpp_qsortByString_FUN_004a2ee0
 // Address: 004a2ee0
-int __cdecl CStrList::qsortByString(char *a,char *b);
+int __cdecl qsortByString(char *a,char *b);
 
 // Original: shape_edittool.cpp_CStrList_sort_FUN_004a2f00
 // Address: 004a2f00

@@ -4,11 +4,25 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6454 functions
+  0 suspects: 6450 functions
+  1 suspects: 3 functions
+  6 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
+
+  [warning_unreachable] (2 functions)
+  ------------------------------------------------------------
+    cockpit_drawsurf.cpp_setColorRGB_FUN_00487220      ( 40 lines)
+      /* WARNING: Removing unreachable block (ram,0x00487331) */...
+    cockpit_drawsurf.cpp_setColor_FUN_00487010         ( 53 lines)
+      /* WARNING: Removing unreachable block (ram,0x004871be) */...
+
+  [unrolled_strcpy] (1 functions)
+  ------------------------------------------------------------
+    engine_ini.cpp_initIniFile_FUN_004fbaa0            ( 20 lines)
+      do {...
 
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS

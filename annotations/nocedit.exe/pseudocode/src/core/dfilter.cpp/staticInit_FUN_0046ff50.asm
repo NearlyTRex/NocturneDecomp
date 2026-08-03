@@ -13,7 +13,7 @@
 ;   CDemonFilter[8] CDemonFilter_ARRAY_020a4878
 ;   CDemonFilter[4] CDemonFilter_ARRAY_020a4ad8
 ;   CFilterCache g_CFilterCacheInstance
-;   CFilterFx g_CFilterFXInstance
+;   CFilterFX g_CFilterFXInstance
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_ctor_FUN_0046ffd0
@@ -56,7 +56,7 @@ section .text
     ADD ESP,0x4                         ; 0046ffa9
     PUSH 0x20a570c                      ; 0046ffac | g_CFilterFXInstance
     CALL core_dfilter.cpp_CFilterFX_ctor_FUN_004706c0 ; 0046ffb1
-        ;   XREF to: 004706c0 (UNCONDITIONAL_CALL)  ; CFilterFx * core_dfilter.cpp_CFilterFX_ctor_FUN_004706c0(CFilterFx * this_ptr)
+        ;   XREF to: 004706c0 (UNCONDITIONAL_CALL)  ; CFilterFX * core_dfilter.cpp_CFilterFX_ctor_FUN_004706c0(CFilterFX * this_ptr)
     ADD ESP,0x4                         ; 0046ffb6
     PUSH 0x66ef8c                       ; 0046ffb9 | g_CFilterFXDestructorNode
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 0046ffbe

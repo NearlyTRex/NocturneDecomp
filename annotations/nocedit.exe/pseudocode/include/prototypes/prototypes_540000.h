@@ -119,7 +119,7 @@ void __cdecl core_npc_cpp_CNPC_getPropertyList_FUN_00544e40(CNPC *this_ptr,CActo
 CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_00544eb0(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_00544ec0(CFont *this_ptr,uint flags);
 int __cdecl engine_palette_cpp_CFont_drawText_FUN_00544ed0(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color);
-int __cdecl engine_palette_cpp_CFont_getLineSpacing_FUN_00544f00(void);
+int __cdecl engine_palette_cpp_CFont_getLineSpacing_FUN_00544f00(CFont *this_ptr);
 CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr,int max_texture_count,int max_pixel_count);
 CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr,uint flags);
 void __cdecl engine_palette_cpp_CPaletteManager_reset_FUN_00544fb0(CPaletteManager *this_ptr);

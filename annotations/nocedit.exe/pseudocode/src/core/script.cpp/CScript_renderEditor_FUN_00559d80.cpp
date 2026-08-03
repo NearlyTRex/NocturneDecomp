@@ -27,11 +27,11 @@ void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80(CScript *this_ptr
   iVar1 = (bottom - top) + 1;
   cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
             (&local_40,left,top,(right - left) + 1,iVar1,(CDrawSurface *)0x0);
-  cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0);
+  cockpit_drawsurf_cpp_setColor_FUN_00487010(0);
   cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_40);
   cockpit_drawsurf_cpp_setCurrentFont_FUN_004874c0((CBitFont *)0x0);
   if (this_ptr->parsed_line_count < 1) {
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xf9);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xf9);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20
               (&local_40,"(No script loaded.)");
   }
@@ -61,7 +61,7 @@ void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80(CScript *this_ptr
         else {
           iVar4 = 0xff;
         }
-        cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(iVar4);
+        cockpit_drawsurf_cpp_setColor_FUN_00487010(iVar4);
         _sprintf(local_a4,"%d",index + 1);
         cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(&local_40,local_a4,2,y);
         x = 0x1e;
@@ -73,7 +73,7 @@ void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80(CScript *this_ptr
       } while (y < iVar1 - iVar2);
     }
   }
-  cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xff);
+  cockpit_drawsurf_cpp_setColor_FUN_00487010(0xff);
   cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(&local_40);
   return;
 }

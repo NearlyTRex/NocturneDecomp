@@ -7,7 +7,7 @@
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CFilterCache.h"
-#include "types/classes/CFilterFx.h"
+#include "types/classes/CFilterFX.h"
 #include "types/classes/CWinFont.h"
 
 // =============================================================================
@@ -37,8 +37,8 @@ extern CDemonLight* g_CurrentShadowLight;
 // CFilterCache
 extern CFilterCache g_CFilterCacheInstance;
 
-// CFilterFx
-extern CFilterFx g_CFilterFXInstance;
+// CFilterFX
+extern CFilterFX g_CFilterFXInstance;
 
 // CWinFont*
 extern CWinFont* g_MediumWinFont;

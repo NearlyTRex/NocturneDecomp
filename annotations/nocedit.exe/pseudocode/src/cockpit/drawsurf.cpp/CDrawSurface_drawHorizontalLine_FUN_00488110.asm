@@ -24,7 +24,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
+;   cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
 ;
@@ -101,8 +101,8 @@ section .text
         ;   Label: LAB_004881a5
     PUSH ECX                            ; 004881a6
     PUSH EAX                            ; 004881a7
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 ; 004881a8
-        ;   XREF to: 00487630 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630(int start_x, int end_x, int y)
+    CALL cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630 ; 004881a8
+        ;   XREF to: 00487630 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630(int start_x, int end_x, int y)
     ADD ESP,0xc                         ; 004881ad
     POP EBP                             ; 004881b0
     POP EDI                             ; 004881b1

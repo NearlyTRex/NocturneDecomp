@@ -39,9 +39,9 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
               (&local_a4,0xc,8,0x15,0xb,&local_64);
     cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
               (&local_c4,0xbe,0x5f,0x14,10,&local_64);
-    cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0x80,0x80,0x80);
+    cockpit_drawsurf_cpp_setColorRGB_FUN_00487220(0x80,0x80,0x80);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_64);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(7);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(7);
     cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(&local_64);
     cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00487990(&local_64,0,0,200,100);
     cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_00487730(&local_64,100,0x32,100);
@@ -51,7 +51,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_00487880(&local_64,0,100,0x32);
     cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomRight_FUN_004878b0(&local_64,200,100,0x32)
     ;
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xf9);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xf9);
     cockpit_drawsurf_cpp_setCurrentFont_FUN_004874c0((CBitFont *)0x0);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00489420
               (&local_64,5,2,"Hello");
@@ -80,20 +80,20 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
               (&local_64,100,0x48,"+");
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830
               (&local_64,0x5c,0x6c,0x57,"+");
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xff);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xff);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_64,100,0x14);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_64,100,0x23);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_64,100,0x4f);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_64,100,0x5e);
-    cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0xff,0,0);
+    cockpit_drawsurf_cpp_setColorRGB_FUN_00487220(0xff,0,0);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_a4);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xfb);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xfb);
     cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(&local_a4);
     cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00487990(&local_a4,-0x15,-0xb,0x29,0x15);
     cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_00487730(&local_a4,10,5,6);
-    cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0,0,0xff);
+    cockpit_drawsurf_cpp_setColorRGB_FUN_00487220(0,0,0xff);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_c4);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xfb);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xfb);
     cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(&local_c4);
     cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00487990(&local_c4,0,0,0x13,9);
     local_24[0] = "A+A"[0];
@@ -105,11 +105,11 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     iVar7 = test_font->current_line_height;
     cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
               (&local_44,g_WindowWidth / 2,iVar2,0xc9,iVar3,(CDrawSurface *)0x0);
-    cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0x80,0x80,0x80);
+    cockpit_drawsurf_cpp_setColorRGB_FUN_00487220(0x80,0x80,0x80);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_44);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(7);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(7);
     cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(&local_44);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xf9);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xf9);
     cockpit_drawsurf_cpp_setCurrentFont_FUN_004874c0(test_font);
     test_font->rendering_ready = 1;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
@@ -135,7 +135,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
               (&local_44,0x32,0x96,y_01 + -0x32,y_01 + 0x32,"%s",local_24);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
               (&local_44,"%s",local_24);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xfb);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xfb);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_44,1,1);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_44,199,1);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_44,100,1);
@@ -148,11 +148,11 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     iVar4 = g_WindowHeight - iVar5;
     cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
               (&local_84,g_WindowWidth / 2 + -0xca,iVar5,0xc9,iVar4,(CDrawSurface *)0x0);
-    cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0x80,0x80,0x80);
+    cockpit_drawsurf_cpp_setColorRGB_FUN_00487220(0x80,0x80,0x80);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_84);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(7);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(7);
     cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(&local_84);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xf9);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xf9);
     cockpit_drawsurf_cpp_setCurrentFont_FUN_004874c0((CBitFont *)0x0);
     test_font->rendering_ready = 1;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
@@ -176,7 +176,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
               (&local_84,0x32,0x96,iVar7 + -0x32,iVar7 + 0x32,"%s",local_24);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
               (&local_84,"%s",local_24);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xfb);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(0xfb);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_84,1,1);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_84,199,1);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_84,100,1);
@@ -185,7 +185,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_84,100,iVar5);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_84,100,iVar6);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_84,100,iVar7);
-    cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(4);
+    cockpit_drawsurf_cpp_setColor_FUN_00487010(4);
     cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedFullSurface_FUN_00488990(&local_84);
     return;
   }

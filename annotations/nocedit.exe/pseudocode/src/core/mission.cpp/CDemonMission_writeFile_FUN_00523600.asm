@@ -41,7 +41,7 @@
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-;   shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0
+;   shape_memdbg.cpp_checkAllMemory_FUN_0050efe0
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 00523607
     PUSH 0x1ae                          ; 0052360b
     PUSH 0x638e50                       ; 00523610 | = "..\\core\\mission.cpp"
-    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00523615
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
+    CALL shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 ; 00523615
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     MOV EDX,dword ptr [EBX + 0x884]     ; 0052361a
     ADD ESP,0x8                         ; 00523620
     TEST EDX,EDX                        ; 00523623

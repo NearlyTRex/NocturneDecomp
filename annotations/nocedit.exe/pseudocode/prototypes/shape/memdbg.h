@@ -31,9 +31,9 @@ void __cdecl SMemHead::remove(SMemHead *header);
 // Address: 0050efa0
 SMemHead * __cdecl getMemoryHeaderFromPtr(void *user_ptr);
 
-// Original: shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0
+// Original: shape_memdbg.cpp_checkAllMemory_FUN_0050efe0
 // Address: 0050efe0
-void __cdecl SMemHead::checkAllMemory(char *source_filename,int source_line);
+void __cdecl checkAllMemory(char *source_filename,int source_line);
 
 // Original: shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
 // Address: 0050f020

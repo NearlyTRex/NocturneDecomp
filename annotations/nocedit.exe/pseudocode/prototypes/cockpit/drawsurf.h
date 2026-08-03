@@ -15,57 +15,57 @@ CDrawSurface * __cdecl CDrawSurface::initFromParent(CDrawSurface *this_ptr,int x
 // Address: 00486ee0
 void __cdecl CDrawSurface::init(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
+// Original: cockpit_drawsurf.cpp_setColor_FUN_00487010
 // Address: 00487010
-void __cdecl CDrawSurface::setColor(int color_value);
+void __cdecl setColor(int color_value);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
+// Original: cockpit_drawsurf.cpp_setColorRGB_FUN_00487220
 // Address: 00487220
-void __cdecl CDrawSurface::setColorRGB(int red,int green,int blue);
+void __cdecl setColorRGB(int red,int green,int blue);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorBlack_FUN_00487380
+// Original: cockpit_drawsurf.cpp_setColorBlack_FUN_00487380
 // Address: 00487380
-void __cdecl CDrawSurface::setColorBlack(void);
+void __cdecl setColorBlack(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorWhite_FUN_00487390
+// Original: cockpit_drawsurf.cpp_setColorWhite_FUN_00487390
 // Address: 00487390
-void __cdecl CDrawSurface::setColorWhite(void);
+void __cdecl setColorWhite(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorRed_FUN_004873b0
+// Original: cockpit_drawsurf.cpp_setColorRed_FUN_004873b0
 // Address: 004873b0
-void __cdecl CDrawSurface::setColorRed(void);
+void __cdecl setColorRed(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorGreen_FUN_004873d0
+// Original: cockpit_drawsurf.cpp_setColorGreen_FUN_004873d0
 // Address: 004873d0
-void __cdecl CDrawSurface::setColorGreen(void);
+void __cdecl setColorGreen(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorBlue_FUN_004873f0
+// Original: cockpit_drawsurf.cpp_setColorBlue_FUN_004873f0
 // Address: 004873f0
-void __cdecl CDrawSurface::setColorBlue(void);
+void __cdecl setColorBlue(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorYellow_FUN_00487410
+// Original: cockpit_drawsurf.cpp_setColorYellow_FUN_00487410
 // Address: 00487410
-void __cdecl CDrawSurface::setColorYellow(void);
+void __cdecl setColorYellow(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorMagenta_FUN_00487430
+// Original: cockpit_drawsurf.cpp_setColorMagenta_FUN_00487430
 // Address: 00487430
-void __cdecl CDrawSurface::setColorMagenta(void);
+void __cdecl setColorMagenta(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorCyan_FUN_00487450
+// Original: cockpit_drawsurf.cpp_setColorCyan_FUN_00487450
 // Address: 00487450
-void __cdecl CDrawSurface::setColorCyan(void);
+void __cdecl setColorCyan(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorDarkGray_FUN_00487470
+// Original: cockpit_drawsurf.cpp_setColorDarkGray_FUN_00487470
 // Address: 00487470
-void __cdecl CDrawSurface::setColorDarkGray(void);
+void __cdecl setColorDarkGray(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorGray_FUN_00487480
+// Original: cockpit_drawsurf.cpp_setColorGray_FUN_00487480
 // Address: 00487480
-void __cdecl CDrawSurface::setColorGray(void);
+void __cdecl setColorGray(void);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_setColorLightGray_FUN_004874a0
+// Original: cockpit_drawsurf.cpp_setColorLightGray_FUN_004874a0
 // Address: 004874a0
-void __cdecl CDrawSurface::setColorLightGray(void);
+void __cdecl setColorLightGray(void);
 
 // Original: cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0
 // Address: 004874c0
@@ -75,9 +75,9 @@ void __cdecl setCurrentFont(CBitFont *font_ptr);
 // Address: 004874d0
 void __cdecl CDrawSurface::plotPixel(CDrawSurface *this_ptr,int x,int y);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
+// Original: cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_00487630
 // Address: 00487630
-void __cdecl CDrawSurface::drawHorizontalLineWithEffect(int start_x,int end_x,int y);
+void __cdecl drawHorizontalLineWithEffect(int start_x,int end_x,int y);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730
 // Address: 00487730

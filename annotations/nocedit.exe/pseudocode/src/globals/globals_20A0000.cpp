@@ -27,8 +27,8 @@ CDemonLight* g_CurrentShadowLight = {};
 // CFilterCache
 CFilterCache g_CFilterCacheInstance = {};
 
-// CFilterFx
-CFilterFx g_CFilterFXInstance = {};
+// CFilterFX
+CFilterFX g_CFilterFXInstance = {};
 
 // CWinFont*
 CWinFont* g_MediumWinFont = {};

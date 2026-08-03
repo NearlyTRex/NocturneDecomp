@@ -2,11 +2,11 @@
 // Address: 004216f0
 // Address Range: [[004216f0, 004216f5]]
 // Convention: __cdecl
-// Signature: CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_004216f0(void)
+// Signature: CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_004216f0(CBoxActor *this_ptr)
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_004216f0(void)
+CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_004216f0(CBoxActor *this_ptr)
 
 {
   return &g_CBoxActorClassInfo;

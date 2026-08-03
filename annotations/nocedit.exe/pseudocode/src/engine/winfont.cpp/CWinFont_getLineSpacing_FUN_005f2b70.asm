@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005f2b70(void)
+; int __cdecl engine_winfont_cpp_CWinFont_getLineSpacing_FUN_005f2b70(CWinFont *this_ptr)
 ;
+; Parameters:
+; CWinFont *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

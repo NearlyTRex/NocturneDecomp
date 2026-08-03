@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   line_number
 ;
 ; XREF[3]:
-;   shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 at 0050eff8
+;   shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 at 0050eff8
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460 at 0050f4df
 ;   shape_memdbg.cpp_debugRealloc_FUN_0050f540 at 0050f5d2
 ;

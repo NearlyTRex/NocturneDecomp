@@ -27,8 +27,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_00523600
 ;   engine_dosio.cpp_getFile_FUN_00481a50
+;   shape_memdbg.cpp_checkAllMemory_FUN_0050efe0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EDI                            ; 00522e31
     PUSH 0xb0                           ; 00522e32
     PUSH 0x638a30                       ; 00522e37 | = "..\\core\\mission.cpp"
-    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00522e3c
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
+    CALL shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 ; 00522e3c
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 00522e41
     PUSH 0x638a44                       ; 00522e44 | = "wt"
     MOV EDX,dword ptr [ESP + 0x14]      ; 00522e49

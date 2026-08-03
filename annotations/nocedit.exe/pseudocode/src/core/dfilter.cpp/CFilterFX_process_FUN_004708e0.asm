@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr)
+; void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFX *this_ptr)
 ;
 ; Parameters:
-; CFilterFx *      Stack[0x4]:4   this_ptr
+; CFilterFX *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e31f7

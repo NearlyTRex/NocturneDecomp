@@ -12,7 +12,7 @@
 #include "types/classes/CDemonTriangle.h"
 #include "types/classes/CDoor.h"
 #include "types/classes/CFilterCache.h"
-#include "types/classes/CFilterFx.h"
+#include "types/classes/CFilterFX.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CMatrix3x3f.h"
@@ -38,11 +38,11 @@ void __cdecl core_dfilter_cpp_CDemonFilter_freeMemory_FUN_004702c0(CDemonFilter 
 void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_ptr,char *filename);
 void __cdecl core_dfilter_cpp_CDemonFilter_save_FUN_00470510(CDemonFilter *this_ptr,char *filename);
 void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float init_value,int flags);
-CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_004706c0(CFilterFx *this_ptr);
-CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_004706e0(CFilterFx *this_ptr,uint flags);
-void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_00470700(CFilterFx *this_ptr);
-void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_ptr,char *filename);
-void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr);
+CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_004706c0(CFilterFX *this_ptr);
+CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_004706e0(CFilterFX *this_ptr,uint flags);
+void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_00470700(CFilterFX *this_ptr);
+void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFX *this_ptr,char *filename);
+void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFX *this_ptr);
 CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemonFilter *objs,uint flags);
 void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void);
 void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void);

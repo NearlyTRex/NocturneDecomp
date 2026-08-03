@@ -27,8 +27,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110(C
     }
     if (start_x_00 <= end_x_00) {
       if (g_UseRGBConversion != 0) {
-        cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
-                  (start_x_00,end_x_00,y_00);
+        cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00487630(start_x_00,end_x_00,y_00);
         return;
       }
       if ((uint)g_BitsPerPixel < 0x10) {

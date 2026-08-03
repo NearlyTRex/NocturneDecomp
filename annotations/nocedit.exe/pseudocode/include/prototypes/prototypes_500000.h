@@ -82,7 +82,7 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(SMRGLPrimit
 void __cdecl engine_keys_cpp_staticInit_FUN_00502410(void);
 int __cdecl engine_keys_cpp_CKeys_getKeyState_FUN_00502420(CKeys *this_ptr,EInputCodeType key_code);
 int __cdecl engine_keys_cpp_CKeys_getAndClearKeyState_FUN_00502430(CKeys *this_ptr,EInputCodeType key_code);
-void __cdecl engine_keys_cpp_CKeys_clearKeypresses_FUN_00502450(void);
+void __cdecl engine_keys_cpp_clearKeypresses_FUN_00502450(void);
 int __cdecl engine_keys_cpp_CKeys_getInputKey_FUN_00502460(CKeys *this_ptr);
 int __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys *this_ptr);
 void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_00502490(CKeys *this_ptr,EInputCodeType key_code);
@@ -329,7 +329,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead *h
 void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *header);
 void __cdecl shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(SMemHead *header);
 SMemHead * __cdecl shape_memdbg_cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void *user_ptr);
-void __cdecl shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0(char *source_filename,int source_line);
+void __cdecl shape_memdbg_cpp_checkAllMemory_FUN_0050efe0(char *source_filename,int source_line);
 void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header,char *filename,int line_number);
 void __cdecl shape_memdbg_cpp_traceMemory_FUN_0050f150(char *format,...) __attribute__((format(printf, 1, 2)));
 void __cdecl shape_memdbg_cpp_traceFile_FUN_0050f180(char *format,...) __attribute__((format(printf, 1, 2)));

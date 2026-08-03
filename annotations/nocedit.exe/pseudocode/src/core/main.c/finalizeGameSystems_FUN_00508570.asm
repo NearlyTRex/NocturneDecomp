@@ -57,8 +57,8 @@ section .text
     SUB ESP,0x100                       ; 00508574
     PUSH 0x4f9                          ; 0050857a
     PUSH 0x635632                       ; 0050857f | = "..\\core\\main.c"
-    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00508584
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
+    CALL shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 ; 00508584
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 00508589
     PUSH 0x635641                       ; 0050858c | = "rb"
     PUSH 0x635644                       ; 00508591 | = "enemy.pod"
@@ -306,8 +306,8 @@ section .text
         ;   XREF to: 004fc510 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_writeIniData_FUN_004fc510()
     PUSH 0x530                          ; 00508826
     PUSH 0x63565e                       ; 0050882b | = "..\\core\\main.c"
-    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00508830
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
+    CALL shape_memdbg.cpp_checkAllMemory_FUN_0050efe0 ; 00508830
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 00508835
     ADD ESP,0x100                       ; 00508838
     POP EBP                             ; 0050883e

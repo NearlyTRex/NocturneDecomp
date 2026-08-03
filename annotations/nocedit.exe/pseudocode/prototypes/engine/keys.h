@@ -15,9 +15,9 @@ int __cdecl CKeys::getKeyState(CKeys *this_ptr,EInputCodeType key_code);
 // Address: 00502430
 int __cdecl CKeys::getAndClearKeyState(CKeys *this_ptr,EInputCodeType key_code);
 
-// Original: engine_keys.cpp_CKeys_clearKeypresses_FUN_00502450
+// Original: engine_keys.cpp_clearKeypresses_FUN_00502450
 // Address: 00502450
-void __cdecl CKeys::clearKeypresses(void);
+void __cdecl clearKeypresses(void);
 
 // Original: engine_keys.cpp_CKeys_getInputKey_FUN_00502460
 // Address: 00502460
