@@ -13,7 +13,7 @@ CCurtain * __cdecl factoryFunc(void);
 
 // Original: core_curtain.cpp_CCurtain_getActorType_FUN_0043d950
 // Address: 0043d950
-CDemonActorType * CCurtain::getActorType(void);
+CDemonActorType * __cdecl CCurtain::getActorType(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_ctor_FUN_0043d960
 // Address: 0043d960
@@ -21,7 +21,7 @@ CCurtain * __cdecl CCurtain::ctor(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_setup_FUN_0043dad0
 // Address: 0043dad0
-void CCurtain::setup(CCurtain *param_1);
+void __cdecl CCurtain::setup(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0043e110
 // Address: 0043e110
@@ -37,7 +37,7 @@ void __cdecl CCurtain::solveConstraints(CCurtain *this_ptr,SCurtainVertex *verte
 
 // Original: core_curtain.cpp_CCurtain_process_FUN_0043ebf0
 // Address: 0043ebf0
-void CCurtain::process(CCurtain *param_1,float param_2);
+void __cdecl CCurtain::process(CCurtain *this_ptr,float delta_time);
 
 // Original: core_curtain.cpp_FUN_0043f330
 // Address: 0043f330
@@ -45,23 +45,23 @@ int __cdecl FUN_0043f330(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_renderOpaque_FUN_0043f610
 // Address: 0043f610
-int CCurtain::renderOpaque(CCurtain *param_1);
+int __cdecl CCurtain::renderOpaque(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_renderTransparent_FUN_0043f630
 // Address: 0043f630
-int CCurtain::renderTransparent(CCurtain *param_1);
+int __cdecl CCurtain::renderTransparent(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_getCollisionType_FUN_0043f640
 // Address: 0043f640
-undefined4 CCurtain::getCollisionType(void);
+ECollisionType __cdecl CCurtain::getCollisionType(CCurtain *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_curtain.cpp_CCurtain_getBoundingBox_FUN_0043f650
 // Address: 0043f650
-void CCurtain::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CCurtain::getBoundingBox(CCurtain *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_curtain.cpp_CCurtain_archive_FUN_0043f6b0
 // Address: 0043f6b0
-void CCurtain::archive(CDemonActor *param_1);
+void __cdecl CCurtain::archive(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_getBlockVirtualDirectorFlag_FUN_0043f8d0
 // Address: 0043f8d0

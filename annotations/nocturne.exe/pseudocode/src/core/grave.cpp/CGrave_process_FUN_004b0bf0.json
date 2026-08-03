@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -68,16 +68,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 186,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 31,
-    "suspect_count": 15,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 105
   },
   "cross_references": [],
@@ -89,9 +87,9 @@
         "004b0cac"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_grave.cpp_CGrave_process_FUN_004b0bf0",
-    "signature": "void core_grave_cpp_CGrave_process_FUN_004b0bf0(CGrave *param_1,float param_2)"
+    "signature": "void __cdecl core_grave_cpp_CGrave_process_FUN_004b0bf0(CGrave *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -122,9 +120,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -165,10 +163,10 @@
     "pcode_op_count": 300
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 32,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -184,131 +182,24 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGrave *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_grave_cpp_CGrave_process_FUN_004b0bf0(CGrave *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_grave_cpp_CGrave_process_FUN_004b0bf0(CGrave *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->animation_started == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->grave_state == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,param_1->start_condition);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_grave_cpp_CGrave_startAnimation_FUN_004b0dc0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->grave_state == 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&param_1->model);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1->fps * param_2 + param_1->cur_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = param_1->fps * param_2 + param_1->cur_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1->fps * param_2 + param_1->cur_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->cur_frame = fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->grave_state = 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->cur_frame = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).process_disabled = 1;",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

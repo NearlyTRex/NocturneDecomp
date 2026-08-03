@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,26 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "format_error",
-        "column": 75,
+        "column": 43,
         "line": 22,
-        "message": "format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 26,
-        "line": 23,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 26,
-        "line": 24,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -80,18 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 94,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast",
       "unnamed_param"
     ],
-    "total_lines": 78
+    "total_lines": 75
   },
   "cross_references": [],
   "function": {
@@ -104,7 +91,7 @@
     ],
     "convention": "unknown",
     "name": "sound_sndmain.cpp_FUN_00527570",
-    "signature": "void sound_sndmain_cpp_FUN_00527570(undefined1 *param_1)"
+    "signature": "void sound_sndmain_cpp_FUN_00527570(char *param_1)"
   },
   "function_calls": [
     {
@@ -232,7 +219,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void sound_sndmain_cpp_FUN_00527570(byte *param_1)",
+      "text": "void sound_sndmain_cpp_FUN_00527570(char *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -240,12 +227,12 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = _sprintf(param_1,\"sfx slot %d: %s, pos %7.1f/%7.1f\\n\",iVar2,this_ptr->sample,",
+      "text": "iVar1 = _sprintf(param_1,\"sfx slot %d: %s, pos %7.1f/%7.1f\\n\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + iVar1;",
@@ -253,7 +240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + iVar1;",
@@ -261,19 +248,11 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = 0;",
+      "text": "*param_1 = '\\0';",
       "type": "unnamed_param"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 17,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4),",
-      "type": "pointer_cast"
     }
   ]
 }

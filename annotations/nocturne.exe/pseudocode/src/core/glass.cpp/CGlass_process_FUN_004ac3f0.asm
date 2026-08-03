@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_CGlass_process_FUN_004ac3f0(CGlass *param_1)
+; void __cdecl core_glass_cpp_CGlass_process_FUN_004ac3f0(CGlass *this_ptr,float delta_time)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7650

@@ -30,7 +30,7 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(CIni *this_ptr,cha
     g_INT_01cc4804 = 0x57;
     core_main_c_FUN_004c8440("cIni::getProfileString: Unable to open input");
   }
-  _sprintf(local_110,"[%s]\n",section);
+  _sprintf(local_110,"[%s]\n");
   do {
     if (((stream->_flag & 0x10) != 0) ||
        (pcVar5 = _fgets(local_210,0xff,stream), pcVar5 == (char *)0x0))

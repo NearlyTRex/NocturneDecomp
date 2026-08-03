@@ -13,7 +13,7 @@ void FUN_0048cf30(void);
 
 // Original: core_flame.cpp_CFlame_getActorType_FUN_0048cf50
 // Address: 0048cf50
-CDemonActorType * CFlame::getActorType(void);
+CDemonActorType * __cdecl CFlame::getActorType(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_ctor_FUN_0048cf60
 // Address: 0048cf60
@@ -37,20 +37,20 @@ void __cdecl FUN_0048df10(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_renderBackground_FUN_0048df20
 // Address: 0048df20
-void CFlame::renderBackground(CDemonActor *param_1,int param_2);
+void __cdecl CFlame::renderBackground(CFlame *this_ptr,int layer_flag);
 
 // Original: core_flame.cpp_CFlame_getBoundingBox_FUN_0048e0a0
 // Address: 0048e0a0
-void CFlame::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CFlame::getBoundingBox(CFlame *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_flame.cpp_CFlame_archive_FUN_0048e100
 // Address: 0048e100
-void CFlame::archive(CDemonActor *param_1);
+void __cdecl CFlame::archive(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_getCollisionType_FUN_0048e220
 // Address: 0048e220
-undefined4 CFlame::getCollisionType(void);
+ECollisionType __cdecl CFlame::getCollisionType(CFlame *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_flame.cpp_CFlame_updateGlobe_FUN_0048e230
 // Address: 0048e230
-void CFlame::updateGlobe(int param_1);
+void __cdecl CFlame::updateGlobe(CFlame *this_ptr);

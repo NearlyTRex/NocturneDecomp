@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 253,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 19,
+    "pseudocode_lines": 44,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "shadow_pointer_walk",
-      "unnamed_param"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 181
+    "total_lines": 177
   },
   "cross_references": [],
   "function": {
@@ -85,9 +84,9 @@
         "0054f4f0"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_vehicle.cpp_CVehicle_archive_FUN_0054f370",
-    "signature": "void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CDemonActor *param_1)"
+    "signature": "void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CVehicle *this_ptr)"
   },
   "function_calls": [
     {
@@ -198,9 +197,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -233,10 +232,10 @@
     "pcode_op_count": 567
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 24,
     "local_size": 20,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -252,173 +251,20 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVehicle *"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CVehicle_archive_FUN_0054f370.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 48,
-          "line": 30,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 48,
-          "line": 31,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1),\"modelName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 7),\"tireCount\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)param_1[7].actor_name) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float_ptr_00 = param_1[7].actor_name + 0x14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float_ptr = param_1[7].actor_name + 0x10;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "model_ptr = (CKeyFramedModelInstance *)(param_1[7].actor_name + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(CVector3f *)((int)param_1",
-      "severity": "moderate",
-      "text": "((CVector3f *)((int)param_1 + iVar1 * 0x1b4 + 0x934),\"static_bpos\");",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CVector3f *)((int)param_1 + iVar1 * 0x1b4 + 0x934),\"static_bpos\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)param_1[7].actor_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[0xc].health,\"curTime\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)&param_1[0xc].validation_magic,\"totalTime\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)&param_1[0xc].direction_hint,\"courseName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor **)(param_1[0xc].create_event + 0x30),\"lastMobsterLeft\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor **)(param_1[0xc].create_event + 0x30),\"lastMobsterRight\");",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 18,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "model_ptr = (CKeyFramedModelInstance *)(param_1[7].actor_name + 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 25,
+      "line": 24,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "model_ptr = (CKeyFramedModelInstance *)(model_ptr[1].part_visibility_flags + 0xe);",
@@ -426,27 +272,27 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `model_ptr` self-updates by self-indexing a constant element step, dereferencing a sibling array field (which decays to a pointer), then adding a constant; the sum equals the larger struct stride being walked. Replace `model_ptr->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
+      "line": 24,
       "match": "model_ptr = (T *)(model_ptr[N].FIELD + CONST)",
       "severity": "moderate",
       "text": "model_ptr = (CKeyFramedModelInstance *)(model_ptr[1].part_visibility_flags + 0xe);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 30,
-      "match": "Cppcheck: invalid pointer cast",
+      "description": "Watcom shadow-pointer walk \u2014 `float_ptr` was initialized to the address of an array element's subfield (`float_ptr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*float_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `float_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 26,
+      "match": "float_ptr = float_ptr + N",
       "severity": "moderate",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)float_ptr,\"radius\");",
-      "type": "static_invalid_pointer_cast"
+      "text": "float_ptr = float_ptr + 0x6d;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 31,
-      "match": "Cppcheck: invalid pointer cast",
+      "description": "Watcom shadow-pointer walk \u2014 `float_ptr_00` was initialized to the address of an array element's subfield (`float_ptr_00 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*float_ptr_00)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `float_ptr_00->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 27,
+      "match": "float_ptr_00 = float_ptr_00 + N",
       "severity": "moderate",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)float_ptr_00,\"width\");",
-      "type": "static_invalid_pointer_cast"
+      "text": "float_ptr_00 = float_ptr_00 + 0x6d;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

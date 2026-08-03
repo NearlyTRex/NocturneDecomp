@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_door_cpp_CDoor_allowBulletHoles_FUN_00456240(int param_1)
+; int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00456240(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

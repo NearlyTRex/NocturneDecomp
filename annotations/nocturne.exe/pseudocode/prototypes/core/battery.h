@@ -13,7 +13,7 @@ CBattery * __cdecl factoryFunc(void);
 
 // Original: core_battery.cpp_CBattery_getActorType_FUN_00414d70
 // Address: 00414d70
-CDemonActorType * CBattery::getActorType(void);
+CDemonActorType * __cdecl CBattery::getActorType(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_ctor_FUN_00414d80
 // Address: 00414d80
@@ -25,7 +25,7 @@ void __cdecl CBattery::setup(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_canPickup_FUN_00414e10
 // Address: 00414e10
-undefined4 CBattery::canPickup(undefined4 param_1,CDemonActor *param_2);
+int __cdecl CBattery::canPickup(CBattery *this_ptr,CDemonActor *picker);
 
 // Original: core_battery.cpp_CBattery_pickup_FUN_00414e30
 // Address: 00414e30
@@ -41,19 +41,19 @@ CDemonActor * __cdecl CBattery::getCarrier(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_process_FUN_00414e60
 // Address: 00414e60
-void CBattery::process(void);
+void __cdecl CBattery::process(CBattery *this_ptr,float delta_time);
 
 // Original: core_battery.cpp_CBattery_renderOpaque_FUN_00414e70
 // Address: 00414e70
-int CBattery::renderOpaque(int param_1);
+int __cdecl CBattery::renderOpaque(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_archive_FUN_00414ef0
 // Address: 00414ef0
-void CBattery::archive(CDemonActor *param_1);
+void __cdecl CBattery::archive(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40
 // Address: 00414f40
-undefined4 CBattery::getCollisionType(void);
+ECollisionType __cdecl CBattery::getCollisionType(CBattery *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_battery.cpp_CBattery_getBoundingBox_FUN_00414f50
 // Address: 00414f50

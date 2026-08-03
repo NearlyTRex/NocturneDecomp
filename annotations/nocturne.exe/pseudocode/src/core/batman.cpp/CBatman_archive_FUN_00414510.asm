@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batman_cpp_CBatman_archive_FUN_00414510(CEnemy *param_1)
+; void __cdecl core_batman_cpp_CBatman_archive_FUN_00414510(CBatman *this_ptr)
 ;
+; Parameters:
+; CBatman *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00578ca7

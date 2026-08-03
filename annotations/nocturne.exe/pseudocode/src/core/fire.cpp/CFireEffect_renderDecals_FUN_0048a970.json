@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -81,7 +81,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 41,
+        "column": 45,
         "line": 50,
         "message": "use of undeclared identifier '_DAT_01c23d48'"
       },
@@ -93,7 +93,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 38,
+        "column": 41,
         "line": 85,
         "message": "use of undeclared identifier 'DAT_01c62eb8'"
       }
@@ -104,19 +104,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 367,
+    "complexity_score": 312,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
-    "suspect_count": 26,
+    "suspect_count": 21,
     "suspect_types": [
-      "param_count_too_few",
+      "param_count_too_many",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 226
@@ -143,9 +142,9 @@
         "0048aad4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970",
-    "signature": "void core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(undefined4 param_1,int param_2)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(CFireEffect *this_ptr,int render_mode,int render_completeness)"
   },
   "function_calls": [
     {
@@ -202,12 +201,10 @@
         "call_addr": "00508caa",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -223,10 +220,10 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 2,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -258,12 +255,34 @@
     "pcode_op_count": 551
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "render_mode",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_completeness",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -275,52 +294,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 != 0) && (iVar2 = 0, 0 < _DAT_01c23d48)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(int *)((int)g_CStake_ARRAY_01c23d50",
       "severity": "moderate",
       "text": "else if (*(int *)((int)g_CStake_ARRAY_01c23d50[0].physics_box.rotation_matrix.m +",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
@@ -351,7 +330,7 @@
       "line": 78,
       "match": "DAT_01c62eb8",
       "severity": "mild",
-      "text": "} while (this_ptr != (CCrater *)&DAT_01c62eb8);",
+      "text": "} while (this_ptr_00 != (CCrater *)&DAT_01c62eb8);",
       "type": "undefined_data"
     },
     {
@@ -468,14 +447,14 @@
     },
     {
       "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

@@ -54,8 +54,7 @@ int __cdecl core_boneguy_cpp_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)
         pCVar3 = (*((pCVar3->vtable)._ub)->getCarrier)(pCVar3);
         if (pCVar3 != (CDemonActor *)0x0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",this_ptr,
-                     this_ptr->pickup_target);
+                    (g_CConsole_PTR_005ad350,"%s can't pick up %s, sombody else beat me to it!\n");
           this_ptr->pickup_target = (CDemonActor *)0x0;
           this_ptr->pickup_cooldown = 0.0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
@@ -91,15 +90,13 @@ int __cdecl core_boneguy_cpp_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)
             return 1;
           }
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s beginning to pickup %s\n",this_ptr,
-                     this_ptr->pickup_target);
+                    (g_CConsole_PTR_005ad350,"%s beginning to pickup %s\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&this_ptr_00->motion_controller,7,1);
           return 1;
         }
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s can't pick up %s, giving up!!!!\n",this_ptr,
-                   this_ptr->pickup_target);
+                  (g_CConsole_PTR_005ad350,"%s can't pick up %s, giving up!!!!\n");
         this_ptr->pickup_target = (CDemonActor *)0x0;
         this_ptr->pickup_cooldown = 20.0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
@@ -152,8 +149,7 @@ int __cdecl core_boneguy_cpp_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)
         this_ptr->pickup_target = pCVar3;
         this_ptr->pickup_attempt_count = this_ptr->pickup_attempt_count + 1;
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s is going to try to pick up %s\n",this_ptr,
-                   this_ptr->pickup_target);
+                  (g_CConsole_PTR_005ad350,"%s is going to try to pick up %s\n");
         return 1;
       }
     }

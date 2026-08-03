@@ -74,7 +74,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0055a241
     PUSH EAX                            ; 0055a245
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0055a246
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055a24b
     PUSH 0x0                            ; 0055a24e
     PUSH 0x0                            ; 0055a250

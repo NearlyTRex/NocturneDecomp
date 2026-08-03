@@ -121,7 +121,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004ea42b
     PUSH EAX                            ; 004ea42f
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004ea430
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ea435
     PUSH 0xb                            ; 004ea438
     PUSH 0x0                            ; 004ea43a
@@ -168,7 +168,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004ea4b3
     PUSH EAX                            ; 004ea4b7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004ea4b8
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ea4bd
     MOV EAX,dword ptr [ESP + 0x180]     ; 004ea4c0
     PUSH EAX                            ; 004ea4c7
@@ -331,7 +331,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 004ea659
     PUSH EAX                            ; 004ea660
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004ea661
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ea666
     PUSH 0xb                            ; 004ea669
     PUSH EDI                            ; 004ea66b

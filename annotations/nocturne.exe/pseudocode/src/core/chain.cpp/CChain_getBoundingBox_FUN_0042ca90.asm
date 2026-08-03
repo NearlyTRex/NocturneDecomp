@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CDemonActor *param_1,CVector3f *param_2)
+; CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CChain *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CChain *         Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c

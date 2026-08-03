@@ -1,12 +1,12 @@
 // Name: core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
 // Address: 004d9180
 // Address Range: [[004d9180, 004d9294]]
-// Convention: unknown
-// Signature: void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission *this_ptr)
 
 #include "nocturne.h"
 
-void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *param_1)
+void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission *this_ptr)
 
 {
   CDemonActor *pCVar1;
@@ -14,14 +14,14 @@ void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *pa
   int iVar3;
   
   g_CDemonSet_PTR_005be368->actor_count = 0;
-  pCVar1 = (CDemonActor *)param_1[0x145];
+  pCVar1 = this_ptr->first_actor;
   do {
     if (pCVar1 == (CDemonActor *)0x0) {
       core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(g_CDemonSet_PTR_005be368);
       core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(g_CDemonSet_PTR_005be368);
       return;
     }
-    if (*param_1 == (pCVar1->location).area_id) {
+    if (this_ptr->current_set_index == (pCVar1->location).area_id) {
       if (pCVar1->lifecycle_state == ACTOR_NOT_CREATED) {
         if (pCVar1->create_event[0] != '\0') {
           iVar3 = _stricmp(pCVar1->create_event,"none");

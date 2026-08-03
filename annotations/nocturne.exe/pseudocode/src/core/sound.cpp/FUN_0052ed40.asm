@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_sound_cpp_FUN_0052ed40(undefined4 param_1,undefined4 param_2,int *param_3)
+; undefined4 core_sound_cpp_FUN_0052ed40(undefined4 param_1,char *param_2,int *param_3)
 ;
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0052ed85
     PUSH EAX                            ; 0052ed89
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 ; 0052ed8a
-        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70()
+        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0xc                         ; 0052ed8f
     TEST EAX,EAX                        ; 0052ed92
     JL 0x0052edbd                       ; 0052ed94

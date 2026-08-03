@@ -146,7 +146,7 @@ section .text
     PUSH EBX                            ; 005232bd
     MOVSD.REP ES:EDI,ESI                ; 005232be
     CALL sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 ; 005232c0
-        ;   XREF to: 00524d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10()
+        ;   XREF to: 00524d10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot * this_ptr, SMixBuffer mix_buffer)
     ADD EBX,0x120                       ; 005232c5
     ADD ESP,0x30                        ; 005232cb
     CMP EBX,EBP                         ; 005232ce

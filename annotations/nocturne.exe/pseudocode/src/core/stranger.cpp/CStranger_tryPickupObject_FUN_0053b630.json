@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,38 +52,26 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 224,
+        "line": 222,
         "message": "use of undeclared identifier '_DAT_02dc9f88'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 226,
+        "line": 224,
         "message": "use of undeclared identifier '_DAT_02dc9f60'"
       },
       {
         "category": "incompatible_types",
-        "column": 11,
-        "line": 237,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 5,
-        "line": 281,
+        "line": 275,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 284,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
     "success": false,
@@ -92,19 +80,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 692,
-    "complexity_score": 353,
+    "complexity_score": 347,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 278,
+    "pseudocode_lines": 272,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 970
+    "total_lines": 964
   },
   "cross_references": [
     {
@@ -497,7 +485,7 @@
       "line": 72,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "pCVar9 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_18);",
+      "text": "pCVar3 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_18);",
       "type": "pointer_cast"
     },
     {
@@ -505,7 +493,7 @@
       "line": 170,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->carry_object_bbox).min.x = (pCVar6->min).x;",
+      "text": "(this_ptr->carry_object_bbox).min.x = (pCVar7->min).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -513,7 +501,7 @@
       "line": 176,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar7->x = (pCVar6->max).x;",
+      "text": "pCVar8->x = (pCVar7->max).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -521,15 +509,15 @@
       "line": 191,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->carry_object_world_center).x = pCVar7->x;",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar8->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 256,
+      "line": 252,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->carry_object_world_center).x = pCVar7->x;",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar8->x;",
       "type": "unrolled_memcpy"
     }
   ]

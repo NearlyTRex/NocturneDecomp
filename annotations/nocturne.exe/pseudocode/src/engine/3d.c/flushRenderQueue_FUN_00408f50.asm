@@ -39,7 +39,7 @@ section .text
     ADD EBX,0x4                         ; 00408f76
     INC ESI                             ; 00408f79
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120 ; 00408f7a
-        ;   XREF to: 00407120 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120()
+        ;   XREF to: 00407120 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(SMRGLHeaderPrimitive * prim)
     MOV EBP,dword ptr [0x00761ec4]      ; 00408f7f | DAT_00761ec4
     ADD ESP,0x4                         ; 00408f85
     CMP ESI,EBP                         ; 00408f88

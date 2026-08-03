@@ -72,7 +72,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f545f
     PUSH EAX                            ; 004f5463
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f5464
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004f5469
     MOV ECX,dword ptr [ESP + 0x94]      ; 004f546c
     PUSH ECX                            ; 004f5473
@@ -89,7 +89,7 @@ section .text
     PUSH EAX                            ; 004f5496
     INC EBX                             ; 004f5497
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 ; 004f5498
-        ;   XREF to: 004f4630 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630()
+        ;   XREF to: 004f4630 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
     ADD ESI,0x24                        ; 004f549d
     ADD ESP,0x18                        ; 004f54a0
     CMP EBX,EBP                         ; 004f54a3

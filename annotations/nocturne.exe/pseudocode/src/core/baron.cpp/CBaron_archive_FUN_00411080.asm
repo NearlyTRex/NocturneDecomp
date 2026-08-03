@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaron_archive_FUN_00411080(CHero *param_1)
+; void __cdecl core_baron_cpp_CBaron_archive_FUN_00411080(CBaron *this_ptr)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_summonEvent_00578698

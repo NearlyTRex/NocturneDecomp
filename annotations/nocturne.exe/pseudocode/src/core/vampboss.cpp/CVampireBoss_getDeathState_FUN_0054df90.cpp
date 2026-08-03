@@ -1,13 +1,13 @@
 // Name: core_vampboss.cpp_CVampireBoss_getDeathState_FUN_0054df90
 // Address: 0054df90
 // Address Range: [[0054df90, 0054df92]]
-// Convention: unknown
-// Signature: undefined4 core_vampboss_cpp_CVampireBoss_getDeathState_FUN_0054df90(void)
+// Convention: __cdecl
+// Signature: EDeathState __cdecl core_vampboss_cpp_CVampireBoss_getDeathState_FUN_0054df90(CVampireBoss *this_ptr)
 
 #include "nocturne.h"
 
-uint core_vampboss_cpp_CVampireBoss_getDeathState_FUN_0054df90(void)
+EDeathState __cdecl core_vampboss_cpp_CVampireBoss_getDeathState_FUN_0054df90(CVampireBoss *this_ptr)
 
 {
-  return 0;
+  return DEATH_STATE_ALIVE;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(CDemonActor *param_1)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(CMansionPuzzleCircle *this_ptr)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;

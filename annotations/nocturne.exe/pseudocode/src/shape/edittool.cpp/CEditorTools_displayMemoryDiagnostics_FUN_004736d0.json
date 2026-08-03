@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,8 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 40,
+        "line": 42,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -62,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 66,
+    "complexity_score": 65,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 50,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strcpy"
     ],
-    "total_lines": 152
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -343,7 +349,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 42,
+      "line": 41,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

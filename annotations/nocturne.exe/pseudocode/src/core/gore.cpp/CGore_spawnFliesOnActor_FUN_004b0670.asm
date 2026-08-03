@@ -41,7 +41,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004b0688
     PUSH ESI                            ; 004b068c
     CALL core_gore.cpp_CGore_spawnFlies_FUN_004b0580 ; 004b068d
-        ;   XREF to: 004b0580 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFlies_FUN_004b0580()
+        ;   XREF to: 004b0580 (UNCONDITIONAL_CALL)  ; CFlies * core_gore.cpp_CGore_spawnFlies_FUN_004b0580(CGore * this_ptr, CVector3f * position, int gather_count, float spawn_rate, ...)
     MOV EDX,dword ptr [EBX + 0x2c]      ; 004b0692
     MOV dword ptr [EAX + 0x2c],EDX      ; 004b0695
     ADD ESP,0x14                        ; 004b0698

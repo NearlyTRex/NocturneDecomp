@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_moloch_cpp_CMoloch_renderOpaque_FUN_004de550(CCharacter *param_1)
+; int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_004de550(CMoloch *this_ptr)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

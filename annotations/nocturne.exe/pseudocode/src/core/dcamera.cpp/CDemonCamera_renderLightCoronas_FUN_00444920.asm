@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(CDemonCamera *this_ptr,CDemonLight *light_source)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light_source
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ; undefined4       Stack[-0x54]:4  local_54
@@ -237,7 +240,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 00444b6e
     LEA EDI,[ESP + 0x14]                ; 00444b72
     CALL core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610 ; 00444b76
-        ;   XREF to: 00441610 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610()
+        ;   XREF to: 00441610 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x8]                 ; 00444b7b
     ADD ESP,0x8                         ; 00444b7f
     MOVSD ES:EDI,ESI                    ; 00444b82

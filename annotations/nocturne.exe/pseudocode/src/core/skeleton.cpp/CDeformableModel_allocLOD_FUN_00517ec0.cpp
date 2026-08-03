@@ -1,12 +1,12 @@
 // Name: core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0
 // Address: 00517ec0
 // Address Range: [[00517ec0, 0051805a]]
-// Convention: unknown
-// Signature: void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count)
 
 #include "nocturne.h"
 
-void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)
+void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count)
 
 {
   void *pvVar1;
@@ -16,49 +16,50 @@ void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *
   int element_count;
   WatcomTypeInfo *type_info;
   
-  if ((param_2 < 0) || (param_1->num_lods <= param_2)) {
+  if ((lod_index < 0) || (this_ptr->num_lods <= lod_index)) {
     g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
     g_INT_01cc4804 = 0x28a;
-    core_main_c_FUN_004c8440("CDeformableModel::allocLOD - invalid lod number %d",param_2);
+    core_main_c_FUN_004c8440("CDeformableModel::allocLOD - invalid lod number %d",lod_index);
   }
   pvVar1 = __vec_delete
-                     (param_1->vertex_data_ptr[param_2],&g_SVertTypeInfo_005a1ee0);
+                     (this_ptr->vertex_data_ptr[lod_index],&g_SVertTypeInfo_005a1ee0);
   shape_memdbg_cpp_free_FUN_00564486(pvVar1);
-  shape_memdbg_cpp_free_FUN_00564486(param_1->tri_data_ptr[param_2]);
-  shape_memdbg_cpp_free_FUN_00564486(param_1->index_data_ptr[param_2]);
-  shape_memdbg_cpp_free_FUN_00564486(param_1->cap_index_ptr[param_2]);
+  shape_memdbg_cpp_free_FUN_00564486(this_ptr->tri_data_ptr[lod_index]);
+  shape_memdbg_cpp_free_FUN_00564486(this_ptr->index_data_ptr[lod_index]);
+  shape_memdbg_cpp_free_FUN_00564486(this_ptr->cap_index_ptr[lod_index]);
   type_info = &g_SVertTypeInfo_005a1ee0;
-  param_1->vertex_count[param_2] = param_3;
-  element_count = param_1->vertex_count[param_2];
-  param_1->tri_count[param_2] = param_4;
-  param_1->cap_tri_count[param_2] = param_5;
+  this_ptr->vertex_count[lod_index] = vertex_count;
+  element_count = this_ptr->vertex_count[lod_index];
+  this_ptr->tri_count[lod_index] = tri_count;
+  this_ptr->cap_tri_count[lod_index] = cap_tri_count;
   pvVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(element_count * 0x34 + 4);
   pSVar2 = (SVert *)__vec_new(pvVar1,element_count,type_info);
-  param_1->vertex_data_ptr[param_2] = pSVar2;
+  this_ptr->vertex_data_ptr[lod_index] = pSVar2;
   pSVar3 = shape_memdbg_cpp_malloc_FUN_00564c18
-                     ((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 0x12);
-  param_1->tri_data_ptr[param_2] = pSVar3;
+                     ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) * 0x12);
+  this_ptr->tri_data_ptr[lod_index] = pSVar3;
   piVar4 = shape_memdbg_cpp_malloc_FUN_00564c18
-                     ((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 4);
-  param_1->index_data_ptr[param_2] = piVar4;
-  if (param_1->cap_tri_count[param_2] < 1) {
-    param_1->cap_index_ptr[param_2] = (int *)0x0;
+                     ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) * 4);
+  this_ptr->index_data_ptr[lod_index] = piVar4;
+  if (this_ptr->cap_tri_count[lod_index] < 1) {
+    this_ptr->cap_index_ptr[lod_index] = (int *)0x0;
   }
   else {
-    piVar4 = shape_memdbg_cpp_malloc_FUN_00564c18(param_1->cap_tri_count[param_2] * 4);
-    param_1->cap_index_ptr[param_2] = piVar4;
+    piVar4 = shape_memdbg_cpp_malloc_FUN_00564c18(this_ptr->cap_tri_count[lod_index] * 4);
+    this_ptr->cap_index_ptr[lod_index] = piVar4;
   }
-  if ((((param_1->vertex_data_ptr[param_2] != (SVert *)0x0) &&
-       (param_1->tri_data_ptr[param_2] != (SInputFace *)0x0)) &&
-      (param_1->index_data_ptr[param_2] != (int *)0x0)) &&
-     ((param_1->cap_tri_count[param_2] < 1 || (param_1->cap_index_ptr[param_2] != (int *)0x0)))) {
+  if ((((this_ptr->vertex_data_ptr[lod_index] != (SVert *)0x0) &&
+       (this_ptr->tri_data_ptr[lod_index] != (SInputFace *)0x0)) &&
+      (this_ptr->index_data_ptr[lod_index] != (int *)0x0)) &&
+     ((this_ptr->cap_tri_count[lod_index] < 1 || (this_ptr->cap_index_ptr[lod_index] != (int *)0x0))
+     )) {
     return;
   }
-  core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(param_1);
+  core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(this_ptr);
   g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
   g_INT_01cc4804 = 0x2ae;
   core_main_c_FUN_004c8440
-            ("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",param_1->vertex_count,param_1->tri_count,
-             param_1->cap_tri_count);
+            ("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",this_ptr->vertex_count,this_ptr->tri_count,
+             this_ptr->cap_tri_count);
   return;
 }

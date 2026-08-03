@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 81,
-        "line": 48,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_01e533c0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 59,
-        "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       }
     ],
     "success": false,
@@ -74,13 +68,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 169,
+    "complexity_score": 228,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
-    "suspect_count": 8,
+    "pseudocode_lines": 63,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -88,7 +82,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 174
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -334,23 +328,71 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(CMatrix3x4f *)((int)pCVar6",
+      "line": 45,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 58,
-      "match": "(int)pCVar6",
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
       "severity": "moderate",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 57,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 44,
+      "line": 43,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -358,7 +400,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",

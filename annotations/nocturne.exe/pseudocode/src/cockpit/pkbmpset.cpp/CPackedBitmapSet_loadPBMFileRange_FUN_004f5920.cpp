@@ -10,7 +10,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920
 
 {
   int iVar1;
-  byte local_74 [100];
+  char local_74 [100];
   
   cockpit_pkbitmap_cpp_FUN_004f5320(this_ptr);
   cockpit_pkbitmap_cpp_FUN_004f5290(this_ptr);
@@ -18,10 +18,11 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920
   if (start_index <= end_index) {
     iVar1 = 0;
     do {
-      _sprintf(local_74,filename_format,start_index);
+      _sprintf(local_74,filename_format);
       start_index = start_index + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40
-                (this_ptr->bitmap_array->filename + iVar1,local_74,apply_palette_flag);
+                ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1),local_74,
+                 apply_palette_flag);
       iVar1 = iVar1 + 0x24;
     } while (start_index <= end_index);
   }

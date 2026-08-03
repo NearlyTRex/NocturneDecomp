@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -62,51 +62,45 @@
         "message": "use of undeclared identifier '_DAT_02dc84bc'"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 27,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 31,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 32,
+        "line": 28,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 32,
+        "line": 28,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 32,
+        "line": 28,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 32,
+        "line": 28,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 52,
+        "line": 48,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 57,
+        "line": 53,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
@@ -116,19 +110,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 98,
+    "complexity_score": 94,
     "cross_reference_count": 10,
     "function_call_count": 4,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 49,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_truncation",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 182
+    "total_lines": 178
   },
   "cross_references": [
     {
@@ -507,7 +501,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 21,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc8318 + 0x4c))(_DAT_02dc8318,slot);",
@@ -515,10 +509,10 @@
     },
     {
       "description": "Pointer value `&slot[-0x28a84].fade_time_remaining` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
+      "line": 43,
       "match": "(int)&slot[-0x28a84].fade_time_remaining",
       "severity": "moderate",
-      "text": "if ((int)&slot[-0x28a84].fade_time_remaining / 0x120 != pCVar2->streaming_slot_index) {",
+      "text": "if ((int)&slot[-0x28a84].fade_time_remaining / 0x120 != this_ptr->streaming_slot_index) {",
       "type": "pointer_truncation"
     }
   ]

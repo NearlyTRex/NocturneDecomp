@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_CBloodPool_render_FUN_004af340(undefined4 *param_1)
+; void __cdecl core_gore_cpp_CBloodPool_render_FUN_004af340(CBloodPool *this_ptr,int expire_flag)
 ;
+; Parameters:
+; CBloodPool *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   expire_flag
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c

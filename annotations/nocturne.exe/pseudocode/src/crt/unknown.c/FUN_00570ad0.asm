@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
+; int crt_unknown_c_FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
 ;
 ;
 ; XREF[1]:
@@ -141,7 +141,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x60]      ; 00570baf
     PUSH ESI                            ; 00570bb3
     CALL crt_stdio.c_CreateFileVariadic_FUN_0056b934 ; 00570bb4
-        ;   XREF to: 0056b934 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_CreateFileVariadic_FUN_0056b934()
+        ;   XREF to: 0056b934 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_CreateFileVariadic_FUN_0056b934(char * filename, int access_mode, int share_mode)
     ADD ESP,0x10                        ; 00570bb9
     ADD ESP,0x48                        ; 00570bbc
         ;   Label: LAB_00570bbc

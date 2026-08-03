@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_wateract_cpp_CWaterActor_setup_FUN_00551370(CWaterActor *param_1)
+; void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00551370(CWaterActor *this_ptr)
 ;
+; Parameters:
+; CWaterActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40

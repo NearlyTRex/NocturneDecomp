@@ -61,7 +61,7 @@ section .text
     PUSH 0x586d48                       ; 004bed55 | = "Add to dict: %s"
     PUSH 0x1cae480                      ; 004bed5a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004bed5f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x1cae480                   ; 004bed64
     ADD ESP,0xc                         ; 004bed69
     POP EBP                             ; 004bed6c

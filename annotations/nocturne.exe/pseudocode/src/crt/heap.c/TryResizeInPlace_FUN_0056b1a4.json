@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 74,
+    "complexity_score": 47,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 5,
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
     "suspect_types": [
-      "register_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 46
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -167,32 +166,16 @@
   },
   "suspects": [
     {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_DS",
-      "severity": "mild",
-      "text": "ushort in_DS;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
+      "line": 7,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad8)();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_DS",
-      "severity": "mild",
-      "text": "iVar1 = ResizeBlockInPlace(in_DS,ptr,new_size,auStack_8);",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 10,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae0)();",
@@ -200,7 +183,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
+      "line": 13,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae0)();",

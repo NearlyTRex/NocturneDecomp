@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_marquee_cpp_CMarquee_archive_FUN_004cc870(CDemonActor *param_1)
+; void __cdecl core_marquee_cpp_CMarquee_archive_FUN_004cc870(CMarquee *this_ptr)
 ;
+; Parameters:
+; CMarquee *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_courseName_0058819d

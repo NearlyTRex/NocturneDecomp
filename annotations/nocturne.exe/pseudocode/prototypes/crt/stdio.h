@@ -25,7 +25,7 @@ SIZE_T __cdecl fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
 
 // Original: crt_stdio.c_sprintf_FUN_00563c90
 // Address: 00563c90
-void sprintf(char *param_1,char *param_2);
+int __cdecl sprintf(char *buffer,char *format);
 
 // Original: crt_stdio.c_fprintf_FUN_005644f0
 // Address: 005644f0
@@ -113,7 +113,7 @@ _FILE * __watcallStack stream::flush(_FILE *stream);
 
 // Original: crt_stdio.c_CreateFileVariadic_FUN_0056b934
 // Address: 0056b934
-void CreateFileVariadic(char *param_1,dword param_2,dword param_3);
+int __cdecl CreateFileVariadic(char *filename,int access_mode,int share_mode);
 
 // Original: crt_stdio.c_CreateFileImpl_FUN_0056b960
 // Address: 0056b960

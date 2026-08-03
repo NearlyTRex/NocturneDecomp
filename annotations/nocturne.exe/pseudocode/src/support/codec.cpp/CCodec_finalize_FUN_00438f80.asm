@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_CCodec_finalize_FUN_00438f80(void)
+; int __cdecl support_codec_cpp_CCodec_finalize_FUN_00438f80(CCodec *this_ptr,_FILE *output_file)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   output_file
 ;
 ; *****************************************************************************
 

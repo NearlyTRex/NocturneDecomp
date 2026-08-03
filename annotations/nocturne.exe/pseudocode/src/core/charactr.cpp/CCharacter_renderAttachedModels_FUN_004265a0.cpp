@@ -12,10 +12,10 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(CCha
   int iVar1;
   SDamageDecal *pSVar2;
   int iVar3;
-  float *pfVar4;
+  CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
-  float local_8c [12];
+  CMatrix3x4f local_8c;
   CMatrix3x4f local_5c;
   CVector3f local_2c;
   CVector3f local_20;
@@ -29,12 +29,12 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(CCha
     do {
       if ((this_ptr->model).part_data.visibility_flags[pSVar2->part_index] != 0) {
         core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-                  (&pSVar2->transform,local_14 + pSVar2->bone_index);
-        pfVar4 = local_8c;
+                  (&pSVar2->transform,local_14 + pSVar2->bone_index,&local_8c);
+        pCVar4 = &local_8c;
         pCVar5 = &local_5c;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-          pCVar5->m[0].w = *pfVar4;
-          pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+          pCVar5->m[0].w = *(float *)pCVar4;
+          pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
           pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
         }
         core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_5c,&local_2c);

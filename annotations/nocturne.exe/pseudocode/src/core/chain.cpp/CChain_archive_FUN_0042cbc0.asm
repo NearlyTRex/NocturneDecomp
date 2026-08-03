@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_chain_cpp_CChain_archive_FUN_0042cbc0(CDemonActor *param_1)
+; void __cdecl core_chain_cpp_CChain_archive_FUN_0042cbc0(CChain *this_ptr)
 ;
+; Parameters:
+; CChain *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_vertexCount_0057a5a6

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
+; int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bits_per_sample
+; int              Stack[0xc]:4   channel_count
+; int              Stack[0x10]:4   sample_rate
+; int              Stack[0x14]:4   sample_count
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -170,7 +176,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0052ad07
     PUSH EAX                            ; 0052ad0b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052ad0c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0052ad11
     MOV EAX,ESP                         ; 0052ad14
     PUSH EAX                            ; 0052ad16

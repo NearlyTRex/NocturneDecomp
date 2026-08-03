@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_004cbb70(CDemonActor *param_1)
+; int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_004cbb70(CMirrorHack *this_ptr)
 ;
+; Parameters:
+; CMirrorHack *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec

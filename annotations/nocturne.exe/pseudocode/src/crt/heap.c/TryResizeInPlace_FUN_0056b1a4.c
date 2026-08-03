@@ -10,11 +10,9 @@ void * __cdecl TryResizeInPlace(void *ptr,ulong new_size)
 
 {
   int iVar1;
-  ushort in_DS;
-  byte auStack_8 [4];
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad8)();
-  iVar1 = ResizeBlockInPlace(in_DS,ptr,new_size,auStack_8);
+  iVar1 = ResizeBlockInPlace();
   if (iVar1 == 0) {
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae0)();
     return ptr;

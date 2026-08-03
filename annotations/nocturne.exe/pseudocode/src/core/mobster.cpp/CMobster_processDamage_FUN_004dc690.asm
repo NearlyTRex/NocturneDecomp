@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mobster_cpp_CMobster_processDamage_FUN_004dc690(CMobster *param_1,SDamageInfo *param_2)
+; void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_004dc690(CMobster *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mobster_die_wav_0058a489

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(int param_1,EDamageType param_2,float param_3)
+; void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(CCharacter *this_ptr,int damage_type,float damage_amount)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   damage_type
+; float            Stack[0xc]:4   damage_amount
 ;
 ; Called Functions:
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0

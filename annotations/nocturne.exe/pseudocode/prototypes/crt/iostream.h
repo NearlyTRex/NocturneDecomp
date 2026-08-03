@@ -65,7 +65,7 @@ streambuf * __watcallStack streambuf::setbuf(streambuf *this_ptr,void *buffer_st
 
 // Original: crt_iostream.cpp_streambuf_destructor_FUN_00571d9f
 // Address: 00571d9f
-int streambuf::destructor(int param_1);
+streambuf * __watcallStack streambuf::destructor(streambuf *this_ptr);
 
 // Original: crt_iostream.cpp_doallocate_FUN_00571dc7
 // Address: 00571dc7

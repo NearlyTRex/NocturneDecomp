@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_stdio_c_sprintf_FUN_00563c90(char *param_1,char *param_2)
+; int __cdecl crt_stdio_c_sprintf_FUN_00563c90(char *buffer,char *format)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; char *           Stack[0x8]:4   format
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

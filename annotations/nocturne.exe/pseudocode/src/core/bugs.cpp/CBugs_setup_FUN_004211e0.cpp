@@ -1,12 +1,12 @@
 // Name: core_bugs.cpp_CBugs_setup_FUN_004211e0
 // Address: 004211e0
 // Address Range: [[004211e0, 00421462]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *this_ptr)
 
 #include "nocturne.h"
 
-void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
+void __cdecl core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *this_ptr)
 
 {
   float fVar1;
@@ -25,48 +25,48 @@ void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
   CKeyFramedModelInstance *local_20;
   char *local_1c;
   
-  (param_1->base).base.base.orient.vec.z = 0.0;
-  (param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.z;
-  (param_1->base).base.base.orient.vec.x = (param_1->base).base.base.orient.vec.y;
-  core_enemy_cpp_CEnemy_setup_FUN_004796b0(&param_1->base);
-  param_1->model_count = 4;
+  (this_ptr->base).base.base.orient.vec.z = 0.0;
+  (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.z;
+  (this_ptr->base).base.base.orient.vec.x = (this_ptr->base).base.base.orient.vec.y;
+  core_enemy_cpp_CEnemy_setup_FUN_004796b0(&this_ptr->base);
+  this_ptr->model_count = 4;
   iVar6 = 0;
-  if (0 < param_1->model_count) {
-    pcVar9 = param_1->models[0].model_name;
+  if (0 < this_ptr->model_count) {
+    pcVar9 = this_ptr->models[0].model_name;
     do {
       if (*pcVar9 == '\0') {
-        iVar5 = param_1->model_count + -1;
-        param_1->model_count = iVar5;
+        iVar5 = this_ptr->model_count + -1;
+        this_ptr->model_count = iVar5;
         if (iVar6 < iVar5) {
-          local_20 = param_1->models + iVar6;
-          local_1c = param_1->models[iVar6 + 1].model_name;
+          local_20 = this_ptr->models + iVar6;
+          local_1c = this_ptr->models[iVar6 + 1].model_name;
           iVar5 = iVar6;
           do {
             core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(local_20,local_1c);
             iVar5 = iVar5 + 1;
             local_20 = local_20 + 1;
             local_1c = local_1c + 0x17c;
-          } while (iVar5 < param_1->model_count);
+          } while (iVar5 < this_ptr->model_count);
         }
       }
       else {
-        core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1->models + iVar6);
+        core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(this_ptr->models + iVar6);
         pcVar9 = pcVar9 + 0x17c;
         iVar6 = iVar6 + 1;
       }
-    } while (iVar6 < param_1->model_count);
+    } while (iVar6 < this_ptr->model_count);
   }
   local_28 = 0;
-  if (0 < param_1->count) {
+  if (0 < this_ptr->count) {
     fVar1 = 0.5f * 12.0f;
     fVar2 = 0.5f * -12.0f;
-    pCVar10 = &param_1->bugs[0].dest_position;
-    pCVar7 = &param_1->bugs[0].orientation;
-    local_2c = &param_1->bugs[0].position;
+    pCVar10 = &this_ptr->bugs[0].dest_position;
+    pCVar7 = &this_ptr->bugs[0].orientation;
+    local_2c = &this_ptr->bugs[0].position;
     do {
-      pSVar8 = param_1->bugs + local_28;
+      pSVar8 = this_ptr->bugs + local_28;
       pSVar8->state = 0;
-      iVar6 = core_actor_cpp_getRandomInt_FUN_0040de00(0,param_1->model_count + -1);
+      iVar6 = core_actor_cpp_getRandomInt_FUN_0040de00(0,this_ptr->model_count + -1);
       fVar4 = fVar1 * (float)0.5;
       min_value = fVar2 * (float)0.5;
       pSVar8->model_index = iVar6;
@@ -89,12 +89,12 @@ void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
       pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);
       local_2c = (CVector3f *)((int)(local_2c + 5) + 4);
       local_28 = local_28 + 1;
-    } while (local_28 < param_1->count);
+    } while (local_28 < this_ptr->count);
   }
-  core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(param_1);
-  param_1->grid_cell_x = -9999;
-  param_1->grid_cell_z = -9999;
-  (param_1->base).base.base.collision_disabled = 1;
-  param_1->damage_timer = 0.0;
+  core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(this_ptr);
+  this_ptr->grid_cell_x = -9999;
+  this_ptr->grid_cell_z = -9999;
+  (this_ptr->base).base.base.collision_disabled = 1;
+  this_ptr->damage_timer = 0.0;
   return;
 }

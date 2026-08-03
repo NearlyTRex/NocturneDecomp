@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_armour_cpp_CArmour_process_FUN_0040fa20(CCharacter *param_1,float param_2)
+; void __cdecl core_armour_cpp_CArmour_process_FUN_0040fa20(CArmour *this_ptr,float delta_time)
 ;
+; Parameters:
+; CArmour *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ;

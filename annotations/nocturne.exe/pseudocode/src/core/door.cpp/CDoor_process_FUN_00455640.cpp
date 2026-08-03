@@ -1,12 +1,12 @@
 // Name: core_door.cpp_CDoor_process_FUN_00455640
 // Address: 00455640
 // Address Range: [[00455640, 00455d40]]
-// Convention: unknown
-// Signature: void core_door_cpp_CDoor_process_FUN_00455640(CDoor *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_door_cpp_CDoor_process_FUN_00455640(CDoor *param_1,float param_2)
+void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delta_time)
 
 {
   int iVar1;
@@ -40,92 +40,92 @@ void core_door_cpp_CDoor_process_FUN_00455640(CDoor *param_1,float param_2)
   int iStack_18;
   float fStack_14;
   
-  local_78 = (param_1->base).location.position.x;
-  local_74 = (param_1->base).location.position.y;
-  local_70 = (param_1->base).location.position.z;
-  local_50 = param_1->param;
-  if (1 < param_1->one_shot) {
+  local_78 = (this_ptr->base).location.position.x;
+  local_74 = (this_ptr->base).location.position.y;
+  local_70 = (this_ptr->base).location.position.z;
+  local_50 = this_ptr->param;
+  if (1 < this_ptr->one_shot) {
     return;
   }
-  switch(param_1->door_state) {
+  switch(this_ptr->door_state) {
   case DOOR_STATE_CLOSED:
     iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1->open_condition);
+                      (0x01C03A10,this_ptr->open_condition);
     if (iVar4 != 0) {
-      param_1->door_state = DOOR_STATE_OPENING;
-      if (param_1->open_sound[0] != '\0') {
-        (*((param_1->base).vtable._ub)->playSound)(&param_1->base,param_1->open_sound);
+      this_ptr->door_state = DOOR_STATE_OPENING;
+      if (this_ptr->open_sound[0] != '\0') {
+        (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
       }
-      core_setcolid_cpp_FUN_00511aa0(g_CDemonSet_PTR_005be368,&param_1->base);
+      core_setcolid_cpp_FUN_00511aa0(g_CDemonSet_PTR_005be368,&this_ptr->base);
     }
-    param_1->param = 0.0;
+    this_ptr->param = 0.0;
     break;
   case DOOR_STATE_OPENING:
-    param_1->param = (param_2 * param_1->max_param) / param_1->open_speed + local_50;
-    if (param_1->max_param <= 0.0) {
-      if (param_1->param < param_1->max_param) {
-        param_1->door_state = DOOR_STATE_OPEN;
-        param_1->param = param_1->max_param;
-        if (param_1->one_shot != 0) {
-          param_1->one_shot = 2;
+    this_ptr->param = (delta_time * this_ptr->max_param) / this_ptr->open_speed + local_50;
+    if (this_ptr->max_param <= 0.0) {
+      if (this_ptr->param < this_ptr->max_param) {
+        this_ptr->door_state = DOOR_STATE_OPEN;
+        this_ptr->param = this_ptr->max_param;
+        if (this_ptr->one_shot != 0) {
+          this_ptr->one_shot = 2;
         }
       }
     }
-    else if (param_1->max_param < param_1->param) {
-      param_1->door_state = DOOR_STATE_OPEN;
-      param_1->param = param_1->max_param;
-      if (param_1->one_shot != 0) {
-        param_1->one_shot = 2;
+    else if (this_ptr->max_param < this_ptr->param) {
+      this_ptr->door_state = DOOR_STATE_OPEN;
+      this_ptr->param = this_ptr->max_param;
+      if (this_ptr->one_shot != 0) {
+        this_ptr->one_shot = 2;
       }
     }
     break;
   case DOOR_STATE_OPEN:
     iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1->close_condition);
-    if ((iVar4 != 0) && (param_1->door_state = DOOR_STATE_CLOSING, param_1->close_sound[0] != '\0'))
-    {
-      (*((param_1->base).vtable._ub)->playSound)(&param_1->base,param_1->close_sound);
+                      (0x01C03A10,this_ptr->close_condition);
+    if ((iVar4 != 0) &&
+       (this_ptr->door_state = DOOR_STATE_CLOSING, this_ptr->close_sound[0] != '\0')) {
+      (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->close_sound);
     }
-    param_1->param = param_1->max_param;
+    this_ptr->param = this_ptr->max_param;
     break;
   case DOOR_STATE_CLOSING:
-    param_1->param = local_50 - (param_2 * param_1->max_param) / param_1->close_speed;
-    if (param_1->max_param <= 0.0) {
-      if (0.0 < param_1->param) {
-        param_1->door_state = DOOR_STATE_CLOSED;
-        param_1->param = 0.0;
-        if (param_1->one_shot != 0) {
-          param_1->one_shot = 2;
+    this_ptr->param = local_50 - (delta_time * this_ptr->max_param) / this_ptr->close_speed;
+    if (this_ptr->max_param <= 0.0) {
+      if (0.0 < this_ptr->param) {
+        this_ptr->door_state = DOOR_STATE_CLOSED;
+        this_ptr->param = 0.0;
+        if (this_ptr->one_shot != 0) {
+          this_ptr->one_shot = 2;
         }
-        core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&param_1->base);
+        core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&this_ptr->base);
       }
     }
-    else if (param_1->param < 0.0) {
-      param_1->door_state = DOOR_STATE_CLOSED;
-      param_1->param = 0.0;
-      if (param_1->one_shot != 0) {
-        param_1->one_shot = 2;
+    else if (this_ptr->param < 0.0) {
+      this_ptr->door_state = DOOR_STATE_CLOSED;
+      this_ptr->param = 0.0;
+      if (this_ptr->one_shot != 0) {
+        this_ptr->one_shot = 2;
       }
-      core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&param_1->base);
+      core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&this_ptr->base);
     }
   }
-  if (param_1->door_state == DOOR_STATE_CLOSED) {
-    if (param_1->on_close_trigger_event[0] == '\0') goto LAB_00455728;
-    commands = param_1->on_close_trigger_event;
+  if (this_ptr->door_state == DOOR_STATE_CLOSED) {
+    if (this_ptr->on_close_trigger_event[0] == '\0') goto LAB_00455728;
+    commands = this_ptr->on_close_trigger_event;
   }
   else {
-    if ((param_1->door_state != DOOR_STATE_OPEN) || (param_1->on_open_trigger_event[0] == '\0'))
+    if ((this_ptr->door_state != DOOR_STATE_OPEN) || (this_ptr->on_open_trigger_event[0] == '\0'))
     goto LAB_00455728;
-    commands = param_1->on_open_trigger_event;
+    commands = this_ptr->on_open_trigger_event;
   }
   core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,commands);
 LAB_00455728:
-  core_door_cpp_CDoor_reposition_FUN_004552a0(param_1);
-  if ((param_1->param != local_50) && (param_1->door_type != DOOR_TYPE_TILT)) {
+  core_door_cpp_CDoor_reposition_FUN_004552a0(this_ptr);
+  if ((this_ptr->param != local_50) && (this_ptr->door_type != DOOR_TYPE_TILT)) {
     iVar4 = 0;
-    (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_a8);
+    (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_a8);
     iStack_54 = 0;
-    pCStack_4c = &(param_1->base).orient_matrix;
+    pCStack_4c = &(this_ptr->base).orient_matrix;
     iStack_18 = 0;
     while( true ) {
       if (g_CDemonSet_PTR_005be368->character_count <= iStack_18) break;
@@ -134,12 +134,12 @@ LAB_00455728:
       iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x34))(iVar1,&SStack_d0);
       if (((iVar2 == 2) &&
           (SStack_d0.cylinder_bottom_y + *(float *)(iVar1 + 0x24) <=
-           (param_1->base).location.position.y + local_a8.max.y)) &&
-         ((param_1->base).location.position.y + local_a8.min.y <=
+           (this_ptr->base).location.position.y + local_a8.max.y)) &&
+         ((this_ptr->base).location.position.y + local_a8.min.y <=
           SStack_d0.cylinder_top_y + *(float *)(iVar1 + 0x24))) {
-        CStack_84.x = *(float *)(iVar1 + 0x20) - (param_1->base).location.position.x;
-        CStack_84.y = *(float *)(iVar1 + 0x24) - (param_1->base).location.position.y;
-        CStack_84.z = *(float *)(iVar1 + 0x28) - (param_1->base).location.position.z;
+        CStack_84.x = *(float *)(iVar1 + 0x20) - (this_ptr->base).location.position.x;
+        CStack_84.y = *(float *)(iVar1 + 0x24) - (this_ptr->base).location.position.y;
+        CStack_84.z = *(float *)(iVar1 + 0x28) - (this_ptr->base).location.position.z;
         pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
                            (pCStack_4c,&CStack_90,&CStack_84);
         if (aCStack_6c != pCVar3) {
@@ -187,11 +187,11 @@ LAB_00455728:
     }
     if (iStack_54 != 0) {
 LAB_00455b1d:
-      (param_1->base).location.position.x = local_78;
-      (param_1->base).location.position.y = local_74;
-      (param_1->base).location.position.z = local_70;
-      param_1->param = local_50;
-      core_door_cpp_CDoor_reposition_FUN_004552a0(param_1);
+      (this_ptr->base).location.position.x = local_78;
+      (this_ptr->base).location.position.y = local_74;
+      (this_ptr->base).location.position.z = local_70;
+      this_ptr->param = local_50;
+      core_door_cpp_CDoor_reposition_FUN_004552a0(this_ptr);
       return;
     }
   }

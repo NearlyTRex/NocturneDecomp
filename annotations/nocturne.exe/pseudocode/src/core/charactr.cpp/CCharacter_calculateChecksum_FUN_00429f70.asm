@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_calculateChecksum_FUN_00429f70(CDemonActor *param_1,uint *param_2)
+; void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_00429f70(CCharacter *this_ptr,uint *out_crc)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; uint *           Stack[0x8]:4   out_crc
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

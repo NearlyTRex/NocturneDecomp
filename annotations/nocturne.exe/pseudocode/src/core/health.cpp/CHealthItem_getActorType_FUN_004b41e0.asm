@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_health_cpp_CHealthItem_getActorType_FUN_004b41e0(void)
+; CDemonActorType * __cdecl core_health_cpp_CHealthItem_getActorType_FUN_004b41e0(CHealthItem *this_ptr)
 ;
+; Parameters:
+; CHealthItem *    Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

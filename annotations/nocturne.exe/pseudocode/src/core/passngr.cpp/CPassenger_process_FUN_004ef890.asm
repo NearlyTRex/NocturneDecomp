@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float param_2)
+; void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_ptr,float delta_time)
 ;
+; Parameters:
+; CPassenger *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined        Stack[-0x1c]:1  local_1c

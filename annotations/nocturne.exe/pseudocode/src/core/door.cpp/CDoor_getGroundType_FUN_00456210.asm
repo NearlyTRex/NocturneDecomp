@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_door_cpp_CDoor_getGroundType_FUN_00456210(int param_1)
+; EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00456210(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

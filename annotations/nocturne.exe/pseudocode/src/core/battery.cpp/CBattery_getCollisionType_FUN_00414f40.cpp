@@ -1,13 +1,13 @@
 // Name: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40
 // Address: 00414f40
 // Address Range: [[00414f40, 00414f42]]
-// Convention: unknown
-// Signature: undefined4 core_battery_cpp_CBattery_getCollisionType_FUN_00414f40(void)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_battery_cpp_CBattery_getCollisionType_FUN_00414f40(CBattery *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-uint core_battery_cpp_CBattery_getCollisionType_FUN_00414f40(void)
+ECollisionType __cdecl core_battery_cpp_CBattery_getCollisionType_FUN_00414f40(CBattery *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return 0;
+  return COLLISION_TYPE_NONE;
 }

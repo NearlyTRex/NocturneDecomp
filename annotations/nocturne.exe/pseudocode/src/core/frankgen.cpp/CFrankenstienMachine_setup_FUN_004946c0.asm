@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004946c0(CFrankenstienMachine *param_1)
+; void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004946c0(CFrankenstienMachine *this_ptr)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0049469c = 004946f3

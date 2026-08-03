@@ -207,7 +207,7 @@ void __cdecl core_stranger_cpp_FUN_00535900(CStranger *this_ptr,float delta_time
     local_24 = 0.0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"ladder\n");
     }
   }
   if (((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0) || (this_ptr->action_pending == 4))
@@ -216,7 +216,7 @@ void __cdecl core_stranger_cpp_FUN_00535900(CStranger *this_ptr,float delta_time
     iVar25 = 0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"pickup\n");
     }
   }
   pCStack_54 = &(this_ptr->base).base.model.motion_controller;
@@ -231,7 +231,7 @@ void __cdecl core_stranger_cpp_FUN_00535900(CStranger *this_ptr,float delta_time
     local_24 = 0.0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"hurt\n");
     }
   }
   pCStack_14 = &(this_ptr->base).base.model.motion_controller;
@@ -246,7 +246,7 @@ void __cdecl core_stranger_cpp_FUN_00535900(CStranger *this_ptr,float delta_time
     iVar25 = 0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"door\n");
     }
   }
   fVar17 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
@@ -258,42 +258,46 @@ void __cdecl core_stranger_cpp_FUN_00535900(CStranger *this_ptr,float delta_time
     pCStack_28 = (CMotionController *)0x0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"sitting\n");
     }
   }
   if (this_ptr->action_pending == 1) {
     iVar25 = 0;
     bVar11 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60
+                (g_CConsole_PTR_005ad350,"stashinventory\n");
     }
   }
   if (this_ptr->action_pending == 2) {
     iVar25 = 0;
     bVar11 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60
+                (g_CConsole_PTR_005ad350,"placeobject\n");
     }
   }
   if (this_ptr->action_pending == 6) {
     iVar25 = 0;
     bVar11 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60
+                (g_CConsole_PTR_005ad350,"putdownobject\n");
     }
   }
   if (this_ptr->action_pending == 3) {
     iVar25 = 0;
     bVar11 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"toss\n");
     }
   }
   if (this_ptr->action_pending == 7) {
     iVar25 = 0;
     bVar11 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350);
+      engine_console_cpp_CConsole_printf_FUN_0043ac60
+                (g_CConsole_PTR_005ad350,"attackmelee\n");
     }
   }
   if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) {
@@ -941,8 +945,7 @@ LAB_00537586:
       if ((this_ptr->base).base.is_on_ground != 0) {
         xxx_unk_c_FUN_004940d0();
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"Splat at %3.2f fps\n",
-                   (double)(this_ptr->base).base.velocity.y);
+                  (g_CConsole_PTR_005ad350,"Splat at %3.2f fps\n");
         fVar17 = -this_ptr->fall_velocity_snapshot;
         dVar27 = (double)fVar17;
         if (fVar17 < (float)20) {

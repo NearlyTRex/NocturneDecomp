@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CShell_render_FUN_004896d0(CVector3f *param_1)
+; void __cdecl core_fire_cpp_CShell_render_FUN_004896d0(CShell *this_ptr)
 ;
+; Parameters:
+; CShell *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -95,7 +97,7 @@ section .text
     MOV EBX,dword ptr [0x007f7370]      ; 00489752 | DAT_007f7370
     PUSH EBX                            ; 00489758
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00489759
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     ADD ESP,0xc                         ; 0048975e
     PUSH 0x0                            ; 00489761
         ;   Label: LAB_00489761

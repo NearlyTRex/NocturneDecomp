@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2)
+; void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCrossbow *this_ptr,float delta_time)
 ;
+; Parameters:
+; CCrossbow *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
 ;

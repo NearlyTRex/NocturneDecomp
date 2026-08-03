@@ -88,7 +88,7 @@ section .text
     PUSH EBX                            ; 004d94a5
     MOV byte ptr [0x01ccbbf0],AH        ; 004d94a6 | DAT_01ccbbf0
     CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180 ; 004d94ac
-        ;   XREF to: 004d9180 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180()
+        ;   XREF to: 004d9180 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d94b1
     MOV ESI,dword ptr [0x005b9354]      ; 004d94b4 | g_CGame_PTR_005b9354
     PUSH ESI                            ; 004d94ba | g_CGame_01c775ec

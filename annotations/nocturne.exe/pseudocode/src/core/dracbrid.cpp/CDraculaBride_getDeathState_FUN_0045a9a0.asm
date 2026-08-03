@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0045a9a0(int param_1)
+; EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0045a9a0(CDraculaBride *this_ptr)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 caseD_8

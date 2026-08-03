@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trap_cpp_CTrap_process_FUN_00546900(CDemonActor *param_1)
+; void __cdecl core_trap_cpp_CTrap_process_FUN_00546900(CTrap *this_ptr,float delta_time)
 ;
+; Parameters:
+; CTrap *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ;

@@ -62,7 +62,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(CIni *this_ptr,c
     core_main_c_FUN_004c8440("cIni::writeProfileString: Unable to open output");
   }
   if (iVar2 == 0) {
-    _sprintf(local_114,"[%s]\n",section);
+    _sprintf(local_114,"[%s]\n");
     bVar6 = (byte)stream->_flag;
     while (((bVar6 & 0x10) == 0 &&
            (pcVar3 = _fgets(local_314,0xff,stream), pcVar3 != (char *)0x0)))

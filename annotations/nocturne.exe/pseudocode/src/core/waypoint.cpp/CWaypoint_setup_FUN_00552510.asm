@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CTrigger *param_1)
+; void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CWayPoint *this_ptr)
 ;
+; Parameters:
+; CWayPoint *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00597768

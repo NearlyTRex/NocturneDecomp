@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_passngr_cpp_CPassenger_archive_FUN_004efb30(CNPC *param_1)
+; void __cdecl core_passngr_cpp_CPassenger_archive_FUN_004efb30(CPassenger *this_ptr)
 ;
+; Parameters:
+; CPassenger *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_transformEvent_0058cc10

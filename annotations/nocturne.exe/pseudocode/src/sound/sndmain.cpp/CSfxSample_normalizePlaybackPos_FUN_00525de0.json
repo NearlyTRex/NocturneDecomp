@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 219,
+    "complexity_score": 21,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 19,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
-    "total_lines": 104
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -97,9 +94,9 @@
         "00525eaf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0",
-    "signature": "double sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSampleInfo *param_1,double param_2,uint param_3)"
+    "signature": "double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSfxSample *this_ptr,double position,uint input_type)"
   },
   "function_calls": [
     {
@@ -132,21 +129,17 @@
         "call_addr": "00525af4",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80",
-        "estimated_params": 7,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 16,
     "estimated_params": 1,
     "matches_declared": false
   },
@@ -187,10 +180,10 @@
     "pcode_op_count": 383
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 52,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -206,164 +199,29 @@
         "offset": -24,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "input_type",
+        "offset": 16,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSampleInfo *param_1,double param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSampleInfo *param_1,double param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSampleInfo *param_1,double param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,param_3,2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,param_3,2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,param_3,2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,param_3,2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1[1].name + 4) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "else if (1.0 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = 1.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "dVar1 = floor(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 - dVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 - dVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

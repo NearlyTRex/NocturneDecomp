@@ -59,7 +59,7 @@ section .text
     ADD ESP,0x4                         ; 0051e9a4
     PUSH EAX                            ; 0051e9a7
     CALL core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0051a470 ; 0051e9a8
-        ;   XREF to: 0051a470 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0051a470()
+        ;   XREF to: 0051a470 (UNCONDITIONAL_CALL)  ; float core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0051a470(CDeformableModel * this_ptr, int lod_index, CVector3f * ray_origin, CVector3f * ray_direction, ...)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0051e9ad
     FLD float ptr [ESP + 0x1c]          ; 0051e9b1
     ADD ESP,0x18                        ; 0051e9b5

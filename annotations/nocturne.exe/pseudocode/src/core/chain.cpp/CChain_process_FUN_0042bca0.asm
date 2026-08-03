@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_chain_cpp_CChain_process_FUN_0042bca0(CChain *param_1,float param_2)
+; void __cdecl core_chain_cpp_CChain_process_FUN_0042bca0(CChain *this_ptr,float delta_time)
 ;
+; Parameters:
+; CChain *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0xf0]:4  local_f0
 ; undefined4       Stack[-0xec]:4  local_ec

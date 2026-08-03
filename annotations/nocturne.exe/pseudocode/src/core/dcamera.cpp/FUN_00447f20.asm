@@ -113,7 +113,7 @@ section .text
     LEA ESI,[ESP + 0x24]                ; 00448058
     LEA EDI,[ESP + 0x78]                ; 0044805c
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0 ; 00448060
-        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0()
+        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x24]                ; 00448065
     ADD ESP,0xc                         ; 00448069
     MOVSD ES:EDI,ESI                    ; 0044806c
@@ -166,7 +166,7 @@ section .text
     LEA EDI,[ESP + 0x8c]                ; 004480e8
     LEA EBX,[ESP + 0x50]                ; 004480ef
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0 ; 004480f3
-        ;   XREF to: 004411b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0()
+        ;   XREF to: 004411b0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x14]                ; 004480f8
     ADD ESP,0x8                         ; 004480fc
     LEA EAX,[ESP + 0x84]                ; 004480ff
@@ -231,7 +231,7 @@ section .text
     LEA ESI,[ESP + 0x3c]                ; 004481d9
     LEA EDI,[ESP + 0x30]                ; 004481dd
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0 ; 004481e1
-        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0()
+        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x3c]                ; 004481e6
     ADD ESP,0xc                         ; 004481ea
     MOVSD ES:EDI,ESI                    ; 004481ed
@@ -257,7 +257,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 0044822c
     LEA EDI,[ESP + 0x48]                ; 00448230
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0 ; 00448234
-        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0()
+        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xc]                 ; 00448239
     ADD ESP,0xc                         ; 0044823d
     MOVSD ES:EDI,ESI                    ; 00448240
@@ -280,7 +280,7 @@ section .text
     LEA ESI,[ESP + 0x6c]                ; 00448271
     LEA EDI,[ESP + 0x60]                ; 00448275
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0 ; 00448279
-        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0()
+        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x6c]                ; 0044827e
     ADD ESP,0xc                         ; 00448282
     MOVSD ES:EDI,ESI                    ; 00448285
@@ -306,7 +306,7 @@ section .text
     LEA ESI,[ESP + 0xb4]                ; 004482c0
     LEA EDI,[ESP + 0x84]                ; 004482c7
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0 ; 004482ce
-        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0()
+        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xb4]                ; 004482d3
     ADD ESP,0xc                         ; 004482da
     MOVSD ES:EDI,ESI                    ; 004482dd

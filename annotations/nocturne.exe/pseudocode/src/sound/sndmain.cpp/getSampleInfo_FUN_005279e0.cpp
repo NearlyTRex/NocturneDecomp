@@ -64,7 +64,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005279e0(CSfxSample *out_sample)
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(&g_CMP3Decoder_02db4d18);
           _atexit(&g_WatcomStaticDestructorNode_005bea44);
         }
-        sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(&g_CMP3Decoder_02db4d18,out_sample);
+        sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(&g_CMP3Decoder_02db4d18,(char *)out_sample);
         (out_sample->sample_info).bit_depth = 0x10;
         (out_sample->sample_info).num_channels = g_CMP3Decoder_02db4d18.num_channels;
         iVar4 = g_CMP3Decoder_02db4d18.sample_rate;

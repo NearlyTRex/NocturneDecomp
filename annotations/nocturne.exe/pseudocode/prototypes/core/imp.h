@@ -13,7 +13,7 @@ CImp * __cdecl factoryFunc(void);
 
 // Original: core_imp.cpp_CImp_getActorType_FUN_004bb750
 // Address: 004bb750
-CDemonActorType * CImp::getActorType(void);
+CDemonActorType * __cdecl CImp::getActorType(CImp *this_ptr);
 
 // Original: core_imp.cpp_CImp_ctor_FUN_004bb760
 // Address: 004bb760
@@ -21,11 +21,11 @@ CImp * __cdecl CImp::ctor(CImp *this_ptr);
 
 // Original: core_imp.cpp_CImp_setup_FUN_004bb7d0
 // Address: 004bb7d0
-void CImp::setup(CEnemy *param_1);
+void __cdecl CImp::setup(CImp *this_ptr);
 
 // Original: core_imp.cpp_CImp_process_FUN_004bbaf0
 // Address: 004bbaf0
-void CImp::process(CEnemy *param_1,float param_2);
+void __cdecl CImp::process(CImp *this_ptr,float delta_time);
 
 // Original: core_imp.cpp_FUN_004bc7c0
 // Address: 004bc7c0
@@ -33,7 +33,7 @@ void FUN_004bc7c0(void);
 
 // Original: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0
 // Address: 004bc7e0
-void CImp::getCarryObjToBodyXForm(int param_1,int param_2);
+void __stack2_esi CImp::getCarryObjToBodyXForm(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_imp.cpp_CImp_attractActorToward_FUN_004bc9b0
 // Address: 004bc9b0
@@ -41,7 +41,7 @@ int __cdecl CImp::attractActorToward(CImp *this_ptr,CDemonActor *actor,CVector3f
 
 // Original: core_imp.cpp_CImp_archive_FUN_004bc9c0
 // Address: 004bc9c0
-void CImp::archive(CEnemy *param_1);
+void __cdecl CImp::archive(CImp *this_ptr);
 
 // Original: core_imp.cpp_CImp_processDismemberment_FUN_004bca20
 // Address: 004bca20
@@ -49,15 +49,15 @@ void __cdecl CImp::processDismemberment(CImp *this_ptr,SDamageInfo *damage_info)
 
 // Original: core_imp.cpp_CImp_processDamage_FUN_004bccc0
 // Address: 004bccc0
-void CImp::processDamage(CImp *param_1,SDamageInfo *param_2);
+void __cdecl CImp::processDamage(CImp *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_imp.cpp_CImp_getTargetPoints_FUN_004bce00
 // Address: 004bce00
-int CImp::getTargetPoints(int param_1,CVector3f *param_2);
+int __cdecl CImp::getTargetPoints(CImp *this_ptr,CVector3f *out_points_array);
 
 // Original: core_imp.cpp_CImp_getCollisionType_FUN_004bcfb0
 // Address: 004bcfb0
-void CImp::getCollisionType(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CImp::getCollisionType(CImp *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_imp.cpp_CImp_dtor_FUN_004bcfd0
 // Address: 004bcfd0

@@ -198,7 +198,7 @@ section .text
     PUSH EBP                            ; 00527b18
         ;   Label: LAB_00527b18
     CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 ; 00527b19
-        ;   XREF to: 00521e10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10()
+        ;   XREF to: 00521e10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSample * this_ptr)
     MOV ESI,dword ptr [EBP + 0x110]     ; 00527b1e
     ADD ESP,0x4                         ; 00527b24
     TEST ESI,ESI                        ; 00527b27
@@ -240,7 +240,7 @@ section .text
         ;   Label: LAB_00527b85
     PUSH 0x2db4d18                      ; 00527b86
     CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0 ; 00527b8b
-        ;   XREF to: 004e7df0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0()
+        ;   XREF to: 004e7df0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder * this_ptr, char * filename)
     MOV dword ptr [EBP + 0x104],0x10    ; 00527b90
     MOV EAX,[0x02db4e1c]                ; 00527b9a | g_CMP3Decoder_02db4d18.num_channels
     MOV dword ptr [EBP + 0x108],EAX     ; 00527b9f

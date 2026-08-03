@@ -1,25 +1,25 @@
 // Name: core_hostage.cpp_CHostage_renderBackground_FUN_004b82d0
 // Address: 004b82d0
 // Address Range: [[004b82d0, 004b831e]]
-// Convention: unknown
-// Signature: void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CNPC *param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CHostage *this_ptr,int layer_flag)
 
 #include "nocturne.h"
 
-void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CNPC *param_1,int param_2)
+void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CHostage *this_ptr,int layer_flag)
 
 {
   EDeathState EVar1;
   int iVar2;
   
-  EVar1 = (*(((param_1->base).base.vtable._uc)->_uc).getDeathState)(&param_1->base);
+  EVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (0 < (int)EVar1) {
-    iVar2 = _stricmp((char *)param_1,"ScatDazzle");
+    iVar2 = _stricmp((char *)this_ptr,"ScatDazzle");
     if (iVar2 != 0) {
-      if (param_2 != 0) {
-        (param_1->base).render_active = 1;
+      if (layer_flag != 0) {
+        (this_ptr->base).base.render_active = 1;
       }
-      core_npc_cpp_CNPC_renderBackground_FUN_004eece0(param_1,param_2);
+      core_npc_cpp_CNPC_renderBackground_FUN_004eece0(&this_ptr->base,layer_flag);
       return;
     }
   }

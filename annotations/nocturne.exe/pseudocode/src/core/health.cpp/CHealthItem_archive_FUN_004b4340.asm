@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_health_cpp_CHealthItem_archive_FUN_004b4340(CDemonActor *param_1)
+; void __cdecl core_health_cpp_CHealthItem_archive_FUN_004b4340(CHealthItem *this_ptr)
 ;
+; Parameters:
+; CHealthItem *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104
 ;

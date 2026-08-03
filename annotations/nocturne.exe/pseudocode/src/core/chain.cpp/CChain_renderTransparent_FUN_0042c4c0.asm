@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CDemonActor *param_1)
+; int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CChain *this_ptr)
 ;
+; Parameters:
+; CChain *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x90]:1  local_90
 ;

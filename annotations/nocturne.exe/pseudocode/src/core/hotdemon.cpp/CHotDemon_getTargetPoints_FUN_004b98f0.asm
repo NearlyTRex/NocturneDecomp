@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004b98f0(int param_1,CVector3f *param_2)
+; int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004b98f0(CHotDemon *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CHotDemon *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ; undefined        Stack[-0x28]:1  local_28

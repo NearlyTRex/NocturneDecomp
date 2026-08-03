@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)
+; float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   lod_index
+; CVector3f *      Stack[0xc]:4   ray_origin
+; CVector3f *      Stack[0x10]:4   ray_direction
+; CVector3i *      Stack[0x14]:4   skinned_vertices
+; byte *           Stack[0x18]:4   part_visibility_flags
 ; Local Variables:
 ; undefined8       Stack[-0x78]:8  local_78
 ; undefined4       Stack[-0x70]:4  local_70

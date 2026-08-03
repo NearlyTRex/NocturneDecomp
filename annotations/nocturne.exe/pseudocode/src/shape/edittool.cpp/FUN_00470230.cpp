@@ -13,19 +13,20 @@ bool shape_edittool_cpp_FUN_00470230(uint param_1,char *param_2)
   char *pcVar2;
   char *pcVar3;
   int iVar4;
-  CPickList local_17c;
+  uint in_stack_fffffe84;
+  char local_168 [348];
   byte *local_c;
   
   local_c = &stack0x0000000c;
   _vsprintf((char *)0x1bcb4d0,param_2,(va_list_t)&local_c);
   local_c = (byte *)0x0;
-  shape_edittool_cpp_CPickList_ctor_FUN_00474c90(&local_17c);
+  shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffe84);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es, I know what I'm doing and I hate these annoying prompts.");
-  shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_17c.base,pcVar2);
+  shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffe84,pcVar2);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[N]o, please, I didn't mean to do it!");
-  shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_17c.base,pcVar2);
+  shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffe84,pcVar2);
   pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("yn");
-  pcVar2 = local_17c.hotkeys;
+  pcVar2 = local_168;
   do {
     cVar1 = *pcVar3;
     *pcVar2 = cVar1;
@@ -36,7 +37,7 @@ bool shape_edittool_cpp_FUN_00470230(uint param_1,char *param_2)
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
   iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                    (&local_17c,0x1bcb4d0,0xffffffff);
-  shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_17c,0);
+                    ((CPickList *)&stack0xfffffe84,(char *)0x1bcb4d0,-1,in_stack_fffffe84);
+  shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe84,0);
   return iVar4 == 0;
 }

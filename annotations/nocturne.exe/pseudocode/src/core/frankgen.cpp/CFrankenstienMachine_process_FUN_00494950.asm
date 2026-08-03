@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMachine *param_1,float param_2)
+; void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMachine *this_ptr,float delta_time)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x80]:1  local_80
 ; undefined        Stack[-0x68]:1  local_68

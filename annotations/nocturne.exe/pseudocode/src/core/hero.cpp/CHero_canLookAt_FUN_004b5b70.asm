@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hero_cpp_CHero_canLookAt_FUN_004b5b70(int param_1)
+; int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004b5b70(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005858e3 = 0.100000000000000

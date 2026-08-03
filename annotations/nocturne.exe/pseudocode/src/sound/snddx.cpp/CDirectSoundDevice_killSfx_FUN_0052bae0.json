@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,49 +52,49 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 27,
+        "line": 26,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 31,
-        "line": 27,
+        "line": 26,
         "message": "expected expression"
       },
       {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 32,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
+        "category": "format_error",
+        "column": 53,
+        "line": 29,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 39,
+        "line": 37,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 39,
+        "line": 37,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 45,
+        "line": 43,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 45,
+        "line": 43,
         "message": "expected expression"
       }
     ],
@@ -104,18 +104,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 91,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 39,
     "suspect_count": 4,
     "suspect_types": [
       "raw_address_pointer_store",
       "unresolved_funcptr"
     ],
-    "total_lines": 140
+    "total_lines": 138
   },
   "cross_references": [],
   "function": {
@@ -233,7 +233,7 @@
   "suspects": [
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 18,
+      "line": 17,
       "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar1 * 4 + 0x2dc92a8);",
@@ -241,7 +241,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 19,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(*piVar2 + 0x48))(piVar2);",
@@ -249,7 +249,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 32,
+      "line": 30,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",
@@ -257,7 +257,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
+      "line": 36,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",

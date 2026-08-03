@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CDemonActor *param_1)
+; int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterActor *this_ptr)
 ;
+; Parameters:
+; CWaterActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ;

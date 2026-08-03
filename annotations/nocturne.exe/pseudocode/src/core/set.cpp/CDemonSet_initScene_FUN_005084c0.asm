@@ -227,7 +227,7 @@ section .text
     ADD EDI,0x1a0                       ; 005086af
     INC ESI                             ; 005086b5
     CALL core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340 ; 005086b6
-        ;   XREF to: 00514340 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340()
+        ;   XREF to: 00514340 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet * this_ptr, CVector3f * position)
     MOV dword ptr [EDI + -0x4],EAX      ; 005086bb
     ADD EBP,0x1a0                       ; 005086be
     MOV EDX,dword ptr [EBX]             ; 005086c4
@@ -261,7 +261,7 @@ section .text
     PUSH EBP                            ; 00508701
     MOV dword ptr [EDX*0x4 + 0x1fb99d4],EAX ; 00508702 | DAT_01fb99d4
     CALL core_setutil.cpp_C3DSLight_apply_FUN_00515350 ; 00508709
-        ;   XREF to: 00515350 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_apply_FUN_00515350()
+        ;   XREF to: 00515350 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_apply_FUN_00515350(C3DSLight * this_ptr, CDemonLight * light)
     MOV EDX,dword ptr [0x01fb99d0]      ; 0050870e | DAT_01fb99d0
     INC EDX                             ; 00508714
     ADD ESP,0x8                         ; 00508715

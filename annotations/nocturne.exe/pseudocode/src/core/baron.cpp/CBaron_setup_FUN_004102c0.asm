@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaron_setup_FUN_004102c0(CHero *param_1)
+; void __cdecl core_baron_cpp_CBaron_setup_FUN_004102c0(CBaron *this_ptr)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_0057852f

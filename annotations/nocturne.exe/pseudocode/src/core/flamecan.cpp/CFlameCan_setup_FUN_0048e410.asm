@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(CDemonActor *param_1)
+; void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(CFlameCan *this_ptr)
 ;
+; Parameters:
+; CFlameCan *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ;

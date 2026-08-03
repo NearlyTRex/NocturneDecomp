@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CDemonActor *param_1)
+; int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
 ;
+; Parameters:
+; CFlies *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x58]:1  local_58
 ;

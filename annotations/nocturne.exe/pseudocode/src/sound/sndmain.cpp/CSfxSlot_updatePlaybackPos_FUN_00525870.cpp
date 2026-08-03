@@ -1,67 +1,67 @@
 // Name: sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870
 // Address: 00525870
 // Address Range: [[00525870, 00525a76]]
-// Convention: unknown
-// Signature: void sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(int param_1,undefined4 param_2,undefined4 param_3)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot *this_ptr,double hardware_playback_pos)
 
 #include "nocturne.h"
 
-void sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(int param_1,uint param_2,uint param_3)
+void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot *this_ptr,double hardware_playback_pos)
 
 {
-  int iVar1;
+  CSfxSample *pCVar1;
   double dVar2;
   double dVar3;
   ulonglong local_28;
   
-  if (*(int *)(param_1 + 0x74) == 0) {
+  if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
     g_INT_01cc4804 = 0xbaf;
     core_main_c_FUN_004c8440();
   }
-  if ((__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < 0.0) ||
-     ((double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) < __BITCAST_DOUBLE(CONCAT44(param_3,param_2)))) {
+  if ((hardware_playback_pos < 0.0) ||
+     ((double)this_ptr->sample->streaming_buffer_size < hardware_playback_pos)) {
     g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
     g_INT_01cc4804 = 0xbb5;
     core_main_c_FUN_004c8440();
   }
-  local_28 = __BITCAST_DOUBLE(CONCAT44(param_3,param_2)) - *(double *)(param_1 + 0x118);
+  local_28 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
   if (local_28 < 0.0) {
-    local_28 = (double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) + local_28;
+    local_28 = (double)this_ptr->sample->streaming_buffer_size + local_28;
   }
   if ((local_28 < 0.0) ||
-     ((double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) + 0.001 < local_28)) {
+     ((double)this_ptr->sample->streaming_buffer_size + 0.001 < local_28)) {
     g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
     g_INT_01cc4804 = 0xbc3;
     core_main_c_FUN_004c8440
-              ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",param_2,param_3,*(uint *)(param_1 + 0x118),
-               *(uint *)(param_1 + 0x11c),(uint)local_28,local_28._4_4_,
-               *(uint *)(*(int *)(param_1 + 0x74) + 0x138),*(int *)(param_1 + 0x74));
+              ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",hardware_playback_pos,
+               *(uint *)&this_ptr->prev_hardware_playback_pos,
+               *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,
+               local_28._4_4_,this_ptr->sample->streaming_buffer_size,this_ptr->sample);
   }
-  if ((*(double *)(param_1 + 0x60) != *(double *)(param_1 + 0x118)) ||
-     (__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < *(double *)(param_1 + 0x60))) {
-    *(double *)(param_1 + 0x60) = *(double *)(param_1 + 0x60) + local_28;
+  if (((this_ptr->options).trigger_time != this_ptr->prev_hardware_playback_pos) ||
+     (hardware_playback_pos < (this_ptr->options).trigger_time)) {
+    (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + local_28;
   }
   else {
-    *(uint *)(param_1 + 0x60) = param_2;
-    *(uint *)(param_1 + 100) = param_3;
+    (this_ptr->options).trigger_time = hardware_playback_pos;
   }
-  if (*(double *)(param_1 + 0x60) < 0.0) {
-    *(uint *)(param_1 + 0x60) = 0;
-    *(uint *)(param_1 + 100) = 0;
+  if ((this_ptr->options).trigger_time < 0.0) {
+    *(uint *)&(this_ptr->options).trigger_time = 0;
+    *(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;
   }
-  iVar1 = *(int *)(param_1 + 0x74);
-  if ((-1 < *(int *)(iVar1 + 0x110)) &&
-     (dVar2 = (double)*(int *)(iVar1 + 0x110), dVar2 <= *(double *)(param_1 + 0x60))) {
-    if (*(int *)(iVar1 + 0x124) == 0) {
-      *(double *)(param_1 + 0x60) = dVar2;
+  pCVar1 = this_ptr->sample;
+  if ((-1 < (pCVar1->sample_info).sample_count) &&
+     (dVar2 = (double)(pCVar1->sample_info).sample_count, dVar2 <= (this_ptr->options).trigger_time)
+     ) {
+    if (pCVar1->loop_marker_count == 0) {
+      (this_ptr->options).trigger_time = dVar2;
     }
     else {
-      dVar3 = floor(*(double *)(param_1 + 0x60) / dVar2);
-      *(double *)(param_1 + 0x60) = *(double *)(param_1 + 0x60) - dVar3 * dVar2;
+      dVar3 = floor((this_ptr->options).trigger_time / dVar2);
+      (this_ptr->options).trigger_time = (this_ptr->options).trigger_time - dVar3 * dVar2;
     }
   }
-  *(uint *)(param_1 + 0x118) = param_2;
-  *(uint *)(param_1 + 0x11c) = param_3;
+  this_ptr->prev_hardware_playback_pos = hardware_playback_pos;
   return;
 }

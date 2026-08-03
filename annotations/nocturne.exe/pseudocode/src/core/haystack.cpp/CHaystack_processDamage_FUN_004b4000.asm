@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(CCharacter *param_1,SDamageInfo *param_2)
+; void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(CHaystack *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CHaystack *      Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059e878 = 0.5

@@ -45,7 +45,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0047523c
     PUSH EBX                            ; 0047523f
     CALL shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0 ; 00475240
-        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0()
+        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0(CPickList * this_ptr)
     MOV EDX,dword ptr [EBX + 0x10c]     ; 00475245
     ADD ESP,0x4                         ; 0047524b
     TEST EDX,EDX                        ; 0047524e
@@ -71,7 +71,7 @@ section .text
         ;   XREF to: 00475403 (CONDITIONAL_JUMP)  ; LAB_00475403
     PUSH EBX                            ; 00475282
     CALL shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0 ; 00475283
-        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0()
+        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0(CPickList * this_ptr)
     MOV ESI,dword ptr [EBX + 0x78]      ; 00475288
     ADD ESP,0x4                         ; 0047528b
     TEST ESI,ESI                        ; 0047528e

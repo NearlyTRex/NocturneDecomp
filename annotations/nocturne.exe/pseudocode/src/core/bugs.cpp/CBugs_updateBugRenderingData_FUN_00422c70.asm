@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *param_1,SBug *param_2,float param_3)
+; void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *this_ptr,SBug *bug_data,float delta_time)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; SBug *           Stack[0x8]:4   bug_data
+; float            Stack[0xc]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x118]:4  local_118
 ; undefined4       Stack[-0x114]:4  local_114

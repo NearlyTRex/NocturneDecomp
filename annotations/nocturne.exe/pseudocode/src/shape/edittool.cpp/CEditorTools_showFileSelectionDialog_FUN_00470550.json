@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,8 +52,32 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 37,
+        "message": "use of undeclared identifier 'stack0xfffff97c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 55,
+        "line": 41,
+        "message": "use of undeclared identifier 'stack0xfffff97c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 76,
+        "line": 55,
+        "message": "use of undeclared identifier 'stack0xfffff97c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 59,
+        "line": 58,
+        "message": "use of undeclared identifier 'stack0xfffff97c'"
       }
     ],
     "success": false,
@@ -62,15 +86,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 52,
+    "complexity_score": 124,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 52,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 219
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 6,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref"
+    ],
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -314,5 +341,54 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_fffff97c",
+      "severity": "moderate",
+      "text": "uint in_stack_fffff97c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0xfffff97c",
+      "severity": "moderate",
+      "text": "(&local_284.base,&stack0xfffff97c,string_index,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xfffff97c",
+      "severity": "moderate",
+      "text": "(local_114,(char *)0x0,(char *)0x0,&stack0xfffff97c,local_484);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_fffff97c",
+      "severity": "moderate",
+      "text": "(&local_284,dialog_title,iVar2,in_stack_fffff97c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 48,
+      "match": "&stack0xfffff97c",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090(&local_284.base,&stack0xfffff97c,iVar2,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xfffff97c",
+      "severity": "moderate",
+      "text": "(output_filename,(char *)0x0,(char *)0x0,&stack0xfffff97c,local_484);",
+      "type": "stack_ref"
+    }
+  ]
 }

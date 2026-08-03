@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(float param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(float angle_radians,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

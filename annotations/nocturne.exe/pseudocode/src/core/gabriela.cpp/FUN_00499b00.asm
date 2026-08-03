@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,undefined4 param_4,int param_5,CVector3f *param_6)
+; void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1b48]:4  local_1b48
@@ -119,7 +119,7 @@ section .text
     LEA ESI,[ESP + 0x1ad8]              ; 00499bdd
     LEA EDI,[ESP + 0x1aa8]              ; 00499be4
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 00499beb
-        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0()
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 00499bf0
     LEA ESI,[ESP + 0x1ad8]              ; 00499bf5
     ADD ESP,0x8                         ; 00499bfc

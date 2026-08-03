@@ -2,6 +2,10 @@ import os
 import re
 from ghidra_annotations.util import *
 
+class StructSizeMismatchError(Exception):
+    """A Ghidra struct size disagrees with the Watcom RTTI instance_size."""
+    pass
+
 def normalize_class_name(class_name):
     typo_map = {
         "fileManager": "CDemonFileManager",
@@ -76,7 +80,7 @@ def get_class_files():
         "CBattery": "..\\core\\battery.cpp",
         "CBeast": "..\\core\\beast.cpp",
         "CBiggs": "..\\core\\biggs.cpp",
-        "CBitFont": "..\engine\font.cpp",
+        "CBitFont": "..\\engine\\font.cpp",
         "CBloodParticle": "..\\core\\gore.cpp",
         "CBloodPool": "..\\core\\gore.cpp",
         "CBloodSplat": "..\\core\\gore.cpp",
@@ -98,7 +102,7 @@ def get_class_files():
         "CClothList": "..\\core\\cloth.cpp",
         "CCodec": "..\\support\\codec.cpp",
         "CColonel": "..\\core\\colonel.cpp",
-        "CConsole": "..\engine\console.cpp",
+        "CConsole": "..\\engine\\console.cpp",
         "CConveyor": "..\\core\\conveyor.cpp",
         "CCourse": "..\\core\\course.cpp",
         "CCrate": "..\\core\\crate.cpp",
@@ -118,16 +122,16 @@ def get_class_files():
         "CDemonLight": "..\\core\\dlight.cpp",
         "CDemonMission": "..\\core\\mission.cpp",
         "CDemonPart": "..\\core\\dpart.cpp",
-        "CDemonPod": "..\engine\pod.cpp",
+        "CDemonPod": "..\\engine\\pod.cpp",
         "CDemonRaytrace": "..\\core\\dtrace.cpp",
-        "CDemonRenderer": "..\engine\drender.cpp",
+        "CDemonRenderer": "..\\engine\\drender.cpp",
         "CDemonSet": "..\\core\\set.cpp",
         "CDemonTriangle": "..\\core\\dtri.cpp",
         "CDestActor": "..\\core\\dest.cpp",
         "CDirectSoundDevice": "..\\sound\\snddx.cpp",
         "CDoor": "..\\core\\door.cpp",
         "CDraculaBride": "..\\core\\dracbrid.cpp",
-        "CDrawSurface": "..\\cockpit\drawsurf.cpp",
+        "CDrawSurface": "..\\cockpit\\drawsurf.cpp",
         "CDrip": "..\\core\\drip.cpp",
         "CDrone": "..\\core\\drone.cpp",
         "CDrummer": "..\\core\\tbplayer.cpp",
@@ -178,8 +182,8 @@ def get_class_files():
         "CHotDemon": "..\\core\\hotdemon.cpp",
         "CIcePick": "..\\core\\icepick.cpp",
         "CImp": "..\\core\\imp.cpp",
-        "cIni": "..\engine\ini.cpp",
-        "CIniFile": "..\engine\ini.cpp",
+        "cIni": "..\\engine\\ini.cpp",
+        "CIniFile": "..\\engine\\ini.cpp",
         "CInputString": "..\\shape\\edittool.cpp",
         "CInventory": "..\\core\\inv.cpp",
         "CKeyActor": "..\\core\\keyactor.cpp",
@@ -195,9 +199,9 @@ def get_class_files():
         "CLightGun": "..\\core\\lightgun.cpp",
         "CLightningBolt": "..\\core\\emitter.cpp",
         "CLodMesh": "..\\shape\\meshlod.cpp",
-        "CLZWCompress": "..\support\codec.cpp",
-        "CLZWDecompress": "..\support\codec.cpp",
-        "CLZWDictionary": "..\support\codec.cpp",
+        "CLZWCompress": "..\\support\\codec.cpp",
+        "CLZWDecompress": "..\\support\\codec.cpp",
+        "CLZWDictionary": "..\\support\\codec.cpp",
         "CMansionPuzzleCircle": "..\\core\\manpuz.cpp",
         "CMarquee": "..\\core\\marquee.cpp",
         "CMatrix": "..\\core\\dirmat.cpp",
@@ -221,9 +225,9 @@ def get_class_files():
         "COptimize": "..\\core\\optimize.cpp",
         "CP2D": "..\\core\\p2d.cpp",
         "CP3D": "..\\core\\p3d.cpp",
-        "CPackedBitmap": "..\\cockpit\pkbitmap.cpp",
-        "CPackedBitmapSet": "..\\cockpit\pkbmpset.cpp",
-        "CPaletteManager": "..\engine\palette.cpp",
+        "CPackedBitmap": "..\\cockpit\\pkbitmap.cpp",
+        "CPackedBitmapSet": "..\\cockpit\\pkbmpset.cpp",
+        "CPaletteManager": "..\\engine\\palette.cpp",
         "CPassenger": "..\\core\\passngr.cpp",
         "CPathMap": "..\\core\\path.cpp",
         "CPendulum": "..\\core\\pendulum.cpp",
@@ -262,7 +266,7 @@ def get_class_files():
         "CTeleportDest": "..\\core\\teleport.cpp",
         "CTempleStone": "..\\core\\stone.cpp",
         "CTentacle": "..\\core\\tentacle.cpp",
-        "CTextureCache": "..\engine\texture.cpp",
+        "CTextureCache": "..\\engine\\texture.cpp",
         "CTextureList": "..\\core\\texlist.cpp",
         "CTire": "..\\core\\vehicle.cpp",
         "CTommyGun": "..\\core\\tommygun.cpp",
@@ -285,7 +289,7 @@ def get_class_files():
         "CWeapon": "..\\core\\weapon.cpp",
         "CWeather": "..\\core\\weather.cpp",
         "CWerewolf": "..\\core\\werewolf.cpp",
-        "CWinFont": "..\engine\font.cpp",
+        "CWinFont": "..\\engine\\font.cpp",
         "CZombie": "..\\core\\zombie.cpp",
         "CZombieCow": "..\\core\\cow.cpp",
         "CZombieDog": "..\\core\\dog.cpp",
@@ -334,6 +338,37 @@ def get_structure_files():
         "SVert": "..\\core\\skeleton.cpp",
         "SWaterVertex": "..\\core\\water.cpp",
     }
+
+def get_rtti_type_aliases():
+    """Map an RTTI class-name string to the Ghidra type that implements it.
+
+    The name Watcom baked into the RTTI descriptor is not always the name the
+    type carries in Ghidra: the sound structs lost their leading C, the LOD
+    types gained one, CVector is the vector class Ghidra calls CVector3f, and
+    GSPlayer is SPlayer. Without these the size check silently skipped the type
+    instead of validating it. Every entry here is treated as a game type for
+    checking purposes.
+    """
+    return {
+        "CVector": "CVector3f",
+        "GSPlayer": "SPlayer",
+        "LodFace": "CLodFace",
+        "LodMesh": "CLodMesh",
+        "LodVert": "CLodVert",
+        "SfxOptions": "CSfxOptions",
+        "SfxSample": "CSfxSample",
+        "SfxSlot": "CSfxSlot",
+        "cIni": "CIni",
+    }
+
+def resolve_ghidra_type_name(type_name, ghidra_struct_sizes, aliases):
+    """Return the Ghidra type name backing an RTTI name, or None if absent."""
+    if type_name in ghidra_struct_sizes:
+        return type_name
+    alias = aliases.get(type_name)
+    if alias and alias in ghidra_struct_sizes:
+        return alias
+    return None
 
 def extract_type_name_from_string(string_value):
 
@@ -493,7 +528,15 @@ def collect_files_from_referencing_functions(currentProgram, referencing_functio
                     break
     return files
 
-def export_type_info(currentProgram, path, strict = False):
+def export_type_info(currentProgram, path, strict = False, allow_size_mismatch = False):
+    """Export RTTI-derived type info and validate struct sizes against it.
+
+    strict is accepted for call-site symmetry with the other exports but no
+    longer gates the size check: a Ghidra struct whose size disagrees with the
+    binary's WatcomTypeInfo.instance_size always fails the export now that the
+    struct layouts are settled. Pass allow_size_mismatch to downgrade the
+    failure to a report.
+    """
 
     # Get class info
     class_hierarchy = get_class_hierarchy()
@@ -585,17 +628,25 @@ def export_type_info(currentProgram, path, strict = False):
                     log_info("Error processing WatcomTypeInfo at %s: %s" % (data.getAddress(), str(e)))
     log_info("Found %d WatcomTypeInfo structures" % len(watcom_typeinfo_map))
 
-    # Build a map of Ghidra struct/class names to their defined sizes
-    # Used to validate WatcomTypeInfo.instance_size against Ghidra definitions
+    # Build a map of Ghidra struct/class names to their defined sizes.
+    # Used to validate WatcomTypeInfo.instance_size against Ghidra definitions.
+    # A name can live in more than one category (the system headers duplicate
+    # tagRECT, _CONTEXT and friends across windef.h/winnt.h/wingdi.h), so keep
+    # every size seen for a name rather than letting the last one win, and
+    # accept the type if the binary's instance_size is any of them.
     ghidra_struct_sizes = {}
     dtm = currentProgram.getDataTypeManager()
     for dt in dtm.getAllDataTypes():
         dt_name = dt.getName()
         if dt_name and dt.getLength() > 0:
-            ghidra_struct_sizes[dt_name] = dt.getLength()
+            ghidra_struct_sizes.setdefault(dt_name, set()).add(dt.getLength())
 
-    # Track size mismatches for final assertion
+    # Buckets for the final size report
+    rtti_aliases = get_rtti_type_aliases()
     size_mismatches = []
+    size_matches = []
+    size_unresolved = []
+    size_skipped = []
 
     log_info("Scanning for type information strings")
     for data in listing.getDefinedData(True):
@@ -623,15 +674,29 @@ def export_type_info(currentProgram, path, strict = False):
                             # Validate: Ghidra struct size must match binary's instance_size
                             # Only check game types (skip CRT/Watcom stdlib like strstreambuf)
                             expected_size = typeinfo_data["size"]
-                            is_game_type = type_name in class_files or type_name in structure_files
-                            if expected_size > 0 and is_game_type and type_name in ghidra_struct_sizes:
-                                ghidra_size = ghidra_struct_sizes[type_name]
-                                if ghidra_size != expected_size:
-                                    msg = ("Size mismatch for %s: Ghidra=%d (0x%x), "
+                            is_game_type = (type_name in class_files
+                                            or type_name in structure_files
+                                            or type_name in rtti_aliases)
+                            ghidra_name = resolve_ghidra_type_name(
+                                type_name, ghidra_struct_sizes, rtti_aliases)
+                            if expected_size <= 0 or not is_game_type:
+                                size_skipped.append(type_name)
+                            elif ghidra_name is None:
+                                size_unresolved.append(
+                                    "%s: no Ghidra type, WatcomTypeInfo=%d (0x%x)" %
+                                    (type_name, expected_size, expected_size))
+                            else:
+                                ghidra_sizes = sorted(ghidra_struct_sizes[ghidra_name])
+                                if expected_size in ghidra_sizes:
+                                    size_matches.append(type_name)
+                                else:
+                                    msg = ("Size mismatch for %s: Ghidra %s=%s, "
                                            "WatcomTypeInfo=%d (0x%x)" %
-                                           (type_name, ghidra_size, ghidra_size,
+                                           (type_name, ghidra_name,
+                                            ", ".join("%d (0x%x)" % (s, s)
+                                                      for s in ghidra_sizes),
                                             expected_size, expected_size))
-                                    log_info("ERROR: " + msg)
+                                    log_error(msg)
                                     size_mismatches.append(msg)
                     log_info("Found type info at %s: '%s'" % (data_addr, type_name))
 
@@ -762,25 +827,40 @@ def export_type_info(currentProgram, path, strict = False):
     log_info("  %d types with parent information" % types_with_parents)
     log_info("  %d types with file information" % types_with_files)
 
-    # Report struct size mismatches. The exported typeinfo_size is the binary's
-    # own instance_size, so an export carrying mismatches is still useful, it
-    # just records the disagreement. Only strict mode refuses to write one.
+    # Report the struct size validation. Nothing here is silent: every type
+    # carrying a WatcomTypeInfo.instance_size lands in exactly one bucket, so a
+    # shrinking checked count is visible rather than reading as "all clear".
+    log_info("=" * 60)
+    log_info("WATCOM RTTI STRUCT SIZE CHECK")
+    log_info("  %d checked and matching" % len(size_matches))
+    log_info("  %d mismatched" % len(size_mismatches))
+    log_info("  %d game type(s) with no Ghidra type (not checked)" % len(size_unresolved))
+    for msg in sorted(size_unresolved):
+        log_info("    " + msg)
+    log_info("  %d non-game type(s) skipped (CRT/Watcom stdlib): %s"
+             % (len(size_skipped), ", ".join(sorted(size_skipped))))
     if size_mismatches:
-        log_info("=" * 60)
-        log_info("STRUCT SIZE MISMATCHES (%d):" % len(size_mismatches))
+        log_error("STRUCT SIZE MISMATCHES (%d):" % len(size_mismatches))
         for msg in size_mismatches:
-            log_info("  " + msg)
-        log_info("=" * 60)
-        if strict:
-            assert False, ("Struct size mismatch: %d type(s) have Ghidra sizes that "
-                            "don't match WatcomTypeInfo.instance_size in the binary. "
-                            "Fix the struct definitions in Ghidra before exporting.\n"
-                            % len(size_mismatches)
-                            + "\n".join(size_mismatches))
-        log_info("Continuing export, WatcomTypeInfo.instance_size is recorded as "
-                 "typeinfo_size for each type (re-run with --strict to fail instead)")
+            log_error("  " + msg)
+    log_info("=" * 60)
 
-    # Export type info
+    # Export type info. This is written even when the check failed: the exported
+    # typeinfo_size is the binary's own instance_size, which is the ground truth
+    # you diff the Ghidra definition against to find what drifted.
     log_info("Exporting type info entries")
     save_json_file(path, "type_info", clean_data(type_info_data))
     log_info("Export complete")
+
+    # WatcomTypeInfo.instance_size is what the shipped binary was compiled with,
+    # so a Ghidra struct that disagrees is a bug in the Ghidra definition, not a
+    # difference of opinion. Fail hard rather than exporting pseudocode built on
+    # a struct layout that is known to be wrong. --allow-struct-size-mismatch
+    # downgrades this to the report above if an export is needed anyway.
+    if size_mismatches and not allow_size_mismatch:
+        raise StructSizeMismatchError(
+            "Struct size mismatch: %d type(s) have Ghidra sizes that don't match "
+            "WatcomTypeInfo.instance_size in the binary. Fix the struct "
+            "definitions in Ghidra before exporting, or pass "
+            "--allow-struct-size-mismatch to export anyway.\n" % len(size_mismatches)
+            + "\n".join(size_mismatches))

@@ -34,7 +34,7 @@ section .text
     PUSH EAX                            ; 004063d4
     MOV EBX,0xd9                        ; 004063d5
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004063da
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004063df
     MOV EAX,ESP                         ; 004063e2
     MOV ECX,0x5774d6                    ; 004063e4 | = "..\\engine\\3d.c"

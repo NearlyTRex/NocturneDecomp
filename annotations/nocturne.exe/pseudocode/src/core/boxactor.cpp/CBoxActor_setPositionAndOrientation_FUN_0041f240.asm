@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240(CBoxActor *param_1,float *param_2,float *param_3)
+; void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   new_position
+; CVector3f *      Stack[0xc]:4   new_orientation
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000

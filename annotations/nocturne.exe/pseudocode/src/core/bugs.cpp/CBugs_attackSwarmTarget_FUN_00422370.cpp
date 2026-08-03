@@ -19,14 +19,15 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(CBugs *this_ptr,
   CCharacter *this_ptr_00;
   CPathMap *this_ptr_01;
   CBugs *pCVar4;
-  SBug *pSVar5;
+  CMatrix3x4f *pCVar5;
+  SBug *bug_data;
   float *pfVar6;
   CMatrix3x4f *pCVar7;
   byte bVar8;
   SDamageInfo SStack_188;
   CMatrix3x4f CStack_14c;
   CMatrix3x4f local_11c;
-  float afStack_ec [12];
+  CMatrix3x4f CStack_ec;
   CMatrix3x3f CStack_bc;
   CVector3f CStack_94;
   float fStack_88;
@@ -129,12 +130,12 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(CBugs *this_ptr,
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
             (&CStack_14c,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_11c,&CStack_14c);
-  pfVar6 = afStack_ec;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_11c,&CStack_14c,&CStack_ec);
+  pCVar5 = &CStack_ec;
   pCVar7 = &this_ptr->model_world_matrix;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar7->m[0].w = *pfVar6;
-    pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
+    pCVar7->m[0].w = pCVar5->m[0].w;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
     pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
   }
   if (this_ptr->lod_index != this_ptr->deformable_model_ptr->cached_skinned_lod_index) {
@@ -143,11 +144,11 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(CBugs *this_ptr,
   }
   iVar3 = 0;
   if (0 < this_ptr->count) {
-    pSVar5 = this_ptr->bugs;
+    bug_data = this_ptr->bugs;
     do {
       iVar3 = iVar3 + 1;
-      core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(this_ptr,pSVar5,delta_time);
-      pSVar5 = pSVar5 + 1;
+      core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(this_ptr,bug_data,delta_time);
+      bug_data = bug_data + 1;
     } while (iVar3 < this_ptr->count);
   }
   core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(this_ptr);

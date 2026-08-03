@@ -1,29 +1,29 @@
 // Name: core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490
 // Address: 00429490
 // Address Range: [[00429490, 004294ee]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(int param_1,int param_2)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-void core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(int param_1,int param_2)
+void __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
-  uint *unaff_ESI;
-  int *piVar2;
-  uint *puVar3;
-  byte bVar4;
-  uint local_38 [12];
+  CMatrix3x4f *pCVar2;
+  byte bVar3;
+  CMatrix3x4f local_38;
   
-  bVar4 = 0;
-  piVar2 = (int *)(param_1 + 0x24a4 + param_2 * 0x44);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(piVar2 + 3,param_1 + 0xfd0 + *piVar2 * 0x30);
-  puVar3 = local_38;
+  bVar3 = 0;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
+            (&this_ptr->carry_hands[hand_index].initial_carry_transform,
+             (this_ptr->model).bone_transform.bone_world_matrices +
+             this_ptr->carry_hands[hand_index].bone_index,&local_38);
+  pCVar2 = &local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *puVar3;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
-    unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;
+    out_matrix->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
+    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
   }
   return;
 }

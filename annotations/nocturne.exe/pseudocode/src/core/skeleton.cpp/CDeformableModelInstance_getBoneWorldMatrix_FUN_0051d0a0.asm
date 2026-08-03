@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance *param_1,int param_2)
+; CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
 ; Local Variables:
 ; undefined        Stack[-0xac]:1  local_ac
 ; undefined4       Stack[-0x7c]:4  local_7c
@@ -72,7 +75,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 0051d0ff
     LEA EDI,[ESP + 0x68]                ; 0051d103
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 0051d107
-        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0()
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 0051d10c
     LEA ESI,[ESP + 0x8]                 ; 0051d111
     ADD ESP,0x8                         ; 0051d115

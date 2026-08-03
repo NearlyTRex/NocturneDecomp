@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_trash_cpp_CTrash_renderOpaque_FUN_00547670(CDemonActor *param_1)
+; int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_00547670(CTrash *this_ptr)
 ;
+; Parameters:
+; CTrash *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ;

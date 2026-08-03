@@ -21,7 +21,7 @@ void __cdecl CEnemy::archive(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_CEnemy_getTargetPoints_FUN_00479820
 // Address: 00479820
-undefined4 CEnemy::getTargetPoints(int param_1,float *param_2);
+int __cdecl CEnemy::getTargetPoints(CEnemy *this_ptr,CVector3f *out_points_array);
 
 // Original: core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0
 // Address: 004798e0
@@ -33,7 +33,7 @@ int __cdecl CEnemy::testAttackLine(CEnemy *this_ptr,CVector3f *start,CVector3f *
 
 // Original: core_enemy.cpp_CEnemy_getTargetPoint_FUN_00479a30
 // Address: 00479a30
-float * CEnemy::getTargetPoint(int param_1,float *param_2);
+CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
 
 // Original: core_enemy.cpp_CEnemy_canSeeTarget_FUN_00479ab0
 // Address: 00479ab0
@@ -61,11 +61,11 @@ int __cdecl CEnemy::updatePatrol(CEnemy *this_ptr,float delta_time);
 
 // Original: core_enemy.cpp_CEnemy_releaseVictim_FUN_0047a090
 // Address: 0047a090
-void CEnemy::releaseVictim(CCharacter *param_1);
+void __cdecl CEnemy::releaseVictim(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_CEnemy_onVictimLost_FUN_0047a120
 // Address: 0047a120
-void CEnemy::onVictimLost(int param_1,int param_2);
+void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 
 // Original: core_enemy.cpp_FUN_0047a150
 // Address: 0047a150

@@ -1,74 +1,75 @@
 // Name: core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0
 // Address: 004533e0
 // Address Range: [[004533e0, 00453611]]
-// Convention: unknown
-// Signature: void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Convention: __cdecl
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)
 
 #include "nocturne.h"
 
-void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)
 
 {
   int iVar1;
-  void *pvVar2;
-  int *piVar3;
+  CVector3i *pCVar2;
+  SMRGLPrimitiveQuad *pSVar3;
   int *piVar4;
+  CBoundingBox3D *pCVar5;
   
-  core_dmodel_cpp_FUN_00452f10(param_1);
-  *(uint *)(param_1 + 0x104) = param_2;
-  *(uint *)(param_1 + 0x110) = param_3;
-  *(uint *)(param_1 + 0x120) = param_4;
-  *(uint *)(param_1 + 0x244) = param_5;
-  *(uint *)(param_1 + 0x100) = param_6;
-  if (4 < *(int *)(param_1 + 0x120)) {
+  core_dmodel_cpp_FUN_00452f10(this_ptr);
+  this_ptr->vertex_count = vertex_count;
+  this_ptr->poly_count = poly_count;
+  this_ptr->texture_count = texture_count;
+  this_ptr->part_count = part_count;
+  this_ptr->frame_count = frame_count;
+  if (4 < this_ptr->texture_count) {
     g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
     g_INT_01cc4804 = 0x2c0;
     core_main_c_FUN_004c8440("Too many materials!");
   }
-  if (0x1e < *(int *)(param_1 + 0x244)) {
+  if (0x1e < this_ptr->part_count) {
     g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
     g_INT_01cc4804 = 0x2c1;
     core_main_c_FUN_004c8440("Too many parts!");
   }
-  pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18
-                     (*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);
-  *(void **)(param_1 + 0x10c) = pvVar2;
-  pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x110) * 0x48);
-  *(void **)(param_1 + 0x114) = pvVar2;
-  pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x110) << 2);
-  iVar1 = *(int *)(param_1 + 0x100);
-  *(void **)(param_1 + 0x118) = pvVar2;
-  piVar3 = shape_memdbg_cpp_malloc_FUN_00564c18(iVar1 * 0x18 + 4);
-  piVar4 = piVar3;
-  if (piVar3 != (int *)0x0) {
-    piVar4 = piVar3 + 1;
-    *piVar3 = iVar1;
+  pCVar2 = shape_memdbg_cpp_malloc_FUN_00564c18
+                     (this_ptr->frame_count * this_ptr->vertex_count * 0xc);
+  this_ptr->vertex_list = pCVar2;
+  pSVar3 = shape_memdbg_cpp_malloc_FUN_00564c18(this_ptr->poly_count * 0x48);
+  this_ptr->poly_vert_list = pSVar3;
+  piVar4 = shape_memdbg_cpp_malloc_FUN_00564c18(this_ptr->poly_count << 2);
+  iVar1 = this_ptr->frame_count;
+  this_ptr->poly_texture_index_list = piVar4;
+  piVar4 = shape_memdbg_cpp_malloc_FUN_00564c18(iVar1 * 0x18 + 4);
+  pCVar5 = (CBoundingBox3D *)0x0;
+  if (piVar4 != (int *)0x0) {
+    pCVar5 = (CBoundingBox3D *)(piVar4 + 1);
+    *piVar4 = iVar1;
   }
-  *(int **)(param_1 + 0x350) = piVar4;
-  if ((((*(int *)(param_1 + 0x10c) == 0) ||
-       ((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||
-      ((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||
-     (*(int *)(param_1 + 0x350) == 0)) {
-    core_dmodel_cpp_FUN_00452f10(param_1);
+  this_ptr->frame_bounds = pCVar5;
+  if ((((this_ptr->vertex_list == (CVector3i *)0x0) ||
+       ((0 < this_ptr->poly_count && (this_ptr->poly_vert_list == (SMRGLPrimitiveQuad *)0x0)))) ||
+      ((0 < this_ptr->poly_count && (this_ptr->poly_texture_index_list == (int *)0x0)))) ||
+     (this_ptr->frame_bounds == (CBoundingBox3D *)0x0)) {
+    core_dmodel_cpp_FUN_00452f10(this_ptr);
     g_INT_01cc4804 = 0x2d3;
     g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
     core_main_c_FUN_004c8440
-              ("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d",*(uint *)(param_1 + 0x100),
-               *(uint *)(param_1 + 0x104),*(uint *)(param_1 + 0x110));
-    if (*(int *)(param_1 + 0x100) != 1) {
+              ("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d",this_ptr->frame_count,this_ptr->vertex_count,
+               this_ptr->poly_count);
+    if (this_ptr->frame_count != 1) {
       return;
     }
   }
-  else if (*(int *)(param_1 + 0x100) != 1) {
+  else if (this_ptr->frame_count != 1) {
     return;
   }
-  pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x104) * 0xc);
-  *(void **)(param_1 + 0x108) = pvVar2;
-  if (pvVar2 != (void *)0x0) {
+  pCVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(this_ptr->vertex_count * 0xc);
+  this_ptr->vertex_normal_list = pCVar2;
+  if (pCVar2 != (CVector3i *)0x0) {
     return;
   }
   g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
   g_INT_01cc4804 = 0x2db;
-  core_main_c_FUN_004c8440("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d",*(uint *)(param_1 + 0x104));
+  core_main_c_FUN_004c8440("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d",this_ptr->vertex_count);
   return;
 }

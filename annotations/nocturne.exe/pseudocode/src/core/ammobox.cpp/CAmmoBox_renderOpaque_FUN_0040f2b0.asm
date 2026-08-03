@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_0040f2b0(CDemonActor *param_1)
+; int __cdecl core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_0040f2b0(CAmmoBox *this_ptr)
 ;
+; Parameters:
+; CAmmoBox *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined4       Stack[-0x14]:4  local_14

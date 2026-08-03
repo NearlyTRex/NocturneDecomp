@@ -77,7 +77,7 @@ void __cdecl CMP3Decoder::rewindBytes(CMP3Decoder *this_ptr,int num_bytes);
 
 // Original: sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0
 // Address: 004e2ed0
-undefined4 CMP3Decoder::huffmanDecode(CMP3Decoder *param_1,char *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6);
+int __cdecl CMP3Decoder::huffmanDecode(CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out,int *w_out);
 
 // Original: sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004e3130
 // Address: 004e3130
@@ -201,7 +201,7 @@ CMP3Decoder * __cdecl CMP3Decoder::dtor(CMP3Decoder *this_ptr,uint flags);
 
 // Original: sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0
 // Address: 004e7df0
-void __cdecl CMP3Decoder::openFile(CMP3Decoder *param_1,char *param_2);
+void __cdecl CMP3Decoder::openFile(CMP3Decoder *this_ptr,char *filename);
 
 // Original: sound_mp3.cpp_FUN_004e7ed0
 // Address: 004e7ed0

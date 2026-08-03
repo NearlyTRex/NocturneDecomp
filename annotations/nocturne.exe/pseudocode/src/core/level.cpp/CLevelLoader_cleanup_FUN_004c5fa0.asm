@@ -31,7 +31,7 @@ section .text
     PUSH ECX                            ; 004c5fb2 | g_CConsole_0077ad0c
     MOV dword ptr [EAX + 0xc],0x0       ; 004c5fb3
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c5fba
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004c5fbf
     PUSH 0x1cc3290                      ; 004c5fc2
     CALL core_dmodel.cpp_FUN_00452f10   ; 004c5fc7

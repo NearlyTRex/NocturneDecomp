@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crate_cpp_CCrate_setup_FUN_0043c870(CDemonActor *param_1)
+; void __cdecl core_crate_cpp_CCrate_setup_FUN_0043c870(CCrate *this_ptr)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057b433 = 0.5

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CDemonActor *param_1)
+; void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CWaterActor *this_ptr)
 ;
+; Parameters:
+; CWaterActor *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_size_0059766f

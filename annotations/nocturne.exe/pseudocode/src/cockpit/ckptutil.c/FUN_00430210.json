@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,32 +52,26 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "format_error",
-        "column": 85,
+        "column": 46,
         "line": 24,
-        "message": "format specifies type 'unsigned int' but the argument has type 'ulong' (aka 'unsigned long') [-Werror,-Wformat]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 27,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "category": "format_error",
+        "column": 53,
+        "line": 32,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 35,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 50,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "category": "format_error",
+        "column": 61,
+        "line": 46,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -86,13 +80,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 356,
+    "complexity_score": 326,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 29,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param"
@@ -379,26 +373,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(local_6c,\"Unable to allocate %u bytes for rotated bitmap file (%s).\",local_1c,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "file = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1,\"rb\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(local_6c,\"Unable to open bitmap file (%s).\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -439,14 +417,6 @@
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(local_6c,\"Unable to read bitmap file (%s).\",param_1);",
       "type": "unnamed_param"
     },
     {

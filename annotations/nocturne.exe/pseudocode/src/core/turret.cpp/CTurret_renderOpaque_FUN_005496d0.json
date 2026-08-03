@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,19 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 32,
+        "line": 33,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 34,
+        "line": 35,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
       }
     ],
@@ -74,18 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 185,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
-    "suspect_count": 14,
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 143
+    "total_lines": 144
   },
   "cross_references": [],
   "function": {
@@ -96,9 +95,9 @@
         "005497ce"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_turret.cpp_CTurret_renderOpaque_FUN_005496d0",
-    "signature": "int core_turret_cpp_CTurret_renderOpaque_FUN_005496d0(CTurret *param_1)"
+    "signature": "int __cdecl core_turret_cpp_CTurret_renderOpaque_FUN_005496d0(CTurret *this_ptr)"
   },
   "function_calls": [
     {
@@ -165,9 +164,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -198,10 +197,10 @@
     "pcode_op_count": 420
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 48,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -210,121 +209,32 @@
         "offset": -40,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_turret_cpp_CTurret_renderOpaque_FUN_005496d0(CTurret *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)param_1,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)param_1,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_10 = core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(param_1,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model,fStack_10,iVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&param_1->model);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&(param_1->base).base.location.position);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,&(param_1->base).base.location.position);",
+      "text": "(DAT_005ae704,&(this_ptr->base).base.location.position);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&(param_1->home_orient).vec,(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,&(param_1->home_orient).vec,(CVector3f *)0x0);",
+      "text": "(DAT_005ae704,&(this_ptr->home_orient).vec,(CVector3f *)0x0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_10 = core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->model,fStack_10,iVar3);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

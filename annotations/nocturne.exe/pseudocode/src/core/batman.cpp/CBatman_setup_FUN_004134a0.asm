@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batman_cpp_CBatman_setup_FUN_004134a0(CEnemy *param_1)
+; void __cdecl core_batman_cpp_CBatman_setup_FUN_004134a0(CBatman *this_ptr)
 ;
+; Parameters:
+; CBatman *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_00578aa7

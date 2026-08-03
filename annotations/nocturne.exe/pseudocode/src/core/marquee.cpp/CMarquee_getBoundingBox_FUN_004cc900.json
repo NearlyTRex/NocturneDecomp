@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,15 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 225,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 20,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
     "total_lines": 58
   },
@@ -83,9 +83,9 @@
         "004cc952"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_marquee.cpp_CMarquee_getBoundingBox_FUN_004cc900",
-    "signature": "void core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(int param_1,undefined4 *param_2)"
+    "signature": "CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(CMarquee *this_ptr,CBoundingBox3D *out_box)"
   },
   "function_calls": [],
   "globals": [],
@@ -93,9 +93,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -122,173 +122,44 @@
     "pcode_op_count": 122
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMarquee *"
+      },
+      {
+        "is_param": true,
+        "name": "out_box",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(int param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(int param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == (uint *)(param_1 + 0x17c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 == (uint *)(param_1 + 0x17c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 3 == (uint *)(param_1 + 0x188)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 + 3 == (uint *)(param_1 + 0x188)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *(uint *)(param_1 + 0x17c);",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(out_box->min).x = (this_ptr->bounding_box).min.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_2 = *(uint *)(param_1 + 0x17c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = *(uint *)(param_1 + 0x180);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[1] = *(uint *)(param_1 + 0x180);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = *(uint *)(param_1 + 0x184);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[2] = *(uint *)(param_1 + 0x184);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 3 == (uint *)(param_1 + 0x188)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 + 3 == (uint *)(param_1 + 0x188)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[3] = *(uint *)(param_1 + 0x188);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[3] = *(uint *)(param_1 + 0x188);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4] = *(uint *)(param_1 + 0x18c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[4] = *(uint *)(param_1 + 0x18c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[5] = *(uint *)(param_1 + 400);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[5] = *(uint *)(param_1 + 400);",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(out_box->max).x = (this_ptr->bounding_box).max.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

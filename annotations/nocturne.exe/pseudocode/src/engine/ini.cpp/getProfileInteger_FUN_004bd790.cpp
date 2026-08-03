@@ -13,7 +13,7 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004bd790(char *section,char *ke
   char local_20c [256];
   char local_10c [256];
   
-  _sprintf(local_10c,"%d",default_value);
+  _sprintf(local_10c,"%d");
   iVar1 = engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0
                     ((CIni *)0x1cae378,section,key,local_10c,local_20c,0xff,filename);
   if (iVar1 == 0) {

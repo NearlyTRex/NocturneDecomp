@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 21,
-        "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       }
     ],
     "success": false,
@@ -68,16 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 144,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 11,
+    "suspect_count": 5,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy"
     ],
     "total_lines": 55
@@ -98,9 +92,9 @@
         "004294ee"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack2_esi",
     "name": "core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490",
-    "signature": "void core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(int param_1,int param_2)"
+    "signature": "void __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -121,15 +115,15 @@
         "instructions_analyzed": 5,
         "method": "push_count",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
     "matches_declared": false
   },
@@ -165,10 +159,10 @@
     "pcode_op_count": 251
   },
   "stack_frame": {
-    "frame_size": 60,
+    "frame_size": 68,
     "local_size": 60,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -177,98 +171,47 @@
         "offset": -56,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_getCarryObjToBodyXForm_FUN_00429490.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 24,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar2 = (int *)(param_1 + 0x24a4 + param_2 * 0x44);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "piVar2 = (int *)(param_1 + 0x24a4 + param_2 * 0x44);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(piVar2 + 3,param_1 + 0xfd0 + *piVar2 * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = *puVar3;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 19,
-      "match": "unaff_ESI",
+      "match": "(CMatrix3x4f *)((int)out_matrix",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)pCVar2",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
@@ -285,14 +228,6 @@
       "severity": "moderate",
       "text": "// 004294e5: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 24,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar3;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(int param_1,int *param_2)
+; CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   input_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

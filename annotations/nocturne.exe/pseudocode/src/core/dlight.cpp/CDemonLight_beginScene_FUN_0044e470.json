@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 164,
+    "complexity_score": 166,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 61,
     "suspect_count": 9,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 210
+    "total_lines": 212
   },
   "cross_references": [
     {
@@ -460,7 +460,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "pCVar3->saved_screen_buffer_rows[0] = *(void **)(&DAT_01bd2fa0 + iVar2 * 4);",
@@ -468,7 +468,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 51,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "*(ushort **)(&DAT_01bd2fa0 + iVar2 * 4) =",
@@ -476,7 +476,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 58,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,1);",
@@ -484,7 +484,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 52,
+      "line": 54,
       "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar3 = (CDemonLight *)((pCVar3->base).camera_name + 4);",

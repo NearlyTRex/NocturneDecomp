@@ -1,30 +1,30 @@
 // Name: core_werewolf.cpp_CWerewolf_getDeathState_FUN_00557c30
 // Address: 00557c30
 // Address Range: [[00557c30, 00557c6a]]
-// Convention: unknown
-// Signature: undefined4 core_werewolf_cpp_CWerewolf_getDeathState_FUN_00557c30(int param_1)
+// Convention: __cdecl
+// Signature: EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_00557c30(CWerewolf *this_ptr)
 
 #include "nocturne.h"
 
-uint core_werewolf_cpp_CWerewolf_getDeathState_FUN_00557c30(int param_1)
+EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_00557c30(CWerewolf *this_ptr)
 
 {
   uint uVar1;
   SMotion *pSVar2;
   
-  if (*(int *)(param_1 + 0x70) == 2) {
-    return 2;
+  if ((this_ptr->base).base.base.lifecycle_state == ACTOR_DESTROYED) {
+    return DEATH_STATE_DEAD;
   }
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     ((CMotionController *)(param_1 + 0x150));
+                     (&(this_ptr->base).base.model.motion_controller);
   uVar1 = pSVar2->state_index;
   if (0xb < uVar1) {
     if (uVar1 < 0xd) {
-      return 1;
+      return DEATH_STATE_DYING;
     }
     if (uVar1 == 0xd) {
-      return 2;
+      return DEATH_STATE_DEAD;
     }
   }
-  return 0;
+  return DEATH_STATE_ALIVE;
 }

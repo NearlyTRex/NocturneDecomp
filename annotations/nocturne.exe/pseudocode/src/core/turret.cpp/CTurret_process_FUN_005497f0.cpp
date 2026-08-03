@@ -16,27 +16,27 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005497f0(CTurret *this_ptr,floa
   int iVar5;
   CVector3f *pCVar6;
   uint uVar7;
-  float *pfVar8;
-  byte bVar9;
+  uint *puVar8;
+  uint *puVar9;
+  byte bVar10;
   float afStackY_186c [1497];
   char *sound_name;
   CQuaternion4f *quat_in;
   float local_f8;
   char local_f4 [100];
-  uint local_90;
-  float afStack_8c [3];
+  CQuaternion4f local_90;
   CQuaternion4f local_80;
-  uint local_70;
-  float afStack_6c [7];
-  float local_50 [4];
-  uint local_40;
+  CQuaternion4f local_70;
+  CQuaternion4f local_60;
+  CQuaternion4f local_50;
+  CQuaternion4f local_40;
   CVector3f local_30;
   double local_24;
-  UOrientationVector *local_1c;
+  CVector3f *local_1c;
   CVector3f *local_18;
   float local_14;
   
-  bVar9 = 0;
+  bVar10 = 0;
   EVar3 = this_ptr->state;
   (this_ptr->base).muzzle_flash_color.r = -1;
   switch(EVar3) {
@@ -113,33 +113,38 @@ LAB_00549887:
     this_ptr->sfx_handles[1] = uVar7;
     break;
   case TURRET_STATE_POWERING_DOWN:
-    local_1c = &this_ptr->home_orient;
+    local_1c = (CVector3f *)&this_ptr->home_orient;
     this_ptr->timer = this_ptr->timer - delta_time;
     local_18 = (CVector3f *)&(this_ptr->base).base.orient;
     if (0.0 < this_ptr->timer) {
-      core_xform_cpp_eulerToQuaternion_FUN_0055d610();
-      local_90 = local_40;
-      afStack_8c[(uint)bVar9 * -2] = afStack_6c[(uint)bVar9 * -2 + 0xc];
-      afStack_8c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-           afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd];
-      (afStack_8c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1] =
-           (afStack_6c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd)[(uint)bVar9 * -2 + 1];
-      core_xform_cpp_eulerToQuaternion_FUN_0055d610();
-      local_50[0] = (float)local_70;
-      afStack_6c[(uint)bVar9 * -2 + 8] = afStack_6c[(uint)bVar9 * -2];
-      afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 9] =
-           afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-      (afStack_6c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 9)[(uint)bVar9 * -2 + 1] =
-           (afStack_6c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1];
-      core_xform_cpp_slerpQuaternion_FUN_0055d2d0(&local_90,afStack_6c + 7);
+      core_xform_cpp_eulerToQuaternion_FUN_0055d610(local_18,&local_40);
+      local_90.w = local_40.w;
+      puVar9 = (uint *)((int)&local_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&local_40 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_40 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
+      core_xform_cpp_eulerToQuaternion_FUN_0055d610(local_1c,&local_70);
+      local_50.w = local_70.w;
+      puVar9 = (uint *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&local_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&local_50 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_70 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
+      core_xform_cpp_slerpQuaternion_FUN_0055d2d0
+                (&local_90,&local_50,
+                 (delta_time / (this_ptr->timer + delta_time)) * (float)2,&local_60);
       quat_in = &local_80;
       pCVar6 = &local_30;
-      local_80.w = afStack_6c[3];
-      pfVar8 = (float *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      *(float *)((int)&local_80 + (uint)bVar9 * -8 + 4) = afStack_6c[(uint)bVar9 * -2 + 4];
-      *pfVar8 = afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 5];
-      pfVar8[(uint)bVar9 * -2 + 1] =
-           (afStack_6c + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 5)[(uint)bVar9 * -2 + 1];
+      local_80.w = local_60.w;
+      puVar9 = (uint *)((int)&local_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&local_80 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
       pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0(pCVar6,quat_in);
       if (pCVar6 != local_18) {
         local_18->x = pCVar6->x;
@@ -151,8 +156,8 @@ LAB_00549887:
     else {
       this_ptr->state = TURRET_STATE_IDLE;
       this_ptr->timer = 0.0;
-      if (local_18 != (CVector3f *)local_1c) {
-        local_18->x = (local_1c->vec).x;
+      if (local_18 != local_1c) {
+        local_18->x = local_1c->x;
         (this_ptr->base).base.orient.vec.y = (this_ptr->home_orient).vec.y;
         (this_ptr->base).base.orient.vec.z = (this_ptr->home_orient).vec.z;
       }
@@ -176,7 +181,7 @@ LAB_00549887:
     local_14 = local_f8;
     iVar5 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(this_ptr->sfx_handles[0],local_f8);
     if (iVar5 == 0) {
-      _sprintf(local_f4,"turret-loop.wav * %f",(double)local_f8);
+      _sprintf(local_f4,"turret-loop.wav * %f");
       uVar7 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,local_f4);
       this_ptr->sfx_handles[0] = uVar7;

@@ -1,55 +1,54 @@
 // Name: shape_edittool.cpp_CStrList_setStringAt_FUN_00474230
 // Address: 00474230
 // Address Range: [[00474230, 004742f3]]
-// Convention: unknown
-// Signature: void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param_2,char *param_3)
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(CStrList *this_ptr,int index,char *new_string)
 
 #include "nocturne.h"
 
-void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param_2,char *param_3)
+void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(CStrList *this_ptr,int index,char *new_string)
 
 {
   char cVar1;
-  void *pvVar2;
+  char *pcVar2;
   uint uVar3;
-  char *pcVar4;
-  byte bVar5;
+  byte bVar4;
   
-  bVar5 = 0;
-  if ((param_2 < 0) || (*param_1 <= param_2)) {
+  bVar4 = 0;
+  if ((index < 0) || (this_ptr->item_count <= index)) {
     g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
     g_INT_01cc4804 = 0xa9b;
     core_main_c_FUN_004c8440("CStrList::set - invalid index");
   }
-  if (param_3 == (char *)0x0) {
-    param_3 = &DAT_0057ed1b;
+  if (new_string == (char *)0x0) {
+    new_string = &DAT_0057ed1b;
   }
   uVar3 = 0xffffffff;
-  pcVar4 = param_3;
+  pcVar2 = new_string;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar4;
-    pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
+    cVar1 = *pcVar2;
+    pcVar2 = pcVar2 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
-  pvVar2 = realloc(*(void **)(param_1[2] + param_2 * 4),~uVar3);
-  *(void **)(param_1[2] + param_2 * 4) = pvVar2;
-  if (*(int *)(param_1[2] + param_2 * 4) == 0) {
+  pcVar2 = (char *)realloc(this_ptr->data_array[index],~uVar3);
+  this_ptr->data_array[index] = pcVar2;
+  if (this_ptr->data_array[index] == (char *)0x0) {
     g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
     g_INT_01cc4804 = 0xaa4;
     core_main_c_FUN_004c8440("CStrList::set - out of memory!");
   }
-  pcVar4 = *(char **)(param_1[2] + param_2 * 4);
+  pcVar2 = this_ptr->data_array[index];
   do {
-    cVar1 = *param_3;
-    *pcVar4 = cVar1;
+    cVar1 = *new_string;
+    *pcVar2 = cVar1;
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = param_3[1];
-    param_3 = param_3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    cVar1 = new_string[1];
+    new_string = new_string + 2;
+    pcVar2[1] = cVar1;
+    pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
   return;
 }

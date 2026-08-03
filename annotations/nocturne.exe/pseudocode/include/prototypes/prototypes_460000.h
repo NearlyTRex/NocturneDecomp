@@ -3,7 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
-#include "types/classes/CDemonActor.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonCube.h"
 #include "types/classes/CDemonRaytrace.h"
@@ -13,13 +13,14 @@
 #include "types/classes/CDrone.h"
 #include "types/classes/CDynamite.h"
 #include "types/classes/CEditorTools.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CInputString.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWeapon.h"
+#include "types/enums/ECollisionType.h"
 #include "types/funcdefs/CustomScanlineFunc.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFace.h"
 #include "types/structs/SInputFace.h"
@@ -32,6 +33,7 @@
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STrianglePackedIndices.h"
 
 // =============================================================================
@@ -102,41 +104,41 @@ void __cdecl engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60(CDemon
 int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr);
 void __cdecl core_drip_cpp_staticInit_FUN_00461ff0(void);
 CDrip * __cdecl core_drip_cpp_factoryFunc_FUN_00462030(void);
-CDemonActorType * core_drip_cpp_CDrip_getActorType_FUN_00462050(void);
+CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_00462050(CDrip *this_ptr);
 CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_00462060(CDrip *this_ptr);
-void core_drip_cpp_CDrip_setup_FUN_00462140(int param_1);
-void core_drip_cpp_CDrip_archive_FUN_004621d0(CDemonActor *param_1);
-void core_drip_cpp_CDrip_process_FUN_00462300(CDemonActor *param_1,float param_2);
+void __cdecl core_drip_cpp_CDrip_setup_FUN_00462140(CDrip *this_ptr);
+void __cdecl core_drip_cpp_CDrip_archive_FUN_004621d0(CDrip *this_ptr);
+void __cdecl core_drip_cpp_CDrip_process_FUN_00462300(CDrip *this_ptr,float delta_time);
 void __cdecl core_drip_cpp_FUN_00462710(CDrip *this_ptr);
-int core_drip_cpp_CDrip_renderOpaque_FUN_00462720(CDemonActor *param_1);
-float * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,float *param_2);
-undefined4 core_drip_cpp_CDrip_getCollisionType_FUN_00462880(void);
+int __cdecl core_drip_cpp_CDrip_renderOpaque_FUN_00462720(CDrip *this_ptr);
+CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(CDrip *this_ptr,CBoundingBox3D *out_box);
+ECollisionType __cdecl core_drip_cpp_CDrip_getCollisionType_FUN_00462880(CDrip *this_ptr,SCollisionInfo *collision_info);
 CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_00462890(CDrip *this_ptr,uint flags);
 void __cdecl core_drone_cpp_staticInit_FUN_004628e0(void);
 CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_00462910(void);
-CDemonActorType * core_drone_cpp_CDrone_getActorType_FUN_00462930(void);
+CDemonActorType * __cdecl core_drone_cpp_CDrone_getActorType_FUN_00462930(CDrone *this_ptr);
 CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_00462940(CDrone *this_ptr);
-void core_drone_cpp_CDrone_setup_FUN_004629b0(CEnemy *param_1);
-void core_drone_cpp_CDrone_process_FUN_00462a60(CEnemy *param_1,float param_2);
-void core_drone_cpp_CDrone_archive_FUN_004630e0(CEnemy *param_1);
-void core_drone_cpp_CDrone_processDamage_FUN_00463150(CEnemy *param_1,SDamageInfo *param_2);
+void __cdecl core_drone_cpp_CDrone_setup_FUN_004629b0(CDrone *this_ptr);
+void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float delta_time);
+void __cdecl core_drone_cpp_CDrone_archive_FUN_004630e0(CDrone *this_ptr);
+void __cdecl core_drone_cpp_CDrone_processDamage_FUN_00463150(CDrone *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_drone_cpp_CDrone_getTargetPoints_FUN_004632c0(CDrone *this_ptr,CVector3f *out_points_array);
 CDrone * __cdecl core_drone_cpp_CDrone_dtor_FUN_00463310(CDrone *this_ptr,uint flags);
 void __cdecl core_dskybox_cpp_staticInit_FUN_004633d0(void);
 SMRGLSkyTexture * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00463400(SMRGLSkyTexture *texture);
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index);
 void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor);
-void core_dstrender_cpp_saveMMXRegisters_FUN_00463a40(void);
-void core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79(void);
-void core_dstrender_cpp_renderDepth16BitConditional_FUN_00463ac7(void);
-void core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27(void);
-uint core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00463c42(void);
-void core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00463d98(void);
-void core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00463f77(void);
-void core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5(void);
-void core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00464075(void);
-void core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200(void);
-void core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(void);
+void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_00463a40(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7);
+void __edi_esi_ebx core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderDepth16BitConditional_FUN_00463ac7(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00463c42(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00463d98(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00463f77(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00464075(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0(uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index);
@@ -156,7 +158,7 @@ void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_004
 void __cdecl core_dtrace_cpp_staticInit_FUN_004671c0(void);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_ctor_FUN_004671e0(CDemonRaytrace *this_ptr);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_dtor_FUN_00467220(CDemonRaytrace *this_ptr,uint flags);
-void core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00467250(int param_1);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00467250(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004672a0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(CDemonRaytrace *this_ptr);
 void core_dtrace_cpp_FUN_004673a0(int param_1);
@@ -182,8 +184,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_0046ae40(CDemonRaytrace 
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70(CDemonRaytrace *this_ptr);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0(CDemonRaytrace *this_ptr,CVector3f *world_position);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position);
-void core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650(int param_1,float *param_2);
-void core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(int param_1,float *param_2);
+void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords);
+CVector3i * __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords);
 CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_0046b7b0(CDemonRaytrace *raytrace_ptr,CVector3f *output_position,CVector3i *voxel_coords);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
@@ -226,7 +228,7 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0046e9f0(CDemonTriangle *th
 void core_dtri_cpp_FUN_0046eb40(void);
 void __cdecl core_dynamite_cpp_staticInit_FUN_0046eb60(void);
 CDynamite * __cdecl core_dynamite_cpp_factoryFunc_FUN_0046eba0(void);
-CDemonActorType * core_dynamite_cpp_CDynamite_getActorType_FUN_0046ebc0(void);
+CDemonActorType * __cdecl core_dynamite_cpp_CDynamite_getActorType_FUN_0046ebc0(CDynamite *this_ptr);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CDynamite *this_ptr);
 undefined4 core_dynamite_cpp_FUN_0046ec80(CWeapon *param_1);
 float core_dynamite_cpp_FUN_0046ecf0(void);
@@ -234,7 +236,7 @@ void core_dynamite_cpp_FUN_0046ed20(void);
 void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0046ed30(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_FUN_0046ed80(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_FUN_0046eda0(CDynamite *this_ptr);
-void core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CWeapon *param_1,float param_2);
+void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CDynamite *this_ptr,float delta_time);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0046ef30(CDynamite *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_staticInit_FUN_0046ef80(void);
 void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0046efa0(int x_coord,int y_coord,int use_clipping);
@@ -258,5 +260,5 @@ void shape_edittool_cpp_FUN_0046fa80(void);
 void shape_edittool_cpp_FUN_0046fb40(CEditorTools *param_1,char *param_2);
 void shape_edittool_cpp_FUN_0046fcd0(CEditorTools *param_1,char *param_2);
 void shape_edittool_cpp_FUN_0046fe60(CEditorTools *param_1,char *param_2);
-void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(undefined4 param_1,char *param_2);
+void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools *this_ptr,char *format);
 

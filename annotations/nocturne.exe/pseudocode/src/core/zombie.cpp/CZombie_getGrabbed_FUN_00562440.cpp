@@ -1,27 +1,28 @@
 // Name: core_zombie.cpp_CZombie_getGrabbed_FUN_00562440
 // Address: 00562440
 // Address Range: [[00562440, 005624a0]]
-// Convention: unknown
-// Signature: undefined4 core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(int param_1,undefined4 param_2,int param_3)
+// Convention: __cdecl
+// Signature: int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(CZombie *this_ptr,CDemonActor *grabber,int grab_type)
 
 #include "nocturne.h"
 
-uint core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(int param_1,uint param_2,int param_3)
+int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(CZombie *this_ptr,CDemonActor *grabber,int grab_type)
 
 {
-  int iVar1;
+  CCharacter *pCVar1;
+  CZombie *pCVar2;
   
-  if (param_3 == 1) {
-    iVar1 = *(int *)(param_1 + 0xbca4);
-    if (iVar1 != 0) {
-      iVar1 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0xec))(iVar1);
-      if (iVar1 == param_1) {
-        (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xe8))
-                  (*(int *)(param_1 + 0xbca4));
+  if (grab_type == 1) {
+    pCVar1 = (this_ptr->base).victim;
+    if (pCVar1 != (CCharacter *)0x0) {
+      pCVar2 = (CZombie *)(*(((pCVar1->base).vtable._uc)->_uc).getGrabber)(pCVar1);
+      if (pCVar2 == this_ptr) {
+        pCVar1 = (this_ptr->base).victim;
+        (*(((pCVar1->base).vtable._uc)->_uc).releaseFromGrab)(pCVar1);
       }
     }
-    *(uint *)(param_1 + 0x2590) = param_2;
-    *(uint *)(param_1 + 0x2594) = 1;
+    (this_ptr->base).base.grabbed_by = grabber;
+    (this_ptr->base).base.grabbed_type = 1;
     return 1;
   }
   return 0;

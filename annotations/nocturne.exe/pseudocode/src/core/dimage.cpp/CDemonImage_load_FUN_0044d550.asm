@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4)
+; void __cdecl core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *this_ptr,char *filename,int width,int height)
 ;
+; Parameters:
+; CDemonImage *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
 ; Local Variables:
 ; undefined1       Stack[-0x11c]:1  local_11c
 ; undefined1       Stack[-0x11b]:1  local_11b

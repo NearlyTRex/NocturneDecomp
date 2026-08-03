@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_CMelee_archive_FUN_004cedb0(CWeapon *param_1)
+; void __cdecl core_melee_cpp_CMelee_archive_FUN_004cedb0(CMelee *this_ptr)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_allowedAttackTypes_00588390

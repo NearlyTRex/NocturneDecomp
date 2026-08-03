@@ -10,33 +10,33 @@ int __cdecl core_script_cpp_validateActorVariableName_FUN_004fdec0(char *variabl
 
 {
   char cVar1;
-  char *pcVar2;
-  uint uVar3;
-  int iVar4;
+  uint uVar2;
+  int iVar3;
+  char *pcVar4;
   
   if (*variable_name == '@') {
-    uVar3 = 0xffffffff;
-    pcVar2 = variable_name;
+    uVar2 = 0xffffffff;
+    pcVar4 = variable_name;
     do {
-      if (uVar3 == 0) break;
-      uVar3 = uVar3 - 1;
-      cVar1 = *pcVar2;
-      pcVar2 = pcVar2 + 1;
+      if (uVar2 == 0) break;
+      uVar2 = uVar2 - 1;
+      cVar1 = *pcVar4;
+      pcVar4 = pcVar4 + 1;
     } while (cVar1 != '\0');
-    if (~uVar3 - 1 < 0x1f) {
-      iVar4 = 1;
-      pcVar2 = variable_name;
-      while ((pcVar2 = pcVar2 + 1, ((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 0xe0) != 0 ||
-             (*pcVar2 == '_'))) {
-        iVar4 = iVar4 + 1;
+    if (~uVar2 - 1 < 0x1f) {
+      iVar3 = 1;
+      while ((variable_name = variable_name + 1,
+             ((&DAT_005c168c)[(byte)(*variable_name + 1)] & 0xe0) != 0 || (*variable_name == '_')))
+      {
+        iVar3 = iVar3 + 1;
       }
-      if ((iVar4 != 1) && (*pcVar2 == '\0')) {
+      if ((iVar3 != 1) && (*variable_name == '\0')) {
         return 1;
       }
-      _sprintf(&DAT_01e56420,"Actor variable name \"%s\" is not valid",variable_name);
+      _sprintf(&DAT_01e56420,"Actor variable name \"%s\" is not valid");
       return 0;
     }
-    _sprintf(&DAT_01e56420,"Actor variable name \"%s\" is too long",variable_name);
+    _sprintf(&DAT_01e56420,"Actor variable name \"%s\" is too long");
   }
   else {
     _sprintf(&DAT_01e56420,"Actor variable name must begin with '@'");

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_elephant_cpp_CElephantGun_onFired_FUN_00477fd0(CDemonActor *param_1)
+; void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_00477fd0(CElephantGun *this_ptr)
 ;
+; Parameters:
+; CElephantGun *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
 ; undefined        Stack[-0x44]:1  local_44

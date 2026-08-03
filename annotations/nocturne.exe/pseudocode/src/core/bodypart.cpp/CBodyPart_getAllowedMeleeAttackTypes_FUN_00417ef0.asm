@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bodypart_cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_00417ef0(CDemonActor *param_1)
+; int __cdecl core_bodypart_cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_00417ef0(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040b200

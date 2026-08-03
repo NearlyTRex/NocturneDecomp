@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(int param_1,CDemonActor *param_2)
+; int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(CCryptVessel *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_00597473

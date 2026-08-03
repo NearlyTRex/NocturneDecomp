@@ -13,7 +13,7 @@ CFlameThrower * __cdecl factoryFunc(void);
 
 // Original: core_flamegun.cpp_CFlameThrower_getActorType_FUN_0048e9b0
 // Address: 0048e9b0
-CDemonActorType * CFlameThrower::getActorType(void);
+CDemonActorType * __cdecl CFlameThrower::getActorType(CFlameThrower *this_ptr);
 
 // Original: core_flamegun.cpp_CFlameThrower_ctor_FUN_0048e9c0
 // Address: 0048e9c0
@@ -25,7 +25,7 @@ undefined4 FUN_0048ea60(CCharacter *param_1);
 
 // Original: core_flamegun.cpp_CFlameThrower_process_FUN_0048eb30
 // Address: 0048eb30
-void CFlameThrower::process(CWeapon *param_1,float param_2);
+void __cdecl CFlameThrower::process(CFlameThrower *this_ptr,float delta_time);
 
 // Original: core_flamegun.cpp_FUN_0048ec60
 // Address: 0048ec60

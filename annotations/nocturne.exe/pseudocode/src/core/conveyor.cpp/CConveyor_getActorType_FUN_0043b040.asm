@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_conveyor_cpp_CConveyor_getActorType_FUN_0043b040(void)
+; CDemonActorType * __cdecl core_conveyor_cpp_CConveyor_getActorType_FUN_0043b040(CConveyor *this_ptr)
 ;
+; Parameters:
+; CConveyor *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CConveyorActorType_0077bcc8

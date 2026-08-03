@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drip_cpp_CDrip_archive_FUN_004621d0(CDemonActor *param_1)
+; void __cdecl core_drip_cpp_CDrip_archive_FUN_004621d0(CDrip *this_ptr)
 ;
+; Parameters:
+; CDrip *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0057de01

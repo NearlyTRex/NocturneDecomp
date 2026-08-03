@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drone_cpp_CDrone_processDamage_FUN_00463150(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_drone_cpp_CDrone_processDamage_FUN_00463150(CDrone *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CDrone *         Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_drone_die_wav_0057df57

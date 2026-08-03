@@ -19,7 +19,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_004f5c
       do {
         iVar2 = iVar2 + 1;
         cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_004f3f80
-                  (this_ptr->bitmap_array->filename + iVar1);
+                  ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1));
         iVar1 = iVar1 + 0x24;
       } while (iVar2 < this_ptr->bitmap_count);
     }

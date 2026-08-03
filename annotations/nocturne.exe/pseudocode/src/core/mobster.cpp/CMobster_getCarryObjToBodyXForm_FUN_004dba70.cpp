@@ -1,22 +1,22 @@
 // Name: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70
 // Address: 004dba70
 // Address Range: [[004dba70, 004dbcdb]]
-// Convention: unknown
-// Signature: void core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(int param_1,int param_2)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-void core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(int param_1,int param_2)
+/* WARNING: Type propagation algorithm not settling */
+
+void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
-  int iVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
-  uint *unaff_ESI;
-  uint *puVar4;
-  byte bVar5;
+  CDemonActor *pCVar1;
+  int iVar2;
+  CMatrix3x4f *pCVar3;
+  byte bVar4;
   CMatrix3x4f local_d8;
-  uint local_a8 [12];
+  CMatrix3x4f local_a8;
   CVector3f local_78 [2];
   CVector3f local_60;
   CVector3f local_54;
@@ -26,14 +26,13 @@ void core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(int param_1,i
   CVector3f local_24;
   CVector3f local_18;
   
-  bVar5 = 0;
-  iVar1 = param_2 * 0x44 + param_1;
-  iVar3 = *(int *)(iVar1 + 0x24a4);
-  if (param_2 == 1) {
-    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (*(CDemonActor **)(iVar1 + 0x24ac),g_CElephantGunActorType_01bcde44.name_hash
-                       );
-    if (pCVar2 == (CDemonActor *)0x0) {
+  bVar4 = 0;
+  iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
+  if (hand_index == 1) {
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
+                       ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
+                        g_CElephantGunActorType_01bcde44.name_hash);
+    if (pCVar1 == (CDemonActor *)0x0) {
       local_78[0].x = 0.228082;
       local_78[0].y = -0.13793;
       local_78[0].z = -0.112196;
@@ -89,12 +88,14 @@ void core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(int param_1,i
     }
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_d8,&local_60,&local_30);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_d8,iVar3 * 0x30 + param_1 + 0xfd0);
-  puVar4 = local_a8;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *unaff_ESI = *puVar4;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
-    unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
+            (&local_d8,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
+             &local_a8);
+  pCVar3 = &local_a8;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    out_matrix->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar4 * -2 + 1) * 4);
   }
   return;
 }

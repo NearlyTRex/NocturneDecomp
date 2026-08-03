@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tbplayer_cpp_CBassPlayer_processDamage_FUN_00543330(int param_1,int param_2)
+; void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_00543330(CBassPlayer *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CBassPlayer *    Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0

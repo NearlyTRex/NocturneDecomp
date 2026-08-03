@@ -30,7 +30,8 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_00408f50(void)
         puVar1 = (uint *)((int)&DAT_00761ec8 + iVar2);
         iVar2 = iVar2 + 4;
         iVar3 = iVar3 + 1;
-        engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(*puVar1);
+        engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120
+                  ((SMRGLHeaderPrimitive *)*puVar1);
       } while (iVar3 < DAT_00761ec4);
     }
     DAT_00761ec4 = 0;

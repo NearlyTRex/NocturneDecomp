@@ -1,24 +1,24 @@
 // Name: core_charactr.cpp_CCharacter_applyDamage_FUN_00424ff0
 // Address: 00424ff0
 // Address Range: [[00424ff0, 00425043]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(int param_1,EDamageType param_2,float param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(CCharacter *this_ptr,int damage_type,float damage_amount)
 
 #include "nocturne.h"
 
-void core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(int param_1,EDamageType param_2,float param_3)
+void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(CCharacter *this_ptr,int damage_type,float damage_amount)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   SDamageInfo SStack_40;
   
-  iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
-  if (0 < iVar1) {
+  EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+  if (0 < (int)EVar1) {
     return;
   }
   core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_40);
-  SStack_40.damage_type = param_2;
-  SStack_40.damage_amount = param_3;
-  (**(code **)(*(int *)(param_1 + 0x14c) + 0x100))(param_1,&SStack_40);
+  SStack_40.damage_type = damage_type;
+  SStack_40.damage_amount = damage_amount;
+  (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,&SStack_40);
   return;
 }

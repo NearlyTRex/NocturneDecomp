@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *param_1,int param_2)
+; void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_onOpened_FUN_00455270

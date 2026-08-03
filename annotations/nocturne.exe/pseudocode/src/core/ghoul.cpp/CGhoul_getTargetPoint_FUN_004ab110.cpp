@@ -1,37 +1,37 @@
 // Name: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004ab110
 // Address: 004ab110
 // Address Range: [[004ab110, 004ab172]]
-// Convention: unknown
-// Signature: CVector3f * core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004ab110(int param_1,CVector3f *param_2)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004ab110(CGhoul *this_ptr,CVector3f *out_point)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-CVector3f * core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004ab110(int param_1,CVector3f *param_2)
+CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004ab110(CGhoul *this_ptr,CVector3f *out_point)
 
 {
   int iVar1;
-  float *pfVar2;
+  CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
   CMatrix3x4f local_7c;
-  float local_4c [12];
+  CMatrix3x4f local_4c;
   CVector3f local_1c;
   
   bVar4 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
-            (param_1 + 0x150,_DAT_01c78c14);
-  pfVar2 = local_4c;
+            (&(this_ptr->base).base.model,_DAT_01c78c14,&local_4c);
+  pCVar2 = &local_4c;
   pCVar3 = &local_7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar3->m[0].w = *pfVar2;
-    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   local_1c.y = 0.7;
   local_1c.x = 0.0;
   local_1c.z = 0.3;
-  core_xform_cpp_transformVector3x4_FUN_0055a8b0(param_2,&local_1c,&local_7c);
-  return param_2;
+  core_xform_cpp_transformVector3x4_FUN_0055a8b0(out_point,&local_1c,&local_7c);
+  return out_point;
 }

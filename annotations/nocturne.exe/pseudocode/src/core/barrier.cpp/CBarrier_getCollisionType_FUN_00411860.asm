@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_barrier_cpp_CBarrier_getCollisionType_FUN_00411860(int param_1,int *param_2)
+; ECollisionType __cdecl core_barrier_cpp_CBarrier_getCollisionType_FUN_00411860(CBarrier *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CBarrier *       Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00763e44

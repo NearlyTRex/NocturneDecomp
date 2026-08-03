@@ -18,8 +18,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(CSfxSample *this_ptr
     g_INT_01cc4804 = 0x791;
     core_main_c_FUN_004c8440();
   }
-  dVar2 = (double)sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0
-                            (this_ptr,(double)playback_position,0);
+  dVar2 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0
+                    (this_ptr,(double)playback_position,0);
   dVar2 = round(dVar2);
   this_ptr->stream_read_position = (int)ROUND(dVar2);
   if (this_ptr->stream_read_position < 0) {

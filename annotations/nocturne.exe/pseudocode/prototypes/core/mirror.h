@@ -69,11 +69,11 @@ void __cdecl CMirror::renderMirrorQuadDepth(CMirror *this_ptr);
 
 // Original: core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30
 // Address: 004d7b30
-void CMirrorReflection::transformMirrorVertex(CMirrorReflection *param_1,int *param_2);
+CVector3i * __stack2_esi CMirrorReflection::transformMirrorVertex(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex);
 
 // Original: core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0
 // Address: 004d7bd0
-void CMirrorReflection::transformMirrorEdgeToIntegerSpace(CMirrorReflection *param_1,int *param_2,int *param_3);
+CVector3i * __stack3_esi CMirrorReflection::transformMirrorEdgeToIntegerSpace(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 
 // Original: core_mirror.cpp_SClipPlane_ctor_FUN_004d7d70
 // Address: 004d7d70

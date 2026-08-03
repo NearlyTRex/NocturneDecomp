@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CNPC *param_1,int param_2)
+; void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CHostage *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CHostage *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ScatDazzle_00585cb2

@@ -49,7 +49,7 @@ CDemonLight * __cdecl C3DSLight::create(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_C3DSLight_apply_FUN_00515350
 // Address: 00515350
-undefined4 C3DSLight::apply(int param_1,CDemonLight *param_2);
+void __cdecl C3DSLight::apply(C3DSLight *this_ptr,CDemonLight *light);
 
 // Original: core_setutil.cpp_FUN_00515410
 // Address: 00515410

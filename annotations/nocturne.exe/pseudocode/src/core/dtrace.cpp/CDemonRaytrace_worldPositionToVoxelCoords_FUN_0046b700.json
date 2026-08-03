@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,19 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 48,
-        "line": 48,
+        "column": 24,
+        "line": 49,
         "message": "use of undeclared identifier 'stack0xffffffe0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 50,
+        "line": 51,
         "message": "use of undeclared identifier 'stack0xffffffe4'"
       }
     ],
@@ -74,23 +74,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 307,
+    "complexity_score": 148,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 23,
+    "pseudocode_lines": 43,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
       "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
-      "sub84_truncation",
-      "unaffected_reg",
-      "unnamed_param"
+      "sub84_truncation"
     ],
-    "total_lines": 101
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -144,9 +142,9 @@
         "0046b7a1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack2_esi",
     "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700",
-    "signature": "void core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(int param_1,float *param_2)"
+    "signature": "CVector3i * __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)"
   },
   "function_calls": [
     {
@@ -172,7 +170,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -181,12 +179,11 @@
         "call_addr": "004f0c4c",
         "call_type": "direct",
         "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -195,13 +192,11 @@
         "call_addr": "004f1cd0",
         "call_type": "direct",
         "caller": "core_path.cpp_getOrCreatePathMap_FUN_004f1c90",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -214,7 +209,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -227,7 +222,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -240,7 +235,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -249,22 +244,21 @@
         "call_addr": "004f1f9d",
         "call_type": "direct",
         "caller": "core_path.cpp_renderPathMapsAtPosition_FUN_004f1f80",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.673076923076923,
@@ -296,10 +290,10 @@
     "pcode_op_count": 347
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -336,13 +330,27 @@
         "offset": -16,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
   "static_analysis": {
     "analyzed_file": "CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 4,
+      "diagnostic_count": 3,
       "diagnostics": [
         {
           "check_id": "ignoredReturnValue",
@@ -364,13 +372,6 @@
           "line": 46,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 4,
-          "line": 47,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
         }
       ],
       "error": null
@@ -378,30 +379,6 @@
     "file_variant": "raw"
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 11,
@@ -411,91 +388,19 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((double)((*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x34)))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((double)((*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x34)))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((double)((*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x34)))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)(param_1 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 25,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_10 = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "text": "local_10 = SUB84(__BITCAST_UINT64(dVar6),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)(param_1 + 0x3c);",
-      "type": "unnamed_param"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 32,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_14 = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "text": "local_14 = SUB84(__BITCAST_UINT64(dVar6),0);",
       "type": "sub84_truncation"
     },
     {
@@ -503,75 +408,40 @@
       "line": 37,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_18 = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "text": "local_18 = SUB84(__BITCAST_UINT64(dVar6),0);",
       "type": "sub84_truncation"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 40,
-      "match": "unaff_ESI",
+      "match": "(uint *)((int)output_voxel_coords",
       "severity": "moderate",
-      "text": "*unaff_ESI = uVar6;",
-      "type": "unaffected_reg"
+      "text": "puVar4 = (uint *)((int)output_voxel_coords + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 41,
+      "line": 42,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8);",
+      "text": "*puVar4 = *(uint *)(&stack0xffffffe0 + (uint)bVar5 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
-      "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 44,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Raw hex address 0x46b76a assigned to bare local `uVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x46b76a assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 34,
       "match": "0x46b76a",
       "severity": "moderate",
-      "text": "uVar6 = 0x46b76a;",
+      "text": "iVar7 = 0x46b76a;",
       "type": "raw_address_constant"
-    },
-    {
-      "call_site_count": 7,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 47,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = uVar6;",
-      "type": "static_uninitvar"
     }
   ]
 }

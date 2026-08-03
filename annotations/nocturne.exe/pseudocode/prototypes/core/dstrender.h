@@ -5,47 +5,47 @@
 
 // Original: core_dstrender.cpp_saveMMXRegisters_FUN_00463a40
 // Address: 00463a40
-void saveMMXRegisters(void);
+void __mmx_save saveMMXRegisters(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7);
 
 // Original: core_dstrender.cpp_renderDepthOnlyStandard_FUN_00463a79
 // Address: 00463a79
-void renderDepthOnlyStandard(void);
+void __edi_esi_ebx renderDepthOnlyStandard(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepth16BitConditional_FUN_00463ac7
 // Address: 00463ac7
-void renderDepth16BitConditional(void);
+void __edi_esi_ebx renderDepth16BitConditional(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_00463b27
 // Address: 00463b27
-void renderTexturedAlphaMMXScanline(void);
+void __edi_esi_ebx renderTexturedAlphaMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00463c42
 // Address: 00463c42
-uint renderZBufferFill16xUnrolled(void);
+void __edi_esi_ebx renderZBufferFill16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00463d98
 // Address: 00463d98
-void renderSolidColorDepth16xUnrolled(void);
+void __edi_esi_ebx renderSolidColorDepth16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepthInterlacedProfiled_FUN_00463f77
 // Address: 00463f77
-void renderDepthInterlacedProfiled(void);
+void __edi_esi_ebx renderDepthInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5
 // Address: 00463ff5
-void renderScreenDepthTestInterlacedProfiled(void);
+void __edi_esi_ebx renderScreenDepthTestInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepthTestStatistics16xUnrolled_FUN_00464075
 // Address: 00464075
-void renderDepthTestStatistics16xUnrolled(void);
+void __edi_esi_ebx renderDepthTestStatistics16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200
 // Address: 00464200
-void renderPerspectiveCorrectTextured16xCached(void);
+void __edi_esi_ebx renderPerspectiveCorrectTextured16xCached(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_004649dd
 // Address: 004649dd
-void renderTexturedDecalMMXScanline(void);
+void __edi_esi_ebx renderTexturedDecalMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
 // Address: 00464afc

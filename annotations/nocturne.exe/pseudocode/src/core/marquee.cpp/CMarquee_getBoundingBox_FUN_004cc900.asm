@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(int param_1,undefined4 *param_2)
+; CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(CMarquee *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CMarquee *       Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; *****************************************************************************
 

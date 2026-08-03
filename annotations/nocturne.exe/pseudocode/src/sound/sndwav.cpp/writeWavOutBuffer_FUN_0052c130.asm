@@ -111,7 +111,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0052c1df
     PUSH EAX                            ; 0052c1e3
     CALL sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 ; 0052c1e4
-        ;   XREF to: 005294f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0()
+        ;   XREF to: 005294f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, ...)
     ADD ESP,0x18                        ; 0052c1e9
     MOV EDX,dword ptr [ESP + 0x20]      ; 0052c1ec
     MOV EDX,dword ptr [EDX + 0x2dc93a8] ; 0052c1f0

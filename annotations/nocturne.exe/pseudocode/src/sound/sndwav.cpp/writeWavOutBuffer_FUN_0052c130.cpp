@@ -17,7 +17,7 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(int buffer_index)
   int iVar4;
   int iVar6;
   int iVar7;
-  int local_34 [8];
+  LPVOID local_34 [8];
   int local_14;
   int iVar5;
   

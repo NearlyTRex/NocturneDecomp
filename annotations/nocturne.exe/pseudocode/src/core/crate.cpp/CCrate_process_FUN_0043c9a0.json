@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "cast_error",
-        "column": 31,
-        "line": 65,
-        "message": "C-style cast from 'struct CPlatform *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -68,21 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 193,
-    "complexity_score": 1006,
+    "complexity_score": 160,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 90,
+    "pseudocode_lines": 90,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "unnamed_param",
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 274
+    "total_lines": 283
   },
   "cross_references": [],
   "function": {
@@ -93,9 +84,9 @@
         "0043cbbd"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_crate.cpp_CCrate_process_FUN_0043c9a0",
-    "signature": "void core_crate_cpp_CCrate_process_FUN_0043c9a0(CDemonActor *param_1)"
+    "signature": "void __cdecl core_crate_cpp_CCrate_process_FUN_0043c9a0(CCrate *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -109,9 +100,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -152,10 +143,10 @@
     "pcode_op_count": 984
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 24,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -164,729 +155,71 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrate *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_crate_cpp_CCrate_process_FUN_0043c9a0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[2].location.area_id != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient.vec.y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.x =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).x + (param_1->location).position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).x + (param_1->location).position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.y =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).y + (param_1->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).y + (param_1->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.z =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).z + (param_1->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).z + (param_1->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).y = (param_1->platform_position_delta).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).y = (param_1->platform_position_delta).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).x = (param_1->platform_position_delta).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_position_delta).x = (param_1->platform_position_delta).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.x = (param_1->platform_orientation_delta).x + (param_1->orient).vec.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.x = (param_1->platform_orientation_delta).x + (param_1->orient).vec.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.x = (param_1->platform_orientation_delta).x + (param_1->orient).vec.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.y = (param_1->platform_orientation_delta).y + (param_1->orient).vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.y = (param_1->platform_orientation_delta).y + (param_1->orient).vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.y = (param_1->platform_orientation_delta).y + (param_1->orient).vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.z = (param_1->platform_orientation_delta).z + (param_1->orient).vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.z = (param_1->platform_orientation_delta).z + (param_1->orient).vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.z = (param_1->platform_orientation_delta).z + (param_1->orient).vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_orientation_delta).z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_orientation_delta).y = (param_1->platform_orientation_delta).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_orientation_delta).y = (param_1->platform_orientation_delta).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_orientation_delta).x = (param_1->platform_orientation_delta).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->platform_orientation_delta).x = (param_1->platform_orientation_delta).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((((param_1[2].orient.vec.z == (param_1->location).position.x) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((((param_1[2].orient.vec.z == (param_1->location).position.x) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].orient_matrix.m[0].x == (param_1->location).position.y)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].orient_matrix.m[0].x == (param_1->location).position.y)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].orient_matrix.m[0].y == (param_1->location).position.z)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].orient_matrix.m[0].y == (param_1->location).position.z)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1[2].orient_matrix.m[0].z == (param_1->orient).vec.x &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1[2].orient_matrix.m[0].z == (param_1->orient).vec.x &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].orient_matrix.m[1].x == (param_1->orient).vec.y)))) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].orient_matrix.m[1].x == (param_1->orient).vec.y)))) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].orient_matrix.m[1].y == (param_1->orient).vec.z)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].orient_matrix.m[1].y == (param_1->orient).vec.z)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_c = param_1[2].orient_matrix.m[1].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_c = (*((param_1->vtable)._ub)->cylinderGroundCheck)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_1[2].orient.vec.x,(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_1[2].orient.vec.x,(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1 = &param_1[2].orient.vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((CLocation *)pfVar1 != &param_1->location) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*pfVar1 = (param_1->location).position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[0].x = (param_1->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[0].x = (param_1->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[0].y = (param_1->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[0].y = (param_1->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1 = &param_1[2].orient_matrix.m[0].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((UOrientationVector *)pfVar1 != &param_1->orient) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*pfVar1 = (param_1->orient).vec.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[1].x = (param_1->orient).vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[1].x = (param_1->orient).vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[1].y = (param_1->orient).vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[1].y = (param_1->orient).vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient_matrix.m[1].z = local_c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1[2].orient.vec.y == 0.0) && (param_1->standing_platform != (CPlatform *)0x0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1[2].orient.vec.y == 0.0) && (param_1->standing_platform != (CPlatform *)0x0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient.vec.y = (float)param_1->standing_platform;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient.vec.y = (float)param_1->standing_platform;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = *(CPlatform **)((int)&param_1[2].orient + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->standing_platform = pCVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.x = (pCVar2->base).location.position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.y = (pCVar2->base).location.position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.z = (pCVar2->base).location.position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).area_id = (pCVar2->base).location.area_id;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = param_1->standing_platform;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (&param_1->orient != pUVar3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.x = (pUVar3->vec).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.y = (pCVar2->base).orient.vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.z = (pCVar2->base).orient.vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->standing_platform->base).vtable._ub)->getBoundingBox)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->standing_platform->base,&CStack_24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.y =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(CStack_24.max.y - CStack_24.min.y) + (param_1->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.y = local_c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `&param_1[2].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
-      "match": "(int)&param_1[2].orient",
-      "severity": "moderate",
-      "text": "pCVar2 = *(CPlatform **)((int)&param_1[2].orient + 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 63,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(param_1->location).position.x = (pCVar2->base).location.position.x;",
+      "text": "(this_ptr->cached_position).x = (pCVar1->position).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 70,
+      "line": 57,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(param_1->orient).vec.x = (pUVar3->vec).x;",
+      "text": "(this_ptr->cached_orientation).vec.x = (pUVar2->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 71,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->base).location.position.x = (pCVar4->base).location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 79,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar2->vec).x = (pUVar5->vec).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 22,
+      "line": 25,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "(param_1->platform_position_delta).z = 0.0;",
+      "text": "(this_ptr->base).platform_position_delta.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 28,
+      "line": 35,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "(param_1->platform_orientation_delta).z = 0.0;",
+      "text": "(this_ptr->base).platform_orientation_delta.z = 0.0;",
       "type": "unrolled_memset"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pCVar2 = *(CPlatform **)((int)&param_1[2].orient + 4);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

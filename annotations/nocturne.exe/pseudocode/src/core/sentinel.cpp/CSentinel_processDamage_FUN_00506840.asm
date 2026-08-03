@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sentinel_cpp_CSentinel_processDamage_FUN_00506840(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_00506840(CSentinel *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CSentinel *      Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sentinel_die_wav_005900c6

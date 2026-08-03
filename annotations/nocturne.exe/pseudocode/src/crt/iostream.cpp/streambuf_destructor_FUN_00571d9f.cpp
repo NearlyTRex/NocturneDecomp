@@ -1,18 +1,21 @@
 // Name: crt_iostream.cpp_streambuf_destructor_FUN_00571d9f
 // Address: 00571d9f
 // Address Range: [[00571d9f, 00571dc6]]
-// Convention: unknown
-// Signature: int crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(int param_1)
+// Convention: __watcallStack
+// Signature: streambuf * __watcallStack crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(streambuf *this_ptr)
 
 #include "nocturne.h"
 
-int crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(int param_1)
+streambuf * __watcallStack crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(streambuf *this_ptr)
 
 {
-  *(byte ***)(param_1 + 0x28) = &g_StreambufVTable;
-  if ((*(byte *)(param_1 + 0x24) & 2) == 0) {
-    return param_1;
+  uint uVar1;
+  
+  uVar1 = this_ptr->__flags;
+  this_ptr[1].__b_lock = &g_StreambufVTable;
+  if ((uVar1 & 2) == 0) {
+    return this_ptr;
   }
-  FUN_00571ef0(*(void **)(param_1 + 4));
-  return param_1;
+  FUN_00571ef0(this_ptr->__reserve_base);
+  return this_ptr;
 }

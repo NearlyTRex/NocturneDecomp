@@ -1,51 +1,52 @@
 // Name: core_zombie.cpp_CZombie_archive_FUN_00561aa0
 // Address: 00561aa0
 // Address Range: [[00561aa0, 00561be8]]
-// Convention: unknown
-// Signature: void core_zombie_cpp_CZombie_archive_FUN_00561aa0(CEnemy *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_zombie_cpp_CZombie_archive_FUN_00561aa0(CZombie *this_ptr)
 
 #include "nocturne.h"
 
-void core_zombie_cpp_CZombie_archive_FUN_00561aa0(CEnemy *param_1)
+void __cdecl core_zombie_cpp_CZombie_archive_FUN_00561aa0(CZombie *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);
-  core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->speed,"speed");
+  core_enemy_cpp_CEnemy_archive_FUN_004796c0(&this_ptr->base);
+  core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
-            (&(param_1->base).model,"modelName");
+            (&(this_ptr->base).base.model,"modelName");
   if (1 < INT_005c166c) {
     if (INT_005c166c < 0xb) {
-      core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->guard_distance,"guardDistance");
+      core_actor_cpp_archiveFloat_FUN_0040c880
+                (&(this_ptr->base).guard_distance,"guardDistance");
     }
     core_actor_cpp_archiveMotionState_FUN_0040cb00
-              (&(param_1->base).model.motion_controller,"motion state");
+              (&(this_ptr->base).base.model.motion_controller,"motion state");
   }
   if (2 < INT_005c166c) {
-    core_actor_cpp_archivePartStatus_FUN_0040cbf0(&(param_1->base).model,"partStatus");
+    core_actor_cpp_archivePartStatus_FUN_0040cbf0
+              (&(this_ptr->base).base.model,"partStatus");
     if (INT_005c166c < 7) {
       core_actor_cpp_archiveActor_FUN_0040c980
-                (&(param_1->base).carry_hands[1].carry_actor,"carriedActor");
+                (&(this_ptr->base).base.carry_hands[1].carry_actor,"carriedActor");
     }
   }
   if (3 < INT_005c166c) {
     core_actor_cpp_archiveString_FUN_0040c6d0
-              ((char *)&param_1[1].base.base.location,"riseFromGraveCondition");
+              (this_ptr->rise_from_grave_condition,"riseFromGraveCondition");
   }
   if (4 < INT_005c166c) {
-    core_actor_cpp_archiveActor_FUN_0040c980
-              ((CDemonActor **)(param_1[1].base.base.actor_name + 0x18),"graveActor");
+    core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->grave_actor,"graveActor");
   }
   if ((5 < INT_005c166c) && (INT_005c166c < 9)) {
-    core_actor_cpp_archiveClothList_FUN_0040cf70(&(param_1->base).cloth_list,"clothList");
+    core_actor_cpp_archiveClothList_FUN_0040cf70
+              (&(this_ptr->base).base.cloth_list,"clothList");
   }
   if (7 < INT_005c166c) {
-    core_actor_cpp_archiveInteger_FUN_0040c900
-              ((int *)(param_1[1].base.base.create_event + 0xc),"isMinerZombie");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->is_miner_zombie,"isMinerZombie");
   }
   if (INT_005c166c < 10) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900
-            ((int *)(param_1[1].base.base.create_event + 0x10),"alwaysChaseFast");
+            (&this_ptr->always_chase_fast,"alwaysChaseFast");
   return;
 }

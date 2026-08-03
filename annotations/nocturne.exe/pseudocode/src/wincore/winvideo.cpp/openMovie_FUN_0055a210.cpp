@@ -14,7 +14,7 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_0055a210(HWND parent_window,char
   byte *pbVar1;
   MCIERROR MVar2;
   byte *pbVar3;
-  CHAR local_1b4 [260];
+  char local_1b4 [260];
   byte local_b0;
   byte local_af [127];
   tagRECT local_30;
@@ -23,7 +23,7 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_0055a210(HWND parent_window,char
   if (_DAT_02de3124 != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(parent_window);
   }
-  _sprintf(local_1b4,"open \"%s\" alias mov style child parent %d",movie_filename,parent_window);
+  _sprintf(local_1b4,"open \"%s\" alias mov style child parent %d");
   MVar2 = mciSendStringA(local_1b4,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar2 != 0) {
     MessageBoxA((HWND)parent_window,"Unable to open .AVI!",(LPCSTR)0x0,0x30);

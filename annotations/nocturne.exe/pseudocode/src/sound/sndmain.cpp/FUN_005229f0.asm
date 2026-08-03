@@ -152,7 +152,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x144]     ; 00522af7
     PUSH EDX                            ; 00522afd
     CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0 ; 00522afe
-        ;   XREF to: 004e7df0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0()
+        ;   XREF to: 004e7df0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00522b03
     MOV EDI,EBP                         ; 00522b06
     PUSH EDI                            ; 00522b08
@@ -182,7 +182,7 @@ section .text
     PUSH EBP                            ; 00522b5e
     MOV dword ptr [EBP + 0x10c],EAX     ; 00522b5f
     CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 ; 00522b65
-        ;   XREF to: 00521e10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10()
+        ;   XREF to: 00521e10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSample * this_ptr)
     MOV dword ptr [EBP + 0x128],0x0     ; 00522b6a
     MOV dword ptr [EBP + 0x12c],0x0     ; 00522b74
     FILD dword ptr [EBP + 0x10c]        ; 00522b7e
@@ -274,7 +274,7 @@ section .text
         ;   XREF to: 00522ceb (CONDITIONAL_JUMP)  ; LAB_00522ceb
     PUSH EBP                            ; 00522c7b
     CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 ; 00522c7c
-        ;   XREF to: 00521e10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10()
+        ;   XREF to: 00521e10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSample * this_ptr)
     MOV dword ptr [EBP + 0x128],0x0     ; 00522c81
     MOV dword ptr [EBP + 0x12c],0x0     ; 00522c8b
     FILD dword ptr [EBP + 0x10c]        ; 00522c95

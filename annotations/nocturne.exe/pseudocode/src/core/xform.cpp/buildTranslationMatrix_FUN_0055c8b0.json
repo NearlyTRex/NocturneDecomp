@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 149,
+    "complexity_score": 60,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 10,
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 66
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -85,9 +83,9 @@
         "0055c90b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "core_xform.cpp_buildTranslationMatrix_FUN_0055c8b0",
-    "signature": "void core_xform_cpp_buildTranslationMatrix_FUN_0055c8b0(undefined4 *param_1)"
+    "signature": "CMatrix3x4f * __stack_esi core_xform_cpp_buildTranslationMatrix_FUN_0055c8b0(CVector3f *translation,CMatrix3x4f *matrix_out)"
   },
   "function_calls": [],
   "globals": [],
@@ -95,9 +93,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -127,10 +125,10 @@
     "pcode_op_count": 113
   },
   "stack_frame": {
-    "frame_size": 60,
+    "frame_size": 64,
     "local_size": 60,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -216,6 +214,13 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "translation",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -236,91 +241,10 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "buildTranslationMatrix_FUN_0055c8b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 39,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_xform_cpp_buildTranslationMatrix_FUN_0055c8b0(uint *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_38[3] = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_c = param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 31,
+      "line": 32,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -333,14 +257,6 @@
       "severity": "moderate",
       "text": "// 0055c902: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 39,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "static_uninitvar"
     }
   ]
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(CDemonActor *param_1)
+; int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040d830

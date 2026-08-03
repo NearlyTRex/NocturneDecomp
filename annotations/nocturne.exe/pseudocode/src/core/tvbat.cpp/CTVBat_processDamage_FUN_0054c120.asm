@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tvbat_cpp_CTVBat_processDamage_FUN_0054c120(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_0054c120(CTVBat *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c

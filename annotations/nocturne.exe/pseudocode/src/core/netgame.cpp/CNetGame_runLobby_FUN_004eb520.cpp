@@ -20,7 +20,6 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
   int iVar7;
   uchar *puVar8;
   double dVar9;
-  uint uVar10;
   float fStack_138;
   float fStack_134;
   uchar auStack_130 [256];
@@ -49,9 +48,9 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
     pcStack_2c = this_ptr->mission_name;
     while (this_ptr->connection_type != CONNECTION_NONE) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
-      _sprintf(auStack_130,"Mission: %s",pcStack_2c);
+      _sprintf((char *)auStack_130,"Mission: %s");
       engine_2d_c_drawText_FUN_00402600((char *)auStack_130,0,0xb);
-      _sprintf(auStack_130,"MyGameSettigsId: %d",_DAT_01cea404);
+      _sprintf((char *)auStack_130,"MyGameSettigsId: %d");
       engine_2d_c_drawText_FUN_00402600((char *)auStack_130,400,0xb);
       engine_2d_c_drawText_FUN_00402600("Player",0,0x21);
       engine_2d_c_drawText_FUN_00402600("IP",100,0x21);
@@ -103,11 +102,10 @@ LAB_004eb75b:
             pcVar6 = "?";
             goto LAB_004eb75b;
           }
-          uVar10 = 0x4eb8c9;
           dVar9 = round
                             ((double)(*(float *)(pcStack_1c + 0x28) * 1000.0f));
           pcStack_1c = (char *)(int)ROUND(dVar9);
-          _sprintf(&fStack_134,"%dms",pcStack_1c,uVar10);
+          _sprintf((char *)&fStack_134,"%dms");
         }
         engine_2d_c_drawText_FUN_00402600((char *)auStack_130,200,iVar4);
         if (*(int *)(pcStack_1c + 0x44) == 0) {
@@ -127,11 +125,10 @@ LAB_004eb75b:
           puVar8 = puVar8 + 2;
         } while (uVar1 != '\0');
         engine_2d_c_drawText_FUN_00402600((char *)auStack_130,300,iVar4);
-        _sprintf(auStack_130,"%d",*(EHeroType *)(pcStack_1c + 0x14))
-        ;
+        _sprintf((char *)auStack_130,"%d");
         engine_2d_c_drawText_FUN_00402600((char *)auStack_130,400,iVar4);
         if (this_ptr->connection_type == CONNECTION_HOST) {
-          _sprintf(auStack_130,"%d",*(int *)(pcStack_1c + 0x34));
+          _sprintf((char *)auStack_130,"%d");
           engine_2d_c_drawText_FUN_00402600((char *)auStack_130,500,iVar4);
         }
         iVar4 = iVar4 + 0xb;
@@ -198,7 +195,7 @@ LAB_004eb75b:
           pcVar6 = pcStack_2c;
           if (iVar4 != 0) {
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-                      (g_CEditorTools_PTR_005b6d50,"Loading %s",pcStack_2c);
+                      (g_CEditorTools_PTR_005b6d50,"Loading %s");
             srand(this_ptr->random_seed);
             core_actor_cpp_setRandomSeed_FUN_0040dd20(this_ptr->random_seed);
             core_mission_cpp_CDemonMission_load_FUN_004d7ee0(g_CDemonMission_PTR_005baf90,pcVar6,0);
@@ -219,7 +216,7 @@ LAB_004eb75b:
       if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
          (this_ptr->network_mode == NET_MODE_SYNCING)) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-                  (g_CEditorTools_PTR_005b6d50,"Loading %s",this_ptr->mission_name);
+                  (g_CEditorTools_PTR_005b6d50,"Loading %s");
         srand(this_ptr->random_seed);
         core_actor_cpp_setRandomSeed_FUN_0040dd20(this_ptr->random_seed);
         core_mission_cpp_CDemonMission_load_FUN_004d7ee0

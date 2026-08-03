@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_vessel_cpp_CCryptVessel_getActorType_FUN_0054f910(void)
+; CDemonActorType * __cdecl core_vessel_cpp_CCryptVessel_getActorType_FUN_0054f910(CCryptVessel *this_ptr)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

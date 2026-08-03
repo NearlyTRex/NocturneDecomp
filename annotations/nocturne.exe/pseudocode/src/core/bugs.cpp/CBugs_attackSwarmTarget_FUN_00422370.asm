@@ -152,7 +152,7 @@ section .text
     PUSH EAX                            ; 00422481
     LEA ESI,[ESP + 0xa4]                ; 00422482
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 00422489
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0042248e
     LEA ESI,[ESP + 0xa4]                ; 00422493
     LEA EDI,[EBX + 0x12968]             ; 0042249a
@@ -181,7 +181,7 @@ section .text
     PUSH EBX                            ; 004224d9
     INC EDI                             ; 004224da
     CALL core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 ; 004224db
-        ;   XREF to: 00422c70 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70()
+        ;   XREF to: 00422c70 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs * this_ptr, SBug * bug_data, float delta_time)
     ADD ESI,0x40                        ; 004224e0
     MOV ECX,dword ptr [EBX + 0xbd28]    ; 004224e3
     ADD ESP,0xc                         ; 004224e9

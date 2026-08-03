@@ -62,7 +62,7 @@ section .text
     FSTP double ptr [ESP]               ; 00523d3d
     PUSH EBX                            ; 00523d40
     CALL sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0 ; 00523d41
-        ;   XREF to: 00525de0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0()
+        ;   XREF to: 00525de0 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSfxSample * this_ptr, double position, uint input_type)
     MOV dword ptr [ESP + 0x10],EAX      ; 00523d46
     MOV dword ptr [ESP + 0x14],EDX      ; 00523d4a
     FLD double ptr [ESP + 0x10]         ; 00523d4e

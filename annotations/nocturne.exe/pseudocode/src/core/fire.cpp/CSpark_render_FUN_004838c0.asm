@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CSpark_render_FUN_004838c0(CVector3f *param_1)
+; void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
 ;
+; Parameters:
+; CSpark *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xd8]:4  local_d8
 ; undefined4       Stack[-0xd4]:4  local_d4
@@ -143,7 +145,7 @@ section .text
     MOV EAX,[0x007f7370]                ; 00483952 | DAT_007f7370
     PUSH EAX                            ; 00483957
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00483958
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     MOV EDX,0xffff                      ; 0048395d
     MOV ECX,dword ptr [0x01c038f4]      ; 00483962 | DAT_01c038f4
     ADD ESP,0xc                         ; 00483968
@@ -387,7 +389,7 @@ section .text
     MOV EBX,dword ptr [0x007f7370]      ; 00483d00 | DAT_007f7370
     PUSH EBX                            ; 00483d06
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00483d07
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     MOV EDX,0xffff                      ; 00483d0c
     MOV ECX,dword ptr [0x01c038f4]      ; 00483d11 | DAT_01c038f4
     ADD ESP,0xc                         ; 00483d17

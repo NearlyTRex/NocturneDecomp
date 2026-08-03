@@ -13,7 +13,7 @@ CPendulum * __cdecl factoryFunc(void);
 
 // Original: core_pendulum.cpp_CPendulum_getActorType_FUN_004f2c20
 // Address: 004f2c20
-CDemonActorType * CPendulum::getActorType(void);
+CDemonActorType * __cdecl CPendulum::getActorType(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_ctor_FUN_004f2c30
 // Address: 004f2c30
@@ -21,7 +21,7 @@ CPendulum * __cdecl CPendulum::ctor(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_setup_FUN_004f2d40
 // Address: 004f2d40
-void CPendulum::setup(CDemonActor *param_1);
+void __cdecl CPendulum::setup(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60
 // Address: 004f2e60
@@ -37,19 +37,19 @@ void __cdecl CPendulum::updateSwing(CPendulum *this_ptr,float delta_time);
 
 // Original: core_pendulum.cpp_CPendulum_process_FUN_004f3a20
 // Address: 004f3a20
-void CPendulum::process(CPendulum *param_1,float param_2);
+void __cdecl CPendulum::process(CPendulum *this_ptr,float delta_time);
 
 // Original: core_pendulum.cpp_CPendulum_renderOpaque_FUN_004f3b90
 // Address: 004f3b90
-int CPendulum::renderOpaque(CDemonActor *param_1);
+int __cdecl CPendulum::renderOpaque(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_getBoundingBox_FUN_004f3c00
 // Address: 004f3c00
-float * CPendulum::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CPendulum::getBoundingBox(CPendulum *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_pendulum.cpp_CPendulum_archive_FUN_004f3c50
 // Address: 004f3c50
-void CPendulum::archive(CDemonActor *param_1);
+void __cdecl CPendulum::archive(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_getCollisionType_FUN_004f3df0
 // Address: 004f3df0

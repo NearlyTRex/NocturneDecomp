@@ -13,7 +13,7 @@ CColonel * __cdecl factoryFunc(void);
 
 // Original: core_colonel.cpp_CColonel_getActorType_FUN_00439d20
 // Address: 00439d20
-CDemonActorType * CColonel::getActorType(void);
+CDemonActorType * __cdecl CColonel::getActorType(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_CColonel_ctor_FUN_00439d30
 // Address: 00439d30
@@ -25,7 +25,7 @@ void __cdecl CColonel::setup(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_CColonel_process_FUN_00439f50
 // Address: 00439f50
-void CColonel::process(CColonel *param_1,float param_2);
+void __cdecl CColonel::process(CColonel *this_ptr,float delta_time);
 
 // Original: core_colonel.cpp_CColonel_processAI_FUN_0043a470
 // Address: 0043a470
@@ -33,19 +33,19 @@ void __cdecl CColonel::processAI(CColonel *this_ptr,float delta_time);
 
 // Original: core_colonel.cpp_CColonel_processMotionEvents_FUN_0043a980
 // Address: 0043a980
-ushort CColonel::processMotionEvents(CCharacter *param_1,float param_2);
+void __cdecl CColonel::processMotionEvents(CColonel *this_ptr,float delta_time);
 
 // Original: core_colonel.cpp_CColonel_archive_FUN_0043a9e0
 // Address: 0043a9e0
-void CColonel::archive(CHero *param_1);
+void __cdecl CColonel::archive(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_CColonel_renderOpaque_FUN_0043a9f0
 // Address: 0043a9f0
-void CColonel::renderOpaque(CCharacter *param_1);
+void __cdecl CColonel::renderOpaque(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_CColonel_processDamage_FUN_0043aa00
 // Address: 0043aa00
-void CColonel::processDamage(CCharacter *param_1,SDamageInfo *param_2);
+void __cdecl CColonel::processDamage(CColonel *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_colonel.cpp_CColonel_isWeaponDrawn_FUN_0043ab20
 // Address: 0043ab20

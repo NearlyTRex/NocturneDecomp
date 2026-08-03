@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_CZombie_setup_FUN_0055ec20(CEnemy *param_1)
+; void __cdecl core_zombie_cpp_CZombie_setup_FUN_0055ec20(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

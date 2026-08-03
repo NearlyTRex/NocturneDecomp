@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_0054dac0(CCharacter *param_1)
+; int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_0054dac0(CVampireBoss *this_ptr)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ;

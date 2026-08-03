@@ -1,12 +1,12 @@
 // Name: core_tvbat.cpp_CTVBat_getActorType_FUN_0054b100
 // Address: 0054b100
 // Address Range: [[0054b100, 0054b105]]
-// Convention: unknown
-// Signature: CDemonActorType * core_tvbat_cpp_CTVBat_getActorType_FUN_0054b100(void)
+// Convention: __cdecl
+// Signature: CDemonActorType * __cdecl core_tvbat_cpp_CTVBat_getActorType_FUN_0054b100(CTVBat *this_ptr)
 
 #include "nocturne.h"
 
-CDemonActorType * core_tvbat_cpp_CTVBat_getActorType_FUN_0054b100(void)
+CDemonActorType * __cdecl core_tvbat_cpp_CTVBat_getActorType_FUN_0054b100(CTVBat *this_ptr)
 
 {
   return &g_CTVBatActorType_02dd110c;

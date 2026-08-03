@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_004fdefa
     PUSH 0x1e56420                      ; 004fdeff
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fdf04
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004fdf09
     XOR EAX,EAX                         ; 004fdf0c
         ;   Label: LAB_004fdf0c
@@ -73,7 +73,7 @@ section .text
     PUSH 0x58dfd2                       ; 004fdf13 | = "Actor variable name \"%s\" is too long"
     PUSH 0x1e56420                      ; 004fdf18
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fdf1d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fdf22
     JMP 0x004fdf0c                      ; 004fdf25
         ;   XREF to: 004fdf0c (UNCONDITIONAL_JUMP)  ; LAB_004fdf0c
@@ -98,7 +98,7 @@ section .text
     PUSH 0x58dff7                       ; 004fdf41 | = "Actor variable name \"%s\" is not valid"
     PUSH 0x1e56420                      ; 004fdf46
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fdf4b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fdf50
     XOR EAX,EAX                         ; 004fdf53
     POP EDI                             ; 004fdf55

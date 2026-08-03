@@ -61,7 +61,7 @@ float10 __watcallRegister function::dispatch(int function_index);
 
 // Original: crt_math.c_dispatch_divide_FUN_0056bf9f
 // Address: 0056bf9f
-float10 * __watcallRegister dispatch::divide(float10 *__return_storage_ptr__);
+void __watcallRegister dispatch::divide(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_0056c007
 // Address: 0056c007
@@ -89,7 +89,7 @@ void fdiv::thunk(void);
 
 // Original: crt_math.c_pentiumFdivpWorkaround_FUN_0056c403
 // Address: 0056c403
-void pentiumFdivpWorkaround(void);
+void __fpustack_safe pentiumFdivpWorkaround(void);
 
 // Original: crt_math.c_sqrt_FUN_0056c5a8
 // Address: 0056c5a8

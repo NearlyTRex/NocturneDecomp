@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_00494620(void)
+; CDemonActorType * __cdecl core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_00494620(CFrankenstienMachine *this_ptr)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

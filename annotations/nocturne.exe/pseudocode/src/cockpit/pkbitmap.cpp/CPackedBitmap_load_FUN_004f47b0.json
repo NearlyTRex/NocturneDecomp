@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,32 +52,20 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
-        "column": 3,
-        "line": 32,
-        "message": "no matching function for call to 'cockpit_pkbitmap_cpp_FUN_004f3f50'"
+        "column": 12,
+        "line": 38,
+        "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
         "category": "format_error",
-        "column": 105,
+        "column": 67,
         "line": 80,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 123,
-        "line": 80,
-        "message": "format specifies type 'unsigned int' but the argument has type 'ulong' (aka 'unsigned long') [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 84,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -86,21 +74,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 515,
+    "complexity_score": 184,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 39,
+    "pseudocode_lines": 99,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 278
+    "total_lines": 277
   },
   "cross_references": [
     {
@@ -126,7 +112,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,uint param_5,int param_6)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride)"
   },
   "function_calls": [
     {
@@ -219,11 +205,11 @@
         "stack_params": 6
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
     "estimated_params": 6,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.01360544217687,
@@ -258,289 +244,84 @@
     "pcode_op_count": 737
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_data",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "transparency_color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "row_stride",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cockpit_pkbitmap_cpp_FUN_004f3f50(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x18) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x18) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1c) = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1c) = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_6 = *(int *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_6 = *(int *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pvVar1 = shape_memdbg_cpp_malloc_FUN_00564c18((*(int *)(param_1 + 0x1c) + 1) * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)(param_1 + 0x20) = pvVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iStack_14 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(ulong *)(*(int *)(param_1 + 0x20) + iStack_28) = new_size;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1c) <= iStack_24) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pvVar1 = realloc(*(void **)(param_1 + 0x14),new_size);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)(param_1 + 0x14) = pvVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x18)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (*pbVar2 == param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x18) <= iVar7) break;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "} while (*pbVar2 != param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pvVar1 = realloc(*(void **)(param_1 + 0x14),uStack_18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)(param_1 + 0x14) = pvVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(auStack_154,\"Out of memory packing file \\\"%s\\\" on row %u trying to get %u bytes\",param_1,iStack_24,uStack_18",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = (ushort *)(*(int *)(param_1 + 0x14) + new_size);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)puVar8",
+      "line": 44,
+      "match": "(ulong *)((int)this_ptr",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "text": "*(ulong *)((int)this_ptr->row_offsets + iStack_28) = new_size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 79,
+      "match": "(ushort *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar4 = (ushort *)((int)this_ptr->packed_data + new_size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
       "match": "(ushort *)((int)puVar4",
       "severity": "moderate",
       "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar7 < *(int *)(param_1 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "iStack_14 = iStack_14 + param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 92,
-      "match": "(int)puVar8",
-      "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
+      "line": 92,
       "match": "(int)puVar4",
       "severity": "moderate",
       "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);",
@@ -548,7 +329,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 85,
+      "line": 84,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = (uVar9 & 0xffff) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -556,7 +337,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 90,
+      "line": 89,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar9 = uVar9 & 3; new_size = uStack_1c, uVar9 != 0; uVar9 = uVar9 - 1) {",
@@ -569,17 +350,6 @@
       "severity": "moderate",
       "text": "// 004f4957: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

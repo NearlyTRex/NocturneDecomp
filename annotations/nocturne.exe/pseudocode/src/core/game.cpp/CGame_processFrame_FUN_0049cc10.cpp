@@ -12,43 +12,36 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
 
 {
   char cVar1;
-  CVector3f *pCVar2;
   CNetGame *this_ptr_00;
   _FILE *file;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
-  char *pcVar6;
-  uint *puVar7;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  char *pcVar5;
+  uint *puVar6;
+  int iVar7;
   int iVar8;
-  int iVar9;
-  int *piVar10;
-  byte bVar11;
+  int *piVar9;
+  byte bVar10;
   uint auStackY_107c [656];
-  double dVar12;
-  double dVar13;
-  double dVar14;
-  uint *puVar16;
-  double dVar15;
+  CVector3i *input_ptr;
   CSfxSample local_604;
   char local_3dc [256];
   char local_2dc [256];
   char local_1dc [200];
   char local_114 [100];
   CSlew local_b0;
-  int local_94;
-  uint auStack_90 [5];
-  int local_7c;
-  int local_78;
-  int local_74;
+  CVector3i local_94;
+  CVector3i local_88;
+  CVector3i local_7c;
   float local_70;
   float local_6c;
   float local_68;
-  uint local_5c;
+  int local_5c;
   int local_58;
-  uint local_54;
+  int local_54;
   int local_50;
-  byte local_4c [4];
+  int local_4c;
   int local_48;
   int local_44;
   int local_40;
@@ -64,7 +57,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
   int local_18;
   int local_14;
   
-  bVar11 = 0;
+  bVar10 = 0;
   local_40 = 0;
   if (this_ptr->profile_mode != 0) {
     local_44 = wincore_winrun_cpp_getTime_FUN_00558a30();
@@ -103,40 +96,42 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
   }
   else {
     core_slew_cpp_FUN_0051f930(&local_b0);
-    iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    if (&local_b0 != (CSlew *)(iVar3 + 0x20)) {
-      local_b0.position.x = (((CSlew *)(iVar3 + 0x20))->position).x;
-      local_b0.position.y = *(float *)(iVar3 + 0x24);
-      local_b0.position.z = *(float *)(iVar3 + 0x28);
+    iVar2 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    if (&local_b0 != (CSlew *)(iVar2 + 0x20)) {
+      local_b0.position.x = (((CSlew *)(iVar2 + 0x20))->position).x;
+      local_b0.position.y = *(float *)(iVar2 + 0x24);
+      local_b0.position.z = *(float *)(iVar2 + 0x28);
     }
-    iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    if (&local_b0.orientation != (UOrientationVector *)(iVar3 + 0x30)) {
-      local_b0.orientation.vec.x = (((UOrientationVector *)(iVar3 + 0x30))->vec).x;
-      local_b0.orientation.vec.y = *(float *)(iVar3 + 0x34);
-      local_b0.orientation.vec.z = *(float *)(iVar3 + 0x38);
+    iVar2 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    if (&local_b0.orientation != (UOrientationVector *)(iVar2 + 0x30)) {
+      local_b0.orientation.vec.x = (((UOrientationVector *)(iVar2 + 0x30))->vec).x;
+      local_b0.orientation.vec.y = *(float *)(iVar2 + 0x34);
+      local_b0.orientation.vec.z = *(float *)(iVar2 + 0x38);
     }
     core_slew_cpp_CSlew_processInput_FUN_0051f980(&local_b0);
-    iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    (**(code **)(*(int *)(iVar3 + 0x14c) + 0x60))(iVar3,&local_b0,&local_b0.orientation);
+    iVar2 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    (**(code **)(*(int *)(iVar2 + 0x14c) + 0x60))(iVar2,&local_b0,&local_b0.orientation);
     if ((DAT_01bd1d94 & 1) != 0) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
-                (&g_CDemonCamera_01fb8508,_DAT_01bd1d8c,_DAT_01bd1d90);
-      puVar16 = auStack_90 + 5;
-      local_7c = auStack_90[2];
-      auStack_90[(uint)bVar11 * -2 + 6] = auStack_90[(uint)bVar11 * -2 + 3];
-      auStack_90[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
-           auStack_90[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+                (&g_CDemonCamera_01fb8508,_DAT_01bd1d8c,_DAT_01bd1d90,&local_88);
+      input_ptr = &local_7c;
+      local_7c.x = local_88.x;
+      *(uint *)((int)&local_7c + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_88 + (uint)bVar10 * -8 + 4);
+      *(uint *)((int)&local_7c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+           *(uint *)((int)&local_88 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
-                (&g_CDemonCamera_01fb8508,puVar16);
-      local_7c = local_94;
-      auStack_90[(uint)bVar11 * -2 + 6] = auStack_90[(uint)bVar11 * -2];
-      auStack_90[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
-           auStack_90[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-      local_70 = (float)local_7c * _DAT_0059de8c;
-      local_6c = (float)local_78 * _DAT_0059de8c;
-      local_68 = (float)local_74 * _DAT_0059de8c;
-      iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      (**(code **)(*(int *)(iVar3 + 0x14c) + 0x60))(iVar3,&local_70,iVar3 + 0x30);
+                (&g_CDemonCamera_01fb8508,input_ptr,&local_94);
+      local_7c.x = local_94.x;
+      *(uint *)((int)&local_7c + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_94 + (uint)bVar10 * -8 + 4);
+      *(uint *)((int)&local_7c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+           *(uint *)((int)&local_94 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      local_70 = (float)local_7c.x * _DAT_0059de8c;
+      local_6c = (float)local_7c.y * _DAT_0059de8c;
+      local_68 = (float)local_7c.z * _DAT_0059de8c;
+      iVar2 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+      (**(code **)(*(int *)(iVar2 + 0x14c) + 0x60))(iVar2,&local_70,iVar2 + 0x30);
       DAT_01bd1d94 = DAT_01bd1d94 & 0xfe;
     }
   }
@@ -150,9 +145,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     local_14 = wincore_winrun_cpp_getTime_FUN_00558a30();
     local_14 = local_14 - local_44;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"screen paint : %3.2f ms\n",
-               ((double)local_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-               (double)g_CGame_PTR_005b9354->delta_time_float);
+              (g_CConsole_PTR_005ad350,"screen paint : %3.2f ms\n");
   }
   if (this_ptr->skip_frame_render != 0) goto LAB_0049d5b0;
   engine_special_cpp_lockFrame_FUN_005322e0();
@@ -160,16 +153,16 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     core_set_cpp_FUN_0050a260(g_CDemonSet_PTR_005be368);
   }
   if (this_ptr->developer_mode_enabled == 0) {
-    pcVar6 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005825f0);
-    pcVar6 = getenv(pcVar6);
-    if (pcVar6 != (char *)0x0) goto LAB_0049cf70;
+    pcVar5 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005825f0);
+    pcVar5 = getenv(pcVar5);
+    if (pcVar5 != (char *)0x0) goto LAB_0049cf70;
   }
   else {
 LAB_0049cf70:
-    iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F4);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F4);
+    if (iVar2 != 0) {
       _DAT_01c780b8 = _DAT_01c780b8 + 1;
-      _sprintf(0x1c780c0,"demon%d.pcx",_DAT_01c780b8);
+      _sprintf((char *)0x1c780c0,"demon%d.pcx");
       engine_pcx_c_FUN_004f2990((char *)0x1c780c0);
     }
   }
@@ -179,14 +172,14 @@ LAB_0049cf70:
   }
   core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(this_ptr);
   if (_DAT_01c78ac8 != 0) {
-    iVar3 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
-    if ((iVar3 != 0) &&
-       (iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_V),
-       iVar3 != 0)) {
-      iVar3 = _DAT_01c78acc;
+    iVar2 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
+    if ((iVar2 != 0) &&
+       (iVar2 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_V),
+       iVar2 != 0)) {
+      iVar2 = _DAT_01c78acc;
       if (_DAT_01c78acc == 0) {
         _DAT_01c78acc = 1;
-        _DAT_01c78ad4 = iVar3;
+        _DAT_01c78ad4 = iVar2;
       }
       else {
         _DAT_01c78acc = 0;
@@ -194,8 +187,8 @@ LAB_0049cf70:
     }
     if ((_DAT_01c78ad0 < 1) || (_DAT_01c78ad4 < _DAT_01c78ad0)) {
       if (_DAT_01c78acc != 0) {
-        _sprintf(local_114,"noc%05d.raw",_DAT_01c78ad4);
-        _sprintf(local_1dc,"Movie recording active: movie\\%s",local_114);
+        _sprintf(local_114,"noc%05d.raw");
+        _sprintf(local_1dc,"Movie recording active: movie\\%s");
         local_34 = engine_dosio_cpp_getFile_FUN_00456a60("movie",local_114,"wb");
         if (local_34 != (_FILE *)0x0) {
           local_38 = 0;
@@ -208,37 +201,37 @@ LAB_0049cf70:
                   file = local_34;
                   local_28 = (local_30 * DAT_005b761c) / 0x00000040;
                   local_20 = ((local_30 + 1) * DAT_005b761c) / 0x00000040;
-                  iVar3 = (local_38 * DAT_005b7620) / 0x00000040;
-                  iVar5 = (local_3c * DAT_005b7620) / 0x00000040;
-                  iVar8 = 0;
+                  iVar2 = (local_38 * DAT_005b7620) / 0x00000040;
+                  iVar4 = (local_3c * DAT_005b7620) / 0x00000040;
+                  iVar7 = 0;
                   local_18 = 0;
                   local_1c = 0;
-                  iVar9 = 0;
-                  if (iVar3 < iVar5) {
-                    local_24 = iVar3 * 4;
-                    local_2c = iVar5 << 2;
+                  iVar8 = 0;
+                  if (iVar2 < iVar4) {
+                    local_24 = iVar2 * 4;
+                    local_2c = iVar4 << 2;
                     do {
                       if (local_28 < local_20) {
-                        puVar7 = (uint *)(local_28 * 4 + *(int *)(&DAT_01bd2fa0 + local_24));
-                        iVar3 = local_28;
+                        puVar6 = (uint *)(local_28 * 4 + *(int *)(&DAT_01bd2fa0 + local_24));
+                        iVar2 = local_28;
                         do {
-                          uVar4 = *puVar7;
-                          puVar7 = puVar7 + 1;
-                          iVar9 = iVar9 + (uVar4 >> 0x10 & 0xff);
-                          iVar3 = iVar3 + 1;
-                          iVar8 = iVar8 + (uVar4 & 0xff);
-                          local_1c = local_1c + (uVar4 >> 8 & 0xff);
+                          uVar3 = *puVar6;
+                          puVar6 = puVar6 + 1;
+                          iVar8 = iVar8 + (uVar3 >> 0x10 & 0xff);
+                          iVar2 = iVar2 + 1;
+                          iVar7 = iVar7 + (uVar3 & 0xff);
+                          local_1c = local_1c + (uVar3 >> 8 & 0xff);
                           local_18 = local_18 + 1;
-                        } while (iVar3 < local_20);
+                        } while (iVar2 < local_20);
                       }
                       local_24 = local_24 + 4;
                     } while (local_24 < local_2c);
                   }
                   local_1c = local_1c / local_18;
-                  iVar8 = iVar8 / local_18;
-                  _fputc(iVar9 / local_18,local_34);
+                  iVar7 = iVar7 / local_18;
+                  _fputc(iVar8 / local_18,local_34);
                   _fputc(local_1c,file);
-                  _fputc(iVar8,file);
+                  _fputc(iVar7,file);
                   local_30 = local_30 + 1;
                 } while (local_30 < 0x00000040);
               }
@@ -263,42 +256,25 @@ LAB_0049cf70:
     _DAT_01c71e38 = 0;
   }
   else {
-    _sprintf(local_2dc,"Camera: \"%s\" Group %d",&g_CDemonCamera_01fb8508,
-               g_CDemonSet_PTR_005be368->cameras[g_CDemonSet_PTR_005be368->selected_camera_index].
-               camera_group);
+    _sprintf(local_2dc,"Camera: \"%s\" Group %d");
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x16);
     _DAT_01c71e38 = _DAT_01c71e38 + 1;
     _DAT_01c71e30 = _DAT_01c71e30 + (double)this_ptr->delta_time_float;
-    _sprintf(local_2dc,"FR: %f, AVG: %f, PC: %d",1.0 / (double)this_ptr->delta_time_float,
-               (double)_DAT_01c71e38 / _DAT_01c71e30,_DAT_01e52ef8);
+    _sprintf(local_2dc,"FR: %f, AVG: %f, PC: %d");
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0xb);
-    iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    _sprintf(local_2dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",(double)*(float *)(iVar3 + 0x20),
-               (double)*(float *)(iVar3 + 0x24),(double)*(float *)(iVar3 + 0x28),
-               180 * (double)*(float *)(iVar3 + 0x30) * 0.31830988619288902,
-               (double)*(float *)(iVar3 + 0x38) * 0.31830988619288902 * 180,
-               (double)*(float *)(iVar3 + 0x34) * 0.31830988619288902 * 180);
+    _sprintf(local_2dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh");
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,0);
-    _sprintf(local_2dc,"Slew : %s, Virtual Director : %s",
-               (&PTR_s_Off_005b9358)[this_ptr->is_paused],
-               (&PTR_s_Off_005b9358)[this_ptr->is_game_active]);
+    _sprintf(local_2dc,"Slew : %s, Virtual Director : %s");
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,0xb);
-    pCVar2 = this_ptr->debug_fudge_target;
-    if (pCVar2 != (CVector3f *)0x0) {
-      _sprintf(local_2dc,"Fudge: %g,%g,%g",(double)pCVar2->x,(double)pCVar2->y,
-                 (double)pCVar2->z);
+    if (this_ptr->debug_fudge_target != (CVector3f *)0x0) {
+      _sprintf(local_2dc,"Fudge: %g,%g,%g");
       engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x4d);
     }
     sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70
-              (&local_5c,&local_58,&local_54,&local_50,local_4c,&local_48);
-    dVar15 = (double)local_48 * 0.0009765625;
-    dVar13 = (double)local_50 * 0.0009765625;
-    dVar14 = (double)(local_58 + local_50) * 0.0009765625;
+              (&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);
     local_14 = local_58;
-    dVar12 = (double)local_58 * 0.0009765625;
-    iVar3 = sound_sndmain_cpp_countActiveSfx_FUN_005275e0();
-    _sprintf(local_2dc,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk",iVar3,local_5c,dVar12,local_54,dVar13,
-               dVar14,dVar15);
+    sound_sndmain_cpp_countActiveSfx_FUN_005275e0();
+    _sprintf(local_2dc,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk");
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x42);
     engine_texture_cpp_getTextureCacheStats_FUN_00545a80(local_2dc);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,DAT_005b7620 + -0x37);
@@ -307,14 +283,14 @@ LAB_0049cf70:
     engine_2d_c_drawText_FUN_00402600(this_ptr->debug_info_string,0,DAT_005b7620 + -0x21);
   }
   if (_DAT_01c78ad8 != 0) {
-    uVar4 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005274e0();
-    iVar3 = 0x37;
-    for (; uVar4 != 0; uVar4 = sound_sndmain_cpp_FUN_00527520(uVar4)) {
+    uVar3 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005274e0();
+    iVar2 = 0x37;
+    for (; uVar3 != 0; uVar3 = sound_sndmain_cpp_FUN_00527520(uVar3)) {
       sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(&local_604);
-      iVar5 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uVar4,&local_604);
-      if (iVar5 != 0) {
-        engine_2d_c_FUN_00402760(0,iVar3,(char *)&local_604);
-        iVar3 = iVar3 + 0xb;
+      iVar4 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uVar3,&local_604);
+      if (iVar4 != 0) {
+        engine_2d_c_FUN_00402760(0,iVar2,(char *)&local_604);
+        iVar2 = iVar2 + 0xb;
       }
     }
   }
@@ -329,19 +305,19 @@ LAB_0049cf70:
               (g_CEditorTools_PTR_005b6d50,local_3dc);
     engine_2d_c_drawText_FUN_00402600(local_3dc,0,DAT_005b7620 + -0x42);
   }
-  iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
-  if (iVar3 == 2) {
-    pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You're dead.  Game over.");
-    piVar10 = &local_604.taken;
+  iVar2 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  iVar2 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x104))(iVar2);
+  if (iVar2 == 2) {
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You're dead.  Game over.");
+    piVar9 = &local_604.taken;
     do {
-      cVar1 = *pcVar6;
-      *(char *)piVar10 = cVar1;
+      cVar1 = *pcVar5;
+      *(char *)piVar9 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      *(char *)((int)piVar10 + 1) = cVar1;
-      piVar10 = (int *)((int)piVar10 + 2);
+      cVar1 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      *(char *)((int)piVar9 + 1) = cVar1;
+      piVar9 = (int *)((int)piVar9 + 2);
     } while (cVar1 != '\0');
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
               (g_CBitFont_PTR_014b98f8,0,DAT_005b761c,

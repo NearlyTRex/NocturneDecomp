@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(int param_1)
+; void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640 at 0050a7a5

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,50 +52,38 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
-        "column": 5,
+        "column": 7,
         "line": 30,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
-        "line": 36,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
         "column": 22,
-        "line": 36,
-        "message": "expected expression"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 44,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 53,
+        "line": 32,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 29,
-        "line": 53,
+        "line": 32,
         "message": "expected expression"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 58,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 35,
+        "message": "use of undeclared identifier 'stack0xfffffe5c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 36,
+        "message": "use of undeclared identifier 'stack0xfffffe5c'"
       }
     ],
     "success": false,
@@ -104,19 +92,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 199,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 13,
+    "pseudocode_lines": 32,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_pointer_store",
-      "unnamed_param",
+      "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 172
+    "total_lines": 150
   },
   "cross_references": [],
   "function": {
@@ -127,9 +115,9 @@
         "0052bad3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0",
-    "signature": "undefined4 sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(int *param_1,int param_2)"
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)"
   },
   "function_calls": [
     {
@@ -207,9 +195,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -244,117 +232,60 @@
     "pcode_op_count": 395
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "slot",
+        "offset": 8,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(int *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(int *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_2 + 0x6c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcStack_1a8 = (char *)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piStack_1ac = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*param_1 + 0x40))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*param_1 + 0x40))();",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(param_2 + 0x74) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcStack_1a4 = (char *)(uint)(*(int *)(*(int *)(param_2 + 0x74) + 0x124) != 0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_2 + 0x74) + 0x138) != *(int *)(*(int *)(param_2 + 0x74) + 0x110)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_2 + 0x74) + 0x138) != *(int *)(*(int *)(param_2 + 0x74) + 0x110)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 44,
+      "line": 25,
       "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
       "severity": "moderate",
-      "text": "piStack_1b0 = *(int **)(iVar1 * 4 + 0x2dc92a8);",
+      "text": "error_code = (**(code **)(**(int **)(iVar1 * 4 + 0x2dc92a8) + 0x30))();",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
-      "text": "error_code = (**(code **)(*piStack_1b0 + 0x30))();",
+      "text": "error_code = (**(code **)(**(int **)(iVar1 * 4 + 0x2dc92a8) + 0x30))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xfffffe5c",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffe5c,\"DirectSux: Unable to %s.  (%s)\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xfffffe5c",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_FUN_00529980(&stack0xfffffe5c);",
+      "type": "stack_ref"
     }
   ],
   "vtable_info": {

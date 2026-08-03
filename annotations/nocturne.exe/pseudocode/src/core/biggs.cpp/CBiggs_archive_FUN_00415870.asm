@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_biggs_cpp_CBiggs_archive_FUN_00415870(CEnemy *param_1)
+; void __cdecl core_biggs_cpp_CBiggs_archive_FUN_00415870(CBiggs *this_ptr)
 ;
+; Parameters:
+; CBiggs *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00578e2e

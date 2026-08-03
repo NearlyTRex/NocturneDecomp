@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_CWeapon_onDropped_FUN_00554310(CCharacter *param_1,CVector3f *param_2)
+; void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_00554310(CWeapon *this_ptr,CVector3f *drop_position)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   drop_position
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;

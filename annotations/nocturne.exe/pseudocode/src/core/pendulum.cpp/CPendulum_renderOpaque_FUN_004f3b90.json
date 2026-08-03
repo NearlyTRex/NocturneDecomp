@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 92,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 67
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -83,9 +81,9 @@
         "004f3bf9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_pendulum.cpp_CPendulum_renderOpaque_FUN_004f3b90",
-    "signature": "int core_pendulum_cpp_CPendulum_renderOpaque_FUN_004f3b90(CDemonActor *param_1)"
+    "signature": "int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_004f3b90(CPendulum *this_ptr)"
   },
   "function_calls": [
     {
@@ -114,9 +112,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -145,10 +143,10 @@
     "pcode_op_count": 184
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -157,67 +155,17 @@
         "offset": -32,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPendulum *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_pendulum_cpp_CPendulum_renderOpaque_FUN_004f3b90(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1),0.0,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

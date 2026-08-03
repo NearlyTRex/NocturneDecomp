@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 188,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 15,
-    "suspect_types": [
-      "pointer_cast",
-      "unnamed_param"
-    ],
-    "total_lines": 111
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 110
   },
   "cross_references": [],
   "function": {
@@ -84,9 +81,9 @@
         "00411c3d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bat.cpp_CBat_archive_FUN_00411b50",
-    "signature": "void core_bat_cpp_CBat_archive_FUN_00411b50(CDemonActor *param_1)"
+    "signature": "void __cdecl core_bat_cpp_CBat_archive_FUN_00411b50(CBat *this_ptr)"
   },
   "function_calls": [
     {
@@ -176,9 +173,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -209,135 +206,22 @@
     "pcode_op_count": 285
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBat *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_bat_cpp_CBat_archive_FUN_00411b50(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].actor_name,\"courseFilename\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[2].orient_matrix.m[2].z,\"param\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].health,\"speed\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].runtime_state = (int)((float)param_1[2].health * (float)30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].runtime_state = (int)((float)param_1[2].health * (float)30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].health,\"flapSpeedMult\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)&param_1[2].runtime_state,\"courseSpeed\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&param_1[1].orient.vec,\"modelName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)&param_1[2].direction_hint,(char *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)(param_1[2].create_event + 0x58),\"periodicSoundTimerMin\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)(param_1[2].create_event + 0x5c),\"periodicSoundTimerMax\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 26,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "((float *)(param_1[2].create_event + 0x58),\"periodicSoundTimerMin\");",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 28,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "((float *)(param_1[2].create_event + 0x5c),\"periodicSoundTimerMax\");",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

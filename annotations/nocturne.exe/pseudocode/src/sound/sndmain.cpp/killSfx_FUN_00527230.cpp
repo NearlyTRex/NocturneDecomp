@@ -11,7 +11,7 @@ int __cdecl sound_sndmain_cpp_killSfx_FUN_00527230(uint sfx_handle)
 {
   CSfxSlot *slot;
   
-  slot = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
+  slot = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
   if (slot == (CSfxSlot *)0x0) {
     return 0;
   }

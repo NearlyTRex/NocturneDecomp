@@ -1,13 +1,13 @@
 // Name: core_charactr.cpp_CCharacter_hasDoorTarget_FUN_00428f20
 // Address: 00428f20
 // Address Range: [[00428f20, 00428f33]]
-// Convention: unknown
-// Signature: bool core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428f20(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428f20(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-bool core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428f20(int param_1)
+int __cdecl core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428f20(CCharacter *this_ptr)
 
 {
-  return *(int *)(param_1 + 0x25ac) == 0;
+  return (uint)(this_ptr->door_target == (CDoor *)0x0);
 }

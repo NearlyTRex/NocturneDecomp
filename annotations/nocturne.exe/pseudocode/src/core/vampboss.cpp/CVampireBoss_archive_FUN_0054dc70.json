@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 158,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 11,
-    "suspect_types": [
-      "unnamed_param",
-      "warning_type_propagation"
-    ],
-    "total_lines": 113
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 97
   },
   "cross_references": [],
   "function": {
@@ -84,9 +81,9 @@
         "0054dd43"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_vampboss.cpp_CVampireBoss_archive_FUN_0054dc70",
-    "signature": "void core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CEnemy *param_1)"
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CVampireBoss *this_ptr)"
   },
   "function_calls": [
     {
@@ -175,9 +172,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -206,103 +203,22 @@
     "pcode_op_count": 240
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model.motion_controller,\"human model motion state\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMotionController *)(param_1 + 1),\"bat model motion state\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3e].m[0].x,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3e].m[0].y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3e].m[0].z,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3e].m + 1),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[0x10].base.model.bone_transform.bone_scales + 0x3a),\"form\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3d].m[1].y,",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

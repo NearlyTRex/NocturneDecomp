@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cloth_cpp_CClothList_remove_FUN_00438410(int *param_1,int param_2)
+; void __cdecl core_cloth_cpp_CClothList_remove_FUN_00438410(CClothList *this_ptr,int index)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af5c

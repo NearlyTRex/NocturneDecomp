@@ -12,7 +12,7 @@ void cockpit_ckptutil_c_FUN_0042f050(int param_1,short *param_2,int param_3,int 
   int iVar1;
   int iVar2;
   int iVar3;
-  byte local_114 [256];
+  char local_114 [256];
   uint local_14;
   
   if (param_1 != 0) {
@@ -23,7 +23,7 @@ void cockpit_ckptutil_c_FUN_0042f050(int param_1,short *param_2,int param_3,int 
       do {
         iVar1 = (int)*param_2 + param_2[1] * param_4;
         if ((iVar1 < 0) || (iVar2 < iVar1)) {
-          _sprintf(local_114,"Edge out of range: edge %d",iVar3);
+          _sprintf(local_114,"Edge out of range: edge %d");
           g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
           g_INT_01cc4804 = 0x54b;
           core_main_c_FUN_004c8440(local_114);
@@ -31,7 +31,7 @@ void cockpit_ckptutil_c_FUN_0042f050(int param_1,short *param_2,int param_3,int 
         *(byte *)(iVar1 + param_1) = (byte)local_14;
         iVar1 = (int)param_2[2] + param_4 * ((short)(param_2[3] * 2) >> 1);
         if ((iVar1 < 0) || (iVar2 < iVar1)) {
-          _sprintf(local_114,"Edge out of range: edge %d",iVar3);
+          _sprintf(local_114,"Edge out of range: edge %d");
           g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
           g_INT_01cc4804 = 0x554;
           core_main_c_FUN_004c8440(local_114);

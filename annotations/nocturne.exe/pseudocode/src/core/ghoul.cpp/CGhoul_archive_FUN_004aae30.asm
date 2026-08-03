@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghoul_cpp_CGhoul_archive_FUN_004aae30(CEnemy *param_1)
+; void __cdecl core_ghoul_cpp_CGhoul_archive_FUN_004aae30(CGhoul *this_ptr)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00584dbd

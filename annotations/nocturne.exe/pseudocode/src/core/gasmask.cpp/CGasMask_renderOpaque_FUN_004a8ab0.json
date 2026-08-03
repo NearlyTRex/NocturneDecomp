@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -66,18 +66,6 @@
         "column": 3,
         "line": 18,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 20,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 43,
-        "line": 20,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -86,17 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 123,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 18,
-    "suspect_count": 9,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
     "total_lines": 74
   },
@@ -109,9 +95,9 @@
         "004a8b2f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gasmask.cpp_CGasMask_renderOpaque_FUN_004a8ab0",
-    "signature": "int core_gasmask_cpp_CGasMask_renderOpaque_FUN_004a8ab0(int param_1)"
+    "signature": "int __cdecl core_gasmask_cpp_CGasMask_renderOpaque_FUN_004a8ab0(CGasMask *this_ptr)"
   },
   "function_calls": [
     {
@@ -158,9 +144,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -190,10 +176,10 @@
     "pcode_op_count": 187
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -202,81 +188,32 @@
         "offset": -32,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGasMask *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_gasmask_cpp_CGasMask_renderOpaque_FUN_004a8ab0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x20));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 10,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x20));",
+      "text": "(DAT_005ae704,&(this_ptr->base).location.position);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);",
+      "text": "(DAT_005ae704,&(this_ptr->base).orient.vec,(CVector3f *)0x0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_20,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x150),0.0,-1);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moloch_cpp_CMoloch_setup_FUN_004dda70(CHero *param_1)
+; void __cdecl core_moloch_cpp_CMoloch_setup_FUN_004dda70(CMoloch *this_ptr)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_moloch_h_dfm_0058a73b

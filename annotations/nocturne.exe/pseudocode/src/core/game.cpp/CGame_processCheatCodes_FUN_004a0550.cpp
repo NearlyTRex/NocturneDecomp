@@ -350,7 +350,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
           dVar5 = (double)(int)uStack_18 * 0.055555555555555601;
           this_ptr->skip_frame_render = 0;
           dStack_2b0 = (double)this_ptr->frame_counter / (dVar5 * 1.52587890625e-05);
-          _sprintf(acStack_498,"FPS: %3.2lf",dStack_2b0);
+          _sprintf(acStack_498,"FPS: %3.2lf");
           core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,acStack_498,5.0);
         }
       }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_werewolf_cpp_CWerewolf_archive_FUN_00557800(CEnemy *param_1)
+; void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_00557800(CWerewolf *this_ptr)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00597e41

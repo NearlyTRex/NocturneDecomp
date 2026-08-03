@@ -1,21 +1,21 @@
 // Name: core_stranger.cpp_CStranger_renderTransparent_FUN_0053d6c0
 // Address: 0053d6c0
 // Address Range: [[0053d6c0, 0053d6f4]]
-// Convention: unknown
-// Signature: undefined4 core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CCharacter *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CStranger *this_ptr)
 
 #include "nocturne.h"
 
-uint core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CCharacter *param_1)
+int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CStranger *this_ptr)
 
 {
-  int iVar1;
+  CWeapon *this_ptr_00;
   
-  core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(param_1);
-  iVar1 = *(int *)(param_1[2].flames[0x1d].on_event + 0x5c);
-  if (iVar1 == 0) {
+  core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260((CCharacter *)this_ptr);
+  this_ptr_00 = this_ptr->weapon;
+  if (this_ptr_00 == (CWeapon *)0x0) {
     return 1;
   }
-  (**(code **)(*(int *)(iVar1 + 0x14c) + 0xc))(iVar1);
+  (*((this_ptr_00->base).vtable._ub)->renderTransparent)(&this_ptr_00->base);
   return 1;
 }

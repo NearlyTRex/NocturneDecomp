@@ -97,7 +97,7 @@ section .text
     LEA EAX,[ESP + 0x19c]               ; 0052bf7a
     PUSH EAX                            ; 0052bf81
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052bf82
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0052bf87
     LEA EAX,[ESP + 0x190]               ; 0052bf8a
     PUSH EAX                            ; 0052bf91
@@ -185,7 +185,7 @@ section .text
     LEA EAX,[ESP + 0x4bc]               ; 0052c070
     PUSH EAX                            ; 0052c077
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052c078
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0052c07d
     LEA EAX,[ESP + 0x4b0]               ; 0052c080
     JMP 0x0052bf91                      ; 0052c087
@@ -201,7 +201,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0052c0a0
     PUSH EAX                            ; 0052c0a4
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052c0a5
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0052c0aa
     MOV EAX,ESP                         ; 0052c0ad
     PUSH EAX                            ; 0052c0af
@@ -232,7 +232,7 @@ section .text
     LEA EAX,[ESP + 0x32c]               ; 0052c0ff
     PUSH EAX                            ; 0052c106
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052c107
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0052c10c
     LEA EAX,[ESP + 0x320]               ; 0052c10f
     JMP 0x0052bf91                      ; 0052c116

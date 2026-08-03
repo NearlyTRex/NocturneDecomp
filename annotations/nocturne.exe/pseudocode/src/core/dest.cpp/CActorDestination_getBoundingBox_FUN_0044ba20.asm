@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20(int param_1,undefined4 *param_2)
+; CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20(CActorDestination *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CActorDestination * Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

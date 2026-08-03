@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 151,
+    "complexity_score": 20,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 12,
-    "suspect_types": [
-      "suspect_float",
-      "unnamed_param"
-    ],
-    "total_lines": 69
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
   },
   "cross_references": [],
   "function": {
@@ -84,9 +81,9 @@
         "0054e36b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_vampboss.cpp_CVampireBoss_getCollisionType_FUN_0054e310",
-    "signature": "ECollisionType core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_0054e310(CCharacter *param_1,SCollisionInfo *param_2)"
+    "signature": "ECollisionType __cdecl core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_0054e310(CVampireBoss *this_ptr,SCollisionInfo *collision_info)"
   },
   "function_calls": [
     {
@@ -100,9 +97,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -133,111 +130,29 @@
     "pcode_op_count": 172
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ECollisionType core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_0054e310(CCharacter *param_1,SCollisionInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "ECollisionType core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_0054e310(CCharacter *param_1,SCollisionInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2->ray_query).ray_type != 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "EVar2 = (*(((param_1->base).vtable._uc)->_uc).getDeathState)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "EVar2 = (*(((param_1->base).vtable._uc)->_uc).getDeathState)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = (param_2->ray_query).ray_type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 14,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "(param_1[0x10].model.bone_transform.bone_world_matrices[0x2f].m[0].y == 2.8026e-45)) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[0x10].model.bone_transform.bone_world_matrices[0x2f].m[0].y == 2.8026e-45)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->deformable_model =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(CDeformableModelInstance *)(param_1[1].base.create_event + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "EVar3 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "EVar3 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(param_1,param_2);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

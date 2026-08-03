@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammobox_cpp_CAmmoBox_setup_FUN_0040f0f0(CDemonActor *param_1)
+; void __cdecl core_ammobox_cpp_CAmmoBox_setup_FUN_0040f0f0(CAmmoBox *this_ptr)
 ;
+; Parameters:
+; CAmmoBox *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

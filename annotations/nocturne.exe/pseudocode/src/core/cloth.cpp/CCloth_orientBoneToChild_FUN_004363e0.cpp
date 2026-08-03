@@ -13,11 +13,11 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(CCloth *this_p
   int iVar1;
   SClothBone *bone_name;
   CVector3f *pCVar2;
-  float *pfVar3;
+  CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
   CMatrix3x4f local_94;
-  float local_64 [12];
+  CMatrix3x4f local_64;
   CVector3f local_34;
   CVector3f local_28;
   CSkeleton *local_1c;
@@ -61,12 +61,12 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(CCloth *this_p
             (&bone_name->world_matrix,&local_28,&local_34);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
             (&local_94,&bone_name->euler1,&bone_name->euler2);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&bone_name->world_matrix,&local_94);
-  pfVar3 = local_64;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&bone_name->world_matrix,&local_94,&local_64);
+  pCVar3 = &local_64;
   pCVar4 = &bone_name->world_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar4->m[0].w = *pfVar3;
-    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+    pCVar4->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
     pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
   }
   bone_name->inv_radius1 = 1.0 / bone_name->radius1;

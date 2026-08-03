@@ -56,7 +56,7 @@ section .text
     PUSH ESI                            ; 00548e60
         ;   Label: LAB_00548e60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00548e61
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00548e66
     POP ESI                             ; 00548e69
     POP EBX                             ; 00548e6a

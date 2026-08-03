@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,25 +52,25 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 24,
-        "line": 158,
+        "column": 25,
+        "line": 165,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 185,
+        "line": 193,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 192,
+        "line": 200,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       }
     ],
@@ -80,19 +80,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 460,
-    "complexity_score": 1596,
+    "complexity_score": 313,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 191,
-    "suspect_count": 139,
+    "pseudocode_lines": 198,
+    "suspect_count": 10,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 651
+    "total_lines": 658
   },
   "cross_references": [],
   "function": {
@@ -103,9 +103,9 @@
         "0055020d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_vessel.cpp_CCryptVessel_process_FUN_0054fc60",
-    "signature": "void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2)"
+    "signature": "void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -183,9 +183,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -230,10 +230,10 @@
     "pcode_op_count": 2015
   },
   "stack_frame": {
-    "frame_size": 76,
+    "frame_size": 84,
     "local_size": 76,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -319,1120 +319,102 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x3ac) == 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3dc) = *(uint *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3dc) = *(uint *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3e0) = *(uint *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3e0) = *(uint *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3e4) = *(uint *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3e4) = *(uint *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 1000) = *(uint *)(param_1 + 0x2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 1000) = *(uint *)(param_1 + 0x2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x3e0) = *(float *)(param_1 + 0x3e0) + 1.7f;",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x3e0) = *(float *)(param_1 + 0x3e0) + 1.7f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x3ec) != (uint *)(param_1 + 0x30)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x3ec) != (uint *)(param_1 + 0x30)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3ec) = *(uint *)(param_1 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3ec) = *(uint *)(param_1 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3f0) = *(uint *)(param_1 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3f0) = *(uint *)(param_1 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3f4) = *(uint *)(param_1 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3f4) = *(uint *)(param_1 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_flame_cpp_CFlame_process_FUN_0048d0c0((CFlame *)(param_1 + 0x3bc),param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_flame_cpp_CFlame_process_FUN_0048d0c0((CFlame *)(param_1 + 0x3bc),param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if (*(int *)(param_1 + 0x3ac) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x658) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x658);",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar12->vec).x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x658) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x658);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x658) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x658);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = param_2 * (float)8 + *(float *)(param_1 + 0x7dc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = param_2 * (float)8 + *(float *)(param_1 + 0x7dc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x7dc) = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x7dc) = *(float *)(param_1 + 0x7dc) + -16.0f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x7dc) = *(float *)(param_1 + 0x7dc) + -16.0f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2cc) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x3b8) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b8) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)(param_1 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x3b0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "position = (CVector3f *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x3b4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x3b4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 <= 1.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b4) = 0x3f800000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(CCryptVessel **)(param_1 + 0x2d0) == (CCryptVessel *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = core_vessel_cpp_FUN_0054fc40(*(CCryptVessel **)(param_1 + 0x2d4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x3a0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b0) = 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(iVar8 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(iVar8 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2c) = *(uint *)(iVar8 + 0x2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x3a0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34) = *(uint *)(iVar8 + 0x34);",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar2->position).x = (pCVar3->base).location.position.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = *(uint *)(iVar8 + 0x38);",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 76,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (pUVar12->vec).x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = core_vessel_cpp_FUN_0054fc40(*(CCryptVessel **)(param_1 + 0x2d0));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar8 = core_vessel_cpp_FUN_0054fc40(*(CCryptVessel **)(param_1 + 0x2d4)), iVar8 == 0))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&& ((iVar8 = core_vessel_cpp_FUN_0054fc40(*(CCryptVessel **)(param_1 + 0x2d0)),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar8 = core_vessel_cpp_FUN_0054fc40(*(CCryptVessel **)(param_1 + 0x2d4)),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = 0x461c3f9a;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = 0x461c3f9a;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = 0x461c3f9a;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x3a0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b0) = 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(iVar8 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(iVar8 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(iVar8 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2c) = *(uint *)(iVar8 + 0x2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x3a0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x30) != (uint *)(iVar8 + 0x30)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x30) = *(uint *)(iVar8 + 0x30);",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->base).location.position.x = (pCVar3->base).location.position.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34) = *(uint *)(iVar8 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = *(uint *)(iVar8 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 103,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) - param_2;",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (pUVar12->vec).x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) - param_2;",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 129,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar2->position).x = (pCVar3->base).location.position.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x3b4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x3b4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0.0 <= param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b0) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b4) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(*(int *)(param_1 + 0x3a0) + 0x17c) == 0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)(param_1 + 0x3a4) + 0x17c) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x3b4) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x3b4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x3b4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0.0 <= param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 120,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x3a0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b4) = 0x3f800000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 123,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(iVar8 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(iVar8 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 125,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2c) = *(uint *)(iVar8 + 0x2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 126,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x3a0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 128,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b0) = 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34) = *(uint *)(iVar8 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 133,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = *(uint *)(iVar8 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 134,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b0) = 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b4) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b0) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 142,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(*(int *)(param_1 + 0x3a0) + 0x17c) == 0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 143,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)(param_1 + 0x3a4) + 0x17c) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 144,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x3b0) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 145,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b4) = 0x40400000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 146,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3b0) = 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 152,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(iVar8 + 0x20) - *(float *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)(iVar8 + 0x24) - *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = *(float *)(iVar8 + 0x28) - *(float *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 157,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x2d0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 159,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar5 = *(float *)(param_1 + 0x20) - *(float *)(iVar8 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar6 = *(float *)(param_1 + 0x24) - *(float *)(iVar8 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 161,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar7 = *(float *)(param_1 + 0x28) - *(float *)(iVar8 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 164,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(param_1 + 0x2d4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar5 = *(float *)(iVar8 + 0x20) - *(float *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 167,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar6 = *(float *)(iVar8 + 0x24) - *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 168,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar7 = *(float *)(iVar8 + 0x28) - *(float *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 171,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((local_18 < *(float *)(param_1 + 0x3a8)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x3a8) < SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3))) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 173,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x3a8) < local_14)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 174,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar8 = *(int *)(param_1 + 0x2d0), *(int *)(iVar8 + 0x2cc) == 0 &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 177,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_1 + 0x2d0) + 0x3b4) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 179,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,(char *)(*(int *)(param_1 + 0x2d0) + 0x2d8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 181,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*(int *)(param_1 + 0x2d0) != 0) && (*(int *)(param_1 + 0x2d4) != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 181,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*(int *)(param_1 + 0x2d0) != 0) && (*(int *)(param_1 + 0x2d4) != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 182,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((*(int *)(*(int *)(param_1 + 0x3a4) + 0x17c) != 0 &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 183,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((*(int *)(*(int *)(*(int *)(param_1 + 0x2d0) + 0x3a4) + 0x17c) != 0 &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)(*(int *)(param_1 + 0x2d4) + 0x3a4) + 0x17c) != 0)))))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 186,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,(char *)(param_1 + 0x33c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 187,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_1 + 0x2d0) + 0x7e0) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 188,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_1 + 0x2d4) + 0x7e0) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 189,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x7e0) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (4 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 20,
-      "match": "raw-offset struct copy",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x3dc) = *(uint *)(param_1 + 0x20);",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 26,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x3ec) = *(uint *)(param_1 + 0x30);",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 63,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(iVar8 + 0x24);",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (4 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 89,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(iVar8 + 0x20);",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 95,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x30) = *(uint *)(iVar8 + 0x30);",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 123,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(iVar8 + 0x24);",
+      "text": "(pUVar1->vec).x = (pUVar12->vec).x;",
       "type": "unrolled_memcpy"
     }
   ],

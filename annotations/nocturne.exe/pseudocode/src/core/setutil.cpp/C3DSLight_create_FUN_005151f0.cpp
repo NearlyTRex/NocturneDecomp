@@ -14,10 +14,10 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *
   CDemonFilter *pCVar3;
   CDemonLight *this_ptr_00;
   CVector3f *pCVar4;
-  char (*pacVar5) [40];
-  int iVar6;
-  char *pcVar7;
-  C3DSLight *pCVar8;
+  char (*filter_name) [40];
+  int iVar5;
+  char *pcVar6;
+  C3DSLight *pCVar7;
   
   pCVar2 = (CDemonLight *)FUN_0056497c(0x2fac);
   this_ptr_00 = (CDemonLight *)0x0;
@@ -46,30 +46,29 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
             (&(this_ptr_00->base).rotation_matrix,&this_ptr->orient);
   (this_ptr_00->base).focal_length = this_ptr->fov;
-  iVar6 = 0;
+  iVar5 = 0;
   if (0 < this_ptr->filter_count) {
-    pacVar5 = this_ptr->filter_names;
-    pCVar8 = this_ptr;
+    filter_name = this_ptr->filter_names;
+    pCVar7 = this_ptr;
     do {
-      iVar6 = iVar6 + 1;
-      pCVar3 = (CDemonFilter *)
-               core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20
-                         (0x014B8DE8,pacVar5,this_ptr->blend_filter);
-      pCVar8->filters[0] = pCVar3;
-      pacVar5 = pacVar5 + 1;
-      pCVar8 = (C3DSLight *)pCVar8->name;
-    } while (iVar6 < this_ptr->filter_count);
+      iVar5 = iVar5 + 1;
+      pCVar3 = core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20
+                         (0x014B8DE8,*filter_name,this_ptr->blend_filter);
+      pCVar7->filters[0] = pCVar3;
+      filter_name = filter_name + 1;
+      pCVar7 = (C3DSLight *)pCVar7->name;
+    } while (iVar5 < this_ptr->filter_count);
   }
-  pcVar7 = this_ptr->name;
+  pcVar6 = this_ptr->name;
   pCVar2 = this_ptr_00;
   do {
-    cVar1 = *pcVar7;
+    cVar1 = *pcVar6;
     (pCVar2->base).camera_name[0] = cVar1;
     if (cVar1 == '\0') {
       return this_ptr_00;
     }
-    cVar1 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
     (pCVar2->base).camera_name[1] = cVar1;
     pCVar2 = (CDemonLight *)((pCVar2->base).camera_name + 2);
   } while (cVar1 != '\0');

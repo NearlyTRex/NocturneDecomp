@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,12 +52,12 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 24,
+        "column": 27,
         "line": 17,
         "message": "use of undeclared identifier 'FUN_0056497c'"
       }
@@ -68,16 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 207,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 16,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
     "total_lines": 122
   },
@@ -97,9 +96,9 @@
         "004b0667"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gore.cpp_CGore_spawnFlies_FUN_004b0580",
-    "signature": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5)"
+    "signature": "CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004b0580(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size)"
   },
   "function_calls": [
     {
@@ -179,24 +178,19 @@
         "call_addr": "004b068d",
         "call_type": "direct",
         "caller": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670",
-        "estimated_params": 9,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 9,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.7285714285714286,
@@ -227,144 +221,65 @@
     "pcode_op_count": 261
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "gather_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "spawn_rate",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "box_size",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr_00->base).location.position.x = *param_2;",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr_01->base).location.position.x = position->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr_00->base).location.position.y = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr_00->base).location.position.z = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr_00->gather_count = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr_00->gather_time = fVar2 / param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((param_5 != (float *)0x0) && (&this_ptr_00->box_size != (CVector3f *)param_5)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((param_5 != (float *)0x0) && (&this_ptr_00->box_size != (CVector3f *)param_5)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 30,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(this_ptr_00->box_size).x = *param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(this_ptr_00->box_size).y = param_5[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(this_ptr_00->box_size).z = param_5[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 9,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:9",
-      "param_delta": 9,
-      "text": "Function declares 0 params but call sites push 9 (9 missing)",
-      "type": "param_count_too_few"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr_01->box_size).x = box_size->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

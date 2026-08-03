@@ -1,49 +1,47 @@
 // Name: core_flamecan.cpp_CFlameCan_setup_FUN_0048e410
 // Address: 0048e410
 // Address Range: [[0048e410, 0048e54c]]
-// Convention: unknown
-// Signature: void core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(CFlameCan *this_ptr)
 
 #include "nocturne.h"
 
-void core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(CDemonActor *param_1)
+void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(CFlameCan *this_ptr)
 
 {
-  float fVar1;
+  CVector3f *pCVar1;
   float fVar2;
-  CDemonActor_vtable *pCVar3;
+  float fVar3;
+  CDemonActor_vtable *pCVar4;
   CBoundingBox3D local_38;
   float afStack_20 [6];
   
-  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)(param_1 + 1));
-  pCVar3 = (param_1->vtable)._ub;
-  param_1[3].platform_orientation_delta.z = 0.0;
-  (*pCVar3->getBoundingBox)(param_1,&local_38);
-  *(float *)(param_1[2].create_event + 0x40) = (param_1->location).position.x;
-  *(float *)(param_1[2].create_event + 0x44) = (param_1->location).position.y;
-  *(float *)(param_1[2].create_event + 0x48) = (param_1->location).position.z;
-  *(int *)(param_1[2].create_event + 0x4c) = (param_1->location).area_id;
-  *(float *)(param_1[2].create_event + 0x44) =
-       (local_38.max.y - local_38.min.y) + *(float *)(param_1[2].create_event + 0x44);
-  if ((float *)(param_1[3].create_event + 0x20) != afStack_20) {
-    *(float *)(param_1[3].create_event + 0x20) = local_38.max.x - local_38.min.x;
-    *(float *)(param_1[3].create_event + 0x24) = local_38.max.y - local_38.min.y;
-    *(float *)(param_1[3].create_event + 0x28) = local_38.max.z - local_38.min.z;
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->model);
+  pCVar4 = (this_ptr->base).vtable._ub;
+  (this_ptr->flame).flame_state = 0;
+  (*pCVar4->getBoundingBox)(&this_ptr->base,&local_38);
+  (this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;
+  (this_ptr->flame).base.location.position.y = (this_ptr->base).location.position.y;
+  (this_ptr->flame).base.location.position.z = (this_ptr->base).location.position.z;
+  (this_ptr->flame).base.location.area_id = (this_ptr->base).location.area_id;
+  (this_ptr->flame).base.location.position.y =
+       (local_38.max.y - local_38.min.y) + (this_ptr->flame).base.location.position.y;
+  pCVar1 = &(this_ptr->flame).flame_size;
+  if (pCVar1 != (CVector3f *)afStack_20) {
+    pCVar1->x = local_38.max.x - local_38.min.x;
+    (this_ptr->flame).flame_size.y = local_38.max.y - local_38.min.y;
+    (this_ptr->flame).flame_size.z = local_38.max.z - local_38.min.z;
   }
-  fVar1 = *(float *)(param_1[3].create_event + 0x20);
-  param_1[3].platform_position_delta.z = 0.0;
-  fVar1 = fVar1 * (float)2;
-  fVar2 = *(float *)(param_1[3].create_event + 0x24);
-  param_1[3].platform_orientation_delta.x = 0.0;
-  if (fVar2 < fVar1) {
-    *(float *)(param_1[3].create_event + 0x24) = fVar1;
+  fVar2 = (this_ptr->flame).flame_size.x;
+  (this_ptr->flame).which_flame = 0;
+  fVar2 = fVar2 * (float)2;
+  fVar3 = (this_ptr->flame).flame_size.y;
+  (this_ptr->flame).globe_scalar = 0.0;
+  if (fVar3 < fVar2) {
+    (this_ptr->flame).flame_size.y = fVar2;
   }
-  param_1[4].create_event[0x1c] = '\0';
-  param_1[4].create_event[0x1d] = '\0';
-  param_1[4].create_event[0x1e] = '\0';
-  param_1[4].create_event[0x1f] = '\0';
-  param_1->is_transparent = 1;
+  this_ptr->is_visible = 0;
+  (this_ptr->base).is_transparent = 1;
   return;
 }

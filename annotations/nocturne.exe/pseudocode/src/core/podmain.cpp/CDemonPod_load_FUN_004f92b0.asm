@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_podmain_cpp_CDemonPod_load_FUN_004f92b0(int param_1)
+; void __cdecl core_podmain_cpp_CDemonPod_load_FUN_004f92b0(CDemonPod *this_ptr)
 ;
+; Parameters:
+; CDemonPod *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x170]:1  local_170
 ; undefined        Stack[-0x5c]:1  local_5c

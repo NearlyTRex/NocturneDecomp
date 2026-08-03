@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(CCharacter *param_1)
+; int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(CScat *this_ptr)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004fcaf0 = 004fcb76

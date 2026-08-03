@@ -93,7 +93,7 @@ void FUN_0046fe60(CEditorTools *param_1,char *param_2);
 
 // Original: shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
 // Address: 0046fff0
-void __cdecl CEditorTools::displayCenteredStatusMessage(undefined4 param_1,char *param_2);
+void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,char *format);
 
 // Original: shape_edittool.cpp_FUN_004700d0
 // Address: 004700d0
@@ -225,7 +225,7 @@ void __cdecl CEditorTools::draw3DProjectedLine(CEditorTools *this_ptr,CVector3f 
 
 // Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60
 // Address: 00473a60
-void CEditorTools::setMousePointerType(undefined4 param_1,uint param_2,uint param_3,uint param_4);
+void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int cursor_type,int width,int height);
 
 // Original: shape_edittool.cpp_CStrList_ctor_FUN_00473b60
 // Address: 00473b60
@@ -305,7 +305,7 @@ int __cdecl CStrList::findByFirstField(CStrList *this_ptr,char *search_field);
 
 // Original: shape_edittool.cpp_CStrList_setStringAt_FUN_00474230
 // Address: 00474230
-void CStrList::setStringAt(int *param_1,int param_2,char *param_3);
+void __cdecl CStrList::setStringAt(CStrList *this_ptr,int index,char *new_string);
 
 // Original: shape_edittool.cpp_CStrList_swap_FUN_00474300
 // Address: 00474300
@@ -341,7 +341,7 @@ CPickList * __cdecl CPickList::dtor(CPickList *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 // Address: 00474d70
-int CPickList::displayChoicesAndWaitForInput(CPickList *param_1,char *param_2,int param_3);
+int __cdecl CPickList::displayChoicesAndWaitForInput(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags);
 
 // Original: shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70
 // Address: 00474e70
@@ -349,7 +349,7 @@ void __cdecl CPickList::initializeDialog(CPickList *this_ptr,char *dialog_title,
 
 // Original: shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0
 // Address: 00474ea0
-undefined4 CPickList::handleInput(CPickList *param_1);
+int __cdecl CPickList::handleInput(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_FUN_00475230
 // Address: 00475230
@@ -365,7 +365,7 @@ void __cdecl FUN_004759d0(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0
 // Address: 00475db0
-void CPickList::validateScrollBounds(int *param_1);
+void __cdecl CPickList::validateScrollBounds(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00475f10
 // Address: 00475f10
@@ -381,11 +381,11 @@ int __cdecl CPickList::isItemEnabled(CPickList *this_ptr,int item_index);
 
 // Original: shape_edittool.cpp_CPickList_insert_FUN_004760a0
 // Address: 004760a0
-void CPickList::insert(CStrList *param_1,int param_2,char *param_3);
+void __cdecl CPickList::insert(CPickList *this_ptr,int insert_index,char *string_data);
 
 // Original: shape_edittool.cpp_CPickList_remove_FUN_00476100
 // Address: 00476100
-void CPickList::remove(CStrList *param_1,int param_2,int param_3);
+void __cdecl CPickList::remove(CPickList *this_ptr,int start_index,int end_index);
 
 // Original: shape_edittool.cpp_FUN_00476160
 // Address: 00476160
@@ -397,7 +397,7 @@ void __cdecl CPickList::sort(CPickList *this_ptr,int sort_type,int sort_order);
 
 // Original: shape_edittool.cpp_CPickList_swap_FUN_00476200
 // Address: 00476200
-void CPickList::swap(CStrList *param_1,int param_2,int param_3);
+void __cdecl CPickList::swap(CPickList *this_ptr,int index1,int index2);
 
 // Original: shape_edittool.cpp_draw3DBorder_FUN_00476260
 // Address: 00476260
@@ -405,7 +405,7 @@ void __cdecl draw3DBorder(int left,int top,int width,int height,int border_style
 
 // Original: shape_edittool.cpp_draw3DInsetBorder_FUN_00476310
 // Address: 00476310
-void draw3DInsetBorder(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
+void __cdecl draw3DInsetBorder(int left,int top,int right,int bottom,int inner_y,int style);
 
 // Original: shape_edittool.cpp_CEdScrollBar_ctor_FUN_00476450
 // Address: 00476450

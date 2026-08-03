@@ -1,17 +1,17 @@
 // Name: core_barrier.cpp_CBarrier_updateCollisionData_FUN_004118a0
 // Address: 004118a0
 // Address Range: [[004118a0, 004118be]]
-// Convention: unknown
-// Signature: void core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CBarrier *this_ptr)
 
 #include "nocturne.h"
 
-void core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CDemonActor *param_1)
+void __cdecl core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CBarrier *this_ptr)
 
 {
-  if (*(int *)(param_1[1].actor_name + 0xc) == 0) {
+  if (this_ptr->add_to_path_grid == 0) {
     return;
   }
-  core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,param_1);
+  core_setcolid_cpp_FUN_00511a10(g_CDemonSet_PTR_005be368,&this_ptr->base);
   return;
 }

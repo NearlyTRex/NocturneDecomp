@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMirrorHack_setup_FUN_004cbb50(CDemonActor *param_1)
+; void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_004cbb50(CMirrorHack *this_ptr)
 ;
+; Parameters:
+; CMirrorHack *    Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

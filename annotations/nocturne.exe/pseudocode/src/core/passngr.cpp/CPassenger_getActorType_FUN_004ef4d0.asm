@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_passngr_cpp_CPassenger_getActorType_FUN_004ef4d0(void)
+; CDemonActorType * __cdecl core_passngr_cpp_CPassenger_getActorType_FUN_004ef4d0(CPassenger *this_ptr)
 ;
+; Parameters:
+; CPassenger *     Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

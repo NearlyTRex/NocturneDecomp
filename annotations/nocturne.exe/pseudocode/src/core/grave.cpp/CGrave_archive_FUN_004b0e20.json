@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 187,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 14,
-    "suspect_types": [
-      "primitive_walker_cast",
-      "suspect_float",
-      "unnamed_param"
-    ],
-    "total_lines": 119
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -85,9 +81,9 @@
         "004b0f19"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_grave.cpp_CGrave_archive_FUN_004b0e20",
-    "signature": "void core_grave_cpp_CGrave_archive_FUN_004b0e20(CDemonActor *param_1)"
+    "signature": "void __cdecl core_grave_cpp_CGrave_archive_FUN_004b0e20(CGrave *this_ptr)"
   },
   "function_calls": [
     {
@@ -176,9 +172,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -207,10 +203,10 @@
     "pcode_op_count": 297
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 20,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -219,123 +215,17 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGrave *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_grave_cpp_CGrave_archive_FUN_004b0e20(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1),\"model name\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].orient,\"fps\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient.vec.z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 15,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "param_1[2].orient.vec.z = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient.vec.z = 1.4013e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 20,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[2].orient.vec.z,\"graveState\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].orient.vec.z,\"graveState\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)&param_1[2].location.area_id,\"curFrame\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 26,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[2].orient_matrix,\"hideOnFirstFrame\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].orient_matrix,\"hideOnFirstFrame\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)&param_1[2].orient_matrix.m[0].y,\"startCondition\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[2].create_event + 0x2c,\"startSound\");",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

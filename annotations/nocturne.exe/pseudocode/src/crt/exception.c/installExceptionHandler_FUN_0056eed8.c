@@ -1,12 +1,12 @@
 // Name: crt_exception.c_installExceptionHandler_FUN_0056eed8
 // Address: 0056eed8
 // Address Range: [[0056eed8, 0056ef23]]
-// Convention: unknown
-// Signature: void crt_exception_c_installExceptionHandler_FUN_0056eed8(undefined4 param_1)
+// Convention: __cdecl
+// Signature: void __cdecl crt_exception_c_installExceptionHandler_FUN_0056eed8(undefined4 param_1)
 
 #include "nocturne.h"
 
-void installExceptionHandler(uint param_1)
+void __cdecl installExceptionHandler(uint param_1)
 
 {
   uint uVar1;

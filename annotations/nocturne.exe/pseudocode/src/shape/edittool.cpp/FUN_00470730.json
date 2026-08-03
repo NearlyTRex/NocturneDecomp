@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -75,15 +75,21 @@
       },
       {
         "category": "format_error",
-        "column": 34,
+        "column": 27,
         "line": 94,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 179,
-        "message": "no matching function for call to 'shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70'"
+        "category": "format_error",
+        "column": 29,
+        "line": 118,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 32,
+        "line": 167,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
@@ -108,12 +114,6 @@
         "column": 7,
         "line": 210,
         "message": "use of undeclared identifier 'FUN_00566570'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 216,
-        "message": "use of undeclared identifier 'FUN_00566570'"
       }
     ],
     "success": false,
@@ -122,7 +122,7 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 617,
-    "complexity_score": 429,
+    "complexity_score": 434,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 19,
@@ -131,6 +131,7 @@
     "suspect_count": 20,
     "suspect_types": [
       "stack_param",
+      "unaffected_reg",
       "undefined_data",
       "unrolled_memcpy",
       "unrolled_strlen"
@@ -708,19 +709,19 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "CEditorTools *in_stack_00000004;",
-      "type": "stack_param"
+      "text": "uint unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
-      "match": "in_stack_00000008",
+      "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "uint in_stack_00000008;",
+      "text": "CEditorTools *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -773,14 +774,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_sprintf(local_1c90,\"%s\\n%s\",in_stack_00000008,local_17dc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 90,
       "match": "in_stack_0000000c",
       "severity": "moderate",
@@ -802,6 +795,14 @@
       "severity": "moderate",
       "text": "engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(&local_18f0,in_stack_0000000c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 173,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(&local_1a60,local_1c90,iVar6,unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",

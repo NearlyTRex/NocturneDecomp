@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_platfrm_cpp_CPlatform_getCollisionType_FUN_004f7560(int param_1,int param_2)
+; ECollisionType __cdecl core_platfrm_cpp_CPlatform_getCollisionType_FUN_004f7560(CPlatform *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530

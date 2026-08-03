@@ -17,7 +17,7 @@ CWayPoint * __cdecl factoryFunc(void);
 
 // Original: core_waypoint.cpp_CWayPoint_getActorType_FUN_005524c0
 // Address: 005524c0
-CDemonActorType * CWayPoint::getActorType(void);
+CDemonActorType * __cdecl CWayPoint::getActorType(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_ctor_FUN_005524d0
 // Address: 005524d0
@@ -25,7 +25,7 @@ CWayPoint * __cdecl CWayPoint::ctor(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWaypoint_setup_FUN_00552510
 // Address: 00552510
-void CWaypoint::setup(CTrigger *param_1);
+void __cdecl CWaypoint::setup(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005525d0
 // Address: 005525d0
@@ -33,7 +33,7 @@ undefined4 CWayPoint::renderOpaque(void);
 
 // Original: core_waypoint.cpp_CWayPoint_archive_FUN_005525e0
 // Address: 005525e0
-void CWayPoint::archive(CTrigger *param_1);
+void __cdecl CWayPoint::archive(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680
 // Address: 00552680

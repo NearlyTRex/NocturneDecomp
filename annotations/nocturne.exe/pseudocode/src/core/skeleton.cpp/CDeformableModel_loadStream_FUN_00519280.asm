@@ -228,7 +228,7 @@ section .text
     PUSH EDI                            ; 005193f5
     PUSH EBX                            ; 005193f6
     CALL core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0 ; 005193f7
-        ;   XREF to: 00517ec0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0()
+        ;   XREF to: 00517ec0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel * this_ptr, int lod_index, int vertex_count, int tri_count, ...)
     INC EDI                             ; 005193fc
     ADD ESP,0x14                        ; 005193fd
     JMP 0x005193a7                      ; 00519400
@@ -319,7 +319,7 @@ section .text
     PUSH 0x0                            ; 005194bd
     PUSH EBX                            ; 005194bf
     CALL core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0 ; 005194c0
-        ;   XREF to: 00517ec0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0()
+        ;   XREF to: 00517ec0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel * this_ptr, int lod_index, int vertex_count, int tri_count, ...)
     ADD ESP,0x14                        ; 005194c5
     MOV EDI,ESI                         ; 005194c8
         ;   Label: LAB_005194c8

@@ -1,13 +1,13 @@
 // Name: core_simbox.cpp_CSimBox_getCollisionType_FUN_005170c0
 // Address: 005170c0
 // Address Range: [[005170c0, 005170c5]]
-// Convention: unknown
-// Signature: undefined4 core_simbox_cpp_CSimBox_getCollisionType_FUN_005170c0(void)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_simbox_cpp_CSimBox_getCollisionType_FUN_005170c0(CSimBox *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-uint core_simbox_cpp_CSimBox_getCollisionType_FUN_005170c0(void)
+ECollisionType __cdecl core_simbox_cpp_CSimBox_getCollisionType_FUN_005170c0(CSimBox *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return 1;
+  return COLLISION_TYPE_MESH;
 }

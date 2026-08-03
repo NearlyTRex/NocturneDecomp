@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,17 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 45,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 16
   },
   "cross_references": [
@@ -91,9 +88,9 @@
         "0043d838"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0043d810",
-    "signature": "float core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0043d810(int param_1)"
+    "signature": "float __cdecl core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0043d810(CCrossbow *this_ptr)"
   },
   "function_calls": [],
   "globals": [
@@ -131,11 +128,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.8,
@@ -162,10 +159,10 @@
     "pcode_op_count": 58
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 8,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -174,36 +171,15 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrossbow *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0043d810(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return ((float)0.66600000000000004 - *(float *)(param_1 + 0x2f8)) * (float)1.5015015015015001 *",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_anvil_cpp_CAnvil_process_FUN_0040f610(CDemonActor *param_1,float param_2)
+; void __cdecl core_anvil_cpp_CAnvil_process_FUN_0040f610(CAnvil *this_ptr,float delta_time)
 ;
+; Parameters:
+; CAnvil *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined4       Stack[-0x44]:4  local_44

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tvbat_cpp_CTVBat_archive_FUN_0054b310(CEnemy *param_1)
+; void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_0054b310(CTVBat *this_ptr)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_homePos_00596ee5

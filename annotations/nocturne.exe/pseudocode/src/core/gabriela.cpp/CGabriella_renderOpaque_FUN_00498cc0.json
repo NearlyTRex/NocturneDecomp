@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,38 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 26,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 21,
-        "line": 26,
-        "message": "expected expression"
-      },
-      {
-        "category": "cast_error",
-        "column": 30,
-        "line": 29,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 35,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 35,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -92,19 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 165,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 12,
-    "suspect_types": [
-      "pointer_cast",
-      "unnamed_param",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 128
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 130
   },
   "cross_references": [],
   "function": {
@@ -115,10 +81,10 @@
         "00498da3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_gabriela.cpp_CGabriella_renderOpaque_FUN_00498cc0",
-    "signature": "int core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(CCharacter *param_1)"
+    "signature": "int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(CGabriella *this_ptr)"
   },
   "function_calls": [
     {
@@ -177,9 +143,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -220,111 +186,22 @@
     "pcode_op_count": 416
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(CCharacter *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CCloth *)(param_1[2].flames[0x1d].on_event + 0x44),(CDeformableModelInstance *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = param_1[2].flames[0x1d].base.orient_matrix.m[1].x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(int *)((int)fVar3",
-      "severity": "moderate",
-      "text": "((**(code **)(*(int *)((int)fVar3 + 0x14c) + 8))(fVar3),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((**(code **)(*(int *)((int)fVar3 + 0x14c) + 8))(fVar3),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float)0.90000000000000002 < *(float *)(param_1[2].flames[0x1d].on_event + 0xc))) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor *)param_1[2].flames[0x1d].base.orient_matrix.m[1].x,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = param_1[2].flames[0x1d].base.orient_matrix.m[1].x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)fVar3",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)fVar3 + 0x14c) + 0xe8))(fVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)fVar3 + 0x14c) + 0xe8))(fVar3);",
-      "type": "unresolved_funcptr"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

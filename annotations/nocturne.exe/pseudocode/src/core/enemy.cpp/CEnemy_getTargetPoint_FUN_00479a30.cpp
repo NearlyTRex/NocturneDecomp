@@ -1,27 +1,22 @@
 // Name: core_enemy.cpp_CEnemy_getTargetPoint_FUN_00479a30
 // Address: 00479a30
 // Address Range: [[00479a30, 00479aae]]
-// Convention: unknown
-// Signature: float * core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30(CEnemy *this_ptr,CVector3f *out_point)
 
 #include "nocturne.h"
 
-float * core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30(int param_1,float *param_2)
+CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30(CEnemy *this_ptr,CVector3f *out_point)
 
 {
   float fVar1;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
+  CBoundingBox3D CStack_30;
   
-  (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_30);
+  (*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,&CStack_30);
   fVar1 = 5.2220990168285998e-315._0_4_;
-  *param_2 = (fStack_30 + fStack_24) * 5.2220990168285998e-315._0_4_;
-  param_2[1] = (fStack_2c + fStack_20) * fVar1;
-  param_2[2] = fVar1 * (fStack_28 + fStack_1c);
-  param_2[1] = fStack_20 - (fStack_20 - fStack_2c) * (float)0.16666666666666699;
-  return param_2;
+  out_point->x = (CStack_30.min.x + CStack_30.max.x) * 5.2220990168285998e-315._0_4_;
+  out_point->y = (CStack_30.min.y + CStack_30.max.y) * fVar1;
+  out_point->z = fVar1 * (CStack_30.min.z + CStack_30.max.z);
+  out_point->y = CStack_30.max.y - (CStack_30.max.y - CStack_30.min.y) * (float)0.16666666666666699;
+  return out_point;
 }

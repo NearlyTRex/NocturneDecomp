@@ -18,7 +18,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
   uint uVar4;
   int iVar5;
   bool bVar6;
-  char *pcVar7;
+  char *format;
   
   iVar5 = 0;
   switch(DAT_005ad44c) {
@@ -32,7 +32,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
     if (_DAT_012ceb5c != 0) {
       iVar5 = (int)(((longlong)DAT_005ad444 * (longlong)_DAT_012ceb60) / (longlong)_DAT_012ceb5c);
     }
-    pcVar7 = "Attack : ";
+    format = "Attack : ";
     break;
   case 1:
     _DAT_012ceb58 = _DAT_012ceb58 - _DAT_01bd1d80;
@@ -41,7 +41,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
       DAT_005ad44c = 2;
       _DAT_012ceb68 = _DAT_012ceb64;
     }
-    pcVar7 = "Sustain : ";
+    format = "Sustain : ";
     iVar5 = DAT_005ad444;
     break;
   case 2:
@@ -53,12 +53,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
     if (_DAT_012ceb64 != 0) {
       iVar5 = (int)(((longlong)DAT_005ad444 * (longlong)_DAT_012ceb68) / (longlong)_DAT_012ceb64);
     }
-    pcVar7 = "Decay : ";
+    format = "Decay : ";
     break;
   default:
     goto switchD_004402a8_caseD_3;
   }
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,pcVar7);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,format);
 switchD_004402a8_caseD_3:
   _DAT_012ceb6c =
        _DAT_012ceb6c +

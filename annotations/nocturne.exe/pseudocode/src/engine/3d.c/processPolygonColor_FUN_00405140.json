@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 14,
+        "line": 17,
         "message": "use of undeclared identifier 'DAT_01bf7720'"
       }
     ],
@@ -68,19 +68,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 157,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
-    "suspect_count": 13,
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_truncation",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 70
+    "total_lines": 72
   },
   "cross_references": [],
   "function": {
@@ -91,9 +90,9 @@
         "004051d7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_3d.c_processPolygonColor_FUN_00405140",
-    "signature": "int engine_3d_c_processPolygonColor_FUN_00405140(int param_1)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00405140(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [],
   "globals": [
@@ -108,9 +107,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -147,57 +146,33 @@
     "pcode_op_count": 640
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int engine_3d_c_processPolygonColor_FUN_00405140(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "DAT_006b0260 = *(uint *)(param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 5,
+      "line": 7,
       "match": "DAT_006b0260",
       "severity": "mild",
-      "text": "DAT_006b0260 = *(uint *)(param_1 + 4);",
+      "text": "DAT_006b0260 = (prim->base).count;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*(byte *)(param_1 + 7) & 0x80) != 0) && ((*(byte *)(param_1 + 7) & 0x40) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*(byte *)(param_1 + 7) & 0x80) != 0) && ((*(byte *)(param_1 + 7) & 0x40) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 10,
       "match": "DAT_006b0260",
       "severity": "mild",
       "text": "DAT_006b0260 = -(uint)(byte)(&DAT_01bf7720)",
@@ -205,55 +180,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 10,
       "match": "DAT_01bf7720",
       "severity": "mild",
       "text": "DAT_006b0260 = -(uint)(byte)(&DAT_01bf7720)",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "[((int)(*(int *)(param_1 + 4) >> 0x10 & 0xffU) >> 3) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int)(*(uint *)(param_1 + 4) & 0xff) >> 3) * 0x400 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int)(*(int *)(param_1 + 4) >> 8 & 0xffU) >> 3) * 0x20];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1 + 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1 + 8;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer value `(&DAT_01bf7720)` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 7,
+      "line": 10,
       "match": "(byte)(&DAT_01bf7720)",
       "severity": "moderate",
       "text": "DAT_006b0260 = -(uint)(byte)(&DAT_01bf7720)",

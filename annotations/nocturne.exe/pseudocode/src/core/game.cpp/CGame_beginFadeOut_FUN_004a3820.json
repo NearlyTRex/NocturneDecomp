@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,68 +52,68 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 31,
+        "line": 30,
         "message": "use of undeclared identifier '_DAT_01c78b04'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 32,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_01c78b0c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 33,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_01c78b10'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 34,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_01c78b08'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 37,
+        "line": 36,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 34,
-        "line": 37,
+        "line": 36,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
-        "column": 42,
+        "column": 44,
+        "line": 45,
+        "message": "use of undeclared identifier '_DAT_0059de84'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 44,
         "line": 46,
         "message": "use of undeclared identifier '_DAT_0059de84'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 42,
+        "column": 44,
         "line": 47,
         "message": "use of undeclared identifier '_DAT_0059de84'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 42,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_0059de84'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 49,
-        "message": "no matching function for call to 'core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610'"
+        "column": 7,
+        "line": 55,
+        "message": "use of undeclared identifier '_DAT_01c78b0c'"
       }
     ],
     "success": false,
@@ -122,14 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 209,
+    "complexity_score": 258,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 12,
+    "pseudocode_lines": 58,
+    "suspect_count": 16,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
       "stack_alignment_array",
@@ -137,7 +139,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 76
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -287,41 +289,34 @@
   "static_analysis": {
     "analyzed_file": "CGame_beginFadeOut_FUN_004a3820.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 5,
+      "diagnostic_count": 4,
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 42,
-          "line": 57,
+          "line": 56,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 35,
-          "line": 58,
+          "line": 57,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 50,
-          "line": 60,
+          "line": 59,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 39,
-          "line": 61,
+          "line": 60,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 17,
-          "line": 51,
-          "message": "Uninitialized variable: aiStack_2c",
           "severity": "error"
         }
       ],
@@ -348,7 +343,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "_DAT_01c78b0c = DAT_005b761c / 2;",
@@ -356,7 +351,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "_DAT_01c78b10 = DAT_005b7620 / 2;",
@@ -364,7 +359,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 26,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "_DAT_01c78b08 = (float)DAT_005b761c;",
@@ -372,7 +367,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
+      "line": 29,
       "match": "code *",
       "severity": "moderate",
       "text": "pfVar2 = (float *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_6c);",
@@ -380,7 +375,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 38,
+      "line": 37,
       "match": "*(CDemonActor **)(0x01E56DA0",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(0x01E56DA0 + 0xc),&CStack_48,&CStack_3c);",
@@ -388,7 +383,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 54,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if (0x1e0 < DAT_005b7620) {",
@@ -396,7 +391,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "_DAT_01c78b0c = (_DAT_01c78b0c * DAT_005b761c) / 0x280;",
@@ -404,15 +399,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 56,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "_DAT_01c78b10 = (_DAT_01c78b10 * DAT_005b7620) / 0x1e0;",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `&CStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&CStack_24",
+      "severity": "moderate",
+      "text": "aiStack_2c[(uint)bVar3 * -2] = *(int *)((int)&CStack_24 + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)&CStack_24",
+      "severity": "moderate",
+      "text": "*(int *)((int)&CStack_24 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 28,
+      "line": 27,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "iVar1 = *(int *)(0x01E56DA0 + 0xc);",
@@ -420,15 +431,31 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 38,
+      "line": 37,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(0x01E56DA0 + 0xc),&CStack_48,&CStack_3c);",
       "type": "raw_address_constant"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 44,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "aiStack_2c[(uint)bVar3 * -2] = *(int *)((int)&CStack_24 + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 46,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&CStack_24 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 57,
+      "line": 56,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -",
@@ -436,7 +463,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 58,
+      "line": 57,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;",
@@ -444,7 +471,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 60,
+      "line": 59,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -",
@@ -452,19 +479,11 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 61,
+      "line": 60,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;",
       "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Uninitialized variable: aiStack_2c",
-      "line": 51,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "iStack_30 = aiStack_2c[2];",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

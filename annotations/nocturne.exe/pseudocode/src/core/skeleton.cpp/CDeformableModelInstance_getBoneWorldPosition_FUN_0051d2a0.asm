@@ -105,7 +105,7 @@ section .text
     PUSH EDI                            ; 0051d341
     LEA ESI,[ESP + 0x38]                ; 0051d342
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 0051d346
-        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0()
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     ADD ESP,0x8                         ; 0051d34b
     MOV EAX,ESP                         ; 0051d34e
     PUSH EAX                            ; 0051d350

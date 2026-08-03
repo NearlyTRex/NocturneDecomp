@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_mimic_cpp_CMimic_getCollisionType_FUN_004d5c80(int param_1,int *param_2)
+; ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_004d5c80(CMimic *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00589507 = 1.30000000000000

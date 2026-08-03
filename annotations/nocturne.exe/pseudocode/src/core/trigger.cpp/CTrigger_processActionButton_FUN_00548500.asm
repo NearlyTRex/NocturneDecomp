@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_trigger_cpp_CTrigger_processActionButton_FUN_00548500(int param_1)
+; int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_00548500(CTrigger *this_ptr)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

@@ -151,7 +151,7 @@ section .text
     PUSH EBX                            ; 005660c1
     PUSH ESI                            ; 005660c2
     CALL crt_time.c_gmtime_r_FUN_0056d340 ; 005660c3
-        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_gmtime_r_FUN_0056d340()
+        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined1 crt_time.c_gmtime_r_FUN_0056d340(time_t days, time_t seconds, time_t timezone_offset, undefined1 result)
     ADD ESP,0x10                        ; 005660c8
     CALL crt_time.c_tzset_FUN_0056d608  ; 005660cb
         ;   XREF to: 0056d608 (UNCONDITIONAL_CALL)  ; void crt_time.c_tzset_FUN_0056d608()

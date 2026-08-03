@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tbplayer_cpp_CDrummer_setup_FUN_005433d0(CNPC *param_1)
+; void __cdecl core_tbplayer_cpp_CDrummer_setup_FUN_005433d0(CDrummer *this_ptr)
 ;
+; Parameters:
+; CDrummer *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_L_Hand_005964c6

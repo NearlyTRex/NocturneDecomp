@@ -1,34 +1,41 @@
 // Name: core_drip.cpp_CDrip_getBoundingBox_FUN_004627a0
 // Address: 004627a0
 // Address Range: [[004627a0, 0046287b]]
-// Convention: unknown
-// Signature: float * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(CDrip *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-float * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,float *param_2)
+CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(CDrip *this_ptr,CBoundingBox3D *out_box)
 
 {
-  CBoundingBox3D *pCVar1;
-  CKeyFramedModel *pCVar2;
+  float *pfVar1;
+  float *pfVar2;
+  float *pfVar3;
+  float *pfVar4;
+  CBoundingBox3D *pCVar5;
+  CKeyFramedModel *pCVar6;
   
-  if (*(int *)(param_1 + 0x2cc) != 2) {
-    *param_2 = -0.5;
-    param_2[1] = 0.0;
-    param_2[2] = -0.5;
-    param_2[3] = 0.5;
-    param_2[4] = 1.0;
-    param_2[5] = 1.0;
-    return param_2;
+  pfVar1 = &(out_box->min).y;
+  pfVar2 = &(out_box->min).z;
+  pfVar3 = &(out_box->max).y;
+  pfVar4 = &(out_box->max).z;
+  if (this_ptr->type != DRIP_TYPE_STALAG) {
+    (out_box->min).x = -0.5;
+    *pfVar1 = 0.0;
+    *pfVar2 = -0.5;
+    (out_box->max).x = 0.5;
+    *pfVar3 = 1.0;
+    *pfVar4 = 1.0;
+    return out_box;
   }
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
-  pCVar1 = pCVar2->frame_bounds;
-  *param_2 = (pCVar1->min).x;
-  param_2[1] = (pCVar1->min).y;
-  param_2[2] = (pCVar1->min).z;
-  param_2[3] = (pCVar1->max).x;
-  param_2[4] = (pCVar1->max).y;
-  param_2[5] = (pCVar1->max).z;
-  return param_2;
+  pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
+  pCVar5 = pCVar6->frame_bounds;
+  (out_box->min).x = (pCVar5->min).x;
+  *pfVar1 = (pCVar5->min).y;
+  *pfVar2 = (pCVar5->min).z;
+  (out_box->max).x = (pCVar5->max).x;
+  *pfVar3 = (pCVar5->max).y;
+  *pfVar4 = (pCVar5->max).z;
+  return out_box;
 }

@@ -5,7 +5,6 @@
 #include "system/stdint.h"
 #include "system/stdio.h"
 #include "types/classes/CAlphaBitmap.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -27,6 +26,7 @@
 #include "types/classes/CVector3i.h"
 #include "types/structs/SChatHistory.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SHuffmanTable.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLTextureLod.h"
 #include "types/structs/SMotion.h"
@@ -103,7 +103,7 @@ void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(CMotion
 float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60(CMotionController *this_ptr);
 float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(CMotionController *this_ptr,int motion_index,float marker_position);
 void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
-void core_motion_cpp_CMotionController_accumulateScaledRootMotion_FUN_004e2120(void);
+void __cdecl core_motion_cpp_CMotionController_accumulateScaledRootMotion_FUN_004e2120(CMotionController *this_ptr,float start_frame,float end_frame,float scale_factor);
 void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_004e2220(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(CMotionController *this_ptr,CDemonActor *actor);
@@ -125,7 +125,7 @@ uint __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_004e2dd0(CMP3Decoder *this_pt
 void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_004e2de0(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte);
 void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(CMP3Decoder *this_ptr,int num_bits);
 void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_004e2ea0(CMP3Decoder *this_ptr,int num_bytes);
-undefined4 sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(CMP3Decoder *param_1,char *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6);
+int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out,int *w_out);
 void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004e3130(CFileBitStream *this_ptr,SMpegFrameHeader **header_out);
 void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegFrame *frame );
 void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_004e3320(CFileBitStream *this_ptr,uint *output_array,SMpegFrame *frame);
@@ -156,7 +156,7 @@ int sound_mp3_cpp_FUN_004e78b0(void);
 void sound_mp3_cpp_FUN_004e7b00(void);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(CMP3Decoder *this_ptr);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_004e7dd0(CMP3Decoder *this_ptr,uint flags);
-void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2);
+void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *this_ptr,char *filename);
 int __cdecl sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size);
 void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(CMP3Decoder *this_ptr);
 int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_004e82d0(CMP3Decoder *this_ptr,short *output_buffer,int samples_requested);
@@ -243,7 +243,7 @@ CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_004ee8b0(CAl
 CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0(CAlphaBitmap *objs,uint flags);
 void __cdecl core_npc_cpp_staticInit_FUN_004ee8f0(void);
 CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_004ee920(void);
-CDemonActorType * core_npc_cpp_CNPC_getActorType_FUN_004ee940(void);
+CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_004ee940(CNPC *this_ptr);
 CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_004ee950(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_setup_FUN_004ee9e0(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_time);
@@ -262,16 +262,16 @@ CParticle * __cdecl core_particle_cpp_CParticle_dtor_FUN_004ef030(CParticle *thi
 void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
 void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(CParticle *this_ptr);
 void __cdecl core_particle_cpp_CParticle_render_FUN_004ef440(CParticle *this_ptr);
-undefined4 core_particle_cpp_CParticle_onCollision_FUN_004ef470(void);
+int __cdecl core_particle_cpp_CParticle_onCollision_FUN_004ef470(CParticle *this_ptr,CVector3f *collision_normal);
 void __cdecl core_passngr_cpp_staticInit_FUN_004ef480(void);
 CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_004ef4b0(void);
-CDemonActorType * core_passngr_cpp_CPassenger_getActorType_FUN_004ef4d0(void);
+CDemonActorType * __cdecl core_passngr_cpp_CPassenger_getActorType_FUN_004ef4d0(CPassenger *this_ptr);
 CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger *this_ptr);
 CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_004ef5c0(CPassenger *this_ptr,uint flags);
-void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CNPC *param_1);
-void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float param_2);
-int core_passngr_cpp_CPassenger_renderOpaque_FUN_004efa60(CCharacter *param_1);
-void core_passngr_cpp_CPassenger_archive_FUN_004efb30(CNPC *param_1);
+void __cdecl core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CPassenger *this_ptr);
+void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_ptr,float delta_time);
+int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_004efa60(CPassenger *this_ptr);
+void __cdecl core_passngr_cpp_CPassenger_archive_FUN_004efb30(CPassenger *this_ptr);
 void core_path_cpp_FUN_004efc10(void);
 int __cdecl core_path_cpp_isPathfindingQueueEmpty_FUN_004efc30(void);
 void __cdecl core_path_cpp_queuePush_FUN_004efc50(int grid_x,int cost,int grid_z,char direction);

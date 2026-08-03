@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_bugs_cpp_CBugs_getActorType_FUN_00421030(void)
+; CDemonActorType * __cdecl core_bugs_cpp_CBugs_getActorType_FUN_00421030(CBugs *this_ptr)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CBugsActorType_00765888

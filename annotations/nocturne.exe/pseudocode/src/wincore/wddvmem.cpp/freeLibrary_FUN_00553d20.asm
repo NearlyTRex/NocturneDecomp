@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_wddvmem_cpp_freeLibrary_FUN_00553d20(HMODULE param_1)
+; BOOL __cdecl wincore_wddvmem_cpp_freeLibrary_FUN_00553d20(HMODULE hLibModule)
 ;
+; Parameters:
+; HMODULE          Stack[0x4]:4   hLibModule
 ;
 ; XREF[1]:
 ;   engine_special.cpp_FUN_00530d40 at 00530e3d

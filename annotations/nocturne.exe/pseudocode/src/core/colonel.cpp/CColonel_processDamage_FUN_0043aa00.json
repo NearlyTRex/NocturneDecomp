@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 260,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 21,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 167
   },
   "cross_references": [],
@@ -83,9 +81,9 @@
         "0043ab18"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_colonel.cpp_CColonel_processDamage_FUN_0043aa00",
-    "signature": "void core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CCharacter *param_1,SDamageInfo *param_2)"
+    "signature": "void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CColonel *this_ptr,SDamageInfo *damage_info)"
   },
   "function_calls": [
     {
@@ -145,9 +143,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -187,183 +185,29 @@
     "pcode_op_count": 469
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColonel *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CCharacter *param_1,SDamageInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CCharacter *param_1,SDamageInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(uint *)param_1[1].base.actor_name & 0x7fffffff) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->damage_amount = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->damage_amount = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->damage_amount = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)param_1[1].base.actor_name = 0.5f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1->hit_points - param_2->damage_amount;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = param_1->hit_points - param_2->damage_amount;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &param_1->model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->hit_points = fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->hit_points = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->grabbed_by = (CDemonActor *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CGore_PTR_005b96c4,&param_1->base,0x32,50.0,(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "else if (0.0 < param_2->damage_amount) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

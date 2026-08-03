@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,13 +62,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 336,
+    "complexity_score": 357,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 25,
+    "pseudocode_lines": 62,
+    "suspect_count": 27,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -76,7 +76,7 @@
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 206
+    "total_lines": 207
   },
   "cross_references": [
     {
@@ -97,7 +97,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_gabriela.cpp_FUN_00499b00",
-    "signature": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,undefined4 param_4,int param_5,CVector3f *param_6)"
+    "signature": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6)"
   },
   "function_calls": [
     {
@@ -360,7 +360,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -368,7 +368,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -376,7 +376,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -384,7 +384,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -392,7 +392,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -400,7 +400,7 @@
       "line": 2,
       "match": "param_6",
       "severity": "mild",
-      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_gabriela_cpp_FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -477,15 +477,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 43,
       "match": "param_4",
       "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(this_ptr,param_4);",
+      "text": "(this_ptr,param_4,&local_78);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 48,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
       "match": "(CMatrix3x4f *)((int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -493,7 +501,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 51,
       "match": "param_6",
       "severity": "mild",
       "text": "input_local_point = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_48,param_6,&local_a8);",
@@ -501,7 +509,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&local_3c,input_local_point);",
@@ -509,7 +517,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 56,
       "match": "param_3",
       "severity": "mild",
       "text": "local_1b48 = *param_3;",
@@ -517,7 +525,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 59,
       "match": "param_3",
       "severity": "mild",
       "text": "local_18 = *param_3;",
@@ -525,15 +533,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 62,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = (local_18 + local_1b48) * (float)0.5;",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 48,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
       "match": "(int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -541,7 +557,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 45,
+      "line": 46,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",

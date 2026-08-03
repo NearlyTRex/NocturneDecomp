@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *param_1,SDamageInfo *param_2)
+; void __cdecl core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CBride *         Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ; undefined        Stack[-0x30]:1  local_30

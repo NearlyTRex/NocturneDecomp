@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hotdemon_cpp_CHotDemon_process_FUN_004b8f20(CEnemy *param_1,float param_2)
+; void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004b8f20(CHotDemon *this_ptr,float delta_time)
 ;
+; Parameters:
+; CHotDemon *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x10c]:1  local_10c
 ; undefined4       Stack[-0x108]:4  local_108
@@ -288,7 +291,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 004b915c | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 004b9162 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b9163
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004b8ffc                      ; 004b9168
         ;   XREF to: 004b8ffc (UNCONDITIONAL_JUMP)  ; LAB_004b8ffc
     JBE 0x004b8fec                      ; 004b916d

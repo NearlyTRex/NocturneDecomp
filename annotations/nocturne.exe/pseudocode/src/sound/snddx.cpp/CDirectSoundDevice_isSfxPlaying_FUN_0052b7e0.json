@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,25 +52,31 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 25,
+        "line": 24,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 29,
-        "line": 25,
+        "line": 24,
         "message": "expected expression"
+      },
+      {
+        "category": "format_error",
+        "column": 60,
+        "line": 27,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 30,
+        "line": 28,
         "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
       }
     ],
@@ -80,18 +86,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 58,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 26,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_pointer_store",
       "unresolved_funcptr"
     ],
-    "total_lines": 86
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -208,7 +214,7 @@
   "suspects": [
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 17,
+      "line": 16,
       "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
       "severity": "moderate",
       "text": "piStack_19c = *(int **)(iVar1 * 4 + 0x2dc92a8);",
@@ -216,7 +222,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
+      "line": 17,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(*piStack_19c + 0x24))();",

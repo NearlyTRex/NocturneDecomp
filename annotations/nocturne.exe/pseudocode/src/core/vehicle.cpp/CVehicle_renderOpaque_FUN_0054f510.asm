@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CDemonActor *param_1)
+; int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_ptr)
 ;
+; Parameters:
+; CVehicle *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ;

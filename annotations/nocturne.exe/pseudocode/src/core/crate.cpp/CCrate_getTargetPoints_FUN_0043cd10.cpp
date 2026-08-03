@@ -1,28 +1,28 @@
 // Name: core_crate.cpp_CCrate_getTargetPoints_FUN_0043cd10
 // Address: 0043cd10
 // Address Range: [[0043cd10, 0043cda0]]
-// Convention: unknown
-// Signature: undefined4 core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(CCrate *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 
-uint core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(int param_1,float *param_2)
+int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(CCrate *this_ptr,CVector3f *out_points_array)
 
 {
   float fVar1;
   float fVar2;
-  float *pfVar3;
-  byte auStack_34 [36];
-  float afStack_10 [3];
+  CBoundingBox3D *pCVar3;
+  CBoundingBox3D CStack_34;
+  CVector3f CStack_10;
   
-  pfVar3 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_34);
-  fVar1 = (pfVar3[1] + pfVar3[4]) * 0.5f;
-  fVar2 = (pfVar3[2] + pfVar3[5]) * 0.5f;
-  if (param_2 == afStack_10) {
+  pCVar3 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_34);
+  fVar1 = ((pCVar3->min).y + (pCVar3->max).y) * 0.5f;
+  fVar2 = ((pCVar3->min).z + (pCVar3->max).z) * 0.5f;
+  if (out_points_array == &CStack_10) {
     return 1;
   }
-  *param_2 = (*pfVar3 + pfVar3[3]) * 0.5f;
-  param_2[1] = fVar1;
-  param_2[2] = fVar2;
+  out_points_array->x = ((pCVar3->min).x + (pCVar3->max).x) * 0.5f;
+  out_points_array->y = fVar1;
+  out_points_array->z = fVar2;
   return 1;
 }

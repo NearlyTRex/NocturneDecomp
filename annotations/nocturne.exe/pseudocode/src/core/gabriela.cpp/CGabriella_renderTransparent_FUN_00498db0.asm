@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_gabriela_cpp_CGabriella_renderTransparent_FUN_00498db0(CCharacter *param_1)
+; int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_00498db0(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_00427260

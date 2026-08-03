@@ -371,7 +371,7 @@ section .text
     PUSH 0x1e56420                      ; 004ff42f | DAT_01e56420
         ;   Label: LAB_004ff42f
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004ff434
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ff439
     MOV dword ptr [ESP + 0x3e84],0xffffffff ; 004ff43c
         ;   Label: LAB_004ff43c
@@ -429,7 +429,7 @@ section .text
     PUSH 0x58e5b5                       ; 004ff4c8 | = "Duplicate label %s on lines %d and %d"
     PUSH 0x1e56420                      ; 004ff4cd | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004ff4d2
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x14                        ; 004ff4d7
     JMP 0x004ff43c                      ; 004ff4da
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -2133,7 +2133,7 @@ section .text
     PUSH 0x58e77d                       ; 005006c4 | = "Error parsing addItemToInventory comm..."
     PUSH 0x1e56420                      ; 005006c9 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005006ce
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005006d3
     JMP 0x004ff43c                      ; 005006d6
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -2228,7 +2228,7 @@ section .text
     PUSH 0x58e7d2                       ; 005007ee | = "Error parsing addLightFilter command ..."
     PUSH 0x1e56420                      ; 005007f3 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005007f8
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005007fd
     JMP 0x004ff43c                      ; 00500800
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -2255,7 +2255,7 @@ section .text
     PUSH 0x58e7fd                       ; 0050084e | = "Light \"%s\" does not exist"
     PUSH 0x1e56420                      ; 00500853 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00500858
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0050085d
     JMP 0x004ff43c                      ; 00500860
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -2290,7 +2290,7 @@ section .text
     PUSH 0x58e81b                       ; 005008b9 | = "Can't open filter \"%s\""
     PUSH 0x1e56420                      ; 005008be | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005008c3
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 005008c8
     JMP 0x004ff43c                      ; 005008cb
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -2419,7 +2419,7 @@ section .text
     PUSH 0x58e88c                       ; 00500a67 | = "Error parsing attachActorToPlatform c..."
     PUSH 0x1e56420                      ; 00500a6c | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00500a71
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00500a76
     JMP 0x004ff43c                      ; 00500a79
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -2534,7 +2534,7 @@ section .text
     LEA EAX,[ESP + 0x3658]              ; 00500bc6
     PUSH EAX                            ; 00500bcd
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00500bce
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00500bd3
     LEA EAX,[ESP + 0x3650]              ; 00500bd6
     PUSH 0x40a00000                     ; 00500bdd
@@ -2898,7 +2898,7 @@ section .text
         ;   Label: LAB_00500fb6
     PUSH 0x1e56420                      ; 00500fbb | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00500fc0
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00500fc5
     JMP 0x004ff43c                      ; 00500fc8
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -2913,7 +2913,7 @@ section .text
     PUSH EAX                            ; 00500ff4
     MOV dword ptr [ESP + 0x3ed0],ECX    ; 00500ff5 | = "$"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00500ffc
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00501001
     LEA EAX,[ESP + 0x1d3c]              ; 00501004
     PUSH EAX                            ; 0050100b
@@ -3035,7 +3035,7 @@ section .text
         ;   Label: LAB_00501179
     PUSH 0x1e56420                      ; 0050117e | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00501183
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00501188
     JMP 0x004ff43c                      ; 0050118b
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3050,7 +3050,7 @@ section .text
     PUSH EAX                            ; 005011b7
     MOV dword ptr [ESP + 0x3ebc],ECX    ; 005011b8 | = "$"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005011bf
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 005011c4
     LEA EAX,[ESP + 0x1954]              ; 005011c7
     PUSH EAX                            ; 005011ce
@@ -3120,7 +3120,7 @@ section .text
     PUSH 0x58ea2d                       ; 005012a0 | = "Error parsing dismember command parms"
     PUSH 0x1e56420                      ; 005012a5 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005012aa
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005012af
     JMP 0x004ff43c                      ; 005012b2
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3327,7 +3327,7 @@ section .text
         ;   Label: LAB_0050153a
     PUSH 0x1e56420                      ; 0050153f | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00501544
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00501549
     JMP 0x004ff43c                      ; 0050154c
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3336,7 +3336,7 @@ section .text
     PUSH 0x58ea8c                       ; 00501552 | = "Error parsing dismember command parms..."
     PUSH 0x1e56420                      ; 00501557 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050155c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00501561
     JMP 0x004ff43c                      ; 00501564
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3362,7 +3362,7 @@ section .text
     PUSH 0x58eac4                       ; 0050159e | = "Error parsing message text on display..."
     PUSH 0x1e56420                      ; 005015a3 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005015a8
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 005015ad
     JMP 0x004ff43c                      ; 005015b0
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3392,7 +3392,7 @@ section .text
     PUSH 0x58eafd                       ; 005015eb | = "Can't skip next command after else st..."
     PUSH 0x1e56420                      ; 005015f0 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005015f5
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 005015fa
     JMP 0x004ff43c                      ; 005015fd
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3423,7 +3423,7 @@ section .text
     PUSH 0x58eb53                       ; 00501653 | = "Error parsing enableCamera parms"
     PUSH 0x1e56420                      ; 00501658 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050165d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00501662
     JMP 0x004ff43c                      ; 00501665
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3491,7 +3491,7 @@ section .text
     PUSH 0x58eb74                       ; 0050170d | = "Camera \"%s\" does not exist."
     PUSH 0x1e56420                      ; 00501712 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00501717
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0050171c
     JMP 0x004ff43c                      ; 0050171f
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3539,7 +3539,7 @@ section .text
     PUSH 0x58ebb1                       ; 005017a2 | = "Error parsing enableCameraGroup parms"
     PUSH 0x1e56420                      ; 005017a7 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005017ac
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005017b1
     JMP 0x004ff43c                      ; 005017b4
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3632,7 +3632,7 @@ section .text
     PUSH 0x58ebf8                       ; 005018ac | = "Error parsing enableHealthBar parms"
     PUSH 0x1e56420                      ; 005018b1 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005018b6
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005018bb
     JMP 0x004ff43c                      ; 005018be
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3716,7 +3716,7 @@ section .text
     PUSH 0x58ec2e                       ; 0050199f | = "Invalid health bar mode '%s'"
     PUSH 0x1e56420                      ; 005019a4 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005019a9
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 005019ae
     JMP 0x004ff43c                      ; 005019b1
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3843,7 +3843,7 @@ section .text
     PUSH 0x58ec77                       ; 00501b34 | = "Error parsing gesture command parms"
     PUSH 0x1e56420                      ; 00501b39 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00501b3e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00501b43
     JMP 0x004ff43c                      ; 00501b46
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3914,7 +3914,7 @@ section .text
     PUSH 0x58ec9b                       ; 00501c0b | = "Gesture name %s is not valid for acto..."
     PUSH 0x1e56420                      ; 00501c10 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00501c15
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x14                        ; 00501c1a
     JMP 0x004ff43c                      ; 00501c1d
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -3954,7 +3954,7 @@ section .text
     PUSH 0x58ecec                       ; 00501c86 | = "Error parsing getIniInt command parms"
     PUSH 0x1e56420                      ; 00501c8b | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00501c90
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00501c95
     JMP 0x004ff43c                      ; 00501c98
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4038,7 +4038,7 @@ section .text
     PUSH 0x58ed4c                       ; 00501da7 | = "Error parsing getTriggerActor command..."
     PUSH 0x1e56420                      ; 00501dac | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00501db1
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00501db6
     JMP 0x004ff43c                      ; 00501db9
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4146,7 +4146,7 @@ section .text
     PUSH 0x58edb4                       ; 00501f01 | = "Call stack overflow detected on scrip..."
     PUSH 0x1e56420                      ; 00501f06 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00501f0b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00501f10
     JMP 0x004ff43c                      ; 00501f13
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4245,7 +4245,7 @@ section .text
     PUSH 0x58ee6d                       ; 00502045 | = "Error parsing holsterWeapon command p..."
     PUSH 0x1e56420                      ; 0050204a | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050204f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502054
     JMP 0x004ff43c                      ; 00502057
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4375,7 +4375,7 @@ section .text
         ;   Label: LAB_005021de
     PUSH 0x1e56420                      ; 005021e3 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005021e8
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005021ed
     JMP 0x004ff43c                      ; 005021f0
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4394,7 +4394,7 @@ section .text
         ;   Label: LAB_00502217
     PUSH 0x1e56420                      ; 0050221c | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502221
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502226
     JMP 0x004ff43c                      ; 00502229
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4475,7 +4475,7 @@ section .text
     PUSH 0x58eef6                       ; 005022fb | = "Can't skip next command after if stat..."
     PUSH 0x1e56420                      ; 00502300 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502305
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0050230a
     JMP 0x004ff43c                      ; 0050230d
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4516,7 +4516,7 @@ section .text
         ;   Label: LAB_00502392
     PUSH 0x1e56420                      ; 00502397 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050239c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005023a1
     JMP 0x004ff43c                      ; 005023a4
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4641,7 +4641,7 @@ section .text
     PUSH 0x58ef82                       ; 00502535 | = "Invalid letterBox mode: %s"
     PUSH 0x1e56420                      ; 0050253a | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050253f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00502544
     JMP 0x004ff43c                      ; 00502547
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4700,7 +4700,7 @@ section .text
     PUSH 0x58efbd                       ; 005025f4 | = "Error parsing lookAt command parms"
     PUSH 0x1e56420                      ; 005025f9 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005025fe
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502603
     JMP 0x004ff43c                      ; 00502606
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4773,7 +4773,7 @@ section .text
     PUSH 0x58efea                       ; 005026d9 | = "Error parsing lookAt command parms"
     PUSH 0x1e56420                      ; 005026de | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005026e3
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005026e8
     JMP 0x004ff43c                      ; 005026eb
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4806,7 +4806,7 @@ section .text
         ;   Label: LAB_00502745
     PUSH 0x1e56420                      ; 0050274a | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050274f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502754
     JMP 0x004ff43c                      ; 00502757
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4839,7 +4839,7 @@ section .text
     PUSH 0x58f054                       ; 005027af | = "Error parsing movePlatform command parms"
     PUSH 0x1e56420                      ; 005027b4 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005027b9
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005027be
     JMP 0x004ff43c                      ; 005027c1
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4909,7 +4909,7 @@ section .text
         ;   Label: LAB_0050286f
     PUSH 0x1e56420                      ; 00502874 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502879
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050287e
     JMP 0x004ff43c                      ; 00502881
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -4948,7 +4948,7 @@ section .text
     PUSH 0x58f0d6                       ; 005028eb | = "Error parsing openDoor command parms"
     PUSH 0x1e56420                      ; 005028f0 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005028f5
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005028fa
     JMP 0x004ff43c                      ; 005028fd
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5060,7 +5060,7 @@ section .text
     PUSH 0x58f119                       ; 00502a50 | = "Error parsing pressButton() command p..."
     PUSH 0x1e56420                      ; 00502a55 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502a5a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502a5f
     JMP 0x004ff43c                      ; 00502a62
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5129,7 +5129,7 @@ section .text
     PUSH 0x58f143                       ; 00502b25 | = "Invalid button name: %s"
     PUSH 0x1e56420                      ; 00502b2a | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502b2f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00502b34
     JMP 0x004ff43c                      ; 00502b37
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5189,7 +5189,7 @@ section .text
     PUSH 0x58f161                       ; 00502bbc | = "Error parsing event expression on rai..."
     PUSH 0x1e56420                      ; 00502bc1 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502bc6
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00502bcb
     JMP 0x004ff43c                      ; 00502bce
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5230,7 +5230,7 @@ section .text
     PUSH 0x58f1b7                       ; 00502c40 | = "Error parsing releaseButton() command..."
     PUSH 0x1e56420                      ; 00502c45 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502c4a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502c4f
     JMP 0x004ff43c                      ; 00502c52
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5299,7 +5299,7 @@ section .text
     PUSH 0x58f1e3                       ; 00502d14 | = "Invalid button name: %s"
     PUSH 0x1e56420                      ; 00502d19 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502d1e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00502d23
     JMP 0x004ff43c                      ; 00502d26
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5328,7 +5328,7 @@ section .text
     PUSH 0x58f223                       ; 00502d74 | = "Error parsing removeAllItemsFromInven..."
     PUSH 0x1e56420                      ; 00502d79 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502d7e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502d83
     JMP 0x004ff43c                      ; 00502d86
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5395,7 +5395,7 @@ section .text
     PUSH 0x58f286                       ; 00502e4e | = "Error parsing removeItemFromInventory..."
     PUSH 0x1e56420                      ; 00502e53 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502e58
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502e5d
     JMP 0x004ff43c                      ; 00502e60
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5501,7 +5501,7 @@ section .text
         ;   Label: LAB_00502fa9
     PUSH 0x1e56420                      ; 00502fae | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502fb3
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502fb8
     JMP 0x004ff43c                      ; 00502fbb
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5509,7 +5509,7 @@ section .text
         ;   Label: LAB_00502fc0
     PUSH 0x1e56420                      ; 00502fc5 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00502fca
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00502fcf
     JMP 0x004ff43c                      ; 00502fd2
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5540,7 +5540,7 @@ section .text
     PUSH 0x58f32b                       ; 00503024 | = "Return without gosub detected on scri..."
     PUSH 0x1e56420                      ; 00503029 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050302e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00503033
     JMP 0x004ff43c                      ; 00503036
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5581,7 +5581,7 @@ section .text
         ;   Label: LAB_005030bb
     PUSH 0x1e56420                      ; 005030c0 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005030c5
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005030ca
     JMP 0x004ff43c                      ; 005030cd
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5645,7 +5645,7 @@ section .text
     PUSH 0x58f3a6                       ; 0050316f | = "Error parsing speaker and wav arguments"
     PUSH 0x1e56420                      ; 00503174 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503179
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050317e
     JMP 0x004ff43c                      ; 00503181
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5743,7 +5743,7 @@ section .text
     PUSH 0x58f3ed                       ; 00503294 | = "Error parsing selectWeapon parameters."
     PUSH 0x1e56420                      ; 00503299 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050329e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005032a3
     JMP 0x004ff43c                      ; 005032a6
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5844,7 +5844,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 005033cb | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 005033d1 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005033d2
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005033d7
     JMP 0x004ff36b                      ; 005033da
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
@@ -5875,7 +5875,7 @@ section .text
     PUSH 0x58f490                       ; 00503430 | = "Error parsing setActorVariable comman..."
     PUSH 0x1e56420                      ; 00503435 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050343a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050343f
     JMP 0x004ff43c                      ; 00503442
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -5989,7 +5989,7 @@ section .text
     PUSH 0x58f4ea                       ; 0050359b | = "Error parsing setCameragroup parms"
     PUSH 0x1e56420                      ; 005035a0 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005035a5
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005035aa
     JMP 0x004ff43c                      ; 005035ad
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6033,7 +6033,7 @@ section .text
     PUSH 0x58f50d                       ; 0050362c | = "Camera \"%s\" does not exist."
     PUSH 0x1e56420                      ; 00503631 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503636
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0050363b
     JMP 0x004ff43c                      ; 0050363e
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6064,7 +6064,7 @@ section .text
     PUSH 0x58f54a                       ; 00503694 | = "Error parsing setCharacterHealth parms"
     PUSH 0x1e56420                      ; 00503699 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050369e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005036a3
     JMP 0x004ff43c                      ; 005036a6
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6191,7 +6191,7 @@ section .text
     PUSH 0x58f59d                       ; 00503811 | = "Error parsing setHeroTask parameters."
     PUSH 0x1e56420                      ; 00503816 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050381b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00503820
     JMP 0x004ff43c                      ; 00503823
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6306,7 +6306,7 @@ section .text
     PUSH 0x58f5e3                       ; 00503953 | = "Invalid Task: %s"
     PUSH 0x1e56420                      ; 00503958 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050395d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00503962
     JMP 0x004ff43c                      ; 00503965
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6337,7 +6337,7 @@ section .text
     PUSH 0x58f60d                       ; 005039bb | = "Error parsing setIniInt command parms"
     PUSH 0x1e56420                      ; 005039c0 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005039c5
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005039ca
     JMP 0x004ff43c                      ; 005039cd
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6415,7 +6415,7 @@ section .text
         ;   Label: LAB_00503ac5
     PUSH 0x1e56420                      ; 00503aca | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503acf
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00503ad4
     JMP 0x004ff43c                      ; 00503ad7
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6441,7 +6441,7 @@ section .text
         ;   Label: LAB_00503b1a
     PUSH 0x1e56420                      ; 00503b1f | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503b24
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00503b29
     JMP 0x004ff43c                      ; 00503b2c
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6506,7 +6506,7 @@ section .text
     PUSH 0x58f6d5                       ; 00503bbd | = "Undefined label '%s'"
     PUSH 0x1e56420                      ; 00503bc2 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503bc7
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00503bcc
     JMP 0x004ff43c                      ; 00503bcf
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6642,7 +6642,7 @@ section .text
     PUSH 0x58f706                       ; 00503d3f | = "Invalid time factor %s"
     PUSH 0x1e56420                      ; 00503d44 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503d49
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00503d4e
     JMP 0x004ff43c                      ; 00503d51
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6671,7 +6671,7 @@ section .text
     PUSH 0x58f731                       ; 00503d9f | = "Error parsing setVictim command parms"
     PUSH 0x1e56420                      ; 00503da4 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503da9
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00503dae
     JMP 0x004ff43c                      ; 00503db1
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6744,7 +6744,7 @@ section .text
     PUSH 0x58f761                       ; 00503e80 | = "Error parsing setVictim command parms"
     PUSH 0x1e56420                      ; 00503e85 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503e8a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00503e8f
     JMP 0x004ff43c                      ; 00503e92
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6790,7 +6790,7 @@ section .text
         ;   Label: LAB_00503f10
     PUSH 0x1e56420                      ; 00503f15 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503f1a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00503f1f
     JMP 0x004ff43c                      ; 00503f22
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6821,7 +6821,7 @@ section .text
     PUSH 0x58f7d4                       ; 00503f78 | = "Error snaping turnToFace command parms"
     PUSH 0x1e56420                      ; 00503f7d | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00503f82
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00503f87
     JMP 0x004ff43c                      ; 00503f8a
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -6960,7 +6960,7 @@ section .text
     PUSH 0x58f815                       ; 00504113 | = "Error parsing speaker and wav arguments"
     PUSH 0x1e56420                      ; 00504118 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050411d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00504122
     JMP 0x004ff43c                      ; 00504125
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7166,7 +7166,7 @@ section .text
     PUSH 0x58f873                       ; 0050432b | = "Camera \"%s\" doesn't exist."
     PUSH 0x1e56420                      ; 00504330 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00504335
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0050433a
     JMP 0x004ff43c                      ; 0050433d
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7199,7 +7199,7 @@ section .text
         ;   Label: LAB_0050438b
     PUSH 0x1e56420                      ; 00504390 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00504395
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050439a
     JMP 0x004ff43c                      ; 0050439d
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7304,7 +7304,7 @@ section .text
         ;   Label: LAB_005044a3
     PUSH 0x1e56420                      ; 005044a8 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005044ad
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005044b2
     JMP 0x004ff43c                      ; 005044b5
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7335,7 +7335,7 @@ section .text
     PUSH 0x58f8f1                       ; 0050450b | = "Error parsing turnToFace command parms"
     PUSH 0x1e56420                      ; 00504510 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00504515
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050451a
     JMP 0x004ff43c                      ; 0050451d
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7441,7 +7441,7 @@ section .text
         ;   Label: LAB_00504661
     PUSH 0x1e56420                      ; 00504666 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050466b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00504670
     JMP 0x004ff43c                      ; 00504673
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7505,7 +7505,7 @@ section .text
     PUSH 0x58f970                       ; 00504733 | = "Error parsing walkTo command parms"
     PUSH 0x1e56420                      ; 00504738 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050473d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00504742
     JMP 0x004ff43c                      ; 00504745
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7560,7 +7560,7 @@ section .text
     PUSH 0x58f9e7                       ; 005047fa | = "Missing closing parenthesis on walkTo..."
     PUSH 0x1e56420                      ; 005047ff | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00504804
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00504809
     JMP 0x004ff43c                      ; 0050480c
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7568,7 +7568,7 @@ section .text
         ;   Label: LAB_00504811
     PUSH 0x1e56420                      ; 00504816 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050481b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00504820
     JMP 0x004ff43c                      ; 00504823
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7596,7 +7596,7 @@ section .text
         ;   Label: LAB_00504871
     PUSH 0x1e56420                      ; 00504876 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050487b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00504880
     JMP 0x004ff43c                      ; 00504883
         ;   XREF to: 004ff43c (UNCONDITIONAL_JUMP)  ; LAB_004ff43c
@@ -7659,7 +7659,7 @@ section .text
     PUSH 0x1e56420                      ; 0050493b | DAT_01e56420
     MOV EDI,0xffffffff                  ; 00504940
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00504945
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0050494a
     MOV dword ptr [ESP + 0x3e84],EDI    ; 0050494d
     MOV EAX,dword ptr [ESP + 0x3e84]    ; 00504954
@@ -7674,7 +7674,7 @@ section .text
     PUSH 0x1e56420                      ; 00504967 | DAT_01e56420
     MOV EDI,0xffffffff                  ; 0050496c
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00504971
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00504976
     MOV dword ptr [ESP + 0x3e84],EDI    ; 00504979
     MOV EAX,dword ptr [ESP + 0x3e84]    ; 00504980

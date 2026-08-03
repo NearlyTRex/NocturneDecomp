@@ -102,7 +102,7 @@ section .text
     PUSH EAX                            ; 004d2245
     PUSH 0x1cc7900                      ; 004d2246
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d224b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d2250
     PUSH 0x588cd3                       ; 004d2253 | = "Sound options"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2258
@@ -111,7 +111,7 @@ section .text
     PUSH EAX                            ; 004d2260
     PUSH 0x1cc7a00                      ; 004d2261
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d2266
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d226b
     PUSH 0x588ce1                       ; 004d226e | = "Control options"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2273
@@ -120,7 +120,7 @@ section .text
     PUSH EAX                            ; 004d227b
     PUSH 0x1cc7b00                      ; 004d227c
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d2281
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d2286
     PUSH 0x588cf1                       ; 004d2289 | = "Credits"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d228e
@@ -129,7 +129,7 @@ section .text
     PUSH EAX                            ; 004d2296
     PUSH 0x1cc7c00                      ; 004d2297
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d229c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d22a1
     MOV EAX,[0x005b9354]                ; 004d22a4 | g_CGame_PTR_005b9354
     PUSH 0x588cf9                       ; 004d22a9 | = "Option Menu"

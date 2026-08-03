@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lever_cpp_CLever_setup_FUN_004c6110(CDemonActor *param_1)
+; void __cdecl core_lever_cpp_CLever_setup_FUN_004c6110(CLever *this_ptr)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_elevbutton_kfm_005878ff

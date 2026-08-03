@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_tvbat_cpp_CTVBat_getActorType_FUN_0054b100(void)
+; CDemonActorType * __cdecl core_tvbat_cpp_CTVBat_getActorType_FUN_0054b100(CTVBat *this_ptr)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

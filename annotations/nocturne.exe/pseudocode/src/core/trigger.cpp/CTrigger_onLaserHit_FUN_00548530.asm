@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(CDemonActor *param_1,SLaserInfo *param_2)
+; void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(CTrigger *this_ptr,SLaserInfo *laser_info)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
+; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(int param_1)
+; void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_hero.cpp_FUN_004b46d0 at 004b47ce

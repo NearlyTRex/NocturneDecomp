@@ -19,7 +19,7 @@ void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *base_filen
   char *pcVar7;
   byte bVar8;
   char acStack_ac [80];
-  byte auStack_5c [80];
+  char acStack_5c [80];
   
   bVar8 = 0;
   pcVar7 = acStack_ac;
@@ -84,10 +84,10 @@ LAB_0042d4f3:
   }
   SVar2 = _fread(output_buffer,0x100,3,file);
   if (SVar2 != 3) {
-    _sprintf(auStack_5c,"Error reading %s.",acStack_ac);
+    _sprintf(acStack_5c,"Error reading %s.");
     g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     g_INT_01cc4804 = 0x135;
-    core_main_c_FUN_004c8440(auStack_5c);
+    core_main_c_FUN_004c8440(acStack_5c);
   }
   _fclose(file);
   return;

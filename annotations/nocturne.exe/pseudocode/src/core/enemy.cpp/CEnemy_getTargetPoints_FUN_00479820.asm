@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_enemy_cpp_CEnemy_getTargetPoints_FUN_00479820(int param_1,float *param_2)
+; int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_00479820(CEnemy *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
 ;   float FLOAT_0057f333 = 0.5

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630(CPackedBitmap *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6,undefined4 param_7,int param_8)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
+; int              Stack[0x14]:4   transparency_color
+; int              Stack[0x18]:4   apply_palette_flag
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_004f3eb0 at 004f3ee8
@@ -55,7 +62,7 @@ section .text
     PUSH EBX                            ; 004f4673
     MOV ESI,EAX                         ; 004f4674
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 ; 004f4676
-        ;   XREF to: 004f47b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0()
+        ;   XREF to: 004f47b0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap * this_ptr, uchar * bitmap_data, int width, int height, ...)
     ADD ESP,0x18                        ; 004f467b
     PUSH ESI                            ; 004f467e
     CALL crt_unknown.c_FUN_005638d0     ; 004f467f

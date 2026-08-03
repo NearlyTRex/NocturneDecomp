@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 164,
+    "complexity_score": 18,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 13,
-    "suspect_types": [
-      "param_count_too_few",
-      "unaffected_reg",
-      "unnamed_param"
-    ],
-    "total_lines": 51
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -92,9 +88,9 @@
         "0055d5a9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack2_esi",
     "name": "core_xform.cpp_quaternionFromAxisAngle_FUN_0055d560",
-    "signature": "void core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float param_1,float *param_2)"
+    "signature": "CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)"
   },
   "function_calls": [],
   "globals": [
@@ -112,12 +108,11 @@
         "call_addr": "0051d8b2",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -126,22 +121,21 @@
         "call_addr": "0051d91e",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.032258064516129,
@@ -170,10 +164,10 @@
     "pcode_op_count": 218
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -203,6 +197,20 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "angle_radians",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "axis_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -223,138 +231,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "quaternionFromAxisAngle_FUN_0055d560.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 4,
-          "line": 24,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = (float10)fsin((float10)param_1 * (float10)0.5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar5 = (float10)fcos((float10)param_1 * (float10)0.5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar3 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = (float)fVar5;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = (float)((float10)fVar1 * fVar4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = (float)((float10)fVar2 * fVar4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[3] = (float)((float10)fVar3 * fVar4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 24,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = (float)fVar5;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

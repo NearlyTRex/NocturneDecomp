@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tentacle_cpp_CTentacle_archive_FUN_00544470(CEnemy *param_1)
+; void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_00544470(CTentacle *this_ptr)
 ;
+; Parameters:
+; CTentacle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005965a8

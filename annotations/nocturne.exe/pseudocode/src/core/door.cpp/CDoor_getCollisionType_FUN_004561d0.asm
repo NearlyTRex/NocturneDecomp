@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_door_cpp_CDoor_getCollisionType_FUN_004561d0(int param_1,int param_2)
+; ECollisionType __cdecl core_door_cpp_CDoor_getCollisionType_FUN_004561d0(CDoor *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530

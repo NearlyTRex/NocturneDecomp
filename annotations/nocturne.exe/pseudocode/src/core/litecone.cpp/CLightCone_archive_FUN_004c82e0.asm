@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_litecone_cpp_CLightCone_archive_FUN_004c82e0(CDemonActor *param_1)
+; void __cdecl core_litecone_cpp_CLightCone_archive_FUN_004c82e0(CLightCone *this_ptr)
 ;
+; Parameters:
+; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fov_00587ae5

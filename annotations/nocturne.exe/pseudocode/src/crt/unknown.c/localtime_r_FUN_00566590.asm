@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 005665a9
     PUSH 0x63df                         ; 005665aa
     CALL crt_time.c_gmtime_r_FUN_0056d340 ; 005665af
-        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_gmtime_r_FUN_0056d340()
+        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined1 crt_time.c_gmtime_r_FUN_0056d340(time_t days, time_t seconds, time_t timezone_offset, undefined1 result)
     ADD ESP,0x10                        ; 005665b4
     PUSH EBX                            ; 005665b7
     CALL crt_time.c_determine_dst_status_FUN_0056d034 ; 005665b8
@@ -54,7 +54,7 @@ section .text
     PUSH ESI                            ; 005665d3
     PUSH 0x63df                         ; 005665d4
     CALL crt_time.c_gmtime_r_FUN_0056d340 ; 005665d9
-        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_gmtime_r_FUN_0056d340()
+        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined1 crt_time.c_gmtime_r_FUN_0056d340(time_t days, time_t seconds, time_t timezone_offset, undefined1 result)
     ADD ESP,0x10                        ; 005665de
     MOV EAX,EBX                         ; 005665e1
         ;   Label: LAB_005665e1

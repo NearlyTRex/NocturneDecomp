@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_litecone_cpp_CLightCone_process_FUN_004c81a0(int param_1)
+; void __cdecl core_litecone_cpp_CLightCone_process_FUN_004c81a0(CLightCone *this_ptr,float delta_time)
 ;
+; Parameters:
+; CLightCone *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7650

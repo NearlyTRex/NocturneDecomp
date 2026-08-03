@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_imp_cpp_CImp_process_FUN_004bbaf0(CEnemy *param_1,float param_2)
+; void __cdecl core_imp_cpp_CImp_process_FUN_004bbaf0(CImp *this_ptr,float delta_time)
 ;
+; Parameters:
+; CImp *           Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x1a0]:1  local_1a0
 ; undefined4       Stack[-0x19c]:4  local_19c
@@ -573,7 +576,7 @@ section .text
     MOV ESI,dword ptr [0x005ad350]      ; 004bc007 | g_CConsole_PTR_005ad350
     PUSH ESI                            ; 004bc00d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004bc00e
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004bbe94                      ; 004bc013
         ;   XREF to: 004bbe94 (UNCONDITIONAL_JUMP)  ; LAB_004bbe94
     JBE 0x004bbe84                      ; 004bc018

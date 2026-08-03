@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
+; void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,float delta_time)
 ;
+; Parameters:
+; CZombieCow *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0xc0]:1  local_c0
 ; undefined4       Stack[-0xbc]:4  local_bc
@@ -291,7 +294,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 0043c024 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 0043c02a | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0043c02b
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x0043be90                      ; 0043c030
         ;   XREF to: 0043be90 (UNCONDITIONAL_JUMP)  ; LAB_0043be90
     JBE 0x0043be80                      ; 0043c035
@@ -521,7 +524,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 0043c2a3 | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 0043c2a9 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0043c2aa
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0043c2af
     PUSH 0x1                            ; 0043c2b2
     PUSH 0x0                            ; 0043c2b4

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_CHostage_setup_FUN_004b6b20(CNPC *param_1)
+; void __cdecl core_hostage_cpp_CHostage_setup_FUN_004b6b20(CHostage *this_ptr)
 ;
+; Parameters:
+; CHostage *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hickboy_dfm_00585a04

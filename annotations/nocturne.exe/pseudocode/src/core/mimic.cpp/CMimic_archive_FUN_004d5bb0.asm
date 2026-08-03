@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mimic_cpp_CMimic_archive_FUN_004d5bb0(CEnemy *param_1)
+; void __cdecl core_mimic_cpp_CMimic_archive_FUN_004d5bb0(CMimic *this_ptr)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0058949a

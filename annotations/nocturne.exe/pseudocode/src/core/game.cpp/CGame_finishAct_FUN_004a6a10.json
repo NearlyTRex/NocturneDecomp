@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,49 +52,61 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 88,
+        "line": 86,
         "message": "use of undeclared identifier 'stack0xfffffaa4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 101,
+        "line": 98,
+        "message": "use of undeclared identifier 'stack0xfffffaa4'"
+      },
+      {
+        "category": "format_error",
+        "column": 27,
+        "line": 118,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 136,
         "message": "use of undeclared identifier 'stack0xfffffaa4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 139,
+        "line": 157,
         "message": "use of undeclared identifier 'stack0xfffffaa4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 160,
+        "line": 178,
         "message": "use of undeclared identifier 'stack0xfffffaa4'"
+      },
+      {
+        "category": "format_error",
+        "column": 26,
+        "line": 197,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 181,
-        "message": "use of undeclared identifier 'stack0xfffffaa4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 203,
+        "line": 200,
         "message": "use of undeclared identifier 'stack0xfffffaa4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 226,
+        "line": 223,
         "message": "use of undeclared identifier 'stack0xfffffaa4'"
       }
     ],
@@ -104,12 +116,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 547,
+    "complexity_score": 544,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 237,
+    "pseudocode_lines": 234,
     "suspect_count": 28,
     "suspect_types": [
       "pointer_truncation",
@@ -119,7 +131,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 661
+    "total_lines": 658
   },
   "cross_references": [
     {
@@ -572,7 +584,7 @@
         {
           "check_name": "cert-flp30-c",
           "column": 54,
-          "line": 48,
+          "line": 46,
           "message": "loop induction expression should not have floating-point type"
         }
       ],
@@ -583,23 +595,23 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 43,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "(pCVar9,0,DAT_005b761c + -1,(DAT_005b7620 - iVar3) / 2,0xf8,0,pcVar4);",
+      "text": "(pCVar8,0,DAT_005b761c + -1,(DAT_005b7620 - iVar3) / 2,0xf8,0,pcVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 43,
       "match": "DAT_005b7620",
       "severity": "mild",
-      "text": "(pCVar9,0,DAT_005b761c + -1,(DAT_005b7620 - iVar3) / 2,0xf8,0,pcVar4);",
+      "text": "(pCVar8,0,DAT_005b761c + -1,(DAT_005b7620 - iVar3) / 2,0xf8,0,pcVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 81,
+      "line": 79,
       "match": "&stack0xfffffaa4",
       "severity": "moderate",
       "text": "pcVar4 = &stack0xfffffaa4;",
@@ -607,7 +619,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 94,
+      "line": 91,
       "match": "&stack0xfffffaa4",
       "severity": "moderate",
       "text": "pcVar4 = &stack0xfffffaa4;",
@@ -615,7 +627,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 132,
+      "line": 129,
       "match": "&stack0xfffffaa4",
       "severity": "moderate",
       "text": "pcVar5 = &stack0xfffffaa4;",
@@ -623,7 +635,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 153,
+      "line": 150,
       "match": "&stack0xfffffaa4",
       "severity": "moderate",
       "text": "pcVar4 = &stack0xfffffaa4;",
@@ -631,7 +643,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 174,
+      "line": 171,
       "match": "&stack0xfffffaa4",
       "severity": "moderate",
       "text": "pcVar4 = &stack0xfffffaa4;",
@@ -639,7 +651,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 196,
+      "line": 193,
       "match": "&stack0xfffffaa4",
       "severity": "moderate",
       "text": "pcVar5 = &stack0xfffffaa4;",
@@ -647,7 +659,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 219,
+      "line": 216,
       "match": "&stack0xfffffaa4",
       "severity": "moderate",
       "text": "(local_2c,&stack0xfffffaa4,(char *)0x1c73240,0x14,0x100,0xc0);",
@@ -655,7 +667,7 @@
     },
     {
       "description": "Pointer value `local_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)local_2c",
       "severity": "moderate",
       "text": "fVar1 = fVar1 - (float)(int)local_2c * (float)3600;",
@@ -663,7 +675,7 @@
     },
     {
       "description": "Pointer value `local_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "(int)local_2c",
       "severity": "moderate",
       "text": "local_18 = (int)local_2c;",
@@ -671,7 +683,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 82,
+      "line": 80,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -679,7 +691,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 104,
+      "line": 101,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -687,7 +699,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 142,
+      "line": 139,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -695,7 +707,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 163,
+      "line": 160,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -703,7 +715,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 184,
+      "line": 181,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -711,7 +723,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 206,
+      "line": 203,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -719,7 +731,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 95,
+      "line": 92,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -727,7 +739,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 118,
+      "line": 115,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -735,7 +747,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 133,
+      "line": 130,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -743,7 +755,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 154,
+      "line": 151,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -751,7 +763,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 175,
+      "line": 172,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -759,7 +771,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 197,
+      "line": 194,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -767,7 +779,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 95,
+      "line": 92,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -775,7 +787,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 133,
+      "line": 130,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -783,7 +795,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 154,
+      "line": 151,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -791,7 +803,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 175,
+      "line": 172,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -799,7 +811,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 197,
+      "line": 194,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

@@ -1,20 +1,21 @@
 // Name: core_trigger.cpp_CTrigger_getCollisionType_FUN_00548410
 // Address: 00548410
 // Address Range: [[00548410, 00548457]]
-// Convention: unknown
-// Signature: undefined4 core_trigger_cpp_CTrigger_getCollisionType_FUN_00548410(int param_1,int *param_2)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_trigger_cpp_CTrigger_getCollisionType_FUN_00548410(CTrigger *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-uint core_trigger_cpp_CTrigger_getCollisionType_FUN_00548410(int param_1,int *param_2)
+ECollisionType __cdecl core_trigger_cpp_CTrigger_getCollisionType_FUN_00548410(CTrigger *this_ptr,SCollisionInfo *collision_info)
 
 {
-  if ((*param_2 == 1) && ((*(int *)(param_1 + 0x16c) == 4 || (*(int *)(param_1 + 0x16c) == 7)))) {
-    return 1;
+  if (((collision_info->ray_query).ray_type == 1) &&
+     ((this_ptr->hero_triggers_me == 4 || (this_ptr->hero_triggers_me == 7)))) {
+    return COLLISION_TYPE_MESH;
   }
-  if (((*param_2 == 3) && (*(int *)(param_1 + 0x16c) == 5)) &&
-     (*(int *)(param_1 + 0x2ec) == param_2[1])) {
-    return 1;
+  if ((((collision_info->ray_query).ray_type == 3) && (this_ptr->hero_triggers_me == 5)) &&
+     (this_ptr->laser_type == (collision_info->ray_query).laser_type)) {
+    return COLLISION_TYPE_MESH;
   }
-  return 0;
+  return COLLISION_TYPE_NONE;
 }

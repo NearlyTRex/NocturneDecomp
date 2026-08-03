@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; short * sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(CSfxSample *param_1,int param_2,int param_3)
+; void * __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(CSfxSample *this_ptr,int lock_offset,int lock_length)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   lock_offset
+; int              Stack[0xc]:4   lock_length
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005240da

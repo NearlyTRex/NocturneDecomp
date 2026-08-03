@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,26 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 56,
-        "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 78,
-        "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 101,
-        "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       }
     ],
     "success": false,
@@ -79,7 +61,7 @@
       {
         "category": "other",
         "column": 18,
-        "line": 72,
+        "line": 73,
         "message": "array comparison always evaluates to true [-Wtautological-compare]"
       }
     ]
@@ -87,20 +69,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 411,
+    "complexity_score": 273,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
-    "suspect_count": 28,
+    "pseudocode_lines": 118,
+    "suspect_count": 13,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy",
+      "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 394
+    "total_lines": 401
   },
   "cross_references": [],
   "function": {
@@ -111,9 +94,9 @@
         "004b8b68"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack2_esi",
     "name": "core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700",
-    "signature": "void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,int param_2)"
+    "signature": "CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -149,9 +132,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -186,10 +169,10 @@
     "pcode_op_count": 1123
   },
   "stack_frame": {
-    "frame_size": 664,
+    "frame_size": 672,
     "local_size": 664,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -555,6 +538,20 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHostage *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -574,23 +571,6 @@
       }
     ],
     "severity": "medium"
-  },
-  "static_analysis": {
-    "analyzed_file": "CHostage_getCarryObjToBodyXForm_FUN_004b8700.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 117,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -634,179 +614,59 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
+      "description": "Type propagation did not converge",
+      "line": 7,
+      "match": "WARNING: Type propagation algorithm not settling",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = param_1 + param_2 * 0x44;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = param_1 + param_2 * 0x44;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x1f920) == 1) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&local_204,param_1 + 0xfd0 + *(int *)(iVar2 + 0x24a4) * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if (*(int *)(param_1 + 0x1f920) == 3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&local_e4,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&local_e4,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(&local_e4,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if (*(int *)(param_1 + 0x1f920) == 5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&local_114,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&local_114,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(&local_114,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 110,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
       "severity": "moderate",
-      "text": "*unaff_ESI = *puVar3;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 112,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 112,
-      "match": "unaff_ESI",
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 111,
+      "match": "(int)pCVar2",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 103,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 119,
+      "match": "(int)pCVar2",
       "severity": "moderate",
-      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 109,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 116,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -816,14 +676,6 @@
       "severity": "moderate",
       "text": "// 004b8854: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 117,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar3;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

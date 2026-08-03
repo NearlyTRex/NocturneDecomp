@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_CDoor_setup_FUN_004551f0(CDemonActor *param_1)
+; void __cdecl core_door_cpp_CDoor_setup_FUN_004551f0(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_defaultDoorOpen_0057d047
@@ -46,7 +48,7 @@ section .text
     PUSH 0x57d057                       ; 00455227 | = "%sOpen"
     PUSH ESI                            ; 0045522c
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0045522d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00455232
     PUSH 0x57d05e                       ; 00455235 | = "defaultDoorClose"
         ;   Label: LAB_00455235
@@ -66,7 +68,7 @@ section .text
     PUSH 0x57d06f                       ; 00455251 | = "%sClose"
     PUSH ESI                            ; 00455256
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00455257
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0045525c
     POP ESI                             ; 0045525f
     POP EBX                             ; 00455260

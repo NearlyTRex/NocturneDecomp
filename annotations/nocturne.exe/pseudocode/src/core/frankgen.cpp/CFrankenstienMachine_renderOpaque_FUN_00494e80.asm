@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankenstienMachine *param_1)
+; int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankenstienMachine *this_ptr)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ;

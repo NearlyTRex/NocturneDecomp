@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004b9b80(CNPC *param_1,float param_2)
+; void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004b9b80(CHighPriestOfGardath *this_ptr,float delta_time)
 ;
+; Parameters:
+; CHighPriestOfGardath * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7650

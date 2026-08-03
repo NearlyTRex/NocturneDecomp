@@ -189,7 +189,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x60]      ; 004e537f
     PUSH EDX                            ; 004e5383
     CALL sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0 ; 004e5384
-        ;   XREF to: 004e2ed0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0()
+        ;   XREF to: 004e2ed0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(CMP3Decoder * this_ptr, SHuffmanTable * huffman_table, int * x_out, int * y_out, ...)
     MOV ECX,0x12                        ; 004e5389
     MOV EDX,ESI                         ; 004e538e
     MOV EAX,ESI                         ; 004e5390
@@ -269,7 +269,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x34]      ; 004e5477
     PUSH EDI                            ; 004e547b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004e547c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004e5481
     MOV EAX,dword ptr [ESP + 0x30]      ; 004e5484
     MOV EAX,dword ptr [EAX + 0x5bdba0]  ; 004e5488 | DAT_005bdba0
@@ -494,7 +494,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x60]      ; 004e5767
     PUSH ECX                            ; 004e576b
     CALL sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0 ; 004e576c
-        ;   XREF to: 004e2ed0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0()
+        ;   XREF to: 004e2ed0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(CMP3Decoder * this_ptr, SHuffmanTable * huffman_table, int * x_out, int * y_out, ...)
     MOV ECX,0x12                        ; 004e5771
     MOV EDX,ESI                         ; 004e5776
     MOV EAX,ESI                         ; 004e5778

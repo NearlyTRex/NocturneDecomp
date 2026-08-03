@@ -17,27 +17,27 @@ void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041a310(CBoneGuy *thi
   CVector3f *pCVar4;
   uint *puVar5;
   uint *puVar6;
-  byte bVar7;
+  uint *puVar7;
+  byte bVar8;
   float afStackY_1800 [1525];
-  float local_24;
+  CQuaternion4f local_24;
   int local_14;
   
-  bVar7 = 0;
+  bVar8 = 0;
   local_14 = 0;
   if (0 < this_ptr->box_count) {
     pCVar4 = &this_ptr->boxes[0].source_pos;
     pCVar3 = this_ptr;
     do {
-      core_xform_cpp_eulerToQuaternion_FUN_0055d610(&((pCVar3->boxes[0].body_part)->base).orient);
-      puVar5 = (uint *)((int)pCVar3 + (uint)bVar7 * -8 + 0xbdc0);
-      pCVar3->boxes[0].dest_orient.w = local_24;
-      puVar6 = puVar5 + (uint)bVar7 * -2 + 1;
-      *puVar5 = *(uint *)(&stack0xffffffe0 + (uint)bVar7 * -8);
-      *puVar6 = *(uint *)(&stack0xffffffe4 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-      puVar6[(uint)bVar7 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffe4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) +
-            ((uint)bVar7 * -2 + 1) * 4);
+      core_xform_cpp_eulerToQuaternion_FUN_0055d610
+                (&((pCVar3->boxes[0].body_part)->base).orient.vec,&local_24);
+      puVar6 = (uint *)((int)pCVar3 + (uint)bVar8 * -8 + 0xbdc0);
+      pCVar3->boxes[0].dest_orient.w = local_24.w;
+      puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
+      puVar5 = (uint *)((int)&local_24 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+      *puVar6 = *(uint *)((int)&local_24 + (uint)bVar8 * -8 + 4);
+      *puVar7 = *puVar5;
+      puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
       ((pCVar3->boxes[0].body_part)->physics_box).is_valid = 0;
       pCVar1 = pCVar3->boxes[0].body_part;
       pCVar2 = &(pCVar1->base).location;

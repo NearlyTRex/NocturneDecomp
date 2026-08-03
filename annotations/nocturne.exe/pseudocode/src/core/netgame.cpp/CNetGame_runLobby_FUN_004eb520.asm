@@ -107,7 +107,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004eb5cb
     PUSH EAX                            ; 004eb5cf
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb5d0
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004eb5d5
     PUSH 0xb                            ; 004eb5d8
     PUSH 0x0                            ; 004eb5da
@@ -122,7 +122,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004eb5f5
     PUSH EAX                            ; 004eb5f9
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb5fa
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004eb5ff
     PUSH 0xb                            ; 004eb602
     PUSH 0x190                          ; 004eb604
@@ -299,7 +299,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004eb7e3
     PUSH EAX                            ; 004eb7e7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb7e8
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004eb7ed
     PUSH EBX                            ; 004eb7f0
     PUSH 0x190                          ; 004eb7f1
@@ -389,7 +389,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004eb8dd
     PUSH EAX                            ; 004eb8e1
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb8e2
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004eb8e7
     JMP 0x004eb779                      ; 004eb8ea
         ;   XREF to: 004eb779 (UNCONDITIONAL_JUMP)  ; LAB_004eb779
@@ -409,7 +409,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004eb913
     PUSH EAX                            ; 004eb917
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb918
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004eb91d
     PUSH EBX                            ; 004eb920
     PUSH 0x1f4                          ; 004eb921
@@ -595,7 +595,7 @@ section .text
     MOV EAX,[0x005b6d50]                ; 004ebb06 | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 004ebb0b
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004ebb0c
-        ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
+        ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004ebb11
     MOV EDX,dword ptr [ESI + 0x16c]     ; 004ebb14
     PUSH EDX                            ; 004ebb1a
@@ -775,7 +775,7 @@ section .text
     MOV ECX,dword ptr [0x005b6d50]      ; 004ebcd7 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004ebcdd
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004ebcde
-        ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
+        ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004ebce3
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ebce6
     MOV ESI,dword ptr [EAX + 0x16c]     ; 004ebce9

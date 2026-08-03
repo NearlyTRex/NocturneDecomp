@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bride_cpp_CBride_getTargetPoints_FUN_00420e20(int param_1,CVector3f *param_2)
+; int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00420e20(CBride *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CBride *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ; undefined        Stack[-0x10]:1  local_10

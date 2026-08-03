@@ -1,17 +1,17 @@
 // Name: core_enemy.cpp_CEnemy_onVictimLost_FUN_0047a120
 // Address: 0047a120
 // Address Range: [[0047a120, 0047a141]]
-// Convention: unknown
-// Signature: void core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(CEnemy *this_ptr,CDemonActor *lost_actor)
 
 #include "nocturne.h"
 
-void core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(int param_1,int param_2)
+void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(CEnemy *this_ptr,CDemonActor *lost_actor)
 
 {
-  if (param_2 != *(int *)(param_1 + 0xbca4)) {
+  if ((CCharacter *)lost_actor != this_ptr->victim) {
     return;
   }
-  (**(code **)(*(int *)(param_1 + 0x14c) + 0xf0))(param_1);
+  (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);
   return;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *param_1,float param_2)
+; void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *this_ptr,float delta_time)
 ;
+; Parameters:
+; CFlameCan *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x40]:1  local_40
 ;

@@ -89,7 +89,7 @@ section .text
     LEA ESI,[ESP + 0x50]                ; 004a373b
     LEA EDI,[ESP + 0x44]                ; 004a373f
     CALL core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610 ; 004a3743
-        ;   XREF to: 00441610 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610()
+        ;   XREF to: 00441610 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x50]                ; 004a3748
     ADD ESP,0x8                         ; 004a374c
     MOVSD ES:EDI,ESI                    ; 004a374f

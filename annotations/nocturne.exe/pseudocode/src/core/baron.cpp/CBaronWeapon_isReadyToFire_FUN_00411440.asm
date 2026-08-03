@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; longlong core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(CBaronWeapon *param_1)
+; int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(CBaronWeapon *this_ptr)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00411430 = 00411475

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_health_cpp_CHealthItem_setup_FUN_004b4250(CDemonActor *param_1)
+; void __cdecl core_health_cpp_CHealthItem_setup_FUN_004b4250(CHealthItem *this_ptr)
 ;
+; Parameters:
+; CHealthItem *    Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

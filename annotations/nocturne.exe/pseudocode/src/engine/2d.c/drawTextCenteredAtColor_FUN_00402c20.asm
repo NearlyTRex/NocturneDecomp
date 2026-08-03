@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(char *param_1,int param_2,int param_3)
+; void __cdecl engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(char *text,int x,int y)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d96c

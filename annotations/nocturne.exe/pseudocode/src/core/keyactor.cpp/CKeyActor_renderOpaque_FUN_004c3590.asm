@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_keyactor_cpp_CKeyActor_renderOpaque_FUN_004c3590(CDemonActor *param_1)
+; int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_004c3590(CKeyActor *this_ptr)
 ;
+; Parameters:
+; CKeyActor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

@@ -47,7 +47,8 @@ def delete_annotations(currentProgram, path):
     delete_memory_layout(currentProgram, path)
     delete_pseudocode(currentProgram, path)
 
-def export_annotations(currentProgram, folder, strict=False, deep_analysis=False):
+def export_annotations(currentProgram, folder, strict=False, deep_analysis=False,
+                       allow_size_mismatch=False):
     export_data_types(currentProgram, folder)
     export_functions(currentProgram, folder)
     export_call_overrides(currentProgram, folder)
@@ -69,7 +70,8 @@ def export_annotations(currentProgram, folder, strict=False, deep_analysis=False
     export_entry_points(currentProgram, folder)
     export_memory_layout(currentProgram, folder)
     export_metadata(currentProgram, folder)
-    export_type_info(currentProgram, folder, strict=strict)
+    export_type_info(currentProgram, folder, strict=strict,
+                     allow_size_mismatch=allow_size_mismatch)
     export_vtables(currentProgram, folder)
     export_switch_tables(currentProgram, folder)
     export_code_caves(currentProgram, folder)

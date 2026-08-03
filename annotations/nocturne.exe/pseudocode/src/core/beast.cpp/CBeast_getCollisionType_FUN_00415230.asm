@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_beast_cpp_CBeast_getCollisionType_FUN_00415230(int param_1,int *param_2)
+; ECollisionType __cdecl core_beast_cpp_CBeast_getCollisionType_FUN_00415230(CBeast *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CBeast *         Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; *****************************************************************************
 

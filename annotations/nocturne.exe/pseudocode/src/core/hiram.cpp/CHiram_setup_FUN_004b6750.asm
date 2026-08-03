@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hiram_cpp_CHiram_setup_FUN_004b6750(CNPC *param_1)
+; void __cdecl core_hiram_cpp_CHiram_setup_FUN_004b6750(CHiram *this_ptr)
 ;
+; Parameters:
+; CHiram *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_setup_FUN_004ee9e0

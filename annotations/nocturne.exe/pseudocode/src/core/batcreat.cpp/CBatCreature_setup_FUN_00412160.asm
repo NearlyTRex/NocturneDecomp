@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batcreat_cpp_CBatCreature_setup_FUN_00412160(CEnemy *param_1)
+; void __cdecl core_batcreat_cpp_CBatCreature_setup_FUN_00412160(CBatCreature *this_ptr)
 ;
+; Parameters:
+; CBatCreature *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_00578849

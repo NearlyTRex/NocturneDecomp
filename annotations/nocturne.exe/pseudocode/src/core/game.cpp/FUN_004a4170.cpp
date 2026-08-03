@@ -161,7 +161,7 @@ LAB_004a43cc:
       local_34 = local_34 + -4;
       crt_fstream_cpp_ifstream_ctor_FUN_005652fe(local_168,0);
       crt_fstream_cpp_ofstream_ctor_FUN_0056536a(local_e8,0);
-      _sprintf(local_638,"%s\\%s","save",local_534);
+      _sprintf(local_638,"%s\\%s");
       buffer_size = 0x000001A4;
       crt_fstream_cpp_openFile_FUN_00565eb5(local_168,local_638,0x121,0x000001A4);
       crt_fstream_cpp_istream_seekg_FUN_00565f14(&local_124,4);

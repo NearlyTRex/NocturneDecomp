@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammo_cpp_CAmmo_archive_FUN_0040ecf0(CDemonActor *param_1)
+; void __cdecl core_ammo_cpp_CAmmo_archive_FUN_0040ecf0(CAmmo *this_ptr)
 ;
+; Parameters:
+; CAmmo *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005781fb

@@ -1,63 +1,50 @@
 // Name: core_emitter.cpp_CEmitter_archive_FUN_004791a0
 // Address: 004791a0
 // Address Range: [[004791a0, 00479371]]
-// Convention: unknown
-// Signature: void core_emitter_cpp_CEmitter_archive_FUN_004791a0(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004791a0(CEmitter *this_ptr)
 
 #include "nocturne.h"
 
-void core_emitter_cpp_CEmitter_archive_FUN_004791a0(CDemonActor *param_1)
+void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004791a0(CEmitter *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 1),"emitterType");
-  core_actor_cpp_archiveVector_FUN_0040c450
-            ((CVector3f *)(param_1[1].actor_name + 4),"emitterSize");
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].actor_name + 0x14,"eventOn");
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].create_event,"eventOff");
+  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
+  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->emitter_type,"emitterType");
+  core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->emitter_size,"emitterSize");
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->event_on,"eventOn");
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->event_off,"eventOff");
   if (1 < INT_005b75dc) {
-    core_actor_cpp_archiveInteger_FUN_0040c900
-              ((int *)(param_1[1].actor_name + 0x10),"emitterState");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->emitter_state,"emitterState");
   }
-  if (*(int *)param_1[1].actor_name == 3) {
-    core_actor_cpp_archiveInteger_FUN_0040c900
-              ((int *)&param_1[1].platform_position_delta.y,"laserR");
-    core_actor_cpp_archiveInteger_FUN_0040c900
-              ((int *)&param_1[1].platform_position_delta.z,"laserG");
-    core_actor_cpp_archiveInteger_FUN_0040c900
-              ((int *)&param_1[1].platform_orientation_delta,"laserB");
+  if (this_ptr->emitter_type == 3) {
+    core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->laser_color).r,"laserR");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->laser_color).g,"laserG");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->laser_color).b,"laserB");
     if (2 < INT_005b75dc) {
-      core_actor_cpp_archiveInteger_FUN_0040c900
-                ((int *)&param_1[1].platform_position_delta,"laserType");
+      core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->laser_type,"laserType");
     }
   }
   if (2 < INT_005b75dc) {
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              ((float *)&param_1[1].standing_platform,"maxEmitTime");
-    core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[3].orient_matrix.m[1].y,"emitPeriod")
-    ;
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->max_emit_time,"maxEmitTime");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->emit_period,"emitPeriod");
   }
   if (3 < INT_005b75dc) {
-    core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00
-              ((CKeyFramedModelInstance *)&param_1[1].platform_orientation_delta.y,
-               "modelName");
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              ((float *)param_1[2].footstep_sound_code,"rockSpeed");
+    core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(&this_ptr->model,"modelName")
+    ;
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->rock_speed,"rockSpeed");
   }
   if (4 < INT_005b75dc) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(&param_1[2].dead1,"periodicFlag");
-    core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].dead2,"maxWaitTime");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->periodic_flag,"periodicFlag");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->max_wait_time,"maxWaitTime");
   }
   if (5 < INT_005b75dc) {
-    core_actor_cpp_archiveActor_FUN_0040c980
-              ((CDemonActor **)&param_1[2].previous_transform_state,"destActor");
+    core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->dest_actor,"destActor");
   }
   if (INT_005b75dc < 7) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040c6d0
-            ((char *)&param_1[2].previous_transform_state.position.y,"wavName");
-  core_actor_cpp_archiveInteger_FUN_0040c900
-            ((int *)&param_1[3].orient_matrix.m[0].z,"sfxType");
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->wav_name,"wavName");
+  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->sfx_type,"sfxType");
   return;
 }

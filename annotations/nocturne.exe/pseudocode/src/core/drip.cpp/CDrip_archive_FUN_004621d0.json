@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 200,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 15,
-    "suspect_types": [
-      "pointer_cast",
-      "primitive_walker_cast",
-      "unnamed_param"
-    ],
-    "total_lines": 136
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 130
   },
   "cross_references": [],
   "function": {
@@ -85,9 +81,9 @@
         "004622f5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_drip.cpp_CDrip_archive_FUN_004621d0",
-    "signature": "void core_drip_cpp_CDrip_archive_FUN_004621d0(CDemonActor *param_1)"
+    "signature": "void __cdecl core_drip_cpp_CDrip_archive_FUN_004621d0(CDrip *this_ptr)"
   },
   "function_calls": [
     {
@@ -199,9 +195,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -230,135 +226,22 @@
     "pcode_op_count": 324
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrip *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_drip_cpp_CDrip_archive_FUN_004621d0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1),\"modelName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1[2].location.area_id,\"type\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 11,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient,\"autoDrop\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient,\"autoDrop\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CVector3f *)&param_1[2].orient_matrix.m[1].z,\"homePos\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CVector3f *)&param_1[2].orient_matrix.m[2].z,\"vel\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[2].orient.vec.z,\"minAutoDripTime\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)&param_1[2].orient_matrix,\"maxAutoDripTime\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[2].orient_matrix.m[0].y,\"dripRadius\")",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)&param_1[2].validation_magic,\"damage\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)&param_1[2].direction_hint,\"hitSound\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[2].create_event + 0x14),\"noRockFlag\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 35,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "((int *)(param_1[2].create_event + 0x14),\"noRockFlag\");",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

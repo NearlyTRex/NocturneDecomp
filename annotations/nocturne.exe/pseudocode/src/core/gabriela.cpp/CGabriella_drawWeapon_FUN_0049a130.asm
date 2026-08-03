@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_CGabriella_drawWeapon_FUN_0049a130(int param_1,int param_2)
+; void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_0049a130(CGabriella *this_ptr,int drawn)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   drawn
 ;
 ; *****************************************************************************
 

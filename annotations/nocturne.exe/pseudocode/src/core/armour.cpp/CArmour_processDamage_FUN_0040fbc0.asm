@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_armour_cpp_CArmour_processDamage_FUN_0040fbc0(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_armour_cpp_CArmour_processDamage_FUN_0040fbc0(CArmour *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CArmour *        Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_armour_wav_005784ae

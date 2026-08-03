@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_teleport_cpp_CTeleport_process_FUN_00543910(CDemonActor *param_1)
+; void __cdecl core_teleport_cpp_CTeleport_process_FUN_00543910(CTeleport *this_ptr,float delta_time)
 ;
+; Parameters:
+; CTeleport *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;

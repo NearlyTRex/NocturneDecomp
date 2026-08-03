@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_imp_cpp_CImp_getActorType_FUN_004bb750(void)
+; CDemonActorType * __cdecl core_imp_cpp_CImp_getActorType_FUN_004bb750(CImp *this_ptr)
 ;
+; Parameters:
+; CImp *           Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

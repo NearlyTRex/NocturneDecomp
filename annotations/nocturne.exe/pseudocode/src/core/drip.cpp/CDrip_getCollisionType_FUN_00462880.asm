@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_drip_cpp_CDrip_getCollisionType_FUN_00462880(void)
+; ECollisionType __cdecl core_drip_cpp_CDrip_getCollisionType_FUN_00462880(CDrip *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CDrip *          Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; *****************************************************************************
 

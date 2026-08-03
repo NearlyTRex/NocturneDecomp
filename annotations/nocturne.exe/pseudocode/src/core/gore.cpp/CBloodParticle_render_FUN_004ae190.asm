@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_CBloodParticle_render_FUN_004ae190(CVector3f *param_1)
+; void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ae190(CBloodParticle *this_ptr)
 ;
+; Parameters:
+; CBloodParticle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0xf8]:8  local_f8
 ; undefined4       Stack[-0xf0]:4  local_f0
@@ -327,7 +329,7 @@ section .text
     MOV EBX,dword ptr [0x007f7370]      ; 004ae4c1 | DAT_007f7370
     PUSH EBX                            ; 004ae4c7
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 004ae4c8
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     MOV EAX,0xffff                      ; 004ae4cd
     MOV ESI,dword ptr [0x01c038f4]      ; 004ae4d2 | DAT_01c038f4
     ADD ESP,0xc                         ; 004ae4d8
@@ -587,7 +589,7 @@ section .text
     MOV EBX,dword ptr [0x007f7370]      ; 004ae85e | DAT_007f7370
     PUSH EBX                            ; 004ae864
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 004ae865
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     MOV EAX,0xffff                      ; 004ae86a
     MOV EDX,dword ptr [0x01c038f4]      ; 004ae86f | DAT_01c038f4
     ADD ESP,0xc                         ; 004ae875

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CPopcorn_render_FUN_00489990(CVector3f *param_1)
+; void __cdecl core_fire_cpp_CPopcorn_render_FUN_00489990(CPopcorn *this_ptr)
 ;
+; Parameters:
+; CPopcorn *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xa0]:1  local_a0
 ; undefined4       Stack[-0x9c]:4  local_9c
@@ -251,7 +253,7 @@ section .text
     PUSH EAX                            ; 00489bba
     MOV EBX,0xf80000                    ; 00489bbb
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00489bc0
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     MOV EAX,0xffff                      ; 00489bc5
     MOV ECX,0x80000                     ; 00489bca
     MOV EDX,dword ptr [0x01c038f4]      ; 00489bcf | DAT_01c038f4

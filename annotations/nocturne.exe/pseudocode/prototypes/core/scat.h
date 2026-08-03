@@ -21,7 +21,7 @@ CScat * __cdecl factoryFunc(void);
 
 // Original: core_scat.cpp_CScat_getActorType_FUN_004fbbf0
 // Address: 004fbbf0
-CDemonActorType * CScat::getActorType(void);
+CDemonActorType * __cdecl CScat::getActorType(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_ctor_FUN_004fbc00
 // Address: 004fbc00
@@ -29,7 +29,7 @@ CScat * __cdecl CScat::ctor(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_setup_FUN_004fbcc0
 // Address: 004fbcc0
-void CScat::setup(CHero *param_1);
+void __cdecl CScat::setup(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80
 // Address: 004fbe80
@@ -37,7 +37,7 @@ void __cdecl CScat::createDefaultWeapon(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_process_FUN_004fbf20
 // Address: 004fbf20
-void CScat::process(CScat *param_1,float param_2);
+void __cdecl CScat::process(CScat *this_ptr,float delta_time);
 
 // Original: core_scat.cpp_CScat_updateAI_FUN_004fc610
 // Address: 004fc610
@@ -53,11 +53,11 @@ void CScat::archive(CHero *param_1);
 
 // Original: core_scat.cpp_CScat_renderOpaque_FUN_004fcb20
 // Address: 004fcb20
-undefined4 CScat::renderOpaque(CCharacter *param_1);
+int __cdecl CScat::renderOpaque(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_processDamage_FUN_004fcbd0
 // Address: 004fcbd0
-void CScat::processDamage(CScat *param_1,SDamageInfo *param_2);
+void __cdecl CScat::processDamage(CScat *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20
 // Address: 004fcd20

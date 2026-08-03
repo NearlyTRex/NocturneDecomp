@@ -1,14 +1,14 @@
 // Name: engine_2d.c_unmapFrameBuffer_FUN_00404360
 // Address: 00404360
 // Address Range: [[00404360, 0040442b]]
-// Convention: unknown
-// Signature: int engine_2d_c_unmapFrameBuffer_FUN_00404360(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00404360(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_2d_c_unmapFrameBuffer_FUN_00404360(void)
+void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00404360(void)
 
 {
   int iVar1;
@@ -27,7 +27,6 @@ int engine_2d_c_unmapFrameBuffer_FUN_00404360(void)
   _DAT_01c00c60 = DAT_006b024c;
   _DAT_01c00c64 = DAT_006b0250;
   DAT_005b7624 = DAT_006b0254;
-  iVar2 = DAT_006b0254;
   if (0 < DAT_006b0240) {
     iVar1 = DAT_006b0240 * 4;
     iVar2 = 0;
@@ -39,5 +38,5 @@ int engine_2d_c_unmapFrameBuffer_FUN_00404360(void)
     } while (iVar2 < iVar1);
   }
   DAT_006b023c = 0;
-  return iVar2;
+  return;
 }

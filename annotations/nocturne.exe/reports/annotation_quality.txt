@@ -14,16 +14,16 @@ SUMMARY STATISTICS
   Total functions analyzed:          4,942
   Unnamed functions (FUN_):          656 (13.3%)
   Functions with unnamed params:     2 ( 0.0%)
-  Functions with type issues:        1,779 (36.0%)
+  Functions with type issues:        1,774 (35.9%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
-    Wrong return type (wide/64-bit):   3
+    Wrong return type (wide/64-bit):   2
     Missing register params:           34
-    Wrong calling convention:          138
+    Wrong calling convention:          77
     Undefined types in variables:      1610
-    Unresolved stack params:           172
+    Unresolved stack params:           188
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -961,14 +961,8 @@ Wrong return type (void function with extra output) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Wrong return type (64-bit return via EDX:EAX) (3)
+Wrong return type (64-bit return via EDX:EAX) (2)
 --------------------------------------------------------------------------------
-
-  CBaronWeapon_isReadyToFire
-    Address: 0x00411440  File: core/baron.cpp
-    Evidence: extraout_EDX, extraout_EDX, extraout_EDX
-    Signature: longlong core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(CBaronWeapon *param_1)
-    Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
   convertDirectionVectorToEulerAngles
     Address: 0x0054e4a0  File: core/vecdir.cpp
@@ -979,7 +973,7 @@ Wrong return type (64-bit return via EDX:EAX) (3)
   slerpQuaternion
     Address: 0x0055d2d0  File: core/xform.cpp
     Evidence: extraout_EDX, extraout_EDX
-    Signature: float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)
+    Signature: CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_0055d2d0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
 --------------------------------------------------------------------------------
@@ -1191,7 +1185,7 @@ Missing register parameters (likely wrong calling convention) (34)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (138)
+Wrong calling convention (unaffected register usage) (77)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -1248,22 +1242,10 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void core_bodypart_cpp_FUN_00417fec(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CBoneGuy_getCarryObjToBodyXForm
-    Address: 0x004194b0  File: core/boneguy.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0(int param_1,int param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  modelStructNotSupported4
-    Address: 0x0041a5a0  File: engine/boss.c
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void engine_boss_c_modelStructNotSupported4_FUN_0041a5a0(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CBugs_renderGroundHeightGrid
     Address: 0x004216d0  File: core/bugs.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(int param_1)
+    Signature: void __cdecl core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(CBugs *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   FUN_00421b80
@@ -1276,12 +1258,6 @@ Wrong calling convention (unaffected register usage) (138)
     Address: 0x00429220  File: core/charactr.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
     Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00429220(CCharacter *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CCharacter_getCarryObjToBodyXForm
-    Address: 0x00429490  File: core/charactr.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(int param_1,int param_2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   FUN_00432057
@@ -1407,43 +1383,7 @@ Wrong calling convention (unaffected register usage) (138)
   CCurtain_setup
     Address: 0x0043dad0  File: core/curtain.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
-    Signature: void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonCamera_screenToWorldCoord
-    Address: 0x004410c0  File: core/dcamera.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(int param_1,int param_2,int param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonCamera_worldToScreenCoord
-    Address: 0x00441150  File: core/dcamera.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_00441150(int param_1,int *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonCamera_screenToWorldTransform
-    Address: 0x004411b0  File: core/dcamera.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: int * core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(int param_1,int *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonCamera_screenToWorldWithAlpha
-    Address: 0x00441440  File: core/dcamera.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: int * core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440(int param_1,int *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonCamera_worldToScreenWithFrustumCull
-    Address: 0x00441610  File: core/dcamera.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(int param_1,int *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonCamera_worldToCameraSpace
-    Address: 0x004418d0  File: core/dcamera.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_004418d0(int param_1,int *param_2)
+    Signature: void __cdecl core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   FUN_00442d9c
@@ -1452,28 +1392,10 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void core_dcamera_cpp_FUN_00442d9c(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CDemonCamera_computeLightExtentBounds
-    Address: 0x00444ef0  File: core/dcamera.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0(int param_1,int param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   FUN_00446810
     Address: 0x00446810  File: core/dcamera.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
     Signature: void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonCamera_restoreAlphaTransform
-    Address: 0x00447910  File: core/dcamera.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910(int param_1,int *param_2,int param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CMatrix3x3f_multiply
-    Address: 0x0044dfb0  File: core/dirmat.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(float *param_1,float *param_2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDrawSurface_drawLineBresenham
@@ -1494,66 +1416,6 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void engine_drender_cpp_FUN_00460d90(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  renderDepthOnlyStandard
-    Address: 0x00463a79  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI
-    Signature: void core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderDepth16BitConditional
-    Address: 0x00463ac7  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI
-    Signature: void core_dstrender_cpp_renderDepth16BitConditional_FUN_00463ac7(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderTexturedAlphaMMXScanline
-    Address: 0x00463b27  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderZBufferFill16xUnrolled
-    Address: 0x00463c42  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI
-    Signature: uint core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00463c42(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderSolidColorDepth16xUnrolled
-    Address: 0x00463d98  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: void core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00463d98(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderDepthInterlacedProfiled
-    Address: 0x00463f77  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI
-    Signature: void core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00463f77(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderScreenDepthTestInterlacedProfiled
-    Address: 0x00463ff5  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI
-    Signature: void core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderDepthTestStatistics16xUnrolled
-    Address: 0x00464075  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI
-    Signature: void core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00464075(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderPerspectiveCorrectTextured16xCached
-    Address: 0x00464200  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderTexturedDecalMMXScanline
-    Address: 0x004649dd  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CDemonRaytrace_cylinderGroundCheck
     Address: 0x004687e0  File: core/dtrace.cpp
     Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX
@@ -1572,16 +1434,10 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CDemonRaytrace_worldPositionToGridCoords
-    Address: 0x0046b650  File: core/dtrace.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650(int param_1,float *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonRaytrace_worldPositionToVoxelCoords
-    Address: 0x0046b700  File: core/dtrace.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(int param_1,float *param_2)
+  FUN_00470730
+    Address: 0x00470730  File: shape/edittool.cpp
+    Evidence: unaff_ESI, unaff_ESI
+    Signature: undefined4 shape_edittool_cpp_FUN_00470730(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CEditorTools_draw3DAxisLabels
@@ -1614,46 +1470,16 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void __cdecl core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(CGabriella *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CGabriella_getCarryObjToBodyXForm
-    Address: 0x00499ca0  File: core/gabriela.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0(int param_1,float param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CGame_process
-    Address: 0x004a6010  File: core/game.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_game_cpp_CGame_process_FUN_004a6010(CGame *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CGame_displayActStats
     Address: 0x004a6680  File: core/game.cpp
-    Evidence: unaff_EDI, unaff_EDI, unaff_EDI
+    Evidence: unaff_EDI, unaff_EDI
     Signature: void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(CGame *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CGround_getNormalAtPosition
-    Address: 0x004b2430  File: core/ground.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_ground_cpp_CGround_getNormalAtPosition_FUN_004b2430(int *param_1,uint param_2,uint param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CHostage_getCarryObjToBodyXForm
-    Address: 0x004b8700  File: core/hostage.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,int param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CIcePick_getCarryObjToBodyXForm
-    Address: 0x004baa50  File: core/icepick.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(int param_1,int param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CImp_getCarryObjToBodyXForm
-    Address: 0x004bc7e0  File: core/imp.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0(int param_1,int param_2)
+  CGore_renderDecals
+    Address: 0x004afe80  File: core/gore.cpp
+    Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
+    Signature: void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004afe80(CGore *this_ptr,int render_all,int expire_flag)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CIni_getProfileString
@@ -1668,52 +1494,22 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(CLightGun *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  transformWorldToView
-    Address: 0x004cd0e0  File: engine/matrix.c
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void engine_matrix_c_transformWorldToView_FUN_004cd0e0(int *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  normalizeVector3DFixed
-    Address: 0x004cde10  File: engine/matrix.c
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void engine_matrix_c_normalizeVector3DFixed_FUN_004cde10(int *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  normalizeVector3DFloat
-    Address: 0x004cde90  File: engine/matrix.c
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: int * engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(int *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CMelee_fillAttackDamageInfo
     Address: 0x004cef80  File: core/melee.cpp
     Evidence: unaff_ESI, unaff_ESI
-    Signature: void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)
+    Signature: void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CMirrorReflection_transformMirrorVertex
-    Address: 0x004d7b30  File: core/mirror.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CMirrorReflection_transformMirrorEdgeToIntegerSpace
-    Address: 0x004d7bd0  File: core/mirror.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *param_1,int *param_2,int *param_3)
+  configureCustomKeyBindings
+    Address: 0x004d2d00  File: core/menu.cpp
+    Evidence: unaff_ESI, unaff_ESI
+    Signature: void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_004d2d00(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonMission_loadActor
     Address: 0x004d8aa0  File: core/mission.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
     Signature: CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CMobster_getCarryObjToBodyXForm
-    Address: 0x004dba70  File: core/mobster.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(int param_1,int param_2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CPathMap_checkAxisAlignedPath
@@ -1749,19 +1545,13 @@ Wrong calling convention (unaffected register usage) (138)
   CScat_process
     Address: 0x004fbf20  File: core/scat.cpp
     Evidence: unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX
-    Signature: void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
+    Signature: void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delta_time)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   FUN_004fcd90
     Address: 0x004fcd90  File: core/scat.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI
     Signature: void __cdecl core_scat_cpp_FUN_004fcd90(CScat *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDeformableModelInstance_getBoneWorldMatrix
-    Address: 0x0051d0a0  File: core/skeleton.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance *param_1,int param_2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   directSoundEnumerationCallback
@@ -1806,18 +1596,6 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_00537cd0(CStranger *this_ptr,float delta_time)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CStranger_computeWeaponAttachXForm
-    Address: 0x0053a760  File: core/stranger.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CCharacter *param_1,CDemonActor *param_2,float param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CStranger_getCarryObjToBodyXForm
-    Address: 0x0053f210  File: core/stranger.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(int param_1,int param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   FUN_0053ffe0
     Address: 0x0053ffe0  File: core/stranger.cpp
     Evidence: unaff_EBX, unaff_EDI, unaff_EDI, unaff_EBX
@@ -1830,34 +1608,10 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(CStranger *this_ptr,float delta_time)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CBassPlayer_getCarryObjToBodyXForm
-    Address: 0x00543210  File: core/tbplayer.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(int param_1,int param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDrummer_getCarryObjToBodyXForm
-    Address: 0x00543450  File: core/tbplayer.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450(int param_1,int param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CTentacle_computeGripBoneMatrix
-    Address: 0x00544760  File: core/tentacle.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(int param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CTextureCache_loadTexture
     Address: 0x00544ef0  File: engine/texture.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
     Signature: int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *cache,char *texture_name)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildSockaddrIn
-    Address: 0x00548dc0  File: support/trisock.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr *param_1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   acceptConnection
@@ -1869,133 +1623,13 @@ Wrong calling convention (unaffected register usage) (138)
   CTurret_updateInteraction
     Address: 0x0054a890  File: core/turret.cpp
     Evidence: unaff_EDI, unaff_EDI
-    Signature: undefined4 core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CCharacter *param_1,float *param_2,int param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CVampireBoss_getCarryObjToBodyXForm
-    Address: 0x0054d8a0  File: core/vampboss.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(int param_1,int param_2)
+    Signature: int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CWeapon_updateLighting
     Address: 0x005543c0  File: core/weapon.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI
     Signature: void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  multiplyMatrix3x4
-    Address: 0x0055aa00  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(float *param_1,float *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  inverse
-    Address: 0x0055bd00  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: float * core_xform_cpp_inverse_FUN_0055bd00(CMatrix3x4f *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildRotationX
-    Address: 0x0055c730  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildRotationX_FUN_0055c730(float param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildRotationY
-    Address: 0x0055c7b0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildRotationY_FUN_0055c7b0(float param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildRotationZ
-    Address: 0x0055c830  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildRotationZ_FUN_0055c830(float param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildTranslationMatrix
-    Address: 0x0055c8b0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildTranslationMatrix_FUN_0055c8b0(undefined4 *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildUniformScaleMatrix
-    Address: 0x0055c910  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildUniformScaleMatrix_FUN_0055c910(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildScaleMatrix
-    Address: 0x0055c970  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildScaleMatrix_FUN_0055c970(undefined4 *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildXFlipMatrix
-    Address: 0x0055c9d0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildXFlipMatrix_FUN_0055c9d0(float param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildYFlipMatrix
-    Address: 0x0055ca30  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildYFlipMatrix_FUN_0055ca30(float param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  buildMirrorTransform
-    Address: 0x0055caf0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_buildMirrorTransform_FUN_0055caf0(CVector3f *param_1,float param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  lerpMatrix3x4
-    Address: 0x0055cc30  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(CMatrix3x4f *param_1,CMatrix3x4f *param_2,float param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  quaternionToMatrix3x4
-    Address: 0x0055ced0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_quaternionToMatrix3x4_FUN_0055ced0(CQuaternion4f *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  matrixToQuaternion
-    Address: 0x0055cf10  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_matrixToQuaternion_FUN_0055cf10(float *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  multiplyQuaternion
-    Address: 0x0055d130  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_multiplyQuaternion_FUN_0055d130(float *param_1,float *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  slerpQuaternion
-    Address: 0x0055d2d0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  quaternionFromAngleY
-    Address: 0x0055d4e0  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(float param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  quaternionFromAxisAngle
-    Address: 0x0055d560  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float param_1,float *param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  eulerToQuaternion
-    Address: 0x0055d610  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *param_1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   FUN_0055d660
@@ -2016,14 +1650,8 @@ Wrong calling convention (unaffected register usage) (138)
     Signature: void core_xform_cpp_FUN_0055df19(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CZombie_getCarryObjToBodyXForm
-    Address: 0x00560cd0  File: core/zombie.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(int param_1,int param_2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (172)
+Unresolved stack parameters (missing from signature) (188)
 --------------------------------------------------------------------------------
 
   drawLineStrip2D
@@ -2316,7 +1944,7 @@ Unresolved stack parameters (missing from signature) (172)
 
   testDrawingSurface
     Address: 0x0045e370  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_000000e8, in_stack_000000f0, in_stack_00000100, in_stack_0000011c, in_stack_00000128, in_stack_0000015c, in_stack_000000f0, in_stack_000000e8, in_stack_00000100, in_stack_0000011c, in_stack_0000015c, in_stack_0000015c, in_stack_00000128
+    Evidence: in_stack_00000108, in_stack_00000110, in_stack_00000120, in_stack_0000013c, in_stack_00000148, in_stack_0000014c, in_stack_0000019c, in_stack_00000110, in_stack_00000108, in_stack_00000120, in_stack_0000014c, in_stack_0000013c, in_stack_00000148, in_stack_0000019c, in_stack_0000019c
     Signature: void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test_font)
     Suggested: Signature is missing stack parameters entirely
 
@@ -2338,9 +1966,33 @@ Unresolved stack parameters (missing from signature) (172)
     Signature: void core_dtri_cpp_FUN_0046eb40(void)
     Suggested: Signature is missing stack parameters entirely
 
+  FUN_00470230
+    Address: 0x00470230  File: shape/edittool.cpp
+    Evidence: in_stack_fffffe84, in_stack_fffffe84
+    Signature: bool shape_edittool_cpp_FUN_00470230(undefined4 param_1,char *param_2)
+    Suggested: Signature is missing stack parameters entirely
+
+  FUN_00470310
+    Address: 0x00470310  File: shape/edittool.cpp
+    Evidence: in_stack_fffffe84, in_stack_fffffe84
+    Signature: bool shape_edittool_cpp_FUN_00470310(undefined4 param_1,char *param_2)
+    Suggested: Signature is missing stack parameters entirely
+
+  FUN_004703f0
+    Address: 0x004703f0  File: shape/edittool.cpp
+    Evidence: in_stack_fffffe80, in_stack_fffffe80
+    Signature: undefined4 shape_edittool_cpp_FUN_004703f0(undefined4 param_1,char *param_2)
+    Suggested: Signature is missing stack parameters entirely
+
+  CEditorTools_showFileSelectionDialog
+    Address: 0x00470550  File: shape/edittool.cpp
+    Evidence: in_stack_fffff97c, in_stack_fffff97c
+    Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
+    Suggested: Signature is missing stack parameters entirely
+
   FUN_00470730
     Address: 0x00470730  File: shape/edittool.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000014, in_stack_00000010, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000010
+    Evidence: in_stack_00000004, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000014, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000010
     Signature: undefined4 shape_edittool_cpp_FUN_00470730(void)
     Suggested: Signature is missing stack parameters entirely
 
@@ -2494,6 +2146,12 @@ Unresolved stack parameters (missing from signature) (172)
     Signature: void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004980d0(CGabriella *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
+  CGame_runGameSession
+    Address: 0x0049da10  File: core/game.cpp
+    Evidence: in_stack_fffffc00, in_stack_fffffc00, in_stack_fffffc00
+    Signature: int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
   CGame
     Address: 0x0049f930  File: core/game.cpp
     Evidence: in_stack_00000080, in_stack_00000080, in_stack_00000080
@@ -2506,10 +2164,16 @@ Unresolved stack parameters (missing from signature) (172)
     Signature: void core_game_cpp_FUN_004a03a0(void)
     Suggested: Signature is missing stack parameters entirely
 
+  FUN_004a4b50
+    Address: 0x004a4b50  File: core/game.cpp
+    Evidence: in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c
+    Signature: void __cdecl core_game_cpp_FUN_004a4b50(CGame *this_ptr,int select_mode)
+    Suggested: Signature is missing stack parameters entirely
+
   CGhoul_process
     Address: 0x004a9270  File: core/ghoul.cpp
     Evidence: in_stack_fffffc88, in_stack_fffffc90, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc90, in_stack_fffffc90, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc90, in_stack_fffffc90, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc90, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc90, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88
-    Signature: void core_ghoul_cpp_CGhoul_process_FUN_004a9270(CGhoul *param_1,float param_2)
+    Signature: void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004a9270(CGhoul *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   CGun_fire
@@ -2521,13 +2185,13 @@ Unresolved stack parameters (missing from signature) (172)
   CHostage_process
     Address: 0x004b6d80  File: core/hostage.cpp
     Evidence: in_stack_fffffe40, in_stack_fffffe40, in_stack_fffffe40
-    Signature: void core_hostage_cpp_CHostage_process_FUN_004b6d80(CHostage *param_1,float param_2)
+    Signature: void __cdecl core_hostage_cpp_CHostage_process_FUN_004b6d80(CHostage *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   CIcePick_process
     Address: 0x004b9fe0  File: core/icepick.cpp
     Evidence: in_stack_ffffff68, in_stack_ffffff78, in_stack_ffffff68, in_stack_ffffff78, in_stack_ffffff78
-    Signature: void core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *param_1,float param_2)
+    Signature: void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_004bc7c0
@@ -2545,7 +2209,7 @@ Unresolved stack parameters (missing from signature) (172)
   CLarva_process
     Address: 0x004c4970  File: core/larva.cpp
     Evidence: in_stack_fffffe18, in_stack_fffffe18
-    Signature: void core_larva_cpp_CLarva_process_FUN_004c4970(CEnemy *param_1,float param_2)
+    Signature: void __cdecl core_larva_cpp_CLarva_process_FUN_004c4970(CLarva *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_004c6a40
@@ -2569,7 +2233,7 @@ Unresolved stack parameters (missing from signature) (172)
   CMelee_fillAttackDamageInfo
     Address: 0x004cef80  File: core/melee.cpp
     Evidence: in_stack_fffffff4, in_stack_fffffff4
-    Signature: void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)
+    Signature: void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
     Suggested: Signature is missing stack parameters entirely
 
   configureSoundOptions
@@ -2596,6 +2260,12 @@ Unresolved stack parameters (missing from signature) (172)
     Signature: void core_mission_cpp_FUN_004d7de0(void)
     Suggested: Signature is missing stack parameters entirely
 
+  CDemonMission_ensureHeroPlaceholder
+    Address: 0x004d9c20  File: core/mission.cpp
+    Evidence: in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe84
+    Signature: void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(CDemonMission *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
   FUN_004da000
     Address: 0x004da000  File: core/mobster.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
@@ -2605,7 +2275,7 @@ Unresolved stack parameters (missing from signature) (172)
   CMobster_process
     Address: 0x004da790  File: core/mobster.cpp
     Evidence: in_stack_fffffe74, in_stack_fffffe78, in_stack_fffffe80, in_stack_fffffe88, in_stack_fffffe8c, in_stack_fffffe94, in_stack_fffffe74, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe78, in_stack_fffffe80, in_stack_fffffe88, in_stack_fffffe8c, in_stack_fffffe94
-    Signature: void core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *param_1,float param_2)
+    Signature: void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_004dba50
@@ -2650,6 +2320,12 @@ Unresolved stack parameters (missing from signature) (172)
     Signature: int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
     Suggested: Signature is missing stack parameters entirely
 
+  CPackedBitmap_reloadFromBitmapFile
+    Address: 0x004f4630  File: cockpit/pkbitmap.cpp
+    Evidence: in_stack_0000001c, in_stack_00000038, in_stack_0000001c, in_stack_00000038
+    Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag)
+    Suggested: Signature is missing stack parameters entirely
+
   CPackedBitmap_loadAndCompressBitmap
     Address: 0x004f46b0  File: cockpit/pkbitmap.cpp
     Evidence: in_stack_00000014, in_stack_00000014
@@ -2665,7 +2341,7 @@ Unresolved stack parameters (missing from signature) (172)
   CPackedBitmap_openPBMFile
     Address: 0x004f4e40  File: cockpit/pkbitmap.cpp
     Evidence: in_stack_00000020, in_stack_00000020
-    Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPackedBitmap *param_1,char *param_2)
+    Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_004f4f10
@@ -2698,6 +2374,12 @@ Unresolved stack parameters (missing from signature) (172)
     Signature: void core_platfrm_cpp_FUN_004f76c0(void)
     Suggested: Signature is missing stack parameters entirely
 
+  CPodFile_verifyChecksum
+    Address: 0x004f8240  File: engine/pod.cpp
+    Evidence: in_stack_fffffe68, in_stack_fffffe68, in_stack_fffffe68
+    Signature: int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
   FUN_004f9100
     Address: 0x004f9100  File: engine/pod.cpp
     Evidence: in_stack_00000008, in_stack_00000008
@@ -2725,7 +2407,25 @@ Unresolved stack parameters (missing from signature) (172)
   CScat_process
     Address: 0x004fbf20  File: core/scat.cpp
     Evidence: in_stack_ffffff78, in_stack_ffffff7c, in_stack_ffffff84, in_stack_ffffff78, in_stack_ffffff7c, in_stack_ffffff84
-    Signature: void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
+    Signature: void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonSet_precomputeLightVisibility
+    Address: 0x00507f80  File: core/set.cpp
+    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_0000000c
+    Signature: void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *this_ptr,int light_index)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonSet_setCameraView
+    Address: 0x005088f0  File: core/set.cpp
+    Evidence: in_stack_ffffff10, in_stack_ffffff10, in_stack_ffffff10
+    Signature: void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_ptr,int index)
+    Suggested: Signature is missing stack parameters entirely
+
+  FUN_00509a80
+    Address: 0x00509a80  File: core/set.cpp
+    Evidence: in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c
+    Signature: void __cdecl core_set_cpp_FUN_00509a80(CDemonSet *this_ptr,int skip_prerender)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_0050dd60
@@ -2782,16 +2482,16 @@ Unresolved stack parameters (missing from signature) (172)
     Signature: float core_skeleton_cpp_FUN_0051f800(void)
     Suggested: Signature is missing stack parameters entirely
 
+  FUN_00523170
+    Address: 0x00523170  File: sound/sndmain.cpp
+    Evidence: in_stack_ffffff94, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94
+    Signature: void sound_sndmain_cpp_FUN_00523170(void)
+    Suggested: Signature is missing stack parameters entirely
+
   FUN_00523550
     Address: 0x00523550  File: sound/sndmain.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_0000000c
     Signature: void sound_sndmain_cpp_FUN_00523550(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CSfxSlot_mix
-    Address: 0x00524d10  File: sound/sndmain.cpp
-    Evidence: in_stack_00000028, in_stack_0000002c, in_stack_00000030, in_stack_00000028, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_00000028, in_stack_0000002c, in_stack_00000028, in_stack_00000028, in_stack_00000030, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_00000028, in_stack_00000028, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c
-    Signature: void sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot *param_1)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00525ff0
@@ -2820,25 +2520,25 @@ Unresolved stack parameters (missing from signature) (172)
 
   FUN_00526dd0
     Address: 0x00526dd0  File: sound/sndmain.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008
     Signature: undefined4 sound_sndmain_cpp_FUN_00526dd0(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00526f00
     Address: 0x00526f00  File: sound/sndmain.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
     Signature: undefined4 sound_sndmain_cpp_FUN_00526f00(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00526f60
     Address: 0x00526f60  File: sound/sndmain.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c
     Signature: undefined4 sound_sndmain_cpp_FUN_00526f60(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00527060
     Address: 0x00527060  File: sound/sndmain.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
     Signature: undefined4 sound_sndmain_cpp_FUN_00527060(void)
     Suggested: Signature is missing stack parameters entirely
 
@@ -2850,8 +2550,14 @@ Unresolved stack parameters (missing from signature) (172)
 
   FUN_00527200
     Address: 0x00527200  File: sound/sndmain.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
     Signature: undefined4 sound_sndmain_cpp_FUN_00527200(void)
+    Suggested: Signature is missing stack parameters entirely
+
+  pollAndMixSfx
+    Address: 0x005294f0  File: sound/sndmain.cpp
+    Evidence: in_stack_ffffff68, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff7c, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff80, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84
+    Signature: void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00529a00
@@ -2864,6 +2570,24 @@ Unresolved stack parameters (missing from signature) (172)
     Address: 0x0052ad30  File: sound/snddx.cpp
     Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
     Signature: undefined4 sound_snddx_cpp_FUN_0052ad30(void)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDirectSoundDevice_lockSample
+    Address: 0x0052adc0  File: sound/snddx.cpp
+    Evidence: in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014
+    Signature: void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDirectSoundDevice_unlockSample
+    Address: 0x0052ae90  File: sound/snddx.cpp
+    Evidence: in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014
+    Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(CDirectSoundDevice *this_ptr,int buffer_id)
+    Suggested: Signature is missing stack parameters entirely
+
+  FUN_0052ed40
+    Address: 0x0052ed40  File: core/sound.cpp
+    Evidence: in_stack_fffffe8c, in_stack_fffffe8c
+    Signature: undefined4 core_sound_cpp_FUN_0052ed40(undefined4 param_1,char *param_2,int *param_3)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_0052ee20
@@ -3019,7 +2743,7 @@ Unresolved stack parameters (missing from signature) (172)
   CWeapon_onDropped
     Address: 0x00554310  File: core/weapon.cpp
     Evidence: in_stack_ffffffec, in_stack_fffffff0, in_stack_ffffffec, in_stack_fffffff0
-    Signature: void core_weapon_cpp_CWeapon_onDropped_FUN_00554310(CCharacter *param_1,CVector3f *param_2)
+    Signature: void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_00554310(CWeapon *this_ptr,CVector3f *drop_position)
     Suggested: Signature is missing stack parameters entirely
 
   CWeapon_updateLighting
@@ -3037,7 +2761,7 @@ Unresolved stack parameters (missing from signature) (172)
   CWerewolf_process
     Address: 0x00555c60  File: core/werewolf.cpp
     Evidence: in_stack_fffffcec, in_stack_fffffcec
-    Signature: void core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *param_1,float param_2)
+    Signature: void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   CWinFont_setColorAndDrawText
@@ -11429,7 +11153,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00495580  (undefined4 param_1,undefined4 param_2,float param_3,int p...)
     0x00498de0  (CGabriella *this_ptr,CDemonActor *target_actor,int use_wi...)
     0x004998c0  (CGabriella *this_ptr,float delta_time,int has_carried_obj...)
-    0x00499b00  (CDemonActor *param_1,float param_2,float *param_3,undefin...)
+    0x00499b00  (CDemonActor *param_1,float param_2,float *param_3,int par...)
 
   core_game.cpp  (8 functions)
     0x0049a320  (void)
@@ -11633,7 +11357,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0052dff0  (CSound *this_ptr)
     0x0052ebc0  (undefined4 param_1,char *param_2)
     0x0052ec80  (void)
-    0x0052ed40  (undefined4 param_1,undefined4 param_2,int *param_3)
+    0x0052ed40  (undefined4 param_1,char *param_2,int *param_3)
     0x0052ee20  (void)
     0x0052ee30  (void)
     0x0052ee40  (void)
@@ -11718,8 +11442,8 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00402af0  (int param_1,int param_2,char *param_3)
     0x00402b90  (int param_1,int param_2,char *param_3)
     0x00402bb0  (int param_1,int param_2,char *param_3)
-    0x00402c60  (undefined4 param_1,undefined4 param_2,undefined4 param_3)
-    0x00402c80  (undefined4 param_1,undefined4 param_2,char *param_3)
+    0x00402c60  (int param_1,int param_2,char *param_3)
+    0x00402c80  (int param_1,int param_2,char *param_3)
     0x00402d30  (int left_x,int right_x,int y,char *text)
     0x00402d60  (int param_1,int param_2,int param_3,char *param_4)
     0x00402e90  (int param_1)
@@ -11732,7 +11456,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00403780  (int param_1,int param_2,int param_3)
 
   engine_3d.c  (19 functions)
-    0x00404430  (undefined4 *param_1)
+    0x00404430  (void)
     0x00404480  (void)
     0x00404490  (void)
     0x00404680  (int param_1,int param_2)
@@ -11928,7 +11652,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00527190  (void)
     0x00527200  (void)
     0x00527520  (uint current_sfx_handle)
-    0x00527570  (undefined1 *param_1)
+    0x00527570  (char *param_1)
     0x00527950  (char *param_1,int param_2)
     0x00527d80  (void)
     0x005289f0  (CIniFile *ini_file)

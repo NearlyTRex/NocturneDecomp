@@ -11,12 +11,12 @@ void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(char *filename,voi
 {
   _FILE *file;
   SIZE_T SVar1;
-  byte local_60 [80];
+  char local_60 [80];
   
   if (buffer == (void *)0x0) {
     buffer = malloc(size);
     if (buffer == (void *)0x0) {
-      _sprintf(local_60,"Unable to allocate %u bytes for bitmap file (%s).",size,filename);
+      _sprintf(local_60,"Unable to allocate %u bytes for bitmap file (%s).");
       g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
       g_INT_01cc4804 = 0xd2;
       core_main_c_FUN_004c8440(local_60);
@@ -24,7 +24,7 @@ void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(char *filename,voi
   }
   file = engine_dosio_cpp_getFile_FUN_00456a60("art",filename,"rb");
   if (file == (_FILE *)0x0) {
-    _sprintf(local_60,"Unable to open bitmap file (%s).",filename);
+    _sprintf(local_60,"Unable to open bitmap file (%s).");
     g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     g_INT_01cc4804 = 0xdb;
     core_main_c_FUN_004c8440(local_60);
@@ -34,7 +34,7 @@ void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(char *filename,voi
     _fclose(file);
     return buffer;
   }
-  _sprintf(local_60,"Unable to read bitmap file (%s).",filename);
+  _sprintf(local_60,"Unable to read bitmap file (%s).");
   _fclose(file);
   g_INT_01cc4804 = 0xe3;
   g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";

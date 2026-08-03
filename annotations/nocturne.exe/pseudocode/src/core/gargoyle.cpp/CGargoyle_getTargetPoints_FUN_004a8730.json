@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,37 +52,37 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
-        "line": 25,
+        "column": 62,
+        "line": 26,
         "message": "use of undeclared identifier '_DAT_01c78b18'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 81,
-        "line": 33,
+        "column": 64,
+        "line": 34,
         "message": "use of undeclared identifier '_DAT_01c78b2c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 81,
-        "line": 43,
+        "column": 64,
+        "line": 44,
         "message": "use of undeclared identifier '_DAT_01c78b30'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 81,
-        "line": 54,
+        "column": 64,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01c78b3c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
-        "line": 67,
+        "column": 62,
+        "line": 68,
         "message": "use of undeclared identifier '_DAT_01c78b44'"
       }
     ],
@@ -92,19 +92,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 449,
+    "complexity_score": 150,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
-    "suspect_count": 37,
+    "pseudocode_lines": 65,
+    "suspect_count": 7,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 229
+    "total_lines": 230
   },
   "cross_references": [],
   "function": {
@@ -115,9 +115,9 @@
         "004a88ce"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gargoyle.cpp_CGargoyle_getTargetPoints_FUN_004a8730",
-    "signature": "int core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(int param_1,CVector3f *param_2)"
+    "signature": "int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(CGargoyle *this_ptr,CVector3f *out_points_array)"
   },
   "function_calls": [
     {
@@ -162,9 +162,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -198,10 +198,10 @@
     "pcode_op_count": 701
   },
   "stack_frame": {
-    "frame_size": 80,
+    "frame_size": 88,
     "local_size": 80,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -238,304 +238,78 @@
         "offset": -28,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGargoyle *"
+      },
+      {
+        "is_param": true,
+        "name": "out_points_array",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(int param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(int param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_4c,_DAT_01c78b18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->y = pCVar1->y;",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "out_points_array->x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd24) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd24) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_40,_DAT_01c78b2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 1 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].y = pCVar1->y;",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "out_points_array[1].x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].z = pCVar1->z;",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 40,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar2->x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd2c) * 4) != 0) {",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 51,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar2->x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd2c) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_34,_DAT_01c78b30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar2 = param_2 + iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd44) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd44) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_1c,_DAT_01c78b3c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar2 = param_2 + iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd48) * 4) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd48) * 4) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_28,_DAT_01c78b44);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 20,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "param_2->x = pCVar1->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 28,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "param_2[1].x = pCVar1->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 39,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar2->x = pCVar1->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 50,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar2->x = pCVar1->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 63,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "param_2->x = pCVar1->x;",
       "type": "unrolled_memcpy"
     }
   ],

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trash_cpp_CTrash_setup_FUN_00546ce0(CDemonActor *param_1)
+; void __cdecl core_trash_cpp_CTrash_setup_FUN_00546ce0(CTrash *this_ptr)
 ;
+; Parameters:
+; CTrash *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

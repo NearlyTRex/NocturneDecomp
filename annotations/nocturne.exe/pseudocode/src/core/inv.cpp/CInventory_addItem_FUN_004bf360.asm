@@ -166,7 +166,7 @@ section .text
     LEA EAX,[ESP + 0x208]               ; 004bf48b
     PUSH EAX                            ; 004bf492
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004bf493
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bf498
     LEA ESI,[ESP + 0x200]               ; 004bf49b
     MOV EDI,ESP                         ; 004bf4a2
@@ -1570,7 +1570,7 @@ section .text
     MOV EBX,dword ptr [0x005ad350]      ; 004c00ca | g_CConsole_PTR_005ad350
     PUSH EBX                            ; 004c00d0 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c00d1
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 004c00d6
     ADD ESP,0x8                         ; 004c00db
     ADD ESP,0x324                       ; 004c00de
@@ -1603,7 +1603,7 @@ section .text
     MOV EBX,dword ptr [0x005ad350]      ; 004c013e | g_CConsole_PTR_005ad350
     PUSH EBX                            ; 004c0144 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0145
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c014a
     PUSH 0x1                            ; 004c014d
     MOV ESI,dword ptr [ESP + 0x340]     ; 004c014f
@@ -1684,7 +1684,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 004c022d | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 004c0233 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0234
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 004c0239
     ADD ESP,0x8                         ; 004c023e
     ADD ESP,0x324                       ; 004c0241
@@ -1791,7 +1791,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 004c034f | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 004c0354 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0355
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c035a
     PUSH 0x1                            ; 004c035d
     PUSH EBX                            ; 004c035f
@@ -1966,7 +1966,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 004c052d | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 004c0532 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0533
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c0538
     PUSH 0x1                            ; 004c053b
     MOV EDX,dword ptr [ESP + 0x340]     ; 004c053d
@@ -2049,7 +2049,7 @@ section .text
     PUSH ECX                            ; 004c0621 | g_CConsole_0077ad0c
     MOV EBX,0x1                         ; 004c0622
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c0627
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004c062c
     JMP 0x004c0418                      ; 004c062f
         ;   XREF to: 004c0418 (UNCONDITIONAL_JUMP)  ; LAB_004c0418

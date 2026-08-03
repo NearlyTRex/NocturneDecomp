@@ -1,12 +1,12 @@
 // Name: core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
 // Address: 00442c50
 // Address Range: [[00442c50, 00442d8d]]
-// Convention: unknown
-// Signature: int core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4)
+// Convention: __cdecl
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction)
 
 #include "nocturne.h"
 
-int core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4)
+int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction)
 
 {
   longlong lVar1;
@@ -18,18 +18,18 @@ int core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c
   int iVar7;
   float fVar8;
   
-  if (param_4 == (int *)0x0) {
+  if (light_direction == (CVector3i *)0x0) {
     iVar7 = 0xaaaa;
   }
   else {
-    fVar4 = (float)param_2->x * 0.00390625f - (param_3->base).position.x;
-    fVar5 = (float)param_2->y * 0.00390625f - (param_3->base).position.y;
-    fVar6 = (float)param_2->z * 0.00390625f - (param_3->base).position.z;
+    fVar4 = (float)world_pos->x * 0.00390625f - (light_source->base).position.x;
+    fVar5 = (float)world_pos->y * 0.00390625f - (light_source->base).position.y;
+    fVar6 = (float)world_pos->z * 0.00390625f - (light_source->base).position.z;
     fVar8 = (float)((int)CVector3f_01c70708.z -
                    ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));
-    lVar1 = (longlong)(int)ROUND(fVar4 * fVar8 * 65536.0f) * (longlong)*param_4;
-    lVar2 = (longlong)(int)ROUND(fVar5 * fVar8 * 65536.0f) * (longlong)param_4[1];
-    lVar3 = (longlong)(int)ROUND(fVar6 * fVar8 * 65536.0f) * (longlong)param_4[2];
+    lVar1 = (longlong)(int)ROUND(fVar4 * fVar8 * 65536.0f) * (longlong)light_direction->x;
+    lVar2 = (longlong)(int)ROUND(fVar5 * fVar8 * 65536.0f) * (longlong)light_direction->y;
+    lVar3 = (longlong)(int)ROUND(fVar6 * fVar8 * 65536.0f) * (longlong)light_direction->z;
     iVar7 = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
@@ -39,6 +39,6 @@ int core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c
     iVar7 = -iVar7;
   }
   iVar7 = core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0
-                    (param_1,param_2,param_3,iVar7);
+                    (this_ptr,world_pos,light_source,iVar7);
   return iVar7;
 }

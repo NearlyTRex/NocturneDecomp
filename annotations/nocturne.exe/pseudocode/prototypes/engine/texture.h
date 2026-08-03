@@ -29,7 +29,7 @@ int __cdecl CTextureCache::findTexture(CTextureCache *this_ptr,int hint_index,ch
 
 // Original: engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410
 // Address: 00545410
-void CTextureCache::setupTexture(int param_1,int param_2);
+void __cdecl CTextureCache::setupTexture(CTextureCache *cache,int texture_index);
 
 // Original: engine_texture.cpp_FUN_00545700
 // Address: 00545700

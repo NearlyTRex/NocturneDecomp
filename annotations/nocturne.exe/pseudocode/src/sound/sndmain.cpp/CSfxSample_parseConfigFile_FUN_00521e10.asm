@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(char *param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSample *this_ptr)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x488]:8  local_488
 ; undefined8       Stack[-0x480]:8  local_480

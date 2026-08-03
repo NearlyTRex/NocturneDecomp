@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -69,44 +69,26 @@
       },
       {
         "category": "incompatible_types",
-        "column": 17,
-        "line": 57,
-        "message": "no matching function for call to '_sprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 60,
-        "message": "no matching function for call to '_sprintf'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 25,
         "line": 158,
         "message": "invalid operands to binary expression ('float' and 'int')"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 178,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 183,
+        "line": 184,
         "message": "use of undeclared identifier 'DAT_005c168c'"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 186,
+        "line": 187,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 199,
+        "line": 200,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -116,12 +98,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 543,
-    "complexity_score": 346,
+    "complexity_score": 347,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 226,
+    "pseudocode_lines": 227,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
@@ -131,7 +113,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 769
+    "total_lines": 770
   },
   "cross_references": [
     {
@@ -802,14 +784,14 @@
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 11,
-          "line": 186,
+          "line": 187,
           "message": "sscanf format string requires 2 parameters but only 0 are given.",
           "severity": "error"
         },
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 11,
-          "line": 199,
+          "line": 200,
           "message": "sscanf format string requires 2 parameters but only 0 are given.",
           "severity": "error"
         },
@@ -851,7 +833,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 177,
       "match": "DAT_005c168c",
       "severity": "mild",
       "text": "if (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0) {",

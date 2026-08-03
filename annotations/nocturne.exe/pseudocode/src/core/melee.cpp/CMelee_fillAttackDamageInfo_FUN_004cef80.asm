@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)
+; void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   attack_flags
+; SDamageInfo *    Stack[0xc]:4   out_damage_info
+; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0

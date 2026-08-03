@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -60,12 +60,6 @@
         "column": 26,
         "line": 45,
         "message": "use of undeclared identifier 'DAT_01b4d478'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 104,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
     "success": false,
@@ -74,18 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 151,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
+    "pseudocode_lines": 109,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 380
+    "total_lines": 378
   },
   "cross_references": [
     {
@@ -586,7 +580,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 105,
+      "line": 103,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(local_20->tangent).x = pCVar5->x;",

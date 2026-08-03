@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_CHostage_archive_FUN_004b8320(CNPC *param_1)
+; void __cdecl core_hostage_cpp_CHostage_archive_FUN_004b8320(CHostage *this_ptr)
 ;
+; Parameters:
+; CHostage *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_followState_00585cbd

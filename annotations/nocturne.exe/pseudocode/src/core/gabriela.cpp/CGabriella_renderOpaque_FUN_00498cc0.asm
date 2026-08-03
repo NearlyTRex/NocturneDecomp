@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(CCharacter *param_1)
+; int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005821fa = 0.900000000000000

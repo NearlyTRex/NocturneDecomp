@@ -154,7 +154,7 @@ section .text
     PUSH EBP                            ; 004cb6de
     MOV dword ptr [ESI + 0x8],0xbf800000 ; 004cb6df
     CALL core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640 ; 004cb6e6
-        ;   XREF to: 004ca640 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640()
+        ;   XREF to: 004ca640 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004cb6eb
     ADD ESI,0x58                        ; 004cb6ee
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 004cb6f1

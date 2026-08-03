@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_CEmitter_archive_FUN_004791a0(CDemonActor *param_1)
+; void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004791a0(CEmitter *this_ptr)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_emitterType_0057f204

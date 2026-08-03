@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(int param_1)
+; int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(CCryptVessel *this_ptr)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x30]:1  local_30
 ;

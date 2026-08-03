@@ -1,12 +1,12 @@
 // Name: sound_sndmain.cpp_getSoundMemoryStats_FUN_00527c70
 // Address: 00527c70
 // Address Range: [[00527c70, 00527d7c]]
-// Convention: unknown
-// Signature: void sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *param_1,int *param_2,int *param_3,int *param_4,int *param_5,int *param_6)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count,int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory)
 
 #include "nocturne.h"
 
-void sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *param_1,int *param_2,int *param_3,int *param_4,int *param_5,int *param_6)
+void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count,int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory)
 
 {
   int iVar1;
@@ -41,24 +41,24 @@ void sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *param_1,int *param_
     iVar3 = iVar3 + 1;
     this_ptr = this_ptr + 1;
   } while (iVar3 < 0x40);
-  if (param_1 != (int *)0x0) {
-    *param_1 = local_18;
+  if (out_referenced_count != (int *)0x0) {
+    *out_referenced_count = local_18;
   }
-  if (param_2 != (int *)0x0) {
-    *param_2 = iVar2;
+  if (out_total_bytes_referenced != (int *)0x0) {
+    *out_total_bytes_referenced = iVar2;
   }
-  if (param_3 != (int *)0x0) {
-    *param_3 = local_1c;
+  if (out_unreferenced_count != (int *)0x0) {
+    *out_unreferenced_count = local_1c;
   }
-  if (param_4 != (int *)0x0) {
-    *param_4 = local_14;
+  if (out_total_bytes_unreferenced != (int *)0x0) {
+    *out_total_bytes_unreferenced = local_14;
   }
-  if (param_5 != (int *)0x0) {
-    *param_5 = 0x40 - (local_18 + local_1c);
+  if (out_free_slots != (int *)0x0) {
+    *out_free_slots = 0x40 - (local_18 + local_1c);
   }
-  if ((param_6 != (int *)0x0) &&
-     (iVar2 = DAT_005bea94 - (iVar2 + local_14), *param_6 = iVar2, iVar2 < 0)) {
-    *param_6 = 0;
+  if ((out_available_memory != (int *)0x0) &&
+     (iVar2 = DAT_005bea94 - (iVar2 + local_14), *out_available_memory = iVar2, iVar2 < 0)) {
+    *out_available_memory = 0;
     return;
   }
   return;

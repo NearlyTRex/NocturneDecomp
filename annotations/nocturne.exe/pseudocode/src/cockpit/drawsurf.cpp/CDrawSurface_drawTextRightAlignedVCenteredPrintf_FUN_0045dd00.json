@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -63,7 +63,7 @@
       },
       {
         "category": "cast_error",
-        "column": 32,
+        "column": 31,
         "line": 16,
         "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
       }
@@ -74,17 +74,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 126,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 11,
-    "suspect_count": 10,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "stack_ref",
-      "unnamed_param"
+      "stack_ref"
     ],
     "total_lines": 45
   },
@@ -104,9 +103,9 @@
         "0045dd6b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00",
-    "signature": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00(CDrawSurface *param_1,int param_2,int param_3,char *param_4)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00(CDrawSurface *this_ptr,int x,int y,char *format)"
   },
   "function_calls": [
     {
@@ -128,13 +127,10 @@
         "call_addr": "0045e858",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370",
-        "estimated_params": 7,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -142,20 +138,18 @@
         "call_addr": "0045eb3a",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 7,
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 5,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -182,10 +176,10 @@
     "pcode_op_count": 122
   },
   "stack_frame": {
-    "frame_size": 4116,
+    "frame_size": 4132,
     "local_size": 4116,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -201,42 +195,38 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00(CDrawSurface *param_1,int param_2,int param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00(CDrawSurface *param_1,int param_2,int param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00(CDrawSurface *param_1,int param_2,int param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00(CDrawSurface *param_1,int param_2,int param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Direct stack address reference",
       "line": 8,
@@ -246,46 +236,14 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "_vsprintf(local_1010,param_4,(va_list_t)&local_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,local_1010,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,local_1010,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,local_1010,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
       "call_site_count": 2,
-      "declared_params": 0,
+      "declared_params": 4,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
+      "estimated_params": 5,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:7",
-      "param_delta": 7,
-      "text": "Function declares 0 params but call sites push 7 (7 missing)",
+      "match": "declared:4 vs estimated:5",
+      "param_delta": 1,
+      "text": "Function declares 4 params but call sites push 5 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

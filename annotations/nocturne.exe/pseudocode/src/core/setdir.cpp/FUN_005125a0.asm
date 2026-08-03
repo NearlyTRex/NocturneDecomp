@@ -291,7 +291,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005128be
     PUSH EDX                            ; 005128c1
     CALL core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340 ; 005128c2
-        ;   XREF to: 00514340 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340()
+        ;   XREF to: 00514340 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 005128c7
     MOV dword ptr [ESP + 0x244],EAX     ; 005128ca
     CMP EAX,-0x1                        ; 005128d1

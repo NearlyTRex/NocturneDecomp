@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_CEmitter_renderBackground_FUN_004790f0(CDemonActor *param_1,int param_2)
+; void __cdecl core_emitter_cpp_CEmitter_renderBackground_FUN_004790f0(CEmitter *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

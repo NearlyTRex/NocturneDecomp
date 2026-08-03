@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 273,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 48,
-    "suspect_count": 22,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 174
   },
   "cross_references": [],
@@ -83,9 +81,9 @@
         "004bcdf4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_imp.cpp_CImp_processDamage_FUN_004bccc0",
-    "signature": "void core_imp_cpp_CImp_processDamage_FUN_004bccc0(CImp *param_1,SDamageInfo *param_2)"
+    "signature": "void __cdecl core_imp_cpp_CImp_processDamage_FUN_004bccc0(CImp *this_ptr,SDamageInfo *damage_info)"
   },
   "function_calls": [
     {
@@ -159,9 +157,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -204,10 +202,10 @@
     "pcode_op_count": 504
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -216,187 +214,24 @@
         "offset": -36,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CImp *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_imp_cpp_CImp_processDamage_FUN_004bccc0(CImp *param_1,SDamageInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_imp_cpp_CImp_processDamage_FUN_004bccc0(CImp *param_1,SDamageInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handles[0]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2->ammo_type == AMMO_TYPE_MERCURY) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->damage_amount = param_2->damage_amount * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->damage_amount = param_2->damage_amount * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor *)param_1,&local_24,&param_2->impact_direction);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((CDemonActor *)param_1,&local_24,&param_2->impact_direction);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_imp_cpp_CImp_processDismemberment_FUN_004bca20(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_imp_cpp_CImp_processDismemberment_FUN_004bca20(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (param_1->base).base.hit_points - param_2->damage_amount;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = (param_1->base).base.hit_points - param_2->damage_amount;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).base.model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.hit_points = fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handles[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.hit_points = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handles[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = (*((param_1->base).base.base.vtable._ub)->playSound)((CDemonActor *)param_1,sound_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = (*((param_1->base).base.base.vtable._ub)->playSound)((CDemonActor *)param_1,sound_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->sfx_handles[1] = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

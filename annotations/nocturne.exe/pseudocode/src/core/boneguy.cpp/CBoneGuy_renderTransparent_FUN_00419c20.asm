@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00419c20(CCharacter *param_1)
+; int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00419c20(CBoneGuy *this_ptr)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

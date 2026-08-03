@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042a700(int param_1,float param_2,int param_3)
+; void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042a700(CCharacter *this_ptr,float blend_weight,int blend_mode)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   blend_weight
+; int              Stack[0xc]:4   blend_mode
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0

@@ -11,14 +11,14 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,C
 {
   int iVar1;
   CVector3f *pCVar2;
-  float *pfVar3;
+  CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
   float10 fVar6;
   CMatrix3x4f CStack_114;
   CMatrix3x4f CStack_e4;
   CMatrix3x4f CStack_b4;
-  float afStack_84 [14];
+  CMatrix3x4f CStack_84;
   float local_4c;
   CVector3f local_48;
   float local_34;
@@ -62,12 +62,12 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,C
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
               (&CStack_e4,&(this_ptr->actor_ptr->location).position,
                &(this_ptr->actor_ptr->orient).vec);
-    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&CStack_114,&CStack_e4);
-    pfVar3 = afStack_84;
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&CStack_114,&CStack_e4,&CStack_84);
+    pCVar3 = &CStack_84;
     pCVar4 = &CStack_b4;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      pCVar4->m[0].w = *pfVar3;
-      pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+      pCVar4->m[0].w = pCVar3->m[0].w;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
       pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
     pCVar2 = core_xform_cpp_getTranslation_FUN_0055bc00(&CStack_b4,&local_48);

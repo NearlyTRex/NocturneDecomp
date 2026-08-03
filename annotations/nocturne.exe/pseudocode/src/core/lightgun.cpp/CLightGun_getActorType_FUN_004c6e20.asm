@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_lightgun_cpp_CLightGun_getActorType_FUN_004c6e20(void)
+; CDemonActorType * __cdecl core_lightgun_cpp_CLightGun_getActorType_FUN_004c6e20(CLightGun *this_ptr)
 ;
+; Parameters:
+; CLightGun *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

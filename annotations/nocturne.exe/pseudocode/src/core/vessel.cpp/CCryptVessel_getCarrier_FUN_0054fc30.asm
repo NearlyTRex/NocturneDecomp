@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vessel_cpp_CCryptVessel_getCarrier_FUN_0054fc30(int param_1)
+; CDemonActor * __cdecl core_vessel_cpp_CCryptVessel_getCarrier_FUN_0054fc30(CCryptVessel *this_ptr)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_boxactor_cpp_CBoxActor_getGroundType_FUN_0041f160(int param_1)
+; EGroundType __cdecl core_boxactor_cpp_CBoxActor_getGroundType_FUN_0041f160(CBoxActor *this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

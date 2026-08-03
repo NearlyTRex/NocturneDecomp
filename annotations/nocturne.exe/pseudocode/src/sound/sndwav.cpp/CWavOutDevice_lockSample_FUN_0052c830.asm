@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_0052c830(void)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_0052c830(CWavOutDevice *this_ptr,int buffer_id,int offset,int size)
 ;
+; Parameters:
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   buffer_id
+; int              Stack[0xc]:4   offset
+; int              Stack[0x10]:4   size
 ;
 ; *****************************************************************************
 

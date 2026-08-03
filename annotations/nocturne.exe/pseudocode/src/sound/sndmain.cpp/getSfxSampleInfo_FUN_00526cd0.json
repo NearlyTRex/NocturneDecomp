@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 18,
-        "message": "incompatible pointer to integer conversion assigning to 'int' from 'CSfxSlot *'"
       }
     ],
     "success": false,
@@ -68,15 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 60,
+    "complexity_score": 85,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy"
     ],
     "total_lines": 44
@@ -220,11 +215,27 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(CSfxSample *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CSfxSample *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 19,
       "match": "(CSfxSample *)((int)output_buffer",
       "severity": "moderate",
       "text": "output_buffer = (CSfxSample *)((int)output_buffer + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CSfxSample *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

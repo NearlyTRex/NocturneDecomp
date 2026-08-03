@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004c9580(CDemonActor *param_1)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004c9580(CMansionPuzzleCircle *this_ptr)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1dc]:1  local_1dc
 ; undefined        Stack[-0x1ac]:1  local_1ac
@@ -255,7 +257,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x92]      ; 004c97a9
     PUSH EDI                            ; 004c97af
     CALL core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640 ; 004c97b0
-        ;   XREF to: 004ca640 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640()
+        ;   XREF to: 004ca640 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(CMansionPuzzleCircle * this_ptr, int panel_index)
     MOV EDI,ESI                         ; 004c97b5
     IMUL EAX,ESI,0xb8                   ; 004c97b7
     MOV EBX,dword ptr [EBP + 0x5a]      ; 004c97bd
@@ -272,7 +274,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x92]      ; 004c97d5
     PUSH EAX                            ; 004c97db
     CALL core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20 ; 004c97dc
-        ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20()
+        ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(CMansionPuzzleCircle * this_ptr, int panel_index, float * out_r, float * out_g, ...)
     MOV EAX,ESI                         ; 004c97e1
     MOV dword ptr [ESI + 0x14],0x0      ; 004c97e3
     MOV EDX,dword ptr [EAX + 0x14]      ; 004c97ea
@@ -334,7 +336,7 @@ section .text
     LEA ESI,[EBP + 0xfffffeb2]          ; 004c98a2
     LEA EDI,[EBP + 0xffffff72]          ; 004c98a8
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004c98ae
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004c98b3
     ADD ESP,0x8                         ; 004c98b8
     LEA EAX,[EBP + 0x42]                ; 004c98bb
@@ -555,7 +557,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x92]      ; 004c9b55
     PUSH EAX                            ; 004c9b5b
     CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980 ; 004c9b5c
-        ;   XREF to: 004cb980 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980()
+        ;   XREF to: 004cb980 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC EBX                             ; 004c9b61
     ADD ESP,0x8                         ; 004c9b62
     CMP EBX,0x2                         ; 004c9b65

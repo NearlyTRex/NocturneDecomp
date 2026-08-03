@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -74,16 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 295,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 22,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 211
   },
@@ -96,9 +95,9 @@
         "004f3b85"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_pendulum.cpp_CPendulum_process_FUN_004f3a20",
-    "signature": "void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *param_1,float param_2)"
+    "signature": "void __cdecl core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -194,9 +193,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -242,150 +241,29 @@
     "pcode_op_count": 525
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPendulum *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->moving == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,param_1->start_event);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->moving = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1->stop_event)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((iVar1 != 0) && (param_1->decay != 1.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->decay_timer = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->decay = 1.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float10)param_1->decay * (float10)-1 * (float10)param_1->decay_timer;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float10)param_1->decay * (float10)-1 * (float10)param_1->decay_timer;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->is_stopped = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->is_stopped = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->kill_hero == 0) && (param_1->kill_enemy == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->kill_hero == 0) && (param_1->kill_enemy == 0)) {",
-      "type": "unnamed_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 48,
@@ -393,38 +271,6 @@
       "severity": "moderate",
       "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->characters + iVar3);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->kill_hero == 0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,actor_ptr,pCVar2,(CDemonActor *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->kill_enemy == 0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,actor_ptr,(CDemonActor *)0x0,pCVar2);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 49,
-        "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       }
     ],
     "success": false,
@@ -68,19 +62,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 182,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 12,
+    "pseudocode_lines": 49,
+    "suspect_count": 6,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param",
-      "unrolled_memcpy"
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memcpy",
+      "warning_type_propagation"
     ],
-    "total_lines": 142
+    "total_lines": 144
   },
   "cross_references": [],
   "function": {
@@ -91,9 +86,9 @@
         "004bab9f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack2_esi",
     "name": "core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50",
-    "signature": "void core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(int param_1,int param_2)"
+    "signature": "void __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -142,9 +137,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -179,10 +174,10 @@
     "pcode_op_count": 394
   },
   "stack_frame": {
-    "frame_size": 172,
+    "frame_size": 180,
     "local_size": 172,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -282,110 +277,59 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIcePick *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CIcePick_getCarryObjToBodyXForm_FUN_004baa50.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 52,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
+      "match": "WARNING: Type propagation algorithm not settling",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_2 * 0x44 + param_1 + 0x24a4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_2 * 0x44 + param_1 + 0x24a4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_78,iVar1 * 0x30 + param_1 + 0xfd0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 45,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
       "severity": "moderate",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(CMatrix3x4f *)((int)out_matrix",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_ESI",
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)pCVar2",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 44,
+      "line": 47,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -398,14 +342,6 @@
       "severity": "moderate",
       "text": "// 004bab54: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 52,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

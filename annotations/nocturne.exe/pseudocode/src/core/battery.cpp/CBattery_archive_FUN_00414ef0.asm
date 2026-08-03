@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_battery_cpp_CBattery_archive_FUN_00414ef0(CDemonActor *param_1)
+; void __cdecl core_battery_cpp_CBattery_archive_FUN_00414ef0(CBattery *this_ptr)
 ;
+; Parameters:
+; CBattery *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_00578d73

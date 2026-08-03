@@ -1,13 +1,13 @@
 // Name: core_conveyor.cpp_CConveyor_getCollisionType_FUN_0043b3b0
 // Address: 0043b3b0
 // Address Range: [[0043b3b0, 0043b3b5]]
-// Convention: unknown
-// Signature: undefined4 core_conveyor_cpp_CConveyor_getCollisionType_FUN_0043b3b0(void)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_conveyor_cpp_CConveyor_getCollisionType_FUN_0043b3b0(CConveyor *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-uint core_conveyor_cpp_CConveyor_getCollisionType_FUN_0043b3b0(void)
+ECollisionType __cdecl core_conveyor_cpp_CConveyor_getCollisionType_FUN_0043b3b0(CConveyor *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return 1;
+  return COLLISION_TYPE_MESH;
 }

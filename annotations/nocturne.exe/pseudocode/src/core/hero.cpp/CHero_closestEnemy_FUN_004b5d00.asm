@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCharacter * core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *param_2)
+; CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(CHero *this_ptr,float *out_distance)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; float *          Stack[0x8]:4   out_distance
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x14]:4  local_14

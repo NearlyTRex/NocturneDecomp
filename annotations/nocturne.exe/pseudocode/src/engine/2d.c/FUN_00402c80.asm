@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402c80(undefined4 param_1,undefined4 param_2,char *param_3)
+; void engine_2d_c_FUN_00402c80(int param_1,int param_2,char *param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x100c]:1  local_100c
@@ -39,7 +39,7 @@ section .text
     PUSH EAX                            ; 00402cc9
     MOV dword ptr [ESP + 0x100c],ECX    ; 00402cca
     CALL engine_2d.c_drawTextCenteredAtColor_FUN_00402c20 ; 00402cd1
-        ;   XREF to: 00402c20 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextCenteredAtColor_FUN_00402c20()
+        ;   XREF to: 00402c20 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredAtColor_FUN_00402c20(char * text, int x, int y)
     ADD ESP,0xc                         ; 00402cd6
     ADD ESP,0x1004                      ; 00402cd9
     POP ESI                             ; 00402cdf

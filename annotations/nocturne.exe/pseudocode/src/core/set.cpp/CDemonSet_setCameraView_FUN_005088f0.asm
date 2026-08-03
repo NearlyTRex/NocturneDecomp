@@ -243,7 +243,7 @@ section .text
     ADD ESI,0x4                         ; 00508adc
     INC EBX                             ; 00508adf
     CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890 ; 00508ae0
-        ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890()
+        ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet * this_ptr, CDemonActor * actor)
     MOV EDI,dword ptr [EBP + 0x14cd6c]  ; 00508ae5
     ADD ESP,0x8                         ; 00508aeb
     CMP EBX,EDI                         ; 00508aee
@@ -307,7 +307,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00508b9d
     PUSH EAX                            ; 00508ba1
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00508ba2
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00508ba7
     MOV EAX,ESP                         ; 00508baa
     PUSH EAX                            ; 00508bac
@@ -355,7 +355,7 @@ section .text
         ;   Label: LAB_00508c0e
     PUSH 0x1fb8508                      ; 00508c10
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 00508c15
-        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
+        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     MOV ESI,dword ptr [EBP + 0x15a89c]  ; 00508c1a
     ADD ESP,0x8                         ; 00508c20
     TEST ESI,ESI                        ; 00508c23
@@ -399,13 +399,13 @@ section .text
     MOV ECX,dword ptr [0x005b96c4]      ; 00508c92 | g_CGore_PTR_005b96c4
     PUSH ECX                            ; 00508c98
     CALL core_gore.cpp_CGore_renderDecals_FUN_004afe80 ; 00508c99
-        ;   XREF to: 004afe80 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_renderDecals_FUN_004afe80()
+        ;   XREF to: 004afe80 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderDecals_FUN_004afe80(CGore * this_ptr, int render_all, int expire_flag)
     ADD ESP,0x8                         ; 00508c9e
     PUSH 0x1                            ; 00508ca1
     MOV EBX,dword ptr [0x005b80f0]      ; 00508ca3 | g_CFireEffect_PTR_005b80f0
     PUSH EBX                            ; 00508ca9
     CALL core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970 ; 00508caa
-        ;   XREF to: 0048a970 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970()
+        ;   XREF to: 0048a970 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970(CFireEffect * this_ptr, int render_mode, int render_completeness)
     MOV EAX,[0x005c11ec]                ; 00508caf | DAT_005c11ec
     MOV ESI,dword ptr [EAX]             ; 00508cb4 | g_CWater_02dd1210
     ADD ESP,0x8                         ; 00508cb6
@@ -426,7 +426,7 @@ section .text
     PUSH 0x0                            ; 00508cd6
     PUSH 0x1fb8508                      ; 00508cd8
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 00508cdd
-        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
+        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     ADD ESP,0x8                         ; 00508ce2
     PUSH EBP                            ; 00508ce5
     MOV dword ptr [EBP + 0x15f2f8],0x0  ; 00508ce6
@@ -520,7 +520,7 @@ section .text
     ADD EBX,0x4                         ; 00508e2e
     INC ESI                             ; 00508e31
     CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890 ; 00508e32
-        ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890()
+        ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet * this_ptr, CDemonActor * actor)
     MOV ECX,dword ptr [EBP + 0x14cd6c]  ; 00508e37
     ADD ESP,0x8                         ; 00508e3d
     CMP ESI,ECX                         ; 00508e40

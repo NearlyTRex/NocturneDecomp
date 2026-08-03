@@ -118,7 +118,7 @@ section .text
     LEA ESI,[ESP + 0x28]                ; 0044226e
     LEA EDI,[ESP + 0x10]                ; 00442272
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0 ; 00442276
-        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0()
+        ;   XREF to: 004410c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x28]                ; 0044227b
     ADD ESP,0xc                         ; 0044227f
     MOVSD ES:EDI,ESI                    ; 00442282
@@ -140,7 +140,7 @@ section .text
     LEA ESI,[ESP + 0x18]                ; 004422a2
     LEA EDI,[ESP + 0x3c]                ; 004422a6
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0 ; 004422aa
-        ;   XREF to: 004411b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0()
+        ;   XREF to: 004411b0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x18]                ; 004422af
     ADD ESP,0x8                         ; 004422b3
     MOVSD ES:EDI,ESI                    ; 004422b6
@@ -164,7 +164,7 @@ section .text
     PUSH EDI                            ; 004422dc
     LEA ESI,[ESP + 0x34]                ; 004422dd
     CALL core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910 ; 004422e1
-        ;   XREF to: 00447910 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910()
+        ;   XREF to: 00447910 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910(CDemonCamera * this_ptr, CVector3i * screen_pos, int alpha_index, CVector3i * world_pos)
     LEA EDI,[ESP + 0x40]                ; 004422e6
     LEA ESI,[ESP + 0x34]                ; 004422ea
     ADD ESP,0xc                         ; 004422ee

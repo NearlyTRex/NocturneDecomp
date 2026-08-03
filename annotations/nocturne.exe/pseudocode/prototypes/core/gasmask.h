@@ -13,7 +13,7 @@ CGasMask * __cdecl factoryFunc(void);
 
 // Original: core_gasmask.cpp_CGasMask_getActorType_FUN_004a8a00
 // Address: 004a8a00
-CDemonActorType * CGasMask::getActorType(void);
+CDemonActorType * __cdecl CGasMask::getActorType(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_ctor_FUN_004a8a10
 // Address: 004a8a10
@@ -29,11 +29,11 @@ int __cdecl CGasMask::canPickup(CGasMask *this_ptr,CDemonActor *picker);
 
 // Original: core_gasmask.cpp_CGasMask_process_FUN_004a8aa0
 // Address: 004a8aa0
-void CGasMask::process(void);
+void __cdecl CGasMask::process(CGasMask *this_ptr,float delta_time);
 
 // Original: core_gasmask.cpp_CGasMask_renderOpaque_FUN_004a8ab0
 // Address: 004a8ab0
-int CGasMask::renderOpaque(int param_1);
+int __cdecl CGasMask::renderOpaque(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_archive_FUN_004a8b30
 // Address: 004a8b30
@@ -41,7 +41,7 @@ void __cdecl CGasMask::archive(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_getCollisionType_FUN_004a8b60
 // Address: 004a8b60
-undefined4 CGasMask::getCollisionType(void);
+ECollisionType __cdecl CGasMask::getCollisionType(CGasMask *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004a8b70
 // Address: 004a8b70

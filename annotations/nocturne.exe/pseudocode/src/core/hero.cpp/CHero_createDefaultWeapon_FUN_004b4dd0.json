@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 108,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 6,
+    "pseudocode_lines": 32,
+    "suspect_count": 2,
     "suspect_types": [
       "suspect_float",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 107
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -92,9 +91,9 @@
         "004b4e80"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0",
-    "signature": "void core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(int param_1)"
+    "signature": "void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(CHero *this_ptr)"
   },
   "function_calls": [
     {
@@ -205,11 +204,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.9661016949152543,
@@ -237,49 +236,25 @@
     "pcode_op_count": 234
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_inv_cpp_CInventory_initialize_FUN_004bef10((CInventory *)(param_1 + 0x1f5a0));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_inv_cpp_CInventory_addItem_FUN_004bf360((CInventory *)(param_1 + 0x1f5a0),pCVar2,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CInventory *)(param_1 + 0x1f5a0),(CDemonActor *)0x0,5,1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 34,
+      "line": 33,
       "match": "1.4013e-43",
       "severity": "mild",
       "text": "pCVar2[4].location.position.x = 1.4013e-43;",

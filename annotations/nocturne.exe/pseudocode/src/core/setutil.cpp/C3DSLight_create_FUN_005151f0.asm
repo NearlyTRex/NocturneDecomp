@@ -110,7 +110,7 @@ section .text
     ADD EDI,0x4                         ; 005152cd
     INC ESI                             ; 005152d0
     CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 ; 005152d1
-        ;   XREF to: 0044bd20 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20()
+        ;   XREF to: 0044bd20 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20(CFilterCache * this_ptr, char * filter_name, int blend_filter)
     MOV dword ptr [EDI + 0x180c],EAX    ; 005152d6
     ADD EBX,0x28                        ; 005152dc
     MOV EDX,dword ptr [EBP + 0x11ec]    ; 005152df

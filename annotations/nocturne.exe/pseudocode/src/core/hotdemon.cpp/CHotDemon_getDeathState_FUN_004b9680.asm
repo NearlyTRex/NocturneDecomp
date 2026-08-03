@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004b9680(int param_1)
+; EDeathState __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004b9680(CHotDemon *this_ptr)
 ;
+; Parameters:
+; CHotDemon *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004b965c = 004b96a4

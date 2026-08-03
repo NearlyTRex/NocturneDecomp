@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *param_1,float param_2)
+; void __cdecl core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *this_ptr,float delta_time)
 ;
+; Parameters:
+; CVehicle *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0xa0]:1  local_a0
 ; undefined4       Stack[-0x88]:4  local_88

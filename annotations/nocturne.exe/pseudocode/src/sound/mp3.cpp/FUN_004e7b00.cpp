@@ -32,7 +32,7 @@ void sound_mp3_cpp_FUN_004e7b00(void)
     iVar5 = 0;
     local_c = (char *)0x1cd8c28;
     do {
-      _sprintf(local_c,"%d",iVar5);
+      _sprintf(local_c,"%d");
       *(uint *)(&DAT_01cd944c + iVar4) = *(uint *)(&DAT_005bdba0 + local_8);
       *(uint *)(iVar4 + 0x1cd8c2c) = *(uint *)(&DAT_005bdba4 + local_8);
       *(uint *)(iVar4 + 0x1cd8c30) = *(uint *)(&DAT_005bdba8 + local_8);

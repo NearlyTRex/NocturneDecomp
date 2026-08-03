@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *param_1,int param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *this_ptr,int skip_zbuffer_copy)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   skip_zbuffer_copy
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508070
@@ -82,7 +85,7 @@ section .text
     ADD ECX,EAX                         ; 00440ab0
     INC ESI                             ; 00440ab2
     CALL crt_watcom.c__memcpy_FUN_00481a28 ; 00440ab3
-        ;   XREF to: 00481a28 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memcpy_FUN_00481a28()
+        ;   XREF to: 00481a28 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_00481a28(void * dest, void * src, uint size)
     CMP ESI,dword ptr [EBX + 0x140]     ; 00440ab8
     JL 0x00440a7a                       ; 00440abe
         ;   XREF to: 00440a7a (CONDITIONAL_JUMP)  ; LAB_00440a7a

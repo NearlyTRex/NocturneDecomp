@@ -29,7 +29,7 @@ void __cdecl CDemonMission::load(CDemonMission *this_ptr,char *mission_filename,
 
 // Original: core_mission.cpp_CDemonMission_save_FUN_004d7f80
 // Address: 004d7f80
-void CDemonMission::save(CDemonMission *param_1,char *param_2);
+void __cdecl CDemonMission::save(CDemonMission *this_ptr,char *filename);
 
 // Original: core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0
 // Address: 004d7fe0
@@ -101,7 +101,7 @@ void FUN_004d9110(int param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
 // Address: 004d9180
-void CDemonMission::buildActiveSetActorList(int *param_1);
+void __cdecl CDemonMission::buildActiveSetActorList(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_process_FUN_004d92a0
 // Address: 004d92a0

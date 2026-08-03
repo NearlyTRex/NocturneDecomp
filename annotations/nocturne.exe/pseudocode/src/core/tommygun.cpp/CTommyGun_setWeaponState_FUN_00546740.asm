@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tommygun_cpp_CTommyGun_setWeaponState_FUN_00546740(CWeapon *param_1,int param_2)
+; void __cdecl core_tommygun_cpp_CTommyGun_setWeaponState_FUN_00546740(CTommyGun *this_ptr,int weapon_state)
 ;
+; Parameters:
+; CTommyGun *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   weapon_state
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560

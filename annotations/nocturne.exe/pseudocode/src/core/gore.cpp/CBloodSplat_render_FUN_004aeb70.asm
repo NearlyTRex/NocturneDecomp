@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_CBloodSplat_render_FUN_004aeb70(undefined4 *param_1)
+; void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr,int expire_flag)
 ;
+; Parameters:
+; CBloodSplat *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   expire_flag
 ; Local Variables:
 ; undefined4       Stack[-0x8c]:4  local_8c
 ; undefined4       Stack[-0x88]:4  local_88

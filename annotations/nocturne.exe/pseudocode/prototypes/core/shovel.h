@@ -13,7 +13,7 @@ CShovel * __cdecl factoryFunc(void);
 
 // Original: core_shovel.cpp_CShovel_getActorType_FUN_00516a00
 // Address: 00516a00
-CDemonActorType * CShovel::getActorType(void);
+CDemonActorType * __cdecl CShovel::getActorType(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_CShovel_ctor_FUN_00516a10
 // Address: 00516a10

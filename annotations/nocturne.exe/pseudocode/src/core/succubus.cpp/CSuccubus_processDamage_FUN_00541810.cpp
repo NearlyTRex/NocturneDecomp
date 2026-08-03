@@ -1,15 +1,15 @@
 // Name: core_succubus.cpp_CSuccubus_processDamage_FUN_00541810
 // Address: 00541810
 // Address Range: [[00541810, 00541829]]
-// Convention: unknown
-// Signature: void core_succubus_cpp_CSuccubus_processDamage_FUN_00541810(CEnemy *param_1,SDamageInfo *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_succubus_cpp_CSuccubus_processDamage_FUN_00541810(CSuccubus *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void core_succubus_cpp_CSuccubus_processDamage_FUN_00541810(CEnemy *param_1,SDamageInfo *param_2)
+void __cdecl core_succubus_cpp_CSuccubus_processDamage_FUN_00541810(CSuccubus *this_ptr,SDamageInfo *damage_info)
 
 {
-  param_2->damage_amount = 0.0;
-  core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
+  damage_info->damage_amount = 0.0;
+  core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&this_ptr->base,damage_info);
   return;
 }

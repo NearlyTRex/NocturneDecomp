@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDamageInfo *param_2)
+; void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined8       Stack[-0x3c]:8  local_3c
 ; undefined        Stack[-0x34]:1  local_34
@@ -124,7 +127,7 @@ section .text
     PUSH EDI                            ; 0053e91d | g_CConsole_0077ad0c
     MOV dword ptr [EBX + 0x2434],0x0    ; 0053e91e
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053e928
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053e92d
     LEA EAX,[EBX + 0x1f5a0]             ; 0053e930
     PUSH EAX                            ; 0053e936
@@ -138,7 +141,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 0053e950 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 0053e955 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053e956
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0053e95b
     XOR EDX,EDX                         ; 0053e95e
         ;   Label: LAB_0053e95e

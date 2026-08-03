@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 122,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
     "total_lines": 55
@@ -100,7 +98,7 @@
     ],
     "convention": "__stack_esi",
     "name": "core_xform.cpp_buildZFlipMatrix_FUN_0055ca90",
-    "signature": "undefined4 * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float param_1,undefined4 *param_2)"
+    "signature": "CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float z_offset,CMatrix3x4f *matrix_out)"
   },
   "function_calls": [],
   "globals": [
@@ -141,11 +139,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.407407407407407,
@@ -176,10 +174,10 @@
     "pcode_op_count": 119
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 60,
     "local_size": 56,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -265,6 +263,13 @@
         "offset": -8,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "z_offset",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -287,46 +292,6 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_34[0xb] = param_1 * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "puVar3 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 24,
       "match": "for (...; != 0; ... + -1)",
@@ -341,17 +306,6 @@
       "severity": "moderate",
       "text": "// 0055cae4: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

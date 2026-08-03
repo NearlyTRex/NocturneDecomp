@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3)
+; int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CTurret *this_ptr,CVector3f *target_pos,float delta_time)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   target_pos
+; float            Stack[0xc]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38

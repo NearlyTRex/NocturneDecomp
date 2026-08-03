@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_anvil_cpp_CAnvil_renderOpaque_FUN_0040f740(int param_1)
+; int __cdecl core_anvil_cpp_CAnvil_renderOpaque_FUN_0040f740(CAnvil *this_ptr)
 ;
+; Parameters:
+; CAnvil *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

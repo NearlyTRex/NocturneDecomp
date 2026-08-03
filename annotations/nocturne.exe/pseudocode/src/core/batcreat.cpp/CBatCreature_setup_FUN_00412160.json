@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 26,
+        "line": 25,
         "message": "use of undeclared identifier '_DAT_007645a8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 28,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_007645ac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 30,
+        "line": 29,
         "message": "use of undeclared identifier '_DAT_007645b0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 32,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_007645b4'; did you mean 'DAT_007645a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 34,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_007645b8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 36,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_007645bc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 38,
+        "line": 37,
         "message": "use of undeclared identifier '_DAT_007645a0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 42,
+        "line": 41,
         "message": "use of undeclared identifier '_DAT_007645c0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 44,
+        "line": 43,
         "message": "use of undeclared identifier '_DAT_007645c4'; did you mean 'DAT_007645a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 46,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_007645c8'"
       }
     ],
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 249,
-    "complexity_score": 360,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 43,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 95,
-    "suspect_count": 25,
+    "pseudocode_lines": 94,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 344
+    "total_lines": 343
   },
   "cross_references": [],
   "function": {
@@ -145,9 +144,9 @@
         "00412459"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_batcreat.cpp_CBatCreature_setup_FUN_00412160",
-    "signature": "void core_batcreat_cpp_CBatCreature_setup_FUN_00412160(CEnemy *param_1)"
+    "signature": "void __cdecl core_batcreat_cpp_CBatCreature_setup_FUN_00412160(CBatCreature *this_ptr)"
   },
   "function_calls": [
     {
@@ -445,9 +444,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -471,12 +470,20 @@
     "pcode_op_count": 813
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBatCreature *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -488,32 +495,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_batcreat_cpp_CBatCreature_setup_FUN_00412160(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 16,
       "match": "DAT_0076459c",
       "severity": "mild",
       "text": "DAT_0076459c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
@@ -521,7 +504,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_007645a4",
       "severity": "mild",
       "text": "DAT_007645a4 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
@@ -529,155 +512,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 40,
       "match": "DAT_0076459c",
       "severity": "mild",
       "text": "DAT_0076459c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)param_1[1].base.base.actor_name = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 4) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 8) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0xc) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0x10) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0x14) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0x18) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0x1c) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.position.x = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.position.y = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.position.z = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.area_id = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.orient.vec.x = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.orient.vec.z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.orient_matrix.m[0].x = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.orient_matrix.m[0].y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.orient_matrix.m[0].z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.orient.vec.y = fVar2;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

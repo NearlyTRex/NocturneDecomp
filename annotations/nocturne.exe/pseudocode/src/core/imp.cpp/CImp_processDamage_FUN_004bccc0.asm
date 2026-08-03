@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_imp_cpp_CImp_processDamage_FUN_004bccc0(CImp *param_1,SDamageInfo *param_2)
+; void __cdecl core_imp_cpp_CImp_processDamage_FUN_004bccc0(CImp *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CImp *           Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ;

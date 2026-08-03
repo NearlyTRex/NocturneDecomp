@@ -28,13 +28,59 @@
         "start":"00481a9c"
       }
     ],
+    "conv":"__fastcall",
     "importable":true,
     "name":"crt_watcom.c__memcpy_FUN_00481a28",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "reg":"ECX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000004",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "reg":"EDX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ]
     }
   },
   {

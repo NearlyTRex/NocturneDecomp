@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,32 +52,44 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 35,
+        "line": 33,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 38,
+        "column": 40,
+        "line": 46,
+        "message": "use of undeclared identifier '_DAT_0059aa88'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 47,
+        "message": "use of undeclared identifier '_DAT_0059aa88'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
         "line": 48,
         "message": "use of undeclared identifier '_DAT_0059aa88'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 38,
+        "column": 40,
         "line": 49,
-        "message": "use of undeclared identifier '_DAT_0059aa88'"
+        "message": "use of undeclared identifier '_DAT_0059aa80'; did you mean 'DAT_005bea80'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 37,
+        "column": 40,
         "line": 50,
-        "message": "use of undeclared identifier '_DAT_0059aa88'"
+        "message": "use of undeclared identifier '_DAT_0059aa80'; did you mean 'DAT_005bea80'?"
       },
       {
         "category": "undeclared_identifier",
@@ -87,32 +99,20 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
-        "line": 52,
-        "message": "use of undeclared identifier '_DAT_0059aa80'; did you mean 'DAT_005bea80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 53,
-        "message": "use of undeclared identifier '_DAT_0059aa80'; did you mean 'DAT_005bea80'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 9,
-        "line": 58,
+        "line": 56,
         "message": "use of undeclared identifier '_DAT_007f7370'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 59,
+        "line": 57,
         "message": "use of undeclared identifier '_DAT_01c038f4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 59,
+        "line": 57,
         "message": "use of undeclared identifier '_DAT_007f7370'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 179,
+    "complexity_score": 177,
     "cross_reference_count": 71,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 62,
     "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
@@ -136,7 +136,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 220
+    "total_lines": 218
   },
   "cross_references": [
     {
@@ -957,28 +957,28 @@
         {
           "check_id": "uninitvar",
           "column": 29,
-          "line": 51,
+          "line": 49,
           "message": "Uninitialized variable: local_20",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 29,
-          "line": 52,
+          "line": 50,
           "message": "Uninitialized variable: local_1c",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 29,
-          "line": 53,
+          "line": 51,
           "message": "Uninitialized variable: local_18",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 69,
+          "line": 67,
           "message": "Uninitialized variable: in_stack_00000008",
           "severity": "error"
         }
@@ -1006,7 +1006,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 26,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
@@ -1014,31 +1014,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_006b028c",
       "severity": "mild",
-      "text": "local_14 = (float)DAT_006b028c * _DAT_0059aa88;",
+      "text": "local_14.x = (float)DAT_006b028c * _DAT_0059aa88;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_006b0290",
       "severity": "mild",
-      "text": "local_10 = (float)DAT_006b0290 * _DAT_0059aa88;",
+      "text": "local_14.y = (float)DAT_006b0290 * _DAT_0059aa88;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_006b0294",
       "severity": "mild",
-      "text": "local_c = (float)DAT_006b0294 * _DAT_0059aa88;",
+      "text": "local_14.z = (float)DAT_006b0294 * _DAT_0059aa88;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 60,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "else if ((in_stack_00000008 == 0) &&",
@@ -1046,7 +1046,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_20 != &local_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 36,
+      "line": 34,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_20 != &local_38) {",
@@ -1065,7 +1065,7 @@
     },
     {
       "description": "Uninitialized variable: local_20",
-      "line": 51,
+      "line": 49,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_2c.x = (int)ROUND(local_20 * _DAT_0059aa80);",
@@ -1073,7 +1073,7 @@
     },
     {
       "description": "Uninitialized variable: local_1c",
-      "line": 52,
+      "line": 50,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_2c.y = (int)ROUND(local_1c * _DAT_0059aa80);",
@@ -1081,7 +1081,7 @@
     },
     {
       "description": "Uninitialized variable: local_18",
-      "line": 53,
+      "line": 51,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_2c.z = (int)ROUND(local_18 * _DAT_0059aa80);",
@@ -1089,7 +1089,7 @@
     },
     {
       "description": "Uninitialized variable: in_stack_00000008",
-      "line": 69,
+      "line": 67,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "else if ((in_stack_00000008 == 0) &&",

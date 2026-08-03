@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 149,
+    "complexity_score": 14,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 13,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 37
   },
   "cross_references": [],
@@ -83,9 +81,9 @@
         "004acbb3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_glass.cpp_CGlass_getBoundingBox_FUN_004acb60",
-    "signature": "void core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(int param_1,float *param_2)"
+    "signature": "CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(CGlass *this_ptr,CBoundingBox3D *out_box)"
   },
   "function_calls": [],
   "globals": [
@@ -106,9 +104,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -128,119 +126,29 @@
     "pcode_op_count": 151
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlass *"
+      },
+      {
+        "is_param": true,
+        "name": "out_box",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x150);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = -0.1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = -fVar1 * fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = -*(float *)(param_1 + 0x158) * fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[2] = -*(float *)(param_1 + 0x158) * fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[3] = *(float *)(param_1 + 0x150) * fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[3] = *(float *)(param_1 + 0x150) * fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4] = *(float *)(param_1 + 0x154) + (float)0.10000000000000001;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[4] = *(float *)(param_1 + 0x154) + (float)0.10000000000000001;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[5] = fVar2 * *(float *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2[5] = fVar2 * *(float *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

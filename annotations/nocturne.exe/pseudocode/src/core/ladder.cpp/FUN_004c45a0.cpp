@@ -12,13 +12,13 @@ void __cdecl core_ladder_cpp_FUN_004c45a0(CLadder *this_ptr)
   UOrientationVector *pUVar1;
   CVector3f *pCVar2;
   int iVar3;
-  float *pfVar4;
+  CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
   CMatrix3x4f local_dc;
   CMatrix3x4f local_ac;
   CMatrix3x4f local_7c;
-  float local_4c [12];
+  CMatrix3x4f local_4c;
   float local_1c;
   float local_18;
   float local_14;
@@ -33,12 +33,12 @@ void __cdecl core_ladder_cpp_FUN_004c45a0(CLadder *this_ptr)
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
             (&local_ac,&(this_ptr->master_actor->location).position,
              &(this_ptr->master_actor->orient).vec);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_dc,&local_ac);
-  pfVar4 = local_4c;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_dc,&local_ac,&local_4c);
+  pCVar4 = &local_4c;
   pCVar5 = &local_7c;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar5->m[0].w = *pfVar4;
-    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+    pCVar5->m[0].w = pCVar4->m[0].w;
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
   }
   local_1c = local_7c.m[0].z;

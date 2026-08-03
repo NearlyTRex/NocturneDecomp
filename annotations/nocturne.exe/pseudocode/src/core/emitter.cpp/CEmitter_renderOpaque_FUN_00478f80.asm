@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_emitter_cpp_CEmitter_renderOpaque_FUN_00478f80(CDemonActor *param_1)
+; int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_00478f80(CEmitter *this_ptr)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xcc]:4  local_cc
 ; undefined4       Stack[-0xc8]:4  local_c8

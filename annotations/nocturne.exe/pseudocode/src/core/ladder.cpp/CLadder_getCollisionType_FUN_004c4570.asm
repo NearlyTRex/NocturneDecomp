@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_ladder_cpp_CLadder_getCollisionType_FUN_004c4570(int param_1)
+; ECollisionType __cdecl core_ladder_cpp_CLadder_getCollisionType_FUN_004c4570(CLadder *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CLadder *        Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530

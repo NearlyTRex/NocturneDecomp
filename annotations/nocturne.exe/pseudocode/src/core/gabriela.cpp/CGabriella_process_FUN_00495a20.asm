@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *param_1,float param_2)
+; void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_ptr,float delta_time)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x1e0]:4  local_1e0
 ; undefined        Stack[-0x1dc]:1  local_1dc
@@ -1171,7 +1174,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 00496621 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 00496626 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00496627
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00495d9a                      ; 0049662c
         ;   XREF to: 00495d9a (UNCONDITIONAL_JUMP)  ; LAB_00495d9a
     PUSH 0x1                            ; 00496631

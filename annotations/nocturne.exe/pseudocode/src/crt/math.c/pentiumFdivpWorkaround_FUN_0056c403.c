@@ -1,12 +1,12 @@
 // Name: crt_math.c_pentiumFdivpWorkaround_FUN_0056c403
 // Address: 0056c403
 // Address Range: [[0056c403, 0056c415]]
-// Convention: unknown
-// Signature: void crt_math_c_pentiumFdivpWorkaround_FUN_0056c403(void)
+// Convention: __fpustack_safe
+// Signature: void __fpustack_safe crt_math_c_pentiumFdivpWorkaround_FUN_0056c403(void)
 
 #include "nocturne.h"
 
-void pentiumFdivpWorkaround(void)
+void __fpustack_safe pentiumFdivpWorkaround(void)
 
 {
   float10 in_ST2;

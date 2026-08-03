@@ -1,36 +1,34 @@
 // Name: core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0
 // Address: 0043cfd0
 // Address Range: [[0043cfd0, 0043d093]]
-// Convention: unknown
-// Signature: void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCrossbow *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2)
+void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCrossbow *this_ptr,float delta_time)
 
 {
   CVector3f *pCVar1;
   CVector3f aCStack_1c [2];
   
-  core_weapon_cpp_CWeapon_process_FUN_00554030((CWeapon *)param_1,param_2);
-  pCVar1 = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);
+  core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,delta_time);
+  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
+  ;
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                     (&param_1->base,aCStack_1c,pCVar1);
-  (param_1->model).transformed_vertices[0x53].z = pCVar1->x;
-  (param_1->model).transformed_vertices[0x54].x = pCVar1->y;
-  (param_1->model).transformed_vertices[0x54].y = pCVar1->z;
-  if (((((param_1->model).transformed_vertices[0x18].y != 2.8026e-45) ||
-       ((int)(param_1->model).transformed_vertices[0x4f].y < 1)) ||
-      ((param_1->model).transformed_vertices[0x4f].z != 7.00649e-45)) ||
-     (0.0 < (param_1->model).transformed_vertices[0x1c].x)) {
-    core_flame_cpp_FUN_0048df10((CFlame *)((param_1->model).transformed_vertices + 0x51));
-    (param_1->model).transformed_vertices[0x50].z = 0.0;
+                     ((CDemonActor *)this_ptr,aCStack_1c,pCVar1);
+  (this_ptr->bolt_flame).base.location.position.x = pCVar1->x;
+  (this_ptr->bolt_flame).base.location.position.y = pCVar1->y;
+  (this_ptr->bolt_flame).base.location.position.z = pCVar1->z;
+  if (((((this_ptr->base).weapon_state != 2) || ((this_ptr->base).ammo_count < 1)) ||
+      ((this_ptr->base).ammo_type != 5)) || (0.0 < (this_ptr->base).fire_cooldown_timer)) {
+    core_flame_cpp_FUN_0048df10(&this_ptr->bolt_flame);
+    this_ptr->flame_active = 0;
   }
   else {
-    (param_1->model).transformed_vertices[0x50].z = 1.4013e-45;
+    this_ptr->flame_active = 1;
   }
-  core_flame_cpp_CFlame_process_FUN_0048d0c0
-            ((CFlame *)((param_1->model).transformed_vertices + 0x51),param_2);
-  (param_1->base).is_transparent = (int)(param_1->model).transformed_vertices[0x50].z;
+  core_flame_cpp_CFlame_process_FUN_0048d0c0(&this_ptr->bolt_flame,delta_time);
+  (this_ptr->base).base.is_transparent = this_ptr->flame_active;
   return;
 }

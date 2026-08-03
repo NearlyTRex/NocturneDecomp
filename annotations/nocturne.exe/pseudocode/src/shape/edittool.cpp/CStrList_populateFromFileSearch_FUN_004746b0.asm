@@ -68,7 +68,7 @@ section .text
     LEA ECX,[ESP + 0x540]               ; 004746e7
     PUSH ECX                            ; 004746ee
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004746ef
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 004746f4
     MOV EDX,dword ptr [0x005be1cc]      ; 004746f7 | g_CPod_PTR_005be1cc
         ;   Label: LAB_004746f7

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CPlatform *param_1,float param_2)
+; void __cdecl core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CConveyor *this_ptr,float delta_time)
 ;
+; Parameters:
+; CConveyor *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

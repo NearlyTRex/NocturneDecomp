@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 465,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 50,
-    "suspect_count": 41,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 216
   },
   "cross_references": [],
@@ -83,10 +81,10 @@
         "00411e25"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_bat.cpp_CBat_process_FUN_00411c40",
-    "signature": "void core_bat_cpp_CBat_process_FUN_00411c40(CBat *param_1,float param_2)"
+    "signature": "void __cdecl core_bat_cpp_CBat_process_FUN_00411c40(CBat *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -151,9 +149,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -197,10 +195,10 @@
     "pcode_op_count": 915
   },
   "stack_frame": {
-    "frame_size": 92,
+    "frame_size": 100,
     "local_size": 92,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -279,6 +277,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBat *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -299,336 +311,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_bat_cpp_CBat_process_FUN_00411c40(CBat *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_bat_cpp_CBat_process_FUN_00411c40(CBat *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = (param_1->base).location.position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->param = param_1->course_speed * param_2 + param_1->param;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->param = param_1->course_speed * param_2 + param_1->param;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->param = param_1->course_speed * param_2 + param_1->param;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->param = param_1->course_speed * param_2 + param_1->param;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bat_cpp_CBat_updateCoursePosition_FUN_00411f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = (((param_1->base).location.position.y - fVar4) * (float)4) / param_2 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar4 = (((param_1->base).location.position.y - fVar4) * (float)4) / param_2 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->flap_speed = (fVar4 - param_1->flap_speed) * (float)0.69999999999999996 + param_1->flap_speed",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->flap_speed = (fVar4 - param_1->flap_speed) * (float)0.69999999999999996 + param_1->flap_speed",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->flap_speed = (fVar4 - param_1->flap_speed) * (float)0.69999999999999996 + param_1->flap_speed",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->anim_frame = param_2 * param_1->flap_speed * param_1->speed + param_1->anim_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->anim_frame = param_2 * param_1->flap_speed * param_1->speed + param_1->anim_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->anim_frame = param_2 * param_1->flap_speed * param_1->speed + param_1->anim_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->anim_frame = param_2 * param_1->flap_speed * param_1->speed + param_1->anim_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->anim_frame = param_2 * param_1->flap_speed * param_1->speed + param_1->anim_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&param_1->model);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->anim_frame < (float)pCVar1->frame_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->anim_frame < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->anim_frame = (float)(pCVar1->frame_count + -1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->anim_frame = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->periodic_sound[0] != '\\0') &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = param_1->sound_timer - param_2, param_1->sound_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2 = param_1->sound_timer - param_2, param_1->sound_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = param_1->sound_timer - param_2, param_1->sound_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2 = param_1->sound_timer - param_2, param_1->sound_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = param_1->sound_timer - param_2, param_1->sound_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = param_1->sound_timer - param_2, param_1->sound_timer = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handle);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((double)(param_1->base).location.position.x,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)(param_1->base).location.position.y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)(param_1->base).location.position.z,50.0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = (*((param_1->base).vtable._ub)->playAmbientSound)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,param_1->periodic_sound);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,param_1->periodic_sound);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->sfx_handle = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->periodic_sound_timer_min,param_1->periodic_sound_timer_max);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->periodic_sound_timer_min,param_1->periodic_sound_timer_max);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->sound_timer = fVar4;",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

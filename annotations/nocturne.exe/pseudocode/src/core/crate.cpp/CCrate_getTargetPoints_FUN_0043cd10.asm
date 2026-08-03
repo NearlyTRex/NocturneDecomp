@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(int param_1,float *param_2)
+; int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(CCrate *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
 ;   float FLOAT_0057b45b = 0.5

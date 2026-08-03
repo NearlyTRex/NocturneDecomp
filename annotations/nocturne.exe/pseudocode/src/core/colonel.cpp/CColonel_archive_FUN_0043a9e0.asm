@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_colonel_cpp_CColonel_archive_FUN_0043a9e0(CHero *param_1)
+; void __cdecl core_colonel_cpp_CColonel_archive_FUN_0043a9e0(CColonel *this_ptr)
 ;
+; Parameters:
+; CColonel *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_archive_FUN_004b49a0

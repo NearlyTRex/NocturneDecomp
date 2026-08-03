@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spike_cpp_CSpike_setup_FUN_00533160(CDemonActor *param_1)
+; void __cdecl core_spike_cpp_CSpike_setup_FUN_00533160(CSpike *this_ptr)
 ;
+; Parameters:
+; CSpike *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28

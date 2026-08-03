@@ -48,7 +48,7 @@ section .text
     PUSH EBP                            ; 004f3ee6
     PUSH EBX                            ; 004f3ee7
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 ; 004f3ee8
-        ;   XREF to: 004f4630 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630()
+        ;   XREF to: 004f4630 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x18                        ; 004f3eed
     MOV EAX,EBX                         ; 004f3ef0
     POP EBP                             ; 004f3ef2

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_tbplayer_cpp_CDrummer_getActorType_FUN_00543390(void)
+; CDemonActorType * __cdecl core_tbplayer_cpp_CDrummer_getActorType_FUN_00543390(CDrummer *this_ptr)
 ;
+; Parameters:
+; CDrummer *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

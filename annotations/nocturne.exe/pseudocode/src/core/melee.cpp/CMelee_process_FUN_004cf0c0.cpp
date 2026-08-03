@@ -1,12 +1,12 @@
 // Name: core_melee.cpp_CMelee_process_FUN_004cf0c0
 // Address: 004cf0c0
 // Address Range: [[004cf0c0, 004cf172]]
-// Convention: unknown
-// Signature: void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_melee_cpp_CMelee_process_FUN_004cf0c0(CMelee *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_2)
+void __cdecl core_melee_cpp_CMelee_process_FUN_004cf0c0(CMelee *this_ptr,float delta_time)
 
 {
   CCharacter_full_vtable *pCVar1;
@@ -14,22 +14,21 @@ void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_
   CVector3f *input_local_point;
   CVector3f CStack_18;
   
-  core_weapon_cpp_CWeapon_process_FUN_00554030((CWeapon *)param_1,param_2);
-  if ((0 < (int)(param_1->model).transformed_vertices[0x52].z) &&
-     (param_2 = (param_1->model).transformed_vertices[0x53].x - param_2,
-     (param_1->model).transformed_vertices[0x53].x = param_2, param_2 <= 0.0)) {
-    fVar2 = (param_1->model).transformed_vertices[0x53].y * (float)1.1499999999999999;
-    pCVar1 = (param_1->base).vtable._uc;
-    (param_1->model).transformed_vertices[0x52].z =
-         (float)((int)(param_1->model).transformed_vertices[0x52].z + -1);
-    (param_1->model).transformed_vertices[0x53].y = fVar2;
-    (param_1->model).transformed_vertices[0x53].x = fVar2;
-    input_local_point = (CVector3f *)(*(pCVar1->_uc).canWalk)(param_1);
+  core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,delta_time);
+  if ((0 < this_ptr->blood_spurt_count) &&
+     (fVar2 = this_ptr->blood_spurt_timer - delta_time, this_ptr->blood_spurt_timer = fVar2,
+     fVar2 <= 0.0)) {
+    fVar2 = this_ptr->blood_spurt_interval * (float)1.1499999999999999;
+    pCVar1 = (this_ptr->base).base.vtable._uc;
+    this_ptr->blood_spurt_count = this_ptr->blood_spurt_count + -1;
+    this_ptr->blood_spurt_interval = fVar2;
+    this_ptr->blood_spurt_timer = fVar2;
+    input_local_point = (CVector3f *)(*(pCVar1->_uc).canWalk)((CCharacter *)this_ptr);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-              (&param_1->base,&CStack_18,input_local_point);
+              ((CDemonActor *)this_ptr,&CStack_18,input_local_point);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-              (g_CGore_PTR_005b96c4,&CStack_18,(CVector3f *)&DAT_02dd1184,
-               (int)(param_1->model).transformed_vertices[0x52].y);
+              (g_CGore_PTR_005b96c4,&CStack_18,(CVector3f *)&DAT_02dd1184,this_ptr->blood_gore_type)
+    ;
     return;
   }
   return;

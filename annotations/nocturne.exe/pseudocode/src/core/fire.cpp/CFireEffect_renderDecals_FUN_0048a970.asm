@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(undefined4 param_1,int param_2)
+; void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(CFireEffect *this_ptr,int render_mode,int render_completeness)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   render_mode
+; int              Stack[0xc]:4   render_completeness
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508caa

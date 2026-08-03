@@ -1,21 +1,21 @@
 // Name: core_flies.cpp_CFlies_renderOpaque_FUN_0048f490
 // Address: 0048f490
 // Address Range: [[0048f490, 0048f884]]
-// Convention: unknown
-// Signature: int core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CDemonActor *param_1)
+int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
 
 {
   short *psVar1;
   CDemonRenderer *pCVar2;
-  char *pcVar3;
+  SFly *pSVar3;
   int iVar4;
-  CBoundingBox3D *this_ptr;
+  CBoundingBox3D *this_ptr_00;
   uint uVar5;
   int iVar6;
   float *out_basis;
@@ -30,7 +30,7 @@ int core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CDemonActor *param_1)
   CVector3i CStack_38;
   int iStack_28;
   int iStack_24;
-  char *pcStack_20;
+  SFly *pSStack_20;
   int iStack_18;
   
   bVar9 = 0;
@@ -38,19 +38,14 @@ int core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CDemonActor *param_1)
   if (iVar4 != 0) {
     return 0;
   }
-  param_1[0x20].actor_name[0x14] = '\0';
-  param_1[0x20].actor_name[0x15] = '\0';
-  param_1[0x20].actor_name[0x16] = '\0';
-  param_1[0x20].actor_name[0x17] = '\0';
-  core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
-  this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,(CBoundingBox3D *)local_58);
-  iStack_28 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr);
+  this_ptr->is_visible = 0;
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                          (&this_ptr->base,(CBoundingBox3D *)local_58);
+  iStack_28 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
   iVar4 = _DAT_01c70714;
   if (iStack_28 != 0) {
-    param_1[0x20].actor_name[0x14] = '\x01';
-    param_1[0x20].actor_name[0x15] = '\0';
-    param_1[0x20].actor_name[0x16] = '\0';
-    param_1[0x20].actor_name[0x17] = '\0';
+    this_ptr->is_visible = 1;
     if (iVar4 == 0) {
       out_basis = (float *)0x1c7075c;
       iVar4 = 0;
@@ -89,22 +84,22 @@ int core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CDemonActor *param_1)
       engine_texture_cpp_ensureTextureLoaded_FUN_00545920((SMRGLTextureBasic *)&DAT_005b9214);
     }
     iStack_24 = 0;
-    if (0 < *(int *)(param_1[1].actor_name + 0xc)) {
-      pcStack_20 = param_1[1].actor_name + 0x10;
+    if (0 < this_ptr->fly_count) {
+      pSStack_20 = this_ptr->flies;
       do {
-        pcVar3 = pcStack_20;
-        dVar10 = round((double)(*(float *)pcStack_20 * 64.0f));
-        pcStack_20 = (char *)(int)ROUND(dVar10);
-        if ((int)pcStack_20 < 0) {
-          pcStack_20 = (char *)0x0;
+        pSVar3 = pSStack_20;
+        dVar10 = round((double)(pSStack_20->t * 64.0f));
+        pSStack_20 = (SFly *)(int)ROUND(dVar10);
+        if ((int)pSStack_20 < 0) {
+          pSStack_20 = (SFly *)0x0;
         }
-        else if (0x3f < (int)pcStack_20) {
-          pcStack_20 = (char *)0x3f;
+        else if (0x3f < (int)pSStack_20) {
+          pSStack_20 = (SFly *)0x3f;
         }
         core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10
-                  ((float *)((int)pcStack_20 * 0x20 + 0x1c7075c),(CVector3f *)(local_58 + 0x14),
-                   (CVector3f *)(pcVar3 + 4),(CVector3f *)(pcVar3 + 0x10),
-                   (CVector3f *)(pcVar3 + 0x1c),(CVector3f *)(pcVar3 + 0x28));
+                  ((float *)((int)pSStack_20 * 0x20 + 0x1c7075c),(CVector3f *)(local_58 + 0x14),
+                   pSVar3->control_points,pSVar3->control_points + 1,pSVar3->control_points + 2,
+                   pSVar3->control_points + 3);
         CStack_38.x = (int)ROUND((float)local_58._20_4_ * _DAT_0059da10);
         CStack_38.y = (int)ROUND(fStack_40 * _DAT_0059da10);
         CStack_38.z = (int)ROUND(fStack_3c * _DAT_0059da10);
@@ -149,9 +144,9 @@ int core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CDemonActor *param_1)
         }
         iStack_24 = iStack_24 + 0x34;
         iStack_28 = iStack_28 + 1;
-      } while (iStack_28 < *(int *)(param_1[1].actor_name + 0xc));
+      } while (iStack_28 < this_ptr->fly_count);
     }
   }
-  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
   return iStack_28;
 }

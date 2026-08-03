@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -60,12 +60,6 @@
         "column": 37,
         "line": 22,
         "message": "C-style cast from 'CHero_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 59,
-        "message": "no matching function for call to 'core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0'"
       }
     ],
     "success": false,
@@ -488,15 +482,15 @@
       "line": 42,
       "match": "2.8026e-45",
       "severity": "mild",
-      "text": "pCVar4[-0x48].item_angles[0x15] = 2.8026e-45;",
+      "text": "pCVar3[-0x48].item_angles[0x15] = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 43,
-      "match": "pCVar4[-1].",
+      "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "pCVar4[-1].cached_ammo_count = 0;",
+      "text": "pCVar3[-1].cached_ammo_count = 0;",
       "type": "negative_offset"
     },
     {
@@ -504,15 +498,15 @@
       "line": 55,
       "match": "1.4013e-45",
       "severity": "mild",
-      "text": "pCVar4[-0x6b].item_angles[0x48] = 1.4013e-45;",
+      "text": "pCVar3[-0x6b].item_angles[0x48] = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
-      "description": "Pointer value `&pCVar2[1].base.orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&pCVar1[1].base.orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 11,
-      "match": "(int)&pCVar2[1].base.orient",
+      "match": "(int)&pCVar1[1].base.orient",
       "severity": "moderate",
-      "text": "pCVar3 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar2[1].base.orient + 4));",
+      "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar1[1].base.orient + 4));",
       "type": "pointer_truncation"
     },
     {
@@ -520,7 +514,7 @@
       "line": 11,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar3 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar2[1].base.orient + 4));",
+      "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar1[1].base.orient + 4));",
       "type": "pointer_cast"
     }
   ]

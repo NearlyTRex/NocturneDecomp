@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CCharacter *param_1,int param_2)
+; int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 ;
+; Parameters:
+; CSmiley *        Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; CVector3f *      Stack[0xc]:4   target_local_point
 ;
 ; Referenced Globals:
 ;   float FLOAT_005920a5 = -4

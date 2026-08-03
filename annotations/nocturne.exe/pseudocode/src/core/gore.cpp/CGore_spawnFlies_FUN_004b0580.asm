@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5)
+; CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004b0580(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; int              Stack[0xc]:4   gather_count
+; float            Stack[0x10]:4   spawn_rate
+; CVector3f *      Stack[0x14]:4   box_size
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 at 004b068d

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float10 * __watcallRegister crt_math_c_dispatch_divide_FUN_0056bf9f(float10 *__return_storage_ptr__)
+; void __watcallRegister crt_math_c_dispatch_divide_FUN_0056bf9f(void)
 ;
 ;
 ; Called Functions:

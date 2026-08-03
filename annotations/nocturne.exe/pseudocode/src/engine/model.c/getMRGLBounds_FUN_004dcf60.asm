@@ -96,7 +96,7 @@ section .text
     PUSH EAX                            ; 004dcfd9
     MOV ESI,0x58a625                    ; 004dcfda | = "..\\engine\\model.c"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004dcfdf
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004dcfe4
     MOV EAX,ESP                         ; 004dcfe7
     MOV EDI,0x176                       ; 004dcfe9
@@ -366,7 +366,7 @@ section .text
     PUSH EBX                            ; 004dd3a1
     MOVSD.REP ES:EDI,ESI                ; 004dd3a2
     CALL engine_model.c_freeMRGLData_FUN_004dcee0 ; 004dd3a4
-        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_freeMRGLData_FUN_004dcee0()
+        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_004dcee0(SMRGLHeaderExtended * mrgl_data)
     MOV ECX,0xd                         ; 004dd3a9
     LEA EDI,[ESP + 0x54]                ; 004dd3ae
     LEA ESI,[ESP + 0xbc]                ; 004dd3b2
@@ -378,7 +378,7 @@ section .text
     LEA ESI,[ESP + 0x88]                ; 004dd3bf
     LEA EDI,[ESP + 0x54]                ; 004dd3c6
     CALL engine_boss.c_modelStructNotSupported4_FUN_0041a5a0 ; 004dd3ca
-        ;   XREF to: 0041a5a0 (UNCONDITIONAL_CALL)  ; undefined engine_boss.c_modelStructNotSupported4_FUN_0041a5a0()
+        ;   XREF to: 0041a5a0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported4_FUN_0041a5a0(SMRGLHeaderExtended * mrgl_data, SMRGLModelBounds * out_bounds)
     MOV ECX,0xd                         ; 004dd3cf
     LEA ESI,[ESP + 0x88]                ; 004dd3d4
     ADD ESP,0x4                         ; 004dd3db

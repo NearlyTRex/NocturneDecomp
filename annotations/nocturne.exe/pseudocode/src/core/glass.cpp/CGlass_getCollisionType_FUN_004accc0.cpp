@@ -1,17 +1,17 @@
 // Name: core_glass.cpp_CGlass_getCollisionType_FUN_004accc0
 // Address: 004accc0
 // Address Range: [[004accc0, 004acce8]]
-// Convention: unknown
-// Signature: undefined4 core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(int param_1)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(CGlass *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-uint core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(int param_1)
+ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(CGlass *this_ptr,SCollisionInfo *collision_info)
 
 {
-  if ((*(int *)(param_1 + 0x178) != 0) && (*(int *)(param_1 + 0x1e0) == 0)) {
-    *(uint *)(param_1 + 0x100) = 1;
-    return 0;
+  if ((this_ptr->shattered != 0) && (this_ptr->mirror_flag == 0)) {
+    (this_ptr->base).collision_disabled = 1;
+    return COLLISION_TYPE_NONE;
   }
-  return 1;
+  return COLLISION_TYPE_MESH;
 }

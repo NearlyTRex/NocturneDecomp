@@ -40,7 +40,7 @@ section .text
     MOV AX,DX                           ; 0056b1c4
     PUSH EAX                            ; 0056b1c7
     CALL crt_heap.c_ResizeBlockInPlace_FUN_0056afe8 ; 0056b1c8
-        ;   XREF to: 0056afe8 (UNCONDITIONAL_CALL)  ; undefined crt_heap.c_ResizeBlockInPlace_FUN_0056afe8()
+        ;   XREF to: 0056afe8 (UNCONDITIONAL_CALL)  ; undefined1 crt_heap.c_ResizeBlockInPlace_FUN_0056afe8()
     ADD ESP,0x10                        ; 0056b1cd
     TEST EAX,EAX                        ; 0056b1d0
     JNZ 0x0056b1e1                      ; 0056b1d2

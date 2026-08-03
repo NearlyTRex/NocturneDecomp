@@ -17,7 +17,7 @@ CMimic * __cdecl factoryFunc(void);
 
 // Original: core_mimic.cpp_CMimic_getActorType_FUN_004d4440
 // Address: 004d4440
-CDemonActorType * CMimic::getActorType(void);
+CDemonActorType * __cdecl CMimic::getActorType(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_ctor_FUN_004d4450
 // Address: 004d4450
@@ -29,11 +29,11 @@ CMimic * __cdecl CMimic::dtor(CMimic *this_ptr,uint flags);
 
 // Original: core_mimic.cpp_CMimic_setup_FUN_004d4650
 // Address: 004d4650
-void CMimic::setup(CEnemy *param_1);
+void __cdecl CMimic::setup(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_process_FUN_004d49f0
 // Address: 004d49f0
-void CMimic::process(CMimic *param_1,float param_2);
+void __cdecl CMimic::process(CMimic *this_ptr,float delta_time);
 
 // Original: core_mimic.cpp_FUN_004d4ba0
 // Address: 004d4ba0
@@ -61,19 +61,19 @@ int __cdecl CMimic::renderTransparent(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_getDeathState_FUN_004d5b10
 // Address: 004d5b10
-undefined4 CMimic::getDeathState(void);
+EDeathState __cdecl CMimic::getDeathState(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderBackground_FUN_004d5b20
 // Address: 004d5b20
-void CMimic::renderBackground(CDemonActor *param_1,int param_2);
+void __cdecl CMimic::renderBackground(CMimic *this_ptr,int layer_flag);
 
 // Original: core_mimic.cpp_CMimic_archive_FUN_004d5bb0
 // Address: 004d5bb0
-void CMimic::archive(CEnemy *param_1);
+void __cdecl CMimic::archive(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_getCollisionType_FUN_004d5c80
 // Address: 004d5c80
-undefined4 CMimic::getCollisionType(int param_1,int *param_2);
+ECollisionType __cdecl CMimic::getCollisionType(CMimic *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_mimic.cpp_CMimic_beginMorph_FUN_004d5d00
 // Address: 004d5d00

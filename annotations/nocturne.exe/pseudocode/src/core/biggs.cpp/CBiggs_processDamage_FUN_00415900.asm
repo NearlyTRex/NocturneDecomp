@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_biggs_cpp_CBiggs_processDamage_FUN_00415900(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_biggs_cpp_CBiggs_processDamage_FUN_00415900(CBiggs *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CBiggs *         Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00

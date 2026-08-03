@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(CEnemy *param_1,int param_2)
+; void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(CGhoul *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_renderBackground_FUN_0047a000

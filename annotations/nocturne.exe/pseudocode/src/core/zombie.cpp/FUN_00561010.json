@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,50 +52,26 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 134,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 141,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 215,
+        "line": 213,
         "message": "use of undeclared identifier '_DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 216,
+        "line": 214,
         "message": "use of undeclared identifier '_DAT_02dd1188'; did you mean 'DAT_02DF1188'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 217,
+        "line": 215,
         "message": "use of undeclared identifier '_DAT_02dd118c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 242,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 253,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
     "success": false,
@@ -104,12 +80,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 612,
-    "complexity_score": 367,
+    "complexity_score": 363,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 267,
+    "pseudocode_lines": 263,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -117,7 +93,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 879
+    "total_lines": 875
   },
   "cross_references": [
     {
@@ -528,7 +504,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 173,
+      "line": 171,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = CStack_44.x;",
@@ -536,7 +512,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 182,
+      "line": 180,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = (pCVar6->location).position.x;",
@@ -544,7 +520,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 203,
+      "line": 201,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = CStack_50.x;",

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_CZombie_archive_FUN_00561aa0(CEnemy *param_1)
+; void __cdecl core_zombie_cpp_CZombie_archive_FUN_00561aa0(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00598887

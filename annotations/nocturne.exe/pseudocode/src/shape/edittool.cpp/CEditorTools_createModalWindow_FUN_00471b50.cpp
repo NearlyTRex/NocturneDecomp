@@ -18,12 +18,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   void *pvVar4;
   uint uVar5;
   int *piVar6;
-  int iVar7;
-  uint *puVar8;
-  int iVar9;
+  uint *puVar7;
+  int iVar8;
+  uint *puVar9;
   uint *puVar10;
-  uint *puVar11;
-  byte bVar12;
+  byte bVar11;
   uint local_12e8 [1200];
   int local_28;
   int local_24;
@@ -32,7 +31,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   int local_18;
   uint local_14;
   
-  bVar12 = 0;
+  bVar11 = 0;
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
     g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
     g_INT_01cc4804 = 0x8b;
@@ -67,20 +66,18 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
     iVar1 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
                       (_DAT_01bcd070,text_content,(char *)0x1bcc0d0,0x14,200,
                        (right - left) + local_20 * -2);
-    iVar9 = 0;
+    iVar8 = 0;
     piVar6 = local_1c + 0xe;
     if (0 < iVar1) {
-      iVar7 = 0x1bcc0d0;
       do {
-        iVar9 = iVar9 + 1;
-        iVar2 = _sprintf(piVar6,"%s\n",iVar7);
+        iVar8 = iVar8 + 1;
+        iVar2 = _sprintf((char *)piVar6,"%s\n");
         piVar6 = (int *)((int)piVar6 + iVar2);
-        iVar7 = iVar7 + 200;
-      } while (iVar9 < iVar1);
+      } while (iVar8 < iVar1);
     }
     this_ptr_00 = _DAT_01bcd070;
     if (0 < iVar1) {
-      *(byte *)((int)piVar6 + -1) = 0;
+      *(char *)((int)piVar6 + -1) = '\0';
       local_28 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
                            (this_ptr_00,(char *)(local_1c + 0xe));
       local_28 = _DAT_01bcd9bc + local_28;
@@ -99,39 +96,39 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
       if (0 < DAT_005b7620) {
         iVar1 = 0;
         do {
-          iVar9 = iVar1 + 4;
+          iVar8 = iVar1 + 4;
           *(uint *)((int)local_12e8 + iVar1) = *(uint *)(&DAT_01bd2fa0 + iVar1);
-          iVar1 = iVar9;
-        } while (iVar9 < DAT_005b7620 * 4);
+          iVar1 = iVar8;
+        } while (iVar8 < DAT_005b7620 * 4);
       }
       engine_special_cpp_lockFrame_FUN_005322e0();
       iVar1 = DAT_005b761c * DAT_005b7624 >> 0x1f;
       uVar3 = (int)((DAT_005b761c * DAT_005b7624 + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
       iVar1 = 0;
       if (0 < DAT_005b7620) {
-        iVar9 = 0;
+        iVar8 = 0;
         do {
-          puVar8 = *(uint **)(&DAT_01bd2fa0 + iVar9);
-          puVar10 = *(uint **)((int)local_12e8 + iVar9);
+          puVar7 = *(uint **)(&DAT_01bd2fa0 + iVar8);
+          puVar9 = *(uint **)((int)local_12e8 + iVar8);
           for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *puVar10 = *puVar8;
-            puVar8 = puVar8 + (uint)bVar12 * -2 + 1;
-            puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
+            *puVar9 = *puVar7;
+            puVar7 = puVar7 + (uint)bVar11 * -2 + 1;
+            puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
           }
           for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *(byte *)puVar10 = *(byte *)puVar8;
-            puVar8 = (uint *)((int)puVar8 + (uint)bVar12 * -2 + 1);
-            puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);
+            *(byte *)puVar9 = *(byte *)puVar7;
+            puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);
+            puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
           }
           iVar1 = iVar1 + 1;
-          iVar9 = iVar9 + 4;
+          iVar8 = iVar8 + 4;
         } while (iVar1 < DAT_005b7620);
       }
       engine_special_cpp_FUN_00532320();
     }
     iVar1 = (right - left) * DAT_005b7624;
-    iVar9 = iVar1 >> 0x1f;
-    local_14 = (int)((iVar1 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3;
+    iVar8 = iVar1 >> 0x1f;
+    local_14 = (int)((iVar1 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3;
     pvVar4 = malloc((bottom - top) * local_14);
     local_1c[0x72] = (int)pvVar4;
     if (pvVar4 == (void *)0x0) {
@@ -139,29 +136,29 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
       g_INT_01cc4804 = 0x6c4;
       core_main_c_FUN_004c8440("out of memory to open editor window.");
     }
-    puVar8 = (uint *)local_1c[0x72];
+    puVar7 = (uint *)local_1c[0x72];
     if (top < bottom) {
       iVar1 = top * 4;
       local_18 = bottom * 4;
       do {
-        iVar9 = left * DAT_005b7624 >> 0x1f;
+        iVar8 = left * DAT_005b7624 >> 0x1f;
         piVar6 = (int *)(&DAT_01bd2fa0 + iVar1);
         iVar1 = iVar1 + 4;
-        puVar10 = (uint *)
-                  (*piVar6 +
-                  ((int)((left * DAT_005b7624 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3));
-        puVar11 = puVar8;
+        puVar9 = (uint *)
+                 (*piVar6 +
+                 ((int)((left * DAT_005b7624 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3));
+        puVar10 = puVar7;
         for (uVar3 = local_14 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *puVar11 = *puVar10;
-          puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
-          puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+          *puVar10 = *puVar9;
+          puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
+          puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
         }
         for (uVar3 = local_14 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *(byte *)puVar11 = *(byte *)puVar10;
-          puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);
-          puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);
+          *(byte *)puVar10 = *(byte *)puVar9;
+          puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
+          puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);
         }
-        puVar8 = (uint *)((int)puVar8 + local_14);
+        puVar7 = (uint *)((int)puVar7 + local_14);
       } while (iVar1 < local_18);
     }
   }

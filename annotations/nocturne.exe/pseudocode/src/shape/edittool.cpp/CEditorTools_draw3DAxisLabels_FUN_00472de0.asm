@@ -197,7 +197,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x10]      ; 00472f8a | DAT_005c5084
     MOV EDI,dword ptr [EBX + 0x14]      ; 00472f8d | DAT_005c5088
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00472f90
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00472f95
     PUSH 0xffff                         ; 00472f98
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00472f9d

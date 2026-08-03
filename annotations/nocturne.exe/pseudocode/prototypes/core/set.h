@@ -29,7 +29,7 @@ void __cdecl CDemonSet::renderSceneGeometry(CDemonSet *this_ptr,float frustum_pa
 
 // Original: core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80
 // Address: 00507f80
-void CDemonSet::precomputeLightVisibility(CDemonSet *param_1,int param_2,int param_3,int param_4);
+void __cdecl CDemonSet::precomputeLightVisibility(CDemonSet *this_ptr,int light_index);
 
 // Original: core_set.cpp_CDemonSet_initScene_FUN_005084c0
 // Address: 005084c0
@@ -41,7 +41,7 @@ void __cdecl CDemonSet::renderBackgroundActors(CDemonSet *this_ptr,int layer_fla
 
 // Original: core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890
 // Address: 00508890
-void CDemonSet::snapshotActorTransformState(undefined4 param_1,int param_2);
+void __cdecl CDemonSet::snapshotActorTransformState(CDemonSet *this_ptr,CDemonActor *actor);
 
 // Original: core_set.cpp_CDemonSet_setCameraView_FUN_005088f0
 // Address: 005088f0
@@ -97,7 +97,7 @@ void __cdecl FUN_0050aa70(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_FUN_0050aba0
 // Address: 0050aba0
-int FUN_0050aba0(CDemonSet *param_1);
+void FUN_0050aba0(CDemonSet *param_1);
 
 // Original: core_set.cpp_FUN_0050ad20
 // Address: 0050ad20
@@ -209,7 +209,7 @@ void __cdecl FUN_0050e080(CDemonSet *this_ptr,int mirror_index,int enable_flag);
 
 // Original: core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
 // Address: 0050e190
-void CDemonSet::restoreCameraAfterMirror(int param_1);
+void __cdecl CDemonSet::restoreCameraAfterMirror(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210
 // Address: 0050e210

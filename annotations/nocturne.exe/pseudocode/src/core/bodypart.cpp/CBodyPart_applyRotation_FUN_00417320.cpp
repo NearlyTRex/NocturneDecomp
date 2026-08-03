@@ -24,7 +24,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart *t
   CVector3f *pCVar12;
   CVector3f *pCVar13;
   int iVar14;
-  float *pfVar15;
+  CMatrix3x4f *pCVar15;
   int iVar16;
   CMatrix3x4f *pCVar17;
   CVector3f *euler_angles_01;
@@ -36,13 +36,18 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart *t
   double dVar23;
   double dVar24;
   double dVar25;
-  uint uVar26;
-  uint uVar27;
+  float fStack_1e8;
+  float fStack_1e4;
+  float fStack_1e0;
+  float fStack_1dc;
+  float fStack_1d8;
+  float fStack_1d4;
+  float fStack_1d0;
   CMatrix3x4f CStack_1b8;
   CMatrix3x4f CStack_188;
   CMatrix3x4f CStack_158;
   CMatrix3x4f CStack_128;
-  float afStack_f8 [12];
+  CMatrix3x4f CStack_f8;
   CMatrix3x3f CStack_c8;
   byte local_a4 [40];
   CVector3f local_7c;
@@ -63,6 +68,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart *t
   CVector3f *local_1c;
   
   bVar18 = 0;
+  fStack_1d0 = 6.01066e-39;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0((CMatrix3x3f *)local_a4,euler_angles)
   ;
   fVar5 = (float)local_a4._4_4_ * 5.9266679317975379e-315._0_4_;
@@ -79,14 +85,19 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart *t
   fVar5 = (float)local_a4._24_4_ * 5.9266679317975379e-315._0_4_;
   iVar16 = 0;
   iVar14 = this_ptr->vertex_count;
+  fStack_1d0 = 6.010888e-39;
   dVar19 = round((double)fVar6);
+  fStack_1d4 = 6.010898e-39;
   dVar20 = round((double)fVar7);
+  fStack_1d8 = 6.010908e-39;
   dVar21 = round((double)fVar8);
+  fStack_1dc = 6.010917e-39;
   dVar22 = round((double)fVar9);
+  fStack_1e0 = 6.010927e-39;
   dVar23 = round((double)fVar10);
-  uVar27 = 0x41740c;
+  fStack_1e4 = 6.010937e-39;
   dVar24 = round((double)fVar11);
-  uVar26 = 0x417413;
+  fStack_1e8 = 6.010947e-39;
   dVar25 = round((double)fVar5);
   iStack_48 = (int)ROUND(dVar19);
   iStack_5c = (int)ROUND(dVar20);
@@ -129,12 +140,12 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart *t
             (&CStack_188,(CVector3f *)&DAT_02dd1184,&euler_angles_00->vec);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
             (&CStack_158,(CVector3f *)&DAT_02dd1184,local_1c);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&CStack_188,&CStack_158,uVar26,uVar27);
-  pfVar15 = afStack_f8;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&CStack_188,&CStack_158,&CStack_f8);
+  pCVar15 = &CStack_f8;
   pCVar17 = &CStack_128;
   for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {
-    pCVar17->m[0].w = *pfVar15;
-    pfVar15 = pfVar15 + (uint)bVar18 * -2 + 1;
+    pCVar17->m[0].w = pCVar15->m[0].w;
+    pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar18 * -2 + 1) * 4);
     pCVar17 = (CMatrix3x4f *)((int)pCVar17 + ((uint)bVar18 * -2 + 1) * 4);
   }
   pCVar12 = core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(&CStack_128,&local_70);
@@ -178,7 +189,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart *t
       euler_angles_01 = pCVar12 + 1;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
                 (&CStack_1b8,(CVector3f *)&DAT_02dd1184,euler_angles_01);
-      core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&CStack_1b8,&CStack_158);
+      core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
+                (&CStack_1b8,&CStack_158,(CMatrix3x4f *)&fStack_1e8);
       pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_0055b180
                           (&CStack_158,(CVector3f *)(local_a4 + 4));
       if (euler_angles_01 != pCVar13) {

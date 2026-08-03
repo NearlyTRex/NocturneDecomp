@@ -62,8 +62,8 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(CMotionContro
         _sprintf(&stack0xffffff58,"%s -> %s");
       }
       engine_2d_c_drawText_FUN_00402600(&stack0xffffff58,local_14,iVar6 + -0x16);
-      pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(this_ptr);
-      _sprintf(&stack0xffffff58,"%s : %5.2f",pSVar4);
+      core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(this_ptr);
+      _sprintf(&stack0xffffff58,"%s : %5.2f");
       engine_2d_c_drawText_FUN_00402600(&stack0xffffff58,local_14,iVar6 + -0xb);
       return;
     }

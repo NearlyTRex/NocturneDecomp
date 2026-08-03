@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 192,
+    "complexity_score": 42,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 15,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 70
@@ -98,9 +96,9 @@
         "004f823a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0",
-    "signature": "void engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(int param_1,int param_2,int param_3)"
+    "signature": "void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info)"
   },
   "function_calls": [],
   "globals": [],
@@ -111,12 +109,10 @@
         "call_addr": "004f8e86",
         "call_type": "direct",
         "caller": "engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -124,21 +120,19 @@
         "call_addr": "004f923e",
         "call_type": "direct",
         "caller": "engine_pod.cpp_CPod_findFile_FUN_004f9200",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.7631578947368425,
@@ -169,118 +163,36 @@
     "pcode_op_count": 181
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPodFile *"
+      },
+      {
+        "is_param": true,
+        "name": "file_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "output_info",
+        "offset": 12,
+        "size": 4,
+        "type": "SFoundFileInfo *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar4 = (char *)(param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pcVar5 = (char *)(param_3 + 0x100);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x20c) + param_2 * 0x14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x20c) + param_2 * 0x14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x200) = *(uint *)(iVar3 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x204) = *(uint *)(iVar3 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x20c) = *(uint *)(iVar3 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x208) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x210) = uVar2;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 14,
@@ -288,17 +200,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

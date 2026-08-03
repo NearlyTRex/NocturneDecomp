@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_CGabriella_setup_FUN_004957c0(CHero *param_1)
+; void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004957c0(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gabriela_dfm_00581e62

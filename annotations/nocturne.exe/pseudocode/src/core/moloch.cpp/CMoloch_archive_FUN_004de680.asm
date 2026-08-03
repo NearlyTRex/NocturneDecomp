@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moloch_cpp_CMoloch_archive_FUN_004de680(CHero *param_1)
+; void __cdecl core_moloch_cpp_CMoloch_archive_FUN_004de680(CMoloch *this_ptr)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_humanToDemonCond_0058a83a

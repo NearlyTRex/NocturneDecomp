@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_process_FUN_004168d0(CBodyPart *param_1,float param_2)
+; void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_004168d0(CBodyPart *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
 ; undefined4       Stack[-0x50]:4  local_50
@@ -99,7 +102,7 @@ section .text
     PUSH EBX                            ; 00416967
     MOV dword ptr [EBX + 0x70],0x2      ; 00416968
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 ; 0041696f
-        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0()
+        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EBX + 0x160]               ; 00416974
     ADD ESP,0xc                         ; 0041697a
     MOV ESI,EAX                         ; 0041697d

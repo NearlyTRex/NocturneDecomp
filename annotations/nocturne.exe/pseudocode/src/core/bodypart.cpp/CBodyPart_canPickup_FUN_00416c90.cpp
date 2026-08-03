@@ -1,15 +1,15 @@
 // Name: core_bodypart.cpp_CBodyPart_canPickup_FUN_00416c90
 // Address: 00416c90
 // Address Range: [[00416c90, 00416cae]]
-// Convention: unknown
-// Signature: undefined4 core_bodypart_cpp_CBodyPart_canPickup_FUN_00416c90(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_bodypart_cpp_CBodyPart_canPickup_FUN_00416c90(CBodyPart *this_ptr,CDemonActor *picker)
 
 #include "nocturne.h"
 
-uint core_bodypart_cpp_CBodyPart_canPickup_FUN_00416c90(int param_1)
+int __cdecl core_bodypart_cpp_CBodyPart_canPickup_FUN_00416c90(CBodyPart *this_ptr,CDemonActor *picker)
 
 {
-  if ((*(int *)(param_1 + 0x150) == 0) && (*(int *)(param_1 + 0xcac) == 0)) {
+  if ((this_ptr->render_in_background == 0) && (this_ptr->dont_pick_me_up == 0)) {
     return 3;
   }
   return 0;

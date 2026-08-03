@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_marquee_cpp_CMarquee_process_FUN_004cc320(int param_1,float param_2)
+; void __cdecl core_marquee_cpp_CMarquee_process_FUN_004cc320(CMarquee *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMarquee *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8

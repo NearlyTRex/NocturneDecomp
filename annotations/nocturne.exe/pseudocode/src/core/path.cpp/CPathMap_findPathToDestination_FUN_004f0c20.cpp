@@ -19,7 +19,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20(CPathMap *
   uint uVar6;
   CVector3f *unaff_EBX;
   CVector3f *unaff_ESI;
-  float *pfVar7;
+  uint *puVar7;
   byte bVar8;
   double dVar9;
   int unaff_retaddr;
@@ -43,8 +43,9 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20(CPathMap *
   CVector3f local_88 [2];
   CVector3f local_70;
   CVector3f local_64;
-  int local_58;
-  float afStack_54 [4];
+  CVector3i local_58;
+  float local_4c;
+  float local_48;
   float local_44;
   byte local_40 [20];
   uint local_2c;
@@ -56,11 +57,13 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20(CPathMap *
   
   bVar8 = 0;
   fStack_124 = 7.259422e-39;
-  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700();
-  pfVar7 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);
-  (this_ptr->dest_voxel_coords).x = local_58;
-  *pfVar7 = afStack_54[(uint)bVar8 * -2];
-  pfVar7[(uint)bVar8 * -2 + 1] = afStack_54[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
+            (&g_CDemonRaytrace_01fba938,dest_position,&local_58);
+  puVar7 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);
+  (this_ptr->dest_voxel_coords).x = local_58.x;
+  *puVar7 = *(uint *)((int)&local_58 + (uint)bVar8 * -8 + 4);
+  puVar7[(uint)bVar8 * -2 + 1] =
+       *(uint *)((int)&local_58 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
   local_a4.y = 0.0;
   local_a4.z = 0.0;
   local_98 = 0;
@@ -95,8 +98,8 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20(CPathMap *
   }
   local_ac = (this_ptr->voxel_coords).x - (this_ptr->dest_voxel_coords).x;
   if (0x31 < (int)((local_ac ^ (int)local_ac >> 0x1f) - ((int)local_ac >> 0x1f))) {
-    afStack_54[2] = (this_ptr->current_position).x - dest_position->x;
-    afStack_54[3] = (this_ptr->current_position).y - dest_position->y;
+    local_4c = (this_ptr->current_position).x - dest_position->x;
+    local_48 = (this_ptr->current_position).y - dest_position->y;
     local_44 = (this_ptr->current_position).z - dest_position->z;
 LAB_004f0ce0:
     pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0

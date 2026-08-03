@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,15 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 118,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
     "total_lines": 43
   },
@@ -83,9 +83,9 @@
         "004cbc9c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_manpuz.cpp_CMirrorHack_getBoundingBox_FUN_004cbc50",
-    "signature": "float * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,float *param_2)"
+    "signature": "CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(CMirrorHack *this_ptr,CBoundingBox3D *out_box)"
   },
   "function_calls": [
     {
@@ -99,9 +99,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -125,93 +125,36 @@
     "pcode_op_count": 97
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirrorHack *"
+      },
+      {
+        "is_param": true,
+        "name": "out_box",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = (pCVar1->bounds).min.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = (pCVar1->bounds).min.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = (pCVar1->bounds).min.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[3] = (pCVar1->bounds).max.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4] = (pCVar1->bounds).max.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[5] = (pCVar1->bounds).max.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(out_box->min).x = (pCVar1->bounds).min.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_simbox_cpp_CSimBox_renderOpaque_FUN_00516f50(CDemonActor *param_1)
+; int __cdecl core_simbox_cpp_CSimBox_renderOpaque_FUN_00516f50(CSimBox *this_ptr)
 ;
+; Parameters:
+; CSimBox *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

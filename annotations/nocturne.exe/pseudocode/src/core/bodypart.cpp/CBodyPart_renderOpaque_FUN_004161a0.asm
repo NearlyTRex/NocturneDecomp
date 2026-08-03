@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *param_1)
+; int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

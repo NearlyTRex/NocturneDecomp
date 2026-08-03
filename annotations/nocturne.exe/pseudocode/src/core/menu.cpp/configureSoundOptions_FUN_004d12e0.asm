@@ -202,7 +202,7 @@ section .text
     PUSH EAX                            ; 004d1414
     PUSH EBX                            ; 004d1415
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d1416
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d141b
     PUSH 0x0                            ; 004d141e
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00527380 ; 004d1420
@@ -222,7 +222,7 @@ section .text
     LEA EAX,[ESP + 0x4d0]               ; 004d1461
     PUSH EAX                            ; 004d1468
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d1469
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d146e
     LEA ESI,[ESP + 0x4c8]               ; 004d1471
     MOV EDI,EBX                         ; 004d1478
@@ -327,7 +327,7 @@ section .text
     LEA EAX,[ESP + 0x6d0]               ; 004d1567
     PUSH EAX                            ; 004d156e
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d156f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d1574
     LEA ESI,[ESP + 0x6c8]               ; 004d1577
     PUSH EDI                            ; 004d157e
@@ -431,7 +431,7 @@ section .text
     LEA EAX,[ESP + 0x3d0]               ; 004d166b
     PUSH EAX                            ; 004d1672
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d1673
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d1678
     LEA ESI,[ESP + 0x3c8]               ; 004d167b
     PUSH EDI                            ; 004d1682
@@ -515,7 +515,7 @@ section .text
     LEA EAX,[ESP + 0x5d0]               ; 004d1727
     PUSH EAX                            ; 004d172e
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d172f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d1734
     LEA ESI,[ESP + 0x5c8]               ; 004d1737
     PUSH EDI                            ; 004d173e
@@ -599,7 +599,7 @@ section .text
     LEA EAX,[ESP + 0x5d0]               ; 004d17df
     PUSH EAX                            ; 004d17e6
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d17e7
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d17ec
     LEA ESI,[ESP + 0x5c8]               ; 004d17ef
     PUSH EDI                            ; 004d17f6
@@ -670,7 +670,7 @@ section .text
     PUSH EAX                            ; 004d1886
     MOV dword ptr [ESP + 0x7f4],EDX     ; 004d1887
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d188e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
         ;   Label: LAB_004d188e
     ADD ESP,0x8                         ; 004d1893
     CALL sound_sndmain.cpp_getCurrentSoundDevice_FUN_00528610 ; 004d1896
@@ -965,7 +965,7 @@ section .text
     PUSH EBX                            ; 004d1bc4
     MOV ESI,dword ptr [ESP + 0x7e4]     ; 004d1bc5
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d1bcc
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d1bd1
     JMP 0x004d14d4                      ; 004d1bd4
         ;   XREF to: 004d14d4 (UNCONDITIONAL_JUMP)  ; LAB_004d14d4
@@ -977,7 +977,7 @@ section .text
     PUSH EAX                            ; 004d1be6
     PUSH EBX                            ; 004d1be7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d1be8
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d1bed
     JMP 0x004d15d8                      ; 004d1bf0
         ;   XREF to: 004d15d8 (UNCONDITIONAL_JUMP)  ; LAB_004d15d8
@@ -990,7 +990,7 @@ section .text
     PUSH EBX                            ; 004d1c03
     MOV dword ptr [ESP + 0x7f4],ESI     ; 004d1c04
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d1c0b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d1c10
     JMP 0x004d16e3                      ; 004d1c13
         ;   XREF to: 004d16e3 (UNCONDITIONAL_JUMP)  ; LAB_004d16e3
@@ -1507,7 +1507,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 004d2120
     PUSH EAX                            ; 004d2124
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 ; 004d2125
-        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70()
+        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     MOV EBX,EAX                         ; 004d212a
     ADD ESP,0xc                         ; 004d212c
     TEST EAX,EAX                        ; 004d212f

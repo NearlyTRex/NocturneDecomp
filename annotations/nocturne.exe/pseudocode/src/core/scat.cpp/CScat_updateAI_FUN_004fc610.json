@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,12 +52,12 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
+        "column": 30,
         "line": 41,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
@@ -66,30 +66,6 @@
         "column": 20,
         "line": 46,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 56,
-        "message": "no matching function for call to 'core_hero_cpp_CHero_closestEnemy_FUN_004b5d00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 56,
-        "message": "incompatible pointer to integer conversion assigning to 'int' from 'CCharacter *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 103,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 40,
-        "line": 103,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -98,20 +74,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 228,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 148,
-    "suspect_count": 6,
+    "pseudocode_lines": 154,
+    "suspect_count": 7,
     "suspect_types": [
-      "unresolved_funcptr",
+      "bit_int_float_compare",
+      "raw_address_pointer_store",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 527
+    "total_lines": 533
   },
   "cross_references": [
     {
@@ -451,16 +428,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 96,
-      "match": "code *",
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 34,
+      "match": "*(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
-      "text": "this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar7 + 0x14c) + 0xbc))(iVar7);",
-      "type": "unresolved_funcptr"
+      "text": "this_ptr_01 = *(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 62,
+      "line": 65,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_3c.x = local_60.x;",
@@ -468,7 +445,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 125,
+      "line": 131,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_3c.x = local_78.x;",
@@ -476,11 +453,19 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 131,
+      "line": 137,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_3c.x = pCVar6->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x41f00000 is the IEEE 754 bit pattern of 30f. Rewrite in a .keep as a plain float compare against 30f.",
+      "line": 50,
+      "match": "(int)local_30 < 0x41f00000",
+      "severity": "moderate",
+      "text": "if ((pCVar4 != (CEnemy *)0x0) && ((int)local_30 < 0x41f00000)) {",
+      "type": "bit_int_float_compare"
     }
   ]
 }

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -63,7 +63,7 @@
       },
       {
         "category": "cast_error",
-        "column": 34,
+        "column": 33,
         "line": 16,
         "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
       }
@@ -74,17 +74,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 166,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 11,
-    "suspect_count": 14,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "stack_ref",
-      "unnamed_param"
+      "stack_ref"
     ],
     "total_lines": 51
   },
@@ -104,9 +103,9 @@
         "0045e0ed"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070",
-    "signature": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format)"
   },
   "function_calls": [
     {
@@ -128,12 +127,10 @@
         "call_addr": "0045e93f",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370",
-        "estimated_params": 8,
+        "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 28,
         "stack_params": 7
       },
@@ -141,20 +138,18 @@
         "call_addr": "0045ebec",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370",
-        "estimated_params": 8,
+        "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 28,
         "stack_params": 7
       }
     ],
     "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 8,
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 7,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -181,62 +176,57 @@
     "pcode_op_count": 141
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 24,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Direct stack address reference",
       "line": 8,
@@ -246,62 +236,14 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_vsprintf(acStack_1014,param_6,(va_list_t)&puStack_14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,acStack_1014,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,acStack_1014,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,acStack_1014,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,acStack_1014,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,acStack_1014,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
       "call_site_count": 2,
-      "declared_params": 0,
+      "declared_params": 6,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
+      "estimated_params": 7,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:8",
-      "param_delta": 8,
-      "text": "Function declares 0 params but call sites push 8 (8 missing)",
+      "match": "declared:6 vs estimated:7",
+      "param_delta": 1,
+      "text": "Function declares 6 params but call sites push 7 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

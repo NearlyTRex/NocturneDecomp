@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,20 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 309,
+    "complexity_score": 103,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 24,
+    "pseudocode_lines": 48,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "unnamed_param"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 163
+    "total_lines": 162
   },
   "cross_references": [],
   "function": {
@@ -86,10 +85,10 @@
         "004ca404"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300",
-    "signature": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2)"
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info)"
   },
   "function_calls": [
     {
@@ -116,9 +115,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -164,10 +163,10 @@
     "pcode_op_count": 632
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 44,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -176,6 +175,20 @@
         "offset": -32,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "laser_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SLaserInfo *"
       }
     ]
   },
@@ -196,313 +209,38 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CMansionPuzzleCircle_onLaserHit_FUN_004ca300.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 7,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 10,
-          "line": 44,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 64,
-          "line": 45,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 15,
-          "line": 46,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 10,
-          "line": 47,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 64,
-          "line": 48,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 15,
-          "line": 49,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 64,
-          "line": 51,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar5 = &param_1[0xe].platform_orientation_delta.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = *pfVar5 - (param_2->local_hit_position).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar3 = pfVar5[1] - (param_2->local_hit_position).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = pfVar5[2] - (param_2->local_hit_position).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->transparency = 1.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2->laser_type == 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar4 = &param_1[8].orient_matrix;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = pCVar4->m[0].x - (param_2->local_hit_position).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar3 = pCVar4->m[0].y - (param_2->local_hit_position).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = pCVar4->m[0].z - (param_2->local_hit_position).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar6 = param_1[8].actor_name + iVar7 * 0xb8 + 0x18;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(float)(param_2->color).r * param_2->intensity * *(float *)pcVar6 * fVar1 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(float)(param_2->color).r * param_2->intensity * *(float *)pcVar6 * fVar1 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(float)(param_2->color).g * param_2->intensity * *(float *)(pcVar6 + 4) * fVar1 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(float)(param_2->color).g * param_2->intensity * *(float *)(pcVar6 + 4) * fVar1 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(float)(param_2->color).b * param_2->intensity * *(float *)(pcVar6 + 8) * fVar1 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(float)(param_2->color).b * param_2->intensity * *(float *)(pcVar6 + 8) * fVar1 +",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 48,
-      "match": "(CMatrix3x3f *)((int)(pCVar4 + 5) +",
+      "line": 47,
+      "match": "(CVector3f *)((int)(pCVar4 + 0xf) +",
       "severity": "moderate",
-      "text": "pCVar4 = (CMatrix3x3f *)((int)(pCVar4 + 5) + 4);",
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0xf) + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `(pCVar4 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 48,
-      "match": "(int)(pCVar4 + 5)",
+      "description": "Pointer value `(pCVar4 + 0xf)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)(pCVar4 + 0xf)",
       "severity": "moderate",
-      "text": "pCVar4 = (CMatrix3x3f *)((int)(pCVar4 + 5) + 4);",
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0xf) + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via element-arithmetic `(int)(pCVar4 + N) + M`, where `N*sizeof(*pCVar4) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar4->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 48,
-      "match": "pCVar4 = (T *)((int)(pCVar4 + N) + M)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` was initialized to the address of an array element's subfield (`pCVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 24,
+      "match": "pCVar4 = pCVar4 + N",
       "severity": "moderate",
-      "text": "pCVar4 = (CMatrix3x3f *)((int)(pCVar4 + 5) + 4);",
+      "text": "pCVar4 = pCVar4 + 8;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 44,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(pcVar6 + 0x18) =",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 45,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(float)(param_2->color).r * param_2->intensity * *(float *)pcVar6 * fVar1 +",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 46,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(pcVar6 + 0x18);",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via element-arithmetic `(int)(pCVar4 + N) + M`, where `N*sizeof(*pCVar4) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar4->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 47,
-      "match": "Cppcheck: invalid pointer cast",
+      "match": "pCVar4 = (T *)((int)(pCVar4 + N) + M)",
       "severity": "moderate",
-      "text": "*(float *)(pcVar6 + 0x1c) =",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 48,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(float)(param_2->color).g * param_2->intensity * *(float *)(pcVar6 + 4) * fVar1 +",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 49,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(pcVar6 + 0x1c);",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 51,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(float)(param_2->color).b * param_2->intensity * *(float *)(pcVar6 + 8) * fVar1 +",
-      "type": "static_invalid_pointer_cast"
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0xf) + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

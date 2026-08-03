@@ -1,24 +1,24 @@
 // Name: core_emitter.cpp_CEmitter_getBoundingBox_FUN_00479140
 // Address: 00479140
 // Address Range: [[00479140, 00479193]]
-// Convention: unknown
-// Signature: void core_emitter_cpp_CEmitter_getBoundingBox_FUN_00479140(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_00479140(CEmitter *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-void core_emitter_cpp_CEmitter_getBoundingBox_FUN_00479140(int param_1,float *param_2)
+CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_00479140(CEmitter *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;
   float fVar2;
   
-  fVar1 = *(float *)(param_1 + 0x154);
+  fVar1 = (this_ptr->emitter_size).x;
   fVar2 = (float)0.5;
-  param_2[1] = -0.1;
-  *param_2 = -fVar1 * fVar2;
-  param_2[2] = -*(float *)(param_1 + 0x15c) * fVar2;
-  param_2[3] = *(float *)(param_1 + 0x154) * fVar2;
-  param_2[4] = *(float *)(param_1 + 0x158) + (float)0.10000000000000001;
-  param_2[5] = fVar2 * *(float *)(param_1 + 0x15c);
-  return;
+  (out_box->min).y = -0.1;
+  (out_box->min).x = -fVar1 * fVar2;
+  (out_box->min).z = -(this_ptr->emitter_size).z * fVar2;
+  (out_box->max).x = (this_ptr->emitter_size).x * fVar2;
+  (out_box->max).y = (this_ptr->emitter_size).y + (float)0.10000000000000001;
+  (out_box->max).z = fVar2 * (this_ptr->emitter_size).z;
+  return out_box;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *param_1,char *param_2)
+; void __cdecl core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *this_ptr,char *filename)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wt_00589669

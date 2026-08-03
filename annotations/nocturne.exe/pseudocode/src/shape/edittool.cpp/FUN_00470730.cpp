@@ -17,16 +17,16 @@ uint shape_edittool_cpp_FUN_00470730(void)
   _tm *time_ptr;
   int iVar4;
   uint uVar5;
+  uint unaff_ESI;
   int iVar6;
   uint *puVar7;
   char *pcVar8;
   byte bVar9;
   CEditorTools *in_stack_00000004;
-  uint in_stack_00000008;
   char *in_stack_0000000c;
   char *in_stack_00000010;
   byte in_stack_00000014;
-  byte local_1c90 [560];
+  char local_1c90 [560];
   CPickList local_1a60;
   CFileFinder local_18f0;
   char local_17dc [260];
@@ -91,7 +91,7 @@ LAB_0047078a:
       pcVar8 = pcVar8 + ((uint)bVar9 * -2 + 1) * 4;
     }
     getcwd(local_17dc,0x104);
-    _sprintf(local_1c90,"%s\n%s",in_stack_00000008,local_17dc);
+    _sprintf(local_1c90,"%s\n%s");
     shape_edittool_cpp_CPickList_ctor_FUN_00474c90(&local_1a60);
     engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(&local_18f0);
     if (in_stack_0000000c == (char *)0x0) {
@@ -115,7 +115,7 @@ LAB_0047078a:
         }
         time_ptr = _localtime((time_t *)&local_18f0.timestamp);
         _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
-        _sprintf(local_fc,"%s\t%s\t%d\t%s",local_dc4,&local_4c4,local_18f0.file_size,local_34);
+        _sprintf(local_fc,"%s\t%s\t%d\t%s");
         strupr(local_fc);
         shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_1a60.base,local_fc);
       }
@@ -164,7 +164,7 @@ LAB_0047078a:
             } while (cVar1 != '\0');
             memmove(&local_6c4,local_6c3,~uVar5 - 1);
           }
-          _sprintf(local_1c4,"%s\t%s\t(DIR)",local_ac4,&local_6c4);
+          _sprintf(local_1c4,"%s\t%s\t(DIR)");
           strupr(local_1c4);
           pcVar2 = local_1c4;
         }
@@ -177,7 +177,7 @@ LAB_00470970:
               (&local_1a60,iVar4,local_1a60.base.item_count + -1);
     shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_1a60.base,"(Change Path)");
     iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                      (&local_1a60,local_1c90,iVar6);
+                      (&local_1a60,local_1c90,iVar6,unaff_ESI);
     if (iVar6 < 0) goto LAB_00470cb8;
     if (local_1a60.base.item_count + -1 <= iVar6) {
       puVar7 = &DAT_005b6f70;

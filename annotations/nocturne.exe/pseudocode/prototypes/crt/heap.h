@@ -9,7 +9,7 @@ int __cdecl ::heapwalk(_heapinfo *heap_info);
 
 // Original: crt_heap.c_AllocateFromFreeList_FUN_00568b00
 // Address: 00568b00
-uint * AllocateFromFreeList(void);
+uint * __watcallRegister AllocateFromFreeList(uint param_1,undefined4 param_2,int unaff_EBX);
 
 // Original: crt_heap.c_CoalesceAndAddFreeBlock_FUN_00568bb0
 // Address: 00568bb0
@@ -37,7 +37,7 @@ ulong __cdecl GetBlockSize(void *ptr);
 
 // Original: crt_heap.c_ResizeBlockInPlace_FUN_0056afe8
 // Address: 0056afe8
-undefined4 ResizeBlockInPlace(short param_1,int *param_2,uint param_3,uint *param_4);
+undefined4 __watcallRegister ResizeBlockInPlace(undefined4 param_1,undefined4 param_2,int *unaff_EBX,undefined4 param_4,short param_5,int *param_6,uint param_7,uint *param_8);
 
 // Original: crt_heap.c_TryResizeInPlace_FUN_0056b1a4
 // Address: 0056b1a4

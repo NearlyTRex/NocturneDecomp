@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flies_cpp_CFlies_process_FUN_0048f090(CFlies *param_1,float param_2)
+; void __cdecl core_flies_cpp_CFlies_process_FUN_0048f090(CFlies *this_ptr,float delta_time)
 ;
+; Parameters:
+; CFlies *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58
 ; undefined        Stack[-0x50]:1  local_50

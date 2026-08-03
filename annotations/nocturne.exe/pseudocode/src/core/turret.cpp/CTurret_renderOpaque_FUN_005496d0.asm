@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_turret_cpp_CTurret_renderOpaque_FUN_005496d0(CTurret *param_1)
+; int __cdecl core_turret_cpp_CTurret_renderOpaque_FUN_005496d0(CTurret *this_ptr)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ;

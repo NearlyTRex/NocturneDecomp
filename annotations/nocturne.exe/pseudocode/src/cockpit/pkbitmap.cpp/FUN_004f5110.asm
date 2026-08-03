@@ -113,7 +113,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 004f51c9
     PUSH EAX                            ; 004f51d0
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f51d1
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x598                       ; 004f51d6
     ADD ESP,0xc                         ; 004f51db
     MOV [0x01cc4804],EAX                ; 004f51de | g_INT_01cc4804

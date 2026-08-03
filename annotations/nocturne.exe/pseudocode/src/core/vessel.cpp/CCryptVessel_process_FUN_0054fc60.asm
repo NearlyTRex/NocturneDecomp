@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2)
+; void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *this_ptr,float delta_time)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44

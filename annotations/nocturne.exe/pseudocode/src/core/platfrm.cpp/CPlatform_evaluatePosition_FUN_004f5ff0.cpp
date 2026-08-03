@@ -14,10 +14,11 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(CPlatform 
   float *pfVar1;
   CVector3f *pCVar2;
   uint *puVar3;
-  byte bVar4;
+  uint *puVar4;
+  byte bVar5;
   float afStackY_1844 [1523];
   CQuaternion4f *quat_in;
-  float local_68;
+  CQuaternion4f local_68;
   CQuaternion4f local_58;
   float local_48;
   float local_44;
@@ -32,7 +33,7 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(CPlatform 
   float local_18;
   int local_14;
   
-  bVar4 = 0;
+  bVar5 = 0;
   if (this_ptr->param < 0.0) {
     this_ptr->param = 0.0;
   }
@@ -57,18 +58,16 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(CPlatform 
     (this_ptr->base).location.position.y = local_38;
     (this_ptr->base).location.position.z = local_34;
     core_xform_cpp_slerpQuaternion_FUN_0055d2d0
-              (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param);
+              (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param,&local_68);
     quat_in = &local_58;
     pCVar2 = &local_30;
-    local_58.w = local_68;
-    puVar3 = (uint *)((int)&local_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    *(uint *)((int)&local_58 + (uint)bVar4 * -8 + 4) =
-         *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8);
-    *puVar3 = *(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    puVar3[(uint)bVar4 * -2 + 1] =
-         *(uint *)
-          ((int)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) +
-          ((uint)bVar4 * -2 + 1) * 4);
+    local_58.w = local_68.w;
+    puVar4 = (uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    puVar3 = (uint *)((int)&local_68 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    *(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&local_68 + (uint)bVar5 * -8 + 4);
+    *puVar4 = *puVar3;
+    puVar4[(uint)bVar5 * -2 + 1] = puVar3[(uint)bVar5 * -2 + 1];
     pCVar2 = core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0(pCVar2,quat_in);
     if ((CVector3f *)out_euler != pCVar2) {
       (out_euler->vec).x = pCVar2->x;

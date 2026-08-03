@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_grave_cpp_CGrave_renderOpaque_FUN_004b0cb0(CDemonActor *param_1)
+; int __cdecl core_grave_cpp_CGrave_renderOpaque_FUN_004b0cb0(CGrave *this_ptr)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_platfrm_cpp_CPlatform_getActorType_FUN_004f5d80(void)
+; CDemonActorType * __cdecl core_platfrm_cpp_CPlatform_getActorType_FUN_004f5d80(CPlatform *this_ptr)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

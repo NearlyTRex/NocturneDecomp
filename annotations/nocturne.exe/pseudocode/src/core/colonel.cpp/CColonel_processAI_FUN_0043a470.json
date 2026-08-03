@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,55 +52,43 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
-        "line": 45,
+        "column": 25,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 48,
+        "line": 49,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "type_error",
         "column": 95,
-        "line": 53,
+        "line": 54,
         "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 21,
-        "line": 55,
-        "message": "no matching function for call to 'core_hero_cpp_CHero_closestEnemy_FUN_004b5d00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 21,
-        "line": 55,
-        "message": "incompatible pointer to integer conversion assigning to 'int' from 'CCharacter *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 73,
+        "line": 77,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 74,
+        "line": 78,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 46,
-        "line": 74,
+        "line": 78,
         "message": "expected expression"
       }
     ],
@@ -110,21 +98,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 258,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 163,
-    "suspect_count": 7,
+    "pseudocode_lines": 170,
+    "suspect_count": 8,
     "suspect_types": [
+      "raw_address_pointer_store",
       "unknown_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 585
+    "total_lines": 592
   },
   "cross_references": [
     {
@@ -576,8 +565,16 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 39,
+      "match": "*(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "pCVar9 = *(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 46,
+      "line": 47,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if (((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_2c < 5.4396864758631248e-315._0_4_)) &&",
@@ -585,15 +582,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 67,
+      "line": 71,
       "match": "code *",
       "severity": "moderate",
-      "text": "this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0xbc))(iVar5);",
+      "text": "this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar8 + 0x14c) + 0xbc))(iVar8);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 57,
+      "line": 61,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_54.x = local_60.x;",
@@ -601,7 +598,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 139,
+      "line": 146,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_54.x = local_78.x;",
@@ -609,7 +606,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 145,
+      "line": 152,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_54.x = pCVar6->x;",

@@ -94,7 +94,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_0049ab50(CGame *this_ptr)
     iVar4 = core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(0x01E56DA0);
     iVar4 = DAT_005b7620 - iVar4;
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
-    _sprintf(local_164,"%d - %s",_DAT_01c78ac0,&DAT_01c789c0);
+    _sprintf(local_164,"%d - %s");
     engine_font_cpp_CBitFont_drawText_FUN_00490980
               (this_ptr_00,local_164,iVar3 * 2,(iVar4 - iVar2) - iVar3,0xf8,0);
   }

@@ -308,7 +308,7 @@ section .text
     PUSH EAX                            ; 0053cab1
     FSTP float ptr [ESP + 0xd8]         ; 0053cab2
     CALL core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0 ; 0053cab9
-        ;   XREF to: 00534fc0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0()
+        ;   XREF to: 00534fc0 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor * object)
     MOV dword ptr [ESP + 0xdc],EAX      ; 0053cabe
     FLD float ptr [ESP + 0xdc]          ; 0053cac5
     ADD ESP,0x4                         ; 0053cacc
@@ -411,7 +411,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 0053cbe3 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 0053cbe9 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053cbea
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x20                        ; 0053cbef
     FLDZ                                ; 0053cbf2
     FCOMP float ptr [ESP + 0x18]        ; 0053cbf4

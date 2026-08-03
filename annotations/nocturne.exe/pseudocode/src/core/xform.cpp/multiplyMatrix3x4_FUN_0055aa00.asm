@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(float *param_1,float *param_2)
+; CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_a
+; CMatrix3x4f *    Stack[0x8]:4   matrix_b
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34

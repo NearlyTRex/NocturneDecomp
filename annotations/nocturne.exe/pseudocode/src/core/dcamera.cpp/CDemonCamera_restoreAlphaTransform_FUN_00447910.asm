@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910(int param_1,int *param_2,int param_3)
+; CVector3i * __stack3_esi core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910(CDemonCamera *this_ptr,CVector3i *screen_pos,int alpha_index,CVector3i *world_pos)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   screen_pos
+; int              Stack[0xc]:4   alpha_index
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28

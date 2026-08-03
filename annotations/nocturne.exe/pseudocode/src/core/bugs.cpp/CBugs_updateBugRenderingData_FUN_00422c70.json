@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -75,7 +75,7 @@
       },
       {
         "category": "type_error",
-        "column": 72,
+        "column": 74,
         "line": 95,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
@@ -122,20 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 590,
-    "complexity_score": 844,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 214,
-    "suspect_count": 59,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "self_copy_guard",
       "unknown_field",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -157,10 +155,10 @@
         "0042347e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70",
-    "signature": "void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *param_1,SBug *param_2,float param_3)"
+    "signature": "void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *this_ptr,SBug *bug_data,float delta_time)"
   },
   "function_calls": [
     {
@@ -227,22 +225,19 @@
         "call_addr": "004224db",
         "call_type": "direct",
         "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.998165137614679,
@@ -287,10 +282,10 @@
     "pcode_op_count": 3814
   },
   "stack_frame": {
-    "frame_size": 284,
+    "frame_size": 296,
     "local_size": 284,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -698,6 +693,27 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      },
+      {
+        "is_param": true,
+        "name": "bug_data",
+        "offset": 8,
+        "size": 4,
+        "type": "SBug *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -728,364 +744,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *param_1,SBug *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *param_1,SBug *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *param_1,SBug *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_118 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2->current_vertex < 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->dest_vertex;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->dest_vertex;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(&local_6c,&param_1->model_world_matrix);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar9 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(param_1,param_2,param_3,&local_6c)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar9 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(param_1,param_2,param_3,&local_6c)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar9 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(param_1,param_2,param_3,&local_6c)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00423480(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00423480(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->interp_t = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2->crawl_duration <= 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00423480(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00423480(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->interp_t = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar4 = 1.0f / param_2->crawl_duration;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = param_2->interp_t;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->interp_t = fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00423480(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00423480(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 88,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "param_2->interp_t = param_2->interp_t + 1.5873523201947252e-314._0_4_;",
+      "text": "bug_data->interp_t = bug_data->interp_t + 1.5873523201947252e-314._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->interp_t = param_2->interp_t + 1.5873523201947252e-314._0_4_;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->interp_t = param_2->interp_t + 1.5873523201947252e-314._0_4_;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2->interp_t < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->interp_t = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (1.0 < param_2->interp_t) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->interp_t = 1.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->current_vertex;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->current_vertex;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->dest_vertex;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->dest_vertex;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar1 = &param_2->interp_t;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_1c = 1.0 - param_2->interp_t;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&local_a8,&local_3c,&param_1->model_world_matrix);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&param_2->position != pCVar6) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 120,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2->position).x = pCVar6->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2->position).y = pCVar6->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2->position).z = pCVar6->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar9 = param_1->swarm_vertices[param_2->current_vertex].first_edge_data;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar9 = param_1->swarm_vertices[param_2->current_vertex].first_edge_data;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 128,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18 = param_1->lod_index << 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 130,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->deformable_model_ptr);",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
@@ -1094,62 +758,6 @@
       "severity": "moderate",
       "text": "puVar8 = (ushort *)(*(int *)((int)pCVar7->tri_data_ptr + local_18) + iVar9 * 0x12);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + *puVar8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 136,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + puVar8[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 140,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar5 = param_1->deformable_model_ptr->skinned_vertices_buffer + puVar8[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 210,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&param_2->orientation != pCVar6) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 211,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2->orientation).x = pCVar6->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 212,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2->orientation).y = pCVar6->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 213,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2->orientation).z = pCVar6->z;",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `pCVar7->tri_data_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -1164,7 +772,7 @@
       "line": 120,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(param_2->position).x = pCVar6->x;",
+      "text": "(bug_data->position).x = pCVar6->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1172,7 +780,7 @@
       "line": 211,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(param_2->orientation).x = pCVar6->x;",
+      "text": "(bug_data->orientation).x = pCVar6->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1182,17 +790,6 @@
       "severity": "moderate",
       "text": "if (&local_c0 != &local_cc) {",
       "type": "self_copy_guard"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -13,7 +13,7 @@ CDraculaBride * __cdecl factoryFunc(void);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getActorType_FUN_00458630
 // Address: 00458630
-CDemonActorType * CDraculaBride::getActorType(void);
+CDemonActorType * __cdecl CDraculaBride::getActorType(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640
 // Address: 00458640
@@ -21,11 +21,11 @@ CDraculaBride * __cdecl CDraculaBride::ctor(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730
 // Address: 00458730
-void CDraculaBride::setup(CEnemy *param_1);
+void __cdecl CDraculaBride::setup(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90
 // Address: 00458a90
-void CDraculaBride::process(CDraculaBride *param_1,float param_2);
+void __cdecl CDraculaBride::process(CDraculaBride *this_ptr,float delta_time);
 
 // Original: core_dracbrid.cpp_CDraculaBride_explode_FUN_00459f70
 // Address: 00459f70
@@ -37,15 +37,15 @@ void __cdecl CDraculaBride::dismemberPart(CDraculaBride *this_ptr,int part_index
 
 // Original: core_dracbrid.cpp_CDraculaBride_getCollisionType_FUN_0045a240
 // Address: 0045a240
-ECollisionType CDraculaBride::getCollisionType(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CDraculaBride::getCollisionType(CDraculaBride *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260
 // Address: 0045a260
-int CDraculaBride::renderOpaque(CCharacter *param_1);
+int __cdecl CDraculaBride::renderOpaque(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450
 // Address: 0045a450
-void CDraculaBride::archive(CEnemy *param_1);
+void __cdecl CDraculaBride::archive(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0
 // Address: 0045a6a0
@@ -53,15 +53,15 @@ void __cdecl CDraculaBride::checkHeartShot(CDraculaBride *this_ptr,SDamageInfo *
 
 // Original: core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0
 // Address: 0045a6f0
-void CDraculaBride::processDamage(CDraculaBride *param_1,SDamageInfo *param_2);
+void __cdecl CDraculaBride::processDamage(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getDeathState_FUN_0045a9a0
 // Address: 0045a9a0
-undefined4 CDraculaBride::getDeathState(int param_1);
+EDeathState __cdecl CDraculaBride::getDeathState(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0
 // Address: 0045a9e0
-undefined4 CDraculaBride::getTargetPoints(int param_1,CVector3f *param_2);
+int __cdecl CDraculaBride::getTargetPoints(CDraculaBride *this_ptr,CVector3f *out_points_array);
 
 // Original: core_dracbrid.cpp_CDraculaBride_FUN_0045ab40
 // Address: 0045ab40

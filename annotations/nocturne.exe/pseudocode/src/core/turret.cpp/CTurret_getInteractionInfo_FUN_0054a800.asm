@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CDemonActor *param_1,SInteractionInfo *param_2)
+; void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CTurret *this_ptr,SInteractionInfo *interaction_info)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; SInteractionInfo * Stack[0x8]:4   interaction_info
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a379c = -0.5235988

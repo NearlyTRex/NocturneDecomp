@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * core_grave_cpp_CGrave_getBoundingBox_FUN_004b0f20(int param_1,CBoundingBox3D *param_2)
+; CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004b0f20(CGrave *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;

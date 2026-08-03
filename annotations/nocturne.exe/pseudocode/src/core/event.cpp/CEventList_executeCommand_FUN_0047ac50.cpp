@@ -1017,8 +1017,7 @@ LAB_0047aec8:
                                         } while (cVar3 != '\0');
                                         if (0x13 < ~uVar13 - 1) {
                                           _sprintf(&DAT_01c08b60,
-                                                     "handle name %s is too long, max %d chars",
-                                                     local_b15 + 1,0x13);
+                                                     "handle name %s is too long, max %d chars");
                                           return 0;
                                         }
                                       }
@@ -1111,14 +1110,12 @@ LAB_0047aec8:
                                                           (g_CDemonSet_PTR_005be368,local_12e5 + 1);
                                         if (iVar5 < 0) {
                                           _sprintf(&DAT_01c08b60,
-                                                     "Camera \"%s\" does not exist.",
-                                                     local_12e5 + 1);
+                                                     "Camera \"%s\" does not exist.");
                                           return 0;
                                         }
                                         if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {
                                           _sprintf(&DAT_01c08b60,
-                                                     "Ambient value %g is out of range (1..100)",
-                                                     (double)local_78);
+                                                     "Ambient value %g is out of range (1..100)");
                                           return 0;
                                         }
                                         if (local_f0 != 0) {
@@ -1222,8 +1219,7 @@ LAB_0047aec8:
                                             local_ec = local_ec + local_5c;
                                             if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
                                               _sprintf(&DAT_01c08b60,
-                                                         "Ambient value %g is out of range (1..100)",
-                                                         (double)local_60);
+                                                         "Ambient value %g is out of range (1..100)");
                                               return 0;
                                             }
                                             if (local_f0 != 0) {
@@ -1479,9 +1475,7 @@ LAB_0047aec8:
                                                             (pCVar9,pcVar17,iVar5);
                                                   if (iVar5 < 0) {
                                                     _sprintf(&DAT_01c08b60,
-                                                               "Model %s does not have state %s",
-                                                               (pCVar7->model).model_name,
-                                                               local_8bd + 1);
+                                                               "Model %s does not have state %s");
                                                     return 0;
                                                   }
                                                   if (local_f0 != 0) {
@@ -1553,7 +1547,7 @@ LAB_0047aec8:
                                                     if (0x1f < ~uVar13 - 1) {
                                                       _sprintf(&DAT_01c08b60,
                                                                  "Timer name \"%s\" is too long, (max %d chars)"
-                                                                 ,local_a4d + 1,0x1f);
+                                                                );
                                                       return 0;
                                                     }
                                                     if (local_3c < 0.0) {
@@ -1632,7 +1626,7 @@ LAB_0047aec8:
                                                       if (iVar5 != 0) {
                                                         _sprintf(&DAT_01c08b60,
                                                                    "Invalid weather type: %s"
-                                                                   ,local_e35 + 1);
+                                                                  );
                                                         return 0;
                                                       }
                                                       type = WEATHER_TYPE_SNOW;
@@ -1771,9 +1765,7 @@ LAB_0047aec8:
                                                             (pCVar9,pcVar17,iVar5);
                                                   if (iVar5 < 0) {
                                                     _sprintf(&DAT_01c08b60,
-                                                               "Model %s does not have motion %s",
-                                                               (pCVar7->model).model_name,
-                                                               local_40d + 1);
+                                                               "Model %s does not have motion %s");
                                                     return 0;
                                                   }
                                                   if (local_f0 != 0) {

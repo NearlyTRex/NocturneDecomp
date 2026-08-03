@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_model_c_freeMRGLData_FUN_004dcee0(SMRGLHeaderExtended *param_1)
+; void __cdecl engine_model_c_freeMRGLData_FUN_004dcee0(SMRGLHeaderExtended *mrgl_data)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ;
 ; XREF[1]:
 ;   engine_model.c_getMRGLBounds_FUN_004dcf60 at 004dd3a4
@@ -44,7 +46,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004dcf07
     PUSH EBX                            ; 004dcf0a
     CALL engine_model.c_freeMRGLData_FUN_004dcee0 ; 004dcf0b
-        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_freeMRGLData_FUN_004dcee0()
+        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_004dcee0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 004dcf10
     MOV ESI,dword ptr [EBP + 0x8]       ; 004dcf13
     XOR EBX,EBX                         ; 004dcf16
@@ -58,7 +60,7 @@ section .text
     ADD ESI,0x4                         ; 004dcf25
     INC EBX                             ; 004dcf28
     CALL engine_model.c_freeMRGLData_FUN_004dcee0 ; 004dcf29
-        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_freeMRGLData_FUN_004dcee0()
+        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_004dcee0(SMRGLHeaderExtended * mrgl_data)
     MOV EDX,dword ptr [EDI + 0x8]       ; 004dcf2e
     ADD ESP,0x4                         ; 004dcf31
     CMP EBX,EDX                         ; 004dcf34

@@ -1134,7 +1134,7 @@ section .text
         ;   Label: LAB_0047b4e2
     PUSH 0x1c08b60                      ; 0047b4e7 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047b4ec
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047b4f1
     XOR EAX,EAX                         ; 0047b4f4
     LEA ESP,[EBP + 0x7e]                ; 0047b4f6
@@ -1240,7 +1240,7 @@ section .text
         ;   Label: LAB_0047b5e0
     PUSH 0x1c08b60                      ; 0047b5e5 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047b5ea
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047b5ef
     XOR EAX,EAX                         ; 0047b5f2
     LEA ESP,[EBP + 0x7e]                ; 0047b5f4
@@ -1829,7 +1829,7 @@ section .text
         ;   Label: LAB_0047bb50
     PUSH 0x1c08b60                      ; 0047bb55 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047bb5a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047bb5f
     XOR EAX,EAX                         ; 0047bb62
     LEA ESP,[EBP + 0x7e]                ; 0047bb64
@@ -2381,7 +2381,7 @@ section .text
         ;   Label: LAB_0047c090
     PUSH 0x1c08b60                      ; 0047c095 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c09a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c09f
     XOR EAX,EAX                         ; 0047c0a2
     LEA ESP,[EBP + 0x7e]                ; 0047c0a4
@@ -2443,7 +2443,7 @@ section .text
         ;   Label: LAB_0047c10e
     PUSH 0x1c08b60                      ; 0047c113 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c118
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c11d
     XOR EAX,EAX                         ; 0047c120
     LEA ESP,[EBP + 0x7e]                ; 0047c122
@@ -2494,7 +2494,7 @@ section .text
         ;   Label: LAB_0047c187
     PUSH 0x1c08b60                      ; 0047c18c | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c191
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c196
     XOR EAX,EAX                         ; 0047c199
     LEA ESP,[EBP + 0x7e]                ; 0047c19b
@@ -2578,7 +2578,7 @@ section .text
         ;   Label: LAB_0047c259
     PUSH 0x1c08b60                      ; 0047c25e | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c263
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c268
     XOR EAX,EAX                         ; 0047c26b
     LEA ESP,[EBP + 0x7e]                ; 0047c26d
@@ -2681,7 +2681,7 @@ section .text
         ;   Label: LAB_0047c34e
     PUSH 0x1c08b60                      ; 0047c353 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c358
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c35d
     XOR EAX,EAX                         ; 0047c360
     LEA ESP,[EBP + 0x7e]                ; 0047c362
@@ -2785,7 +2785,7 @@ section .text
         ;   Label: LAB_0047c43d
     PUSH 0x1c08b60                      ; 0047c442 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c447
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c44c
     XOR EAX,EAX                         ; 0047c44f
     LEA ESP,[EBP + 0x7e]                ; 0047c451
@@ -2819,7 +2819,7 @@ section .text
     PUSH 0x57fb90                       ; 0047c483 | = "handle name %s is too long, max %d chars"
     PUSH 0x1c08b60                      ; 0047c488 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c48d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0047c492
     XOR EAX,EAX                         ; 0047c495
     LEA ESP,[EBP + 0x7e]                ; 0047c497
@@ -2889,7 +2889,7 @@ section .text
         ;   Label: LAB_0047c53f
     PUSH 0x1c08b60                      ; 0047c544 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c549
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c54e
     XOR EAX,EAX                         ; 0047c551
     LEA ESP,[EBP + 0x7e]                ; 0047c553
@@ -3017,7 +3017,7 @@ section .text
         ;   Label: LAB_0047c681
     PUSH 0x1c08b60                      ; 0047c686 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c68b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c690
     XOR EAX,EAX                         ; 0047c693
     LEA ESP,[EBP + 0x7e]                ; 0047c695
@@ -3076,7 +3076,7 @@ section .text
     PUSH 0x57fc2a                       ; 0047c709 | = "Camera \"%s\" does not exist."
     PUSH 0x1c08b60                      ; 0047c70e | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c713
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047c718
     XOR EAX,EAX                         ; 0047c71b
     LEA ESP,[EBP + 0x7e]                ; 0047c71d
@@ -3092,7 +3092,7 @@ section .text
     PUSH 0x57fc46                       ; 0047c72e | = "Ambient value %g is out of range (1....."
     PUSH 0x1c08b60                      ; 0047c733 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c738
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0047c73d
     XOR EAX,EAX                         ; 0047c740
     LEA ESP,[EBP + 0x7e]                ; 0047c742
@@ -3193,7 +3193,7 @@ section .text
         ;   Label: LAB_0047c824
     PUSH 0x1c08b60                      ; 0047c829 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c82e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c833
     XOR EAX,EAX                         ; 0047c836
     LEA ESP,[EBP + 0x7e]                ; 0047c838
@@ -3272,7 +3272,7 @@ section .text
         ;   Label: LAB_0047c8d2
     PUSH 0x1c08b60                      ; 0047c8d7 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c8dc
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c8e1
     XOR EAX,EAX                         ; 0047c8e4
     LEA ESP,[EBP + 0x7e]                ; 0047c8e6
@@ -3289,7 +3289,7 @@ section .text
         ;   Label: LAB_0047c8f6
     PUSH 0x1c08b60                      ; 0047c8fb | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c900
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c905
     XOR EAX,EAX                         ; 0047c908
     LEA ESP,[EBP + 0x7e]                ; 0047c90a
@@ -3376,7 +3376,7 @@ section .text
         ;   Label: LAB_0047c9d0
     PUSH 0x1c08b60                      ; 0047c9d5 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c9da
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047c9df
     XOR EAX,EAX                         ; 0047c9e2
     LEA ESP,[EBP + 0x7e]                ; 0047c9e4
@@ -3392,7 +3392,7 @@ section .text
     PUSH 0x57fd39                       ; 0047c9f5 | = "Ambient value %g is out of range (1....."
     PUSH 0x1c08b60                      ; 0047c9fa | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047c9ff
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0047ca04
     XOR EAX,EAX                         ; 0047ca07
     LEA ESP,[EBP + 0x7e]                ; 0047ca09
@@ -3635,7 +3635,7 @@ section .text
         ;   Label: LAB_0047cc5c
     PUSH 0x1c08b60                      ; 0047cc61 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047cc66
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047cc6b
     XOR EAX,EAX                         ; 0047cc6e
     LEA ESP,[EBP + 0x7e]                ; 0047cc70
@@ -3862,7 +3862,7 @@ section .text
         ;   Label: LAB_0047ce68
     PUSH 0x1c08b60                      ; 0047ce6d | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047ce72
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047ce77
     XOR EAX,EAX                         ; 0047ce7a
     LEA ESP,[EBP + 0x7e]                ; 0047ce7c
@@ -3979,7 +3979,7 @@ section .text
     PUSH 0x57fee1                       ; 0047cf74 | = "Model %s does not have state %s"
     PUSH 0x1c08b60                      ; 0047cf79 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047cf7e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0047cf83
     XOR EAX,EAX                         ; 0047cf86
     LEA ESP,[EBP + 0x7e]                ; 0047cf88
@@ -4082,7 +4082,7 @@ section .text
         ;   Label: LAB_0047d06e
     PUSH 0x1c08b60                      ; 0047d073 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047d078
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047d07d
     XOR EAX,EAX                         ; 0047d080
     LEA ESP,[EBP + 0x7e]                ; 0047d082
@@ -4137,7 +4137,7 @@ section .text
     PUSH 0x57ff3d                       ; 0047d0e4 | = "Timer name \"%s\" is too long, (max %..."
     PUSH 0x1c08b60                      ; 0047d0e9 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047d0ee
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0047d0f3
     XOR EAX,EAX                         ; 0047d0f6
     LEA ESP,[EBP + 0x7e]                ; 0047d0f8
@@ -4150,7 +4150,7 @@ section .text
         ;   Label: LAB_0047d100
     PUSH 0x1c08b60                      ; 0047d105 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047d10a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047d10f
     XOR EAX,EAX                         ; 0047d112
     LEA ESP,[EBP + 0x7e]                ; 0047d114
@@ -4252,7 +4252,7 @@ section .text
         ;   Label: LAB_0047d1f7
     PUSH 0x1c08b60                      ; 0047d1fc | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047d201
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047d206
     XOR EAX,EAX                         ; 0047d209
     LEA ESP,[EBP + 0x7e]                ; 0047d20b
@@ -4323,7 +4323,7 @@ section .text
     PUSH 0x57ffcb                       ; 0047d297 | = "Invalid weather type: %s"
     PUSH 0x1c08b60                      ; 0047d29c | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047d2a1
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d2a6
     XOR EAX,EAX                         ; 0047d2a9
     LEA ESP,[EBP + 0x7e]                ; 0047d2ab
@@ -4405,7 +4405,7 @@ section .text
         ;   Label: LAB_0047d361
     PUSH 0x1c08b60                      ; 0047d366 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047d36b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047d370
     XOR EAX,EAX                         ; 0047d373
     LEA ESP,[EBP + 0x7e]                ; 0047d375
@@ -4509,7 +4509,7 @@ section .text
         ;   Label: LAB_0047d45f
     PUSH 0x1c08b60                      ; 0047d464 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047d469
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047d46e
     XOR EAX,EAX                         ; 0047d471
     LEA ESP,[EBP + 0x7e]                ; 0047d473
@@ -4637,7 +4637,7 @@ section .text
     PUSH 0x58007e                       ; 0047d583 | = "Model %s does not have motion %s"
     PUSH 0x1c08b60                      ; 0047d588 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047d58d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0047d592
     XOR EAX,EAX                         ; 0047d595
     LEA ESP,[EBP + 0x7e]                ; 0047d597

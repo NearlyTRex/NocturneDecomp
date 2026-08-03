@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_chain_cpp_CChain_getActorType_FUN_0042b740(void)
+; CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042b740(CChain *this_ptr)
 ;
+; Parameters:
+; CChain *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CChainActorType_00765c30

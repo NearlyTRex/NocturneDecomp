@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 45,
+        "line": 44,
         "message": "use of undeclared identifier '_DAT_02dc9224'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 46,
+        "line": 45,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 46,
+        "line": 45,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 46,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_02dc9224'; did you mean 'DAT_004A9224'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 46,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_02dc9224'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 47,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_02dc9224'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 49,
+        "line": 48,
         "message": "use of undeclared identifier '_DAT_02dc9218'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 58,
+        "line": 57,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 58,
+        "line": 57,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 58,
+        "line": 57,
         "message": "use of undeclared identifier '_DAT_02dc9218'; did you mean 'DAT_004A9218'?"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 385,
+    "complexity_score": 380,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 155,
+    "pseudocode_lines": 150,
     "suspect_count": 21,
     "suspect_types": [
       "raw_address_constant",
@@ -135,7 +135,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 546
+    "total_lines": 541
   },
   "cross_references": [],
   "function": {
@@ -444,28 +444,28 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 66,
-          "line": 54,
+          "line": 53,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 53,
-          "line": 55,
+          "line": 54,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 58,
-          "line": 126,
+          "line": 124,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 47,
-          "line": 127,
+          "line": 125,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -485,7 +485,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
+      "line": 38,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc9224 + 8))(_DAT_02dc9224);",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
+      "line": 50,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02dc9218 + 0x38))(_DAT_02dc9218,&local_48);",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
+      "line": 52,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02dc9218 + 0x14))(_DAT_02dc9218,&local_48,0x12,0);",
@@ -509,7 +509,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 59,
+      "line": 58,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc9224 + 8))(_DAT_02dc9224);",
@@ -517,7 +517,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 75,
+      "line": 74,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_5c,&uStack_20,0);",
@@ -525,7 +525,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 77,
+      "line": 76,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*piStack_30)(piStack_30,&DAT_005c3918,&piStack_2c);",
@@ -533,7 +533,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 76,
       "match": "DAT_005c3918",
       "severity": "mild",
       "text": "(**(code **)*piStack_30)(piStack_30,&DAT_005c3918,&piStack_2c);",
@@ -541,7 +541,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 80,
+      "line": 79,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
@@ -549,7 +549,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 85,
+      "line": 84,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_005bed10,&DAT_02dc9224);",
@@ -557,7 +557,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 84,
       "match": "DAT_005bed10",
       "severity": "mild",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_005bed10,&DAT_02dc9224);",
@@ -565,7 +565,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 84,
       "match": "DAT_02dc9224",
       "severity": "mild",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_005bed10,&DAT_02dc9224);",
@@ -573,7 +573,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 87,
+      "line": 86,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
@@ -581,7 +581,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 91,
+      "line": 90,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_2c + 8))(piStack_2c);",
@@ -589,7 +589,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 104,
+      "line": 102,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed20,0,0,0,&uStack_28,4);",
@@ -597,7 +597,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 102,
       "match": "DAT_005bed20",
       "severity": "mild",
       "text": "(**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed20,0,0,0,&uStack_28,4);",
@@ -605,15 +605,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 127,
+      "line": 125,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c,uVar4);",
+      "text": "(**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c,uVar3);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 130,
+      "line": 128,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_84,&DAT_02dc921c,0);",
@@ -621,7 +621,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 128,
       "match": "DAT_02dc921c",
       "severity": "mild",
       "text": "uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_84,&DAT_02dc921c,0);",
@@ -629,23 +629,23 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 155,
+      "line": 150,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc921c + 8))(_DAT_02dc921c);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Raw hex address 0x52a73b assigned to bare local `uVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 112,
+      "description": "Raw hex address 0x52a73b assigned to bare local `uVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 110,
       "match": "0x52a73b",
       "severity": "moderate",
-      "text": "uVar4 = 0x52a73b;",
+      "text": "uVar3 = 0x52a73b;",
       "type": "raw_address_constant"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 54,
+      "line": 53,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "local_3c = (short)((int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 55,
+      "line": 54,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3) * local_46;",
@@ -661,7 +661,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 126,
+      "line": 124,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "((int)((_DAT_02dc9228 + ((int)_DAT_02dc9228 >> 0x1f) * -8) -",
@@ -669,7 +669,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 127,
+      "line": 125,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)(((int)_DAT_02dc9228 >> 0x1f) << 2 < 0)) >> 3) * _DAT_02dc9230;",

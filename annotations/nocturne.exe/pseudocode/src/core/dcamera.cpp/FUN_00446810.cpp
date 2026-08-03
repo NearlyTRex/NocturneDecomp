@@ -60,13 +60,13 @@ void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)
   if ((_DAT_0140e790 == 0 && _DAT_0140e794 == 0) && _DAT_0140e798 == 0) {
     _DAT_0140d780 = 1;
   }
-  _sprintf(local_274,"%s.fog",this_ptr);
+  _sprintf(local_274,"%s.fog");
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_274,"rb");
   if (file_handle != (_FILE *)0x0) {
     _fclose(file_handle);
     return;
   }
-  _sprintf(local_f8,"backdrop\\%s",local_274);
+  _sprintf(local_f8,"backdrop\\%s");
   crt_fstream_cpp_ofstream_ctor_FUN_0056511e(local_174,0,local_f8,0x110,0x000001A4);
   if (local_114 != (void *)0x0) {
     g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";

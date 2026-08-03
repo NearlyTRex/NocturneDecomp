@@ -609,7 +609,7 @@ section .text
     PUSH EAX                            ; 0052e6d8
     FSTP float ptr [ESP + 0xc]          ; 0052e6d9
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052e6dd
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0052e6e2
     PUSH 0x40000000                     ; 0052e6e5
         ;   Label: default
@@ -645,7 +645,7 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 0052e75f
     PUSH EAX                            ; 0052e763
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052e764
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x14                        ; 0052e769
     MOV ECX,dword ptr [ESP + 0x124]     ; 0052e76c
     PUSH ECX                            ; 0052e773

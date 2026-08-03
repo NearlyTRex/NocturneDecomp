@@ -164,7 +164,7 @@ section .text
     PUSH EDI                            ; 0050a92f
     INC ESI                             ; 0050a930
     CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 ; 0050a931
-        ;   XREF to: 0050e190 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190()
+        ;   XREF to: 0050e190 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(CDemonSet * this_ptr)
     MOV ECX,dword ptr [EDI + 0x15a8cc]  ; 0050a936
     ADD ESP,0x4                         ; 0050a93c
     CMP ESI,ECX                         ; 0050a93f

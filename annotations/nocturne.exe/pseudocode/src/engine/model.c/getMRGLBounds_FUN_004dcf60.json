@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 75,
-        "message": "no matching function for call to 'engine_boss_c_modelStructNotSupported4_FUN_0041a5a0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 92,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -74,19 +62,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 308,
+    "complexity_score": 346,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 193,
-    "suspect_count": 10,
+    "pseudocode_lines": 191,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_memcpy"
     ],
-    "total_lines": 532
+    "total_lines": 530
   },
   "cross_references": [],
   "function": {
@@ -448,75 +436,54 @@
   "static_analysis": {
     "analyzed_file": "getMRGLBounds_FUN_004dcf60.c",
     "cppcheck_quick": {
-      "diagnostic_count": 10,
+      "diagnostic_count": 7,
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 36,
-          "line": 165,
+          "column": 52,
+          "line": 161,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 24,
-          "line": 166,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 42,
-          "line": 170,
+          "line": 162,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 27,
-          "line": 171,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 42,
-          "line": 175,
+          "line": 168,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 27,
-          "line": 176,
+          "line": 174,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 33,
-          "line": 162,
+          "column": 27,
+          "line": 159,
           "message": "Uninitialized variable: local_38",
           "severity": "error"
         },
         {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 191,
-          "message": "Uninitialized variable: *puVar10",
-          "severity": "warning"
-        },
-        {
           "check_id": "legacyUninitvar",
           "column": 18,
-          "line": 171,
+          "line": 168,
           "message": "Uninitialized variable: local_b0",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 18,
-          "line": 176,
+          "line": 174,
           "message": "Uninitialized variable: local_ac",
           "severity": "error"
         }
@@ -528,55 +495,87 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(SMRGLModelBounds *)((int)pSVar12",
+      "line": 48,
+      "match": "(SMRGLModelBounds *)((int)pSVar10",
       "severity": "moderate",
-      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 49,
       "match": "(SMRGLModelBounds *)((int)pSVar12",
       "severity": "moderate",
-      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + (uint)bVar14 * -8 + 4);",
+      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(SMRGLModelBounds *)((int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 191,
+      "match": "(SMRGLModelBounds *)((int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 58,
+      "line": 49,
       "match": "(int)pSVar12",
       "severity": "moderate",
-      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 151,
+      "line": 148,
       "match": "(int)local_34",
       "severity": "moderate",
-      "text": "local_94 = (uint)((longlong)(int)local_34 * (longlong)(int)local_18) >> 0x10 |",
+      "text": "(uint)((longlong)(int)local_34 * (longlong)(int)local_18) >> 0x10 |",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
+      "line": 149,
       "match": "(int)local_34",
       "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)local_18) >> 0x20) << 0x10",
+      "text": "(int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)local_18) >> 0x20) << 0x10;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 193,
-      "match": "(int)pSVar12",
+      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 183,
+      "match": "(int)pSVar10",
       "severity": "moderate",
-      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + (uint)bVar14 * -8 + 4);",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 191,
+      "match": "(int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 56,
+      "line": 46,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -584,7 +583,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 183,
+      "line": 181,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -592,7 +591,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 190,
+      "line": 188,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -608,15 +607,15 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 165,
+      "line": 161,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "local_8c = (uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f);",
+      "text": "local_a8.center_scaled.y = (uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f);",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 166,
+      "line": 162,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar3 = (int)uVar4 >> 0x1f;",
@@ -624,15 +623,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 170,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "local_88 = (local_a4 ^ (int)local_a4 >> 0x1f) - ((int)local_a4 >> 0x1f);",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 171,
+      "line": 168,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar3 = (int)local_b0 >> 0x1f;",
@@ -640,15 +631,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 175,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "local_84 = (local_a0 ^ (int)local_a0 >> 0x1f) - ((int)local_a0 >> 0x1f);",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 176,
+      "line": 174,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar3 = (int)local_ac >> 0x1f;",
@@ -656,23 +639,15 @@
     },
     {
       "description": "Uninitialized variable: local_38",
-      "line": 162,
+      "line": 159,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_94 = (uint)((longlong)local_38 * (longlong)(int)ROUND(dVar15)) >> 0x10 |",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: *puVar10",
-      "line": 191,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*puVar11 = *puVar10;",
+      "text": "(uint)((longlong)local_38 * (longlong)(int)ROUND(dVar14)) >> 0x10 |",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_b0",
-      "line": 171,
+      "line": 168,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uVar3 = (int)local_b0 >> 0x1f;",
@@ -680,7 +655,7 @@
     },
     {
       "description": "Uninitialized variable: local_ac",
-      "line": 176,
+      "line": 174,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uVar3 = (int)local_ac >> 0x1f;",

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -70,49 +70,49 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 57,
+        "line": 58,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50'"
       },
       {
         "category": "undeclared_identifier",
         "column": 41,
-        "line": 58,
+        "line": 59,
         "message": "use of undeclared identifier 'DAT_01c78ca8'"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 66,
+        "line": 67,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 74,
+        "line": 75,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 82,
+        "line": 83,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 90,
+        "line": 91,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 91,
+        "line": 92,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 92,
+        "line": 93,
         "message": "use of undeclared identifier 'DAT_005b96d4'"
       }
     ],
@@ -122,23 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 1062,
+    "complexity_score": 845,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 217,
-    "suspect_count": 81,
+    "pseudocode_lines": 220,
+    "suspect_count": 60,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "suspect_float",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 764
+    "total_lines": 767
   },
   "cross_references": [],
   "function": {
@@ -149,10 +147,10 @@
         "004ae8ff"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_gore.cpp_CBloodParticle_render_FUN_004ae190",
-    "signature": "void core_gore_cpp_CBloodParticle_render_FUN_004ae190(CVector3f *param_1)"
+    "signature": "void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ae190(CBloodParticle *this_ptr)"
   },
   "function_calls": [
     {
@@ -374,9 +372,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -420,10 +418,10 @@
     "pcode_op_count": 2894
   },
   "stack_frame": {
-    "frame_size": 252,
+    "frame_size": 256,
     "local_size": 252,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -775,6 +773,13 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodParticle *"
       }
     ]
   },
@@ -805,14 +810,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_gore_cpp_CBloodParticle_render_FUN_004ae190(CVector3f *param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 41,
       "match": "DAT_005ae704",
@@ -821,48 +818,16 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_70.x = (int)ROUND(param_1->x * 256.0f);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_70.y = (int)ROUND(param_1->y * 256.0f);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_70.z = (int)ROUND(param_1->z * 256.0f);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);",
+      "text": "(DAT_005ae704,(CVector3f *)this_ptr);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(CVector3i *)&DAT_01c78ca8,(CVector3i *)0x0);",
@@ -870,7 +835,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_01c78ca8",
       "severity": "mild",
       "text": "(DAT_005ae704,(CVector3i *)&DAT_01c78ca8,(CVector3i *)0x0);",
@@ -878,7 +843,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_e8);",
@@ -886,7 +851,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 68,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_64);",
@@ -894,7 +859,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_b8);",
@@ -902,7 +867,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_88);",
@@ -910,7 +875,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005b96d4);",
@@ -918,63 +883,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_005b96d4",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005b96d4);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_005c505c = ((uint)param_1[5].x & 3) * 0x400000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_005c5090 = ((int)param_1[5].x >> 2 & 3U) * 0x400000;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 89,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "DAT_005c502c = _DAT_005c505c + 0x80000;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_7c.x = (int)ROUND(param_1->x * 256.0f);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_7c.y = (int)ROUND(param_1->y * 256.0f);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_7c.z = (int)ROUND(param_1->z * 256.0f);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 98,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "_DAT_005c50bc = DAT_005c502c;",
@@ -982,34 +907,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 101,
       "match": "DAT_01c78cb4",
       "severity": "mild",
       "text": "(g_CDemonSet_PTR_005be368,&local_7c,(CVector3i *)&DAT_01c78cb4,0,4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1[4].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 108,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "if (fVar1 == 2.8026e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 120,
-      "match": "DAT_005c5034",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar5);",
       "type": "undefined_data"
     },
     {
@@ -1017,15 +918,15 @@
       "line": 121,
       "match": "DAT_005c5034",
       "severity": "mild",
-      "text": "*(uint *)((int)&DAT_005c5034 + iVar5) =",
+      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_005c5038",
+      "line": 122,
+      "match": "DAT_005c5034",
       "severity": "mild",
-      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar5);",
+      "text": "*(uint *)((int)&DAT_005c5034 + iVar5) =",
       "type": "undefined_data"
     },
     {
@@ -1033,28 +934,28 @@
       "line": 124,
       "match": "DAT_005c5038",
       "severity": "mild",
+      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 125,
+      "match": "DAT_005c5038",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar5) =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 128,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c503c + iVar5) = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 130,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(_DAT_007f7370,param_1,0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 133,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff - _DAT_01c038f4)",
@@ -1062,71 +963,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 136,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 136,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_dc.x = param_1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 137,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_dc.y = param_1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_dc.z = param_1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_4c = param_1[1].x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 140,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_48 = param_1[1].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 143,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_44 = param_1[1].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 149,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_48 = local_48 - local_ec * param_1[2].y;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 158,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&local_dc);",
@@ -1134,7 +979,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 160,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(CVector3i *)&DAT_01c78ca8,(CVector3i *)0x0);",
@@ -1142,7 +987,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 160,
       "match": "DAT_01c78ca8",
       "severity": "mild",
       "text": "(DAT_005ae704,(CVector3i *)&DAT_01c78ca8,(CVector3i *)0x0);",
@@ -1150,7 +995,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 169,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_d0);",
@@ -1158,7 +1003,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 178,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_94);",
@@ -1166,7 +1011,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 184,
+      "line": 186,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_58);",
@@ -1174,7 +1019,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 192,
+      "line": 194,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_c4);",
@@ -1182,7 +1027,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 197,
+      "line": 199,
       "match": "DAT_01c78cb4",
       "severity": "mild",
       "text": "(g_CDemonSet_PTR_005be368,&local_7c,(CVector3i *)&DAT_01c78cb4,0,4);",
@@ -1190,7 +1035,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 200,
+      "line": 202,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
@@ -1198,7 +1043,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 201,
+      "line": 203,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar3) =",
@@ -1206,7 +1051,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 205,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
@@ -1214,7 +1059,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 204,
+      "line": 206,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar3) =",
@@ -1222,7 +1067,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 209,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
@@ -1230,23 +1075,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 208,
+      "line": 210,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c503c + iVar3) =",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 212,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(_DAT_007f7370,param_1,0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 214,
+      "line": 217,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,0xffff - _DAT_01c038f4);",
@@ -1254,7 +1091,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 216,
+      "line": 219,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);",
@@ -1262,7 +1099,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 120,
+      "line": 121,
       "match": "(int)&DAT_005c5034",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar5);",
@@ -1270,7 +1107,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 121,
+      "line": 122,
       "match": "(int)&DAT_005c5034",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar5) =",
@@ -1278,7 +1115,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 124,
       "match": "(int)&DAT_005c5038",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar5);",
@@ -1286,7 +1123,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 124,
+      "line": 125,
       "match": "(int)&DAT_005c5038",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar5) =",
@@ -1294,7 +1131,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c503c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 127,
+      "line": 128,
       "match": "(int)&DAT_005c503c",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c503c + iVar5) = 0;",
@@ -1302,7 +1139,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 200,
+      "line": 202,
       "match": "(int)&DAT_005c5034",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
@@ -1310,7 +1147,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 201,
+      "line": 203,
       "match": "(int)&DAT_005c5034",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar3) =",
@@ -1318,7 +1155,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 203,
+      "line": 205,
       "match": "(int)&DAT_005c5038",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
@@ -1326,7 +1163,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 204,
+      "line": 206,
       "match": "(int)&DAT_005c5038",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar3) =",
@@ -1334,7 +1171,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c503c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 207,
+      "line": 209,
       "match": "(int)&DAT_005c503c",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
@@ -1342,7 +1179,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c503c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 208,
+      "line": 210,
       "match": "(int)&DAT_005c503c",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c503c + iVar3) =",
@@ -1350,15 +1187,15 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 136,
+      "line": 138,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_dc.x = param_1->x;",
+      "text": "local_dc.x = (this_ptr->base).position.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 120,
+      "line": 121,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar5);",
@@ -1366,7 +1203,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 121,
+      "line": 122,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar5) =",
@@ -1374,7 +1211,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 123,
+      "line": 124,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar5);",
@@ -1382,7 +1219,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 124,
+      "line": 125,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar5) =",
@@ -1390,7 +1227,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 127,
+      "line": 128,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c503c + iVar5) = 0;",
@@ -1398,7 +1235,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 200,
+      "line": 202,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
@@ -1406,7 +1243,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 201,
+      "line": 203,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar3) =",
@@ -1414,7 +1251,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 203,
+      "line": 205,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
@@ -1422,7 +1259,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 204,
+      "line": 206,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar3) =",
@@ -1430,7 +1267,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 207,
+      "line": 209,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
@@ -1438,7 +1275,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 208,
+      "line": 210,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c503c + iVar3) =",

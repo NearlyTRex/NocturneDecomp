@@ -171,13 +171,13 @@ LAB_004d0249:
       pcVar8 = "Resolution : 320x240";
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar8);
-    _sprintf(0x1cc5b80,pcVar8);
+    _sprintf((char *)0x1cc5b80,pcVar8);
     uVar7 = g_CGame_PTR_005b9354->halo_mode;
     if (uVar7 == 0) {
       pcVar8 = "Flashlight halo : Off";
 LAB_004d039c:
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar8);
-      _sprintf(0x1cc5c80,pcVar8);
+      _sprintf((char *)0x1cc5c80,pcVar8);
     }
     else {
       if (uVar7 < 2) {
@@ -196,7 +196,7 @@ LAB_004d039c:
       pcVar8 = "3D Hardware : On";
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar8);
-    _sprintf(0x1cc5d80,pcVar8);
+    _sprintf((char *)0x1cc5d80,pcVar8);
     iVar5 = _stricmp(&DAT_005c0e80,"trid3d.dll");
     if (iVar5 == 0) {
       pcVar8 = "3D API : DirectX 5";
@@ -228,7 +228,7 @@ LAB_004d039c:
       }
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar8);
-    _sprintf(0x1cc5e80,pcVar8);
+    _sprintf((char *)0x1cc5e80,pcVar8);
     if (_DAT_01cc64a8 == 0) {
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("No 3D Hardware detected");
@@ -279,7 +279,7 @@ LAB_004d039c:
       pcVar10[1] = cVar1;
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
-    _sprintf(local_120,"%d",g_CGame_PTR_005b9354->game_bpp);
+    _sprintf(local_120,"%d");
     iVar5 = -1;
     pcVar8 = &DAT_01cc6080;
     do {
@@ -301,7 +301,7 @@ LAB_004d039c:
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Monitor calibration");
-    _sprintf(0x1cc6180,pcVar9);
+    _sprintf((char *)0x1cc6180,pcVar9);
     if (g_CGame_PTR_005b9354->subtitle_mode == 0) {
       pcVar9 = "Subtitles : Off";
     }

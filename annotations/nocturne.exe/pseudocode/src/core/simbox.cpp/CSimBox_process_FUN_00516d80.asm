@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)
+; void __cdecl core_simbox_cpp_CSimBox_process_FUN_00516d80(CSimBox *this_ptr,float delta_time)
 ;
+; Parameters:
+; CSimBox *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x18]:1  local_18
 ;

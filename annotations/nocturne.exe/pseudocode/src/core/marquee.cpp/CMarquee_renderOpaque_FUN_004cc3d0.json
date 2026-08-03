@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 17,
+        "line": 16,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
       }
     ],
@@ -68,18 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 118,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 9,
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 60
+    "total_lines": 59
   },
   "cross_references": [],
   "function": {
@@ -90,9 +89,9 @@
         "004cc437"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_marquee.cpp_CMarquee_renderOpaque_FUN_004cc3d0",
-    "signature": "float core_marquee_cpp_CMarquee_renderOpaque_FUN_004cc3d0(CDemonActor *param_1)"
+    "signature": "int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_004cc3d0(CMarquee *this_ptr)"
   },
   "function_calls": [
     {
@@ -134,9 +133,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -165,10 +164,10 @@
     "pcode_op_count": 165
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -177,81 +176,24 @@
         "offset": -28,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMarquee *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_marquee_cpp_CMarquee_renderOpaque_FUN_004cc3d0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 9,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].orient_matrix.m[0].z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].orient_matrix.m[0].z = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1[1].orient_matrix.m[0].z;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

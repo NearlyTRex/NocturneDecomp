@@ -1,12 +1,12 @@
 // Name: core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
 // Address: 004411b0
 // Address Range: [[004411b0, 004412b2]]
-// Convention: unknown
-// Signature: int * core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(int param_1,int *param_2)
+// Convention: __stack2_esi
+// Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 #include "nocturne.h"
 
-int * core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(int param_1,int *param_2)
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 {
   int iVar1;
@@ -16,27 +16,27 @@ int * core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(int para
   longlong lVar5;
   int iVar6;
   int iVar7;
-  int *unaff_ESI;
   
-  iVar1 = param_2[2];
-  iVar6 = (int)(((longlong)(*param_2 - *(int *)(param_1 + 0x1c8)) * (longlong)iVar1) /
-               (longlong)*(int *)(param_1 + 0x1c0));
-  iVar7 = (int)(((longlong)(param_2[1] - *(int *)(param_1 + 0x1cc)) * (longlong)iVar1) /
-               (longlong)*(int *)(param_1 + 0x1c4));
-  lVar3 = (longlong)iVar7 * (longlong)*(int *)(param_1 + 0x1a8) +
-          (longlong)iVar6 * (longlong)*(int *)(param_1 + 0x19c) +
-          (longlong)iVar1 * (longlong)*(int *)(param_1 + 0x1b4);
-  lVar4 = (longlong)iVar7 * (longlong)*(int *)(param_1 + 0x1ac) +
-          (longlong)iVar6 * (longlong)*(int *)(param_1 + 0x1a0) +
-          (longlong)iVar1 * (longlong)*(int *)(param_1 + 0x1b8);
-  iVar2 = *(int *)(param_1 + 0x170);
-  lVar5 = (longlong)iVar7 * (longlong)*(int *)(param_1 + 0x1b0) +
-          (longlong)iVar6 * (longlong)*(int *)(param_1 + 0x1a4) +
-          (longlong)iVar1 * (longlong)*(int *)(param_1 + 0x1bc);
-  iVar1 = *(int *)(param_1 + 0x174);
-  *unaff_ESI = *(int *)(param_1 + 0x16c) +
-               ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-  unaff_ESI[1] = iVar2 + ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-  unaff_ESI[2] = iVar1 + ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
-  return unaff_ESI;
+  iVar1 = input_ptr->z;
+  iVar6 = (int)(((longlong)(input_ptr->x - (this_ptr->cached_projection).center_x_fixed) *
+                (longlong)iVar1) / (longlong)(this_ptr->cached_projection).half_width_fixed);
+  iVar7 = (int)(((longlong)(input_ptr->y - (this_ptr->cached_projection).center_y_fixed) *
+                (longlong)iVar1) / (longlong)(this_ptr->cached_projection).neg_half_height_fixed);
+  lVar3 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].x +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].x +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].x;
+  lVar4 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].y +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].y +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].y;
+  iVar2 = (this_ptr->camera_origin).y;
+  lVar5 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].z +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].z +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].z;
+  iVar1 = (this_ptr->camera_origin).z;
+  output_ptr->x =
+       (this_ptr->camera_origin).x + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10)
+  ;
+  output_ptr->y = iVar2 + ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+  output_ptr->z = iVar1 + ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
+  return output_ptr;
 }

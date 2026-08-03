@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_keyactor_cpp_CKeyActor_canPickup_FUN_004c36d0(undefined4 param_1,CDemonActor *param_2)
+; int __cdecl core_keyactor_cpp_CKeyActor_canPickup_FUN_004c36d0(CKeyActor *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CKeyActor *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_005875c6

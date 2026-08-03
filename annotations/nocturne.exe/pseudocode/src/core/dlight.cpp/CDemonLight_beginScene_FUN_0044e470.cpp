@@ -46,7 +46,9 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c03a04;
   _DAT_01c03a04 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   if (skip_clear_buffers == 0) {
-    _memset(this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2);
+    _memset
+              (this_ptr->shadow_depth_buffer,0xff,
+               this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2);
   }
   iVar2 = 0;
   pCVar3 = this_ptr;

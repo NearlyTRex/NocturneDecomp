@@ -17,7 +17,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(CBitFont *this_ptr
   char *pcVar5;
   SIZE_T size;
   char (*pacVar6) [80];
-  byte local_440 [300];
+  char local_440 [300];
   char local_314 [260];
   char local_210 [256];
   char local_110 [256];
@@ -43,7 +43,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(CBitFont *this_ptr
   this_ptr->bitmap_widths[this_ptr->bitmap_count] = width;
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",filename);
   if (iVar2 < (int)size) {
-    _sprintf(local_440,"Invalid font file size (%s).",filename);
+    _sprintf(local_440,"Invalid font file size (%s).");
     g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
     g_INT_01cc4804 = 0xec;
     core_main_c_FUN_004c8440(local_440);
@@ -51,7 +51,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(CBitFont *this_ptr
   pvVar3 = shape_memdbg_cpp_malloc_FUN_00564c18(size);
   this_ptr->bitmap_data[this_ptr->bitmap_count] = pvVar3;
   if (this_ptr->bitmap_data[this_ptr->bitmap_count] == (void *)0x0) {
-    _sprintf(local_440,"Unable to allocate memory for font bitmap (%s).",filename);
+    _sprintf(local_440,"Unable to allocate memory for font bitmap (%s).");
     g_INT_01cc4804 = 0xf4;
     g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
     core_main_c_FUN_004c8440(local_440);

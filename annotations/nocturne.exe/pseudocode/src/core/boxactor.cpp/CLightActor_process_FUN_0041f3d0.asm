@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CBoxActor *param_1,float param_2)
+; void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CLightActor *this_ptr,float delta_time)
 ;
+; Parameters:
+; CLightActor *    Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0xe4]:1  local_e4
 ; undefined        Stack[-0xb4]:1  local_b4
@@ -192,7 +195,7 @@ section .text
     LEA ESI,[ESP + 0x10]                ; 0041f58c
     LEA EDI,[ESP + 0x70]                ; 0041f590
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 0041f594
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 0041f599
     LEA EAX,[ESP + 0xc8]                ; 0041f59c
     MOV ECX,0xc                         ; 0041f5a3

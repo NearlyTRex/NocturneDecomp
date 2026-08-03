@@ -1,21 +1,24 @@
 // Name: engine_3d.c_processPolygonColor_FUN_00405140
 // Address: 00405140
 // Address Range: [[00405140, 004051d7]]
-// Convention: unknown
-// Signature: int engine_3d_c_processPolygonColor_FUN_00405140(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00405140(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-int engine_3d_c_processPolygonColor_FUN_00405140(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00405140(SMRGLHeaderPrimitive *prim)
 
 {
-  DAT_006b0260 = *(uint *)(param_1 + 4);
-  if (((*(byte *)(param_1 + 7) & 0x80) != 0) && ((*(byte *)(param_1 + 7) & 0x40) == 0)) {
+  int iVar1;
+  
+  DAT_006b0260 = (prim->base).count;
+  iVar1 = (prim->base).count;
+  if (((int)(iVar1 & -0x80000000) != 0) && ((iVar1 & 0x40000000) == 0)) {
     DAT_006b0260 = -(uint)(byte)(&DAT_01bf7720)
-                                [((int)(*(int *)(param_1 + 4) >> 0x10 & 0xffU) >> 3) +
-                                 ((int)(*(uint *)(param_1 + 4) & 0xff) >> 3) * 0x400 +
-                                 ((int)(*(int *)(param_1 + 4) >> 8 & 0xffU) >> 3) * 0x20];
-    return param_1 + 8;
+                                [((int)((prim->base).count >> 0x10 & 0xffU) >> 3) +
+                                 ((int)((prim->base).count & 0xffU) >> 3) * 0x400 +
+                                 ((int)((prim->base).count >> 8 & 0xffU) >> 3) * 0x20];
+    return (SMRGLHeaderExtended *)&prim->surface_normal;
   }
-  return param_1 + 8;
+  return (SMRGLHeaderExtended *)&prim->surface_normal;
 }

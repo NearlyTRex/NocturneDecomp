@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ladder_cpp_CLadder_setup_FUN_004c4340(CDemonActor *param_1)
+; void __cdecl core_ladder_cpp_CLadder_setup_FUN_004c4340(CLadder *this_ptr)
 ;
+; Parameters:
+; CLadder *        Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

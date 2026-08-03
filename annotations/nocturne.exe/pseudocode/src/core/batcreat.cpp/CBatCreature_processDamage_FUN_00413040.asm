@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batcreat_cpp_CBatCreature_processDamage_FUN_00413040(CBatCreature *param_1,SDamageInfo *param_2)
+; void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_00413040(CBatCreature *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CBatCreature *   Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ; undefined        Stack[-0x30]:1  local_30

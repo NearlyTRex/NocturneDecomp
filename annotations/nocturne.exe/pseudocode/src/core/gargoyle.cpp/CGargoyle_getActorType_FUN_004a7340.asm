@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_gargoyle_cpp_CGargoyle_getActorType_FUN_004a7340(void)
+; CDemonActorType * __cdecl core_gargoyle_cpp_CGargoyle_getActorType_FUN_004a7340(CGargoyle *this_ptr)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

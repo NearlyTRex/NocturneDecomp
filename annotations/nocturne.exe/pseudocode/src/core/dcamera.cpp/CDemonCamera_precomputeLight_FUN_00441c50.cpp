@@ -28,7 +28,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCa
   int local_7c;
   int local_78;
   int local_74;
-  int local_70;
+  CVector3i local_70;
   CVector3i local_64;
   int local_58;
   int local_54;
@@ -40,7 +40,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCa
   int local_3c;
   int local_38;
   int local_34;
-  int local_30;
+  CVector3i *local_30;
   int local_2c;
   float *local_28;
   int *local_24;
@@ -133,7 +133,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCa
     local_48 = (light_source->base).camera_name + local_78 * 4;
     do {
       local_38 = 999;
-      local_30 = local_54 + local_58;
+      local_30 = (CVector3i *)(local_54 + local_58);
       local_28 = (float *)((int)&local_4c->x + local_58);
       local_34 = 0;
       local_20 = (int *)((int)light_source->corona_visibility_buffers + local_50 + local_44);
@@ -159,12 +159,12 @@ LAB_00441eb7:
                        *local_28 * (light_source->base).rotation_matrix.m[0].z +
                        local_28[1] * (light_source->base).rotation_matrix.m[1].z)) {
               core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
-                        (light_source,local_30);
-              local_64.x = local_70;
+                        (&light_source->base,local_30,&local_70);
+              local_64.x = local_70.x;
               *(uint *)((int)&local_64 + (uint)bVar12 * -8 + 4) =
-                   *(uint *)(&stack0xffffff94 + (uint)bVar12 * -8);
+                   *(uint *)((int)&local_70 + (uint)bVar12 * -8 + 4);
               *(uint *)((int)&local_64 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-                   *(uint *)(&stack0xffffff98 + (uint)bVar12 * -8 + (uint)bVar12 * -8);
+                   *(uint *)((int)&local_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
               if (local_64.z < 1) goto LAB_00441e9f;
               *local_20 = local_64.z - local_3c;
               puVar6 = core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60
@@ -194,7 +194,7 @@ LAB_00441eb7:
           }
 LAB_00441ebd:
           local_28 = local_28 + 3;
-          local_30 = local_30 + 0xc;
+          local_30 = local_30 + 1;
           local_20 = local_20 + 1;
           local_1c = local_1c + 1;
           local_24 = local_24 + 1;

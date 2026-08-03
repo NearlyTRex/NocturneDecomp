@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_elephant_cpp_CElephantGun_getActorType_FUN_00477700(void)
+; CDemonActorType * __cdecl core_elephant_cpp_CElephantGun_getActorType_FUN_00477700(CElephantGun *this_ptr)
 ;
+; Parameters:
+; CElephantGun *   Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

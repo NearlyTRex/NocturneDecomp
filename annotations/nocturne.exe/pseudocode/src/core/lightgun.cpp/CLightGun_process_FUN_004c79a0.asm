@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *param_1,float param_2)
+; void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_ptr,float delta_time)
 ;
+; Parameters:
+; CLightGun *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -175,7 +178,7 @@ section .text
     PUSH EDI                            ; 004c7b4a
     MOV dword ptr [0x01c76310],ESI      ; 004c7b4b | g_CDemonLight_01c74640.antialiasing_enabled
     CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 ; 004c7b51
-        ;   XREF to: 0044bd20 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20()
+        ;   XREF to: 0044bd20 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20(CFilterCache * this_ptr, char * filter_name, int blend_filter)
     ADD ESP,0xc                         ; 004c7b56
     PUSH 0x0                            ; 004c7b59
     PUSH 0x0                            ; 004c7b5b

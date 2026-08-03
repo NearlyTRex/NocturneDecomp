@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vessel_cpp_CCryptVessel_pickup_FUN_0054fc00(int param_1,undefined4 param_2)
+; void __cdecl core_vessel_cpp_CCryptVessel_pickup_FUN_0054fc00(CCryptVessel *this_ptr,CDemonActor *carrier)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   carrier
 ;
 ; *****************************************************************************
 

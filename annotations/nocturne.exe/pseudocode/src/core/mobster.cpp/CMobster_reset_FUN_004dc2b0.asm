@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_mobster_cpp_CMobster_reset_FUN_004dc2b0(void)
+; void __cdecl core_mobster_cpp_CMobster_reset_FUN_004dc2b0(CMobster *this_ptr)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

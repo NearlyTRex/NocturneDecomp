@@ -1,12 +1,12 @@
 // Name: core_conveyor.cpp_CConveyor_renderBackground_FUN_0043b300
 // Address: 0043b300
 // Address Range: [[0043b300, 0043b300]]
-// Convention: unknown
-// Signature: void core_conveyor_cpp_CConveyor_renderBackground_FUN_0043b300(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_conveyor_cpp_CConveyor_renderBackground_FUN_0043b300(CConveyor *this_ptr,int layer_flag)
 
 #include "nocturne.h"
 
-void core_conveyor_cpp_CConveyor_renderBackground_FUN_0043b300(void)
+void __cdecl core_conveyor_cpp_CConveyor_renderBackground_FUN_0043b300(CConveyor *this_ptr,int layer_flag)
 
 {
   return;

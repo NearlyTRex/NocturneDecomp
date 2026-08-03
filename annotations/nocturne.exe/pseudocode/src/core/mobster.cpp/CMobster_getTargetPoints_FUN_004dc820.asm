@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_mobster_cpp_CMobster_getTargetPoints_FUN_004dc820(int param_1,CVector3f *param_2)
+; int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_004dc820(CMobster *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ; undefined        Stack[-0x28]:1  local_28

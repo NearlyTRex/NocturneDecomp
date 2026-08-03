@@ -133,7 +133,7 @@ void __cdecl CSound::setReverbPreset(CSound *this_ptr,int index);
 
 // Original: core_sound.cpp_FUN_0052ed40
 // Address: 0052ed40
-undefined4 FUN_0052ed40(undefined4 param_1,undefined4 param_2,int *param_3);
+undefined4 FUN_0052ed40(undefined4 param_1,char *param_2,int *param_3);
 
 // Original: core_sound.cpp_CSound_setVolumeFade_FUN_0052ede0
 // Address: 0052ede0

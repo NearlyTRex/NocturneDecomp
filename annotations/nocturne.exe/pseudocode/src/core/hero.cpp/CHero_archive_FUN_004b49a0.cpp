@@ -59,7 +59,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004b49a0(CHero *this_ptr)
     if ((7 < INT_005ba940) && (INT_005ba940 < 0xb)) {
       iVar1 = 0;
       do {
-        _sprintf(local_70,"keyNameList[%d]",iVar1);
+        _sprintf(local_70,"keyNameList[%d]");
         iVar1 = iVar1 + 1;
         core_actor_cpp_archiveString_FUN_0040c6d0(local_d4,local_70);
       } while (iVar1 < 0x20);

@@ -76,7 +76,7 @@ section .text
     PUSH EAX                            ; 004f53b6
     MOV EDI,0x6b                        ; 004f53b7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f53bc
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 004f53c1
     LEA EAX,[ESP + 0x4]                 ; 004f53c4
     MOV ECX,0x58d4aa                    ; 004f53c8 | = "..\\cockpit\\pkbmpset.cpp"

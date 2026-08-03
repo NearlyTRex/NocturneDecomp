@@ -18,17 +18,16 @@ _FILE * __cdecl OpenFileAndInitialize(char *filename,char mode_char,int parsed_m
   file_struct->_flag = file_struct->_flag | parsed_mode_flags;
   iVar3 = tolower((uint)(byte)mode_char);
   if ((char)iVar3 == 'r') {
-    uVar2 = 0;
+    uVar4 = 0;
     if ((parsed_mode_flags & 2U) != 0) {
-      uVar2 = 2;
+      uVar4 = 2;
     }
     if ((parsed_mode_flags & 0x40U) == 0) {
-      uVar2 = uVar2 | 0x100;
+      uVar4 = uVar4 | 0x100;
     }
     else {
-      uVar2 = uVar2 | 0x200;
+      uVar4 = uVar4 | 0x200;
     }
-    uVar4 = 0;
   }
   else {
     bVar1 = ((parsed_mode_flags & 1U) != 0) + 0x21;
@@ -44,23 +43,23 @@ _FILE * __cdecl OpenFileAndInitialize(char *filename,char mode_char,int parsed_m
     else {
       uVar2 = CONCAT11(2,bVar1);
     }
-    uVar4 = 0x180;
+    uVar4 = (uint)uVar2;
   }
-  iVar3 = CreateFileVariadic(filename,uVar2,additional_flags,uVar4);
+  iVar3 = CreateFileVariadic(filename,uVar4,additional_flags);
   file_struct->_handle = iVar3;
-  if (file_struct->_handle == -1) {
-    __freefp(file_struct);
-    return (_FILE *)0x0;
+  if (file_struct->_handle != -1) {
+    file_struct->_cnt = 0;
+    file_struct->_bufsize = 0;
+    file_struct->_link->__get_base = (char *)0x0;
+    file_struct->_link->__get_end = (char *)stage1_result;
+    *(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;
+    file_struct->_link->__reserve_end = (char *)0x0;
+    if ((parsed_mode_flags & 0x80U) != 0) {
+      _fseek(file_struct,0,2);
+    }
+    DetectDeviceAndSetBuffering(file_struct);
+    return file_struct;
   }
-  file_struct->_cnt = 0;
-  file_struct->_bufsize = 0;
-  file_struct->_link->__get_base = (char *)0x0;
-  file_struct->_link->__get_end = (char *)stage1_result;
-  *(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;
-  file_struct->_link->__reserve_end = (char *)0x0;
-  if ((parsed_mode_flags & 0x80U) != 0) {
-    _fseek(file_struct,0,2);
-  }
-  DetectDeviceAndSetBuffering(file_struct);
-  return file_struct;
+  __freefp(file_struct);
+  return (_FILE *)0x0;
 }

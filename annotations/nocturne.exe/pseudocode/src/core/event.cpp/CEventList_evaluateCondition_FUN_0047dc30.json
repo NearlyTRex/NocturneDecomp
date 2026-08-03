@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -60,12 +60,6 @@
         "column": 7,
         "line": 24,
         "message": "use of undeclared identifier '_DAT_01c08b5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 29,
-        "message": "use of undeclared identifier 'DAT_01c08b60'"
       }
     ],
     "success": false,
@@ -74,18 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 54,
+    "complexity_score": 38,
     "cross_reference_count": 49,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 68
+    "total_lines": 67
   },
   "cross_references": [
     {
@@ -626,14 +619,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01c08b60",
-      "severity": "mild",
-      "text": "(g_CConsole_PTR_005ad350,\"%s\\n\",&DAT_01c08b60);",
-      "type": "undefined_data"
     }
   ]
 }

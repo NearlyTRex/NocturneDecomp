@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
+        "line": 25,
+        "message": "use of undeclared identifier '_DAT_02dc921c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 26,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 24,
+        "line": 26,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
         "line": 26,
         "message": "use of undeclared identifier '_DAT_02dc921c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 17,
-        "line": 27,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 27,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_02dc921c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 50,
-        "line": 27,
+        "line": 26,
         "message": "use of undeclared identifier '_DAT_02dc921c'"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 32,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
+        "category": "format_error",
+        "column": 51,
+        "line": 29,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 36,
+        "line": 34,
         "message": "use of undeclared identifier '_DAT_02dc9218'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 37,
+        "line": 35,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 37,
+        "line": 35,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 37,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_02dc9218'; did you mean 'DAT_004A9218'?"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 158,
+    "complexity_score": 154,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 69,
     "suspect_count": 7,
     "suspect_types": [
       "raw_address_pointer_store",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 232
+    "total_lines": 228
   },
   "cross_references": [],
   "function": {
@@ -293,7 +293,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 19,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*_DAT_02dc921c + 0x48))(_DAT_02dc921c);",
@@ -301,7 +301,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*_DAT_02dc9218 + 0x48))(_DAT_02dc9218);",
@@ -309,15 +309,15 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 42,
-      "match": "*(int **)(iVar5 + 0x2dc92a8",
+      "line": 39,
+      "match": "*(int **)(iVar4 + 0x2dc92a8",
       "severity": "moderate",
-      "text": "piVar1 = *(int **)(iVar5 + 0x2dc92a8);",
+      "text": "piVar1 = *(int **)(iVar4 + 0x2dc92a8);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
+      "line": 45,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar1 + 8))(piVar1);",
@@ -325,7 +325,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 51,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar1 + 8))(piVar1);",
@@ -333,7 +333,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 59,
+      "line": 56,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);",

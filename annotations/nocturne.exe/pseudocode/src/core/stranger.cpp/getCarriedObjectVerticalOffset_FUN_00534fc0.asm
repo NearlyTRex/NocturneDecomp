@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *param_1)
+; float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *object)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   object
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

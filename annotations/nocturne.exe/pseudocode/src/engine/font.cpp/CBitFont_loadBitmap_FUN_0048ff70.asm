@@ -114,7 +114,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0049000e
     PUSH EAX                            ; 00490012
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00490013
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x5817a0                    ; 00490018 | = "..\\engine\\font.cpp"
     ADD ESP,0xc                         ; 0049001d
     MOV [0x01cc4800],EAX                ; 00490020 | g_CHAR_PTR_01cc4800
@@ -142,7 +142,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00490060
     PUSH EAX                            ; 00490064
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00490065
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0xf4                        ; 0049006a
     ADD ESP,0xc                         ; 0049006f
     MOV [0x01cc4804],EAX                ; 00490072 | g_INT_01cc4804
@@ -236,7 +236,7 @@ section .text
     PUSH EAX                            ; 0049017d
     PUSH EBX                            ; 0049017e
     CALL engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470 ; 0049017f
-        ;   XREF to: 00490470 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470()
+        ;   XREF to: 00490470 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont * this_ptr, int bitmap_count, int bitmap_width, int bitmap_height, ...)
     MOV EDX,dword ptr [EBX]             ; 00490184
     ADD ESP,0x14                        ; 00490186
     INC EDX                             ; 00490189

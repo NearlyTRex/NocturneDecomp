@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_onDropped_FUN_00416cc0(int param_1,CVector3f *param_2)
+; void __cdecl core_bodypart_cpp_CBodyPart_onDropped_FUN_00416cc0(CBodyPart *this_ptr,CVector3f *drop_position)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   drop_position
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
@@ -23,7 +26,7 @@ section .text
     PUSH EBX                            ; 00416cc8
     MOV dword ptr [EBX + 0xf10],0x0     ; 00416cc9
     CALL core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70 ; 00416cd3
-        ;   XREF to: 00417d70 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70()
+        ;   XREF to: 00417d70 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00416cd8
     MOV EDX,dword ptr [ESP + 0x18]      ; 00416cdb
     TEST EDX,EDX                        ; 00416cdf

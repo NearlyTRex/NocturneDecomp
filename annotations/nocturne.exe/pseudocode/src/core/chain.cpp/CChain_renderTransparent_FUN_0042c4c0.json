@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -87,19 +87,19 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 52,
+        "column": 57,
         "line": 61,
         "message": "use of undeclared identifier '_DAT_0059b220'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 52,
+        "column": 57,
         "line": 62,
         "message": "use of undeclared identifier '_DAT_0059b220'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 52,
+        "column": 57,
         "line": 63,
         "message": "use of undeclared identifier '_DAT_0059b220'"
       },
@@ -111,7 +111,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 52,
+        "column": 57,
         "line": 66,
         "message": "use of undeclared identifier '_DAT_0059b220'"
       }
@@ -122,20 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 511,
+    "complexity_score": 380,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 161,
-    "suspect_count": 33,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 160,
+    "suspect_count": 21,
     "suspect_types": [
-      "pointer_cast",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 597
+    "total_lines": 596
   },
   "cross_references": [],
   "function": {
@@ -146,9 +144,9 @@
         "0042ca80"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_chain.cpp_CChain_renderTransparent_FUN_0042c4c0",
-    "signature": "undefined4 core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CDemonActor *param_1)"
+    "signature": "int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CChain *this_ptr)"
   },
   "function_calls": [
     {
@@ -243,9 +241,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -279,10 +277,10 @@
     "pcode_op_count": 2086
   },
   "stack_frame": {
-    "frame_size": 148,
+    "frame_size": 152,
     "local_size": 148,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -291,6 +289,13 @@
         "offset": -144,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CChain *"
       }
     ]
   },
@@ -304,14 +309,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_005ae704",
@@ -320,67 +317,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_90);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_90);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4].location.area_id = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[4].location.area_id != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[1].actor_name + 0x14));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 38,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[1].actor_name + 0x14));",
+      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&this_ptr->texture_size);",
       "type": "undefined_data"
     },
     {
@@ -406,30 +347,6 @@
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pUVar5 = &param_1[1].previous_transform_state.orientation;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar4 = (int *)(param_1[2].actor_name + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar3 = 0; iVar3 < *(int *)param_1[1].actor_name + -1; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -545,19 +462,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 159,
+      "line": 158,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&SStack_b8);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 38,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[1].actor_name + 0x14));",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

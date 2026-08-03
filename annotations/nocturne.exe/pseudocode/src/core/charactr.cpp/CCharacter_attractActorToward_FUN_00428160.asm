@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,CDemonActor *param_2,CVector3f *param_3)
+; int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; CVector3f *      Stack[0xc]:4   target_local_point
 ; Local Variables:
 ; undefined        Stack[-0x44]:1  local_44
 ; undefined4       Stack[-0x38]:4  local_38

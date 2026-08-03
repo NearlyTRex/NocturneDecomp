@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *this_ptr)
@@ -15,10 +14,8 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *t
   CDemonSet *pCVar1;
   byte bVar2;
   int aiStackY_101c [1014];
-  int local_34;
-  int local_28;
-  int local_24;
-  int local_20;
+  CVector3i local_34;
+  CVector3i local_28;
   CVector3f local_1c;
   
   bVar2 = 0;
@@ -35,19 +32,19 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *t
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,&local_1c)
   ;
   g_CDemonSet_PTR_005be368->rendering_mode = 1;
-  local_28 = _DAT_01c038f8 + -0x8000;
-  local_24 = _DAT_01c038fc + -0x8000;
-  local_20 = 0x8000;
-  engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffd8);
+  local_28.x = _DAT_01c038f8 + -0x8000;
+  local_28.y = _DAT_01c038fc + -0x8000;
+  local_28.z = 0x8000;
+  engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&local_28,&local_34);
   pCVar1 = g_CDemonSet_PTR_005be368;
-  local_28 = local_34;
-  (&stack0xffffffdc)[(uint)bVar2 * 0xfffffffe] =
-       *(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);
-  *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  (g_CDemonSet_PTR_005be368->light_direction).x = local_28;
-  (pCVar1->light_direction).y = local_24;
-  (pCVar1->light_direction).z = local_20;
+  local_28.x = local_34.x;
+  *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  (g_CDemonSet_PTR_005be368->light_direction).x = local_28.x;
+  (pCVar1->light_direction).y = local_28.y;
+  (pCVar1->light_direction).z = local_28.z;
   pCVar1->ambient_base_quick = 0x280;
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
             (&this_ptr->moon,0,(CKeyFramedModelInstance *)0x0,0x205);

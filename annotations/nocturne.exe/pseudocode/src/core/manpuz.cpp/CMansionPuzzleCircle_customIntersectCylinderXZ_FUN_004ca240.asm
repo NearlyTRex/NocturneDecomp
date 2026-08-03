@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004ca240(int param_1,SIntersectXZCylinder *param_2)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004ca240(CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; SIntersectXZCylinder * Stack[0x8]:4   cylinder
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

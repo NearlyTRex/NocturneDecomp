@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -82,7 +82,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 60,
+        "line": 61,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
@@ -92,19 +92,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 729,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 66,
+    "pseudocode_lines": 55,
+    "suspect_count": 1,
     "suspect_types": [
-      "alloc_magic_size",
-      "param_count_too_few",
-      "unnamed_param"
+      "alloc_magic_size"
     ],
-    "total_lines": 210
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -122,9 +120,9 @@
         "0051805a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0",
-    "signature": "void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count)"
   },
   "function_calls": [
     {
@@ -209,14 +207,10 @@
         "call_addr": "005193f7",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280",
-        "estimated_params": 8,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -224,22 +218,19 @@
         "call_addr": "005194c0",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280",
-        "estimated_params": 7,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 8,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.25984251968504,
@@ -273,526 +264,50 @@
     "pcode_op_count": 668
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "tri_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "cap_tri_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (param_1->num_lods <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (param_1->num_lods <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (param_1->num_lods <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"CDeformableModel::allocLOD - invalid lod number %d\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->vertex_data_ptr[param_2],&g_SVertTypeInfo_005a1ee0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1->vertex_data_ptr[param_2],&g_SVertTypeInfo_005a1ee0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_00564486(param_1->tri_data_ptr[param_2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_00564486(param_1->tri_data_ptr[param_2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_00564486(param_1->index_data_ptr[param_2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_00564486(param_1->index_data_ptr[param_2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_00564486(param_1->cap_index_ptr[param_2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_00564486(param_1->cap_index_ptr[param_2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_count[param_2] = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->vertex_count[param_2] = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_1->vertex_count[param_2] = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "element_count = param_1->vertex_count[param_2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "element_count = param_1->vertex_count[param_2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->tri_count[param_2] = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->tri_count[param_2] = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_1->tri_count[param_2] = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->cap_tri_count[param_2] = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->cap_tri_count[param_2] = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_1->cap_tri_count[param_2] = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_data_ptr[param_2] = pSVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->vertex_data_ptr[param_2] = pSVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 0x12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 0x12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 0x12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 0x12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->tri_data_ptr[param_2] = pSVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->tri_data_ptr[param_2] = pSVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_1->tri_count[param_2] + param_1->cap_tri_count[param_2]) * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->index_data_ptr[param_2] = piVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->index_data_ptr[param_2] = piVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->cap_tri_count[param_2] < 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_1->cap_tri_count[param_2] < 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->cap_index_ptr[param_2] = (int *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->cap_index_ptr[param_2] = (int *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar4 = shape_memdbg_cpp_malloc_FUN_00564c18(param_1->cap_tri_count[param_2] * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "piVar4 = shape_memdbg_cpp_malloc_FUN_00564c18(param_1->cap_tri_count[param_2] * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->cap_index_ptr[param_2] = piVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->cap_index_ptr[param_2] = piVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((param_1->vertex_data_ptr[param_2] != (SVert *)0x0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((param_1->vertex_data_ptr[param_2] != (SVert *)0x0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->tri_data_ptr[param_2] != (SInputFace *)0x0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1->tri_data_ptr[param_2] != (SInputFace *)0x0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->index_data_ptr[param_2] != (int *)0x0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1->index_data_ptr[param_2] != (int *)0x0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1->cap_tri_count[param_2] < 1 || (param_1->cap_index_ptr[param_2] != (int *)0x0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_1->cap_tri_count[param_2] < 1 || (param_1->cap_index_ptr[param_2] != (int *)0x0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1->cap_tri_count[param_2] < 1 || (param_1->cap_index_ptr[param_2] != (int *)0x0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_1->cap_tri_count[param_2] < 1 || (param_1->cap_index_ptr[param_2] != (int *)0x0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d\",param_1->vertex_count,param_1->tri_count,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d\",param_1->vertex_count,param_1->tri_count,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->cap_tri_count);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Watcom array-new allocation hardcodes 0x34 == sizeof(SVert) as the element stride (the buffer fed to __vec_new). Replace with sizeof(SVert) so it stays correct if the struct grows at 64-bit (\u00a717/\u00a718).",
       "line": 28,
@@ -800,17 +315,6 @@
       "severity": "moderate",
       "text": "pvVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(element_count * 0x34 + 4)",
       "type": "alloc_magic_size"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:8",
-      "param_delta": 8,
-      "text": "Function declares 0 params but call sites push 8 (8 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

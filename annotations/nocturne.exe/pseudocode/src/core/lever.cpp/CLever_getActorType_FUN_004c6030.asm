@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_lever_cpp_CLever_getActorType_FUN_004c6030(void)
+; CDemonActorType * __cdecl core_lever_cpp_CLever_getActorType_FUN_004c6030(CLever *this_ptr)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

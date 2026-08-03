@@ -1,30 +1,28 @@
 // Name: core_trash.cpp_CTrash_process_FUN_00546e10
 // Address: 00546e10
 // Address Range: [[00546e10, 00547660]]
-// Convention: unknown
-// Signature: void core_trash_cpp_CTrash_process_FUN_00546e10(CDemonActor *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_trash_cpp_CTrash_process_FUN_00546e10(CTrash *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_trash_cpp_CTrash_process_FUN_00546e10(CDemonActor *param_1,float param_2)
+void __cdecl core_trash_cpp_CTrash_process_FUN_00546e10(CTrash *this_ptr,float delta_time)
 
 {
-  CLocation *position;
-  EActorLifecycleState *pEVar1;
+  CLocation *pCVar1;
   float *pfVar2;
   float fVar3;
-  float fVar4;
-  bool bVar5;
-  CDemonSet *pCVar6;
-  int iVar7;
-  float fVar8;
+  bool bVar4;
+  CDemonSet *pCVar5;
+  int iVar6;
+  float fVar7;
+  CVector3f *pCVar8;
   CVector3f *pCVar9;
-  int *piVar10;
-  float *pfVar11;
-  CMatrix3x4f *pCVar12;
-  byte bVar13;
+  CMatrix3x4f *pCVar10;
+  CMatrix3x4f *pCVar11;
+  byte bVar12;
   CMatrix3x4f local_1a8;
-  float local_178 [12];
+  CMatrix3x4f local_178;
   CMatrix3x4f local_148;
   CMatrix3x4f local_118;
   float local_e8;
@@ -76,202 +74,191 @@ void core_trash_cpp_CTrash_process_FUN_00546e10(CDemonActor *param_1,float param
   CVector3f *local_18;
   float local_14;
   
-  bVar13 = 0;
-  iVar7 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(&(param_1->location).position,100.0);
-  if (iVar7 == 0) {
-    piVar10 = &param_1[2].location.area_id;
-    iVar7 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0((CVector3f *)piVar10,100.0);
-    if (iVar7 != 0) {
+  bVar12 = 0;
+  pCVar1 = &(this_ptr->base).location;
+  iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(&pCVar1->position,100.0);
+  if (iVar6 == 0) {
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(&this_ptr->home_pos,100.0);
+    if (iVar6 != 0) {
       return;
     }
-    (param_1->location).position.x = (float)*piVar10;
-    (param_1->location).position.y = param_1[2].orient.vec.x;
-    (param_1->location).position.z = param_1[2].orient.vec.y;
+    (pCVar1->position).x = (this_ptr->home_pos).x;
+    (this_ptr->base).location.position.y = (this_ptr->home_pos).y;
+    (this_ptr->base).location.position.z = (this_ptr->home_pos).z;
     return;
   }
   local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.05,0.05);
-  pfVar11 = &param_1[2].orient_matrix.m[2].y;
-  *pfVar11 = local_14 + *pfVar11;
+  (this_ptr->drift).x = local_14 + (this_ptr->drift).x;
   local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.05,0.05);
-  pfVar11 = &param_1[2].orient_matrix.m[2].z;
-  *pfVar11 = local_14 + *pfVar11;
+  pfVar2 = &(this_ptr->drift).y;
+  *pfVar2 = local_14 + *pfVar2;
   local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.05,0.05);
-  param_1[2].runtime_state = (int)(local_14 + (float)param_1[2].runtime_state);
-  pCVar6 = g_CDemonSet_PTR_005be368;
+  pfVar2 = &(this_ptr->drift).z;
+  *pfVar2 = local_14 + *pfVar2;
+  pCVar5 = g_CDemonSet_PTR_005be368;
   local_d0 = 0x40800000;
   local_cc = 0;
   pCVar9 = &(g_CDemonSet_PTR_005be368->active_fog).scroll;
   local_c8 = 0;
   if (pCVar9 != (CVector3f *)&local_d0) {
     pCVar9->x = 4.0;
-    (pCVar6->active_fog).scroll.y = 0.0;
-    (pCVar6->active_fog).scroll.z = 0.0;
+    (pCVar5->active_fog).scroll.y = 0.0;
+    (pCVar5->active_fog).scroll.z = 0.0;
   }
-  fVar8 = (float)param_1[2].direction_hint - param_2;
-  param_1[2].direction_hint = (int)fVar8;
-  pCVar6 = g_CDemonSet_PTR_005be368;
-  if (fVar8 <= 0.0) {
+  fVar7 = this_ptr->animation_timer - delta_time;
+  this_ptr->animation_timer = fVar7;
+  pCVar5 = g_CDemonSet_PTR_005be368;
+  if (fVar7 <= 0.0) {
     pCVar9 = &(g_CDemonSet_PTR_005be368->active_fog).scroll;
-    if ((CVector3f *)&param_1[2].lifecycle_state != pCVar9) {
-      param_1[2].lifecycle_state = (EActorLifecycleState)pCVar9->x;
-      param_1[2].create_prob = (pCVar6->active_fog).scroll.y;
-      *(float *)param_1[2].create_event = (pCVar6->active_fog).scroll.z;
+    if (&this_ptr->drift_target != pCVar9) {
+      (this_ptr->drift_target).x = pCVar9->x;
+      (this_ptr->drift_target).y = (pCVar5->active_fog).scroll.y;
+      (this_ptr->drift_target).z = (pCVar5->active_fog).scroll.z;
     }
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-10.0,10.0);
-    param_1[2].lifecycle_state =
-         (EActorLifecycleState)(local_14 + (float)param_1[2].lifecycle_state);
+    (this_ptr->drift_target).x = local_14 + (this_ptr->drift_target).x;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(15.0,25.0);
-    param_1[2].create_prob = local_14 + param_1[2].create_prob;
+    (this_ptr->drift_target).y = local_14 + (this_ptr->drift_target).y;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-10.0,10.0);
-    *(float *)param_1[2].create_event = local_14 + *(float *)param_1[2].create_event;
-    fVar8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(6.0,20.0);
-    param_1[2].direction_hint = (int)fVar8;
+    (this_ptr->drift_target).z = local_14 + (this_ptr->drift_target).z;
+    fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(6.0,20.0);
+    this_ptr->animation_timer = fVar7;
   }
-  pEVar1 = &param_1[2].lifecycle_state;
-  local_28 = (g_CDemonSet_PTR_005be368->active_fog).scroll.x - (float)*pEVar1;
-  local_24 = (g_CDemonSet_PTR_005be368->active_fog).scroll.y - param_1[2].create_prob;
+  pCVar9 = &this_ptr->drift_target;
+  local_28 = (g_CDemonSet_PTR_005be368->active_fog).scroll.x - pCVar9->x;
+  local_24 = (g_CDemonSet_PTR_005be368->active_fog).scroll.y - (this_ptr->drift_target).y;
   local_ac = local_28 * 0.05f;
-  local_20 = (g_CDemonSet_PTR_005be368->active_fog).scroll.z - *(float *)param_1[2].create_event;
+  local_20 = (g_CDemonSet_PTR_005be368->active_fog).scroll.z - (this_ptr->drift_target).z;
   local_a8 = local_24 * 0.05f;
   local_a4 = local_20 * 0.05f;
-  pfVar11 = &param_1[2].orient_matrix.m[2].y;
-  *pEVar1 = (EActorLifecycleState)((float)*pEVar1 + local_ac);
-  param_1[2].create_prob = param_1[2].create_prob + local_a8;
-  *(float *)param_1[2].create_event = *(float *)param_1[2].create_event + local_a4;
-  local_94 = (float)*pEVar1 - *pfVar11;
-  local_90 = param_1[2].create_prob - param_1[2].orient_matrix.m[2].z;
+  pCVar8 = &this_ptr->drift;
+  pCVar9->x = pCVar9->x + local_ac;
+  (this_ptr->drift_target).y = (this_ptr->drift_target).y + local_a8;
+  (this_ptr->drift_target).z = (this_ptr->drift_target).z + local_a4;
+  local_94 = pCVar9->x - pCVar8->x;
+  local_90 = (this_ptr->drift_target).y - (this_ptr->drift).y;
   local_40 = local_94 * 0.07f;
-  local_8c = *(float *)param_1[2].create_event - (float)param_1[2].runtime_state;
+  local_8c = (this_ptr->drift_target).z - (this_ptr->drift).z;
   local_3c = local_90 * 0.07f;
   local_38 = local_8c * 0.07f;
-  fVar8 = param_1[2].orient_matrix.m[2].z;
-  *pfVar11 = *pfVar11 + local_40;
-  fVar3 = (float)param_1[2].runtime_state;
-  param_1[2].orient_matrix.m[2].z = fVar8 + local_3c;
-  param_1[2].runtime_state = (int)(fVar3 + local_38);
-  local_c4 = (param_1->location).position.x;
-  local_c0 = (param_1->location).position.y;
-  local_bc = (param_1->location).position.z;
-  local_14 = -*(float *)(param_1[2].create_event + 4);
-  pfVar2 = &param_1[2].orient_matrix.m[0].y;
-  local_e8 = *pfVar11 - *pfVar2;
-  local_e4 = param_1[2].orient_matrix.m[2].z - param_1[2].orient_matrix.m[0].z;
-  piVar10 = &param_1[2].health;
-  local_e0 = (float)param_1[2].runtime_state - param_1[2].orient_matrix.m[1].x;
-  local_dc = local_e8 * (float)*piVar10;
-  local_48 = local_e4 * (float)*piVar10;
-  local_d4 = local_e0 * (float)*piVar10;
+  pCVar8->x = pCVar8->x + local_40;
+  (this_ptr->drift).y = (this_ptr->drift).y + local_3c;
+  (this_ptr->drift).z = (this_ptr->drift).z + local_38;
+  local_c4 = (this_ptr->base).location.position.x;
+  local_c0 = (this_ptr->base).location.position.y;
+  local_bc = (this_ptr->base).location.position.z;
+  local_14 = -this_ptr->gravity;
+  pCVar9 = &this_ptr->velocity;
+  local_e8 = pCVar8->x - pCVar9->x;
+  local_e4 = (this_ptr->drift).y - (this_ptr->velocity).y;
+  pfVar2 = &this_ptr->damping_factor;
+  local_e0 = (this_ptr->drift).z - (this_ptr->velocity).z;
+  local_dc = local_e8 * *pfVar2;
+  local_48 = local_e4 * *pfVar2;
+  local_d4 = local_e0 * *pfVar2;
   local_d8 = local_14 + local_48;
   local_4c = local_dc;
   local_44 = local_d4;
-  pCVar9 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
-                     (param_1,&local_70,(CVector3f *)pfVar11);
-  local_a0 = pCVar9->x * 0.5f;
-  local_9c = pCVar9->y * 0.5f;
-  local_98 = 0.5f * pCVar9->z;
-  pfVar11 = &param_1[2].orient_matrix.m[1].y;
-  fVar8 = param_1[2].orient_matrix.m[1].z * 0.8f;
-  fVar3 = param_1[2].orient_matrix.m[2].x * 0.8f;
-  *pfVar11 = *pfVar11 * 0.8f;
-  param_1[2].orient_matrix.m[1].z = fVar8;
-  param_1[2].orient_matrix.m[2].x = fVar3;
-  fVar8 = param_1[2].orient_matrix.m[1].z;
-  *pfVar11 = *pfVar11 + local_a0;
-  fVar3 = param_1[2].orient_matrix.m[2].x;
-  param_1[2].orient_matrix.m[1].z = fVar8 + local_9c;
-  param_1[2].orient_matrix.m[2].x = fVar3 + local_98;
-  local_7c = local_dc * param_2;
-  local_78 = local_d8 * param_2;
-  local_74 = local_d4 * param_2;
-  fVar8 = param_1[2].orient_matrix.m[0].z;
-  *pfVar2 = *pfVar2 + local_7c;
-  fVar3 = param_1[2].orient_matrix.m[1].x;
-  param_1[2].orient_matrix.m[0].z = fVar8 + local_78;
-  param_1[2].orient_matrix.m[1].x = fVar3 + local_74;
-  fVar8 = param_1[2].orient_matrix.m[1].z;
-  fVar3 = param_1[2].orient_matrix.m[2].x;
-  fVar8 = SQRT(fVar3 * fVar3 + *pfVar11 * *pfVar11 + fVar8 * fVar8) * (float)0.15915494309644401;
-  if (1.0 < fVar8) {
-    fVar8 = 1.0 / fVar8;
-    fVar3 = param_1[2].orient_matrix.m[1].z;
-    fVar4 = param_1[2].orient_matrix.m[2].x;
-    *pfVar11 = *pfVar11 * fVar8;
-    param_1[2].orient_matrix.m[1].z = fVar3 * fVar8;
-    param_1[2].orient_matrix.m[2].x = fVar4 * fVar8;
+  pCVar8 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                     (&this_ptr->base,&local_70,pCVar8);
+  local_a0 = pCVar8->x * 0.5f;
+  local_9c = pCVar8->y * 0.5f;
+  local_98 = 0.5f * pCVar8->z;
+  pCVar8 = &this_ptr->acceleration;
+  fVar7 = (this_ptr->acceleration).y * 0.8f;
+  fVar3 = (this_ptr->acceleration).z * 0.8f;
+  pCVar8->x = pCVar8->x * 0.8f;
+  (this_ptr->acceleration).y = fVar7;
+  (this_ptr->acceleration).z = fVar3;
+  pCVar8->x = pCVar8->x + local_a0;
+  (this_ptr->acceleration).y = (this_ptr->acceleration).y + local_9c;
+  (this_ptr->acceleration).z = (this_ptr->acceleration).z + local_98;
+  local_7c = local_dc * delta_time;
+  local_78 = local_d8 * delta_time;
+  local_74 = local_d4 * delta_time;
+  pCVar9->x = pCVar9->x + local_7c;
+  (this_ptr->velocity).y = (this_ptr->velocity).y + local_78;
+  (this_ptr->velocity).z = (this_ptr->velocity).z + local_74;
+  fVar7 = (this_ptr->acceleration).y;
+  fVar3 = (this_ptr->acceleration).z;
+  fVar7 = SQRT(fVar3 * fVar3 + pCVar8->x * pCVar8->x + fVar7 * fVar7) * (float)0.15915494309644401;
+  if (1.0 < fVar7) {
+    fVar7 = 1.0 / fVar7;
+    pCVar8->x = pCVar8->x * fVar7;
+    (this_ptr->acceleration).y = (this_ptr->acceleration).y * fVar7;
+    (this_ptr->acceleration).z = (this_ptr->acceleration).z * fVar7;
   }
-  local_58 = param_1[2].orient_matrix.m[0].y * param_2;
-  local_54 = param_1[2].orient_matrix.m[0].z * param_2;
-  local_50 = param_1[2].orient_matrix.m[1].x * param_2;
-  local_34.x = param_1[2].orient_matrix.m[1].y * param_2;
-  local_34.y = param_1[2].orient_matrix.m[1].z * param_2;
-  local_34.z = param_2 * param_1[2].orient_matrix.m[2].x;
+  local_58 = (this_ptr->velocity).x * delta_time;
+  local_54 = (this_ptr->velocity).y * delta_time;
+  local_50 = (this_ptr->velocity).z * delta_time;
+  local_34.x = (this_ptr->acceleration).x * delta_time;
+  local_34.y = (this_ptr->acceleration).y * delta_time;
+  local_34.z = delta_time * (this_ptr->acceleration).z;
   local_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-                       (g_CDemonSet_PTR_005be368,(param_1->location).position.x,
-                        (param_1->location).position.z,local_58,local_50,
-                        (float)param_1[2].validation_magic,param_1[2].orient.vec.z,
-                        param_1[2].orient_matrix.m[0].x);
-  bVar5 = false;
+                       (g_CDemonSet_PTR_005be368,(this_ptr->base).location.position.x,
+                        (this_ptr->base).location.position.z,local_58,local_50,
+                        this_ptr->collision_radius,this_ptr->collision_bottom_y,
+                        this_ptr->collision_top_y);
+  bVar4 = false;
   if ((0.0 <= local_14) && (local_14 < 1.0)) {
     local_58 = local_58 * local_14;
     local_54 = local_54 * local_14;
     local_50 = local_50 * local_14;
-    bVar5 = true;
+    bVar4 = true;
   }
-  position = &param_1->location;
-  fVar8 = (param_1->location).position.y;
-  (position->position).x = (position->position).x + local_58;
-  fVar3 = (param_1->location).position.z;
-  (param_1->location).position.y = fVar8 + local_54;
-  (param_1->location).position.z = fVar3 + local_50;
+  pCVar1 = &(this_ptr->base).location;
+  fVar7 = (this_ptr->base).location.position.y;
+  (pCVar1->position).x = (pCVar1->position).x + local_58;
+  fVar3 = (this_ptr->base).location.position.z;
+  (this_ptr->base).location.position.y = fVar7 + local_54;
+  (this_ptr->base).location.position.z = fVar3 + local_50;
   local_1c = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                       (g_CDemonSet_PTR_005be368,&position->position,
-                        (float)param_1[2].validation_magic * (float)0.90000000000000002);
-  if (local_1c <= (param_1->location).position.y) {
-    if (!bVar5) goto LAB_005474f0;
+                       (g_CDemonSet_PTR_005be368,&pCVar1->position,
+                        this_ptr->collision_radius * (float)0.90000000000000002);
+  if (local_1c <= (this_ptr->base).location.position.y) {
+    if (!bVar4) goto LAB_005474f0;
   }
   else {
-    fVar8 = (float)param_1[2].validation_magic;
+    fVar7 = this_ptr->collision_radius;
     fVar3 = (float)1.5;
-    (param_1->location).position.y = local_1c;
-    if (fVar8 * fVar3 + local_c0 < (param_1->location).position.y) {
-      (position->position).x = local_c4;
-      (param_1->location).position.y = local_c0;
-      (param_1->location).position.z = local_bc;
+    (this_ptr->base).location.position.y = local_1c;
+    if (fVar7 * fVar3 + local_c0 < (this_ptr->base).location.position.y) {
+      (pCVar1->position).x = local_c4;
+      (this_ptr->base).location.position.y = local_c0;
+      (this_ptr->base).location.position.z = local_bc;
     }
   }
-  pfVar11 = &param_1[2].orient_matrix.m[1].y;
-  fVar8 = param_1[2].orient_matrix.m[1].z * 0.7f;
-  fVar3 = param_1[2].orient_matrix.m[2].x * 0.7f;
-  *pfVar11 = *pfVar11 * 0.7f;
-  param_1[2].orient_matrix.m[1].z = fVar8;
-  param_1[2].orient_matrix.m[2].x = fVar3;
+  fVar7 = (this_ptr->acceleration).y * 0.7f;
+  fVar3 = (this_ptr->acceleration).z * 0.7f;
+  (this_ptr->acceleration).x = (this_ptr->acceleration).x * 0.7f;
+  (this_ptr->acceleration).y = fVar7;
+  (this_ptr->acceleration).z = fVar3;
 LAB_005474f0:
-  local_64 = (param_1->location).position.x - local_c4;
-  local_60 = (param_1->location).position.y - local_c0;
-  local_b0 = 1.0 / param_2;
+  local_64 = (this_ptr->base).location.position.x - local_c4;
+  local_60 = (this_ptr->base).location.position.y - local_c0;
+  local_b0 = 1.0 / delta_time;
   local_b8 = local_64 * local_b0;
-  local_5c = (param_1->location).position.z - local_bc;
+  local_5c = (this_ptr->base).location.position.z - local_bc;
   local_b4 = local_60 * local_b0;
   local_b0 = local_5c * local_b0;
-  pfVar11 = &param_1[2].orient_matrix.m[0].y;
-  if (pfVar11 != &local_b8) {
-    *pfVar11 = local_b8;
-    param_1[2].orient_matrix.m[0].z = local_b4;
-    param_1[2].orient_matrix.m[1].x = local_b0;
+  if (&this_ptr->velocity != (CVector3f *)&local_b8) {
+    (this_ptr->velocity).x = local_b8;
+    (this_ptr->velocity).y = local_b4;
+    (this_ptr->velocity).z = local_b0;
   }
-  local_18 = (CVector3f *)&param_1->orient;
+  local_18 = (CVector3f *)&(this_ptr->base).orient;
   local_14 = local_1c;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
             (&local_1a8,(CVector3f *)&DAT_02dd1184,local_18);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
             (&local_118,(CVector3f *)&DAT_02dd1184,&local_34);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_118,&local_1a8);
-  pfVar11 = local_178;
-  pCVar12 = &local_148;
-  for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-    pCVar12->m[0].w = *pfVar11;
-    pfVar11 = pfVar11 + (uint)bVar13 * -2 + 1;
-    pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar13 * -2 + 1) * 4);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_118,&local_1a8,&local_178);
+  pCVar10 = &local_178;
+  pCVar11 = &local_148;
+  for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+    pCVar11->m[0].w = pCVar10->m[0].w;
+    pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);
+    pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar12 * -2 + 1) * 4);
   }
   pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_148,&local_88);
   if (pCVar9 != local_18) {
@@ -279,6 +266,6 @@ LAB_005474f0:
     local_18->y = pCVar9->y;
     local_18->z = pCVar9->z;
   }
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
   return;
 }

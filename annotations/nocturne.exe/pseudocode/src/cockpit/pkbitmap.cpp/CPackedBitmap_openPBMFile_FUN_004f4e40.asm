@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPackedBitmap *param_1,char *param_2)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   apply_palette_flag
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0 at 004f4efb
@@ -62,7 +66,7 @@ section .text
     PUSH EAX                            ; 004f4e84
     MOV EDI,0x4ff                       ; 004f4e85
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f4e8a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004f4e8f
     LEA EAX,[ESP + 0x4]                 ; 004f4e92
     MOV ECX,0x58d327                    ; 004f4e96 | = "..\\cockpit\\pkbitmap.cpp"

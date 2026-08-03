@@ -205,7 +205,7 @@ int __cdecl seek::within_buffer(_FILE *file);
 
 // Original: crt_unknown.c_integer_power_FUN_00565c12
 // Address: 00565c12
-void integer::power(void);
+void __fpureg integer::power(void);
 
 // Original: crt_unknown.c_FUN_00565c50
 // Address: 00565c50
@@ -849,7 +849,7 @@ undefined4 FUN_0056d308(int *param_1,int *param_2);
 
 // Original: crt_unknown.c_FUN_0056d488
 // Address: 0056d488
-void FUN_0056d488(undefined4 *param_1,int param_2);
+void FUN_0056d488(time_t *param_1,int param_2);
 
 // Original: crt_unknown.c_FUN_0056d4ab
 // Address: 0056d4ab
@@ -1141,7 +1141,7 @@ int FUN_00570a70(uint param_1);
 
 // Original: crt_unknown.c_FUN_00570ad0
 // Address: 00570ad0
-undefined4 FUN_00570ad0(char *param_1,uint *param_2,uint param_3);
+int FUN_00570ad0(char *param_1,uint *param_2,uint param_3);
 
 // Original: crt_unknown.c_FUN_00570ce0
 // Address: 00570ce0

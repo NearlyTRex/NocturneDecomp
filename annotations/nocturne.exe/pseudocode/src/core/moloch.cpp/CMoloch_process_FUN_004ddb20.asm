@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moloch_cpp_CMoloch_process_FUN_004ddb20(CMoloch *param_1,float param_2)
+; void __cdecl core_moloch_cpp_CMoloch_process_FUN_004ddb20(CMoloch *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x1b18]:4  local_1b18
 ; undefined4       Stack[-0x1b14]:4  local_1b14
@@ -343,7 +346,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 004dde1e | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 004dde23 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004dde24
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004ddc37                      ; 004dde29
         ;   XREF to: 004ddc37 (UNCONDITIONAL_JUMP)  ; LAB_004ddc37
     PUSH 0x1                            ; 004dde2e

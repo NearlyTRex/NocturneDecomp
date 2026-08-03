@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet *param_1,CVector3f *param_2)
+; int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet *this_ptr,CVector3f *position)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 005086b6

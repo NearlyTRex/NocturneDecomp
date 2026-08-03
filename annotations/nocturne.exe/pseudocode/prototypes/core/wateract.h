@@ -13,7 +13,7 @@ CWaterActor * __cdecl factoryFunc(void);
 
 // Original: core_wateract.cpp_CWaterActor_getActorType_FUN_00551210
 // Address: 00551210
-CDemonActorType * CWaterActor::getActorType(void);
+CDemonActorType * __cdecl CWaterActor::getActorType(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_ctor_FUN_00551220
 // Address: 00551220
@@ -21,7 +21,7 @@ CWaterActor * __cdecl CWaterActor::ctor(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_setup_FUN_00551370
 // Address: 00551370
-void CWaterActor::setup(CWaterActor *param_1);
+void __cdecl CWaterActor::setup(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_00551920
 // Address: 00551920
@@ -37,15 +37,15 @@ void __cdecl CWaterActor::process(CWaterActor *this_ptr,float delta_time);
 
 // Original: core_wateract.cpp_CWaterActor_renderTransparent_FUN_00551c00
 // Address: 00551c00
-int CWaterActor::renderTransparent(CDemonActor *param_1);
+int __cdecl CWaterActor::renderTransparent(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_getBoundingBox_FUN_00551e40
 // Address: 00551e40
-void CWaterActor::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CWaterActor::getBoundingBox(CWaterActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_wateract.cpp_CWaterActor_archive_FUN_00551ea0
 // Address: 00551ea0
-void CWaterActor::archive(CDemonActor *param_1);
+void __cdecl CWaterActor::archive(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_getCollisionType_FUN_005520a0
 // Address: 005520a0
@@ -53,11 +53,11 @@ ECollisionType __cdecl CWaterActor::getCollisionType(CWaterActor *this_ptr,SColl
 
 // Original: core_wateract.cpp_CWaterActor_getGroundType_FUN_005520c0
 // Address: 005520c0
-undefined4 CWaterActor::getGroundType(void);
+EGroundType __cdecl CWaterActor::getGroundType(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005520d0
 // Address: 005520d0
-float CWaterActor::customRayIntersect(int param_1,CVector3f *param_2,CVector3f *param_3,float *param_4);
+float __cdecl CWaterActor::customRayIntersect(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_wateract.cpp_CWaterActor_onLaserHit_FUN_005522a0
 // Address: 005522a0

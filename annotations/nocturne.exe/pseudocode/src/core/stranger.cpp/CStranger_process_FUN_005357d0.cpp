@@ -1,26 +1,26 @@
 // Name: core_stranger.cpp_CStranger_process_FUN_005357d0
 // Address: 005357d0
 // Address Range: [[005357d0, 0053589f]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *param_1,float param_2)
+void __cdecl core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *this_ptr,float delta_time)
 
 {
-  float delta_time;
+  float delta_time_00;
   bool bVar1;
   int iVar2;
   SMotion *pSVar3;
   
-  iVar2 = core_charactr_cpp_FUN_004259f0((CCharacter *)param_1,param_2);
+  iVar2 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
     return;
   }
-  delta_time = g_CGame_PTR_005b9354->delta_time_float;
+  delta_time_00 = g_CGame_PTR_005b9354->delta_time_float;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&(param_1->base).base.model.motion_controller);
+                     (&(this_ptr->base).base.model.motion_controller);
   bVar1 = false;
   switch(pSVar3->state_index) {
   case 7:
@@ -44,13 +44,13 @@ void core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *param_1,float p
   case 0x1b:
     bVar1 = true;
   }
-  if ((param_1->action_pending == 7) || (bVar1)) {
-    param_2 = param_2 * (float)0.25;
-    core_stranger_cpp_FUN_00535900(param_1,param_2);
-    core_stranger_cpp_FUN_00535900(param_1,param_2);
-    core_stranger_cpp_FUN_00535900(param_1,param_2);
+  if ((this_ptr->action_pending == 7) || (bVar1)) {
+    delta_time = delta_time * (float)0.25;
+    core_stranger_cpp_FUN_00535900(this_ptr,delta_time);
+    core_stranger_cpp_FUN_00535900(this_ptr,delta_time);
+    core_stranger_cpp_FUN_00535900(this_ptr,delta_time);
   }
-  core_stranger_cpp_FUN_00535900(param_1,param_2);
-  core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGame_PTR_005b9354,delta_time);
+  core_stranger_cpp_FUN_00535900(this_ptr,delta_time);
+  core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGame_PTR_005b9354,delta_time_00);
   return;
 }

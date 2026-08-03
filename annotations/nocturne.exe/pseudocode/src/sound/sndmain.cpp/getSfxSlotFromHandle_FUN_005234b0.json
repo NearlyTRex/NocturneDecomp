@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,37 +52,37 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 32,
+        "line": 33,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 34,
-        "line": 32,
+        "line": 33,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 32,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 60,
-        "line": 32,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 31,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       }
     ],
@@ -92,20 +92,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 203,
+    "complexity_score": 64,
     "cross_reference_count": 16,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 15,
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 120
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -213,9 +211,9 @@
         "0052354a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0",
-    "signature": "CSfxSlot * sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)"
+    "signature": "CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint sfx_handle,int check_hardware_playback)"
   },
   "function_calls": [
     {
@@ -255,12 +253,10 @@
         "call_addr": "00526c60",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_isSfxPlaying_FUN_00526c50",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -268,12 +264,10 @@
         "call_addr": "00526c7e",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_isSfxPlaying_FUN_00526c50",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -281,12 +275,10 @@
         "call_addr": "00526cd7",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -294,13 +286,10 @@
         "call_addr": "00526d22",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -308,12 +297,10 @@
         "call_addr": "005270d8",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_setSfxVolume_FUN_005270d0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -321,12 +308,10 @@
         "call_addr": "00527237",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_killSfx_FUN_00527230",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -334,12 +319,10 @@
         "call_addr": "0052726a",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_setSfxFade_FUN_00527260",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -347,12 +330,10 @@
         "call_addr": "00527138",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -360,12 +341,10 @@
         "call_addr": "00526ea8",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00526ea0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -373,21 +352,19 @@
         "call_addr": "00526ff8",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00526ff0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.318181818181818,
@@ -420,12 +397,27 @@
     "pcode_op_count": 417
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "check_hardware_playback",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -437,119 +429,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CSfxSlot * sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CSfxSlot * sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = param_1 >> 6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 & 0x3f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 & 0x3f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((uVar2 != 0) && (uVar2 < 0xffffff)) && (param_1 < 0x40)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "slot = g_CSfxSlot_ARRAY_02dbd374 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (uVar2 == g_CSfxSlot_ARRAY_02dbd374[param_1].playback_state) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uVar2 != g_CSfxSlot_ARRAY_02dbd374[param_1].playback_state) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CSfxSlot_ARRAY_02dbd374[param_1].sample == (CSfxSample *)0x0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (g_CSfxSlot_ARRAY_02dbd374[param_1].hardware_buffer_handle != 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar1 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,slot), iVar1 != 0)) {",
+      "text": "(iVar2 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,slot), iVar2 != 0)) {",
       "type": "unresolved_funcptr"
-    },
-    {
-      "call_site_count": 17,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

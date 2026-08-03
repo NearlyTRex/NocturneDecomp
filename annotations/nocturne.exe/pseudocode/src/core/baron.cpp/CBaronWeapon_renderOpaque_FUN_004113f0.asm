@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaronWeapon_renderOpaque_FUN_004113f0(CWeapon *param_1)
+; void __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_004113f0(CBaronWeapon *this_ptr)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_renderOpaque_FUN_00553f50

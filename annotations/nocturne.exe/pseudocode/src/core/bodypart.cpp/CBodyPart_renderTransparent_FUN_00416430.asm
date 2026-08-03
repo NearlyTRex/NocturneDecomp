@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *param_1)
+; int __cdecl core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

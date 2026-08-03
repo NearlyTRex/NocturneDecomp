@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_00557020(CCharacter *param_1,CDemonActor *param_2,float param_3,float param_4)
+; void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_00557020(CWerewolf *this_ptr,CDemonActor *target,float speed,float distance)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   target
+; float            Stack[0xc]:4   speed
+; float            Stack[0x10]:4   distance
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00428ab0

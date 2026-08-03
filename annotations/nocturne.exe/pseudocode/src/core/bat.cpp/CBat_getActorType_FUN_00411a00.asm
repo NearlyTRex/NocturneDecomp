@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_bat_cpp_CBat_getActorType_FUN_00411a00(void)
+; CDemonActorType * __cdecl core_bat_cpp_CBat_getActorType_FUN_00411a00(CBat *this_ptr)
 ;
+; Parameters:
+; CBat *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CBatActorType_00764560

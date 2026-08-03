@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 33,
-        "message": "no matching function for call to 'core_xform_cpp_slerpQuaternion_FUN_0055d2d0'"
       },
       {
         "category": "undeclared_identifier",
@@ -437,7 +431,7 @@
       "line": 29,
       "match": "(uint *)((int)pCVar2",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)pCVar2 + (uint)bVar6 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -445,7 +439,7 @@
       "line": 32,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) = *puVar4;",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar3;",
       "type": "stack_ref"
     },
     {
@@ -453,7 +447,7 @@
       "line": 33,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) = *puVar5;",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) = *puVar4;",
       "type": "stack_ref"
     },
     {
@@ -461,7 +455,7 @@
       "line": 35,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4) =",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =",
       "type": "stack_ref"
     },
     {
@@ -469,7 +463,7 @@
       "line": 37,
       "match": "(uint *)((int)result_out",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)result_out + (uint)bVar6 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)result_out + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -477,7 +471,7 @@
       "line": 40,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*puVar4 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
+      "text": "*puVar3 = *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
     {
@@ -485,7 +479,7 @@
       "line": 41,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "*puVar5 = *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "text": "*puVar4 = *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
     {
@@ -493,7 +487,7 @@
       "line": 44,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4)",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)",
       "type": "stack_ref"
     },
     {
@@ -501,23 +495,23 @@
       "line": 29,
       "match": "(int)pCVar2",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)pCVar2 + (uint)bVar6 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 35,
-      "match": "(int)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8)",
+      "match": "(int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8)",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4) =",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 44,
-      "match": "(int)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8)",
+      "match": "(int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8)",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4)",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)",
       "type": "pointer_truncation"
     }
   ]

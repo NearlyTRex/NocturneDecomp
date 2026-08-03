@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -116,16 +116,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 177,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 12,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 161
@@ -139,9 +138,9 @@
         "004c9ce5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0",
-    "signature": "int core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0(CMansionPuzzleCircle *param_1)"
+    "signature": "int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0(CMansionPuzzleCircle *this_ptr)"
   },
   "function_calls": [
     {
@@ -239,9 +238,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -277,10 +276,10 @@
     "pcode_op_count": 486
   },
   "stack_frame": {
-    "frame_size": 48,
+    "frame_size": 52,
     "local_size": 48,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -289,6 +288,13 @@
         "offset": -44,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
       }
     ]
   },
@@ -302,38 +308,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0(CMansionPuzzleCircle *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_2c);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_005ae704",
@@ -342,52 +316,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_manpuz_cpp_FUN_004ca710(param_1,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_manpuz_cpp_FUN_004ca790(param_1,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0(param_1,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

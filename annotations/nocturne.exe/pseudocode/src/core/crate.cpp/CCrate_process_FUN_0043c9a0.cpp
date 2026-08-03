@@ -1,91 +1,100 @@
 // Name: core_crate.cpp_CCrate_process_FUN_0043c9a0
 // Address: 0043c9a0
 // Address Range: [[0043c9a0, 0043cbbd]]
-// Convention: unknown
-// Signature: void core_crate_cpp_CCrate_process_FUN_0043c9a0(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_crate_cpp_CCrate_process_FUN_0043c9a0(CCrate *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_crate_cpp_CCrate_process_FUN_0043c9a0(CDemonActor *param_1)
+void __cdecl core_crate_cpp_CCrate_process_FUN_0043c9a0(CCrate *this_ptr,float delta_time)
 
 {
-  float *pfVar1;
-  CPlatform *pCVar2;
-  UOrientationVector *pUVar3;
+  CLocation *pCVar1;
+  UOrientationVector *pUVar2;
+  CVector3f *pCVar3;
+  CPlatform *pCVar4;
+  UOrientationVector *pUVar5;
   CBoundingBox3D CStack_24;
   float local_c;
   float fStack_8;
   
-  if (param_1[2].location.area_id != 0) {
-    param_1[2].orient.vec.y = 0.0;
+  if (this_ptr->carrier != (CDemonActor *)0x0) {
+    this_ptr->last_platform = (CDemonActor *)0x0;
     return;
   }
-  (param_1->location).position.x =
-       (param_1->platform_position_delta).x + (param_1->location).position.x;
-  (param_1->location).position.y =
-       (param_1->platform_position_delta).y + (param_1->location).position.y;
-  (param_1->location).position.z =
-       (param_1->platform_position_delta).z + (param_1->location).position.z;
-  (param_1->platform_position_delta).z = 0.0;
-  (param_1->platform_position_delta).y = (param_1->platform_position_delta).z;
-  (param_1->platform_position_delta).x = (param_1->platform_position_delta).y;
-  (param_1->orient).vec.x = (param_1->platform_orientation_delta).x + (param_1->orient).vec.x;
-  (param_1->orient).vec.y = (param_1->platform_orientation_delta).y + (param_1->orient).vec.y;
-  (param_1->orient).vec.z = (param_1->platform_orientation_delta).z + (param_1->orient).vec.z;
-  (param_1->platform_orientation_delta).z = 0.0;
-  (param_1->platform_orientation_delta).y = (param_1->platform_orientation_delta).z;
-  (param_1->platform_orientation_delta).x = (param_1->platform_orientation_delta).y;
-  if (((((param_1[2].orient.vec.z == (param_1->location).position.x) &&
-        (param_1[2].orient_matrix.m[0].x == (param_1->location).position.y)) &&
-       (param_1[2].orient_matrix.m[0].y == (param_1->location).position.z)) &&
-      ((param_1[2].orient_matrix.m[0].z == (param_1->orient).vec.x &&
-       (param_1[2].orient_matrix.m[1].x == (param_1->orient).vec.y)))) &&
-     (param_1[2].orient_matrix.m[1].y == (param_1->orient).vec.z)) {
-    local_c = param_1[2].orient_matrix.m[1].z;
+  pCVar1 = &(this_ptr->base).location;
+  pCVar3 = &(this_ptr->base).platform_position_delta;
+  (pCVar1->position).x = pCVar3->x + (pCVar1->position).x;
+  (this_ptr->base).location.position.y =
+       (this_ptr->base).platform_position_delta.y + (this_ptr->base).location.position.y;
+  (this_ptr->base).location.position.z =
+       (this_ptr->base).platform_position_delta.z + (this_ptr->base).location.position.z;
+  (this_ptr->base).platform_position_delta.z = 0.0;
+  pUVar2 = &(this_ptr->base).orient;
+  (this_ptr->base).platform_position_delta.y = (this_ptr->base).platform_position_delta.z;
+  pCVar3->x = (this_ptr->base).platform_position_delta.y;
+  pCVar3 = &(this_ptr->base).platform_orientation_delta;
+  (pUVar2->vec).x = pCVar3->x + (pUVar2->vec).x;
+  (this_ptr->base).orient.vec.y =
+       (this_ptr->base).platform_orientation_delta.y + (this_ptr->base).orient.vec.y;
+  (this_ptr->base).orient.vec.z =
+       (this_ptr->base).platform_orientation_delta.z + (this_ptr->base).orient.vec.z;
+  (this_ptr->base).platform_orientation_delta.z = 0.0;
+  (this_ptr->base).platform_orientation_delta.y = (this_ptr->base).platform_orientation_delta.z;
+  pCVar3->x = (this_ptr->base).platform_orientation_delta.y;
+  if ((((((this_ptr->cached_position).x == (this_ptr->base).location.position.x) &&
+        ((this_ptr->cached_position).y == (this_ptr->base).location.position.y)) &&
+       ((this_ptr->cached_position).z == (this_ptr->base).location.position.z)) &&
+      (((this_ptr->cached_orientation).vec.x == (this_ptr->base).orient.vec.x &&
+       ((this_ptr->cached_orientation).vec.y == (this_ptr->base).orient.vec.y)))) &&
+     ((this_ptr->cached_orientation).vec.z == (this_ptr->base).orient.vec.z)) {
+    local_c = this_ptr->cached_ground_height;
   }
   else {
-    local_c = (*((param_1->vtable)._ub)->cylinderGroundCheck)
-                        (param_1,param_1[2].orient.vec.x,(CVector3f *)0x0);
-    pfVar1 = &param_1[2].orient.vec.z;
-    if ((CLocation *)pfVar1 != &param_1->location) {
-      *pfVar1 = (param_1->location).position.x;
-      param_1[2].orient_matrix.m[0].x = (param_1->location).position.y;
-      param_1[2].orient_matrix.m[0].y = (param_1->location).position.z;
+    local_c = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                        (&this_ptr->base,this_ptr->ground_check_radius,(CVector3f *)0x0);
+    pCVar1 = &(this_ptr->base).location;
+    if ((CLocation *)&this_ptr->cached_position != pCVar1) {
+      (this_ptr->cached_position).x = (pCVar1->position).x;
+      (this_ptr->cached_position).y = (this_ptr->base).location.position.y;
+      (this_ptr->cached_position).z = (this_ptr->base).location.position.z;
     }
-    pfVar1 = &param_1[2].orient_matrix.m[0].z;
-    if ((UOrientationVector *)pfVar1 != &param_1->orient) {
-      *pfVar1 = (param_1->orient).vec.x;
-      param_1[2].orient_matrix.m[1].x = (param_1->orient).vec.y;
-      param_1[2].orient_matrix.m[1].y = (param_1->orient).vec.z;
+    pUVar2 = &(this_ptr->base).orient;
+    if (&this_ptr->cached_orientation != pUVar2) {
+      (this_ptr->cached_orientation).vec.x = (pUVar2->vec).x;
+      (this_ptr->cached_orientation).vec.y = (this_ptr->base).orient.vec.y;
+      (this_ptr->cached_orientation).vec.z = (this_ptr->base).orient.vec.z;
     }
-    param_1[2].orient_matrix.m[1].z = local_c;
+    this_ptr->cached_ground_height = local_c;
     fStack_8 = local_c;
   }
-  if ((param_1[2].orient.vec.y == 0.0) && (param_1->standing_platform != (CPlatform *)0x0)) {
-    param_1[2].orient.vec.y = (float)param_1->standing_platform;
+  if ((this_ptr->last_platform == (CDemonActor *)0x0) &&
+     (pCVar4 = (this_ptr->base).standing_platform, pCVar4 != (CPlatform *)0x0)) {
+    this_ptr->last_platform = &pCVar4->base;
   }
-  pCVar2 = *(CPlatform **)((int)&param_1[2].orient + 4);
-  if (pCVar2 != (CPlatform *)0x0) {
-    param_1->standing_platform = pCVar2;
-    (param_1->location).position.x = (pCVar2->base).location.position.x;
-    (param_1->location).position.y = (pCVar2->base).location.position.y;
-    (param_1->location).position.z = (pCVar2->base).location.position.z;
-    (param_1->location).area_id = (pCVar2->base).location.area_id;
-    pCVar2 = param_1->standing_platform;
-    pUVar3 = &(pCVar2->base).orient;
-    if (&param_1->orient != pUVar3) {
-      (param_1->orient).vec.x = (pUVar3->vec).x;
-      (param_1->orient).vec.y = (pCVar2->base).orient.vec.y;
-      (param_1->orient).vec.z = (pCVar2->base).orient.vec.z;
+  pCVar4 = (CPlatform *)this_ptr->last_platform;
+  if (pCVar4 != (CPlatform *)0x0) {
+    (this_ptr->base).standing_platform = pCVar4;
+    (this_ptr->base).location.position.x = (pCVar4->base).location.position.x;
+    (this_ptr->base).location.position.y = (pCVar4->base).location.position.y;
+    (this_ptr->base).location.position.z = (pCVar4->base).location.position.z;
+    (this_ptr->base).location.area_id = (pCVar4->base).location.area_id;
+    pCVar4 = (this_ptr->base).standing_platform;
+    pUVar2 = &(this_ptr->base).orient;
+    pUVar5 = &(pCVar4->base).orient;
+    if (pUVar2 != pUVar5) {
+      (pUVar2->vec).x = (pUVar5->vec).x;
+      (this_ptr->base).orient.vec.y = (pCVar4->base).orient.vec.y;
+      (this_ptr->base).orient.vec.z = (pCVar4->base).orient.vec.z;
     }
-    (*((param_1->standing_platform->base).vtable._ub)->getBoundingBox)
-              (&param_1->standing_platform->base,&CStack_24);
-    (param_1->location).position.y =
-         (CStack_24.max.y - CStack_24.min.y) + (param_1->location).position.y;
-    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
+    pCVar4 = (this_ptr->base).standing_platform;
+    (*((pCVar4->base).vtable._ub)->getBoundingBox)(&pCVar4->base,&CStack_24);
+    (this_ptr->base).location.position.y =
+         (CStack_24.max.y - CStack_24.min.y) + (this_ptr->base).location.position.y;
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
     return;
   }
-  (param_1->location).position.y = local_c;
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
+  (this_ptr->base).location.position.y = local_c;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
   return;
 }

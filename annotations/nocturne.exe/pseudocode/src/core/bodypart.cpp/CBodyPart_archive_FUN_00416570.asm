@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *param_1)
+; void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -240,7 +242,7 @@ section .text
     PUSH EDI                            ; 00416795
     PUSH EBX                            ; 00416796
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 ; 00416797
-        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0()
+        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0(CBodyPart * this_ptr, int vertex_count, int tri_count)
     XOR EDI,EDI                         ; 0041679c
     MOV EBP,dword ptr [EBX + 0x16c]     ; 0041679e
     ADD ESP,0xc                         ; 004167a4

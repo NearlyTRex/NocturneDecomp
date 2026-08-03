@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(int param_1)
+; streambuf * __watcallStack crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(streambuf *this_ptr)
 ;
+; Parameters:
+; streambuf *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_filebuf_dtor_FUN_00570449 at 00570487

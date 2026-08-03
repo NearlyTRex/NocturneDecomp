@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -68,16 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 87,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 53
   },
@@ -90,9 +89,9 @@
         "004b6d3f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hostage.cpp_CHostage_renderOpaque_FUN_004b6cf0",
-    "signature": "int core_hostage_cpp_CHostage_renderOpaque_FUN_004b6cf0(CCharacter *param_1)"
+    "signature": "int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004b6cf0(CHostage *this_ptr)"
   },
   "function_calls": [
     {
@@ -129,9 +128,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -160,30 +159,22 @@
     "pcode_op_count": 129
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHostage *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_hostage_cpp_CHostage_renderOpaque_FUN_004b6cf0(CCharacter *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1[2].flames[0x1d].base.create_event + 0x44) != 0) {",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 9,
@@ -191,30 +182,6 @@
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((iVar1 != 0) && (*(int *)(param_1[2].flames[0x1d].base.create_event + 0x24) == 4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->model).motion_controller);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

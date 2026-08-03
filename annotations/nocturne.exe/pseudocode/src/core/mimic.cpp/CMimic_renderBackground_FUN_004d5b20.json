@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 171,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 14,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 80
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -83,9 +81,9 @@
         "004d5ba1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mimic.cpp_CMimic_renderBackground_FUN_004d5b20",
-    "signature": "void core_mimic_cpp_CMimic_renderBackground_FUN_004d5b20(CDemonActor *param_1,int param_2)"
+    "signature": "void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_004d5b20(CMimic *this_ptr,int layer_flag)"
   },
   "function_calls": [
     {
@@ -119,9 +117,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -149,10 +147,10 @@
     "pcode_op_count": 193
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 40,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -161,123 +159,24 @@
         "offset": -28,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_mimic_cpp_CMimic_renderBackground_FUN_004d5b20(CDemonActor *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_mimic_cpp_CMimic_renderBackground_FUN_004d5b20(CDemonActor *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[0x8f].platform_position_delta.x != 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x1b].create_event[0x1c] = '\\x01';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x1b].create_event[0x1d] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x1b].create_event[0x1e] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x1b].create_event[0x1f] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 1),-1,0xffffffff,1,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CCloth *)&param_1[0x90].platform_orientation_delta,(CDeformableModelInstance *)0x0",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

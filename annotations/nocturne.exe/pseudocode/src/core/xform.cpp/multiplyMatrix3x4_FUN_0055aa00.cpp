@@ -1,17 +1,17 @@
 // Name: core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
 // Address: 0055aa00
 // Address Range: [[0055aa00, 0055aba8]]
-// Convention: unknown
-// Signature: void core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(float *param_1,float *param_2)
+// Convention: __stack2_esi
+// Signature: CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 
-void core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(float *param_1,float *param_2)
+CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out)
 
 {
   int iVar1;
-  uint *unaff_ESI;
   float *pfVar2;
+  float *pfVar3;
   float local_38 [4];
   float local_28;
   float local_24;
@@ -22,26 +22,39 @@ void core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(float *param_1,float *param_2
   float local_10;
   float local_c;
   
-  local_38[0] = param_2[2] * param_1[8] + *param_2 * *param_1 + param_2[1] * param_1[4];
-  local_38[1] = param_2[2] * param_1[9] + *param_2 * param_1[1] + param_2[1] * param_1[5];
-  local_38[2] = param_2[2] * param_1[10] + *param_2 * param_1[2] + param_2[1] * param_1[6];
-  local_28 = param_2[6] * param_1[8] + param_2[4] * *param_1 + param_2[5] * param_1[4];
-  local_24 = param_2[6] * param_1[9] + param_2[5] * param_1[5] + param_2[4] * param_1[1];
-  local_20 = param_2[6] * param_1[10] + param_2[5] * param_1[6] + param_2[4] * param_1[2];
-  local_18 = param_2[10] * param_1[8] + param_2[8] * *param_1 + param_2[9] * param_1[4];
-  local_14 = param_2[10] * param_1[9] + param_2[9] * param_1[5] + param_2[8] * param_1[1];
-  local_10 = param_2[10] * param_1[10] + param_2[9] * param_1[6] + param_2[8] * param_1[2];
-  local_38[3] = param_2[2] * param_1[0xb] + *param_2 * param_1[3] + param_2[1] * param_1[7] +
-                param_2[3];
-  local_1c = param_2[6] * param_1[0xb] + param_2[5] * param_1[7] + param_2[4] * param_1[3] +
-             param_2[7];
-  local_c = param_2[10] * param_1[0xb] + param_2[9] * param_1[7] + param_2[8] * param_1[3] +
-            param_2[0xb];
+  local_38[0] = matrix_b->m[0].y * matrix_a->m[2].w +
+                matrix_b->m[0].w * matrix_a->m[0].w + matrix_b->m[0].x * matrix_a->m[1].w;
+  local_38[1] = matrix_b->m[0].y * matrix_a->m[2].x +
+                matrix_b->m[0].w * matrix_a->m[0].x + matrix_b->m[0].x * matrix_a->m[1].x;
+  local_38[2] = matrix_b->m[0].y * matrix_a->m[2].y +
+                matrix_b->m[0].w * matrix_a->m[0].y + matrix_b->m[0].x * matrix_a->m[1].y;
+  local_28 = matrix_b->m[1].y * matrix_a->m[2].w +
+             matrix_b->m[1].w * matrix_a->m[0].w + matrix_b->m[1].x * matrix_a->m[1].w;
+  local_24 = matrix_b->m[1].y * matrix_a->m[2].x +
+             matrix_b->m[1].x * matrix_a->m[1].x + matrix_b->m[1].w * matrix_a->m[0].x;
+  local_20 = matrix_b->m[1].y * matrix_a->m[2].y +
+             matrix_b->m[1].x * matrix_a->m[1].y + matrix_b->m[1].w * matrix_a->m[0].y;
+  local_18 = matrix_b->m[2].y * matrix_a->m[2].w +
+             matrix_b->m[2].w * matrix_a->m[0].w + matrix_b->m[2].x * matrix_a->m[1].w;
+  local_14 = matrix_b->m[2].y * matrix_a->m[2].x +
+             matrix_b->m[2].x * matrix_a->m[1].x + matrix_b->m[2].w * matrix_a->m[0].x;
+  local_10 = matrix_b->m[2].y * matrix_a->m[2].y +
+             matrix_b->m[2].x * matrix_a->m[1].y + matrix_b->m[2].w * matrix_a->m[0].y;
+  local_38[3] = matrix_b->m[0].y * matrix_a->m[2].z +
+                matrix_b->m[0].w * matrix_a->m[0].z + matrix_b->m[0].x * matrix_a->m[1].z +
+                matrix_b->m[0].z;
+  local_1c = matrix_b->m[1].y * matrix_a->m[2].z +
+             matrix_b->m[1].x * matrix_a->m[1].z + matrix_b->m[1].w * matrix_a->m[0].z +
+             matrix_b->m[1].z;
+  local_c = matrix_b->m[2].y * matrix_a->m[2].z +
+            matrix_b->m[2].x * matrix_a->m[1].z + matrix_b->m[2].w * matrix_a->m[0].z +
+            matrix_b->m[2].z;
   pfVar2 = local_38;
+  pfVar3 = (float *)matrix_out;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *pfVar2;
+    *pfVar3 = *pfVar2;
     pfVar2 = pfVar2 + 1;
-    unaff_ESI = unaff_ESI + 1;
+    pfVar3 = pfVar3 + 1;
   }
-  return;
+  return matrix_out;
 }

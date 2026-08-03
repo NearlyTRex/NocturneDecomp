@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hero_cpp_CHero_testLineIntersection_FUN_004b4950(CDemonActor *param_1,CVector3f *param_2,CVector3f *param_3,CVector3f *param_4)
+; int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004b4950(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   line_start
+; CVector3f *      Stack[0xc]:4   line_end
+; CVector3f *      Stack[0x10]:4   out_intersection_point
 ;
 ; Referenced Globals:
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec

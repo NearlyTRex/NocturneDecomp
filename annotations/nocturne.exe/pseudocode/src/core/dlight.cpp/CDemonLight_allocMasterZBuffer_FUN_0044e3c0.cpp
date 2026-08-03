@@ -19,6 +19,8 @@ void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(CDemonL
   pvVar1 = core_dlight_cpp_getRestoreMemory_FUN_0044e340
                      (this_ptr->shadow_map_width * this_ptr->shadow_map_height);
   this_ptr->master_zbuffer = pvVar1;
-  _memcpy(this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2);
+  _memcpy
+            (this_ptr->master_zbuffer,this_ptr->shadow_depth_buffer,
+             this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2);
   return;
 }

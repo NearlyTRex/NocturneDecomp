@@ -303,7 +303,7 @@ section .text
     LEA ESI,[ESP + 0xbc]                ; 00549b47
     LEA EDI,[ESP + 0x6c]                ; 00549b4e
     CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 00549b52
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_0055d610(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xbc]                ; 00549b57
     ADD ESP,0x4                         ; 00549b5e
     MOVSD ES:EDI,ESI                    ; 00549b61
@@ -314,7 +314,7 @@ section .text
     PUSH EDI                            ; 00549b6c
     LEA ESI,[ESP + 0x8c]                ; 00549b6d
     CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 00549b74
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_0055d610(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA EDI,[ESP + 0xac]                ; 00549b79
     LEA ESI,[ESP + 0x8c]                ; 00549b80
     ADD ESP,0x4                         ; 00549b87
@@ -335,7 +335,7 @@ section .text
     PUSH EAX                            ; 00549bb3
     LEA ESI,[ESP + 0xa4]                ; 00549bb4
     CALL core_xform.cpp_slerpQuaternion_FUN_0055d2d0 ; 00549bbb
-        ;   XREF to: 0055d2d0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_0055d2d0()
+        ;   XREF to: 0055d2d0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_0055d2d0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     ADD ESP,0xc                         ; 00549bc0
     LEA EAX,[ESP + 0x78]                ; 00549bc3
     LEA EDI,[ESP + 0x78]                ; 00549bc7
@@ -386,7 +386,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 00549c46
     PUSH EAX                            ; 00549c4a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00549c4b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 00549c50
     LEA EAX,[ESP + 0x4]                 ; 00549c53
     PUSH EAX                            ; 00549c57

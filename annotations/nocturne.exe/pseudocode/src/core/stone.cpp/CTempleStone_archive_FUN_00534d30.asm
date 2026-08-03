@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stone_cpp_CTempleStone_archive_FUN_00534d30(CBoxActor *param_1)
+; void __cdecl core_stone_cpp_CTempleStone_archive_FUN_00534d30(CTempleStone *this_ptr)
 ;
+; Parameters:
+; CTempleStone *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_destActor_005951b7

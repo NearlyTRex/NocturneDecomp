@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drone_cpp_CDrone_process_FUN_00462a60(CEnemy *param_1,float param_2)
+; void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float delta_time)
 ;
+; Parameters:
+; CDrone *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0xfc]:8  local_fc
 ; undefined8       Stack[-0xf4]:8  local_f4
@@ -344,7 +347,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 00462d4f | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 00462d54 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00462d55
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00462b51                      ; 00462d5a
         ;   XREF to: 00462b51 (UNCONDITIONAL_JUMP)  ; LAB_00462b51
     JBE 0x00462b41                      ; 00462d5f
@@ -619,7 +622,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 0046304b | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 00463051 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00463052
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00463057
     PUSH 0x1                            ; 0046305a
     PUSH EDI                            ; 0046305c

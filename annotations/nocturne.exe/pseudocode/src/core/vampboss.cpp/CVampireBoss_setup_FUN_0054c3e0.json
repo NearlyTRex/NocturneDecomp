@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,49 +52,49 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 52,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_01cd4314'; did you mean 'DAT_02DF4314'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 56,
+        "line": 49,
         "message": "use of undeclared identifier '_DAT_01cd4314'; did you mean 'DAT_02DF4314'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 59,
+        "line": 51,
         "message": "use of undeclared identifier '_DAT_01cd4314'; did you mean 'DAT_02DF4314'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 62,
+        "line": 53,
         "message": "use of undeclared identifier '_DAT_01cd4314'; did you mean 'DAT_02DF4314'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 65,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01cd4314'; did you mean 'DAT_02DF4314'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 70,
+        "line": 58,
         "message": "use of undeclared identifier '_DAT_01cd4314'; did you mean 'DAT_02DF4314'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 73,
+        "line": 60,
         "message": "use of undeclared identifier '_DAT_01cd4314'; did you mean 'DAT_02DF4314'?"
       }
     ],
@@ -104,19 +104,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 249,
+    "complexity_score": 75,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 60,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 268
+    "total_lines": 254
   },
   "cross_references": [],
   "function": {
@@ -127,9 +125,9 @@
         "0054c5e3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_vampboss.cpp_CVampireBoss_setup_FUN_0054c3e0",
-    "signature": "void core_vampboss_cpp_CVampireBoss_setup_FUN_0054c3e0(CEnemy *param_1)"
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_0054c3e0(CVampireBoss *this_ptr)"
   },
   "function_calls": [
     {
@@ -229,9 +227,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -258,10 +256,10 @@
     "pcode_op_count": 669
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -291,137 +289,24 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_vampboss_cpp_CVampireBoss_setup_FUN_0054c3e0(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_01 = (CCloth *)(param_1[1].base.model.part_data.visibility_flags + 9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "euler = &(param_1->base).base.orient;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "position = &(param_1->base).base.location;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_02 = (CCloth *)(param_1[6].base.model.bone_transform.bone_world_matrices + 0x42);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_03 = &param_1[0xb].base.model.bone_transform.bone_world_matrices[0x1f].m[0].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_04 = (CMorph *)(param_1[0x10].base.model.bone_transform.bone_scales + 0x3b);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.is_transparent = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].secondary_bone_index = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3d].m[2].y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].bone_index = iVar1;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

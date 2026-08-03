@@ -215,7 +215,7 @@ section .text
     PUSH ESI                            ; 00509902
     INC EBX                             ; 00509903
     CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 ; 00509904
-        ;   XREF to: 0050e190 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190()
+        ;   XREF to: 0050e190 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(CDemonSet * this_ptr)
     MOV EDX,dword ptr [ESI + 0x15a8cc]  ; 00509909
     ADD ESP,0x4                         ; 0050990f
     CMP EBX,EDX                         ; 00509912
@@ -346,7 +346,7 @@ section .text
     MOV EBP,dword ptr [0x005ad350]      ; 00509a66 | g_CConsole_PTR_005ad350
     PUSH EBP                            ; 00509a6c | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00509a6d
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 00509a72
     ADD ESP,0x30                        ; 00509a75
     POP EBP                             ; 00509a78

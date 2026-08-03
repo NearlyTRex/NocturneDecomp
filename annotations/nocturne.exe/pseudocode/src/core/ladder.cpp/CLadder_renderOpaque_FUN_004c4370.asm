@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_ladder_cpp_CLadder_renderOpaque_FUN_004c4370(CDemonActor *param_1)
+; int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_004c4370(CLadder *this_ptr)
 ;
+; Parameters:
+; CLadder *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

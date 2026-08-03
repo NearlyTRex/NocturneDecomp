@@ -1,38 +1,38 @@
 // Name: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004161a0
 // Address: 004161a0
 // Address Range: [[004161a0, 004162f7]]
-// Convention: unknown
-// Signature: int core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *this_ptr)
 
 #include "nocturne.h"
 
-int core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *param_1)
+int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *this_ptr)
 
 {
   SBodyPartModel *pSVar1;
-  CBoundingBox3D *this_ptr;
+  CBoundingBox3D *this_ptr_00;
   int iVar2;
   CVector3f *position;
   CBoundingBox3D local_20;
   SBodyPartModel *pSStack_8;
   
-  if (param_1->render_in_background < 2) {
-    g_CDemonSet_PTR_005be368->disable_directional_lighting = param_1->dont_use_normals;
-    core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);
-    this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);
-    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr);
-    param_1->is_visible = iVar2;
+  if (this_ptr->render_in_background < 2) {
+    g_CDemonSet_PTR_005be368->disable_directional_lighting = this_ptr->dont_use_normals;
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
+    this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_20);
+    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
+    this_ptr->is_visible = iVar2;
     if (iVar2 != 0) {
-      if ((param_1->transparent_geometry_flag == 0) ||
+      if ((this_ptr->transparent_geometry_flag == 0) ||
          (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),
          iVar2 != 0)) {
-        core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(param_1,-1);
+        core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(this_ptr,-1);
       }
       iVar2 = 0;
-      if (0 < param_1->attached_model_count) {
-        pSStack_8 = param_1->attached_models;
-        pSVar1 = param_1->attached_models;
-        position = &param_1->attached_models[0].position;
+      if (0 < this_ptr->attached_model_count) {
+        pSStack_8 = this_ptr->attached_models;
+        pSVar1 = this_ptr->attached_models;
+        position = &this_ptr->attached_models[0].position;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
                     (DAT_005ae704,position,&pSStack_8[iVar2].scale);
@@ -42,14 +42,14 @@ int core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *param_1)
           position = (CVector3f *)&position[0x21].z;
           pSVar1 = (SBodyPartModel *)(&pSVar1->model + 1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-        } while (iVar2 < param_1->attached_model_count);
+        } while (iVar2 < this_ptr->attached_model_count);
       }
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
     g_CDemonSet_PTR_005be368->disable_directional_lighting = 0;
-    return param_1->is_visible;
+    return this_ptr->is_visible;
   }
-  if ((param_1->is_visible != 0) && (0 < param_1->fire_count)) {
+  if ((this_ptr->is_visible != 0) && (0 < this_ptr->fire_count)) {
     return 1;
   }
   return 0;

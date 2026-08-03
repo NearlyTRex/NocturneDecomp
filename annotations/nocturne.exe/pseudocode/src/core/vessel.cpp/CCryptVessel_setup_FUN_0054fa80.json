@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 431,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 51,
-    "suspect_count": 37,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 2,
     "suspect_types": [
-      "suspect_float",
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
-    "total_lines": 142
+    "total_lines": 140
   },
   "cross_references": [],
   "function": {
@@ -84,9 +83,9 @@
         "0054fbba"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_vessel.cpp_CCryptVessel_setup_FUN_0054fa80",
-    "signature": "void core_vessel_cpp_CCryptVessel_setup_FUN_0054fa80(CDemonActor *param_1)"
+    "signature": "void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_0054fa80(CCryptVessel *this_ptr)"
   },
   "function_calls": [
     {
@@ -117,9 +116,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -161,309 +160,37 @@
     "pcode_op_count": 394
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_vessel_cpp_CCryptVessel_setup_FUN_0054fa80(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)param_1[4].footstep_sound_code);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,&CStack_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,&CStack_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_1[2].collision_disabled;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].location.area_id = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_10 = *(float *)(iVar1 + 0x20) - (param_1->location).position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_c = *(float *)(iVar1 + 0x24) - (param_1->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_8 = *(float *)(iVar1 + 0x28) - (param_1->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_1[2].collision_disabled;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.x = *(float *)(iVar1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.y = *(float *)(iVar1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).position.z = *(float *)(iVar1 + 0x28);",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar1->position).x = (pCVar3->base).location.position.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).area_id = *(int *)(iVar1 + 0x2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_1[2].collision_disabled;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (&param_1->orient != (UOrientationVector *)(iVar1 + 0x30)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.x = *(float *)(iVar1 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.y = *(float *)(iVar1 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.z = *(float *)(iVar1 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].blood_effect_color = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4].actor_name[0x1c] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4].actor_name[0x1d] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4].actor_name[0x1e] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4].actor_name[0x1f] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 43,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "param_1[4].location.position.z = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4].location.position.z = 1.4013e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4].location.position.x = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].footstep_sound_code[0] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].footstep_sound_code[1] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].footstep_sound_code[2] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].footstep_sound_code[3] = '?';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].dead1 = 0x3f800000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].dead2 = 0x3f000000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_flame_cpp_CFlame_setup_FUN_0048d050((CFlame *)param_1[2].footstep_sound_code);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->is_transparent = 1;",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 36,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar2->vec).x = (pUVar4->vec).x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 59,
-        "message": "no matching function for call to 'core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640'"
       }
     ],
     "success": false,
@@ -68,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 110,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 56,
     "suspect_count": 5,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 207
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -254,42 +248,42 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 18,
+      "line": 19,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pSVar3->exists = pSVar1->exists;",
+      "text": "pSVar2->exists = pSVar1->exists;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 22,
+      "line": 23,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pSVar3->local_position).x = (pSVar1->local_position).x;",
+      "text": "(pSVar2->local_position).x = (pSVar1->local_position).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 27,
+      "line": 28,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pSVar3->rotation).x = (pSVar1->rotation).x;",
+      "text": "(pSVar2->rotation).x = (pSVar1->rotation).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (13 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 31,
+      "line": 32,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pSVar3->rotation_matrix).m[0].x = (pSVar1->rotation_matrix).m[0].x;",
+      "text": "(pSVar2->rotation_matrix).m[0].x = (pSVar1->rotation_matrix).m[0].x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 45,
+      "line": 46,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pSVar3->world_position).x = (pSVar1->world_position).x;",
+      "text": "(pSVar2->world_position).x = (pSVar1->world_position).x;",
       "type": "unrolled_memcpy"
     }
   ]

@@ -1,14 +1,14 @@
 // Name: sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340
 // Address: 0052c340
 // Address Range: [[0052c340, 0052c3ed]]
-// Convention: unknown
-// Signature: undefined4 sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(int *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(CWavOutDevice *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(int *param_1)
+int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(CWavOutDevice *this_ptr)
 
 {
   int iVar1;
@@ -35,6 +35,6 @@ uint sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(int *param_1)
     return 1;
   }
 LAB_0052c3d6:
-  (**(code **)(*param_1 + 8))();
+  (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   return 0;
 }

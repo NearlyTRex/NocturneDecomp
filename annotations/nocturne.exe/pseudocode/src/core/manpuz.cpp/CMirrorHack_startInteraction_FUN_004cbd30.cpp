@@ -1,17 +1,17 @@
 // Name: core_manpuz.cpp_CMirrorHack_startInteraction_FUN_004cbd30
 // Address: 004cbd30
 // Address Range: [[004cbd30, 004cbd4f]]
-// Convention: unknown
-// Signature: undefined4 core_manpuz_cpp_CMirrorHack_startInteraction_FUN_004cbd30(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_004cbd30(CMirrorHack *this_ptr,CDemonActor *user)
 
 #include "nocturne.h"
 
-uint core_manpuz_cpp_CMirrorHack_startInteraction_FUN_004cbd30(int param_1,uint param_2)
+int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_004cbd30(CMirrorHack *this_ptr,CDemonActor *user)
 
 {
-  if (*(int *)(param_1 + 0x2cc) != 0) {
+  if (this_ptr->interacting_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  *(uint *)(param_1 + 0x2cc) = param_2;
+  this_ptr->interacting_actor = user;
   return 1;
 }

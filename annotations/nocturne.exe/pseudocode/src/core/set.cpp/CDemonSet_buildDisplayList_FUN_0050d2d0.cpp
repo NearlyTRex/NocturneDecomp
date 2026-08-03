@@ -137,9 +137,7 @@ LAB_0050d39b:
     local_14 = wincore_winrun_cpp_getTime_FUN_00558a30();
     local_14 = local_14 - local_28;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"buildDispList %d items : %3.2f ms\n",_DAT_02080430,
-               ((double)local_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-               (double)g_CGame_PTR_005b9354->delta_time_float);
+              (g_CConsole_PTR_005ad350,"buildDispList %d items : %3.2f ms\n");
     return;
   }
   return;

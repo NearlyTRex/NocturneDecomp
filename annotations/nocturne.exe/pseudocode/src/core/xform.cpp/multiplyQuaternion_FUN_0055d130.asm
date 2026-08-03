@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_multiplyQuaternion_FUN_0055d130(float *param_1,float *param_2)
+; CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_0055d130(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat1_in
+; CQuaternion4f *  Stack[0x8]:4   quat2_in
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

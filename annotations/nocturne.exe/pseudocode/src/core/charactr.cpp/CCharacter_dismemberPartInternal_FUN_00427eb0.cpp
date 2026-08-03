@@ -14,11 +14,11 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCh
   SFire *pSVar2;
   int iVar3;
   CCharacter *pCVar4;
-  float *pfVar5;
+  CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar6;
   byte bVar7;
   CMatrix3x4f local_9c;
-  float local_6c [12];
+  CMatrix3x4f local_6c;
   CVector3f local_3c;
   CVector3f local_30;
   CVector3f local_24;
@@ -37,12 +37,12 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCh
       do {
         if (part_index == pSVar1->part_index) {
           core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-                    (&pSVar1->transform,local_18 + pSVar1->bone_index);
-          pfVar5 = local_6c;
+                    (&pSVar1->transform,local_18 + pSVar1->bone_index,&local_6c);
+          pCVar5 = &local_6c;
           pCVar6 = &local_9c;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-            pCVar6->m[0].w = *pfVar5;
-            pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
+            pCVar6->m[0].w = pCVar5->m[0].w;
+            pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
             pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
           }
           position = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_9c,&local_3c);

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_zombie_cpp_CZombie_renderTransparent_FUN_00561940(CCharacter *param_1)
+; int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_00561940(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xf4]:1  local_f4
 ; undefined        Stack[-0xc4]:1  local_c4
@@ -66,7 +68,7 @@ section .text
     LEA ESI,[EBP + -0x36]               ; 0056197d
     LEA EDI,[EBP + -0x66]               ; 00561980
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 00561983
-        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0()
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     ADD ESP,0x8                         ; 00561988
     LEA EAX,[EBP + -0x66]               ; 0056198b
     MOV ECX,0xc                         ; 0056198e

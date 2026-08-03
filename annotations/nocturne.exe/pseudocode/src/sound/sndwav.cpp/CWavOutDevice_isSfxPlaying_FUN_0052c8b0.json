@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -81,9 +81,9 @@
         "0052c8b2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavOutDevice_isSfxPlaying_FUN_0052c8b0",
-    "signature": "undefined4 sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_0052c8b0(void)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_0052c8b0(CWavOutDevice *this_ptr,CSfxSlot *slot)"
   },
   "function_calls": [],
   "globals": [],
@@ -91,9 +91,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -113,12 +113,27 @@
     "pcode_op_count": 12
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavOutDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "slot",
+        "offset": 8,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
   },
   "suspects": [],
   "vtable_info": {

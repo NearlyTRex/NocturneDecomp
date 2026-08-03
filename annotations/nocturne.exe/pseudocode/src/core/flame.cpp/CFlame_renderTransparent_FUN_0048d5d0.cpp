@@ -125,7 +125,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
           engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                     (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&CStack_48);
           core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
-                    (_DAT_007f7370,&(this_ptr->base).location,0);
+                    (_DAT_007f7370,&(this_ptr->base).location.position,(SProjectedVertex *)0x0);
           DAT_005c5040 = 0xffff - _DAT_01c038f4;
           if (iStack_14 == 3) {
             DAT_005c5040 = DAT_005c5040 / 2;

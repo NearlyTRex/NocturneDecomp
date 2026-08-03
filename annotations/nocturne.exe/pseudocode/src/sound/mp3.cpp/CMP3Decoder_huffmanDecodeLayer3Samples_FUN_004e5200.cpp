@@ -15,6 +15,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200(C
   uint uVar2;
   int iVar3;
   byte *puVar4;
+  SHuffmanTable *huffman_table;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -32,7 +33,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200(C
   int local_34;
   int local_30;
   int *local_2c;
-  int local_28;
+  SHuffmanTable *local_28;
   int *local_24;
   int local_20;
   char *local_1c;
@@ -48,7 +49,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200(C
     local_1c = (char *)0x1cd8c28;
     do {
       pcVar13 = local_1c;
-      _sprintf(local_1c,"%d",iVar6);
+      _sprintf(local_1c,"%d");
       *(uint *)(&DAT_01cd944c + iVar8) = *(uint *)(&DAT_005bdba0 + local_18);
       *(uint *)(iVar8 + 0x1cd8c2c) = *(uint *)(&DAT_005bdba4 + local_18);
       *(uint *)(iVar8 + 0x1cd8c30) = *(uint *)(&DAT_005bdba8 + local_18);
@@ -144,16 +145,19 @@ LAB_004e5594:
   for (uVar9 = 0; piVar1 = local_24, iVar7 = local_30,
       uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {
     if ((int)uVar9 < local_20) {
-      iVar7 = *(int *)((int)local_24 + local_30 + 0x34) * 0x828 + 0x1cd8c28;
+      huffman_table =
+           (SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x34) * 0x828 + 0x1cd8c28);
     }
     else if ((int)uVar9 < iVar8) {
-      iVar7 = *(int *)((int)local_24 + local_30 + 0x38) * 0x828 + 0x1cd8c28;
+      huffman_table =
+           (SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x38) * 0x828 + 0x1cd8c28);
     }
     else {
-      iVar7 = *(int *)((int)local_24 + local_30 + 0x3c) * 0x828 + 0x1cd8c28;
+      huffman_table =
+           (SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x3c) * 0x828 + 0x1cd8c28);
     }
     sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0
-              (this_ptr,iVar7,&local_48,&local_44,&local_40,&local_3c);
+              (this_ptr,huffman_table,&local_48,&local_44,&local_40,&local_3c);
     quantized_dest->samples[(int)uVar9 / 0x12][(int)uVar9 % 0x12] = local_48;
     iVar7 = iVar6 / 0x12;
     iVar3 = iVar6 % 0x12;
@@ -161,7 +165,7 @@ LAB_004e5594:
     quantized_dest->samples[iVar7][iVar3] = local_44;
   }
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(this_ptr);
-  local_28 = (*(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1cd8c28;
+  local_28 = (SHuffmanTable *)((*(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1cd8c28);
   iVar8 = uVar9 + 3;
   iVar6 = uVar9 + 2;
   local_2c = side_info->channels[channel].scfsi + granule * 0x12 + -2;

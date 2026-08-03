@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel *param_1,CSkeleton *param_2)
+; void __cdecl core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel *this_ptr,CSkeleton *skeleton_ptr)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; CSkeleton *      Stack[0x8]:4   skeleton_ptr
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0 at 005180be

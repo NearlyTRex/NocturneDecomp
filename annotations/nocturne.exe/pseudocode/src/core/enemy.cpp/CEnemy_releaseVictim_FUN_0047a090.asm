@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CCharacter *param_1)
+; void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CEnemy *this_ptr)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0078a123

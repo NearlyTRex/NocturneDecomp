@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_CBarrier_archive_FUN_00411800(CDemonActor *param_1)
+; void __cdecl core_barrier_cpp_CBarrier_archive_FUN_00411800(CBarrier *this_ptr)
 ;
+; Parameters:
+; CBarrier *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_size_00578750

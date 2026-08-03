@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_exception_c_installExceptionHandler_FUN_0056eed8(undefined4 param_1)
+; void __cdecl crt_exception_c_installExceptionHandler_FUN_0056eed8(undefined4 param_1)
 ;
 ;
 ; XREF[2]:

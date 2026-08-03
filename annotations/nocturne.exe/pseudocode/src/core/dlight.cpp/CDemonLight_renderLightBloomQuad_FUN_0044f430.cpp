@@ -1,20 +1,20 @@
 // Name: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
 // Address: 0044f430
 // Address Range: [[0044f430, 0044f9a3]]
-// Convention: unknown
-// Signature: void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *param_1)
+void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *this_ptr)
 
 {
   CVector3f *world_position;
   longlong lVar1;
   float fVar2;
-  CDemonRenderer *this_ptr;
+  CDemonRenderer *this_ptr_00;
   int iVar3;
   uint uVar4;
   byte bVar5;
@@ -52,10 +52,10 @@ void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *
   int local_14;
   
   bVar5 = 0;
-  if (param_1->volumetric_enabled == 0) {
+  if (this_ptr->volumetric_enabled == 0) {
     return;
   }
-  world_position = &(param_1->base).position;
+  world_position = &(this_ptr->base).position;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (DAT_005ae704,world_position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
@@ -73,16 +73,16 @@ void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *
   afStack_78[3] = (float)(int)local_60 * local_68;
   local_68 = (float)local_5c * local_68;
   local_a0 = world_position->x - afStack_78[2];
-  local_9c = (param_1->base).position.y - afStack_78[3];
-  local_98.x = (int)((param_1->base).position.z - local_68);
+  local_9c = (this_ptr->base).position.y - afStack_78[3];
+  local_98.x = (int)((this_ptr->base).position.z - local_68);
   if (&local_58 != &local_a0) {
     local_58 = local_a0;
     local_54 = local_9c;
     local_50 = (float)local_98.x;
   }
-  local_4c = (param_1->base).rotation_matrix.m[0].z;
-  local_48 = (param_1->base).rotation_matrix.m[1].z;
-  local_44.x = (int)(param_1->base).rotation_matrix.m[2].z;
+  local_4c = (this_ptr->base).rotation_matrix.m[0].z;
+  local_48 = (this_ptr->base).rotation_matrix.m[1].z;
+  local_44.x = (int)(this_ptr->base).rotation_matrix.m[2].z;
   local_d8.base.type = (int)SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);
   if ((float)local_d8.base.type <= 0.0) {
     local_54 = 0.0;
@@ -135,33 +135,33 @@ void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *
     local_98.z = (int)ROUND(_DAT_0059c030 * -0.5);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_98);
-    this_ptr = DAT_005ae704;
+    this_ptr_00 = DAT_005ae704;
     DAT_005ae704->vertex_buffer_ptr->u = 0xf80000;
-    this_ptr->vertex_buffer_ptr->v = 0xf80000;
-    this_ptr->vertex_buffer_ptr->a = uVar4;
-    this_ptr->vertex_buffer_ptr[1].u = 0x80000;
-    this_ptr->vertex_buffer_ptr[1].v = 0xf80000;
-    this_ptr->vertex_buffer_ptr[1].a = uVar4;
-    this_ptr->vertex_buffer_ptr[2].u = 0x80000;
-    this_ptr->vertex_buffer_ptr[2].v = 0x80000;
-    this_ptr->vertex_buffer_ptr[2].a = uVar4;
-    this_ptr->vertex_buffer_ptr[3].u = 0xf80000;
-    this_ptr->vertex_buffer_ptr[3].v = 0x80000;
-    this_ptr->vertex_buffer_ptr[3].a = uVar4;
-    this_ptr->vertex_buffer_ptr->r = 0xffff;
-    this_ptr->vertex_buffer_ptr->g = 0xffff;
-    this_ptr->vertex_buffer_ptr->b = 0xffff;
-    this_ptr->vertex_buffer_ptr[1].r = 0xffff;
-    this_ptr->vertex_buffer_ptr[1].g = 0xffff;
-    this_ptr->vertex_buffer_ptr[1].b = 0xffff;
-    this_ptr->vertex_buffer_ptr[2].r = 0xffff;
-    this_ptr->vertex_buffer_ptr[2].g = 0xffff;
-    this_ptr->vertex_buffer_ptr[2].b = 0xffff;
-    this_ptr->vertex_buffer_ptr[3].r = 0xffff;
-    this_ptr->vertex_buffer_ptr[3].g = 0xffff;
-    this_ptr->vertex_buffer_ptr[3].b = 0xffff;
+    this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr->a = uVar4;
+    this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr[1].a = uVar4;
+    this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[2].a = uVar4;
+    this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[3].a = uVar4;
+    this_ptr_00->vertex_buffer_ptr->r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr->g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr->b = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].b = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].b = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (this_ptr,(SMRGLTextureBasic *)&DAT_005ae470);
+              (this_ptr_00,(SMRGLTextureBasic *)&DAT_005ae470);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
     local_d8.base.count = 4;
     local_d8.surface_normal.A.i = 0;
@@ -176,6 +176,6 @@ void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-  core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520(param_1);
+  core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520(this_ptr);
   return;
 }

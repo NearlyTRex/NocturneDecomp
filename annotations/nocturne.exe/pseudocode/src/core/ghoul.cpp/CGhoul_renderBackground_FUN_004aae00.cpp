@@ -1,17 +1,16 @@
 // Name: core_ghoul.cpp_CGhoul_renderBackground_FUN_004aae00
 // Address: 004aae00
 // Address Range: [[004aae00, 004aae27]]
-// Convention: unknown
-// Signature: void core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(CEnemy *param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(CGhoul *this_ptr,int layer_flag)
 
 #include "nocturne.h"
 
-void core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(CEnemy *param_1,int param_2)
+void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(CGhoul *this_ptr,int layer_flag)
 
 {
-  if ((param_1[1].base.base.location.position.x == 0.0) &&
-     (*(int *)(param_1[1].base.base.actor_name + 0x1c) < 1)) {
-    core_enemy_cpp_CEnemy_renderBackground_FUN_0047a000(param_1,param_2);
+  if ((this_ptr->spasm_count == 0) && (this_ptr->lives_left < 1)) {
+    core_enemy_cpp_CEnemy_renderBackground_FUN_0047a000(&this_ptr->base,layer_flag);
     return;
   }
   return;

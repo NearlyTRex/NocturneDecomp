@@ -43,7 +43,7 @@ section .text
     PUSH 0x57d2b1                       ; 00456719 | = "%s\\%s"
     PUSH EDI                            ; 0045671e
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0045671f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 00456724
     POP EDI                             ; 00456727
     POP ESI                             ; 00456728

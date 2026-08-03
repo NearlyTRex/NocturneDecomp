@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot *param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot *this_ptr,SMixBuffer mix_buffer)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
+; SMixBuffer       Stack[0x8]:44   mix_buffer
 ; Local Variables:
 ; undefined8       Stack[-0xc8]:8  local_c8
 ; undefined8       Stack[-0xc0]:8  local_c0
@@ -387,7 +390,7 @@ section .text
     PUSH ECX                            ; 0052508e
     PUSH EDI                            ; 0052508f
     CALL sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870 ; 00525090
-        ;   XREF to: 00525870 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870()
+        ;   XREF to: 00525870 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot * this_ptr, double hardware_playback_pos)
     ADD ESP,0xc                         ; 00525095
     CMP dword ptr [ESP + 0x70],0x0      ; 00525098
     JZ 0x005250be                       ; 0052509d

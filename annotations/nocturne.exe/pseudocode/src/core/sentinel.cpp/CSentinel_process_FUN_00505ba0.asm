@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CEnemy *param_1,float param_2)
+; void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CSentinel *this_ptr,float delta_time)
 ;
+; Parameters:
+; CSentinel *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x1a0]:1  local_1a0
 ; undefined4       Stack[-0x19c]:4  local_19c
@@ -478,7 +481,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 00505fb1 | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 00505fb7 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00505fb8
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00505c7d                      ; 00505fbd
         ;   XREF to: 00505c7d (UNCONDITIONAL_JUMP)  ; LAB_00505c7d
     JBE 0x00505c6d                      ; 00505fc2

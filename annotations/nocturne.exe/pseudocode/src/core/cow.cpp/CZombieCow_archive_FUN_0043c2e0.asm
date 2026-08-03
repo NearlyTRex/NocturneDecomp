@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cow_cpp_CZombieCow_archive_FUN_0043c2e0(CEnemy *param_1)
+; void __cdecl core_cow_cpp_CZombieCow_archive_FUN_0043c2e0(CZombieCow *this_ptr)
 ;
+; Parameters:
+; CZombieCow *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0057b3c2

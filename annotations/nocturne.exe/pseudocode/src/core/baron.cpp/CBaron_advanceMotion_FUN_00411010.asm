@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaron_advanceMotion_FUN_00411010(CBaron *param_1,float param_2)
+; void __cdecl core_baron_cpp_CBaron_advanceMotion_FUN_00411010(CBaron *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_baron.cpp_CBaron_process_FUN_00410490 at 004105ca

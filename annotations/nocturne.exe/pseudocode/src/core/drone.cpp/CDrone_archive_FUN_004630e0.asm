@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drone_cpp_CDrone_archive_FUN_004630e0(CEnemy *param_1)
+; void __cdecl core_drone_cpp_CDrone_archive_FUN_004630e0(CDrone *this_ptr)
 ;
+; Parameters:
+; CDrone *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0057df2c

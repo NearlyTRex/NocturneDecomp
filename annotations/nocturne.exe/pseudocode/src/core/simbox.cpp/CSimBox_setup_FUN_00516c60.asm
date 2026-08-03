@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_simbox_cpp_CSimBox_setup_FUN_00516c60(CDemonActor *param_1)
+; void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00516c60(CSimBox *this_ptr)
 ;
+; Parameters:
+; CSimBox *        Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

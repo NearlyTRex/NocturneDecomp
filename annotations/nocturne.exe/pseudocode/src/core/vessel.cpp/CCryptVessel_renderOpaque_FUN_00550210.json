@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -64,49 +64,37 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 20,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 22,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 43,
-        "line": 22,
-        "message": "expected expression"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 29,
+        "line": 21,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 31,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
+        "line": 30,
+        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
       },
       {
         "category": "incompatible_types",
-        "column": 5,
-        "line": 40,
+        "column": 3,
+        "line": 32,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
         "line": 41,
+        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 42,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 44,
+        "line": 45,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0'"
       }
     ],
@@ -116,19 +104,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 283,
+    "complexity_score": 114,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 23,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 39,
+    "suspect_count": 7,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
-    "total_lines": 171
+    "total_lines": 172
   },
   "cross_references": [],
   "function": {
@@ -139,10 +125,10 @@
         "00550367"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00550210",
-    "signature": "undefined4 core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(int param_1)"
+    "signature": "int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(CCryptVessel *this_ptr)"
   },
   "function_calls": [
     {
@@ -215,9 +201,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -261,10 +247,10 @@
     "pcode_op_count": 501
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 56,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -273,6 +259,13 @@
         "offset": -48,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
       }
     ]
   },
@@ -295,107 +288,19 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x20));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x20));",
+      "text": "(DAT_005ae704,&(this_ptr->base).location.position);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_30,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_30,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_30,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x7d8) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x7d8) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(uint *)(param_1 + 0x7d8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 0x30),(CVector3f *)0x0);",
+      "text": "(DAT_005ae704,&position->vec,(CVector3f *)0x0);",
       "type": "undefined_data"
     },
     {
@@ -403,47 +308,15 @@
       "line": 24,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
+      "text": "(DAT_005ae704,&position->vec,(CVector3f *)0x0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x3b0) == 3) || ((double)*(float *)(param_1 + 0x3b4) <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x3b0) == 3) || ((double)*(float *)(param_1 + 0x3b4) <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x150),0.0,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(65535 - (double)*(float *)(param_1 + 0x3b4) * 65535);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 25,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,iStack_1c);",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
       "type": "undefined_data"
     },
     {
@@ -451,32 +324,24 @@
       "line": 34,
       "match": "DAT_005ae704",
       "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,(int)local_30.max.z);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005ae704",
+      "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(DAT_005ae704,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x150),0.0,0x2e7);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 38,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(DAT_005ae704);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(uint *)(param_1 + 0x7d8);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

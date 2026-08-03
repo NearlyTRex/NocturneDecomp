@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 116,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
     "success": false,
@@ -68,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 330,
-    "complexity_score": 187,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 142,
+    "pseudocode_lines": 141,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 472
+    "total_lines": 471
   },
   "cross_references": [
     {
@@ -383,7 +377,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_20),",
@@ -391,10 +385,10 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 85,
+      "line": 84,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_d0.x = pCVar2->x;",
+      "text": "local_d0.x = pCVar1->x;",
       "type": "unrolled_memcpy"
     }
   ]

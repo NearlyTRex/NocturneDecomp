@@ -1,62 +1,47 @@
 // Name: core_wateract.cpp_CWaterActor_archive_FUN_00551ea0
 // Address: 00551ea0
 // Address Range: [[00551ea0, 00552091]]
-// Convention: unknown
-// Signature: void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CWaterActor *this_ptr)
 
 #include "nocturne.h"
 
-void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CDemonActor *param_1)
+void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CWaterActor *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveVector_FUN_0040c450((CVector3f *)(param_1 + 1),"size");
-  core_actor_cpp_archiveInteger_FUN_0040c900
-            ((int *)(param_1[1].actor_name + 0xc),"opacity");
+  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
+  core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->size,"size");
+  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->opacity,"opacity");
   if (g_INT_005c154c == 2) {
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              ((float *)(param_1[1].actor_name + 0x10),"heightDelta");
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              ((float *)(param_1[1].actor_name + 0x14),"timeToMove");
-    core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].actor_name + 0x1c,"moveSound");
-    core_actor_cpp_archiveString_FUN_0040c6d0
-              ((char *)&param_1[1].orient_matrix.m[2].z,"moveEvent");
-    core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[1].dead2,"param");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->height_delta,"heightDelta");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->time_to_move,"timeToMove");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_sound,"moveSound");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_event,"moveEvent");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->param,"param");
   }
   if (2 < g_INT_005c154c) {
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              ((float *)(param_1[1].actor_name + 0x10),"heightDelta");
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              ((float *)(param_1[1].actor_name + 0x14),"timeToMoveUp");
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              ((float *)(param_1[1].actor_name + 0x18),"timeToMoveDown");
-    core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].actor_name + 0x1c,"moveUpSound");
-    core_actor_cpp_archiveString_FUN_0040c6d0
-              ((char *)&param_1[1].orient_matrix,"moveDownSound");
-    core_actor_cpp_archiveString_FUN_0040c6d0
-              ((char *)&param_1[1].orient_matrix.m[2].z,"moveUpEvent");
-    core_actor_cpp_archiveString_FUN_0040c6d0
-              (param_1[1].create_event + 0x48,"moveDownEvent");
-    core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[1].dead2,"param");
-    core_actor_cpp_archiveInteger_FUN_0040c900
-              ((int *)&param_1[1].previous_transform_state,"state");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->height_delta,"heightDelta");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->time_to_move,"timeToMoveUp");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->time_to_move_down,"timeToMoveDown")
+    ;
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_sound,"moveUpSound");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_down_sound,"moveDownSound");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_event,"moveUpEvent");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_down_event,"moveDownEvent");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->param,"param");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->state,"state");
   }
   if (3 < g_INT_005c154c) {
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              (&param_1[1].previous_transform_state.position.y,"patchSize");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->patch_size,"patchSize");
   }
   if (4 < g_INT_005c154c) {
-    core_actor_cpp_archiveInteger_FUN_0040c900
-              ((int *)&param_1[1].previous_transform_state.position.z,"roundFlag");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->round_flag,"roundFlag");
   }
   if (g_INT_005c154c < 6) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040c900
-            ((int *)&param_1[1].previous_transform_state.orientation,"colR");
-  core_actor_cpp_archiveInteger_FUN_0040c900
-            ((int *)&param_1[1].previous_transform_state.orientation.vec.y,"colG");
-  core_actor_cpp_archiveInteger_FUN_0040c900
-            ((int *)&param_1[1].previous_transform_state.orientation.vec.z,"colB");
+  core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->color).r,"colR");
+  core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->color).g,"colG");
+  core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->color).b,"colB");
   return;
 }

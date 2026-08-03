@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_00548460(CDemonActor *param_1,undefined4 param_2,CVector3f *param_3)
+; float __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_00548460(CTrigger *this_ptr,CDemonActor *querying_actor,CVector3f *query_position)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   querying_actor
+; CVector3f *      Stack[0xc]:4   query_position
 ; Local Variables:
 ; undefined        Stack[-0x18]:1  local_18
 ; undefined4       Stack[-0xc]:4  local_c

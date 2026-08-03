@@ -49,7 +49,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 004b0e07 | g_CDemonSet_PTR_005be368
     PUSH EBX                            ; 004b0e0d | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890 ; 004b0e0e
-        ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890()
+        ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004b0e13
     POP EBX                             ; 004b0e16
         ;   Label: LAB_004b0e16

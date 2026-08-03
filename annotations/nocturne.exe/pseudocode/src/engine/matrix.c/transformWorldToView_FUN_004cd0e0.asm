@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_matrix_c_transformWorldToView_FUN_004cd0e0(int *param_1)
+; CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_004cd0e0(CVector3i *input_coords,CVector3i *output_coords)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input_coords
 ;
 ; XREF[1]:
 ;   engine_matrix.c_projectToScreen_FUN_004cea50 at 004cea76

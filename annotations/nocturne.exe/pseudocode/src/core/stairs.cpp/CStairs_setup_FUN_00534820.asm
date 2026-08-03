@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stairs_cpp_CStairs_setup_FUN_00534820(CStairs *param_1)
+; void __cdecl core_stairs_cpp_CStairs_setup_FUN_00534820(CStairs *this_ptr)
 ;
+; Parameters:
+; CStairs *        Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

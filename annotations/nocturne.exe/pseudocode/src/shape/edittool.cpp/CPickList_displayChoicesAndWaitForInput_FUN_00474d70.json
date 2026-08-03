@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -110,20 +110,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 193,
+    "complexity_score": 99,
     "cross_reference_count": 12,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 14,
+    "pseudocode_lines": 34,
+    "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_few",
+      "param_count_too_many",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 124
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -207,9 +206,9 @@
         "00474e62"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70",
-    "signature": "int shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *param_1,char *param_2,int param_3)"
+    "signature": "int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)"
   },
   "function_calls": [
     {
@@ -333,12 +332,10 @@
         "call_addr": "004a5055",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004a4b50",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -346,12 +343,10 @@
         "call_addr": "004a524a",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004a4b50",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -359,12 +354,10 @@
         "call_addr": "004a539e",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004a4b50",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -372,12 +365,10 @@
         "call_addr": "004a555e",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004a4b50",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -385,12 +376,10 @@
         "call_addr": "004a564c",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004a4b50",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -398,12 +387,10 @@
         "call_addr": "004a56e0",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004a4b50",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -411,14 +398,10 @@
         "call_addr": "00470651",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550",
-        "estimated_params": 6,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -426,12 +409,10 @@
         "call_addr": "0049df56",
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -439,12 +420,10 @@
         "call_addr": "0049e2d9",
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -452,21 +431,18 @@
         "call_addr": "004702e6",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_FUN_00470230",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 3,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -495,10 +471,10 @@
     "pcode_op_count": 274
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 40,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -507,6 +483,34 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "dialog_title",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "initial_selected_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "window_flags",
+        "offset": 16,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },
@@ -520,44 +524,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *param_1,char *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *param_1,char *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *param_1,char *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_005b7630",
       "severity": "mild",
       "text": "uVar1 = DAT_005b7630;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (param_1->base).item_count) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -568,48 +540,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = shape_edittool_cpp_FUN_00475230(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004759d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005b7630",
       "severity": "mild",
       "text": "DAT_005b7630 = uVar1;",
@@ -617,14 +549,14 @@
     },
     {
       "call_site_count": 18,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
+      "declared_params": 4,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 3,
+      "fix_type": "remove_params",
+      "match": "declared:4 vs estimated:3",
+      "param_delta": -1,
+      "text": "Function declares 4 params but call sites push 3 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

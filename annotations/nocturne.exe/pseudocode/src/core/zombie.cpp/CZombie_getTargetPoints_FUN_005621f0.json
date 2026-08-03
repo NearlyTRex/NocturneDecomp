@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 399,
+    "complexity_score": 160,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
-    "suspect_count": 30,
+    "pseudocode_lines": 90,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_param",
-      "unrolled_memcpy"
+      "unrolled_memcpy",
+      "warning_type_propagation"
     ],
-    "total_lines": 270
+    "total_lines": 271
   },
   "cross_references": [],
   "function": {
@@ -84,10 +84,10 @@
         "005623e6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_zombie.cpp_CZombie_getTargetPoints_FUN_005621f0",
-    "signature": "int core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(int param_1,CVector3f *param_2)"
+    "signature": "int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(CZombie *this_ptr,CVector3f *out_points_array)"
   },
   "function_calls": [
     {
@@ -126,9 +126,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -173,10 +173,10 @@
     "pcode_op_count": 711
   },
   "stack_frame": {
-    "frame_size": 100,
+    "frame_size": 108,
     "local_size": 100,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -255,6 +255,20 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      },
+      {
+        "is_param": true,
+        "name": "out_points_array",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -277,216 +291,24 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(int param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(int param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_30,*(int *)(param_1 + 0xbdd8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_30,*(int *)(param_1 + 0xbdd8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&local_30 != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->x = local_30.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->y = local_30.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->z = local_30.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (CDeformableModelInstance *)(param_1 + 0x150);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "switch((local_18 + *(int *)(param_1 + 0x6c)) % 4) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde0) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde0) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bone_index = *(int *)(param_1 + 0xbdc8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar1 = param_2 + iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde8) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbde8) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bone_index = *(int *)(param_1 + 0xbdcc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf8) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf8) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(this_ptr,&local_3c,*(int *)(param_1 + 0xbdb4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar2 = param_2 + iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf4) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbdf4) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(this_ptr,&local_60,*(int *)(param_1 + 0xbddc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar2 = param_2 + iVar3;",
-      "type": "unnamed_param"
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 21,
+      "line": 23,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2->x = local_30.x;",
+      "text": "out_points_array->x = local_30.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 38,
+      "line": 40,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_48.x = pCVar1->x;",
@@ -494,7 +316,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 46,
+      "line": 48,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar1->x = local_48.x;",
@@ -502,7 +324,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 67,
+      "line": 69,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar2->x = pCVar1->x;",
@@ -510,7 +332,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 80,
+      "line": 82,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar2->x = pCVar1->x;",

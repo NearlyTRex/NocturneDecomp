@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_CCharacter_canLookAt_FUN_00429fe0(int param_1)
+; int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_00429fe0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_0057a36b

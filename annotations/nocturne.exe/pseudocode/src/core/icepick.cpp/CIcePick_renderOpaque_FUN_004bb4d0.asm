@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_icepick_cpp_CIcePick_renderOpaque_FUN_004bb4d0(CCharacter *param_1)
+; void __cdecl core_icepick_cpp_CIcePick_renderOpaque_FUN_004bb4d0(CIcePick *this_ptr)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440

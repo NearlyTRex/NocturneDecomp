@@ -275,7 +275,7 @@ section .text
     PUSH EAX                            ; 004d0374
     PUSH 0x1cc5b80                      ; 004d0375
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d037a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d037f
     MOV EAX,[0x005b9354]                ; 004d0382 | g_CGame_PTR_005b9354
     MOV EAX,dword ptr [EAX + 0xc]       ; 004d0387 | g_CGame_01c775ec.halo_mode
@@ -293,7 +293,7 @@ section .text
     PUSH EAX                            ; 004d03a4
     PUSH 0x1cc5c80                      ; 004d03a5
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d03aa
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d03af
     TEST EBP,EBP                        ; 004d03b2
         ;   Label: LAB_004d03b2
@@ -313,7 +313,7 @@ section .text
     PUSH EAX                            ; 004d03dd
     PUSH 0x1cc5d80                      ; 004d03de
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d03e3
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d03e8
     PUSH 0x588825                       ; 004d03eb | = "trid3d.dll"
     PUSH 0x5c0e80                       ; 004d03f0 | DAT_005c0e80
@@ -331,7 +331,7 @@ section .text
     PUSH EAX                            ; 004d0412
     PUSH 0x1cc5e80                      ; 004d0413
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d0418
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d041d
     CMP dword ptr [0x01cc64a8],0x0      ; 004d0420 | DAT_01cc64a8
     JNZ 0x004d07fd                      ; 004d0427
@@ -343,7 +343,7 @@ section .text
     PUSH EAX                            ; 004d043a
     PUSH 0x1cc5f80                      ; 004d043b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d0440
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d0445
     PUSH 0x5888f0                       ; 004d0448 | = "Bits per pixel : "
         ;   Label: LAB_004d0448
@@ -375,7 +375,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004d0484
     PUSH EAX                            ; 004d0488
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d0489
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d048e
     MOV ESI,ESP                         ; 004d0491
     MOV EDI,0x1cc6080                   ; 004d0493
@@ -407,7 +407,7 @@ section .text
     PUSH EAX                            ; 004d04c7
     PUSH 0x1cc6180                      ; 004d04c8
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d04cd
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,[0x005b9354]                ; 004d04d2 | g_CGame_PTR_005b9354
     MOV EDX,dword ptr [EAX + 0x10]      ; 004d04d7 | g_CGame_01c775ec.subtitle_mode
     ADD ESP,0x8                         ; 004d04da

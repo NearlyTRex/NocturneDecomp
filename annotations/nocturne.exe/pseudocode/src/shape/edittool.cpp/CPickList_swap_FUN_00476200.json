@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 85,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 45
   },
   "cross_references": [],
@@ -83,9 +81,9 @@
         "00476251"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_edittool.cpp_CPickList_swap_FUN_00476200",
-    "signature": "void shape_edittool_cpp_CPickList_swap_FUN_00476200(CStrList *param_1,int param_2,int param_3)"
+    "signature": "void __cdecl shape_edittool_cpp_CPickList_swap_FUN_00476200(CPickList *this_ptr,int index1,int index2)"
   },
   "function_calls": [
     {
@@ -129,9 +127,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -161,71 +159,36 @@
     "pcode_op_count": 100
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "index1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "index2",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_CPickList_swap_FUN_00476200(CStrList *param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_CPickList_swap_FUN_00476200(CStrList *param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_CPickList_swap_FUN_00476200(CStrList *param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1[0x13].item_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_swap_FUN_00474300(param_1,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_swap_FUN_00474300(param_1,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_swap_FUN_00474300(param_1,param_2,param_3);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

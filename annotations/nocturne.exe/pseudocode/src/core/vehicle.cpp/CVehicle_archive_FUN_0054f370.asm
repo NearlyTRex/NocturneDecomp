@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CDemonActor *param_1)
+; void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CVehicle *this_ptr)
 ;
+; Parameters:
+; CVehicle *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

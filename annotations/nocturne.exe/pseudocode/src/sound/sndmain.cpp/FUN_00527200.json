@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 17,
-        "message": "no matching function for call to 'sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 17,
-        "message": "incompatible pointer to integer conversion assigning to 'int' from 'CSfxSlot *'"
       }
     ],
     "success": false,
@@ -74,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 38,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 31
+    "total_lines": 32
   },
   "cross_references": [],
   "function": {
@@ -151,22 +139,63 @@
     "return_addr_offset": 0,
     "variables": []
   },
+  "static_analysis": {
+    "analyzed_file": "FUN_00527200.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 23,
+          "line": 22,
+          "message": "Uninitialized variable: in_stack_00000008",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "in_stack_00000008",
+      "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "uint in_stack_00000008;",
+      "text": "uint in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 9,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x114) = in_stack_00000008;",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(in_stack_00000004,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "pCVar1->is_active = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000008",
+      "line": 22,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "pCVar1->is_active = in_stack_00000008;",
+      "type": "static_uninitvar"
     }
   ]
 }

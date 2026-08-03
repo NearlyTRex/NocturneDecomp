@@ -5,19 +5,18 @@
 #include "system/stdio.h"
 #include "types/classes/C3DSCamera.h"
 #include "types/classes/C3DSLight.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDeformableModel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonGlobe.h"
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonSet.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CScript.h"
 #include "types/classes/CSentinel.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SDisplayListSortEntry.h"
@@ -51,15 +50,15 @@ CVector3f * __cdecl core_script_cpp_makeVector_FUN_00505880(CVector3f *out,float
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_005058b0(CDeformableModel *model_ptr);
 void __cdecl core_sentinel_cpp_staticInit_FUN_005058c0(void);
 CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_005058f0(void);
-CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_00505910(void);
+CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_00505910(CSentinel *this_ptr);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00505920(CSentinel *this_ptr);
-void core_sentinel_cpp_CSentinel_setup_FUN_00505990(CEnemy *param_1);
-void core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CEnemy *param_1,float param_2);
-undefined4 core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(CDemonActor *param_1,int param_2);
-void core_sentinel_cpp_CSentinel_archive_FUN_005067e0(CEnemy *param_1);
-void core_sentinel_cpp_CSentinel_processDamage_FUN_00506840(CEnemy *param_1,SDamageInfo *param_2);
-undefined4 core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00506940(int param_1,CVector3f *param_2);
-void core_sentinel_cpp_CSentinel_getCollisionType_FUN_00506a60(CCharacter *param_1,SCollisionInfo *param_2);
+void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_00505990(CSentinel *this_ptr);
+void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CSentinel *this_ptr,float delta_time);
+int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
+void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_005067e0(CSentinel *this_ptr);
+void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_00506840(CSentinel *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00506940(CSentinel *this_ptr,CVector3f *out_points_array);
+ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_00506a60(CSentinel *this_ptr,SCollisionInfo *collision_info);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00506a80(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_00506b40(void);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_00506bc0(CDemonSet *this_ptr);
@@ -67,10 +66,10 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *this_ptr
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_00506ec0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *filename);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet *this_ptr,float frustum_param,int render_mode);
-void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *param_1,int param_2,int param_3,int param_4);
+void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *this_ptr,int light_index);
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSet *this_ptr,int layer_flag);
-void core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(undefined4 param_1,int param_2);
+void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_ptr,int index);
 int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(CDemonSet *this_ptr,char *name);
 void core_set_cpp_FUN_005090f0(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,int param_4);
@@ -84,7 +83,7 @@ void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(CDemonSet *this
 void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet *this_ptr,CDemonGlobe *globe);
 void __cdecl core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20(CDemonSet *this_ptr,CDemonGlobe *globe);
 void __cdecl core_set_cpp_FUN_0050aa70(CDemonSet *this_ptr);
-int core_set_cpp_FUN_0050aba0(CDemonSet *param_1);
+void core_set_cpp_FUN_0050aba0(CDemonSet *param_1);
 void __cdecl core_set_cpp_FUN_0050ad20(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
 int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
@@ -112,7 +111,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(CDemonSe
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count);
 void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim,int count);
 void __cdecl core_set_cpp_FUN_0050e080(CDemonSet *this_ptr,int mirror_index,int enable_flag);
-void core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(int param_1);
+void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_restoreCameraView_FUN_0050e310(CDemonSet *this_ptr);

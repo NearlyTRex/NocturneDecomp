@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,38 +52,32 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 14,
-        "line": 28,
+        "column": 79,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_02dca1d0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 45,
+        "column": 79,
         "line": 28,
         "message": "use of undeclared identifier '_DAT_02dca1d4'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 14,
-        "line": 37,
+        "column": 79,
+        "line": 38,
         "message": "use of undeclared identifier '_DAT_02dca1d8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 45,
-        "line": 37,
+        "column": 79,
+        "line": 39,
         "message": "use of undeclared identifier '_DAT_02dca1dc'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 45,
-        "message": "no matching function for call to 'core_xform_cpp_lerpMatrix3x4_FUN_0055cc30'"
       }
     ],
     "success": false,
@@ -92,21 +86,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 237,
+    "complexity_score": 251,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 17,
+    "pseudocode_lines": 46,
+    "suspect_count": 18,
     "suspect_types": [
-      "param_count_too_few",
-      "unaffected_reg",
-      "unnamed_param",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 111
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -130,9 +124,9 @@
         "0054484b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760",
-    "signature": "void core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(int param_1)"
+    "signature": "CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(CTentacle *this_ptr,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -178,7 +172,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -187,22 +181,21 @@
         "call_addr": "00544647",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_CTentacle_attractActorToward_FUN_005445c0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.615384615384615,
@@ -236,10 +229,10 @@
     "pcode_op_count": 430
   },
   "stack_frame": {
-    "frame_size": 256,
+    "frame_size": 260,
     "local_size": 256,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -276,126 +269,132 @@
         "offset": -60,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTentacle *"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CTentacle_computeGripBoneMatrix_FUN_00544760.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 48,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 0xfd0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 0xfd0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(_DAT_02dca1d0 * 0x30 + param_1,_DAT_02dca1d4 * 0x30 + param_1,0x3f000000);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(_DAT_02dca1d0 * 0x30 + param_1,_DAT_02dca1d4 * 0x30 + param_1,0x3f000000);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(_DAT_02dca1d8 * 0x30 + param_1,_DAT_02dca1dc * 0x30 + param_1,0x3f000000);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(_DAT_02dca1d8 * 0x30 + param_1,_DAT_02dca1dc * 0x30 + param_1,0x3f000000);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "unaffected_reg"
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 24,
+      "line": 25,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -403,7 +402,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 33,
+      "line": 36,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -411,7 +410,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 40,
+      "line": 44,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -424,25 +423,6 @@
       "severity": "moderate",
       "text": "// 0054483e: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 48,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "static_uninitvar"
     }
   ]
 }

@@ -12,11 +12,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFr
   SIZE_T SVar1;
   int iVar2;
   int local_2c;
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
+  int local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
   int local_14;
   
   SVar1 = _fread(&local_2c,0x18,1,file);

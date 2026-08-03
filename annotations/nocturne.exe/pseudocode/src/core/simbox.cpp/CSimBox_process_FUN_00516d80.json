@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,26 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 18,
+        "line": 21,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 57,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 57,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -80,19 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 698,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 62,
+    "pseudocode_lines": 72,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 215
+    "total_lines": 224
   },
   "cross_references": [],
   "function": {
@@ -103,9 +89,9 @@
         "00516f46"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_simbox.cpp_CSimBox_process_FUN_00516d80",
-    "signature": "void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)"
+    "signature": "void __cdecl core_simbox_cpp_CSimBox_process_FUN_00516d80(CSimBox *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -177,9 +163,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -212,10 +198,10 @@
     "pcode_op_count": 534
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 36,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -224,504 +210,70 @@
         "offset": -24,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimBox *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x2cc) == 1) && (*(int *)(param_1 + 0x5a4) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x2cc) == 1) && (*(int *)(param_1 + 0x5a4) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,(char *)(param_1 + 0x2d4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5a4) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x39c) != (uint *)(param_1 + 0x338)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x39c) != (uint *)(param_1 + 0x338)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x39c) = *(uint *)(param_1 + 0x338);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x39c) = *(uint *)(param_1 + 0x338);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3a0) = *(uint *)(param_1 + 0x33c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3a0) = *(uint *)(param_1 + 0x33c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3a4) = *(uint *)(param_1 + 0x340);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3a4) = *(uint *)(param_1 + 0x340);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x3c0) != (uint *)(param_1 + 0x344)) {",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->x = (this_ptr->initial_velocity).x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x3c0) != (uint *)(param_1 + 0x344)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c0) = *(uint *)(param_1 + 0x344);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c0) = *(uint *)(param_1 + 0x344);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c4) = *(uint *)(param_1 + 0x348);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c4) = *(uint *)(param_1 + 0x348);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c8) = *(uint *)(param_1 + 0x34c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c8) = *(uint *)(param_1 + 0x34c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)(param_1 + 0x368),&local_18,(CVector3f *)(param_1 + 0x39c))",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->x = (this_ptr->init_rot_vel).x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)(param_1 + 0x368),&local_18,(CVector3f *)(param_1 + 0x39c))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(param_1 + 0x390) != pCVar2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CVector3f *)(param_1 + 0x390))->x = pCVar2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x394) = pCVar2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x398) = pCVar2->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2cc) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x5ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x5ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x5b0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x5b0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x5b4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x5b4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x30) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x38) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(*(code *)**(uint **)(param_1 + 0x14c))(param_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)(param_1 + 0x14c))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)(param_1 + 0x14c))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x5a4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_box_cpp_CBox_process_FUN_0041acb0((CBox *)(param_1 + 0x350),param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_box_cpp_CBox_process_FUN_0041acb0((CBox *)(param_1 + 0x350),param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x20) = (((CBox *)(param_1 + 0x350))->position).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x20) = (((CBox *)(param_1 + 0x350))->position).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x354);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x354);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x358);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x358);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x30) != (uint *)(param_1 + 0x35c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x30) != (uint *)(param_1 + 0x35c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x35c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x35c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34) = *(uint *)(param_1 + 0x360);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34) = *(uint *)(param_1 + 0x360);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = *(uint *)(param_1 + 0x364);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = *(uint *)(param_1 + 0x364);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 16,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x39c) = *(uint *)(param_1 + 0x338);",
+      "text": "pCVar5->x = pCVar4->x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 21,
-      "match": "raw-offset struct copy",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 44,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x3c0) = *(uint *)(param_1 + 0x344);",
+      "text": "(this_ptr->base).location.position.x = (this_ptr->spawn_position).x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 38,
-      "match": "raw-offset struct copy",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 62,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x5ac);",
+      "text": "(this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 59,
-      "match": "raw-offset struct copy",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 68,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x35c);",
+      "text": "(pUVar1->vec).x = pCVar5->x;",
       "type": "unrolled_memcpy"
     }
   ],

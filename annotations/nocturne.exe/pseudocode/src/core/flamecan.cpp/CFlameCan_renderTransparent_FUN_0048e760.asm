@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_flamecan_cpp_CFlameCan_renderTransparent_FUN_0048e760(int param_1)
+; int __cdecl core_flamecan_cpp_CFlameCan_renderTransparent_FUN_0048e760(CFlameCan *this_ptr)
 ;
+; Parameters:
+; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0

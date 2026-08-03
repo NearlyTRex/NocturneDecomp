@@ -17,7 +17,7 @@ EXCEPTION_DISPOSITION __cdecl ExceptionHandler(EXCEPTION_RECORD *ExceptionRecord
 
 // Original: crt_exception.c_installExceptionHandler_FUN_0056eed8
 // Address: 0056eed8
-void installExceptionHandler(undefined4 param_1);
+void __cdecl installExceptionHandler(undefined4 param_1);
 
 // Original: crt_exception.c_RemoveExceptionHandler_FUN_0056ef24
 // Address: 0056ef24

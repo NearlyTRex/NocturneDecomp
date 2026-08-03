@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_CTurret_archive_FUN_0054a000(CWeapon *param_1)
+; void __cdecl core_turret_cpp_CTurret_archive_FUN_0054a000(CTurret *this_ptr)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_homeOrient_00596ddd

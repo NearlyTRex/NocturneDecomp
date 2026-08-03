@@ -9,7 +9,7 @@
 void __cdecl engine_texture_cpp_FUN_00545700(CTextureCache *this_ptr)
 
 {
-  int iVar1;
+  int texture_index;
   SRenderVertex local_cc;
   uint local_9c;
   uint local_98;
@@ -33,11 +33,11 @@ void __cdecl engine_texture_cpp_FUN_00545700(CTextureCache *this_ptr)
   uint local_24;
   uint local_20;
   
-  iVar1 = 0;
+  texture_index = 0;
   if (0 < *(int *)(this_ptr[10].texture_names[0x1fe] + 8)) {
     do {
-      engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(this_ptr,iVar1);
-      iVar1 = iVar1 + 1;
+      engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(this_ptr,texture_index);
+      texture_index = texture_index + 1;
       local_cc.projected_vertex.transformed_x = 1000;
       local_cc.projected_vertex.transformed_y = 1000;
       local_cc.projected_vertex.transformed_z = 2000;
@@ -67,7 +67,7 @@ void __cdecl engine_texture_cpp_FUN_00545700(CTextureCache *this_ptr)
       local_88 = 0x4fffb;
       local_2c = 0x4fffb;
       engine_special_cpp_drawPolygon_FUN_00532620(&local_cc,4,1);
-    } while (iVar1 < *(int *)(this_ptr[10].texture_names[0x1fe] + 8));
+    } while (texture_index < *(int *)(this_ptr[10].texture_names[0x1fe] + 8));
   }
   return;
 }

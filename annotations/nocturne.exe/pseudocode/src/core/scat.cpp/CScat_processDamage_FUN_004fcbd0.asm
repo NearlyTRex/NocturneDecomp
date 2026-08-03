@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_CScat_processDamage_FUN_004fcbd0(CScat *param_1,SDamageInfo *param_2)
+; void __cdecl core_scat_cpp_CScat_processDamage_FUN_004fcbd0(CScat *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_scat_die_wav_0058df26

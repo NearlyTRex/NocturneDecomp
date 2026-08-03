@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * core_bride_cpp_CBride_getTargetPoint_FUN_00420eb0(int param_1,CVector3f *param_2)
+; CVector3f * __cdecl core_bride_cpp_CBride_getTargetPoint_FUN_00420eb0(CBride *this_ptr,CVector3f *out_point)
 ;
+; Parameters:
+; CBride *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_point
 ; Local Variables:
 ; undefined        Stack[-0x7c]:1  local_7c
 ; undefined        Stack[-0x4c]:1  local_4c
@@ -37,7 +40,7 @@ section .text
     LEA ESI,[EBP + -0x3c]               ; 00420ecd
     LEA EDI,[EBP + -0x6c]               ; 00420ed0
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0 ; 00420ed3
-        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0()
+        ;   XREF to: 0051d0a0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 00420ed8
     LEA ESI,[EBP + -0x3c]               ; 00420edd
     MOVSD.REP ES:EDI,ESI                ; 00420ee0

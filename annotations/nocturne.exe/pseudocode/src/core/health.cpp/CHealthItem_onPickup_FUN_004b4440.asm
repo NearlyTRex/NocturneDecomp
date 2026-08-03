@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_health_cpp_CHealthItem_onPickup_FUN_004b4440(CDemonActor *param_1,CDemonActor *param_2)
+; void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004b4440(CHealthItem *this_ptr,CDemonActor *owner)
 ;
+; Parameters:
+; CHealthItem *    Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   owner
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onPickup_FUN_0040b1a0

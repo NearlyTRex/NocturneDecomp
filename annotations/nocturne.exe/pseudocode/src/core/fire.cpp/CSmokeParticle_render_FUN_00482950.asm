@@ -292,7 +292,7 @@ section .text
     MOV EDX,dword ptr [0x007f7370]      ; 00482c1e | DAT_007f7370
     PUSH EDX                            ; 00482c24
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00482c25
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     MOV EAX,0xffff                      ; 00482c2a
     MOV ECX,dword ptr [0x01c038f4]      ; 00482c2f | DAT_01c038f4
     ADD ESP,0xc                         ; 00482c35

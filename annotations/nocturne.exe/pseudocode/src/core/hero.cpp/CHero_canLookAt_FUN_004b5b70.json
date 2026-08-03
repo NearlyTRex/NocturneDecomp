@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 14,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 14,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -74,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 182,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 15,
-    "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 88
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 90
   },
   "cross_references": [],
   "function": {
@@ -96,9 +81,9 @@
         "004b5c2b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hero.cpp_CHero_canLookAt_FUN_004b5b70",
-    "signature": "undefined4 core_hero_cpp_CHero_canLookAt_FUN_004b5b70(int param_1)"
+    "signature": "int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004b5b70(CHero *this_ptr)"
   },
   "function_calls": [],
   "globals": [
@@ -113,9 +98,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -155,135 +140,22 @@
     "pcode_op_count": 348
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_hero_cpp_CHero_canLookAt_FUN_004b5b70(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 7,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((((*(int *)(param_1 + 0xbc94) != 0) || (*(int *)(param_1 + 0xbc98) != 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((((*(int *)(param_1 + 0xbc94) != 0) || (*(int *)(param_1 + 0xbc98) != 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 0xbca0) != 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((*(int *)(param_1 + 0xbca4) != 0 || (*(int *)(param_1 + 0xbca8) != 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((*(int *)(param_1 + 0xbca4) != 0 || (*(int *)(param_1 + 0xbca8) != 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((*(int *)(param_1 + 0xbcac) != 0 ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((*(int *)(param_1 + 0xbcb0) != 0 ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcb4)))))))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcb8)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcbc)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x2408) == 0)))))) {",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

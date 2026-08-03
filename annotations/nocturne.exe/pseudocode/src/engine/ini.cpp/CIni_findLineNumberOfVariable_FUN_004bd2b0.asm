@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5)
+; int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 ;
+; Parameters:
+; CIni *           Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   section
+; char *           Stack[0xc]:4   key
+; char *           Stack[0x10]:4   value
+; char *           Stack[0x14]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x214]:1  local_214
 ; undefined1       Stack[-0x213]:1  local_213
@@ -60,7 +66,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 004bd2f7
     PUSH EAX                            ; 004bd2fe
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004bd2ff
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bd304
     TEST EBP,EBP                        ; 004bd307
         ;   Label: LAB_004bd307

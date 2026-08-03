@@ -1,24 +1,24 @@
 // Name: core_course.cpp_fmodfPositive_FUN_0043b510
 // Address: 0043b510
 // Address Range: [[0043b510, 0043b5a0]]
-// Convention: unknown
-// Signature: float core_course_cpp_fmodfPositive_FUN_0043b510(float param_1,float param_2)
+// Convention: __cdecl
+// Signature: float __cdecl core_course_cpp_fmodfPositive_FUN_0043b510(float value,float modulus)
 
 #include "nocturne.h"
 
-float core_course_cpp_fmodfPositive_FUN_0043b510(float param_1,float param_2)
+float __cdecl core_course_cpp_fmodfPositive_FUN_0043b510(float value,float modulus)
 
 {
   double dVar1;
   
-  if (param_1 < 0.0) {
-    dVar1 = floor((double)(-param_1 / param_2));
-    param_1 = (float)dVar1 * param_2 + param_1;
-    if (param_1 < 0.0) {
-      param_1 = param_1 + param_2;
+  if (value < 0.0) {
+    dVar1 = floor((double)(-value / modulus));
+    value = (float)dVar1 * modulus + value;
+    if (value < 0.0) {
+      value = value + modulus;
     }
-    return param_1;
+    return value;
   }
-  dVar1 = floor((double)(param_1 / param_2));
-  return param_1 - (float)dVar1 * param_2;
+  dVar1 = floor((double)(value / modulus));
+  return value - (float)dVar1 * modulus;
 }

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "cast_error",
         "column": 22,
-        "line": 88,
+        "line": 89,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 132,
-        "message": "no matching function for call to 'core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00'"
       }
     ],
     "success": false,
@@ -74,13 +68,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 289,
+    "complexity_score": 310,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 154,
-    "suspect_count": 11,
+    "pseudocode_lines": 155,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -88,7 +82,7 @@
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 493
+    "total_lines": 494
   },
   "cross_references": [
     {
@@ -407,7 +401,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 56,
       "match": "(float *)((int)pfVar6",
       "severity": "moderate",
       "text": "pfVar6 = (float *)((int)pfVar6 + 1);",
@@ -416,6 +410,14 @@
     {
       "description": "Complex pointer cast",
       "line": 131,
+      "match": "(CMatrix3x4f *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
@@ -423,7 +425,7 @@
     },
     {
       "description": "Pointer value `pfVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 56,
       "match": "(int)pfVar6",
       "severity": "moderate",
       "text": "pfVar6 = (float *)((int)pfVar6 + 1);",
@@ -431,7 +433,7 @@
     },
     {
       "description": "Pointer value `pfVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
+      "line": 62,
       "match": "(int)pfVar6",
       "severity": "moderate",
       "text": "if ((int)pfVar6 < this_ptr->count) {",
@@ -439,7 +441,7 @@
     },
     {
       "description": "Pointer value `pfVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "(int)pfVar6",
       "severity": "moderate",
       "text": "if ((0 < (int)pfVar6) &&",
@@ -447,15 +449,23 @@
     },
     {
       "description": "Pointer value `pfVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 112,
+      "line": 113,
       "match": "(int)pfVar6",
       "severity": "moderate",
       "text": "SStack_188.damage_amount = (float)(int)pfVar6 * (float)0.050000000000000003;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 131,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 132,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
@@ -463,7 +473,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 128,
+      "line": 129,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -471,7 +481,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 58,
+      "line": 59,
       "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar4 = (CBugs *)&(pCVar4->base).base.base.orient_matrix.m[0].y;",

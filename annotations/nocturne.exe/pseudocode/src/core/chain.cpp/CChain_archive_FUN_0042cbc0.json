@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 238,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 19,
-    "suspect_types": [
-      "pointer_cast",
-      "primitive_walker_cast",
-      "unnamed_param"
-    ],
-    "total_lines": 132
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 124
   },
   "cross_references": [],
   "function": {
@@ -85,9 +81,9 @@
         "0042cce0"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_chain.cpp_CChain_archive_FUN_0042cbc0",
-    "signature": "void core_chain_cpp_CChain_archive_FUN_0042cbc0(CDemonActor *param_1)"
+    "signature": "void __cdecl core_chain_cpp_CChain_archive_FUN_0042cbc0(CChain *this_ptr)"
   },
   "function_calls": [
     {
@@ -200,9 +196,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -231,167 +227,22 @@
     "pcode_op_count": 320
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CChain *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_chain_cpp_CChain_archive_FUN_0042cbc0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 1),\"vertexCount\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)(param_1[1].actor_name + 4),\"chainLength\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor **)(param_1[1].actor_name + 0xc),\"target\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[1].actor_name + 0x10),\"targetBone\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)(param_1[4].actor_name + 0x14),\"weight\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[4].location,\"dampen\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)(param_1[4].actor_name + 0x18),\"friction\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)(param_1[4].actor_name + 0x1c),\"gravity\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].actor_name + 0x1c,\"textureName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)&param_1[1].orient_matrix.m[2].z,\"pullWavName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].create_event + 0x4c,\"moveWavName\")",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 33,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[1].previous_transform_state.position.z,\"groundCollideFlag\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[1].previous_transform_state.position.z,\"groundCollideFlag\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 12,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "((int *)(param_1[1].actor_name + 0x10),\"targetBone\");",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 14,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "((float *)(param_1[4].actor_name + 0x14),\"weight\");",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 17,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "((float *)(param_1[4].actor_name + 0x18),\"friction\");",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 19,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "((float *)(param_1[4].actor_name + 0x1c),\"gravity\");",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

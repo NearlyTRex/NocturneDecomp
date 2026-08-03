@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_backgnd_cpp_CBackgroundActor_archive_FUN_00410040(CDemonActor *param_1)
+; void __cdecl core_backgnd_cpp_CBackgroundActor_archive_FUN_00410040(CBackgroundActor *this_ptr)
 ;
+; Parameters:
+; CBackgroundActor * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005784d5

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(CGargoyle *param_1,float param_2)
+; void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(CGargoyle *this_ptr,float delta_time)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104
 ; undefined4       Stack[-0x100]:4  local_100
@@ -370,7 +373,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 004a7bab | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 004a7bb1 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a7bb2
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004a7982                      ; 004a7bb7
         ;   XREF to: 004a7982 (UNCONDITIONAL_JUMP)  ; LAB_004a7982
     JBE 0x004a7972                      ; 004a7bbc

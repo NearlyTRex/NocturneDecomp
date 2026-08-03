@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batman_cpp_CBatman_process_FUN_00413800(CBatman *param_1,float param_2)
+; void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBatman *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x188]:1  local_188
 ; undefined4       Stack[-0x184]:4  local_184
@@ -323,7 +326,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 00413a78 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 00413a7d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00413a7e
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004138e3                      ; 00413a83
         ;   XREF to: 004138e3 (UNCONDITIONAL_JUMP)  ; LAB_004138e3
     JBE 0x004138d3                      ; 00413a88

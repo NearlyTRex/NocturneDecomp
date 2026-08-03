@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4)
+; int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   world_pos
+; CDemonLight *    Stack[0xc]:4   light_source
+; CVector3i *      Stack[0x10]:4   light_direction
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30

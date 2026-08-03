@@ -374,7 +374,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 0042b371 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 0042b377 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0042b378
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0042b37d
     MOV dword ptr [EDI + 0x2dbc],0x0    ; 0042b380
     XOR EAX,EAX                         ; 0042b38a

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *param_1,char *param_2)
+; void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format)
 ;
+; Parameters:
+; CConsole *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   format
 ; Local Variables:
 ; undefined        Stack[-0x1014]:1  local_1014
 ; undefined4       Stack[-0x14]:4  local_14

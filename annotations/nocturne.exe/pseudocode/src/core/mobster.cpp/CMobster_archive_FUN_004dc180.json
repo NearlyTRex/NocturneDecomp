@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 185,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 14,
-    "suspect_types": [
-      "primitive_walker_cast",
-      "unnamed_param"
-    ],
-    "total_lines": 137
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 133
   },
   "cross_references": [],
   "function": {
@@ -84,9 +81,9 @@
         "004dc2a7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mobster.cpp_CMobster_archive_FUN_004dc180",
-    "signature": "void core_mobster_cpp_CMobster_archive_FUN_004dc180(CEnemy *param_1)"
+    "signature": "void __cdecl core_mobster_cpp_CMobster_archive_FUN_004dc180(CMobster *this_ptr)"
   },
   "function_calls": [
     {
@@ -208,9 +205,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -240,127 +237,22 @@
     "pcode_op_count": 325
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMobster *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_mobster_cpp_CMobster_archive_FUN_004dc180(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->speed,\"speed\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model,\"modelName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->guard_distance,\"guardDistance\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model.motion_controller,\"motion state\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveClothList_FUN_0040cf70(&(param_1->base).cloth_list,\"clothList\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[1].base.base.actor_name + 0x1c),\"postMode\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor **)&param_1[1].base.base.location,\"ourPost\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor **)&param_1[1].base.base.location.position.y,\"vehicle\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 27,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[1].base.base.location.position.z,\"sideOfCar\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[1].base.base.location.position.z,\"sideOfCar\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1[1].base.base.location.area_id,\"holdPosFlag\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)&param_1[1].base.base.orient,\"holdPosCond\");",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

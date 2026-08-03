@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_bride_cpp_CBride_getActorType_FUN_0041fba0(void)
+; CDemonActorType * __cdecl core_bride_cpp_CBride_getActorType_FUN_0041fba0(CBride *this_ptr)
 ;
+; Parameters:
+; CBride *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CBrideActorType_00764af0

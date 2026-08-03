@@ -118,7 +118,7 @@ section .text
     PUSH EDI                            ; 004f8e84
     PUSH EBP                            ; 004f8e85
     CALL engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0 ; 004f8e86
-        ;   XREF to: 004f81c0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0()
+        ;   XREF to: 004f81c0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0(CPodFile * this_ptr, int file_index, SFoundFileInfo * output_info)
     MOV EAX,0x1                         ; 004f8e8b
     MOV EBP,dword ptr [EBX + 0x318]     ; 004f8e90
     ADD EBP,EAX                         ; 004f8e96

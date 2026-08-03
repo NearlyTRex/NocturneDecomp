@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   height
+; char *           Stack[0x18]:4   format
 ;
 ; XREF[1]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e93f

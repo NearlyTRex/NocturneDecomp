@@ -1,14 +1,16 @@
 // Name: wincore_wddvmem.cpp_freeLibrary_FUN_00553d20
 // Address: 00553d20
 // Address Range: [[00553d20, 00553d2c]]
-// Convention: unknown
-// Signature: void wincore_wddvmem_cpp_freeLibrary_FUN_00553d20(HMODULE param_1)
+// Convention: __cdecl
+// Signature: BOOL __cdecl wincore_wddvmem_cpp_freeLibrary_FUN_00553d20(HMODULE hLibModule)
 
 #include "nocturne.h"
 
-void wincore_wddvmem_cpp_freeLibrary_FUN_00553d20(HMODULE param_1)
+BOOL __cdecl wincore_wddvmem_cpp_freeLibrary_FUN_00553d20(HMODULE hLibModule)
 
 {
-  FreeLibrary(param_1);
-  return;
+  BOOL BVar1;
+  
+  BVar1 = FreeLibrary(hLibModule);
+  return BVar1;
 }

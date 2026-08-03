@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(int param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot *this_ptr,double hardware_playback_pos)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
+; double           Stack[0x8]:8   hardware_playback_pos
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28

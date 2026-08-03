@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,undefined4 param_5,int param_6)
+; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag)
 ;
+; Parameters:
+; CPackedBitmapSet * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   bitmap_width
+; int              Stack[0x10]:4   bitmap_height
+; int              Stack[0x14]:4   transparency_color
+; int              Stack[0x18]:4   apply_palette_flag
 ; Local Variables:
 ; undefined        Stack[-0x1a8]:1  local_1a8
 ; undefined        Stack[-0x144]:1  local_144
@@ -101,7 +108,7 @@ section .text
     PUSH EAX                            ; 004f5568
     MOV ESI,0xc6                        ; 004f5569
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f556e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x18                        ; 004f5573
     LEA EAX,[ESP + 0x64]                ; 004f5576
     MOV ECX,0x58d577                    ; 004f557a | = "..\\cockpit\\pkbmpset.cpp"
@@ -134,7 +141,7 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 004f55c7
     PUSH EAX                            ; 004f55ce
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f55cf
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EDX,0x58d5d9                    ; 004f55d4 | = "..\\cockpit\\pkbmpset.cpp"
     ADD ESP,0xc                         ; 004f55d9
     LEA EAX,[ESP + 0xc8]                ; 004f55dc
@@ -171,7 +178,7 @@ section .text
     LEA EAX,[ESP + 0x134]               ; 004f5638
     PUSH EAX                            ; 004f563f
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f5640
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x58d62a                    ; 004f5645 | = "..\\cockpit\\pkbmpset.cpp"
     ADD ESP,0xc                         ; 004f564a
     MOV [0x01cc4800],EAX                ; 004f564d | g_CHAR_PTR_01cc4800
@@ -197,7 +204,7 @@ section .text
     PUSH EAX                            ; 004f568b
     INC EDI                             ; 004f568c
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 ; 004f568d
-        ;   XREF to: 004f47b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0()
+        ;   XREF to: 004f47b0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap * this_ptr, uchar * bitmap_data, int width, int height, ...)
     ADD ESI,0x24                        ; 004f5692
     MOV EDX,dword ptr [EBX]             ; 004f5695
     ADD ESP,0x18                        ; 004f5697
@@ -236,7 +243,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f56ee
     PUSH EAX                            ; 004f56f2
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f56f3
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x58d502                    ; 004f56f8 | = "..\\cockpit\\pkbmpset.cpp"
     ADD ESP,0xc                         ; 004f56fd
     MOV [0x01cc4800],EAX                ; 004f5700 | g_CHAR_PTR_01cc4800

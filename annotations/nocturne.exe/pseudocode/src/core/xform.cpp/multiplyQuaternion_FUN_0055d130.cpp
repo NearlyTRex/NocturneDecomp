@@ -1,12 +1,12 @@
 // Name: core_xform.cpp_multiplyQuaternion_FUN_0055d130
 // Address: 0055d130
 // Address Range: [[0055d130, 0055d1e1]]
-// Convention: unknown
-// Signature: void core_xform_cpp_multiplyQuaternion_FUN_0055d130(float *param_1,float *param_2)
+// Convention: __stack2_esi
+// Signature: CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_0055d130(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 
-void core_xform_cpp_multiplyQuaternion_FUN_0055d130(float *param_1,float *param_2)
+CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_0055d130(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out)
 
 {
   float fVar1;
@@ -33,36 +33,35 @@ void core_xform_cpp_multiplyQuaternion_FUN_0055d130(float *param_1,float *param_
   float fVar22;
   float fVar23;
   float fVar24;
-  float *unaff_ESI;
   
-  fVar1 = *param_2;
-  fVar2 = param_1[1];
-  fVar3 = *param_2;
-  fVar4 = param_1[2];
-  fVar5 = *param_2;
-  fVar6 = param_1[3];
-  fVar7 = *param_1;
-  fVar8 = param_2[1];
-  fVar9 = *param_1;
-  fVar10 = param_2[2];
-  fVar11 = *param_1;
-  fVar12 = param_2[3];
-  fVar13 = param_2[2];
-  fVar14 = param_1[3];
-  fVar15 = param_2[3];
-  fVar16 = param_1[1];
-  fVar17 = param_2[3];
-  fVar18 = param_1[2];
-  fVar19 = param_2[1];
-  fVar20 = param_1[2];
-  fVar21 = param_2[1];
-  fVar22 = param_1[3];
-  fVar23 = param_2[2];
-  fVar24 = param_1[1];
-  *unaff_ESI = *param_2 * *param_1 -
-               (param_2[3] * param_1[3] + param_2[2] * param_1[2] + param_2[1] * param_1[1]);
-  unaff_ESI[1] = (fVar13 * fVar14 + fVar7 * fVar8 + fVar1 * fVar2) - fVar17 * fVar18;
-  unaff_ESI[2] = (fVar15 * fVar16 + fVar9 * fVar10 + fVar3 * fVar4) - fVar21 * fVar22;
-  unaff_ESI[3] = (fVar19 * fVar20 + fVar11 * fVar12 + fVar5 * fVar6) - fVar23 * fVar24;
-  return;
+  fVar1 = quat2_in->w;
+  fVar2 = quat1_in->x;
+  fVar3 = quat2_in->w;
+  fVar4 = quat1_in->y;
+  fVar5 = quat2_in->w;
+  fVar6 = quat1_in->z;
+  fVar7 = quat1_in->w;
+  fVar8 = quat2_in->x;
+  fVar9 = quat1_in->w;
+  fVar10 = quat2_in->y;
+  fVar11 = quat1_in->w;
+  fVar12 = quat2_in->z;
+  fVar13 = quat2_in->y;
+  fVar14 = quat1_in->z;
+  fVar15 = quat2_in->z;
+  fVar16 = quat1_in->x;
+  fVar17 = quat2_in->z;
+  fVar18 = quat1_in->y;
+  fVar19 = quat2_in->x;
+  fVar20 = quat1_in->y;
+  fVar21 = quat2_in->x;
+  fVar22 = quat1_in->z;
+  fVar23 = quat2_in->y;
+  fVar24 = quat1_in->x;
+  quat_out->w = quat2_in->w * quat1_in->w -
+                (quat2_in->z * quat1_in->z + quat2_in->y * quat1_in->y + quat2_in->x * quat1_in->x);
+  quat_out->x = (fVar13 * fVar14 + fVar7 * fVar8 + fVar1 * fVar2) - fVar17 * fVar18;
+  quat_out->y = (fVar15 * fVar16 + fVar9 * fVar10 + fVar3 * fVar4) - fVar21 * fVar22;
+  quat_out->z = (fVar19 * fVar20 + fVar11 * fVar12 + fVar5 * fVar6) - fVar23 * fVar24;
+  return quat_out;
 }

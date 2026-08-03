@@ -158,7 +158,7 @@ section .text
         ;   Label: LAB_00537db9
     MOV EDI,dword ptr [EBX + 0x24f0]    ; 00537dba
     CALL core_stranger.cpp_CStranger_dropRightHandObject_FUN_0053bf30 ; 00537dc0
-        ;   XREF to: 0053bf30 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_dropRightHandObject_FUN_0053bf30()
+        ;   XREF to: 0053bf30 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_dropRightHandObject_FUN_0053bf30(CStranger * this_ptr)
     MOV EAX,dword ptr [EBX + 0x1faa0]   ; 00537dc5
     ADD ESP,0x4                         ; 00537dcb
     CMP EAX,0x2                         ; 00537dce

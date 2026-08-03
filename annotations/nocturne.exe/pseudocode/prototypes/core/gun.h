@@ -13,7 +13,7 @@ CGun * __cdecl factoryFunc(void);
 
 // Original: core_gun.cpp_CGun_getActorType_FUN_004b2750
 // Address: 004b2750
-CDemonActorType * CGun::getActorType(void);
+CDemonActorType * __cdecl CGun::getActorType(CGun *this_ptr);
 
 // Original: core_gun.cpp_CGun_ctor_FUN_004b2760
 // Address: 004b2760

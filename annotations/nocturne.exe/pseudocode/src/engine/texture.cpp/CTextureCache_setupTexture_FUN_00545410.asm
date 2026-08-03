@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(int param_1,int param_2)
+; void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache *cache,int texture_index)
 ;
+; Parameters:
+; CTextureCache *  Stack[0x4]:4   cache
+; int              Stack[0x8]:4   texture_index
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

@@ -1,12 +1,12 @@
 // Name: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_0052c830
 // Address: 0052c830
 // Address Range: [[0052c830, 0052c832]]
-// Convention: unknown
-// Signature: undefined4 sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_0052c830(void)
+// Convention: __cdecl
+// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_0052c830(CWavOutDevice *this_ptr,int buffer_id,int offset,int size)
 
 #include "nocturne.h"
 
-uint sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_0052c830(void)
+int __cdecl sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_0052c830(CWavOutDevice *this_ptr,int buffer_id,int offset,int size)
 
 {
   return 0;

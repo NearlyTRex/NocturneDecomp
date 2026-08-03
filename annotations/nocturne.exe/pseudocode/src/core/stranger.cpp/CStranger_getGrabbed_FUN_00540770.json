@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "cast_error",
-        "column": 11,
-        "line": 18,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 11,
-        "line": 23,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       }
     ],
     "success": false,
@@ -74,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 208,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 18,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 89
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 88
   },
   "cross_references": [],
   "function": {
@@ -95,9 +81,9 @@
         "00540812"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_stranger.cpp_CStranger_getGrabbed_FUN_00540770",
-    "signature": "int core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CHero *param_1,CDemonActor *param_2,int param_3)"
+    "signature": "int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CStranger *this_ptr,CDemonActor *grabber,int grab_type)"
   },
   "function_calls": [
     {
@@ -111,9 +97,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -143,159 +129,36 @@
     "pcode_op_count": 232
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      },
+      {
+        "is_param": true,
+        "name": "grabber",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "grab_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CHero *param_1,CDemonActor *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CHero *param_1,CDemonActor *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CHero *param_1,CDemonActor *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_1->object_to_pick_up == (CDemonActor *)0x0) && (param_1->door_to_open == (CDoor *)0x0)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_1->object_to_pick_up == (CDemonActor *)0x0) && (param_1->door_to_open == (CDoor *)0x0)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": ") && ((iVar1 = param_1[1].base.base.health, iVar1 == 0 || (iVar1 == 3)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_CHero_getGrabbed_FUN_004b4c70(param_1,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_CHero_getGrabbed_FUN_004b4c70(param_1,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_CHero_getGrabbed_FUN_004b4c70(param_1,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y !=",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].carry_actor) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,0,(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y !=",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[1].carry_actor) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,1,(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.collision_disabled = 0;",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

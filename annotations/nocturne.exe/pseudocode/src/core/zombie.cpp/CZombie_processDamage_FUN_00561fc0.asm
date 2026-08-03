@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *param_1,SDamageInfo *param_2)
+; void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_lookForHead_0059893e
@@ -74,7 +77,7 @@ section .text
     PUSH ESI                            ; 00562050
     PUSH EBX                            ; 00562051
     CALL core_zombie.cpp_CZombie_dropAndClearTarget_FUN_005618c0 ; 00562052
-        ;   XREF to: 005618c0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_dropAndClearTarget_FUN_005618c0()
+        ;   XREF to: 005618c0 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_dropAndClearTarget_FUN_005618c0(CZombie * this_ptr)
     MOV EAX,dword ptr [EBX + 0xbdf8]    ; 00562057
     MOV ESI,0x6                         ; 0056205d
     MOV EBP,dword ptr [EBX + EAX*0x4 + 0x2290] ; 00562062

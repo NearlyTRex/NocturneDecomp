@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_werewolf_cpp_CWerewolf_getDeathState_FUN_00557c30(int param_1)
+; EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_00557c30(CWerewolf *this_ptr)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660

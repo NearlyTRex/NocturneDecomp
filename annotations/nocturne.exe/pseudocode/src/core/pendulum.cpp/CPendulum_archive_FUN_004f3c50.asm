@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pendulum_cpp_CPendulum_archive_FUN_004f3c50(CDemonActor *param_1)
+; void __cdecl core_pendulum_cpp_CPendulum_archive_FUN_004f3c50(CPendulum *this_ptr)
 ;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0058d090

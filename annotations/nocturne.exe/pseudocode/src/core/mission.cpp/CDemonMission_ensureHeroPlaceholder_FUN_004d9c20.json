@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,56 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
+        "column": 64,
+        "line": 21,
+        "message": "use of undeclared identifier 'stack0xfffffe84'; did you mean 'in_stack_fffffe84'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 31,
+        "message": "use of undeclared identifier 'stack0xfffffe84'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 35,
+        "message": "use of undeclared identifier 'stack0xfffffe84'; did you mean 'in_stack_fffffe84'?"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 45,
-        "line": 40,
+        "line": 42,
         "message": "use of undeclared identifier 'FUN_0056497c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 72,
+        "line": 63,
+        "message": "use of undeclared identifier 'stack0xfffffe84'; did you mean 'in_stack_fffffe84'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 68,
+        "line": 67,
+        "message": "use of undeclared identifier 'stack0xfffffe84'; did you mean 'in_stack_fffffe84'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 65,
+        "line": 72,
+        "message": "use of undeclared identifier 'stack0xfffffe84'; did you mean 'in_stack_fffffe84'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 64,
+        "line": 79,
+        "message": "use of undeclared identifier 'stack0xfffffe84'; did you mean 'in_stack_fffffe84'?"
       }
     ],
     "success": false,
@@ -68,17 +110,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 189,
-    "complexity_score": 94,
+    "complexity_score": 206,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
-    "suspect_count": 2,
+    "pseudocode_lines": 71,
+    "suspect_count": 12,
     "suspect_types": [
+      "stack_param",
+      "stack_ref",
       "unrolled_memcpy"
     ],
-    "total_lines": 258
+    "total_lines": 260
   },
   "cross_references": [
     {
@@ -316,20 +360,6 @@
         {
           "check_id": "nullPointer",
           "column": 11,
-          "line": 45,
-          "message": "Possible null pointer dereference: actor",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointer",
-          "column": 12,
-          "line": 46,
-          "message": "Possible null pointer dereference: actor",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointer",
-          "column": 12,
           "line": 47,
           "message": "Possible null pointer dereference: actor",
           "severity": "warning"
@@ -344,7 +374,21 @@
         {
           "check_id": "nullPointer",
           "column": 12,
+          "line": 49,
+          "message": "Possible null pointer dereference: actor",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointer",
+          "column": 12,
           "line": 50,
+          "message": "Possible null pointer dereference: actor",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointer",
+          "column": 12,
+          "line": 52,
           "message": "Possible null pointer dereference: actor",
           "severity": "warning"
         }
@@ -355,8 +399,88 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "uint in_stack_fffffe84;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffe84);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "if ((int)in_stack_fffffe84 < 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "((CPickList *)&stack0xfffffe84,\"Mission has no hero placeholders.\\n\\nSelect a hero to convert into a hero placeholder, or\\npress ESC to leave mission as is.\\n\\n(You will not be able to play the mission without a hero placeholder.)\",-1,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "in_stack_fffffe84);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "((CStrList *)&stack0xfffffe84,iVar1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe84,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe84,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffe84,pCVar3->actor_name);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 72,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe84,0);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 39,
+      "line": 41,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(actor->base).location.position.x = (pCVar3->location).position.x;",
@@ -364,7 +488,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 45,
+      "line": 47,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar4->vec).x = (pCVar3->orient).vec.x;",
@@ -372,7 +496,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 45,
+      "line": 47,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "actor->index = 0;",
@@ -380,7 +504,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 46,
+      "line": 48,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "(actor->base).location.position.x = (pCVar3->location).position.x;",
@@ -388,7 +512,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 47,
+      "line": 49,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "(actor->base).location.position.y = (pCVar3->location).position.y;",
@@ -396,7 +520,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 48,
+      "line": 50,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "(actor->base).location.position.z = (pCVar3->location).position.z;",
@@ -404,7 +528,7 @@
     },
     {
       "description": "Possible null pointer dereference: actor",
-      "line": 50,
+      "line": 52,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "(actor->base).location.area_id = (pCVar3->location).area_id;",

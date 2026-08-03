@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_spike_cpp_CSpike_getBoundingBox_FUN_005335a0(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_spike_cpp_CSpike_getBoundingBox_FUN_005335a0(CSpike *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CSpike *         Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_litecone_cpp_CLightCone_setup_FUN_004c8190(CDemonActor *param_1)
+; void __cdecl core_litecone_cpp_CLightCone_setup_FUN_004c8190(CLightCone *this_ptr)
 ;
+; Parameters:
+; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

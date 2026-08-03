@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_marquee_cpp_CMarquee_renderOpaque_FUN_004cc3d0(CDemonActor *param_1)
+; int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_004cc3d0(CMarquee *this_ptr)
 ;
+; Parameters:
+; CMarquee *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

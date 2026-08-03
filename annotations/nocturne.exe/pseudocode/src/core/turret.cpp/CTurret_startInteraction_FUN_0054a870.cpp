@@ -1,17 +1,17 @@
 // Name: core_turret.cpp_CTurret_startInteraction_FUN_0054a870
 // Address: 0054a870
 // Address Range: [[0054a870, 0054a88f]]
-// Convention: unknown
-// Signature: undefined4 core_turret_cpp_CTurret_startInteraction_FUN_0054a870(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_0054a870(CTurret *this_ptr,CDemonActor *user)
 
 #include "nocturne.h"
 
-uint core_turret_cpp_CTurret_startInteraction_FUN_0054a870(int param_1,uint param_2)
+int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_0054a870(CTurret *this_ptr,CDemonActor *user)
 
 {
-  if (*(int *)(param_1 + 0x854) != 0) {
+  if (this_ptr->user != (CDemonActor *)0x0) {
     return 0;
   }
-  *(uint *)(param_1 + 0x854) = param_2;
+  this_ptr->user = user;
   return 1;
 }

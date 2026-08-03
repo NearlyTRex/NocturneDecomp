@@ -1,18 +1,18 @@
 // Name: core_gabriela.cpp_CGabriella_renderTransparent_FUN_00498db0
 // Address: 00498db0
 // Address Range: [[00498db0, 00498dd9]]
-// Convention: unknown
-// Signature: undefined4 core_gabriela_cpp_CGabriella_renderTransparent_FUN_00498db0(CCharacter *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_00498db0(CGabriella *this_ptr)
 
 #include "nocturne.h"
 
-uint core_gabriela_cpp_CGabriella_renderTransparent_FUN_00498db0(CCharacter *param_1)
+int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_00498db0(CGabriella *this_ptr)
 
 {
-  float fVar1;
+  CWeapon *this_ptr_00;
   
-  fVar1 = param_1[2].flames[0x1d].base.orient_matrix.m[1].x;
-  (**(code **)(*(int *)((int)fVar1 + 0x14c) + 0xc))(fVar1);
-  core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(param_1);
+  this_ptr_00 = (this_ptr->base).inventory.selected_weapon;
+  (*((this_ptr_00->base).vtable._ub)->renderTransparent)(&this_ptr_00->base);
+  core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260((CCharacter *)this_ptr);
   return 1;
 }

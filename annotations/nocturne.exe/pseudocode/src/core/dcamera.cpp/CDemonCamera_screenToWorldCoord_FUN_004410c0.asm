@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(int param_1,int param_2,int param_3)
+; int __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   screen_x
+; int              Stack[0xc]:4   screen_y
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

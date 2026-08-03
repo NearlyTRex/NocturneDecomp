@@ -1,53 +1,57 @@
 // Name: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760
 // Address: 00544760
 // Address Range: [[00544760, 0054484b]]
-// Convention: unknown
-// Signature: void core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(int param_1)
+// Convention: __stack_esi
+// Signature: CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(CTentacle *this_ptr,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(int param_1)
+CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(CTentacle *this_ptr,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
-  uint *unaff_ESI;
-  uint *puVar2;
-  uint *puVar3;
+  CMatrix3x4f *pCVar2;
+  CMatrix3x4f *pCVar3;
   byte bVar4;
-  uint local_fc [12];
-  uint local_cc [12];
-  uint local_9c [12];
-  uint local_6c [12];
-  uint local_3c [12];
+  CMatrix3x4f local_fc;
+  CMatrix3x4f local_cc;
+  CMatrix3x4f local_9c;
+  CMatrix3x4f local_6c;
+  CMatrix3x4f local_3c;
   
   bVar4 = 0;
-  param_1 = param_1 + 0xfd0;
   core_xform_cpp_lerpMatrix3x4_FUN_0055cc30
-            (_DAT_02dca1d0 * 0x30 + param_1,_DAT_02dca1d4 * 0x30 + param_1,0x3f000000);
-  puVar2 = local_6c;
-  puVar3 = local_cc;
+            ((this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_02dca1d0,
+             (this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_02dca1d4,0.5,
+             &local_6c);
+  pCVar2 = &local_6c;
+  pCVar3 = &local_cc;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   core_xform_cpp_lerpMatrix3x4_FUN_0055cc30
-            (_DAT_02dca1d8 * 0x30 + param_1,_DAT_02dca1dc * 0x30 + param_1,0x3f000000);
-  puVar2 = local_fc;
-  puVar3 = local_9c;
+            ((this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_02dca1d8,
+             (this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_02dca1dc,0.5,
+             &local_fc);
+  pCVar2 = &local_fc;
+  pCVar3 = &local_9c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = *(float *)pCVar2;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(local_cc,local_9c,0x3f000000);
-  puVar2 = local_3c;
+  core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(&local_cc,&local_9c,0.5,&local_3c);
+  pCVar2 = &local_3c;
+  pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

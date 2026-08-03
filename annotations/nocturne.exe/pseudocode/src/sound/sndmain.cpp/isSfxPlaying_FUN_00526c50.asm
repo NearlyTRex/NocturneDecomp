@@ -38,7 +38,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 00526c5b
     PUSH ECX                            ; 00526c5f
     CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 ; 00526c60
-        ;   XREF to: 005234b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0()
+        ;   XREF to: 005234b0 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0(uint sfx_handle, int check_hardware_playback)
     ADD ESP,0x8                         ; 00526c65
     TEST EAX,EAX                        ; 00526c68
     JNZ 0x00526c6d                      ; 00526c6a
@@ -54,7 +54,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00526c79
     PUSH EDX                            ; 00526c7d
     CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 ; 00526c7e
-        ;   XREF to: 005234b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0()
+        ;   XREF to: 005234b0 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0(uint sfx_handle, int check_hardware_playback)
     ADD ESP,0x8                         ; 00526c83
     TEST EAX,EAX                        ; 00526c86
     SETNZ AL                            ; 00526c88

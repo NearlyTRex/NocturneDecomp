@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CDemonActor *param_1,CVector3f *param_2)
+; int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CGhoul *this_ptr,CVector3f *out_attract_position)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_attract_position
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
 ; undefined        Stack[-0x88]:1  local_88

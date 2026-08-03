@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(CActorDestination *param_1)
+; void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(CFilmProjector *this_ptr)
 ;
+; Parameters:
+; CFilmProjector * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_keyReel_00581053

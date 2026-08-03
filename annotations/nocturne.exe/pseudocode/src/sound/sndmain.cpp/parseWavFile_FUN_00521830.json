@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,56 +52,56 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 49,
+        "line": 50,
         "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 55,
+        "line": 56,
         "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
       },
       {
-        "category": "incompatible_types",
-        "column": 19,
+        "category": "undeclared_identifier",
+        "column": 28,
+        "line": 62,
+        "message": "use of undeclared identifier '_local_24'"
+      },
+      {
+        "category": "format_error",
+        "column": 69,
         "line": 63,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
-      },
-      {
-        "category": "type_error",
-        "column": 30,
-        "line": 66,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 59,
-        "line": 66,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 97,
-        "line": 67,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 68,
+        "line": 64,
         "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
       },
       {
-        "category": "type_error",
-        "column": 33,
-        "line": 71,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+        "category": "format_error",
+        "column": 68,
+        "line": 68,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 19,
+        "line": 69,
+        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
+      },
+      {
+        "category": "format_error",
+        "column": 63,
+        "line": 81,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
@@ -122,16 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 184,
+    "complexity_score": 119,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 119,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 488
   },
   "cross_references": [
@@ -471,48 +469,55 @@
   "static_analysis": {
     "analyzed_file": "parseWavFile_FUN_00521830.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 6,
+      "diagnostic_count": 7,
       "diagnostics": [
         {
           "check_id": "uninitvar",
           "column": 35,
-          "line": 34,
+          "line": 35,
           "message": "Uninitialized variable: local_17",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 57,
-          "line": 34,
+          "line": 35,
           "message": "Uninitialized variable: local_16",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 79,
-          "line": 34,
+          "line": 35,
           "message": "Uninitialized variable: local_15",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 38,
-          "line": 38,
+          "line": 39,
           "message": "Uninitialized variable: local_87",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 61,
-          "line": 38,
+          "line": 39,
           "message": "Uninitialized variable: local_86",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 81,
-          "line": 38,
+          "line": 39,
           "message": "Uninitialized variable: local_85",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 30,
+          "line": 73,
+          "message": "Uninitialized variable: local_1c",
           "severity": "error"
         }
       ],
@@ -522,56 +527,8 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "_sprintf(&local_88,\"Invalid number of channels: %u  (must be 1 or 2)\",local_24._2_2_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "sVar1 = local_24._2_2_ * (short)local_20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 100,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "(sfx_sample->sample_info).num_channels = (uint)local_24._2_2_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 103,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",
-      "type": "unknown_field"
-    },
-    {
       "description": "Uninitialized variable: local_17",
-      "line": 34,
+      "line": 35,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
@@ -579,7 +536,7 @@
     },
     {
       "description": "Uninitialized variable: local_16",
-      "line": 34,
+      "line": 35,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
@@ -587,7 +544,7 @@
     },
     {
       "description": "Uninitialized variable: local_15",
-      "line": 34,
+      "line": 35,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
@@ -595,7 +552,7 @@
     },
     {
       "description": "Uninitialized variable: local_87",
-      "line": 38,
+      "line": 39,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",
@@ -603,7 +560,7 @@
     },
     {
       "description": "Uninitialized variable: local_86",
-      "line": 38,
+      "line": 39,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",
@@ -611,11 +568,19 @@
     },
     {
       "description": "Uninitialized variable: local_85",
-      "line": 38,
+      "line": 39,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",
       "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_1c",
+      "line": 73,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if (sVar1 == local_1c) {",
+      "type": "static_legacy_uninitvar"
     }
   ]
 }

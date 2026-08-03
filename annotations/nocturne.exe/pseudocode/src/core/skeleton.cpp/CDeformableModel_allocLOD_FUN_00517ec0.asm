@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   lod_index
+; int              Stack[0xc]:4   vertex_count
+; int              Stack[0x10]:4   tri_count
+; int              Stack[0x14]:4   cap_tri_count
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280 at 005193f7

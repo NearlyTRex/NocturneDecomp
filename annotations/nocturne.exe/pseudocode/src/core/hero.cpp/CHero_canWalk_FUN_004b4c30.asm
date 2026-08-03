@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hero_cpp_CHero_canWalk_FUN_004b4c30(void)
+; int __cdecl core_hero_cpp_CHero_canWalk_FUN_004b4c30(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_canBeGrabbed_FUN_004b4c20 at 004b4c59

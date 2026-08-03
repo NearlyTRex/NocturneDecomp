@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -80,16 +80,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 323,
+    "complexity_score": 168,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 31,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 68,
-    "suspect_count": 24,
+    "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 248
@@ -103,9 +102,9 @@
         "0041fe3f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bride.cpp_CBride_setup_FUN_0041fc20",
-    "signature": "void core_bride_cpp_CBride_setup_FUN_0041fc20(CEnemy *param_1)"
+    "signature": "void __cdecl core_bride_cpp_CBride_setup_FUN_0041fc20(CBride *this_ptr)"
   },
   "function_calls": [
     {
@@ -336,9 +335,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -364,10 +363,10 @@
     "pcode_op_count": 600
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 20,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -376,6 +375,13 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBride *"
       }
     ]
   },
@@ -387,22 +393,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_bride_cpp_CBride_setup_FUN_0041fc20(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -467,110 +457,6 @@
       "severity": "mild",
       "text": "DAT_00764b50 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)param_1[1].base.base.actor_name = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 4) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 8) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0xc) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0x10) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0x14) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0x18) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.actor_name + 0x1c) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.position.x = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.position.z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.area_id = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.position.y = fVar2;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

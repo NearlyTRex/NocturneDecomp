@@ -13,16 +13,16 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_004f5740(CPackedBi
   int iVar2;
   ulong size;
   int iVar3;
-  byte local_148 [100];
-  byte local_e4 [100];
-  byte local_80 [100];
+  char local_148 [100];
+  char local_e4 [100];
+  char local_80 [100];
   char *local_1c;
   uchar *local_18;
   _FILE *local_14;
   
   local_14 = engine_dosio_cpp_getFile_FUN_00456a60("art",this_ptr->filename,"rb");
   if (local_14 == (_FILE *)0x0) {
-    _sprintf(local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW",this_ptr->filename);
+    _sprintf(local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW");
     g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
     g_INT_01cc4804 = 0x107;
     core_main_c_FUN_004c8440(local_e4);
@@ -30,7 +30,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_004f5740(CPackedBi
   size = this_ptr->width * this_ptr->height;
   local_18 = (uchar *)malloc(size);
   if (local_18 == (uchar *)0x0) {
-    _sprintf(local_148,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",size);
+    _sprintf(local_148,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW");
     g_INT_01cc4804 = 0x114;
     g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_FUN_004c8440(local_148);
@@ -43,7 +43,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_004f5740(CPackedBi
       if ((bitmap_index < 0) || (iVar2 == bitmap_index)) {
         SVar1 = _fread(local_18,size,1,local_14);
         if (SVar1 != 1) {
-          _sprintf(local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",local_1c);
+          _sprintf(local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW");
           g_INT_01cc4804 = 0x127;
           g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
           core_main_c_FUN_004c8440(local_80);

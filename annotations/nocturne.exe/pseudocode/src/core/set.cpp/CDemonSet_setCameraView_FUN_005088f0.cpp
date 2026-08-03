@@ -25,7 +25,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
   uint *puVar9;
   uint *puVar10;
   byte bVar11;
-  char local_f0 [80];
+  int in_stack_ffffff10;
   float local_a0 [10];
   CMatrix3x3f local_78;
   CVector3f local_50;
@@ -136,8 +136,8 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
   _DAT_01ffb060 = 0;
   core_dcamera_cpp_FUN_004421b0(&g_CDemonCamera_01fb8508);
   core_dcamera_cpp_FUN_00448380(&g_CDemonCamera_01fb8508);
-  _sprintf(local_f0,"%s.raw",this_ptr->cameras + index);
-  core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(&g_CDemonCamera_01fb8508,local_f0);
+  _sprintf(&stack0xffffff10,"%s.raw");
+  core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(&g_CDemonCamera_01fb8508,&stack0xffffff10);
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
   core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(&g_CDemonCamera_01fb8508,0);
   if (_DAT_01c02594 != 0) {
@@ -218,8 +218,9 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
               (0x01B7B4E8,this_ptr->sky_texture_name,this_ptr->sky_brightness);
   }
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
-  core_gore_cpp_CGore_renderDecals_FUN_004afe80(g_CGore_PTR_005b96c4,1);
-  core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(g_CFireEffect_PTR_005b80f0,1);
+  core_gore_cpp_CGore_renderDecals_FUN_004afe80(g_CGore_PTR_005b96c4,1,in_stack_ffffff10);
+  core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970
+            (g_CFireEffect_PTR_005b80f0,1,in_stack_ffffff10);
   if (0x02DD1210->wave_animation_enabled == 0) {
     core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);
   }

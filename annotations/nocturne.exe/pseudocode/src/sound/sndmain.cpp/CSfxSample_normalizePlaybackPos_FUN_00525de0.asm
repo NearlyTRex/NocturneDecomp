@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSampleInfo *param_1,double param_2,uint param_3)
+; double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSfxSample *this_ptr,double position,uint input_type)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   this_ptr
+; double           Stack[0x8]:8   position
+; uint             Stack[0x10]:4   input_type
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18

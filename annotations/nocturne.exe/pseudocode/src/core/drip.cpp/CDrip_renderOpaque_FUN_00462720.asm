@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_drip_cpp_CDrip_renderOpaque_FUN_00462720(CDemonActor *param_1)
+; int __cdecl core_drip_cpp_CDrip_renderOpaque_FUN_00462720(CDrip *this_ptr)
 ;
+; Parameters:
+; CDrip *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

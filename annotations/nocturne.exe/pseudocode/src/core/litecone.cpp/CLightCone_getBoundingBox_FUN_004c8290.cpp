@@ -1,22 +1,22 @@
 // Name: core_litecone.cpp_CLightCone_getBoundingBox_FUN_004c8290
 // Address: 004c8290
 // Address Range: [[004c8290, 004c82d6]]
-// Convention: unknown
-// Signature: void core_litecone_cpp_CLightCone_getBoundingBox_FUN_004c8290(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004c8290(CLightCone *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-void core_litecone_cpp_CLightCone_getBoundingBox_FUN_004c8290(int param_1,float *param_2)
+CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004c8290(CLightCone *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;
   
-  fVar1 = ((float)18 / *(float *)(param_1 + 0x150)) * *(float *)(param_1 + 0x154);
-  param_2[2] = 0.0;
-  param_2[3] = fVar1;
-  param_2[4] = fVar1;
-  *param_2 = -fVar1;
-  param_2[1] = -fVar1;
-  param_2[5] = *(float *)(param_1 + 0x154);
-  return;
+  fVar1 = ((float)18 / this_ptr->fov) * this_ptr->falloff;
+  (out_box->min).z = 0.0;
+  (out_box->max).x = fVar1;
+  (out_box->max).y = fVar1;
+  (out_box->min).x = -fVar1;
+  (out_box->min).y = -fVar1;
+  (out_box->max).z = this_ptr->falloff;
+  return out_box;
 }

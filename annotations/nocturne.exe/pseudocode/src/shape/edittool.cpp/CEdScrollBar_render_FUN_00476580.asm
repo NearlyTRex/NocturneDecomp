@@ -137,7 +137,7 @@ section .text
     MOV ECX,dword ptr [EBP + -0x8]      ; 0047667d
     PUSH ECX                            ; 00476680
     CALL shape_edittool.cpp_draw3DInsetBorder_FUN_00476310 ; 00476681
-        ;   XREF to: 00476310 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_draw3DInsetBorder_FUN_00476310()
+        ;   XREF to: 00476310 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_00476310(int left, int top, int right, int bottom, ...)
     MOV EAX,[0x01bcde24]                ; 00476686 | DAT_01bcde24
     ADD ESP,0x18                        ; 0047668b
     CMP EBX,EAX                         ; 0047668e
@@ -176,7 +176,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x28]      ; 004766d8
     PUSH EDI                            ; 004766db
     CALL shape_edittool.cpp_draw3DInsetBorder_FUN_00476310 ; 004766dc
-        ;   XREF to: 00476310 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_draw3DInsetBorder_FUN_00476310()
+        ;   XREF to: 00476310 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_00476310(int left, int top, int right, int bottom, ...)
     ADD ESP,0x18                        ; 004766e1
     MOV ESP,EBP                         ; 004766e4
     POP EBP                             ; 004766e6
@@ -252,7 +252,7 @@ section .text
     MOV EDI,dword ptr [EBP + -0x8]      ; 00476776
     PUSH EDI                            ; 00476779
     CALL shape_edittool.cpp_draw3DInsetBorder_FUN_00476310 ; 0047677a
-        ;   XREF to: 00476310 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_draw3DInsetBorder_FUN_00476310()
+        ;   XREF to: 00476310 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_00476310(int left, int top, int right, int bottom, ...)
     MOV EAX,[0x01bcde24]                ; 0047677f | DAT_01bcde24
     ADD ESP,0x18                        ; 00476784
     CMP EBX,EAX                         ; 00476787
@@ -293,7 +293,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x8]      ; 004767d3
     PUSH EAX                            ; 004767d6
     CALL shape_edittool.cpp_draw3DInsetBorder_FUN_00476310 ; 004767d7
-        ;   XREF to: 00476310 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_draw3DInsetBorder_FUN_00476310()
+        ;   XREF to: 00476310 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_00476310(int left, int top, int right, int bottom, ...)
     ADD ESP,0x18                        ; 004767dc
     MOV ESP,EBP                         ; 004767df
     POP EBP                             ; 004767e1

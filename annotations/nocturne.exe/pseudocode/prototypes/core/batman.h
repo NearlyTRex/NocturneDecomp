@@ -13,7 +13,7 @@ CBatman * __cdecl factoryFunc(void);
 
 // Original: core_batman.cpp_CBatman_getActorType_FUN_004133d0
 // Address: 004133d0
-CDemonActorType * CBatman::getActorType(void);
+CDemonActorType * __cdecl CBatman::getActorType(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_ctor_FUN_004133e0
 // Address: 004133e0
@@ -21,7 +21,7 @@ CBatman * __cdecl CBatman::ctor(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_setup_FUN_004134a0
 // Address: 004134a0
-void CBatman::setup(CEnemy *param_1);
+void __cdecl CBatman::setup(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_pickRandomMovementState_FUN_00413780
 // Address: 00413780
@@ -29,15 +29,15 @@ void __cdecl CBatman::pickRandomMovementState(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_process_FUN_00413800
 // Address: 00413800
-void CBatman::process(CBatman *param_1,float param_2);
+void __cdecl CBatman::process(CBatman *this_ptr,float delta_time);
 
 // Original: core_batman.cpp_CBatman_renderOpaque_FUN_00414340
 // Address: 00414340
-int CBatman::renderOpaque(CCharacter *param_1);
+int __cdecl CBatman::renderOpaque(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_archive_FUN_00414510
 // Address: 00414510
-void CBatman::archive(CEnemy *param_1);
+void __cdecl CBatman::archive(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_processDismemberment_FUN_004145f0
 // Address: 004145f0

@@ -13,45 +13,45 @@ void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_004145f0(CBatman *
 {
   CVector3f *initial_velocity;
   float fVar1;
-  CConsole *pCVar2;
-  int iVar3;
+  CConsole *this_ptr_00;
+  int iVar2;
   CBodyPart *body_part;
   CVector3f local_34;
   CVector3f local_28;
   float local_14;
   
   if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
-    iVar3 = rand();
-    switch(iVar3 % 6) {
+    iVar2 = rand();
+    switch(iVar2 % 6) {
     case 0:
-      iVar3 = this_ptr->part_indices[2];
+      iVar2 = this_ptr->part_indices[2];
       break;
     case 1:
-      iVar3 = this_ptr->part_indices[3];
+      iVar2 = this_ptr->part_indices[3];
       break;
     case 2:
-      iVar3 = this_ptr->part_indices[4];
+      iVar2 = this_ptr->part_indices[4];
       break;
     case 3:
-      iVar3 = this_ptr->part_indices[5];
+      iVar2 = this_ptr->part_indices[5];
       break;
     case 4:
-      iVar3 = this_ptr->part_indices[0];
+      iVar2 = this_ptr->part_indices[0];
       break;
     case 5:
-      iVar3 = this_ptr->part_indices[1];
+      iVar2 = this_ptr->part_indices[1];
       break;
     default:
       goto switchD_00414626_default;
     }
-    damage_info->hit_part_index = iVar3;
+    damage_info->hit_part_index = iVar2;
   }
 switchD_00414626_default:
-  iVar3 = damage_info->hit_part_index;
-  if (((((iVar3 == this_ptr->part_indices[2]) || (iVar3 == this_ptr->part_indices[3])) ||
-       (iVar3 == this_ptr->part_indices[4])) ||
-      ((iVar3 == this_ptr->part_indices[5] || (iVar3 == this_ptr->part_indices[1])))) ||
-     (iVar3 == this_ptr->part_indices[0])) {
+  iVar2 = damage_info->hit_part_index;
+  if (((((iVar2 == this_ptr->part_indices[2]) || (iVar2 == this_ptr->part_indices[3])) ||
+       (iVar2 == this_ptr->part_indices[4])) ||
+      ((iVar2 == this_ptr->part_indices[5] || (iVar2 == this_ptr->part_indices[1])))) ||
+     (iVar2 == this_ptr->part_indices[0])) {
     local_14 = damage_info->dismember_prob;
     if (this_ptr->part_indices[0] == damage_info->hit_part_index) {
       local_14 = 0.05;
@@ -65,8 +65,8 @@ switchD_00414626_default:
     if (g_CGame_PTR_005b9354->blood_flag == 0) {
       local_14 = 0.0;
     }
-    iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(local_14);
-    if (iVar3 != 0) {
+    iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(local_14);
+    if (iVar2 != 0) {
       body_part = core_bodypart_cpp_createBodyPart_FUN_00415b30
                             (&(this_ptr->base).base.base.location.position,
                              &(this_ptr->base).base.base.orient,&damage_info->impact_point,
@@ -103,12 +103,12 @@ switchD_00414626_default:
       damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     }
   }
-  iVar3 = damage_info->hit_part_index;
-  if (iVar3 == this_ptr->part_indices[0]) {
+  iVar2 = damage_info->hit_part_index;
+  if (iVar2 == this_ptr->part_indices[0]) {
     fVar1 = damage_info->damage_amount * (float)2.5;
   }
   else {
-    if ((iVar3 == this_ptr->part_indices[6]) || (iVar3 == this_ptr->part_indices[1])) {
+    if ((iVar2 == this_ptr->part_indices[6]) || (iVar2 == this_ptr->part_indices[1])) {
       damage_info->damage_amount = damage_info->damage_amount;
       goto LAB_004147e1;
     }
@@ -116,13 +116,13 @@ switchD_00414626_default:
   }
   damage_info->damage_amount = fVar1;
 LAB_004147e1:
-  pCVar2 = g_CConsole_PTR_005ad350;
+  this_ptr_00 = g_CConsole_PTR_005ad350;
   if ((this_ptr->part_indices[1] == damage_info->hit_part_index) &&
      (damage_info->damage_type == DAMAGE_TYPE_LAUNCH)) {
     damage_info->damage_amount = damage_info->damage_amount * (float)20;
-    engine_console_cpp_CConsole_printf_FUN_0043ac60(pCVar2,"Shot thru the heart\n");
-    iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
-    if (iVar3 != 0) {
+    engine_console_cpp_CConsole_printf_FUN_0043ac60(this_ptr_00,"Shot thru the heart\n");
+    iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
+    if (iVar2 != 0) {
       local_28.x = 0.0;
       local_28.y = 20.0;
       local_28.z = 20.0;

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 271,
+    "complexity_score": 49,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
-    "suspect_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
-    "total_lines": 118
+    "total_lines": 116
   },
   "cross_references": [],
   "function": {
@@ -83,9 +83,9 @@
         "004c44eb"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_ladder.cpp_CLadder_getBoundingBox_FUN_004c43f0",
-    "signature": "float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *param_2)"
+    "signature": "CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(CLadder *this_ptr,CBoundingBox3D *out_box)"
   },
   "function_calls": [
     {
@@ -112,9 +112,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -145,10 +145,10 @@
     "pcode_op_count": 354
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 44,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -192,193 +192,31 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLadder *"
+      },
+      {
+        "is_param": true,
+        "name": "out_box",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x2d4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x2cc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)(param_1 + 0x2d0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = *(float *)(param_1 + 0x2d4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = -*(float *)(param_1 + 0x2cc) * fVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_2 = -*(float *)(param_1 + 0x2cc) * fVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = -0.1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = -fVar1 * fVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[3] = fVar2 * fVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4] = fVar3 + fVar6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[5] = fVar5 * fVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = (pCVar7->bounds).min.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = (pCVar7->bounds).min.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = (pCVar7->bounds).min.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[3] = (pCVar7->bounds).max.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4] = (pCVar7->bounds).max.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[5] = (pCVar7->bounds).max.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 30,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(out_box->min).x = (pCVar7->bounds).min.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

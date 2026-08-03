@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vampboss_cpp_CVampireBoss_getTargetPoints_FUN_0054dfa0(int param_1,float *param_2)
+; int __cdecl core_vampboss_cpp_CVampireBoss_getTargetPoints_FUN_0054dfa0(CVampireBoss *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
 ;   float FLOAT_00597215 = 0.5

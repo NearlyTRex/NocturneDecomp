@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -98,20 +98,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 1070,
+    "complexity_score": 465,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 280,
-    "suspect_count": 75,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "self_copy_guard",
       "shadow_pointer_walk",
       "undefined_data",
       "unknown_field",
-      "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy"
     ],
@@ -126,10 +125,10 @@
         "0043f32e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_curtain.cpp_CCurtain_process_FUN_0043ebf0",
-    "signature": "void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2)"
+    "signature": "void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -267,9 +266,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -319,10 +318,10 @@
     "pcode_op_count": 3459
   },
   "stack_frame": {
-    "frame_size": 176,
+    "frame_size": 184,
     "local_size": 176,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -366,6 +365,20 @@
         "offset": -116,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCurtain *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -387,158 +400,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_1->is_visible != 0) || (param_1->falling != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_1->is_visible != 0) || (param_1->falling != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->is_visible = 0, param_1->simulate_me != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->is_visible = 0, param_1->simulate_me != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,param_1->let_go_event);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->falling = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = _strcmp(param_1->let_go_event,\"none\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((iVar6 == 0) || (param_1->falling != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->hit_floor != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_14 = (*((param_1->base).vtable._ub)->cylinderGroundCheck)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,0.1,(CVector3f *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->floor_height = fStack_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->mesh).inv_delta_time = 1.0 / param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1->mesh).inv_delta_time = 1.0 / param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9 = param_1->vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 104,
@@ -612,142 +473,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->needs_update = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((iVar6 == 0) && (param_1->falling == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 133,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->needs_update = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 134,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 135,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9 = param_1->vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 143,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->needs_update = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 151,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->needs_update = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 157,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 159,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->needs_update == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar8 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 171,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 174,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 175,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9 = param_1->vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 180,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar5 = param_1->dampen;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 183,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_e0 = param_1->weight;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 187,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_44 = 1.0 / param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 199,
       "match": "._0_4_",
@@ -770,198 +495,6 @@
       "severity": "mild",
       "text": "fStack_68 = fStack_8c * 5.0811852348229435e-315._0_4_ + 0.0;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 211,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar1->x = pCVar1->x + fStack_c4 * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 212,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pSVar9->velocity).y = (pSVar9->velocity).y + fStack_c0 * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 213,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_a0 = pCVar1->x * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 214,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pSVar9->velocity).z = (pSVar9->velocity).z + fStack_bc * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 215,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_9c = (pSVar9->velocity).y * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 216,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_98 = param_2 * (pSVar9->velocity).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 220,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(param_1,pSVar9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 224,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iStack_1c < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 226,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSStack_30 = param_1->vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 231,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 234,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(param_1,pSVar9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 238,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 243,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 244,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar2 = &param_1->friction;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 245,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9 = param_1->vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 260,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 262,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->hit_floor != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 265,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 266,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9 = param_1->vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 268,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((pSVar9->world_position).y <= param_1->floor_height) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 273,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar10 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 275,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (iVar6 == param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 276,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->simulate_me = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 279,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",

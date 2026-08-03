@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 164,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 12,
+    "pseudocode_lines": 31,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param"
+      "pointer_truncation",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 118
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -84,9 +85,9 @@
         "004cb8d2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0",
-    "signature": "void core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(CDemonActor *param_1)"
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(CMansionPuzzleCircle *this_ptr)"
   },
   "function_calls": [
     {
@@ -164,9 +165,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -199,10 +200,10 @@
     "pcode_op_count": 319
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 20,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -211,130 +212,56 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMansionPuzzleCircle_archive_FUN_004cb7f0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 50,
-          "line": 34,
-          "message": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CVector3f *)(param_1[4].create_event + 0xc),\"pGemPos\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((COrientation *)(param_1[4].create_event + 0x18),\"pGemOrient\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CVector3f *)(param_1[4].create_event + 0x24),\"pEmitterPos\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int_ptr = &param_1[4].is_transparent;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int_ptr_01 = &param_1[4].is_renderable;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int_ptr_00 = &param_1[4].platform_orientation_delta.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[4].create_event + iVar1 * 100 + 0x30),\"exists\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 13,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 27,
+      "match": "(CColor3i *)((int)(int_ptr_00 + 8) +",
       "severity": "moderate",
-      "text": "((CVector3f *)(param_1[4].create_event + 0xc),\"pGemPos\");",
+      "text": "int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 15,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "description": "Pointer value `(int_ptr_00 + 8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)(int_ptr_00 + 8)",
       "severity": "moderate",
-      "text": "((COrientation *)(param_1[4].create_event + 0x18),\"pGemOrient\");",
-      "type": "pointer_cast"
+      "text": "int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 17,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "description": "Watcom shadow-pointer walk \u2014 `int_ptr_00` self-updates via element-arithmetic `(int)(int_ptr_00 + N) + M`, where `N*sizeof(*int_ptr_00) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `int_ptr_00->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 27,
+      "match": "int_ptr_00 = (T *)((int)(int_ptr_00 + N) + M)",
       "severity": "moderate",
-      "text": "((CVector3f *)(param_1[4].create_event + 0x24),\"pEmitterPos\");",
-      "type": "pointer_cast"
+      "text": "int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
-      "line": 34,
-      "match": "Cppcheck: invalid pointer cast",
+      "description": "Watcom shadow-pointer walk \u2014 `int_ptr_01` was initialized to the address of an array element's subfield (`int_ptr_01 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*int_ptr_01)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `int_ptr_01->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 28,
+      "match": "int_ptr_01 = int_ptr_01 + N",
       "severity": "moderate",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)int_ptr_00,\"r\");",
-      "type": "static_invalid_pointer_cast"
+      "text": "int_ptr_01 = int_ptr_01 + 0x19;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `int_ptr` was initialized to the address of an array element's subfield (`int_ptr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*int_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `int_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 30,
+      "match": "int_ptr = int_ptr + N",
+      "severity": "moderate",
+      "text": "int_ptr = int_ptr + 0x19;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

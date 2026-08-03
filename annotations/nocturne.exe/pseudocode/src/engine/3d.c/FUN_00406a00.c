@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int * engine_3d_c_FUN_00406a00(SMRGLHeaderPrimitive *param_1)
@@ -15,21 +14,19 @@ int * engine_3d_c_FUN_00406a00(SMRGLHeaderPrimitive *param_1)
   int iVar1;
   byte bVar2;
   UIntegerFloat aUStackY_1010 [1016];
-  UIntegerFloat local_28;
-  UIntegerFloat local_24;
-  UIntegerFloat local_20;
-  UIntegerFloat local_1c;
+  CVector3i local_28;
+  CVector3i local_1c;
   
   bVar2 = 0;
-  local_28 = (param_1->surface_normal).A;
-  local_24 = (param_1->surface_normal).B;
-  local_20 = (param_1->surface_normal).C;
-  engine_matrix_c_normalizeVector3DFixed_FUN_004cde10(&stack0xffffffd8);
-  local_28 = local_1c;
-  (&stack0xffffffdc)[(uint)bVar2 * 0xfffffffe] =
-       (UIntegerFloat)*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
-  *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  local_28.x = *(int *)&(param_1->surface_normal).A;
+  local_28.y = *(int *)&(param_1->surface_normal).B;
+  local_28.z = *(int *)&(param_1->surface_normal).C;
+  engine_matrix_c_normalizeVector3DFixed_FUN_004cde10(&local_28,&local_1c);
+  local_28.x = local_1c.x;
+  *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);
   if (iVar1 != 0) {
     if (_DAT_01c03948 == 0) {

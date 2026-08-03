@@ -9,7 +9,7 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 483
+  Functions with static analysis data: 399
   Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
@@ -18,9 +18,9 @@ SUMMARY
     Total diagnostics:   11
 
   Cppcheck (quick):
-    Files analyzed:      477
-    Files with findings: 477
-    Total diagnostics:   1524
+    Files analyzed:      393
+    Files with findings: 393
+    Total diagnostics:   1210
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
@@ -33,18 +33,18 @@ TOP FINDINGS - Clang-Tidy (quick)
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                 712  [likely decompiler artifact]
-  shiftTooManyBitsSigned                                    200
-  legacyUninitvar                                           141
+  uninitvar                                                 547  [likely decompiler artifact]
+  shiftTooManyBitsSigned                                    200  [likely decompiler artifact]
   wrongPrintfScanfArgNum                                    132
+  legacyUninitvar                                           105
   invalidscanf                                               76
-  arrayIndexOutOfBounds                                      73
-  ignoredReturnValue                                         58
-  invalidPointerCast                                         47
-  objectIndex                                                29
-  pointerOutOfBounds                                         17
+  ignoredReturnValue                                         60
+  objectIndex                                                27
+  invalidPointerCast                                         21
   nullPointer                                                 9
   shiftNegativeLHS                                            7
+  pointerOutOfBounds                                          4
   nullPointerRedundantCheck                                   4
   identicalInnerCondition                                     4
-  negativeIndex                                               4
+  nullPointerArithmeticRedundantCheck                         3
+  selfAssignment                                              2

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_flamecan_cpp_CFlameCan_renderOpaque_FUN_0048e6d0(int param_1)
+; int __cdecl core_flamecan_cpp_CFlameCan_renderOpaque_FUN_0048e6d0(CFlameCan *this_ptr)
 ;
+; Parameters:
+; CFlameCan *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

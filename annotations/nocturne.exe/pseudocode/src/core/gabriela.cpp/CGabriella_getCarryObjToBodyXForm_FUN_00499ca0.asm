@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0(int param_1,float param_2)
+; void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ; Local Variables:
 ; undefined        Stack[-0x160]:1  local_160
 ; undefined4       Stack[-0x154]:4  local_154
@@ -237,7 +240,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 00499f4c
     LEA EDI,[ESP + 0xc4]                ; 00499f50
     CALL core_xform.cpp_buildRotationY_FUN_0055c7b0 ; 00499f57
-        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildRotationY_FUN_0055c7b0()
+        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationY_FUN_0055c7b0(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00499f5c
     LEA ESI,[ESP + 0x4]                 ; 00499f61
     ADD ESP,0x4                         ; 00499f65
@@ -257,7 +260,7 @@ section .text
     LEA ESI,[ESP + 0x68]                ; 00499f91
     LEA EDI,[ESP + 0xc8]                ; 00499f95
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 00499f9c
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 00499fa1
     LEA EAX,[ESP + 0x144]               ; 00499fa4
     MOV ECX,0xc                         ; 00499fab
@@ -297,7 +300,7 @@ section .text
     LEA ESI,[ESP + 0x94]                ; 0049a022
     LEA EDI,[ESP + 0xc4]                ; 0049a029
     CALL core_xform.cpp_buildRotationY_FUN_0055c7b0 ; 0049a030
-        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildRotationY_FUN_0055c7b0()
+        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationY_FUN_0055c7b0(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0049a035
     LEA ESI,[ESP + 0x94]                ; 0049a03a
     JMP 0x00499f65                      ; 0049a041

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_biggs_cpp_CBiggs_getCollisionType_FUN_00415a10(CCharacter *param_1,SCollisionInfo *param_2)
+; ECollisionType __cdecl core_biggs_cpp_CBiggs_getCollisionType_FUN_00415a10(CBiggs *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CBiggs *         Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0

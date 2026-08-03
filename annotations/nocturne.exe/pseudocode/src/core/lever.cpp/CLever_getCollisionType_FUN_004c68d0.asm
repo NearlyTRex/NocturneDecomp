@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_lever_cpp_CLever_getCollisionType_FUN_004c68d0(int param_1)
+; ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004c68d0(CLever *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; *****************************************************************************
 

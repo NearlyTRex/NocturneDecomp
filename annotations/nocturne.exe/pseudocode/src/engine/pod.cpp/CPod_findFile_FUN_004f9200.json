@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 23,
-        "message": "no matching function for call to 'engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0'"
       }
     ],
     "success": false,
@@ -166,11 +160,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 21,
-      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "match": "pCVar1 = (T *)pCVar1->ARRAY",
       "severity": "moderate",
-      "text": "pCVar2 = (CPod *)pCVar2->pod_files;",
+      "text": "pCVar1 = (CPod *)pCVar1->pod_files;",
       "type": "shadow_pointer_walk"
     }
   ],

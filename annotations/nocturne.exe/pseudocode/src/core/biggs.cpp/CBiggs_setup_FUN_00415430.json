@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 112,
+    "complexity_score": 20,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 74
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -83,9 +81,9 @@
         "004154a7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_biggs.cpp_CBiggs_setup_FUN_00415430",
-    "signature": "void core_biggs_cpp_CBiggs_setup_FUN_00415430(CEnemy *param_1)"
+    "signature": "void __cdecl core_biggs_cpp_CBiggs_setup_FUN_00415430(CBiggs *this_ptr)"
   },
   "function_calls": [
     {
@@ -129,9 +127,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -155,79 +153,22 @@
     "pcode_op_count": 159
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBiggs *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_biggs_cpp_CBiggs_setup_FUN_00415430(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (CMorph *)(param_1[1].base.model.motion_controller.current_motion_name + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.motion_controller.in_transition = (SMotionTransition *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = &param_1[1].base;",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

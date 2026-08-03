@@ -102,7 +102,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
       iVar6 = iVar6 + 1;
       iVar2 = core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(this_ptr,pCVar3);
       pCVar5->cameras[0].vdir_zone = iVar2;
-      pCVar3 = (CVector3f *)((int)(pCVar3 + 0x22) + 8);
+      pCVar3 = (CVector3f *)&pCVar3[0x22].z;
       pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;
     } while (iVar6 < this_ptr->camera_count);
   }

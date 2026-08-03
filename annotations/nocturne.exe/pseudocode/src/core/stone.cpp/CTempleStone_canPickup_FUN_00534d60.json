@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 83,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 62
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 61
   },
   "cross_references": [],
   "function": {
@@ -83,9 +81,9 @@
         "00534db8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_stone.cpp_CTempleStone_canPickup_FUN_00534d60",
-    "signature": "undefined4 core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(int param_1,CDemonActor *param_2)"
+    "signature": "int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(CTempleStone *this_ptr,CDemonActor *picker)"
   },
   "function_calls": [
     {
@@ -117,9 +115,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -148,63 +146,29 @@
     "pcode_op_count": 146
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTempleStone *"
+      },
+      {
+        "is_param": true,
+        "name": "picker",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(int param_1,CDemonActor *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(int param_1,CDemonActor *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(CDemonActor **)(param_1 + 0x664),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x30c) != 3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,\"CHero\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(uint *)(param_1 + 0x30c);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

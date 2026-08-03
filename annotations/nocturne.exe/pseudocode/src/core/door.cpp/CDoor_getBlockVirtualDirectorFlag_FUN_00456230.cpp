@@ -1,13 +1,13 @@
 // Name: core_door.cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230
 // Address: 00456230
 // Address Range: [[00456230, 0045623a]]
-// Convention: unknown
-// Signature: undefined4 core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230(CDoor *this_ptr)
 
 #include "nocturne.h"
 
-uint core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230(int param_1)
+int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230(CDoor *this_ptr)
 
 {
-  return *(uint *)(param_1 + 0x9c8);
+  return this_ptr->block_virtual_director_flag;
 }

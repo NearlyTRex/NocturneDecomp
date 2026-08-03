@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 26,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 26,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -74,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 197,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 15,
-    "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 143
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 144
   },
   "cross_references": [],
   "function": {
@@ -96,10 +81,10 @@
         "0042825e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_attractActorToward_FUN_00428160",
-    "signature": "undefined4 core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,CDemonActor *param_2,CVector3f *param_3)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point)"
   },
   "function_calls": [
     {
@@ -132,9 +117,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -179,10 +164,10 @@
     "pcode_op_count": 601
   },
   "stack_frame": {
-    "frame_size": 72,
+    "frame_size": 84,
     "local_size": 72,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -275,156 +260,31 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "target_local_point",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_attractActorToward_FUN_00428160.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 29,
-          "message": "Uninitialized variable: local_18",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,CDemonActor *param_2,CVector3f *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,CDemonActor *param_2,CVector3f *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,CDemonActor *param_2,CVector3f *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 != (CDemonActor *)0x0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x10c))(param_1,local_20), iVar1 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x10c))(param_1,local_20), iVar1 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x10c))(param_1,local_20), iVar1 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,&local_44,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,&local_44,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_38.x = (param_2->location).position.x + local_2c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_38.y = (param_2->location).position.y + local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_38.z = (param_2->location).position.z + local_24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->setPositionAndOrientation)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2,&local_38,(CVector3f *)&param_2->orient);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2,&local_38,(CVector3f *)&param_2->orient);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Uninitialized variable: local_18",
-      "line": 29,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_24 = local_18 - pCVar2->z;",
-      "type": "static_uninitvar"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

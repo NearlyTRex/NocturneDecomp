@@ -74,7 +74,7 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
       return;
     }
     splitpath(local_558,(char *)0x0,(char *)0x0,local_454,(char *)0x0);
-    _sprintf();
+    _sprintf(local_558,"%s.noc");
   }
   else {
     do {
@@ -146,7 +146,7 @@ void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
       crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_14c,0);
       return;
     }
-    _sprintf(local_350,"%s\\%s","save",local_558);
+    _sprintf(local_350,"%s\\%s");
     crt_fstream_cpp_openFile_FUN_00565eb5(local_cc,local_350,0x112,buffer_size);
     if (local_88._ios.__enabled_exceptions != 0) {
       shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar3);

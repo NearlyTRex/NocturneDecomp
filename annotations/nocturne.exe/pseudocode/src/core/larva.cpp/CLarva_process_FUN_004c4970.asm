@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_larva_cpp_CLarva_process_FUN_004c4970(CEnemy *param_1,float param_2)
+; void __cdecl core_larva_cpp_CLarva_process_FUN_004c4970(CLarva *this_ptr,float delta_time)
 ;
+; Parameters:
+; CLarva *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x200]:8  local_200
 ; undefined8       Stack[-0x1f8]:8  local_1f8
@@ -502,7 +505,7 @@ section .text
     MOV ESI,dword ptr [0x005ad350]      ; 004c4dd5 | g_CConsole_PTR_005ad350
     PUSH ESI                            ; 004c4ddb | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c4ddc
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004c4a59                      ; 004c4de1
         ;   XREF to: 004c4a59 (UNCONDITIONAL_JUMP)  ; LAB_004c4a59
     JBE 0x004c4a49                      ; 004c4de6
@@ -820,7 +823,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 004c515d | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 004c5163 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004c5164
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004c5169
     PUSH 0x1                            ; 004c516c
     PUSH 0x0                            ; 004c516e
@@ -881,7 +884,7 @@ section .text
     LEA EAX,[EBP + 0xfffffe9a]          ; 004c5200
     PUSH EAX                            ; 004c5206
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004c5207
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x18                        ; 004c520c
     LEA EAX,[EBP + 0xfffffe9a]          ; 004c520f
     PUSH EAX                            ; 004c5215

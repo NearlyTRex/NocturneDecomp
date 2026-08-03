@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 31,
+        "line": 29,
         "message": "use of undeclared identifier '_DAT_01c71398'; did you mean 'DAT_02DF1398'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 33,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_01c7139c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 35,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_01c713a0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 37,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_01c713a4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 39,
+        "line": 37,
         "message": "use of undeclared identifier '_DAT_01c713a8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 41,
+        "line": 39,
         "message": "use of undeclared identifier '_DAT_01c713ac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 43,
+        "line": 41,
         "message": "use of undeclared identifier '_DAT_01c713b0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 45,
+        "line": 43,
         "message": "use of undeclared identifier '_DAT_01c713b4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 47,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_01c713b8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 49,
+        "line": 47,
         "message": "use of undeclared identifier '_DAT_01c713bc'"
       }
     ],
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 194,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 42,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 74,
-    "suspect_count": 11,
+    "pseudocode_lines": 72,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 274
+    "total_lines": 272
   },
   "cross_references": [],
   "function": {
@@ -144,9 +143,9 @@
         "00495a09"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gabriela.cpp_CGabriella_setup_FUN_004957c0",
-    "signature": "void core_gabriela_cpp_CGabriella_setup_FUN_004957c0(CHero *param_1)"
+    "signature": "void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004957c0(CGabriella *this_ptr)"
   },
   "function_calls": [
     {
@@ -453,9 +452,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -479,12 +478,20 @@
     "pcode_op_count": 639
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -494,86 +501,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_gabriela_cpp_CGabriella_setup_FUN_004957c0(CHero *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_hero_cpp_CHero_setup_FUN_004b48d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = &param_1[1].base.base.orient_matrix.m[0].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CCloth *)this_ptr_00,&(param_1->base).base.location.position,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&(param_1->base).base.orient.vec,this_ptr);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->pushed_object = (CBoxActor *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->lever_to_pull = (CLever *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->ladder_to_climb = (CLadder *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].bone_index = _DAT_01c713d8;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

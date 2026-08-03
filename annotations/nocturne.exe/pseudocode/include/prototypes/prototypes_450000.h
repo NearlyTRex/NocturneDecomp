@@ -6,7 +6,7 @@
 #include "system/stdio.h"
 #include "system/winbase.h"
 #include "types/classes/CBitFont.h"
-#include "types/classes/CCharacter.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
@@ -17,7 +17,6 @@
 #include "types/classes/CDoor.h"
 #include "types/classes/CDraculaBride.h"
 #include "types/classes/CDrawSurface.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CFileFinder.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CKeyFramedModelInstance.h"
@@ -29,6 +28,8 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CZombieDog.h"
 #include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
+#include "types/enums/EGroundType.h"
 #include "types/enums/ETextAlignment.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -70,7 +71,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyF
 CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(CKeyFramedModel *this_ptr,int frame_index);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags);
-void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00453620(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(CKeyFramedModel *model_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00453950(CKeyFramedModel *this_ptr);
@@ -92,33 +93,33 @@ CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_004545d0(CDemon
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_004545e0(CKeyFramedModel *this_ptr,uint flags);
 void __cdecl core_dog_cpp_staticInit_FUN_00454600(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_00454630(void);
-CDemonActorType * core_dog_cpp_CZombieDog_getActorType_FUN_00454650(void);
+CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_00454650(CZombieDog *this_ptr);
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_00454660(CZombieDog *this_ptr);
-void core_dog_cpp_CZombieDog_setup_FUN_004546d0(CEnemy *param_1);
-void core_dog_cpp_CZombieDog_process_FUN_00454750(CEnemy *param_1,float param_2);
-void core_dog_cpp_CZombieDog_archive_FUN_00454dc0(CEnemy *param_1);
-void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CEnemy *param_1,SDamageInfo *param_2);
+void __cdecl core_dog_cpp_CZombieDog_setup_FUN_004546d0(CZombieDog *this_ptr);
+void __cdecl core_dog_cpp_CZombieDog_process_FUN_00454750(CZombieDog *this_ptr,float delta_time);
+void __cdecl core_dog_cpp_CZombieDog_archive_FUN_00454dc0(CZombieDog *this_ptr);
+void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CZombieDog *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_00454ee0(CZombieDog *this_ptr,CVector3f *out_points_array);
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_00454f30(CZombieDog *this_ptr,uint flags);
 void __cdecl core_door_cpp_staticInit_FUN_00454ff0(void);
 CDoor * __cdecl core_door_cpp_factoryFunc_FUN_00455020(void);
-CDemonActorType * core_door_cpp_CDoor_getActorType_FUN_00455040(void);
+CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_00455040(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00455050(CDoor *this_ptr);
-void core_door_cpp_CDoor_setup_FUN_004551f0(CDemonActor *param_1);
+void __cdecl core_door_cpp_CDoor_setup_FUN_004551f0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_onOpened_FUN_00455270(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(CDoor *this_ptr);
-void core_door_cpp_CDoor_process_FUN_00455640(CDoor *param_1,float param_2);
-int core_door_cpp_CDoor_renderOpaque_FUN_00455d50(CDemonActor *param_1);
-void core_door_cpp_CDoor_renderBackground_FUN_00455e10(CDemonActor *param_1,int param_2);
-float * core_door_cpp_CDoor_getBoundingBox_FUN_00455e90(int param_1,float *param_2);
-void core_door_cpp_CDoor_archive_FUN_00455ee0(CDemonActor *param_1);
-undefined4 core_door_cpp_CDoor_getCollisionType_FUN_004561d0(int param_1,int param_2);
-undefined4 core_door_cpp_CDoor_getGroundType_FUN_00456210(int param_1);
+void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delta_time);
+int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00455d50(CDoor *this_ptr);
+void __cdecl core_door_cpp_CDoor_renderBackground_FUN_00455e10(CDoor *this_ptr,int layer_flag);
+CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00455e90(CDoor *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_door_cpp_CDoor_archive_FUN_00455ee0(CDoor *this_ptr);
+ECollisionType __cdecl core_door_cpp_CDoor_getCollisionType_FUN_004561d0(CDoor *this_ptr,SCollisionInfo *collision_info);
+EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00456210(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00456220(CDoor *this_ptr,float swing_range);
-undefined4 core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230(int param_1);
-undefined4 core_door_cpp_CDoor_allowBulletHoles_FUN_00456240(int param_1);
+int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230(CDoor *this_ptr);
+int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00456240(CDoor *this_ptr);
 CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(CDoor *this_ptr,CVector3f *out_pos,CVector3f *direction,CVector3f *actor_pos);
-void core_door_cpp_CDoor_updateCollisionData_FUN_00456460(CDoor *param_1);
+void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00456460(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(CDoor *this_ptr,CDemonActor *opener);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00456650(CDoor *this_ptr);
 CRuleList * core_door_cpp_FUN_00456690(void);
@@ -157,19 +158,19 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00457a00(int *vertex_
 void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *vertex_indices,int vertex_count);
 void __cdecl core_dracbrid_cpp_staticInit_FUN_00458580(void);
 CDraculaBride * __cdecl core_dracbrid_cpp_factoryFunc_FUN_00458610(void);
-CDemonActorType * core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00458630(void);
+CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00458630(CDraculaBride *this_ptr);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(CDraculaBride *this_ptr);
-void core_dracbrid_cpp_CDraculaBride_setup_FUN_00458730(CEnemy *param_1);
-void core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(CDraculaBride *param_1,float param_2);
+void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_00458730(CDraculaBride *this_ptr);
+void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(CDraculaBride *this_ptr,float delta_time);
 void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background);
 void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_0045a1a0(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
-ECollisionType core_dracbrid_cpp_CDraculaBride_getCollisionType_FUN_0045a240(CCharacter *param_1,SCollisionInfo *param_2);
-int core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_0045a260(CCharacter *param_1);
-void core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CEnemy *param_1);
+ECollisionType __cdecl core_dracbrid_cpp_CDraculaBride_getCollisionType_FUN_0045a240(CDraculaBride *this_ptr,SCollisionInfo *collision_info);
+int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_0045a260(CDraculaBride *this_ptr);
+void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(CDraculaBride *this_ptr,SDamageInfo *damage_info);
-void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDraculaBride *param_1,SDamageInfo *param_2);
-undefined4 core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0045a9a0(int param_1);
-undefined4 core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(int param_1,CVector3f *param_2);
+void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDraculaBride *this_ptr,SDamageInfo *damage_info);
+EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0045a9a0(CDraculaBride *this_ptr);
+int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(CDraculaBride *this_ptr,CVector3f *out_points_array);
 void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(CDraculaBride *this_ptr,char *sound_name,float volume);
 void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDraculaBride *this_ptr,float delta_time);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_0045b310(SFreaky *this_ptr);
@@ -234,28 +235,28 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_0045d6d0(C
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(CDrawSurface *this_ptr,char *text,int x,int y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_0045da60(CDrawSurface *this_ptr,int x,int y,char *text);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_0045da90(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_0045da90(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_0045db00(CDrawSurface *this_ptr,char *text,int x,int y);
 void cockpit_drawsurf_cpp_FUN_0045db30(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_0045db60(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_0045db60(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCentered_FUN_0045dbd0(CDrawSurface *this_ptr,char *text,int x,int y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredWrapper_FUN_0045dc00(CDrawSurface *this_ptr,int x,int y,char *text);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredPrintf_FUN_0045dc30(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredPrintf_FUN_0045dc30(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0045dca0(CDrawSurface *this_ptr,char *text,int x,int y);
 void cockpit_drawsurf_cpp_FUN_0045dcd0(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_0045dd70(CDrawSurface *this_ptr,char *text,int x,int y);
 void cockpit_drawsurf_cpp_FUN_0045dda0(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_0045ddd0(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_0045ddd0(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBounds_FUN_0045de40(CDrawSurface *this_ptr,char *text,int x,int width,int y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_0045de70(CDrawSurface *this_ptr,int x,int y,int width,char *text);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0045dea0(CDrawSurface *param_1,int param_2,int param_3,int param_4,char *param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0045dea0(CDrawSurface *this_ptr,int x,int y,int width,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_0045df20(CDrawSurface *this_ptr,char *text,int x,int y,int height);
 void cockpit_drawsurf_cpp_FUN_0045df50(CDrawSurface *param_1,int param_2,int param_3,int param_4,char *param_5);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_0045df80(CDrawSurface *param_1,int param_2,int param_3,int param_4,char *param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_0045df80(CDrawSurface *this_ptr,int x,int y,int height,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0045e000(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthWrapper_FUN_0045e040(CDrawSurface *this_ptr,int x,int y,int width,int height,char *text);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0045e0f0(CDrawSurface *this_ptr,char *text,int y);
 void cockpit_drawsurf_cpp_FUN_0045e110(CDrawSurface *param_1,int param_2,char *param_3);
 void cockpit_drawsurf_cpp_FUN_0045e130(CDrawSurface *param_1,int param_2,char *param_3);
@@ -263,7 +264,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00
 void cockpit_drawsurf_cpp_FUN_0045e1d0(void);
 void cockpit_drawsurf_cpp_FUN_0045e1f0(CDrawSurface *param_1,int param_2,char *param_3);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260(CDrawSurface *this_ptr,char *text);
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(CDrawSurface *param_1,char *param_2);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(CDrawSurface *this_ptr,char *format);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_0045e2e0(CDrawSurface *this_ptr,int char_code);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320(CDrawSurface *this_ptr);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_0045e340(CDrawSurface *this_ptr,char *text);

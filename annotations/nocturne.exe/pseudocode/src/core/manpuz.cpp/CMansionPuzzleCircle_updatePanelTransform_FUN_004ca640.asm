@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(CDemonActor *param_1,int param_2)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(CMansionPuzzleCircle *this_ptr,int panel_index)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30

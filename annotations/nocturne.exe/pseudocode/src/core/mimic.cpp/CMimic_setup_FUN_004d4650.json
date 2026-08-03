@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 37,
+        "line": 36,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 630,
+    "complexity_score": 370,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 150,
-    "suspect_count": 45,
+    "pseudocode_lines": 145,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 479
+    "total_lines": 474
   },
   "cross_references": [],
   "function": {
@@ -148,9 +147,9 @@
         "004d49eb"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mimic.cpp_CMimic_setup_FUN_004d4650",
-    "signature": "void core_mimic_cpp_CMimic_setup_FUN_004d4650(CEnemy *param_1)"
+    "signature": "void __cdecl core_mimic_cpp_CMimic_setup_FUN_004d4650(CMimic *this_ptr)"
   },
   "function_calls": [
     {
@@ -511,9 +510,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -552,12 +551,20 @@
     "pcode_op_count": 1271
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -593,356 +600,156 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_mimic_cpp_CMimic_setup_FUN_004d4650(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
+      "line": 17,
       "match": "auStackY_1010",
       "severity": "moderate",
       "text": "uint auStackY_1010 [1014];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,model_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (CCloth *)(param_1[1].base.base.create_event + 0x50);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(this_ptr,&(param_1->base).base.location.position,&(param_1->base).base.orient.vec,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(this_ptr,&(param_1->base).base.location.position,&(param_1->base).base.orient.vec,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)(param_1[5].base.motion_transition_costs[3] + 0xd));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[6].base.model.rest_pose_data[0x10] = (float)pCVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = param_1[6].base.model.rest_pose_data[0x10];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint **)((int)fVar3",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)((int)fVar3 + 0x14c))(fVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 92,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)((int)fVar3 + 0x14c))(fVar3);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMorph *)(param_1[5].base.motion_transition_costs[4] + 3),0,pCVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (int)param_1[5].base.motion_transition_costs[5][4]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = param_1[5].base.motion_transition_costs[5][5];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 105,
-      "match": "(float *)((int)fVar3",
-      "severity": "moderate",
-      "text": "*(float *)((int)fVar3 + 4 + iVar5) = -*(float *)((int)fVar3 + 4 + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 105,
-      "match": "(float *)((int)fVar3",
-      "severity": "moderate",
-      "text": "*(float *)((int)fVar3 + 4 + iVar5) = -*(float *)((int)fVar3 + 4 + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < (int)param_1[5].base.motion_transition_costs[5][4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (int)param_1[5].base.motion_transition_costs[5][6]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = param_1[5].base.motion_transition_costs[5][7];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Direct stack address reference",
       "line": 114,
-      "match": "(uint *)(iVar5 + 0x30 + (int)fVar3",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)(iVar5 + 0x30 + (int)fVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 117,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8) = *puVar7;",
+      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) = *puVar8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 118,
+      "line": 115,
       "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Direct stack address reference",
       "line": 120,
-      "match": "(uint *)(iVar5 + 0x18 + (int)fVar3",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)(iVar5 + 0x18 + (int)fVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 123,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar8 * -8) = *puVar7;",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) = *puVar8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 124,
+      "line": 121,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(uint *)(iVar5 + 0x18 + (int)fVar3",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)(iVar5 + 0x18 + (int)fVar3);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 129,
+      "line": 126,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "*puVar7 = *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8);",
+      "text": "*puVar8 = *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 131,
+      "line": 128,
       "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 132,
-      "match": "(uint *)(iVar5 + 0x30 + (int)fVar3",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)(iVar5 + 0x30 + (int)fVar3);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 135,
+      "line": 132,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*puVar7 = *(uint *)(&stack0xffffffdc + (uint)bVar8 * -8);",
+      "text": "*puVar8 = *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 137,
+      "line": 134,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 140,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < (int)param_1[5].base.motion_transition_costs[5][6]);",
-      "type": "unnamed_param"
+      "description": "Pointer value `&pSVar4->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 111,
+      "match": "(int)&pSVar4->vertices[2].vertex_index",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 143,
-      "match": "(CDeformableModelInstance *)((int)param_1",
+      "description": "Pointer value `&pSVar4->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 117,
+      "match": "(int)&pSVar4->vertices[0].vertex_index",
       "severity": "moderate",
-      "text": "((CDeformableModelInstance *)((int)param_1[6].base.model.rest_pose_data[0x10] + 0x150));",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pSVar4->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 123,
+      "match": "(int)&pSVar4->vertices[0].vertex_index",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pSVar4->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 129,
+      "match": "(int)&pSVar4->vertices[2].vertex_index",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 101,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&(pSVar3->position).x + iVar6) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 143,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)((int)param_1[6].base.model.rest_pose_data[0x10] + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(CDeformableModelInstance *)((int)param_1",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 102,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((CDeformableModelInstance *)((int)param_1[6].base.model.rest_pose_data[0x10] + 0x150));",
+      "text": "-*(float *)((int)&(pSVar3->position).x + iVar6);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 145,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)((int)param_1[6].base.model.rest_pose_data[0x10] + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 146,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (CMorph *)(param_1[5].base.motion_transition_costs[4] + 3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(CDeformableModelInstance *)((int)param_1",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 111,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(CDeformableModelInstance *)((int)param_1[6].base.model.rest_pose_data[0x10] + 0x150));",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 149,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(CDeformableModelInstance *)((int)param_1[6].base.model.rest_pose_data[0x10] + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 151,
-      "match": "(CDeformableModelInstance *)((int)param_1",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 117,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((CDeformableModelInstance *)((int)param_1[6].base.model.rest_pose_data[0x10] + 0x150));",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 151,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)((int)param_1[6].base.model.rest_pose_data[0x10] + 0x150));",
-      "type": "unnamed_param"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 123,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 129,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

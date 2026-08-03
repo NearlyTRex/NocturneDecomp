@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vampboss_cpp_CVampireBoss_getDeathState_FUN_0054df90(void)
+; EDeathState __cdecl core_vampboss_cpp_CVampireBoss_getDeathState_FUN_0054df90(CVampireBoss *this_ptr)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

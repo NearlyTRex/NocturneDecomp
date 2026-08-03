@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 118,
+    "complexity_score": 12,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 9,
-    "suspect_types": [
-      "param_count_too_few",
-      "unaffected_reg",
-      "unnamed_param"
-    ],
-    "total_lines": 39
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
   },
   "cross_references": [
     {
@@ -140,9 +136,9 @@
         "0055d519"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "core_xform.cpp_quaternionFromAngleY_FUN_0055d4e0",
-    "signature": "void core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(float param_1)"
+    "signature": "CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(float angle_radians,CQuaternion4f *quat_out)"
   },
   "function_calls": [],
   "globals": [
@@ -164,7 +160,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -173,12 +169,11 @@
         "call_addr": "00497ab9",
         "call_type": "direct",
         "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -187,12 +182,11 @@
         "call_addr": "00497dd0",
         "call_type": "direct",
         "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -201,10 +195,12 @@
         "call_addr": "004db99b",
         "call_type": "direct",
         "caller": "core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -212,12 +208,11 @@
         "call_addr": "004fd216",
         "call_type": "direct",
         "caller": "core_scat.cpp_FUN_004fd1d0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -230,7 +225,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -243,7 +238,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -252,10 +247,12 @@
         "call_addr": "00538710",
         "call_type": "direct",
         "caller": "core_stranger.cpp_FUN_005384d0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -263,10 +260,12 @@
         "call_addr": "00538a12",
         "call_type": "direct",
         "caller": "core_stranger.cpp_FUN_005384d0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -274,19 +273,21 @@
         "call_addr": "00538a6f",
         "call_type": "direct",
         "caller": "core_stranger.cpp_FUN_005384d0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 1,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.28,
@@ -316,10 +317,10 @@
     "pcode_op_count": 157
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -349,6 +350,13 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "angle_radians",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -369,106 +377,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "quaternionFromAngleY_FUN_0055d4e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 4,
-          "line": 18,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(float param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (float10)fcos((float10)param_1 * (float10)0.5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = (float10)fsin((float10)param_1 * (float10)0.5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = (float)fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = (float)fVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[3] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 29,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 18,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = (float)fVar1;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -64,7 +64,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 34,
+        "line": 33,
         "message": "no matching function for call to 'core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20'"
       }
     ],
@@ -74,18 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 60,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 29,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_constant",
       "unrolled_strcpy"
     ],
-    "total_lines": 104
+    "total_lines": 103
   },
   "cross_references": [
     {
@@ -242,10 +242,10 @@
   "suspects": [
     {
       "description": "Raw hex literal 0x14b8de8 matches address of g_CFilterCache_014b8de8 (type CFilterCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 28,
+      "line": 27,
       "match": "0x14b8de8",
       "severity": "moderate",
-      "text": "(0x014B8DE8,this_ptr->filter_names + this_ptr->filter_count,",
+      "text": "(0x014B8DE8,this_ptr->filter_names[this_ptr->filter_count],",
       "type": "raw_address_constant"
     },
     {

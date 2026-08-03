@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(int param_1,float param_2)
+; void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(CKeyActor *this_ptr,float delta_time)
 ;
+; Parameters:
+; CKeyActor *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;

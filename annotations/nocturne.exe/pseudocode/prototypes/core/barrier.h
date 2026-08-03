@@ -13,7 +13,7 @@ void FUN_004116e0(void);
 
 // Original: core_barrier.cpp_CBarrier_getActorType_FUN_00411700
 // Address: 00411700
-CDemonActorType * CBarrier::getActorType(void);
+CDemonActorType * __cdecl CBarrier::getActorType(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_ctor_FUN_00411710
 // Address: 00411710
@@ -25,23 +25,23 @@ void __cdecl CBarrier::setup(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_renderTransparent_FUN_00411790
 // Address: 00411790
-undefined4 CBarrier::renderTransparent(void);
+int __cdecl CBarrier::renderTransparent(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_getBoundingBox_FUN_004117a0
 // Address: 004117a0
-void CBarrier::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CBarrier::getBoundingBox(CBarrier *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_barrier.cpp_CBarrier_archive_FUN_00411800
 // Address: 00411800
-void CBarrier::archive(CDemonActor *param_1);
+void __cdecl CBarrier::archive(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_getCollisionType_FUN_00411860
 // Address: 00411860
-undefined4 CBarrier::getCollisionType(int param_1,int *param_2);
+ECollisionType __cdecl CBarrier::getCollisionType(CBarrier *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_barrier.cpp_CBarrier_updateCollisionData_FUN_004118a0
 // Address: 004118a0
-void CBarrier::updateCollisionData(CDemonActor *param_1);
+void __cdecl CBarrier::updateCollisionData(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_dtor_FUN_004118c0
 // Address: 004118c0

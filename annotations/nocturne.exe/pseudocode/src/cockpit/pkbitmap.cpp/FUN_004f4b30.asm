@@ -61,7 +61,7 @@ section .text
     PUSH EAX                            ; 004f4b7a
     MOV ESI,0x58d210                    ; 004f4b7b | = "..\\cockpit\\pkbitmap.cpp"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f4b80
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004f4b85
     LEA EAX,[ESP + 0x8]                 ; 004f4b88
     MOV EDI,0x473                       ; 004f4b8c

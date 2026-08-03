@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,37 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 32,
-        "line": 18,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 39,
-        "line": 18,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
+        "column": 63,
         "line": 21,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 21,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 22,
         "message": "use of undeclared identifier 'DAT_0078a123'"
       }
     ],
@@ -92,19 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 203,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
-    "total_lines": 79
+    "total_lines": 74
   },
   "cross_references": [],
   "function": {
@@ -115,9 +89,9 @@
         "0047a11d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_enemy.cpp_CEnemy_releaseVictim_FUN_0047a090",
-    "signature": "void core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CCharacter *param_1)"
+    "signature": "void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CEnemy *this_ptr)"
   },
   "function_calls": [
     {
@@ -138,9 +112,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -170,141 +144,29 @@
     "pcode_op_count": 197
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEnemy *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CCharacter *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1[1].base.actor_name + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pCVar2 = (CCharacter *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0xec))(iVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (pCVar2 == param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1[1].base.actor_name + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x14c) + 0xe8))(iVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((byte *)(param_1->base).validation_magic == &DAT_0078a123) &&",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_0078a123",
       "severity": "mild",
-      "text": "if (((byte *)(param_1->base).validation_magic == &DAT_0078a123) &&",
+      "text": "if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((param_1->model).model_ptr != (CDeformableModel *)0x0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&CStack_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).actor_name[0x18] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).actor_name[0x19] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).actor_name[0x1a] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).actor_name[0x1b] = '\\0';",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

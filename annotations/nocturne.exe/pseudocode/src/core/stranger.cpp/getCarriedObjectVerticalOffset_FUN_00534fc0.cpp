@@ -1,12 +1,12 @@
 // Name: core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0
 // Address: 00534fc0
 // Address Range: [[00534fc0, 00535088]]
-// Convention: unknown
-// Signature: float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *object)
 
 #include "nocturne.h"
 
-float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *param_1)
+float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *object)
 
 {
   CDemonActor *pCVar1;
@@ -20,13 +20,13 @@ float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor 
   
   pCVar5 = (CKeyFramedModel *)0x0;
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (param_1,g_CBoxActorActorType_00764800.name_hash);
+                     (object,g_CBoxActorActorType_00764800.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                        ((CKeyFramedModelInstance *)(pCVar1 + 1));
   }
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (param_1,g_CCryptVesselActorType_02dd11cc.name_hash);
+                     (object,g_CCryptVesselActorType_02dd11cc.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                        ((CKeyFramedModelInstance *)(pCVar1 + 1));

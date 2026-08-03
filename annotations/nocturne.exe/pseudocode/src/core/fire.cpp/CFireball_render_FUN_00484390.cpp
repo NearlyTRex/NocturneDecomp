@@ -1,21 +1,21 @@
 // Name: core_fire.cpp_CFireball_render_FUN_00484390
 // Address: 00484390
 // Address Range: [[00484390, 00484b5b]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
+void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
 
 {
   CBoundingBox3D *pCVar1;
   longlong lVar2;
   CKeyFramedModel *pCVar3;
   int iVar4;
-  CKeyFramedModelInstance *this_ptr;
+  CKeyFramedModelInstance *this_ptr_00;
   SMRGLTextureBasic *texture;
   float local_e8;
   float local_e4;
@@ -44,25 +44,26 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
   float local_18;
   
   local_20 = 0.5;
-  if (param_1[5].z == 0.0) {
+  if (this_ptr->lighting_active == 0) {
     local_20 = 4.0;
   }
-  if (param_1[5].z == 2.8026e-45) {
+  if (this_ptr->lighting_active == 2) {
     local_20 = 0.666;
   }
-  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);
+  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
+            (DAT_005ae704,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-            (DAT_005ae704,(CVector3i *)&param_1[6].y,(CVector3i *)0x0);
-  if (param_1[5].z == 0.0) {
-    this_ptr = &g_CKeyFramedModelInstance_01c08ec4;
+            (DAT_005ae704,(CVector3i *)&this_ptr->rotation_angle1,(CVector3i *)0x0);
+  if (this_ptr->lighting_active == 0) {
+    this_ptr_00 = &g_CKeyFramedModelInstance_01c08ec4;
   }
-  else if (param_1[5].z == 1.4013e-45) {
-    this_ptr = &g_CKeyFramedModelInstance_01c09040;
+  else if (this_ptr->lighting_active == 1) {
+    this_ptr_00 = &g_CKeyFramedModelInstance_01c09040;
   }
   else {
-    this_ptr = &g_CKeyFramedModelInstance_01c091bc;
+    this_ptr_00 = &g_CKeyFramedModelInstance_01c091bc;
   }
-  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr_00);
   pCVar1 = pCVar3->frame_bounds;
   local_e0.min.x = (pCVar1->min).x;
   local_e0.min.y = (pCVar1->min).y;
@@ -73,9 +74,9 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
   iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(&local_e0);
   if (iVar4 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-              (g_CDemonSet_PTR_005be368,param_1,(UOrientationVector *)&DAT_02dd1184,&local_e0.min,
-               &local_e0.max,(CMatrix3x3f *)0x0);
-    core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(this_ptr,0.0,-1);
+              (g_CDemonSet_PTR_005be368,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_02dd1184,
+               &local_e0.min,&local_e0.max,(CMatrix3x3f *)0x0);
+    core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(this_ptr_00,0.0,-1);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   if ((iVar4 != 0) &&
@@ -124,17 +125,17 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
     local_80.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_80);
-    if (param_1[5].z == 1.4013e-45) {
+    if (this_ptr->lighting_active == 1) {
       texture = (SMRGLTextureBasic *)&DAT_005b8514;
     }
-    else if (param_1[5].z == 2.8026e-45) {
+    else if (this_ptr->lighting_active == 2) {
       texture = (SMRGLTextureBasic *)&DAT_005b84fc;
     }
     else {
       texture = (SMRGLTextureBasic *)&DAT_005b84cc;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);
-    lVar2 = (longlong)(int)param_1[4].z * (longlong)(0xffff - _DAT_01c038f4);
+    lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - _DAT_01c038f4);
     DAT_005c5040 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
     DAT_005c5034 = 0xffff;
     DAT_005c5038 = 0xffff;
@@ -156,21 +157,21 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
               (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-    if ((param_1[5].z != 1.4013e-45) && (param_1[5].z != 2.8026e-45)) {
-      local_50.x = param_1->x;
-      local_50.y = param_1->y;
-      local_50.z = param_1->z;
-      local_a4 = param_1[1].x;
-      local_a0 = param_1[1].y;
+    if ((this_ptr->lighting_active != 1) && (this_ptr->lighting_active != 2)) {
+      local_50.x = (this_ptr->base).position.x;
+      local_50.y = (this_ptr->base).position.y;
+      local_50.z = (this_ptr->base).position.z;
+      local_a4 = (this_ptr->base).velocity.x;
+      local_a0 = (this_ptr->base).velocity.y;
       iVar4 = 0;
       local_e4 = 0.1;
-      local_9c = param_1[1].z;
+      local_9c = (this_ptr->base).velocity.z;
       local_e8 = 1.0;
       do {
         local_e4 = local_e4 * (float)0.69999999999999996;
         local_e8 = (float)0.69999999999999996 * local_e8;
         local_5c = local_a4 * local_e4;
-        local_a0 = local_a0 - local_e4 * param_1[2].y;
+        local_a0 = local_a0 - local_e4 * (this_ptr->base).gravity_acceleration;
         local_54 = local_9c * local_e4;
         local_58 = local_a0 * local_e4;
         local_50.x = local_50.x - local_5c;
@@ -214,8 +215,9 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
         local_8c.z = (int)ROUND(256.0f * 0.0);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_8c);
-        core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(_DAT_007f7370,param_1,0);
-        lVar2 = (longlong)(int)param_1[4].z * (longlong)(0xffff - _DAT_01c038f4);
+        core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
+                  (_DAT_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+        lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - _DAT_01c038f4);
         DAT_005c5040 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
         DAT_005c5034 = 0xffff;
         DAT_005c5038 = 0xffff;

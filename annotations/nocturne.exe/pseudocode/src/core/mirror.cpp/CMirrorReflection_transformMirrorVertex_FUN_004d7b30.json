@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 186,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 13,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
       "stack_alignment_array",
-      "unaffected_reg",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
     "total_lines": 91
@@ -94,9 +92,9 @@
         "004d7bce"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack2_esi",
     "name": "core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30",
-    "signature": "void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2)"
+    "signature": "CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex)"
   },
   "function_calls": [
     {
@@ -126,23 +124,21 @@
         "call_addr": "0050b6f9",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.589285714285714,
@@ -175,10 +171,10 @@
     "pcode_op_count": 313
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 72,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -250,51 +246,24 @@
         "offset": -24,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirrorReflection *"
+      },
+      {
+        "is_param": true,
+        "name": "input_vertex",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMirrorReflection_transformMirrorVertex_FUN_004d7b30.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 4,
-          "line": 36,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 8,
@@ -304,60 +273,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_3c.x = (float)*param_2 * 0.00390625f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_3c.y = (float)param_2[1] * 0.00390625f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_3c.z = (float)param_2[2] * 0.00390625f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_18,&local_3c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 29,
-      "match": "unaff_ESI",
+      "match": "(int *)((int)output_vertex",
       "severity": "moderate",
-      "text": "*unaff_ESI = (int)ROUND(local_30.x * 256.0f);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = local_20[(uint)bVar2 * -2];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
-      "type": "unaffected_reg"
+      "text": "piVar2 = (int *)((int)output_vertex + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
@@ -366,25 +287,6 @@
       "severity": "moderate",
       "text": "local_30.x = pCVar1->x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 36,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = (int)ROUND(local_30.x * 256.0f);",
-      "type": "static_uninitvar"
     }
   ]
 }

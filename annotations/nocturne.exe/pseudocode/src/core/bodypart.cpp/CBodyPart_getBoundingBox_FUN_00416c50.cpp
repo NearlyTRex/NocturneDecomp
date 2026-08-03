@@ -1,19 +1,19 @@
 // Name: core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00416c50
 // Address: 00416c50
 // Address Range: [[00416c50, 00416c8e]]
-// Convention: unknown
-// Signature: undefined4 * core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_00416c50(int param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_00416c50(CBodyPart *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-uint * core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_00416c50(int param_1,uint *param_2)
+CBoundingBox3D * __cdecl core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_00416c50(CBodyPart *this_ptr,CBoundingBox3D *out_box)
 
 {
-  *param_2 = *(uint *)(param_1 + 0x154);
-  param_2[1] = *(uint *)(param_1 + 0x158);
-  param_2[2] = *(uint *)(param_1 + 0x15c);
-  param_2[3] = *(uint *)(param_1 + 0x160);
-  param_2[4] = *(uint *)(param_1 + 0x164);
-  param_2[5] = *(uint *)(param_1 + 0x168);
-  return param_2;
+  (out_box->min).x = (this_ptr->bounding_box).min.x;
+  (out_box->min).y = (this_ptr->bounding_box).min.y;
+  (out_box->min).z = (this_ptr->bounding_box).min.z;
+  (out_box->max).x = (this_ptr->bounding_box).max.x;
+  (out_box->max).y = (this_ptr->bounding_box).max.y;
+  (out_box->max).z = (this_ptr->bounding_box).max.z;
+  return out_box;
 }

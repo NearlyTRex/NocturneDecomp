@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 749,
-    "complexity_score": 510,
+    "complexity_score": 530,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 320,
-    "suspect_count": 15,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -938,6 +938,14 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(CMatrix3x4f *)((int)pCVar9",
+      "severity": "moderate",
+      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 98,
       "match": "(CMatrix3x4f *)((int)pCVar10",
       "severity": "moderate",
@@ -999,6 +1007,14 @@
       "severity": "mild",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Pointer value `pCVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 97,
+      "match": "(int)pCVar9",
+      "severity": "moderate",
+      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pCVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

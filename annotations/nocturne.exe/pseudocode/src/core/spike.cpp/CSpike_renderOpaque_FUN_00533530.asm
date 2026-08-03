@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_spike_cpp_CSpike_renderOpaque_FUN_00533530(CDemonActor *param_1)
+; int __cdecl core_spike_cpp_CSpike_renderOpaque_FUN_00533530(CSpike *this_ptr)
 ;
+; Parameters:
+; CSpike *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_004418d0(int param_1,int *param_2)
+; CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_004418d0(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   input_vector
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

@@ -16,8 +16,7 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_0043cdb0(CCrate *this_ptr)
   if ((this_ptr->base).lifecycle_state != ACTOR_CREATED) {
     return;
   }
-  engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (g_CConsole_PTR_005ad350,"%s exploding!\n",this_ptr);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"%s exploding!\n");
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_28);
   pCVar1 = &(this_ptr->base).location;
   if ((CLocation *)&CStack_10 != pCVar1) {

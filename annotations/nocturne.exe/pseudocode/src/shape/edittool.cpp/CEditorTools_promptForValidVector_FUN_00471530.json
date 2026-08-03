@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,25 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "format_error",
+        "column": 27,
+        "line": 20,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
         "column": 33,
-        "line": 29,
+        "line": 28,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 31,
+        "line": 30,
         "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       }
     ],
@@ -74,17 +80,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 44,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 119
+    "total_lines": 118
   },
   "cross_references": [],
   "function": {
@@ -222,7 +228,7 @@
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 13,
-          "line": 29,
+          "line": 28,
           "message": "sscanf format string requires 3 parameters but only 0 are given.",
           "severity": "error"
         }
@@ -234,7 +240,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 27,
+      "line": 26,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "result_ptr->x = CStack_18.x;",

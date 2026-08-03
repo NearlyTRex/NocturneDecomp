@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_0054c040(CTVBat *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

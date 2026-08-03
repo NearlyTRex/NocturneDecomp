@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(undefined4 param_1,int param_2)
+; void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
 ;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 004789c5

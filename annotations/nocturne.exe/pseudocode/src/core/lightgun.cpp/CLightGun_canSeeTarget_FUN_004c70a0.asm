@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CVector3f *param_1,CDemonActor *param_2)
+; int __cdecl core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CLightGun *this_ptr,CDemonActor *target)
 ;
+; Parameters:
+; CLightGun *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   target
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTrigger_CGlass_00587a48

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,43 +52,37 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 26,
-        "line": 18,
-        "message": "no matching function for call to 'sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 25,
+        "line": 26,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 26,
+        "line": 27,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 26,
+        "line": 27,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 26,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 26,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       }
     ],
@@ -98,19 +92,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 74,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 4,
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 64
+    "total_lines": 65
   },
   "cross_references": [],
   "function": {
@@ -198,7 +192,7 @@
         {
           "check_id": "uninitvar",
           "column": 45,
-          "line": 23,
+          "line": 24,
           "message": "Uninitialized variable: in_stack_00000008",
           "severity": "error"
         }
@@ -219,6 +213,14 @@
     {
       "description": "Unresolved stack parameter",
       "line": 9,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "void *in_stack_00000008;",
@@ -226,7 +228,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 12,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(in_stack_00000004,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "(this_ptr->options).position_source_ptr = in_stack_00000008;",
@@ -234,7 +244,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,2);",
@@ -242,7 +252,7 @@
     },
     {
       "description": "Uninitialized variable: in_stack_00000008",
-      "line": 23,
+      "line": 24,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "(this_ptr->options).position_source_ptr = in_stack_00000008;",

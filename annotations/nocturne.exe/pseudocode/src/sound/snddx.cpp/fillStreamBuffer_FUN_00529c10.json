@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,68 +52,68 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 38,
+        "line": 37,
         "message": "use of undeclared identifier '_DAT_02dc921c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 44,
+        "line": 43,
         "message": "use of undeclared identifier '_DAT_02dc9240'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 44,
+        "line": 43,
         "message": "use of undeclared identifier '_DAT_02dc9238'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 45,
+        "line": 44,
         "message": "use of undeclared identifier '_DAT_02dc9238'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 46,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_02dc921c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 47,
+        "line": 46,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 47,
+        "line": 46,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 47,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_02dc921c'"
+      },
+      {
+        "category": "format_error",
+        "column": 60,
+        "line": 49,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 52,
+        "line": 50,
         "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 55,
-        "message": "use of undeclared identifier '_DAT_02dc9238'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 131,
+    "complexity_score": 128,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
+    "pseudocode_lines": 73,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 246
+    "total_lines": 243
   },
   "cross_references": [
     {
@@ -333,21 +333,21 @@
         {
           "check_id": "uninitvar",
           "column": 10,
-          "line": 55,
+          "line": 53,
           "message": "Uninitialized variable: iStack_40",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 30,
-          "line": 55,
+          "line": 53,
           "message": "Uninitialized variable: iStack_38",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 59,
+          "line": 57,
           "message": "Uninitialized variable: iStack_3c",
           "severity": "error"
         }
@@ -367,7 +367,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02dc921c + 0x2c))();",
@@ -375,15 +375,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(int *)((int)aiStack_60",
+      "line": 53,
+      "match": "(int *)((int)apvStack_60",
       "severity": "moderate",
-      "text": "*(int *)((int)aiStack_60 + iVar3) = iVar5;",
+      "text": "*(int *)((int)apvStack_60 + iVar3) = iVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 67,
+      "line": 65,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_02dc921c + 0x4c))",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_40",
-      "line": 55,
+      "line": 53,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((iStack_40 == 0) && (iStack_38 == _DAT_02dc9238)) {",
@@ -399,7 +399,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_38",
-      "line": 55,
+      "line": 53,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((iStack_40 == 0) && (iStack_38 == _DAT_02dc9238)) {",
@@ -407,10 +407,10 @@
     },
     {
       "description": "Uninitialized variable: iStack_3c",
-      "line": 59,
+      "line": 57,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "iVar5 = iStack_3c;",
+      "text": "iVar4 = iStack_3c;",
       "type": "static_uninitvar"
     }
   ]

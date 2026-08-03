@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_tentacle_cpp_CTentacle_getActorType_FUN_00543b50(void)
+; CDemonActorType * __cdecl core_tentacle_cpp_CTentacle_getActorType_FUN_00543b50(CTentacle *this_ptr)
 ;
+; Parameters:
+; CTentacle *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

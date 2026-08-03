@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(undefined4 param_1,uint param_2,uint param_3,uint param_4)
+; void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(CEditorTools *this_ptr,int cursor_type,int width,int height)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   cursor_type
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057eb12

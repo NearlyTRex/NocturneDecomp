@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,19 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 83,
+        "line": 81,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 86,
+        "line": 84,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -74,22 +74,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 660,
+    "complexity_score": 309,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 53,
+    "pseudocode_lines": 99,
+    "suspect_count": 19,
     "suspect_types": [
       "bitcast_double_pair",
       "extra_output",
-      "param_count_too_few",
-      "sub84_truncation",
-      "unaffected_reg",
-      "unnamed_param"
+      "pointer_cast",
+      "sub84_truncation"
     ],
-    "total_lines": 280
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -191,10 +189,10 @@
         "0055d492"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack3_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_slerpQuaternion_FUN_0055d2d0",
-    "signature": "float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)"
+    "signature": "CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_0055d2d0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)"
   },
   "function_calls": [
     {
@@ -218,12 +216,11 @@
         "call_addr": "0043b9d5",
         "call_type": "direct",
         "caller": "core_course.cpp_CCourse_interpolate_FUN_0043b890",
-        "estimated_params": 5,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -236,7 +233,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -249,7 +246,7 @@
         "instructions_analyzed": 5,
         "method": "push_count",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -258,12 +255,11 @@
         "call_addr": "0051c4fa",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0",
-        "estimated_params": 5,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "ECX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -272,12 +268,11 @@
         "call_addr": "0051c905",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0",
-        "estimated_params": 5,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -290,7 +285,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -303,7 +298,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -316,7 +311,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -329,7 +324,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -342,17 +337,17 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EAX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 12,
+    "estimated_params": 4,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.9447852760736195,
@@ -396,10 +391,10 @@
     "pcode_op_count": 1132
   },
   "stack_frame": {
-    "frame_size": 132,
+    "frame_size": 144,
     "local_size": 132,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -499,6 +494,27 @@
         "offset": -24,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "quat1_in",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "quat2_in",
+        "offset": 8,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "t",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -526,30 +542,30 @@
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 19,
-          "line": 78,
+          "column": 18,
+          "line": 76,
           "message": "Uninitialized variable: extraout_ECX",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 17,
-          "line": 79,
+          "column": 18,
+          "line": 77,
           "message": "Uninitialized variable: extraout_EDX",
           "severity": "error"
         },
         {
-          "check_id": "uninitvar",
-          "column": 12,
-          "line": 103,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "warning"
+          "check_id": "legacyUninitvar",
+          "column": 17,
+          "line": 102,
+          "message": "Uninitialized variable: local_54",
+          "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
-          "column": 16,
+          "column": 13,
           "line": 104,
-          "message": "Uninitialized variable: local_54",
+          "message": "Uninitialized variable: local_50",
           "severity": "error"
         }
       ],
@@ -559,35 +575,11 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "float *extraout_ECX;",
+      "text": "CQuaternion4f *extraout_ECX;",
       "type": "extra_output"
     },
     {
@@ -595,156 +587,20 @@
       "line": 9,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "float *extraout_EDX;",
+      "text": "CQuaternion4f *extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "dVar1 = (double)param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_5c = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_58 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_60 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_54 = param_2[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar2 = (double)(*param_1 * *param_2 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "dVar2 = (double)(*param_1 * *param_2 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 50,
+      "line": 48,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "afStack_1830[0x5ec] = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "sub84_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_54 = -param_2[3];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 59,
+      "line": 57,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec])) <= 0.99999000000000005) {",
@@ -752,31 +608,15 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 60,
+      "line": 58,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "x = (float10)__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec]));",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar9 = (float10)fsin(((float10)1 - (float10)param_3) * fVar8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar8 = (float10)fsin((float10)param_3 * fVar8);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 65,
+      "line": 63,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_74 = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -784,7 +624,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 68,
+      "line": 66,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_7c = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -792,7 +632,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 70,
+      "line": 68,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_18 = __BITCAST_DOUBLE(CONCAT44(uStack_74,local_78));",
@@ -800,47 +640,23 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
+      "line": 69,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "unaff_ESI = extraout_ECX;",
+      "text": "quat_out = extraout_ECX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 71,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = extraout_ECX;",
-      "type": "unaffected_reg"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 72,
+      "line": 70,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "param_1 = extraout_EDX;",
+      "text": "quat1_in = extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = extraout_EDX;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_18 = (double)param_3;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 76,
+      "line": 74,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_70 = SUB84(1.0 - local_18,0);",
@@ -848,7 +664,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 79,
+      "line": 77,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_78 = SUB84(local_18,0);",
@@ -856,165 +672,90 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 80,
+      "line": 78,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "fVar3 = (float)__BITCAST_DOUBLE(CONCAT44(local_70,uStack_74));",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 82,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "aCStack_44[0].y = fStack_64 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->y * fVar3;",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
       "line": 83,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = local_50 + 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_3c = fStack_64 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[2] * fVar3;",
-      "type": "unnamed_param"
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "aCStack_44[0].z = local_58 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->z * fVar3;",
+      "type": "bitcast_double_pair"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
       "line": 84,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "local_3c = fStack_64 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[2] * fVar3;",
+      "text": "aCStack_44[0].w = local_60 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->w * fVar3;",
       "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_38 = local_58 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[3] * fVar3;",
-      "type": "unnamed_param"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
       "line": 85,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "local_38 = local_58 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[3] * fVar3;",
+      "text": "aCStack_44[0].x = local_5c * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->x * fVar3;",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_50[3] = local_60 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + *param_1 * fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 86,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(float *)((int)quat2_in",
       "severity": "moderate",
-      "text": "local_50[3] = local_60 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + *param_1 * fVar3;",
-      "type": "bitcast_double_pair"
+      "text": "pfVar4 = (float *)((int)quat2_in + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_40 = local_5c * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[1] * fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 87,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(float *)((int)quat_out",
       "severity": "moderate",
-      "text": "local_40 = local_5c * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[1] * fVar3;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar4 = param_2 + (uint)bVar7 * -2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*pfVar5 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 96,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "pfVar5 = unaff_ESI + (uint)bVar7 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 97,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = local_54;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 102,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 22,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
+      "text": "pfVar6 = (float *)((int)quat_out + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Uninitialized variable: extraout_ECX",
-      "line": 78,
+      "line": 76,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "unaff_ESI = extraout_ECX;",
+      "text": "quat_out = extraout_ECX;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: extraout_EDX",
-      "line": 79,
+      "line": 77,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "param_1 = extraout_EDX;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 103,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pfVar5 = unaff_ESI + (uint)bVar7 * -2 + 1;",
+      "text": "quat1_in = extraout_EDX;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_54",
+      "line": 102,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "quat_out->w = local_54;",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_50",
       "line": 104,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "*unaff_ESI = local_54;",
+      "text": "*pfVar6 = local_50[(uint)bVar7 * -2];",
       "type": "static_legacy_uninitvar"
     }
   ]

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -92,12 +92,6 @@
         "message": "use of undeclared identifier '_DAT_01fb99d0'"
       },
       {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 64,
-        "message": "no matching function for call to 'core_setutil_cpp_C3DSLight_apply_FUN_00515350'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 9,
         "line": 65,
@@ -114,6 +108,12 @@
         "column": 20,
         "line": 66,
         "message": "use of undeclared identifier '_DAT_01fb99d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 77,
+        "message": "use of undeclared identifier '_DAT_01fb99d0'"
       }
     ],
     "success": false,
@@ -122,16 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 265,
+    "complexity_score": 235,
     "cross_reference_count": 3,
     "function_call_count": 17,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 100,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "raw_address_constant",
       "shadow_pointer_walk",
       "undefined_data",
@@ -500,22 +498,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 98,
-      "match": "(CVector3f *)((int)(pCVar3 + 0x22) +",
-      "severity": "moderate",
-      "text": "pCVar3 = (CVector3f *)((int)(pCVar3 + 0x22) + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `(pCVar3 + 0x22)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
-      "match": "(int)(pCVar3 + 0x22)",
-      "severity": "moderate",
-      "text": "pCVar3 = (CVector3f *)((int)(pCVar3 + 0x22) + 8);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Raw hex literal 0x14b8de8 matches address of g_CFilterCache_014b8de8 (type CFilterCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 19,
       "match": "0x14b8de8",
@@ -556,11 +538,11 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via element-arithmetic `(int)(pCVar3 + N) + M`, where `N*sizeof(*pCVar3) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar3->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar3) + offsetof(subfield)` equals the real array stride. Replace `pCVar3->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 98,
-      "match": "pCVar3 = (T *)((int)(pCVar3 + N) + M)",
+      "match": "pCVar3 = (T *)&pCVar3[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CVector3f *)((int)(pCVar3 + 0x22) + 8);",
+      "text": "pCVar3 = (CVector3f *)&pCVar3[0x22].z;",
       "type": "shadow_pointer_walk"
     },
     {

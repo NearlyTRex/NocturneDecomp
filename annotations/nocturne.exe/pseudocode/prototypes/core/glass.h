@@ -13,7 +13,7 @@ CGlass * __cdecl factoryFunc(void);
 
 // Original: core_glass.cpp_CGlass_getActorType_FUN_004abb40
 // Address: 004abb40
-CDemonActorType * CGlass::getActorType(void);
+CDemonActorType * __cdecl CGlass::getActorType(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_ctor_FUN_004abb50
 // Address: 004abb50
@@ -25,15 +25,15 @@ void __cdecl CGlass::setup(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_process_FUN_004ac3f0
 // Address: 004ac3f0
-void CGlass::process(CGlass *param_1);
+void __cdecl CGlass::process(CGlass *this_ptr,float delta_time);
 
 // Original: core_glass.cpp_CGlass_renderOpaque_FUN_004ac440
 // Address: 004ac440
-int CGlass::renderOpaque(CDemonActor *param_1);
+int __cdecl CGlass::renderOpaque(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_renderTransparent_FUN_004ac600
 // Address: 004ac600
-int CGlass::renderTransparent(CDemonActor *param_1);
+int __cdecl CGlass::renderTransparent(CGlass *this_ptr);
 
 // Original: core_glass.cpp_FUN_004ac7c0
 // Address: 004ac7c0
@@ -41,19 +41,19 @@ void __cdecl FUN_004ac7c0(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_renderBackground_FUN_004ac9b0
 // Address: 004ac9b0
-void CGlass::renderBackground(CGlass *param_1,int param_2);
+void __cdecl CGlass::renderBackground(CGlass *this_ptr,int layer_flag);
 
 // Original: core_glass.cpp_CGlass_getBoundingBox_FUN_004acb60
 // Address: 004acb60
-void CGlass::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CGlass::getBoundingBox(CGlass *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_glass.cpp_CGlass_archive_FUN_004acbc0
 // Address: 004acbc0
-void CGlass::archive(CDemonActor *param_1);
+void __cdecl CGlass::archive(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_getCollisionType_FUN_004accc0
 // Address: 004accc0
-undefined4 CGlass::getCollisionType(int param_1);
+ECollisionType __cdecl CGlass::getCollisionType(CGlass *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_glass.cpp_FUN_004accf0
 // Address: 004accf0
@@ -65,11 +65,11 @@ void __cdecl CGlass::shatter(CGlass *this_ptr,CVector3f *location);
 
 // Original: core_glass.cpp_CGlass_onLaserHit_FUN_004add80
 // Address: 004add80
-void CGlass::onLaserHit(CDemonActor *param_1,SLaserInfo *param_2);
+void __cdecl CGlass::onLaserHit(CGlass *this_ptr,SLaserInfo *laser_info);
 
 // Original: core_glass.cpp_CGlass_getGroundType_FUN_004adec0
 // Address: 004adec0
-undefined4 CGlass::getGroundType(void);
+EGroundType __cdecl CGlass::getGroundType(CGlass *this_ptr);
 
 // Original: core_glass.cpp_FUN_004aded0
 // Address: 004aded0

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_dropRightHandObject_FUN_0053bf30(int param_1)
+; void __cdecl core_stranger_cpp_CStranger_dropRightHandObject_FUN_0053bf30(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 at 00537dc0

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -80,16 +80,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 482,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
-    "suspect_count": 39,
+    "suspect_count": 4,
     "suspect_types": [
       "unknown_field",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
     "total_lines": 292
@@ -103,10 +102,10 @@
         "0042850a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_testDamageLine_FUN_004282d0",
-    "signature": "undefined4 core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit)"
   },
   "function_calls": [
     {
@@ -160,9 +159,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -210,10 +209,10 @@
     "pcode_op_count": 1061
   },
   "stack_frame": {
-    "frame_size": 100,
+    "frame_size": 120,
     "local_size": 100,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -236,6 +235,41 @@
         "offset": -72,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "start",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "end",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 16,
+        "size": 4,
+        "type": "SDamageInfo *"
+      },
+      {
+        "is_param": true,
+        "name": "out_hit",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -275,228 +309,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,(CVector3f *)local_48,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(&param_1->base,(CVector3f *)local_48,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(&param_1->base,&local_54,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(&param_1->base,&local_54,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = (*((param_1->base).vtable._ub)->testLineIntersection)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,(CVector3f *)local_48,&local_54,&local_60);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 != (CVector3f *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,(CVector3f *)auStack_6c,&local_60);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 != pCVar3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5->x = pCVar3->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5->y = pCVar3->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5->z = pCVar3->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (0.0 < (double)param_4->damage_amount) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fStack_78 = param_3->x - param_2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_78 = param_3->x - param_2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fStack_74 = param_3->y - param_2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_74 = param_3->y - param_2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar1 = param_3->z - param_2->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = param_3->z - param_2->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "dVar4 = round((double)param_4->damage_amount * 0.40000000000000002);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 58,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_48._8_4_ = fStack_7c * 10.0f;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,&CStack_28,(CVector3f *)(auStack_6c + 8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->blood_type);",
-      "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
@@ -515,75 +333,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (&param_4->impact_direction != (CVector3f *)&fStack_34) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_4->impact_direction).x = fStack_34;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_4->impact_direction).y = fStack_30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_4->impact_direction).z = fStack_2c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(((param_1->base).vtable._uc)->_uc).processDamage)(param_1,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(((param_1->base).vtable._uc)->_uc).processDamage)(param_1,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(*(((param_1->base).vtable._uc)->_uc).processDamage)(param_1,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4->damage_amount = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 34,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_5->x = pCVar3->x;",
+      "text": "out_hit->x = pCVar3->x;",
       "type": "unrolled_memcpy"
     },
     {

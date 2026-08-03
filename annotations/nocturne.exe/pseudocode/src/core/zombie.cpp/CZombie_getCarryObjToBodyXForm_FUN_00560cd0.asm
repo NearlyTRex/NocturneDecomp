@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(int param_1,int param_2)
+; void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ; Local Variables:
 ; undefined        Stack[-0x16c]:1  local_16c
 ; undefined        Stack[-0x13c]:1  local_13c
@@ -225,7 +228,7 @@ section .text
     LEA ESI,[EBP + 0xffffff4a]          ; 00560e8e
     LEA EDI,[EBP + 0xffffff7a]          ; 00560e94
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 00560e9a
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 00560e9f
     LEA EAX,[EBP + 0xffffff7a]          ; 00560ea2
     MOV ECX,0xc                         ; 00560ea8

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_health_cpp_CHealthItem_process_FUN_004b4270(void)
+; void __cdecl core_health_cpp_CHealthItem_process_FUN_004b4270(CHealthItem *this_ptr,float delta_time)
 ;
+; Parameters:
+; CHealthItem *    Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; *****************************************************************************
 

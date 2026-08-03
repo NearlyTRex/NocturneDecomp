@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_crossbow_cpp_CCrossbow_renderTransparent_FUN_0043d120(int param_1)
+; int __cdecl core_crossbow_cpp_CCrossbow_renderTransparent_FUN_0043d120(CCrossbow *this_ptr)
 ;
+; Parameters:
+; CCrossbow *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0

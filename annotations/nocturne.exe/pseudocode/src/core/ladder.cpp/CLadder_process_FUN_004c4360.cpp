@@ -1,14 +1,14 @@
 // Name: core_ladder.cpp_CLadder_process_FUN_004c4360
 // Address: 004c4360
 // Address Range: [[004c4360, 004c436d]]
-// Convention: unknown
-// Signature: void core_ladder_cpp_CLadder_process_FUN_004c4360(CLadder *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_ladder_cpp_CLadder_process_FUN_004c4360(CLadder *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_ladder_cpp_CLadder_process_FUN_004c4360(CLadder *param_1)
+void __cdecl core_ladder_cpp_CLadder_process_FUN_004c4360(CLadder *this_ptr,float delta_time)
 
 {
-  core_ladder_cpp_FUN_004c45a0(param_1);
+  core_ladder_cpp_FUN_004c45a0(this_ptr);
   return;
 }

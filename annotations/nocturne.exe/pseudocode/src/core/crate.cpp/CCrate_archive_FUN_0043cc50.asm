@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crate_cpp_CCrate_archive_FUN_0043cc50(CDemonActor *param_1)
+; void __cdecl core_crate_cpp_CCrate_archive_FUN_0043cc50(CCrate *this_ptr)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0057b441

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_keyactor_cpp_CKeyActor_archive_FUN_004c3650(CDemonActor *param_1)
+; void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_004c3650(CKeyActor *this_ptr)
 ;
+; Parameters:
+; CKeyActor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104
 ;

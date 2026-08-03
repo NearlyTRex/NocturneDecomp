@@ -19,7 +19,7 @@ int __cdecl engine_2d_c_getInputWithPrompt_FUN_00403fb0(char *buffer,int max_len
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   iVar3 = 0;
   do {
-    _sprintf(local_114,"%s%s_    ",prompt,buffer);
+    _sprintf(local_114,"%s%s_    ");
     engine_2d_c_drawText_FUN_00402600(local_114,x,y);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_00558b00();

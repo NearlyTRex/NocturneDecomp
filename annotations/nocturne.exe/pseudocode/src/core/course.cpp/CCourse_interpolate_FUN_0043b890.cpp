@@ -106,7 +106,8 @@ LAB_0043b8ca:
       local_40.pos.z = local_40.orient.y;
     }
     core_xform_cpp_slerpQuaternion_FUN_0055d2d0
-              (&this_ptr->frames[local_1c].orient,&this_ptr->frames[iVar5].orient,local_7c);
+              (&this_ptr->frames[local_1c].orient,&this_ptr->frames[iVar5].orient,local_7c,
+               &CStack_68);
     pCVar3 = &CStack_68;
   }
   puVar6 = (uint *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);

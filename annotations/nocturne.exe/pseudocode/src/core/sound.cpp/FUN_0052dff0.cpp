@@ -22,7 +22,6 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
   uint *puVar9;
   char *pcVar10;
   byte bVar11;
-  float fVar12;
   float local_13c;
   float local_138;
   char local_134 [100];
@@ -105,9 +104,9 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
     _DAT_02dc9ca0 = 0.0;
   }
   else {
-    fVar12 = local_30 / _DAT_02dc9ca0;
+    fVar2 = local_30 / _DAT_02dc9ca0;
     _DAT_02dc9ca0 = _DAT_02dc9ca0 - local_30;
-    _DAT_02dc9c98 = fVar12 * (_DAT_02dc9c9c - _DAT_02dc9c98) + _DAT_02dc9c98;
+    _DAT_02dc9c98 = fVar2 * (_DAT_02dc9c9c - _DAT_02dc9c98) + _DAT_02dc9c98;
   }
   iVar4 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00527490(0);
   if (iVar4 == 0) {
@@ -223,17 +222,14 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
         pcVar10 = pcVar10 + ((uint)bVar11 * -2 + 1) * 4;
       }
       iVar4 = rand();
-      fVar12 = 1.0;
       switch(iVar4 % 5) {
       case 0:
       case 1:
-        fVar12 = local_13c * (float)0.59999999999999998;
         local_2c = 25.0;
-        _sprintf(local_d0,"rail?%s.wav",PTR_s_int_005bed60,fVar12);
+        _sprintf(local_d0,"rail?%s.wav");
         break;
       case 2:
       case 3:
-        fVar12 = local_13c * (float)0.80000000000000004;
         pcVar8 = "bump?.wav";
         local_2c = 20.0;
         pcVar10 = local_d0;
@@ -258,7 +254,7 @@ void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
       sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
       sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(3);
       sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);
-      _sprintf(local_134,"%s @ %g",local_d0,(double)fVar12);
+      _sprintf(local_134,"%s @ %g");
       uVar6 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
                         (g_CSound_PTR_005bed68,(CDemonActor *)0x0,local_134,&local_1c->position);
       local_1c->sfx_handle = uVar6;

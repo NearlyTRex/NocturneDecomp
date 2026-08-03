@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_turret_cpp_CTurret_fire_FUN_0054ab10(CCharacter *param_1)
+; int __cdecl core_turret_cpp_CTurret_fire_FUN_0054ab10(CTurret *this_ptr)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
 ;

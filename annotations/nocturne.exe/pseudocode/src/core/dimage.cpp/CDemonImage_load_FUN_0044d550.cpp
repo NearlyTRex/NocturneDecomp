@@ -1,12 +1,12 @@
 // Name: core_dimage.cpp_CDemonImage_load_FUN_0044d550
 // Address: 0044d550
 // Address Range: [[0044d550, 0044d792]]
-// Convention: unknown
-// Signature: void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *this_ptr,char *filename,int width,int height)
 
 #include "nocturne.h"
 
-void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4)
+void __cdecl core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *this_ptr,char *filename,int width,int height)
 
 {
   char cVar1;
@@ -26,11 +26,11 @@ void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *pa
   pcVar8 = local_11c;
   pcVar6 = local_11c;
   do {
-    cVar1 = *param_2;
+    cVar1 = *filename;
     *pcVar8 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
+    cVar1 = filename[1];
+    filename = filename + 2;
     pcVar8[1] = cVar1;
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
@@ -40,10 +40,10 @@ void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *pa
     g_INT_01cc4804 = 0x68;
     core_main_c_FUN_004c8440("CDemonImage::load - Unable to load image!");
   }
-  param_1->width = param_3;
-  param_1->height = param_4;
-  core_dimage_cpp_CDemonImage_allocMemory_FUN_0044d460(param_1);
-  _fread(param_1->data,param_3,param_4,p_Var4);
+  this_ptr->width = width;
+  this_ptr->height = height;
+  core_dimage_cpp_CDemonImage_allocMemory_FUN_0044d460(this_ptr);
+  _fread(this_ptr->data,width,height,p_Var4);
   _fclose(p_Var4);
   do {
     pcVar8 = pcVar6;
@@ -76,18 +76,18 @@ LAB_0044d60d:
     g_INT_01cc4804 = 0x7f;
     core_main_c_FUN_004c8440("CDemonImage::load - Unable to load palette!");
   }
-  _fread(&param_1->palette,0x100,3,p_Var4);
+  _fread(&this_ptr->palette,0x100,3,p_Var4);
   _fclose(p_Var4);
-  local_14 = (CDemonImage *)(param_1->color_values + 0x80);
-  pCVar5 = param_1;
-  pCVar7 = param_1;
-  pCVar9 = param_1;
+  local_14 = (CDemonImage *)(this_ptr->color_values + 0x80);
+  pCVar5 = this_ptr;
+  pCVar7 = this_ptr;
+  pCVar9 = this_ptr;
   do {
     local_1c = (uint)(pCVar5->palette).colors[0].r;
     local_18 = (uint)(pCVar5->palette).colors[0].b;
     bVar2 = (pCVar5->palette).colors[0].g;
     uVar3 = core_dimage_cpp_CDemonImage_packColor_FUN_0044d4f0
-                      (param_1,local_1c,(uint)bVar2,local_18);
+                      (this_ptr,local_1c,(uint)bVar2,local_18);
     pCVar7->color_values[0] = uVar3;
     pCVar7 = (CDemonImage *)(pCVar7->color_cube_lookup + 2);
     pCVar5 = (CDemonImage *)(pCVar5->color_cube_lookup + 3);

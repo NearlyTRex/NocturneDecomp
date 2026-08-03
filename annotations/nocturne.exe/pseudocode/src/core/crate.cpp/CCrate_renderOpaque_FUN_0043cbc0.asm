@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_crate_cpp_CCrate_renderOpaque_FUN_0043cbc0(int param_1)
+; int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_0043cbc0(CCrate *this_ptr)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

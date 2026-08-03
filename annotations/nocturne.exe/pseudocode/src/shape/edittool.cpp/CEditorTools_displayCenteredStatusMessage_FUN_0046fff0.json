@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -99,7 +99,7 @@
       },
       {
         "category": "cast_error",
-        "column": 39,
+        "column": 38,
         "line": 24,
         "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
       },
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 111,
+    "complexity_score": 76,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_ref",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 98
@@ -197,7 +196,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(undefined4 param_1,char *param_2)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools *this_ptr,char *format)"
   },
   "function_calls": [
     {
@@ -328,10 +327,10 @@
     "pcode_op_count": 307
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 32,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -340,6 +339,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -353,36 +366,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(uint param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(uint param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 16,
       "match": "&stack0x0000000c",
       "severity": "moderate",
       "text": "local_14 = &stack0x0000000c;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_vsprintf((char *)0x1bcacd0,param_2,(va_list_t)&local_14);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",

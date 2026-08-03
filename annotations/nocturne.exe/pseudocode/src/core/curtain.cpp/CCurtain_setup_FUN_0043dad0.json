@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -68,20 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 524,
-    "complexity_score": 1171,
+    "complexity_score": 666,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 271,
-    "suspect_count": 86,
+    "suspect_count": 36,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "unrolled_memset"
     ],
@@ -96,10 +95,10 @@
         "0043e10a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_curtain.cpp_CCurtain_setup_FUN_0043dad0",
-    "signature": "void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)"
+    "signature": "void __cdecl core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *this_ptr)"
   },
   "function_calls": [
     {
@@ -165,9 +164,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -217,10 +216,10 @@
     "pcode_op_count": 2581
   },
   "stack_frame": {
-    "frame_size": 140,
+    "frame_size": 144,
     "local_size": 140,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -418,6 +417,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCurtain *"
       }
     ]
   },
@@ -445,7 +451,7 @@
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 33,
+          "column": 34,
           "line": 58,
           "message": "Uninitialized variable: iStack_7c",
           "severity": "error"
@@ -513,14 +519,6 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 20,
       "match": "unaff_EBP",
@@ -529,100 +527,12 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&param_1->curtain_texture);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 43,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,&param_1->curtain_texture);",
+      "text": "(DAT_005ae704,&this_ptr->curtain_texture);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = 1.0 / param_1->patch_size;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (param_1->curtain_size).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar21 = round((double)((param_1->curtain_size).x * fVar2));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->mesh).grid_cols = iStack_7c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->mesh).grid_rows = (int)fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_count = iVar7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->patch_size = param_1->patch_size * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->patch_size = param_1->patch_size * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = (param_1->curtain_size).x;",
-      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
@@ -631,46 +541,6 @@
       "severity": "moderate",
       "text": "iVar16 = unaff_EBP;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((((iVar7 == 0) && (param_1->cinched_top != 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar7 == iVar18 && (param_1->cinched_bottom != 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((fVar11 == 0.0 && (param_1->cinched_left != 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((fVar11 == fVar2 / (float)iVar18 && (param_1->cinched_right != 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = (param_1->curtain_size).x;",
-      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
@@ -689,14 +559,6 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->curtain_size).y) * fVar6));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 121,
       "match": "unaff_EBP",
@@ -705,164 +567,12 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 128,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar13 = param_1->vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 147,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_68 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 150,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 151,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar8 = &param_1->vertices[0].initial_position;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar13 = param_1->vertices + iVar18;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 163,
       "match": "(CVector3f *)((int)(pCVar8 + 9) +",
       "severity": "moderate",
       "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 9) + 8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 164,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar18 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar10 = (param_1->mesh).front_faces;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 167,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar15 = (param_1->mesh).back_faces;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 169,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (param_1->mesh).grid_rows) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 174,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (param_1->mesh).grid_cols) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 188,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = ((param_1->mesh).grid_cols + 1) * local_2c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 191,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9->vertices[0].texture_u = param_1->vertices[iVar16].texture_u;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 192,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9->vertices[0].texture_v = param_1->vertices[iVar16].texture_v;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 194,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9->vertices[1].texture_u = param_1->vertices[iVar16 + 1].texture_u;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 195,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9->vertices[1].texture_v = param_1->vertices[iVar16 + 1].texture_v;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 196,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar18 = (param_1->mesh).grid_cols;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 198,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9->vertices[2].texture_u = param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_u",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 200,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9->vertices[2].texture_v = param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_v",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
@@ -913,70 +623,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 229,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = ((param_1->mesh).grid_cols + 1) * local_2c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 232,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9[1].vertices[0].texture_u = param_1->vertices[iVar16].texture_u;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 233,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar9[1].vertices[0].texture_v = param_1->vertices[iVar16].texture_v;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 234,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar18 = (param_1->mesh).grid_cols;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 238,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_u;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 240,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_v;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 243,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar18 + iVar7 + local_1c + 1].texture_u;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 245,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar18 + iVar7 + local_1c + 1].texture_v;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 246,
       "match": "(uint *)((int)pSVar14",
@@ -1023,46 +669,6 @@
       "severity": "moderate",
       "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 100);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 266,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_1c < (param_1->mesh).grid_cols);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 269,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_2c < (param_1->mesh).grid_rows);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 271,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 272,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).is_transparent = (uint)(param_1->opacity < 0xfde9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 272,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).is_transparent = (uint)(param_1->opacity < 0xfde9);",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `(pCVar8 + 9)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -1205,7 +811,7 @@
       "line": 58,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "(param_1->mesh).grid_cols = iStack_7c;",
+      "text": "(this_ptr->mesh).grid_cols = iStack_7c;",
       "type": "static_uninitvar"
     },
     {

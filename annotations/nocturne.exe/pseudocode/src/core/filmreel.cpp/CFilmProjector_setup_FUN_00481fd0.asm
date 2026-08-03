@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(CActorDestination *param_1)
+; void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(CFilmProjector *this_ptr)
 ;
+; Parameters:
+; CFilmProjector * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_dest.cpp_CActorDestination_setup_FUN_0044b810

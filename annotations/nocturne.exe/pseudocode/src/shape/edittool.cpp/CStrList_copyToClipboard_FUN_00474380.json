@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,26 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 39,
+        "line": 38,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 43,
+        "line": 42,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+      },
+      {
+        "category": "format_error",
+        "column": 33,
+        "line": 50,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -74,17 +80,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 65,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 49,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strlen"
     ],
-    "total_lines": 154
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -264,7 +270,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 22,
+      "line": 21,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

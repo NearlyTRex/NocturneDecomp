@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CDemonActor *param_1,int param_2)
+; void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CFlame *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CFlame *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ;

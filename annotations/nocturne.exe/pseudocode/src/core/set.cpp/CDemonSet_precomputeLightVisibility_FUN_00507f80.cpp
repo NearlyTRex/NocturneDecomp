@@ -1,14 +1,14 @@
 // Name: core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80
 // Address: 00507f80
 // Address Range: [[00507f80, 005084b0]]
-// Convention: unknown
-// Signature: void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *param_1,int param_2,int param_3,int param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *this_ptr,int light_index)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *param_1,int param_2,int param_3,int param_4)
+void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *this_ptr,int light_index)
 
 {
   CDemonLight *light_source;
@@ -23,13 +23,15 @@ void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *pa
   int iVar9;
   uint *puVar10;
   uint *puVar11;
-  bool bVar12;
-  byte bVar13;
-  uint auStackY_1834 [1445];
+  uint *puVar12;
+  bool bVar13;
+  byte bVar14;
+  int in_stack_0000000c;
+  int in_stack_00000010;
+  uint auStackY_182c [1443];
   char acStack_168 [248];
   CVector3f aCStack_70 [2];
-  uint uStack_58;
-  uint auStack_54 [5];
+  CRect CStack_50;
   C3DSCamera *pCStack_40;
   int iStack_3c;
   CBoundingBox3D *pCStack_38;
@@ -43,28 +45,28 @@ void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *pa
   int iStack_18;
   int iStack_14;
   
-  bVar13 = 0;
-  auStack_54[3] = 0;
-  bVar12 = _DAT_01fb99d0 == 0;
-  if (bVar12) {
-    core_set_cpp_CDemonSet_initScene_FUN_005084c0(param_1);
+  bVar14 = 0;
+  CStack_50.y_min = 0;
+  bVar13 = _DAT_01fb99d0 == 0;
+  if (bVar13) {
+    core_set_cpp_CDemonSet_initScene_FUN_005084c0(this_ptr);
   }
-  auStack_54[3] = (uint)bVar12;
+  CStack_50.y_min = (int)bVar13;
   pCStack_20 = (CDemonSet *)0x0;
-  if (0 < param_1->camera_count) {
-    pCStack_30 = (CVector3f *)param_1->lights;
-    auStack_54[4] = param_2 + 1;
-    pCStack_40 = param_1->cameras;
-    pCStack_38 = &param_1->cameras[0].box;
+  if (0 < this_ptr->camera_count) {
+    pCStack_30 = (CVector3f *)this_ptr->lights;
+    CStack_50.y_max = light_index + 1;
+    pCStack_40 = this_ptr->cameras;
+    pCStack_38 = &this_ptr->cameras[0].box;
     iStack_3c = 0;
-    pCStack_34 = param_1;
+    pCStack_34 = this_ptr;
     pCStack_2c = (C3DSLight *)pCStack_30;
     do {
       core_setutil_cpp_FUN_005148b0(pCStack_40 + (int)pCStack_20,&g_CDemonCamera_01fb8508);
       core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(&g_CDemonCamera_01fb8508,0);
       g_CDemonRaytrace_01fba938.rendering_mode = 1;
-      core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,9999.9,0);
-      core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCamera_01fb8508);
+      core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(this_ptr,9999.9,0);
+      core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCamera_01fb8508,0);
       core_dcamera_cpp_FUN_004421b0(&g_CDemonCamera_01fb8508);
       pCVar4 = core_dcamera_cpp_FUN_00447f20(&g_CDemonCamera_01fb8508,aCStack_70);
       if (pCVar4 != pCStack_30) {
@@ -77,28 +79,23 @@ void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *pa
         pCStack_30[1].y = pCVar4[1].y;
         pCStack_30[1].z = pCVar4[1].z;
       }
-      _sprintf(acStack_168,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
-                 (double)*(float *)(pCStack_2c->visible_flags + 0x54),
-                 (double)*(float *)(pCStack_2c->visible_flags + 0x58),
-                 (double)*(float *)(pCStack_2c->visible_flags + 0x5c),
-                 (double)*(float *)(pCStack_2c->visible_flags + 0x60),
-                 (double)*(float *)(pCStack_2c->visible_flags + 100));
+      _sprintf(acStack_168,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)");
       engine_2d_c_drawText_FUN_00402600(acStack_168,0,0x16);
       iStack_14 = 0x21;
-      iStack_1c = *(int *)(param_3 + 0x19644);
+      iStack_1c = *(int *)(in_stack_0000000c + 0x19644);
       iVar8 = 0;
-      if (param_4 != -1) {
+      if (in_stack_00000010 != -1) {
         iStack_1c = iStack_3c;
-        iVar8 = param_4;
+        iVar8 = in_stack_00000010;
       }
       if (iVar8 < iStack_1c) {
         pCStack_20 = pCStack_34;
-        iVar5 = iVar8 * 0x1898 + iStack_18;
-        iVar8 = (int)pCStack_34->cameras + param_3 + iVar8 * 0x1898 + -4;
+        iVar5 = iVar8 * 0x1898 + iStack_18 + in_stack_0000000c;
+        iVar8 = (int)pCStack_34->cameras + in_stack_0000000c + iVar8 * 0x1898 + -4;
         do {
           iVar7 = iStack_14;
           iVar9 = iStack_14 * 0x1898;
-          pCVar1 = param_1->cameras;
+          pCVar1 = this_ptr->cameras;
           if (*(int *)((int)pCVar1 + iVar9 + 0x19644) == 0) {
             iVar7 = 0;
             if (0 < _DAT_01fb99d0) {
@@ -122,26 +119,27 @@ void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *pa
                       (&g_CDemonCamera_01fb8508,light_source,(CRect *)0x0);
             iVar7 = core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20
                               (&g_CDemonCamera_01fb8508,light_source);
-            *(char *)(iVar5 + param_3 + 0x19770) = (char)iVar7;
-            core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0();
-            puVar10 = (uint *)(iVar8 + 0x19870 + (uint)bVar13 * -8);
-            *(uint *)(iVar8 + 0x1986c) = uStack_58;
-            puVar11 = puVar10 + (uint)bVar13 * -2 + 1;
-            *puVar10 = auStack_54[(uint)bVar13 * -2];
-            *puVar11 = auStack_54[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
-            puVar11[(uint)bVar13 * -2 + 1] =
-                 (auStack_54 + (uint)bVar13 * -2 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1];
-            if (*(char *)(iStack_18 + 0x19770) != '\0') {
-              _sprintf();
-              engine_2d_c_drawText_FUN_00402600(&stack0xfffffe90,0,iStack_1c);
-              iStack_1c = iStack_1c + 0xb;
+            *(char *)(iVar5 + 0x19770) = (char)iVar7;
+            core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0
+                      (&g_CDemonCamera_01fb8508,light_source,&CStack_50);
+            puVar11 = (uint *)(iVar8 + 0x19870 + (uint)bVar14 * -8);
+            *(int *)(iVar8 + 0x1986c) = CStack_50.x_min;
+            puVar12 = puVar11 + (uint)bVar14 * -2 + 1;
+            puVar10 = (uint *)((int)&CStack_50 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
+            *puVar11 = *(uint *)((int)&CStack_50 + (uint)bVar14 * -8 + 4);
+            *puVar12 = *puVar10;
+            puVar12[(uint)bVar14 * -2 + 1] = puVar10[(uint)bVar14 * -2 + 1];
+            if (*(char *)(iVar5 + 0x19770) != '\0') {
+              _sprintf(acStack_168,"Light %d, Box : %d,%d,%d,%d");
+              engine_2d_c_drawText_FUN_00402600(acStack_168,0,iStack_14);
+              iStack_14 = iStack_14 + 0xb;
             }
           }
           else {
             core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(&g_CDemonCamera_01fb8508,1);
             cVar3 = core_setutil_cpp_FUN_00515c40();
             pCVar1->name[(int)(pCStack_20->lights[iVar7].visible_flags + -4)] = cVar3;
-            core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCamera_01fb8508);
+            core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCamera_01fb8508,0);
             *(uint *)((int)pCVar1 + iStack_28 + iVar9 + 0x19868) = 0;
             *(uint *)((int)pCVar1 + iStack_28 + iVar9 + 0x1986c) = 0;
             *(uint *)((int)pCVar1 + iStack_28 + iVar9 + 0x19870) = 0;
@@ -152,17 +150,17 @@ void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *pa
           iStack_14 = iStack_14 + 1;
         } while (iStack_14 < iStack_24);
       }
-      _sprintf();
+      _sprintf(&stack0xfffffe90,"Precomputing lights from camera : %d");
       engine_2d_c_drawText_FUN_00402600(&stack0xfffffe90,0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       pCStack_38 = (CBoundingBox3D *)((int)(pCStack_38 + 0x11) + 8);
       pCStack_34 = (CDemonSet *)&pCStack_34->cameras[0].enabled;
       iStack_3c = iStack_3c + 0x10;
       pCStack_20 = (CDemonSet *)((int)&pCStack_20->camera_count + 1);
-    } while ((int)pCStack_20 < param_1->camera_count);
+    } while ((int)pCStack_20 < this_ptr->camera_count);
   }
-  if (auStack_54[3] != 0) {
-    core_set_cpp_FUN_0050ad20(param_1);
+  if (CStack_50.y_min != 0) {
+    core_set_cpp_FUN_0050ad20(this_ptr);
     g_CDemonRaytrace_01fba938.rendering_mode = 0;
     return;
   }

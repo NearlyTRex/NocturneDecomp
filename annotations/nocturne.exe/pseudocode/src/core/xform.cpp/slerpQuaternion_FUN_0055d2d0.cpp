@@ -1,22 +1,22 @@
 // Name: core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 // Address: 0055d2d0
 // Address Range: [[0055d2d0, 0055d492]]
-// Convention: unknown
-// Signature: float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)
+// Convention: __stack3_esi
+// Signature: CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_0055d2d0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 
-float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_2,float param_3)
+CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_0055d2d0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 
 {
   double dVar1;
   double dVar2;
   float fVar3;
-  float *extraout_ECX;
-  float *extraout_EDX;
-  float *unaff_ESI;
+  CQuaternion4f *extraout_ECX;
+  CQuaternion4f *extraout_EDX;
   float *pfVar4;
   float *pfVar5;
+  float *pfVar6;
   byte bVar7;
   float10 x;
   float10 fVar8;
@@ -31,43 +31,41 @@ float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_
   float local_5c;
   float local_58;
   float local_54;
-  float local_50 [4];
-  float local_40;
-  float local_3c;
-  float local_38;
+  float local_50 [3];
+  CQuaternion4f aCStack_44 [2];
   double local_18;
-  float *pfVar6;
   
   bVar7 = 0;
-  dVar1 = (double)param_3;
+  dVar1 = (double)t;
   if (dVar1 <= 0.0) {
-    pfVar5 = local_50;
-    param_2 = param_1;
+    pfVar6 = local_50;
+    quat2_in = quat1_in;
   }
   else if (1.0 <= dVar1) {
-    pfVar5 = local_50;
+    pfVar6 = local_50;
   }
   else {
-    local_5c = *param_2;
-    local_58 = param_2[1];
-    local_60 = param_2[2];
-    local_54 = param_2[3];
-    dVar2 = (double)(*param_1 * *param_2 +
-                    param_1[3] * param_2[3] + param_1[2] * param_2[2] + param_1[1] * param_2[1]);
+    local_5c = quat2_in->w;
+    local_58 = quat2_in->x;
+    local_60 = quat2_in->y;
+    local_54 = quat2_in->z;
+    dVar2 = (double)(quat1_in->w * quat2_in->w +
+                    quat1_in->z * quat2_in->z +
+                    quat1_in->y * quat2_in->y + quat1_in->x * quat2_in->x);
     afStack_1830[0x5ec] = SUB84(__BITCAST_UINT64(dVar2),0);
     uStack_7c = (uint)((ulonglong)dVar2 >> 0x20);
     if (dVar2 < 0.0) {
       local_5c = -local_5c;
       local_58 = -local_58;
-      local_54 = -param_2[3];
+      local_54 = -quat2_in->z;
       local_60 = -local_60;
       uStack_7c = uStack_7c ^ 0x80000000;
     }
     if (__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec])) <= 0.99999000000000005) {
       x = (float10)__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec]));
       fVar8 = atan2(SQRT((float10)1 - x * x),x);
-      fVar9 = (float10)fsin(((float10)1 - (float10)param_3) * fVar8);
-      fVar8 = (float10)fsin((float10)param_3 * fVar8);
+      fVar9 = (float10)fsin(((float10)1 - (float10)t) * fVar8);
+      fVar8 = (float10)fsin((float10)t * fVar8);
       dVar2 = (double)(fVar9 * ((float10)1 / x));
       uStack_74 = SUB84(__BITCAST_UINT64(dVar2),0);
       local_70 = (uint)((ulonglong)dVar2 >> 0x20);
@@ -75,36 +73,37 @@ float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_
       uStack_7c = SUB84(__BITCAST_UINT64(dVar2),0);
       local_78 = (uint)((ulonglong)dVar2 >> 0x20);
       local_18 = __BITCAST_DOUBLE(CONCAT44(uStack_74,local_78));
-      unaff_ESI = extraout_ECX;
-      param_1 = extraout_EDX;
+      quat_out = extraout_ECX;
+      quat1_in = extraout_EDX;
     }
     else {
-      local_18 = (double)param_3;
+      local_18 = (double)t;
       local_70 = SUB84(1.0 - local_18,0);
     }
     uStack_74 = (uint)((ulonglong)local_18 >> 0x20);
     local_78 = SUB84(local_18,0);
     fVar3 = (float)__BITCAST_DOUBLE(CONCAT44(local_70,uStack_74));
     fStack_64 = (float)((ulonglong)dVar1 >> 0x20);
-    pfVar5 = &local_54;
-    param_2 = local_50 + 3;
-    local_3c = fStack_64 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[2] * fVar3;
-    local_38 = local_58 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[3] * fVar3;
-    local_50[3] = local_60 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + *param_1 * fVar3;
-    local_40 = local_5c * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + param_1[1] * fVar3;
+    pfVar6 = &local_54;
+    quat2_in = aCStack_44;
+    aCStack_44[0].y = fStack_64 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->y * fVar3;
+    aCStack_44[0].z = local_58 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->z * fVar3;
+    aCStack_44[0].w = local_60 * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->w * fVar3;
+    aCStack_44[0].x = local_5c * (float)__BITCAST_DOUBLE(CONCAT44(local_78,uStack_7c)) + quat1_in->x * fVar3;
   }
-  pfVar6 = pfVar5 + (uint)bVar7 * -2 + 1;
-  pfVar4 = param_2 + (uint)bVar7 * -2 + 1;
-  *pfVar5 = *param_2;
-  *pfVar6 = *pfVar4;
-  pfVar6[(uint)bVar7 * -2 + 1] = pfVar4[(uint)bVar7 * -2 + 1];
-  (pfVar6 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] =
-       (pfVar4 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
-  pfVar5 = unaff_ESI + (uint)bVar7 * -2 + 1;
-  *unaff_ESI = local_54;
-  *pfVar5 = local_50[(uint)bVar7 * -2];
-  pfVar5[(uint)bVar7 * -2 + 1] = local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-  (pfVar5 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] =
+  pfVar5 = pfVar6 + (uint)bVar7 * -2 + 1;
+  pfVar4 = (float *)((int)quat2_in + (uint)bVar7 * -8 + 4);
+  *pfVar6 = quat2_in->w;
+  pfVar6 = pfVar4 + (uint)bVar7 * -2 + 1;
+  *pfVar5 = *pfVar4;
+  pfVar5[(uint)bVar7 * -2 + 1] = *pfVar6;
+  (pfVar5 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] = pfVar6[(uint)bVar7 * -2 + 1];
+  pfVar6 = (float *)((int)quat_out + (uint)bVar7 * -8 + 4);
+  quat_out->w = local_54;
+  pfVar4 = pfVar6 + (uint)bVar7 * -2 + 1;
+  *pfVar6 = local_50[(uint)bVar7 * -2];
+  *pfVar4 = local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  pfVar4[(uint)bVar7 * -2 + 1] =
        (local_50 + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
-  return unaff_ESI;
+  return quat_out;
 }

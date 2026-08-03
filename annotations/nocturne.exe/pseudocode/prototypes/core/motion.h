@@ -125,7 +125,7 @@ void __cdecl CMotionController::getFramesForInterpolation(CMotionController *thi
 
 // Original: core_motion.cpp_CMotionController_accumulateScaledRootMotion_FUN_004e2120
 // Address: 004e2120
-void CMotionController::accumulateScaledRootMotion(void);
+void __cdecl CMotionController::accumulateScaledRootMotion(CMotionController *this_ptr,float start_frame,float end_frame,float scale_factor);
 
 // Original: core_motion.cpp_CMotionController_load_FUN_004e2180
 // Address: 004e2180

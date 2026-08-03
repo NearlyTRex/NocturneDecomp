@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_00505910(void)
+; CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_00505910(CSentinel *this_ptr)
 ;
+; Parameters:
+; CSentinel *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gargoyle_cpp_CGargoyle_renderOpaque_FUN_004a8260(CCharacter *param_1)
+; void __cdecl core_gargoyle_cpp_CGargoyle_renderOpaque_FUN_004a8260(CGargoyle *this_ptr)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440

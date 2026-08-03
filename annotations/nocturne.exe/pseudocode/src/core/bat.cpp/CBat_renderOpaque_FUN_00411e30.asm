@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bat_cpp_CBat_renderOpaque_FUN_00411e30(CDemonActor *param_1)
+; int __cdecl core_bat_cpp_CBat_renderOpaque_FUN_00411e30(CBat *this_ptr)
 ;
+; Parameters:
+; CBat *           Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

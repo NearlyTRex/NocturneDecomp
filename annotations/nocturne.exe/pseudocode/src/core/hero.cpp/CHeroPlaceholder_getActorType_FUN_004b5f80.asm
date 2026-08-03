@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004b5f80(void)
+; CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004b5f80(CHeroPlaceholder *this_ptr)
 ;
+; Parameters:
+; CHeroPlaceholder * Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

@@ -17,11 +17,12 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(CHaystack *this_p
   EHeroTask EVar2;
   bool bVar3;
   float fVar4;
-  int iVar5;
+  CEnemy *pCVar5;
   CVector3f *pCVar6;
   SMotion *pSVar7;
   CPathMap *this_ptr_01;
   int iVar8;
+  CEnemy *pCVar9;
   float local_8c;
   float local_88;
   CVector3f local_84;
@@ -42,32 +43,35 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(CHaystack *this_p
   bVar3 = false;
   local_1c = 0.25;
   local_20 = 0.7853982;
-  iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  pCVar9 = *(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   memset(&(this_ptr->base).player_input,0,0x2c);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    local_48.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar5 + 0x20);
-    local_48.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar5 + 0x24);
-    local_48.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar5 + 0x28);
+    iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    local_48.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar8 + 0x20);
+    local_48.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar8 + 0x24);
+    local_48.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar8 + 0x28);
     local_30 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);
     if ((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_30 < 20.0f)) &&
        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
     {
       local_88 = 9999.9;
-      iVar5 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(this_ptr,&local_88);
-      if ((iVar5 == 0) || ((float)20 <= local_88)) {
+      pCVar5 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(&this_ptr->base,&local_88);
+      if ((pCVar5 == (CEnemy *)0x0) || ((float)20 <= local_88)) {
         if (this_ptr->guns_drawn != 0) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }
       }
       else {
         bVar3 = true;
-        iVar8 = iVar5;
+        pCVar9 = pCVar5;
       }
     }
-    local_78.x = *(float *)(iVar8 + 0x20) - (this_ptr->base).base.base.location.position.x;
-    local_78.y = *(float *)(iVar8 + 0x24) - (this_ptr->base).base.base.location.position.y;
-    local_78.z = *(float *)(iVar8 + 0x28) - (this_ptr->base).base.base.location.position.z;
+    local_78.x = (pCVar9->base).base.location.position.x -
+                 (this_ptr->base).base.base.location.position.x;
+    local_78.y = (pCVar9->base).base.location.position.y -
+                 (this_ptr->base).base.base.location.position.y;
+    local_78.z = (pCVar9->base).base.location.position.z -
+                 (this_ptr->base).base.base.location.position.z;
     if (&local_48 != &local_78) {
       local_48.x = local_78.x;
       local_48.y = local_78.y;
@@ -78,16 +82,16 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(CHaystack *this_p
     if ((float)6 <= fVar1) {
       this_ptr_01 = (CPathMap *)0x0;
       if (!bVar3) {
-        iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0xbc))(iVar5);
+        iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+        this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar8 + 0x14c) + 0xbc))(iVar8);
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
-        this_ptr_01 = core_path_cpp_getPathMap_FUN_004f1e00((CLocation *)(iVar8 + 0x20));
+        this_ptr_01 = core_path_cpp_getPathMap_FUN_004f1e00(&(pCVar9->base).base.location);
       }
-      iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
+      iVar8 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
                         (this_ptr_01,&(this_ptr->base).base.base.location.position,&local_84,
                          (this_ptr->base).base.base.direction_hint);
-      if (iVar5 != 0) {
+      if (iVar8 != 0) {
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                              (local_84.y - (this_ptr->base).base.base.orient.vec.y);
         fVar4 = local_14 * (float)0.31830988619288902 * (float)4;
@@ -150,9 +154,12 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(CHaystack *this_p
         }
       }
     }
-    local_6c.x = *(float *)(iVar8 + 0x20) - (this_ptr->base).base.base.location.position.x;
-    local_6c.y = *(float *)(iVar8 + 0x24) - (this_ptr->base).base.base.location.position.y;
-    local_6c.z = *(float *)(iVar8 + 0x28) - (this_ptr->base).base.base.location.position.z;
+    local_6c.x = (pCVar9->base).base.location.position.x -
+                 (this_ptr->base).base.base.location.position.x;
+    local_6c.y = (pCVar9->base).base.location.position.y -
+                 (this_ptr->base).base.base.location.position.y;
+    local_6c.z = (pCVar9->base).base.location.position.z -
+                 (this_ptr->base).base.base.location.position.z;
     if (&local_48 != &local_6c) {
       local_48.x = local_6c.x;
       local_48.y = local_6c.y;

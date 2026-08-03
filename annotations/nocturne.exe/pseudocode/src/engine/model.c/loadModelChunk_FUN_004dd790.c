@@ -13,18 +13,18 @@ SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_004dd790(char *f
   _FILE *file;
   SMRGLHeaderExtended *buffer;
   SIZE_T SVar2;
-  byte local_60 [80];
+  char local_60 [80];
   
   file = engine_dosio_cpp_getFile_FUN_00456a60("models",filename,"rb");
   if (file == (_FILE *)0x0) {
-    _sprintf(local_60,"Unable to open model: %s",filename);
+    _sprintf(local_60,"Unable to open model: %s");
     g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
     g_INT_01cc4804 = 0x2e3;
     core_main_c_FUN_004c8440(local_60);
   }
   buffer = (SMRGLHeaderExtended *)malloc(model_size + 4);
   if (buffer == (SMRGLHeaderExtended *)0x0) {
-    _sprintf(local_60,"Out of partial model mem : %s",filename);
+    _sprintf(local_60,"Out of partial model mem : %s");
     g_INT_01cc4804 = 0x2ee;
     g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
     core_main_c_FUN_004c8440(local_60);

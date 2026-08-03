@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 88,
-        "line": 24,
+        "line": 23,
         "message": "use of undeclared identifier 'DAT_02dc93a0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 34,
+        "line": 33,
         "message": "use of undeclared identifier 'Ordinal_1'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 36,
+        "line": 35,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 36,
+        "line": 35,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 36,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_02dc9214'; did you mean 'DAT_004A9214'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 36,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_02dc9214'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 36,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_02de2098'; did you mean 'DAT_02DF2098'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 41,
+        "line": 40,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 30,
-        "line": 41,
+        "line": 40,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 41,
+        "line": 40,
         "message": "use of undeclared identifier '_DAT_02dc9214'; did you mean 'DAT_004A9214'?"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 222,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 68,
     "suspect_count": 13,
     "suspect_types": [
       "raw_address_constant",
@@ -135,7 +135,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 272
+    "total_lines": 268
   },
   "cross_references": [
     {
@@ -347,7 +347,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 16,
       "match": "DAT_02dc93a0",
       "severity": "mild",
       "text": "iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90((CDirectSoundDevice *)&DAT_02dc93a0)",
@@ -355,7 +355,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0x18))(_DAT_02dc9214,_DAT_02de2098,3);",
@@ -363,15 +363,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 33,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 34,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
       "match": "DAT_02dc9218",
       "severity": "mild",
       "text": "(_DAT_02dc9214,&local_138.flags,&DAT_02dc9218,0);",
@@ -379,15 +379,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 41,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
       "match": "DAT_02dc9218",
       "severity": "mild",
       "text": "(_DAT_02dc9214,&local_138.flags,&DAT_02dc9218,0);",
@@ -395,7 +395,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 52,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 52,
       "match": "DAT_005c3908",
       "severity": "mild",
       "text": "(**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 52,
       "match": "DAT_02dc9220",
       "severity": "mild",
       "text": "(**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);",
@@ -419,7 +419,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 54,
       "match": "DAT_02dc93a0",
       "severity": "mild",
       "text": "return (CDirectSoundDevice *)&DAT_02dc93a0;",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 67,
       "match": "DAT_02dc93a0",
       "severity": "mild",
       "text": "sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90((CDirectSoundDevice *)&DAT_02dc93a0);",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Raw hex address 0x52bf29 assigned to bare local `iStack_784`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_784` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 19,
       "match": "0x52bf29",
       "severity": "moderate",
       "text": "iStack_784 = 0x52bf29;",

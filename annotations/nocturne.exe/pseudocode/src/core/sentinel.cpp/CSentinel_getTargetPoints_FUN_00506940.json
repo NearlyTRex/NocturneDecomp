@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,36 +52,36 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
+        "column": 62,
         "line": 22,
         "message": "use of undeclared identifier '_DAT_01e57218'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
+        "column": 62,
         "line": 29,
         "message": "use of undeclared identifier '_DAT_01e5722c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
+        "column": 62,
         "line": 36,
         "message": "use of undeclared identifier '_DAT_01e57230'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
+        "column": 62,
         "line": 43,
         "message": "use of undeclared identifier '_DAT_01e5723c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
+        "column": 62,
         "line": 50,
         "message": "use of undeclared identifier '_DAT_01e57244'"
       }
@@ -92,15 +92,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 392,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 33,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -115,9 +114,9 @@
         "00506a5d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_sentinel.cpp_CSentinel_getTargetPoints_FUN_00506940",
-    "signature": "undefined4 core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00506940(int param_1,CVector3f *param_2)"
+    "signature": "int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00506940(CSentinel *this_ptr,CVector3f *out_points_array)"
   },
   "function_calls": [
     {
@@ -162,9 +161,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -192,10 +191,10 @@
     "pcode_op_count": 374
   },
   "stack_frame": {
-    "frame_size": 80,
+    "frame_size": 88,
     "local_size": 80,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -232,6 +231,20 @@
         "offset": -28,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSentinel *"
+      },
+      {
+        "is_param": true,
+        "name": "out_points_array",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -245,227 +258,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00506940(int param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00506940(int param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_34,_DAT_01e57218);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_28,_DAT_01e5722c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 1 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_1c,_DAT_01e57230);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 2 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2].x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2].y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2].z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_40,_DAT_01e5723c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 3 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[3].x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[3].y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[3].z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_4c,_DAT_01e57244);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 4 == pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4].x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4].y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4].z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 17,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2->x = pCVar1->x;",
+      "text": "out_points_array->x = pCVar1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -473,7 +270,7 @@
       "line": 24,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2[1].x = pCVar1->x;",
+      "text": "out_points_array[1].x = pCVar1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -481,7 +278,7 @@
       "line": 31,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2[2].x = pCVar1->x;",
+      "text": "out_points_array[2].x = pCVar1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -489,7 +286,7 @@
       "line": 38,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2[3].x = pCVar1->x;",
+      "text": "out_points_array[3].x = pCVar1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -497,7 +294,7 @@
       "line": 47,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2[4].x = pCVar1->x;",
+      "text": "out_points_array[4].x = pCVar1->x;",
       "type": "unrolled_memcpy"
     }
   ],

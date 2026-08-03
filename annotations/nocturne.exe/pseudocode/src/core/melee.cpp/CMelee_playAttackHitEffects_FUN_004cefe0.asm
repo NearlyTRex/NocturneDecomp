@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)
+; void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   attack_flags
+; SDamageInfo *    Stack[0xc]:4   damage_info
+; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; Referenced Globals:
 ;   undefined4 g_CCharacterActorType_00765a60.name_hash

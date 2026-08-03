@@ -13,7 +13,7 @@ CLightGun * __cdecl factoryFunc(void);
 
 // Original: core_lightgun.cpp_CLightGun_getActorType_FUN_004c6e20
 // Address: 004c6e20
-CDemonActorType * CLightGun::getActorType(void);
+CDemonActorType * __cdecl CLightGun::getActorType(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_ctor_FUN_004c6e30
 // Address: 004c6e30
@@ -33,7 +33,7 @@ void __cdecl CLightGun::updateBeamLight(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_canSeeTarget_FUN_004c70a0
 // Address: 004c70a0
-undefined4 CLightGun::canSeeTarget(CVector3f *param_1,CDemonActor *param_2);
+int __cdecl CLightGun::canSeeTarget(CLightGun *this_ptr,CDemonActor *target);
 
 // Original: core_lightgun.cpp_FUN_004c71a0
 // Address: 004c71a0
@@ -41,7 +41,7 @@ undefined4 FUN_004c71a0(CCharacter *param_1);
 
 // Original: core_lightgun.cpp_CLightGun_process_FUN_004c79a0
 // Address: 004c79a0
-void CLightGun::process(CLightGun *param_1,float param_2);
+void __cdecl CLightGun::process(CLightGun *this_ptr,float delta_time);
 
 // Original: core_lightgun.cpp_CLightGun_getDamage_FUN_004c7c60
 // Address: 004c7c60

@@ -13,7 +13,7 @@ CFlashlight * __cdecl factoryFunc(void);
 
 // Original: core_flashlit.cpp_CFlashlight_getActorType_FUN_0048ed50
 // Address: 0048ed50
-CDemonActorType * CFlashlight::getActorType(void);
+CDemonActorType * __cdecl CFlashlight::getActorType(CFlashlight *this_ptr);
 
 // Original: core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60
 // Address: 0048ed60

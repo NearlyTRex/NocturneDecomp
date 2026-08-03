@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(undefined4 *param_1,uint param_2,int param_3,uint *param_4)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
 ;
+; Parameters:
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bits_per_sample
+; int              Stack[0xc]:4   channels
+; int              Stack[0x10]:4   sample_rate
+; int *            Stack[0x14]:4   out_buffer_size
 ;
 ; Referenced Globals:
 ;   void* PTR_waveOutOpen_005753f8 = 0017587e

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bodypart_cpp_CBodyPart_canPickup_FUN_00416c90(int param_1)
+; int __cdecl core_bodypart_cpp_CBodyPart_canPickup_FUN_00416c90(CBodyPart *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; *****************************************************************************
 

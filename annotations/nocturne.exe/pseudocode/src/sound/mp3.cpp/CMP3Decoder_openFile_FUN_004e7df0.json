@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -80,16 +80,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 231,
+    "complexity_score": 51,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 128
@@ -130,7 +128,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0",
-    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *this_ptr,char *filename)"
   },
   "function_calls": [
     {
@@ -271,10 +269,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.6056338028169015,
@@ -304,142 +302,29 @@
     "pcode_op_count": 256
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0(\"sound\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Can't open %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "file_handle = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_2,\"rb\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Can't open %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = sound_mp3_cpp_FUN_004e7ed0(param_1,file_handle,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Error preparing to decode %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->filename[0] = cVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->filename[1] = cVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (CMP3Decoder *)(param_1->filename + 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (CMP3Decoder *)(param_1->filename + 2);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 27,
@@ -447,17 +332,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

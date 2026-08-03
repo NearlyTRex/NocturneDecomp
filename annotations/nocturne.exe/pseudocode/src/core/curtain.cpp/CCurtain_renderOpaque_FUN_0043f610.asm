@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_curtain_cpp_CCurtain_renderOpaque_FUN_0043f610(CCurtain *param_1)
+; int __cdecl core_curtain_cpp_CCurtain_renderOpaque_FUN_0043f610(CCurtain *this_ptr)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_curtain.cpp_FUN_0043f330

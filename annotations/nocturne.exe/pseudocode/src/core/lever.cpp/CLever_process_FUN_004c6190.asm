@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lever_cpp_CLever_process_FUN_004c6190(CLever *param_1,float param_2)
+; void __cdecl core_lever_cpp_CLever_process_FUN_004c6190(CLever *this_ptr,float delta_time)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00587925 = 6

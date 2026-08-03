@@ -13,7 +13,7 @@ CZombieCow * __cdecl factoryFunc(void);
 
 // Original: core_cow.cpp_CZombieCow_getActorType_FUN_0043bbd0
 // Address: 0043bbd0
-CDemonActorType * CZombieCow::getActorType(void);
+CDemonActorType * __cdecl CZombieCow::getActorType(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_ctor_FUN_0043bbe0
 // Address: 0043bbe0
@@ -21,15 +21,15 @@ CZombieCow * __cdecl CZombieCow::ctor(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_setup_FUN_0043bc50
 // Address: 0043bc50
-void CZombieCow::setup(CEnemy *param_1);
+void __cdecl CZombieCow::setup(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_process_FUN_0043bdb0
 // Address: 0043bdb0
-void CZombieCow::process(CEnemy *param_1,float param_2);
+void __cdecl CZombieCow::process(CZombieCow *this_ptr,float delta_time);
 
 // Original: core_cow.cpp_CZombieCow_archive_FUN_0043c2e0
 // Address: 0043c2e0
-void CZombieCow::archive(CEnemy *param_1);
+void __cdecl CZombieCow::archive(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_processDismemberment_FUN_0043c360
 // Address: 0043c360
@@ -37,7 +37,7 @@ void __cdecl CZombieCow::processDismemberment(CZombieCow *this_ptr,SDamageInfo *
 
 // Original: core_cow.cpp_CZombieCow_processDamage_FUN_0043c5e0
 // Address: 0043c5e0
-void CZombieCow::processDamage(CZombieCow *param_1,SDamageInfo *param_2);
+void __cdecl CZombieCow::processDamage(CZombieCow *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_cow.cpp_CZombieCow_getTargetPoints_FUN_0043c6a0
 // Address: 0043c6a0

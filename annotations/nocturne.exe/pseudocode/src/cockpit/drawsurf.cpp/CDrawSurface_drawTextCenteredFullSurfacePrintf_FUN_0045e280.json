@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -63,7 +63,7 @@
       },
       {
         "category": "cast_error",
-        "column": 34,
+        "column": 33,
         "line": 16,
         "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
       }
@@ -74,17 +74,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 85,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "stack_ref",
-      "unnamed_param"
+      "stack_ref"
     ],
     "total_lines": 36
   },
@@ -104,9 +103,9 @@
         "0045e2d5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280",
-    "signature": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(CDrawSurface *param_1,char *param_2)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(CDrawSurface *this_ptr,char *format)"
   },
   "function_calls": [
     {
@@ -128,12 +127,10 @@
         "call_addr": "0045e95c",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -141,20 +138,18 @@
         "call_addr": "0045ec06",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
     "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -181,30 +176,29 @@
     "pcode_op_count": 95
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(CDrawSurface *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(CDrawSurface *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Direct stack address reference",
       "line": 8,
@@ -214,30 +208,14 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_vsprintf(acStack_1008,param_2,(va_list_t)&puStack_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260(param_1,acStack_1008);",
-      "type": "unnamed_param"
-    },
-    {
       "call_site_count": 2,
-      "declared_params": 0,
+      "declared_params": 2,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "match": "declared:2 vs estimated:3",
+      "param_delta": 1,
+      "text": "Function declares 2 params but call sites push 3 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

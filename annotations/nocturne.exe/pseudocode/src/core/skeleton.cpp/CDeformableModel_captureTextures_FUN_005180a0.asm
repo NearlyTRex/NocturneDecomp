@@ -41,7 +41,7 @@ section .text
     PUSH EDI                            ; 005180bb
     XOR EBP,EBP                         ; 005180bc
     CALL core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00519ae0 ; 005180be
-        ;   XREF to: 00519ae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00519ae0()
+        ;   XREF to: 00519ae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(CDeformableModel * this_ptr, CSkeleton * skeleton_ptr)
     MOV EDX,dword ptr [EDI + 0xb8]      ; 005180c3
     ADD ESP,0x8                         ; 005180c9
     TEST EDX,EDX                        ; 005180cc

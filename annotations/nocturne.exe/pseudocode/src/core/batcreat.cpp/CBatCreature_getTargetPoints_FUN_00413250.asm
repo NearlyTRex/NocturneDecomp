@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00413250(int param_1,CVector3f *param_2)
+; int __cdecl core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00413250(CBatCreature *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CBatCreature *   Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;

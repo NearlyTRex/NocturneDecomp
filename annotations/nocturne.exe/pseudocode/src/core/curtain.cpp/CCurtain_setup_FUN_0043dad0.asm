@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
+; void __cdecl core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *this_ptr)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88
 ; undefined4       Stack[-0x84]:4  local_84

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flame_cpp_CFlame_archive_FUN_0048e100(CDemonActor *param_1)
+; void __cdecl core_flame_cpp_CFlame_archive_FUN_0048e100(CFlame *this_ptr)
 ;
+; Parameters:
+; CFlame *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flameSize_005815af

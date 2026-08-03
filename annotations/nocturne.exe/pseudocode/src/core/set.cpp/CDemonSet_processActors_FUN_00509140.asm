@@ -566,7 +566,7 @@ section .text
     ADD ESI,0x4                         ; 005096d0
     INC EBX                             ; 005096d3
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005096d4
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x18                        ; 005096d9
     CMP EBX,EDI                         ; 005096dc
     JL 0x0050969c                       ; 005096de
@@ -590,7 +590,7 @@ section .text
     MOV EBX,dword ptr [0x005ad350]      ; 00509721 | g_CConsole_PTR_005ad350
     PUSH EBX                            ; 00509727 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00509728
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 0050972d
     MOV EDX,dword ptr [EBP + 0x14]      ; 00509730
         ;   Label: LAB_00509730

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 169,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 14,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 58
+    "total_lines": 57
   },
   "cross_references": [],
   "function": {
@@ -84,9 +83,9 @@
         "004621c9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_drip.cpp_CDrip_setup_FUN_00462140",
-    "signature": "void core_drip_cpp_CDrip_setup_FUN_00462140(int param_1)"
+    "signature": "void __cdecl core_drip_cpp_CDrip_setup_FUN_00462140(CDrip *this_ptr)"
   },
   "function_calls": [
     {
@@ -117,9 +116,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -146,10 +145,10 @@
     "pcode_op_count": 156
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 16,
     "local_size": 12,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -158,120 +157,23 @@
         "offset": -8,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrip *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_drip_cpp_CDrip_setup_FUN_00462140(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2e4) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x2f0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x2f0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x2f4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x2f4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x2f8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x2f8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x2d8),*(float *)(param_1 + 0x2dc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x2d8),*(float *)(param_1 + 0x2dc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2d4) = fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x330) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 10,
-      "match": "raw-offset struct copy",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x2f0);",
+      "text": "(this_ptr->base).location.position.x = (this_ptr->home_pos).x;",
       "type": "unrolled_memcpy"
     }
   ],

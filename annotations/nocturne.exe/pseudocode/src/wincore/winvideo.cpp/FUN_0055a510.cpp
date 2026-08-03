@@ -21,14 +21,14 @@ int __cdecl wincore_winvideo_cpp_FUN_0055a510(char *directory_path,char *movie_f
   bool bVar6;
   char *lpstrCommand;
   HWND pHVar7;
-  CHAR local_1f8 [260];
+  char local_1f8 [260];
   byte local_f4;
   byte local_f3 [127];
   char local_74 [80];
   tagRECT local_24;
   tagRECT local_14;
   
-  _sprintf(local_74,"%s\\%s",directory_path,movie_filename);
+  _sprintf(local_74,"%s\\%s");
   file_handle = _fopen(local_74,"rb");
   if (file_handle == (_FILE *)0x0) {
     return 0;
@@ -40,7 +40,7 @@ int __cdecl wincore_winvideo_cpp_FUN_0055a510(char *directory_path,char *movie_f
   if (_DAT_02de3124 != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_0055a1c0((HWND)_DAT_02de2098);
   }
-  _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,pHVar7);
+  _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d");
   MVar3 = mciSendStringA(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar3 == 0) {
     _DAT_02de3124 = 1;

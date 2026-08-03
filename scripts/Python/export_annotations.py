@@ -12,6 +12,11 @@
 #   python export_annotations.py ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe pseudocode
 #   python export_annotations.py ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe data_types,functions
 #
+# The type_info export validates every Ghidra struct that has a Watcom RTTI
+# descriptor against that descriptor's instance_size, and fails the export on
+# any disagreement. Pass --allow-struct-size-mismatch to downgrade it to a
+# report. This is independent of --strict, which covers pseudocode compilation.
+#
 # Available categories:
 #   all              - Export everything (default)
 #   data_types       - Data type definitions
@@ -100,7 +105,8 @@ def get_export_categories():
     }
 
 def export_selected_categories(currentProgram, folder, categories, export_categories,
-                               log_info, log_error, strict=False, deep_analysis=False):
+                               log_info, log_error, strict=False, deep_analysis=False,
+                               allow_size_mismatch=False):
     for category in categories:
         category = category.strip().lower()
         if category in export_categories:
@@ -110,7 +116,8 @@ def export_selected_categories(currentProgram, folder, categories, export_catego
                 export_categories[category](currentProgram, folder, strict=strict,
                                            deep_analysis=deep_analysis)
             elif category == "type_info":
-                export_categories[category](currentProgram, folder, strict=strict)
+                export_categories[category](currentProgram, folder, strict=strict,
+                                           allow_size_mismatch=allow_size_mismatch)
             else:
                 export_categories[category](currentProgram, folder)
         else:
@@ -118,7 +125,7 @@ def export_selected_categories(currentProgram, folder, categories, export_catego
             log_error("Available categories: %s" % ", ".join(sorted(export_categories.keys())))
 
 def run_export(currentProgram, output_folder, categories=None, strict=False,
-               deep_analysis=False):
+               deep_analysis=False, allow_size_mismatch=False):
     """Main export function that takes currentProgram and args.
 
     Args:
@@ -127,6 +134,8 @@ def run_export(currentProgram, output_folder, categories=None, strict=False,
         categories: List of category names to export, or None for all
         strict: If True, raise error on compilation failures
         deep_analysis: If True, use deep static analysis mode
+        allow_size_mismatch: If True, downgrade a Watcom RTTI struct size
+            mismatch from a hard failure to a report
     """
 
     # Import after PyGhidra started
@@ -155,16 +164,19 @@ def run_export(currentProgram, output_folder, categories=None, strict=False,
     else:
         log_info("Categories: all")
     log_info("Strict mode: %s" % strict)
+    log_info("Allow struct size mismatch: %s" % allow_size_mismatch)
     log_info("=" * 60)
 
     # Export annotations
     if categories:
         export_selected_categories(currentProgram, output_folder, categories, export_categories,
                                    log_info, log_error, strict=strict,
-                                   deep_analysis=deep_analysis)
+                                   deep_analysis=deep_analysis,
+                                   allow_size_mismatch=allow_size_mismatch)
     else:
         export_annotations(currentProgram, output_folder, strict=strict,
-                          deep_analysis=deep_analysis)
+                          deep_analysis=deep_analysis,
+                          allow_size_mismatch=allow_size_mismatch)
 
     # Export complete
     log_info("=" * 60)
@@ -222,6 +234,10 @@ Available categories:
                         help="Exit with error if compilation fails (for pseudocode export)")
     parser.add_argument("--deep-analysis", action="store_true",
                         help="Deep static analysis mode: longer timeouts, more thorough checks")
+    parser.add_argument("--allow-struct-size-mismatch", action="store_true",
+                        help="Export even if a Ghidra struct size disagrees with the "
+                             "Watcom RTTI instance_size in the binary (by default such "
+                             "a disagreement fails the export)")
     parser.add_argument("--all-programs", action="store_true",
                         help="Export every program in the project. In this mode program_name is "
                              "ignored and output_folder is treated as a parent directory: each "
@@ -277,7 +293,8 @@ Available categories:
             try:
                 with pyghidra.program_context(project, pathname) as currentProgram:
                     run_export(currentProgram, out_folder, categories=categories,
-                               strict=args.strict, deep_analysis=args.deep_analysis)
+                               strict=args.strict, deep_analysis=args.deep_analysis,
+                               allow_size_mismatch=args.allow_struct_size_mismatch)
             except SystemExit as e:
                 # A library deep in the export (e.g. data-type dependency resolution)
                 # may call sys.exit() on a per-program problem. SystemExit is a

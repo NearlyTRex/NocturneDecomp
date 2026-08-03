@@ -25,4 +25,4 @@ void __cdecl CParticle::render(CParticle *this_ptr);
 
 // Original: core_particle.cpp_CParticle_onCollision_FUN_004ef470
 // Address: 004ef470
-undefined4 CParticle::onCollision(void);
+int __cdecl CParticle::onCollision(CParticle *this_ptr,CVector3f *collision_normal);

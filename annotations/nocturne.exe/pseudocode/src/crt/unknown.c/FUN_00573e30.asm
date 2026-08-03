@@ -79,7 +79,7 @@ section .text
     LEA EAX,[EBP + -0xc]                ; 00573ea3
     PUSH EAX                            ; 00573ea6
     CALL crt_exception.c_installExceptionHandler_FUN_0056eed8 ; 00573ea7
-        ;   XREF to: 0056eed8 (UNCONDITIONAL_CALL)  ; undefined crt_exception.c_installExceptionHandler_FUN_0056eed8()
+        ;   XREF to: 0056eed8 (UNCONDITIONAL_CALL)  ; undefined1 crt_exception.c_installExceptionHandler_FUN_0056eed8()
     ADD ESP,0x4                         ; 00573eac
     CALL dword ptr [0x005c1afc]         ; 00573eaf | PTR_crt_sync.c_CriticalSectionStub_FUN_00567208_005c1afc
     PUSH EDI                            ; 00573eb5

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hiram_cpp_CHiram_process_FUN_004b6770(CCharacter *param_1,float param_2)
+; void __cdecl core_hiram_cpp_CHiram_process_FUN_004b6770(CHiram *this_ptr,float delta_time)
 ;
+; Parameters:
+; CHiram *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;

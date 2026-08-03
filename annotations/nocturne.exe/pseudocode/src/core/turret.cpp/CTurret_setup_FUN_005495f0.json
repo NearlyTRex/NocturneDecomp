@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,24 +52,24 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 62,
+        "column": 57,
         "line": 30,
         "message": "use of undeclared identifier '_DAT_005a3788'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 66,
+        "column": 57,
         "line": 31,
         "message": "use of undeclared identifier '_DAT_005a3788'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 66,
+        "column": 57,
         "line": 32,
         "message": "use of undeclared identifier '_DAT_005a3788'"
       }
@@ -80,15 +80,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 150,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 30,
-    "suspect_count": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 110
@@ -102,9 +101,9 @@
         "005496c5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_turret.cpp_CTurret_setup_FUN_005495f0",
-    "signature": "void core_turret_cpp_CTurret_setup_FUN_005495f0(CWeapon *param_1)"
+    "signature": "void __cdecl core_turret_cpp_CTurret_setup_FUN_005495f0(CTurret *this_ptr)"
   },
   "function_calls": [
     {
@@ -146,9 +145,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -190,10 +189,10 @@
     "pcode_op_count": 360
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -209,6 +208,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
       }
     ]
   },
@@ -220,86 +226,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_turret_cpp_CTurret_setup_FUN_005495f0(CWeapon *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1[1].base.actor_name + 0xc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_setup_FUN_00553f10(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&param_1->model);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].can_attach_light = (int)((float)pCVar2->x * _DAT_005a3788);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].muzzle_flash_color.r = (int)((float)pCVar2->y * _DAT_005a3788);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].muzzle_flash_color.g = (int)((float)pCVar2->z * _DAT_005a3788);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].physics_box.dead = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].physics_box.linear_velocity.x = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].physics_box.rotation_matrix.m[2].z = 0.0;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

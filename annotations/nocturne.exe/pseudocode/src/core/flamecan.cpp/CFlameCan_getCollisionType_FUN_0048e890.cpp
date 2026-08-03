@@ -1,13 +1,13 @@
 // Name: core_flamecan.cpp_CFlameCan_getCollisionType_FUN_0048e890
 // Address: 0048e890
 // Address Range: [[0048e890, 0048e895]]
-// Convention: unknown
-// Signature: undefined4 core_flamecan_cpp_CFlameCan_getCollisionType_FUN_0048e890(void)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_flamecan_cpp_CFlameCan_getCollisionType_FUN_0048e890(CFlameCan *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-uint core_flamecan_cpp_CFlameCan_getCollisionType_FUN_0048e890(void)
+ECollisionType __cdecl core_flamecan_cpp_CFlameCan_getCollisionType_FUN_0048e890(CFlameCan *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return 1;
+  return COLLISION_TYPE_MESH;
 }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(int param_1,undefined4 param_2,int param_3)
+; int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(CHero *this_ptr,CDemonActor *grabber,int grab_type)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   grabber
+; int              Stack[0xc]:4   grab_type
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_GETGRABBED_00585792

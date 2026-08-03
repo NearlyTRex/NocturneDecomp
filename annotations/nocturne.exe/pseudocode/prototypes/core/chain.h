@@ -13,7 +13,7 @@ CChain * __cdecl factoryFunc(void);
 
 // Original: core_chain.cpp_CChain_getActorType_FUN_0042b740
 // Address: 0042b740
-CDemonActorType * CChain::getActorType(void);
+CDemonActorType * __cdecl CChain::getActorType(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_ctor_FUN_0042b750
 // Address: 0042b750
@@ -25,7 +25,7 @@ CVector3f * __cdecl CChain::getTargetBoneWorldPosition(CChain *this_ptr,CVector3
 
 // Original: core_chain.cpp_CChain_setup_FUN_0042b8f0
 // Address: 0042b8f0
-void CChain::setup(CChain *param_1);
+void __cdecl CChain::setup(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0
 // Address: 0042baa0
@@ -33,23 +33,23 @@ void __cdecl CChain::constrainSegmentDistance(CChain *this_ptr,SChainVertex *ver
 
 // Original: core_chain.cpp_CChain_process_FUN_0042bca0
 // Address: 0042bca0
-void CChain::process(CChain *param_1,float param_2);
+void __cdecl CChain::process(CChain *this_ptr,float delta_time);
 
 // Original: core_chain.cpp_CChain_renderTransparent_FUN_0042c4c0
 // Address: 0042c4c0
-undefined4 CChain::renderTransparent(CDemonActor *param_1);
+int __cdecl CChain::renderTransparent(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_getBoundingBox_FUN_0042ca90
 // Address: 0042ca90
-CVector3f * CChain::getBoundingBox(CDemonActor *param_1,CVector3f *param_2);
+CBoundingBox3D * __cdecl CChain::getBoundingBox(CChain *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_chain.cpp_CChain_archive_FUN_0042cbc0
 // Address: 0042cbc0
-void CChain::archive(CDemonActor *param_1);
+void __cdecl CChain::archive(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_getCollisionType_FUN_0042ccf0
 // Address: 0042ccf0
-undefined4 CChain::getCollisionType(void);
+ECollisionType __cdecl CChain::getCollisionType(CChain *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_chain.cpp_FUN_0042cd00
 // Address: 0042cd00

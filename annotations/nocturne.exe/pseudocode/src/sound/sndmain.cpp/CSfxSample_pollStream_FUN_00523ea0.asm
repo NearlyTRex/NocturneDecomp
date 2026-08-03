@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *param_1,float param_2)
+; int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *this_ptr,float time_window,float update_interval)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   time_window
+; float            Stack[0xc]:4   update_interval
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
@@ -246,7 +250,7 @@ section .text
     PUSH ECX                            ; 005240d8
     PUSH EBX                            ; 005240d9
     CALL sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0 ; 005240da
-        ;   XREF to: 00523ba0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0()
+        ;   XREF to: 00523ba0 (UNCONDITIONAL_CALL)  ; void * sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0(CSfxSample * this_ptr, int lock_offset, int lock_length)
     ADD ESP,0xc                         ; 005240df
     MOV ESI,EAX                         ; 005240e2
     TEST EAX,EAX                        ; 005240e4
@@ -388,7 +392,7 @@ section .text
     PUSH EDX                            ; 0052425b
     PUSH EBX                            ; 0052425c
     CALL sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0 ; 0052425d
-        ;   XREF to: 00523ba0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0()
+        ;   XREF to: 00523ba0 (UNCONDITIONAL_CALL)  ; void * sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0(CSfxSample * this_ptr, int lock_offset, int lock_length)
     MOV EDI,EAX                         ; 00524262
     ADD ESP,0xc                         ; 00524264
     TEST EAX,EAX                        ; 00524267

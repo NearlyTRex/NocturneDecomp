@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_grave_cpp_CGrave_process_FUN_004b0bf0(CGrave *param_1,float param_2)
+; void __cdecl core_grave_cpp_CGrave_process_FUN_004b0bf0(CGrave *this_ptr,float delta_time)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

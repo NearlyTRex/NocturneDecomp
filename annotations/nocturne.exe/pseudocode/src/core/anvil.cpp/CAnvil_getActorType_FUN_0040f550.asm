@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_anvil_cpp_CAnvil_getActorType_FUN_0040f550(void)
+; CDemonActorType * __cdecl core_anvil_cpp_CAnvil_getActorType_FUN_0040f550(CAnvil *this_ptr)
 ;
+; Parameters:
+; CAnvil *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CAnvilActorType_00764234

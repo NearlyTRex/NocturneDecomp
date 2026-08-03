@@ -5,11 +5,11 @@
 
 // Original: crt_watcom.c__memset_FUN_00481980
 // Address: 00481980
-void ::memset(uint param_1);
+void __fastcall ::memset(void *dest,int fill_byte,uint size);
 
 // Original: crt_watcom.c__memcpy_FUN_00481a28
 // Address: 00481a28
-void ::memcpy(uint param_1);
+void __fastcall ::memcpy(void *dest,void *src,uint size);
 
 // Original: crt_watcom.c__mkdir_FUN_00565e40
 // Address: 00565e40

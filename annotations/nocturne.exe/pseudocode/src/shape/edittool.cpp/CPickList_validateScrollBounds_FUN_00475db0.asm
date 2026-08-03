@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(int *param_1)
+; void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(CPickList *this_ptr)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 at 004751fc

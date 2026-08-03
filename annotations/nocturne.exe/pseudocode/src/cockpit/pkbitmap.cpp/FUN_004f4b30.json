@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 20,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "category": "format_error",
+        "column": 53,
+        "line": 17,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -68,15 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 86,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "raw_address_constant",
+      "builtin_function",
       "unnamed_param"
     ],
     "total_lines": 69
@@ -221,14 +221,6 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_sprintf(&uStack_6c,\"Unable to create PBM file %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_1",
       "severity": "mild",
@@ -236,12 +228,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Raw hex address 0x4f4b61 assigned to bare local `uStack_6c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_6c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Ghidra builtin function",
       "line": 16,
-      "match": "0x4f4b61",
-      "severity": "moderate",
-      "text": "uStack_6c = 0x4f4b61;",
-      "type": "raw_address_constant"
+      "match": "builtin_strncpy",
+      "severity": "mild",
+      "text": "builtin_strncpy(acStack_6c,\"aKO\",4);",
+      "type": "builtin_function"
     }
   ]
 }

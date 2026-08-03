@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230(int param_1)
+; int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00456230(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

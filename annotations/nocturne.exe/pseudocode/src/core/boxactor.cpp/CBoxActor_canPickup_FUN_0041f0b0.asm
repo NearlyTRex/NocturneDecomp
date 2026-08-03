@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_boxactor_cpp_CBoxActor_canPickup_FUN_0041f0b0(int param_1,CDemonActor *param_2)
+; int __cdecl core_boxactor_cpp_CBoxActor_canPickup_FUN_0041f0b0(CBoxActor *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_00579965

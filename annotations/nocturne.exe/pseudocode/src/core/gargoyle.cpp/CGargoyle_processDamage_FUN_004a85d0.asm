@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gargoyle_cpp_CGargoyle_processDamage_FUN_004a85d0(CGargoyle *param_1,SDamageInfo *param_2)
+; void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004a85d0(CGargoyle *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

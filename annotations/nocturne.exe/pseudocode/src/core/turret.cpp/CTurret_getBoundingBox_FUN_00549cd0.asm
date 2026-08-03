@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * core_turret_cpp_CTurret_getBoundingBox_FUN_00549cd0(CTurret *param_1,CBoundingBox3D *param_2)
+; CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_00549cd0(CTurret *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined        Stack[-0x100]:1  local_100
 ; undefined        Stack[-0xd0]:1  local_d0
@@ -122,7 +125,7 @@ section .text
     PUSH EAX                            ; 00549dd1
     LEA ESI,[ESP + 0x70]                ; 00549dd2
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 00549dd6
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 00549ddb
     LEA EDI,[ESP + 0x38]                ; 00549dde
     PUSH 0x1                            ; 00549de2

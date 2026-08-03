@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(undefined4 param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)
+; void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   buffer_id
+; int              Stack[0xc]:4   offset
+; int              Stack[0x10]:4   size
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
@@ -82,7 +87,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0052ae63
     PUSH EAX                            ; 0052ae67
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052ae68
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0052ae6d
     MOV EAX,ESP                         ; 0052ae70
     PUSH EAX                            ; 0052ae72

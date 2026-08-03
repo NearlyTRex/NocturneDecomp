@@ -89,7 +89,7 @@ void __cdecl CClothList::add(CClothList *this_ptr,char *filename);
 
 // Original: core_cloth.cpp_CClothList_remove_FUN_00438410
 // Address: 00438410
-void CClothList::remove(int *param_1,int param_2);
+void __cdecl CClothList::remove(CClothList *this_ptr,int index);
 
 // Original: core_cloth.cpp_CClothList_setup_FUN_00438510
 // Address: 00438510

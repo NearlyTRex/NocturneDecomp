@@ -93,7 +93,7 @@ void __cdecl FUN_00553ca0(void);
 
 // Original: wincore_wddvmem.cpp_freeLibrary_FUN_00553d20
 // Address: 00553d20
-void freeLibrary(HMODULE param_1);
+BOOL __cdecl freeLibrary(HMODULE hLibModule);
 
 // Original: wincore_wddvmem.cpp_FUN_00553d30
 // Address: 00553d30

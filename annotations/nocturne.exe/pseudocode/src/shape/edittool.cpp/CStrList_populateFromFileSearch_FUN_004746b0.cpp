@@ -35,7 +35,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004746b0(CSt
     } while (cVar1 != '\0');
   }
   else {
-    _sprintf(local_310,"%s\\%s",directory_path,file_pattern);
+    _sprintf(local_310,"%s\\%s");
   }
   if (g_CPod_PTR_005be1cc != (CPod *)0x0) {
     engine_pod_cpp_CPod_initSearch_FUN_004f8d50(g_CPod_PTR_005be1cc,local_310,&local_844);

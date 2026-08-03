@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004b9ae0(void)
+; CDemonActorType * __cdecl core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004b9ae0(CHighPriestOfGardath *this_ptr)
 ;
+; Parameters:
+; CHighPriestOfGardath * Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

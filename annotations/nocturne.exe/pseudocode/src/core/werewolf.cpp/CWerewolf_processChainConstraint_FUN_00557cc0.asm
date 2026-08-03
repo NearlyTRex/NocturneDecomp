@@ -133,7 +133,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 00557d89 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 00557d8f | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00557d90
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     FLD float ptr [EBP + -0xc]          ; 00557d95
     ADD ESP,0x10                        ; 00557d98
     FCOMP float ptr [EBX + 0xbd54]      ; 00557d9b

@@ -53,7 +53,7 @@ void __cdecl CKeyFramedModel::submitToRenderer(CKeyFramedModel *this_ptr,CKeyFra
 
 // Original: core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0
 // Address: 004533e0
-void CKeyFramedModel::allocate(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void __cdecl CKeyFramedModel::allocate(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620
 // Address: 00453620

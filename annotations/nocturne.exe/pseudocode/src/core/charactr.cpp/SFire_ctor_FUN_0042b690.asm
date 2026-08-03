@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_SFire_ctor_FUN_0042b690(undefined4 param_1)
+; SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042b690(SFire *this_ptr)
 ;
+; Parameters:
+; SFire *          Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

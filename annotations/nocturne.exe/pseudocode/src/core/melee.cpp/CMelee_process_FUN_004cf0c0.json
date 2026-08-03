@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 62,
-        "line": 31,
+        "line": 30,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       }
     ],
@@ -68,18 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 246,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 21,
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 92
+    "total_lines": 91
   },
   "cross_references": [],
   "function": {
@@ -90,9 +89,9 @@
         "004cf172"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_melee.cpp_CMelee_process_FUN_004cf0c0",
-    "signature": "void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_2)"
+    "signature": "void __cdecl core_melee_cpp_CMelee_process_FUN_004cf0c0(CMelee *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -135,9 +134,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -178,10 +177,10 @@
     "pcode_op_count": 317
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -190,177 +189,31 @@
         "offset": -36,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMelee *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_00554030((CWeapon *)param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_00554030((CWeapon *)param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((0 < (int)(param_1->model).transformed_vertices[0x52].z) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = (param_1->model).transformed_vertices[0x53].x - param_2,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2 = (param_1->model).transformed_vertices[0x53].x - param_2,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = (param_1->model).transformed_vertices[0x53].x - param_2,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->model).transformed_vertices[0x53].x = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1->model).transformed_vertices[0x53].x = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1->model).transformed_vertices[0x53].x = param_2, param_2 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = (param_1->model).transformed_vertices[0x53].y * (float)1.1499999999999999;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = (param_1->base).vtable._uc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->model).transformed_vertices[0x52].z =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float)((int)(param_1->model).transformed_vertices[0x52].z + -1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->model).transformed_vertices[0x53].y = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->model).transformed_vertices[0x53].x = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "input_local_point = (CVector3f *)(*(pCVar1->_uc).canWalk)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,&CStack_18,input_local_point);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 23,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(g_CGore_PTR_005b96c4,&CStack_18,(CVector3f *)&DAT_02dd1184,",
+      "text": "(g_CGore_PTR_005b96c4,&CStack_18,(CVector3f *)&DAT_02dd1184,this_ptr->blood_gore_type)",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)(param_1->model).transformed_vertices[0x52].y);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

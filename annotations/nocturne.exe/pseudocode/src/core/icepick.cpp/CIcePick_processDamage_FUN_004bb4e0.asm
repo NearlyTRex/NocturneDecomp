@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_icepick_cpp_CIcePick_processDamage_FUN_004bb4e0(CCharacter *param_1,SDamageInfo *param_2)
+; void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004bb4e0(CIcePick *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_icepick_die01_wav_00586255

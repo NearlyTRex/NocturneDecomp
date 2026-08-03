@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_door_cpp_CDoor_renderOpaque_FUN_00455d50(CDemonActor *param_1)
+; int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00455d50(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

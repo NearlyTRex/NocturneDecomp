@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -81,7 +81,7 @@
       },
       {
         "category": "incompatible_types",
-        "column": 20,
+        "column": 23,
         "line": 63,
         "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
       }
@@ -92,17 +92,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 395,
+    "complexity_score": 120,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 31,
+    "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 215
@@ -116,9 +115,9 @@
         "004acb57"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_glass.cpp_CGlass_renderBackground_FUN_004ac9b0",
-    "signature": "void core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *param_1,int param_2)"
+    "signature": "void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_ptr,int layer_flag)"
   },
   "function_calls": [
     {
@@ -193,9 +192,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -232,10 +231,10 @@
     "pcode_op_count": 570
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 44,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -244,6 +243,20 @@
         "offset": -32,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlass *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -257,134 +270,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->background_flag == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (((param_2 != 0) && (param_1->shattered != 0)) && (param_1->mirror_flag != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_2 != 0) && (param_1->shattered != 0)) && (param_1->mirror_flag != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_2 != 0) && (param_1->shattered != 0)) && (param_1->mirror_flag != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_glass_cpp_FUN_004ac7c0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "else if ((param_2 != 0) || (param_1->pending_background_render != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if ((param_2 != 0) || (param_1->pending_background_render != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->pending_background_render = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->shattered == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "texture = &param_1->glass_texture;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "texture = &param_1->broken_texture;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 34,
       "match": "DAT_005ae704",
@@ -393,100 +278,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = param_1->broken_vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = param_1->render_vertices;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->broken_vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar4 < param_1->broken_vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,param_1->broken_vertex_count,param_1->render_vertices);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,param_1->broken_vertex_count,param_1->render_vertices);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->broken_polygon_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "poly = (SMRGLPrimitivePoly *)param_1->broken_quads;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 56,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "this_ptr = DAT_005ae704;",
+      "text": "this_ptr_00 = DAT_005ae704;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar4 < param_1->broken_polygon_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

@@ -305,7 +305,7 @@ section .text
     LEA ESI,[ESP + 0x18]                ; 004db993
     PUSH dword ptr [ESP + 0x60]         ; 004db997
     CALL core_xform.cpp_quaternionFromAngleY_FUN_0055d4e0 ; 004db99b
-        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_0055d4e0()
+        ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleY_FUN_0055d4e0(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 004db9a0
     LEA EDI,[ESP + 0x8]                 ; 004db9a3
     PUSH 0x51b650                       ; 004db9a7

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005618c0(int param_1)
+; void __cdecl core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005618c0(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_zombie.cpp_CZombie_processDamage_FUN_00561fc0 at 00562052

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_CDoor_updateCollisionData_FUN_00456460(CDoor *param_1)
+; void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00456460(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450

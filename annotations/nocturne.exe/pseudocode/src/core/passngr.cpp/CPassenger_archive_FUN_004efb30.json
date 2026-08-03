@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 143,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 10,
-    "suspect_types": [
-      "unnamed_param",
-      "warning_type_propagation"
-    ],
-    "total_lines": 114
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 106
   },
   "cross_references": [],
   "function": {
@@ -84,9 +81,9 @@
         "004efc09"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_passngr.cpp_CPassenger_archive_FUN_004efb30",
-    "signature": "void core_passngr_cpp_CPassenger_archive_FUN_004efb30(CNPC *param_1)"
+    "signature": "void __cdecl core_passngr_cpp_CPassenger_archive_FUN_004efb30(CPassenger *this_ptr)"
   },
   "function_calls": [
     {
@@ -175,9 +172,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -205,95 +202,22 @@
     "pcode_op_count": 272
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPassenger *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_passngr_cpp_CPassenger_archive_FUN_004efb30(CNPC *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_npc_cpp_CNPC_archive_FUN_004eed10(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 1),\"transformEvent\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)&param_1[1].base.base.health,\"wolfModelName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x53].y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "model_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x53].z,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[1].base.base.create_event + 0xc,\"nameOfWolf\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[1].base.base.create_event + 0x2c,\"transformWav\");",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

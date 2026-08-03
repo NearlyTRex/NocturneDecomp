@@ -77,7 +77,7 @@ void __cdecl CDeformableModel::allocMemory(CDeformableModel *this_ptr,int num_lo
 
 // Original: core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0
 // Address: 00517ec0
-void CDeformableModel::allocLOD(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CDeformableModel::allocLOD(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count);
 
 // Original: core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0
 // Address: 005180a0
@@ -137,7 +137,7 @@ void __cdecl CDeformableModel::loadStream(CDeformableModel *this_ptr,_FILE *file
 
 // Original: core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00519ae0
 // Address: 00519ae0
-void CDeformableModel::bindSkeleton(CDeformableModel *param_1,CSkeleton *param_2);
+void __cdecl CDeformableModel::bindSkeleton(CDeformableModel *this_ptr,CSkeleton *skeleton_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_00519b10
 // Address: 00519b10
@@ -161,7 +161,7 @@ void __cdecl CDeformableModel::dismember(CDeformableModel *this_ptr,int lod_inde
 
 // Original: core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0051a470
 // Address: 0051a470
-float CDeformableModel::exactRayTrace(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6);
+float __cdecl CDeformableModel::exactRayTrace(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags);
 
 // Original: core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700
 // Address: 0051a700
@@ -253,7 +253,7 @@ void __cdecl CDeformableModelInstance::blendBoneRotations(CDeformableModelInstan
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
 // Address: 0051d0a0
-void CDeformableModelInstance::getBoneWorldMatrix(CDeformableModelInstance *param_1,int param_2);
+CMatrix3x4f * __stack2_esi CDeformableModelInstance::getBoneWorldMatrix(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 // Address: 0051d2a0

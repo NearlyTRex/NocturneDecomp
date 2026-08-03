@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 565,
+    "complexity_score": 270,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 44,
+    "suspect_count": 15,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "unnamed_param",
       "unrolled_memcpy",
       "unrolled_memset"
     ],
@@ -89,10 +88,10 @@
         "00421462"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_bugs.cpp_CBugs_setup_FUN_004211e0",
-    "signature": "void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)"
+    "signature": "void __cdecl core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *this_ptr)"
   },
   "function_calls": [
     {
@@ -156,9 +155,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -197,10 +196,10 @@
     "pcode_op_count": 936
   },
   "stack_frame": {
-    "frame_size": 68,
+    "frame_size": 72,
     "local_size": 68,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -279,6 +278,13 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
       }
     ]
   },
@@ -300,190 +306,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.base.orient.vec.z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.base.orient.vec.x = (param_1->base).base.base.orient.vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.base.orient.vec.x = (param_1->base).base.base.orient.vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->model_count = 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->model_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar9 = param_1->models[0].model_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = param_1->model_count + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->model_count = iVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = param_1->models + iVar6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = param_1->models[iVar6 + 1].model_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar5 < param_1->model_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1->models + iVar6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->model_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar10 = &param_1->bugs[0].dest_position;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar7 = &param_1->bugs[0].orientation;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_2c = &param_1->bugs[0].position;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar8 = param_1->bugs + local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = core_actor_cpp_getRandomInt_FUN_0040de00(0,param_1->model_count + -1);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 77,
@@ -533,54 +355,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_28 < param_1->count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->grid_cell_x = -9999;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->grid_cell_z = -9999;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.base.collision_disabled = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->damage_timer = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer value `(pCVar10 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 81,
       "match": "(int)(pCVar10 + 5)",
@@ -617,7 +391,7 @@
       "line": 20,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "(param_1->base).base.base.orient.vec.z = 0.0;",
+      "text": "(this_ptr->base).base.base.orient.vec.z = 0.0;",
       "type": "unrolled_memset"
     },
     {

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_werewolf_cpp_CWerewolf_setup_FUN_00555b40(CEnemy *param_1)
+; void __cdecl core_werewolf_cpp_CWerewolf_setup_FUN_00555b40(CWerewolf *this_ptr)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;

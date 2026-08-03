@@ -1,12 +1,12 @@
 // Name: core_ladder.cpp_CLadder_getBoundingBox_FUN_004c43f0
 // Address: 004c43f0
 // Address Range: [[004c43f0, 004c44eb]]
-// Convention: unknown
-// Signature: float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(CLadder *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *param_2)
+CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(CLadder *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;
@@ -17,30 +17,28 @@ float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *p
   float fVar6;
   CKeyFramedModel *pCVar7;
   
-  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
   if (pCVar7->poly_count < 1) {
     fVar5 = (float)0.5;
-    fVar1 = *(float *)(param_1 + 0x2d4);
-    fVar2 = *(float *)(param_1 + 0x2cc);
-    fVar3 = *(float *)(param_1 + 0x2d0);
+    fVar1 = (this_ptr->ladder_size).z;
+    fVar2 = (this_ptr->ladder_size).x;
+    fVar3 = (this_ptr->ladder_size).y;
     fVar6 = (float)0.10000000000000001;
-    fVar4 = *(float *)(param_1 + 0x2d4);
-    *param_2 = -*(float *)(param_1 + 0x2cc) * fVar5;
-    param_2[1] = -0.1;
-    param_2[2] = -fVar1 * fVar5;
-    param_2[3] = fVar2 * fVar5;
-    param_2[4] = fVar3 + fVar6;
-    param_2[5] = fVar5 * fVar4;
-    return param_2;
+    fVar4 = (this_ptr->ladder_size).z;
+    (out_box->min).x = -(this_ptr->ladder_size).x * fVar5;
+    (out_box->min).y = -0.1;
+    (out_box->min).z = -fVar1 * fVar5;
+    (out_box->max).x = fVar2 * fVar5;
+    (out_box->max).y = fVar3 + fVar6;
+    (out_box->max).z = fVar5 * fVar4;
+    return out_box;
   }
-  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
-  *param_2 = (pCVar7->bounds).min.x;
-  param_2[1] = (pCVar7->bounds).min.y;
-  param_2[2] = (pCVar7->bounds).min.z;
-  param_2[3] = (pCVar7->bounds).max.x;
-  param_2[4] = (pCVar7->bounds).max.y;
-  param_2[5] = (pCVar7->bounds).max.z;
-  return param_2;
+  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
+  (out_box->min).x = (pCVar7->bounds).min.x;
+  (out_box->min).y = (pCVar7->bounds).min.y;
+  (out_box->min).z = (pCVar7->bounds).min.z;
+  (out_box->max).x = (pCVar7->bounds).max.x;
+  (out_box->max).y = (pCVar7->bounds).max.y;
+  (out_box->max).z = (pCVar7->bounds).max.z;
+  return out_box;
 }

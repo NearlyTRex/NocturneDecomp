@@ -1,34 +1,36 @@
 // Name: core_xform.cpp_eulerToQuaternion_FUN_0055d610
 // Address: 0055d610
 // Address Range: [[0055d610, 0055d658]]
-// Convention: unknown
-// Signature: void core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *param_1)
+// Convention: __stack_esi
+// Signature: CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *euler_angles,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 
-void core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *param_1)
+CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *euler_angles,CQuaternion4f *quat_out)
 
 {
-  uint *unaff_ESI;
-  float *pfVar1;
-  byte bVar2;
-  float afStackY_1804 [1512];
+  uint *puVar1;
+  uint *puVar2;
+  uint *puVar3;
+  byte bVar4;
+  uint auStackY_1804 [1512];
   CMatrix3x4f local_58;
-  uint local_28;
-  float afStack_24 [3];
+  CQuaternion4f local_28;
   CVector3f local_18;
   
-  bVar2 = 0;
+  bVar4 = 0;
   local_18.x = 0.0;
   local_18.y = 0.0;
   local_18.z = 0.0;
-  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_58,&local_18,param_1);
-  core_xform_cpp_matrixToQuaternion_FUN_0055cf10(&local_58);
-  pfVar1 = (float *)(unaff_ESI + (uint)bVar2 * -2 + 1);
-  *unaff_ESI = local_28;
-  *pfVar1 = afStack_24[(uint)bVar2 * -2];
-  pfVar1[(uint)bVar2 * -2 + 1] = afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  (pfVar1 + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
-       (afStack_24 + (uint)bVar2 * -2 + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1];
-  return;
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+            (&local_58,&local_18,euler_angles);
+  core_xform_cpp_matrixToQuaternion_FUN_0055cf10((CMatrix3x3f *)&local_58,&local_28);
+  puVar2 = (uint *)((int)quat_out + (uint)bVar4 * -8 + 4);
+  quat_out->w = local_28.w;
+  puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
+  puVar1 = (uint *)((int)&local_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  *puVar2 = *(uint *)((int)&local_28 + (uint)bVar4 * -8 + 4);
+  *puVar3 = *puVar1;
+  puVar3[(uint)bVar4 * -2 + 1] = puVar1[(uint)bVar4 * -2 + 1];
+  return quat_out;
 }

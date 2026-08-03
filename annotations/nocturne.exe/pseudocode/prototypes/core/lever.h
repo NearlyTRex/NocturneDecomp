@@ -13,7 +13,7 @@ CLever * __cdecl factoryFunc(void);
 
 // Original: core_lever.cpp_CLever_getActorType_FUN_004c6030
 // Address: 004c6030
-CDemonActorType * CLever::getActorType(void);
+CDemonActorType * __cdecl CLever::getActorType(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_ctor_FUN_004c6040
 // Address: 004c6040
@@ -21,11 +21,11 @@ CLever * __cdecl CLever::ctor(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_setup_FUN_004c6110
 // Address: 004c6110
-void CLever::setup(CDemonActor *param_1);
+void __cdecl CLever::setup(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_process_FUN_004c6190
 // Address: 004c6190
-void CLever::process(CLever *param_1,float param_2);
+void __cdecl CLever::process(CLever *this_ptr,float delta_time);
 
 // Original: core_lever.cpp_CLever_setState_FUN_004c6390
 // Address: 004c6390
@@ -37,11 +37,11 @@ void __cdecl CLever::activate(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_renderOpaque_FUN_004c6560
 // Address: 004c6560
-int CLever::renderOpaque(CDemonActor *param_1);
+int __cdecl CLever::renderOpaque(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_getBoundingBox_FUN_004c65f0
 // Address: 004c65f0
-float * CLever::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_lever.cpp_CLever_getHandlePosition_FUN_004c6640
 // Address: 004c6640
@@ -49,11 +49,11 @@ CVector3f * __cdecl CLever::getHandlePosition(CLever *this_ptr,CVector3f *out_po
 
 // Original: core_lever.cpp_CLever_archive_FUN_004c66f0
 // Address: 004c66f0
-void CLever::archive(CDemonActor *param_1);
+void __cdecl CLever::archive(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_getCollisionType_FUN_004c68d0
 // Address: 004c68d0
-bool CLever::getCollisionType(int param_1);
+ECollisionType __cdecl CLever::getCollisionType(CLever *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_lever.cpp_CLever_isAccessibleFrom_FUN_004c68f0
 // Address: 004c68f0

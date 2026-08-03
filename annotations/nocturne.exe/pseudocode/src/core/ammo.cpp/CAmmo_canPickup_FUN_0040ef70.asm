@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_ammo_cpp_CAmmo_canPickup_FUN_0040ef70(undefined4 param_1,CDemonActor *param_2)
+; int __cdecl core_ammo_cpp_CAmmo_canPickup_FUN_0040ef70(CAmmo *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CAmmo *          Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_0057833e

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CCharacter *param_1,SDamageInfo *param_2)
+; void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

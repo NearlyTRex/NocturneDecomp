@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGame * core_gore_cpp_CGore_renderDecals_FUN_004afe80(undefined4 param_1,int param_2)
+; void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004afe80(CGore *this_ptr,int render_all,int expire_flag)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   render_all
+; int              Stack[0xc]:4   expire_flag
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508c99
@@ -62,7 +66,7 @@ section .text
     PUSH EBX                            ; 004afecb
         ;   Label: LAB_004afecb
     CALL core_gore.cpp_CBloodSplat_render_FUN_004aeb70 ; 004afecc
-        ;   XREF to: 004aeb70 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodSplat_render_FUN_004aeb70()
+        ;   XREF to: 004aeb70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat * this_ptr, int expire_flag)
     INC ESI                             ; 004afed1
     MOV EDX,dword ptr [0x01c7ccf0]      ; 004afed2 | DAT_01c7ccf0
     ADD ESP,0x4                         ; 004afed8
@@ -90,7 +94,7 @@ section .text
     PUSH EBX                            ; 004aff16
         ;   Label: LAB_004aff16
     CALL core_gore.cpp_CBloodPool_render_FUN_004af340 ; 004aff17
-        ;   XREF to: 004af340 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodPool_render_FUN_004af340()
+        ;   XREF to: 004af340 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_render_FUN_004af340(CBloodPool * this_ptr, int expire_flag)
     INC ESI                             ; 004aff1c
     MOV EDX,dword ptr [0x01c9e038]      ; 004aff1d | DAT_01c9e038
     ADD ESP,0x4                         ; 004aff23
@@ -112,7 +116,7 @@ section .text
     PUSH ESI                            ; 004aff4d
         ;   Label: LAB_004aff4d
     CALL core_gore.cpp_CFootstep_render_FUN_004afa20 ; 004aff4e
-        ;   XREF to: 004afa20 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CFootstep_render_FUN_004afa20()
+        ;   XREF to: 004afa20 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_render_FUN_004afa20(CFootstep * this_ptr, int expire_flag)
     INC EBX                             ; 004aff53
     MOV EAX,[0x01c9e540]                ; 004aff54 | DAT_01c9e540
     ADD ESP,0x4                         ; 004aff59
@@ -150,7 +154,7 @@ section .text
     ADD EAX,EBX                         ; 004aff9c
     PUSH EAX                            ; 004aff9e
     CALL core_gore.cpp_CBloodSplat_render_FUN_004aeb70 ; 004aff9f
-        ;   XREF to: 004aeb70 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodSplat_render_FUN_004aeb70()
+        ;   XREF to: 004aeb70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat * this_ptr, int expire_flag)
     ADD ESP,0x4                         ; 004affa4
     JMP 0x004aff83                      ; 004affa7
         ;   XREF to: 004aff83 (UNCONDITIONAL_JUMP)  ; LAB_004aff83
@@ -179,7 +183,7 @@ section .text
     ADD EAX,EBX                         ; 004affdd
     PUSH EAX                            ; 004affdf
     CALL core_gore.cpp_CBloodPool_render_FUN_004af340 ; 004affe0
-        ;   XREF to: 004af340 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodPool_render_FUN_004af340()
+        ;   XREF to: 004af340 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_render_FUN_004af340(CBloodPool * this_ptr, int expire_flag)
     ADD ESP,0x4                         ; 004affe5
     JMP 0x004affc4                      ; 004affe8
         ;   XREF to: 004affc4 (UNCONDITIONAL_JUMP)  ; LAB_004affc4
@@ -208,7 +212,7 @@ section .text
     ADD EAX,EBX                         ; 004b001e
     PUSH EAX                            ; 004b0020
     CALL core_gore.cpp_CFootstep_render_FUN_004afa20 ; 004b0021
-        ;   XREF to: 004afa20 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CFootstep_render_FUN_004afa20()
+        ;   XREF to: 004afa20 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_render_FUN_004afa20(CFootstep * this_ptr, int expire_flag)
     ADD ESP,0x4                         ; 004b0026
     JMP 0x004b0005                      ; 004b0029
         ;   XREF to: 004b0005 (UNCONDITIONAL_JUMP)  ; LAB_004b0005

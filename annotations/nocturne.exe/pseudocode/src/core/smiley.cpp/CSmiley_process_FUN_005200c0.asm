@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_smiley_cpp_CSmiley_process_FUN_005200c0(CEnemy *param_1,float param_2)
+; void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,float delta_time)
 ;
+; Parameters:
+; CSmiley *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x1cc]:1  local_1cc
 ; undefined4       Stack[-0x1c8]:4  local_1c8
@@ -409,7 +412,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 00520432 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 00520438 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00520439
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00520360                      ; 0052043e
         ;   XREF to: 00520360 (UNCONDITIONAL_JUMP)  ; LAB_00520360
     JBE 0x00520350                      ; 00520443

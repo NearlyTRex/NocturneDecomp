@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vessel_cpp_CCryptVessel_setup_FUN_0054fa80(CDemonActor *param_1)
+; void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_0054fa80(CCryptVessel *this_ptr)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059746b = 0.5

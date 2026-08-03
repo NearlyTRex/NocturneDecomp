@@ -13,9 +13,10 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0051f3f0(SPose *result
   int iVar2;
   uint *puVar3;
   uint *puVar4;
-  byte bVar5;
+  uint *puVar5;
+  byte bVar6;
   float afStackY_1830 [1524];
-  float local_54;
+  CQuaternion4f local_54;
   float local_44;
   float local_40;
   float local_3c;
@@ -30,7 +31,7 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0051f3f0(SPose *result
   CQuaternion4f *local_18;
   CQuaternion4f *local_14;
   
-  bVar5 = 0;
+  bVar6 = 0;
   if (blend_weight < 0.0) {
     blend_weight = 0.0;
   }
@@ -47,7 +48,7 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0051f3f0(SPose *result
   local_44 = local_2c + local_38;
   local_40 = local_28 + local_34;
   local_3c = local_24 + local_30;
-  if ((SPose *)&stack0xffffffbc != result_pose) {
+  if ((SPose *)&local_44 != result_pose) {
     (result_pose->pose_data).root_position.x = local_44;
     (result_pose->pose_data).root_position.y = local_40;
     (result_pose->pose_data).root_position.z = local_3c;
@@ -59,16 +60,14 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0051f3f0(SPose *result
     local_18 = (bone_data_in->pose_data).bone_rotations;
     pSVar1 = result_pose;
     do {
-      core_xform_cpp_slerpQuaternion_FUN_0055d2d0(local_14,local_18,blend_weight);
-      puVar3 = (uint *)((int)pSVar1 + (uint)bVar5 * -8 + 0x10);
-      (pSVar1->pose_data).bone_rotations[0].w = local_54;
-      puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
-      *puVar3 = *(uint *)(&stack0xffffffb0 + (uint)bVar5 * -8);
-      *puVar4 = *(uint *)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      puVar4[(uint)bVar5 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
-            ((uint)bVar5 * -2 + 1) * 4);
+      core_xform_cpp_slerpQuaternion_FUN_0055d2d0(local_14,local_18,blend_weight,&local_54);
+      puVar4 = (uint *)((int)pSVar1 + (uint)bVar6 * -8 + 0x10);
+      (pSVar1->pose_data).bone_rotations[0].w = local_54.w;
+      puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
+      puVar3 = (uint *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+      *puVar4 = *(uint *)((int)&local_54 + (uint)bVar6 * -8 + 4);
+      *puVar5 = *puVar3;
+      puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
       local_18 = local_18 + 1;
       iVar2 = iVar2 + 1;
       local_14 = local_14 + 1;

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,43 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 54,
-        "line": 29,
-        "message": "use of undeclared identifier 'stack0xffffffb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 31,
-        "message": "use of undeclared identifier 'stack0xffffffb4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 32,
-        "message": "use of undeclared identifier 'stack0xffffffc0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 33,
-        "message": "use of undeclared identifier 'stack0xffffffb8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 34,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 57,
-        "line": 39,
+        "line": 36,
         "message": "use of undeclared identifier '_DAT_01c00c4c'"
       }
     ],
@@ -98,23 +68,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 178,
+    "complexity_score": 120,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 11,
+    "pseudocode_lines": 30,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
       "undefined_data",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 91
+    "total_lines": 88
   },
   "cross_references": [],
   "function": {
@@ -240,35 +207,10 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "projectToScreen_FUN_004cea50.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 30,
-          "message": "Uninitialized variable: uStack_44",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -276,83 +218,51 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 9,
       "match": "aiStackY_1038",
       "severity": "moderate",
       "text": "int aiStackY_1038 [1017];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)aCStack_44",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 22,
-      "match": "&stack0xffffffb0",
+      "match": "(uint *)((int)aCStack_44",
       "severity": "moderate",
-      "text": "engine_matrix_c_transformWorldToView_FUN_004cd0e0(&stack0xffffffb0);",
-      "type": "stack_ref"
+      "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)aCStack_44",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + -4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 24,
-      "match": "&stack0xffffffb4",
+      "match": "(uint *)((int)aCStack_44",
       "severity": "moderate",
-      "text": "(&stack0xffffffb4)[(uint)bVar1 * 0xfffffffe] =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffffc0",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar1 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xffffffb8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
-      "type": "stack_ref"
+      "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 30,
       "match": "DAT_005b7648",
       "severity": "mild",
       "text": "(double)DAT_005b7648);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&stack0xffffffb8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
-      "match": "(int)&stack0xffffffb8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 26,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: uStack_44",
-      "line": 30,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "uStack_50 = uStack_44;",
-      "type": "static_uninitvar"
     }
   ]
 }

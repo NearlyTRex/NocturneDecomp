@@ -1,12 +1,12 @@
 // Name: core_curtain.cpp_CCurtain_process_FUN_0043ebf0
 // Address: 0043ebf0
 // Address Range: [[0043ebf0, 0043f32e]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2)
+void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,float delta_time)
 
 {
   CVector3f *pCVar1;
@@ -60,21 +60,21 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float para
   float fStack_18;
   float fStack_14;
   
-  if (((param_1->is_visible != 0) || (param_1->falling != 0)) &&
-     (param_1->is_visible = 0, param_1->simulate_me != 0)) {
+  if (((this_ptr->is_visible != 0) || (this_ptr->falling != 0)) &&
+     (this_ptr->is_visible = 0, this_ptr->simulate_me != 0)) {
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1->let_go_event);
+                      (0x01C03A10,this_ptr->let_go_event);
     if (iVar6 != 0) {
-      param_1->falling = 1;
+      this_ptr->falling = 1;
     }
-    iVar6 = _strcmp(param_1->let_go_event,"none");
-    if ((iVar6 == 0) || (param_1->falling != 0)) {
-      if (param_1->hit_floor != 0) {
-        fStack_14 = (*((param_1->base).vtable._ub)->cylinderGroundCheck)
-                              (&param_1->base,0.1,(CVector3f *)0x0);
-        param_1->floor_height = fStack_14;
+    iVar6 = _strcmp(this_ptr->let_go_event,"none");
+    if ((iVar6 == 0) || (this_ptr->falling != 0)) {
+      if (this_ptr->hit_floor != 0) {
+        fStack_14 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                              (&this_ptr->base,0.1,(CVector3f *)0x0);
+        this_ptr->floor_height = fStack_14;
       }
-      (param_1->mesh).inv_delta_time = 1.0 / param_2;
+      (this_ptr->mesh).inv_delta_time = 1.0 / delta_time;
       local_ac = 99999.0;
       local_a8 = 99999.0;
       local_a4 = 99999.0;
@@ -82,8 +82,8 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float para
       local_78 = -99999.0;
       local_74 = -99999.0;
       iVar6 = 0;
-      if (0 < param_1->vertex_count) {
-        pSVar9 = param_1->vertices;
+      if (0 < this_ptr->vertex_count) {
+        pSVar9 = this_ptr->vertices;
         do {
           if ((pSVar9->world_position).x < local_ac) {
             local_ac = (pSVar9->world_position).x;
@@ -105,7 +105,7 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float para
           }
           iVar6 = iVar6 + 1;
           pSVar9 = pSVar9 + 1;
-        } while (iVar6 < param_1->vertex_count);
+        } while (iVar6 < this_ptr->vertex_count);
       }
       iStack_28 = 0;
       DAT_0077bdb8 = 0;
@@ -135,11 +135,11 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float para
         }
         iStack_28 = iStack_28 + 4;
       }
-      param_1->needs_update = 1;
-      if ((iVar6 == 0) && (param_1->falling == 0)) {
-        param_1->needs_update = 0;
-        if (0 < param_1->vertex_count) {
-          pSVar9 = param_1->vertices;
+      this_ptr->needs_update = 1;
+      if ((iVar6 == 0) && (this_ptr->falling == 0)) {
+        this_ptr->needs_update = 0;
+        if (0 < this_ptr->vertex_count) {
+          pSVar9 = this_ptr->vertices;
           iVar6 = 0;
           do {
             if (pSVar9->is_pinned == 0) {
@@ -147,7 +147,7 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float para
               fVar3 = (pSVar9->velocity).x;
               fVar4 = (pSVar9->velocity).z;
               if ((float)0.10000000000000001 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5)) {
-                param_1->needs_update = 1;
+                this_ptr->needs_update = 1;
                 goto LAB_0043eed9;
               }
               fStack_b8 = (pSVar9->initial_position).x - (pSVar9->local_position).x;
@@ -155,43 +155,43 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float para
               fStack_b0 = (pSVar9->initial_position).z - (pSVar9->local_position).z;
               if ((float)0.10000000000000001 <
                   SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {
-                param_1->needs_update = 1;
+                this_ptr->needs_update = 1;
                 goto LAB_0043eed9;
               }
             }
             iVar6 = iVar6 + 1;
             pSVar9 = pSVar9 + 1;
-          } while (iVar6 < param_1->vertex_count);
+          } while (iVar6 < this_ptr->vertex_count);
         }
-        if (param_1->needs_update == 0) {
+        if (this_ptr->needs_update == 0) {
           return;
         }
       }
 LAB_0043eed9:
       iVar6 = 0;
-      pCVar8 = param_1;
-      if (0 < param_1->vertex_count) {
+      pCVar8 = this_ptr;
+      if (0 < this_ptr->vertex_count) {
         do {
           pCVar8->vertices[0].has_collision = 0;
           iVar6 = iVar6 + 1;
           pCVar8 = (CCurtain *)&(pCVar8->base).create_prob;
-        } while (iVar6 < param_1->vertex_count);
+        } while (iVar6 < this_ptr->vertex_count);
       }
       iStack_1c = 0;
-      if (0 < param_1->vertex_count) {
-        pSVar9 = param_1->vertices;
+      if (0 < this_ptr->vertex_count) {
+        pSVar9 = this_ptr->vertices;
         do {
           if (pSVar9->is_pinned == 0) {
             fVar3 = (float)0.84999999999999998;
             (pSVar9->velocity).x = (pSVar9->velocity).x * fVar3;
-            fVar5 = param_1->dampen;
+            fVar5 = this_ptr->dampen;
             (pSVar9->velocity).z = fVar3 * (pSVar9->velocity).z;
             (pSVar9->velocity).y = fVar5 * (pSVar9->velocity).y;
-            fStack_e0 = param_1->weight;
+            fStack_e0 = this_ptr->weight;
             if (pSVar9->is_corner != 0) {
               fStack_e0 = fStack_e0 * (float)4;
             }
-            fStack_44 = 1.0 / param_2;
+            fStack_44 = 1.0 / delta_time;
             fStack_18 = fStack_e0 * (float)0.03125;
             fStack_64 = -(pSVar9->velocity).x;
             fStack_60 = -(pSVar9->velocity).y;
@@ -215,41 +215,41 @@ LAB_0043eed9:
               fStack_bc = fStack_50;
             }
             pCVar1 = &pSVar9->velocity;
-            pCVar1->x = pCVar1->x + fStack_c4 * param_2;
-            (pSVar9->velocity).y = (pSVar9->velocity).y + fStack_c0 * param_2;
-            fStack_a0 = pCVar1->x * param_2;
-            (pSVar9->velocity).z = (pSVar9->velocity).z + fStack_bc * param_2;
-            fStack_9c = (pSVar9->velocity).y * param_2;
-            fStack_98 = param_2 * (pSVar9->velocity).z;
+            pCVar1->x = pCVar1->x + fStack_c4 * delta_time;
+            (pSVar9->velocity).y = (pSVar9->velocity).y + fStack_c0 * delta_time;
+            fStack_a0 = pCVar1->x * delta_time;
+            (pSVar9->velocity).z = (pSVar9->velocity).z + fStack_bc * delta_time;
+            fStack_9c = (pSVar9->velocity).y * delta_time;
+            fStack_98 = delta_time * (pSVar9->velocity).z;
             (pSVar9->world_position).x = (pSVar9->world_position).x + fStack_a0;
             (pSVar9->world_position).y = (pSVar9->world_position).y + fStack_9c;
             (pSVar9->world_position).z = (pSVar9->world_position).z + fStack_98;
-            core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(param_1,pSVar9);
+            core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(this_ptr,pSVar9);
           }
           pSVar9 = pSVar9 + 1;
           iStack_1c = iStack_1c + 1;
-        } while (iStack_1c < param_1->vertex_count);
+        } while (iStack_1c < this_ptr->vertex_count);
       }
-      pSStack_30 = param_1->vertices;
+      pSStack_30 = this_ptr->vertices;
       iStack_24 = 0;
       do {
         iVar6 = 0;
         pSVar9 = pSStack_30;
-        if (0 < param_1->vertex_count) {
+        if (0 < this_ptr->vertex_count) {
           do {
             if (pSVar9->is_pinned == 0) {
-              core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(param_1,pSVar9);
+              core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(this_ptr,pSVar9);
             }
             iVar6 = iVar6 + 1;
             pSVar9 = pSVar9 + 1;
-          } while (iVar6 < param_1->vertex_count);
+          } while (iVar6 < this_ptr->vertex_count);
         }
         iStack_24 = iStack_24 + 1;
       } while (iStack_24 < 3);
       iVar6 = 0;
-      if (0 < param_1->vertex_count) {
-        pfVar2 = &param_1->friction;
-        pSVar9 = param_1->vertices;
+      if (0 < this_ptr->vertex_count) {
+        pfVar2 = &this_ptr->friction;
+        pSVar9 = this_ptr->vertices;
         do {
           pSStack_2c = pSVar9;
           if (pSStack_2c->has_collision != 0) {
@@ -264,26 +264,26 @@ LAB_0043eed9:
           }
           iVar6 = iVar6 + 1;
           pSVar9 = pSStack_2c + 1;
-        } while (iVar6 < param_1->vertex_count);
+        } while (iVar6 < this_ptr->vertex_count);
       }
-      if (param_1->hit_floor != 0) {
+      if (this_ptr->hit_floor != 0) {
         iVar10 = 0;
         iVar6 = 0;
-        if (0 < param_1->vertex_count) {
-          pSVar9 = param_1->vertices;
+        if (0 < this_ptr->vertex_count) {
+          pSVar9 = this_ptr->vertices;
           do {
-            if ((pSVar9->world_position).y <= param_1->floor_height) {
+            if ((pSVar9->world_position).y <= this_ptr->floor_height) {
               iVar6 = iVar6 + 1;
             }
             iVar10 = iVar10 + 1;
             pSVar9 = pSVar9 + 1;
-          } while (iVar10 < param_1->vertex_count);
+          } while (iVar10 < this_ptr->vertex_count);
         }
-        if (iVar6 == param_1->vertex_count) {
-          param_1->simulate_me = 0;
+        if (iVar6 == this_ptr->vertex_count) {
+          this_ptr->simulate_me = 0;
         }
       }
-      core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(param_1);
+      core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(this_ptr);
     }
   }
   return;

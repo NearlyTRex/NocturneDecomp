@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00550370(int param_1)
+; int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00550370(CCryptVessel *this_ptr)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
@@ -200,7 +202,7 @@ section .text
     ADD EAX,0x12c                       ; 00550516
     PUSH EAX                            ; 0055051b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0055051c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00550521
     PUSH 0xbb80                         ; 00550524
     MOV ESI,dword ptr [0x005ae704]      ; 00550529 | DAT_005ae704

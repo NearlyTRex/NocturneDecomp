@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drip_cpp_CDrip_process_FUN_00462300(CDemonActor *param_1,float param_2)
+; void __cdecl core_drip_cpp_CDrip_process_FUN_00462300(CDrip *this_ptr,float delta_time)
 ;
+; Parameters:
+; CDrip *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x78]:1  local_78
 ; undefined        Stack[-0x54]:1  local_54

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(CGlass *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00584fb8 = 0.5

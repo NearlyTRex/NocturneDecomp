@@ -1,39 +1,40 @@
 // Name: core_waypoint.cpp_CWaypoint_setup_FUN_00552510
 // Address: 00552510
 // Address Range: [[00552510, 005525cb]]
-// Convention: unknown
-// Signature: void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CTrigger *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CWayPoint *this_ptr)
 
 #include "nocturne.h"
 
-void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CTrigger *param_1)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CWayPoint *this_ptr)
 
 {
-  int iVar1;
+  CWayPoint *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
-  CTrigger *pCVar5;
+  CWayPoint *pCVar5;
   int iVar6;
   char *str1;
   
-  core_trigger_cpp_CTrigger_setup_FUN_00547a00(param_1);
+  core_trigger_cpp_CTrigger_setup_FUN_00547a00(&this_ptr->base);
   iVar6 = 0;
-  if (0 < *(int *)param_1[1].base.actor_name) {
-    pCVar5 = param_1;
+  if (0 < this_ptr->num_adjacent_waypoints) {
+    pCVar5 = this_ptr;
     do {
-      iVar1 = *(int *)(pCVar5[1].base.actor_name + 4);
-      fVar2 = (param_1->base).location.position.x - *(float *)(iVar1 + 0x20);
-      fVar4 = (param_1->base).location.position.y - *(float *)(iVar1 + 0x24);
-      fVar3 = (param_1->base).location.position.z - *(float *)(iVar1 + 0x28);
+      pCVar1 = pCVar5->adjacency[0].waypoint;
+      fVar2 = (this_ptr->base).base.location.position.x - (pCVar1->base).base.location.position.x;
+      fVar4 = (this_ptr->base).base.location.position.y - (pCVar1->base).base.location.position.y;
+      fVar3 = (this_ptr->base).base.location.position.z - (pCVar1->base).base.location.position.z;
       iVar6 = iVar6 + 1;
-      *(float *)(pCVar5[1].base.actor_name + 8) =
-           SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);
-      pCVar5 = (CTrigger *)((pCVar5->base).actor_name + 8);
-    } while (iVar6 < *(int *)param_1[1].base.actor_name);
+      pCVar5->adjacency[0].distance = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);
+      pCVar5 = (CWayPoint *)((pCVar5->base).base.actor_name + 8);
+    } while (iVar6 < this_ptr->num_adjacent_waypoints);
   }
-  if ((param_1->base).create_event[0] != '\0') {
-    str1 = (param_1->base).create_event;
+  if ((this_ptr->base).base.create_event[0] != '\0') {
+    str1 = (this_ptr->base).base.create_event;
     iVar6 = _stricmp(str1,"none");
     if ((iVar6 != 0) &&
        (iVar6 = _stricmp(str1,"true"), iVar6 != 0)) {

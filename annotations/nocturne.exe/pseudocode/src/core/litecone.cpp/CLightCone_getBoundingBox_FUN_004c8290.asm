@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_litecone_cpp_CLightCone_getBoundingBox_FUN_004c8290(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004c8290(CLightCone *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CLightCone *     Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

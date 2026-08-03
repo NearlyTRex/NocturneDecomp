@@ -39,7 +39,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00548bd3
     PUSH EDX                            ; 00548bd7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00548bd8
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x18                        ; 00548bdd
     RET                                 ; 00548be0
 

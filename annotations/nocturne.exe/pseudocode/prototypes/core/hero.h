@@ -33,11 +33,11 @@ void __cdecl CHero::setup(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_testCylinderCollision_FUN_004b4910
 // Address: 004b4910
-int CHero::testCylinderCollision(CDemonActor *param_1,SCollisionReturnInfo *param_2,float param_3);
+int __cdecl CHero::testCylinderCollision(CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 
 // Original: core_hero.cpp_CHero_testLineIntersection_FUN_004b4950
 // Address: 004b4950
-int CHero::testLineIntersection(CDemonActor *param_1,CVector3f *param_2,CVector3f *param_3,CVector3f *param_4);
+int __cdecl CHero::testLineIntersection(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 
 // Original: core_hero.cpp_CHero_archive_FUN_004b49a0
 // Address: 004b49a0
@@ -49,19 +49,19 @@ CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_isGrabbable_FUN_004b4c10
 // Address: 004b4c10
-undefined4 CHero::isGrabbable(void);
+int __cdecl CHero::isGrabbable(CHero *this_ptr,CDemonActor *grabber);
 
 // Original: core_hero.cpp_CHero_canBeGrabbed_FUN_004b4c20
 // Address: 004b4c20
-undefined4 CHero::canBeGrabbed(int param_1,undefined4 param_2,int param_3);
+int __cdecl CHero::canBeGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 
 // Original: core_hero.cpp_CHero_canWalk_FUN_004b4c30
 // Address: 004b4c30
-undefined4 CHero::canWalk(void);
+int __cdecl CHero::canWalk(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHeroPlaceholder_renderTransparent_FUN_004b4c60
 // Address: 004b4c60
-undefined4 CHeroPlaceholder::renderTransparent(void);
+int __cdecl CHeroPlaceholder::renderTransparent(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHero_getGrabbed_FUN_004b4c70
 // Address: 004b4c70
@@ -73,7 +73,7 @@ void __cdecl CHero::releaseFromGrab(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0
 // Address: 004b4dd0
-void CHero::createDefaultWeapon(int param_1);
+void __cdecl CHero::createDefaultWeapon(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_tryInteract_FUN_004b4e90
 // Address: 004b4e90
@@ -125,7 +125,7 @@ int __cdecl FUN_004b5b00(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_canLookAt_FUN_004b5b70
 // Address: 004b5b70
-undefined4 CHero::canLookAt(int param_1);
+int __cdecl CHero::canLookAt(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_executeObjectPickup_FUN_004b5c30
 // Address: 004b5c30
@@ -145,11 +145,11 @@ void __cdecl CHero::setAiTask(CHero *this_ptr,int ai_task);
 
 // Original: core_hero.cpp_CHero_closestEnemy_FUN_004b5d00
 // Address: 004b5d00
-CCharacter * CHero::closestEnemy(int param_1,float *param_2);
+CEnemy * __cdecl CHero::closestEnemy(CHero *this_ptr,float *out_distance);
 
 // Original: core_hero.cpp_CHero_kill_FUN_004b5e90
 // Address: 004b5e90
-void CHero::kill(CCharacter *param_1,int param_2,CVector3f *param_3,float param_4);
+void __cdecl CHero::kill(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 
 // Original: core_hero.cpp_CHero_reset_FUN_004b5ec0
 // Address: 004b5ec0
@@ -161,7 +161,7 @@ void FUN_004b5f60(void);
 
 // Original: core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004b5f80
 // Address: 004b5f80
-CDemonActorType * CHeroPlaceholder::getActorType(void);
+CDemonActorType * __cdecl CHeroPlaceholder::getActorType(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90
 // Address: 004b5f90

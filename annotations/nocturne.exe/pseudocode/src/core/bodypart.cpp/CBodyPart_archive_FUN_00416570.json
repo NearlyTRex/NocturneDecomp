@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 28,
-        "message": "no matching function for call to 'core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0'"
       },
       {
         "category": "incompatible_types",
@@ -104,18 +98,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 793,
+    "complexity_score": 458,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 66,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 435
   },
@@ -128,9 +121,9 @@
         "004168c9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bodypart.cpp_CBodyPart_archive_FUN_00416570",
-    "signature": "void core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *param_1)"
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_ptr)"
   },
   "function_calls": [
     {
@@ -294,9 +287,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -328,10 +321,10 @@
     "pcode_op_count": 1157
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -347,50 +340,17 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1->vertex_count,\"vertexCount\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1->tri_count,\"triCount\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1->texture_count,\"textureCount\");",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 20,
@@ -400,68 +360,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_1->vertex_count,param_1->tri_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_1->vertex_count,param_1->tri_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_1->vertex_count,param_1->tri_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 27,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fscanf(DAT_00763e84,\"%d,%d,%d\\n\");",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->tri_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar5 = param_1->faces;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -480,22 +384,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_14 < param_1->tri_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->texture_count) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 45,
       "match": "DAT_00763e84",
@@ -504,68 +392,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->texture_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->vertex_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar4 = param_1->vertices;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 61,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"\\t%d,%d,%d\\n\",*puVar1,*puVar3,*puVar2);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->vertex_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->tri_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar5 = param_1->faces;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -578,42 +410,10 @@
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(uint *)(iVar8 + (int)param_1",
+      "match": "(uint *)(iVar8 + (int)this_ptr",
       "severity": "moderate",
-      "text": "*(uint *)(iVar8 + (int)param_1->face_texture_indices),",
+      "text": "*(uint *)(iVar8 + (int)this_ptr->face_texture_indices),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(iVar8 + (int)param_1->face_texture_indices),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->tri_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->texture_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar7 = param_1->textures[0].texture_name;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -622,70 +422,6 @@
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"\\t\\\"%s\\\"\\n\",pcVar7);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->texture_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveBox_FUN_0040ce80(&param_1->physics_box,\"simBox\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(&param_1->carried_by_actor,\"carriedByActor\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1->blood_type,\"bloodType\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1->dont_use_normals,\"dontUseNormals\")",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->transparent_geometry_flag,\"transparentGeometryFlag\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->render_in_background,\"renderInBackground\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1->dont_pick_me_up,\"dontPickMeUp\");",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&pCVar4->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

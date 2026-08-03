@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0(int param_1,int param_2)
+; CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508283

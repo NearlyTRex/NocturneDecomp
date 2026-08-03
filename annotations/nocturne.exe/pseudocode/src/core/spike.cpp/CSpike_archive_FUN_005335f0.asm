@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spike_cpp_CSpike_archive_FUN_005335f0(CDemonActor *param_1)
+; void __cdecl core_spike_cpp_CSpike_archive_FUN_005335f0(CSpike *this_ptr)
 ;
+; Parameters:
+; CSpike *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0059503a

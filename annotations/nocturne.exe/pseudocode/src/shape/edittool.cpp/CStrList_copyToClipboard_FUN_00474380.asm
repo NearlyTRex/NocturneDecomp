@@ -105,7 +105,7 @@ section .text
     PUSH EDI                            ; 00474413
     INC ESI                             ; 00474414
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00474415
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047441a
     MOV EDX,dword ptr [EBX]             ; 0047441d
     ADD EDI,EAX                         ; 0047441f

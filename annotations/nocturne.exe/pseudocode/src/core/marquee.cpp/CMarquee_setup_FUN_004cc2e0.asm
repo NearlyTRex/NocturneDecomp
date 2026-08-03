@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_marquee_cpp_CMarquee_setup_FUN_004cc2e0(CMarquee *param_1)
+; void __cdecl core_marquee_cpp_CMarquee_setup_FUN_004cc2e0(CMarquee *this_ptr)
 ;
+; Parameters:
+; CMarquee *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

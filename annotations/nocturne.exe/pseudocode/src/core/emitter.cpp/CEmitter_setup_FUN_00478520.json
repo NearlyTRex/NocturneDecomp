@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "cast_error",
-        "column": 37,
-        "line": 19,
-        "message": "C-style cast from 'struct CPlatform *' to 'float' is not allowed"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 65,
-        "line": 25,
+        "column": 46,
+        "line": 20,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
@@ -74,19 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 219,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 18,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_param",
+      "raw_address_pointer_store",
       "warning_overlapping_globals"
     ],
-    "total_lines": 62
+    "total_lines": 54
   },
   "cross_references": [],
   "function": {
@@ -97,9 +90,9 @@
         "00478594"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_emitter.cpp_CEmitter_setup_FUN_00478520",
-    "signature": "void core_emitter_cpp_CEmitter_setup_FUN_00478520(CDemonActor *param_1)"
+    "signature": "void __cdecl core_emitter_cpp_CEmitter_setup_FUN_00478520(CEmitter *this_ptr)"
   },
   "function_calls": [
     {
@@ -125,9 +118,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -157,12 +150,20 @@
     "pcode_op_count": 118
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEmitter *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -174,140 +175,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_emitter_cpp_CEmitter_setup_FUN_00478520(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)param_1[1].actor_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].orient_matrix.m[1].z = (float)param_1[1].standing_platform;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].orient_matrix.m[1].z = (float)param_1[1].standing_platform;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&param_1[1].platform_orientation_delta.y);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[2].previous_transform_state.position.x == 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].previous_transform_state.position.x = *(float *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].orient_matrix.m[0].y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)(param_1[1].actor_name + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].create_event[0x1c] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].create_event[0x1d] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].create_event[0x1e] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].create_event[0x1f] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1[3].create_event + 0x20) = uVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 21,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 13,
+      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
-      "text": "uVar2 = *(uint *)(param_1[1].actor_name + 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 26,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "*(uint *)(param_1[3].create_event + 0x20) = uVar2;",
-      "type": "pointer_cast"
+      "text": "this_ptr->dest_actor = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
+      "type": "raw_address_pointer_store"
     }
   ],
   "vtable_info": {

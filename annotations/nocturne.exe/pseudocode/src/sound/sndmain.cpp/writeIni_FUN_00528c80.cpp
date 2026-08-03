@@ -59,10 +59,10 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(CIniFile *ini_file)
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(ini_file,"Mute",iVar2);
   if (0 < DAT_005bea60) {
     do {
-      _sprintf(local_84,"SfxChannel%dEnabled",channel_index);
+      _sprintf(local_84,"SfxChannel%dEnabled");
       iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00527490(channel_index);
       engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(ini_file,local_84,iVar2);
-      _sprintf(local_84,"SfxChannel%dVol",channel_index);
+      _sprintf(local_84,"SfxChannel%dVol");
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(channel_index);
       channel_index = channel_index + 1;
       engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(ini_file,local_84,local_14);

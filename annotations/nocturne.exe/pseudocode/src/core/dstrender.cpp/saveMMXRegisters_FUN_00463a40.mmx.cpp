@@ -1,15 +1,14 @@
 // Name: core_dstrender.cpp_saveMMXRegisters_FUN_00463a40
 // Address: 00463a40
 // Address Range: [[00463a40, 00463a78]]
-// Convention: unknown
-// Signature: void core_dstrender_cpp_saveMMXRegisters_FUN_00463a40(void)
+// Convention: __mmx_save
+// Signature: void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_00463a40(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void core_dstrender_cpp_saveMMXRegisters_FUN_00463a40(void)
+void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_00463a40(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7)
 {
 __asm {
         movq qword ptr [DAT_01c03958],MM0

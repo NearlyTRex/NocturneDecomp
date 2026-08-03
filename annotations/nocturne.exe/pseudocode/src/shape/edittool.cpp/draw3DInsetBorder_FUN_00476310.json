@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 19,
+        "line": 20,
         "message": "use of undeclared identifier '_DAT_01c00c70'"
       }
     ],
@@ -68,19 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 550,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 75,
-    "suspect_count": 46,
+    "pseudocode_lines": 76,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 243
+    "total_lines": 244
   },
   "cross_references": [
     {
@@ -98,9 +96,9 @@
         "00476443"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_edittool.cpp_draw3DInsetBorder_FUN_00476310",
-    "signature": "void shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)"
+    "signature": "void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int left,int top,int right,int bottom,int inner_y,int style)"
   },
   "function_calls": [
     {
@@ -129,14 +127,10 @@
         "call_addr": "00476681",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEdScrollBar_render_FUN_00476580",
-        "estimated_params": 9,
+        "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 24,
         "stack_params": 6
       },
@@ -144,13 +138,10 @@
         "call_addr": "004766dc",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEdScrollBar_render_FUN_00476580",
-        "estimated_params": 8,
+        "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 24,
         "stack_params": 6
       },
@@ -158,14 +149,10 @@
         "call_addr": "0047677a",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEdScrollBar_render_FUN_00476580",
-        "estimated_params": 9,
+        "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 24,
         "stack_params": 6
       },
@@ -173,22 +160,19 @@
         "call_addr": "004767d7",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEdScrollBar_render_FUN_00476580",
-        "estimated_params": 8,
+        "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 24,
         "stack_params": 6
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 9,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.704225352112676,
@@ -227,12 +211,55 @@
     "pcode_op_count": 810
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bottom",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "inner_y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "style",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -242,369 +269,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if ((param_6 == 0) || (param_6 == 1)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if ((param_6 == 0) || (param_6 == 1)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = (param_1 + param_3 + -1) / 2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar3 = (param_1 + param_3 + -1) / 2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar3 = (param_1 + param_3 + -1) / 2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar2 = (param_4 - param_2) / 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = (param_4 - param_2) / 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + param_2 + iVar2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + param_2 + iVar2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_5 = param_5 + param_2 + iVar2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawHLine_FUN_00403bd0(iVar4,param_5,iVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = (param_4 - iVar2) + -2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_5 = (param_4 - iVar2) + -2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = (param_4 - iVar2) + -2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawHLine_FUN_00403bd0(iVar4,param_5,iVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar3 = (param_2 + param_4 + -1) / 2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar3 = (param_2 + param_4 + -1) / 2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar3 = (param_2 + param_4 + -1) / 2 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar2 = (param_3 - param_1) / 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = (param_3 - param_1) / 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 == 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_1 + iVar2 + 1 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_5 = param_1 + iVar2 + 1 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_1 + iVar2 + 1 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawVLine_FUN_00403ce0(param_5,iVar4,iVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + (param_3 - iVar2) + -2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + (param_3 - iVar2) + -2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_5 = param_5 + (param_3 - iVar2) + -2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawVLine_FUN_00403ce0(param_5,iVar4,iVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 9,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:9",
-      "param_delta": 9,
-      "text": "Function declares 0 params but call sites push 9 (9 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

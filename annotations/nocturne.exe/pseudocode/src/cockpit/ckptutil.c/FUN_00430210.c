@@ -12,7 +12,7 @@ void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,
   _FILE *file;
   uint uVar1;
   byte *puVar2;
-  byte local_6c [80];
+  char local_6c [80];
   ulong local_1c;
   uint local_18;
   int local_14;
@@ -21,7 +21,7 @@ void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,
   if (param_2 == (void *)0x0) {
     param_2 = malloc(local_1c);
     if (param_2 == (void *)0x0) {
-      _sprintf(local_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).",local_1c,param_1);
+      _sprintf(local_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).");
       g_INT_01cc4804 = 0x7b8;
       g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
       core_main_c_FUN_004c8440(local_6c);
@@ -29,7 +29,7 @@ void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,
   }
   file = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1,"rb");
   if (file == (_FILE *)0x0) {
-    _sprintf(local_6c,"Unable to open bitmap file (%s).",param_1);
+    _sprintf(local_6c,"Unable to open bitmap file (%s).");
     g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     g_INT_01cc4804 = 0x7c1;
     core_main_c_FUN_004c8440(local_6c);
@@ -43,7 +43,7 @@ void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,
         do {
           local_14 = _fgetc(file);
           if (local_14 == -1) {
-            _sprintf(local_6c,"Unable to read bitmap file (%s).",param_1);
+            _sprintf(local_6c,"Unable to read bitmap file (%s).");
             _fclose(file);
             g_INT_01cc4804 = 0x7ce;
             g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";

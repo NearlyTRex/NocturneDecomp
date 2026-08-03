@@ -1,24 +1,22 @@
 // Name: crt_heap.c_AllocateFromFreeList_FUN_00568b00
 // Address: 00568b00
 // Address Range: [[00568b00, 00568bac]]
-// Convention: unknown
-// Signature: uint * crt_heap_c_AllocateFromFreeList_FUN_00568b00(void)
+// Convention: __watcallRegister
+// Signature: uint * __watcallRegister crt_heap_c_AllocateFromFreeList_FUN_00568b00(uint param_1,undefined4 param_2,int unaff_EBX)
 
 #include "nocturne.h"
 
-uint * AllocateFromFreeList(void)
+uint * __watcallRegister AllocateFromFreeList(uint param_1,uint param_2,int unaff_EBX)
 
 {
   uint *puVar1;
   uint uVar2;
-  uint in_EAX;
   uint *puVar3;
   uint uVar4;
-  int unaff_EBX;
   uint uVar5;
   
-  if ((in_EAX != 0) && (in_EAX <= in_EAX + 0xb)) {
-    uVar4 = in_EAX + 0xb & 0xfffffff8;
+  if ((param_1 != 0) && (param_1 <= param_1 + 0xb)) {
+    uVar4 = param_1 + 0xb & 0xfffffff8;
     if (uVar4 < 0x10) {
       uVar4 = 0x10;
     }

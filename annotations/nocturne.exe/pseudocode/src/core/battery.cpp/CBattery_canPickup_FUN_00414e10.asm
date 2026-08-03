@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_battery_cpp_CBattery_canPickup_FUN_00414e10(undefined4 param_1,CDemonActor *param_2)
+; int __cdecl core_battery_cpp_CBattery_canPickup_FUN_00414e10(CBattery *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CBattery *       Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_00578d6d

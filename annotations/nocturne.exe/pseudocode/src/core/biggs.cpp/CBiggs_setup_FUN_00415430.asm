@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_biggs_cpp_CBiggs_setup_FUN_00415430(CEnemy *param_1)
+; void __cdecl core_biggs_cpp_CBiggs_setup_FUN_00415430(CBiggs *this_ptr)
 ;
+; Parameters:
+; CBiggs *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530

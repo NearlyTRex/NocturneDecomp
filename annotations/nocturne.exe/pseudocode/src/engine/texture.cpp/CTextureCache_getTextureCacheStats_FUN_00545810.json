@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,8 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 45,
+        "line": 21,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -62,17 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 56,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
-    "total_lines": 116
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -186,14 +190,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 34,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
-      "severity": "moderate",
-      "text": "pCVar1 = (CTextureCache *)&pCVar1->max_texture_count;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stairs_cpp_CStairs_archive_FUN_005348c0(CDemonActor *param_1)
+; void __cdecl core_stairs_cpp_CStairs_archive_FUN_005348c0(CStairs *this_ptr)
 ;
+; Parameters:
+; CStairs *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rise_00595182

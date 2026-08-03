@@ -1,37 +1,36 @@
 // Name: core_bat.cpp_CBat_archive_FUN_00411b50
 // Address: 00411b50
 // Address Range: [[00411b50, 00411c3d]]
-// Convention: unknown
-// Signature: void core_bat_cpp_CBat_archive_FUN_00411b50(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_bat_cpp_CBat_archive_FUN_00411b50(CBat *this_ptr)
 
 #include "nocturne.h"
 
-void core_bat_cpp_CBat_archive_FUN_00411b50(CDemonActor *param_1)
+void __cdecl core_bat_cpp_CBat_archive_FUN_00411b50(CBat *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].actor_name,"courseFilename");
-  core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[2].orient_matrix.m[2].z,"param");
+  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->course_filename,"courseFilename");
+  core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->param,"param");
   if (g_INT_005acf94 < 3) {
-    core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].health,"speed");
-    param_1[2].runtime_state = (int)((float)param_1[2].health * (float)30);
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->speed,"speed");
+    this_ptr->course_speed = this_ptr->speed * (float)30;
   }
   else {
-    core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].health,"flapSpeedMult");
-    core_actor_cpp_archiveFloat_FUN_0040c880
-              ((float *)&param_1[2].runtime_state,"courseSpeed");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->speed,"flapSpeedMult");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->course_speed,"courseSpeed");
   }
   if (1 < g_INT_005acf94) {
-    core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00
-              ((CKeyFramedModelInstance *)&param_1[1].orient.vec,"modelName");
+    core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(&this_ptr->model,"modelName")
+    ;
   }
   if (g_INT_005acf94 < 4) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040c6d0((char *)&param_1[2].direction_hint,(char *)0x0);
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->periodic_sound,(char *)0x0);
   core_actor_cpp_archiveFloat_FUN_0040c880
-            ((float *)(param_1[2].create_event + 0x58),"periodicSoundTimerMin");
+            (&this_ptr->periodic_sound_timer_min,"periodicSoundTimerMin");
   core_actor_cpp_archiveFloat_FUN_0040c880
-            ((float *)(param_1[2].create_event + 0x5c),"periodicSoundTimerMax");
+            (&this_ptr->periodic_sound_timer_max,"periodicSoundTimerMax");
   return;
 }

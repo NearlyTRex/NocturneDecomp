@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0043d810(int param_1)
+; float __cdecl core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0043d810(CCrossbow *this_ptr)
 ;
+; Parameters:
+; CCrossbow *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

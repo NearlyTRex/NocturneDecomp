@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dog_cpp_CZombieDog_process_FUN_00454750(CEnemy *param_1,float param_2)
+; void __cdecl core_dog_cpp_CZombieDog_process_FUN_00454750(CZombieDog *this_ptr,float delta_time)
 ;
+; Parameters:
+; CZombieDog *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0xe0]:1  local_e0
 ; undefined4       Stack[-0xdc]:4  local_dc
@@ -310,7 +313,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 004549e1 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 004549e7 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004549e8
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00454847                      ; 004549ed
         ;   XREF to: 00454847 (UNCONDITIONAL_JUMP)  ; LAB_00454847
     JBE 0x00454837                      ; 004549f2
@@ -648,7 +651,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 00454d83 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 00454d89 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00454d8a
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00454d8f
     PUSH 0x1                            ; 00454d92
     PUSH 0x0                            ; 00454d94

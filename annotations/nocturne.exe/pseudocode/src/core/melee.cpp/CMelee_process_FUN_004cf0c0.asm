@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_2)
+; void __cdecl core_melee_cpp_CMelee_process_FUN_004cf0c0(CMelee *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ;

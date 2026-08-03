@@ -51,7 +51,7 @@ section .text
     FSTP ST1                            ; 0045a6dd
     FSTP float ptr [EAX + 0x4]          ; 0045a6df
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0045a6e2
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0045a6e7
     POP EDI                             ; 0045a6ea
     ADD ESP,0x8                         ; 0045a6eb

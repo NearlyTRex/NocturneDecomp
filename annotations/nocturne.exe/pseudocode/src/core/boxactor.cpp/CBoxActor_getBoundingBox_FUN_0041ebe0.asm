@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_0041ebe0(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_0041ebe0(CBoxActor *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

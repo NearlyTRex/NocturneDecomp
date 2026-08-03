@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0045dea0(CDrawSurface *param_1,int param_2,int param_3,int param_4,char *param_5)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0045dea0(CDrawSurface *this_ptr,int x,int y,int width,char *format)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   width
+; char *           Stack[0x14]:4   format
 ; Local Variables:
 ; undefined        Stack[-0x1014]:1  local_1014
 ; undefined4       Stack[-0x14]:4  local_14

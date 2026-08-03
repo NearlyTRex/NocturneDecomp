@@ -1,14 +1,14 @@
 // Name: core_crate.cpp_CCrate_pickup_FUN_0043c960
 // Address: 0043c960
 // Address Range: [[0043c960, 0043c96e]]
-// Convention: unknown
-// Signature: void core_crate_cpp_CCrate_pickup_FUN_0043c960(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_crate_cpp_CCrate_pickup_FUN_0043c960(CCrate *this_ptr,CDemonActor *carrier)
 
 #include "nocturne.h"
 
-void core_crate_cpp_CCrate_pickup_FUN_0043c960(int param_1,uint param_2)
+void __cdecl core_crate_cpp_CCrate_pickup_FUN_0043c960(CCrate *this_ptr,CDemonActor *carrier)
 
 {
-  *(uint *)(param_1 + 0x2cc) = param_2;
+  this_ptr->carrier = carrier;
   return;
 }

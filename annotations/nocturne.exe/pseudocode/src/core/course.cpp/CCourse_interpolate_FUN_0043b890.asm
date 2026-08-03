@@ -158,7 +158,7 @@ section .text
     LEA ESI,[ESP + 0x38]                ; 0043b9cd
     LEA EDI,[ESP + 0x28]                ; 0043b9d1
     CALL core_xform.cpp_slerpQuaternion_FUN_0055d2d0 ; 0043b9d5
-        ;   XREF to: 0055d2d0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_0055d2d0()
+        ;   XREF to: 0055d2d0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_0055d2d0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x38]                ; 0043b9da
     ADD ESP,0xc                         ; 0043b9de
     MOVSD ES:EDI,ESI                    ; 0043b9e1

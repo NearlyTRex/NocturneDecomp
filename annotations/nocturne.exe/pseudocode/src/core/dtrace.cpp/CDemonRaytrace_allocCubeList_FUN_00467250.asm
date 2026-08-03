@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00467250(int param_1)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00467250(CDemonRaytrace *this_ptr)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_0057dfce

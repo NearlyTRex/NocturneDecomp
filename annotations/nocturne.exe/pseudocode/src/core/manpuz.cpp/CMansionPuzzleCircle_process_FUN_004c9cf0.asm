@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_004c9cf0(CMansionPuzzleCircle *param_1,float param_2)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_004c9cf0(CMansionPuzzleCircle *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
@@ -89,7 +92,7 @@ section .text
         ;   Label: LAB_004c9d69
     PUSH EBX                            ; 004c9d6a
     CALL core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640 ; 004c9d6b
-        ;   XREF to: 004ca640 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640()
+        ;   XREF to: 004ca640 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(CMansionPuzzleCircle * this_ptr, int panel_index)
     INC ESI                             ; 004c9d70
     ADD ESP,0x8                         ; 004c9d71
     CMP ESI,0xc                         ; 004c9d74
@@ -100,7 +103,7 @@ section .text
         ;   Label: LAB_004c9d7b
     PUSH EBX                            ; 004c9d7c
     CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980 ; 004c9d7d
-        ;   XREF to: 004cb980 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980()
+        ;   XREF to: 004cb980 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC ESI                             ; 004c9d82
     ADD ESP,0x8                         ; 004c9d83
     CMP ESI,0x2                         ; 004c9d86

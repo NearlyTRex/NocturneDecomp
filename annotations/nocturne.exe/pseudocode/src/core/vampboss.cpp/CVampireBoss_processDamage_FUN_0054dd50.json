@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -68,18 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 234,
-    "complexity_score": 356,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
-    "suspect_count": 26,
-    "suspect_types": [
-      "suspect_float",
-      "unnamed_param"
-    ],
-    "total_lines": 320
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 87,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 321
   },
   "cross_references": [],
   "function": {
@@ -90,9 +87,9 @@
         "0054df8e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_0054dd50",
-    "signature": "void core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CCharacter *param_1,int param_2)"
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CVampireBoss *this_ptr,SDamageInfo *damage_info)"
   },
   "function_calls": [
     {
@@ -239,9 +236,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -283,10 +280,10 @@
     "pcode_op_count": 840
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -295,219 +292,24 @@
         "offset": -36,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CCharacter *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CCharacter *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(param_2 + 0x28) == 7) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,&local_24,(CVector3f *)(param_2 + 0x1c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(&param_1->base,&local_24,(CVector3f *)(param_2 + 0x1c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1[0x10].model.bone_transform.bone_world_matrices[0x2f].m[0].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_2 + 0x28) == 1) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*(CDemonActor **)(param_2 + 0x34),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->model).motion_controller,10,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(param_1,0,this_ptr_00,0.2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1[0x10].carry_hands[1].bone_index);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CSound_PTR_005bed68,param_1,\"voicudeath.wav @ 2.5\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->hit_points = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 60,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "if (fVar1 != 2.8026e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 4) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1->hit_points - *(float *)(param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = param_1->hit_points - *(float *)(param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->hit_points = fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->hit_points = 24.999;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMotionController *)(param_1[1].base.create_event + 0x20),iVar2,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1[0x10].carry_hands[1].bone_index);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"voicuhurt.wav\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"voicuhurt.wav\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x10].carry_hands[1].bone_index = uVar3;",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

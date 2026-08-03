@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -62,10 +62,10 @@
         "message": "use of undeclared identifier '_DAT_00b0ddf8'; did you mean 'DAT_005b06f8'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
+        "category": "undeclared_identifier",
+        "column": 28,
         "line": 21,
-        "message": "no matching function for call to '_memset'"
+        "message": "use of undeclared identifier '_DAT_00b0ddf8'; did you mean 'DAT_005b06f8'?"
       },
       {
         "category": "undeclared_identifier",
@@ -92,10 +92,10 @@
         "message": "use of undeclared identifier '_DAT_012b022c'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
+        "category": "undeclared_identifier",
+        "column": 12,
         "line": 29,
-        "message": "no matching function for call to '_memcpy'"
+        "message": "use of undeclared identifier 'DAT_012ceb78'"
       },
       {
         "category": "undeclared_identifier",
@@ -110,14 +110,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 36,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 75
@@ -286,6 +287,14 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_012ceb78",
+      "severity": "mild",
+      "text": "_memcpy(&DAT_012ceb78,(void *)0x12e1778,0x12c00);",
+      "type": "undefined_data"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",

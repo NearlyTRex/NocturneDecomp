@@ -32,7 +32,7 @@ section .text
     PUSH EAX                            ; 0046ed47
     FSTP float ptr [EBX + 0x570]        ; 0046ed48
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0046ed4e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0046ed53
     MOV EAX,ESP                         ; 0046ed56
     PUSH EAX                            ; 0046ed58

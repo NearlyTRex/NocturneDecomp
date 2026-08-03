@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 81,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 41
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
   },
   "cross_references": [],
   "function": {
@@ -87,9 +85,9 @@
         "004b4c5f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hero.cpp_CHero_canBeGrabbed_FUN_004b4c20",
-    "signature": "undefined4 core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(int param_1,undefined4 param_2,int param_3)"
+    "signature": "int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(CHero *this_ptr,CDemonActor *grabber,int grab_type)"
   },
   "function_calls": [
     {
@@ -115,9 +113,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -141,63 +139,36 @@
     "pcode_op_count": 76
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      },
+      {
+        "is_param": true,
+        "name": "grabber",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "grab_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint core_hero_cpp_CHero_canBeGrabbed_FUN_004b4c20(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMotionController *)(param_1 + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(this_ptr,state_name,param_3);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

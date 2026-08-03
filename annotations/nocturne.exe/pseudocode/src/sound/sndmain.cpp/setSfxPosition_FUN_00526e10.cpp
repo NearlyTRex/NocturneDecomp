@@ -14,7 +14,7 @@ int __cdecl sound_sndmain_cpp_setSfxPosition_FUN_00526e10(uint sfx_handle,double
   CSfxSlot *this_ptr;
   int iVar1;
   
-  this_ptr = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }

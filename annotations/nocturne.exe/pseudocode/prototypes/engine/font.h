@@ -49,7 +49,7 @@ void __cdecl CBitFont::setInitializedFlag(CBitFont *this_ptr);
 
 // Original: engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470
 // Address: 00490470
-void CBitFont::parseCharacterMetrics(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CBitFont::parseCharacterMetrics(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height,int first_char);
 
 // Original: engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920
 // Address: 00490920
@@ -121,7 +121,7 @@ int __cdecl CBitFont::printCenterFV(CBitFont *this_ptr,int y,int color_mode,int 
 
 // Original: engine_font.cpp_setShadowColor_FUN_00490ff0
 // Address: 00490ff0
-void setShadowColor(uint param_1,uint param_2,uint param_3);
+void __cdecl setShadowColor(uint red,uint green,uint blue);
 
 // Original: engine_font.cpp_getDefaultTextColor_FUN_00491140
 // Address: 00491140

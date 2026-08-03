@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -122,23 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 639,
-    "complexity_score": 601,
+    "complexity_score": 662,
     "cross_reference_count": 7,
     "function_call_count": 34,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 266,
-    "suspect_count": 30,
+    "pseudocode_lines": 267,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "shadow_pointer_walk",
+      "stack_param",
+      "stack_ref",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 905
+    "total_lines": 906
   },
   "cross_references": [
     {
@@ -874,6 +876,14 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "int in_stack_ffffff10;",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 53,
       "match": "DAT_01fb9b58",
@@ -888,6 +898,22 @@
       "severity": "mild",
       "text": "puVar10 = (uint *)(&DAT_01fb9b58 + iVar2);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 132,
+      "match": "&stack0xffffff10",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xffffff10,\"%s.raw\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 133,
+      "match": "&stack0xffffff10",
+      "severity": "moderate",
+      "text": "core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(&g_CDemonCamera_01fb8508,&stack0xffffff10);",
+      "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
@@ -922,8 +948,24 @@
       "type": "undefined_data"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 214,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "core_gore_cpp_CGore_renderDecals_FUN_004afe80(g_CGore_PTR_005b96c4,1,in_stack_ffffff10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 216,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "(g_CFireEffect_PTR_005b80f0,1,in_stack_ffffff10);",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 242,
+      "line": 243,
       "match": "(CMatrix3x3f *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -931,7 +973,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 250,
+      "line": 251,
       "match": "(CMatrix3x3f *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -947,7 +989,7 @@
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 242,
+      "line": 243,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -955,7 +997,7 @@
     },
     {
       "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 250,
+      "line": 251,
       "match": "(int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -979,7 +1021,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 216,
+      "line": 217,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "if (0x02DD1210->wave_animation_enabled == 0) {",
@@ -987,7 +1029,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 217,
+      "line": 218,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);",
@@ -995,7 +1037,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 259,
+      "line": 260,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(0x02DDF9F0,&local_44,&local_38);",
@@ -1003,7 +1045,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 240,
+      "line": 241,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 10; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -1011,7 +1053,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 247,
+      "line": 248,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 10; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -1051,7 +1093,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 230,
+      "line": 231,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_2c.x = g_CDemonCamera_01fb8508.position.x;",
@@ -1059,7 +1101,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 234,
+      "line": 235,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_44.x = g_CDemonCamera_01fb8508.position.x;",
@@ -1067,7 +1109,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 254,
+      "line": 255,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_38.x = pCVar1->x;",
@@ -1099,7 +1141,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 265,
+      "line": 266,
       "match": "pCVar4 = (T *)pCVar4->ARRAY",
       "severity": "moderate",
       "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",

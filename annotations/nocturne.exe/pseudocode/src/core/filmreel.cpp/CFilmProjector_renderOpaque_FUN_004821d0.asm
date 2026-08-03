@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004821d0(CDemonActor *param_1)
+; int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004821d0(CFilmProjector *this_ptr)
 ;
+; Parameters:
+; CFilmProjector * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ;

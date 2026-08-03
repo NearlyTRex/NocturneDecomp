@@ -297,7 +297,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 0045b2aa | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 0045b2b0 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0045b2b1
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x20                        ; 0045b2b6
     MOV EAX,dword ptr [ESP + 0x68]      ; 0045b2b9
     ADD EAX,0x44                        ; 0045b2bd

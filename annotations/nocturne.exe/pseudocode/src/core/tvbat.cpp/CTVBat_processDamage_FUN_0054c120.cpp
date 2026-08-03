@@ -1,28 +1,28 @@
 // Name: core_tvbat.cpp_CTVBat_processDamage_FUN_0054c120
 // Address: 0054c120
 // Address Range: [[0054c120, 0054c18d]]
-// Convention: unknown
-// Signature: void core_tvbat_cpp_CTVBat_processDamage_FUN_0054c120(CEnemy *param_1,SDamageInfo *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_0054c120(CTVBat *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void core_tvbat_cpp_CTVBat_processDamage_FUN_0054c120(CEnemy *param_1,SDamageInfo *param_2)
+void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_0054c120(CTVBat *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;
-  CGore *this_ptr;
+  CGore *this_ptr_00;
   
-  fVar1 = (param_1->base).hit_points - param_2->damage_amount;
-  (param_1->base).hit_points = fVar1;
-  this_ptr = g_CGore_PTR_005b96c4;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  (this_ptr->base).base.hit_points = fVar1;
+  this_ptr_00 = g_CGore_PTR_005b96c4;
   if (0.0 < fVar1) {
-    core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
+    core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&this_ptr->base,damage_info);
     return;
   }
-  (param_1->base).hit_points = 0.0;
+  (this_ptr->base).base.hit_points = 0.0;
   core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-            (this_ptr,&(param_1->base).base.location.position,(CVector3f *)0x0,10,0);
-  param_1[1].base.model.transformed_vertices[1].z = 1.4013e-45;
-  core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
+            (this_ptr_00,&(this_ptr->base).base.base.location.position,(CVector3f *)0x0,10,0);
+  this_ptr->state = 1;
+  core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&this_ptr->base,damage_info);
   return;
 }

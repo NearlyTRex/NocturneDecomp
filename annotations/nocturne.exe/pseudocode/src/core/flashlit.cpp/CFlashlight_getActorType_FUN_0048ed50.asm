@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_flashlit_cpp_CFlashlight_getActorType_FUN_0048ed50(void)
+; CDemonActorType * __cdecl core_flashlit_cpp_CFlashlight_getActorType_FUN_0048ed50(CFlashlight *this_ptr)
 ;
+; Parameters:
+; CFlashlight *    Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

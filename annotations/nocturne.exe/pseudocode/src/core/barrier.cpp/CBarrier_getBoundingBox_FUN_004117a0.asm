@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_CBarrier_getBoundingBox_FUN_004117a0(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_barrier_cpp_CBarrier_getBoundingBox_FUN_004117a0(CBarrier *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CBarrier *       Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00578740 = 0.5

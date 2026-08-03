@@ -13,7 +13,7 @@ CIcePick * __cdecl factoryFunc(void);
 
 // Original: core_icepick.cpp_CIcePick_getActorType_FUN_004b9d10
 // Address: 004b9d10
-CDemonActorType * CIcePick::getActorType(void);
+CDemonActorType * __cdecl CIcePick::getActorType(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_ctor_FUN_004b9d20
 // Address: 004b9d20
@@ -21,11 +21,11 @@ CIcePick * __cdecl CIcePick::ctor(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_setup_FUN_004b9db0
 // Address: 004b9db0
-void CIcePick::setup(CHero *param_1);
+void __cdecl CIcePick::setup(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_process_FUN_004b9fe0
 // Address: 004b9fe0
-void CIcePick::process(CIcePick *param_1,float param_2);
+void __cdecl CIcePick::process(CIcePick *this_ptr,float delta_time);
 
 // Original: core_icepick.cpp_FUN_004ba740
 // Address: 004ba740
@@ -41,7 +41,7 @@ int __cdecl CIcePick::startThrowAttack(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50
 // Address: 004baa50
-void CIcePick::getCarryObjToBodyXForm(int param_1,int param_2);
+void __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_icepick.cpp_FUN_004baba0
 // Address: 004baba0
@@ -57,15 +57,15 @@ void __cdecl CIcePick::performMeleeAttack(CIcePick *this_ptr,int bone_index);
 
 // Original: core_icepick.cpp_CIcePick_archive_FUN_004bb4c0
 // Address: 004bb4c0
-void CIcePick::archive(CHero *param_1);
+void __cdecl CIcePick::archive(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_renderOpaque_FUN_004bb4d0
 // Address: 004bb4d0
-void CIcePick::renderOpaque(CCharacter *param_1);
+void __cdecl CIcePick::renderOpaque(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_processDamage_FUN_004bb4e0
 // Address: 004bb4e0
-void CIcePick::processDamage(CCharacter *param_1,SDamageInfo *param_2);
+void __cdecl CIcePick::processDamage(CIcePick *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_icepick.cpp_CIcePick_isWeaponDrawn_FUN_004bb690
 // Address: 004bb690

@@ -9,7 +9,6 @@
 void __cdecl support_trisock_cpp_formatIPAddress_FUN_00548bb0(char *output_buffer,uchar *ip_bytes)
 
 {
-  _sprintf(ip_bytes,"%d.%d.%d.%d",*output_buffer,output_buffer[1],output_buffer[2],
-             output_buffer[3]);
+  _sprintf((char *)ip_bytes,"%d.%d.%d.%d");
   return;
 }

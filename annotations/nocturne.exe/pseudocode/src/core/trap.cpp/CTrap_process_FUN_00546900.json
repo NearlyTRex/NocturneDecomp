@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 25,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 25,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -74,19 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 235,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 16,
+    "pseudocode_lines": 58,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "warning_type_propagation"
     ],
-    "total_lines": 213
+    "total_lines": 211
   },
   "cross_references": [],
   "function": {
@@ -97,9 +84,9 @@
         "00546aa8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_trap.cpp_CTrap_process_FUN_00546900",
-    "signature": "void core_trap_cpp_CTrap_process_FUN_00546900(CDemonActor *param_1)"
+    "signature": "void __cdecl core_trap_cpp_CTrap_process_FUN_00546900(CTrap *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -147,9 +134,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -192,10 +179,10 @@
     "pcode_op_count": 785
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 64,
     "local_size": 56,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -204,137 +191,39 @@
         "offset": -52,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrap *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_trap_cpp_CTrap_process_FUN_00546900(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[2].location.area_id == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1[2].orient.vec.x;",
-      "type": "unnamed_param"
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(int *)((int)fVar1",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)((int)fVar1 + 0x14c) + 0x104))(fVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)((int)fVar1 + 0x14c) + 0x104))(fVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint *)((int)param_1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)param_1[2].orient.vec.x + 0xbd50) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)((int)param_1[2].orient.vec.x + 0xbd50) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].orient.vec.x = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar4),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((this_ptr->base).location.position.y <= (param_1->location).position.y + local_34.max.y",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": ") && ((param_1->location).position.y + local_34.min.y <=",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&CStack_1c,&(this_ptr->base).location.position);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CCharacter **)&param_1[2].orient = this_ptr;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(this_ptr[1].base.create_event + 0x4c) = param_1;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

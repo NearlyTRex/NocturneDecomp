@@ -93,7 +93,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 00440308 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 0044030d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0044030e
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
         ;   Label: LAB_0044030e
     ADD ESP,0x8                         ; 00440313
     MOV EDX,dword ptr [0x01bd1d80]      ; 00440316 | DAT_01bd1d80

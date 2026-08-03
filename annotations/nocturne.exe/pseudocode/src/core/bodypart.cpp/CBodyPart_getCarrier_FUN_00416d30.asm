@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bodypart_cpp_CBodyPart_getCarrier_FUN_00416d30(int param_1)
+; CDemonActor * __cdecl core_bodypart_cpp_CBodyPart_getCarrier_FUN_00416d30(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

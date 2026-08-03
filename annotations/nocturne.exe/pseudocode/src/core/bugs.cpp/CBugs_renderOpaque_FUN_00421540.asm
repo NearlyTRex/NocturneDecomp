@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CDemonActor *param_1)
+; int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x44]:1  local_44
 ;

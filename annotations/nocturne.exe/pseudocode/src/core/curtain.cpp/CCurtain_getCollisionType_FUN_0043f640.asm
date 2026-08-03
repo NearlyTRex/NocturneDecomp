@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_curtain_cpp_CCurtain_getCollisionType_FUN_0043f640(void)
+; ECollisionType __cdecl core_curtain_cpp_CCurtain_getCollisionType_FUN_0043f640(CCurtain *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; *****************************************************************************
 

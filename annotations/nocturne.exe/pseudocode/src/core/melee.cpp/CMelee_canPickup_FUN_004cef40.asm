@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_melee_cpp_CMelee_canPickup_FUN_004cef40(int param_1,CDemonActor *param_2)
+; int __cdecl core_melee_cpp_CMelee_canPickup_FUN_004cef40(CMelee *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_00588468

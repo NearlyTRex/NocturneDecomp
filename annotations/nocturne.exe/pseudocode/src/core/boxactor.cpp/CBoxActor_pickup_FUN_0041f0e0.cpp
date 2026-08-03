@@ -1,14 +1,14 @@
 // Name: core_boxactor.cpp_CBoxActor_pickup_FUN_0041f0e0
 // Address: 0041f0e0
 // Address Range: [[0041f0e0, 0041f0ee]]
-// Convention: unknown
-// Signature: void core_boxactor_cpp_CBoxActor_pickup_FUN_0041f0e0(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_boxactor_cpp_CBoxActor_pickup_FUN_0041f0e0(CBoxActor *this_ptr,CDemonActor *carrier)
 
 #include "nocturne.h"
 
-void core_boxactor_cpp_CBoxActor_pickup_FUN_0041f0e0(int param_1,uint param_2)
+void __cdecl core_boxactor_cpp_CBoxActor_pickup_FUN_0041f0e0(CBoxActor *this_ptr,CDemonActor *carrier)
 
 {
-  *(uint *)(param_1 + 0x310) = param_2;
+  this_ptr->carrier_actor = carrier;
   return;
 }

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 65,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 79,
+        "line": 78,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       }
     ],
@@ -74,18 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 144,
+    "complexity_score": 143,
     "cross_reference_count": 31,
     "function_call_count": 9,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 103,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 375
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -564,7 +558,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 71,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "pCVar5 = (CVector3f *)&DAT_02dd1184;",

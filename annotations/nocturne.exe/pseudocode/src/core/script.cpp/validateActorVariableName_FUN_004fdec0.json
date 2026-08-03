@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,12 +52,12 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 17,
         "line": 29,
         "message": "use of undeclared identifier 'DAT_005c168c'"
       },
@@ -264,7 +264,7 @@
       "line": 22,
       "match": "DAT_005c168c",
       "severity": "mild",
-      "text": "while ((pcVar2 = pcVar2 + 1, ((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 0xe0) != 0 ||",
+      "text": "((&DAT_005c168c)[(byte)(*variable_name + 1)] & 0xe0) != 0 || (*variable_name == '_')))",
       "type": "undefined_data"
     },
     {
@@ -272,7 +272,7 @@
       "line": 29,
       "match": "DAT_01e56420",
       "severity": "mild",
-      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is not valid\",variable_name);",
+      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is not valid\");",
       "type": "undefined_data"
     },
     {
@@ -280,7 +280,7 @@
       "line": 32,
       "match": "DAT_01e56420",
       "severity": "mild",
-      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is too long\",variable_name);",
+      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is too long\");",
       "type": "undefined_data"
     },
     {

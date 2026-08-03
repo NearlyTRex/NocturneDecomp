@@ -14,7 +14,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
   char *pcVar3;
   int string_index;
   int iVar4;
-  char local_684 [512];
+  uint in_stack_fffff97c;
   char local_484 [512];
   CPickList local_284;
   char local_114 [260];
@@ -34,10 +34,11 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
     if (((flags & 1) != 0) && (string_index = 0, 0 < local_284.base.item_count)) {
       do {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090
-                  (&local_284.base,local_684,string_index,0);
+                  (&local_284.base,&stack0xfffff97c,string_index,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090
                   (&local_284.base,local_484,string_index,1);
-        makepath(local_114,(char *)0x0,(char *)0x0,local_684,local_484);
+        makepath
+                  (local_114,(char *)0x0,(char *)0x0,&stack0xfffff97c,local_484);
         iVar1 = _stricmp(local_114,output_filename);
         iVar2 = string_index;
         if (iVar1 == 0) break;
@@ -46,14 +47,15 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
       } while (string_index < local_284.base.item_count);
     }
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                      (&local_284,dialog_title,iVar2);
+                      (&local_284,dialog_title,iVar2,in_stack_fffff97c);
     if (iVar2 < 0) {
       iVar2 = 0;
     }
     else {
-      shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090(&local_284.base,local_684,iVar2,0);
+      shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090(&local_284.base,&stack0xfffff97c,iVar2,0);
       shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090(&local_284.base,local_484,iVar2,1);
-      makepath(output_filename,(char *)0x0,(char *)0x0,local_684,local_484);
+      makepath
+                (output_filename,(char *)0x0,(char *)0x0,&stack0xfffff97c,local_484);
       iVar2 = 1;
     }
   }

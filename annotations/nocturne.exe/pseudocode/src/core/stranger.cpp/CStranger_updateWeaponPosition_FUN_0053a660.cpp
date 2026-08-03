@@ -14,43 +14,41 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(CStra
   CVector3f *new_orientation;
   CVector3f *new_position;
   int iVar3;
-  uint *puVar4;
-  float *pfVar5;
-  uint *puVar6;
-  CMatrix3x4f *pCVar7;
-  byte bVar8;
-  uint local_114 [12];
+  CMatrix3x4f *pCVar4;
+  CMatrix3x4f *pCVar5;
+  byte bVar6;
+  CMatrix3x4f local_114;
   CMatrix3x4f local_e4;
-  uint local_b4 [12];
+  CMatrix3x4f local_b4;
   CMatrix3x4f local_84;
-  float local_54 [12];
+  CMatrix3x4f local_54;
   CVector3f local_24;
   CVector3f local_18;
   
-  bVar8 = 0;
+  bVar6 = 0;
   pCVar1 = this_ptr->weapon;
   if (((pCVar1 != (CWeapon *)0x0) &&
       (pCVar1 != (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) &&
      (pCVar1 != (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) {
     core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
-              (this_ptr,this_ptr->weapon,hand_index == 0);
-    puVar4 = local_114;
-    puVar6 = local_b4;
+              (this_ptr,&this_ptr->weapon->base,(uint)(hand_index == 0),&local_114);
+    pCVar4 = &local_114;
+    pCVar5 = &local_b4;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar8 * -2 + 1;
-      puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+      pCVar5->m[0].w = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
               (&local_84,&(this_ptr->base).base.base.location.position,
                &(this_ptr->base).base.base.orient.vec);
-    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_b4,&local_84);
-    pfVar5 = local_54;
-    pCVar7 = &local_e4;
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_b4,&local_84,&local_54);
+    pCVar4 = &local_54;
+    pCVar5 = &local_e4;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      pCVar7->m[0].w = *pfVar5;
-      pfVar5 = pfVar5 + (uint)bVar8 * -2 + 1;
-      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
+      pCVar5->m[0].w = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
     pCVar1 = this_ptr->weapon;
     pCVar2 = (pCVar1->base).vtable._ub;

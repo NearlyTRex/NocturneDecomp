@@ -149,7 +149,7 @@ LAB_0052671f:
             g_INT_01cc4804 = 0x3c8;
             core_main_c_FUN_004c8440();
           }
-          sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(local_14->mp3_data);
+          sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(local_14->mp3_data,local_38c);
           pCVar11 = local_14;
           pCVar20 = local_14;
           do {
@@ -168,7 +168,7 @@ LAB_0052671f:
           iVar3 = local_14->mp3_data->sample_rate;
           (local_14->sample_info).sample_count = -1;
           (local_14->sample_info).sample_rate = iVar3;
-          sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10();
+          sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(local_14);
           uVar7 = local_20;
           pCVar11->taken = 0;
           pCVar11->ref_count = 0;
@@ -211,7 +211,7 @@ joined_r0x00526c01:
           iVar3 = sound_sndmain_cpp_parseWavFile_FUN_00521830
                             (pCVar11->file_handle,&pCVar11->file_offset,pCVar11);
           if (iVar3 != 0) {
-            sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10();
+            sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(local_18);
             pCVar11 = local_18;
             iVar3 = (local_18->sample_info).sample_rate;
             local_18->taken = 0;
@@ -268,7 +268,7 @@ LAB_0052673b:
     iVar3 = g_INT_005bea40;
     pCVar11 = g_CSfxSlot_ARRAY_02dbd374[uVar12].sample;
     g_CSfxSlot_ARRAY_02dbd374[uVar12].playback_state = g_INT_005bea40;
-    iVar6 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(pCVar11,0x4479c000,0x4479c000);
+    iVar6 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(pCVar11,999.0,999.0);
     if (iVar6 != 0) {
       sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(this_ptr_00,0.0);
       uVar7 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();

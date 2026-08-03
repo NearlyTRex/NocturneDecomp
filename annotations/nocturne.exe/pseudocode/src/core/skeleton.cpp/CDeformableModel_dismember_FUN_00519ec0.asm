@@ -258,7 +258,7 @@ section .text
     PUSH ECX                            ; 0051a11c
     PUSH EBP                            ; 0051a11d
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 ; 0051a11e
-        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0()
+        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0(CBodyPart * this_ptr, int vertex_count, int tri_count)
     ADD ESP,0xc                         ; 0051a123
     MOV EAX,dword ptr [ESP + 0x5c]      ; 0051a126
     MOV EDX,dword ptr [ESP + 0x58]      ; 0051a12a

@@ -101,7 +101,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x20]      ; 005655ac
     PUSH ESI                            ; 005655b0
     CALL crt_stdio.c_CreateFileVariadic_FUN_0056b934 ; 005655b1
-        ;   XREF to: 0056b934 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_CreateFileVariadic_FUN_0056b934()
+        ;   XREF to: 0056b934 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_CreateFileVariadic_FUN_0056b934(char * filename, int access_mode, int share_mode)
         ;   Label: LAB_005655b1
     ADD ESP,0x10                        ; 005655b6
     MOV dword ptr [EBX + 0x10],EAX      ; 005655b9

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_colonel_cpp_CColonel_getActorType_FUN_00439d20(void)
+; CDemonActorType * __cdecl core_colonel_cpp_CColonel_getActorType_FUN_00439d20(CColonel *this_ptr)
 ;
+; Parameters:
+; CColonel *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CColonelActorType_0077acd0

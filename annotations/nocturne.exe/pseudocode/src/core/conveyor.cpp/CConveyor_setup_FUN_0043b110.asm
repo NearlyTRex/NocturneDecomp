@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_conveyor_cpp_CConveyor_setup_FUN_0043b110(CPlatform *param_1)
+; void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_0043b110(CConveyor *this_ptr)
 ;
+; Parameters:
+; CConveyor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
@@ -42,7 +44,7 @@ section .text
     PUSH EAX                            ; 0043b146
     LEA ESI,[ESP + 0x4]                 ; 0043b147
     CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 0043b14b
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_0055d610(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x4]                 ; 0043b150
     LEA EDI,[EBX + 0x33c]               ; 0043b154
     ADD ESP,0x4                         ; 0043b15a

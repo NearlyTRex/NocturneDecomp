@@ -1,38 +1,33 @@
 // Name: core_vessel.cpp_CCryptVessel_archive_FUN_00550540
 // Address: 00550540
 // Address Range: [[00550540, 0055064c]]
-// Convention: unknown
-// Signature: void core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CCryptVessel *this_ptr)
 
 #include "nocturne.h"
 
-void core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CDemonActor *param_1)
+void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CCryptVessel *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00
-            ((CKeyFramedModelInstance *)(param_1 + 1),"modelName");
-  core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)&param_1[2].orient,"prey");
-  core_actor_cpp_archiveActor_FUN_0040c980
-            ((CDemonActor **)&param_1[2].orient.vec.y,"neutral");
-  core_actor_cpp_archiveString_FUN_0040c6d0
-            ((char *)((int)&param_1[2].orient + 8),"destroyedEvent");
-  core_actor_cpp_archiveActor_FUN_0040c980
-            ((CDemonActor **)&param_1[2].collision_disabled,"startLoc");
-  core_actor_cpp_archiveActor_FUN_0040c980
-            ((CDemonActor **)&param_1[2].process_disabled,"endLoc");
-  core_actor_cpp_archiveInteger_FUN_0040c900(&param_1[2].scale.z,"state");
-  core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].blood_effect_timer,"timer")
+  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)&this_ptr->prey,"prey");
+  core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)&this_ptr->neutral,"neutral");
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->destroyed_event,"destroyedEvent");
+  core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)&this_ptr->start_loc,"startLoc")
   ;
+  core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)&this_ptr->end_loc,"endLoc");
+  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->state,"state");
+  core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->timer,"timer");
   if (1 < g_INT_005c11c4) {
-    core_actor_cpp_archiveString_FUN_0040c6d0(param_1[2].create_event + 0x24,"winEvent");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->win_event,"winEvent");
   }
   if (2 < g_INT_005c11c4) {
-    core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].scale,"eatDistance");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->eat_distance,"eatDistance");
   }
   if (g_INT_005c11c4 < 4) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040c900(&param_1[2].scale.y,"visualType");
+  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->visual_type,"visualType");
   return;
 }

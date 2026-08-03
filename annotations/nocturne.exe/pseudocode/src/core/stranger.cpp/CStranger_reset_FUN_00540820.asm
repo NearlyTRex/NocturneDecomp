@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_reset_FUN_00540820(CHero *param_1)
+; void __cdecl core_stranger_cpp_CStranger_reset_FUN_00540820(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stand_00595fdc

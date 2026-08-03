@@ -103,7 +103,7 @@ section .text
     PUSH ESI                            ; 0050ab2c
     ADD EBX,ECX                         ; 0050ab2d
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050ab2f
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0050ab34
     MOV EDI,dword ptr [EBX*0x4 + 0x5be4fc] ; 0050ab37 | DAT_005be4fc
     PUSH EDI                            ; 0050ab3e
@@ -120,7 +120,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 0050ab5f
     PUSH ESI                            ; 0050ab63
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050ab64
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV ESI,dword ptr [EBX*0x4 + 0x5be4fc] ; 0050ab69 | DAT_005be4fc
     ADD ESP,0xc                         ; 0050ab70
     ADD ESI,0xb                         ; 0050ab73

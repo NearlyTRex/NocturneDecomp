@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CDemonActor *param_1)
+; int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CGlass *this_ptr)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ;

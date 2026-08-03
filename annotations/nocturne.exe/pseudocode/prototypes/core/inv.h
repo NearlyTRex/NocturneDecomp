@@ -141,7 +141,7 @@ void __cdecl CInventory::resetInventoryDisplayTimer(CInventory *this_ptr);
 
 // Original: core_inv.cpp_drawWeaponIconBackground_FUN_004c1dd0
 // Address: 004c1dd0
-void drawWeaponIconBackground(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl drawWeaponIconBackground(int x1,int y1,int x2,int y2,int alpha);
 
 // Original: core_inv.cpp_drawItemIconBackground_FUN_004c1f90
 // Address: 004c1f90

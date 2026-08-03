@@ -241,7 +241,7 @@ LAB_0049fc23:
     if (iVar3 < 0x8000) {
       this_ptr->gamma = 0x8000;
     }
-    _sprintf(&stack0xfffffe4c,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
+    _sprintf(&stack0xfffffe4c,"Gamma : %f");
     core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,&stack0xfffffe4c,1.0);
     core_set_cpp_CDemonSet_setGamma_FUN_0050e400(g_CDemonSet_PTR_005be368,this_ptr->gamma);
   }
@@ -252,7 +252,7 @@ LAB_0049fc23:
     if (0x10000 < iVar3) {
       this_ptr->gamma = 0x10000;
     }
-    _sprintf(acStack_ac,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
+    _sprintf(acStack_ac,"Gamma : %f");
     core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,acStack_ac,1.0);
     core_set_cpp_CDemonSet_setGamma_FUN_0050e400(g_CDemonSet_PTR_005be368,this_ptr->gamma);
   }

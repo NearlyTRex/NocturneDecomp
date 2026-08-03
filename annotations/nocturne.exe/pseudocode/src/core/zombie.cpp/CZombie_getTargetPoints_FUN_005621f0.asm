@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(int param_1,CVector3f *param_2)
+; int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(CZombie *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ; undefined        Stack[-0x54]:1  local_54

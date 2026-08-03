@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_smiley_cpp_CSmiley_archive_FUN_00520ae0(CEnemy *param_1)
+; void __cdecl core_smiley_cpp_CSmiley_archive_FUN_00520ae0(CSmiley *this_ptr)
 ;
+; Parameters:
+; CSmiley *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_005920a9

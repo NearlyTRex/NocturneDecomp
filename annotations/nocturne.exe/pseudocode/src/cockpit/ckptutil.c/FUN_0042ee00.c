@@ -18,7 +18,7 @@ void cockpit_ckptutil_c_FUN_0042ee00(char *param_1,int param_2,int param_3)
   _FILE *file_handle;
   int iVar7;
   int iVar8;
-  byte local_6c [80];
+  char local_6c [80];
   int local_1c;
   int local_18;
   int local_14;
@@ -30,7 +30,7 @@ void cockpit_ckptutil_c_FUN_0042ee00(char *param_1,int param_2,int param_3)
   }
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1,"wt");
   if (file_handle == (_FILE *)0x0) {
-    _sprintf(local_6c,"Could not create output file (%s).",param_1);
+    _sprintf(local_6c,"Could not create output file (%s).");
     g_INT_01cc4804 = 0x4ff;
     g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     core_main_c_FUN_004c8440(local_6c);

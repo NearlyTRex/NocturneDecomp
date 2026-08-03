@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_drawWeapon_FUN_00540730(int param_1,int param_2)
+; void __cdecl core_stranger_cpp_CStranger_drawWeapon_FUN_00540730(CStranger *this_ptr,int drawn)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   drawn
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flashlit_wav_00595fcf

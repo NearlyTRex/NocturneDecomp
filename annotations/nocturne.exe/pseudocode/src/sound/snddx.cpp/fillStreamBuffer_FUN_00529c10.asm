@@ -122,7 +122,7 @@ section .text
     LEA EAX,[ESP + 0x334]               ; 00529cef
     PUSH EAX                            ; 00529cf6
     CALL sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 ; 00529cf7
-        ;   XREF to: 005294f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0()
+        ;   XREF to: 005294f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, ...)
     MOV EDX,dword ptr [0x02dc9240]      ; 00529cfc | DAT_02dc9240
     MOV ECX,dword ptr [0x02dc923c]      ; 00529d02 | DAT_02dc923c
     INC EDX                             ; 00529d08
@@ -167,7 +167,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00529d71
     PUSH EAX                            ; 00529d75
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00529d76
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 00529d7b
     MOV EAX,ESP                         ; 00529d7e
     PUSH EAX                            ; 00529d80
@@ -192,7 +192,7 @@ section .text
     LEA EAX,[ESP + 0x19c]               ; 00529daa
     PUSH EAX                            ; 00529db1
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00529db2
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 00529db7
     LEA EAX,[ESP + 0x190]               ; 00529dba
     PUSH EAX                            ; 00529dc1

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 26,
+        "line": 25,
         "message": "use of undeclared identifier '_DAT_01c7ccf0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 30,
-        "message": "no matching function for call to 'core_gore_cpp_CBloodSplat_render_FUN_004aeb70'"
       },
       {
         "category": "undeclared_identifier",
@@ -80,12 +74,6 @@
         "message": "use of undeclared identifier '_DAT_01c7ccf0'"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 43,
-        "message": "no matching function for call to 'core_gore_cpp_CBloodSplat_render_FUN_004aeb70'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 26,
         "line": 46,
@@ -94,14 +82,8 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier '_DAT_01c9e038'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 31,
-        "line": 57,
-        "message": "no matching function for call to 'core_gore_cpp_CBloodPool_render_FUN_004af340'"
       },
       {
         "category": "undeclared_identifier",
@@ -114,6 +96,24 @@
         "column": 15,
         "line": 67,
         "message": "use of undeclared identifier '_DAT_01c9e038'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 73,
+        "message": "use of undeclared identifier '_DAT_01c9e038'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 78,
+        "message": "use of undeclared identifier '_DAT_01c9e540'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 88,
+        "message": "use of undeclared identifier '_DAT_01c9e540'"
       }
     ],
     "success": false,
@@ -122,21 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 186,
-    "complexity_score": 278,
+    "complexity_score": 309,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 16,
+    "pseudocode_lines": 94,
+    "suspect_count": 19,
     "suspect_types": [
-      "param_count_too_few",
+      "param_count_too_many",
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_param",
+      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 279
+    "total_lines": 280
   },
   "cross_references": [
     {
@@ -160,9 +160,9 @@
         "004b002a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gore.cpp_CGore_renderDecals_FUN_004afe80",
-    "signature": "CGame * core_gore_cpp_CGore_renderDecals_FUN_004afe80(undefined4 param_1,int param_2)"
+    "signature": "void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004afe80(CGore *this_ptr,int render_all,int expire_flag)"
   },
   "function_calls": [
     {
@@ -230,12 +230,10 @@
         "call_addr": "00508c99",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -243,20 +241,18 @@
         "call_addr": "00509ea7",
         "call_type": "direct",
         "caller": "core_set.cpp_FUN_00509a80",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
     "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 2,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -288,12 +284,34 @@
     "pcode_op_count": 641
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "render_all",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "expire_flag",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -305,127 +323,151 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CGame * core_gore_cpp_CGore_renderDecals_FUN_004afe80(uint param_1,int param_2)",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CGame * core_gore_cpp_CGore_renderDecals_FUN_004afe80(uint param_1,int param_2)",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "core_gore_cpp_CBloodSplat_render_FUN_004aeb70(this_ptr_00,unaff_EBP);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "core_gore_cpp_CBloodPool_render_FUN_004af340(this_ptr_01,unaff_EBP);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 74,
       "match": "(int *)((int)g_CFootstep_ARRAY_01c9e544",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_CFootstep_ARRAY_01c9e544[0].corners + iVar4 + -8) == 0) {",
+      "text": "if (*(int *)((int)g_CFootstep_ARRAY_01c9e544[0].corners + iVar1 + -8) == 0) {",
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(CFootstep *)((int)g_CFootstep_ARRAY_01c9e544",
+      "severity": "moderate",
+      "text": "((CFootstep *)((int)g_CFootstep_ARRAY_01c9e544[0].corners + iVar1 + -8),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "core_gore_cpp_CFootstep_render_FUN_004afa20(this_ptr_02,unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Pointer value `&g_CBloodSplat_ARRAY_01c7ccf4[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 22,
+      "line": 21,
       "match": "(int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar4) == 0) {",
+      "text": "if (*(int *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar1) == 0) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&g_CBloodSplat_ARRAY_01c7ccf4[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
+      "line": 23,
       "match": "(int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired",
       "severity": "moderate",
-      "text": "((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar4);",
+      "text": "((CBloodSplat *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar1),",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&g_CBloodPool_ARRAY_01c9e03c[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "(int)&g_CBloodPool_ARRAY_01c9e03c[0].expired",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar4) == 0) {",
+      "text": "if (*(int *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar1) == 0) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&g_CBloodPool_ARRAY_01c9e03c[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 50,
       "match": "(int)&g_CBloodPool_ARRAY_01c9e03c[0].expired",
       "severity": "moderate",
-      "text": "((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar4);",
+      "text": "((CBloodPool *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar1),",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 22,
+      "line": 21,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar4) == 0) {",
+      "text": "if (*(int *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar1) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 24,
+      "line": 23,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar4);",
+      "text": "((CBloodSplat *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar1),",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar4) == 0) {",
+      "text": "if (*(int *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar1) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 51,
+      "line": 50,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar4);",
+      "text": "((CBloodPool *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar1),",
       "type": "pointer_cast"
     },
     {
       "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

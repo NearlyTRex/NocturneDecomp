@@ -39,11 +39,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(CKeyFram
   int iVar2;
   int iVar3;
   int local_48;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
-  uint local_30;
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
+  int local_30;
   int local_20;
   int local_1c;
   

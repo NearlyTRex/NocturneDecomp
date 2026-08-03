@@ -25,4 +25,4 @@ ushort __cdecl CDemonImage::packColor(CDemonImage *this_ptr,uint red,uint green,
 
 // Original: core_dimage.cpp_CDemonImage_load_FUN_0044d550
 // Address: 0044d550
-void CDemonImage::load(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4);
+void __cdecl CDemonImage::load(CDemonImage *this_ptr,char *filename,int width,int height);

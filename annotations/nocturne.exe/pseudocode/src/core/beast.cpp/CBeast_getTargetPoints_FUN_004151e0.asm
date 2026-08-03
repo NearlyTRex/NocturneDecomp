@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_beast_cpp_CBeast_getTargetPoints_FUN_004151e0(int param_1,CVector3f *param_2)
+; int __cdecl core_beast_cpp_CBeast_getTargetPoints_FUN_004151e0(CBeast *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CBeast *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
 ;

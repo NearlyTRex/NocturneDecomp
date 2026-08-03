@@ -1,29 +1,29 @@
 // Name: core_marquee.cpp_CMarquee_getBoundingBox_FUN_004cc900
 // Address: 004cc900
 // Address Range: [[004cc900, 004cc952]]
-// Convention: unknown
-// Signature: void core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(int param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(CMarquee *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-void core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(int param_1,uint *param_2)
+CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(CMarquee *this_ptr,CBoundingBox3D *out_box)
 
 {
-  if (param_2 == (uint *)(param_1 + 0x17c)) {
-    if (param_2 + 3 == (uint *)(param_1 + 0x188)) {
-      return;
+  if (out_box == &this_ptr->bounding_box) {
+    if (&out_box->max == &(this_ptr->bounding_box).max) {
+      return out_box;
     }
   }
   else {
-    *param_2 = *(uint *)(param_1 + 0x17c);
-    param_2[1] = *(uint *)(param_1 + 0x180);
-    param_2[2] = *(uint *)(param_1 + 0x184);
-    if (param_2 + 3 == (uint *)(param_1 + 0x188)) {
-      return;
+    (out_box->min).x = (this_ptr->bounding_box).min.x;
+    (out_box->min).y = (this_ptr->bounding_box).min.y;
+    (out_box->min).z = (this_ptr->bounding_box).min.z;
+    if (&out_box->max == &(this_ptr->bounding_box).max) {
+      return out_box;
     }
   }
-  param_2[3] = *(uint *)(param_1 + 0x188);
-  param_2[4] = *(uint *)(param_1 + 0x18c);
-  param_2[5] = *(uint *)(param_1 + 400);
-  return;
+  (out_box->max).x = (this_ptr->bounding_box).max.x;
+  (out_box->max).y = (this_ptr->bounding_box).max.y;
+  (out_box->max).z = (this_ptr->bounding_box).max.z;
+  return out_box;
 }

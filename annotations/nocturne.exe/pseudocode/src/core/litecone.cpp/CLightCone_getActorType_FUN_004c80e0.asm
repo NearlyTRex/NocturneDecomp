@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_litecone_cpp_CLightCone_getActorType_FUN_004c80e0(void)
+; CDemonActorType * __cdecl core_litecone_cpp_CLightCone_getActorType_FUN_004c80e0(CLightCone *this_ptr)
 ;
+; Parameters:
+; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

@@ -1,21 +1,22 @@
 // Name: core_stranger.cpp_CStranger_processDamage_FUN_0053e860
 // Address: 0053e860
 // Address Range: [[0053e860, 0053ecba]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDamageInfo *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDamageInfo *param_2)
+void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *this_ptr,SDamageInfo *damage_info)
 
 {
-  CDeformableModelInstance *this_ptr;
+  CDeformableModelInstance *this_ptr_00;
   CCharacter_full_vtable *pCVar1;
-  CConsole *pCVar2;
-  CGame *pCVar3;
-  int iVar4;
-  CVector3f *pCVar5;
-  SMotion *pSVar6;
+  CConsole *this_ptr_01;
+  CGame *pCVar2;
+  int iVar3;
+  CVector3f *pCVar4;
+  SMotion *pSVar5;
+  uint uVar6;
   CDemonActor *pCVar7;
   float fVar8;
   CVector3f local_28;
@@ -24,43 +25,42 @@ void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDama
   float local_14;
   
   if (g_CGame_PTR_005b9354->god_mode_enabled != 0) {
-    param_2->damage_amount = 0.0;
+    damage_info->damage_amount = 0.0;
   }
   if (g_CGame_PTR_005b9354->allow_damage_flag == 0) {
-    param_2->damage_amount = 0.0;
+    damage_info->damage_amount = 0.0;
   }
-  core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(param_1);
-  if ((0.0 < param_1->invincibility_timer) && (0xb < (int)param_2->damage_type)) {
-    param_2->damage_amount = 0.0;
+  core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(&this_ptr->base);
+  if ((0.0 < (this_ptr->base).invincibility_timer) && (0xb < (int)damage_info->damage_type)) {
+    damage_info->damage_amount = 0.0;
     return;
   }
-  param_1->invincibility_timer = 2.0f;
-  iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2->wielder,"CBugs");
-  if (iVar4 != 0) {
-    param_1->invincibility_timer = 0.15;
+  (this_ptr->base).invincibility_timer = 2.0f;
+  iVar3 = core_actor_cpp_isOfClass_FUN_0040d7e0(damage_info->wielder,"CBugs");
+  if (iVar3 != 0) {
+    (this_ptr->base).invincibility_timer = 0.15;
   }
-  pCVar3 = g_CGame_PTR_005b9354;
-  (param_1->base).hit_points = (param_1->base).hit_points - param_2->damage_amount;
-  pCVar2 = g_CConsole_PTR_005ad350;
-  if (((pCVar3->auto_use_health != 0) && (0xb < (int)param_2->damage_type)) &&
-     ((param_1->base).hit_points <= 0.0)) {
-    (param_1->base).hit_points = 0.0;
-    engine_console_cpp_CConsole_printf_FUN_0043ac60(pCVar2);
-    core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(&param_1->inventory);
+  pCVar2 = g_CGame_PTR_005b9354;
+  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  this_ptr_01 = g_CConsole_PTR_005ad350;
+  if (((pCVar2->auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&
+     ((this_ptr->base).base.hit_points <= 0.0)) {
+    (this_ptr->base).base.hit_points = 0.0;
+    engine_console_cpp_CConsole_printf_FUN_0043ac60(this_ptr_01,"Using auto health\n");
+    core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(&(this_ptr->base).inventory);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"hit points: %3.2f\n",(double)(param_1->base).hit_points
-              );
+              (g_CConsole_PTR_005ad350,"hit points: %3.2f\n");
   }
   local_28.y = 0.0;
   local_28.z = 1.0;
   local_28.x = 0.0;
-  if (param_2->attacker != (CDemonActor *)0x0) {
-    pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                       ((CDemonActor *)param_1,(CVector3f *)&stack0xffffffcc,
-                        &(param_2->attacker->location).position);
-    if (&local_28 != pCVar5) {
-      local_28.x = pCVar5->x;
-      local_28.z = pCVar5->z;
+  if (damage_info->attacker != (CDemonActor *)0x0) {
+    pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                       ((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffcc,
+                        &(damage_info->attacker->location).position);
+    if (&local_28 != pCVar4) {
+      local_28.x = pCVar4->x;
+      local_28.z = pCVar4->z;
     }
     local_1c = SQRT(local_28.z * local_28.z + local_28.x * local_28.x);
     local_28.y = 0.0;
@@ -75,7 +75,7 @@ void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDama
       local_28.z = local_28.z * fVar8;
     }
   }
-  local_18 = param_2->damage_amount * (float)0.050000000000000003;
+  local_18 = damage_info->damage_amount * (float)0.050000000000000003;
   if (local_18 < (float)0.75) {
     local_18 = 0.75;
   }
@@ -86,87 +86,83 @@ void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDama
   local_28.y = local_28.y * local_18;
   local_28.z = local_28.z * local_18;
   xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284,local_28.x);
-  this_ptr = &(param_1->base).model;
-  if ((param_1->base).hit_points <= 0.0) {
-    pCVar1 = (param_1->base).base.vtable._uc;
-    (param_1->base).hit_points = 0.0;
-    (*(pCVar1->_uc).releaseFromGrab)(&param_1->base);
-    pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                       (&this_ptr->motion_controller);
-    if (pSVar6->state_index != 0x29) {
-      pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&this_ptr->motion_controller);
-      if (pSVar6->state_index != 0x28) {
-        if ((param_1->ladder_to_climb == (CLadder *)0x0) &&
-           (param_1[1].base.base.orient_matrix.m[2].x == 0.0)) {
-          if (param_2->damage_type == DAMAGE_TYPE_DROWN) {
-            iVar4 = 0x27;
+  this_ptr_00 = &(this_ptr->base).base.model;
+  if ((this_ptr->base).base.hit_points <= 0.0) {
+    pCVar1 = (this_ptr->base).base.base.vtable._uc;
+    (this_ptr->base).base.hit_points = 0.0;
+    (*(pCVar1->_uc).releaseFromGrab)((CCharacter *)this_ptr);
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                       (&this_ptr_00->motion_controller);
+    if (pSVar5->state_index != 0x29) {
+      pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                         (&this_ptr_00->motion_controller);
+      if (pSVar5->state_index != 0x28) {
+        if (((this_ptr->base).ladder_to_climb == (CLadder *)0x0) &&
+           (this_ptr->ladder_to_descend == (CLadder *)0x0)) {
+          if (damage_info->damage_type == DAMAGE_TYPE_DROWN) {
+            iVar3 = 0x27;
             fVar8 = 1.4013e-45;
           }
           else {
             fVar8 = 1.4013e-45;
             local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,100.0);
-            iVar4 = (local_14 <= 50.0f) + 0x25;
+            iVar3 = (local_14 <= 50.0f) + 0x25;
           }
         }
         else {
           fVar8 = 1.4013e-45;
-          param_1->ladder_to_climb = (CLadder *)0x0;
-          iVar4 = 0xf;
-          param_1[1].base.base.orient_matrix.m[2].x = 0.0;
+          (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
+          iVar3 = 0xf;
+          this_ptr->ladder_to_descend = (CLadder *)0x0;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(param_1->base).model.motion_controller,iVar4,(int)fVar8);
-        sound_sndmain_cpp_killSfx_FUN_00527230
-                  ((uint)param_1[1].base.model.transformed_vertices[0x13].z);
-        if (param_2->damage_type != DAMAGE_TYPE_DROWN) {
-          fVar8 = (float)(*((param_1->base).base.vtable._ub)->playSound)
-                                   ((CDemonActor *)param_1,"stranger_die??.wav");
-          param_1[1].base.model.transformed_vertices[0x13].z = fVar8;
+                  (&(this_ptr->base).base.model.motion_controller,iVar3,(int)fVar8);
+        sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
+        if (damage_info->damage_type != DAMAGE_TYPE_DROWN) {
+          uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                            ((CDemonActor *)this_ptr,"stranger_die??.wav");
+          this_ptr->sfx_handle = uVar6;
         }
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-                  (g_CGore_PTR_005b96c4,(CDemonActor *)param_1,0x32,50.0,(CVector3f *)0x0);
+                  (g_CGore_PTR_005b96c4,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
       }
     }
-    if ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y ==
-        (param_1->base).carry_hands[0].carry_actor) {
-      param_1[1].base.base.orient_matrix.m[2].y = 0.0;
+    if (this_ptr->weapon == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor) {
+      this_ptr->weapon = (CWeapon *)0x0;
     }
-    (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,0,(CVector3f *)0x0)
-    ;
-    if ((param_1->base).carry_hands[1].carry_actor ==
-        (CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y) {
-      param_1[1].base.base.orient_matrix.m[2].y = 0.0;
+    (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+              ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
+    if ((CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor == this_ptr->weapon) {
+      this_ptr->weapon = (CWeapon *)0x0;
     }
-    (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,1,(CVector3f *)0x0)
-    ;
+    (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+              ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
     goto LAB_0053eb7b;
   }
-  if (param_2->damage_amount <= 0.0) goto LAB_0053eb7b;
-  if (((param_2->damage_type != DAMAGE_TYPE_NO_FLINCH) &&
-      (param_1->ladder_to_climb == (CLadder *)0x0)) &&
-     ((param_1[1].base.base.orient_matrix.m[2].x == 0.0 && (param_1[1].base.base.health == 0)))) {
+  if (damage_info->damage_amount <= 0.0) goto LAB_0053eb7b;
+  if (((damage_info->damage_type != DAMAGE_TYPE_NO_FLINCH) &&
+      ((this_ptr->base).ladder_to_climb == (CLadder *)0x0)) &&
+     ((this_ptr->ladder_to_descend == (CLadder *)0x0 && (this_ptr->action_pending == 0)))) {
     pCVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (param_2->attacker,g_CTommyGunActorType_02dd0fd0.name_hash);
+                       (damage_info->attacker,g_CTommyGunActorType_02dd0fd0.name_hash);
     if (pCVar7 != (CDemonActor *)0x0) {
-      iVar4 = core_actor_cpp_randomChance_FUN_0040dea0(0.333);
-      if (iVar4 == 0) goto LAB_0053ec87;
+      iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0.333);
+      if (iVar3 == 0) goto LAB_0053ec87;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&this_ptr->motion_controller,0x24,1);
+              (&this_ptr_00->motion_controller,0x24,1);
   }
 LAB_0053ec87:
-  iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50
-                    ((uint)param_1[1].base.model.transformed_vertices[0x13].z);
-  if (iVar4 == 0) {
-    fVar8 = (float)(*((param_1->base).base.vtable._ub)->playSound)
-                             ((CDemonActor *)param_1,"stranger_hit??.wav");
-    param_1[1].base.model.transformed_vertices[0x13].z = fVar8;
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handle);
+  if (iVar3 == 0) {
+    uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                      ((CDemonActor *)this_ptr,"stranger_hit??.wav");
+    this_ptr->sfx_handle = uVar6;
   }
 LAB_0053eb7b:
-  if (0.0 < param_2->damage_amount) {
+  if (0.0 < damage_info->damage_amount) {
     core_game_cpp_FUN_004a3a90(g_CGame_PTR_005b9354);
   }
-  core_charactr_cpp_CCharacter_processDamage_FUN_00428510(&param_1->base,param_2);
+  core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
   return;
 }

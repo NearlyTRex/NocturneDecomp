@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ushort core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(CCharacter *param_1,float param_2)
+; void __cdecl core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(CColonel *this_ptr,float delta_time)
 ;
+; Parameters:
+; CColonel *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_colonel.cpp_CColonel_process_FUN_00439f50 at 00439fb4

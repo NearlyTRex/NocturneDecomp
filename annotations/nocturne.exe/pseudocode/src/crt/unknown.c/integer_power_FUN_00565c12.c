@@ -1,12 +1,12 @@
 // Name: crt_unknown.c_integer_power_FUN_00565c12
 // Address: 00565c12
 // Address Range: [[00565c12, 00565c34]]
-// Convention: unknown
-// Signature: void crt_unknown_c_integer_power_FUN_00565c12(void)
+// Convention: __fpureg
+// Signature: void __fpureg crt_unknown_c_integer_power_FUN_00565c12(void)
 
 #include "nocturne.h"
 
-void integer_power(void)
+void __fpureg integer_power(void)
 
 {
   ushort in_AX;

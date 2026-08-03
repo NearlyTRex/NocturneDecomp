@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xd8]:4  local_d8
 ; undefined        Stack[-0xd4]:1  local_d4

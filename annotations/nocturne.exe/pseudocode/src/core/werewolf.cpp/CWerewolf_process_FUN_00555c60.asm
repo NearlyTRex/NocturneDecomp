@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *param_1,float param_2)
+; void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_ptr,float delta_time)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x320]:1  local_320
 ; undefined4       Stack[-0x31c]:4  local_31c
@@ -525,7 +528,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 005560a9 | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 005560af | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005560b0
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00555e75                      ; 005560b5
         ;   XREF to: 00555e75 (UNCONDITIONAL_JUMP)  ; LAB_00555e75
     CMP EDI,0xf                         ; 005560ba
@@ -1266,7 +1269,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 0055691c | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 00556922 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00556923
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     MOV EAX,dword ptr [EBX + 0xbd60]    ; 00556928
     ADD ESP,0x14                        ; 0055692e
     CMP EAX,0x1                         ; 00556931
@@ -1556,7 +1559,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 00556c81 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 00556c86 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00556c87
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00556c8c
     PUSH 0x1                            ; 00556c8f
     PUSH 0x0                            ; 00556c91

@@ -1,16 +1,17 @@
 // Name: core_crate.cpp_CCrate_getCollisionType_FUN_0043cca0
 // Address: 0043cca0
 // Address Range: [[0043cca0, 0043ccba]]
-// Convention: unknown
-// Signature: undefined4 core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(int param_1)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(CCrate *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-uint core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(int param_1)
+ECollisionType __cdecl core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(CCrate *this_ptr,SCollisionInfo *collision_info)
 
 {
-  if ((*(int *)(param_1 + 0x70) == 1) && (*(int *)(param_1 + 0x2cc) == 0)) {
-    return 1;
+  if (((this_ptr->base).lifecycle_state == ACTOR_CREATED) &&
+     (this_ptr->carrier == (CDemonActor *)0x0)) {
+    return COLLISION_TYPE_MESH;
   }
-  return 0;
+  return COLLISION_TYPE_NONE;
 }

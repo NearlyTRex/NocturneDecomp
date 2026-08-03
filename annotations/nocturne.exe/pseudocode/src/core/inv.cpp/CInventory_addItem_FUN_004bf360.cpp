@@ -67,7 +67,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
       pcVar11 = pcVar11 + 2;
     } while (cVar1 != '\0');
     if (pCVar5 != (CDemonActor *)0x0) {
-      _sprintf(acStack_134,"%d ",pCVar5[2].direction_hint);
+      _sprintf(acStack_134,"%d ");
       pcVar11 = acStack_134;
       iVar9 = -1;
       pcVar6 = acStack_334;
@@ -1108,10 +1108,10 @@ LAB_004bfff1:
             (*((actor->vtable)._ub)->onPickup)(actor,(CDemonActor *)this_ptr);
             core_actor_cpp_destroyActor_FUN_00409cd0(pCStack_18->items[0]);
             pCStack_18->items[0] = actor;
-            pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
+            core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
             bVar2 = true;
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (g_CConsole_PTR_005ad350,"Converting existing ammo for %s to weapon\n",pcVar11);
+                      (g_CConsole_PTR_005ad350,"Converting existing ammo for %s to weapon\n");
           }
         }
         pCStack_18 = (CInventory *)&pCStack_18->owner;

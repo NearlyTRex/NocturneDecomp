@@ -11,20 +11,18 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(CCharacter 
 {
   int iVar1;
   SCarryHand *pSVar2;
-  uint *puVar3;
-  float *pfVar4;
-  uint *puVar5;
-  CMatrix3x4f *pCVar6;
-  byte bVar7;
-  float local_160 [12];
-  uint local_130 [12];
+  CMatrix3x4f *pCVar3;
+  CMatrix3x4f *pCVar4;
+  byte bVar5;
+  CMatrix3x4f local_160;
+  CMatrix3x4f local_130;
   CMatrix3x4f local_100;
   CMatrix3x4f local_d0;
-  uint local_a0 [12];
-  uint local_70 [12];
-  uint local_40 [12];
+  CMatrix3x4f local_a0;
+  CMatrix3x4f local_70;
+  CMatrix3x4f local_40;
   
-  bVar7 = 0;
+  bVar5 = 0;
   pSVar2 = this_ptr->carry_hands + hand_index;
   if (pSVar2->bone_index < 0) {
     g_CHAR_PTR_01cc4800 = "..\\core\\charactr.cpp";
@@ -36,30 +34,31 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(CCharacter 
             );
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
             (&local_d0,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_d0,&local_100);
-  puVar3 = local_130;
-  puVar5 = local_a0;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_d0,&local_100,&local_130);
+  pCVar3 = &local_130;
+  pCVar4 = &local_a0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar5 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar7 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+    pCVar4->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-            ((this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,local_a0);
-  puVar3 = local_40;
-  puVar5 = local_70;
+            ((this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,&local_a0,
+             &local_40);
+  pCVar3 = &local_40;
+  pCVar4 = &local_70;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar5 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar7 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+    pCVar4->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  core_xform_cpp_inverse_FUN_0055bd00(local_70);
-  pfVar4 = local_160;
-  pCVar6 = &pSVar2->initial_carry_transform;
+  core_xform_cpp_inverse_FUN_0055bd00(&local_70,&local_160);
+  pCVar3 = &local_160;
+  pCVar4 = &pSVar2->initial_carry_transform;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar6->m[0].w = *pfVar4;
-    pfVar4 = pfVar4 + (uint)bVar7 * -2 + 1;
-    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
+    pCVar4->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
   }
   if (0.0 < blend_time) {
     pSVar2->blend_factor = 0.0;

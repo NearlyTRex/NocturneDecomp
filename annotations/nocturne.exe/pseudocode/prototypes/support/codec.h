@@ -37,11 +37,11 @@ CCodec * __cdecl CCodec::dtor(CCodec *this_ptr,uint flags);
 
 // Original: support_codec.cpp_CCodec_init_FUN_00438f50
 // Address: 00438f50
-void CCodec::init(void);
+void __cdecl CCodec::init(CCodec *this_ptr);
 
 // Original: support_codec.cpp_CCodec_finalize_FUN_00438f80
 // Address: 00438f80
-undefined4 CCodec::finalize(void);
+int __cdecl CCodec::finalize(CCodec *this_ptr,_FILE *output_file);
 
 // Original: support_codec.cpp_CCodec_process_FUN_00438f90
 // Address: 00438f90

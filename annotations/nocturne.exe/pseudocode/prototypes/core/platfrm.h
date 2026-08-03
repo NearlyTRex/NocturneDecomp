@@ -13,7 +13,7 @@ CPlatform * __cdecl factoryFunc(void);
 
 // Original: core_platfrm.cpp_CPlatform_getActorType_FUN_004f5d80
 // Address: 004f5d80
-CDemonActorType * CPlatform::getActorType(void);
+CDemonActorType * __cdecl CPlatform::getActorType(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90
 // Address: 004f5d90
@@ -37,15 +37,15 @@ void __cdecl CPlatform::startMovement(CPlatform *this_ptr,float goal_param,float
 
 // Original: core_platfrm.cpp_CPlatform_renderOpaque_FUN_004f6c60
 // Address: 004f6c60
-int CPlatform::renderOpaque(CDemonActor *param_1);
+int __cdecl CPlatform::renderOpaque(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_renderBackground_FUN_004f6d90
 // Address: 004f6d90
-void CPlatform::renderBackground(CDemonActor *param_1,int param_2);
+void __cdecl CPlatform::renderBackground(CPlatform *this_ptr,int layer_flag);
 
 // Original: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_004f6f50
 // Address: 004f6f50
-float * CPlatform::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CPlatform::getBoundingBox(CPlatform *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_platfrm.cpp_CPlatform_archive_FUN_004f6fa0
 // Address: 004f6fa0
@@ -57,19 +57,19 @@ int __cdecl FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor);
 
 // Original: core_platfrm.cpp_CPlatform_getCollisionType_FUN_004f7560
 // Address: 004f7560
-undefined4 CPlatform::getCollisionType(int param_1,int param_2);
+ECollisionType __cdecl CPlatform::getCollisionType(CPlatform *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_platfrm.cpp_CPlatform_allowBulletHoles_FUN_004f7580
 // Address: 004f7580
-undefined4 CPlatform::allowBulletHoles(void);
+int __cdecl CPlatform::allowBulletHoles(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_getGroundType_FUN_004f75a0
 // Address: 004f75a0
-undefined4 CPlatform::getGroundType(int param_1);
+EGroundType __cdecl CPlatform::getGroundType(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_004f75b0
 // Address: 004f75b0
-undefined4 CPlatform::getBlockVirtualDirectorFlag(int param_1);
+int __cdecl CPlatform::getBlockVirtualDirectorFlag(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_attachActor_FUN_004f75c0
 // Address: 004f75c0

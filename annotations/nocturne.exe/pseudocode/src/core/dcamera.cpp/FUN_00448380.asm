@@ -43,7 +43,7 @@ section .text
     ADD ECX,EAX                         ; 004483c8
     INC ESI                             ; 004483ca
     CALL crt_watcom.c__memcpy_FUN_00481a28 ; 004483cb
-        ;   XREF to: 00481a28 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memcpy_FUN_00481a28()
+        ;   XREF to: 00481a28 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_00481a28(void * dest, void * src, uint size)
     CMP ESI,dword ptr [EBX + 0x140]     ; 004483d0
     JL 0x00448392                       ; 004483d6
         ;   XREF to: 00448392 (CONDITIONAL_JUMP)  ; LAB_00448392

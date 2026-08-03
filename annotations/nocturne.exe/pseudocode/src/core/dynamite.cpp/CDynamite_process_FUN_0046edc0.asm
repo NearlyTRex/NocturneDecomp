@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CWeapon *param_1,float param_2)
+; void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CDynamite *this_ptr,float delta_time)
 ;
+; Parameters:
+; CDynamite *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined8       Stack[-0x68]:8  local_68

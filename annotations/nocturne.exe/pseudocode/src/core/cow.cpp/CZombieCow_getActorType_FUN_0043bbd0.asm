@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_cow_cpp_CZombieCow_getActorType_FUN_0043bbd0(void)
+; CDemonActorType * __cdecl core_cow_cpp_CZombieCow_getActorType_FUN_0043bbd0(CZombieCow *this_ptr)
 ;
+; Parameters:
+; CZombieCow *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CZombieCowActorType_0077bd04

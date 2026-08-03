@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_pod_cpp_CPod_mount_FUN_004f88a0(int *param_1,undefined4 param_2)
+; void __cdecl engine_pod_cpp_CPod_mount_FUN_004f88a0(CPod *this_ptr,char *pod_filename)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   pod_filename
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_0058db9c

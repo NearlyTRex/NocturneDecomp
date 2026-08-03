@@ -1,13 +1,13 @@
 // Name: core_beast.cpp_CBeast_getDeathState_FUN_004151d0
 // Address: 004151d0
 // Address Range: [[004151d0, 004151d2]]
-// Convention: unknown
-// Signature: undefined4 core_beast_cpp_CBeast_getDeathState_FUN_004151d0(void)
+// Convention: __cdecl
+// Signature: EDeathState __cdecl core_beast_cpp_CBeast_getDeathState_FUN_004151d0(CBeast *this_ptr)
 
 #include "nocturne.h"
 
-uint core_beast_cpp_CBeast_getDeathState_FUN_004151d0(void)
+EDeathState __cdecl core_beast_cpp_CBeast_getDeathState_FUN_004151d0(CBeast *this_ptr)
 
 {
-  return 0;
+  return DEATH_STATE_ALIVE;
 }

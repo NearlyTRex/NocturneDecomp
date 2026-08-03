@@ -24,9 +24,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *t
   float local_20;
   float local_1c;
   float local_18;
-  float local_14;
-  float local_10;
-  float local_c;
+  CVector3f local_14;
   
   iVar1 = core_box_cpp_FUN_0041d050(this_ptr);
   if ((iVar1 == -1) || (iVar1 == 0)) {
@@ -45,16 +43,16 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *t
       local_1c = local_34;
       local_18 = local_30;
     }
-    local_14 = (float)DAT_006b028c * _DAT_0059aa88;
-    local_10 = (float)DAT_006b0290 * _DAT_0059aa88;
-    local_c = (float)DAT_006b0294 * _DAT_0059aa88;
+    local_14.x = (float)DAT_006b028c * _DAT_0059aa88;
+    local_14.y = (float)DAT_006b0290 * _DAT_0059aa88;
+    local_14.z = (float)DAT_006b0294 * _DAT_0059aa88;
     local_2c.x = (int)ROUND(local_20 * _DAT_0059aa80);
     local_2c.y = (int)ROUND(local_1c * _DAT_0059aa80);
     local_2c.z = (int)ROUND(local_18 * _DAT_0059aa80);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c(local_74,&local_2c);
-    local_14 = local_14 + local_20;
-    local_10 = local_10 + local_1c;
-    local_c = local_c + local_18;
+    local_14.x = local_14.x + local_20;
+    local_14.y = local_14.y + local_1c;
+    local_14.z = local_14.z + local_18;
     if (_DAT_007f7370 == 0) {
       _DAT_01c038f4 = _DAT_007f7370;
     }

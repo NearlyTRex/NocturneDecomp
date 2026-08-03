@@ -46,7 +46,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00567486
     PUSH EBX                            ; 0056748a
     CALL crt_exception.c_installExceptionHandler_FUN_0056eed8 ; 0056748b
-        ;   XREF to: 0056eed8 (UNCONDITIONAL_CALL)  ; undefined crt_exception.c_installExceptionHandler_FUN_0056eed8()
+        ;   XREF to: 0056eed8 (UNCONDITIONAL_CALL)  ; undefined1 crt_exception.c_installExceptionHandler_FUN_0056eed8()
     ADD ESP,0x4                         ; 00567490
     MOV EAX,0x21                        ; 00567493
     CALL crt_init.c_ProcessInitTermHandlers_FUN_0056ef60 ; 00567498

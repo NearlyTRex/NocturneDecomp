@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vessel_cpp_CCryptVessel_onDropped_FUN_0054fc10(int param_1)
+; void __cdecl core_vessel_cpp_CCryptVessel_onDropped_FUN_0054fc10(CCryptVessel *this_ptr,CVector3f *drop_position)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   drop_position
 ;
 ; *****************************************************************************
 

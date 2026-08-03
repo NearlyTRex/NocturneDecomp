@@ -1,26 +1,26 @@
 // Name: core_dest.cpp_CActorDestination_getBoundingBox_FUN_0044ba20
 // Address: 0044ba20
 // Address Range: [[0044ba20, 0044baab]]
-// Convention: unknown
-// Signature: undefined4 * core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20(int param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20(CActorDestination *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-uint * core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20(int param_1,uint *param_2)
+CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20(CActorDestination *this_ptr,CBoundingBox3D *out_box)
 
 {
-  int iVar1;
+  CDemonActor *this_ptr_00;
   
-  iVar1 = *(int *)(param_1 + 0x150);
-  if (iVar1 == 0) {
-    *param_2 = 0xbf800000;
-    param_2[1] = 0xbdcccccd;
-    param_2[2] = 0xbf800000;
-    param_2[3] = 0x3f800000;
-    param_2[4] = 0x40066666;
-    param_2[5] = 0x3f800000;
-    return param_2;
+  this_ptr_00 = this_ptr->dest_actor;
+  if (this_ptr_00 == (CDemonActor *)0x0) {
+    (out_box->min).x = -1.0;
+    (out_box->min).y = -0.1;
+    (out_box->min).z = -1.0;
+    (out_box->max).x = 1.0;
+    (out_box->max).y = 2.1;
+    (out_box->max).z = 1.0;
+    return out_box;
   }
-  (**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,param_2);
-  return param_2;
+  (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,out_box);
+  return out_box;
 }

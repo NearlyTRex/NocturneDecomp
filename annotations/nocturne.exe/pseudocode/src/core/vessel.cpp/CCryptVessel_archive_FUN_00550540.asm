@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CDemonActor *param_1)
+; void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CCryptVessel *this_ptr)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005974c5

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "format_error",
-        "column": 31,
+        "column": 25,
         "line": 32,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -68,16 +68,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 238,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 83,
-    "suspect_count": 14,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unrolled_strchr"
     ],
     "total_lines": 284
@@ -98,9 +96,9 @@
         "004bd47e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0",
-    "signature": "int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5)"
+    "signature": "int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *value,char *filename)"
   },
   "function_calls": [
     {
@@ -179,23 +177,19 @@
         "call_addr": "004bd4bb",
         "call_type": "direct",
         "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
-        "estimated_params": 8,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 8,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.409395973154362,
@@ -224,10 +218,10 @@
     "pcode_op_count": 657
   },
   "stack_frame": {
-    "frame_size": 536,
+    "frame_size": 556,
     "local_size": 536,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -264,6 +258,41 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIni *"
+      },
+      {
+        "is_param": true,
+        "name": "section",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "key",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -293,94 +322,6 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint param_2,char *param_3,char *param_4,char *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint param_2,char *param_3,char *param_4,char *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint param_2,char *param_3,char *param_4,char *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint param_2,char *param_3,char *param_4,char *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint param_2,char *param_3,char *param_4,char *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "stream = _fopen(param_4,\"rt\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_sprintf(local_114,\"[%s]\\n\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar4 = _strcmp(local_214,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar4 = _strcmp(local_14 + 1,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = 0;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal 0xa with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, 0xa) in a .keep.",
       "line": 46,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
@@ -395,17 +336,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:8",
-      "param_delta": 8,
-      "text": "Function declares 0 params but call sites push 8 (8 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

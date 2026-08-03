@@ -23,7 +23,7 @@ section .text
     PUSH EDI                            ; 0055bc89
     LEA ESI,[ESP + 0x4]                 ; 0055bc8a
     CALL core_xform.cpp_inverse_FUN_0055bd00 ; 0055bc8e
-        ;   XREF to: 0055bd00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_inverse_FUN_0055bd00()
+        ;   XREF to: 0055bd00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_0055bd00(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0055bc93
     LEA ESI,[ESP + 0x4]                 ; 0055bc98
     ADD ESP,0x4                         ; 0055bc9c

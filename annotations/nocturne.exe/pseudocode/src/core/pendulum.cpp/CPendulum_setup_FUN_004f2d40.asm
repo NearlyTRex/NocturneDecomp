@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pendulum_cpp_CPendulum_setup_FUN_004f2d40(CDemonActor *param_1)
+; void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_004f2d40(CPendulum *this_ptr)
 ;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ;

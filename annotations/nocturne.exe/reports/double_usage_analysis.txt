@@ -9,7 +9,7 @@ decompiler artifacts (SUB84/CONCAT44/._0_4_/._4_4_ splits).
 SUMMARY
 --------------------------------------------------
 Functions returning double:         10
-Functions with double parameter(s): 24
+Functions with double parameter(s): 29
 
 ====================================================================================================
 FUNCTIONS RETURNING DOUBLE (10)
@@ -37,7 +37,7 @@ FUNCTIONS RETURNING DOUBLE (10)
     Address: 0052c870  File: sound/sndwav.cpp
 
 ====================================================================================================
-FUNCTIONS WITH DOUBLE PARAMETER(S) (24)
+FUNCTIONS WITH DOUBLE PARAMETER(S) (29)
 ====================================================================================================
 
   sound_sndmain.cpp_startSoundThread_FUN_005286d0
@@ -72,7 +72,10 @@ FUNCTIONS WITH DOUBLE PARAMETER(S) (24)
     Double params: position
   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0
     Address: 00525de0  File: sound/sndmain.cpp
-    Double params: (from signature)
+    Double params: position
+  sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870
+    Address: 00525870  File: sound/sndmain.cpp
+    Double params: hardware_playback_pos
   sound_sndmain.cpp_convertDoubleToFixed_FUN_005235b0
     Address: 005235b0  File: sound/sndmain.cpp
     Double params: input
@@ -106,6 +109,18 @@ FUNCTIONS WITH DOUBLE PARAMETER(S) (24)
   sound_sndmain.cpp_setSfxPosition_FUN_00526e10
     Address: 00526e10  File: sound/sndmain.cpp
     Double params: pos_x, pos_y, pos_z
+  sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_0052c7f0
+    Address: 0052c7f0  File: sound/sndwav.cpp
+    Double params: distance_in_feet
+  sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_0052c7d0
+    Address: 0052c7d0  File: sound/sndwav.cpp
+    Double params: x_front, y_front, z_front, x_top, y_top, z_top
+  sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_0052c7c0
+    Address: 0052c7c0  File: sound/sndwav.cpp
+    Double params: x, y, z
+  sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_0052c7e0
+    Address: 0052c7e0  File: sound/sndwav.cpp
+    Double params: x_velocity, y_velocity, z_velocity
   wincore_winrun.cpp_sleep_FUN_00559cc0
     Address: 00559cc0  File: wincore/winrun.cpp
     Double params: seconds

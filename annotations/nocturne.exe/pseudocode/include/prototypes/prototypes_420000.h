@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBodyPart.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBride.h"
 #include "types/classes/CBugs.h"
 #include "types/classes/CChain.h"
@@ -10,15 +11,14 @@
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CGame.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPackedBitmap.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CSkeleton.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
-#include "types/enums/EDamageType.h"
 #include "types/enums/EDeathState.h"
 #include "types/funcdefs/ColorConversionFunc.h"
 #include "types/funcdefs/OptimizedMemcpyFunc.h"
@@ -28,6 +28,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SEdge.h"
 #include "types/structs/SEdgeList.h"
+#include "types/structs/SFire.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SPose.h"
 #include "types/structs/SProjectedVertex.h"
@@ -38,25 +39,25 @@
 // FUNCTION PROTOTYPES - Range 0x420000
 // =============================================================================
 
-void core_bride_cpp_CBride_archive_FUN_00420970(CEnemy *param_1);
+void __cdecl core_bride_cpp_CBride_archive_FUN_00420970(CBride *this_ptr);
 void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_00420a10(CBride *this_ptr,SDamageInfo *damage_info);
-void core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *param_1,SDamageInfo *param_2);
-undefined4 core_bride_cpp_CBride_getTargetPoints_FUN_00420e20(int param_1,CVector3f *param_2);
-CVector3f * core_bride_cpp_CBride_getTargetPoint_FUN_00420eb0(int param_1,CVector3f *param_2);
+void __cdecl core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00420e20(CBride *this_ptr,CVector3f *out_points_array);
+CVector3f * __cdecl core_bride_cpp_CBride_getTargetPoint_FUN_00420eb0(CBride *this_ptr,CVector3f *out_point);
 CBride * __cdecl core_bride_cpp_CBride_dtor_FUN_00420f20(CBride *this_ptr,uint flags);
 void __cdecl core_bugs_cpp_staticInit_FUN_00420fe0(void);
 CBugs * __cdecl core_bugs_cpp_factoryFunc_FUN_00421010(void);
-CDemonActorType * core_bugs_cpp_CBugs_getActorType_FUN_00421030(void);
+CDemonActorType * __cdecl core_bugs_cpp_CBugs_getActorType_FUN_00421030(CBugs *this_ptr);
 CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00421040(CBugs *this_ptr);
-void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1);
-void core_bugs_cpp_CBugs_process_FUN_00421480(CBugs *param_1,float param_2);
-int core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CDemonActor *param_1);
-void core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(int param_1);
-undefined4 * core_bugs_cpp_CBugs_getBoundingBox_FUN_00421840(int param_1,undefined4 *param_2);
-void core_bugs_cpp_CBugs_archive_FUN_00421880(CEnemy *param_1);
-undefined4 core_bugs_cpp_CBugs_getCollisionType_FUN_004219a0(void);
-undefined4 core_bugs_cpp_CBugs_getDeathState_FUN_004219b0(int param_1);
-void core_bugs_cpp_CBugs_processDamage_FUN_004219d0(CEnemy *param_1,SDamageInfo *param_2);
+void __cdecl core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *this_ptr);
+void __cdecl core_bugs_cpp_CBugs_process_FUN_00421480(CBugs *this_ptr,float delta_time);
+int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr);
+void __cdecl core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(CBugs *this_ptr);
+CBoundingBox3D * __cdecl core_bugs_cpp_CBugs_getBoundingBox_FUN_00421840(CBugs *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_bugs_cpp_CBugs_archive_FUN_00421880(CBugs *this_ptr);
+ECollisionType __cdecl core_bugs_cpp_CBugs_getCollisionType_FUN_004219a0(CBugs *this_ptr,SCollisionInfo *collision_info);
+EDeathState __cdecl core_bugs_cpp_CBugs_getDeathState_FUN_004219b0(CBugs *this_ptr);
+void __cdecl core_bugs_cpp_CBugs_processDamage_FUN_004219d0(CBugs *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_bugs_cpp_FUN_004219f0(CBugs *this_ptr,int tri_count,SInputFace *triangles);
 void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs *this_ptr,int vertex_index,int neighbor_index,int first_edge_data);
 void __cdecl core_bugs_cpp_FUN_00421b80(CBugs *this_ptr);
@@ -65,7 +66,7 @@ void __cdecl core_bugs_cpp_FUN_00422050(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_004227a0(CBugs *this_ptr,float delta_time);
 int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex);
-void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *param_1,SBug *param_2,float param_3);
+void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *this_ptr,SBug *bug_data,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00423480(CBugs *this_ptr,SBug *bug_data);
 void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(CBugs *this_ptr);
 void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423790(CBugs *this_ptr,CDemonActor *target);
@@ -97,7 +98,7 @@ float core_charactr_cpp_FUN_00424780(void);
 int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance);
 void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00424e90(CCharacter *this_ptr,CVector3f *target);
 void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00424f40(CCharacter *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
-void core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(int param_1,EDamageType param_2,float param_3);
+void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(CCharacter *this_ptr,int damage_type,float damage_amount);
 void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter *this_ptr,CVector3f *velocity);
 int __cdecl core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(CCharacter *this_ptr);
@@ -106,7 +107,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacte
 void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_renderBackground_FUN_00426510(CCharacter *this_ptr,int layer_flag);
-int core_charactr_cpp_CCharacter_getPartDominantBone_FUN_00426570(int param_1,int param_2);
+int __cdecl core_charactr_cpp_CCharacter_getPartDominantBone_FUN_00426570(CCharacter *this_ptr,int part_index);
 void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(CCharacter *this_ptr,CSkeleton *skeleton,int target_bone_index);
 void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_004269b0(CCharacter *this_ptr,float delta_time);
@@ -119,7 +120,7 @@ void __cdecl core_charactr_cpp_FUN_00427730(CCharacter *this_ptr,CVector3f *posi
 void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_004277f0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990(CCharacter *this_ptr,int part_index,int bone_index,float chance);
-undefined4 * core_charactr_cpp_CCharacter_getBoundingBox_FUN_00427a20(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl core_charactr_cpp_CCharacter_getBoundingBox_FUN_00427a20(CCharacter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_charactr_cpp_FUN_00427a60(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427ab0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
 void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427b60(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background);
@@ -129,30 +130,30 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCh
 int __cdecl core_charactr_cpp_CCharacter_isGrabbable_FUN_004280a0(CCharacter *this_ptr,CDemonActor *grabber);
 void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004280b0(CCharacter *this_ptr);
 void core_charactr_cpp_FUN_004280e0(void);
-undefined4 core_charactr_cpp_CCharacter_getGrabber_FUN_004280f0(int param_1);
+CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_004280f0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_drop_FUN_00428100(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
-undefined4 core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,CDemonActor *param_2,CVector3f *param_3);
-undefined4 core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3,SDamageInfo *param_4);
-undefined4 core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5);
+int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
+int __cdecl core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *this_ptr,CVector3f *world_point,float tolerance,SDamageInfo *damage_info);
+int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit);
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00428510(CCharacter *this_ptr,SDamageInfo *damage_info);
 void core_charactr_cpp_FUN_004286d0(int param_1,undefined4 param_2);
 EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state );
 void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance);
-void core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_00428b60(int param_1,undefined4 param_2);
+void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_00428b60(CCharacter *this_ptr,CDemonActor *target);
 void core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(int param_1,undefined4 param_2);
-undefined4 core_charactr_cpp_CCharacter_isWalkComplete_FUN_00428bc0(int param_1);
-undefined4 core_charactr_cpp_CCharacter_canWalk_FUN_00428bf0(void);
+int __cdecl core_charactr_cpp_CCharacter_isWalkComplete_FUN_00428bc0(CCharacter *this_ptr);
+int __cdecl core_charactr_cpp_CCharacter_canWalk_FUN_00428bf0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_FUN_00428c00(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428ee0(CCharacter *this_ptr,float timeout);
-void core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(int param_1);
-bool core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428f20(int param_1);
+void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(CCharacter *this_ptr);
+int __cdecl core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428f20(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time);
 void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(CCharacter *this_ptr,int hand_index,float blend_time);
 void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(CCharacter *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00429220(CCharacter *this_ptr,float delta_time);
-void core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(int param_1,int param_2);
+void __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_charactr_cpp_CCharacter_isCarryingAnything_FUN_004294f0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_00429520(CCharacter *this_ptr,char *motion_name);
 void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *this_ptr);
@@ -161,14 +162,14 @@ void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(CChara
 void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCharacter *this_ptr,float delta_time,int disable_search);
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00429e60(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00429f60(CCharacter *this_ptr,CDemonActor *target);
-void core_charactr_cpp_CCharacter_calculateChecksum_FUN_00429f70(CDemonActor *param_1,uint *param_2);
-undefined4 core_charactr_cpp_CCharacter_canLookAt_FUN_00429fe0(int param_1);
+void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_00429f70(CCharacter *this_ptr,uint *out_crc);
+int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_00429fe0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042a060(CCharacter *this_ptr,UOrientationVector *orientation);
-void core_charactr_cpp_CCharacter_spawnFlies_FUN_0042a120(CDemonActor *param_1,int param_2,float param_3);
+void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_0042a120(CCharacter *this_ptr,int fly_count,float spawn_radius);
 void __cdecl core_charactr_cpp_FUN_0042a150(CCharacter *this_ptr,float delta_time);
 int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0(CCharacter *this_ptr,float delta_time,char *pattern);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
-void core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042a700(int param_1,float param_2,int param_3);
+void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042a700(CCharacter *this_ptr,float blend_weight,int blend_mode);
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
 void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800(CCharacter *this_ptr);
 float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter *this_ptr,int state_index);
@@ -185,7 +186,7 @@ undefined4 core_charactr_cpp_FUN_0042b5a0(void);
 char * __cdecl core_charactr_cpp_getActorCreateEvent_FUN_0042b5b0(CDemonActor *actor);
 float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(CGame *game_ptr);
 CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags);
-undefined4 core_charactr_cpp_SFire_ctor_FUN_0042b690(undefined4 param_1);
+SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042b690(SFire *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_ctor_FUN_0042b6a0(SPose *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_dtor_FUN_0042b6b0(SPose *this_ptr,uint flags);
 undefined4 * core_charactr_cpp_FUN_0042b6c0(void);
@@ -193,16 +194,16 @@ undefined4 * core_charactr_cpp_FUN_0042b6d0(void);
 undefined4 * core_charactr_cpp_FUN_0042b6e0(void);
 void __cdecl core_chain_cpp_staticInit_FUN_0042b6f0(void);
 CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042b720(void);
-CDemonActorType * core_chain_cpp_CChain_getActorType_FUN_0042b740(void);
+CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042b740(CChain *this_ptr);
 CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042b750(CChain *this_ptr);
 CVector3f * __cdecl core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(CChain *this_ptr,CVector3f *out_point);
-void core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *param_1);
+void __cdecl core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *this_ptr);
 void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042baa0(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b);
-void core_chain_cpp_CChain_process_FUN_0042bca0(CChain *param_1,float param_2);
-undefined4 core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CDemonActor *param_1);
-CVector3f * core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CDemonActor *param_1,CVector3f *param_2);
-void core_chain_cpp_CChain_archive_FUN_0042cbc0(CDemonActor *param_1);
-undefined4 core_chain_cpp_CChain_getCollisionType_FUN_0042ccf0(void);
+void __cdecl core_chain_cpp_CChain_process_FUN_0042bca0(CChain *this_ptr,float delta_time);
+int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CChain *this_ptr);
+CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CChain *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_chain_cpp_CChain_archive_FUN_0042cbc0(CChain *this_ptr);
+ECollisionType __cdecl core_chain_cpp_CChain_getCollisionType_FUN_0042ccf0(CChain *this_ptr,SCollisionInfo *collision_info);
 undefined4 core_chain_cpp_FUN_0042cd00(void);
 undefined4 core_chain_cpp_FUN_0042cd10(void);
 float __cdecl core_chain_cpp_fastSqrt_FUN_0042cd20(float value);

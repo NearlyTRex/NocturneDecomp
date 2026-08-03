@@ -58,7 +58,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 005490c6
     LEA EDI,[ESP + 0x14]                ; 005490ca
     CALL support_trisock.cpp_buildSockaddrIn_FUN_00548dc0 ; 005490ce
-        ;   XREF to: 00548dc0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_buildSockaddrIn_FUN_00548dc0()
+        ;   XREF to: 00548dc0 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr * net_addr, SOCKADDR_IN * dest_buffer)
     LEA ESI,[ESP + 0x4]                 ; 005490d3
     ADD ESP,0x4                         ; 005490d7
     MOVSD ES:EDI,ESI                    ; 005490da

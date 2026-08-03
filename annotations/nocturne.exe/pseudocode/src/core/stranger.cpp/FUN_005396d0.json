@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 3,
-        "line": 21,
+        "line": 22,
         "message": "unknown type name 'code'"
       },
       {
@@ -74,13 +74,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 141,
+    "complexity_score": 182,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 7,
+    "pseudocode_lines": 47,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -88,7 +88,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 120
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -267,23 +267,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_005396d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 45,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -303,7 +286,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
+      "line": 15,
       "match": "code *",
       "severity": "moderate",
       "text": "code *blend_callback;",
@@ -314,15 +297,31 @@
       "line": 39,
       "match": "(int)&local_3c",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&local_3c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)&local_2c",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_3c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 41,
       "match": "(int)&local_3c",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_3c + (uint)bVar3 * -8 + 4) = auStack_28[(uint)bVar3 * -2];",
+      "text": "*(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&local_2c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -330,7 +329,7 @@
       "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&local_3c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -338,16 +337,24 @@
       "line": 40,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_3c + (uint)bVar3 * -8 + 4) = auStack_28[(uint)bVar3 * -2];",
+      "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Uninitialized variable: local_2c",
-      "line": 45,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_3c.w = local_2c;",
-      "type": "static_uninitvar"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

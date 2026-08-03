@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CDemonActor *param_1)
+; int __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CBackgroundActor *this_ptr)
 ;
+; Parameters:
+; CBackgroundActor * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

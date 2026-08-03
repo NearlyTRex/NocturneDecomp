@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_grave_cpp_CGrave_setup_FUN_004b0bd0(CDemonActor *param_1)
+; void __cdecl core_grave_cpp_CGrave_setup_FUN_004b0bd0(CGrave *this_ptr)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

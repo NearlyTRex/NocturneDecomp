@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,43 +52,49 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 28,
+        "line": 25,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 46,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
+        "line": 46,
+        "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
         "line": 47,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 23,
-        "line": 50,
+        "line": 49,
         "message": "use of undeclared identifier '_DAT_01bd1d80'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 51,
+        "line": 50,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
       }
     ],
@@ -98,17 +104,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 207,
-    "complexity_score": 73,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 57,
     "suspect_count": 1,
     "suspect_types": [
       "warning_overlapping_globals"
     ],
-    "total_lines": 265
+    "total_lines": 264
   },
   "cross_references": [],
   "function": {
@@ -314,6 +320,23 @@
         "type": "undefined"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "showPromoScreen_FUN_004c8eb0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
+          "line": 24,
+          "message": "Return value of function rand() is not used.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
   },
   "suspects": [
     {

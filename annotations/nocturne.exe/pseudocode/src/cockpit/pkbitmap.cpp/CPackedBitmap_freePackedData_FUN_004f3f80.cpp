@@ -1,18 +1,18 @@
 // Name: cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80
 // Address: 004f3f80
 // Address Range: [[004f3f80, 004f3f9f]]
-// Convention: unknown
-// Signature: void cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_004f3f80(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_004f3f80(CPackedBitmap *this_ptr)
 
 #include "nocturne.h"
 
-void cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_004f3f80(int param_1)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_004f3f80(CPackedBitmap *this_ptr)
 
 {
-  if (*(int *)(param_1 + 0x14) == 0) {
+  if (this_ptr->packed_data == (ushort *)0x0) {
     return;
   }
-  FUN_005638d0(*(int *)(param_1 + 0x14));
-  *(uint *)(param_1 + 0x14) = 0;
+  FUN_005638d0(this_ptr->packed_data);
+  this_ptr->packed_data = (ushort *)0x0;
   return;
 }

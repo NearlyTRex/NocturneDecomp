@@ -207,7 +207,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
     if ((*(byte *)((int)puVar4 + 0x13) & 0x80) == 0) {
       iVar1 = puVar4[4];
       iVar2 = puVar4[5];
-      _sprintf();
+      _sprintf((char *)local_18,"%c");
       engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
       engine_font_cpp_CBitFont_drawText_FUN_00490980
                 (_DAT_01bcd070,(char *)local_18,iVar1 >> 0x10,iVar2 >> 0x10,_DAT_01bcde04,-1);

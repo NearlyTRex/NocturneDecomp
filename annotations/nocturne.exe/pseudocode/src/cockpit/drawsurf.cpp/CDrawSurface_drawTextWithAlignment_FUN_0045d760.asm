@@ -279,7 +279,7 @@ section .text
     PUSH ESI                            ; 0045d96a
     PUSH EDI                            ; 0045d96b
     CALL engine_2d.c_drawTextCenteredAtColor_FUN_00402c20 ; 0045d96c
-        ;   XREF to: 00402c20 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextCenteredAtColor_FUN_00402c20()
+        ;   XREF to: 00402c20 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredAtColor_FUN_00402c20(char * text, int x, int y)
     JMP 0x0045d97e                      ; 0045d971
         ;   XREF to: 0045d97e (UNCONDITIONAL_JUMP)  ; LAB_0045d97e
     SUB EBX,0x5                         ; 0045d973
@@ -311,7 +311,7 @@ section .text
     PUSH ESI                            ; 0045d9a1
     PUSH EDI                            ; 0045d9a2
     CALL engine_2d.c_drawTextCenteredAtColor_FUN_00402c20 ; 0045d9a3
-        ;   XREF to: 00402c20 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextCenteredAtColor_FUN_00402c20()
+        ;   XREF to: 00402c20 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredAtColor_FUN_00402c20(char * text, int x, int y)
     JMP 0x0045d97e                      ; 0045d9a8
         ;   XREF to: 0045d97e (UNCONDITIONAL_JUMP)  ; LAB_0045d97e
     PUSH EBX                            ; 0045d9aa

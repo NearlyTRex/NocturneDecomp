@@ -1,28 +1,28 @@
 // Name: core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210
 // Address: 0053f210
 // Address Range: [[0053f210, 0053f250]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(int param_1,int param_2)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(int param_1,int param_2)
+void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
-  uint *unaff_ESI;
-  uint *puVar2;
+  CMatrix3x4f *pCVar2;
   byte bVar3;
-  uint local_38 [12];
+  CMatrix3x4f local_38;
   
   bVar3 = 0;
   core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
-            (param_1,*(uint *)(param_1 + 0x24ac + param_2 * 0x44),param_2);
-  puVar2 = local_38;
+            (this_ptr,(this_ptr->base).base.carry_hands[hand_index].carry_actor,hand_index,&local_38
+            );
+  pCVar2 = &local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *puVar2;
-    puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
-    unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
+    out_matrix->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
+    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
   }
   return;
 }

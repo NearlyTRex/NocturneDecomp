@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004f4ef9
     PUSH EAX                            ; 004f4efa
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 ; 004f4efb
-        ;   XREF to: 004f4e40 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40()
+        ;   XREF to: 004f4e40 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPackedBitmap * this_ptr, char * filename, int apply_palette_flag)
     ADD ESP,0xc                         ; 004f4f00
     RET                                 ; 004f4f03
 

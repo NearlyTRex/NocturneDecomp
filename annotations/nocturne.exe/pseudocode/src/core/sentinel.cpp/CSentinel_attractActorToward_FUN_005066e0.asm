@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(CDemonActor *param_1,int param_2)
+; int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 ;
+; Parameters:
+; CSentinel *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; CVector3f *      Stack[0xc]:4   target_local_point
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c

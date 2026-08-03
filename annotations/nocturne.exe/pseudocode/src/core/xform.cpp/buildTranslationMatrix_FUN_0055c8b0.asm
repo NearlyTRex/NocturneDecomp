@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_buildTranslationMatrix_FUN_0055c8b0(undefined4 *param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_buildTranslationMatrix_FUN_0055c8b0(CVector3f *translation,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   translation
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34

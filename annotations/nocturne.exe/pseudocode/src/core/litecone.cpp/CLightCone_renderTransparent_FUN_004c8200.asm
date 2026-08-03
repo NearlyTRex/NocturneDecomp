@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_litecone_cpp_CLightCone_renderTransparent_FUN_004c8200(CDemonActor *param_1)
+; int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_004c8200(CLightCone *this_ptr)
 ;
+; Parameters:
+; CLightCone *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

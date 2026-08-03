@@ -125,7 +125,7 @@ section .text
         ;   Label: LAB_00544fa0
     PUSH EDI                            ; 00544fa5
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00544fa6
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00544fab
     PUSH 0x596799                       ; 00544fae | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 00544fb3
@@ -269,7 +269,7 @@ section .text
         ;   Label: LAB_0054511b
     PUSH ESI                            ; 00545120
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00545121
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00545126
     PUSH 0x59680e                       ; 00545129 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 0054512e
@@ -336,7 +336,7 @@ section .text
         ;   Label: LAB_005451a6
     PUSH ESI                            ; 005451ab
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005451ac
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 005451b1
     PUSH 0x59681a                       ; 005451b4 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 005451b9
@@ -433,7 +433,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 005452ab
     PUSH EAX                            ; 005452af
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005452b0
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0xf3                        ; 005452b5
     ADD ESP,0x10                        ; 005452ba
     MOV [0x01cc4804],EAX                ; 005452bd | g_INT_01cc4804

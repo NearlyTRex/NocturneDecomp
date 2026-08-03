@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_spawnFlies_FUN_0042a120(CDemonActor *param_1,int param_2,float param_3)
+; void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_0042a120(CCharacter *this_ptr,int fly_count,float spawn_radius)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   fly_count
+; float            Stack[0xc]:4   spawn_radius
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_spawnFlies_FUN_0040b090

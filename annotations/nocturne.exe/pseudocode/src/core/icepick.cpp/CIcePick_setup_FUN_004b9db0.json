@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 22,
+        "line": 21,
         "message": "use of undeclared identifier '_DAT_01cae288'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 24,
+        "line": 23,
         "message": "use of undeclared identifier '_DAT_01cae28c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 26,
+        "line": 25,
         "message": "use of undeclared identifier '_DAT_01cae290'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 28,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_01cae294'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 30,
+        "line": 29,
         "message": "use of undeclared identifier '_DAT_01cae298'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 32,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_01cae29c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 34,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_01cae2a0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 36,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_01cae2a4'; did you mean 'DAT_005ae4a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 38,
+        "line": 37,
         "message": "use of undeclared identifier '_DAT_01cae2a8'; did you mean 'DAT_005ae4a8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 40,
+        "line": 39,
         "message": "use of undeclared identifier '_DAT_01cae2ac'; did you mean 'DAT_005ae4ac'?"
       }
     ],
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 239,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 15,
+    "pseudocode_lines": 61,
+    "suspect_count": 2,
     "suspect_types": [
       "raw_address_pointer_store",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 238
+    "total_lines": 225
   },
   "cross_references": [],
   "function": {
@@ -145,9 +144,9 @@
         "004b9fc4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_icepick.cpp_CIcePick_setup_FUN_004b9db0",
-    "signature": "void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CHero *param_1)"
+    "signature": "void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CIcePick *this_ptr)"
   },
   "function_calls": [
     {
@@ -394,9 +393,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -425,12 +424,20 @@
     "pcode_op_count": 498
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIcePick *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -442,116 +449,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CHero *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_hero_cpp_CHero_setup_FUN_004b48d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].secondary_bone_index = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[1].secondary_bone_index = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].bone_index = _DAT_01cae2bc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[1].bone_index = _DAT_01cae2c0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.position.y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 62,
-      "match": "*(CHero **)(iVar3 * 4 + 0x1cae0d8",
+      "line": 57,
+      "match": "*(CIcePick **)(iVar2 * 4 + 0x1cae0d8",
       "severity": "moderate",
-      "text": "pCVar1 = *(CHero **)(iVar3 * 4 + 0x1cae0d8);",
+      "text": "pCVar1 = *(CIcePick **)(iVar2 * 4 + 0x1cae0d8);",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = &param_1[1].base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = &param_1[1].base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.location.area_id = 0;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

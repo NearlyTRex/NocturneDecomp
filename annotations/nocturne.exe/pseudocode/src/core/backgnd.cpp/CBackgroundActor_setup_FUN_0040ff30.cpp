@@ -1,22 +1,19 @@
 // Name: core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30
 // Address: 0040ff30
 // Address Range: [[0040ff30, 0040ff6f]]
-// Convention: unknown
-// Signature: undefined8 core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CBackgroundActor *this_ptr)
 
 #include "nocturne.h"
 
-ulonglong core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CDemonActor *param_1)
+int __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CBackgroundActor *this_ptr)
 
 {
-  int iVar1;
-  uint uVar2;
+  uint uVar1;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)(param_1 + 1));
-  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
-  iVar1 = param_1[2].location.area_id;
-  uVar2 = (uint)(iVar1 == 0);
-  param_1->collision_disabled = uVar2;
-  return CONCAT44(iVar1,uVar2);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->model);
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
+  uVar1 = (uint)(this_ptr->collide_with_me == 0);
+  (this_ptr->base).collision_disabled = uVar1;
+  return uVar1;
 }

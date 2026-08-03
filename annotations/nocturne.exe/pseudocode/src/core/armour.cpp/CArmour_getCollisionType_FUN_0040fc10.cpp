@@ -1,14 +1,17 @@
 // Name: core_armour.cpp_CArmour_getCollisionType_FUN_0040fc10
 // Address: 0040fc10
 // Address Range: [[0040fc10, 0040fc22]]
-// Convention: unknown
-// Signature: void core_armour_cpp_CArmour_getCollisionType_FUN_0040fc10(CCharacter *param_1,SCollisionInfo *param_2)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_armour_cpp_CArmour_getCollisionType_FUN_0040fc10(CArmour *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-void core_armour_cpp_CArmour_getCollisionType_FUN_0040fc10(CCharacter *param_1,SCollisionInfo *param_2)
+ECollisionType __cdecl core_armour_cpp_CArmour_getCollisionType_FUN_0040fc10(CArmour *this_ptr,SCollisionInfo *collision_info)
 
 {
-  core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(param_1,param_2);
-  return;
+  ECollisionType EVar1;
+  
+  EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0
+                    ((CCharacter *)this_ptr,collision_info);
+  return EVar1;
 }

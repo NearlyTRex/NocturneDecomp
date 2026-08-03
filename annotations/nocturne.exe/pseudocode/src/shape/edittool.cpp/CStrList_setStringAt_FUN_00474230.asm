@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param_2,char *param_3)
+; void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(CStrList *this_ptr,int index,char *new_string)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
+; char *           Stack[0xc]:4   new_string
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ece7

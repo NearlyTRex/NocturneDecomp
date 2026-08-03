@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setutil_cpp_C3DSLight_apply_FUN_00515350(int param_1,CDemonLight *param_2)
+; void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_00515350(C3DSLight *this_ptr,CDemonLight *light)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508709

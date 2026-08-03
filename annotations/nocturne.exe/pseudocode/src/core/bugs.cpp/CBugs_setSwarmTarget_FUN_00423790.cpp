@@ -42,11 +42,9 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423790(CBugs *this_ptr,CDe
     do {
       pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
                          (this_ptr->deformable_model_ptr);
-      iVar5 = this_ptr->lod_index;
-      if (pCVar4->vertex_count[iVar5] < 0x2bd) {
+      if (pCVar4->vertex_count[this_ptr->lod_index] < 0x2bd) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s swarming on %s at LOD %d\n",this_ptr,target,iVar5
-                  );
+                  (g_CConsole_PTR_005ad350,"%s swarming on %s at LOD %d\n");
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
                            (this_ptr->deformable_model_ptr);
         core_bugs_cpp_FUN_004219f0
@@ -103,7 +101,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423790(CBugs *this_ptr,CDe
         } while (iVar7 < this_ptr->count);
         return;
       }
-      this_ptr->lod_index = iVar5 + 1;
+      this_ptr->lod_index = this_ptr->lod_index + 1;
       pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
                          (this_ptr->deformable_model_ptr);
     } while (this_ptr->lod_index < pCVar4->num_lods);

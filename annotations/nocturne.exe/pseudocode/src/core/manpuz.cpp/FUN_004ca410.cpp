@@ -13,10 +13,10 @@ void __cdecl core_manpuz_cpp_FUN_004ca410(CMansionPuzzleCircle *this_ptr)
   CMansionPuzzleCircle *pCVar2;
   CMansionPuzzleCircle *pCVar3;
   CMansionPuzzleCircle *pCVar4;
-  SGem *pSVar5;
-  float *pfVar6;
-  int iVar7;
-  float *pfVar8;
+  SGem *out_r;
+  float *out_b;
+  int iVar5;
+  float *out_g;
   
   pCVar2 = this_ptr;
   pCVar4 = this_ptr;
@@ -36,7 +36,7 @@ void __cdecl core_manpuz_cpp_FUN_004ca410(CMansionPuzzleCircle *this_ptr)
     pCVar2 = pCVar3;
   } while (pCVar3 != (CMansionPuzzleCircle *)&(this_ptr->base).orient);
   this_ptr->panels[0].color.b = 0xff;
-  iVar7 = this_ptr->panels[0].color.b;
+  iVar5 = this_ptr->panels[0].color.b;
   this_ptr->panels[1].color.r = 0xff;
   this_ptr->panels[2].color.r = 0xff;
   this_ptr->panels[3].exists = 0;
@@ -59,27 +59,27 @@ void __cdecl core_manpuz_cpp_FUN_004ca410(CMansionPuzzleCircle *this_ptr)
   this_ptr->laser_color_b[8] = 0xff;
   this_ptr->laser_color_b[9] = 0xff;
   this_ptr->laser_color_r[10] = 0xff;
-  this_ptr->panels[0].color.r = iVar7;
-  iVar7 = 0;
+  this_ptr->panels[0].color.r = iVar5;
+  iVar5 = 0;
   this_ptr->laser_color_r[0] = this_ptr->laser_color_b[0];
   this_ptr->laser_color_r[0xb] = 0xff;
-  pfVar6 = &this_ptr->gems[0].color.b;
-  pfVar8 = &this_ptr->gems[0].color.g;
+  out_b = &this_ptr->gems[0].color.b;
+  out_g = &this_ptr->gems[0].color.g;
   do {
-    pSVar5 = this_ptr->gems + iVar7;
+    out_r = this_ptr->gems + iVar5;
     core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
-              (this_ptr,iVar7,pSVar5,pfVar8,pfVar6);
-    (pSVar5->hum_color).b = 0.0;
-    iVar7 = iVar7 + 1;
-    (pSVar5->light).b = 0.0;
-    fVar1 = (pSVar5->light).b;
-    (pSVar5->hum_color).g = (pSVar5->hum_color).b;
-    (pSVar5->light).g = fVar1;
-    (pSVar5->hum_color).r = (pSVar5->hum_color).g;
-    (pSVar5->light).r = fVar1;
-    pfVar6 = pfVar6 + 0x2e;
-    pfVar8 = pfVar8 + 0x2e;
-  } while (iVar7 < 0xc);
+              (this_ptr,iVar5,(float *)out_r,out_g,out_b);
+    (out_r->hum_color).b = 0.0;
+    iVar5 = iVar5 + 1;
+    (out_r->light).b = 0.0;
+    fVar1 = (out_r->light).b;
+    (out_r->hum_color).g = (out_r->hum_color).b;
+    (out_r->light).g = fVar1;
+    (out_r->hum_color).r = (out_r->hum_color).g;
+    (out_r->light).r = fVar1;
+    out_b = out_b + 0x2e;
+    out_g = out_g + 0x2e;
+  } while (iVar5 < 0xc);
   this_ptr->reflectors[0].panel_index = 1;
   this_ptr->reflectors[1].interp_factor = 0.0;
   this_ptr->reflectors[1].panel_index = 0xb;

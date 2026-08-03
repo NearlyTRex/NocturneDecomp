@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CDemonActor *param_1,int param_2)
+; void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ;

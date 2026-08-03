@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,24 +52,24 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
+        "column": 62,
         "line": 23,
         "message": "use of undeclared identifier '_DAT_01b4d260'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
+        "column": 62,
         "line": 30,
         "message": "use of undeclared identifier '_DAT_01b4d274'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 79,
+        "column": 62,
         "line": 37,
         "message": "use of undeclared identifier '_DAT_01b4d27c'"
       }
@@ -80,15 +80,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 268,
+    "complexity_score": 83,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 22,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -103,9 +102,9 @@
         "0045aaa1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0",
-    "signature": "undefined4 core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(int param_1,CVector3f *param_2)"
+    "signature": "int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(CDraculaBride *this_ptr,CVector3f *out_points_array)"
   },
   "function_calls": [
     {
@@ -138,9 +137,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -168,10 +167,10 @@
     "pcode_op_count": 280
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 60,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -194,6 +193,20 @@
         "offset": -24,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDraculaBride *"
+      },
+      {
+        "is_param": true,
+        "name": "out_points_array",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -207,155 +220,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(int param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(int param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0xbdb0) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_24,_DAT_01b4d260);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_18,_DAT_01b4d274);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 1 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_30,_DAT_01b4d27c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 2 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2].x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2].y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2].z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 18,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2->x = pCVar1->x;",
+      "text": "out_points_array->x = pCVar1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -363,7 +232,7 @@
       "line": 25,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2[1].x = pCVar1->x;",
+      "text": "out_points_array[1].x = pCVar1->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -371,7 +240,7 @@
       "line": 32,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2[2].x = pCVar1->x;",
+      "text": "out_points_array[2].x = pCVar1->x;",
       "type": "unrolled_memcpy"
     }
   ],

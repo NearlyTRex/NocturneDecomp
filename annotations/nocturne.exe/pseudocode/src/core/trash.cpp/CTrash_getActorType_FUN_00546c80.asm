@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_trash_cpp_CTrash_getActorType_FUN_00546c80(void)
+; CDemonActorType * __cdecl core_trash_cpp_CTrash_getActorType_FUN_00546c80(CTrash *this_ptr)
 ;
+; Parameters:
+; CTrash *         Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

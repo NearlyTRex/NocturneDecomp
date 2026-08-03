@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bride_cpp_CBride_archive_FUN_00420970(CEnemy *param_1)
+; void __cdecl core_bride_cpp_CBride_archive_FUN_00420970(CBride *this_ptr)
 ;
+; Parameters:
+; CBride *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00579b85

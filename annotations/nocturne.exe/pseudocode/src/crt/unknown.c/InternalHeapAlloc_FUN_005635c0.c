@@ -14,6 +14,7 @@ void * __cdecl InternalHeapAlloc(ulong size)
   void *pvVar3;
   int iVar4;
   uint uVar5;
+  ushort in_DS;
   void *pvStack_28;
   uint local_24;
   
@@ -44,7 +45,7 @@ void * __cdecl InternalHeapAlloc(ulong size)
         uVar1 = *(uint *)(uVar5 + 0x14);
         DAT_005c1684 = uVar5;
         if ((size <= uVar1) &&
-           (pvStack_28 = (void *)AllocateFromFreeList(),
+           (pvStack_28 = (void *)AllocateFromFreeList(size,in_DS),
            pvStack_28 != (void *)0x0)) goto LAB_005636b0;
         if (DAT_005c1688 < uVar1) {
           DAT_005c1688 = uVar1;

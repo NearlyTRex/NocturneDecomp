@@ -25,11 +25,8 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(CGame *this_ptr)
   double dVar11;
   char *pcVar12;
   char acStack_158 [256];
-  byte auStack_58 [28];
-  uint uStack_3c;
-  uint uStack_38;
+  byte auStack_58 [36];
   int iStack_34;
-  uint uStack_30;
   int local_2c;
   int local_28;
   int local_24;
@@ -100,7 +97,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(CGame *this_ptr)
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
   uVar7 = 0;
-  _sprintf(acStack_158,"%2d:%2d:%2d.%2d\n\n",uStack_30,uStack_3c,uStack_38,iStack_34);
+  _sprintf(acStack_158,"%2d:%2d:%2d.%2d\n\n");
   do {
     uVar5 = 0xffffffff;
     pcVar12 = acStack_158;
@@ -179,7 +176,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(CGame *this_ptr)
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  _sprintf(acStack_158,"%d\n\n",*(uint *)(unaff_EDI + 0x24c));
+  _sprintf(acStack_158,"%d\n\n");
   this_ptr_00 = g_CBitFont_PTR_014b9900;
   pcVar12 = acStack_158;
   iVar4 = -1;

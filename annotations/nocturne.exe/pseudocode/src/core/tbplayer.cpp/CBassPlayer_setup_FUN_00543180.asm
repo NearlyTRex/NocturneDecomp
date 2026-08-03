@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180(CNPC *param_1)
+; void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180(CBassPlayer *this_ptr)
 ;
+; Parameters:
+; CBassPlayer *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_L_Hand_005964a0

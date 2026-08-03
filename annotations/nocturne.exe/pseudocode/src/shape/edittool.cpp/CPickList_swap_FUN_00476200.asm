@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CPickList_swap_FUN_00476200(CStrList *param_1,int param_2,int param_3)
+; void __cdecl shape_edittool_cpp_CPickList_swap_FUN_00476200(CPickList *this_ptr,int index1,int index2)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index1
+; int              Stack[0xc]:4   index2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057f012

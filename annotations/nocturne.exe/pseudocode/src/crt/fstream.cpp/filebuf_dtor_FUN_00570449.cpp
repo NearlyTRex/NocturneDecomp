@@ -21,7 +21,7 @@ filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_00570449(filebuf *this
         FUN_0056cd52(this_ptr);
       }
     }
-    this_ptr = (filebuf *)crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(this_ptr,1);
+    this_ptr = (filebuf *)crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(&this_ptr->_streambuf);
     if ((flags & 2) == 0) {
       return this_ptr;
     }

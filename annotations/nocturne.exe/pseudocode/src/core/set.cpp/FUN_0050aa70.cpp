@@ -46,9 +46,9 @@ void __cdecl core_set_cpp_FUN_0050aa70(CDemonSet *this_ptr)
     } while (iVar4 < _DAT_01fba2d8);
   }
   iVar5 = _DAT_01fb9b54 + _DAT_01fba2d8;
-  _sprintf(local_110,"%d omni lights",_DAT_01fba9a4);
+  _sprintf(local_110,"%d omni lights");
   engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5]);
-  _sprintf(local_110,"%d spot lights",_DAT_01fb9b54);
+  _sprintf(local_110,"%d spot lights");
   engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5] + 0xb);
   return;
 }

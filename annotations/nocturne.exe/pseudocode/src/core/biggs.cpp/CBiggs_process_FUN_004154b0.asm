@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_biggs_cpp_CBiggs_process_FUN_004154b0(CCharacter *param_1,float param_2)
+; void __cdecl core_biggs_cpp_CBiggs_process_FUN_004154b0(CBiggs *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBiggs *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -268,7 +271,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 00415728 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 0041572e | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0041572f
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00415570                      ; 00415734
         ;   XREF to: 00415570 (UNCONDITIONAL_JUMP)  ; LAB_00415570
     JBE 0x00415560                      ; 00415739

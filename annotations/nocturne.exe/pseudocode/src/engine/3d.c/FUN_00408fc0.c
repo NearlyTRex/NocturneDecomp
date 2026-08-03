@@ -16,7 +16,7 @@ void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
   byte bVar3;
   int iVar4;
   int iVar5;
-  byte local_110 [256];
+  char local_110 [256];
   
   cVar2 = (char)(param_1->base).type;
   DAT_00761ec4 = 0;
@@ -31,7 +31,8 @@ void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
               puVar1 = (uint *)((int)&DAT_00761ec8 + iVar4);
               iVar4 = iVar4 + 4;
               iVar5 = iVar5 + 1;
-              engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(*puVar1);
+              engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120
+                        ((SMRGLHeaderPrimitive *)*puVar1);
             } while (iVar5 < DAT_00761ec4);
           }
         }
@@ -57,7 +58,7 @@ void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
         }
         else {
 LAB_004091a2:
-          _sprintf(local_110,"Unknown primitive : %d",(char)(param_1->base).type);
+          _sprintf(local_110,"Unknown primitive : %d");
           g_INT_01cc4804 = 0xdd3;
           g_CHAR_PTR_01cc4800 = "..\\engine\\3d.c";
           core_main_c_FUN_004c8440(local_110);
@@ -77,7 +78,8 @@ LAB_004091a2:
                 puVar1 = (uint *)((int)&DAT_00761ec8 + iVar5);
                 iVar5 = iVar5 + 4;
                 iVar4 = iVar4 + 1;
-                engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(*puVar1);
+                engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120
+                          ((SMRGLHeaderPrimitive *)*puVar1);
               } while (iVar4 < DAT_00761ec4);
             }
           }

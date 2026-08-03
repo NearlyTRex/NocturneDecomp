@@ -71,7 +71,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004dd7d4
     PUSH EAX                            ; 004dd7d8
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004dd7d9
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x2ee                       ; 004dd7de
     ADD ESP,0xc                         ; 004dd7e3
     MOV [0x01cc4804],EAX                ; 004dd7e6 | g_INT_01cc4804
@@ -128,7 +128,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004dd861
     PUSH EAX                            ; 004dd865
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004dd866
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EDX,0x58a684                    ; 004dd86b | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 004dd870
     MOV EAX,ESP                         ; 004dd873

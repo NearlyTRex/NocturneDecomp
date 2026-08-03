@@ -1,14 +1,14 @@
 // Name: core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_004649dd
 // Address: 004649dd
 // Address Range: [[004649dd, 00464afb]]
-// Convention: unknown
-// Signature: void core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(void)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(void)
+void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 {
 __asm {
         mov EAX,dword ptr [ESI + 0x8]

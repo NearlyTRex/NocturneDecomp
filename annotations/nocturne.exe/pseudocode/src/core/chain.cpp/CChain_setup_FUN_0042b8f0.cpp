@@ -1,12 +1,12 @@
 // Name: core_chain.cpp_CChain_setup_FUN_0042b8f0
 // Address: 0042b8f0
 // Address Range: [[0042b8f0, 0042ba95]]
-// Convention: unknown
-// Signature: void core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *this_ptr)
 
 #include "nocturne.h"
 
-void core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *param_1)
+void __cdecl core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *this_ptr)
 
 {
   CLocation *pCVar1;
@@ -26,26 +26,26 @@ void core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *param_1)
   float local_2c;
   float local_28;
   
-  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&param_1->base);
-  if (param_1->target != (CDemonActor *)0x0) {
-    pCVar9 = core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(param_1,&CStack_3c);
-    pCVar1 = &(param_1->base).location;
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
+  if (this_ptr->target != (CDemonActor *)0x0) {
+    pCVar9 = core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(this_ptr,&CStack_3c);
+    pCVar1 = &(this_ptr->base).location;
     fVar2 = pCVar9->x;
     fVar3 = (pCVar1->position).x;
     fVar4 = pCVar9->y;
-    fVar5 = (param_1->base).location.position.y;
+    fVar5 = (this_ptr->base).location.position.y;
     fVar6 = pCVar9->z;
-    fVar7 = (param_1->base).location.position.z;
+    fVar7 = (this_ptr->base).location.position.z;
     local_30 = (pCVar1->position).x;
-    local_2c = (param_1->base).location.position.y;
-    local_28 = (param_1->base).location.position.z;
-    fVar8 = 1.0 / (float)(param_1->vertex_count + -1);
+    local_2c = (this_ptr->base).location.position.y;
+    local_28 = (this_ptr->base).location.position.z;
+    fVar8 = 1.0 / (float)(this_ptr->vertex_count + -1);
     iVar10 = 0;
-    if (0 < param_1->vertex_count) {
-      pCVar9 = &param_1->vertices[0].prev_position;
-      pCVar11 = &param_1->vertices[0].velocity;
+    if (0 < this_ptr->vertex_count) {
+      pCVar9 = &this_ptr->vertices[0].prev_position;
+      pCVar11 = &this_ptr->vertices[0].velocity;
       do {
-        pSVar12 = param_1->vertices + iVar10;
+        pSVar12 = this_ptr->vertices + iVar10;
         if (pSVar12 != (SChainVertex *)&local_30) {
           (pSVar12->position).x = local_30;
           (pSVar12->position).y = local_2c;
@@ -56,7 +56,7 @@ void core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *param_1)
         local_28 = local_28 + (fVar6 - fVar7) * fVar8;
         pCVar11->z = 0.0;
         pCVar11->y = pCVar11->z;
-        pSVar12 = param_1->vertices + iVar10;
+        pSVar12 = this_ptr->vertices + iVar10;
         pCVar11->x = pCVar11->y;
         if ((SChainVertex *)pCVar9 != pSVar12) {
           pCVar11[1].x = (pSVar12->position).x;
@@ -66,14 +66,14 @@ void core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *param_1)
         pCVar9 = pCVar9 + 3;
         iVar10 = iVar10 + 1;
         pCVar11 = pCVar11 + 3;
-      } while (iVar10 < param_1->vertex_count);
+      } while (iVar10 < this_ptr->vertex_count);
     }
   }
-  param_1->pull_wav_handle = 0;
-  param_1->move_wav_handle = 0;
-  param_1->sound_cooldown = 0.0;
-  param_1->cached_distance = -9999.9;
-  param_1->is_visible = 0;
-  param_1->segment_length = param_1->chain_length / (float)(param_1->vertex_count + -1);
+  this_ptr->pull_wav_handle = 0;
+  this_ptr->move_wav_handle = 0;
+  this_ptr->sound_cooldown = 0.0;
+  this_ptr->cached_distance = -9999.9;
+  this_ptr->is_visible = 0;
+  this_ptr->segment_length = this_ptr->chain_length / (float)(this_ptr->vertex_count + -1);
   return;
 }

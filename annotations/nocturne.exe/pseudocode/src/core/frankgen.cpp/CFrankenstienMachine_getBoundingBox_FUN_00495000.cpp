@@ -1,27 +1,26 @@
 // Name: core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000
 // Address: 00495000
 // Address Range: [[00495000, 00495075]]
-// Convention: unknown
-// Signature: float * core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-float * core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000(int param_1,float *param_2)
+CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
 
 {
   CKeyFramedModel *pCVar1;
   CBoundingBox3D *pCVar2;
   double dVar3;
   
-  dVar3 = round((double)*(float *)(param_1 + 0x178));
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     ((CKeyFramedModelInstance *)(param_1 + 0x17c));
+  dVar3 = round((double)this_ptr->part_frame);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->bed_model);
   pCVar2 = pCVar1->frame_bounds + (int)ROUND(dVar3);
-  *param_2 = (pCVar2->min).x;
-  param_2[1] = (pCVar2->min).y;
-  param_2[2] = (pCVar2->min).z;
-  param_2[3] = (pCVar2->max).x;
-  param_2[4] = (pCVar2->max).y;
-  param_2[5] = (pCVar2->max).z;
-  return param_2;
+  (out_box->min).x = (pCVar2->min).x;
+  (out_box->min).y = (pCVar2->min).y;
+  (out_box->min).z = (pCVar2->min).z;
+  (out_box->max).x = (pCVar2->max).x;
+  (out_box->max).y = (pCVar2->max).y;
+  (out_box->max).z = (pCVar2->max).z;
+  return out_box;
 }

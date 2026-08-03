@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_CFootstep_render_FUN_004afa20(undefined4 *param_1)
+; void __cdecl core_gore_cpp_CFootstep_render_FUN_004afa20(CFootstep *this_ptr,int expire_flag)
 ;
+; Parameters:
+; CFootstep *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   expire_flag
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

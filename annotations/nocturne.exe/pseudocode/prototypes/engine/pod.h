@@ -41,7 +41,7 @@ int __cdecl CPodFile::findFileIndex(CPodFile *this_ptr,char *filename);
 
 // Original: engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0
 // Address: 004f81c0
-void CPodFile::populateFileInfo(int param_1,int param_2,int param_3);
+void __cdecl CPodFile::populateFileInfo(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 
 // Original: engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
 // Address: 004f8240
@@ -53,7 +53,7 @@ void CPodFile::getAuditRecord(int param_1,int param_2);
 
 // Original: engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0
 // Address: 004f86a0
-uint CPodFile::computeFileCRC(int param_1,int param_2);
+uint __cdecl CPodFile::computeFileCRC(CPodFile *this_ptr,int file_index);
 
 // Original: engine_pod.cpp_CPod_ctor_FUN_004f8810
 // Address: 004f8810
@@ -65,11 +65,11 @@ CPod * __cdecl CPod::dtor(CPod *this_ptr,uint flags);
 
 // Original: engine_pod.cpp_CPod_load_FUN_004f8870
 // Address: 004f8870
-void CPod::load(void);
+void __cdecl CPod::load(CPod *this_ptr);
 
 // Original: engine_pod.cpp_CPod_mount_FUN_004f88a0
 // Address: 004f88a0
-void CPod::mount(int *param_1,undefined4 param_2);
+void __cdecl CPod::mount(CPod *this_ptr,char *pod_filename);
 
 // Original: engine_pod.cpp_CPod_remount_FUN_004f8970
 // Address: 004f8970
@@ -89,7 +89,7 @@ void __cdecl CPod::cleanup(CPod *this_ptr);
 
 // Original: engine_pod.cpp_findFilesByExtension_FUN_004f8b90
 // Address: 004f8b90
-int findFilesByExtension(int *param_1,byte *param_2,int param_3,int param_4,int param_5);
+int __cdecl findFilesByExtension(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length);
 
 // Original: engine_pod.cpp_CPod_initSearch_FUN_004f8d50
 // Address: 004f8d50

@@ -17,7 +17,7 @@ CBodyPart * __cdecl factoryFunc(void);
 
 // Original: core_bodypart.cpp_CBodyPart_getActorType_FUN_00415d10
 // Address: 00415d10
-CDemonActorType * CBodyPart::getActorType(void);
+CDemonActorType * __cdecl CBodyPart::getActorType(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
 // Address: 00415d20
@@ -29,7 +29,7 @@ CBodyPart * __cdecl CBodyPart::dtor(CBodyPart *this_ptr,uint flags);
 
 // Original: core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0
 // Address: 00415ee0
-void CBodyPart::setCounts(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CBodyPart::setCounts(CBodyPart *this_ptr,int vertex_count,int tri_count);
 
 // Original: core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030
 // Address: 00416030
@@ -37,27 +37,27 @@ void __cdecl CBodyPart::renderGeometry(CBodyPart *this_ptr,int render_flags);
 
 // Original: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004161a0
 // Address: 004161a0
-int CBodyPart::renderOpaque(CBodyPart *param_1);
+int __cdecl CBodyPart::renderOpaque(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_renderBackground_FUN_00416300
 // Address: 00416300
-void CBodyPart::renderBackground(CBodyPart *param_1,int param_2);
+void __cdecl CBodyPart::renderBackground(CBodyPart *this_ptr,int layer_flag);
 
 // Original: core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00416430
 // Address: 00416430
-undefined4 CBodyPart::renderTransparent(CBodyPart *param_1);
+int __cdecl CBodyPart::renderTransparent(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_setup_FUN_00416500
 // Address: 00416500
-void CBodyPart::setup(CDemonActor *param_1);
+void __cdecl CBodyPart::setup(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_archive_FUN_00416570
 // Address: 00416570
-void CBodyPart::archive(CBodyPart *param_1);
+void __cdecl CBodyPart::archive(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_process_FUN_004168d0
 // Address: 004168d0
-void CBodyPart::process(CBodyPart *param_1,float param_2);
+void __cdecl CBodyPart::process(CBodyPart *this_ptr,float delta_time);
 
 // Original: core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00
 // Address: 00416b00
@@ -65,27 +65,27 @@ void __cdecl CBodyPart::processFires(CBodyPart *this_ptr,float delta_time);
 
 // Original: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00416c40
 // Address: 00416c40
-undefined4 CBodyPart::getCollisionType(void);
+ECollisionType __cdecl CBodyPart::getCollisionType(CBodyPart *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00416c50
 // Address: 00416c50
-undefined4 * CBodyPart::getBoundingBox(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CBodyPart::getBoundingBox(CBodyPart *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bodypart.cpp_CBodyPart_canPickup_FUN_00416c90
 // Address: 00416c90
-undefined4 CBodyPart::canPickup(int param_1);
+int __cdecl CBodyPart::canPickup(CBodyPart *this_ptr,CDemonActor *picker);
 
 // Original: core_bodypart.cpp_CBodyPart_pickup_FUN_00416cb0
 // Address: 00416cb0
-void CBodyPart::pickup(int param_1,undefined4 param_2);
+void __cdecl CBodyPart::pickup(CBodyPart *this_ptr,CDemonActor *carrier);
 
 // Original: core_bodypart.cpp_CBodyPart_onDropped_FUN_00416cc0
 // Address: 00416cc0
-void CBodyPart::onDropped(int param_1,CVector3f *param_2);
+void __cdecl CBodyPart::onDropped(CBodyPart *this_ptr,CVector3f *drop_position);
 
 // Original: core_bodypart.cpp_CBodyPart_getCarrier_FUN_00416d30
 // Address: 00416d30
-undefined4 CBodyPart::getCarrier(int param_1);
+CDemonActor * __cdecl CBodyPart::getCarrier(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
 // Address: 00416d40
@@ -113,7 +113,7 @@ int __cdecl CBodyPart::addTexture(CBodyPart *this_ptr,char *texture_name);
 
 // Original: core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70
 // Address: 00417d70
-void CBodyPart::setupPhysicsBox(CDemonActor *param_1);
+void __cdecl CBodyPart::setupPhysicsBox(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0
 // Address: 00417eb0
@@ -121,7 +121,7 @@ void __cdecl CBodyPart::spawnGore(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_00417ef0
 // Address: 00417ef0
-int CBodyPart::getAllowedMeleeAttackTypes(CDemonActor *param_1);
+int __cdecl CBodyPart::getAllowedMeleeAttackTypes(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10
 // Address: 00417f10

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_armour_cpp_CArmour_getCollisionType_FUN_0040fc10(CCharacter *param_1,SCollisionInfo *param_2)
+; ECollisionType __cdecl core_armour_cpp_CArmour_getCollisionType_FUN_0040fc10(CArmour *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CArmour *        Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0

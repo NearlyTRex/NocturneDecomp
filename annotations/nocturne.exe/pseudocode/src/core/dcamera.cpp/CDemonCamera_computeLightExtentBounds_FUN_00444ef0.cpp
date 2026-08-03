@@ -1,49 +1,48 @@
 // Name: core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0
 // Address: 00444ef0
 // Address Range: [[00444ef0, 00444f82]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0(int param_1,int param_2)
+// Convention: __stack2_esi
+// Signature: CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
 
 #include "nocturne.h"
 
-void core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0(int param_1,int param_2)
+CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
 
 {
-  uint uVar1;
-  uint *unaff_ESI;
+  int iVar1;
   uint uStack_1c;
   uint uStack_18;
-  uint uStack_14;
-  uint uStack_10;
+  int iStack_14;
+  int iStack_10;
   
-  uVar1 = 0;
+  iVar1 = 0;
   uStack_18 = 0;
-  uStack_14 = 9999;
-  uStack_10 = 0;
+  iStack_14 = 9999;
+  iStack_10 = 0;
   uStack_1c = 9999;
-  if (0 < *(int *)(param_1 + 0x154)) {
+  if (0 < this_ptr->display_height) {
     do {
-      if (*(uint *)(param_2 + 0x14c8) <= *(uint *)(param_2 + 0x1888)) {
-        if ((int)uVar1 < (int)uStack_14) {
-          uStack_14 = uVar1;
+      if ((uint)light->left_extent[0] <= (uint)light->right_extent[0]) {
+        if (iVar1 < iStack_14) {
+          iStack_14 = iVar1;
         }
-        if ((int)uStack_10 < (int)uVar1) {
-          uStack_10 = uVar1;
+        if (iStack_10 < iVar1) {
+          iStack_10 = iVar1;
         }
-        if (*(uint *)(param_2 + 0x14c8) < uStack_1c) {
-          uStack_1c = *(uint *)(param_2 + 0x14c8);
+        if ((uint)light->left_extent[0] < uStack_1c) {
+          uStack_1c = light->left_extent[0];
         }
-        if (uStack_18 < *(uint *)(param_2 + 0x1888)) {
-          uStack_18 = *(uint *)(param_2 + 0x1888);
+        if (uStack_18 < (uint)light->right_extent[0]) {
+          uStack_18 = light->right_extent[0];
         }
       }
-      uVar1 = uVar1 + 1;
-      param_2 = param_2 + 4;
-    } while ((int)uVar1 < *(int *)(param_1 + 0x154));
+      iVar1 = iVar1 + 1;
+      light = (CDemonLight *)((light->base).camera_name + 4);
+    } while (iVar1 < this_ptr->display_height);
   }
-  *unaff_ESI = uStack_1c;
-  unaff_ESI[1] = uStack_18;
-  unaff_ESI[2] = uStack_14;
-  unaff_ESI[3] = uStack_10;
-  return;
+  out_bounds->x_min = uStack_1c;
+  out_bounds->x_max = uStack_18;
+  out_bounds->y_min = iStack_14;
+  out_bounds->y_max = iStack_10;
+  return out_bounds;
 }

@@ -1,16 +1,16 @@
 // Name: core_vessel.cpp_CCryptVessel_onDropped_FUN_0054fc10
 // Address: 0054fc10
 // Address Range: [[0054fc10, 0054fc2c]]
-// Convention: unknown
-// Signature: void core_vessel_cpp_CCryptVessel_onDropped_FUN_0054fc10(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_vessel_cpp_CCryptVessel_onDropped_FUN_0054fc10(CCryptVessel *this_ptr,CVector3f *drop_position)
 
 #include "nocturne.h"
 
-void core_vessel_cpp_CCryptVessel_onDropped_FUN_0054fc10(int param_1)
+void __cdecl core_vessel_cpp_CCryptVessel_onDropped_FUN_0054fc10(CCryptVessel *this_ptr,CVector3f *drop_position)
 
 {
-  *(uint *)(param_1 + 0x30) = 0;
-  *(uint *)(param_1 + 0x38) = 0;
-  *(uint *)(param_1 + 0x2cc) = 0;
+  (this_ptr->base).orient.vec.x = 0.0;
+  (this_ptr->base).orient.vec.z = 0.0;
+  this_ptr->carrier = (CDemonActor *)0x0;
   return;
 }

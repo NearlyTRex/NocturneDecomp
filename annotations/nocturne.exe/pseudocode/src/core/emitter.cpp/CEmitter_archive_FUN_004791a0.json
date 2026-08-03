@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 339,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 27,
-    "suspect_types": [
-      "pointer_cast",
-      "primitive_walker_cast",
-      "unnamed_param"
-    ],
-    "total_lines": 212
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 199
   },
   "cross_references": [],
   "function": {
@@ -85,9 +81,9 @@
         "00479371"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_emitter.cpp_CEmitter_archive_FUN_004791a0",
-    "signature": "void core_emitter_cpp_CEmitter_archive_FUN_004791a0(CDemonActor *param_1)"
+    "signature": "void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004791a0(CEmitter *this_ptr)"
   },
   "function_calls": [
     {
@@ -246,9 +242,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -278,231 +274,22 @@
     "pcode_op_count": 514
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEmitter *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_emitter_cpp_CEmitter_archive_FUN_004791a0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 1),\"emitterType\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CVector3f *)(param_1[1].actor_name + 4),\"emitterSize\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].actor_name + 0x14,\"eventOn\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].create_event,\"eventOff\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[1].actor_name + 0x10),\"emitterState\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)param_1[1].actor_name == 3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 17,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[1].platform_position_delta.y,\"laserR\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[1].platform_position_delta.y,\"laserR\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 19,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[1].platform_position_delta.z,\"laserG\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[1].platform_position_delta.z,\"laserG\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 21,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[1].platform_orientation_delta,\"laserB\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[1].platform_orientation_delta,\"laserB\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 24,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[1].platform_position_delta,\"laserType\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[1].platform_position_delta,\"laserType\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)&param_1[1].standing_platform,\"maxEmitTime\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[3].orient_matrix.m[1].y,\"emitPeriod\")",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&param_1[1].platform_orientation_delta.y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)param_1[2].footstep_sound_code,\"rockSpeed\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1[2].dead1,\"periodicFlag\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].dead2,\"maxWaitTime\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor **)&param_1[2].previous_transform_state,\"destActor\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)&param_1[2].previous_transform_state.position.y,\"wavName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 54,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[3].orient_matrix.m[0].z,\"sfxType\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[3].orient_matrix.m[0].z,\"sfxType\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 13,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "((int *)(param_1[1].actor_name + 0x10),\"emitterState\");",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

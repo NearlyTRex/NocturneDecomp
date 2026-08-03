@@ -16,7 +16,7 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   int iVar5;
   byte bVar6;
   int aiStackY_101c [1015];
-  int local_34;
+  CVector3i local_34;
   CVector3f local_28;
   int local_1c;
   int local_18 [2];
@@ -38,12 +38,12 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   }
   iVar4 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-            (&g_CDemonRaytrace_01fba938,location);
+            (&g_CDemonRaytrace_01fba938,&location->position,&local_34);
   iVar2 = 0;
-  local_1c = local_34;
-  local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 * -8);
+  local_1c = local_34.x;
+  local_18[(uint)bVar6 * -2] = *(int *)((int)&local_34 + (uint)bVar6 * -8 + 4);
   local_18[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-       *(int *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+       *(int *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   iVar3 = 0;
   iVar1 = 0;
   do {

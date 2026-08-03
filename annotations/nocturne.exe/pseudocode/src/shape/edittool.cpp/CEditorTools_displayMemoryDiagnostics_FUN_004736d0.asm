@@ -128,7 +128,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x18]      ; 0047377d
     PUSH ECX                            ; 00473780
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00473781
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x1c                        ; 00473786
     MOV ESP,EBP                         ; 00473789
     POP EBP                             ; 0047378b

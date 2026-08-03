@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,19 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 44,
+        "line": 32,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 27,
-        "line": 34,
+        "line": 33,
         "message": "no matching function for call to 'core_sound_cpp_FUN_0052ebc0'"
       }
     ],
@@ -68,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 74,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 58,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 218
+    "total_lines": 217
   },
   "cross_references": [
     {
@@ -326,7 +332,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + local_18),",

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_course_cpp_fmodfPositive_FUN_0043b510(float param_1,float param_2)
+; float __cdecl core_course_cpp_fmodfPositive_FUN_0043b510(float value,float modulus)
 ;
+; Parameters:
+; float            Stack[0x4]:4   value
+; float            Stack[0x8]:4   modulus
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005648c0

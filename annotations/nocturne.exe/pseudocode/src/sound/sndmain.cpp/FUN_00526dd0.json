@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 26,
-        "line": 20,
-        "message": "no matching function for call to 'sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0'"
       }
     ],
     "success": false,
@@ -68,20 +62,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 121,
+    "complexity_score": 142,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 21,
-    "suspect_count": 8,
+    "pseudocode_lines": 22,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 51
+    "total_lines": 52
   },
   "cross_references": [],
   "function": {
@@ -164,7 +158,7 @@
         {
           "check_id": "uninitvar",
           "column": 6,
-          "line": 26,
+          "line": 27,
           "message": "Uninitialized variable: in_stack_00000008",
           "severity": "error"
         }
@@ -177,6 +171,14 @@
     {
       "description": "Unresolved stack parameter",
       "line": 10,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "int *in_stack_00000008;",
@@ -184,7 +186,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 14,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(in_stack_00000004,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "*in_stack_00000008 = (this_ptr->options).channel_index;",
@@ -192,7 +202,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(CSfxSlot *)((int)this_ptr",
       "severity": "moderate",
       "text": "this_ptr = (CSfxSlot *)((int)this_ptr + (uint)bVar2 * -8 + 4);",
@@ -200,7 +210,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 22,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar2 * -2 + 1;",
@@ -208,7 +218,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 22,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar2 * -2 + 1;",
@@ -216,7 +226,7 @@
     },
     {
       "description": "Pointer value `this_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
+      "line": 21,
       "match": "(int)this_ptr",
       "severity": "moderate",
       "text": "this_ptr = (CSfxSlot *)((int)this_ptr + (uint)bVar2 * -8 + 4);",
@@ -224,7 +234,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 18,
+      "line": 19,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x1b; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -240,7 +250,7 @@
     },
     {
       "description": "Uninitialized variable: in_stack_00000008",
-      "line": 26,
+      "line": 27,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*in_stack_00000008 = (this_ptr->options).channel_index;",

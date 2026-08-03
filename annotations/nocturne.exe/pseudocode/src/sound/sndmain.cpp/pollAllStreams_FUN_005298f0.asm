@@ -58,7 +58,7 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 00529939
     PUSH EBX                            ; 0052993d
     CALL sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 ; 0052993e
-        ;   XREF to: 00523ea0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0()
+        ;   XREF to: 00523ea0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample * this_ptr, float time_window, float update_interval)
     ADD EBX,0x168                       ; 00529943
     ADD ESP,0xc                         ; 00529949
     CMP EBX,ESI                         ; 0052994c

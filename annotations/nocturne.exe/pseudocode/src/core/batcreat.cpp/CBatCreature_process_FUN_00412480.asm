@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batcreat_cpp_CBatCreature_process_FUN_00412480(CEnemy *param_1,float param_2)
+; void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00412480(CBatCreature *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBatCreature *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x13c]:1  local_13c
 ; undefined4       Stack[-0x138]:4  local_138
@@ -303,7 +306,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 004126ca | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 004126d0 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004126d1
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00412560                      ; 004126d6
         ;   XREF to: 00412560 (UNCONDITIONAL_JUMP)  ; LAB_00412560
     JBE 0x00412550                      ; 004126db

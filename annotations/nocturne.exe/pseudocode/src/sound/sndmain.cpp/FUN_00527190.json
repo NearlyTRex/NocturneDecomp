@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 24,
-        "message": "incompatible pointer to integer conversion assigning to 'int' from 'CSfxSlot *'"
       }
     ],
     "success": false,
@@ -184,13 +178,20 @@
   "static_analysis": {
     "analyzed_file": "FUN_00527190.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 1,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "check_id": "uninitvar",
           "column": 8,
           "line": 19,
           "message": "Uninitialized variable: in_stack_00000008",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 51,
+          "line": 28,
+          "message": "Uninitialized variable: in_stack_0000000c",
           "severity": "error"
         }
       ],
@@ -220,7 +221,7 @@
       "line": 10,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "uint in_stack_0000000c;",
+      "text": "void *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -244,7 +245,7 @@
       "line": 17,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "iVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(in_stack_00000004,1);",
+      "text": "pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(in_stack_00000004,1);",
       "type": "stack_param"
     },
     {
@@ -252,7 +253,7 @@
       "line": 21,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + in_stack_00000008 * 4 + 0x54) = in_stack_0000000c;",
+      "text": "(pCVar1->options).userdata[in_stack_00000008] = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -260,7 +261,7 @@
       "line": 21,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + in_stack_00000008 * 4 + 0x54) = in_stack_0000000c;",
+      "text": "(pCVar1->options).userdata[in_stack_00000008] = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -269,6 +270,14 @@
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((in_stack_00000008 < 0) || (1 < in_stack_00000008)) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000000c",
+      "line": 28,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(pCVar1->options).userdata[in_stack_00000008] = in_stack_0000000c;",
       "type": "static_uninitvar"
     }
   ]

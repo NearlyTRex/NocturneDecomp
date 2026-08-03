@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drip_cpp_CDrip_setup_FUN_00462140(int param_1)
+; void __cdecl core_drip_cpp_CDrip_setup_FUN_00462140(CDrip *this_ptr)
 ;
+; Parameters:
+; CDrip *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

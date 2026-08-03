@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CHero *param_1)
+; void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CIcePick *this_ptr)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_00586017

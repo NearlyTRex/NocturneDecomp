@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 8,
-        "line": 55,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 55,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -74,21 +62,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 417,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
-    "suspect_count": 32,
+    "pseudocode_lines": 71,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_truncation",
-      "unnamed_param",
-      "unresolved_funcptr",
+      "shadow_pointer_walk",
+      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 230
+    "total_lines": 229
   },
   "cross_references": [],
   "function": {
@@ -99,9 +86,9 @@
         "004ef887"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_passngr.cpp_CPassenger_setup_FUN_004ef6d0",
-    "signature": "void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CNPC *param_1)"
+    "signature": "void __cdecl core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CPassenger *this_ptr)"
   },
   "function_calls": [
     {
@@ -183,9 +170,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -216,12 +203,20 @@
     "pcode_op_count": 582
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPassenger *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -233,252 +228,36 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CNPC *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_npc_cpp_CNPC_setup_FUN_004ee9e0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[1].base.base.scale.x == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar4 = param_1[1].base.base.create_event + 0xc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.base.scale.x = (int)pCVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = param_1[1].base.base.scale.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(iVar5 + 0x20) = (param_1->base).base.location.position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(iVar5 + 0x24) = (param_1->base).base.location.position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(iVar5 + 0x28) = (param_1->base).base.location.position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(iVar5 + 0x2c) = (param_1->base).base.location.area_id;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = param_1[1].base.base.scale.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pUVar1 = &(param_1->base).base.orient;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(iVar5 + 0x34) = (param_1->base).base.orient.vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(iVar5 + 0x38) = (param_1->base).base.orient.vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(char *)&param_1[1].base.base.health);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1[1].base.base.scale.x + 0x2614) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x53].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = param_1[1].base.base.scale.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)(iVar5 + 0x14c))(iVar5);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMotionController *)(param_1[1].base.base.scale.x + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMotionController *)(param_1[1].base.base.scale.x + 0x150),iVar5,0.0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = &param_1[1].base.base.scale.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x53].y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
-      "match": "(int)pCVar3",
-      "severity": "moderate",
-      "text": "param_1[1].base.base.scale.x = (int)pCVar3;",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 21,
+      "line": 22,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 32,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar3->base).base.base.location.position.x = (this_ptr->base).base.base.location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 40,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar4->vec).x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 29,
+      "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CWerewolf *)((pCVar3->base).base.base.actor_name + 2);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

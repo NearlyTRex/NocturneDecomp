@@ -14,7 +14,6 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(CNetGame *t
   _SOCKET *socket_handle;
   int iVar1;
   char *pcStack00000008;
-  char *pcStack00000010;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
             (g_CEditorTools_PTR_005b6d50,"Initializing network...");
@@ -42,12 +41,11 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(CNetGame *t
     pcStack00000008 = (char *)0x4e9de9;
     core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(this_ptr);
     _DAT_01cea3f8 = 1;
-    pcStack00000010 = (char *)0x4e9df7;
     _DAT_01cea3f4 = wincore_winrun_cpp_getTime_FUN_00558a30();
     _DAT_01cea3f4 = _DAT_01cea3f4 / 0x12;
-    pcStack00000010 = "Initializing network...OK";
     pcStack00000008 = (char *)0x4e9e18;
-    shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0();
+    shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
+              (g_CEditorTools_PTR_005b6d50,"Initializing network...OK");
     return 1;
   }
   pcStack00000008 = "Can't querry back for socket address";

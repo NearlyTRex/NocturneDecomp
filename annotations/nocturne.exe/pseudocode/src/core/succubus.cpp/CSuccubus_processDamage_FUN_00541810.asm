@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_succubus_cpp_CSuccubus_processDamage_FUN_00541810(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_succubus_cpp_CSuccubus_processDamage_FUN_00541810(CSuccubus *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CSuccubus *      Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70

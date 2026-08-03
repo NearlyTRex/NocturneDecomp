@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_beast_cpp_CBeast_archive_FUN_00415160(CEnemy *param_1)
+; void __cdecl core_beast_cpp_CBeast_archive_FUN_00415160(CBeast *this_ptr)
 ;
+; Parameters:
+; CBeast *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00578da9

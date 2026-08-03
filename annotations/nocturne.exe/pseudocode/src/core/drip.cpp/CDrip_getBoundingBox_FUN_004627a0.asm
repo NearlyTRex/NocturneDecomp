@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(CDrip *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CDrip *          Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

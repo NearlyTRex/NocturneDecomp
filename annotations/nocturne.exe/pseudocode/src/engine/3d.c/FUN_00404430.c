@@ -2,16 +2,16 @@
 // Address: 00404430
 // Address Range: [[00404430, 00404477]]
 // Convention: unknown
-// Signature: undefined4 * engine_3d_c_FUN_00404430(undefined4 *param_1)
+// Signature: undefined4 * engine_3d_c_FUN_00404430(void)
 
 #include "nocturne.h"
 
-uint * engine_3d_c_FUN_00404430(uint *param_1)
+uint * engine_3d_c_FUN_00404430(void)
 
 {
-  byte local_54 [80];
+  char local_54 [80];
   
-  _sprintf(local_54,"Old func : %d",*param_1);
+  _sprintf(local_54,"Old func : %d");
   g_INT_01cc4804 = 0xd9;
   g_CHAR_PTR_01cc4800 = "..\\engine\\3d.c";
   core_main_c_FUN_004c8440(local_54);

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_004f7580(void)
+; int __cdecl core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_004f7580(CPlatform *this_ptr)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

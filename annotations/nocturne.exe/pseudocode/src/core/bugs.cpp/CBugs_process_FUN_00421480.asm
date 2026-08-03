@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_CBugs_process_FUN_00421480(CBugs *param_1,float param_2)
+; void __cdecl core_bugs_cpp_CBugs_process_FUN_00421480(CBugs *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00421464 = 004214bb

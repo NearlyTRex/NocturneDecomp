@@ -1,24 +1,24 @@
 // Name: core_stairs.cpp_CStairs_getBoundingBox_FUN_00534860
 // Address: 00534860
 // Address Range: [[00534860, 005348b3]]
-// Convention: unknown
-// Signature: void core_stairs_cpp_CStairs_getBoundingBox_FUN_00534860(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_stairs_cpp_CStairs_getBoundingBox_FUN_00534860(CStairs *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-void core_stairs_cpp_CStairs_getBoundingBox_FUN_00534860(int param_1,float *param_2)
+CBoundingBox3D * __cdecl core_stairs_cpp_CStairs_getBoundingBox_FUN_00534860(CStairs *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;
   float fVar2;
   
   fVar2 = (float)0.5;
-  *param_2 = -*(float *)(param_1 + 0x158) * fVar2;
-  fVar1 = *(float *)(param_1 + 0x158);
-  param_2[1] = 0.0;
-  param_2[2] = 0.0;
-  param_2[3] = fVar1 * fVar2;
-  param_2[4] = (float)*(int *)(param_1 + 0x164) * *(float *)(param_1 + 0x150);
-  param_2[5] = (float)*(int *)(param_1 + 0x164) * *(float *)(param_1 + 0x154);
-  return;
+  (out_box->min).x = -this_ptr->width * fVar2;
+  fVar1 = this_ptr->width;
+  (out_box->min).y = 0.0;
+  (out_box->min).z = 0.0;
+  (out_box->max).x = fVar1 * fVar2;
+  (out_box->max).y = (float)this_ptr->stair_count * this_ptr->rise;
+  (out_box->max).z = (float)this_ptr->stair_count * this_ptr->run;
+  return out_box;
 }

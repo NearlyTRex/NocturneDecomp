@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(int param_1,int param_2,int param_3)
+; void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info)
 ;
+; Parameters:
+; CPodFile *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   file_index
+; SFoundFileInfo * Stack[0xc]:4   output_info
 ;
 ; XREF[2]:
 ;   engine_pod.cpp_CPod_findFile_FUN_004f9200 at 004f923e

@@ -1,12 +1,12 @@
 // Name: core_curtain.cpp_CCurtain_setup_FUN_0043dad0
 // Address: 0043dad0
 // Address Range: [[0043dad0, 0043e10a]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *this_ptr)
 
 #include "nocturne.h"
 
-void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
+void __cdecl core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *this_ptr)
 
 {
   float fVar1;
@@ -45,24 +45,24 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
   int local_14;
   
   bVar20 = 0;
-  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&param_1->base);
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,&param_1->curtain_texture);
+            (DAT_005ae704,&this_ptr->curtain_texture);
   while( true ) {
-    fVar2 = 1.0 / param_1->patch_size;
-    fVar1 = (param_1->curtain_size).y;
-    dVar21 = round((double)((param_1->curtain_size).x * fVar2));
+    fVar2 = 1.0 / this_ptr->patch_size;
+    fVar1 = (this_ptr->curtain_size).y;
+    dVar21 = round((double)((this_ptr->curtain_size).x * fVar2));
     iVar18 = (int)ROUND(dVar21);
     dVar21 = round((double)(fVar1 * fVar2));
     fVar1 = (float)(int)ROUND(dVar21);
-    (param_1->mesh).grid_cols = iStack_7c;
-    (param_1->mesh).grid_rows = (int)fVar1;
+    (this_ptr->mesh).grid_cols = iStack_7c;
+    (this_ptr->mesh).grid_rows = (int)fVar1;
     iVar7 = (iVar18 + 1) * ((int)fVar1 + 1);
-    param_1->vertex_count = iVar7;
+    this_ptr->vertex_count = iVar7;
     if (iVar7 < 0x3e9) break;
-    param_1->patch_size = param_1->patch_size * (float)2;
+    this_ptr->patch_size = this_ptr->patch_size * (float)2;
   }
-  fVar2 = (param_1->curtain_size).x;
+  fVar2 = (this_ptr->curtain_size).x;
   iVar7 = 0;
   if (0 < (int)fVar1 + 1) {
     do {
@@ -74,10 +74,10 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
           *(uint *)(iVar16 + 0x14) = 0;
           *(int *)(iVar16 + 0xc) = iVar18;
           *(int *)(iVar16 + 0x10) = local_2c;
-          if (((((iVar7 == 0) && (param_1->cinched_top != 0)) ||
-               ((iVar7 == iVar18 && (param_1->cinched_bottom != 0)))) ||
-              ((fVar11 == 0.0 && (param_1->cinched_left != 0)))) ||
-             ((fVar11 == fVar2 / (float)iVar18 && (param_1->cinched_right != 0)))) {
+          if (((((iVar7 == 0) && (this_ptr->cinched_top != 0)) ||
+               ((iVar7 == iVar18 && (this_ptr->cinched_bottom != 0)))) ||
+              ((fVar11 == 0.0 && (this_ptr->cinched_left != 0)))) ||
+             ((fVar11 == fVar2 / (float)iVar18 && (this_ptr->cinched_right != 0)))) {
             *(uint *)(iVar16 + 0x68) = 1;
           }
           else {
@@ -109,7 +109,7 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
             *(int *)(iVar16 + 0x48 + *(int *)(iVar16 + 0x44) * 4) = local_18 + 1;
             *(int *)(iVar16 + 0x44) = *(int *)(iVar16 + 0x44) + 1;
           }
-          fVar3 = (param_1->curtain_size).x;
+          fVar3 = (this_ptr->curtain_size).x;
           fVar6 = (float)252;
           fVar5 = (float)65536;
           dVar21 = round
@@ -121,7 +121,7 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
           local_18 = local_14 + 0x74;
           dVar21 = round
                              ((double)(fVar5 * (1.0 - *(float *)(iVar16 + 0x10) /
-                                                      (param_1->curtain_size).y) * fVar6));
+                                                      (this_ptr->curtain_size).y) * fVar6));
           local_14 = (int)ROUND(dVar21);
           *(int *)(iVar16 + 0x1c) = local_14 + 0x20000;
           local_20 = (float)((int)(local_20 + local_40) + 1);
@@ -132,8 +132,8 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
     } while (iVar7 < iVar18);
   }
   local_68 = 0;
-  if (0 < param_1->vertex_count) {
-    pSVar13 = param_1->vertices;
+  if (0 < this_ptr->vertex_count) {
+    pSVar13 = this_ptr->vertices;
     local_60 = pSVar13;
     do {
       iVar18 = 0;
@@ -151,13 +151,13 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
       }
       local_60 = local_60 + 1;
       local_68 = local_68 + 1;
-    } while (local_68 < param_1->vertex_count);
+    } while (local_68 < this_ptr->vertex_count);
   }
   iVar18 = 0;
-  if (0 < param_1->vertex_count) {
-    pCVar8 = &param_1->vertices[0].initial_position;
+  if (0 < this_ptr->vertex_count) {
+    pCVar8 = &this_ptr->vertices[0].initial_position;
     do {
-      pSVar13 = param_1->vertices + iVar18;
+      pSVar13 = this_ptr->vertices + iVar18;
       if (pSVar13 != (SCurtainVertex *)pCVar8) {
         (pSVar13->local_position).x = pCVar8->x;
         (pSVar13->local_position).y = pCVar8->y;
@@ -168,17 +168,17 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
       (pSVar13->velocity).y = (pSVar13->velocity).z;
       (pSVar13->velocity).x = (pSVar13->velocity).y;
       pCVar8 = (CVector3f *)((int)(pCVar8 + 9) + 8);
-    } while (iVar18 < param_1->vertex_count);
+    } while (iVar18 < this_ptr->vertex_count);
   }
-  pSVar10 = (param_1->mesh).front_faces;
-  pSVar15 = (param_1->mesh).back_faces;
+  pSVar10 = (this_ptr->mesh).front_faces;
+  pSVar15 = (this_ptr->mesh).back_faces;
   local_2c = 0;
-  if (0 < (param_1->mesh).grid_rows) {
+  if (0 < (this_ptr->mesh).grid_rows) {
     do {
       local_1c = 0;
       pSVar9 = pSVar10;
       pSVar14 = pSVar15;
-      if (0 < (param_1->mesh).grid_cols) {
+      if (0 < (this_ptr->mesh).grid_cols) {
         do {
           (pSVar9->base).surface_normal.D.i = 0;
           (pSVar9->base).base.count = 3;
@@ -192,20 +192,20 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
           (pSVar14->base).surface_normal.C = UVar4;
           (pSVar14->base).surface_normal.B = UVar4;
           (pSVar14->base).surface_normal.A = UVar4;
-          iVar7 = ((param_1->mesh).grid_cols + 1) * local_2c;
+          iVar7 = ((this_ptr->mesh).grid_cols + 1) * local_2c;
           iVar16 = local_1c + iVar7;
           pSVar9->vertices[0].vertex_index = iVar16;
-          pSVar9->vertices[0].texture_u = param_1->vertices[iVar16].texture_u;
-          pSVar9->vertices[0].texture_v = param_1->vertices[iVar16].texture_v;
+          pSVar9->vertices[0].texture_u = this_ptr->vertices[iVar16].texture_u;
+          pSVar9->vertices[0].texture_v = this_ptr->vertices[iVar16].texture_v;
           pSVar9->vertices[1].vertex_index = iVar16 + 1;
-          pSVar9->vertices[1].texture_u = param_1->vertices[iVar16 + 1].texture_u;
-          pSVar9->vertices[1].texture_v = param_1->vertices[iVar16 + 1].texture_v;
-          iVar18 = (param_1->mesh).grid_cols;
+          pSVar9->vertices[1].texture_u = this_ptr->vertices[iVar16 + 1].texture_u;
+          pSVar9->vertices[1].texture_v = this_ptr->vertices[iVar16 + 1].texture_v;
+          iVar18 = (this_ptr->mesh).grid_cols;
           pSVar9->vertices[2].vertex_index = iVar16 + 1 + iVar18 + 1;
-          pSVar9->vertices[2].texture_u = param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_u
-          ;
-          pSVar9->vertices[2].texture_v = param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_v
-          ;
+          pSVar9->vertices[2].texture_u =
+               this_ptr->vertices[iVar18 + iVar7 + local_1c + 2].texture_u;
+          pSVar9->vertices[2].texture_v =
+               this_ptr->vertices[iVar18 + iVar7 + local_1c + 2].texture_v;
           puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x1c);
           puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x34);
           pSVar14->vertices[0].vertex_index = pSVar9->vertices[2].vertex_index;
@@ -233,23 +233,23 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
           pSVar14[1].base.surface_normal.C = UVar4;
           pSVar14[1].base.surface_normal.B = UVar4;
           pSVar14[1].base.surface_normal.A = UVar4;
-          iVar7 = ((param_1->mesh).grid_cols + 1) * local_2c;
+          iVar7 = ((this_ptr->mesh).grid_cols + 1) * local_2c;
           iVar16 = local_1c + iVar7;
           pSVar9[1].vertices[0].vertex_index = iVar16;
-          pSVar9[1].vertices[0].texture_u = param_1->vertices[iVar16].texture_u;
-          pSVar9[1].vertices[0].texture_v = param_1->vertices[iVar16].texture_v;
-          iVar18 = (param_1->mesh).grid_cols;
+          pSVar9[1].vertices[0].texture_u = this_ptr->vertices[iVar16].texture_u;
+          pSVar9[1].vertices[0].texture_v = this_ptr->vertices[iVar16].texture_v;
+          iVar18 = (this_ptr->mesh).grid_cols;
           iVar16 = iVar16 + iVar18 + 2;
           pSVar9[1].vertices[1].vertex_index = iVar16;
           pSVar9[1].vertices[1].texture_u =
-               param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_u;
+               this_ptr->vertices[iVar18 + iVar7 + local_1c + 2].texture_u;
           pSVar9[1].vertices[1].texture_v =
-               param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_v;
+               this_ptr->vertices[iVar18 + iVar7 + local_1c + 2].texture_v;
           pSVar9[1].vertices[2].vertex_index = iVar16 + -1;
           pSVar9[1].vertices[2].texture_u =
-               param_1->vertices[iVar18 + iVar7 + local_1c + 1].texture_u;
+               this_ptr->vertices[iVar18 + iVar7 + local_1c + 1].texture_u;
           pSVar9[1].vertices[2].texture_v =
-               param_1->vertices[iVar18 + iVar7 + local_1c + 1].texture_v;
+               this_ptr->vertices[iVar18 + iVar7 + local_1c + 1].texture_v;
           puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 100);
           puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x7c);
           pSVar14[1].vertices[0].vertex_index = pSVar9[1].vertices[2].vertex_index;
@@ -270,12 +270,12 @@ void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1)
           local_1c = local_1c + 1;
           pSVar9 = pSVar10;
           pSVar14 = pSVar15;
-        } while (local_1c < (param_1->mesh).grid_cols);
+        } while (local_1c < (this_ptr->mesh).grid_cols);
       }
       local_2c = local_2c + 1;
-    } while (local_2c < (param_1->mesh).grid_rows);
+    } while (local_2c < (this_ptr->mesh).grid_rows);
   }
-  core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(param_1);
-  (param_1->base).is_transparent = (uint)(param_1->opacity < 0xfde9);
+  core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(this_ptr);
+  (this_ptr->base).is_transparent = (uint)(this_ptr->opacity < 0xfde9);
   return;
 }

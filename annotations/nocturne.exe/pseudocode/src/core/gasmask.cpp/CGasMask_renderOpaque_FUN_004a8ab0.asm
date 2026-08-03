@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gasmask_cpp_CGasMask_renderOpaque_FUN_004a8ab0(int param_1)
+; int __cdecl core_gasmask_cpp_CGasMask_renderOpaque_FUN_004a8ab0(CGasMask *this_ptr)
 ;
+; Parameters:
+; CGasMask *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

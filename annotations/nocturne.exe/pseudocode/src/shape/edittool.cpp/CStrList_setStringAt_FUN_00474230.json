@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 25,
+        "column": 18,
+        "line": 24,
         "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       }
     ],
@@ -68,20 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 305,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 24,
+    "pseudocode_lines": 44,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 133
+    "total_lines": 132
   },
   "cross_references": [],
   "function": {
@@ -92,9 +91,9 @@
         "004742f3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_edittool.cpp_CStrList_setStringAt_FUN_00474230",
-    "signature": "void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param_2,char *param_3)"
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(CStrList *this_ptr,int index,char *new_string)"
   },
   "function_calls": [
     {
@@ -168,9 +167,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -204,193 +203,47 @@
     "pcode_op_count": 299
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "new_string",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param_2,char *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param_2,char *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(int *param_1,int param_2,char *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (*param_1 <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (*param_1 <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (*param_1 <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == (char *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = &DAT_0057ed1b;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 17,
       "match": "DAT_0057ed1b",
       "severity": "mild",
-      "text": "param_3 = &DAT_0057ed1b;",
+      "text": "new_string = &DAT_0057ed1b;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pcVar4 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pvVar2 = realloc(*(void **)(param_1[2] + param_2 * 4),~uVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pvVar2 = realloc(*(void **)(param_1[2] + param_2 * 4),~uVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)(param_1[2] + param_2 * 4) = pvVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(void **)(param_1[2] + param_2 * 4) = pvVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1[2] + param_2 * 4) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1[2] + param_2 * 4) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar4 = *(char **)(param_1[2] + param_2 * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar4 = *(char **)(param_1[2] + param_2 * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "cVar1 = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "cVar1 = param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + 2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 36,
+      "line": 35,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -398,7 +251,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 22,
+      "line": 21,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

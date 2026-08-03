@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -69,38 +69,38 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 37,
-        "line": 37,
+        "column": 16,
+        "line": 38,
         "message": "use of undeclared identifier 'DAT_005b9d4c'"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 45,
+        "line": 46,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 53,
+        "line": 54,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 61,
+        "line": 62,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 69,
+        "line": 70,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 135,
+        "line": 136,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0'"
       }
     ],
@@ -110,19 +110,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 295,
-    "complexity_score": 603,
+    "complexity_score": 509,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 128,
-    "suspect_count": 46,
+    "pseudocode_lines": 129,
+    "suspect_count": 37,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "param_count_too_many",
+      "undefined_data"
     ],
-    "total_lines": 423
+    "total_lines": 424
   },
   "cross_references": [
     {
@@ -140,9 +139,9 @@
         "004af6f7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gore.cpp_CBloodPool_render_FUN_004af340",
-    "signature": "void core_gore_cpp_CBloodPool_render_FUN_004af340(undefined4 *param_1)"
+    "signature": "void __cdecl core_gore_cpp_CBloodPool_render_FUN_004af340(CBloodPool *this_ptr,int expire_flag)"
   },
   "function_calls": [
     {
@@ -282,12 +281,10 @@
         "call_addr": "004aff17",
         "call_type": "direct",
         "caller": "core_gore.cpp_CGore_renderDecals_FUN_004afe80",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -295,20 +292,18 @@
         "call_addr": "004affe0",
         "call_type": "direct",
         "caller": "core_gore.cpp_CGore_renderDecals_FUN_004afe80",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
     "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 1,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -349,10 +344,10 @@
     "pcode_op_count": 1025
   },
   "stack_frame": {
-    "frame_size": 84,
+    "frame_size": 92,
     "local_size": 84,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -466,48 +461,30 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodPool *"
+      },
+      {
+        "is_param": true,
+        "name": "expire_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_gore_cpp_CBloodPool_render_FUN_004af340(uint *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar2 = round((double)((float)param_1[6] * (float)8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 1));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 27,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)(param_1 + 1));",
+      "text": "(DAT_005ae704,&this_ptr->position);",
       "type": "undefined_data"
     },
     {
@@ -519,24 +496,16 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(SMRGLTextureBasic *)(&DAT_005b9d4c + local_18 * 0x18 + param_1[5] * 0x2b8));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_005b9d4c",
       "severity": "mild",
-      "text": "(SMRGLTextureBasic *)(&DAT_005b9d4c + local_18 * 0x18 + param_1[5] * 0x2b8));",
+      "text": "(&DAT_005b9d4c + local_18 * 0x18 + this_ptr->texture_variant * 0x2b8));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_24);",
@@ -544,7 +513,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&CStack_54);",
@@ -552,7 +521,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 55,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_48);",
@@ -560,23 +529,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 63,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_3c);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1[4];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 67,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "DAT_005c5034 = 0x2000;",
@@ -584,7 +545,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 68,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "DAT_005c5038 = 0;",
@@ -592,7 +553,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 71,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "DAT_005c5034 = 0;",
@@ -600,7 +561,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 72,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "DAT_005c5038 = 0x7f80;",
@@ -608,7 +569,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "DAT_005c5038 = 0;",
@@ -616,7 +577,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 77,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "DAT_005c5034 = 0;",
@@ -624,23 +585,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 79,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "DAT_005c503c = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1[4];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_005c5064",
       "severity": "mild",
       "text": "DAT_005c5064 = 0x2000;",
@@ -648,7 +601,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_005c5068",
       "severity": "mild",
       "text": "DAT_005c5068 = 0;",
@@ -656,7 +609,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 87,
       "match": "DAT_005c5068",
       "severity": "mild",
       "text": "DAT_005c5068 = 0x7f80;",
@@ -664,7 +617,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_005c5064",
       "severity": "mild",
       "text": "DAT_005c5064 = 0;",
@@ -672,7 +625,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 92,
       "match": "DAT_005c5068",
       "severity": "mild",
       "text": "DAT_005c5068 = 0;",
@@ -680,7 +633,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 93,
       "match": "DAT_005c5064",
       "severity": "mild",
       "text": "DAT_005c5064 = 0;",
@@ -688,23 +641,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 95,
       "match": "DAT_005c506c",
       "severity": "mild",
       "text": "DAT_005c506c = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1[4];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_005c5094",
       "severity": "mild",
       "text": "DAT_005c5094 = 0x2000;",
@@ -712,7 +657,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 100,
       "match": "DAT_005c5098",
       "severity": "mild",
       "text": "DAT_005c5098 = 0;",
@@ -720,7 +665,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 103,
       "match": "DAT_005c5098",
       "severity": "mild",
       "text": "DAT_005c5098 = 0x7f80;",
@@ -728,7 +673,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_005c5094",
       "severity": "mild",
       "text": "DAT_005c5094 = 0;",
@@ -736,7 +681,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 108,
       "match": "DAT_005c5098",
       "severity": "mild",
       "text": "DAT_005c5098 = 0;",
@@ -744,7 +689,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 109,
       "match": "DAT_005c5094",
       "severity": "mild",
       "text": "DAT_005c5094 = 0;",
@@ -752,23 +697,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 111,
       "match": "DAT_005c509c",
       "severity": "mild",
       "text": "DAT_005c509c = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 111,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1[4];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 115,
       "match": "DAT_005c50c8",
       "severity": "mild",
       "text": "DAT_005c50c8 = 0x7f80;",
@@ -776,7 +713,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 116,
       "match": "DAT_005c50c4",
       "severity": "mild",
       "text": "DAT_005c50c4 = 0;",
@@ -784,7 +721,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 120,
       "match": "DAT_005c50c8",
       "severity": "mild",
       "text": "DAT_005c50c8 = 0;",
@@ -792,7 +729,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 121,
       "match": "DAT_005c50c4",
       "severity": "mild",
       "text": "DAT_005c50c4 = 0;",
@@ -800,7 +737,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 125,
       "match": "DAT_005c50c4",
       "severity": "mild",
       "text": "DAT_005c50c4 = 0x2000;",
@@ -808,7 +745,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 126,
       "match": "DAT_005c50c8",
       "severity": "mild",
       "text": "DAT_005c50c8 = 0;",
@@ -816,7 +753,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 128,
       "match": "DAT_005c50cc",
       "severity": "mild",
       "text": "DAT_005c50cc = 0;",
@@ -824,7 +761,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 130,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);",
@@ -832,14 +769,14 @@
     },
     {
       "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

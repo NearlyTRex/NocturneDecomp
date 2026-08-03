@@ -1,112 +1,121 @@
 // Name: core_ground.cpp_CGround_getNormalAtPosition_FUN_004b2430
 // Address: 004b2430
 // Address Range: [[004b2430, 004b26ff]]
-// Convention: unknown
-// Signature: void core_ground_cpp_CGround_getNormalAtPosition_FUN_004b2430(int *param_1,uint param_2,uint param_3)
+// Convention: __stack3_esi
+// Signature: CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004b2430(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
-void core_ground_cpp_CGround_getNormalAtPosition_FUN_004b2430(int *param_1,uint param_2,uint param_3)
+CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004b2430(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal)
 
 {
   uint uVar1;
-  uint uVar2;
+  SGroundCell *pSVar2;
   ulonglong uVar3;
   uint uVar4;
-  int iVar5;
+  uint uVar5;
   int iVar6;
-  int *unaff_ESI;
-  int *piVar7;
+  CVector3i *pCVar7;
   uint uVar8;
-  byte bVar9;
-  int aiStackY_1024 [1008];
-  int iStack_3c;
-  int iStack_38;
-  int iStack_34;
-  byte auStack_30 [12];
+  uint *puVar9;
+  byte bVar10;
+  uint auStackY_1024 [1008];
+  CVector3i CStack_60;
+  CVector3i CStack_54;
+  CVector3i CStack_48;
+  CVector3i CStack_3c;
+  CVector3i CStack_30;
   int iStack_24;
   int iStack_20;
-  uint uStack_1c;
-  uint uStack_18;
+  SGroundCell *pSStack_1c;
+  SGroundCell *pSStack_18;
   int iStack_14;
   int iStack_10;
   
-  bVar9 = 0;
-  uVar3 = (ulonglong)(int)(param_1[7] * 0x100 - 1U & param_3);
+  bVar10 = 0;
+  iVar6 = this_ptr->vertical_scale * 0x100;
+  uVar3 = (ulonglong)(int)(iVar6 - 1U & world_z);
   iStack_14 = (int)((longlong)
                     (((uVar3 & 0xffffffffffff) >> 0x10) << 0x20 | uVar3 * 0x10000 & 0xffffffff) /
-                   (longlong)(param_1[7] * 0x100));
-  uVar3 = (ulonglong)(int)(param_1[7] * 0x100 - 1U & param_2);
+                   (longlong)iVar6);
+  iVar6 = this_ptr->vertical_scale * 0x100;
+  uVar3 = (ulonglong)(int)(iVar6 - 1U & world_x);
   iStack_10 = (int)((longlong)
                     (((uVar3 & 0xffffffffffff) >> 0x10) << 0x20 | uVar3 * 0x10000 & 0xffffffff) /
-                   (longlong)(param_1[7] * 0x100));
-  uVar8 = param_1[2] & param_3 / (uint)(param_1[7] << 8);
-  uVar4 = param_2 / (uint)(param_1[7] << 8) & param_1[3];
-  uStack_1c = uVar4 & 1;
-  uVar1 = uVar4 + 1;
-  uVar2 = uVar8 + 1;
-  if ((uVar8 & 1) == uStack_1c) {
+                   (longlong)iVar6);
+  uVar5 = this_ptr->vertical_scale << 8;
+  uVar8 = this_ptr->width_minus_1 & (uint)world_z / uVar5;
+  uVar4 = (uint)world_x / uVar5 & this_ptr->height_minus_1;
+  pSStack_1c = (SGroundCell *)(uVar4 & 1);
+  uVar5 = uVar4 + 1;
+  uVar1 = uVar8 + 1;
+  if ((SGroundCell *)(uVar8 & 1) == pSStack_1c) {
     if (iStack_10 < iStack_14) {
-      uStack_1c = *param_1 * uVar4;
-      iVar5 = param_1[9];
-      iStack_24 = (int)*(short *)(iVar5 + (uStack_1c + uVar8) * 4) * param_1[8];
-      iStack_34 = (int)*(short *)(iVar5 + ((param_1[2] & uVar2) + uStack_1c) * 4) * param_1[8];
-      iStack_3c = iStack_24 - iStack_34;
-      iStack_38 = param_1[7] << 8;
-      iStack_34 = iStack_34 -
-                  param_1[8] *
-                  (int)*(short *)(iVar5 + ((uVar2 & param_1[3]) + (uVar1 & param_1[3]) * *param_1) *
-                                          4);
-      engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffc4);
-      piVar7 = (int *)&stack0xffffffac;
+      pSStack_1c = (SGroundCell *)(this_ptr->width * uVar4);
+      pSVar2 = this_ptr->terrain_data;
+      iStack_24 = (int)pSVar2[(int)pSStack_1c + uVar8].height * this_ptr->height_scale;
+      CStack_3c.z = (int)pSVar2[(this_ptr->width_minus_1 & uVar1) + (int)pSStack_1c].height *
+                    this_ptr->height_scale;
+      CStack_3c.x = iStack_24 - CStack_3c.z;
+      CStack_3c.y = this_ptr->vertical_scale << 8;
+      CStack_3c.z = CStack_3c.z -
+                    this_ptr->height_scale *
+                    (int)pSVar2[(uVar1 & this_ptr->height_minus_1) +
+                                (uVar5 & this_ptr->height_minus_1) * this_ptr->width].height;
+      engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&CStack_3c,&CStack_54);
+      pCVar7 = &CStack_54;
     }
     else {
-      uStack_1c = param_1[9];
-      iStack_24 = (int)*(short *)((uVar4 * *param_1 + uVar8) * 4 + uStack_1c) * param_1[8];
-      iVar5 = (param_1[3] & uVar1) * *param_1;
-      iStack_34 = (int)*(short *)((iVar5 + uVar8) * 4 + uStack_1c) * param_1[8];
-      iStack_3c = iStack_34 -
-                  param_1[8] * (int)*(short *)(((uVar2 & param_1[2]) + iVar5) * 4 + uStack_1c);
-      iStack_38 = param_1[7] << 8;
-      iStack_34 = iStack_24 - iStack_34;
-      engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffc4);
-      piVar7 = (int *)auStack_30;
+      pSStack_1c = this_ptr->terrain_data;
+      iStack_24 = (int)pSStack_1c[uVar4 * this_ptr->width + uVar8].height * this_ptr->height_scale;
+      iVar6 = (this_ptr->height_minus_1 & uVar5) * this_ptr->width;
+      CStack_3c.z = (int)pSStack_1c[iVar6 + uVar8].height * this_ptr->height_scale;
+      CStack_3c.x = CStack_3c.z -
+                    this_ptr->height_scale *
+                    (int)pSStack_1c[(uVar1 & this_ptr->width_minus_1) + iVar6].height;
+      CStack_3c.y = this_ptr->vertical_scale << 8;
+      CStack_3c.z = iStack_24 - CStack_3c.z;
+      engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&CStack_3c,&CStack_30);
+      pCVar7 = &CStack_30;
     }
   }
   else if (iStack_10 < 0x10000 - iStack_14) {
-    uStack_1c = *param_1 * uVar4;
-    uStack_18 = param_1[9];
-    iStack_34 = param_1[8] * (int)*(short *)((uStack_1c + uVar8) * 4 + uStack_18);
-    iStack_20 = (int)*(short *)(((uVar2 & param_1[2]) + uStack_1c) * 4 + uStack_18) * param_1[8];
-    iStack_3c = iStack_34 - iStack_20;
-    iStack_38 = param_1[7] << 8;
-    iStack_34 = iStack_34 -
-                param_1[8] *
-                (int)*(short *)((uVar8 + (uVar1 & param_1[3]) * *param_1) * 4 + uStack_18);
-    engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffc4);
-    piVar7 = (int *)&stack0xffffffa0;
+    pSStack_1c = (SGroundCell *)(this_ptr->width * uVar4);
+    pSStack_18 = this_ptr->terrain_data;
+    CStack_3c.z = this_ptr->height_scale * (int)pSStack_18[(int)pSStack_1c + uVar8].height;
+    iStack_20 = (int)pSStack_18[(uVar1 & this_ptr->width_minus_1) + (int)pSStack_1c].height *
+                this_ptr->height_scale;
+    CStack_3c.x = CStack_3c.z - iStack_20;
+    CStack_3c.y = this_ptr->vertical_scale << 8;
+    CStack_3c.z = CStack_3c.z -
+                  this_ptr->height_scale *
+                  (int)pSStack_18[uVar8 + (uVar5 & this_ptr->height_minus_1) * this_ptr->width].
+                       height;
+    engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&CStack_3c,&CStack_60);
+    pCVar7 = &CStack_60;
   }
   else {
-    uStack_18 = param_1[2] & uVar2;
-    iVar5 = param_1[9];
-    iStack_20 = param_1[8] * (int)*(short *)((uVar4 * *param_1 + uStack_18) * 4 + iVar5);
-    iVar6 = (uVar1 & param_1[3]) * *param_1;
-    iStack_34 = (int)*(short *)(iVar5 + (uStack_18 + iVar6) * 4) * param_1[8];
-    iStack_3c = (int)*(short *)(iVar5 + (iVar6 + uVar8) * 4) * param_1[8] - iStack_34;
-    iStack_38 = param_1[7] << 8;
-    iStack_34 = iStack_20 - iStack_34;
-    engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&stack0xffffffc4);
-    piVar7 = (int *)&stack0xffffffb8;
+    pSStack_18 = (SGroundCell *)(this_ptr->width_minus_1 & uVar1);
+    pSVar2 = this_ptr->terrain_data;
+    iStack_20 = this_ptr->height_scale *
+                (int)pSVar2[uVar4 * this_ptr->width + (int)pSStack_18].height;
+    iVar6 = (uVar5 & this_ptr->height_minus_1) * this_ptr->width;
+    CStack_3c.z = (int)pSVar2[(int)pSStack_18 + iVar6].height * this_ptr->height_scale;
+    CStack_3c.x = (int)pSVar2[iVar6 + uVar8].height * this_ptr->height_scale - CStack_3c.z;
+    CStack_3c.y = this_ptr->vertical_scale << 8;
+    CStack_3c.z = iStack_20 - CStack_3c.z;
+    engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&CStack_3c,&CStack_48);
+    pCVar7 = &CStack_48;
   }
-  iStack_3c = *piVar7;
-  (&stack0xffffffc8)[(uint)bVar9 * 0xfffffffe] = piVar7[(uint)bVar9 * -2 + 1];
-  *(int *)((int)&stack0xffffffcc + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-       (piVar7 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1];
-  *unaff_ESI = iStack_3c;
-  unaff_ESI[(uint)bVar9 * -2 + 1] = (&stack0xffffffc8)[(uint)bVar9 * 0xfffffffe];
-  (unaff_ESI + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1] =
-       *(int *)((int)&stack0xffffffcc + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-  return;
+  puVar9 = (uint *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
+  CStack_3c.x = pCVar7->x;
+  *(uint *)((int)&CStack_3c + (uint)bVar10 * -8 + 4) = *puVar9;
+  *(uint *)((int)&CStack_3c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+       puVar9[(uint)bVar10 * -2 + 1];
+  puVar9 = (uint *)((int)out_normal + (uint)bVar10 * -8 + 4);
+  out_normal->x = CStack_3c.x;
+  *puVar9 = *(uint *)((int)&CStack_3c + (uint)bVar10 * -8 + 4);
+  puVar9[(uint)bVar10 * -2 + 1] =
+       *(uint *)((int)&CStack_3c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+  return out_normal;
 }

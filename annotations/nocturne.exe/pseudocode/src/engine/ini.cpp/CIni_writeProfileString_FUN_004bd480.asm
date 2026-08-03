@@ -68,7 +68,7 @@ section .text
     PUSH EBX                            ; 004bd4b3
     MOV dword ptr [ESP + 0x314],EDX     ; 004bd4b4
     CALL engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0 ; 004bd4bb
-        ;   XREF to: 004bd2b0 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0()
+        ;   XREF to: 004bd2b0 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni * this_ptr, char * section, char * key, char * value, ...)
     MOV EBP,EAX                         ; 004bd4c0
     MOV EAX,dword ptr [EBX]             ; 004bd4c2
     ADD ESP,0x14                        ; 004bd4c4
@@ -177,7 +177,7 @@ section .text
     LEA EAX,[ESP + 0x208]               ; 004bd5cc
     PUSH EAX                            ; 004bd5d3
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004bd5d4
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV DL,byte ptr [EBX + 0xc]         ; 004bd5d9
     ADD ESP,0xc                         ; 004bd5dc
     TEST DL,0x10                        ; 004bd5df

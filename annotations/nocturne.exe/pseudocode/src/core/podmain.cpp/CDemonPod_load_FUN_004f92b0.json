@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 23,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 23,
-        "message": "expected expression"
       },
       {
         "category": "format_error",
@@ -78,18 +66,6 @@
         "column": 22,
         "line": 34,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 35,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 35,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -98,17 +74,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 111,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 31,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 134
   },
   "cross_references": [],
@@ -120,9 +93,9 @@
         "004f93b2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_podmain.cpp_CDemonPod_load_FUN_004f92b0",
-    "signature": "void core_podmain_cpp_CDemonPod_load_FUN_004f92b0(int param_1)"
+    "signature": "void __cdecl core_podmain_cpp_CDemonPod_load_FUN_004f92b0(CDemonPod *this_ptr)"
   },
   "function_calls": [
     {
@@ -202,9 +175,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -236,10 +209,10 @@
     "pcode_op_count": 367
   },
   "stack_frame": {
-    "frame_size": 372,
+    "frame_size": 376,
     "local_size": 372,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -262,6 +235,13 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonPod *"
       }
     ]
   },
@@ -283,62 +263,6 @@
     "file_variant": "raw"
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_podmain_cpp_CDemonPod_load_FUN_004f92b0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&local_170);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&local_170);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&local_170);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,local_5c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,local_5c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,local_5c);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Uninitialized variable: local_c",
       "line": 32,

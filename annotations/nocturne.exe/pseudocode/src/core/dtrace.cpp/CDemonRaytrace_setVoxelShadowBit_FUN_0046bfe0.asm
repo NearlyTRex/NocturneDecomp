@@ -50,7 +50,7 @@ section .text
     LEA ESI,[ESP + 0x20]                ; 0046bff1
     LEA EDI,[ESP + 0x8]                 ; 0046bff5
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650 ; 0046bff9
-        ;   XREF to: 0046b650 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650()
+        ;   XREF to: 0046b650 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_grid_coords)
     LEA ESI,[ESP + 0x20]                ; 0046bffe
     ADD ESP,0x8                         ; 0046c002
     MOVSD ES:EDI,ESI                    ; 0046c005
@@ -91,7 +91,7 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 0046c03c
     LEA EDI,[ESP + 0x14]                ; 0046c040
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 0046c044
-        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700()
+        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x2c]                ; 0046c049
     ADD ESP,0x8                         ; 0046c04d
     MOVSD ES:EDI,ESI                    ; 0046c050

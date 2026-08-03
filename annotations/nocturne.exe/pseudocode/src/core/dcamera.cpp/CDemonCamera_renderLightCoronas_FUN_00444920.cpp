@@ -1,14 +1,14 @@
 // Name: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920
 // Address: 00444920
 // Address Range: [[00444920, 00444c87]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)
+void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 {
   float fVar1;
@@ -37,13 +37,13 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
   int local_30;
   uint *local_2c;
   uint *local_28;
-  int local_24;
+  CVector3i *local_24;
   int local_20;
   char *local_1c;
   
   bVar9 = 0;
-  _DAT_012b0634 = param_2;
-  pCVar7 = &(param_2->base).rotation_matrix;
+  _DAT_012b0634 = light_source;
+  pCVar7 = &(light_source->base).rotation_matrix;
   pfVar8 = (float *)&DAT_012b0638;
   for (iVar5 = 10; iVar4 = 0, iVar5 != 0; iVar5 = iVar5 + -1) {
     *pfVar8 = pCVar7->m[0].x;
@@ -57,18 +57,18 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
     iVar4 = iVar5;
   } while (iVar5 != 0x400);
   iVar5 = 0;
-  if (0 < *(int *)(param_1 + 0x154)) {
+  if (0 < this_ptr->display_height) {
     iVar4 = 0;
     do {
-      *(uint *)(iVar4 + 0x146b290) = *(uint *)(param_1 + 0x150);
+      *(int *)(iVar4 + 0x146b290) = this_ptr->display_width;
       *(uint *)(iVar4 + 0x146b650) = 0;
       iVar5 = iVar5 + 1;
       iVar4 = iVar4 + 4;
-    } while (iVar5 < *(int *)(param_1 + 0x154));
+    } while (iVar5 < this_ptr->display_height);
   }
   iStack_68 = 0x4449a9;
-  core_dlight_cpp_FUN_0044f0b0(param_2);
-  fVar1 = (param_2->base).fixed_point_scale * (float)256;
+  core_dlight_cpp_FUN_0044f0b0(light_source);
+  fVar1 = (light_source->base).fixed_point_scale * (float)256;
   fVar2 = (float)3.3219280948900001;
   dVar11 = round((double)fVar1);
   iStack_68 = 0x4449d6;
@@ -77,17 +77,17 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
   _DAT_00b0e600 = (int)ROUND(dVar12);
   _DAT_00b0e5fc = (int)ROUND(dVar11);
   _DAT_00b0e600 = _DAT_00b0e600 + -1;
-  if (0 < *(int *)(param_1 + 0x154)) {
+  if (0 < this_ptr->display_height) {
     local_34 = 0;
     local_40 = g_CVector3f_ARRAY_009bb178;
     iStack_44 = 0x146ba10;
     iStack_48 = 0xa9d078;
     local_3c = 0x8d9278;
     do {
-      if (*(int *)(param_1 + 0x150) != *(int *)(local_34 + 0x146b290)) {
+      if (this_ptr->display_width != *(int *)(local_34 + 0x146b290)) {
         local_20 = *(int *)(local_34 + 0x146b290);
         local_30 = *(int *)(local_34 + 0x146b650);
-        local_24 = local_3c + local_20 * 0xc;
+        local_24 = (CVector3i *)(local_3c + local_20 * 0xc);
         local_1c = (char *)(iStack_48 + local_20);
         local_2c = (uint *)(iStack_44 + local_20 * 4);
         local_28 = (uint *)(*(int *)(&DAT_01bd4260 + (local_38 << (DAT_012b0660 & 0x1f)) * 4) +
@@ -100,7 +100,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
              (0.0 <= pCVar6->z * _DAT_012b0658 +
                      pCVar6->x * _DAT_012b0640 + pCVar6->y * _DAT_012b064c)) {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
-                      (_DAT_012b0634,local_24);
+                      (&_DAT_012b0634->base,local_24,(CVector3i *)&stack0xffffff98);
             iStack_5c = iStack_68;
             *(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =
                  *(uint *)(&stack0xffffff9c + (uint)bVar9 * -8);
@@ -126,7 +126,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
           }
           pCVar6 = pCVar6 + 1;
           local_2c = local_2c + 1;
-          local_24 = local_24 + 0xc;
+          local_24 = local_24 + 1;
           local_20 = local_20 + 1;
           local_28 = local_28 + (1 << (DAT_012b0660 & 0x1f));
           local_1c = local_1c + 1;
@@ -140,7 +140,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,C
       iStack_48 = iStack_48 + 0x140;
       local_3c = local_3c + 0xf00;
       local_38 = local_38 + 1;
-    } while (local_38 < *(int *)(param_1 + 0x154));
+    } while (local_38 < this_ptr->display_height);
   }
   _DAT_012b022c = 1;
   return;

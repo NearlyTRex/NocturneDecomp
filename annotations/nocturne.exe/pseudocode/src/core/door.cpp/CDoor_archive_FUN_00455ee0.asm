@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_CDoor_archive_FUN_00455ee0(CDemonActor *param_1)
+; void __cdecl core_door_cpp_CDoor_archive_FUN_00455ee0(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0057d0ca

@@ -16,7 +16,7 @@ void __cdecl core_grave_cpp_CGrave_startAnimation_FUN_004b0dc0(CGrave *this_ptr)
       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->start_sound);
     }
     core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890
-              (g_CDemonSet_PTR_005be368,this_ptr);
+              (g_CDemonSet_PTR_005be368,&this_ptr->base);
   }
   return;
 }

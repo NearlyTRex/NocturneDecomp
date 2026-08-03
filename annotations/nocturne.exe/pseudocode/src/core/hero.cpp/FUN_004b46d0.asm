@@ -77,7 +77,7 @@ section .text
     PUSH EBX                            ; 004b47c3
     MOV dword ptr [EBX + 0x1fa00],0x0   ; 004b47c4
     CALL core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0 ; 004b47ce
-        ;   XREF to: 004b4dd0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0()
+        ;   XREF to: 004b4dd0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0(CHero * this_ptr)
     MOV dword ptr [EBX + 0x1fa38],0x2   ; 004b47d3
     ADD ESP,0x4                         ; 004b47dd
     MOV dword ptr [EBX + 0x261c],0x0    ; 004b47e0

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(int *param_1)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(CWavOutDevice *this_ptr)
 ;
+; Parameters:
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ;

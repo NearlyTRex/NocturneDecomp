@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_baron_cpp_CBaronWeapon_getActorType_FUN_00411340(void)
+; CDemonActorType * __cdecl core_baron_cpp_CBaronWeapon_getActorType_FUN_00411340(CBaronWeapon *this_ptr)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CBaronWeaponActorType_007644e8

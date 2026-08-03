@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_oldFunction3_FUN_004051e0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction3_FUN_004051e0(SMRGLHeaderExtended *primitive)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   primitive
 ;
 ; Called Functions:
 ;   engine_3d.c_FUN_00408e80

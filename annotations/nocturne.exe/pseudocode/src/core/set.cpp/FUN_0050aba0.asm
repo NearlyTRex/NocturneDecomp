@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_set_cpp_FUN_0050aba0(CDemonSet *param_1)
+; void core_set_cpp_FUN_0050aba0(CDemonSet *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
@@ -135,7 +135,7 @@ section .text
     PUSH 0x1fb8508                      ; 0050acd7
     XOR EBX,EBX                         ; 0050acdc
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 0050acde
-        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
+        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     MOV ECX,dword ptr [0x01fb9b54]      ; 0050ace3 | DAT_01fb9b54
     ADD ESP,0x8                         ; 0050ace9
     TEST ECX,ECX                        ; 0050acec

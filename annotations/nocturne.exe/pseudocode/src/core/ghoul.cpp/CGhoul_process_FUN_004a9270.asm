@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghoul_cpp_CGhoul_process_FUN_004a9270(CGhoul *param_1,float param_2)
+; void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004a9270(CGhoul *this_ptr,float delta_time)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x38c]:4  local_38c
 ; undefined4       Stack[-0x388]:4  local_388
@@ -1018,7 +1021,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 004a9c2b | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 004a9c31 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a9c32
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004a93a9                      ; 004a9c37
         ;   XREF to: 004a93a9 (UNCONDITIONAL_JUMP)  ; LAB_004a93a9
     PUSH 0x1                            ; 004a9c3c
@@ -2425,7 +2428,7 @@ section .text
     LEA EAX,[EBP + 0xfffffd12]          ; 004aacc5
     PUSH EAX                            ; 004aaccb
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004aaccc
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 004aacd1
     LEA EAX,[EBP + 0xfffffd12]          ; 004aacd4
     PUSH EAX                            ; 004aacda

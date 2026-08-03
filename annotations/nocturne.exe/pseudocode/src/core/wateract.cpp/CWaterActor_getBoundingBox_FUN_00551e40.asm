@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00551e40(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00551e40(CWaterActor *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CWaterActor *    Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059765f = 0.5

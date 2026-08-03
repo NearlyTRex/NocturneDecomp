@@ -2,16 +2,16 @@
 // Address: 0055ca90
 // Address Range: [[0055ca90, 0055caea]]
 // Convention: __stack_esi
-// Signature: undefined4 * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float param_1,undefined4 *param_2)
+// Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float z_offset,CMatrix3x4f *matrix_out)
 
 #include "nocturne.h"
 
-uint * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float param_1,uint *param_2)
+CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float z_offset,CMatrix3x4f *matrix_out)
 
 {
   int iVar1;
   float *pfVar2;
-  uint *puVar3;
+  float *pfVar3;
   float local_34 [12];
   
   local_34[0] = 1.0;
@@ -25,13 +25,13 @@ uint * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_0055ca90(float param_1,ui
   local_34[8] = 0.0;
   local_34[9] = 0.0;
   local_34[10] = -1.0;
-  local_34[0xb] = param_1 * (float)2;
+  local_34[0xb] = z_offset * (float)2;
   pfVar2 = local_34;
-  puVar3 = param_2;
+  pfVar3 = (float *)matrix_out;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *pfVar2;
+    *pfVar3 = *pfVar2;
     pfVar2 = pfVar2 + 1;
-    puVar3 = puVar3 + 1;
+    pfVar3 = pfVar3 + 1;
   }
-  return param_2;
+  return matrix_out;
 }

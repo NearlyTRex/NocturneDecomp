@@ -21,16 +21,10 @@ void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data
   SMRGLPrimitivePoly SStack_118;
   uint local_90;
   uint uStack_8c;
-  int local_50;
-  int local_4c;
-  int local_48;
-  int local_38;
-  int aiStack_34 [4];
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  int local_14;
+  CVector3i local_50 [2];
+  CVector3i local_38;
+  int local_2c;
+  int local_28 [6];
   
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
@@ -45,7 +39,7 @@ void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
   }
   engine_drender_cpp_FUN_00460d10(DAT_005ae704);
-  local_20 = 0;
+  local_28[2] = 0;
   if (0 < count) {
     do {
       SStack_118.base.surface_normal.D.i = 0;
@@ -66,37 +60,37 @@ void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data
         engine_keyframe_c_calculateSurfaceNormal_FUN_004c3920
                   ((CVector3i *)0x200b130,(SMRGLPrimitiveTriangle *)&SStack_118);
       }
-      local_18 = 0;
+      local_28[4] = 0;
       if (0 < SStack_118.base.base.count) {
-        local_1c = 0;
-        local_14 = 0;
+        local_28[3] = 0;
+        local_28[5] = 0;
         do {
-          iVar4 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_1c) * 0xc;
+          iVar4 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]) * 0xc;
           if ((((this_ptr->skip_normal_normalization == 0) ||
                (1.0 <= ABS(*(float *)(&DAT_02045ab0 + iVar4)))) ||
               (1.0 <= ABS(*(float *)(&DAT_02045ab4 + iVar4)))) ||
              (1.0 <= ABS(*(float *)(&DAT_02045ab8 + iVar4)))) {
-            aiStack_34[2] = (int)ROUND(*(float *)(&DAT_02045ab0 + iVar4));
-            aiStack_34[3] = (int)ROUND(*(float *)(&DAT_02045ab4 + iVar4));
-            local_24 = (int)ROUND(*(float *)(&DAT_02045ab8 + iVar4));
+            local_2c = (int)ROUND(*(float *)(&DAT_02045ab0 + iVar4));
+            local_28[0] = (int)ROUND(*(float *)(&DAT_02045ab4 + iVar4));
+            local_28[1] = (int)ROUND(*(float *)(&DAT_02045ab8 + iVar4));
           }
           else {
-            local_50 = (int)ROUND(_DAT_01fff54c * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b130);
-            local_4c = (int)ROUND(_DAT_01fff550 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b134);
-            local_48 = (int)ROUND(_DAT_01fff554 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b138);
-            engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&local_50);
-            aiStack_34[2] = local_38;
-            aiStack_34[(uint)bVar6 * -2 + 3] = aiStack_34[(uint)bVar6 * -2];
-            aiStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-                 aiStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+            local_50[0].x = (int)ROUND(_DAT_01fff54c * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b130);
+            local_50[0].y = (int)ROUND(_DAT_01fff550 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b134);
+            local_50[0].z = (int)ROUND(_DAT_01fff554 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b138);
+            engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(local_50,&local_38);
+            local_2c = local_38.x;
+            local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);
+            local_28[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+                 *(int *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
           }
-          iVar5 = local_18 + 1;
-          iVar4 = 0x8000 - aiStack_34[3];
-          *(int *)((int)&SStack_118.vertices[4].vertex_index + local_14) = aiStack_34[2] + 0x8000;
-          *(int *)((int)&local_90 + local_14) = iVar4;
-          local_18 = iVar5;
-          local_14 = local_14 + 4;
-          local_1c = local_1c + 0xc;
+          iVar5 = local_28[4] + 1;
+          iVar4 = 0x8000 - local_28[0];
+          *(int *)((int)&SStack_118.vertices[4].vertex_index + local_28[5]) = local_2c + 0x8000;
+          *(int *)((int)&local_90 + local_28[5]) = iVar4;
+          local_28[4] = iVar5;
+          local_28[5] = local_28[5] + 4;
+          local_28[3] = local_28[3] + 0xc;
         } while (iVar5 < SStack_118.base.base.count);
       }
       if (1 < SStack_118.base.base.count) {
@@ -151,8 +145,8 @@ void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data
                   (DAT_005ae704,&SStack_118);
       }
       face_data = face_data + 1;
-      local_20 = local_20 + 1;
-    } while (local_20 < count);
+      local_28[2] = local_28[2] + 1;
+    } while (local_28[2] < count);
   }
   return;
 }

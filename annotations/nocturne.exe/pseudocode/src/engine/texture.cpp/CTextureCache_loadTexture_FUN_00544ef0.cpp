@@ -51,7 +51,7 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCa
       }
     }
   }
-  _sprintf(local_114,"CTextureCache::load - Bad texture length : %s,%d",texture_name,local_14);
+  _sprintf(local_114,"CTextureCache::load - Bad texture length : %s,%d");
   g_INT_01cc4804 = 0xf3;
   g_CHAR_PTR_01cc4800 = "..\\engine\\texture.cpp";
   core_main_c_FUN_004c8440(local_114);

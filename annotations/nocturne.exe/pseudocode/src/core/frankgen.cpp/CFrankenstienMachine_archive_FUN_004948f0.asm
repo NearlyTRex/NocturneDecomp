@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_frankgen_cpp_CFrankenstienMachine_archive_FUN_004948f0(CDemonActor *param_1)
+; void __cdecl core_frankgen_cpp_CFrankenstienMachine_archive_FUN_004948f0(CFrankenstienMachine *this_ptr)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_whichPart_00581be0

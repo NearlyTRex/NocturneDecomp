@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -69,8 +69,8 @@
       },
       {
         "category": "type_error",
-        "column": 66,
-        "line": 38,
+        "column": 24,
+        "line": 40,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -80,18 +80,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 577,
+    "complexity_score": 112,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 50,
+    "suspect_count": 4,
     "suspect_types": [
-      "bitcast_double_pair",
-      "param_count_too_few",
-      "unknown_field",
-      "unnamed_param"
+      "pointer_cast",
+      "pointer_truncation",
+      "unknown_field"
     ],
     "total_lines": 244
   },
@@ -117,10 +116,10 @@
         "00525a76"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870",
-    "signature": "void sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(int param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot *this_ptr,double hardware_playback_pos)"
   },
   "function_calls": [
     {
@@ -197,13 +196,10 @@
         "call_addr": "00525855",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -211,24 +207,19 @@
         "call_addr": "00525090",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10",
-        "estimated_params": 7,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.306666666666667,
@@ -270,10 +261,10 @@
     "pcode_op_count": 946
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 64,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -303,6 +294,20 @@
         "offset": -24,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      },
+      {
+        "is_param": true,
+        "name": "hardware_playback_pos",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
       }
     ]
   },
@@ -325,407 +330,36 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(int param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(int param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(int param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x74) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < 0.0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < 0.0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 15,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < 0.0) ||",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) < __BITCAST_DOUBLE(CONCAT44(param_3,param_2)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) < __BITCAST_DOUBLE(CONCAT44(param_3,param_2)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) < __BITCAST_DOUBLE(CONCAT44(param_3,param_2)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 16,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "((double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) < __BITCAST_DOUBLE(CONCAT44(param_3,param_2)))) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_28 = __BITCAST_DOUBLE(CONCAT44(param_3,param_2)) - *(double *)(param_1 + 0x118);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_28 = __BITCAST_DOUBLE(CONCAT44(param_3,param_2)) - *(double *)(param_1 + 0x118);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = __BITCAST_DOUBLE(CONCAT44(param_3,param_2)) - *(double *)(param_1 + 0x118);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 21,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "local_28 = __BITCAST_DOUBLE(CONCAT44(param_3,param_2)) - *(double *)(param_1 + 0x118);",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = (double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) + local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((double)*(int *)(*(int *)(param_1 + 0x74) + 0x138) + 0.001 < local_28)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",param_2,param_3,*(uint *)(param_1 + 0x118),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",param_2,param_3,*(uint *)(param_1 + 0x118),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",param_2,param_3,*(uint *)(param_1 + 0x118),",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 31,
+      "line": 33,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x11c),(uint)local_28,local_28._4_4_,",
+      "text": "local_28._4_4_,this_ptr->sample->streaming_buffer_size,this_ptr->sample);",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x11c),(uint)local_28,local_28._4_4_,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `&this_ptr->prev_hardware_playback_pos` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_1 + 0x74) + 0x138),*(int *)(param_1 + 0x74));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_1 + 0x74) + 0x138),*(int *)(param_1 + 0x74));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(double *)(param_1 + 0x60) != *(double *)(param_1 + 0x118)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(double *)(param_1 + 0x60) != *(double *)(param_1 + 0x118)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < *(double *)(param_1 + 0x60))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < *(double *)(param_1 + 0x60))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < *(double *)(param_1 + 0x60))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 35,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "match": "(int)&this_ptr->prev_hardware_playback_pos",
       "severity": "moderate",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(param_3,param_2)) < *(double *)(param_1 + 0x60))) {",
-      "type": "bitcast_double_pair"
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(double *)(param_1 + 0x60) = *(double *)(param_1 + 0x60) + local_28;",
-      "type": "unnamed_param"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 32,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(double *)(param_1 + 0x60) = *(double *)(param_1 + 0x60) + local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x60) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x60) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 100) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 100) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(double *)(param_1 + 0x60) < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x60) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 100) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x74);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(dVar2 = (double)*(int *)(iVar1 + 0x110), dVar2 <= *(double *)(param_1 + 0x60))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(double *)(param_1 + 0x60) = dVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar3 = floor(*(double *)(param_1 + 0x60) / dVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(double *)(param_1 + 0x60) = *(double *)(param_1 + 0x60) - dVar3 * dVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(double *)(param_1 + 0x60) = *(double *)(param_1 + 0x60) - dVar3 * dVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x118) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x118) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x11c) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x11c) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

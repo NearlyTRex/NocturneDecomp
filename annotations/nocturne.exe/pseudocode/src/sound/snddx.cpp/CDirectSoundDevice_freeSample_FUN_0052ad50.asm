@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_0052ad50(undefined4 param_1,int param_2)
+; void __cdecl sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_0052ad50(CDirectSoundDevice *this_ptr,int buffer_id)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   buffer_id
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_snddx_cpp_005942a2

@@ -356,7 +356,7 @@ section .text
     FSTP float ptr [EDI + 0x1fcc8]      ; 0053c37f
     MOV dword ptr [EDI + 0x1fccc],0x3f800000 ; 0053c385
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053c38f
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 0053c394
     ADD ESP,0xc                         ; 0053c399
     MOV ESP,EBP                         ; 0053c39c

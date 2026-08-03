@@ -180,7 +180,7 @@ section .text
     INC ESI                             ; 00471d0b
     ADD EBP,0xc8                        ; 00471d0c
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00471d12
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00471d17
     ADD EBX,EAX                         ; 00471d1a
     CMP ESI,EDI                         ; 00471d1c

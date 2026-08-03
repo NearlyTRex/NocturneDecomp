@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_renderBackground_FUN_00416300(CBodyPart *param_1,int param_2)
+; void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00416300(CBodyPart *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;
@@ -119,7 +122,7 @@ section .text
     PUSH EBP                            ; 004163f9 | g_CConsole_0077ad0c
     MOV dword ptr [EBX + 0x150],0x1     ; 004163fa
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00416404
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00416409
     JMP 0x0041632f                      ; 0041640c
         ;   XREF to: 0041632f (UNCONDITIONAL_JUMP)  ; LAB_0041632f

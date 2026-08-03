@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_grave_cpp_CGrave_archive_FUN_004b0e20(CDemonActor *param_1)
+; void __cdecl core_grave_cpp_CGrave_archive_FUN_004b0e20(CGrave *this_ptr)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;

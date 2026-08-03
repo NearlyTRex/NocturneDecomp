@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *param_1,int param_2,int param_3,int param_4)
+; void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemonSet *this_ptr,int light_index)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   light_index
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Camera_box_7_2f_7_2f_7_2_005902ac
@@ -98,7 +101,7 @@ section .text
     PUSH 0x0                            ; 00508069
     PUSH 0x1fb8508                      ; 0050806b
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 00508070
-        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
+        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     ADD ESP,0x8                         ; 00508075
     PUSH 0x1fb8508                      ; 00508078
     CALL core_dcamera.cpp_FUN_004421b0  ; 0050807d
@@ -157,7 +160,7 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 00508125
     PUSH EAX                            ; 00508129
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050812a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x38                        ; 0050812f
     PUSH 0x16                           ; 00508132
     PUSH 0x0                            ; 00508134
@@ -251,7 +254,7 @@ section .text
     MOV byte ptr [ESI + 0x19770],AL     ; 00508276
     LEA ESI,[ESP + 0x120]               ; 0050827c
     CALL core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0 ; 00508283
-        ;   XREF to: 00444ef0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0()
+        ;   XREF to: 00444ef0 (UNCONDITIONAL_CALL)  ; CRect * core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0(CDemonCamera * this_ptr, CDemonLight * light, CRect * out_bounds)
     LEA ESI,[ESP + 0x120]               ; 00508288
     ADD ESP,0x8                         ; 0050828f
     LEA EDI,[EBP + 0x1986c]             ; 00508292
@@ -277,7 +280,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 005082d5
     PUSH EAX                            ; 005082d9
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005082da
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x1c                        ; 005082df
     MOV EAX,dword ptr [ESP + 0x154]     ; 005082e2
     PUSH EAX                            ; 005082e9
@@ -307,7 +310,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00508346
     PUSH EAX                            ; 0050834a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050834b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00508350
     PUSH 0x0                            ; 00508353
     PUSH 0x0                            ; 00508355
@@ -382,7 +385,7 @@ section .text
     PUSH 0x1fb8508                      ; 00508442
     MOV byte ptr [ESI + EBX*0x1 + 0x19770],AL ; 00508447
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 0050844e
-        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
+        ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     ADD ESP,0x8                         ; 00508453
     MOV EAX,dword ptr [ESP + 0x148]     ; 00508456
     MOV dword ptr [EBX + EAX*0x1 + 0x1986c],0x0 ; 0050845d

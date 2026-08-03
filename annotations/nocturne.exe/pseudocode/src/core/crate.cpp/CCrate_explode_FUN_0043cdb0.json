@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 19,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 30,
+        "line": 29,
         "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
       }
     ],
@@ -74,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 38,
+    "complexity_score": 37,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 88
+    "total_lines": 87
   },
   "cross_references": [
     {
@@ -307,7 +301,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 17,
+      "line": 16,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_10.x = (pCVar1->position).x;",

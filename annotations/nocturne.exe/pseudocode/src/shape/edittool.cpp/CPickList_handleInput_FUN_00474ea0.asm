@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_CPickList_handleInput_FUN_00474ea0(CPickList *param_1)
+; int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_00474ea0(CPickList *this_ptr)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
@@ -352,7 +354,7 @@ section .text
     PUSH EBX                            ; 004751f5
     MOV dword ptr [EBX + 0x118],EDI     ; 004751f6
     CALL shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0 ; 004751fc
-        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0()
+        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00475201
     MOV ECX,dword ptr [EBX + 0x118]     ; 00475204
     PUSH ECX                            ; 0047520a

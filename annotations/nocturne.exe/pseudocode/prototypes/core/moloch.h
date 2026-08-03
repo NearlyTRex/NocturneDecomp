@@ -13,7 +13,7 @@ CMoloch * __cdecl factoryFunc(void);
 
 // Original: core_moloch.cpp_CMoloch_getActorType_FUN_004dd920
 // Address: 004dd920
-CDemonActorType * CMoloch::getActorType(void);
+CDemonActorType * __cdecl CMoloch::getActorType(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_ctor_FUN_004dd930
 // Address: 004dd930
@@ -25,11 +25,11 @@ CMoloch * __cdecl CMoloch::dtor(CMoloch *this_ptr,uint flags);
 
 // Original: core_moloch.cpp_CMoloch_setup_FUN_004dda70
 // Address: 004dda70
-void CMoloch::setup(CHero *param_1);
+void __cdecl CMoloch::setup(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_process_FUN_004ddb20
 // Address: 004ddb20
-void CMoloch::process(CMoloch *param_1,float param_2);
+void __cdecl CMoloch::process(CMoloch *this_ptr,float delta_time);
 
 // Original: core_moloch.cpp_CMoloch_processAI_FUN_004de1b0
 // Address: 004de1b0
@@ -37,11 +37,11 @@ void __cdecl CMoloch::processAI(CMoloch *this_ptr,float delta_time);
 
 // Original: core_moloch.cpp_CMoloch_renderOpaque_FUN_004de550
 // Address: 004de550
-int CMoloch::renderOpaque(CCharacter *param_1);
+int __cdecl CMoloch::renderOpaque(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_archive_FUN_004de680
 // Address: 004de680
-void CMoloch::archive(CHero *param_1);
+void __cdecl CMoloch::archive(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_startMorph_FUN_004de700
 // Address: 004de700

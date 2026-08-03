@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0(int param_1,int param_2)
+; void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ; Local Variables:
 ; undefined        Stack[-0x120]:1  local_120
 ; undefined        Stack[-0xf0]:1  local_f0
@@ -183,7 +186,7 @@ section .text
     LEA ESI,[EBP + -0x3a]               ; 0041961f
     LEA EDI,[EBP + -0x6a]               ; 00419622
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 00419625
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 0041962a
     LEA EAX,[EBP + -0x6a]               ; 0041962d
     MOV ECX,0xc                         ; 00419630

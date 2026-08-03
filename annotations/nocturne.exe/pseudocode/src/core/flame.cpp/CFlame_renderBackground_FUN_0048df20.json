@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
-        "column": 14,
-        "line": 24,
+        "column": 17,
+        "line": 26,
         "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
       }
     ],
@@ -68,17 +68,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 319,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 25,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 205
   },
@@ -91,10 +90,10 @@
         "0048e096"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_flame.cpp_CFlame_renderBackground_FUN_0048df20",
-    "signature": "void core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CDemonActor *param_1,int param_2)"
+    "signature": "void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CFlame *this_ptr,int layer_flag)"
   },
   "function_calls": [
     {
@@ -177,9 +176,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -225,10 +224,10 @@
     "pcode_op_count": 746
   },
   "stack_frame": {
-    "frame_size": 60,
+    "frame_size": 68,
     "local_size": 60,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -237,6 +236,20 @@
         "offset": -56,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlame *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -259,204 +272,20 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CDemonActor *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CDemonActor *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 19,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "this_ptr = DAT_005ae704;",
+      "text": "this_ptr_00 = DAT_005ae704;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].prev_actor = (CDemonActor *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].previous_transform_state.dirty_flags = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((iVar1 == 0) && (param_2 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].previous_transform_state.orientation.vec.y = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1[1].previous_transform_state.orientation.vec.y != 0.0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((1.0 < SQRT(*(float *)(param_1[1].actor_name + 8) * *(float *)(param_1[1].actor_name + 8) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((1.0 < SQRT(*(float *)(param_1[1].actor_name + 8) * *(float *)(param_1[1].actor_name + 8) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)param_1[1].actor_name * *(float *)param_1[1].actor_name +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)param_1[1].actor_name * *(float *)param_1[1].actor_name +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1[1].actor_name + 4) * *(float *)(param_1[1].actor_name + 4))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1[1].actor_name + 4) * *(float *)(param_1[1].actor_name + 4))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&& (0.0 < param_1[1].orient_matrix.m[2].x)) && (param_1[1].orient_matrix.m[1].z == 0.0))))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&& (0.0 < param_1[1].orient_matrix.m[2].x)) && (param_1[1].orient_matrix.m[1].z == 0.0))))",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar1),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar4),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_20 = (param_1->location).position.x - (pCVar3->location).position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_1c = (param_1->location).position.y - (pCVar3->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_18 = (param_1->location).position.z - (pCVar3->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].prev_actor = (CDemonActor *)0x1;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

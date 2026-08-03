@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_batcreat_cpp_CBatCreature_getActorType_FUN_004120f0(void)
+; CDemonActorType * __cdecl core_batcreat_cpp_CBatCreature_getActorType_FUN_004120f0(CBatCreature *this_ptr)
 ;
+; Parameters:
+; CBatCreature *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CBatCreatureActorType_007645cc

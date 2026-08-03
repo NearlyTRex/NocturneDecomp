@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(int param_1)
+; ECollisionType __cdecl core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(CCrate *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; *****************************************************************************
 

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bride_cpp_CBride_process_FUN_0041fe40(CEnemy *param_1,float param_2)
+; void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBride *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x1f4]:1  local_1f4
 ; undefined4       Stack[-0x1f0]:4  local_1f0

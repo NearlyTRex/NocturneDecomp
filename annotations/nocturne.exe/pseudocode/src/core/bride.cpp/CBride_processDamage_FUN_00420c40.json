@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,15 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 387,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 31,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_type_propagation"
     ],
     "total_lines": 252
@@ -84,10 +83,10 @@
         "00420e1a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_bride.cpp_CBride_processDamage_FUN_00420c40",
-    "signature": "void core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *param_1,SDamageInfo *param_2)"
+    "signature": "void __cdecl core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *this_ptr,SDamageInfo *damage_info)"
   },
   "function_calls": [
     {
@@ -176,9 +175,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -222,10 +221,10 @@
     "pcode_op_count": 718
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 72,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -248,6 +247,20 @@
         "offset": -36,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBride *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
       }
     ]
   },
@@ -259,246 +272,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *param_1,SDamageInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *param_1,SDamageInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handles[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2->ammo_type == AMMO_TYPE_LITHIUM) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->damage_amount = param_2->damage_amount * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->damage_amount = param_2->damage_amount * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor *)param_1,&local_3c,&param_2->impact_direction);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((CDemonActor *)param_1,&local_3c,&param_2->impact_direction);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2->damage_type == DAMAGE_TYPE_BURN) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).base.model,&local_24,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor *)param_1,&local_30,input_local_point);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00427730((CCharacter *)param_1,&local_30,0,0,10.0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bride_cpp_CBride_processDismemberment_FUN_00420a10(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_bride_cpp_CBride_processDismemberment_FUN_00420a10(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = param_1->part_indices[8];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.hit_points = (param_1->base).base.hit_points - param_2->damage_amount;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.hit_points = (param_1->base).base.hit_points - param_2->damage_amount;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1->base).base.hit_points = (param_1->base).base.hit_points - param_2->damage_amount;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->base).base.model.part_data.visibility_flags[iVar2] == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.hit_points = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).base.model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < (param_1->base).base.hit_points) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handles[0]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.hit_points = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handles[0]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = (*((param_1->base).base.base.vtable._ub)->playSound)((CDemonActor *)param_1,sound_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = (*((param_1->base).base.base.vtable._ub)->playSound)((CDemonActor *)param_1,sound_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->sfx_handles[0] = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

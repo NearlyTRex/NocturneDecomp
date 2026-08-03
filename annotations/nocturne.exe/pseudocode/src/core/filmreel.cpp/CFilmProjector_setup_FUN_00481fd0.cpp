@@ -1,19 +1,18 @@
 // Name: core_filmreel.cpp_CFilmProjector_setup_FUN_00481fd0
 // Address: 00481fd0
 // Address Range: [[00481fd0, 0048200c]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(CActorDestination *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(CFilmProjector *this_ptr)
 
 #include "nocturne.h"
 
-void core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(CActorDestination *param_1)
+void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(CFilmProjector *this_ptr)
 
 {
-  core_dest_cpp_CActorDestination_setup_FUN_0044b810(param_1);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)(param_1 + 1));
-  (param_1->base).is_renderable = 1;
-  param_1[1].persistent_event_flag = 0;
-  param_1[1].needs_actor_search = 0;
+  core_dest_cpp_CActorDestination_setup_FUN_0044b810(&this_ptr->base);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->model);
+  (this_ptr->base).base.is_renderable = 1;
+  this_ptr->reel_rotation = 0.0;
+  this_ptr->prev_dest_state = 0;
   return;
 }

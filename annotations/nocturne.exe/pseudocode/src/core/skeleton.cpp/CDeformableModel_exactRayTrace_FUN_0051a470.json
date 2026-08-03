@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -81,20 +81,20 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 37,
+        "column": 48,
+        "line": 44,
+        "message": "use of undeclared identifier '_DAT_005a1eb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
         "line": 45,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 48,
         "line": 46,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 47,
         "message": "use of undeclared identifier '_DAT_005a1eb0'"
       },
       {
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 423,
+    "complexity_score": 178,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 88,
-    "suspect_count": 31,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
       "stack_ref",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 311
@@ -154,10 +153,10 @@
         "0051a6f4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0051a470",
-    "signature": "float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)"
+    "signature": "float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags)"
   },
   "function_calls": [
     {
@@ -312,11 +311,11 @@
         "stack_params": 6
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
     "estimated_params": 6,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.865284974093265,
@@ -360,10 +359,10 @@
     "pcode_op_count": 1132
   },
   "stack_frame": {
-    "frame_size": 124,
+    "frame_size": 148,
     "local_size": 124,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -470,6 +469,48 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "ray_origin",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_direction",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "skinned_vertices",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "part_visibility_flags",
+        "offset": 24,
+        "size": 4,
+        "type": "byte *"
       }
     ]
   },
@@ -500,54 +541,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 23,
       "match": "DAT_02684230",
@@ -572,142 +565,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = param_2 * 4 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_2 * 4 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "pCVar2->x = (float)*param_5 * _DAT_005a1eb0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "pCVar2->y = (float)param_5[1] * _DAT_005a1eb0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "pCVar2->z = (float)param_5[2] * _DAT_005a1eb0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0xc00)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = param_1 + param_2 * 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_1c = param_1 + param_2 * 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_20 = param_2 * 4 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = param_2 * 4 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "local_24 = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(&local_6c,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(&local_6c,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 70,
       "match": "&stack0x00000000",
@@ -716,31 +573,20 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_DAT_0268cee8 = param_2;",
-      "type": "unnamed_param"
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 53,
+      "match": "(int *)(local_20 + 0xc24)",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(local_20 + 0xc24) + local_28;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0xc00));",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 59,
+      "match": "(int *)(local_1c + 0x7c)",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(local_1c + 0x7c);",
+      "type": "pointer_cast"
     }
   ]
 }

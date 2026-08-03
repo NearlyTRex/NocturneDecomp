@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,19 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 33,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 34,
+        "line": 28,
         "message": "use of undeclared identifier 'PTR_DAT_005b9284'"
       }
     ],
@@ -74,19 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 387,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 32,
+    "pseudocode_lines": 44,
+    "suspect_count": 2,
     "suspect_types": [
       "raw_address_pointer_store",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 155
+    "total_lines": 147
   },
   "cross_references": [],
   "function": {
@@ -97,10 +96,10 @@
         "0048ec52"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_flamegun.cpp_CFlameThrower_process_FUN_0048eb30",
-    "signature": "void core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CWeapon *param_1,float param_2)"
+    "signature": "void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CFlameThrower *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -160,9 +159,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -206,10 +205,10 @@
     "pcode_op_count": 408
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 36,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -218,6 +217,20 @@
         "offset": -24,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameThrower *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -248,252 +261,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CWeapon *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CWeapon *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_00554030(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_00554030(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)param_1[1].base.actor_name == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar6 = *(uint *)(param_1[1].base.actor_name + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar4 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar4 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 26,
+      "line": 20,
       "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
-      "text": "if (pCVar4 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
+      "text": "if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CSound_PTR_005bed68,*(uint *)(param_1[1].base.actor_name + 4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar6 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"fl-throw.wav\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar6 = (*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"fl-throw.wav\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1[1].base.actor_name + 4) = uVar6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1[1].base.actor_name + 0xc) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1[1].base.actor_name + 0xc) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1[1].base.actor_name + 0xc) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1[1].base.actor_name + 0xc) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1[1].base.actor_name + 0xc) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = param_1->ammo_count + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->ammo_count = iVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1[1].base.actor_name + 0xc) = fVar2 + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1[1].base.actor_name + 0xc) = fVar2 + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->ammo_count = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)param_1[1].base.actor_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.actor_name[0] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.actor_name[1] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.actor_name[2] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.actor_name[3] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1[1].base.actor_name + 8) = uVar1;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

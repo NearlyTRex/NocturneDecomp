@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bugs_cpp_CBugs_getDeathState_FUN_004219b0(int param_1)
+; EDeathState __cdecl core_bugs_cpp_CBugs_getDeathState_FUN_004219b0(CBugs *this_ptr)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

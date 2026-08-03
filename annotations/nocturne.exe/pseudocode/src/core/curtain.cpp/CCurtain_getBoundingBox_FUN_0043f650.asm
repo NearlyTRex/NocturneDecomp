@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_curtain_cpp_CCurtain_getBoundingBox_FUN_0043f650(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_curtain_cpp_CCurtain_getBoundingBox_FUN_0043f650(CCurtain *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057b53e = 0.5

@@ -95,7 +95,7 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
       pcVar11[1] = cVar2;
       pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_228,"%.1f",(double)((float)_DAT_02de20a8 * 9.536743e-07f));
+    _sprintf(acStack_228,"%.1f");
     pcVar11 = acStack_228;
     iVar7 = -1;
     pcVar8 = acStack_528;
@@ -322,7 +322,7 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_128,"%.1f",(double)((float)_DAT_02de20ac * 9.536743e-07f));
+    _sprintf(acStack_128,"%.1f");
     pcVar5 = acStack_128;
     iVar7 = -1;
     pcVar11 = &stack0xfffff8d8;

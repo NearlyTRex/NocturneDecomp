@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

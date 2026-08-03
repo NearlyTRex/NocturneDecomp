@@ -19,7 +19,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(CGabriella *thi
   CBoundingBox3D *pCVar4;
   int iVar5;
   float fVar6;
-  CDemonActor *this_ptr_01;
+  CEnemy *this_ptr_01;
   float local_120;
   float local_11c;
   float fStack_118;
@@ -105,12 +105,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(CGabriella *thi
     else {
       local_11c = 9999.9;
       EVar1 = (this_ptr->base).ai_task;
-      this_ptr_01 = (CDemonActor *)0x0;
+      this_ptr_01 = (CEnemy *)0x0;
       if ((EVar1 == HERO_TASK_KILL) || (EVar1 == HERO_TASK_GUARD)) {
-        this_ptr_01 = (CDemonActor *)
-                      core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(this_ptr,&local_11c);
+        this_ptr_01 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(&this_ptr->base,&local_11c);
       }
-      if ((this_ptr_01 == (CDemonActor *)0x0) || ((float)30 <= local_11c)) {
+      if ((this_ptr_01 == (CEnemy *)0x0) || ((float)30 <= local_11c)) {
         if (this_ptr->weapon_state_flags != 0) {
           pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                              (&(this_ptr->base).base.model.motion_controller);
@@ -128,11 +127,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(CGabriella *thi
             (this_ptr->base).player_input.action_state.draw = 1;
           }
         }
-        local_6c.x = (this_ptr_01->location).position.x -
+        local_6c.x = (this_ptr_01->base).base.location.position.x -
                      (this_ptr->base).base.base.location.position.x;
-        local_6c.y = (this_ptr_01->location).position.y -
+        local_6c.y = (this_ptr_01->base).base.location.position.y -
                      (this_ptr->base).base.base.location.position.y;
-        local_6c.z = (this_ptr_01->location).position.z -
+        local_6c.z = (this_ptr_01->base).base.location.position.z -
                      (this_ptr->base).base.base.location.position.z;
         pCVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                            (&local_e4,&local_6c);
@@ -160,18 +159,19 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(CGabriella *thi
           CStack_78.x = (this_ptr->base).base.base.location.position.x + fStack_54;
           CStack_78.y = (this_ptr->base).base.base.location.position.y + fStack_50;
           CStack_78.z = (this_ptr->base).base.base.location.position.z + fStack_4c;
-          pCVar4 = (*((this_ptr_01->vtable)._ub)->getBoundingBox)(this_ptr_01,&CStack_114);
+          pCVar4 = (*((this_ptr_01->base).base.vtable._ub)->getBoundingBox)
+                             ((CDemonActor *)this_ptr_01,&CStack_114);
           fStack_30 = (pCVar4->min).x + (pCVar4->max).x;
           fStack_2c = (pCVar4->min).y + (pCVar4->max).y;
           fStack_60 = fStack_30 * 0.5f;
           fStack_28 = (pCVar4->min).z + (pCVar4->max).z;
           fStack_5c = fStack_2c * 0.5f;
           fStack_58 = fStack_28 * 0.5f;
-          CStack_48.x = (this_ptr_01->location).position.x + fStack_60;
-          CStack_48.y = (this_ptr_01->location).position.y + fStack_5c;
+          CStack_48.x = (this_ptr_01->base).base.location.position.x + fStack_60;
+          CStack_48.y = (this_ptr_01->base).base.location.position.y + fStack_5c;
           fStack_cc = CStack_48.x - CStack_78.x;
           fStack_c8 = CStack_48.y - CStack_78.y;
-          CStack_48.z = (this_ptr_01->location).position.z + fStack_58;
+          CStack_48.z = (this_ptr_01->base).base.location.position.z + fStack_58;
           fStack_c4 = CStack_48.z - CStack_78.z;
           fStack_118 = SQRT(fStack_c4 * fStack_c4 + fStack_cc * fStack_cc + fStack_c8 * fStack_c8);
           if (fStack_118 <= 0.0) {
@@ -203,7 +203,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(CGabriella *thi
           g_CDemonSet_PTR_005be368->collision_actor = (CDemonActor *)0x0;
           core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(this_ptr_00,&CStack_78,&CStack_48);
           core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-          if (this_ptr_01 == g_CDemonSet_PTR_005be368->collision_actor) {
+          if (this_ptr_01 == (CEnemy *)g_CDemonSet_PTR_005be368->collision_actor) {
             (this_ptr->base).player_input.action_state.fire = 1;
             return;
           }

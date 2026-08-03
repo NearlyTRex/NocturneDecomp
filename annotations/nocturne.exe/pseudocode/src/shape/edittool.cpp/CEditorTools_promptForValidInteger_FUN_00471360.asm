@@ -77,7 +77,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004713ae
     PUSH EAX                            ; 004713b2
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004713b3
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004713b8
     JMP 0x00471383                      ; 004713bb
         ;   XREF to: 00471383 (UNCONDITIONAL_JUMP)  ; LAB_00471383

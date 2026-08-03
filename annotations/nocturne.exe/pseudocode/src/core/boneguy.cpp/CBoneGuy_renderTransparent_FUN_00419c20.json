@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,25 +52,25 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 24,
+        "line": 25,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 25,
+        "line": 26,
         "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 29,
+        "line": 30,
         "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
       }
     ],
@@ -80,18 +80,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 135,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 10,
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 97
+    "total_lines": 98
   },
   "cross_references": [],
   "function": {
@@ -102,9 +101,9 @@
         "00419cd5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419c20",
-    "signature": "int core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00419c20(CCharacter *param_1)"
+    "signature": "int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00419c20(CBoneGuy *this_ptr)"
   },
   "function_calls": [
     {
@@ -173,9 +172,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -204,10 +203,10 @@
     "pcode_op_count": 257
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -216,53 +215,20 @@
         "offset": -32,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneGuy *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00419c20(CCharacter *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->render_active != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 18,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(DAT_005ae704,0);",
@@ -270,35 +236,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 19,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar1 = DAT_005ae704;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar1 = DAT_005ae704;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

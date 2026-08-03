@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(CLightActor *param_1)
+; void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(CLightActor *this_ptr)
 ;
+; Parameters:
+; CLightActor *    Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_0041e430

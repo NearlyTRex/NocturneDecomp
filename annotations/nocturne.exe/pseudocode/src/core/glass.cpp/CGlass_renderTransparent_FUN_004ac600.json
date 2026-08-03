@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,24 +52,30 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
-        "column": 15,
-        "line": 28,
+        "column": 18,
+        "line": 27,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 34,
+        "line": 33,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 42,
+        "column": 44,
+        "line": 40,
+        "message": "use of undeclared identifier '_DAT_0059e390'; did you mean 'DAT_005be380'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 44,
         "line": 41,
         "message": "use of undeclared identifier '_DAT_0059e390'; did you mean 'DAT_005be380'?"
       },
@@ -81,26 +87,20 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 44,
-        "line": 43,
-        "message": "use of undeclared identifier '_DAT_0059e390'; did you mean 'DAT_005be380'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 33,
-        "line": 51,
+        "line": 50,
         "message": "use of undeclared identifier '_DAT_01c038f4'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 52,
+        "line": 51,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
       },
       {
         "category": "incompatible_types",
-        "column": 20,
-        "line": 62,
+        "column": 23,
+        "line": 61,
         "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
       }
     ],
@@ -110,21 +110,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 474,
+    "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
-    "suspect_count": 38,
+    "pseudocode_lines": 65,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 227
+    "total_lines": 223
   },
   "cross_references": [],
   "function": {
@@ -135,9 +133,9 @@
         "004ac7b4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_glass.cpp_CGlass_renderTransparent_FUN_004ac600",
-    "signature": "int core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CDemonActor *param_1)"
+    "signature": "int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CGlass *this_ptr)"
   },
   "function_calls": [
     {
@@ -228,9 +226,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -272,10 +270,10 @@
     "pcode_op_count": 657
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 48,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -284,6 +282,13 @@
         "offset": -40,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlass *"
       }
     ]
   },
@@ -297,299 +302,43 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((*(int *)(param_1[2].create_event + 0x50) == 0) && (param_1[1].location.position.y != 0.0))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((*(int *)(param_1[2].create_event + 0x50) == 0) && (param_1[1].location.position.y != 0.0))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Undefined global data reference",
       "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&& (param_1[1].location.position.z == 0.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar2 == 0)",
+      "text": "&& (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[1].actor_name + 0xc));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[1].actor_name + 0xc));",
+      "text": "(DAT_005ae704,&this_ptr->glass_texture);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar4 = &param_1[2].platform_position_delta.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "input_vertices = (CVector3i *)(param_1[3].create_event + 0x48);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1[8].create_event + 0x34)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar2 < *(int *)(param_1[8].create_event + 0x34));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,*(int *)(param_1[8].create_event + 0x34),input_vertices);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)(int)param_1[1].location.position.y;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "poly = (SMRGLPrimitivePoly *)(param_1[5].actor_name + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,*(int *)(param_1[8].create_event + 0x34),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[8].create_event + 0x38),poly,input_vertices,4,(CVector3i *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar5 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1[8].create_event + 0x38)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 54,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "this_ptr = DAT_005ae704;",
+      "text": "this_ptr_00 = DAT_005ae704;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar2 < *(int *)(param_1[8].create_event + 0x38));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 19,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if ((((*(int *)(param_1[2].create_event + 0x50) == 0) && (param_1[1].location.position.y != 0.0))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 28,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(param_1[1].actor_name + 0xc));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 30,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "input_vertices = (CVector3i *)(param_1[3].create_event + 0x48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 32,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if (0 < *(int *)(param_1[8].create_event + 0x34)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 40,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "} while (iVar2 < *(int *)(param_1[8].create_event + 0x34));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 43,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "(g_CDemonSet_PTR_005be368,*(int *)(param_1[8].create_event + 0x34),input_vertices);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 47,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "poly = (SMRGLPrimitivePoly *)(param_1[5].actor_name + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 49,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "(g_CDemonSet_PTR_005be368,*(int *)(param_1[8].create_event + 0x34),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 50,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "*(int *)(param_1[8].create_event + 0x38),poly,input_vertices,4,(CVector3i *)0x0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 53,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if (0 < *(int *)(param_1[8].create_event + 0x38)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 67,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "} while (iVar2 < *(int *)(param_1[8].create_event + 0x38));",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 66,
+      "line": 62,
       "match": "pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar5 = (CDemonActor *)((pCVar5->orient_matrix).m + 1);",
+      "text": "pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);",
       "type": "shadow_pointer_walk"
     }
   ],

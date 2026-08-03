@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_succubus_cpp_CSuccubus_renderOpaque_FUN_00541640(CCharacter *param_1)
+; int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00541640(CSuccubus *this_ptr)
 ;
+; Parameters:
+; CSuccubus *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ;

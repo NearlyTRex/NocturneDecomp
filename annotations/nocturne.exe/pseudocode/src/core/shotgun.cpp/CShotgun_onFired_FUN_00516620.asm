@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shotgun_cpp_CShotgun_onFired_FUN_00516620(CDemonActor *param_1)
+; void __cdecl core_shotgun_cpp_CShotgun_onFired_FUN_00516620(CShotgun *this_ptr)
 ;
+; Parameters:
+; CShotgun *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x64]:1  local_64
 ; undefined        Stack[-0x3c]:1  local_3c

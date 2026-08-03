@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_heap_c_ResizeBlockInPlace_FUN_0056afe8(short param_1,int *param_2,uint param_3,uint *param_4)
+; undefined4 __watcallRegister crt_heap_c_ResizeBlockInPlace_FUN_0056afe8(undefined4 param_1,undefined4 param_2,int *unaff_EBX,undefined4 param_4,short param_5,int *param_6,uint param_7,uint *param_8)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

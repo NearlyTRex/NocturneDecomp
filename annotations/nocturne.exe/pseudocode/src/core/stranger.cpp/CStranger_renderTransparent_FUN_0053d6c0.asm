@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CCharacter *param_1)
+; int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_00427260

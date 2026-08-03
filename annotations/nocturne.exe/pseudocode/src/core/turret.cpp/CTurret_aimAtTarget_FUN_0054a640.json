@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 248,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 48,
-    "suspect_count": 19,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
-    "total_lines": 229
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -97,10 +94,10 @@
         "0054a7fe"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640",
-    "signature": "undefined4 core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3)"
+    "signature": "int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CTurret *this_ptr,CVector3f *target_pos,float delta_time)"
   },
   "function_calls": [
     {
@@ -152,12 +149,10 @@
         "call_addr": "0054a5dd",
         "call_type": "direct",
         "caller": "core_turret.cpp_CTurret_updateTargeting_FUN_0054a110",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -165,21 +160,19 @@
         "call_addr": "0054a984",
         "call_type": "direct",
         "caller": "core_turret.cpp_CTurret_updatePatrol_FUN_0054a920",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.549668874172186,
@@ -223,10 +216,10 @@
     "pcode_op_count": 1140
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 76,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -312,6 +305,27 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
+      },
+      {
+        "is_param": true,
+        "name": "target_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -332,161 +346,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_24.x = *param_2 - (param_1->location).position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24.x = *param_2 - (param_1->location).position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_24.y = param_2[1] - (param_1->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24.y = param_2[1] - (param_1->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_24.z = param_2[2] - (param_1->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24.z = param_2[2] - (param_1->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_30.y - (param_1->orient).vec.y);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_c = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_30.x - (param_1->orient).vec.x);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_10 = param_3 * param_1[5].platform_position_delta.x * (float)0.017453292519444399;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_10 = param_3 * param_1[5].platform_position_delta.x * (float)0.017453292519444399;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.y = (param_1->orient).vec.y + local_34;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.y = (param_1->orient).vec.y + local_34;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.x = (param_1->orient).vec.x + local_38;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.x = (param_1->orient).vec.x + local_38;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

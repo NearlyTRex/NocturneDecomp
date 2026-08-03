@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_00534a30(int param_1,SIntersectXZCylinder *param_2)
+; void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_00534a30(CStairs *this_ptr,SIntersectXZCylinder *cylinder)
 ;
+; Parameters:
+; CStairs *        Stack[0x4]:4   this_ptr
+; SIntersectXZCylinder * Stack[0x8]:4   cylinder
 ;
 ; Called Functions:
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_0046cba0

@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 004f5cae
     INC ESI                             ; 004f5caf
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80 ; 004f5cb0
-        ;   XREF to: 004f3f80 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80()
+        ;   XREF to: 004f3f80 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80(CPackedBitmap * this_ptr)
     ADD EBX,0x24                        ; 004f5cb5
     MOV EBP,dword ptr [EDI]             ; 004f5cb8
     ADD ESP,0x4                         ; 004f5cba

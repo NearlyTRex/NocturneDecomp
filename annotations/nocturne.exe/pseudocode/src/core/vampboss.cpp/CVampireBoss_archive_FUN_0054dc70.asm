@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CEnemy *param_1)
+; void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CVampireBoss *this_ptr)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_human_model_motion_state_00597165

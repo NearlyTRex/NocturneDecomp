@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *param_1,float param_2)
+; void __cdecl core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *this_ptr,float delta_time)
 ;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058d080 = -1

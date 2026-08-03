@@ -1,30 +1,32 @@
 // Name: core_hero.cpp_CHero_canLookAt_FUN_004b5b70
 // Address: 004b5b70
 // Address Range: [[004b5b70, 004b5c2b]]
-// Convention: unknown
-// Signature: undefined4 core_hero_cpp_CHero_canLookAt_FUN_004b5b70(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004b5b70(CHero *this_ptr)
 
 #include "nocturne.h"
 
-uint core_hero_cpp_CHero_canLookAt_FUN_004b5b70(int param_1)
+int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004b5b70(CHero *this_ptr)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   
-  iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
-  if (iVar1 < 2) {
-    if (iVar1 == 1) {
+  EVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
+  if ((int)EVar1 < 2) {
+    if (EVar1 == DEATH_STATE_DYING) {
       return 1;
     }
-    if ((((((*(int *)(param_1 + 0xbc94) != 0) || (*(int *)(param_1 + 0xbc98) != 0)) ||
-          (*(int *)(param_1 + 0xbca0) != 0)) ||
-         ((*(int *)(param_1 + 0xbca4) != 0 || (*(int *)(param_1 + 0xbca8) != 0)))) ||
-        ((*(int *)(param_1 + 0xbcac) != 0 ||
-         ((*(int *)(param_1 + 0xbcb0) != 0 ||
-          ((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcb4)))))))) ||
-       (((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcb8)) ||
-        (((float)0.10000000000000001 < ABS(*(float *)(param_1 + 0xbcbc)) ||
-         (*(int *)(param_1 + 0x2408) == 0)))))) {
+    if (((((((this_ptr->player_input).action_state.walk != 0) ||
+           ((this_ptr->player_input).action_state.backup != 0)) ||
+          ((this_ptr->player_input).action_state.fire != 0)) ||
+         (((this_ptr->player_input).action_state.use_item != 0 ||
+          ((this_ptr->player_input).action_state.light != 0)))) ||
+        (((this_ptr->player_input).action_state.draw != 0 ||
+         (((this_ptr->player_input).action_state.jump != 0 ||
+          ((float)0.10000000000000001 < ABS((this_ptr->player_input).strafe_speed))))))) ||
+       (((float)0.10000000000000001 < ABS((this_ptr->player_input).turn_speed) ||
+        (((float)0.10000000000000001 < ABS((this_ptr->player_input).look_up_down_speed) ||
+         ((this_ptr->base).is_on_ground == 0)))))) {
       return 1;
     }
   }

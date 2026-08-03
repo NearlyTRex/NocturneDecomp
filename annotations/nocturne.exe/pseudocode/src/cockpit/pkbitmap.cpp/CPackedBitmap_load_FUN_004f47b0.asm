@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,uint param_5,int param_6)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; uchar *          Stack[0x8]:4   bitmap_data
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
+; int              Stack[0x14]:4   transparency_color
+; int              Stack[0x18]:4   row_stride
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f4676
@@ -139,7 +146,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004f48f8
     PUSH EAX                            ; 004f48fc
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f48fd
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EDX,0x58d1ce                    ; 004f4902 | = "..\\cockpit\\pkbitmap.cpp"
     ADD ESP,0x14                        ; 004f4907
     MOV EAX,ESP                         ; 004f490a

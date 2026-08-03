@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,21 +62,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 593,
+    "complexity_score": 229,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 118,
-    "suspect_count": 45,
+    "pseudocode_lines": 119,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 412
+    "total_lines": 413
   },
   "cross_references": [],
   "function": {
@@ -87,10 +86,10 @@
         "0048f3b1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_flies.cpp_CFlies_process_FUN_0048f090",
-    "signature": "void core_flies_cpp_CFlies_process_FUN_0048f090(CFlies *param_1,float param_2)"
+    "signature": "void __cdecl core_flies_cpp_CFlies_process_FUN_0048f090(CFlies *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -132,9 +131,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -178,10 +177,10 @@
     "pcode_op_count": 1495
   },
   "stack_frame": {
-    "frame_size": 92,
+    "frame_size": 100,
     "local_size": 92,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -260,6 +259,20 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlies *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -282,300 +295,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_flies_cpp_CFlies_process_FUN_0048f090(CFlies *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_flies_cpp_CFlies_process_FUN_0048f090(CFlies *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->is_visible != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = param_1->follow_actor;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_38.x = (pCVar2->location).position.x - (param_1->base).location.position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_38.y = (pCVar2->location).position.y - (param_1->base).location.position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_38.z = (pCVar2->location).position.z - (param_1->base).location.position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,&local_2c,&local_38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->fly_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar6 = param_1->flies;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar4 = param_1->flies[0].control_points + 2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 59,
       "match": "(CVector3f *)((int)(pCVar4 + 4) +",
       "severity": "moderate",
       "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 4) + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar7 < param_1->fly_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = param_1->follow_actor;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).location.position.x = (pCVar2->location).position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).location.position.y = (pCVar2->location).position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).location.position.z = (pCVar2->location).position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).location.area_id = (pCVar2->location).area_id;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((0 < param_1->gather_count) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(fVar1 = param_1->gather_timer - param_2, param_1->gather_timer = fVar1, fVar1 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(fVar1 = param_1->gather_timer - param_2, param_1->gather_timer = fVar1, fVar1 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(fVar1 = param_1->gather_timer - param_2, param_1->gather_timer = fVar1, fVar1 <= 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->fly_count < 200) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_flies_cpp_CFlies_initFly_FUN_0048f8f0(param_1,param_1->fly_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_flies_cpp_CFlies_initFly_FUN_0048f8f0(param_1,param_1->fly_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->fly_count = param_1->fly_count + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->fly_count = param_1->fly_count + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->gather_timer = param_1->gather_time;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->gather_timer = param_1->gather_time;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->gather_count = param_1->gather_count + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->gather_count = param_1->gather_count + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->gather_count = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->fly_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar6 = param_1->flies;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar3 = pSVar6->t + param_2 * fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_50,pSVar6->control_points + 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_18 < param_1->fly_count);",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `(pCVar4 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -598,12 +323,12 @@
       "line": 64,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(param_1->base).location.position.x = (pCVar2->location).position.x;",
+      "text": "(this_ptr->base).location.position.x = (pCVar2->location).position.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 93,
+      "line": 94,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pSVar6->control_points[0].x = pSVar6->control_points[1].x;",
@@ -611,7 +336,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 98,
+      "line": 99,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pSVar6->control_points[1].x = pSVar6->control_points[2].x;",
@@ -619,7 +344,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pSVar6->control_points[2].x = pSVar6->control_points[3].x;",
@@ -627,7 +352,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 110,
+      "line": 111,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pSVar6->control_points[3].x = pCVar4->x;",

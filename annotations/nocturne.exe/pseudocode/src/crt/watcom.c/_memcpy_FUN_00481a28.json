@@ -2,24 +2,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 719,
+    "complexity_score": 647,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 79,
-    "suspect_count": 60,
+    "pseudocode_lines": 77,
+    "suspect_count": 54,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "register_param",
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_indirect_jump",
       "warning_jumptable"
     ],
-    "total_lines": 145
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -77,9 +75,9 @@
         "00481ac3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__fastcall",
     "name": "crt_watcom.c__memcpy_FUN_00481a28",
-    "signature": "void crt_watcom_c__memcpy_FUN_00481a28(uint param_1)"
+    "signature": "void __fastcall crt_watcom_c__memcpy_FUN_00481a28(void *dest,void *src,uint size)"
   },
   "function_calls": [],
   "globals": [
@@ -127,81 +125,41 @@
     "pcode_op_count": 233
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void _memcpy(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 7,
-      "match": "in_ECX",
-      "severity": "mild",
-      "text": "int in_ECX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "int in_EDX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = param_1 - 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (7 < param_1 && uVar2 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 17,
-      "match": "in_ECX",
-      "severity": "mild",
-      "text": "uVar5 = -in_ECX & 7;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 18,
-      "match": "in_ECX",
-      "severity": "mild",
-      "text": "plVar3 = (longlong *)(in_ECX + uVar5);",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 19,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "plVar4 = (longlong *)(in_EDX + uVar5);",
-      "type": "register_param"
+      "match": "(longlong *)((int)dest",
+      "severity": "moderate",
+      "text": "plVar3 = (longlong *)((int)dest + uVar5);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 17,
+      "match": "(longlong *)((int)src",
+      "severity": "moderate",
+      "text": "plVar4 = (longlong *)((int)src + uVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
       "match": "(byte *)((int)plVar3",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)plVar4 + -1);",
@@ -209,7 +167,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(byte *)((int)plVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)plVar4 + -1);",
@@ -217,7 +175,7 @@
     },
     {
       "description": "Jump table recovery failed",
-      "line": 27,
+      "line": 25,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x00481abd. Too many branches */",
@@ -225,7 +183,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 28,
+      "line": 26,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -233,7 +191,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
+      "line": 27,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -241,7 +199,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 27,
       "match": "DAT_005b8014",
       "severity": "mild",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -249,7 +207,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(byte *)((int)plVar3",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)plVar4 + -3);",
@@ -257,7 +215,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(byte *)((int)plVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)plVar4 + -3);",
@@ -265,7 +223,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(ushort *)((int)plVar3",
       "severity": "moderate",
       "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)plVar4 + -2);",
@@ -273,7 +231,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(ushort *)((int)plVar4",
       "severity": "moderate",
       "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)plVar4 + -2);",
@@ -281,7 +239,7 @@
     },
     {
       "description": "Jump table recovery failed",
-      "line": 38,
+      "line": 36,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x00481aad. Too many branches */",
@@ -289,7 +247,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 39,
+      "line": 37,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -297,7 +255,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 38,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -305,7 +263,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 38,
       "match": "DAT_005b8014",
       "severity": "mild",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -313,7 +271,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(byte *)((int)plVar3",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)plVar4 + -5);",
@@ -321,7 +279,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(byte *)((int)plVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)plVar4 + -5);",
@@ -329,7 +287,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(uint *)((int)plVar3",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
@@ -337,7 +295,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(uint *)((int)plVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
@@ -345,7 +303,7 @@
     },
     {
       "description": "Jump table recovery failed",
-      "line": 48,
+      "line": 46,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x00481a93. Too many branches */",
@@ -353,7 +311,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 49,
+      "line": 47,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -361,7 +319,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
+      "line": 48,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -369,7 +327,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 48,
       "match": "DAT_005b8014",
       "severity": "mild",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -377,7 +335,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(byte *)((int)plVar3",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)plVar4 + -7);",
@@ -385,7 +343,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(byte *)((int)plVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)plVar4 + -7);",
@@ -393,7 +351,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(ushort *)((int)plVar3",
       "severity": "moderate",
       "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)plVar4 + -6);",
@@ -401,7 +359,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(ushort *)((int)plVar4",
       "severity": "moderate",
       "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)plVar4 + -6);",
@@ -409,7 +367,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 57,
       "match": "(uint *)((int)plVar3",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
@@ -417,7 +375,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 57,
       "match": "(uint *)((int)plVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
@@ -425,7 +383,7 @@
     },
     {
       "description": "Jump table recovery failed",
-      "line": 61,
+      "line": 59,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x00481a7b. Too many branches */",
@@ -433,7 +391,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 62,
+      "line": 60,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -441,7 +399,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 61,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -449,7 +407,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 61,
       "match": "DAT_005b8014",
       "severity": "mild",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -457,7 +415,7 @@
     },
     {
       "description": "Jump table recovery failed",
-      "line": 78,
+      "line": 76,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x00481a5c. Too many branches */",
@@ -465,7 +423,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 79,
+      "line": 77,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -473,7 +431,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 80,
+      "line": 78,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -481,7 +439,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 78,
       "match": "DAT_005b8014",
       "severity": "mild",
       "text": "(**(code **)(&DAT_005b8014 + uVar2 * 4))();",
@@ -489,7 +447,7 @@
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
+      "line": 23,
       "match": "(int)plVar3",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)plVar4 + -1);",
@@ -497,7 +455,7 @@
     },
     {
       "description": "Pointer value `plVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
+      "line": 23,
       "match": "(int)plVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)plVar4 + -1);",
@@ -505,7 +463,7 @@
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 32,
       "match": "(int)plVar3",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)plVar4 + -3);",
@@ -513,7 +471,7 @@
     },
     {
       "description": "Pointer value `plVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 32,
       "match": "(int)plVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)plVar4 + -3);",
@@ -521,7 +479,7 @@
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 34,
       "match": "(int)plVar3",
       "severity": "moderate",
       "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)plVar4 + -2);",
@@ -529,7 +487,7 @@
     },
     {
       "description": "Pointer value `plVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 34,
       "match": "(int)plVar4",
       "severity": "moderate",
       "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)plVar4 + -2);",
@@ -537,7 +495,7 @@
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 43,
       "match": "(int)plVar3",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)plVar4 + -5);",
@@ -545,7 +503,7 @@
     },
     {
       "description": "Pointer value `plVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 43,
       "match": "(int)plVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)plVar4 + -5);",
@@ -553,7 +511,7 @@
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)plVar3",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
@@ -561,7 +519,7 @@
     },
     {
       "description": "Pointer value `plVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)plVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
@@ -569,7 +527,7 @@
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)plVar3",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)plVar4 + -7);",
@@ -577,7 +535,7 @@
     },
     {
       "description": "Pointer value `plVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)plVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)plVar4 + -7);",
@@ -585,7 +543,7 @@
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 55,
       "match": "(int)plVar3",
       "severity": "moderate",
       "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)plVar4 + -6);",
@@ -593,7 +551,7 @@
     },
     {
       "description": "Pointer value `plVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 55,
       "match": "(int)plVar4",
       "severity": "moderate",
       "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)plVar4 + -6);",
@@ -601,7 +559,7 @@
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 57,
       "match": "(int)plVar3",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
@@ -609,7 +567,7 @@
     },
     {
       "description": "Pointer value `plVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 57,
       "match": "(int)plVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",

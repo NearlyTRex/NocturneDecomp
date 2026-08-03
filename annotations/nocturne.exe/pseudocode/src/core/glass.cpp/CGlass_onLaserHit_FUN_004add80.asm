@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CDemonActor *param_1,SLaserInfo *param_2)
+; void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CGlass *this_ptr,SLaserInfo *laser_info)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
+; SLaserInfo *     Stack[0x8]:4   laser_info
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

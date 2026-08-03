@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 70,
-        "message": "no matching function for call to 'core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20'"
       }
     ],
     "success": false,
@@ -200,19 +194,19 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pfVar6` was initialized to the address of an array element's subfield (`pfVar6 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar6)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar6->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `out_b` was initialized to the address of an array element's subfield (`out_b = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_b)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_b->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 73,
-      "match": "pfVar6 = pfVar6 + N",
+      "match": "out_b = out_b + N",
       "severity": "moderate",
-      "text": "pfVar6 = pfVar6 + 0x2e;",
+      "text": "out_b = out_b + 0x2e;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pfVar8` was initialized to the address of an array element's subfield (`pfVar8 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar8)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar8->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `out_g` was initialized to the address of an array element's subfield (`out_g = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_g)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_g->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 74,
-      "match": "pfVar8 = pfVar8 + N",
+      "match": "out_g = out_g + N",
       "severity": "moderate",
-      "text": "pfVar8 = pfVar8 + 0x2e;",
+      "text": "out_g = out_g + 0x2e;",
       "type": "shadow_pointer_walk"
     }
   ]

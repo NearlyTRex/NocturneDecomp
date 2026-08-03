@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height,int first_char)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bitmap_count
+; int              Stack[0xc]:4   bitmap_width
+; int              Stack[0x10]:4   bitmap_height
+; int              Stack[0x14]:4   first_char
 ; Local Variables:
 ; undefined        Stack[-0x16c]:1  local_16c
 ; undefined4       Stack[-0x40]:4  local_40
@@ -95,7 +101,7 @@ section .text
     PUSH EAX                            ; 0049051c
     MOV EBX,0x1ce                       ; 0049051d
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00490522
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00490527
     MOV EAX,ESP                         ; 0049052a
     MOV ECX,0x581878                    ; 0049052c | = "..\\engine\\font.cpp"
@@ -254,7 +260,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00490757
     PUSH EAX                            ; 0049075b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049075c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x202                       ; 00490761
     ADD ESP,0x10                        ; 00490766
     MOV [0x01cc4804],EAX                ; 00490769 | g_INT_01cc4804

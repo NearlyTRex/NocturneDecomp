@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ECollisionType core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_0054e310(CCharacter *param_1,SCollisionInfo *param_2)
+; ECollisionType __cdecl core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_0054e310(CVampireBoss *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0

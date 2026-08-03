@@ -156,7 +156,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00430736
     PUSH EAX                            ; 0043073a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0043073b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x57ab2a                    ; 00430740 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00430745
     MOV [0x01cc4800],EAX                ; 00430748 | g_CHAR_PTR_01cc4800
@@ -525,7 +525,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00430cea
     PUSH EAX                            ; 00430cee
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00430cef
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x57ab6f                    ; 00430cf4 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00430cf9
     MOV [0x01cc4800],EAX                ; 00430cfc | g_CHAR_PTR_01cc4800
@@ -751,7 +751,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00431078
     PUSH EAX                            ; 0043107c
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0043107d
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EDX,0x57abb0                    ; 00431082 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 00431087
     MOV EAX,ESP                         ; 0043108a

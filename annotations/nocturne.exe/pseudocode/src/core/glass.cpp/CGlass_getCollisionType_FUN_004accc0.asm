@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(int param_1)
+; ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(CGlass *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; *****************************************************************************
 

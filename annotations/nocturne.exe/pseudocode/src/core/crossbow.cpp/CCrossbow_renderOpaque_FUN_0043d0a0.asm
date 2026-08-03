@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_crossbow_cpp_CCrossbow_renderOpaque_FUN_0043d0a0(CDemonActor *param_1)
+; int __cdecl core_crossbow_cpp_CCrossbow_renderOpaque_FUN_0043d0a0(CCrossbow *this_ptr)
 ;
+; Parameters:
+; CCrossbow *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ;
@@ -54,7 +56,7 @@ section .text
         ;   Label: LAB_0043d0e6
     PUSH EBX                            ; 0043d0e8
     CALL core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0043d810 ; 0043d0e9
-        ;   XREF to: 0043d810 (UNCONDITIONAL_CALL)  ; undefined core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0043d810()
+        ;   XREF to: 0043d810 (UNCONDITIONAL_CALL)  ; float core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0043d810(CCrossbow * this_ptr)
     MOV dword ptr [ESP + 0x20],EAX      ; 0043d0ee
     FLD float ptr [ESP + 0x20]          ; 0043d0f2
     ADD ESP,0x4                         ; 0043d0f6

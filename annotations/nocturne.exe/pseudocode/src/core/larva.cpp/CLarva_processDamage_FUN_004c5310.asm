@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_larva_cpp_CLarva_processDamage_FUN_004c5310(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004c5310(CLarva *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CLarva *         Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100
 ; undefined8       Stack[-0xf8]:8  local_f8
@@ -100,7 +103,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 004c53b9
     PUSH EAX                            ; 004c53bd
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004c53be
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004c53c3
     LEA ESI,[ESP + 0x18]                ; 004c53c6
     PUSH ESI                            ; 004c53ca
@@ -184,7 +187,7 @@ section .text
     LEA EAX,[ESP + 0x84]                ; 004c5492
     PUSH EAX                            ; 004c5499
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004c549a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004c549f
     LEA ESI,[ESP + 0x7c]                ; 004c54a2
     PUSH ESI                            ; 004c54a6

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,17 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 219,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 14,
-    "suspect_count": 19,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
-      "unaffected_reg",
-      "unnamed_param"
+      "unaffected_reg"
     ],
     "total_lines": 44
   },
@@ -85,9 +84,9 @@
         "004cefd3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_004cef80",
-    "signature": "void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)"
+    "signature": "void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)"
   },
   "function_calls": [
     {
@@ -101,9 +100,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -130,46 +129,43 @@
     "pcode_op_count": 113
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 20,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMelee *"
+      },
+      {
+        "is_param": true,
+        "name": "attack_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "out_damage_info",
+        "offset": 12,
+        "size": 4,
+        "type": "SDamageInfo *"
+      },
+      {
+        "is_param": true,
+        "name": "victim",
+        "offset": 16,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004cef80(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Unaffected register variable",
       "line": 6,
@@ -187,51 +183,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,param_2,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(&param_1->base,param_2,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&param_1->base,param_2,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(&param_1->base,param_2,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (float)(*(((param_1->base).vtable._uc)->_uc).getGrabbed)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_fffffff4",
       "severity": "moderate",
-      "text": "(param_1,in_stack_fffffff4,unaff_ESI);",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffff4,unaff_ESI);",
       "type": "stack_param"
     },
     {
@@ -239,56 +195,8 @@
       "line": 12,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "(param_1,in_stack_fffffff4,unaff_ESI);",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffff4,unaff_ESI);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,in_stack_fffffff4,unaff_ESI);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3->damage_amount = fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3->dismember_prob = (param_1->model).transformed_vertices[0x51].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3->dismember_prob = (param_1->model).transformed_vertices[0x51].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3->ammo_type = (EAmmoType)(param_1->model).transformed_vertices[0x53].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3->ammo_type = (EAmmoType)(param_1->model).transformed_vertices[0x53].z;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

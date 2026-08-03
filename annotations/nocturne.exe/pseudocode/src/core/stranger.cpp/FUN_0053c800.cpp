@@ -9,19 +9,21 @@
 int __cdecl core_stranger_cpp_FUN_0053c800(CStranger *this_ptr)
 
 {
-  double dVar1;
+  float fVar1;
   float fVar2;
   float fVar3;
-  CActorDestination *pCVar4;
-  UOrientationVector *pUVar5;
-  int iVar6;
-  CVector3f *pCVar7;
-  CVector3f *pCVar8;
-  float fVar9;
-  CDemonActor *pCVar10;
-  UOrientationVector *pUVar11;
-  CLocation *pCVar12;
-  int iVar13;
+  double dVar4;
+  float fVar5;
+  CActorDestination *pCVar6;
+  UOrientationVector *pUVar7;
+  int iVar8;
+  CVector3f *pCVar9;
+  CVector3f *pCVar10;
+  float fVar11;
+  CDemonActor *pCVar12;
+  UOrientationVector *pUVar13;
+  CLocation *pCVar14;
+  int iVar15;
   double in_stack_ffffff18;
   int force_immediate;
   CVector3f local_cc;
@@ -68,48 +70,49 @@ int __cdecl core_stranger_cpp_FUN_0053c800(CStranger *this_ptr)
   if (local_18 < 1.0) {
     return 0;
   }
-  pCVar10 = (this_ptr->base).base.carry_hands[1].carry_actor;
-  if ((pCVar10 == (CDemonActor *)0x0) ||
-     (iVar6 = (*((pCVar10->vtable)._ub)->canPickup)(pCVar10,(CDemonActor *)this_ptr), iVar6 != 4)) {
+  pCVar12 = (this_ptr->base).base.carry_hands[1].carry_actor;
+  if ((pCVar12 == (CDemonActor *)0x0) ||
+     (iVar8 = (*((pCVar12->vtable)._ub)->canPickup)(pCVar12,(CDemonActor *)this_ptr), iVar8 != 4)) {
     iStack_1c = 0;
     for (iStack_20 = 0; iStack_20 < g_CDemonSet_PTR_005be368->actor_count; iStack_20 = iStack_20 + 1
         ) {
-      pCVar4 = (CActorDestination *)
+      pCVar6 = (CActorDestination *)
                core_actor_cpp_castToClassHash_FUN_0040d890
                          (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iStack_1c),
                           g_CActorDestinationActorType_014b8a1c.name_hash);
-      local_30 = pCVar4;
-      if ((pCVar4 != (CActorDestination *)0x0) &&
-         (iVar6 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
-                            (pCVar4,(this_ptr->base).base.carry_hands[1].carry_actor), iVar6 != 0))
+      local_30 = pCVar6;
+      if ((pCVar6 != (CActorDestination *)0x0) &&
+         (iVar8 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
+                            (pCVar6,(this_ptr->base).base.carry_hands[1].carry_actor), iVar8 != 0))
       {
-        pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+        pCVar9 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                            ((CDemonActor *)this_ptr,&CStack_c0,
                             &(((this_ptr->base).base.carry_hands[1].carry_actor)->location).position
                            );
-        pCVar12 = &(pCVar4->base).location;
-        pCVar8 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                           ((CDemonActor *)this_ptr,&CStack_84,&pCVar12->position);
-        fVar9 = pCVar8->x - pCVar7->x;
-        fVar2 = pCVar8->y - pCVar7->y;
-        fVar3 = pCVar8->z - pCVar7->z;
+        pCVar14 = &(pCVar6->base).location;
+        pCVar10 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                            ((CDemonActor *)this_ptr,&CStack_84,&pCVar14->position);
+        fVar11 = pCVar10->x;
+        fVar1 = pCVar9->x;
+        fVar2 = pCVar10->y;
+        fVar3 = pCVar9->y;
+        fVar5 = pCVar10->z - pCVar9->z;
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"Delta to dest : %3.2f,%3.2f,%3.2f\n",(double)fVar9,
-                   (double)fVar2,(double)fVar3);
-        if ((((0.0 < fVar3) &&
-             ((fVar3 < (float)3 && (ABS(fVar9) < (float)2)))) &&
-            (dVar1 = (double)fVar2, 0.0 < dVar1)) && (dVar1 < 4)) {
-          pCVar7 = &(this_ptr->base).target_position;
+                  (g_CConsole_PTR_005ad350,"Delta to dest : %3.2f,%3.2f,%3.2f\n");
+        if ((((0.0 < fVar5) &&
+             ((fVar5 < (float)3 && (ABS(fVar11 - fVar1) < (float)2))))
+            && (dVar4 = (double)(fVar2 - fVar3), 0.0 < dVar4)) && (dVar4 < 4)) {
+          pCVar9 = &(this_ptr->base).target_position;
           this_ptr->action_pending = 2;
-          if ((CLocation *)pCVar7 != pCVar12) {
-            pCVar7->x = (pCVar12->position).x;
-            (this_ptr->base).target_position.y = (pCVar4->base).location.position.y;
-            (this_ptr->base).target_position.z = (pCVar4->base).location.position.z;
+          if ((CLocation *)pCVar9 != pCVar14) {
+            pCVar9->x = (pCVar14->position).x;
+            (this_ptr->base).target_position.y = (pCVar6->base).location.position.y;
+            (this_ptr->base).target_position.z = (pCVar6->base).location.position.z;
           }
-          pUVar5 = &(this_ptr->base).target_orientation;
-          pUVar11 = &(local_30->base).orient;
-          if (pUVar5 != pUVar11) {
-            (pUVar5->vec).x = (pUVar11->vec).x;
+          pUVar7 = &(this_ptr->base).target_orientation;
+          pUVar13 = &(local_30->base).orient;
+          if (pUVar7 != pUVar13) {
+            (pUVar7->vec).x = (pUVar13->vec).x;
             (this_ptr->base).target_orientation.vec.y = (local_30->base).orient.vec.y;
             (this_ptr->base).target_orientation.vec.z = (local_30->base).orient.vec.z;
           }
@@ -124,59 +127,60 @@ int __cdecl core_stranger_cpp_FUN_0053c800(CStranger *this_ptr)
   else {
     local_18 = 0.0;
     for (local_24 = 0; local_24 < g_CDemonSet_PTR_005be368->actor_count; local_24 = local_24 + 1) {
-      pCVar4 = (CActorDestination *)
+      pCVar6 = (CActorDestination *)
                core_actor_cpp_castToClassHash_FUN_0040d890
                          (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + (int)local_18),
                           g_CActorDestinationActorType_014b8a1c.name_hash);
-      pCStack_2c = pCVar4;
-      if ((pCVar4 != (CActorDestination *)0x0) &&
-         (iVar6 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
-                            (pCVar4,(this_ptr->base).base.carry_hands[1].carry_actor), iVar6 != 0))
+      pCStack_2c = pCVar6;
+      if ((pCVar6 != (CActorDestination *)0x0) &&
+         (iVar8 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
+                            (pCVar6,(this_ptr->base).base.carry_hands[1].carry_actor), iVar8 != 0))
       {
-        pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+        pCVar9 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                            ((CDemonActor *)this_ptr,&CStack_a8,
                             &(((this_ptr->base).base.carry_hands[1].carry_actor)->location).position
                            );
-        pCVar12 = &(pCVar4->base).location;
-        pCVar8 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                           ((CDemonActor *)this_ptr,&CStack_3c,&pCVar12->position);
-        fStack_90 = pCVar8->x - pCVar7->x;
-        local_8c = pCVar8->y - pCVar7->y;
-        fStack_88 = pCVar8->z - pCVar7->z;
+        pCVar14 = &(pCVar6->base).location;
+        pCVar10 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                            ((CDemonActor *)this_ptr,&CStack_3c,&pCVar14->position);
+        fStack_90 = pCVar10->x - pCVar9->x;
+        local_8c = pCVar10->y - pCVar9->y;
+        fStack_88 = pCVar10->z - pCVar9->z;
         if ((0.0 < fStack_88) &&
            ((((fStack_88 < (float)3 && (ABS(fStack_90) < (float)2)) &&
              (in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&
             (in_stack_ffffff18 < 4)))) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&(this_ptr->base).base.model.motion_controller,0x1a,1);
-          pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                             ((CDemonActor *)this_ptr,&CStack_60,&pCVar12->position);
-          if (&this_ptr->carry_object_world_center != pCVar7) {
-            (this_ptr->carry_object_world_center).x = pCVar7->x;
-            (this_ptr->carry_object_world_center).y = pCVar7->y;
-            (this_ptr->carry_object_world_center).z = pCVar7->z;
+          pCVar9 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                             ((CDemonActor *)this_ptr,&CStack_60,&pCVar14->position);
+          if (&this_ptr->carry_object_world_center != pCVar9) {
+            (this_ptr->carry_object_world_center).x = pCVar9->x;
+            (this_ptr->carry_object_world_center).y = pCVar9->y;
+            (this_ptr->carry_object_world_center).z = pCVar9->z;
           }
           fStack_14 = (this_ptr->carry_object_bbox).max.y - (this_ptr->carry_object_bbox).min.y;
-          fVar9 = (float)core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0();
-          iVar6 = this_ptr->action_pending;
+          fVar11 = core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0
+                             ((this_ptr->base).base.carry_hands[1].carry_actor);
+          iVar8 = this_ptr->action_pending;
           (this_ptr->carry_object_world_center).y =
-               (fStack_14 - fVar9) + (this_ptr->carry_object_world_center).y;
-          if (iVar6 != 0) {
+               (fStack_14 - fVar11) + (this_ptr->carry_object_world_center).y;
+          if (iVar8 != 0) {
             shape_edittool_cpp_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",iVar6,0xe6f);
+                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",iVar8,0xe6f);
           }
-          pCVar7 = &(this_ptr->base).target_position;
-          pCVar12 = &(pCStack_2c->base).location;
+          pCVar9 = &(this_ptr->base).target_position;
+          pCVar14 = &(pCStack_2c->base).location;
           this_ptr->action_pending = 2;
-          if ((CLocation *)pCVar7 != pCVar12) {
-            pCVar7->x = (pCVar12->position).x;
+          if ((CLocation *)pCVar9 != pCVar14) {
+            pCVar9->x = (pCVar14->position).x;
             (this_ptr->base).target_position.y = (pCStack_2c->base).location.position.y;
             (this_ptr->base).target_position.z = (pCStack_2c->base).location.position.z;
           }
-          pUVar11 = &(this_ptr->base).target_orientation;
-          pUVar5 = &(pCStack_2c->base).orient;
-          if (pUVar11 != pUVar5) {
-            (pUVar11->vec).x = (pUVar5->vec).x;
+          pUVar13 = &(this_ptr->base).target_orientation;
+          pUVar7 = &(pCStack_2c->base).orient;
+          if (pUVar13 != pUVar7) {
+            (pUVar13->vec).x = (pUVar7->vec).x;
             (this_ptr->base).target_orientation.vec.y = (pCStack_2c->base).orient.vec.y;
             (this_ptr->base).target_orientation.vec.z = (pCStack_2c->base).orient.vec.z;
           }
@@ -189,26 +193,27 @@ int __cdecl core_stranger_cpp_FUN_0053c800(CStranger *this_ptr)
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
             (g_CDemonSet_PTR_005be368,(this_ptr->base).base.carry_hands[1].carry_actor);
-  pCVar10 = (this_ptr->base).base.carry_hands[1].carry_actor;
-  local_6c = (pCVar10->location).position.x;
-  fStack_68 = (pCVar10->location).position.y;
-  fStack_64 = (pCVar10->location).position.z;
+  pCVar12 = (this_ptr->base).base.carry_hands[1].carry_actor;
+  local_6c = (pCVar12->location).position.x;
+  fStack_68 = (pCVar12->location).position.y;
+  fStack_64 = (pCVar12->location).position.z;
   local_b4.x = 0.0;
   local_b4.y = 0.0;
   local_b4.z = 1.0;
-  pCVar7 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+  pCVar9 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
                      ((CDemonActor *)this_ptr,&CStack_9c,&local_b4);
-  local_6c = local_6c + pCVar7->x;
-  fStack_64 = fStack_64 + pCVar7->z;
+  local_6c = local_6c + pCVar9->x;
+  fStack_64 = fStack_64 + pCVar9->z;
   fStack_68 = (this_ptr->base).base.base.location.position.y;
   local_54.x = 0.0;
   local_54.y = 0.0;
   local_54.z = 1.5;
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
             ((CDemonActor *)this_ptr,&local_78,&local_54);
-  fVar9 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-                    (g_CDemonSet_PTR_005be368,local_6c,fStack_64,local_78.x,local_78.z,1.0,0.1,3.0);
-  if (fVar9 < 1.0) {
+  fVar11 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
+                     (g_CDemonSet_PTR_005be368,local_6c,fStack_64,local_78.x,local_78.z,1.0,0.1,3.0)
+  ;
+  if (fVar11 < 1.0) {
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
     return 0;
   }
@@ -219,41 +224,41 @@ int __cdecl core_stranger_cpp_FUN_0053c800(CStranger *this_ptr)
                        (g_CDemonSet_PTR_005be368,&local_cc,0.5);
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   if (ABS(local_28 - (this_ptr->base).base.base.location.position.y) <= 1.0) {
-    iVar6 = 0;
-    iVar13 = 0;
+    iVar8 = 0;
+    iVar15 = 0;
     do {
       force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);
-      if (g_CDemonSet_PTR_005be368->actor_count <= iVar6) {
-        pCVar10 = (this_ptr->base).base.carry_hands[1].carry_actor;
+      if (g_CDemonSet_PTR_005be368->actor_count <= iVar8) {
+        pCVar12 = (this_ptr->base).base.carry_hands[1].carry_actor;
         this_ptr->action_pending = 6;
-        if ((pCVar10 == (CDemonActor *)0x0) ||
-           (iVar6 = (*((pCVar10->vtable)._ub)->canPickup)(pCVar10,(CDemonActor *)this_ptr),
-           iVar6 != 4)) {
-          iVar6 = 0x14;
+        if ((pCVar12 == (CDemonActor *)0x0) ||
+           (iVar8 = (*((pCVar12->vtable)._ub)->canPickup)(pCVar12,(CDemonActor *)this_ptr),
+           iVar8 != 4)) {
+          iVar8 = 0x14;
         }
         else {
           force_immediate = 1;
-          iVar6 = 0x19;
+          iVar8 = 0x19;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(this_ptr->base).base.model.motion_controller,iVar6,force_immediate);
+                  (&(this_ptr->base).base.model.motion_controller,iVar8,force_immediate);
         this_ptr->action_timer = 4.0;
         return 1;
       }
-      pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar13),
+      pCVar12 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar15),
                            g_CCrateActorType_0077bd40.name_hash);
-      if (pCVar10 != (CDemonActor *)0x0) {
-        local_48 = (pCVar10->location).position.x - local_6c;
-        fStack_44 = (pCVar10->location).position.y - fStack_68;
-        fStack_40 = (pCVar10->location).position.z - fStack_64;
+      if (pCVar12 != (CDemonActor *)0x0) {
+        local_48 = (pCVar12->location).position.x - local_6c;
+        fStack_44 = (pCVar12->location).position.y - fStack_68;
+        fStack_40 = (pCVar12->location).position.z - fStack_64;
         if (SQRT(fStack_40 * fStack_40 + local_48 * local_48 + fStack_44 * fStack_44) <
             (float)2) {
           return 0;
         }
       }
-      iVar6 = iVar6 + 1;
-      iVar13 = iVar13 + 4;
+      iVar8 = iVar8 + 1;
+      iVar15 = iVar15 + 4;
     } while( true );
   }
   return 0;

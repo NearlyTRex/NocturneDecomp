@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_CHero_kill_FUN_004b5e90(CCharacter *param_1,int param_2,CVector3f *param_3,float param_4)
+; void __cdecl core_hero_cpp_CHero_kill_FUN_004b5e90(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   damage_type
+; CVector3f *      Stack[0xc]:4   damage_direction
+; float            Stack[0x10]:4   impact_force
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_kill_FUN_00424f40

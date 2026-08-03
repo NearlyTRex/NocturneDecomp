@@ -164,7 +164,7 @@ section .text
     PUSH ESI                            ; 0048d21f
     MOV dword ptr [ESI + 0x34],0x0      ; 0048d220
     CALL core_flame.cpp_CFlame_updateGlobe_FUN_0048e230 ; 0048d227
-        ;   XREF to: 0048e230 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_updateGlobe_FUN_0048e230()
+        ;   XREF to: 0048e230 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_updateGlobe_FUN_0048e230(CFlame * this_ptr)
     MOV ECX,dword ptr [ESI + 0x298]     ; 0048d22c
     ADD ESP,0x4                         ; 0048d232
     TEST ECX,ECX                        ; 0048d235
@@ -301,7 +301,7 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 0048d3f7
     PUSH EAX                            ; 0048d3fb
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048d3fc
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048d401
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 0048d404
         ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()

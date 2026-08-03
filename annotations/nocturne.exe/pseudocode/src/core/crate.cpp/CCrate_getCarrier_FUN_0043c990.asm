@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_crate_cpp_CCrate_getCarrier_FUN_0043c990(int param_1)
+; CDemonActor * __cdecl core_crate_cpp_CCrate_getCarrier_FUN_0043c990(CCrate *this_ptr)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

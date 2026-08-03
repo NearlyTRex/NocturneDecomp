@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,68 +52,68 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 35,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 57,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_02de20a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
+        "column": 15,
         "line": 42,
-        "message": "use of undeclared identifier '_DAT_02de20ac'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 45,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 47,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
+        "message": "use of undeclared identifier 'stack0xfffffc00'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 80,
+        "line": 75,
         "message": "use of undeclared identifier '_DAT_01c78420'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 102,
+        "line": 97,
         "message": "use of undeclared identifier '_DAT_01c78698'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 106,
+        "line": 101,
         "message": "use of undeclared identifier '_DAT_01c78698'"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 108,
+        "line": 103,
         "message": "use of undeclared identifier 'DAT_01c7869c'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 119,
+        "line": 114,
         "message": "no matching function for call to 'shape_edittool_cpp_FUN_00476160'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 120,
+        "message": "member reference type 'int' is not a pointer"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 28,
+        "line": 133,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 53,
+        "line": 136,
+        "message": "use of undeclared identifier '_DAT_01c78420'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 148,
+        "message": "member reference type 'int' is not a pointer"
       }
     ],
     "success": false,
@@ -122,22 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 523,
+    "complexity_score": 618,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 70,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 353,
-    "suspect_count": 14,
+    "pseudocode_lines": 348,
+    "suspect_count": 23,
     "suspect_types": [
       "raw_address_constant",
       "shadow_pointer_walk",
+      "stack_param",
+      "stack_ref",
       "undefined_data",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1373
+    "total_lines": 1368
   },
   "cross_references": [
     {
@@ -1005,8 +1007,24 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_fffffc00",
+      "severity": "moderate",
+      "text": "uint in_stack_fffffc00;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xfffffc00",
+      "severity": "moderate",
+      "text": "local_20 = &stack0xfffffc00;",
+      "type": "stack_ref"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 96,
       "match": "DAT_01c7869c",
       "severity": "mild",
       "text": "(g_CDemonSet_PTR_005be368,(int *)&DAT_01c7869c);",
@@ -1014,15 +1032,23 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 162,
+      "line": 157,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x104))(iVar4);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 210,
+      "match": "in_stack_fffffc00",
+      "severity": "moderate",
+      "text": "(&local_290,pcVar2,iVar3,in_stack_fffffc00);",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 226,
+      "line": 221,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if (0xf0 < DAT_005b7620) {",
@@ -1030,7 +1056,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 288,
+      "line": 283,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);",
@@ -1038,15 +1064,63 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 324,
+      "line": 319,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 321,
+      "match": "&stack0xfffffc00",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffc00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 323,
+      "match": "&stack0xfffffc00",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 325,
+      "match": "&stack0xfffffc00",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 330,
+      "match": "in_stack_fffffc00",
+      "severity": "moderate",
+      "text": "((CPickList *)&stack0xfffffc00,pcVar2,iVar3,in_stack_fffffc00);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 330,
+      "match": "&stack0xfffffc00",
+      "severity": "moderate",
+      "text": "((CPickList *)&stack0xfffffc00,pcVar2,iVar3,in_stack_fffffc00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 336,
+      "match": "&stack0xfffffc00",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffc00,0);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 118,
+      "line": 113,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "core_setdir_cpp_FUN_005125a0(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,1);",
@@ -1054,7 +1128,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 146,
+      "line": 141,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,",
@@ -1062,7 +1136,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 147,
+      "line": 142,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "0x01E56DA0->focus_actor_changed);",
@@ -1070,7 +1144,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 151,
+      "line": 146,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "0x01E56DA0->focus_actor_changed = 0;",
@@ -1078,7 +1152,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 245,
+      "line": 240,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "iVar3 = core_script_cpp_FUN_00504d90(0x01E56DA0);",
@@ -1086,7 +1160,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 305,
+      "line": 300,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "if (0x01E56DA0->script_pause_flag != 0) {",
@@ -1094,7 +1168,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 83,
+      "line": 78,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1102,7 +1176,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 90,
+      "line": 85,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar6 = (CDemonLight *)((pCVar6->base).camera_name + 2);",

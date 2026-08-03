@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lever_cpp_CLever_archive_FUN_004c66f0(CDemonActor *param_1)
+; void __cdecl core_lever_cpp_CLever_archive_FUN_004c66f0(CLever *this_ptr)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0xd4]:1  local_d4
 ; undefined1       Stack[-0xd3]:1  local_d3

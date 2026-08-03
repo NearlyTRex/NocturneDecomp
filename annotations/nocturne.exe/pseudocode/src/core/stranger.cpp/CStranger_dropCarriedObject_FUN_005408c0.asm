@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CEnemy *param_1,int param_2,CVector3f *param_3)
+; void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CStranger *this_ptr,int hand_index,CVector3f *drop_direction)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
+; CVector3f *      Stack[0xc]:4   drop_direction
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00429170

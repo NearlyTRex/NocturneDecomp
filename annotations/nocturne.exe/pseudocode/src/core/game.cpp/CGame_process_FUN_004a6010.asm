@@ -118,7 +118,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 004a60d5 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 004a60db | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a60dc
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004a60e1
     MOV EAX,[0x005b9354]                ; 004a60e4 | g_CGame_PTR_005b9354
         ;   Label: LAB_004a60e4
@@ -159,7 +159,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 004a6160 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 004a6166 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a6167
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004a616c
     CMP dword ptr [EBX + 0xcc],0x0      ; 004a616f
         ;   Label: LAB_004a616f
@@ -210,7 +210,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 004a6207 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 004a620d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a620e
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004a6213
     MOV EAX,[0x005b9354]                ; 004a6216 | g_CGame_PTR_005b9354
         ;   Label: LAB_004a6216
@@ -251,7 +251,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 004a6292 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 004a6298 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a6299
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004a629e
     MOV EBP,dword ptr [0x005c11ec]      ; 004a62a1 | DAT_005c11ec
         ;   Label: LAB_004a62a1
@@ -298,7 +298,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 004a632f | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 004a6334 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a6335
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004a633a
     MOV EAX,[0x005b9354]                ; 004a633d | g_CGame_PTR_005b9354
         ;   Label: LAB_004a633d
@@ -339,7 +339,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 004a63ba | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 004a63bf | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a63c0
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004a63c5
     MOV EDX,dword ptr [0x005c1144]      ; 004a63c8 | DAT_005c1144
         ;   Label: LAB_004a63c8
@@ -400,7 +400,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 004a647c | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 004a6482 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a6483
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004a6488
     MOV EAX,[0x005b9354]                ; 004a648b | g_CGame_PTR_005b9354
         ;   Label: LAB_004a648b
@@ -472,7 +472,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 004a6559 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 004a655e | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a655f
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 004a6564
     JMP 0x004a64a3                      ; 004a6567
         ;   XREF to: 004a64a3 (UNCONDITIONAL_JUMP)  ; LAB_004a64a3

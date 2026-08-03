@@ -14,12 +14,12 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_FUN_004f5110(CPackedBitmapSet *bitm
   int iVar1;
   CPackedBitmap *unaff_EDI;
   uchar auStack_170 [248];
-  byte local_78 [100];
+  char local_78 [100];
   CPackedBitmap *local_14;
   
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60("art",pbg_filename,"rb");
   if (file_handle == (_FILE *)0x0) {
-    _sprintf(local_78,"Unable to open PBG file %s",pbg_filename);
+    _sprintf(local_78,"Unable to open PBG file %s");
     g_INT_01cc4804 = 0x598;
     g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
     core_main_c_FUN_004c8440(local_78);

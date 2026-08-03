@@ -61,7 +61,7 @@ void __cdecl core_script_cpp_FUN_004fe9d0(CScript *this_ptr,int left,int top,int
           iVar1 = 0xff;
         }
         cockpit_drawsurf_cpp_setColor_FUN_0045b5f0(iVar1);
-        _sprintf(local_a4,"%d",index + 1);
+        _sprintf(local_a4,"%d");
         cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(&local_40,local_a4,2,y);
         x = 0x1e;
         iVar1 = y;

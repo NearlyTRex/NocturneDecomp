@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(CMP3Decoder *param_1,char *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)
+; int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out,int *w_out)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; SHuffmanTable *  Stack[0x8]:4   huffman_table
+; int *            Stack[0xc]:4   x_out
+; int *            Stack[0x10]:4   y_out
+; int *            Stack[0x14]:4   v_out
+; int *            Stack[0x18]:4   w_out
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

@@ -127,7 +127,7 @@ section .text
         ;   Label: LAB_0047a59e
     PUSH 0x1c08b60                      ; 0047a5a3 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047a5a8
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 0047a5ad
     ADD ESP,0x8                         ; 0047a5b2
     ADD ESP,0x68                        ; 0047a5b5

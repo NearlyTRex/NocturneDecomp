@@ -76,7 +76,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 0049da38 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 0049da3e | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0049da3f
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0049da44
     PUSH 0x5827dd                       ; 0049da47 | = "15:09:32"
     PUSH 0x5827e6                       ; 0049da4c | = "Nov 02 1999"
@@ -84,7 +84,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 0049da56 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 0049da5b | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0049da5c
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0049da61
     MOV EDX,dword ptr [0x02de20a8]      ; 0049da64 | DAT_02de20a8
     PUSH EDX                            ; 0049da6a
@@ -93,7 +93,7 @@ section .text
     PUSH ECX                            ; 0049da76 | g_CConsole_0077ad0c
     MOV EBX,0x1                         ; 0049da77
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0049da7c
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0049da81
     MOV dword ptr [EBP + -0x8],EBX      ; 0049da84
     MOV EBX,dword ptr [0x02de20ac]      ; 0049da87 | DAT_02de20ac
@@ -102,7 +102,7 @@ section .text
     MOV ESI,dword ptr [0x005ad350]      ; 0049da93 | g_CConsole_PTR_005ad350
     PUSH ESI                            ; 0049da99 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0049da9a
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0049da9f
     LEA EAX,[EBP + 0xfffffef0]          ; 0049daa2
     PUSH EAX                            ; 0049daa8
@@ -117,7 +117,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 0049dac4 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 0049dac9 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0049daca
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0049dacf
     MOV dword ptr [EBP + 0xfffffff0],ESP ; 0049dad2
     MOV EAX,dword ptr [EBP + -0x10]     ; 0049dad8
@@ -126,7 +126,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 0049dae1 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 0049dae7 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0049dae8
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049daed
     MOV dword ptr [EAX + 0x270],0x0     ; 0049daf0
     MOV dword ptr [EAX + 0x1fc],0x0     ; 0049dafa
@@ -453,7 +453,7 @@ section .text
     LEA EAX,[EBP + 0xfffffc10]          ; 0049df4f
     PUSH EAX                            ; 0049df55
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 ; 0049df56
-        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70()
+        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0xc                         ; 0049df5b
     TEST EAX,EAX                        ; 0049df5e
     JNZ 0x0049e601                      ; 0049df60
@@ -764,7 +764,7 @@ section .text
     LEA EAX,[EBP + 0xfffffd80]          ; 0049e2d2
     PUSH EAX                            ; 0049e2d8
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 ; 0049e2d9
-        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70()
+        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0xc                         ; 0049e2de
     MOV EBX,EAX                         ; 0049e2e1
     CMP EAX,0x1                         ; 0049e2e3

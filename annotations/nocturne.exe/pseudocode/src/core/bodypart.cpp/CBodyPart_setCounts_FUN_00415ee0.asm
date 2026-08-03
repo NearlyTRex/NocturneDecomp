@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(int param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(CBodyPart *this_ptr,int vertex_count,int tri_count)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
+; int              Stack[0xc]:4   tri_count
 ;
 ; XREF[6]:
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00416570 at 00416797

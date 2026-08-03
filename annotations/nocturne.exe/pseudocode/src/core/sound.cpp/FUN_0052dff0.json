@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 56,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_02dc9468'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 56,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_02dc946c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 63,
+        "line": 62,
         "message": "use of undeclared identifier '_DAT_02dc946c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
+        "line": 62,
+        "message": "use of undeclared identifier '_DAT_02dc946c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
         "line": 63,
         "message": "use of undeclared identifier '_DAT_02dc946c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 64,
-        "message": "use of undeclared identifier '_DAT_02dc946c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 59,
-        "line": 65,
+        "line": 64,
         "message": "use of undeclared identifier '_DAT_02dc9454'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 66,
+        "line": 65,
         "message": "use of undeclared identifier '_DAT_02dc946c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 72,
-        "line": 69,
+        "line": 68,
         "message": "use of undeclared identifier '_DAT_02dc9454'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 71,
+        "line": 70,
         "message": "use of undeclared identifier '_DAT_02dc9454'"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 73,
+        "line": 72,
         "message": "use of undeclared identifier '_DAT_02dc9454'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 355,
+    "complexity_score": 351,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 62,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 260,
+    "pseudocode_lines": 256,
     "suspect_count": 7,
     "suspect_types": [
       "raw_address_constant",
@@ -136,7 +136,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 900
+    "total_lines": 896
   },
   "cross_references": [
     {
@@ -990,7 +990,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 210,
+      "line": 209,
       "match": "DAT_005bef88",
       "severity": "mild",
       "text": "puVar9 = &DAT_005bef88;",
@@ -998,7 +998,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 253,
+      "line": 249,
       "match": "DAT_02dc9d44",
       "severity": "mild",
       "text": "sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);",
@@ -1006,7 +1006,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 69,
+      "line": 68,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "if (((0.0 < *(float *)(0x02DD1210 + 0xc)) &&",
@@ -1014,7 +1014,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 72,
+      "line": 71,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": ")) && (local_138 = SQRT(*(float *)(0x02DD1210 + 0xc)) * (float)0.027777777777777801 +",
@@ -1022,7 +1022,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 233,
+      "line": 229,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1030,7 +1030,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 213,
+      "line": 212,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {",

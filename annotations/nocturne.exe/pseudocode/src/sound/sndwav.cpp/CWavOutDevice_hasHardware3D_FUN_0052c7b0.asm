@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndwav_cpp_CWavOutDevice_hasHardware3D_FUN_0052c7b0(void)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_hasHardware3D_FUN_0052c7b0(CWavOutDevice *this_ptr)
 ;
+; Parameters:
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

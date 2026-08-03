@@ -1,21 +1,22 @@
 // Name: core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00467250
 // Address: 00467250
 // Address Range: [[00467250, 0046729d]]
-// Convention: unknown
-// Signature: void core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00467250(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00467250(CDemonRaytrace *this_ptr)
 
 #include "nocturne.h"
 
-void core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00467250(int param_1)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00467250(CDemonRaytrace *this_ptr)
 
 {
-  int iVar1;
+  SVoxelCubeMetadata *pSVar1;
   
-  iVar1 = FUN_00565c50
-                    (0x58,*(int *)(param_1 + 0x40) * *(int *)(param_1 + 0x44) *
-                          *(int *)(param_1 + 0x48));
-  *(int *)(param_1 + 0x4c) = iVar1;
-  if (iVar1 != 0) {
+  pSVar1 = (SVoxelCubeMetadata *)
+           FUN_00565c50
+                     (0x58,(this_ptr->grid_coord).x * (this_ptr->grid_coord).y *
+                           (this_ptr->grid_coord).z);
+  this_ptr->cube_list = pSVar1;
+  if (pSVar1 != (SVoxelCubeMetadata *)0x0) {
     return;
   }
   g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";

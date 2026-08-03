@@ -54,10 +54,10 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *s
           g_INT_01cc4804 = 0x137;
           core_main_c_FUN_004c8440("Invalid sfx string: %s");
         }
-        iVar2 = _sprintf(pcVar7);
+        iVar2 = _sprintf(pcVar7,"?");
         pcVar6 = pcVar7 + iVar2;
         if (9 < local_2c) {
-          iVar2 = _sprintf(pcVar6);
+          iVar2 = _sprintf(pcVar6,"?");
           pcVar6 = pcVar6 + iVar2;
         }
         local_14 = local_14 + local_34;
@@ -175,7 +175,8 @@ LAB_0052d202:
       } while ((int)local_1c < local_18);
     }
     if (local_a8[0] == '\0') {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60();
+      engine_console_cpp_CConsole_printf_FUN_0043ac60
+                (g_CConsole_PTR_005ad350,"Can't find wav: %s\n");
       return 0;
     }
     cVar5 = *local_14;

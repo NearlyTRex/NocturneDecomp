@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_boxactor_cpp_CBoxActor_getBlockVirtualDirectorFlag_FUN_0041ef30(int param_1)
+; int __cdecl core_boxactor_cpp_CBoxActor_getBlockVirtualDirectorFlag_FUN_0041ef30(CBoxActor *this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

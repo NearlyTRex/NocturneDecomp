@@ -86,7 +86,7 @@ section .text
     MOV EBX,dword ptr [0x005ad350]      ; 004d5809 | g_CConsole_PTR_005ad350
     PUSH EBX                            ; 004d580f | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004d5810
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004d5815
     POP ESI                             ; 004d5818
     POP EBX                             ; 004d5819

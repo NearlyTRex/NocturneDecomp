@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_svetlana_cpp_CSvetlana_processDamage_FUN_00542e90(CCharacter *param_1,SDamageInfo *param_2)
+; void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_00542e90(CSvetlana *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CSvetlana *      Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_svet_die_wav_00596460

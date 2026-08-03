@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_CTurret_setup_FUN_005495f0(CWeapon *param_1)
+; void __cdecl core_turret_cpp_CTurret_setup_FUN_005495f0(CTurret *this_ptr)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

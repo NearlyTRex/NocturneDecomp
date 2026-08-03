@@ -1,25 +1,24 @@
 // Name: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_004f6f50
 // Address: 004f6f50
 // Address Range: [[004f6f50, 004f6f9d]]
-// Convention: unknown
-// Signature: float * core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(CPlatform *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-float * core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(int param_1,float *param_2)
+CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_004f6f50(CPlatform *this_ptr,CBoundingBox3D *out_box)
 
 {
   CBoundingBox3D *pCVar1;
   CKeyFramedModel *pCVar2;
   
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
   pCVar1 = pCVar2->frame_bounds;
-  *param_2 = (pCVar1->min).x;
-  param_2[1] = (pCVar1->min).y;
-  param_2[2] = (pCVar1->min).z;
-  param_2[3] = (pCVar1->max).x;
-  param_2[4] = (pCVar1->max).y;
-  param_2[5] = (pCVar1->max).z;
-  return param_2;
+  (out_box->min).x = (pCVar1->min).x;
+  (out_box->min).y = (pCVar1->min).y;
+  (out_box->min).z = (pCVar1->min).z;
+  (out_box->max).x = (pCVar1->max).x;
+  (out_box->max).y = (pCVar1->max).y;
+  (out_box->max).z = (pCVar1->max).z;
+  return out_box;
 }

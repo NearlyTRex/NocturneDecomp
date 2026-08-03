@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align)
 ;
+; Parameters:
+; LPVOID *         Stack[0x4]:4   channel_buffers
+; int              Stack[0x8]:4   bits_per_sample
+; int              Stack[0xc]:4   num_channels
+; int              Stack[0x10]:4   samples_per_sec
+; int              Stack[0x14]:4   samples_per_block
+; int              Stack[0x18]:4   block_align
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x4c]:4  local_4c
@@ -222,7 +229,7 @@ section .text
     PUSH EBX                            ; 005296df | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
     MOVSD.REP ES:EDI,ESI                ; 005296e0
     CALL sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 ; 005296e2
-        ;   XREF to: 00524d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10()
+        ;   XREF to: 00524d10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot * this_ptr, SMixBuffer mix_buffer)
     ADD ESP,0x30                        ; 005296e7
     ADD EBX,0x120                       ; 005296ea
     CMP EBX,dword ptr [ESP + 0x54]      ; 005296f0

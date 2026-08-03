@@ -30,7 +30,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00526e13
     PUSH EDX                            ; 00526e17
     CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 ; 00526e18
-        ;   XREF to: 005234b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0()
+        ;   XREF to: 005234b0 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0(uint sfx_handle, int check_hardware_playback)
     MOV EBX,EAX                         ; 00526e1d
     ADD ESP,0x8                         ; 00526e1f
     TEST EAX,EAX                        ; 00526e22

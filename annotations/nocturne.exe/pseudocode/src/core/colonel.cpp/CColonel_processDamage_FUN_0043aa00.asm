@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CCharacter *param_1,SDamageInfo *param_2)
+; void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CColonel *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CColonel *       Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059b568 = 0.5

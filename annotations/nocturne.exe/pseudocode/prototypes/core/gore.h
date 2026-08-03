@@ -17,7 +17,7 @@ void __cdecl CBloodParticle::setupRenderState(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_CBloodParticle_render_FUN_004ae190
 // Address: 004ae190
-void CBloodParticle::render(CVector3f *param_1);
+void __cdecl CBloodParticle::render(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_CBloodParticle_onCollision_FUN_004ae900
 // Address: 004ae900
@@ -37,7 +37,7 @@ void __cdecl CBloodSplat::setupRenderState(CBloodSplat *this_ptr);
 
 // Original: core_gore.cpp_CBloodSplat_render_FUN_004aeb70
 // Address: 004aeb70
-void CBloodSplat::render(undefined4 *param_1);
+void __cdecl CBloodSplat::render(CBloodSplat *this_ptr,int expire_flag);
 
 // Original: core_gore.cpp_CBloodSplat_processAge_FUN_004af130
 // Address: 004af130
@@ -57,7 +57,7 @@ int __cdecl CBloodPool::setupRenderState(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_CBloodPool_render_FUN_004af340
 // Address: 004af340
-void CBloodPool::render(undefined4 *param_1);
+void __cdecl CBloodPool::render(CBloodPool *this_ptr,int expire_flag);
 
 // Original: core_gore.cpp_CBloodPool_processAge_FUN_004af700
 // Address: 004af700
@@ -81,7 +81,7 @@ void __cdecl CFootstep::init(CFootstep *this_ptr,CVector3f *position,UOrientatio
 
 // Original: core_gore.cpp_CFootstep_render_FUN_004afa20
 // Address: 004afa20
-void CFootstep::render(undefined4 *param_1);
+void __cdecl CFootstep::render(CFootstep *this_ptr,int expire_flag);
 
 // Original: core_gore.cpp_CGore_ctor_FUN_004afd80
 // Address: 004afd80
@@ -101,7 +101,7 @@ void __cdecl CGore::renderParticles(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_renderDecals_FUN_004afe80
 // Address: 004afe80
-CGame * CGore::renderDecals(undefined4 param_1,int param_2);
+void __cdecl CGore::renderDecals(CGore *this_ptr,int render_all,int expire_flag);
 
 // Original: core_gore.cpp_CGore_process_FUN_004b0030
 // Address: 004b0030
@@ -141,7 +141,7 @@ void __cdecl CGore::loadAssets(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_spawnFlies_FUN_004b0580
 // Address: 004b0580
-CFlies * CGore::spawnFlies(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5);
+CFlies * __cdecl CGore::spawnFlies(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size);
 
 // Original: core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670
 // Address: 004b0670

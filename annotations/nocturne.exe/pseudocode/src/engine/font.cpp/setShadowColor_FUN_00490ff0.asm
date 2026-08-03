@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_setShadowColor_FUN_00490ff0(uint param_1,uint param_2,uint param_3)
+; void __cdecl engine_font_cpp_setShadowColor_FUN_00490ff0(uint red,uint green,uint blue)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   red
+; uint             Stack[0x8]:4   green
+; uint             Stack[0xc]:4   blue
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

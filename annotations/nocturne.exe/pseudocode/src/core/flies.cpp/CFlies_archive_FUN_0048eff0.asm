@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flies_cpp_CFlies_archive_FUN_0048eff0(CDemonActor *param_1)
+; void __cdecl core_flies_cpp_CFlies_archive_FUN_0048eff0(CFlies *this_ptr)
 ;
+; Parameters:
+; CFlies *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_count_005816d6

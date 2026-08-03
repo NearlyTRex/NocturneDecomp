@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_ammo_cpp_CAmmo_renderOpaque_FUN_0040ec30(CDemonActor *param_1)
+; int __cdecl core_ammo_cpp_CAmmo_renderOpaque_FUN_0040ec30(CAmmo *this_ptr)
 ;
+; Parameters:
+; CAmmo *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

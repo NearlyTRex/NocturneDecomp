@@ -1,12 +1,12 @@
 // Name: engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0
 // Address: 004f86a0
 // Address Range: [[004f86a0, 004f8805]]
-// Convention: unknown
-// Signature: uint engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(CPodFile *this_ptr,int file_index)
 
 #include "nocturne.h"
 
-uint engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(int param_1,int param_2)
+uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(CPodFile *this_ptr,int file_index)
 
 {
   uchar uVar1;
@@ -16,20 +16,20 @@ uint engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(int param_1,int param_2
   uchar *puVar3;
   SIZE_T size;
   
-  if ((param_2 < 0) || (*(int *)(param_1 + 0x208) <= param_2)) {
+  if ((file_index < 0) || (this_ptr->file_count <= file_index)) {
     g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
     g_INT_01cc4804 = 0x221;
     core_main_c_FUN_004c8440("CPodFile::computeOneFileCRC - invalid index");
   }
-  file = _fopen((char *)(param_1 + 4),"rb");
+  file = _fopen(this_ptr->filename,"rb");
   if (file == (_FILE *)0x0) {
     g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
     g_INT_01cc4804 = 0x226;
-    core_main_c_FUN_004c8440("CPodFile::computeOneFileCRC - can't open %s",(char *)(param_1 + 4));
+    core_main_c_FUN_004c8440("CPodFile::computeOneFileCRC - can't open %s",this_ptr->filename);
   }
-  _fseek(file,*(long *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x20c)),0);
+  _fseek(file,this_ptr->directory_entries[file_index].offset,0);
   current_crc = 0xffffffff;
-  for (size = *(SIZE_T *)(param_2 * 0x14 + *(int *)(param_1 + 0x20c) + 4); 0xffff < (int)size;
+  for (size = this_ptr->directory_entries[file_index].size; 0xffff < (int)size;
       size = size - 0x10000) {
     puVar3 = &DAT_01e428d0;
     uVar2 = 0;

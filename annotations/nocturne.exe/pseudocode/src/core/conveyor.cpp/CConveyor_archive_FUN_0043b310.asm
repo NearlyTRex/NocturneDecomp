@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_conveyor_cpp_CConveyor_archive_FUN_0043b310(CPlatform *param_1)
+; void __cdecl core_conveyor_cpp_CConveyor_archive_FUN_0043b310(CConveyor *this_ptr)
 ;
+; Parameters:
+; CConveyor *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_size_0057b1de

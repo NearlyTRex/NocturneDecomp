@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_imp_cpp_CImp_archive_FUN_004bc9c0(CEnemy *param_1)
+; void __cdecl core_imp_cpp_CImp_archive_FUN_004bc9c0(CImp *this_ptr)
 ;
+; Parameters:
+; CImp *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0058647d

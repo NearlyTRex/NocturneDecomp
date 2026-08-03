@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,12 +52,12 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 57,
+        "column": 17,
         "line": 27,
         "message": "use of undeclared identifier 'DAT_02dc9244'"
       },
@@ -98,21 +98,21 @@
         "message": "expected expression"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 58,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
+        "category": "format_error",
+        "column": 51,
+        "line": 56,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 65,
+        "line": 64,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 65,
+        "line": 64,
         "message": "expected expression"
       }
     ],
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 366,
+    "complexity_score": 288,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
-    "suspect_count": 23,
+    "pseudocode_lines": 108,
+    "suspect_count": 16,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 389
+    "total_lines": 386
   },
   "cross_references": [],
   "function": {
@@ -147,9 +146,9 @@
         "0052b236"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50",
-    "signature": "int sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(undefined4 param_1,int param_2)"
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(CDirectSoundDevice *this_ptr,int sample_buffer_id)"
   },
   "function_calls": [
     {
@@ -304,9 +303,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -342,12 +341,27 @@
     "pcode_op_count": 949
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "sample_buffer_id",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -359,60 +373,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_02dc9244",
       "severity": "mild",
-      "text": "if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {",
+      "text": "(*(int *)(&DAT_02dc9244 + sample_buffer_id * 4) == 0)) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"DirectSoundDevice::allocateSfx - Invalid sample handle: %d\",param_2);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -425,9 +391,9 @@
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 44,
-      "match": "*(int **)(iVar7 * 4 + 0x2dc92a8",
+      "match": "*(int **)(iVar6 * 4 + 0x2dc92a8",
       "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar7 * 4 + 0x2dc92a8);",
+      "text": "piVar2 = *(int **)(iVar6 * 4 + 0x2dc92a8);",
       "type": "raw_address_pointer_store"
     },
     {
@@ -440,7 +406,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 58,
+      "line": 57,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",
@@ -448,7 +414,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
+      "line": 63,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",
@@ -456,26 +422,18 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 69,
+      "line": 68,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*_DAT_02dc9214 + 0x14))",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(_DAT_02dc9214,*(uint *)(&DAT_02dc9244 + param_2 * 4),iVar1 + 0x2dc92a8);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 69,
       "match": "DAT_02dc9244",
       "severity": "mild",
-      "text": "(_DAT_02dc9214,*(uint *)(&DAT_02dc9244 + param_2 * 4),iVar1 + 0x2dc92a8);",
+      "text": "(_DAT_02dc9214,*(uint *)(&DAT_02dc9244 + sample_buffer_id * 4),",
       "type": "undefined_data"
     },
     {
@@ -504,15 +462,15 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 94,
-      "match": "*(int **)(iVar7 * 4 + 0x2dc92a8",
+      "line": 92,
+      "match": "*(int **)(iVar6 * 4 + 0x2dc92a8",
       "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar7 * 4 + 0x2dc92a8);",
+      "text": "piVar2 = *(int **)(iVar6 * 4 + 0x2dc92a8);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 95,
+      "line": 93,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((piVar2 != (int *)0x0) && (uVar5 = (**(code **)(*piVar2 + 0x48))(piVar2), uVar5 != 0)) {",
@@ -520,7 +478,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 105,
+      "line": 102,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",
@@ -528,7 +486,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
+      "line": 108,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",

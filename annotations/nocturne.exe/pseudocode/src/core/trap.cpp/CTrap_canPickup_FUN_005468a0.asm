@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_trap_cpp_CTrap_canPickup_FUN_005468a0(int param_1,CDemonActor *param_2)
+; int __cdecl core_trap_cpp_CTrap_canPickup_FUN_005468a0(CTrap *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CTrap *          Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_00596910

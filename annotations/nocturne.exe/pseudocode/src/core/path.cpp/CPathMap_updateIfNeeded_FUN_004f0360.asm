@@ -101,7 +101,7 @@ section .text
     PUSH 0x1fba938                      ; 004f0405 | g_CDemonRaytrace_01fba938
     LEA ESI,[ESP + 0x14]                ; 004f040a
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f040e
-        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700()
+        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x14]                ; 004f0413
     LEA EDI,[EBX + 0xc]                 ; 004f0417
     ADD ESP,0x8                         ; 004f041a

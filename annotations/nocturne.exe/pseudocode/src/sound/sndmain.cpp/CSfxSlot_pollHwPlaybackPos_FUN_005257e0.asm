@@ -84,7 +84,7 @@ section .text
     PUSH EAX                            ; 00525853
     PUSH EBX                            ; 00525854
     CALL sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870 ; 00525855
-        ;   XREF to: 00525870 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870()
+        ;   XREF to: 00525870 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot * this_ptr, double hardware_playback_pos)
     MOV EAX,0x1                         ; 0052585a
     ADD ESP,0xc                         ; 0052585f
     MOV ESP,EBP                         ; 00525862

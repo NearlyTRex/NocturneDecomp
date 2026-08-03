@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_battery_cpp_CBattery_renderOpaque_FUN_00414e70(int param_1)
+; int __cdecl core_battery_cpp_CBattery_renderOpaque_FUN_00414e70(CBattery *this_ptr)
 ;
+; Parameters:
+; CBattery *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

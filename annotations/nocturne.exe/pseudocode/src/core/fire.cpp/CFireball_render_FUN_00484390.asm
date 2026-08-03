@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
+; void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
 ;
+; Parameters:
+; CFireball *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xe8]:4  local_e8
 ; undefined4       Stack[-0xe4]:4  local_e4
@@ -601,7 +603,7 @@ section .text
     MOV EDX,dword ptr [0x007f7370]      ; 00484a5c | DAT_007f7370
     PUSH EDX                            ; 00484a62
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00484a63
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     MOV EDX,0xffff                      ; 00484a68
     MOV ECX,dword ptr [0x01c038f4]      ; 00484a6d | DAT_01c038f4
     ADD ESP,0xc                         ; 00484a73

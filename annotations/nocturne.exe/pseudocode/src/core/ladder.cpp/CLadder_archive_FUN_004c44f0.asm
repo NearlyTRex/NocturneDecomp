@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ladder_cpp_CLadder_archive_FUN_004c44f0(CLadder *param_1)
+; void __cdecl core_ladder_cpp_CLadder_archive_FUN_004c44f0(CLadder *this_ptr)
 ;
+; Parameters:
+; CLadder *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_model_0058774c

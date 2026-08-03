@@ -1,12 +1,12 @@
 // Name: engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0
 // Address: 004bd2b0
 // Address Range: [[004bd2b0, 004bd47e]]
-// Convention: unknown
-// Signature: int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5)
+// Convention: __cdecl
+// Signature: int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 #include "nocturne.h"
 
-int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint param_2,char *param_3,char *param_4,char *param_5)
+int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 {
   byte bVar1;
@@ -22,14 +22,14 @@ int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint
   
   iVar6 = 0;
   bVar2 = false;
-  *param_1 = 1;
-  stream = _fopen(param_4,"rt");
+  this_ptr->initialized = 1;
+  stream = _fopen(value,"rt");
   if (stream == (_FILE *)0x0) {
     g_CHAR_PTR_01cc4800 = "..\\engine\\ini.cpp";
     g_INT_01cc4804 = 0xf5;
     core_main_c_FUN_004c8440("cIni::FindLineNumberOfVariable: Unable to open input");
   }
-  _sprintf(local_114,"[%s]\n",param_2);
+  _sprintf(local_114,"[%s]\n");
   while (((stream->_flag & 0x10) == 0 &&
          (pcVar5 = _fgets(local_214,0xff,stream), pcVar5 != (char *)0x0))) {
     iVar4 = _strcmp(local_214,local_114);
@@ -78,12 +78,12 @@ LAB_004bd385:
   if (local_14 != (char *)0x0) {
     *local_14 = '\0';
   }
-  iVar4 = _strcmp(local_214,param_3);
+  iVar4 = _strcmp(local_214,key);
   if (iVar4 == 0) {
     bVar2 = true;
-    iVar4 = _strcmp(local_14 + 1,param_5);
+    iVar4 = _strcmp(local_14 + 1,filename);
     if (iVar4 == 0) {
-      *param_1 = 0;
+      this_ptr->initialized = 0;
     }
     goto LAB_004bd3e0;
   }

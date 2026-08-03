@@ -1,29 +1,31 @@
 // Name: sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0
 // Address: 00525de0
 // Address Range: [[00525de0, 00525eaf]]
-// Convention: unknown
-// Signature: double sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSampleInfo *param_1,double param_2,uint param_3)
+// Convention: __cdecl
+// Signature: double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSfxSample *this_ptr,double position,uint input_type)
 
 #include "nocturne.h"
 
-double sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSampleInfo *param_1,double param_2,uint param_3)
+double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSfxSample *this_ptr,double position,uint input_type)
 
 {
   double dVar1;
   
-  param_2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,param_3,2);
-  if (*(int *)(param_1[1].name + 4) == 0) {
-    if (param_2 < 0.0) {
-      param_2 = 0.0;
+  position = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
+                       (&this_ptr->sample_info,position,input_type,2);
+  if (this_ptr->loop_marker_count == 0) {
+    if (position < 0.0) {
+      position = 0.0;
     }
-    else if (1.0 < param_2) {
-      param_2 = 1.0;
+    else if (1.0 < position) {
+      position = 1.0;
     }
   }
   else {
-    dVar1 = floor(param_2);
-    param_2 = param_2 - dVar1;
+    dVar1 = floor(position);
+    position = position - dVar1;
   }
-  dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(param_1,param_2,2,param_3);
+  dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
+                    (&this_ptr->sample_info,position,2,input_type);
   return dVar1;
 }

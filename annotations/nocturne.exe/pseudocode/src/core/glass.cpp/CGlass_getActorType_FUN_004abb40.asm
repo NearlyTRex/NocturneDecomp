@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_glass_cpp_CGlass_getActorType_FUN_004abb40(void)
+; CDemonActorType * __cdecl core_glass_cpp_CGlass_getActorType_FUN_004abb40(CGlass *this_ptr)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

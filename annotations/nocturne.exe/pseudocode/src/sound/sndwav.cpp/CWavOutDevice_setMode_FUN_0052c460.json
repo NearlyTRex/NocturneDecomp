@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,68 +52,68 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 27,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'uint *' (aka 'unsigned int *'); dereference with *"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 28,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 28,
-        "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 32,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_02dc9428'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 33,
+        "line": 28,
         "message": "use of undeclared identifier '_DAT_02dc942c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 34,
+        "line": 29,
         "message": "use of undeclared identifier '_DAT_02dc943c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 35,
+        "line": 30,
         "message": "use of undeclared identifier '_DAT_02dc9430'"
       },
       {
-        "category": "type_error",
-        "column": 12,
-        "line": 36,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 12,
+        "category": "undeclared_identifier",
+        "column": 44,
         "line": 37,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+        "message": "use of undeclared identifier '_DAT_02dc942c'"
       },
       {
-        "category": "type_error",
-        "column": 12,
+        "category": "undeclared_identifier",
+        "column": 76,
+        "line": 37,
+        "message": "use of undeclared identifier '_DAT_02dc943c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 38,
+        "message": "use of undeclared identifier '_DAT_02dc9434'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
         "line": 39,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+        "message": "use of undeclared identifier '_DAT_02dc9434'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 39,
+        "message": "use of undeclared identifier '_DAT_02dc9434'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 40,
+        "message": "use of undeclared identifier '_DAT_02dc9438'"
       }
     ],
     "success": false,
@@ -122,21 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 327,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
-    "suspect_count": 23,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 67,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unknown_field",
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 229
+    "total_lines": 224
   },
   "cross_references": [],
   "function": {
@@ -147,9 +144,9 @@
         "0052c63c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0052c460",
-    "signature": "undefined4 sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(undefined4 *param_1,uint param_2,int param_3,uint *param_4)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)"
   },
   "function_calls": [
     {
@@ -261,9 +258,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -309,12 +306,48 @@
     "pcode_op_count": 808
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavOutDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_sample",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "channels",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sample_rate",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "out_buffer_size",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
   },
   "static_analysis": {
     "analyzed_file": "CWavOutDevice_setMode_FUN_0052c460.cpp",
@@ -324,14 +357,14 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 52,
-          "line": 47,
+          "line": 42,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 41,
-          "line": 48,
+          "line": 43,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -350,184 +383,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(uint *param_1,uint param_2,int param_3,uint *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(uint *param_1,uint param_2,int param_3,uint *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(uint *param_1,uint param_2,int param_3,uint *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(uint *param_1,uint param_2,int param_3,uint *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uStack_28 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)*param_1)();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)*param_1)();",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_DAT_02dc9428 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "_DAT_02dc942c = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "_DAT_02dc9430 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "uStack_28._0_2_ = 0xc4aa;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "uStack_28._2_2_ = 0x52;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "uStack_28._0_2_ = 0xc4c7;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "uStack_28._2_2_ = 0x52;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "uStack_28._2_2_ = _DAT_02dc9430;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 63,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "uStack_28._0_2_ = 1;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 62,
       "match": "DAT_02dc93a4",
       "severity": "mild",
-      "text": "MVar4 = waveOutOpen((LPHWAVEOUT)&DAT_02dc93a4,DAT_005bed44,(LPCWAVEFORMATEX)&uStack_28,0,0,0);",
+      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_02dc93a4,DAT_005bed44,&WStack_24,0,0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 62,
       "match": "DAT_005bed44",
       "severity": "mild",
-      "text": "MVar4 = waveOutOpen((LPHWAVEOUT)&DAT_02dc93a4,DAT_005bed44,(LPCWAVEFORMATEX)&uStack_28,0,0,0);",
+      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_02dc93a4,DAT_005bed44,&WStack_24,0,0,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*param_4 = _DAT_02dc9434;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 74,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)*param_1)(param_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)*param_1)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)*param_1)(param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 47,
+      "line": 42,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "((int)((_DAT_02dc9428 + ((int)_DAT_02dc9428 >> 0x1f) * -8) -",
@@ -535,7 +408,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 48,
+      "line": 43,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)(((int)_DAT_02dc9428 >> 0x1f) << 2 < 0)) >> 3) * _DAT_02dc9430;",

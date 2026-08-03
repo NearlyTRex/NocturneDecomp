@@ -9,7 +9,7 @@ undefined4 * FUN_0043b500(void);
 
 // Original: core_course.cpp_fmodfPositive_FUN_0043b510
 // Address: 0043b510
-float fmodfPositive(float param_1,float param_2);
+float __cdecl fmodfPositive(float value,float modulus);
 
 // Original: core_course.cpp_FUN_0043b5b0
 // Address: 0043b5b0

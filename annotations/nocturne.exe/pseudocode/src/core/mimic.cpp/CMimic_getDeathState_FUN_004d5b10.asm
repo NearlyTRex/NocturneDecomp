@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_mimic_cpp_CMimic_getDeathState_FUN_004d5b10(void)
+; EDeathState __cdecl core_mimic_cpp_CMimic_getDeathState_FUN_004d5b10(CMimic *this_ptr)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

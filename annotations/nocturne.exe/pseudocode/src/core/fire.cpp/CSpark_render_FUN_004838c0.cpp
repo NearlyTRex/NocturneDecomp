@@ -1,19 +1,19 @@
 // Name: core_fire.cpp_CSpark_render_FUN_004838c0
 // Address: 004838c0
 // Address Range: [[004838c0, 00483fd8]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CSpark_render_FUN_004838c0(CVector3f *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00483fc0) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fire_cpp_CSpark_render_FUN_004838c0(CVector3f *param_1)
+void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
 
 {
   SRenderVertex *vertex_ptr;
-  float fVar1;
+  uint uVar1;
   longlong lVar2;
   int iVar3;
   SMRGLTextureBasic *texture;
@@ -43,16 +43,17 @@ void core_fire_cpp_CSpark_render_FUN_004838c0(CVector3f *param_1)
   float local_18;
   
   vertex_ptr = DAT_005ae704->vertex_buffer_ptr;
-  local_70.x = (int)ROUND(param_1->x * 256.0f);
-  local_70.y = (int)ROUND(param_1->y * 256.0f);
-  local_70.z = (int)ROUND(param_1->z * 256.0f);
+  local_70.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
+  local_70.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
+  local_70.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
   local_20 = 0.4;
   engine_special_cpp_transformPoint_FUN_00530a25(&vertex_ptr->projected_vertex,&local_70);
   iVar3 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(DAT_005ae704,vertex_ptr);
   if (iVar3 == 0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);
+  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
+            (DAT_005ae704,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
             (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
   local_4c = -0.4;
@@ -87,21 +88,22 @@ void core_fire_cpp_CSpark_render_FUN_004838c0(CVector3f *param_1)
   local_7c.z = (int)ROUND(256.0f * 0.0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_7c);
-  fVar1 = param_1[5].z;
-  if (fVar1 == 0.0) {
+  uVar1 = this_ptr->spark_type;
+  if (uVar1 == 0) {
     texture = (SMRGLTextureBasic *)&DAT_005b84cc;
   }
-  else if ((uint)fVar1 < 2) {
+  else if (uVar1 < 2) {
     texture = (SMRGLTextureBasic *)&DAT_005b84e4;
   }
   else {
-    if (fVar1 != 2.8026e-45) goto LAB_0048394f;
+    if (uVar1 != 2) goto LAB_0048394f;
     texture = (SMRGLTextureBasic *)&DAT_005b84fc;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);
 LAB_0048394f:
-  core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(_DAT_007f7370,param_1,0);
-  lVar2 = (longlong)(int)param_1[4].z * (longlong)(0xffff - _DAT_01c038f4);
+  core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
+            (_DAT_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+  lVar2 = (longlong)this_ptr->intensity_current * (longlong)(0xffff - _DAT_01c038f4);
   DAT_005c5040 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
   DAT_005c5034 = 0xffff;
   DAT_005c5038 = 0xffff;
@@ -123,12 +125,12 @@ LAB_0048394f:
             (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-  local_58.x = param_1->x;
-  local_58.y = param_1->y;
-  local_58.z = param_1->z;
-  local_a0 = param_1[1].x;
-  local_9c = param_1[1].y;
-  local_98 = param_1[1].z;
+  local_58.x = (this_ptr->base).position.x;
+  local_58.y = (this_ptr->base).position.y;
+  local_58.z = (this_ptr->base).position.z;
+  local_a0 = (this_ptr->base).velocity.x;
+  local_9c = (this_ptr->base).velocity.y;
+  local_98 = (this_ptr->base).velocity.z;
   local_d4 = 1.0;
   iVar3 = 0;
   local_d8 = 0.025;
@@ -136,7 +138,7 @@ LAB_0048394f:
     local_d8 = local_d8 * (float)0.69999999999999996;
     local_d4 = (float)0.69999999999999996 * local_d4;
     local_ac = local_a0 * local_d8;
-    local_9c = local_9c - local_d8 * param_1[2].y;
+    local_9c = local_9c - local_d8 * (this_ptr->base).gravity_acceleration;
     local_a4 = local_98 * local_d8;
     local_a8 = local_9c * local_d8;
     local_58.x = local_58.x - local_ac;
@@ -180,8 +182,9 @@ LAB_0048394f:
     local_d0.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_d0);
-    core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(_DAT_007f7370,param_1,0);
-    lVar2 = (longlong)(int)param_1[4].z * (longlong)(0xffff - _DAT_01c038f4);
+    core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
+              (_DAT_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+    lVar2 = (longlong)this_ptr->intensity_current * (longlong)(0xffff - _DAT_01c038f4);
     DAT_005c5040 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
     DAT_005c5034 = 0xffff;
     DAT_005c5038 = 0xffff;

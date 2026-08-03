@@ -1,29 +1,28 @@
 // Name: core_xform.cpp_quaternionFromAxisAngle_FUN_0055d560
 // Address: 0055d560
 // Address Range: [[0055d560, 0055d5a9]]
-// Convention: unknown
-// Signature: void core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float param_1,float *param_2)
+// Convention: __stack2_esi
+// Signature: CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 
-void core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float param_1,float *param_2)
+CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)
 
 {
   float fVar1;
   float fVar2;
   float fVar3;
-  float *unaff_ESI;
   float10 fVar4;
   float10 fVar5;
   
-  fVar4 = (float10)fsin((float10)param_1 * (float10)0.5);
-  fVar5 = (float10)fcos((float10)param_1 * (float10)0.5);
-  fVar1 = *param_2;
-  fVar2 = param_2[1];
-  fVar3 = param_2[2];
-  *unaff_ESI = (float)fVar5;
-  unaff_ESI[1] = (float)((float10)fVar1 * fVar4);
-  unaff_ESI[2] = (float)((float10)fVar2 * fVar4);
-  unaff_ESI[3] = (float)((float10)fVar3 * fVar4);
-  return;
+  fVar4 = (float10)fsin((float10)angle_radians * (float10)0.5);
+  fVar5 = (float10)fcos((float10)angle_radians * (float10)0.5);
+  fVar1 = axis_ptr->x;
+  fVar2 = axis_ptr->y;
+  fVar3 = axis_ptr->z;
+  quat_out->w = (float)fVar5;
+  quat_out->x = (float)((float10)fVar1 * fVar4);
+  quat_out->y = (float)((float10)fVar2 * fVar4);
+  quat_out->z = (float)((float10)fVar3 * fVar4);
+  return quat_out;
 }

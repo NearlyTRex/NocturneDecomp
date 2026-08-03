@@ -10,15 +10,15 @@ int __cdecl sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
 
 {
   uint uVar1;
-  int iVar2;
+  CSfxSlot *pCVar2;
   
   uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();
   if (uVar1 == 0) {
-    iVar2 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,0);
-    return (uint)(iVar2 != 0);
+    pCVar2 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,0);
+    return (uint)(pCVar2 != (CSfxSlot *)0x0);
   }
-  iVar2 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
-  if (iVar2 == 0) {
+  pCVar2 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
+  if (pCVar2 == (CSfxSlot *)0x0) {
     return 0;
   }
   sound_sndmain_cpp_unlockSound_FUN_00528890();

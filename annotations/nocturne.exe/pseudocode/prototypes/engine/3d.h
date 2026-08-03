@@ -5,7 +5,7 @@
 
 // Original: engine_3d.c_FUN_00404430
 // Address: 00404430
-undefined4 * FUN_00404430(undefined4 *param_1);
+undefined4 * FUN_00404430(void);
 
 // Original: engine_3d.c_FUN_005458a0
 // Address: 00404480
@@ -69,11 +69,11 @@ int FUN_00404b10(int param_1);
 
 // Original: engine_3d.c_processPolygonColor_FUN_00405140
 // Address: 00405140
-int processPolygonColor(int param_1);
+SMRGLHeaderExtended * __cdecl processPolygonColor(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_oldFunction3_FUN_004051e0
 // Address: 004051e0
-int oldFunction3(int param_1);
+SMRGLHeaderExtended * __cdecl oldFunction3(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_FUN_00405200
 // Address: 00405200
@@ -233,7 +233,7 @@ SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedHardwareOp53(SMRGLHeader
 
 // Original: engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120
 // Address: 00407120
-int renderPolygonFogTexturedPlaneMaskedOp41(int param_1);
+SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedPlaneMaskedOp41(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonFogTexturedDepthOp42_FUN_004072d0
 // Address: 004072d0
@@ -293,7 +293,7 @@ SMRGLHeaderExtended * __cdecl renderPolygonLitAlphaPlaneMaskedUVOp56(SMRGLHeader
 
 // Original: engine_3d.c_renderPolygonSolidLitOp62_FUN_00408010
 // Address: 00408010
-int renderPolygonSolidLitOp62(SMRGLHeaderPrimitive *param_1);
+SMRGLHeaderExtended * __cdecl renderPolygonSolidLitOp62(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonFullEffectsLitOp57_FUN_00408130
 // Address: 00408130

@@ -132,7 +132,7 @@ section .text
     PUSH 0x58e080                       ; 004fe21e | = "Actor variable %s not defined, or doe..."
     PUSH 0x1e56420                      ; 004fe223
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fe228
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fe22d
     XOR EAX,EAX                         ; 004fe230
     POP EBP                             ; 004fe232
@@ -163,7 +163,7 @@ section .text
     PUSH 0x1e56420                      ; 004fe26e
     MOV dword ptr [0x01e56c2c],EDI      ; 004fe273 | DAT_01e56c2c
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fe279
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004fe27e
     XOR EAX,EAX                         ; 004fe281
     POP EBP                             ; 004fe283
@@ -175,7 +175,7 @@ section .text
         ;   Label: LAB_004fe288
     PUSH 0x1e56420                      ; 004fe28d
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fe292
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004fe297
     XOR EAX,EAX                         ; 004fe29a
     POP EBP                             ; 004fe29c
@@ -198,7 +198,7 @@ section .text
     PUSH 0x58e10d                       ; 004fe2bc | = "Actor \"%s\" does not exist."
     PUSH 0x1e56420                      ; 004fe2c1
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fe2c6
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fe2cb
     XOR EAX,EAX                         ; 004fe2ce
     POP EBP                             ; 004fe2d0
@@ -218,7 +218,7 @@ section .text
     PUSH 0x58e128                       ; 004fe2e5 | = "Actor \"%s\" is of type %s, this comm..."
     PUSH 0x1e56420                      ; 004fe2ea
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fe2ef
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x14                        ; 004fe2f4
     XOR EAX,EAX                         ; 004fe2f7
     POP EBP                             ; 004fe2f9

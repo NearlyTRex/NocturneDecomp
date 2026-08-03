@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CZombieDog *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CZombieDog *     Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dog2_wav_0057cff9

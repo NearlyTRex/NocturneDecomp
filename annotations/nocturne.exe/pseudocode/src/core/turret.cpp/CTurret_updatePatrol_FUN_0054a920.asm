@@ -73,7 +73,7 @@ section .text
     PUSH EBX                            ; 0054a982
     PUSH ESI                            ; 0054a983
     CALL core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640 ; 0054a984
-        ;   XREF to: 0054a640 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640()
+        ;   XREF to: 0054a640 (UNCONDITIONAL_CALL)  ; int core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640(CTurret * this_ptr, CVector3f * target_pos, float delta_time)
     ADD ESP,0xc                         ; 0054a989
     TEST EAX,EAX                        ; 0054a98c
     JZ 0x0054a949                       ; 0054a98e

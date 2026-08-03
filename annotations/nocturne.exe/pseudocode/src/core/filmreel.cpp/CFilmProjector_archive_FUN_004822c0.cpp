@@ -1,20 +1,19 @@
 // Name: core_filmreel.cpp_CFilmProjector_archive_FUN_004822c0
 // Address: 004822c0
 // Address Range: [[004822c0, 00482304]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(CActorDestination *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(CFilmProjector *this_ptr)
 
 #include "nocturne.h"
 
-void core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(CActorDestination *param_1)
+void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(CFilmProjector *this_ptr)
 
 {
-  core_dest_cpp_CActorDestination_archive_FUN_0044bb10(param_1);
+  core_dest_cpp_CActorDestination_archive_FUN_0044bb10(&this_ptr->base);
   if (INT_005b801c < 2) {
     return;
   }
-  core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)&param_1[1].triggered,"keyReel")
-  ;
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1[1].what_event,"keyEvent");
+  core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->key_reel,"keyReel");
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->key_event,"keyEvent");
   return;
 }

@@ -37,7 +37,7 @@ section .text
     PUSH EDI                            ; 00488241
     ADD EBP,EAX                         ; 00488242
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00488244
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00488249
     PUSH EBP                            ; 0048824c
     MOV EDX,dword ptr [0x005ae704]      ; 0048824d | DAT_005ae704

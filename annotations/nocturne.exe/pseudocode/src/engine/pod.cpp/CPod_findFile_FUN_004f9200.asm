@@ -57,7 +57,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 004f923a
     PUSH EDX                            ; 004f923d
     CALL engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0 ; 004f923e
-        ;   XREF to: 004f81c0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0()
+        ;   XREF to: 004f81c0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0(CPodFile * this_ptr, int file_index, SFoundFileInfo * output_info)
     MOV EAX,0x1                         ; 004f9243
     ADD ESP,0xc                         ; 004f9248
     POP EBP                             ; 004f924b

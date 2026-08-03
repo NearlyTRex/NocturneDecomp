@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_CEmitter_setup_FUN_00478520(CDemonActor *param_1)
+; void __cdecl core_emitter_cpp_CEmitter_setup_FUN_00478520(CEmitter *this_ptr)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cae0e8

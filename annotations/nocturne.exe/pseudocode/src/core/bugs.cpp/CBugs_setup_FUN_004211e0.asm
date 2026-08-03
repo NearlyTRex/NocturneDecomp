@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
+; void __cdecl core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *this_ptr)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c

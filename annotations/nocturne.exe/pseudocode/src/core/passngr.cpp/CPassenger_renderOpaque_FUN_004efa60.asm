@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_passngr_cpp_CPassenger_renderOpaque_FUN_004efa60(CCharacter *param_1)
+; int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_004efa60(CPassenger *this_ptr)
 ;
+; Parameters:
+; CPassenger *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

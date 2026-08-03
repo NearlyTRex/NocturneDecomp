@@ -14,8 +14,8 @@ void __cdecl core_inv_cpp_FUN_004c2470(CInventory *this_ptr)
   char cVar1;
   CDemonActor *pCVar2;
   int iVar3;
-  char *pcVar4;
-  int iVar5;
+  int iVar4;
+  char *pcVar5;
   char *pcVar6;
   int iVar7;
   CAlphaBitmap *this_ptr_00;
@@ -24,9 +24,8 @@ void __cdecl core_inv_cpp_FUN_004c2470(CInventory *this_ptr)
   double dVar10;
   CBitFont *pCVar11;
   int iVar12;
-  uint uVar15;
+  uint uVar14;
   longlong lVar13;
-  ulonglong uVar14;
   float fStack_684;
   float local_680;
   char local_67c [256];
@@ -148,8 +147,8 @@ void __cdecl core_inv_cpp_FUN_004c2470(CInventory *this_ptr)
         _sprintf(local_67c,"%d");
       }
       else {
-        pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->ammo_ptr->base);
-        _sprintf(local_67c,"%s %d",pcVar6);
+        core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->ammo_ptr->base);
+        _sprintf(local_67c,"%s %d");
       }
       iVar12 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_48,0x58);
       pCVar11 = local_48;
@@ -162,15 +161,15 @@ void __cdecl core_inv_cpp_FUN_004c2470(CInventory *this_ptr)
     }
   }
   else {
-    uVar15 = 0x4c25da;
+    uVar14 = 0x4c25da;
     dVar10 = round
                        ((double)(pCVar2[4].orient_matrix.m[0].x * (float)100));
     local_1c = (CBitFont *)(int)ROUND(dVar10);
-    _sprintf(acStack_480,"%d%%",local_1c);
+    _sprintf(acStack_480,"%d%%");
     pCVar11 = local_4c;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_4c,0x58);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(pCVar11,acStack_480);
-    lVar13 = (ulonglong)uVar15 << 0x20;
+    lVar13 = (ulonglong)uVar14 << 0x20;
     iVar12 = 0xf8;
     iVar7 = (DAT_005b7620 - local_50) - iVar7;
     pcVar6 = (char *)((DAT_005b761c - local_50) - iVar3);
@@ -188,18 +187,16 @@ LAB_004c2650:
     if ((iVar7 == 0) &&
        (iVar7 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004c1bf0
                           (this_ptr,&this_ptr->selected_weapon->base,1), iVar7 == 0)) {
-      pcVar6 = core_inv_cpp_getItemIconName_FUN_004bed10(&this_ptr->selected_weapon->base);
-      pcVar4 = core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->selected_weapon->base);
-      uVar14 = CONCAT44(pcVar6,pcVar4);
+      core_inv_cpp_getItemIconName_FUN_004bed10(&this_ptr->selected_weapon->base);
+      core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->selected_weapon->base);
       pcVar6 = "%s\n\n%s";
       goto LAB_004c26ad;
     }
-    pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->ammo_ptr->base);
-    pcVar4 = core_inv_cpp_getItemIconName_FUN_004bed10(&this_ptr->selected_weapon->base);
-    uVar14 = CONCAT44(pcVar6,pcVar4);
-    pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->selected_weapon->base);
-    _sprintf(acStack_17c,"%s\n\n%s %s",pcVar6,uVar14);
-    pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" are loaded.");
+    core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->ammo_ptr->base);
+    core_inv_cpp_getItemIconName_FUN_004bed10(&this_ptr->selected_weapon->base);
+    core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->selected_weapon->base);
+    _sprintf(acStack_17c,"%s\n\n%s %s");
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" are loaded.");
     iVar7 = -1;
     pcVar6 = acStack_17c;
     do {
@@ -212,22 +209,21 @@ LAB_004c2650:
     } while (cVar1 != '\0');
     pcVar8 = pcVar8 + -1;
     do {
-      cVar1 = *pcVar4;
+      cVar1 = *pcVar5;
       *pcVar8 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar4[1];
-      pcVar4 = pcVar4 + 2;
+      cVar1 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
       pcVar8[1] = cVar1;
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
   }
   else {
-    pcVar6 = core_inv_cpp_getItemIconName_FUN_004bed10(&this_ptr->selected_weapon->base);
-    pcVar4 = core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->selected_weapon->base);
-    uVar14 = CONCAT44(pcVar6,pcVar4);
+    core_inv_cpp_getItemIconName_FUN_004bed10(&this_ptr->selected_weapon->base);
+    core_inv_cpp_getItemDisplayName_FUN_004beca0(&this_ptr->selected_weapon->base);
     pcVar6 = "%s\n\n%s";
 LAB_004c26ad:
-    _sprintf(acStack_17c,pcVar6,uVar14);
+    _sprintf(acStack_17c,pcVar6);
   }
   local_2c = local_48;
   iVar7 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
@@ -261,12 +257,11 @@ LAB_004c27a0:
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
                        (this_ptr->selected_item,g_CHealthItemActorType_01cae098.name_hash);
     if (pCVar2 != (CDemonActor *)0x0) {
-      _sprintf(acStack_37c,"%d x%3.0f%%",pCVar2[2].location.area_id,
-                 (double)pCVar2[2].orient.vec.x);
+      _sprintf(acStack_37c,"%d x%3.0f%%");
       iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_48,0x58);
-      iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(local_48,acStack_37c);
+      iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(local_48,acStack_37c);
       engine_font_cpp_CBitFont_drawText_FUN_00490980
-                (local_48,acStack_37c,(DAT_005b761c - local_50) - iVar5,
+                (local_48,acStack_37c,(DAT_005b761c - local_50) - iVar4,
                  (DAT_005b7620 - local_50) - iVar3,0xf8,0);
     }
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
@@ -275,15 +270,15 @@ LAB_004c27a0:
       core_inv_cpp_getItemDisplayName_FUN_004beca0(pCVar2);
       _sprintf(acStack_27c,"%s");
       iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_48,0x58);
-      iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(local_48,acStack_27c);
+      iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(local_48,acStack_27c);
       engine_font_cpp_CBitFont_drawText_FUN_00490980
-                (local_48,acStack_27c,(DAT_005b761c - local_50) - iVar5,
+                (local_48,acStack_27c,(DAT_005b761c - local_50) - iVar4,
                  (DAT_005b7620 - local_50) - iVar3,0xf8,0);
     }
     if (this_ptr->render_mode_flag != 0) {
       core_inv_cpp_getItemIconName_FUN_004bed10(this_ptr->selected_item);
-      pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004beca0(this_ptr->selected_item);
-      _sprintf(acStack_57c,"%s\n\n%s",pcVar6);
+      core_inv_cpp_getItemDisplayName_FUN_004beca0(this_ptr->selected_item);
+      _sprintf(acStack_57c,"%s\n\n%s");
       local_28 = local_48;
       local_44 = (CBitFont *)
                  engine_font_cpp_CBitFont_wrapText_FUN_00492f30

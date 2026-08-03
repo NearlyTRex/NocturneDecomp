@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *param_1)
+; void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission *this_ptr)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d92eb

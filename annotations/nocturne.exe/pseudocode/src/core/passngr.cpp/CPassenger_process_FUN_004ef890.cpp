@@ -1,21 +1,22 @@
 // Name: core_passngr.cpp_CPassenger_process_FUN_004ef890
 // Address: 004ef890
 // Address Range: [[004ef890, 004efa56]]
-// Convention: unknown
-// Signature: void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float param_2)
+void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_ptr,float delta_time)
 
 {
   CLocation *pCVar1;
+  CDeformableModelInstance *this_ptr_00;
   int iVar2;
-  CDemonActor *actor;
-  float fVar3;
-  CFlame *pCVar4;
+  CWerewolf *pCVar3;
+  float fVar4;
   CDemonMission *pCVar5;
   SMotion *pSVar6;
   int iVar7;
@@ -23,67 +24,68 @@ void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float 
   float local_20;
   CVector3f local_1c;
   
-  if (1.0 <= *(float *)(param_1[2].flames[0x20].off_event + 0x38)) {
+  if (1.0 <= this_ptr->morph_time) {
     return;
   }
+  this_ptr_00 = &(this_ptr->base).base.model;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&(param_1->model).motion_controller);
+                     (&this_ptr_00->motion_controller);
   iVar2 = pSVar6->state_index;
   if ((iVar2 == 1) || (iVar2 == 2)) {
     if ((iVar2 == 2) &&
-       ((fVar3 = param_2 / _DAT_005a1068 + *(float *)(param_1[2].flames[0x20].off_event + 0x38),
-        *(float *)(param_1[2].flames[0x20].off_event + 0x38) = fVar3, 1.0 <= fVar3 &&
-        (actor = *(CDemonActor **)(param_1[2].flames[0x1c].base.create_event + 0x14),
-        actor != (CDemonActor *)0x0)))) {
-      core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(g_CDemonMission_PTR_005baf90,actor)
-      ;
+       ((fVar4 = delta_time / _DAT_005a1068 + this_ptr->morph_time, this_ptr->morph_time = fVar4,
+        1.0 <= fVar4 && (this_ptr->werewolf_actor != (CWerewolf *)0x0)))) {
+      core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
+                (g_CDemonMission_PTR_005baf90,(CDemonActor *)this_ptr->werewolf_actor);
       pCVar5 = g_CDemonMission_PTR_005baf90;
-      pCVar4 = param_1[2].flames + 0x1c;
-      (pCVar4->base).create_event[0x14] = '\0';
-      (pCVar4->base).create_event[0x15] = '\0';
-      (pCVar4->base).create_event[0x16] = '\0';
-      (pCVar4->base).create_event[0x17] = '\0';
-      core_mission_cpp_FUN_004d9110(pCVar5,param_1,1);
+      this_ptr->werewolf_actor = (CWerewolf *)0x0;
+      core_mission_cpp_FUN_004d9110(pCVar5,this_ptr,1);
     }
   }
   else {
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1[2].flames[0x1b].off_event + 0xc);
+                      (0x01C03A10,this_ptr->transform_event);
     if (iVar7 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(param_1->model).motion_controller,1,1);
-      if (*(char *)&param_1[2].flames[0x1c].base.location.position.z != '\0') {
-        (*((param_1->base).vtable._ub)->playSound)
-                  (&param_1->base,(char *)&param_1[2].flames[0x1c].base.location.position.z);
-        *(byte *)&param_1[2].flames[0x1c].base.location.position.z = 0;
+                (&this_ptr_00->motion_controller,1,1);
+      if (this_ptr->transform_wav[0] != '\0') {
+        (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                  ((CDemonActor *)this_ptr,this_ptr->transform_wav);
+        this_ptr->transform_wav[0] = '\0';
       }
     }
   }
-  local_20 = param_2;
-  (param_1->model).accumulated_root_motion.z = 0.0;
-  (param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;
-  (param_1->model).accumulated_root_motion.x = (param_1->model).accumulated_root_motion.y;
+  local_20 = delta_time;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.y =
+       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.model.accumulated_root_motion.x =
+       (this_ptr->base).base.model.accumulated_root_motion.y;
   while (0.0 < local_20) {
     iVar7 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
-                      (&(param_1->model).motion_controller,&local_20);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,iVar7);
+                      (&(this_ptr->base).base.model.motion_controller,&local_20);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,iVar7);
   }
   if (iVar2 != 0) {
     pCVar8 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                       (&param_1->base,&local_1c,&(param_1->model).accumulated_root_motion);
-    pCVar1 = &(param_1->base).location;
+                       ((CDemonActor *)this_ptr,&local_1c,
+                        &(this_ptr->base).base.model.accumulated_root_motion);
+    pCVar1 = &(this_ptr->base).base.base.location;
     (pCVar1->position).x = pCVar8->x + (pCVar1->position).x;
-    (param_1->base).location.position.y = pCVar8->y + (param_1->base).location.position.y;
-    (param_1->base).location.position.z = pCVar8->z + (param_1->base).location.position.z;
-    iVar2 = *(int *)(param_1[2].flames[0x1c].base.create_event + 0x14);
-    if (iVar2 != 0) {
-      *(float *)(iVar2 + 0x20) = (pCVar1->position).x;
-      *(float *)(iVar2 + 0x24) = (param_1->base).location.position.y;
-      *(float *)(iVar2 + 0x28) = (param_1->base).location.position.z;
-      *(int *)(iVar2 + 0x2c) = (param_1->base).location.area_id;
+    (this_ptr->base).base.base.location.position.y =
+         pCVar8->y + (this_ptr->base).base.base.location.position.y;
+    (this_ptr->base).base.base.location.position.z =
+         pCVar8->z + (this_ptr->base).base.base.location.position.z;
+    pCVar3 = this_ptr->werewolf_actor;
+    if (pCVar3 != (CWerewolf *)0x0) {
+      (pCVar3->base).base.base.location.position.x = (pCVar1->position).x;
+      (pCVar3->base).base.base.location.position.y = (this_ptr->base).base.base.location.position.y;
+      (pCVar3->base).base.base.location.position.z = (this_ptr->base).base.base.location.position.z;
+      (pCVar3->base).base.base.location.area_id = (this_ptr->base).base.base.location.area_id;
     }
   }
-  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(&param_1->model);
-  core_charactr_cpp_FUN_0042a150(param_1,param_2);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
+            (&(this_ptr->base).base.model);
+  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   return;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_icepick_cpp_CIcePick_archive_FUN_004bb4c0(CHero *param_1)
+; void __cdecl core_icepick_cpp_CIcePick_archive_FUN_004bb4c0(CIcePick *this_ptr)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_archive_FUN_004b49a0

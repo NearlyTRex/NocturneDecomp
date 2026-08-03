@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mobster_cpp_CMobster_archive_FUN_004dc180(CEnemy *param_1)
+; void __cdecl core_mobster_cpp_CMobster_archive_FUN_004dc180(CMobster *this_ptr)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_0058a3e1

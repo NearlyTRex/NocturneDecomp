@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_CBoneGuy_setup_FUN_00418800(CEnemy *param_1)
+; void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_00418800(CBoneGuy *this_ptr)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_005791a2

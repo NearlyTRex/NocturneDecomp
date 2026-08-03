@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_moloch_cpp_CMoloch_getActorType_FUN_004dd920(void)
+; CDemonActorType * __cdecl core_moloch_cpp_CMoloch_getActorType_FUN_004dd920(CMoloch *this_ptr)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

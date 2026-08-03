@@ -2,18 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 205,
+    "complexity_score": 231,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 14,
+    "pseudocode_lines": 56,
+    "suspect_count": 16,
     "suspect_types": [
+      "register_param",
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 177
+    "total_lines": 178
   },
   "cross_references": [
     {
@@ -160,8 +161,16 @@
   },
   "suspects": [
     {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_DS",
+      "severity": "mild",
+      "text": "ushort in_DS;",
+      "type": "register_param"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 21,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad8)();",
@@ -169,7 +178,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_005c1688",
       "severity": "mild",
       "text": "if (DAT_005c1688 < local_24) {",
@@ -177,7 +186,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_005c1684",
       "severity": "mild",
       "text": "uVar5 = DAT_005c1684;",
@@ -185,7 +194,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_005c1684",
       "severity": "mild",
       "text": "if (DAT_005c1684 == 0) {",
@@ -193,16 +202,8 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_005c1688",
-      "severity": "mild",
-      "text": "DAT_005c1688 = DAT_005c1684;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005c1684",
       "severity": "mild",
       "text": "DAT_005c1688 = DAT_005c1684;",
       "type": "undefined_data"
@@ -210,6 +211,14 @@
     {
       "description": "Undefined global data reference",
       "line": 29,
+      "match": "DAT_005c1684",
+      "severity": "mild",
+      "text": "DAT_005c1688 = DAT_005c1684;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
       "match": "DAT_005c1680",
       "severity": "mild",
       "text": "uVar5 = DAT_005c1680;",
@@ -217,7 +226,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005c1688",
       "severity": "mild",
       "text": "DAT_005c1688 = 0;",
@@ -225,7 +234,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 35,
       "match": "DAT_005c1680",
       "severity": "mild",
       "text": "uVar5 = DAT_005c1680;",
@@ -233,15 +242,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_005c1684",
       "severity": "mild",
       "text": "DAT_005c1684 = uVar5;",
       "type": "undefined_data"
     },
     {
+      "description": "Inferred register parameter",
+      "line": 41,
+      "match": "in_DS",
+      "severity": "mild",
+      "text": "(pvStack_28 = (void *)AllocateFromFreeList(size,in_DS),",
+      "type": "register_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 43,
       "match": "DAT_005c1688",
       "severity": "mild",
       "text": "if (DAT_005c1688 < uVar1) {",
@@ -249,7 +266,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_005c1688",
       "severity": "mild",
       "text": "DAT_005c1688 = uVar1;",
@@ -257,7 +274,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 56,
       "match": "DAT_02de5460",
       "severity": "mild",
       "text": "DAT_02de5460 = 0;",
@@ -265,7 +282,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
+      "line": 57,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae0)();",

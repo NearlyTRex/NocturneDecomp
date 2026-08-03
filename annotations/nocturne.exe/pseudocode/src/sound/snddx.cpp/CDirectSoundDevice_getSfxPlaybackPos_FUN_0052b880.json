@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,31 +52,37 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 26,
+        "line": 25,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 30,
+        "line": 29,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 30,
+        "line": 29,
         "message": "expected expression"
+      },
+      {
+        "category": "format_error",
+        "column": 58,
+        "line": 32,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 35,
+        "line": 33,
         "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
       }
     ],
@@ -86,18 +92,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 60,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 28,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_pointer_store",
       "unresolved_funcptr"
     ],
-    "total_lines": 130
+    "total_lines": 128
   },
   "cross_references": [],
   "function": {
@@ -287,7 +293,7 @@
         {
           "check_name": "bugprone-integer-division",
           "column": 19,
-          "line": 39,
+          "line": 37,
           "message": "result of integer division used in a floating point context; possible loss of precision"
         }
       ],
@@ -298,7 +304,7 @@
   "suspects": [
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 22,
+      "line": 21,
       "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar1 * 4 + 0x2dc92a8);",
@@ -306,7 +312,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
+      "line": 22,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar3 = (**(code **)(*piVar2 + 0x10))(piVar2);",
@@ -314,7 +320,7 @@
     },
     {
       "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 39,
+      "line": 37,
       "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
       "severity": "mild",
       "text": "return (double)(uStack_20 / uVar3);",

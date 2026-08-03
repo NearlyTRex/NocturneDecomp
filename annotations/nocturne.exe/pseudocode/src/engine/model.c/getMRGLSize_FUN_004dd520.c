@@ -9,11 +9,9 @@
 int __cdecl engine_model_c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended *header)
 
 {
-  int iVar1;
-  byte local_100 [256];
+  char local_100 [256];
   
-  iVar1 = (header->base).type;
-  switch(iVar1) {
+  switch((header->base).type) {
   case 0:
     return 4;
   case 1:
@@ -67,7 +65,7 @@ int __cdecl engine_model_c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended *header)
   case 0x10:
     return 0x14;
   default:
-    _sprintf(local_100,"MRGLSize: Bad type : %d",iVar1);
+    _sprintf(local_100,"MRGLSize: Bad type : %d");
     g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
     g_INT_01cc4804 = 0x25b;
     core_main_c_FUN_004c8440(local_100);

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_tvbat_cpp_CTVBat_renderOpaque_FUN_0054bfd0(CDemonActor *param_1)
+; int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_0054bfd0(CTVBat *this_ptr)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

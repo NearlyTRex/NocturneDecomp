@@ -12,7 +12,7 @@ void __cdecl core_baron_cpp_FUN_00410cc0(CBaron *this_ptr)
 
 {
   CLocation *start_position;
-  CCharacter *this_ptr_00;
+  CEnemy *this_ptr_00;
   CVector3f *pCVar1;
   int iVar2;
   int iVar3;
@@ -28,16 +28,16 @@ void __cdecl core_baron_cpp_FUN_00410cc0(CBaron *this_ptr)
   CVector3f local_40;
   CVector3f CStack_34;
   CVector3f CStack_28;
-  byte local_1c [4];
+  float local_1c;
   int iStack_18;
   float local_14;
   
-  this_ptr_00 = (CCharacter *)core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(this_ptr,local_1c);
-  if (this_ptr_00 == (CCharacter *)0x0) {
+  this_ptr_00 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(&this_ptr->base,&local_1c);
+  if (this_ptr_00 == (CEnemy *)0x0) {
     return;
   }
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-            ((CDemonActor *)this_ptr,&local_40,&(this_ptr_00->base).location.position);
+            ((CDemonActor *)this_ptr,&local_40,&(this_ptr_00->base).base.location.position);
   pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_7c,&local_40);
   if (&local_40 != pCVar1) {
     local_40.x = pCVar1->x;
@@ -47,7 +47,7 @@ void __cdecl core_baron_cpp_FUN_00410cc0(CBaron *this_ptr)
   local_40.y = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_40.y);
   local_14 = local_40.y;
   if ((local_40.y < (float)-0.78539816337500001) || (0.78539816337500001 < (double)local_40.y)) {
-    start_position = &(this_ptr_00->base).location;
+    start_position = &(this_ptr_00->base).base.location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420
               (g_CFireEffect_PTR_005b80f0,&start_position->position,16.0,1,0.0);
     core_fire_cpp_CFireEffect_createCrater_FUN_0048c370
@@ -55,7 +55,7 @@ void __cdecl core_baron_cpp_FUN_00410cc0(CBaron *this_ptr)
   }
   else {
     __arrinit(local_148,10,&g_CVectorTypeInfo_005993b0);
-    iVar2 = (*((this_ptr_00->base).vtable._ub)->getTargetPoints)
+    iVar2 = (*((this_ptr_00->base).base.vtable._ub)->getTargetPoints)
                       ((CDemonActor *)this_ptr_00,local_148);
     iStack_18 = iVar2;
     iVar3 = rand();
@@ -101,7 +101,7 @@ void __cdecl core_baron_cpp_FUN_00410cc0(CBaron *this_ptr)
   if ((CBaron *)local_d0.wielder == (CBaron *)0x0) {
     local_d0.wielder = (CDemonActor *)this_ptr;
   }
-  (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&local_d0);
+  (*(((this_ptr_00->base).base.vtable._uc)->_uc).processDamage)(&this_ptr_00->base,&local_d0);
   core_charactr_cpp_FUN_004286d0(this_ptr_00,0x40400000);
   return;
 }

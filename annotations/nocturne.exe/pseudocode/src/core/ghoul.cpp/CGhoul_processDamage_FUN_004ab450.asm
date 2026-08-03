@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghoul_cpp_CGhoul_processDamage_FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2)
+; void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004ab450(CGhoul *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined        Stack[-0x78]:1  local_78
 ; undefined4       Stack[-0x14]:4  local_14
@@ -225,7 +228,7 @@ section .text
     MOV ESI,dword ptr [0x005ad350]      ; 004ab68a | g_CConsole_PTR_005ad350
     PUSH ESI                            ; 004ab690 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004ab691
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ab696
     JMP 0x004ab47c                      ; 004ab699
         ;   XREF to: 004ab47c (UNCONDITIONAL_JUMP)  ; LAB_004ab47c
@@ -364,7 +367,7 @@ section .text
     LEA EAX,[EBP + -0x68]               ; 004ab7d3
     PUSH EAX                            ; 004ab7d6
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004ab7d7
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ab7dc
     PUSH 0x1                            ; 004ab7df
     LEA EAX,[EBP + -0x68]               ; 004ab7e1

@@ -13,7 +13,7 @@ CShotgun * __cdecl factoryFunc(void);
 
 // Original: core_shotgun.cpp_CShotgun_getActorType_FUN_00515d10
 // Address: 00515d10
-CDemonActorType * CShotgun::getActorType(void);
+CDemonActorType * __cdecl CShotgun::getActorType(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_ctor_FUN_00515d20
 // Address: 00515d20
@@ -29,7 +29,7 @@ undefined4 FUN_00515ea0(CCharacter *param_1);
 
 // Original: core_shotgun.cpp_CShotgun_onFired_FUN_00516620
 // Address: 00516620
-void CShotgun::onFired(CDemonActor *param_1);
+void __cdecl CShotgun::onFired(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_getDamage_FUN_00516730
 // Address: 00516730

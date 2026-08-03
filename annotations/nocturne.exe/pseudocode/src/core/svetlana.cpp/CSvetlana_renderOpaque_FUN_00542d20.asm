@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CCharacter *param_1)
+; int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *this_ptr)
 ;
+; Parameters:
+; CSvetlana *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x84]:4  local_84
 ;

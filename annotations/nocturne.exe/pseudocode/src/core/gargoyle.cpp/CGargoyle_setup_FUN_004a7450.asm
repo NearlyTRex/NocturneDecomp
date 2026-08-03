@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gargoyle_cpp_CGargoyle_setup_FUN_004a7450(CEnemy *param_1)
+; void __cdecl core_gargoyle_cpp_CGargoyle_setup_FUN_004a7450(CGargoyle *this_ptr)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_00584837

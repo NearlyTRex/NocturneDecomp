@@ -102,7 +102,7 @@ section .text
     PUSH 0x58e1a6                       ; 004fe471 | = "Character %s model %s does not have a..."
     PUSH 0x1e56420                      ; 004fe476 | DAT_01e56420
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004fe47b
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x14                        ; 004fe480
     XOR EAX,EAX                         ; 004fe483
     ADD ESP,0x68                        ; 004fe485

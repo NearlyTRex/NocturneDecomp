@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 334,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 79,
-    "suspect_count": 24,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 74,
+    "suspect_count": 1,
     "suspect_types": [
-      "primitive_walker_cast",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 291
+    "total_lines": 286
   },
   "cross_references": [],
   "function": {
@@ -85,9 +83,9 @@
         "0045a699"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450",
-    "signature": "void core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CEnemy *param_1)"
+    "signature": "void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CDraculaBride *this_ptr)"
   },
   "function_calls": [
     {
@@ -256,9 +254,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -290,10 +288,10 @@
     "pcode_op_count": 719
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 28,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -302,201 +300,24 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDraculaBride *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->speed,\"speed\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model,\"modelName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->guard_distance,\"guardDistance\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)&param_1[1].base.base.location.position.y,\"riseEvent\"),",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_00763e88",
       "severity": "mild",
       "text": "DAT_00763e88 == 1)) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model.motion_controller,pcVar2,0.0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model.motion_controller,\"motionState\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).cloth_list.count,\"clothCount\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (param_1->base).cloth_list.count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "string_buffer = (param_1->base).cloth_list.filenames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < (param_1->base).cloth_list.count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[1].base.base.create_event + 0x10),\"freakyVoiceNumber\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 57,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[1].base.base.previous_transform_state,\"exploded\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[1].base.base.previous_transform_state,\"exploded\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[1].base.base.create_event + 0x34),\"partCount\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1[1].base.base.previous_transform_state.position.y,\"fadeTimer\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1[1].base.base.create_event + 0x34)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar2 = param_1[1].base.base.create_event + 0x38;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1[1].base.base.create_event + 0x34));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1[1].base.base.create_event + 0x14),\"mistState\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((float *)(param_1[1].base.base.create_event + 0x18),\"vanishTimer\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CVector3f *)(param_1[1].base.base.create_event + 0x24),\"newPos\");",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

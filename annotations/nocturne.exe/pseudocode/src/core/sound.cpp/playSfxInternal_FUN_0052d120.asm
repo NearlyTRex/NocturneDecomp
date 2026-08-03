@@ -374,7 +374,7 @@ section .text
         ;   Label: LAB_0052d406
     PUSH ESI                            ; 0052d40b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052d40c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0052d411
     ADD ESI,EAX                         ; 0052d414
     CMP dword ptr [ESP + 0x14c],0x9     ; 0052d416
@@ -383,7 +383,7 @@ section .text
     PUSH 0x594a4f                       ; 0052d420 | = "?"
     PUSH ESI                            ; 0052d425
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0052d426
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0052d42b
     ADD ESI,EAX                         ; 0052d42e
     MOV EAX,dword ptr [ESP + 0x144]     ; 0052d430
@@ -498,7 +498,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 0052d568 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 0052d56e | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0052d56f
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0052d574
     XOR EAX,EAX                         ; 0052d577
     MOV ESP,EBP                         ; 0052d579

@@ -100,7 +100,7 @@ section .text
         ;   Label: LAB_0040369b
     PUSH EBX                            ; 004036a0
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004036a1
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004036a6
     PUSH 0x57725e                       ; 004036a9 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 004036ae

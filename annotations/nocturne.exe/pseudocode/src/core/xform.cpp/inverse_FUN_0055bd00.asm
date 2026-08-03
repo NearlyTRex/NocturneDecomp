@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_xform_cpp_inverse_FUN_0055bd00(CMatrix3x4f *param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_0055bd00(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_in
 ; Local Variables:
 ; undefined8       Stack[-0x98]:8  local_98
 ; undefined4       Stack[-0x90]:4  local_90

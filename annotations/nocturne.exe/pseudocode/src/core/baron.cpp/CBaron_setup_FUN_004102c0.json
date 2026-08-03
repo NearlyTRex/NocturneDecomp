@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 23,
+        "line": 22,
         "message": "use of undeclared identifier '_DAT_007642ec'; did you mean 'DAT_007642e8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 25,
+        "line": 24,
         "message": "use of undeclared identifier '_DAT_007642f0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 27,
+        "line": 26,
         "message": "use of undeclared identifier '_DAT_007642f4'; did you mean 'DAT_007672f4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 29,
+        "line": 28,
         "message": "use of undeclared identifier '_DAT_007642f8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 31,
+        "line": 30,
         "message": "use of undeclared identifier '_DAT_007642fc'; did you mean 'DAT_007647fc'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 33,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_00764300'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 35,
+        "line": 34,
         "message": "use of undeclared identifier '_DAT_00764304'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 37,
+        "line": 36,
         "message": "use of undeclared identifier '_DAT_00764308'; did you mean 'DAT_00764608'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 39,
+        "line": 38,
         "message": "use of undeclared identifier '_DAT_0076430c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 41,
+        "line": 40,
         "message": "use of undeclared identifier '_DAT_00764310'"
       }
     ],
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 169,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 36,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 54,
-    "suspect_count": 10,
+    "pseudocode_lines": 49,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 202
+    "total_lines": 197
   },
   "cross_references": [],
   "function": {
@@ -145,9 +144,9 @@
         "00410474"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_baron.cpp_CBaron_setup_FUN_004102c0",
-    "signature": "void core_baron_cpp_CBaron_setup_FUN_004102c0(CHero *param_1)"
+    "signature": "void __cdecl core_baron_cpp_CBaron_setup_FUN_004102c0(CBaron *this_ptr)"
   },
   "function_calls": [
     {
@@ -393,9 +392,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -419,12 +418,20 @@
     "pcode_op_count": 469
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBaron *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -436,40 +443,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_baron_cpp_CBaron_setup_FUN_004102c0(CHero *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_hero_cpp_CHero_setup_FUN_004b48d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_007642e8",
       "severity": "mild",
-      "text": "DAT_007642e8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,\"Bip01 head\",1)",
+      "text": "DAT_007642e8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 39,
       "match": "DAT_0076431c",
       "severity": "mild",
       "text": "DAT_0076431c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
@@ -477,31 +460,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 41,
       "match": "DAT_00764320",
       "severity": "mild",
       "text": "DAT_00764320 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = &param_1[1].base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).gesture_branch_root = iVar2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 51,
       "match": "DAT_0076436c",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&DAT_0076436c);",

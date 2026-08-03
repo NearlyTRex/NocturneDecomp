@@ -1,56 +1,56 @@
 // Name: core_conveyor.cpp_CConveyor_setup_FUN_0043b110
 // Address: 0043b110
 // Address Range: [[0043b110, 0043b19c]]
-// Convention: unknown
-// Signature: void core_conveyor_cpp_CConveyor_setup_FUN_0043b110(CPlatform *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_0043b110(CConveyor *this_ptr)
 
 #include "nocturne.h"
 
-void core_conveyor_cpp_CConveyor_setup_FUN_0043b110(CPlatform *param_1)
+void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_0043b110(CConveyor *this_ptr)
 
 {
   CLocation *pCVar1;
   CVector3f *pCVar2;
-  uint *puVar3;
+  CVector3f *pCVar3;
   uint *puVar4;
   uint *puVar5;
   uint *puVar6;
-  byte bVar7;
+  uint *puVar7;
+  byte bVar8;
   float afStackY_17f8 [1526];
-  float local_1c;
+  CQuaternion4f local_1c;
   
-  bVar7 = 0;
-  pCVar2 = &param_1->end_pos;
-  pCVar1 = &(param_1->base).location;
+  bVar8 = 0;
+  pCVar2 = &(this_ptr->base).end_pos;
+  pCVar1 = &(this_ptr->base).base.location;
   if ((CLocation *)pCVar2 != pCVar1) {
     pCVar2->x = (pCVar1->position).x;
-    (param_1->end_pos).y = (param_1->base).location.position.y;
-    (param_1->end_pos).z = (param_1->base).location.position.z;
+    (this_ptr->base).end_pos.y = (this_ptr->base).base.location.position.y;
+    (this_ptr->base).end_pos.z = (this_ptr->base).base.location.position.z;
   }
-  if (&param_1->start_pos != pCVar2) {
-    (param_1->start_pos).x = pCVar2->x;
-    (param_1->start_pos).y = (param_1->end_pos).y;
-    (param_1->start_pos).z = (param_1->end_pos).z;
+  pCVar3 = &(this_ptr->base).start_pos;
+  if (pCVar3 != pCVar2) {
+    pCVar3->x = pCVar2->x;
+    (this_ptr->base).start_pos.y = (this_ptr->base).end_pos.y;
+    (this_ptr->base).start_pos.z = (this_ptr->base).end_pos.z;
   }
-  core_xform_cpp_eulerToQuaternion_FUN_0055d610(&(param_1->base).orient);
-  puVar3 = (uint *)((int)param_1 + (uint)bVar7 * -8 + 0x340);
-  (param_1->end_orient).w = local_1c;
-  puVar4 = puVar3 + (uint)bVar7 * -2 + 1;
-  *puVar3 = *(uint *)(&stack0xffffffe8 + (uint)bVar7 * -8);
-  *puVar4 = *(uint *)(&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-  puVar4[(uint)bVar7 * -2 + 1] =
-       *(uint *)
-        ((int)(&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4)
-  ;
-  puVar5 = (uint *)((int)param_1 + (uint)bVar7 * -8 + 0x330);
-  puVar3 = (uint *)((int)param_1 + (uint)bVar7 * -8 + 0x340);
-  (param_1->orig_orient).w = (param_1->end_orient).w;
-  puVar6 = puVar5 + (uint)bVar7 * -2 + 1;
-  puVar4 = puVar3 + (uint)bVar7 * -2 + 1;
-  *puVar5 = *puVar3;
+  core_xform_cpp_eulerToQuaternion_FUN_0055d610(&(this_ptr->base).base.orient.vec,&local_1c);
+  puVar5 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x340);
+  (this_ptr->base).end_orient.w = local_1c.w;
+  puVar6 = puVar5 + (uint)bVar8 * -2 + 1;
+  puVar4 = (uint *)((int)&local_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+  *puVar5 = *(uint *)((int)&local_1c + (uint)bVar8 * -8 + 4);
   *puVar6 = *puVar4;
-  puVar6[(uint)bVar7 * -2 + 1] = puVar4[(uint)bVar7 * -2 + 1];
-  core_platfrm_cpp_CPlatform_setup_FUN_004f5f60(param_1);
-  (param_1->base).is_transparent = 1;
+  puVar6[(uint)bVar8 * -2 + 1] = puVar4[(uint)bVar8 * -2 + 1];
+  puVar6 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x330);
+  puVar4 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x340);
+  (this_ptr->base).orig_orient.w = (this_ptr->base).end_orient.w;
+  puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
+  puVar5 = puVar4 + (uint)bVar8 * -2 + 1;
+  *puVar6 = *puVar4;
+  *puVar7 = *puVar5;
+  puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
+  core_platfrm_cpp_CPlatform_setup_FUN_004f5f60(&this_ptr->base);
+  (this_ptr->base).base.is_transparent = 1;
   return;
 }

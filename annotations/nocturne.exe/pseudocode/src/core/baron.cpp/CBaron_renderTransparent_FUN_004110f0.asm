@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_baron_cpp_CBaron_renderTransparent_FUN_004110f0(CDemonActor *param_1)
+; int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_004110f0(CBaron *this_ptr)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44

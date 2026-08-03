@@ -16,18 +16,17 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSou
   longlong lVar3;
   uint uVar4;
   uint uVar5;
-  char *pcVar6;
-  uint uVar7;
-  double dVar8;
+  uint uVar6;
+  double dVar7;
   float local_cb8;
-  byte auStack_cb4 [400];
-  byte auStack_b24 [400];
-  byte auStack_994 [400];
-  byte auStack_804 [400];
-  byte auStack_674 [400];
-  byte auStack_4e4 [388];
-  byte auStack_360 [412];
-  byte auStack_1c4 [396];
+  char acStack_cb4 [400];
+  char acStack_b24 [400];
+  char acStack_994 [400];
+  char acStack_804 [400];
+  char acStack_674 [400];
+  char acStack_4e4 [388];
+  char acStack_360 [412];
+  char acStack_1c4 [396];
   ulonglong uStack_38;
   uint uStack_30;
   float local_2c;
@@ -44,7 +43,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSou
     g_INT_01cc4804 = 0x2f3;
     core_main_c_FUN_004c8440();
   }
-  uVar7 = 1;
+  uVar6 = 1;
   local_20 = *(int **)(iVar1 * 4 + 0x2dc92a8);
   local_24 = (int *)0x0;
   piVar2 = *(int **)(iVar1 * 4 + 0x2dc9324);
@@ -63,16 +62,15 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSou
     }
   }
   if ((update_flags & 2U) != 0) {
-    uVar7 = (**(code **)(*piVar2 + 0x4c))
+    uVar6 = (**(code **)(*piVar2 + 0x4c))
                       (piVar2,(float)(slot->options).position.x,(float)(slot->options).position.y,
                        (float)(slot->options).position.z);
-    if (uVar7 != 0) {
-      sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar7);
-      _sprintf(auStack_804,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer position")
-      ;
+    if (uVar6 != 0) {
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar6);
+      _sprintf(acStack_804,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_FUN_00529980();
     }
-    uVar7 = (uint)(uVar7 == 0);
+    uVar6 = (uint)(uVar6 == 0);
     local_24 = (int *)0x1;
   }
   if ((update_flags & 4U) != 0) {
@@ -81,22 +79,21 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSou
                        (float)(slot->options).velocity.z);
     if (uVar4 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
-      _sprintf(auStack_994,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer velocity")
-      ;
-      uVar7 = 0;
+      _sprintf(acStack_994,"DirectSux: Unable to %s.  (%s)");
+      uVar6 = 0;
       sound_sndmain_cpp_FUN_00529980();
     }
     local_24 = (int *)0x1;
   }
   if ((update_flags & 8U) != 0) {
-    dVar8 = (double)((slot->options).current_volume * local_cb8);
-    if (0.0 < dVar8) {
-      if (dVar8 < 1.0) {
-        dVar8 = floor(dVar8 * 0.6931471805599453 * 868.58900000000006);
-        uStack_38._4_4_ = SUB84(__BITCAST_UINT64(dVar8),0);
-        uStack_30 = (uint)((ulonglong)dVar8 >> 0x20);
-        dVar8 = round(dVar8);
-        local_20 = (int *)(int)ROUND(dVar8);
+    dVar7 = (double)((slot->options).current_volume * local_cb8);
+    if (0.0 < dVar7) {
+      if (dVar7 < 1.0) {
+        dVar7 = floor(dVar7 * 0.6931471805599453 * 868.58900000000006);
+        uStack_38._4_4_ = SUB84(__BITCAST_UINT64(dVar7),0);
+        uStack_30 = (uint)((ulonglong)dVar7 >> 0x20);
+        dVar7 = round(dVar7);
+        local_20 = (int *)(int)ROUND(dVar7);
         if ((int)local_20 < 1) {
           if ((int)local_20 < -10000) goto LAB_0052b3c8;
         }
@@ -115,23 +112,21 @@ LAB_0052b3c8:
     uVar4 = (**(code **)(*local_20 + 0x3c))(local_20);
     if (uVar4 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
-      _sprintf(auStack_4e4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer volume")
-      ;
-      uVar7 = 0;
+      _sprintf(acStack_4e4,"DirectSux: Unable to %s.  (%s)");
+      uVar6 = 0;
       sound_sndmain_cpp_FUN_00529980();
     }
   }
   if ((update_flags & 0x10U) != 0) {
-    dVar8 = round
+    dVar7 = round
                       ((double)((float)(slot->sample->sample_info).sample_rate *
                                (slot->options).base_frequency));
-    uStack_38 = (longlong)ROUND(dVar8);
+    uStack_38 = (longlong)ROUND(dVar7);
     uVar4 = (**(code **)(*local_24 + 0x44))(local_24,(uint)uStack_38);
     if (uVar4 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
-      _sprintf(auStack_b24,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer frequency")
-      ;
-      uVar7 = 0;
+      _sprintf(acStack_b24,"DirectSux: Unable to %s.  (%s)");
+      uVar6 = 0;
       sound_sndmain_cpp_FUN_00529980();
     }
   }
@@ -143,9 +138,8 @@ LAB_0052b3c8:
     uVar4 = (**(code **)(*piVar2 + 0x48))(piVar2,uVar5);
     if (uVar4 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
-      _sprintf(auStack_674,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer mode")
-      ;
-      uVar7 = 0;
+      _sprintf(acStack_674,"DirectSux: Unable to %s.  (%s)");
+      uVar6 = 0;
       sound_sndmain_cpp_FUN_00529980();
     }
     local_24 = (int *)0x1;
@@ -157,11 +151,10 @@ LAB_0052b3c8:
     uVar4 = (**(code **)(*piVar2 + 0x44))(piVar2,local_2c);
     lVar3 = uStack_38;
     if (uVar4 != 0) {
-      pcVar6 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
-      _sprintf(auStack_360,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer minimum distance",
-                 pcVar6);
-      uVar7 = 0;
-      sound_sndmain_cpp_FUN_00529980(auStack_360);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
+      _sprintf(acStack_360,"DirectSux: Unable to %s.  (%s)");
+      uVar6 = 0;
+      sound_sndmain_cpp_FUN_00529980(acStack_360);
       lVar3 = uStack_38;
     }
     uStack_38._4_4_ = (uint)((ulonglong)lVar3 >> 0x20);
@@ -169,9 +162,8 @@ LAB_0052b3c8:
     uStack_38 = lVar3;
     if (uVar4 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
-      _sprintf(auStack_cb4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer maximum distance")
-      ;
-      uVar7 = 0;
+      _sprintf(acStack_cb4,"DirectSux: Unable to %s.  (%s)");
+      uVar6 = 0;
       sound_sndmain_cpp_FUN_00529980();
     }
 LAB_0052b4a2:
@@ -182,15 +174,14 @@ LAB_0052b4a2:
     }
     uVar4 = (**(code **)(*_DAT_02dc9220 + 0x44))();
     if (uVar4 != 0) {
-      pcVar6 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
-      _sprintf(auStack_1c4,"DirectSux: Unable to %s.  (%s)","Commit hardware sfx 3d buffer settings",
-                 pcVar6);
+      sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
+      _sprintf(acStack_1c4,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_FUN_00529980();
       goto LAB_0052b4e4;
     }
   }
-  if (uVar7 != 0) {
-    return uVar7;
+  if (uVar6 != 0) {
+    return uVar6;
   }
 LAB_0052b4e4:
   sound_sndmain_cpp_FUN_00529980();

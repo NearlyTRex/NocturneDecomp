@@ -65,7 +65,7 @@ void __cdecl CDirectSoundDevice::set3DListenerDistanceFactor(CDirectSoundDevice 
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60
 // Address: 0052ab60
-int CDirectSoundDevice::allocateSample(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
+int __cdecl CDirectSoundDevice::allocateSample(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 
 // Original: sound_snddx.cpp_FUN_0052ad30
 // Address: 0052ad30
@@ -73,19 +73,19 @@ undefined4 FUN_0052ad30(void);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_freeSample_FUN_0052ad50
 // Address: 0052ad50
-void CDirectSoundDevice::freeSample(undefined4 param_1,int param_2);
+void __cdecl CDirectSoundDevice::freeSample(CDirectSoundDevice *this_ptr,int buffer_id);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0
 // Address: 0052adc0
-void * CDirectSoundDevice::lockSample(undefined4 param_1,int param_2,int param_3,int param_4,CSfxSample *param_5);
+void * __cdecl CDirectSoundDevice::lockSample(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90
 // Address: 0052ae90
-void CDirectSoundDevice::unlockSample(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,int param_5);
+void __cdecl CDirectSoundDevice::unlockSample(CDirectSoundDevice *this_ptr,int buffer_id);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50
 // Address: 0052af50
-int CDirectSoundDevice::allocateSfx(undefined4 param_1,int param_2);
+int __cdecl CDirectSoundDevice::allocateSfx(CDirectSoundDevice *this_ptr,int sample_buffer_id);
 
 // Original: sound_snddx.cpp_isValidSfxHandle_FUN_0052b240
 // Address: 0052b240
@@ -105,7 +105,7 @@ double __cdecl CDirectSoundDevice::getSfxPlaybackPos(CDirectSoundDevice *this_pt
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0
 // Address: 0052b9a0
-undefined4 CDirectSoundDevice::startSfx(int *param_1,int param_2);
+int __cdecl CDirectSoundDevice::startSfx(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_0052bae0
 // Address: 0052bae0

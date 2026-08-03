@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 38,
+        "line": 35,
         "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 40,
+        "line": 37,
         "message": "use of undeclared identifier '_DAT_005b06d4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 43,
+        "line": 40,
         "message": "use of undeclared identifier 'DAT_01c00c84'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 45,
+        "line": 42,
         "message": "use of undeclared identifier '_DAT_005b06d8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 48,
+        "line": 45,
         "message": "use of undeclared identifier 'DAT_01c00c84'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 50,
+        "line": 47,
         "message": "use of undeclared identifier '_DAT_005b06dc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 53,
+        "line": 50,
         "message": "use of undeclared identifier 'DAT_01c00c84'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 60,
+        "line": 57,
         "message": "use of undeclared identifier '_DAT_01c02584'; did you mean 'DAT_02DF2584'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 61,
+        "line": 58,
         "message": "use of undeclared identifier '_DAT_01c02584'; did you mean 'DAT_02DF2584'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 62,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_01c02580'; did you mean 'DAT_02DF2580'?"
       }
     ],
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 341,
+    "complexity_score": 203,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
-    "suspect_count": 26,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 63,
+    "suspect_count": 13,
     "suspect_types": [
-      "unaffected_reg",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 153
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -176,9 +175,9 @@
         "00463c41"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__edi_esi_ebx",
     "name": "core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_00463b27",
-    "signature": "void core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27(void)"
+    "signature": "void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -283,9 +282,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
+    "declared_params": 3,
     "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -323,43 +322,12 @@
     "pcode_op_count": 362
   },
   "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
-  },
-  "static_analysis": {
-    "analyzed_file": "renderTexturedAlphaMMXScanline_FUN_00463b27.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 24,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 25,
-          "message": "Uninitialized variable: unaff_EDI",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 45,
-          "line": 38,
-          "message": "Uninitialized variable: unaff_EBX",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -371,176 +339,72 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uVar4 = *(uint *)(unaff_ESI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "uVar5 = *(uint *)(unaff_EDI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "iVar2 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "iVar2 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 27,
       "match": "DAT_005b06e4",
       "severity": "mild",
-      "text": "DAT_005b06e4 = iVar3 * 2;",
+      "text": "DAT_005b06e4 = iVar2 * 2;",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "DAT_005b06e8 = *(int *)(&DAT_01bd2fa0 + unaff_EBX * 4) + uVar1 * 2;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 28,
       "match": "DAT_005b06e8",
       "severity": "mild",
-      "text": "DAT_005b06e8 = *(int *)(&DAT_01bd2fa0 + unaff_EBX * 4) + uVar1 * 2;",
+      "text": "DAT_005b06e8 = *(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar1 * 2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 28,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "DAT_005b06e8 = *(int *)(&DAT_01bd2fa0 + unaff_EBX * 4) + uVar1 * 2;",
+      "text": "DAT_005b06e8 = *(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar1 * 2;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x18) - uVar4) *",
-      "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 33,
       "match": "DAT_01c00c84",
       "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c00c84 + iVar3 * 4)) >> 0x20);",
+      "text": "(longlong)*(int *)(&DAT_01c00c84 + iVar2 * 4)) >> 0x20);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x20) - uVar5) *",
-      "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 38,
       "match": "DAT_01c00c84",
       "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c00c84 + iVar3 * 4)) >> 0x20);",
+      "text": "(longlong)*(int *)(&DAT_01c00c84 + iVar2 * 4)) >> 0x20);",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_01c00c84",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c00c84 + iVar2 * 4)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 45,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x28) - uVar1) *",
-      "type": "unaffected_reg"
+      "match": "DAT_005b06b8",
+      "severity": "mild",
+      "text": "DAT_005b06b8 = uVar3;",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 46,
-      "match": "DAT_01c00c84",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c00c84 + iVar3 * 4)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005b06b8",
-      "severity": "mild",
-      "text": "DAT_005b06b8 = uVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
       "match": "DAT_005b06bc",
       "severity": "mild",
-      "text": "DAT_005b06bc = uVar5;",
+      "text": "DAT_005b06bc = uVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 47,
       "match": "DAT_005b06c4",
       "severity": "mild",
       "text": "DAT_005b06c4 = uVar1;",
@@ -548,7 +412,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 49,
       "match": "DAT_005b06e8",
       "severity": "mild",
       "text": "if (uVar1 < *(ushort *)(DAT_005b06e8 + uVar6)) {",
@@ -556,7 +420,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 56,
       "match": "DAT_005b06e8",
       "severity": "mild",
       "text": "*(ushort *)(DAT_005b06e8 + uVar6) = (ushort)uVar1;",
@@ -564,35 +428,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 60,
       "match": "DAT_005b06e4",
       "severity": "mild",
       "text": "if (DAT_005b06e4 < uVar6) break;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 24,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "uVar4 = *(uint *)(unaff_ESI + 8);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: unaff_EDI",
-      "line": 25,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "uVar5 = *(uint *)(unaff_EDI + 8);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: unaff_EBX",
-      "line": 38,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "DAT_005b06e8 = *(int *)(&DAT_01bd2fa0 + unaff_EBX * 4) + uVar1 * 2;",
-      "type": "static_uninitvar"
     }
   ]
 }

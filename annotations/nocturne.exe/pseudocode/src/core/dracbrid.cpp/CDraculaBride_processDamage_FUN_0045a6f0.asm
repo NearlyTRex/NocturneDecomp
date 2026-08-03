@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDraculaBride *param_1,SDamageInfo *param_2)
+; void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDraculaBride *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ; undefined        Stack[-0x30]:1  local_30

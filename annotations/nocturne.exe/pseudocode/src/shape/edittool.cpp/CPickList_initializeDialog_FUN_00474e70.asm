@@ -36,7 +36,7 @@ section .text
     PUSH EBX                            ; 00474e8c
     MOV dword ptr [EBX + 0x118],EAX     ; 00474e8d
     CALL shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0 ; 00474e93
-        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0()
+        ;   XREF to: 00475db0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00474e98
     POP EBX                             ; 00474e9b
     RET                                 ; 00474e9c

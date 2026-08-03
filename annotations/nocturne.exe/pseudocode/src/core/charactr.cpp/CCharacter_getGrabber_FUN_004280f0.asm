@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_CCharacter_getGrabber_FUN_004280f0(int param_1)
+; CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_004280f0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

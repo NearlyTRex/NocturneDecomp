@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_texlist_cpp_CTextureList_save_FUN_00544c10(int *param_1,char *param_2)
+; void __cdecl core_texlist_cpp_CTextureList_save_FUN_00544c10(CTextureList *this_ptr,char *filename)
 ;
+; Parameters:
+; CTextureList *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114
 ; undefined1       Stack[-0x113]:1  local_113

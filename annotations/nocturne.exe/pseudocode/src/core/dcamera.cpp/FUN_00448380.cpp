@@ -10,13 +10,19 @@ void core_dcamera_cpp_FUN_00448380(int param_1)
 
 {
   int iVar1;
+  int iVar2;
+  int iVar3;
   
-  iVar1 = 0;
+  iVar3 = 0;
   if (0 < *(int *)(param_1 + 0x140)) {
     do {
-      iVar1 = iVar1 + 1;
-      _memcpy(*(int *)(param_1 + 0x13c) << 2);
-    } while (iVar1 < *(int *)(param_1 + 0x140));
+      iVar2 = *(int *)(param_1 + 0x13c) * iVar3;
+      iVar1 = *(int *)(param_1 + 0x148) + iVar3;
+      iVar3 = iVar3 + 1;
+      _memcpy
+                ((void *)(*(int *)(param_1 + 0x144) * 4 + *(int *)(&DAT_01bd4260 + iVar1 * 4)),
+                 (void *)(iVar2 * 4 + *(int *)(param_1 + 0x15c)),*(int *)(param_1 + 0x13c) << 2);
+    } while (iVar3 < *(int *)(param_1 + 0x140));
   }
   return;
 }

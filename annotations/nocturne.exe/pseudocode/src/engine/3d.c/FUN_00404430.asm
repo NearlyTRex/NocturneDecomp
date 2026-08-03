@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * engine_3d_c_FUN_00404430(undefined4 *param_1)
+; undefined4 * engine_3d_c_FUN_00404430(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
@@ -32,7 +32,7 @@ section .text
     PUSH EAX                            ; 00404444
     MOV EBX,0xd9                        ; 00404445
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0040444a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0040444f
     MOV EAX,ESP                         ; 00404452
     MOV ECX,0x5774d6                    ; 00404454 | = "..\\engine\\3d.c"

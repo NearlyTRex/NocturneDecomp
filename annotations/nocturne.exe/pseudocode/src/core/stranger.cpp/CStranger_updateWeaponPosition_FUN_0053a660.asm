@@ -61,7 +61,7 @@ section .text
     PUSH EBX                            ; 0053a6b1
     LEA ESI,[ESP + 0x10]                ; 0053a6b2
     CALL core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 ; 0053a6b6
-        ;   XREF to: 0053a760 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760()
+        ;   XREF to: 0053a760 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CStranger * this_ptr, CDemonActor * carried_actor, int hand_index, CMatrix3x4f * output_matrix)
     ADD ESP,0xc                         ; 0053a6bb
     LEA EAX,[EBX + 0x30]                ; 0053a6be
     LEA EDI,[ESP + 0x64]                ; 0053a6c1
@@ -83,7 +83,7 @@ section .text
     LEA ESI,[ESP + 0xcc]                ; 0053a6f2
     LEA EDI,[ESP + 0x3c]                ; 0053a6f9
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 0053a6fd
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0053a702
     ADD ESP,0x8                         ; 0053a707
     LEA EAX,[ESP + 0xf4]                ; 0053a70a

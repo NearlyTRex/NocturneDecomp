@@ -89,7 +89,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004703c1
     PUSH EAX                            ; 004703c5
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 ; 004703c6
-        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70()
+        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0xc                         ; 004703cb
     TEST EAX,EAX                        ; 004703ce
     SETZ AL                             ; 004703d0

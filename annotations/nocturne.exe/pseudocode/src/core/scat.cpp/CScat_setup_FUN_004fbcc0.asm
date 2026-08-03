@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_CScat_setup_FUN_004fbcc0(CHero *param_1)
+; void __cdecl core_scat_cpp_CScat_setup_FUN_004fbcc0(CScat *this_ptr)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_0058dd4c

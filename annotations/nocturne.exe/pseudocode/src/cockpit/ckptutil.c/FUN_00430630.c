@@ -24,10 +24,9 @@ void * cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,void *param_3,in
   uint *puVar13;
   int iVar14;
   int iVar15;
-  ulong new_size;
   uint *puVar16;
   byte bVar17;
-  byte local_1f4 [256];
+  char local_1f4 [256];
   int local_f4;
   int local_f0;
   int local_ec;
@@ -112,7 +111,7 @@ void * cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,void *param_3,in
         iVar14 = *(int *)((int)piVar3 + local_e0 + 0x44) + iVar2;
         iVar15 = iVar14 + -1;
         if (0x1ff < (int)uVar10) {
-          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",uVar10,iVar12);
+          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d");
           g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
           g_INT_01cc4804 = 0x87e;
           core_main_c_FUN_004c8440(local_1f4);
@@ -245,7 +244,7 @@ LAB_00430936:
           }
         }
         if (0x1ff < (int)uVar10) {
-          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",uVar10,iVar12);
+          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d");
           g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
           g_INT_01cc4804 = 0x8b8;
           core_main_c_FUN_004c8440(local_1f4);
@@ -334,10 +333,9 @@ LAB_00430936:
   if (param_3 == (void *)0x0) {
     *param_4 = 0;
   }
-  new_size = *param_4 * 8 + uVar10 * 8;
-  pvVar6 = realloc(param_3,new_size);
+  pvVar6 = realloc(param_3,*param_4 * 8 + uVar10 * 8);
   if (pvVar6 == (void *)0x0) {
-    _sprintf(local_1f4,"Unable to allocate %u bytes for edge list.",new_size);
+    _sprintf(local_1f4,"Unable to allocate %u bytes for edge list.");
     g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     g_INT_01cc4804 = 0x8f7;
     core_main_c_FUN_004c8440(local_1f4);

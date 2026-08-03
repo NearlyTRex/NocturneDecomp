@@ -13,7 +13,7 @@ CDynamite * __cdecl factoryFunc(void);
 
 // Original: core_dynamite.cpp_CDynamite_getActorType_FUN_0046ebc0
 // Address: 0046ebc0
-CDemonActorType * CDynamite::getActorType(void);
+CDemonActorType * __cdecl CDynamite::getActorType(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_ctor_FUN_0046ebd0
 // Address: 0046ebd0
@@ -45,7 +45,7 @@ int __cdecl FUN_0046eda0(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_process_FUN_0046edc0
 // Address: 0046edc0
-void CDynamite::process(CWeapon *param_1,float param_2);
+void __cdecl CDynamite::process(CDynamite *this_ptr,float delta_time);
 
 // Original: core_dynamite.cpp_CDynamite_dtor_FUN_0046ef30
 // Address: 0046ef30

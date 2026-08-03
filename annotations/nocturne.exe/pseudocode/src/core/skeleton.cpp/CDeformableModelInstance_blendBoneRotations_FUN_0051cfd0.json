@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,32 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 38,
-        "message": "no matching function for call to 'core_xform_cpp_slerpQuaternion_FUN_0055d2d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 42,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 43,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 46,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
       }
     ],
     "success": false,
@@ -86,7 +62,7 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 151,
+    "complexity_score": 146,
     "cross_reference_count": 11,
     "function_call_count": 3,
     "global_count": 1,
@@ -97,8 +73,7 @@
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "stack_alignment_array",
-      "stack_ref"
+      "stack_alignment_array"
     ],
     "total_lines": 136
   },
@@ -439,27 +414,10 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 70,
-          "line": 40,
-          "message": "Uninitialized variable: fStack_2c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
+      "line": 12,
       "match": "afStackY_1808",
       "severity": "moderate",
       "text": "float afStackY_1808 [1522];",
@@ -467,51 +425,51 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 34,
       "match": "(uint *)((int)local_18",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)local_18 + (uint)bVar4 * -8 + 0x6b4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "*puVar2 = *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "*puVar3 = *(uint *)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 39,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "((int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) +",
-      "type": "stack_ref"
-    },
-    {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 34,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)local_18 + (uint)bVar4 * -8 + 0x6b4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
-      "match": "(int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8)",
+      "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)&CStack_2c",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) +",
+      "text": "puVar1 = (uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)&CStack_2c",
+      "severity": "moderate",
+      "text": "*puVar2 = *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 38,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*puVar2 = *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
@@ -520,14 +478,6 @@
       "severity": "moderate",
       "text": "local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).tween_speed;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: fStack_2c",
-      "line": 40,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(local_18->bone_transform).pose_data.bone_rotations[0].w = fStack_2c;",
-      "type": "static_uninitvar"
     }
   ]
 }

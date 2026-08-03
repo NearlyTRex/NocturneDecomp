@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 294,
+    "complexity_score": 309,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "bitcast_double_pair",
+      "extra_output",
       "raw_address_constant",
       "stack_param",
       "sub84_truncation",
@@ -208,8 +209,24 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 11,
+      "match": "extraout_ST0",
+      "severity": "moderate",
+      "text": "float10 extraout_ST0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_ST0_00",
+      "severity": "moderate",
+      "text": "float10 extraout_ST0_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
       "match": "in_stack_ffffffe0",
       "severity": "moderate",
       "text": "uint in_stack_ffffffe0;",
@@ -217,7 +234,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 26,
       "match": "in_stack_ffffffe0",
       "severity": "moderate",
       "text": "in_stack_ffffffe0 = 0x565bf9;",
@@ -232,51 +249,51 @@
       "type": "stack_param"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 36,
-      "match": "SUB84(",
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 37,
+      "match": "extraout_ST0",
       "severity": "moderate",
-      "text": "integer_power(dVar2,SUB84(__BITCAST_UINT64(dVar1),0),uVar3);",
-      "type": "sub84_truncation"
+      "text": "fVar2 = extraout_ST0;",
+      "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 42,
       "match": "in_stack_ffffffe0",
       "severity": "moderate",
       "text": "in_stack_ffffffe0 = 0x565ba5;",
       "type": "stack_param"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 42,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "integer_power(dVar2,SUB84(__BITCAST_UINT64(dVar1),0),uVar3);",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_005c1d98",
       "severity": "mild",
       "text": "if ((DAT_005c1d98 & 1) == 0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_ffffffe0",
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 45,
+      "match": "extraout_ST0_00",
       "severity": "moderate",
-      "text": "in_stack_ffffffe0 = 0x565bbe;",
-      "type": "stack_param"
+      "text": "fVar2 = (float10)1 / extraout_ST0_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 48,
+      "match": "extraout_ST0_00",
+      "severity": "moderate",
+      "text": "exp = extraout_ST0_00;",
+      "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 62,
       "match": "in_stack_ffffffe0",
       "severity": "moderate",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),in_stack_ffffffe0)),",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar3),0),in_stack_ffffffe0)),",
       "type": "stack_param"
     },
     {
@@ -284,7 +301,7 @@
       "line": 62,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),in_stack_ffffffe0)),",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar3),0),in_stack_ffffffe0)),",
       "type": "bitcast_double_pair"
     },
     {
@@ -292,7 +309,7 @@
       "line": 62,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),in_stack_ffffffe0)),",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar3),0),in_stack_ffffffe0)),",
       "type": "sub84_truncation"
     },
     {
@@ -300,7 +317,7 @@
       "line": 63,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar2 >> 0x20))),",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar3 >> 0x20))),",
       "type": "bitcast_double_pair"
     },
     {
@@ -308,12 +325,12 @@
       "line": 63,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar2 >> 0x20))),",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar3 >> 0x20))),",
       "type": "sub84_truncation"
     },
     {
       "description": "Raw hex address 0x565bf9 assigned to bare local `in_stack_ffffffe0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffe0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 24,
+      "line": 26,
       "match": "0x565bf9",
       "severity": "moderate",
       "text": "in_stack_ffffffe0 = 0x565bf9;",
@@ -329,18 +346,10 @@
     },
     {
       "description": "Raw hex address 0x565ba5 assigned to bare local `in_stack_ffffffe0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffe0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 41,
+      "line": 42,
       "match": "0x565ba5",
       "severity": "moderate",
       "text": "in_stack_ffffffe0 = 0x565ba5;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x565bbe assigned to bare local `in_stack_ffffffe0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffe0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 47,
-      "match": "0x565bbe",
-      "severity": "moderate",
-      "text": "in_stack_ffffffe0 = 0x565bbe;",
       "type": "raw_address_constant"
     }
   ]

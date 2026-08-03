@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(CDemonActor *param_1)
+; void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 at 0041722f
@@ -39,7 +41,7 @@ section .text
     PUSH EBX                            ; 00417d8e
     MOV dword ptr [EBX + 0x70],0x2      ; 00417d8f
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 ; 00417d96
-        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0()
+        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EBX + 0x160]               ; 00417d9b
     ADD ESP,0xc                         ; 00417da1
     MOV EDX,EAX                         ; 00417da4

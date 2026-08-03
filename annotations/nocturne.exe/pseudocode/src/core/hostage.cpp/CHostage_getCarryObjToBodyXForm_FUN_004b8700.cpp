@@ -1,8 +1,8 @@
 // Name: core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700
 // Address: 004b8700
 // Address Range: [[004b8700, 004b8b68]]
-// Convention: unknown
-// Signature: void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,int param_2)
+// Convention: __stack2_esi
+// Signature: CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
@@ -11,22 +11,21 @@
 /* WARNING: Removing unreachable block (ram,0x004b8a76) */
 /* WARNING: Removing unreachable block (ram,0x004b8aa7) */
 /* WARNING: Removing unreachable block (ram,0x004b8ac1) */
+/* WARNING: Type propagation algorithm not settling */
 
-void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,int param_2)
+CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
-  int iVar2;
-  uint *unaff_ESI;
-  uint *puVar3;
-  uint *puVar4;
-  byte bVar5;
-  uint local_294 [12];
-  uint local_264 [24];
+  CMatrix3x4f *pCVar2;
+  float *pfVar3;
+  byte bVar4;
+  float local_294 [12];
+  CMatrix3x4f local_264 [2];
   CMatrix3x4f local_204;
-  uint local_1d4 [24];
-  uint local_174 [12];
-  uint local_144 [12];
+  CMatrix3x4f local_1d4 [2];
+  CMatrix3x4f local_174;
+  CMatrix3x4f local_144;
   CMatrix3x4f local_114;
   CMatrix3x4f local_e4;
   CVector3f local_a8;
@@ -40,11 +39,11 @@ void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,i
   CVector3f local_30;
   CVector3f local_24 [2];
   
-  bVar5 = 0;
-  iVar2 = param_1 + param_2 * 0x44;
-  if ((*(int *)(param_1 + 0x1f920) == 1) &&
+  bVar4 = 0;
+  if ((this_ptr->hostage_type == 1) &&
      (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                        (*(CDemonActor **)(iVar2 + 0x24ac),"CShotgun"), iVar1 != 0)) {
+                        ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
+                         "CShotgun"), iVar1 != 0)) {
     local_84.x = 0.269;
     local_84.y = -0.012;
     local_54.x = -0.287;
@@ -54,10 +53,12 @@ void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,i
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
               (&local_204,&local_84,&local_54);
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-              (&local_204,param_1 + 0xfd0 + *(int *)(iVar2 + 0x24a4) * 0x30);
-    puVar3 = local_1d4;
+              (&local_204,
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,local_1d4);
+    pCVar2 = local_1d4;
   }
-  else if (*(int *)(param_1 + 0x1f920) == 3) {
+  else if (this_ptr->hostage_type == 3) {
     local_3c.x = 0.265971;
     local_3c.y = -0.200311;
     local_3c.z = 0.0324051;
@@ -76,10 +77,12 @@ void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,i
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_e4,&local_a8,local_9c);
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-              (&local_e4,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);
-    puVar3 = local_264;
+              (&local_e4,
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,local_264);
+    pCVar2 = local_264;
   }
-  else if (*(int *)(param_1 + 0x1f920) == 5) {
+  else if (this_ptr->hostage_type == 5) {
     local_78[0].x = 0.265971;
     local_78[0].y = -0.200311;
     local_78[0].z = 0.0324051;
@@ -99,24 +102,28 @@ void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,i
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
               (&local_114,&local_30,&local_48);
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-              (&local_114,param_1 + 0xfd0 + *(int *)(param_1 + 0x24a4 + param_2 * 0x44) * 0x30);
-    puVar3 = local_174;
+              (&local_114,
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,&local_174);
+    pCVar2 = &local_174;
   }
   else {
-    core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(param_1,param_2);
-    puVar3 = local_144;
+    core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490
+              ((CCharacter *)this_ptr,hand_index,&local_144);
+    pCVar2 = &local_144;
   }
-  puVar4 = local_294;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+  pfVar3 = local_294;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *pfVar3 = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
   }
-  puVar3 = local_294;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *unaff_ESI = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;
+  pfVar3 = local_294;
+  pCVar2 = out_matrix;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    pCVar2->m[0].w = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trash_cpp_CTrash_process_FUN_00546e10(CDemonActor *param_1,float param_2)
+; void __cdecl core_trash_cpp_CTrash_process_FUN_00546e10(CTrash *this_ptr,float delta_time)
 ;
+; Parameters:
+; CTrash *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x1bc]:4  local_1bc
 ; undefined8       Stack[-0x1b8]:8  local_1b8
@@ -618,7 +621,7 @@ section .text
     LEA ESI,[ESP + 0x48]                ; 005475ca
     LEA EDI,[ESP + 0x78]                ; 005475ce
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 005475d2
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 005475d7
     LEA EAX,[ESP + 0x130]               ; 005475da
     MOV ECX,0xc                         ; 005475e1

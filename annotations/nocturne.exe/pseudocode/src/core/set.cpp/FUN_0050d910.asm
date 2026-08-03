@@ -224,7 +224,7 @@ section .text
     LEA EDI,[ESP + 0xf0]                ; 0050db0a
     MOV dword ptr [ESP + 0xd4],EDX      ; 0050db11
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_004cde90 ; 0050db18
-        ;   XREF to: 004cde90 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_normalizeVector3DFloat_FUN_004cde90()
+        ;   XREF to: 004cde90 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_004cde90(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0xe4]                ; 0050db1d
     ADD ESP,0x4                         ; 0050db24
     MOVSD ES:EDI,ESI                    ; 0050db27

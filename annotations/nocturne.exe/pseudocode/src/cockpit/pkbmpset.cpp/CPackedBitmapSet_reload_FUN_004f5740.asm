@@ -80,7 +80,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f5797
     PUSH EAX                            ; 004f579b
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f579c
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x114                       ; 004f57a1
     ADD ESP,0xc                         ; 004f57a6
     MOV [0x01cc4804],EAX                ; 004f57a9 | g_INT_01cc4804
@@ -148,7 +148,7 @@ section .text
     LEA EAX,[ESP + 0x6c]                ; 004f584b
     PUSH EAX                            ; 004f584f
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f5850
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EDX,0x58d680                    ; 004f5855 | = "..\\cockpit\\pkbmpset.cpp"
     ADD ESP,0xc                         ; 004f585a
     LEA EAX,[ESP + 0x64]                ; 004f585d
@@ -180,7 +180,7 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 004f58ad
     PUSH EAX                            ; 004f58b4
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f58b5
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x127                       ; 004f58ba
     ADD ESP,0xc                         ; 004f58bf
     MOV [0x01cc4804],EAX                ; 004f58c2 | g_INT_01cc4804

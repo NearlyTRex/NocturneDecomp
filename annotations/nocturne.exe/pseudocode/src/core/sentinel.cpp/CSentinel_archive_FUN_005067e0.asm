@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sentinel_cpp_CSentinel_archive_FUN_005067e0(CEnemy *param_1)
+; void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_005067e0(CSentinel *this_ptr)
 ;
+; Parameters:
+; CSentinel *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005900a1

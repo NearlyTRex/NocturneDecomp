@@ -18,8 +18,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
   int iVar4;
   uint uVar5;
   CDemonLight *pCVar6;
-  uint uVar7;
-  CPickList local_400;
+  uint in_stack_fffffc00;
   CPickList local_290;
   char local_120 [256];
   byte *local_20;
@@ -33,19 +32,15 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
   engine_console_cpp_CConsole_printf_FUN_0043ac60
             (g_CConsole_PTR_005ad350,"Nocturne is alive and kicking\n");
   engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (g_CConsole_PTR_005ad350,"game.cpp built on %s %s\n\n","Nov 02 1999",
-             "15:09:32");
-  engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (g_CConsole_PTR_005ad350,"System RAM: %d\n",_DAT_02de20a8);
+            (g_CConsole_PTR_005ad350,"game.cpp built on %s %s\n\n");
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"System RAM: %d\n");
   local_18 = 1;
-  engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (g_CConsole_PTR_005ad350,"Swap file: %d\n",_DAT_02de20ac);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"Swap file: %d\n");
   shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0
             (g_CEditorTools_PTR_005b6d50,local_120);
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"%s\n",local_120);
-  local_20 = (byte *)&local_400;
-  engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (g_CConsole_PTR_005ad350,"ESP: %08X\n",&local_400);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"%s\n");
+  local_20 = &stack0xfffffc00;
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"ESP: %08X\n");
   this_ptr->camera_view_index = 0;
   this_ptr->is_paused = 0;
   this_ptr->is_game_active = 1;
@@ -216,10 +211,10 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
             if (this_ptr->letterbox_mode != 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(&local_290,3,0);
             }
-            uVar7 = 0xffffffff;
+            iVar3 = -1;
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Game paused");
             iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                              (&local_290,pcVar2,uVar7);
+                              (&local_290,pcVar2,iVar3,in_stack_fffffc00);
             if (iVar3 == 1) {
               engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(g_CKeys_PTR_005bac64,0);
               core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(this_ptr);
@@ -330,22 +325,22 @@ LAB_0049dec1:
   iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
   if ((iVar3 == 2) && (this_ptr->need_chapter_reload == 0)) {
-    shape_edittool_cpp_CPickList_ctor_FUN_00474c90(&local_400);
+    shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffc00);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Load game");
-    shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_400.base,pcVar2);
+    shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
-    shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_400.base,pcVar2);
+    shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);
     do {
-      uVar7 = 0xffffffff;
+      iVar3 = -1;
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Game Over");
       iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                        (&local_400,pcVar2,uVar7);
+                        ((CPickList *)&stack0xfffffc00,pcVar2,iVar3,in_stack_fffffc00);
       if (iVar3 == 0) {
         core_game_cpp_CGame_promptLoadGame_FUN_004a6570(this_ptr);
         break;
       }
     } while (iVar3 != 1);
-    shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_400,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffc00,0);
   }
   iVar3 = core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0
                     (g_CDemonMission_PTR_005baf90);

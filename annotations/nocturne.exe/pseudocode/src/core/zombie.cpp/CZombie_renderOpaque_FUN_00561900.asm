@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_zombie_cpp_CZombie_renderOpaque_FUN_00561900(CCharacter *param_1)
+; int __cdecl core_zombie_cpp_CZombie_renderOpaque_FUN_00561900(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450

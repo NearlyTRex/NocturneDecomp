@@ -117,8 +117,8 @@ LAB_005224ea:
     iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pCVar6);
     if (iVar7 == 0) goto LAB_005226f8;
     _fseek(local_14,pCVar6->file_offset,0);
-    buffer = (void *)sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
-                               (pCVar6,0,(pCVar6->sample_info).sample_count);
+    buffer = sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
+                       (pCVar6,0,(pCVar6->sample_info).sample_count);
     if (buffer == (void *)0x0) {
       pcVar11 = "Failed to lock sample %s\n";
     }
@@ -166,8 +166,8 @@ LAB_005224ea:
     iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pCVar6);
     if (iVar7 == 0) goto LAB_005226f8;
     output_buffer =
-         (short *)sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
-                            (pCVar6,0,(pCVar6->sample_info).sample_count);
+         sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(pCVar6,0,(pCVar6->sample_info).sample_count)
+    ;
     if (output_buffer == (short *)0x0) {
       pcVar11 = "Failed to lock sample %s\n";
     }

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 18,
-        "message": "no matching function for call to '_memcpy'"
+        "category": "undeclared_identifier",
+        "column": 69,
+        "line": 23,
+        "message": "use of undeclared identifier 'DAT_01bd4260'; did you mean 'DAT_02DF4260'?"
       }
     ],
     "success": false,
@@ -68,18 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 72,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 5,
+    "pseudocode_lines": 18,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
+      "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 48
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -188,7 +189,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x140)) {",
@@ -196,18 +197,58 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "_memcpy(*(int *)(param_1 + 0x13c) << 2);",
+      "text": "iVar2 = *(int *)(param_1 + 0x13c) * iVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x140));",
+      "text": "iVar1 = *(int *)(param_1 + 0x148) + iVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((void *)(*(int *)(param_1 + 0x144) * 4 + *(int *)(&DAT_01bd4260 + iVar1 * 4)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_01bd4260",
+      "severity": "mild",
+      "text": "((void *)(*(int *)(param_1 + 0x144) * 4 + *(int *)(&DAT_01bd4260 + iVar1 * 4)),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(void *)(iVar2 * 4 + *(int *)(param_1 + 0x15c)),*(int *)(param_1 + 0x13c) << 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(void *)(iVar2 * 4 + *(int *)(param_1 + 0x15c)),*(int *)(param_1 + 0x13c) << 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar3 < *(int *)(param_1 + 0x140));",
       "type": "unnamed_param"
     },
     {

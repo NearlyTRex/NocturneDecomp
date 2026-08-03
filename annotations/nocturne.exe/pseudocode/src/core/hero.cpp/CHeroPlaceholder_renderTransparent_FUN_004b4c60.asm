@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004b4c60(void)
+; int __cdecl core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004b4c60(CHeroPlaceholder *this_ptr)
 ;
+; Parameters:
+; CHeroPlaceholder * Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

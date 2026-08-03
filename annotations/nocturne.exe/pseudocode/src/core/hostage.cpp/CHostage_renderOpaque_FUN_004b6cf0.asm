@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hostage_cpp_CHostage_renderOpaque_FUN_004b6cf0(CCharacter *param_1)
+; int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004b6cf0(CHostage *this_ptr)
 ;
+; Parameters:
+; CHostage *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

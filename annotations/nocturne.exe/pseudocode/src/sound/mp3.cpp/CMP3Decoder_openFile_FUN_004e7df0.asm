@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *this_ptr,char *filename)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[4]:
 ;   sound_sndmain.cpp_FUN_005229f0 at 00522afe

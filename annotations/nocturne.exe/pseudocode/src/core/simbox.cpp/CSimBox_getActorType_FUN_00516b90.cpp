@@ -1,12 +1,12 @@
 // Name: core_simbox.cpp_CSimBox_getActorType_FUN_00516b90
 // Address: 00516b90
 // Address Range: [[00516b90, 00516b95]]
-// Convention: unknown
-// Signature: CDemonActorType * core_simbox_cpp_CSimBox_getActorType_FUN_00516b90(void)
+// Convention: __cdecl
+// Signature: CDemonActorType * __cdecl core_simbox_cpp_CSimBox_getActorType_FUN_00516b90(CSimBox *this_ptr)
 
 #include "nocturne.h"
 
-CDemonActorType * core_simbox_cpp_CSimBox_getActorType_FUN_00516b90(void)
+CDemonActorType * __cdecl core_simbox_cpp_CSimBox_getActorType_FUN_00516b90(CSimBox *this_ptr)
 
 {
   return &g_CSimBoxActorType_02671914;

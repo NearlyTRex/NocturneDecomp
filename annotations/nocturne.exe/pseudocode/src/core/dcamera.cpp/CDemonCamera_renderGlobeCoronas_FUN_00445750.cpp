@@ -25,7 +25,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
   uint uVar12;
   uint uVar13;
   int aiStackY_107c [1014];
-  int local_94;
+  CVector3i local_94;
   int local_88;
   SCoronaLightEntry *local_80;
   int local_7c;
@@ -59,12 +59,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
   if ((g_CGame_PTR_005b9354->halo_mode != 0) || ((force_render == 0 && (globe->corona_mode != 0))))
   {
     _DAT_014b8458 = globe;
-    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(this_ptr,globe);
-    _DAT_014b8460 = local_94;
+    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
+              (this_ptr,&globe->position_scaled,&local_94);
+    _DAT_014b8460 = local_94.x;
     *(uint *)(&DAT_014b8464 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffff70 + (uint)bVar1 * -8);
+         *(uint *)((int)&local_94 + (uint)bVar1 * -8 + 4);
     *(uint *)(&DAT_014b8468 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffff74 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+         *(uint *)((int)&local_94 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
     if (globe->corona_mode == 0) {
       _DAT_014b845c = 0;
     }

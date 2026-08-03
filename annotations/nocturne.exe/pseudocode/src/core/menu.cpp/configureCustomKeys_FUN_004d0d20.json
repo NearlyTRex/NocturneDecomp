@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,49 +52,25 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 62,
-        "message": "no matching function for call to '_sprintf'"
+        "category": "format_error",
+        "column": 29,
+        "line": 105,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 64,
-        "message": "no matching function for call to '_sprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 72,
-        "message": "no matching function for call to '_sprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 89,
-        "message": "no matching function for call to '_sprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 97,
-        "message": "no matching function for call to '_sprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 174,
-        "message": "no matching function for call to '_sprintf'"
+        "category": "format_error",
+        "column": 29,
+        "line": 138,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 188,
+        "line": 182,
         "message": "use of undeclared identifier '_DAT_01cc5b5c'"
       }
     ],
@@ -104,22 +80,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 505,
-    "complexity_score": 418,
+    "complexity_score": 367,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 248,
-    "suspect_count": 14,
+    "pseudocode_lines": 242,
+    "suspect_count": 10,
     "suspect_types": [
-      "concat_reconstruction",
       "raw_address_constant",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 753
+    "total_lines": 747
   },
   "cross_references": [
     {
@@ -539,7 +514,7 @@
     },
     {
       "description": "Raw hex address 0x1cc65b0 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 23,
+      "line": 22,
       "match": "0x1cc65b0",
       "severity": "moderate",
       "text": "iVar6 = 0x1cc65b0;",
@@ -547,7 +522,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 93,
+      "line": 89,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -555,7 +530,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 115,
+      "line": 110,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -563,7 +538,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 126,
+      "line": 121,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -571,47 +546,15 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 149,
+      "line": 143,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 55,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "_sprintf(CONCAT44(pcVar5,0x1cc65b0));",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 71,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar12 = CONCAT44(pcVar5,0x1cc68b0);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 75,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar12 = CONCAT44(pcVar5,0x1cc68b0);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 80,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar12 = CONCAT44(pcVar5,0x1cc68b0);",
-      "type": "concat_reconstruction"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 106,
+      "line": 101,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -619,7 +562,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 140,
+      "line": 134,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -627,7 +570,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 106,
+      "line": 101,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -635,7 +578,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 140,
+      "line": 134,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

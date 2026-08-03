@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_platfrm_cpp_CPlatform_renderOpaque_FUN_004f6c60(CDemonActor *param_1)
+; int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_004f6c60(CPlatform *this_ptr)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ;

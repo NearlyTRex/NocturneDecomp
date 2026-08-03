@@ -1,22 +1,23 @@
 // Name: core_drone.cpp_CDrone_archive_FUN_004630e0
 // Address: 004630e0
 // Address Range: [[004630e0, 0046314c]]
-// Convention: unknown
-// Signature: void core_drone_cpp_CDrone_archive_FUN_004630e0(CEnemy *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_drone_cpp_CDrone_archive_FUN_004630e0(CDrone *this_ptr)
 
 #include "nocturne.h"
 
-void core_drone_cpp_CDrone_archive_FUN_004630e0(CEnemy *param_1)
+void __cdecl core_drone_cpp_CDrone_archive_FUN_004630e0(CDrone *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);
-  core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->speed,"speed");
+  core_enemy_cpp_CEnemy_archive_FUN_004796c0(&this_ptr->base);
+  core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
-            (&(param_1->base).model,"modelName");
+            (&(this_ptr->base).base.model,"modelName");
   if (g_INT_005b0660 < 2) {
-    core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->guard_distance,"guardDistance");
+    core_actor_cpp_archiveFloat_FUN_0040c880
+              (&(this_ptr->base).guard_distance,"guardDistance");
   }
   core_actor_cpp_archiveMotionState_FUN_0040cb00
-            (&(param_1->base).model.motion_controller,"motion state");
+            (&(this_ptr->base).base.model.motion_controller,"motion state");
   return;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CWeapon *param_1,float param_2)
+; void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CFlameThrower *this_ptr,float delta_time)
 ;
+; Parameters:
+; CFlameThrower *  Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ;

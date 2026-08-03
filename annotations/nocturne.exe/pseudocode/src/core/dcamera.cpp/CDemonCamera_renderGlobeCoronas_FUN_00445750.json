@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -62,58 +62,58 @@
         "message": "use of undeclared identifier '_DAT_014b8458'; did you mean 'DAT_004DD458'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 62,
-        "message": "no matching function for call to 'core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 63,
+        "line": 64,
         "message": "use of undeclared identifier '_DAT_014b8460'"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 64,
+        "line": 65,
         "message": "use of undeclared identifier 'DAT_014b8464'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 21,
-        "line": 65,
-        "message": "use of undeclared identifier 'stack0xffffff70'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 16,
-        "line": 66,
-        "message": "use of undeclared identifier 'DAT_014b8468'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
         "line": 67,
-        "message": "use of undeclared identifier 'stack0xffffff74'"
+        "message": "use of undeclared identifier 'DAT_014b8468'; did you mean 'DAT_00418468'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 69,
+        "line": 70,
         "message": "use of undeclared identifier '_DAT_014b845c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 72,
+        "line": 73,
         "message": "use of undeclared identifier '_DAT_014b845c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 72,
+        "line": 73,
         "message": "use of undeclared identifier '_DAT_014b8460'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 74,
+        "message": "use of undeclared identifier '_DAT_014b8460'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 75,
+        "message": "use of undeclared identifier '_DAT_012b0660'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 76,
+        "message": "use of undeclared identifier '_DAT_014b845c'"
       }
     ],
     "success": false,
@@ -122,24 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 674,
-    "complexity_score": 535,
+    "complexity_score": 561,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 265,
-    "suspect_count": 23,
+    "pseudocode_lines": 266,
+    "suspect_count": 25,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
       "shadow_pointer_walk",
       "sign_compare_idiom",
       "stack_alignment_array",
-      "stack_ref",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 939
+    "total_lines": 940
   },
   "cross_references": [
     {
@@ -602,62 +603,55 @@
   "static_analysis": {
     "analyzed_file": "CDemonCamera_renderGlobeCoronas_FUN_00445750.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 8,
+      "diagnostic_count": 7,
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 41,
-          "line": 143,
+          "line": 144,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 41,
-          "line": 146,
+          "line": 147,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 42,
-          "line": 149,
+          "line": 150,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 35,
-          "line": 162,
+          "line": 163,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 44,
-          "line": 242,
+          "line": 243,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 45,
-          "line": 245,
+          "line": 246,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 44,
-          "line": 248,
+          "line": 249,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 63,
-          "message": "Uninitialized variable: local_94",
           "severity": "error"
         }
       ],
@@ -684,39 +678,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_014b8464",
       "severity": "mild",
       "text": "*(uint *)(&DAT_014b8464 + (uint)bVar1 * -8) =",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffff70",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff70 + (uint)bVar1 * -8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_014b8468",
       "severity": "mild",
       "text": "*(uint *)(&DAT_014b8468 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xffffff74",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff74 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 88,
+      "line": 89,
       "match": "*(CDemonGlobe **)(iVar5 + 0x121660c",
       "severity": "moderate",
       "text": "if (globe == *(CDemonGlobe **)(iVar5 + 0x121660c)) {",
@@ -724,16 +702,8 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 130,
       "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "local_24 = (uint *)(*(int *)(&DAT_01bd4260 + (local_54 << (DAT_012b0660 & 0x1f)) * 4)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_012b0660",
       "severity": "mild",
       "text": "local_24 = (uint *)(*(int *)(&DAT_01bd4260 + (local_54 << (DAT_012b0660 & 0x1f)) * 4)",
       "type": "undefined_data"
@@ -743,12 +713,20 @@
       "line": 130,
       "match": "DAT_012b0660",
       "severity": "mild",
+      "text": "local_24 = (uint *)(*(int *)(&DAT_01bd4260 + (local_54 << (DAT_012b0660 & 0x1f)) * 4)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_012b0660",
+      "severity": "mild",
       "text": "+ (local_88 << (DAT_012b0660 & 0x1f)) * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 178,
       "match": "DAT_012b0660",
       "severity": "mild",
       "text": "bVar1 = DAT_012b0660;",
@@ -756,16 +734,8 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 230,
       "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "local_38 = (uint *)(*(int *)(&DAT_01bd4260 + (local_64 << (DAT_012b0660 & 0x1f)) * 4) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 229,
-      "match": "DAT_012b0660",
       "severity": "mild",
       "text": "local_38 = (uint *)(*(int *)(&DAT_01bd4260 + (local_64 << (DAT_012b0660 & 0x1f)) * 4) +",
       "type": "undefined_data"
@@ -775,12 +745,20 @@
       "line": 230,
       "match": "DAT_012b0660",
       "severity": "mild",
+      "text": "local_38 = (uint *)(*(int *)(&DAT_01bd4260 + (local_64 << (DAT_012b0660 & 0x1f)) * 4) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 231,
+      "match": "DAT_012b0660",
+      "severity": "mild",
       "text": "(local_28 << (DAT_012b0660 & 0x1f)) * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 232,
+      "line": 233,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "while (SBORROW4(local_28,iVar5) != iVar2 < 0) {",
@@ -788,15 +766,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 255,
+      "line": 256,
       "match": "DAT_012b0660",
       "severity": "mild",
       "text": "local_38 = local_38 + (1 << (DAT_012b0660 & 0x1f));",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)&local_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_94 + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)&local_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_94 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex address 0x7f7378 assigned to bare local `local_68`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_68` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 117,
+      "line": 118,
       "match": "0x7f7378",
       "severity": "moderate",
       "text": "local_68 = 0x7f7378;",
@@ -804,7 +798,7 @@
     },
     {
       "description": "Raw hex address 0x146ba10 assigned to bare local `local_70`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_70` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 118,
+      "line": 119,
       "match": "0x146ba10",
       "severity": "moderate",
       "text": "local_70 = 0x146ba10;",
@@ -812,7 +806,7 @@
     },
     {
       "description": "Raw hex address 0x146ba10 assigned to bare local `local_78`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_78` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 219,
+      "line": 220,
       "match": "0x146ba10",
       "severity": "moderate",
       "text": "local_78 = 0x146ba10;",
@@ -820,7 +814,7 @@
     },
     {
       "description": "Raw hex address 0xa9d078 assigned to bare local `local_7c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_7c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 220,
+      "line": 221,
       "match": "0xa9d078",
       "severity": "moderate",
       "text": "local_7c = 0xa9d078;",
@@ -828,15 +822,31 @@
     },
     {
       "description": "Raw hex address 0x7f7378 assigned to bare local `local_74`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_74` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 221,
+      "line": 222,
       "match": "0x7f7378",
       "severity": "moderate",
       "text": "local_74 = 0x7f7378;",
       "type": "raw_address_constant"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 59,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_94 + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 61,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_94 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 102,
+      "line": 103,
       "match": "pSVar8 = (T *)pSVar8->ARRAY",
       "severity": "moderate",
       "text": "pSVar8 = (SCoronaLightEntry *)pSVar8->left_extents;",
@@ -844,7 +854,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_60` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_60->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 207,
+      "line": 208,
       "match": "local_60 = (T *)local_60->ARRAY",
       "severity": "moderate",
       "text": "local_60 = (SCoronaLightEntry *)local_60->left_extents;",
@@ -852,7 +862,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 143,
+      "line": 144,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar12 = (int)uVar4 >> 0x1f, iVar5 = (uVar4 ^ uVar12) - uVar12,",
@@ -860,7 +870,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 146,
+      "line": 147,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar12 = (int)uVar4 >> 0x1f, iVar2 = (uVar4 ^ uVar12) - uVar12,",
@@ -868,7 +878,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 149,
+      "line": 150,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar12 = (int)uVar4 >> 0x1f, iVar3 = (uVar4 ^ uVar12) - uVar12,",
@@ -876,7 +886,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 162,
+      "line": 163,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar7 = iVar6 >> 0x1f;",
@@ -884,7 +894,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 242,
+      "line": 243,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(int)((uVar4 ^ (int)uVar4 >> 0x1f) - ((int)uVar4 >> 0x1f)) <",
@@ -892,7 +902,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 245,
+      "line": 246,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(int)((uVar12 ^ (int)uVar12 >> 0x1f) - ((int)uVar12 >> 0x1f)) <",
@@ -900,19 +910,11 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 248,
+      "line": 249,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(int)((uVar13 ^ (int)uVar13 >> 0x1f) - ((int)uVar13 >> 0x1f)) <",
       "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Uninitialized variable: local_94",
-      "line": 63,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_014b8460 = local_94;",
-      "type": "static_uninitvar"
     }
   ]
 }

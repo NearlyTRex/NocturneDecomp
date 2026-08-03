@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dog_cpp_CZombieDog_setup_FUN_004546d0(CEnemy *param_1)
+; void __cdecl core_dog_cpp_CZombieDog_setup_FUN_004546d0(CZombieDog *this_ptr)
 ;
+; Parameters:
+; CZombieDog *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Spine1_0057cf39

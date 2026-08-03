@@ -86,7 +86,7 @@ section .text
     MOV EDX,dword ptr [0x005ad350]      ; 00514942 | g_CConsole_PTR_005ad350
     PUSH EDX                            ; 00514948 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00514949
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0051494e
     FLD float ptr [EBX + 0x144]         ; 00514951
         ;   Label: LAB_00514951
@@ -104,7 +104,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 0051496b | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 00514971 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00514972
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00514977
     POP EDI                             ; 0051497a
     POP ESI                             ; 0051497b

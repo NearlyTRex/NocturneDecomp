@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_grave_cpp_CGrave_getActorType_FUN_004b0b30(void)
+; CDemonActorType * __cdecl core_grave_cpp_CGrave_getActorType_FUN_004b0b30(CGrave *this_ptr)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

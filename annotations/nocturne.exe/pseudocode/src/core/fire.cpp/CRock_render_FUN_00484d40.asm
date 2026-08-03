@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CRock_render_FUN_00484d40(CVector3f *param_1)
+; void __cdecl core_fire_cpp_CRock_render_FUN_00484d40(CRock *this_ptr)
 ;
+; Parameters:
+; CRock *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

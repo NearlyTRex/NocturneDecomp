@@ -82,7 +82,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 0051f7e5
     PUSH EBX                            ; 0051f7e9
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0051f7ea
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x18                        ; 0051f7ef
     POP EBP                             ; 0051f7f2
     POP EDI                             ; 0051f7f3

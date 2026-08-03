@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(CEnemy *param_1)
+; void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(CGhoul *this_ptr)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_00584ad5

@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_00570205
     PUSH EBX                            ; 00570207
     CALL crt_iostream.cpp_streambuf_destructor_FUN_00571d9f ; 00570208
-        ;   XREF to: 00571d9f (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_streambuf_destructor_FUN_00571d9f()
+        ;   XREF to: 00571d9f (UNCONDITIONAL_CALL)  ; streambuf * crt_iostream.cpp_streambuf_destructor_FUN_00571d9f(streambuf * this_ptr)
     ADD ESP,0x8                         ; 0057020d
     MOV CL,byte ptr [ESP + 0xc]         ; 00570210
     MOV EBX,EAX                         ; 00570214

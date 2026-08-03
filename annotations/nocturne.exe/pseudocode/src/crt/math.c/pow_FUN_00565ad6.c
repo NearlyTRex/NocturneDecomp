@@ -14,16 +14,18 @@ float10 __fpustack_safe pow(float10 base,float10 exp)
 
 {
   double dVar1;
-  double dVar2;
+  float10 fVar2;
+  float10 extraout_ST0;
+  float10 extraout_ST0_00;
+  double dVar3;
   uint in_stack_ffffffe0;
-  byte uVar3;
   ushort uStack_e;
   short local_c;
   short sStack_a;
   short sStack_8;
   ushort uStack_6;
   
-  dVar2 = (double)base;
+  dVar3 = (double)base;
   if (base != (float10)0) {
     if ((float10)0 <= base) {
       if (ROUND(exp) == exp) goto LAB_00565b61;
@@ -33,30 +35,28 @@ LAB_00565be8:
     }
     else if (ROUND(exp) == exp) {
 LAB_00565b61:
-      dVar1 = (double)exp;
-      uVar3 = (byte)((ulonglong)dVar1 >> 0x20);
-      uStack_e = (ushort)((ulonglong)dVar1 >> 0x30);
+      uStack_e = (ushort)((ulonglong)(double)exp >> 0x30);
       if (0xff < (ushort)((uStack_e & 0x7ff0) + 0xc010)) goto LAB_00565be8;
       uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);
       if (uStack_6 == 0) {
         in_stack_ffffffe0 = 0x565b91;
-        integer_power(dVar2,SUB84(__BITCAST_UINT64(dVar1),0),uVar3);
+        integer_power();
+        fVar2 = extraout_ST0;
       }
       else {
         if ((uStack_6 != -1) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))
         goto LAB_00565be8;
         in_stack_ffffffe0 = 0x565ba5;
-        integer_power(dVar2,SUB84(__BITCAST_UINT64(dVar1),0),uVar3);
+        integer_power();
         if ((DAT_005c1d98 & 1) == 0) {
-          base = (float10)1 / base;
+          fVar2 = (float10)1 / extraout_ST0_00;
         }
         else {
-          in_stack_ffffffe0 = 0x565bbe;
-          exp = base;
-          base = function_dispatch(0xf);
+          exp = extraout_ST0_00;
+          fVar2 = function_dispatch(0xf);
         }
       }
-      dVar1 = (double)base;
+      dVar1 = (double)fVar2;
       local_c = SUB82(__BITCAST_UINT64(dVar1),0);
       sStack_a = (short)((ulonglong)dVar1 >> 0x10);
       sStack_8 = (short)((ulonglong)dVar1 >> 0x20);
@@ -65,11 +65,11 @@ LAB_00565b61:
       goto LAB_00565c07;
     }
   }
-  dVar2 = math_domain_error
-                    (__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),in_stack_ffffffe0)),
-                     __BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar2 >> 0x20))),
+  dVar3 = math_domain_error
+                    (__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar3),0),in_stack_ffffffe0)),
+                     __BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar3 >> 0x20))),
                      (uchar)((ulonglong)(double)exp >> 0x20));
-  base = (float10)dVar2;
+  fVar2 = (float10)dVar3;
 LAB_00565c07:
-  return (float10)(double)base;
+  return (float10)(double)fVar2;
 }

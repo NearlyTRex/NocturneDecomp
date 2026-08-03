@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bat_cpp_CBat_archive_FUN_00411b50(CDemonActor *param_1)
+; void __cdecl core_bat_cpp_CBat_archive_FUN_00411b50(CBat *this_ptr)
 ;
+; Parameters:
+; CBat *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_courseFilename_00578790

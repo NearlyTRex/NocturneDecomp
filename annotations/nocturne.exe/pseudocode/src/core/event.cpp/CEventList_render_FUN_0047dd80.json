@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,50 +52,44 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "format_error",
-        "column": 42,
-        "line": 37,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
+        "column": 39,
+        "line": 33,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 43,
-        "line": 50,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
+        "column": 40,
+        "line": 44,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 84,
-        "line": 63,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
+        "column": 38,
+        "line": 55,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 33,
-        "line": 88,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
+        "column": 27,
+        "line": 78,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 33,
+        "column": 27,
+        "line": 89,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 28,
         "line": 101,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 42,
-        "line": 101,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 18,
-        "line": 117,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -104,18 +98,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 148,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 118,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
-    "total_lines": 384
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 99,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 365
   },
   "cross_references": [
     {
@@ -340,22 +331,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 111,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar6->sfx_handles).entries[0].playback_position + 4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar6->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 112,
-      "match": "pCVar6 = (T *)((pCVar6->FIELD).ARRAY[N] + CONST)",
-      "severity": "moderate",
-      "text": "pCVar6 = (CEventList *)((pCVar6->events).names[8] + 0x1c);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

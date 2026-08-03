@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,19 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 24,
+        "line": 25,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 43,
+        "line": 44,
         "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
       }
     ],
@@ -74,17 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 262,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 21,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 156
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 157
   },
   "cross_references": [],
   "function": {
@@ -95,9 +93,9 @@
         "0048e6cd"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0",
-    "signature": "void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *param_1,float param_2)"
+    "signature": "void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -162,9 +160,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -206,10 +204,10 @@
     "pcode_op_count": 568
   },
   "stack_frame": {
-    "frame_size": 68,
+    "frame_size": 76,
     "local_size": 68,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -218,179 +216,24 @@
         "offset": -64,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameCan *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,param_1->on_fire_condition);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->on_fire == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->on_fire == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_flame_cpp_CFlame_process_FUN_0048d0c0(&param_1->flame,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_flame_cpp_CFlame_process_FUN_0048d0c0(&param_1->flame,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_1->time_to_explode - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = param_1->time_to_explode - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_1->time_to_explode - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->time_to_explode = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->time_to_explode = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0.0 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_28 = (param_1->base).location.position.x + fStack_1c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_24 = (param_1->base).location.position.y + fStack_18;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_20 = (param_1->base).location.position.z + fStack_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CFireEffect_PTR_005b80f0,&(param_1->flame).base.location.position,16.0,1500.0,4.0);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

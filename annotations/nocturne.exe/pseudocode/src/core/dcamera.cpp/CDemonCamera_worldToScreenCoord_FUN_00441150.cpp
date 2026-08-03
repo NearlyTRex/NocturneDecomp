@@ -1,12 +1,12 @@
 // Name: core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_00441150
 // Address: 00441150
 // Address Range: [[00441150, 004411ab]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_00441150(int param_1,int *param_2)
+// Convention: __stack2_esi
+// Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_00441150(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 #include "nocturne.h"
 
-void core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_00441150(int param_1,int *param_2)
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_00441150(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 {
   int iVar1;
@@ -14,16 +14,16 @@ void core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_00441150(int param_1,i
   int iVar3;
   int iVar4;
   int iVar5;
-  uint *unaff_ESI;
   
-  iVar1 = param_2[2];
-  iVar2 = *(int *)(param_1 + 0x1c4);
-  iVar3 = param_2[2];
-  iVar4 = param_2[1];
-  iVar5 = *(int *)(param_1 + 0x1cc);
-  *unaff_ESI = (int)(((longlong)(*param_2 - *(int *)(param_1 + 0x1c8)) * (longlong)iVar1) /
-                    (longlong)*(int *)(param_1 + 0x1c0));
-  unaff_ESI[1] = (int)(((longlong)(iVar4 - iVar5) * (longlong)iVar3) / (longlong)iVar2);
-  unaff_ESI[2] = iVar1;
-  return;
+  iVar1 = input_ptr->z;
+  iVar2 = (this_ptr->cached_projection).neg_half_height_fixed;
+  iVar3 = input_ptr->z;
+  iVar4 = input_ptr->y;
+  iVar5 = (this_ptr->cached_projection).center_y_fixed;
+  output_ptr->x =
+       (int)(((longlong)(input_ptr->x - (this_ptr->cached_projection).center_x_fixed) *
+             (longlong)iVar1) / (longlong)(this_ptr->cached_projection).half_width_fixed);
+  output_ptr->y = (int)(((longlong)(iVar4 - iVar5) * (longlong)iVar3) / (longlong)iVar2);
+  output_ptr->z = iVar1;
+  return output_ptr;
 }

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,32 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 56,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 93,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 100,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 154,
-        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
       }
     ],
     "success": false,
@@ -86,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 437,
-    "complexity_score": 213,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 158,
+    "pseudocode_lines": 154,
     "suspect_count": 4,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 595
+    "total_lines": 591
   },
   "cross_references": [
     {
@@ -403,7 +379,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 104,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "pCVar3 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_20);",
@@ -411,7 +387,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 127,
       "match": "(CDemonActor **)((int)auStack_d4",
       "severity": "moderate",
       "text": "*(CDemonActor **)((int)auStack_d4 + iVar6) = pCVar3;",
@@ -419,7 +395,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x41700001 is the IEEE 754 bit pattern of 15f. Rewrite in a .keep as a plain float compare against 15f.",
-      "line": 129,
+      "line": 126,
       "match": "(int)fVar1 < 0x41700001",
       "severity": "moderate",
       "text": "if (((float)5 <= fVar1) && ((int)fVar1 < 0x41700001)) {",

@@ -13,13 +13,58 @@
         "start":"00463b20"
       }
     ],
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"core_dstrender.cpp_renderDepth16BitConditional_FUN_00463ac7",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"left_edge",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right_edge",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {

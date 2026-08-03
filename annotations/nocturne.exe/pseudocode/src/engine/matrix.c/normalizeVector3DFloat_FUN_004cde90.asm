@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(int *param_1)
+; CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(CVector3i *input_vector,CVector3i *output_vector)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input_vector
 ; Local Variables:
 ; undefined        Stack[-0x50]:1  local_50
 ; undefined4       Stack[-0x44]:4  local_44

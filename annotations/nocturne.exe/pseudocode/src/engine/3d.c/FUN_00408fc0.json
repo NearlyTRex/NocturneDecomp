@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -64,25 +64,25 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 54,
+        "line": 55,
         "message": "no matching function for call to 'engine_3d_c_FUN_00408e80'"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 63,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "category": "format_error",
+        "column": 52,
+        "line": 61,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 72,
+        "line": 73,
         "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
       },
       {
         "category": "incompatible_types",
         "column": 43,
-        "line": 107,
+        "line": 109,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'SMRGLHeaderPrimitive *'"
       }
     ],
@@ -92,13 +92,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 609,
+    "complexity_score": 601,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 109,
-    "suspect_count": 47,
+    "pseudocode_lines": 111,
+    "suspect_count": 46,
     "suspect_types": [
       "displaced_global_access",
       "pointer_cast",
@@ -107,7 +107,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 351
+    "total_lines": 353
   },
   "cross_references": [],
   "function": {
@@ -371,7 +371,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "} while (iVar5 < DAT_00761ec4);",
@@ -379,16 +379,8 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005c5014",
-      "severity": "mild",
-      "text": "((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveTriangle **)&DAT_00761ec8,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00761ec8",
       "severity": "mild",
       "text": "((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveTriangle **)&DAT_00761ec8,",
       "type": "undefined_data"
@@ -396,6 +388,14 @@
     {
       "description": "Undefined global data reference",
       "line": 34,
+      "match": "DAT_00761ec8",
+      "severity": "mild",
+      "text": "((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveTriangle **)&DAT_00761ec8,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "DAT_00761ec4,0xcd);",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "DAT_00761ec4 = 0;",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_005b7644",
       "severity": "mild",
       "text": "DAT_005b7644 = 1;",
@@ -419,7 +419,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "bVar3 = (byte)(param_1->base).type;",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_3d_c_transformAndBufferVertices_FUN_00404530((SMRGLHeaderExtended *)param_1);",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_005b7644",
       "severity": "mild",
       "text": "if (DAT_005b7644 != 0) {",
@@ -443,7 +443,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_3d_c_FUN_00408e80(param_1);",
@@ -451,15 +451,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(local_110,\"Unknown primitive : %d\",(char)(param_1->base).type);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_3d_c_processVertexLighting_FUN_00404730((SMRGLHeaderExtended *)param_1);",
@@ -467,7 +459,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "if (DAT_00761ec4 != 0) {",
@@ -475,7 +467,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 68,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "if (0 < DAT_00761ec4) {",
@@ -483,7 +475,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 71,
       "match": "DAT_00761ec8",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)&DAT_00761ec8 + iVar5);",
@@ -491,7 +483,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 76,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "} while (iVar4 < DAT_00761ec4);",
@@ -499,7 +491,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 81,
       "match": "DAT_005c5014",
       "severity": "mild",
       "text": "((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveTriangle **)&DAT_00761ec8,",
@@ -507,7 +499,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 81,
       "match": "DAT_00761ec8",
       "severity": "mild",
       "text": "((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveTriangle **)&DAT_00761ec8,",
@@ -515,7 +507,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 82,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "DAT_00761ec4,0xcd);",
@@ -523,7 +515,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 84,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "DAT_00761ec4 = 0;",
@@ -531,7 +523,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_texture_cpp_ensureTextureLoaded_FUN_00545920((SMRGLTextureBasic *)param_1);",
@@ -539,7 +531,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(param_1);",
@@ -547,7 +539,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);",
@@ -555,7 +547,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 97,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "if (1999 < DAT_00761ec4) {",
@@ -563,7 +555,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 102,
       "match": "param_1",
       "severity": "mild",
       "text": "(&DAT_00761ec8)[DAT_00761ec4] = param_1;",
@@ -571,7 +563,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 102,
       "match": "DAT_00761ec8",
       "severity": "mild",
       "text": "(&DAT_00761ec8)[DAT_00761ec4] = param_1;",
@@ -579,7 +571,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 102,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "(&DAT_00761ec8)[DAT_00761ec4] = param_1;",
@@ -587,7 +579,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 103,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "DAT_00761ec4 = DAT_00761ec4 + 1;",
@@ -595,7 +587,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 103,
       "match": "DAT_00761ec4",
       "severity": "mild",
       "text": "DAT_00761ec4 = DAT_00761ec4 + 1;",
@@ -603,7 +595,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00408880(param_1);",
@@ -611,7 +603,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 111,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = engine_model_c_getMRGLSize_FUN_004dd520((SMRGLHeaderExtended *)param_1);",
@@ -619,7 +611,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (SMRGLHeaderPrimitive *)((int)&(param_1->base).type + iVar4);",
@@ -627,7 +619,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (SMRGLHeaderPrimitive *)((int)&(param_1->base).type + iVar4);",
@@ -635,7 +627,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "cVar2 = (char)(param_1->base).type;",
@@ -651,7 +643,7 @@
     },
     {
       "description": "Pointer value `&DAT_00761ec8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "(int)&DAT_00761ec8",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&DAT_00761ec8 + iVar5);",
@@ -667,7 +659,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&DAT_00761ec8 + iVar5);",
@@ -675,7 +667,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 110,
+      "line": 112,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "param_1 = (SMRGLHeaderPrimitive *)((int)&(param_1->base).type + iVar4);",

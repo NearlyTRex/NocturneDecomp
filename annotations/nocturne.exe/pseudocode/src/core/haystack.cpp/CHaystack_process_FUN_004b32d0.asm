@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *param_1,float param_2)
+; void __cdecl core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *this_ptr,float delta_time)
 ;
+; Parameters:
+; CHaystack *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x90]:4  local_90
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -285,7 +288,7 @@ section .text
     PUSH EAX                            ; 004b3541
     LEA ESI,[ESP + 0x14]                ; 004b3542
     CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 004b3546
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_0055d610(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 004b354b
     LEA EAX,[ESP + 0x20]                ; 004b354e
     LEA EDI,[ESP + 0x20]                ; 004b3552
@@ -333,7 +336,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 004b35a3 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 004b35a9 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b35aa
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004b33b1                      ; 004b35af
         ;   XREF to: 004b33b1 (UNCONDITIONAL_JUMP)  ; LAB_004b33b1
     PUSH 0x1                            ; 004b35b4

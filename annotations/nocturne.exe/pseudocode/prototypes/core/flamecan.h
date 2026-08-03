@@ -13,7 +13,7 @@ CFlameCan * __cdecl factoryFunc(void);
 
 // Original: core_flamecan.cpp_CFlameCan_getActorType_FUN_0048e360
 // Address: 0048e360
-CDemonActorType * CFlameCan::getActorType(void);
+CDemonActorType * __cdecl CFlameCan::getActorType(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_ctor_FUN_0048e370
 // Address: 0048e370
@@ -21,7 +21,7 @@ CFlameCan * __cdecl CFlameCan::ctor(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_setup_FUN_0048e410
 // Address: 0048e410
-void CFlameCan::setup(CDemonActor *param_1);
+void __cdecl CFlameCan::setup(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550
 // Address: 0048e550
@@ -29,15 +29,15 @@ void __cdecl CFlameCan::ignite(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0
 // Address: 0048e5a0
-void CFlameCan::process(CFlameCan *param_1,float param_2);
+void __cdecl CFlameCan::process(CFlameCan *this_ptr,float delta_time);
 
 // Original: core_flamecan.cpp_CFlameCan_renderOpaque_FUN_0048e6d0
 // Address: 0048e6d0
-int CFlameCan::renderOpaque(int param_1);
+int __cdecl CFlameCan::renderOpaque(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_renderTransparent_FUN_0048e760
 // Address: 0048e760
-undefined4 CFlameCan::renderTransparent(int param_1);
+int __cdecl CFlameCan::renderTransparent(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_0048e790
 // Address: 0048e790
@@ -49,7 +49,7 @@ void __cdecl CFlameCan::archive(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_getCollisionType_FUN_0048e890
 // Address: 0048e890
-undefined4 CFlameCan::getCollisionType(void);
+ECollisionType __cdecl CFlameCan::getCollisionType(CFlameCan *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_flamecan.cpp_CFlameCan_getBoundingBox_FUN_0048e8a0
 // Address: 0048e8a0

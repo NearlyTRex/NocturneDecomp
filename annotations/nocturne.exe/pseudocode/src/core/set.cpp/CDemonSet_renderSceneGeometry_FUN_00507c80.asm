@@ -224,7 +224,7 @@ section .text
     ADD ESI,0x4                         ; 00507e49
     INC EDI                             ; 00507e4c
     CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 ; 00507e4d
-        ;   XREF to: 0050e190 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190()
+        ;   XREF to: 0050e190 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(CDemonSet * this_ptr)
     MOV EAX,dword ptr [EBX + 0x15a8cc]  ; 00507e52
     ADD ESP,0x4                         ; 00507e58
     CMP EDI,EAX                         ; 00507e5b
@@ -331,7 +331,7 @@ section .text
     ADD EDI,0x4                         ; 00507f5d
     INC ESI                             ; 00507f60
     CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 ; 00507f61
-        ;   XREF to: 0050e190 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190()
+        ;   XREF to: 0050e190 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(CDemonSet * this_ptr)
     MOV ECX,dword ptr [EBX + 0x15a8cc]  ; 00507f66
     ADD ESP,0x4                         ; 00507f6c
     CMP ESI,ECX                         ; 00507f6f

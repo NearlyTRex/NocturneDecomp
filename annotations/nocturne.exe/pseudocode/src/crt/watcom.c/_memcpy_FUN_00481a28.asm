@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_watcom_c__memcpy_FUN_00481a28(uint param_1)
+; void __fastcall crt_watcom_c__memcpy_FUN_00481a28(void *dest,void *src,uint size)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   size
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 at 00440ab3

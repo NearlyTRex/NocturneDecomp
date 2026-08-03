@@ -193,15 +193,15 @@ void FUN_00402bb0(int param_1,int param_2,char *param_3);
 
 // Original: engine_2d.c_drawTextCenteredAtColor_FUN_00402c20
 // Address: 00402c20
-void drawTextCenteredAtColor(char *param_1,int param_2,int param_3);
+void __cdecl drawTextCenteredAtColor(char *text,int x,int y);
 
 // Original: engine_2d.c_FUN_00402c60
 // Address: 00402c60
-void FUN_00402c60(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void FUN_00402c60(int param_1,int param_2,char *param_3);
 
 // Original: engine_2d.c_FUN_00402c80
 // Address: 00402c80
-void FUN_00402c80(undefined4 param_1,undefined4 param_2,char *param_3);
+void FUN_00402c80(int param_1,int param_2,char *param_3);
 
 // Original: engine_2d.c_drawTextCenteredColor_FUN_00402cf0
 // Address: 00402cf0
@@ -333,4 +333,4 @@ int __cdecl mapTextureFrameBuffer(void);
 
 // Original: engine_2d.c_unmapFrameBuffer_FUN_00404360
 // Address: 00404360
-int unmapFrameBuffer(void);
+void __cdecl unmapFrameBuffer(void);

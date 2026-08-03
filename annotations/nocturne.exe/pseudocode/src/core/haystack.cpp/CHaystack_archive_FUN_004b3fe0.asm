@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_haystack_cpp_CHaystack_archive_FUN_004b3fe0(CHero *param_1)
+; void __cdecl core_haystack_cpp_CHaystack_archive_FUN_004b3fe0(CHaystack *this_ptr)
 ;
+; Parameters:
+; CHaystack *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_archive_FUN_004b49a0

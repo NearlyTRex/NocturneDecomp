@@ -77,11 +77,11 @@ void __cdecl CSpark::setupRenderState(CSpark *this_ptr);
 
 // Original: core_fire.cpp_CSpark_render_FUN_004838c0
 // Address: 004838c0
-void CSpark::render(CVector3f *param_1);
+void __cdecl CSpark::render(CSpark *this_ptr);
 
 // Original: core_fire.cpp_CSpark_onCollision_FUN_00483fe0
 // Address: 00483fe0
-undefined4 CSpark::onCollision(void);
+int __cdecl CSpark::onCollision(CSpark *this_ptr,CVector3f *collision_normal);
 
 // Original: core_fire.cpp_loadFireBallAssets_FUN_00483ff0
 // Address: 00483ff0
@@ -97,7 +97,7 @@ void __cdecl CFireball::setupRenderState(CFireball *this_ptr);
 
 // Original: core_fire.cpp_CFireball_render_FUN_00484390
 // Address: 00484390
-void CFireball::render(CVector3f *param_1);
+void __cdecl CFireball::render(CFireball *this_ptr);
 
 // Original: core_fire.cpp_CFireball_onCollision_FUN_00484b60
 // Address: 00484b60
@@ -117,7 +117,7 @@ void __cdecl CRock::process(CRock *this_ptr);
 
 // Original: core_fire.cpp_CRock_render_FUN_00484d40
 // Address: 00484d40
-void CRock::render(CVector3f *param_1);
+void __cdecl CRock::render(CRock *this_ptr);
 
 // Original: core_fire.cpp_CMuzzleFlash_init_FUN_00484e10
 // Address: 00484e10
@@ -149,7 +149,7 @@ void __cdecl CGlassParticle::process(CGlassParticle *this_ptr);
 
 // Original: core_fire.cpp_CGlassParticle_onCollision_FUN_00485630
 // Address: 00485630
-undefined4 CGlassParticle::onCollision(void);
+int __cdecl CGlassParticle::onCollision(CGlassParticle *this_ptr,CVector3f *collision_normal);
 
 // Original: core_fire.cpp_CBulletTrail_init_FUN_00485640
 // Address: 00485640
@@ -321,7 +321,7 @@ void __cdecl CShell::setup(CShell *this_ptr,CVector3f *position,CVector3f *euler
 
 // Original: core_fire.cpp_CShell_render_FUN_004896d0
 // Address: 004896d0
-void CShell::render(CVector3f *param_1);
+void __cdecl CShell::render(CShell *this_ptr);
 
 // Original: core_fire.cpp_CShell_process_FUN_004897d0
 // Address: 004897d0
@@ -333,15 +333,15 @@ int __cdecl CShell::onCollision(CShell *this_ptr,CVector3f *collision_normal);
 
 // Original: core_fire.cpp_CRainDrop_onCollision_FUN_00489980
 // Address: 00489980
-undefined4 CRainDrop::onCollision(void);
+int __cdecl CRainDrop::onCollision(CRainDrop *this_ptr,CVector3f *collision_normal);
 
 // Original: core_fire.cpp_CPopcorn_render_FUN_00489990
 // Address: 00489990
-void CPopcorn::render(CVector3f *param_1);
+void __cdecl CPopcorn::render(CPopcorn *this_ptr);
 
 // Original: core_fire.cpp_CRainDrop_render_FUN_00489d00
 // Address: 00489d00
-void CRainDrop::render(CVector3f *param_1);
+void __cdecl CRainDrop::render(CRainDrop *this_ptr);
 
 // Original: core_fire.cpp_allocateBulletHole_FUN_0048a0e0
 // Address: 0048a0e0
@@ -365,7 +365,7 @@ void __cdecl CFireEffect::render(CFireEffect *this_ptr);
 
 // Original: core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970
 // Address: 0048a970
-void CFireEffect::renderDecals(undefined4 param_1,int param_2);
+void __cdecl CFireEffect::renderDecals(CFireEffect *this_ptr,int render_mode,int render_completeness);
 
 // Original: core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0
 // Address: 0048aae0

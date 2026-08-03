@@ -1,18 +1,18 @@
 // Name: core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ef0
 // Address: 00428ef0
 // Address Range: [[00428ef0, 00428f15]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-void core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(int param_1)
+void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(CCharacter *this_ptr)
 
 {
-  if (*(CDoor **)(param_1 + 0x25ac) == (CDoor *)0x0) {
+  if (this_ptr->door_target == (CDoor *)0x0) {
     return;
   }
-  core_door_cpp_CDoor_onOpened_FUN_00455270(*(CDoor **)(param_1 + 0x25ac));
-  *(uint *)(param_1 + 0x25ac) = 0;
+  core_door_cpp_CDoor_onOpened_FUN_00455270(this_ptr->door_target);
+  this_ptr->door_target = (CDoor *)0x0;
   return;
 }

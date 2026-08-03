@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dracbrid_cpp_CDraculaBride_setup_FUN_00458730(CEnemy *param_1)
+; void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_00458730(CDraculaBride *this_ptr)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

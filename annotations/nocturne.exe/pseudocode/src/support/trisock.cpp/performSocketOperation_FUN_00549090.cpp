@@ -6,33 +6,31 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl support_trisock_cpp_performSocketOperation_FUN_00549090(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr)
 
 {
   int iVar1;
-  byte bVar2;
+  uint *puVar2;
+  uint *puVar3;
+  byte bVar4;
   uint auStackY_1808 [1521];
-  uint local_2c;
-  uint local_1c;
+  SOCKADDR_IN local_2c;
+  SOCKADDR_IN local_1c;
   
-  bVar2 = 0;
+  bVar4 = 0;
   if (dest_addr == (SNetworkAddr *)0x0) {
     iVar1 = Ordinal_19(*socket_handle,buffer,length,0);
     return iVar1;
   }
-  support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(dest_addr);
-  local_1c = local_2c;
-  *(uint *)((int)&stack0xffffffe8 + (uint)bVar2 * 0xfffffffe * 4) =
-       *(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
-  *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  *(uint *)
-   ((int)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =
-       *(uint *)
-        ((int)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
-  ;
-  iVar1 = Ordinal_20(*socket_handle,buffer,length,0,&stack0xffffffe4,0x10);
+  support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(dest_addr,&local_2c);
+  local_1c.sin_family = local_2c.sin_family;
+  local_1c.sin_port = local_2c.sin_port;
+  puVar3 = (uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  *(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =
+       *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
+  *puVar3 = *puVar2;
+  puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
+  iVar1 = Ordinal_20(*socket_handle,buffer,length,0,&local_1c,0x10);
   return iVar1;
 }

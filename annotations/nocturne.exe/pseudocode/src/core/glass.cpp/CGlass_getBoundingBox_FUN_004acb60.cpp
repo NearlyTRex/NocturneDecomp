@@ -1,24 +1,24 @@
 // Name: core_glass.cpp_CGlass_getBoundingBox_FUN_004acb60
 // Address: 004acb60
 // Address Range: [[004acb60, 004acbb3]]
-// Convention: unknown
-// Signature: void core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(CGlass *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-void core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(int param_1,float *param_2)
+CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(CGlass *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;
   float fVar2;
   
-  fVar1 = *(float *)(param_1 + 0x150);
+  fVar1 = (this_ptr->glass_size).x;
   fVar2 = (float)0.5;
-  param_2[1] = -0.1;
-  *param_2 = -fVar1 * fVar2;
-  param_2[2] = -*(float *)(param_1 + 0x158) * fVar2;
-  param_2[3] = *(float *)(param_1 + 0x150) * fVar2;
-  param_2[4] = *(float *)(param_1 + 0x154) + (float)0.10000000000000001;
-  param_2[5] = fVar2 * *(float *)(param_1 + 0x158);
-  return;
+  (out_box->min).y = -0.1;
+  (out_box->min).x = -fVar1 * fVar2;
+  (out_box->min).z = -(this_ptr->glass_size).z * fVar2;
+  (out_box->max).x = (this_ptr->glass_size).x * fVar2;
+  (out_box->max).y = (this_ptr->glass_size).y + (float)0.10000000000000001;
+  (out_box->max).z = fVar2 * (this_ptr->glass_size).z;
+  return out_box;
 }

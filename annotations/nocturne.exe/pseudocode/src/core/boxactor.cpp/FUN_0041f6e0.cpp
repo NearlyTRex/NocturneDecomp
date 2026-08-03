@@ -87,7 +87,7 @@ void __cdecl core_boxactor_cpp_FUN_0041f6e0(CLightActor *this_ptr)
         this_ptr_01 = g_CDemonFilter_ARRAY_0076483c;
         iVar3 = 0;
         do {
-          _sprintf(acStack_d0,"lantern%d.raw",iVar3);
+          _sprintf(acStack_d0,"lantern%d.raw");
           iVar3 = iVar3 + 1;
           core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(this_ptr_01,acStack_d0);
           this_ptr_01 = this_ptr_01 + 1;

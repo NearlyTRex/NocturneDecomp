@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_0052c8b0(void)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_0052c8b0(CWavOutDevice *this_ptr,CSfxSlot *slot)
 ;
+; Parameters:
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
+; CSfxSlot *       Stack[0x8]:4   slot
 ;
 ; *****************************************************************************
 

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 956,
+    "complexity_score": 232,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 201,
-    "suspect_count": 74,
+    "pseudocode_lines": 202,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unnamed_param",
       "unrolled_memset"
     ],
-    "total_lines": 618
+    "total_lines": 619
   },
   "cross_references": [],
   "function": {
@@ -85,10 +84,10 @@
         "00551918"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_wateract.cpp_CWaterActor_setup_FUN_00551370",
-    "signature": "void core_wateract_cpp_CWaterActor_setup_FUN_00551370(CWaterActor *param_1)"
+    "signature": "void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00551370(CWaterActor *this_ptr)"
   },
   "function_calls": [
     {
@@ -161,9 +160,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -214,10 +213,10 @@
     "pcode_op_count": 2459
   },
   "stack_frame": {
-    "frame_size": 72,
+    "frame_size": 76,
     "local_size": 72,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -310,6 +309,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWaterActor *"
       }
     ]
   },
@@ -337,22 +343,22 @@
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 28,
-          "line": 47,
+          "column": 29,
+          "line": 48,
           "message": "Uninitialized variable: iStack_4c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 67,
+          "line": 68,
           "message": "Uninitialized variable: local_2c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 20,
-          "line": 81,
+          "line": 82,
           "message": "Uninitialized variable: local_18",
           "severity": "error"
         }
@@ -363,592 +369,16 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_wateract_cpp_CWaterActor_setup_FUN_00551370(CWaterActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->base_y = (param_1->base).location.position.y - param_1->height_delta * param_1->param;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->base_y = (param_1->base).location.position.y - param_1->height_delta * param_1->param;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->base_y = (param_1->base).location.position.y - param_1->height_delta * param_1->param;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->base_y = (param_1->base).location.position.y - param_1->height_delta * param_1->param;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->round_flag == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = 1.0 / param_1->patch_size;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (param_1->size).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar17 = round((double)((param_1->size).z * fVar4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->grid_cols = (int)ROUND(dVar18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->grid_rows = iStack_4c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_count = iVar6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->patch_size = param_1->patch_size * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->patch_size = param_1->patch_size * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (param_1->size).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar19 = (double)(param_1->size).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((1.0 - (double)pfVar7[2] / (double)(param_1->size).z) * dVar5 *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar10 = param_1->primitives;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->grid_rows) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->grid_cols) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar13 = (param_1->grid_cols + 1) * local_30 + iVar6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar10->vertices[0].vertex_index = iVar13 + param_1->grid_cols + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 111,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar13 = param_1->grid_cols;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = param_1->grid_cols;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 126,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->grid_cols);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_30 < param_1->grid_rows);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->primitive_count = param_1->grid_cols * param_1->grid_rows * 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->primitive_count = param_1->grid_cols * param_1->grid_rows * 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->primitive_count = param_1->grid_cols * param_1->grid_rows * 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 134,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->primitive_count = 0x20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 135,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_count = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 140,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->primitive_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 142,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar15 = ((float10)iVar6 / (float10)param_1->primitive_count) * (float10)3.1415926535000001 *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 146,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[param_1->vertex_count].local_position.x =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 146,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[param_1->vertex_count].local_position.x =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 147,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float)(fVar16 * (float10)(param_1->size).x * (float10)0.70699999999999996);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 148,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[param_1->vertex_count].local_position.y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 148,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[param_1->vertex_count].local_position.y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 149,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[param_1->vertex_count].local_position.z =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 149,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[param_1->vertex_count].local_position.z =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 150,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float)(fVar15 * (float10)(param_1->size).z * (float10)0.70699999999999996);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 151,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar12 = param_1->vertex_count;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((double)param_1->vertices[iVar12].local_position.x /",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)(param_1->size).x) * dVar17 * dVar18 + dVar5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 155,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar12].u = (int)ROUND(dVar19);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 156,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar12 = param_1->vertex_count;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 158,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((double)param_1->vertices[iVar12].local_position.z /",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 159,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)(param_1->size).z) * dVar17 * dVar18 + dVar5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar12].v = (int)ROUND(dVar19);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 162,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_count = param_1->vertex_count + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 162,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_count = param_1->vertex_count + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 163,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < param_1->primitive_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = param_1->vertex_count;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar6].local_position.z = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 167,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar6].local_position.y = param_1->vertices[iVar6].local_position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 167,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar6].local_position.y = param_1->vertices[iVar6].local_position.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 168,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar6].local_position.x = param_1->vertices[iVar6].local_position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 168,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertices[iVar6].local_position.x = param_1->vertices[iVar6].local_position.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 170,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_count = param_1->vertex_count + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 170,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->vertex_count = param_1->vertex_count + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 171,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->primitive_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar10 = param_1->primitives;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 173,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar14 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 182,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = param_1->primitive_count;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 186,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar12 = iVar9 % param_1->primitive_count;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 192,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar10->vertices[2].texture_u = param_1->vertices[iVar12].u;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 194,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar10->vertices[2].texture_v = param_1->vertices[iVar12].v;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 197,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar9 < param_1->primitive_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 200,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_00551920(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 201,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->texture_frame = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 202,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->texture_anim_accum = 0;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 166,
+      "line": 167,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "param_1->vertices[iVar6].local_position.z = 0.0;",
+      "text": "this_ptr->vertices[iVar6].local_position.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 193,
+      "line": 194,
       "match": "pCVar14 = (T *)&(pCVar14->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar14 = (CWaterActor *)&(pCVar14->base).location;",
@@ -956,15 +386,15 @@
     },
     {
       "description": "Uninitialized variable: iStack_4c",
-      "line": 47,
+      "line": 48,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "param_1->grid_rows = iStack_4c;",
+      "text": "this_ptr->grid_rows = iStack_4c;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_2c",
-      "line": 67,
+      "line": 68,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "pfVar7[2] = local_2c;",
@@ -972,7 +402,7 @@
     },
     {
       "description": "Uninitialized variable: local_18",
-      "line": 81,
+      "line": 82,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_18 = local_18 + 1;",

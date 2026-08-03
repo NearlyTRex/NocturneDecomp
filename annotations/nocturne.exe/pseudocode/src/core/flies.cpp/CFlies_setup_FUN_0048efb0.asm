@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flies_cpp_CFlies_setup_FUN_0048efb0(CFlies *param_1)
+; void __cdecl core_flies_cpp_CFlies_setup_FUN_0048efb0(CFlies *this_ptr)
 ;
+; Parameters:
+; CFlies *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

@@ -79,6 +79,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(CDemonCamera *
   int local_24;
   int local_20;
   int iStack_1c;
+  int iStack_18;
   _FILE *local_14;
   
   bVar31 = 0;
@@ -443,10 +444,10 @@ LAB_00443363:
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60
                 (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c,(SRGBColorPalette *)&DAT_00b0daf8);
-      _memset(0x12d40);
+      _memset((void *)0xaafdb8,0,0x12d40);
       if (DAT_005b7620 == 0x180) {
+        iStack_18 = 0;
         iStack_1c = 0;
-        local_20 = 0;
         do {
           iVar21 = 0;
           iVar7 = 0;
@@ -454,8 +455,8 @@ LAB_00443363:
             iVar17 = 0;
             if (0 < (int)_DAT_0140d780) {
               iVar15 = ((int)((iVar7 + (iVar7 >> 0x1f) * -0x100) - (uint)((iVar7 >> 0x1f) << 7 < 0))
-                       >> 8) + (iStack_1c / 0xc0) * 0x140;
-              iVar19 = local_20 + iVar21;
+                       >> 8) + (iStack_18 / 0xc0) * 0x140;
+              iVar19 = iStack_1c + iVar21;
               do {
                 iVar17 = iVar17 + 1;
                 *(byte *)(iVar19 + 0x12e1778) = *(byte *)(iVar15 + 0x12e1778);
@@ -466,9 +467,9 @@ LAB_00443363:
             iVar21 = iVar21 + 1;
             iVar7 = iVar7 + 0x140;
           } while (iVar21 < 0x100);
-          iStack_1c = iStack_1c + 0xf0;
-          local_20 = local_20 + 0x140;
-        } while (iStack_1c != 0xb400);
+          iStack_18 = iStack_18 + 0xf0;
+          iStack_1c = iStack_1c + 0x140;
+        } while (iStack_18 != 0xb400);
       }
     }
   }

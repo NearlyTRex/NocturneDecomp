@@ -334,7 +334,7 @@ section .text
     FSTP ST1                            ; 004148c3
     FSTP float ptr [ESI + 0x4]          ; 004148c5
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004148c8
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004148cd
     PUSH 0x3f000000                     ; 004148d0
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 004148d5

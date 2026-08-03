@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_armour_cpp_CArmour_setup_FUN_0040fa00(CEnemy *param_1)
+; void __cdecl core_armour_cpp_CArmour_setup_FUN_0040fa00(CArmour *this_ptr)
 ;
+; Parameters:
+; CArmour *        Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0

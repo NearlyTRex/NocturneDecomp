@@ -65,7 +65,7 @@ int __cdecl CDemonSet::findVdirBoxRoot(CDemonSet *this_ptr,int box_index);
 
 // Original: core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340
 // Address: 00514340
-int CDemonSet::findVdirBoxAtPosition(CDemonSet *param_1,CVector3f *param_2);
+int __cdecl CDemonSet::findVdirBoxAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
 // Original: core_setdir.cpp_FUN_00514390
 // Address: 00514390

@@ -125,7 +125,7 @@ section .text
     PUSH ESI                            ; 004cb0f1
     FSTP float ptr [EBX + 0x18]         ; 004cb0f2
     CALL core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20 ; 004cb0f5
-        ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20()
+        ;   XREF to: 004cae20 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(CMansionPuzzleCircle * this_ptr, int panel_index, float * out_r, float * out_g, ...)
     ADD ESP,0x14                        ; 004cb0fa
     FLD float ptr [ESP + 0x14]          ; 004cb0fd
     FDIV float ptr [0x005a0048]         ; 004cb101 | FLOAT_005a0048

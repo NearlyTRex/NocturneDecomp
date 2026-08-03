@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(int param_1,int param_2,float *param_3,float *param_4,float *param_5)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
+; float *          Stack[0xc]:4   out_r
+; float *          Stack[0x10]:4   out_g
+; float *          Stack[0x14]:4   out_b
 ;
 ; XREF[3]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004c9580 at 004c97dc

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -68,17 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 424,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 36,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "unnamed_param"
+      "unrolled_strcpy"
     ],
     "total_lines": 153
   },
@@ -91,9 +89,9 @@
         "0043850d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_cloth.cpp_CClothList_remove_FUN_00438410",
-    "signature": "void core_cloth_cpp_CClothList_remove_FUN_00438410(int *param_1,int param_2)"
+    "signature": "void __cdecl core_cloth_cpp_CClothList_remove_FUN_00438410(CClothList *this_ptr,int index)"
   },
   "function_calls": [
     {
@@ -142,9 +140,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -177,301 +175,36 @@
     "pcode_op_count": 488
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      },
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_cloth_cpp_CClothList_remove_FUN_00438410(int *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_cloth_cpp_CClothList_remove_FUN_00438410(int *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (*param_1 <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (*param_1 <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (*param_1 <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((CCloth *)param_1[param_2 + 0x65] != (CCloth *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((CCloth *)param_1[param_2 + 0x65] != (CCloth *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = core_cloth_cpp_CCloth_dtor_FUN_00435160((CCloth *)param_1[param_2 + 0x65],0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar3 = core_cloth_cpp_CCloth_dtor_FUN_00435160((CCloth *)param_1[param_2 + 0x65],0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar6 = param_1 + param_2 * 10 + -9;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "piVar6 = param_1 + param_2 * 10 + -9;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar5 = param_1 + param_2 * 10 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "piVar5 = param_1 + param_2 * 10 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar4 = param_1 + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "piVar4 = param_1 + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(char *)((int)piVar7",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 31,
+      "match": "do {",
       "severity": "moderate",
-      "text": "cVar1 = *(char *)((int)piVar7 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(int *)((int)piVar7",
-      "severity": "moderate",
-      "text": "piVar7 = (int *)((int)piVar7 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(char *)((int)piVar8",
-      "severity": "moderate",
-      "text": "*(char *)((int)piVar8 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(int *)((int)piVar8",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)((int)piVar8 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "} while (param_2 < *param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (param_2 < *param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = iVar2 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)(param_1 + (iVar2 + -1) * 10 + 1) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 + 0x65] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 + 0x65] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
-      "match": "(int)piVar7",
-      "severity": "moderate",
-      "text": "cVar1 = *(char *)((int)piVar7 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
-      "match": "(int)piVar7",
-      "severity": "moderate",
-      "text": "piVar7 = (int *)((int)piVar7 + 2);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(int)piVar8",
-      "severity": "moderate",
-      "text": "*(char *)((int)piVar8 + 1) = cVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
-      "match": "(int)piVar8",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)((int)piVar8 + 2);",
-      "type": "pointer_truncation"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

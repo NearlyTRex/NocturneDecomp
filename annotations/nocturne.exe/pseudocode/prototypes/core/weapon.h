@@ -25,7 +25,7 @@ int __cdecl CWeapon::renderOpaque(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_getBoundingBox_FUN_00553fe0
 // Address: 00553fe0
-float * CWeapon::getBoundingBox(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CWeapon::getBoundingBox(CWeapon *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_weapon.cpp_CWeapon_process_FUN_00554030
 // Address: 00554030
@@ -37,7 +37,7 @@ void __cdecl CWeapon::archive(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_getCollisionType_FUN_00554250
 // Address: 00554250
-undefined4 CWeapon::getCollisionType(void);
+ECollisionType __cdecl CWeapon::getCollisionType(CWeapon *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_weapon.cpp_CWeapon_canPickup_FUN_00554260
 // Address: 00554260
@@ -45,11 +45,11 @@ int __cdecl CWeapon::canPickup(CWeapon *this_ptr,CDemonActor *picker);
 
 // Original: core_weapon.cpp_CWeapon_pickup_FUN_00554300
 // Address: 00554300
-void CWeapon::pickup(int param_1,undefined4 param_2);
+void __cdecl CWeapon::pickup(CWeapon *this_ptr,CDemonActor *carrier);
 
 // Original: core_weapon.cpp_CWeapon_onDropped_FUN_00554310
 // Address: 00554310
-void CWeapon::onDropped(CCharacter *param_1,CVector3f *param_2);
+void __cdecl CWeapon::onDropped(CWeapon *this_ptr,CVector3f *drop_position);
 
 // Original: core_weapon.cpp_CLadder_getGroundType_FUN_005543b0
 // Address: 005543b0
@@ -65,7 +65,7 @@ void __cdecl CWeapon::setWeaponState(CWeapon *this_ptr,int weapon_state);
 
 // Original: core_weapon.cpp_CWeapon_onPickup_FUN_00554570
 // Address: 00554570
-void CWeapon::onPickup(CDemonActor *param_1,CDemonActor *param_2);
+void __cdecl CWeapon::onPickup(CWeapon *this_ptr,CDemonActor *owner);
 
 // Original: core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_00554590
 // Address: 00554590

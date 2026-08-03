@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00534a70(int param_1,CVector3f *param_2,float param_3,float *param_4)
+; int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00534a70(CStairs *this_ptr,CVector3f *position,float search_radius,float *out_floor_height)
 ;
+; Parameters:
+; CStairs *        Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   search_radius
+; float *          Stack[0x10]:4   out_floor_height
 ;
 ; Called Functions:
 ;   core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110

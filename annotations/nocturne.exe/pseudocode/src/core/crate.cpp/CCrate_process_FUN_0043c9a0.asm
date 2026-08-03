@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crate_cpp_CCrate_process_FUN_0043c9a0(CDemonActor *param_1)
+; void __cdecl core_crate_cpp_CCrate_process_FUN_0043c9a0(CCrate *this_ptr,float delta_time)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;

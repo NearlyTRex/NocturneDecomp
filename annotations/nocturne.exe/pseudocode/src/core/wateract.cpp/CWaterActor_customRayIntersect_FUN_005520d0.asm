@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,CVector3f *param_2,CVector3f *param_3,float *param_4)
+; float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 ;
+; Parameters:
+; CWaterActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_direction
+; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
 ; undefined        Stack[-0x50]:1  local_50
 ;

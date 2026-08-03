@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,19 +62,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 104,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 7,
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "unaffected_reg",
+      "pointer_cast",
       "unrolled_memcpy"
     ],
-    "total_lines": 41
+    "total_lines": 40
   },
   "cross_references": [
     {
@@ -92,9 +91,9 @@
         "0041a5de"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "engine_boss.c_modelStructNotSupported4_FUN_0041a5a0",
-    "signature": "void engine_boss_c_modelStructNotSupported4_FUN_0041a5a0(void)"
+    "signature": "void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041a5a0(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds)"
   },
   "function_calls": [
     {
@@ -140,17 +139,17 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.85,
@@ -179,10 +178,10 @@
     "pcode_op_count": 77
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 68,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -191,62 +190,28 @@
         "offset": -60,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "mrgl_data",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "modelStructNotSupported4_FUN_0041a5a0.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 24,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(SMRGLModelBounds *)((int)out_bounds",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
+      "text": "out_bounds = (SMRGLModelBounds *)((int)out_bounds + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 16,
+      "line": 15,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -259,25 +224,6 @@
       "severity": "moderate",
       "text": "// 0041a5d5: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 24,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "static_uninitvar"
     }
   ]
 }

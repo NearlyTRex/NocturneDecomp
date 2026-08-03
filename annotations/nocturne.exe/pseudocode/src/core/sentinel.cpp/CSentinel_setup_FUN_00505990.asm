@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sentinel_cpp_CSentinel_setup_FUN_00505990(CEnemy *param_1)
+; void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_00505990(CSentinel *this_ptr)
 ;
+; Parameters:
+; CSentinel *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_0058ff34

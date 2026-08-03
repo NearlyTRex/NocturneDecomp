@@ -19,7 +19,7 @@ double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(uint sfx_ha
   uint local_20;
   uint uStack_1c;
   
-  this_ptr = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     local_24 = 0xbff00000;
     local_28 = 0;

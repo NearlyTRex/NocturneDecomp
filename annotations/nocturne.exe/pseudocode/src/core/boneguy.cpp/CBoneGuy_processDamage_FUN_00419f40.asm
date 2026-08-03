@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_CBoneGuy_processDamage_FUN_00419f40(CBoneGuy *param_1,SDamageInfo *param_2)
+; void __cdecl core_boneguy_cpp_CBoneGuy_processDamage_FUN_00419f40(CBoneGuy *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0

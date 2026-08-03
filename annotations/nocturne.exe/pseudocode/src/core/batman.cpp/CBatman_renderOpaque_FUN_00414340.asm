@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_batman_cpp_CBatman_renderOpaque_FUN_00414340(CCharacter *param_1)
+; int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_00414340(CBatman *this_ptr)
 ;
+; Parameters:
+; CBatman *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ;

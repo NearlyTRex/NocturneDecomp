@@ -1,57 +1,60 @@
 // Name: shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0
 // Address: 00475db0
 // Address Range: [[00475db0, 00475f0b]]
-// Convention: unknown
-// Signature: void shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(int *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(CPickList *this_ptr)
 
 #include "nocturne.h"
 
-void shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(int *param_1)
+void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(CPickList *this_ptr)
 
 {
   int iVar1;
   
-  if (*param_1 <= param_1[0x46]) {
-    param_1[0x46] = *param_1 + -1;
+  iVar1 = (this_ptr->base).item_count;
+  if (iVar1 <= this_ptr->current_index) {
+    this_ptr->current_index = iVar1 + -1;
   }
-  if (param_1[0x46] < 0) {
-    param_1[0x46] = 0;
+  if (this_ptr->current_index < 0) {
+    this_ptr->current_index = 0;
   }
-  while (param_1[0x47] < 0) {
-    param_1[0x47] = param_1[0x47] + param_1[0x49];
+  while (this_ptr->scroll_top < 0) {
+    this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->vertical_page_size;
   }
-  while (*param_1 <= param_1[0x47]) {
-    param_1[0x47] = param_1[0x47] - param_1[0x49];
+  while ((this_ptr->base).item_count <= this_ptr->scroll_top) {
+    this_ptr->scroll_top = this_ptr->scroll_top - this_ptr->vertical_page_size;
   }
-  if (param_1[0x47] < 0) {
-    param_1[0x47] = 0;
+  if (this_ptr->scroll_top < 0) {
+    this_ptr->scroll_top = 0;
   }
-  if (param_1[0x46] < *param_1) {
-    while (iVar1 = param_1[0x47], param_1[0x46] < iVar1) {
-      if (param_1[0x4b] == 1) {
-        param_1[0x47] = iVar1 + -1;
+  if (this_ptr->current_index < (this_ptr->base).item_count) {
+    while (iVar1 = this_ptr->scroll_top, this_ptr->current_index < iVar1) {
+      if (this_ptr->column_count == 1) {
+        this_ptr->scroll_top = iVar1 + -1;
       }
       else {
-        param_1[0x47] = iVar1 - param_1[0x49];
+        this_ptr->scroll_top = iVar1 - this_ptr->vertical_page_size;
       }
-      if (param_1[0x47] < 0) {
-        param_1[0x47] = 0;
+      if (this_ptr->scroll_top < 0) {
+        this_ptr->scroll_top = 0;
       }
     }
-    while (param_1[0x47] + param_1[0x48] <= param_1[0x46]) {
-      if (param_1[0x4b] == 1) {
-        param_1[0x47] = param_1[0x47] + 1;
+    while (this_ptr->scroll_top + this_ptr->page_size <= this_ptr->current_index) {
+      if (this_ptr->column_count == 1) {
+        this_ptr->scroll_top = this_ptr->scroll_top + 1;
       }
       else {
-        param_1[0x47] = param_1[0x47] + param_1[0x49];
+        this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->vertical_page_size;
       }
     }
   }
-  if ((param_1[0x4b] == 1) && (*param_1 - param_1[0x49] < param_1[0x47])) {
-    param_1[0x47] = *param_1 - param_1[0x49];
+  if ((this_ptr->column_count == 1) &&
+     (iVar1 = (this_ptr->base).item_count - this_ptr->vertical_page_size,
+     iVar1 < this_ptr->scroll_top)) {
+    this_ptr->scroll_top = iVar1;
   }
-  if (param_1[0x47] < 0) {
-    param_1[0x47] = 0;
+  if (this_ptr->scroll_top < 0) {
+    this_ptr->scroll_top = 0;
     return;
   }
   return;

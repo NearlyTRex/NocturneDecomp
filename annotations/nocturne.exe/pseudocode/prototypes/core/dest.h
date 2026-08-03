@@ -13,7 +13,7 @@ CActorDestination * __cdecl factoryFunc(void);
 
 // Original: core_dest.cpp_CActorDestination_getActorType_FUN_0044b790
 // Address: 0044b790
-CDemonActorType * CActorDestination::getActorType(void);
+CDemonActorType * __cdecl CActorDestination::getActorType(CActorDestination *this_ptr);
 
 // Original: core_dest.cpp_CActorDestination_ctor_FUN_0044b7a0
 // Address: 0044b7a0
@@ -33,7 +33,7 @@ undefined4 FUN_0044ba10(void);
 
 // Original: core_dest.cpp_CActorDestination_getBoundingBox_FUN_0044ba20
 // Address: 0044ba20
-undefined4 * CActorDestination::getBoundingBox(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CActorDestination::getBoundingBox(CActorDestination *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0
 // Address: 0044bab0

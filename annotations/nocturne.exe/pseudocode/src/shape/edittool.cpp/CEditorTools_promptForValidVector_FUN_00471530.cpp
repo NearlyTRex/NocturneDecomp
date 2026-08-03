@@ -17,8 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CE
     acStack_40[0] = '\0';
   }
   else {
-    _sprintf(acStack_40,"%g,%g,%g",(double)result_ptr->x,(double)result_ptr->y,
-               (double)result_ptr->z);
+    _sprintf(acStack_40,"%g,%g,%g");
   }
   while( true ) {
     iVar1 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600

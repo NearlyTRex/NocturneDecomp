@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,25 +52,61 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "incompatible_types",
+        "column": 3,
+        "line": 18,
+        "message": "no matching function for call to 'core_dmodel_cpp_FUN_00452f10'"
+      },
+      {
+        "category": "incompatible_types",
         "column": 12,
-        "line": 41,
+        "line": 34,
+        "message": "assigning to 'CVector3i *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 37,
+        "message": "assigning to 'SMRGLPrimitiveQuad *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 39,
+        "message": "assigning to 'int *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 42,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 55,
+        "line": 53,
+        "message": "no matching function for call to 'core_dmodel_cpp_FUN_00452f10'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 56,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "incompatible_types",
+        "column": 12,
+        "line": 66,
+        "message": "assigning to 'CVector3i *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
         "column": 3,
-        "line": 72,
+        "line": 73,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
@@ -80,18 +116,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 514,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 64,
-    "suspect_count": 44,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
-    "total_lines": 241
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 242
   },
   "cross_references": [
     {
@@ -115,9 +148,9 @@
         "00453611"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0",
-    "signature": "void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)"
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)"
   },
   "function_calls": [
     {
@@ -205,15 +238,10 @@
         "call_addr": "0045285f",
         "call_type": "direct",
         "caller": "core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0",
-        "estimated_params": 10,
+        "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 24,
         "stack_params": 6
       },
@@ -221,24 +249,19 @@
         "call_addr": "00452a74",
         "call_type": "direct",
         "caller": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00452990",
-        "estimated_params": 10,
+        "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 24,
         "stack_params": 6
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 10,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.387323943661972,
@@ -275,368 +298,55 @@
     "pcode_op_count": 765
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "poly_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "part_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame_count",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dmodel_cpp_FUN_00452f10(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x104) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x104) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x110) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x110) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x120) = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x120) = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x244) = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x244) = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x100) = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x100) = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (4 < *(int *)(param_1 + 0x120)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0x1e < *(int *)(param_1 + 0x244)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)(param_1 + 0x10c) = pvVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x110) * 0x48);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)(param_1 + 0x114) = pvVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x110) << 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x100);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)(param_1 + 0x118) = pvVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int **)(param_1 + 0x350) = piVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((*(int *)(param_1 + 0x10c) == 0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x350) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dmodel_cpp_FUN_00452f10(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d\",*(uint *)(param_1 + 0x100),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x104),*(uint *)(param_1 + 0x110));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x104),*(uint *)(param_1 + 0x110));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x100) != 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if (*(int *)(param_1 + 0x100) != 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x104) * 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)(param_1 + 0x108) = pvVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d\",*(uint *)(param_1 + 0x104));",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 10,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:10",
-      "param_delta": 10,
-      "text": "Function declares 0 params but call sites push 10 (10 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

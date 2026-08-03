@@ -187,7 +187,7 @@ uint core_lightgun_cpp_FUN_004c71a0(CCharacter *param_1)
                          &(this_ptr->base).orient.vec,&CStack_b0,aCStack_a4);
       if (iVar7 != 0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s in volume\n",this_ptr);
+                  (g_CConsole_PTR_005ad350,"%s in volume\n");
         core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
         pCVar3 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                            (&this_ptr->base,(CBoundingBox3D *)auStack_c8);

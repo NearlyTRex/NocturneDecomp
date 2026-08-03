@@ -2,19 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 102,
+    "complexity_score": 38,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 7,
-    "suspect_count": 8,
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "stack_ref",
-      "unnamed_param"
+      "stack_ref"
     ],
-    "total_lines": 26
+    "total_lines": 27
   },
   "cross_references": [
     {
@@ -38,9 +37,9 @@
         "0056b95d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_stdio.c_CreateFileVariadic_FUN_0056b934",
-    "signature": "void crt_stdio_c_CreateFileVariadic_FUN_0056b934(char *param_1,dword param_2,dword param_3)"
+    "signature": "int __cdecl crt_stdio_c_CreateFileVariadic_FUN_0056b934(char *filename,int access_mode,int share_mode)"
   },
   "function_calls": [
     {
@@ -57,12 +56,10 @@
         "call_addr": "005655b1",
         "call_type": "direct",
         "caller": "crt_unknown.c_OpenFileAndInitialize_FUN_0056551c",
-        "estimated_params": 5,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       },
@@ -70,21 +67,18 @@
         "call_addr": "00570bb4",
         "call_type": "direct",
         "caller": "crt_unknown.c_FUN_00570ad0",
-        "estimated_params": 6,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 4,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -110,10 +104,10 @@
     "pcode_op_count": 66
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 24,
     "local_size": 12,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -122,75 +116,48 @@
         "offset": -8,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "access_mode",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "share_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void CreateFileVariadic(char *param_1,dword param_2,dword param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void CreateFileVariadic(char *param_1,dword param_2,dword param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void CreateFileVariadic(char *param_1,dword param_2,dword param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 7,
+      "line": 8,
       "match": "&stack0x00000010",
       "severity": "moderate",
       "text": "local_8.value[0] = (char * [1])&stack0x00000010;",
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CreateFileImpl(param_1,param_2,param_3,&local_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CreateFileImpl(param_1,param_2,param_3,&local_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "CreateFileImpl(param_1,param_2,param_3,&local_8);",
-      "type": "unnamed_param"
-    },
-    {
       "call_site_count": 2,
-      "declared_params": 0,
+      "declared_params": 3,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
+      "estimated_params": 4,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "match": "declared:3 vs estimated:4",
+      "param_delta": 1,
+      "text": "Function declares 3 params but call sites push 4 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

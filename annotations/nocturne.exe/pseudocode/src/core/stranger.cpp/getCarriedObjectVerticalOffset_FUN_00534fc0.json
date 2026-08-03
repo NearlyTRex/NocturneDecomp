@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 123,
+    "complexity_score": 73,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
-      "pointer_truncation",
-      "unnamed_param"
+      "pointer_truncation"
     ],
     "total_lines": 144
   },
@@ -105,9 +103,9 @@
         "00535088"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0",
-    "signature": "float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *param_1)"
+    "signature": "float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *object)"
   },
   "function_calls": [
     {
@@ -170,22 +168,19 @@
         "call_addr": "0053cab9",
         "call_type": "direct",
         "caller": "core_stranger.cpp_FUN_0053c800",
-        "estimated_params": 3,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.8076923076923075,
@@ -218,10 +213,10 @@
     "pcode_op_count": 375
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -244,34 +239,17 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "object",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,g_CBoxActorActorType_00764800.name_hash);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,g_CCryptVesselActorType_02dd11cc.name_hash);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Pointer value `&pCVar5->vertex_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 33,
@@ -287,17 +265,6 @@
       "severity": "moderate",
       "text": "piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

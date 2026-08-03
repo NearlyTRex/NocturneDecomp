@@ -165,7 +165,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 0054a2a2 | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 0054a2a8 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0054a2a9
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0054a2ae
     ADD ESP,0x14c                       ; 0054a2b1
     POP EBP                             ; 0054a2b7
@@ -415,7 +415,7 @@ section .text
     PUSH EAX                            ; 0054a5db
     PUSH ESI                            ; 0054a5dc
     CALL core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640 ; 0054a5dd
-        ;   XREF to: 0054a640 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640()
+        ;   XREF to: 0054a640 (UNCONDITIONAL_CALL)  ; int core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640(CTurret * this_ptr, CVector3f * target_pos, float delta_time)
     FLD float ptr [ESI + 0x2f8]         ; 0054a5e2
     FLDZ                                ; 0054a5e8
     ADD ESP,0xc                         ; 0054a5ea

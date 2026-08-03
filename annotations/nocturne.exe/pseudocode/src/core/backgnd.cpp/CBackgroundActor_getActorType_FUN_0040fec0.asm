@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_backgnd_cpp_CBackgroundActor_getActorType_FUN_0040fec0(void)
+; CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_0040fec0(CBackgroundActor *this_ptr)
 ;
+; Parameters:
+; CBackgroundActor * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CBackgroundActorActorType_007642ac

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_filmreel_cpp_CFilmReel_getActorType_FUN_00481c20(void)
+; CDemonActorType * __cdecl core_filmreel_cpp_CFilmReel_getActorType_FUN_00481c20(CFilmReel *this_ptr)
 ;
+; Parameters:
+; CFilmReel *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

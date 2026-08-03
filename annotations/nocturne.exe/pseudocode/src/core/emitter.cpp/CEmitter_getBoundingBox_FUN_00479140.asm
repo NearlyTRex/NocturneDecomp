@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_CEmitter_getBoundingBox_FUN_00479140(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_00479140(CEmitter *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057f1f4 = 0.5

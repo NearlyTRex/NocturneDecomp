@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_CBugs_archive_FUN_00421880(CEnemy *param_1)
+; void __cdecl core_bugs_cpp_CBugs_archive_FUN_00421880(CBugs *this_ptr)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_count_00579c5d

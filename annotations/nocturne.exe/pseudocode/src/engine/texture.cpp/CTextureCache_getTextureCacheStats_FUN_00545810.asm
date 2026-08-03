@@ -77,7 +77,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x30]      ; 00545875
     PUSH ECX                            ; 00545879
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0054587a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x1c                        ; 0054587f
     POP EBP                             ; 00545882
     POP EDI                             ; 00545883
@@ -89,7 +89,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0054588c
     PUSH EAX                            ; 00545890
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00545891
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 00545896
     POP EBP                             ; 00545899
     POP EDI                             ; 0054589a

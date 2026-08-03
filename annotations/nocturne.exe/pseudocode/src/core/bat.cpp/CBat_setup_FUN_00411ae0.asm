@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bat_cpp_CBat_setup_FUN_00411ae0(CBat *param_1)
+; void __cdecl core_bat_cpp_CBat_setup_FUN_00411ae0(CBat *this_ptr)
 ;
+; Parameters:
+; CBat *           Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

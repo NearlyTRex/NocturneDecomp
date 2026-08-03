@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hotdemon_cpp_CHotDemon_archive_FUN_004b96c0(CEnemy *param_1)
+; void __cdecl core_hotdemon_cpp_CHotDemon_archive_FUN_004b96c0(CHotDemon *this_ptr)
 ;
+; Parameters:
+; CHotDemon *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_speed_00585f7d

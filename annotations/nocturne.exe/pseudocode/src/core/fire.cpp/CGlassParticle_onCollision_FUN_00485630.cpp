@@ -1,12 +1,12 @@
 // Name: core_fire.cpp_CGlassParticle_onCollision_FUN_00485630
 // Address: 00485630
 // Address Range: [[00485630, 00485632]]
-// Convention: unknown
-// Signature: undefined4 core_fire_cpp_CGlassParticle_onCollision_FUN_00485630(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_fire_cpp_CGlassParticle_onCollision_FUN_00485630(CGlassParticle *this_ptr,CVector3f *collision_normal)
 
 #include "nocturne.h"
 
-uint core_fire_cpp_CGlassParticle_onCollision_FUN_00485630(void)
+int __cdecl core_fire_cpp_CGlassParticle_onCollision_FUN_00485630(CGlassParticle *this_ptr,CVector3f *collision_normal)
 
 {
   return 0;

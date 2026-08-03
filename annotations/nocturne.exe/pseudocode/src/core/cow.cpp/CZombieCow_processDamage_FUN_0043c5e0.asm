@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cow_cpp_CZombieCow_processDamage_FUN_0043c5e0(CZombieCow *param_1,SDamageInfo *param_2)
+; void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_0043c5e0(CZombieCow *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CZombieCow *     Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cow_wav_0057b412

@@ -27,7 +27,7 @@ section .text
     PUSH 0x57f397                       ; 0047a214 | = "Event command parse error:\n"
     PUSH 0x1c08b60                      ; 0047a219 | DAT_01c08b60
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047a21e
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EDX,0x1c08b60                   ; 0047a223
     ADD ESP,0x8                         ; 0047a228
     ADD EDX,EAX                         ; 0047a22b

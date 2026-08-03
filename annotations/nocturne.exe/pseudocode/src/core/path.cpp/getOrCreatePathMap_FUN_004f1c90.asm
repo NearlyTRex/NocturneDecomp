@@ -59,7 +59,7 @@ section .text
     LEA EDI,[ESP + 0x20]                ; 004f1cca
     XOR EBX,EBX                         ; 004f1cce
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f1cd0
-        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700()
+        ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x8]                 ; 004f1cd5
     ADD ESP,0x8                         ; 004f1cd9
     XOR ECX,ECX                         ; 004f1cdc

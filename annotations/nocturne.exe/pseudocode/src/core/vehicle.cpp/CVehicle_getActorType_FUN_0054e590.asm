@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_vehicle_cpp_CVehicle_getActorType_FUN_0054e590(void)
+; CDemonActorType * __cdecl core_vehicle_cpp_CVehicle_getActorType_FUN_0054e590(CVehicle *this_ptr)
 ;
+; Parameters:
+; CVehicle *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

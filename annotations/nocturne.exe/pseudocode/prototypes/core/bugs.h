@@ -13,7 +13,7 @@ CBugs * __cdecl factoryFunc(void);
 
 // Original: core_bugs.cpp_CBugs_getActorType_FUN_00421030
 // Address: 00421030
-CDemonActorType * CBugs::getActorType(void);
+CDemonActorType * __cdecl CBugs::getActorType(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_ctor_FUN_00421040
 // Address: 00421040
@@ -21,39 +21,39 @@ CBugs * __cdecl CBugs::ctor(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_setup_FUN_004211e0
 // Address: 004211e0
-void CBugs::setup(CBugs *param_1);
+void __cdecl CBugs::setup(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_process_FUN_00421480
 // Address: 00421480
-void CBugs::process(CBugs *param_1,float param_2);
+void __cdecl CBugs::process(CBugs *this_ptr,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_renderOpaque_FUN_00421540
 // Address: 00421540
-int CBugs::renderOpaque(CDemonActor *param_1);
+int __cdecl CBugs::renderOpaque(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0
 // Address: 004216d0
-void CBugs::renderGroundHeightGrid(int param_1);
+void __cdecl CBugs::renderGroundHeightGrid(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_getBoundingBox_FUN_00421840
 // Address: 00421840
-undefined4 * CBugs::getBoundingBox(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bugs.cpp_CBugs_archive_FUN_00421880
 // Address: 00421880
-void CBugs::archive(CEnemy *param_1);
+void __cdecl CBugs::archive(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_getCollisionType_FUN_004219a0
 // Address: 004219a0
-undefined4 CBugs::getCollisionType(void);
+ECollisionType __cdecl CBugs::getCollisionType(CBugs *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_bugs.cpp_CBugs_getDeathState_FUN_004219b0
 // Address: 004219b0
-undefined4 CBugs::getDeathState(int param_1);
+EDeathState __cdecl CBugs::getDeathState(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_processDamage_FUN_004219d0
 // Address: 004219d0
-void CBugs::processDamage(CEnemy *param_1,SDamageInfo *param_2);
+void __cdecl CBugs::processDamage(CBugs *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_bugs.cpp_FUN_004219f0
 // Address: 004219f0
@@ -89,7 +89,7 @@ int __cdecl CBugs::updateBugPathfinding(CBugs *this_ptr,SBug *bug_data,float del
 
 // Original: core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70
 // Address: 00422c70
-void CBugs::updateBugRenderingData(CBugs *param_1,SBug *param_2,float param_3);
+void __cdecl CBugs::updateBugRenderingData(CBugs *this_ptr,SBug *bug_data,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480
 // Address: 00423480

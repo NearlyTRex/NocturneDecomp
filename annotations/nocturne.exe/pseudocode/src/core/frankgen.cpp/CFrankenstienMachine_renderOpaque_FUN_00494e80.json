@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 254,
+    "complexity_score": 99,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 19,
+    "suspect_count": 4,
     "suspect_types": [
-      "bit_int_float_compare",
-      "unnamed_param"
+      "bit_int_float_compare"
     ],
     "total_lines": 201
   },
@@ -84,10 +83,10 @@
         "00494ff6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80",
-    "signature": "int core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankenstienMachine *param_1)"
+    "signature": "int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankenstienMachine *this_ptr)"
   },
   "function_calls": [
     {
@@ -192,9 +191,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -237,10 +236,10 @@
     "pcode_op_count": 587
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 60,
     "local_size": 56,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -249,6 +248,13 @@
         "offset": -52,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFrankenstienMachine *"
       }
     ]
   },
@@ -270,126 +276,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankenstienMachine *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->master_frame = *(float *)(pCVar2[1].actor_name + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->bed_model,param_1->part_frame,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->bed_model,param_1->part_frame,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->body_model).model_name[0] != '\\0') {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1->master_frame;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_38 = param_1->master_frame + -1800.0f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (param_1->master_frame + -2000.0f) * (float)3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->body_model,fStack_38,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x4400c000 is the IEEE 754 bit pattern of 515f. Rewrite in a .keep as a plain float compare against 515f.",
       "line": 27,

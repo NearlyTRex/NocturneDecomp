@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 69,
+        "line": 68,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 72,
+        "line": 71,
         "message": "use of undeclared identifier '_DAT_01cc30a0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 75,
+        "line": 74,
         "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 76,
+        "line": 75,
         "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 148,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 33,
-        "line": 152,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 33,
-        "line": 169,
-        "message": "format specifies type 'int' but the argument has type 'CBitFont *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 47,
-        "line": 201,
-        "message": "format specifies type 'char *' but the argument has type 'ulonglong' (aka 'unsigned long long') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 201,
+        "line": 147,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 276,
+        "line": 151,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 28,
+        "line": 168,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 28,
+        "line": 198,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 30,
+        "line": 260,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 30,
+        "line": 271,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 967,
+    "complexity_score": 927,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 387,
-    "suspect_count": 53,
+    "pseudocode_lines": 382,
+    "suspect_count": 50,
     "suspect_types": [
-      "concat_reconstruction",
       "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
@@ -141,7 +140,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1465
+    "total_lines": 1460
   },
   "cross_references": [
     {
@@ -835,7 +834,7 @@
         {
           "check_id": "legacyUninitvar",
           "column": 15,
-          "line": 170,
+          "line": 169,
           "message": "Uninitialized variable: local_4c",
           "severity": "error"
         }
@@ -855,7 +854,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 62,
+      "line": 61,
       "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "if (this_ptr->owner != *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
@@ -863,7 +862,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 64,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if (DAT_005b7620 != _DAT_01cc30a0) {",
@@ -871,7 +870,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 70,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if ((DAT_005b7620 < 0x180) && (this_ptr->render_mode_flag == 0)) {",
@@ -879,7 +878,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if ((DAT_005b7620 < 0x180) && (this_ptr->render_mode_flag == 0)) {",
@@ -887,7 +886,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 99,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "iVar3 = DAT_005b761c - iVar7;",
@@ -895,7 +894,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 100,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar7 = DAT_005b7620 - iVar7;",
@@ -903,7 +902,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 151,
+      "line": 150,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar12 = (DAT_005b7620 - (int)local_4c) - iVar12;",
@@ -911,7 +910,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 152,
+      "line": 151,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "iVar7 = (DAT_005b761c - (int)local_4c) - iVar7;",
@@ -919,7 +918,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 167,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar7 = (DAT_005b7620 - local_50) - iVar7;",
@@ -927,7 +926,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 168,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "pcVar6 = (char *)((DAT_005b761c - local_50) - iVar3);",
@@ -935,7 +934,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 230,
+      "line": 226,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar12 = (DAT_005b7620 - local_58) + (int)local_4c;",
@@ -943,7 +942,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 231,
+      "line": 227,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "local_30 = (int)local_4c + (DAT_005b761c - local_54);",
@@ -951,7 +950,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 248,
+      "line": 244,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if ((DAT_005b7620 < 0x180) && (this_ptr->render_mode_flag == 0)) {",
@@ -959,15 +958,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 262,
+      "line": 257,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "(local_48,acStack_37c,(DAT_005b761c - local_50) - iVar5,",
+      "text": "(local_48,acStack_37c,(DAT_005b761c - local_50) - iVar4,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 263,
+      "line": 258,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "(DAT_005b7620 - local_50) - iVar3,0xf8,0);",
@@ -975,15 +974,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 273,
+      "line": 268,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "(local_48,acStack_27c,(DAT_005b761c - local_50) - iVar5,",
+      "text": "(local_48,acStack_27c,(DAT_005b761c - local_50) - iVar4,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 274,
+      "line": 269,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "(DAT_005b7620 - local_50) - iVar3,0xf8,0);",
@@ -991,7 +990,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 286,
+      "line": 281,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar12 = (DAT_005b7620 - iVar12) + local_50;",
@@ -999,7 +998,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 287,
+      "line": 282,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "local_3c = local_50 + (DAT_005b761c - iVar7);",
@@ -1007,7 +1006,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 302,
+      "line": 297,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iStack_7c = DAT_005b7620 + -0x21;",
@@ -1015,7 +1014,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 303,
+      "line": 298,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "local_18 = (CBitFont *)(DAT_005b7620 + -6);",
@@ -1023,7 +1022,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 311,
+      "line": 306,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar7 = DAT_005b7620;",
@@ -1031,7 +1030,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 337,
+      "line": 332,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if (DAT_005b7620 < 0x180) {",
@@ -1039,7 +1038,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 341,
+      "line": 336,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "local_78 = (DAT_005b761c + -4) - iVar7;",
@@ -1047,7 +1046,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 364,
+      "line": 359,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if (DAT_005b7620 < 0x180) {",
@@ -1055,7 +1054,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 371,
+      "line": 366,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "(DAT_005b761c - iVar7) + -4);",
@@ -1063,7 +1062,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 374,
+      "line": 369,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar7 = (DAT_005b7620 + -4) - local_24 * iVar7;",
@@ -1071,7 +1070,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 386,
+      "line": 381,
       "match": "DAT_01c02594",
       "severity": "mild",
       "text": "DAT_01c02594 = local_70[0];",
@@ -1079,7 +1078,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 387,
+      "line": 382,
       "match": "._0_1_",
       "severity": "mild",
       "text": "DAT_01c02594_1._0_1_ = local_70[1];",
@@ -1087,7 +1086,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 388,
+      "line": 383,
       "match": "._1_1_",
       "severity": "mild",
       "text": "DAT_01c02594_1._1_1_ = local_70[2];",
@@ -1095,7 +1094,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 389,
+      "line": 384,
       "match": "._2_1_",
       "severity": "mild",
       "text": "DAT_01c02594_1._2_1_ = local_70[3];",
@@ -1103,7 +1102,7 @@
     },
     {
       "description": "Pointer value `local_4c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 151,
+      "line": 150,
       "match": "(int)local_4c",
       "severity": "moderate",
       "text": "iVar12 = (DAT_005b7620 - (int)local_4c) - iVar12;",
@@ -1111,7 +1110,7 @@
     },
     {
       "description": "Pointer value `local_4c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
+      "line": 151,
       "match": "(int)local_4c",
       "severity": "moderate",
       "text": "iVar7 = (DAT_005b761c - (int)local_4c) - iVar7;",
@@ -1119,7 +1118,7 @@
     },
     {
       "description": "Pointer value `local_4c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 230,
+      "line": 226,
       "match": "(int)local_4c",
       "severity": "moderate",
       "text": "iVar12 = (DAT_005b7620 - local_58) + (int)local_4c;",
@@ -1127,7 +1126,7 @@
     },
     {
       "description": "Pointer value `local_4c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 231,
+      "line": 227,
       "match": "(int)local_4c",
       "severity": "moderate",
       "text": "local_30 = (int)local_4c + (DAT_005b761c - local_54);",
@@ -1135,7 +1134,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 289,
+      "line": 284,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "if (0 < (int)local_18) {",
@@ -1143,7 +1142,7 @@
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 296,
+      "line": 291,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "} while (iVar7 < (int)local_44);",
@@ -1151,7 +1150,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 308,
+      "line": 303,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "((double)((float)(int)local_18 +",
@@ -1159,7 +1158,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 309,
+      "line": 304,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "(float)(iStack_7c - (int)local_18) * this_ptr->battery_charge *",
@@ -1167,7 +1166,7 @@
     },
     {
       "description": "Pointer value `pCVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 313,
+      "line": 308,
       "match": "(int)pCVar11",
       "severity": "moderate",
       "text": "engine_2d_c_fillRectColor_FUN_00403e60(6,iStack_80,iVar12,iVar3,(int)pCVar11);",
@@ -1175,7 +1174,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 346,
+      "line": 341,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "((double)((float)(int)local_18 - (float)(int)local_18 * fStack_684));",
@@ -1183,7 +1182,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 346,
+      "line": 341,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "((double)((float)(int)local_18 - (float)(int)local_18 * fStack_684));",
@@ -1191,23 +1190,23 @@
     },
     {
       "description": "Pointer value `pCVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 350,
+      "line": 345,
       "match": "(int)pCVar11",
       "severity": "moderate",
       "text": "(int)pCVar11);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x4c25da assigned to bare local `uVar15`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar15` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 158,
+      "description": "Raw hex address 0x4c25da assigned to bare local `uVar14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 157,
       "match": "0x4c25da",
       "severity": "moderate",
-      "text": "uVar15 = 0x4c25da;",
+      "text": "uVar14 = 0x4c25da;",
       "type": "raw_address_constant"
     },
     {
       "description": "Raw hex address 0x4c2ae5 assigned to bare local `iVar12`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar12` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 305,
+      "line": 300,
       "match": "0x4c2ae5",
       "severity": "moderate",
       "text": "iVar12 = 0x4c2ae5;",
@@ -1215,7 +1214,7 @@
     },
     {
       "description": "Raw hex address 0x4c2c2e assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 343,
+      "line": 338,
       "match": "0x4c2c2e",
       "severity": "moderate",
       "text": "iVar3 = 0x4c2c2e;",
@@ -1223,39 +1222,15 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 207,
+      "line": 204,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 186,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 192,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 220,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
-      "type": "concat_reconstruction"
-    },
-    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 198,
+      "line": 195,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1263,7 +1238,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 198,
+      "line": 195,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1271,7 +1246,7 @@
     },
     {
       "description": "Uninitialized variable: local_4c",
-      "line": 170,
+      "line": 169,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "pCVar11 = local_4c;",

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 256,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 19,
+    "pseudocode_lines": 60,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 193
+    "total_lines": 197
   },
   "cross_references": [],
   "function": {
@@ -84,9 +83,9 @@
         "0042cbb6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_chain.cpp_CChain_getBoundingBox_FUN_0042ca90",
-    "signature": "CVector3f * core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CDemonActor *param_1,CVector3f *param_2)"
+    "signature": "CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CChain *this_ptr,CBoundingBox3D *out_box)"
   },
   "function_calls": [
     {
@@ -100,9 +99,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -140,10 +139,10 @@
     "pcode_op_count": 636
   },
   "stack_frame": {
-    "frame_size": 68,
+    "frame_size": 76,
     "local_size": 68,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -201,160 +200,38 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CChain *"
+      },
+      {
+        "is_param": true,
+        "name": "out_box",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CVector3f * core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CDemonActor *param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CVector3f * core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CDemonActor *param_1,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)param_1[1].actor_name) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pUVar2 = &param_1[1].previous_transform_state.orientation;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)param_1[1].actor_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_34,&local_1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_28,&local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 1 == pCVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].x = pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].y = pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1].z = pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 47,
+      "line": 50,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2->x = pCVar1->x;",
+      "text": "(out_box->min).x = (pCVar1->min).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 55,
+      "line": 59,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "param_2[1].x = pCVar1->x;",
+      "text": "(out_box->max).x = pCVar2->x;",
       "type": "unrolled_memcpy"
     }
   ],

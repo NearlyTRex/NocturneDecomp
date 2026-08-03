@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hero_cpp_CHero_testCylinderCollision_FUN_004b4910(CDemonActor *param_1,SCollisionReturnInfo *param_2,float param_3)
+; int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004b4910(CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; SCollisionReturnInfo * Stack[0x8]:4   collision_info
+; float            Stack[0xc]:4   tolerance
 ;
 ; Referenced Globals:
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec

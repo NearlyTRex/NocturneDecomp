@@ -49,7 +49,7 @@ void crt_unknown_c_FUN_005708c0(FILETIME *param_1,LPWORD param_2,LPWORD param_3)
 time_t __cdecl crt_time_c_dos_datetime_to_time_t_FUN_005709b0(WORD dos_date,WORD dos_time);
 time_t __cdecl crt_time_c__time_FUN_00570a30(time_t *time);
 int crt_unknown_c_FUN_00570a70(uint param_1);
-undefined4 crt_unknown_c_FUN_00570ad0(char *param_1,uint *param_2,uint param_3);
+int crt_unknown_c_FUN_00570ad0(char *param_1,uint *param_2,uint param_3);
 int __cdecl crt_string_c_wcstombs_FUN_00570bd0(char *dest,wchar_t *src,SIZE_T dest_size);
 int __watcallStack crt_string_c_mbstring_termination_check_FUN_00570ca0(char *str);
 char * crt_unknown_c_FUN_00570ce0(char *param_1,char *param_2,ulong param_3);
@@ -103,7 +103,7 @@ undefined4 crt_unknown_c_FUN_00571bdc(undefined4 param_1,undefined4 param_2,unde
 int __watcallStack crt_stdio_c_fgetc_buffered_FUN_00571c60(_FILE *stream);
 uint crt_unknown_c_FUN_00571cc6(int *param_1);
 streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *this_ptr,void *buffer_start,int buffer_size);
-int crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(int param_1);
+streambuf * __watcallStack crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(streambuf *this_ptr);
 int __watcallStack crt_iostream_cpp_doallocate_FUN_00571dc7(streambuf *this_ptr);
 void __watcallStack crt_iostream_cpp_setBuffer_FUN_00571df8(streambuf *this_ptr,void *new_buffer,void *buffer_end,int ownership_flag);
 int __watcallStack crt_iostream_cpp_validateBufferSeek_FUN_00571e75(int seek_distance,int whence,char *buffer_start,char *current_ptr,char *buffer_end1,char *buffer_end2);

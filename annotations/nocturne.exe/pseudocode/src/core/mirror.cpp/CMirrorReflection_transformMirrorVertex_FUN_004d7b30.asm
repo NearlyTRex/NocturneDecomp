@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2)
+; CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex)
 ;
+; Parameters:
+; CMirrorReflection * Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   input_vertex
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38

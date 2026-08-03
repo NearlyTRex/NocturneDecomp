@@ -125,7 +125,7 @@ section .text
     PUSH EAX                            ; 00431381
     MOV EDI,0x57ac31                    ; 00431382 | = "..\\cockpit\\ckptutil.c"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00431387
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x14                        ; 0043138c
     MOV EAX,ESP                         ; 0043138f
     MOV EBP,0x96a                       ; 00431391
@@ -185,7 +185,7 @@ section .text
     PUSH EAX                            ; 00431463
     MOV EBX,0x57abea                    ; 00431464 | = "..\\cockpit\\ckptutil.c"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00431469
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0043146e
     MOV EAX,ESP                         ; 00431471
     MOV ESI,0x93a                       ; 00431473

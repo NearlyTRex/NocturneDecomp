@@ -1,17 +1,17 @@
 // Name: core_dirmat.cpp_CMatrix3x3f_multiply_FUN_0044dfb0
 // Address: 0044dfb0
 // Address Range: [[0044dfb0, 0044e0e4]]
-// Convention: unknown
-// Signature: void core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(float *param_1,float *param_2)
+// Convention: __stack2_esi
+// Signature: CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out)
 
 #include "nocturne.h"
 
-void core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(float *param_1,float *param_2)
+CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out)
 
 {
   int iVar1;
-  uint *unaff_ESI;
   float *pfVar2;
+  float *pfVar3;
   float local_30 [4];
   float local_20;
   float local_1c;
@@ -19,20 +19,30 @@ void core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(float *param_1,float *par
   float local_14;
   float local_10;
   
-  local_30[1] = param_1[2] * param_2[7] + *param_1 * param_2[1] + param_1[1] * param_2[4];
-  local_30[2] = param_1[2] * param_2[8] + *param_1 * param_2[2] + param_1[1] * param_2[5];
-  local_30[3] = param_1[5] * param_2[6] + param_1[3] * *param_2 + param_1[4] * param_2[3];
-  local_20 = param_1[5] * param_2[7] + param_1[4] * param_2[4] + param_1[3] * param_2[1];
-  local_1c = param_1[5] * param_2[8] + param_1[4] * param_2[5] + param_1[3] * param_2[2];
-  local_18 = param_1[8] * param_2[6] + param_1[6] * *param_2 + param_1[7] * param_2[3];
-  local_14 = param_1[8] * param_2[7] + param_1[7] * param_2[4] + param_1[6] * param_2[1];
-  local_10 = param_1[8] * param_2[8] + param_1[7] * param_2[5] + param_1[6] * param_2[2];
-  local_30[0] = param_1[2] * param_2[6] + *param_1 * *param_2 + param_1[1] * param_2[3];
+  local_30[1] = matrix_a->m[0].z * matrix_b->m[2].y +
+                matrix_a->m[0].x * matrix_b->m[0].y + matrix_a->m[0].y * matrix_b->m[1].y;
+  local_30[2] = matrix_a->m[0].z * matrix_b->m[2].z +
+                matrix_a->m[0].x * matrix_b->m[0].z + matrix_a->m[0].y * matrix_b->m[1].z;
+  local_30[3] = matrix_a->m[1].z * matrix_b->m[2].x +
+                matrix_a->m[1].x * matrix_b->m[0].x + matrix_a->m[1].y * matrix_b->m[1].x;
+  local_20 = matrix_a->m[1].z * matrix_b->m[2].y +
+             matrix_a->m[1].y * matrix_b->m[1].y + matrix_a->m[1].x * matrix_b->m[0].y;
+  local_1c = matrix_a->m[1].z * matrix_b->m[2].z +
+             matrix_a->m[1].y * matrix_b->m[1].z + matrix_a->m[1].x * matrix_b->m[0].z;
+  local_18 = matrix_a->m[2].z * matrix_b->m[2].x +
+             matrix_a->m[2].x * matrix_b->m[0].x + matrix_a->m[2].y * matrix_b->m[1].x;
+  local_14 = matrix_a->m[2].z * matrix_b->m[2].y +
+             matrix_a->m[2].y * matrix_b->m[1].y + matrix_a->m[2].x * matrix_b->m[0].y;
+  local_10 = matrix_a->m[2].z * matrix_b->m[2].z +
+             matrix_a->m[2].y * matrix_b->m[1].z + matrix_a->m[2].x * matrix_b->m[0].z;
+  local_30[0] = matrix_a->m[0].z * matrix_b->m[2].x +
+                matrix_a->m[0].x * matrix_b->m[0].x + matrix_a->m[0].y * matrix_b->m[1].x;
   pfVar2 = local_30;
+  pfVar3 = (float *)matrix_out;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *pfVar2;
+    *pfVar3 = *pfVar2;
     pfVar2 = pfVar2 + 1;
-    unaff_ESI = unaff_ESI + 1;
+    pfVar3 = pfVar3 + 1;
   }
-  return;
+  return matrix_out;
 }

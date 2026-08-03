@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -64,55 +64,55 @@
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 95,
+        "line": 90,
         "message": "use of undeclared identifier 'DAT_005c168c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 99,
+        "line": 94,
         "message": "use of undeclared identifier 'DAT_005c168c'"
       },
       {
         "category": "format_error",
         "column": 43,
-        "line": 111,
+        "line": 106,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 116,
+        "line": 111,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 122,
+        "line": 118,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 131,
+        "line": 127,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 136,
+        "line": 132,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 143,
+        "line": 140,
         "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 149,
+        "line": 145,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -122,21 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 528,
-    "complexity_score": 588,
+    "complexity_score": 252,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 203,
-    "suspect_count": 36,
+    "pseudocode_lines": 197,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 731
+    "total_lines": 725
   },
   "cross_references": [
     {
@@ -175,7 +173,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10",
-    "signature": "void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(char *param_1)"
+    "signature": "void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSample *this_ptr)"
   },
   "function_calls": [
     {
@@ -581,10 +579,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.258741258741258,
@@ -627,10 +625,10 @@
     "pcode_op_count": 1827
   },
   "stack_frame": {
-    "frame_size": 1164,
+    "frame_size": 1168,
     "local_size": 1164,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -772,6 +770,13 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
       }
     ]
   },
@@ -795,124 +800,61 @@
   "static_analysis": {
     "analyzed_file": "CSfxSample_parseConfigFile_FUN_00521e10.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 17,
+      "diagnostic_count": 8,
       "diagnostics": [
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 15,
-          "line": 111,
+          "line": 106,
           "message": "sscanf format string requires 1 parameter but only 0 are given.",
           "severity": "error"
         },
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 17,
-          "line": 131,
+          "line": 127,
           "message": "sscanf format string requires 1 parameter but only 0 are given.",
           "severity": "error"
         },
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 19,
-          "line": 149,
+          "line": 145,
           "message": "sscanf format string requires 1 parameter but only 0 are given.",
           "severity": "error"
         },
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 21,
-          "line": 151,
+          "line": 147,
           "message": "sscanf format string requires 1 parameter but only 0 are given.",
           "severity": "error"
         },
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 23,
-          "line": 175,
+          "line": 172,
           "message": "sscanf format string requires 1 parameter but only 0 are given.",
           "severity": "error"
         },
         {
           "check_id": "nullPointer",
           "column": 60,
-          "line": 95,
+          "line": 90,
           "message": "Possible null pointer dereference: pcVar8",
           "severity": "warning"
         },
         {
-          "check_id": "invalidPointerCast",
-          "column": 4,
-          "line": 49,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 4,
-          "line": 50,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 4,
-          "line": 51,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 14,
-          "line": 119,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 90,
-          "line": 123,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 12,
-          "line": 127,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 16,
-          "line": 140,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 92,
-          "line": 144,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 16,
-          "line": 172,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
           "check_id": "legacyUninitvar",
           "column": 19,
-          "line": 165,
+          "line": 161,
           "message": "Uninitialized variable: local_470",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 21,
-          "line": 183,
+          "line": 180,
           "message": "Uninitialized variable: local_34",
           "severity": "error"
         }
@@ -931,136 +873,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(char *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x124] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x125] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x126] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x127] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x114) = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = fVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x11c) = fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "splitpath(param_1,(char *)0x0,(char *)0x0,local_138,(char *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x124] = '\\x01';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x125] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x126] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x127] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_2c = param_1 + 0x11c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = param_1 + 0x118;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_30 = param_1 + 0x114;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 83,
       "match": "DAT_005c168c",
       "severity": "mild",
       "text": "while ((local_46c < pcVar8 && (((&DAT_005c168c)[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {",
@@ -1068,234 +882,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 87,
       "match": "DAT_005c168c",
       "severity": "mild",
       "text": "while (((&DAT_005c168c)[(byte)(local_46c[0] + 1)] & 2) != 0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x114) < (float)0.10000000000000001) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"Reference volume distance %g is too small in %s line %d!\",(double)*(float *)(param_1 + 0x114),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 120,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 120,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 133,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x118) < (float)0.10000000000000001) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 137,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"Reference volume distance %g is too small in %s line %d!\",(double)*(float *)(param_1 + 0x118),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / local_470;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / local_470;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 170,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (-1 < *(int *)(param_1 + 0x110)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 174,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"Length for %s already known, then specified again in %s line %d\",param_1,local_340,local_38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 182,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x110) = local_34;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 187,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x124] = '\\x01';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 188,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x125] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 189,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x126] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 190,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x127] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 95,
+      "line": 90,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
     },
     {
-      "call_site_count": 7,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    },
-    {
       "description": "Possible null pointer dereference: pcVar8",
-      "line": 95,
+      "line": 90,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
       "text": "while ((local_46c < pcVar8 && (((&DAT_005c168c)[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {",
       "type": "static_null_pointer"
     },
     {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 49,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(param_1 + 0x114) = fVar2;",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 50,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(param_1 + 0x118) = fVar4;",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 51,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(param_1 + 0x11c) = fVar3;",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 119,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "if (*(float *)(param_1 + 0x114) < (float)0.10000000000000001) {",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 123,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(\"Reference volume distance %g is too small in %s line %d!\",(double)*(float *)(param_1 + 0x114),",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 127,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 140,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "if (*(float *)(param_1 + 0x118) < (float)0.10000000000000001) {",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 144,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(\"Reference volume distance %g is too small in %s line %d!\",(double)*(float *)(param_1 + 0x118),",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 172,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / local_470;",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
       "description": "Uninitialized variable: local_470",
-      "line": 165,
+      "line": 161,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (local_470 < (float)0.001) {",
@@ -1303,7 +914,7 @@
     },
     {
       "description": "Uninitialized variable: local_34",
-      "line": 183,
+      "line": 180,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (local_34 < 1) {",

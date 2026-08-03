@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -74,17 +74,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 261,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 20,
+    "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 170
   },
@@ -97,9 +96,9 @@
         "004162f7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004161a0",
-    "signature": "int core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *param_1)"
+    "signature": "int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *this_ptr)"
   },
   "function_calls": [
     {
@@ -168,9 +167,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -206,10 +205,10 @@
     "pcode_op_count": 455
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -218,74 +217,17 @@
         "offset": -32,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1->render_in_background < 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "g_CDemonSet_PTR_005be368->disable_directional_lighting = param_1->dont_use_normals;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->is_visible = iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->transparent_geometry_flag == 0) ||",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 20,
@@ -295,84 +237,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(param_1,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < param_1->attached_model_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSStack_8 = param_1->attached_models;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar1 = param_1->attached_models;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "position = &param_1->attached_models[0].position;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 31,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,position,&pSStack_8[iVar2].scale);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar2 < param_1->attached_model_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1->is_visible;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->is_visible != 0) && (0 < param_1->fire_count)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->is_visible != 0) && (0 < param_1->fire_count)) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*position) + offsetof(subfield)` equals the real array stride. Replace `position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",

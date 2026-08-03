@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -64,55 +64,55 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 35,
+        "line": 34,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 40,
+        "line": 39,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 46,
+        "line": 45,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 66,
+        "line": 59,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 63,
-        "line": 74,
+        "column": 69,
+        "line": 67,
         "message": "use of undeclared identifier '_DAT_005a1360'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 63,
-        "line": 75,
+        "column": 69,
+        "line": 68,
         "message": "use of undeclared identifier '_DAT_005a1360'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 63,
-        "line": 76,
+        "column": 69,
+        "line": 69,
         "message": "use of undeclared identifier '_DAT_005a1360'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 77,
+        "line": 70,
         "message": "use of undeclared identifier '_DAT_014b7190'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 79,
+        "line": 72,
         "message": "use of undeclared identifier '_DAT_007f7370'"
       }
     ],
@@ -122,20 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 465,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
-    "suspect_count": 37,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 68,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 240
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -146,9 +144,9 @@
         "004f6f4b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_platfrm.cpp_CPlatform_renderBackground_FUN_004f6d90",
-    "signature": "void core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CDemonActor *param_1,int param_2)"
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform *this_ptr,int layer_flag)"
   },
   "function_calls": [
     {
@@ -241,9 +239,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -277,10 +275,10 @@
     "pcode_op_count": 611
   },
   "stack_frame": {
-    "frame_size": 48,
+    "frame_size": 56,
     "local_size": 48,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -289,6 +287,20 @@
         "offset": -44,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -302,22 +314,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CDemonActor *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CDemonActor *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_005ae704",
@@ -326,268 +322,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1[3].create_event + 0x50) < 2) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1[3].create_event + 0x58) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1[3].create_event + 0x58) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_1[2].location.area_id;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,(char *)&param_1[2].scale.z);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01C03A10,param_1[2].create_event + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 38,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1[3].create_event + 0x58) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].create_event[0x50] = '\\x03';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].create_event[0x51] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].create_event[0x52] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3].create_event[0x53] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[5].create_event[0x14] = '\\x01';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[5].create_event[0x15] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[5].create_event[0x16] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[5].create_event[0x17] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_2c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)param_1[3].footstep_sound_code == 0) ||",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 52,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1),0.0,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_14.x = (int)ROUND((param_1->location).position.x * _DAT_005a1360);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_14.y = (int)ROUND((param_1->location).position.y * _DAT_005a1360);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_14.z = (int)ROUND((param_1->location).position.z * _DAT_005a1360);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1),0.0,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 19,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if ((*(int *)(param_1[3].create_event + 0x50) < 2) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 20,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "(*(int *)(param_1[3].create_event + 0x58) == 0)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 23,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if (*(int *)(param_1[3].create_event + 0x58) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 41,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if (*(int *)(param_1[3].create_event + 0x58) == 0) {",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

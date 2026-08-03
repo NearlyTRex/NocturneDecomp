@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,44 +52,20 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 9,
-        "line": 24,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 24,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 44,
-        "line": 29,
+        "line": 30,
         "message": "use of undeclared identifier 'DAT_02dd1184'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 73,
-        "line": 30,
+        "column": 84,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_02da8a7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 34,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 34,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -98,20 +74,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 205,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 16,
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 93
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -122,9 +97,9 @@
         "00520ad2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_smiley.cpp_CSmiley_attractActorToward_FUN_00520a20",
-    "signature": "undefined4 core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CCharacter *param_1,int param_2)"
+    "signature": "int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point)"
   },
   "function_calls": [
     {
@@ -162,9 +137,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -200,141 +175,59 @@
     "pcode_op_count": 320
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSmiley *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "target_local_point",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CCharacter *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CCharacter *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "EVar1 = (*(((param_1->base).vtable._uc)->_uc).getDeathState)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "EVar1 = (*(((param_1->base).vtable._uc)->_uc).getDeathState)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0xe8))(param_2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0xe8))(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0xe8))(param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&CStack_14,(CVector3f *)&DAT_02dd1184,",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->model).bone_transform.bone_world_matrices + _DAT_02da8a7c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,&CStack_20,input_local_point);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,&CStack_20,param_2 + 0x30);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,&CStack_20,param_2 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,&CStack_20,param_2 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x60))(param_2,&CStack_20,param_2 + 0x30);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

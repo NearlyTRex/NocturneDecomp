@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mobster_cpp_CMobster_setup_FUN_004da290(CEnemy *param_1)
+; void __cdecl core_mobster_cpp_CMobster_setup_FUN_004da290(CMobster *this_ptr)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_0058a193

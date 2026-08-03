@@ -10,18 +10,18 @@ CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_0055abb0(CMatr
 
 {
   int iVar1;
-  float *pfVar2;
+  CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
-  float afStack_3c [12];
+  CMatrix3x4f CStack_3c;
   
   bVar4 = 0;
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(matrix_a,matrix_b);
-  pfVar2 = afStack_3c;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(matrix_a,matrix_b,&CStack_3c);
+  pCVar2 = &CStack_3c;
   pCVar3 = matrix_a;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar3->m[0].w = *pfVar2;
-    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   return matrix_a;

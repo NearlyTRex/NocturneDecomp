@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5)
+; int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start
+; CVector3f *      Stack[0xc]:4   end
+; SDamageInfo *    Stack[0x10]:4   damage_info
+; CVector3f *      Stack[0x14]:4   out_hit
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ; undefined        Stack[-0x54]:1  local_54

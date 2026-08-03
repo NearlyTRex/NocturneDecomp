@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_trash_cpp_CTrash_getBoundingBox_FUN_00547730(CDemonActor *param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_00547730(CTrash *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CTrash *         Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

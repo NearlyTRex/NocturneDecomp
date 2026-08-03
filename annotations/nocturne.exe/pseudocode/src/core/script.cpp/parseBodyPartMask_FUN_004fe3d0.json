@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,19 +52,19 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "format_error",
         "column": 26,
-        "line": 29,
+        "line": 26,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 39,
+        "line": 36,
         "message": "use of undeclared identifier 'DAT_01e56420'"
       }
     ],
@@ -74,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 46,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 28,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 111
+    "total_lines": 108
   },
   "cross_references": [
     {
@@ -254,14 +254,14 @@
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 5,
-          "line": 29,
+          "line": 26,
           "message": "sscanf format string requires 2 parameters but only 0 are given.",
           "severity": "error"
         },
         {
           "check_id": "invalidscanf",
           "column": 5,
-          "line": 29,
+          "line": 26,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         }
@@ -273,10 +273,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 29,
       "match": "DAT_01e56420",
       "severity": "mild",
-      "text": "_sprintf(&DAT_01e56420,\"Character %s model %s does not have a part '%s'\",character,pcVar3,pcVar4);",
+      "text": "_sprintf(&DAT_01e56420,\"Character %s model %s does not have a part '%s'\");",
       "type": "undefined_data"
     }
   ]

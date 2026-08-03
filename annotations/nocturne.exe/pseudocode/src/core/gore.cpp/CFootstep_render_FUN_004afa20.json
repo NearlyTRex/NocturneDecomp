@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 789,
+    "complexity_score": 684,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 124,
-    "suspect_count": 64,
+    "suspect_count": 54,
     "suspect_types": [
-      "param_count_too_few",
+      "param_count_too_many",
       "raw_address_constant",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 366
@@ -154,9 +153,9 @@
         "004afd74"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gore.cpp_CFootstep_render_FUN_004afa20",
-    "signature": "void core_gore_cpp_CFootstep_render_FUN_004afa20(undefined4 *param_1)"
+    "signature": "void __cdecl core_gore_cpp_CFootstep_render_FUN_004afa20(CFootstep *this_ptr,int expire_flag)"
   },
   "function_calls": [
     {
@@ -399,14 +398,10 @@
         "call_addr": "004aff4e",
         "call_type": "direct",
         "caller": "core_gore.cpp_CGore_renderDecals_FUN_004afe80",
-        "estimated_params": 4,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -414,20 +409,18 @@
         "call_addr": "004b0021",
         "call_type": "direct",
         "caller": "core_gore.cpp_CGore_renderDecals_FUN_004afe80",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 1,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -462,10 +455,10 @@
     "pcode_op_count": 601
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 40,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -488,6 +481,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFootstep *"
+      },
+      {
+        "is_param": true,
+        "name": "expire_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -499,14 +506,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_gore_cpp_CFootstep_render_FUN_004afa20(uint *param_1)",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -525,19 +524,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,param_1[0xe]);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,param_1[0xe]);",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,this_ptr->alpha);",
       "type": "undefined_data"
     },
     {
@@ -555,30 +546,6 @@
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ba84c);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar2 = (float *)(param_1 + 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (pfVar2 != (float *)(param_1 + 0xe));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[0xf] == 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -677,14 +644,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 60,
       "match": "DAT_005c5034",
@@ -739,14 +698,6 @@
       "severity": "mild",
       "text": "DAT_005c503c = 0;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1[1];",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -805,14 +756,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 92,
       "match": "DAT_005c5094",
@@ -867,14 +810,6 @@
       "severity": "mild",
       "text": "DAT_005c509c = 0;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1[1];",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -957,14 +892,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 126,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = 1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_005c505c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_005c505c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 19,
       "match": "0xf80000",
@@ -998,14 +925,14 @@
     },
     {
       "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 76,
+        "line": 73,
         "message": "use of undeclared identifier '_DAT_01cae1a0'"
       }
     ],
@@ -68,19 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 396,
+    "complexity_score": 83,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
-    "suspect_count": 31,
+    "pseudocode_lines": 68,
+    "suspect_count": 1,
     "suspect_types": [
-      "suspect_float",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 236
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -91,9 +89,9 @@
         "004b6ce8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hostage.cpp_CHostage_setup_FUN_004b6b20",
-    "signature": "void core_hostage_cpp_CHostage_setup_FUN_004b6b20(CNPC *param_1)"
+    "signature": "void __cdecl core_hostage_cpp_CHostage_setup_FUN_004b6b20(CHostage *this_ptr)"
   },
   "function_calls": [
     {
@@ -228,9 +226,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -259,12 +257,20 @@
     "pcode_op_count": 521
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHostage *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -274,246 +280,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_hostage_cpp_CHostage_setup_FUN_004b6b20(CNPC *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(&(param_1->base).model);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "str1 = (param_1->base).model.model_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 16,
-      "match": "8.40779e-45",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 8.40779e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 8.40779e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 23,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 1.4013e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 27,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 2.8026e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 2.8026e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 31,
-      "match": "5.60519e-45",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 5.60519e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 5.60519e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 35,
-      "match": "7.00649e-45",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 7.00649e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 7.00649e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 39,
-      "match": "4.2039e-45",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 4.2039e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 4.2039e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2d].y = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2d].x = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2d].z = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2e].x = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = param_1[1].base.model.transformed_vertices[0x2b].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[1].bone_index = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 60,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (fVar2 != 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].bone_index = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = param_1[1].base.model.transformed_vertices[0x2b].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).gesture_branch_root = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 68,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if (fVar2 == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_npc_cpp_CNPC_setup_FUN_004ee9e0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.model.transformed_vertices[0x2a].z = 0.0;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -165,7 +165,7 @@ section .text
     ADD ESI,0x4                         ; 004090e3
     INC EBX                             ; 004090e6
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120 ; 004090e7
-        ;   XREF to: 00407120 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120()
+        ;   XREF to: 00407120 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(SMRGLHeaderPrimitive * prim)
     MOV EAX,[0x00761ec4]                ; 004090ec | DAT_00761ec4
     ADD ESP,0x4                         ; 004090f1
     CMP EBX,EAX                         ; 004090f4
@@ -249,7 +249,7 @@ section .text
     PUSH EAX                            ; 004091b0
     MOV EBX,0xdd3                       ; 004091b1
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004091b6
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004091bb
     MOV EAX,ESP                         ; 004091be
     MOV ECX,0x577562                    ; 004091c0 | = "..\\engine\\3d.c"
@@ -272,7 +272,7 @@ section .text
     ADD EBX,0x4                         ; 004091f0
     INC EDI                             ; 004091f3
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120 ; 004091f4
-        ;   XREF to: 00407120 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120()
+        ;   XREF to: 00407120 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(SMRGLHeaderPrimitive * prim)
     MOV EAX,[0x00761ec4]                ; 004091f9 | DAT_00761ec4
     ADD ESP,0x4                         ; 004091fe
     CMP EDI,EAX                         ; 00409201

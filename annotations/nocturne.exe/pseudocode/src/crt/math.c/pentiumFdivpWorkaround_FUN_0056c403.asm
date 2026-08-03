@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_pentiumFdivpWorkaround_FUN_0056c403(void)
+; void __fpustack_safe crt_math_c_pentiumFdivpWorkaround_FUN_0056c403(void)
 ;
 ;
 ; Called Functions:

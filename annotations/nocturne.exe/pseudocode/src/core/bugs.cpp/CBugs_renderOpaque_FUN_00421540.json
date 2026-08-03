@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -64,13 +64,13 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 41,
+        "line": 42,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 52,
+        "line": 53,
         "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
       }
     ],
@@ -80,23 +80,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 322,
+    "complexity_score": 148,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
-    "suspect_count": 23,
+    "pseudocode_lines": 58,
+    "suspect_count": 7,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 203
+    "total_lines": 204
   },
   "cross_references": [],
   "function": {
@@ -107,9 +104,9 @@
         "004216cf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bugs.cpp_CBugs_renderOpaque_FUN_00421540",
-    "signature": "int core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CDemonActor *param_1)"
+    "signature": "int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)"
   },
   "function_calls": [
     {
@@ -188,9 +185,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -229,10 +226,10 @@
     "pcode_op_count": 618
   },
   "stack_frame": {
-    "frame_size": 72,
+    "frame_size": 76,
     "local_size": 72,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -241,6 +238,13 @@
         "offset": -68,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
       }
     ]
   },
@@ -254,176 +258,48 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1[0x1b].create_event + 0x1c) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_44);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_44);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (int)param_1[0x90].location.position.z) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pEStack_10 = &param_1[0xdc].lifecycle_state;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piStack_c = &param_1[0x90].location.area_id;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = param_1[0x90].orient_matrix.m;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "rotation = (CVector3f *)((int)&param_1[0x90].orient + 4);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&pCVar1->y,rotation);",
+      "text": "(DAT_005ae704,position,rotation);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_20.x = (param_1->location).position.x + rotation->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_20.y = (param_1->location).position.y + rotation->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_20.z = (param_1->location).position.z + rotation->z;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 46,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar2 < (int)param_1[0x90].location.position.z);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `&param_1[0x90].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)&param_1[0x90].orient",
-      "severity": "moderate",
-      "text": "rotation = (CVector3f *)((int)&param_1[0x90].orient + 4);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 40,
+      "line": 41,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_2c.x = CStack_20.x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 31,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Watcom shadow-pointer walk \u2014 `position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*position) + offsetof(subfield)` equals the real array stride. Replace `position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "position = (T *)&position[N].SUBFIELD",
       "severity": "moderate",
-      "text": "rotation = (CVector3f *)((int)&param_1[0x90].orient + 4);",
-      "type": "pointer_cast"
+      "text": "position = (CVector3f *)&position[5].y;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `rotation` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*rotation) + offsetof(subfield)` equals the real array stride. Replace `rotation->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 51,
+      "line": 52,
       "match": "rotation = (T *)&rotation[N].SUBFIELD",
       "severity": "moderate",
       "text": "rotation = (CVector3f *)&rotation[5].y;",

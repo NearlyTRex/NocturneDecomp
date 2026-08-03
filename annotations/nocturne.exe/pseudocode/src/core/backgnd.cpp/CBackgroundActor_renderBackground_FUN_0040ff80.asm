@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_0040ff80(CDemonActor *param_1,int param_2)
+; void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_0040ff80(CBackgroundActor *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CBackgroundActor * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

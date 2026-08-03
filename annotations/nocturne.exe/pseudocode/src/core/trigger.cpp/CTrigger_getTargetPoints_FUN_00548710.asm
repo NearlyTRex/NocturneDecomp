@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_trigger_cpp_CTrigger_getTargetPoints_FUN_00548710(int param_1,float *param_2)
+; int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_00548710(CTrigger *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
 ;   float FLOAT_00596b1f = 0.5

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 292,
+    "complexity_score": 290,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 25,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 182,
+    "pseudocode_lines": 180,
     "suspect_count": 8,
     "suspect_types": [
       "extra_output",
@@ -137,7 +137,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 534
+    "total_lines": 532
   },
   "cross_references": [],
   "function": {
@@ -497,7 +497,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 12,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "uint extraout_EAX;",
@@ -505,10 +505,10 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 127,
+      "line": 128,
       "match": "NAN(",
       "severity": "severe",
-      "text": "uVar5 = (uint)(ushort)((ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
+      "text": "uVar6 = (uint)(ushort)((ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
       "type": "nan_function_artifact"
     },
     {
@@ -516,12 +516,12 @@
       "line": 133,
       "match": "DAT_005bef88",
       "severity": "mild",
-      "text": "puVar8 = &DAT_005bef88;",
+      "text": "puVar9 = &DAT_005bef88;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 174,
       "match": "DAT_02dc9d44",
       "severity": "mild",
       "text": "sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);",
@@ -529,7 +529,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 182,
+      "line": 180,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "return extraout_EAX;",
@@ -537,7 +537,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 156,
+      "line": 154,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -548,7 +548,7 @@
       "line": 136,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     }
   ]

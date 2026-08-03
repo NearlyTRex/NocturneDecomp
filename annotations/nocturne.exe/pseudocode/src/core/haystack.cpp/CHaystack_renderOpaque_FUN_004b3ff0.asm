@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_haystack_cpp_CHaystack_renderOpaque_FUN_004b3ff0(CCharacter *param_1)
+; void __cdecl core_haystack_cpp_CHaystack_renderOpaque_FUN_004b3ff0(CHaystack *this_ptr)
 ;
+; Parameters:
+; CHaystack *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440

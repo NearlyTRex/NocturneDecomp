@@ -85,7 +85,7 @@ void __cdecl FUN_0044f0b0(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
 // Address: 0044f430
-void CDemonLight::renderLightBloomQuad(CDemonLight *param_1);
+void __cdecl CDemonLight::renderLightBloomQuad(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_FUN_0044f9b0
 // Address: 0044f9b0

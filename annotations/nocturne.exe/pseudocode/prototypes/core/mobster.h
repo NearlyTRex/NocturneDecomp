@@ -21,7 +21,7 @@ CMobster * __cdecl factoryFunc(void);
 
 // Original: core_mobster.cpp_CMobster_getActorType_FUN_004da140
 // Address: 004da140
-CDemonActorType * CMobster::getActorType(void);
+CDemonActorType * __cdecl CMobster::getActorType(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_ctor_FUN_004da150
 // Address: 004da150
@@ -29,7 +29,7 @@ CMobster * __cdecl CMobster::ctor(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_setup_FUN_004da290
 // Address: 004da290
-void CMobster::setup(CEnemy *param_1);
+void __cdecl CMobster::setup(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_positionOnVehicle_FUN_004da5a0
 // Address: 004da5a0
@@ -41,7 +41,7 @@ void __cdecl CMobster::dismountVehicle(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_process_FUN_004da790
 // Address: 004da790
-void CMobster::process(CMobster *param_1,float param_2);
+void __cdecl CMobster::process(CMobster *this_ptr,float delta_time);
 
 // Original: core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
 // Address: 004db6f0
@@ -53,7 +53,7 @@ void FUN_004dba50(void);
 
 // Original: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70
 // Address: 004dba70
-void CMobster::getCarryObjToBodyXForm(int param_1,int param_2);
+void __stack2_esi CMobster::getCarryObjToBodyXForm(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_mobster.cpp_CMobster_processWeaponPickup_FUN_004dbce0
 // Address: 004dbce0
@@ -65,11 +65,11 @@ void __cdecl CMobster::startFiringAttack(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_archive_FUN_004dc180
 // Address: 004dc180
-void CMobster::archive(CEnemy *param_1);
+void __cdecl CMobster::archive(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_reset_FUN_004dc2b0
 // Address: 004dc2b0
-undefined4 CMobster::reset(void);
+void __cdecl CMobster::reset(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_processDismemberment_FUN_004dc2d0
 // Address: 004dc2d0
@@ -77,15 +77,15 @@ void __cdecl CMobster::processDismemberment(CMobster *this_ptr,SDamageInfo *dama
 
 // Original: core_mobster.cpp_CMobster_processDamage_FUN_004dc690
 // Address: 004dc690
-void CMobster::processDamage(CMobster *param_1,SDamageInfo *param_2);
+void __cdecl CMobster::processDamage(CMobster *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_mobster.cpp_CMobster_getTargetPoints_FUN_004dc820
 // Address: 004dc820
-int CMobster::getTargetPoints(int param_1,CVector3f *param_2);
+int __cdecl CMobster::getTargetPoints(CMobster *this_ptr,CVector3f *out_points_array);
 
 // Original: core_mobster.cpp_CMobster_getCollisionType_FUN_004dc920
 // Address: 004dc920
-void CMobster::getCollisionType(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CMobster::getCollisionType(CMobster *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_mobster.cpp_CMobster_playTaunt_FUN_004dc940
 // Address: 004dc940

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CHero *param_1,CDemonActor *param_2,int param_3)
+; int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CStranger *this_ptr,CDemonActor *grabber,int grab_type)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   grabber
+; int              Stack[0xc]:4   grab_type
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004b4c70

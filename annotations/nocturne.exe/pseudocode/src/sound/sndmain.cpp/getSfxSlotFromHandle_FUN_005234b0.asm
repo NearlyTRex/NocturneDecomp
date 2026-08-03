@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSfxSlot * sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)
+; CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint sfx_handle,int check_hardware_playback)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; int              Stack[0x8]:4   check_hardware_playback
 ;
 ; XREF[16]:
 ;   sound_sndmain.cpp_FUN_00526dd0 at 00526dd8

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -68,21 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 139,
+    "complexity_score": 55,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 9,
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
     "suspect_types": [
-      "concat_reconstruction",
-      "param_count_too_few",
-      "stack_alignment_array",
-      "unaffected_reg",
-      "unnamed_param"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
-    "total_lines": 62
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -106,9 +103,9 @@
         "00548e16"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "support_trisock.cpp_buildSockaddrIn_FUN_00548dc0",
-    "signature": "void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr *param_1)"
+    "signature": "SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)"
   },
   "function_calls": [
     {
@@ -139,7 +136,7 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -152,17 +149,17 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.764705882352941,
@@ -190,10 +187,10 @@
     "pcode_op_count": 162
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -202,26 +199,26 @@
         "offset": -24,
         "size": 2,
         "type": "undefined2"
+      },
+      {
+        "is_param": true,
+        "name": "net_addr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNetworkAddr *"
       }
     ]
   },
   "static_analysis": {
     "analyzed_file": "buildSockaddrIn_FUN_00548dc0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "negativeIndex",
           "column": 23,
-          "line": 29,
+          "line": 30,
           "message": "Array 'auStack_14[3]' accessed at index -1, which is out of bounds.",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 12,
-          "line": 27,
-          "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
       ],
@@ -231,22 +228,6 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
       "match": "auStackY_17f8",
@@ -255,63 +236,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = param_1->port;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "support_trisock_cpp_getIPAddress_FUN_00548d20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)dest_buffer",
       "severity": "moderate",
-      "text": "puVar3 = unaff_ESI + (uint)bVar4 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = uStack_1c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 17,
-      "match": "CONCAT22",
-      "severity": "moderate",
-      "text": "uStack_1c = CONCAT22(uVar2,uVar1);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 27,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "puVar3 = unaff_ESI + (uint)bVar4 * -2 + 1;",
-      "type": "static_uninitvar"
+      "text": "puVar3 = (uint *)((int)dest_buffer + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

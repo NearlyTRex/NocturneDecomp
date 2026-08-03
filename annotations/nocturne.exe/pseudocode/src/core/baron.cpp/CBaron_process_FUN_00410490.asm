@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaron_process_FUN_00410490(CBaron *param_1,float param_2)
+; void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0xa4]:1  local_a4
 ; undefined        Stack[-0x94]:1  local_94
@@ -172,7 +175,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 004105c5
     MOV dword ptr [EAX],EDX             ; 004105c8
     CALL core_baron.cpp_CBaron_advanceMotion_FUN_00411010 ; 004105ca
-        ;   XREF to: 00411010 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaron_advanceMotion_FUN_00411010()
+        ;   XREF to: 00411010 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_advanceMotion_FUN_00411010(CBaron * this_ptr, float delta_time)
     MOV EBX,dword ptr [EBP + 0x1fb34]   ; 004105cf
     ADD ESP,0x8                         ; 004105d5
     TEST EBX,EBX                        ; 004105d8
@@ -269,7 +272,7 @@ section .text
     PUSH EAX                            ; 00410704
     LEA ESI,[ESP + 0x14]                ; 00410705
     CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 00410709
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_0055d610(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 0041070e
     LEA EAX,[ESP + 0x20]                ; 00410711
     PUSH EAX                            ; 00410715
@@ -364,7 +367,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 00410827 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 0041082c | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0041082d
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00410621                      ; 00410832
         ;   XREF to: 00410621 (UNCONDITIONAL_JUMP)  ; LAB_00410621
     PUSH 0x1                            ; 00410837

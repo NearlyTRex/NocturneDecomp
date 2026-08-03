@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 378,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 48,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
-    "suspect_count": 26,
+    "pseudocode_lines": 104,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 376
+    "total_lines": 377
   },
   "cross_references": [],
   "function": {
@@ -145,9 +144,9 @@
         "00535778"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_stranger.cpp_CStranger_setup_FUN_00535450",
-    "signature": "void core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *param_1)"
+    "signature": "void __cdecl core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *this_ptr)"
   },
   "function_calls": [
     {
@@ -505,9 +504,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -534,10 +533,10 @@
     "pcode_op_count": 876
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 44,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -553,6 +552,13 @@
         "offset": -24,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
       }
     ]
   },
@@ -566,203 +572,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_hero_cpp_CHero_setup_FUN_004b48d0(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).base.model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.carry_hands[0].bone_index = _DAT_02dc9f84;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).base.carry_hands[1].bone_index = _DAT_02dc9f88;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (&param_1->ref_r_hand_bone_pos != pCVar2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->ref_r_hand_bone_pos).x = pCVar2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->ref_r_hand_bone_pos).y = pCVar2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->ref_r_hand_bone_pos).z = pCVar2->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).base.model,&local_24,_DAT_02dc9f60);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (&param_1->ref_r_upperarm_bone_pos != pCVar2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->ref_r_upperarm_bone_pos).x = pCVar2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->ref_r_upperarm_bone_pos).y = pCVar2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->ref_r_upperarm_bone_pos).z = pCVar2->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_stranger_cpp_FUN_005384d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->grab_timer = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->ladder_blend_time = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->model,\"stranger-hat.kfm\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&param_1->model);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->fall_velocity_snapshot = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->goggle_sfx_handles[0] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->goggle_sfx_handles[1] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).base.model);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 81,
+      "line": 82,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(param_1->ref_r_hand_bone_pos).x = pCVar2->x;",
+      "text": "(this_ptr->ref_r_hand_bone_pos).x = pCVar2->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 88,
+      "line": 89,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(param_1->ref_r_upperarm_bone_pos).x = pCVar2->x;",
+      "text": "(this_ptr->ref_r_upperarm_bone_pos).x = pCVar2->x;",
       "type": "unrolled_memcpy"
     }
   ],

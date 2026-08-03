@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(int param_1,int param_2)
+; uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(CPodFile *this_ptr,int file_index)
 ;
+; Parameters:
+; CPodFile *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   file_index
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

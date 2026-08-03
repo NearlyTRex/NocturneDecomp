@@ -1,32 +1,33 @@
 // Name: core_turret.cpp_CTurret_getInteractionInfo_FUN_0054a800
 // Address: 0054a800
 // Address Range: [[0054a800, 0054a868]]
-// Convention: unknown
-// Signature: void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CDemonActor *param_1,SInteractionInfo *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CTurret *this_ptr,SInteractionInfo *interaction_info)
 
 #include "nocturne.h"
 
-void core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CDemonActor *param_1,SInteractionInfo *param_2)
+void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CTurret *this_ptr,SInteractionInfo *interaction_info)
 
 {
   float fVar1;
   CDemonActor *pCVar2;
   float fVar3;
   
-  core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0(param_1,param_2);
-  if (param_1[6].lifecycle_state == ACTOR_NOT_CREATED) {
+  core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0
+            ((CDemonActor *)this_ptr,interaction_info);
+  if (this_ptr->can_manual_aim == 0) {
     return;
   }
-  param_2->can_interact = 1;
-  pCVar2 = (CDemonActor *)param_1[6].create_prob;
-  param_2->yaw_max = 6.2831855;
-  param_2->yaw_min = -6.2831855;
-  param_2->interacting_actor = pCVar2;
+  interaction_info->can_interact = 1;
+  pCVar2 = this_ptr->user;
+  interaction_info->yaw_max = 6.2831855;
+  interaction_info->yaw_min = -6.2831855;
+  interaction_info->interacting_actor = pCVar2;
   fVar3 = -0.5235988f;
-  param_2->pitch_max = 1.22173f - (param_1->orient).vec.x;
-  fVar1 = (param_1->orient).vec.x;
-  param_2->approach_offset = -4.0;
-  param_2->pitch_min = fVar3 - fVar1;
-  param_2->distance_max = 0.0;
+  interaction_info->pitch_max = 1.22173f - (this_ptr->base).base.orient.vec.x;
+  fVar1 = (this_ptr->base).base.orient.vec.x;
+  interaction_info->approach_offset = -4.0;
+  interaction_info->pitch_min = fVar3 - fVar1;
+  interaction_info->distance_max = 0.0;
   return;
 }

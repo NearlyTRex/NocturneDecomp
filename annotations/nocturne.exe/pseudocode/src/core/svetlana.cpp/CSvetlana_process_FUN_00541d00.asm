@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_svetlana_cpp_CSvetlana_process_FUN_00541d00(CSvetlana *param_1,float param_2)
+; void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00541d00(CSvetlana *this_ptr,float delta_time)
 ;
+; Parameters:
+; CSvetlana *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x98]:4  local_98
 ; undefined4       Stack[-0x74]:4  local_74
@@ -321,7 +324,7 @@ section .text
     LEA ESI,[ESP + 0x24]                ; 00541fd3
     LEA EDI,[ESP + 0x14]                ; 00541fd7
     CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 00541fdb
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_0055d610(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x24]                ; 00541fe0
     ADD ESP,0x4                         ; 00541fe4
     LEA EAX,[ESP + 0x10]                ; 00541fe7
@@ -384,7 +387,7 @@ section .text
     MOV EDI,dword ptr [0x005ad350]      ; 00542076 | g_CConsole_PTR_005ad350
     PUSH EDI                            ; 0054207c | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0054207d
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00541e42                      ; 00542082
         ;   XREF to: 00541e42 (UNCONDITIONAL_JUMP)  ; LAB_00541e42
     PUSH 0x1                            ; 00542087

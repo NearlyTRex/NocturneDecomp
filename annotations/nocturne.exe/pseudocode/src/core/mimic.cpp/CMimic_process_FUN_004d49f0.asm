@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *param_1,float param_2)
+; void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_005893d1

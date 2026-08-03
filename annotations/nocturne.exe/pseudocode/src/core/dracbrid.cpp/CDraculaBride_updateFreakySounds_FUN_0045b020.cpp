@@ -102,9 +102,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDr
           (local_20->position).z = pCVar5->z;
         }
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%5.2f %5.2f %5.2f\n",
-                   (double)(local_20->position).x,(double)(local_20->position).y,
-                   (double)(local_20->position).z);
+                  (g_CConsole_PTR_005ad350,"%5.2f %5.2f %5.2f\n");
         pCVar5 = core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0
                            (local_88,&local_5c,local_20->control_points,local_20->control_points + 1
                             ,local_20->control_points + 2,local_20->control_points + 3);

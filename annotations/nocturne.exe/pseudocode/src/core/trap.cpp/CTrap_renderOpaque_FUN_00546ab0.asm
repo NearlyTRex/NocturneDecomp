@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_trap_cpp_CTrap_renderOpaque_FUN_00546ab0(int param_1)
+; int __cdecl core_trap_cpp_CTrap_renderOpaque_FUN_00546ab0(CTrap *this_ptr)
 ;
+; Parameters:
+; CTrap *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ;

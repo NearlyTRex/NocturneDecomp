@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_004c9e50(int param_1,CVector3f *param_2,CVector3f *param_3,CVector3f *param_4)
+; float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_004c9e50(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_direction
+; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
 ; undefined4       Stack[-0xd8]:4  local_d8
 ; undefined4       Stack[-0xd4]:4  local_d4

@@ -13,7 +13,7 @@ int __cdecl sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00526ea0(uint sfx_h
 {
   CSfxSlot *this_ptr;
   
-  this_ptr = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }

@@ -86,7 +86,7 @@ section .text
     MOV ECX,dword ptr [0x005b6d50]      ; 004f828d | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004f8293
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004f8294
-        ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
+        ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004f8299
     PUSH 0x58da74                       ; 004f829c | = "rb"
     PUSH ESI                            ; 004f82a1
@@ -280,7 +280,7 @@ section .text
     PUSH EBX                            ; 004f8499
     MOV EBP,dword ptr [EBX + 0x20c]     ; 004f849a
     CALL engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0 ; 004f84a0
-        ;   XREF to: 004f86a0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0()
+        ;   XREF to: 004f86a0 (UNCONDITIONAL_CALL)  ; uint engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0(CPodFile * this_ptr, int file_index)
     MOV EDX,dword ptr [ESI + EBP*0x1 + 0x10] ; 004f84a5
     ADD ESP,0x8                         ; 004f84a9
     CMP EAX,EDX                         ; 004f84ac
@@ -325,7 +325,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f8508
     PUSH EAX                            ; 004f850c
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 ; 004f850d
-        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70()
+        ;   XREF to: 00474d70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0xc                         ; 004f8512
     XOR EBX,EBX                         ; 004f8515
     PUSH EBX                            ; 004f8517

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_lever_cpp_CLever_renderOpaque_FUN_004c6560(CDemonActor *param_1)
+; int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_004c6560(CLever *this_ptr)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined4       Stack[-0x14]:4  local_14

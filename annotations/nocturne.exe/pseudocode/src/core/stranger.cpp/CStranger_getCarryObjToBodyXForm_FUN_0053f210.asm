@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(int param_1,int param_2)
+; void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ;
@@ -30,7 +33,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 0053f230
     MOV EDI,EBX                         ; 0053f234
     CALL core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 ; 0053f236
-        ;   XREF to: 0053a760 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760()
+        ;   XREF to: 0053a760 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CStranger * this_ptr, CDemonActor * carried_actor, int hand_index, CMatrix3x4f * output_matrix)
     MOV ECX,0xc                         ; 0053f23b
     LEA ESI,[ESP + 0xc]                 ; 0053f240
     ADD ESP,0xc                         ; 0053f244

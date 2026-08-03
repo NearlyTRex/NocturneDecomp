@@ -31,7 +31,7 @@ section .text
     MOV ECX,dword ptr [ECX + 0x2fa0]    ; 00451a82
     XOR EDX,EDX                         ; 00451a88
     CALL crt_watcom.c__memset_FUN_00481980 ; 00451a8a
-        ;   XREF to: 00481980 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memset_FUN_00481980()
+        ;   XREF to: 00481980 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_00481980(void * dest, int fill_byte, uint size)
     POP EBX                             ; 00451a8f
     RET                                 ; 00451a90
 

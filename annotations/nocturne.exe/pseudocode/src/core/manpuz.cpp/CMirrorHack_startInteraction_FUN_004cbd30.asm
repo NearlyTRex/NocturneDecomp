@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_manpuz_cpp_CMirrorHack_startInteraction_FUN_004cbd30(int param_1,undefined4 param_2)
+; int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_004cbd30(CMirrorHack *this_ptr,CDemonActor *user)
 ;
+; Parameters:
+; CMirrorHack *    Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   user
 ;
 ; *****************************************************************************
 

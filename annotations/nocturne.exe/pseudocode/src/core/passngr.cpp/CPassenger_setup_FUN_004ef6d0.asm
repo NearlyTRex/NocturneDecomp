@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CNPC *param_1)
+; void __cdecl core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CPassenger *this_ptr)
 ;
+; Parameters:
+; CPassenger *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CWerewolf_0058cbfc

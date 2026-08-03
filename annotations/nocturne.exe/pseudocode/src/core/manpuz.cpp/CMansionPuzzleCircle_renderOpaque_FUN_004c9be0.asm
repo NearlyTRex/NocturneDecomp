@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0(CMansionPuzzleCircle *param_1)
+; int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0(CMansionPuzzleCircle *this_ptr)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ;

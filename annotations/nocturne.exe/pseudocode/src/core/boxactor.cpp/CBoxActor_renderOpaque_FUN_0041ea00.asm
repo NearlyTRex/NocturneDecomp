@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041ea00(int param_1)
+; int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041ea00(CBoxActor *this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

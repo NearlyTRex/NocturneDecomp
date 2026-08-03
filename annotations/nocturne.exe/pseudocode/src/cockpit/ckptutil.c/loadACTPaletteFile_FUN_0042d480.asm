@@ -148,7 +148,7 @@ section .text
     LEA EAX,[ESP + 0x58]                ; 0042d54d
     PUSH EAX                            ; 0042d551
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0042d552
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EDX,0x57a700                    ; 0042d557 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 0042d55c
     LEA EAX,[ESP + 0x50]                ; 0042d55f

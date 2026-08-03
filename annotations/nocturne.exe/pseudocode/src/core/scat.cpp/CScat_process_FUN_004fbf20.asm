@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2)
+; void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delta_time)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88
 ; undefined4       Stack[-0x64]:4  local_64
@@ -397,7 +400,7 @@ section .text
     PUSH EAX                            ; 004fc2a3
     LEA ESI,[ESP + 0x24]                ; 004fc2a4
     CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 004fc2a8
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_0055d610(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 004fc2ad
     LEA EAX,[ESP + 0x10]                ; 004fc2b0
     LEA EDI,[ESP + 0x10]                ; 004fc2b4
@@ -441,7 +444,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 004fc307 | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 004fc30d | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004fc30e
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004fc313
     PUSH EBX                            ; 004fc316
     CALL core_scat.cpp_CScat_isWeaponReady_FUN_004fcd40 ; 004fc317

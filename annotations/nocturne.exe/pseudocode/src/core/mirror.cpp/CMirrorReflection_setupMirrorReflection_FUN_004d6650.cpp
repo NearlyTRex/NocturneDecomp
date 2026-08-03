@@ -14,27 +14,28 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004d665
   float fVar1;
   CVector3f *pCVar2;
   int iVar3;
-  uint *puVar4;
-  float *pfVar5;
-  uint *puVar6;
+  CMatrix3x4f *pCVar4;
+  CMatrix3x4f *pCVar5;
+  CMatrix3x4f *pCVar6;
   CMatrix3x4f *pCVar7;
-  byte bVar8;
-  float local_4a4 [12];
-  uint local_474 [12];
-  uint local_444 [12];
-  uint local_414 [12];
+  CMatrix3x4f *pCVar8;
+  byte bVar9;
+  CMatrix3x4f local_4a4;
+  CMatrix3x4f local_474;
+  CMatrix3x4f local_444;
+  CMatrix3x4f local_414;
   CMatrix3x4f local_3e4;
-  uint local_3b4 [12];
-  uint local_384 [12];
+  CMatrix3x4f local_3b4;
+  CMatrix3x4f local_384;
   CMatrix3x4f local_354;
   CMatrix3x4f local_324;
-  uint local_2f4 [12];
+  CMatrix3x4f local_2f4;
   CMatrix3x4f local_2c4;
-  float local_294 [12];
-  uint local_264 [12];
-  uint local_234 [12];
-  uint local_204 [12];
-  uint local_1d4 [12];
+  CMatrix3x4f local_294;
+  CMatrix3x4f local_264;
+  CMatrix3x4f local_234;
+  CMatrix3x4f local_204;
+  CMatrix3x4f local_1d4;
   UIntegerFloat local_1a4;
   float local_1a0;
   float local_19c;
@@ -87,7 +88,7 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004d665
   float local_1c;
   float local_18;
   
-  bVar8 = 0;
+  bVar9 = 0;
   core_mirror_cpp_computePlaneFromTriangle_FUN_004d6170
             ((SClipPlane *)&local_1a4,&this_ptr->corner1,&this_ptr->corner2,&this_ptr->corner3);
   if ((ABS(local_1a4.f) <= ABS(local_1a0)) || (ABS(local_1a4.f) <= ABS(local_19c))) {
@@ -166,53 +167,56 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004d665
   local_2c4.m[2].z = 0.0;
   core_xform_cpp_setIdentityMatrix3x4_FUN_0055abf0(&local_354);
   local_354.m[2].y = -1.0;
-  core_xform_cpp_inverse_FUN_0055bd00(&local_3e4);
-  puVar4 = local_264;
-  puVar6 = local_234;
+  core_xform_cpp_inverse_FUN_0055bd00(&local_3e4,&local_264);
+  pCVar7 = &local_234;
+  pCVar6 = &local_264;
+  pCVar5 = &local_234;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar8 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+    pCVar5->m[0].w = pCVar6->m[0].w;
+    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);
   }
-  core_xform_cpp_inverse_FUN_0055bd00(&local_2c4,local_234);
-  puVar4 = local_204;
-  puVar6 = local_3b4;
+  core_xform_cpp_inverse_FUN_0055bd00(&local_2c4,&local_204);
+  pCVar6 = &local_3b4;
+  pCVar5 = &local_354;
+  pCVar4 = &local_204;
+  pCVar8 = &local_3b4;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar8 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+    pCVar8->m[0].w = pCVar4->m[0].w;
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);
+    pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_3e4,&local_2c4,&local_354,local_3b4);
-  puVar4 = local_2f4;
-  puVar6 = local_1d4;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_3e4,&local_2c4,&local_2f4);
+  pCVar4 = &local_2f4;
+  pCVar8 = &local_1d4;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar8 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+    pCVar8->m[0].w = pCVar4->m[0].w;
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);
+    pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_1d4);
-  puVar4 = local_414;
-  puVar6 = local_474;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_1d4,pCVar5,&local_414);
+  pCVar5 = &local_414;
+  pCVar4 = &local_474;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar8 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+    pCVar4->m[0].w = pCVar5->m[0].w;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_474);
-  puVar4 = local_444;
-  puVar6 = local_384;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_474,pCVar6,&local_444);
+  pCVar6 = &local_444;
+  pCVar5 = &local_384;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar8 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+    pCVar5->m[0].w = pCVar6->m[0].w;
+    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_384);
-  pfVar5 = local_294;
-  pCVar7 = &this_ptr->mirror_transform_matrix;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_384,pCVar7,&local_294);
+  pCVar7 = &local_294;
+  pCVar6 = &this_ptr->mirror_transform_matrix;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar7->m[0].w = *pfVar5;
-    pfVar5 = pfVar5 + (uint)bVar8 * -2 + 1;
-    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
+    pCVar6->m[0].w = pCVar7->m[0].w;
+    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);
+    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar9 * -8 + 4);
   }
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                      (&local_8c,camera_position,&this_ptr->mirror_transform_matrix);
@@ -335,13 +339,13 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004d665
   local_2c4.m[0].y = (float)_DAT_01c03a00 * (float)1.52587890625e-05;
   local_2c4.m[1].y = (float)_DAT_01c03a04 * (float)1.52587890625e-05;
   local_2c4.m[2].y = (float)_DAT_01c03a08 * (float)1.52587890625e-05;
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_3e4,&local_2c4);
-  pfVar5 = local_4a4;
-  pCVar7 = &local_324;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_3e4,&local_2c4,&local_4a4);
+  pCVar7 = &local_4a4;
+  pCVar6 = &local_324;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar7->m[0].w = *pfVar5;
-    pfVar5 = pfVar5 + (uint)bVar8 * -2 + 1;
-    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
+    pCVar6->m[0].w = pCVar7->m[0].w;
+    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);
+    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);
   }
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_50,&this_ptr->corner1,&local_324);
   if (&local_170 != pCVar2) {

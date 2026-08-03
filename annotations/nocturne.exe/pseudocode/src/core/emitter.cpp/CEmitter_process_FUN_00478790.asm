@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *param_1,float param_2)
+; void __cdecl core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *this_ptr,float delta_time)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x108]:8  local_108
 ; undefined8       Stack[-0x100]:8  local_100
@@ -257,7 +260,7 @@ section .text
     PUSH ECX                            ; 004789be | g_CDemonSet_01e57284
     FSTP float ptr [EBX + 0x440]        ; 004789bf
     CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890 ; 004789c5
-        ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890()
+        ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004789ca
     JMP 0x004787c4                      ; 004789cd
         ;   XREF to: 004787c4 (UNCONDITIONAL_JUMP)  ; LAB_004787c4

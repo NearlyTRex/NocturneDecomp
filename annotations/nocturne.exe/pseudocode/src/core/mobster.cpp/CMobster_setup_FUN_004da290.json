@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 24,
+        "line": 22,
         "message": "use of undeclared identifier '_DAT_01ccdba8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 26,
+        "line": 24,
         "message": "use of undeclared identifier '_DAT_01ccdbb4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 28,
+        "line": 26,
         "message": "use of undeclared identifier '_DAT_01ccdbb8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 30,
+        "line": 28,
         "message": "use of undeclared identifier '_DAT_01ccdbbc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 32,
+        "line": 30,
         "message": "use of undeclared identifier '_DAT_01ccdbc0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 34,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_01ccdbc4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 36,
+        "line": 34,
         "message": "use of undeclared identifier '_DAT_01ccdbc8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 38,
+        "line": 36,
         "message": "use of undeclared identifier '_DAT_01ccdbac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 40,
+        "line": 38,
         "message": "use of undeclared identifier '_DAT_01ccdbb0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 42,
+        "line": 40,
         "message": "use of undeclared identifier '_DAT_01ccdbcc'"
       }
     ],
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 423,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 40,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 123,
-    "suspect_count": 29,
+    "pseudocode_lines": 94,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 370
+    "total_lines": 341
   },
   "cross_references": [],
   "function": {
@@ -144,9 +143,9 @@
         "004da59f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mobster.cpp_CMobster_setup_FUN_004da290",
-    "signature": "void core_mobster_cpp_CMobster_setup_FUN_004da290(CEnemy *param_1)"
+    "signature": "void __cdecl core_mobster_cpp_CMobster_setup_FUN_004da290(CMobster *this_ptr)"
   },
   "function_calls": [
     {
@@ -426,9 +425,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -455,12 +454,20 @@
     "pcode_op_count": 785
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMobster *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -470,230 +477,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_mobster_cpp_CMobster_setup_FUN_004da290(CEnemy *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = &(param_1->base).model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x2c) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x30) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x34) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x38) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x3c) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x40) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x44) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x48) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x4c) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x50) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x54) = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].bone_index = _DAT_01ccdbac;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[0].secondary_bone_index =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[1].bone_index = _DAT_01ccdbb0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).carry_hands[1].secondary_bone_index =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1[1].base.base.create_event + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = &param_1[1].base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1[1].base.base.location.position.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = &param_1[1].base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->allow_pathfind_to_new_targets = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = &param_1[1].base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 111,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = &param_1[1].base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = &param_1[1].base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = &param_1[1].base;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -13,7 +13,7 @@ CMelee * __cdecl factoryFunc(void);
 
 // Original: core_melee.cpp_CMelee_getActorType_FUN_004cec50
 // Address: 004cec50
-CDemonActorType * CMelee::getActorType(void);
+CDemonActorType * __cdecl CMelee::getActorType(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_ctor_FUN_004cec60
 // Address: 004cec60
@@ -21,7 +21,7 @@ CMelee * __cdecl CMelee::ctor(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_archive_FUN_004cedb0
 // Address: 004cedb0
-void CMelee::archive(CWeapon *param_1);
+void __cdecl CMelee::archive(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_fire_FUN_004ceed0
 // Address: 004ceed0
@@ -37,19 +37,19 @@ void FUN_004cef30(void);
 
 // Original: core_melee.cpp_CMelee_canPickup_FUN_004cef40
 // Address: 004cef40
-undefined4 CMelee::canPickup(int param_1,CDemonActor *param_2);
+int __cdecl CMelee::canPickup(CMelee *this_ptr,CDemonActor *picker);
 
 // Original: core_melee.cpp_CMelee_getAllowedMeleeAttackTypes_FUN_004cef70
 // Address: 004cef70
-undefined4 CMelee::getAllowedMeleeAttackTypes(int param_1);
+int __cdecl CMelee::getAllowedMeleeAttackTypes(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_004cef80
 // Address: 004cef80
-void CMelee::fillAttackDamageInfo(CCharacter *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4);
+void __cdecl CMelee::fillAttackDamageInfo(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
 // Original: core_melee.cpp_CMelee_playAttackHitEffects_FUN_004cefe0
 // Address: 004cefe0
-void CMelee::playAttackHitEffects(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4);
+void __cdecl CMelee::playAttackHitEffects(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 
 // Original: core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090
 // Address: 004cf090
@@ -57,11 +57,11 @@ void __cdecl CMelee::initBloodSpurtEffects(CMelee *this_ptr,int blood_spurt_coun
 
 // Original: core_melee.cpp_CMelee_process_FUN_004cf0c0
 // Address: 004cf0c0
-void CMelee::process(CCharacter *param_1,float param_2);
+void __cdecl CMelee::process(CMelee *this_ptr,float delta_time);
 
 // Original: core_melee.cpp_CMelee_setWeaponState_FUN_004cf180
 // Address: 004cf180
-void CMelee::setWeaponState(CWeapon *param_1,int param_2);
+void __cdecl CMelee::setWeaponState(CMelee *this_ptr,int weapon_state);
 
 // Original: core_melee.cpp_CMelee_dtor_FUN_004cf1a0
 // Address: 004cf1a0

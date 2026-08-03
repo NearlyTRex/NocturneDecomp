@@ -512,7 +512,7 @@ section .text
         ;   Label: LAB_0053bbe1
     PUSH ECX                            ; 0053bbe7 | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053bbe8
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
         ;   Label: LAB_0053bbe8
     ADD ESP,0xc                         ; 0053bbed
     MOV dword ptr [ESI + 0x1faa8],0x40800000 ; 0053bbf0
@@ -705,7 +705,7 @@ section .text
     MOV EAX,[0x005ad350]                ; 0053be35 | g_CConsole_PTR_005ad350
     PUSH EAX                            ; 0053be3a | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053be3b
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053be40
     MOV dword ptr [ESI + 0x1fa08],0x0   ; 0053be43
     XOR EAX,EAX                         ; 0053be4d

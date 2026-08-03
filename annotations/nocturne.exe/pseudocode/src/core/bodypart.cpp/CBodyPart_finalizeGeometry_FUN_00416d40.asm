@@ -87,7 +87,7 @@ section .text
     PUSH EDI                            ; 00416d68
     MOV dword ptr [EDI + 0x70],0x2      ; 00416d69
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 ; 00416d70
-        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0()
+        ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EDI + 0x160]               ; 00416d75
     ADD ESP,0xc                         ; 00416d7b
     MOV EDX,EAX                         ; 00416d7e
@@ -473,7 +473,7 @@ section .text
     PUSH EDI                            ; 0041722e
         ;   Label: LAB_0041722e
     CALL core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70 ; 0041722f
-        ;   XREF to: 00417d70 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70()
+        ;   XREF to: 00417d70 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(CBodyPart * this_ptr)
     LEA EAX,[EDI + 0xcf4]               ; 00417234
     LEA EDX,[EDI + 0x278]               ; 0041723a
     ADD ESP,0x4                         ; 00417240

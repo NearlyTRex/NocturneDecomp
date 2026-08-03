@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_inv_cpp_drawWeaponIconBackground_FUN_004c1dd0(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004c1dd0(int x1,int y1,int x2,int y2,int alpha)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
+; int              Stack[0x14]:4   alpha
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined4       Stack[-0x44]:4  local_44

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_CBugs_processDamage_FUN_004219d0(CEnemy *param_1,SDamageInfo *param_2)
+; void __cdecl core_bugs_cpp_CBugs_processDamage_FUN_004219d0(CBugs *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70

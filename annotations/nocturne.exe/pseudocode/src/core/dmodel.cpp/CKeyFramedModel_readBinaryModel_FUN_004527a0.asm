@@ -120,7 +120,7 @@ section .text
     PUSH EBP                            ; 0045285d
     PUSH EBX                            ; 0045285e
     CALL core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0 ; 0045285f
-        ;   XREF to: 004533e0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0()
+        ;   XREF to: 004533e0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedModel * this_ptr, int vertex_count, int poly_count, int texture_count, ...)
     MOV EDI,dword ptr [EBX + 0x104]     ; 00452864
     IMUL EDI,dword ptr [EBX + 0x100]    ; 0045286a
     ADD ESP,0x18                        ; 00452871

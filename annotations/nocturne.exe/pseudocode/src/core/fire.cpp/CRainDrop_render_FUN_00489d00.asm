@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CRainDrop_render_FUN_00489d00(CVector3f *param_1)
+; void __cdecl core_fire_cpp_CRainDrop_render_FUN_00489d00(CRainDrop *this_ptr)
 ;
+; Parameters:
+; CRainDrop *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xa8]:1  local_a8
 ; undefined4       Stack[-0xa4]:4  local_a4
@@ -253,7 +255,7 @@ section .text
     MOV EAX,[0x007f7370]                ; 00489f25 | DAT_007f7370
     PUSH EAX                            ; 00489f2a
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00489f2b
-        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
+        ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     FLD float ptr [EBP + 0x18]          ; 00489f30
     FMUL double ptr [0x00581464]        ; 00489f33 | DOUBLE_00581464
     MOV EAX,0xffff                      ; 00489f39

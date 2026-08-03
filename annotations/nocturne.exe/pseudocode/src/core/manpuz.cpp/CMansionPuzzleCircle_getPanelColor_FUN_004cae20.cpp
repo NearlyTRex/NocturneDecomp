@@ -1,22 +1,22 @@
 // Name: core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
 // Address: 004cae20
 // Address Range: [[004cae20, 004cae8d]]
-// Convention: unknown
-// Signature: void core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(int param_1,int param_2,float *param_3,float *param_4,float *param_5)
+// Convention: __cdecl
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b)
 
 #include "nocturne.h"
 
-void core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(int param_1,int param_2,float *param_3,float *param_4,float *param_5)
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b)
 
 {
-  *param_5 = 0.0;
-  *param_4 = *param_5;
-  *param_3 = *param_4;
-  param_1 = param_2 * 100 + param_1;
-  if ((*(int *)(param_1 + 0x5e8) != 0) && ((*(uint *)(param_1 + 0x5f0) & 0x7fffffff) == 0)) {
-    *param_3 = (float)*(int *)(param_1 + 0x634);
-    *param_4 = (float)*(int *)(param_1 + 0x638);
-    *param_5 = (float)*(int *)(param_1 + 0x63c);
+  *out_b = 0.0;
+  *out_g = *out_b;
+  *out_r = *out_g;
+  if ((this_ptr->panels[panel_index].exists != 0) &&
+     (ABS(this_ptr->panels[panel_index].anim_speed) == 0.0)) {
+    *out_r = (float)this_ptr->panels[panel_index].color.r;
+    *out_g = (float)this_ptr->panels[panel_index].color.g;
+    *out_b = (float)this_ptr->panels[panel_index].color.b;
     return;
   }
   return;

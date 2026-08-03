@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_CFilmReel_setup_FUN_00481ca0(CDemonActor *param_1)
+; void __cdecl core_filmreel_cpp_CFilmReel_setup_FUN_00481ca0(CFilmReel *this_ptr)
 ;
+; Parameters:
+; CFilmReel *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00580fa3 = 0.5

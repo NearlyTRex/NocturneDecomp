@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 198,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 16,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
-    "total_lines": 102
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
   },
   "cross_references": [
     {
@@ -91,10 +88,10 @@
         "0048e30e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_flame.cpp_CFlame_updateGlobe_FUN_0048e230",
-    "signature": "void core_flame_cpp_CFlame_updateGlobe_FUN_0048e230(int param_1)"
+    "signature": "void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_0048e230(CFlame *this_ptr)"
   },
   "function_calls": [
     {
@@ -153,11 +150,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.855072463768116,
@@ -197,10 +194,10 @@
     "pcode_op_count": 542
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 56,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -244,6 +241,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlame *"
       }
     ]
   },
@@ -272,14 +276,14 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 35,
-          "line": 29,
+          "line": 30,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 17,
-          "line": 30,
+          "line": 31,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -290,139 +294,8 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_flame_cpp_CFlame_updateGlobe_FUN_0048e230(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28.x = *(float *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28.z = *(float *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28.y = *(float *)(param_1 + 0x154) * (float)0.5 + *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28.y = *(float *)(param_1 + 0x154) * (float)0.5 + *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90((CDemonGlobe *)(param_1 + 0x160),&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(-*(float *)(param_1 + 0x27c),*(float *)(param_1 + 0x27c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(-*(float *)(param_1 + 0x27c),*(float *)(param_1 + 0x27c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((double)((local_14 + *(float *)(param_1 + 0x278)) * (float)65535));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x19c) = iStack_18;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(char *)(param_1 + 0x17c) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonGlobe *)(param_1 + 0x160),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x154) * *(float *)(param_1 + 0x1a4) * (float)2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x154) * *(float *)(param_1 + 0x1a4) * (float)2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x180) = 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    },
-    {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 29,
+      "line": 30,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar1 = (iStack_18 + (iStack_18 >> 0x1f) * -0x100) - (uint)((iStack_18 >> 0x1f) << 7 < 0);",
@@ -430,7 +303,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 30,
+      "line": 31,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar2 = iVar1 >> 0x1f;",

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004a88d0(CCharacter *param_1,SCollisionInfo *param_2)
+; ECollisionType __cdecl core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004a88d0(CGargoyle *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0

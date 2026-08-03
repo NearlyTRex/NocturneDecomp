@@ -52,7 +52,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 004e78ce
     PUSH ESI                            ; 004e78d2
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004e78d3
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004e78d8
     MOV EAX,dword ptr [ESP + 0x8]       ; 004e78db
     MOV EAX,dword ptr [EAX + 0x5bdba0]  ; 004e78df | DAT_005bdba0

@@ -54,6 +54,6 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(CMimic *this_ptr)
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
             (&this_ptr_00->motion_controller,1,1);
   engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (g_CConsole_PTR_005ad350,"%s attacking hero\n",this_ptr);
+            (g_CConsole_PTR_005ad350,"%s attacking hero\n");
   return;
 }

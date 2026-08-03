@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_wateract_cpp_CWaterActor_getGroundType_FUN_005520c0(void)
+; EGroundType __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_005520c0(CWaterActor *this_ptr)
 ;
+; Parameters:
+; CWaterActor *    Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

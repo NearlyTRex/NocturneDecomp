@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_CWeapon_pickup_FUN_00554300(int param_1,undefined4 param_2)
+; void __cdecl core_weapon_cpp_CWeapon_pickup_FUN_00554300(CWeapon *this_ptr,CDemonActor *carrier)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   carrier
 ;
 ; *****************************************************************************
 

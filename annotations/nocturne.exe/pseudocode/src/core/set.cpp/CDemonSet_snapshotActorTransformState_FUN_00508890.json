@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 276,
+    "complexity_score": 46,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 24,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
     "total_lines": 58
@@ -104,9 +102,9 @@
         "005088e9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890",
-    "signature": "void core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(undefined4 param_1,int param_2)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet *this_ptr,CDemonActor *actor)"
   },
   "function_calls": [],
   "globals": [],
@@ -117,14 +115,10 @@
         "call_addr": "00508ae0",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
-        "estimated_params": 5,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -132,14 +126,10 @@
         "call_addr": "00508e32",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
-        "estimated_params": 5,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -147,12 +137,10 @@
         "call_addr": "004789c5",
         "call_type": "direct",
         "caller": "core_emitter.cpp_CEmitter_process_FUN_00478790",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -160,21 +148,19 @@
         "call_addr": "004b0e0e",
         "call_type": "direct",
         "caller": "core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.2903225806451615,
@@ -198,208 +184,44 @@
     "pcode_op_count": 102
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x140) = 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((uint *)(param_2 + 0x128) == (uint *)(param_2 + 0x20)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((uint *)(param_2 + 0x128) == (uint *)(param_2 + 0x20)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 0x134 == param_2 + 0x30) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 0x134 == param_2 + 0x30) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x128) = *(uint *)(param_2 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x128) = *(uint *)(param_2 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 300) = *(uint *)(param_2 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 300) = *(uint *)(param_2 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x130) = *(uint *)(param_2 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x130) = *(uint *)(param_2 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 0x134 == param_2 + 0x30) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 + 0x134 == param_2 + 0x30) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x134) = *(uint *)(param_2 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x134) = *(uint *)(param_2 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x138) = *(uint *)(param_2 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x138) = *(uint *)(param_2 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x13c) = *(uint *)(param_2 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_2 + 0x13c) = *(uint *)(param_2 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 12,
-      "match": "raw-offset struct copy",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(param_2 + 0x128) = *(uint *)(param_2 + 0x20);",
+      "text": "(actor->previous_transform_state).position.x = (actor->location).position.x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 19,
-      "match": "raw-offset struct copy",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(param_2 + 0x134) = *(uint *)(param_2 + 0x30);",
+      "text": "(actor->previous_transform_state).orientation.vec.x = (actor->orient).vec.x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

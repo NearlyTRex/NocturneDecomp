@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_bat_cpp_CBat_getBoundingBox_FUN_00411ea0(int param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_bat_cpp_CBat_getBoundingBox_FUN_00411ea0(CBat *this_ptr,CBoundingBox3D *out_box)
 ;
+; Parameters:
+; CBat *           Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   out_box
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

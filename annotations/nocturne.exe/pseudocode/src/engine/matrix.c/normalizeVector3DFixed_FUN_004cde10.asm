@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_matrix_c_normalizeVector3DFixed_FUN_004cde10(int *param_1)
+; CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_004cde10(CVector3i *input_vector,CVector3i *output_vector)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input_vector
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

@@ -17,7 +17,7 @@ CDemonRaytrace * __cdecl CDemonRaytrace::dtor(CDemonRaytrace *this_ptr,uint flag
 
 // Original: core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00467250
 // Address: 00467250
-void CDemonRaytrace::allocCubeList(int param_1);
+void __cdecl CDemonRaytrace::allocCubeList(CDemonRaytrace *this_ptr);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004672a0
 // Address: 004672a0
@@ -121,11 +121,11 @@ int __cdecl CDemonRaytrace::voxelRaycast3D(CDemonRaytrace *this_ptr,CVector3f *s
 
 // Original: core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650
 // Address: 0046b650
-void CDemonRaytrace::worldPositionToGridCoords(int param_1,float *param_2);
+void __stack2_esi CDemonRaytrace::worldPositionToGridCoords(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
 // Address: 0046b700
-void CDemonRaytrace::worldPositionToVoxelCoords(int param_1,float *param_2);
+CVector3i * __stack2_esi CDemonRaytrace::worldPositionToVoxelCoords(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_0046b7b0
 // Address: 0046b7b0

@@ -118,7 +118,7 @@ section .text
     SUB EDI,0x50000                     ; 004e9b57
     MOV [0x01cea3fc],EAX                ; 004e9b5d | DAT_01cea3fc
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004e9b62
-        ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
+        ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
     MOV EAX,[0x005c1664]                ; 004e9b67 | DAT_005c1664
     ADD ESP,0x8                         ; 004e9b6c
     XOR ECX,ECX                         ; 004e9b6f

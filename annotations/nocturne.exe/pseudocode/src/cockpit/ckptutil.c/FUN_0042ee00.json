@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,14 +52,14 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 36,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "category": "format_error",
+        "column": 55,
+        "line": 33,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -68,13 +68,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 179,
+    "complexity_score": 169,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 54,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "unnamed_param"
     ],
@@ -307,14 +307,6 @@
       "match": "param_1",
       "severity": "mild",
       "text": "file_handle = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1,\"wt\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(local_6c,\"Could not create output file (%s).\",param_1);",
       "type": "unnamed_param"
     },
     {

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_gasmask_cpp_CGasMask_getCollisionType_FUN_004a8b60(void)
+; ECollisionType __cdecl core_gasmask_cpp_CGasMask_getCollisionType_FUN_004a8b60(CGasMask *this_ptr,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; CGasMask *       Stack[0x4]:4   this_ptr
+; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; *****************************************************************************
 

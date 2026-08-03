@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint * crt_heap_c_AllocateFromFreeList_FUN_00568b00(void)
+; uint * __watcallRegister crt_heap_c_AllocateFromFreeList_FUN_00568b00(uint param_1,undefined4 param_2,int unaff_EBX)
 ;
 ;
 ; XREF[1]:

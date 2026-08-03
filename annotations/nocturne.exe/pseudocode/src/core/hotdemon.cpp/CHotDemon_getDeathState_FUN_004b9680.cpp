@@ -1,26 +1,26 @@
 // Name: core_hotdemon.cpp_CHotDemon_getDeathState_FUN_004b9680
 // Address: 004b9680
 // Address Range: [[004b9680, 004b96b2]]
-// Convention: unknown
-// Signature: undefined4 core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004b9680(int param_1)
+// Convention: __cdecl
+// Signature: EDeathState __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004b9680(CHotDemon *this_ptr)
 
 #include "nocturne.h"
 
-uint core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004b9680(int param_1)
+EDeathState __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004b9680(CHotDemon *this_ptr)
 
 {
   SMotion *pSVar1;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     ((CMotionController *)(param_1 + 0x150));
+                     (&(this_ptr->base).base.model.motion_controller);
   switch(pSVar1->state_index) {
   case 4:
   case 10:
-    return 1;
+    return DEATH_STATE_DYING;
   case 5:
   case 0xb:
-    return 2;
+    return DEATH_STATE_DEAD;
   default:
-    return 0;
+    return DEATH_STATE_ALIVE;
   }
 }

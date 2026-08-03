@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
+; int              Stack[0xc]:4   poly_count
+; int              Stack[0x10]:4   texture_count
+; int              Stack[0x14]:4   part_count
+; int              Stack[0x18]:4   frame_count
 ;
 ; XREF[2]:
 ;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0 at 0045285f

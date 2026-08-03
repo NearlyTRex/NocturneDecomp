@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_boneguy_cpp_CBoneGuy_reset_FUN_00419f30(void)
+; void __cdecl core_boneguy_cpp_CBoneGuy_reset_FUN_00419f30(CBoneGuy *this_ptr)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

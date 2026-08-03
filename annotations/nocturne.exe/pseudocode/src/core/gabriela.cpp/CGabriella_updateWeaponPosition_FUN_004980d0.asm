@@ -116,7 +116,7 @@ section .text
     PUSH 0x3fc90fdb                     ; 00498185
     LEA EDI,[EBP + 0xfffffe02]          ; 0049818a
     CALL core_xform.cpp_buildRotationX_FUN_0055c730 ; 00498190
-        ;   XREF to: 0055c730 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildRotationX_FUN_0055c730()
+        ;   XREF to: 0055c730 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationX_FUN_0055c730(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00498195
     ADD ESP,0x4                         ; 0049819a
     LEA EAX,[EBP + 0xfffffe02]          ; 0049819d
@@ -127,7 +127,7 @@ section .text
     LEA ESI,[EBP + 0xfffffce2]          ; 004981b1
     LEA EDI,[EBP + 0xfffffdd2]          ; 004981b7
     CALL core_xform.cpp_buildRotationY_FUN_0055c7b0 ; 004981bd
-        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildRotationY_FUN_0055c7b0()
+        ;   XREF to: 0055c7b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationY_FUN_0055c7b0(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004981c2
     LEA ESI,[EBP + 0xfffffce2]          ; 004981c7
     LEA EAX,[EBP + 0xfffffdd2]          ; 004981cd
@@ -137,7 +137,7 @@ section .text
     LEA ESI,[EBP + 0xfffffd12]          ; 004981d9
     LEA EDI,[EBP + 0xfffffe32]          ; 004981df
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004981e5
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004981ea
     LEA ESI,[EBP + 0xfffffd12]          ; 004981ef
     LEA EAX,[EBP + 0xfffffe32]          ; 004981f5
@@ -147,7 +147,7 @@ section .text
     LEA ESI,[EBP + -0x1e]               ; 00498201
     LEA EDI,[EBP + 0xfffffef2]          ; 00498204
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 0049820a
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0049820f
     LEA ESI,[EBP + -0x1e]               ; 00498214
     LEA EAX,[EBP + 0xfffffef2]          ; 00498217
@@ -157,7 +157,7 @@ section .text
     LEA ESI,[EBP + 0x12]                ; 00498223
     LEA EDI,[EBP + 0xfffffda2]          ; 00498226
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 0049822c
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00498231
     LEA ESI,[EBP + 0x12]                ; 00498236
     MOV EAX,dword ptr [EBP + 0x7a]      ; 00498239
@@ -211,7 +211,7 @@ section .text
     LEA ESI,[EBP + -0x7e]               ; 004982ba
     LEA EDI,[EBP + 0xfffffd72]          ; 004982bd
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004982c3
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004982c8
     LEA ESI,[EBP + -0x7e]               ; 004982cd
     ADD ESP,0x8                         ; 004982d0
@@ -291,7 +291,7 @@ section .text
     LEA ESI,[EBP + 0xfffffec2]          ; 004983a9
     LEA EDI,[EBP + 0xfffffe92]          ; 004983af
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004983b5
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004983ba
     LEA ESI,[EBP + 0xfffffec2]          ; 004983bf
     LEA EAX,[EBP + 0xfffffe92]          ; 004983c5
@@ -301,7 +301,7 @@ section .text
     LEA ESI,[EBP + -0x4e]               ; 004983d1
     LEA EDI,[EBP + 0xfffffd72]          ; 004983d4
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004983da
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004983df
     LEA ESI,[EBP + -0x4e]               ; 004983e4
     JMP 0x004982d0                      ; 004983e7

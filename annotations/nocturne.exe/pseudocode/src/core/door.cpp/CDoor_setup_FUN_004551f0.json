@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,20 +52,20 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "format_error",
-        "column": 28,
-        "line": 21,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+        "column": 41,
+        "line": 18,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 53,
-        "line": 28,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+        "column": 40,
+        "line": 24,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -74,17 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 105,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 71
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -95,9 +93,9 @@
         "00455261"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_door.cpp_CDoor_setup_FUN_004551f0",
-    "signature": "void core_door_cpp_CDoor_setup_FUN_004551f0(CDemonActor *param_1)"
+    "signature": "void __cdecl core_door_cpp_CDoor_setup_FUN_004551f0(CDoor *this_ptr)"
   },
   "function_calls": [
     {
@@ -151,9 +149,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -179,79 +177,22 @@
     "pcode_op_count": 166
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_door_cpp_CDoor_setup_FUN_004551f0(CDemonActor *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "str1 = &param_1[2].orient_matrix.m[0].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(str1,\"%sOpen\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[2].create_event + 0x2c,\"defaultDoorClose\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(param_1[2].create_event + 0x2c,\"%sClose\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(param_1[2].create_event + 0x2c,\"%sClose\",param_1);",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

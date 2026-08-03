@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 31,
+        "line": 30,
         "message": "use of undeclared identifier '_DAT_02dc9224'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 32,
+        "line": 31,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 32,
+        "line": 31,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 32,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_02dc9224'; did you mean 'DAT_004A9224'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 33,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_02dc9224'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 51,
+        "line": 50,
         "message": "use of undeclared identifier '_DAT_02dc9214'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 52,
+        "line": 51,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 27,
-        "line": 52,
+        "line": 51,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 52,
+        "line": 51,
         "message": "use of undeclared identifier '_DAT_02dc9214'; did you mean 'DAT_004A9214'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 54,
+        "line": 53,
         "message": "use of undeclared identifier 'code'"
       }
     ],
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 193,
+    "complexity_score": 191,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 66,
     "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 214
+    "total_lines": 212
   },
   "cross_references": [],
   "function": {
@@ -293,7 +293,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc9224 + 8))();",
@@ -301,7 +301,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
+      "line": 44,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(*_DAT_02dc9214 + 0xc))();",
@@ -309,7 +309,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
+      "line": 46,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*puStack_28)(puStack_28,&DAT_005c3918,&uStack_24);",
@@ -317,7 +317,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_005c3918",
       "severity": "mild",
       "text": "(**(code **)*puStack_28)(puStack_28,&DAT_005c3918,&uStack_24);",
@@ -325,7 +325,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
+      "line": 49,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_34 + 8))(piStack_34);",
@@ -333,7 +333,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 53,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);",
@@ -341,7 +341,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_005bed10",
       "severity": "mild",
       "text": "(**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);",
@@ -349,7 +349,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_02dc9224",
       "severity": "mild",
       "text": "(**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);",
@@ -357,7 +357,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
+      "line": 55,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_40 + 8))(piStack_40);",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 60,
+      "line": 59,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_3c + 8))(piStack_3c);",

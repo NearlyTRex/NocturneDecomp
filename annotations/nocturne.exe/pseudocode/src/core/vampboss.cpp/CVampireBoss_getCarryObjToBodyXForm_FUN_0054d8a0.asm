@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(int param_1,int param_2)
+; void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ; Local Variables:
 ; undefined        Stack[-0xa8]:1  local_a8
 ; undefined        Stack[-0x78]:1  local_78
@@ -90,7 +93,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 0054d97b
     MOV EDI,EBX                         ; 0054d97f
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 0054d981
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0054d986
     LEA ESI,[ESP + 0x8]                 ; 0054d98b
     ADD ESP,0x8                         ; 0054d98f

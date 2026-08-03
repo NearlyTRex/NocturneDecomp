@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -84,18 +84,6 @@
         "column": 55,
         "line": 33,
         "message": "use of undeclared identifier '_DAT_02dc942c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 38,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 38,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -104,17 +92,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 109,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
       "raw_address_pointer_store",
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 101
@@ -128,9 +114,9 @@
         "0052c3ed"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340",
-    "signature": "undefined4 sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(int *param_1)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(CWavOutDevice *this_ptr)"
   },
   "function_calls": [
     {
@@ -185,9 +171,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -222,10 +208,10 @@
     "pcode_op_count": 292
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -234,6 +220,13 @@
         "offset": -24,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavOutDevice *"
       }
     ]
   },
@@ -245,14 +238,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(int *param_1)",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
@@ -269,22 +254,6 @@
       "severity": "moderate",
       "text": "**(uint **)(iVar2 + 0x2dc93a8) = *(uint *)(iVar2 + 0x2dc93c8);",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*param_1 + 8))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*param_1 + 8))();",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

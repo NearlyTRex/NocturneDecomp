@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_trigger_cpp_CTrigger_renderTransparent_FUN_00548100(void)
+; int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_00548100(CTrigger *this_ptr)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005485a0 at 005485aa

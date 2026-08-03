@@ -29,6 +29,6 @@ char * __cdecl core_inv_cpp_getItemIconName_FUN_004bed10(CDemonActor *actor_ptr)
       str2 = str2 + 0x300;
     } while (iVar3 < _DAT_01cb03d0);
   }
-  _sprintf(0x1cae480,"Add to dict: %s",pCVar1->model_name);
+  _sprintf((char *)0x1cae480,"Add to dict: %s");
   return (char *)0x1cae480;
 }

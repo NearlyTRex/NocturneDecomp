@@ -89,7 +89,7 @@ section .text
         ;   Label: LAB_00530e3b
     PUSH EBX                            ; 00530e3c
     CALL wincore_wddvmem.cpp_freeLibrary_FUN_00553d20 ; 00530e3d
-        ;   XREF to: 00553d20 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_freeLibrary_FUN_00553d20()
+        ;   XREF to: 00553d20 (UNCONDITIONAL_CALL)  ; BOOL wincore_wddvmem.cpp_freeLibrary_FUN_00553d20(HMODULE hLibModule)
     XOR EDI,EDI                         ; 00530e42
     ADD ESP,0x4                         ; 00530e44
     MOV dword ptr [0x02dc9e08],EDI      ; 00530e47 | DAT_02dc9e08

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_beast_cpp_CBeast_getActorType_FUN_00415040(void)
+; CDemonActorType * __cdecl core_beast_cpp_CBeast_getActorType_FUN_00415040(CBeast *this_ptr)
 ;
+; Parameters:
+; CBeast *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonActorType g_CBeastActorType_007646b0

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ladder_cpp_CLadder_process_FUN_004c4360(CLadder *param_1)
+; void __cdecl core_ladder_cpp_CLadder_process_FUN_004c4360(CLadder *this_ptr,float delta_time)
 ;
+; Parameters:
+; CLadder *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Called Functions:
 ;   core_ladder.cpp_FUN_004c45a0

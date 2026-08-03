@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_pendulum_cpp_CPendulum_renderOpaque_FUN_004f3b90(CDemonActor *param_1)
+; int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_004f3b90(CPendulum *this_ptr)
 ;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;

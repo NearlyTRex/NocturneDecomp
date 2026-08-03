@@ -68,7 +68,7 @@ section .text
     PUSH EDI                            ; 004d92ea
         ;   Label: LAB_004d92ea
     CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180 ; 004d92eb
-        ;   XREF to: 004d9180 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180()
+        ;   XREF to: 004d9180 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission * this_ptr)
     MOV ECX,dword ptr [EDI + 0x528]     ; 004d92f0
     ADD ESP,0x4                         ; 004d92f6
     TEST ECX,ECX                        ; 004d92f9

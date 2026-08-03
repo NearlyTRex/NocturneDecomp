@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_smiley_cpp_CSmiley_setup_FUN_0051fd90(CEnemy *param_1)
+; void __cdecl core_smiley_cpp_CSmiley_setup_FUN_0051fd90(CSmiley *this_ptr)
 ;
+; Parameters:
+; CSmiley *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_00591ef8

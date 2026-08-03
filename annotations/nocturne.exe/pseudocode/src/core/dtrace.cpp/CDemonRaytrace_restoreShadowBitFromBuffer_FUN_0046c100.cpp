@@ -19,25 +19,27 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0046c
   int local_34;
   int local_30;
   int local_2c;
-  int local_28;
-  int local_1c;
+  CVector3i local_28;
+  CVector3i local_1c;
   
   bVar2 = 0;
-  core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650(this_ptr,world_position);
-  local_34 = local_28;
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650
+            (this_ptr,world_position,&local_28);
+  local_34 = local_28.x;
   *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);
+       *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+       *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   if ((((-1 < local_34) && (-1 < local_30)) && (-1 < local_2c)) &&
      (((local_34 < (this_ptr->grid_coord).x && (local_30 < (this_ptr->grid_coord).y)) &&
       (local_2c < (this_ptr->grid_coord).z)))) {
-    core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(this_ptr,world_position);
-    local_40 = local_1c;
+    core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
+              (this_ptr,world_position,&local_1c);
+    local_40 = local_1c.x;
     *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
+         *(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);
     *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-         *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+         *(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     local_40 = local_40 % 8;
     local_3c = local_3c % 8;
     local_38 = local_38 % 8;

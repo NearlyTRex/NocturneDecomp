@@ -17,7 +17,7 @@ int __cdecl CWavOutDevice::close(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340
 // Address: 0052c340
-undefined4 CWavOutDevice::start(int *param_1);
+int __cdecl CWavOutDevice::start(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_reset_FUN_0052c3f0
 // Address: 0052c3f0
@@ -25,7 +25,7 @@ int __cdecl CWavOutDevice::reset(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0052c460
 // Address: 0052c460
-undefined4 CWavOutDevice::setMode(undefined4 *param_1,uint param_2,int param_3,uint *param_4);
+int __cdecl CWavOutDevice::setMode(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_poll_FUN_0052c640
 // Address: 0052c640
@@ -41,51 +41,51 @@ CWavOutDevice * __cdecl getWavOutDevice(UINT device_id);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_hasHardware3D_FUN_0052c7b0
 // Address: 0052c7b0
-undefined4 CWavOutDevice::hasHardware3D(void);
+int __cdecl CWavOutDevice::hasHardware3D(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_0052c7c0
 // Address: 0052c7c0
-void CWavOutDevice::set3DListenerPos(void);
+void __cdecl CWavOutDevice::set3DListenerPos(CWavOutDevice *this_ptr,double x,double y,double z);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_0052c7d0
 // Address: 0052c7d0
-void CWavOutDevice::set3DListenerOrient(void);
+void __cdecl CWavOutDevice::set3DListenerOrient(CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_0052c7e0
 // Address: 0052c7e0
-void CWavOutDevice::set3DListenerVelocity(void);
+void __cdecl CWavOutDevice::set3DListenerVelocity(CWavOutDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_0052c7f0
 // Address: 0052c7f0
-void CWavOutDevice::set3DListenerDistanceFactor(void);
+void __cdecl CWavOutDevice::set3DListenerDistanceFactor(CWavOutDevice *this_ptr,double distance_in_feet);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_commitDeferredSettings_FUN_0052c800
 // Address: 0052c800
-void CWavOutDevice::commitDeferredSettings(void);
+void __cdecl CWavOutDevice::commitDeferredSettings(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_allocateSample_FUN_0052c810
 // Address: 0052c810
-undefined4 CWavOutDevice::allocateSample(void);
+int __cdecl CWavOutDevice::allocateSample(CWavOutDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_freeSample_FUN_0052c820
 // Address: 0052c820
-void CWavOutDevice::freeSample(void);
+void __cdecl CWavOutDevice::freeSample(CWavOutDevice *this_ptr,int buffer_id);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_0052c830
 // Address: 0052c830
-undefined4 CWavOutDevice::lockSample(void);
+int __cdecl CWavOutDevice::lockSample(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_0052c840
 // Address: 0052c840
-void CWavOutDevice::unlockSample(void);
+void __cdecl CWavOutDevice::unlockSample(CWavOutDevice *this_ptr,int buffer_id);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_allocateSfx_FUN_0052c850
 // Address: 0052c850
-undefined4 CWavOutDevice::allocateSfx(void);
+int __cdecl CWavOutDevice::allocateSfx(CWavOutDevice *this_ptr,int sample_buffer_id);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_setSfxPos_FUN_0052c860
 // Address: 0052c860
-undefined4 CWavOutDevice::setSfxPos(void);
+int __cdecl CWavOutDevice::setSfxPos(CWavOutDevice *this_ptr,CSfxSlot *slot,int update_flags);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_getSfxPlaybackPos_FUN_0052c870
 // Address: 0052c870
@@ -93,12 +93,12 @@ double __cdecl CWavOutDevice::getSfxPlaybackPos(CWavOutDevice *this_ptr,CSfxSlot
 
 // Original: sound_sndwav.cpp_CWavOutDevice_startSfx_FUN_0052c890
 // Address: 0052c890
-undefined4 CWavOutDevice::startSfx(void);
+int __cdecl CWavOutDevice::startSfx(CWavOutDevice *this_ptr,CSfxSlot *slot);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_0052c8a0
 // Address: 0052c8a0
-void CWavOutDevice::killSfx(void);
+void __cdecl CWavOutDevice::killSfx(CWavOutDevice *this_ptr,CSfxSlot *slot);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_isSfxPlaying_FUN_0052c8b0
 // Address: 0052c8b0
-undefined4 CWavOutDevice::isSfxPlaying(void);
+int __cdecl CWavOutDevice::isSfxPlaying(CWavOutDevice *this_ptr,CSfxSlot *slot);

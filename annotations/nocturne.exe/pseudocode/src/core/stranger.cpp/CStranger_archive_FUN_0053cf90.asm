@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_archive_FUN_0053cf90(CHero *param_1)
+; void __cdecl core_stranger_cpp_CStranger_archive_FUN_0053cf90(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_objectToPickUp_00595bf7

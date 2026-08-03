@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_icepick_cpp_CIcePick_getActorType_FUN_004b9d10(void)
+; CDemonActorType * __cdecl core_icepick_cpp_CIcePick_getActorType_FUN_004b9d10(CIcePick *this_ptr)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30(int param_1,float *param_2)
+; CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30(CEnemy *this_ptr,CVector3f *out_point)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057f35f = 5.22209901682860E-315

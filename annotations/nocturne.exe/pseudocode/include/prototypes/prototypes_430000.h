@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/fstream.h"
 #include "system/iostream.h"
+#include "system/stdio.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CCloth.h"
@@ -20,8 +21,6 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonCamera.h"
-#include "types/classes/CEnemy.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
@@ -31,6 +30,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CZombieCow.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SBitBuffer.h"
 #include "types/structs/SClothBone.h"
 #include "types/structs/SClothVertex.h"
@@ -125,7 +125,7 @@ CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_00438250(CClothList *thi
 void __cdecl core_cloth_cpp_CClothList_load_FUN_00438270(CClothList *this_ptr);
 void __cdecl core_cloth_cpp_CClothList_reset_FUN_00438320(CClothList *this_ptr);
 void __cdecl core_cloth_cpp_CClothList_add_FUN_00438390(CClothList *this_ptr,char *filename);
-void core_cloth_cpp_CClothList_remove_FUN_00438410(int *param_1,int param_2);
+void __cdecl core_cloth_cpp_CClothList_remove_FUN_00438410(CClothList *this_ptr,int index);
 void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_process_FUN_00438550(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
@@ -154,8 +154,8 @@ void __cdecl support_codec_cpp_flushBitBuffer_FUN_00438d60(SBitBuffer *bit_buffe
 int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_00438dc0(SBitBuffer *bit_state,int bit_count,char **output_pos,int *bytes_remaining);
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(CCodec *this_ptr);
 CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(CCodec *this_ptr,uint flags);
-void support_codec_cpp_CCodec_init_FUN_00438f50(void);
-undefined4 support_codec_cpp_CCodec_finalize_FUN_00438f80(void);
+void __cdecl support_codec_cpp_CCodec_init_FUN_00438f50(CCodec *this_ptr);
+int __cdecl support_codec_cpp_CCodec_finalize_FUN_00438f80(CCodec *this_ptr,_FILE *output_file);
 int __cdecl support_codec_cpp_CCodec_process_FUN_00438f90(CCodec *this_ptr,_istream *istream,int *byte_count,_ostream *ostream);
 int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_00439000(CCodec *this_ptr,_istream *ifstream,int *byte_count,char *output_buffer,int *output_size,int enable_finalize);
 int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_004390b0(CCodec *this_ptr,char *input,int *input_length,_ostream *ostream);
@@ -188,15 +188,15 @@ CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_00439c10(CLZW
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_00439c70(CLZWCompress *this_ptr,uint flags);
 void __cdecl core_colonel_cpp_staticInit_FUN_00439cd0(void);
 CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_00439d00(void);
-CDemonActorType * core_colonel_cpp_CColonel_getActorType_FUN_00439d20(void);
+CDemonActorType * __cdecl core_colonel_cpp_CColonel_getActorType_FUN_00439d20(CColonel *this_ptr);
 CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_00439d30(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_setup_FUN_00439da0(CColonel *this_ptr);
-void core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *param_1,float param_2);
+void __cdecl core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *this_ptr,float delta_time);
 void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr,float delta_time);
-ushort core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(CCharacter *param_1,float param_2);
-void core_colonel_cpp_CColonel_archive_FUN_0043a9e0(CHero *param_1);
-void core_colonel_cpp_CColonel_renderOpaque_FUN_0043a9f0(CCharacter *param_1);
-void core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CCharacter *param_1,SDamageInfo *param_2);
+void __cdecl core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(CColonel *this_ptr,float delta_time);
+void __cdecl core_colonel_cpp_CColonel_archive_FUN_0043a9e0(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_0043a9f0(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CColonel *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_colonel_cpp_CColonel_isWeaponDrawn_FUN_0043ab20(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_drawWeapon_FUN_0043ab30(CColonel *this_ptr,int drawn);
 int __cdecl core_colonel_cpp_getCurrentMotionState_FUN_0043ab40(CMotionController *motion_ptr);
@@ -204,26 +204,26 @@ CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_0043ab60(CColonel *this_pt
 void __cdecl core_console_cpp_staticInit_FUN_0043abb0(void);
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_0043abe0(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
 CConsole * __cdecl engine_console_cpp_CConsole_dtor_FUN_0043ac50(CConsole *this_ptr,uint flags);
-void engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *param_1,char *param_2);
+void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format);
 void __cdecl engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *this_ptr,char character);
 void __cdecl engine_console_cpp_CConsole_reset_FUN_0043ae00(CConsole *this_ptr);
 void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_0043ae40(CConsole *this_ptr);
 void __cdecl engine_console_cpp_CConsole_render_FUN_0043aec0(CConsole *this_ptr);
 void __cdecl core_conveyor_cpp_staticInit_FUN_0043aff0(void);
 CConveyor * __cdecl core_conveyor_cpp_factoryFunc_FUN_0043b020(void);
-CDemonActorType * core_conveyor_cpp_CConveyor_getActorType_FUN_0043b040(void);
+CDemonActorType * __cdecl core_conveyor_cpp_CConveyor_getActorType_FUN_0043b040(CConveyor *this_ptr);
 CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_0043b050(CConveyor *this_ptr);
-void core_conveyor_cpp_CConveyor_setup_FUN_0043b110(CPlatform *param_1);
-void core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CPlatform *param_1,float param_2);
+void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_0043b110(CConveyor *this_ptr);
+void __cdecl core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CConveyor *this_ptr,float delta_time);
 undefined4 core_conveyor_cpp_FUN_0043b2f0(void);
-void core_conveyor_cpp_CConveyor_renderBackground_FUN_0043b300(void);
-void core_conveyor_cpp_CConveyor_archive_FUN_0043b310(CPlatform *param_1);
-undefined4 core_conveyor_cpp_CConveyor_getCollisionType_FUN_0043b3b0(void);
+void __cdecl core_conveyor_cpp_CConveyor_renderBackground_FUN_0043b300(CConveyor *this_ptr,int layer_flag);
+void __cdecl core_conveyor_cpp_CConveyor_archive_FUN_0043b310(CConveyor *this_ptr);
+ECollisionType __cdecl core_conveyor_cpp_CConveyor_getCollisionType_FUN_0043b3b0(CConveyor *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_conveyor_cpp_CConveyor_getBoundingBox_FUN_0043b3c0(CConveyor *this_ptr,CBoundingBox3D *out_box);
 CConveyor * __cdecl core_conveyor_cpp_CConveyor_dtor_FUN_0043b420(CConveyor *this_ptr,uint flags);
 CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_0043b490(CPlatform *this_ptr,uint flags);
 undefined4 * core_course_cpp_FUN_0043b500(void);
-float core_course_cpp_fmodfPositive_FUN_0043b510(float param_1,float param_2);
+float __cdecl core_course_cpp_fmodfPositive_FUN_0043b510(float value,float modulus);
 void core_course_cpp_FUN_0043b5b0(void);
 CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_0043b5d0(CCourse *this_ptr);
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_0043b5f0(CCourse *this_ptr,uint flags);
@@ -234,60 +234,60 @@ void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(CCourse *this_ptr,flo
 void __cdecl core_course_cpp_CCourse_interpolate_FUN_0043b890(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
 void __cdecl core_cow_cpp_staticInit_FUN_0043bb80(void);
 CZombieCow * __cdecl core_cow_cpp_factoryFunc_FUN_0043bbb0(void);
-CDemonActorType * core_cow_cpp_CZombieCow_getActorType_FUN_0043bbd0(void);
+CDemonActorType * __cdecl core_cow_cpp_CZombieCow_getActorType_FUN_0043bbd0(CZombieCow *this_ptr);
 CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_0043bbe0(CZombieCow *this_ptr);
-void core_cow_cpp_CZombieCow_setup_FUN_0043bc50(CEnemy *param_1);
-void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2);
-void core_cow_cpp_CZombieCow_archive_FUN_0043c2e0(CEnemy *param_1);
+void __cdecl core_cow_cpp_CZombieCow_setup_FUN_0043bc50(CZombieCow *this_ptr);
+void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,float delta_time);
+void __cdecl core_cow_cpp_CZombieCow_archive_FUN_0043c2e0(CZombieCow *this_ptr);
 void __cdecl core_cow_cpp_CZombieCow_processDismemberment_FUN_0043c360(CZombieCow *this_ptr,SDamageInfo *damage_info);
-void core_cow_cpp_CZombieCow_processDamage_FUN_0043c5e0(CZombieCow *param_1,SDamageInfo *param_2);
+void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_0043c5e0(CZombieCow *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_0043c6a0(CZombieCow *this_ptr,CVector3f *out_points_array);
 CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_0043c6f0(CZombieCow *this_ptr,uint flags);
 void __cdecl core_crate_cpp_staticInit_FUN_0043c7b0(void);
 CCrate * __cdecl core_crate_cpp_factoryFunc_FUN_0043c7e0(void);
-CDemonActorType * core_crate_cpp_CCrate_getActorType_FUN_0043c800(void);
+CDemonActorType * __cdecl core_crate_cpp_CCrate_getActorType_FUN_0043c800(CCrate *this_ptr);
 CCrate * __cdecl core_crate_cpp_CCrate_ctor_FUN_0043c810(CCrate *this_ptr);
-void core_crate_cpp_CCrate_setup_FUN_0043c870(CDemonActor *param_1);
+void __cdecl core_crate_cpp_CCrate_setup_FUN_0043c870(CCrate *this_ptr);
 int __cdecl core_crate_cpp_CCrate_canPickup_FUN_0043c940(CCrate *this_ptr,CDemonActor *picker);
-void core_crate_cpp_CCrate_pickup_FUN_0043c960(int param_1,undefined4 param_2);
+void __cdecl core_crate_cpp_CCrate_pickup_FUN_0043c960(CCrate *this_ptr,CDemonActor *carrier);
 void core_crate_cpp_CCrate_onDropped_FUN_0043c970(int param_1);
-undefined4 core_crate_cpp_CCrate_getCarrier_FUN_0043c990(int param_1);
-void core_crate_cpp_CCrate_process_FUN_0043c9a0(CDemonActor *param_1);
-int core_crate_cpp_CCrate_renderOpaque_FUN_0043cbc0(int param_1);
-void core_crate_cpp_CCrate_renderBackground_FUN_0043cc30(void);
-void core_crate_cpp_CCrate_archive_FUN_0043cc50(CDemonActor *param_1);
-undefined4 core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(int param_1);
-float * core_crate_cpp_CCrate_getBoundingBox_FUN_0043ccc0(int param_1,float *param_2);
-undefined4 core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(int param_1,float *param_2);
+CDemonActor * __cdecl core_crate_cpp_CCrate_getCarrier_FUN_0043c990(CCrate *this_ptr);
+void __cdecl core_crate_cpp_CCrate_process_FUN_0043c9a0(CCrate *this_ptr,float delta_time);
+int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_0043cbc0(CCrate *this_ptr);
+void __cdecl core_crate_cpp_CCrate_renderBackground_FUN_0043cc30(CCrate *this_ptr,int layer_flag);
+void __cdecl core_crate_cpp_CCrate_archive_FUN_0043cc50(CCrate *this_ptr);
+ECollisionType __cdecl core_crate_cpp_CCrate_getCollisionType_FUN_0043cca0(CCrate *this_ptr,SCollisionInfo *collision_info);
+CBoundingBox3D * __cdecl core_crate_cpp_CCrate_getBoundingBox_FUN_0043ccc0(CCrate *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_0043cd10(CCrate *this_ptr,CVector3f *out_points_array);
 void __cdecl core_crate_cpp_CCrate_explode_FUN_0043cdb0(CCrate *this_ptr);
 CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_0043ce60(CCrate *this_ptr,uint flags);
 void __cdecl core_crossbow_cpp_staticInit_FUN_0043ceb0(void);
 CCrossbow * __cdecl core_crossbow_cpp_factoryFunc_FUN_0043cee0(void);
-CDemonActorType * core_crossbow_cpp_CCrossbow_getActorType_FUN_0043cf00(void);
+CDemonActorType * __cdecl core_crossbow_cpp_CCrossbow_getActorType_FUN_0043cf00(CCrossbow *this_ptr);
 CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_0043cf10(CCrossbow *this_ptr);
-void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2);
-int core_crossbow_cpp_CCrossbow_renderOpaque_FUN_0043d0a0(CDemonActor *param_1);
-undefined4 core_crossbow_cpp_CCrossbow_renderTransparent_FUN_0043d120(int param_1);
+void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCrossbow *this_ptr,float delta_time);
+int __cdecl core_crossbow_cpp_CCrossbow_renderOpaque_FUN_0043d0a0(CCrossbow *this_ptr);
+int __cdecl core_crossbow_cpp_CCrossbow_renderTransparent_FUN_0043d120(CCrossbow *this_ptr);
 undefined4 * core_crossbow_cpp_FUN_0043d150(int param_1,undefined4 *param_2);
 undefined4 core_crossbow_cpp_FUN_0043d1c0(CCharacter *param_1);
-float core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0043d810(int param_1);
+float __cdecl core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0043d810(CCrossbow *this_ptr);
 float core_crossbow_cpp_FUN_0043d840(void);
 CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_0043d870(CCrossbow *this_ptr,uint flags);
 void __cdecl core_curtain_cpp_staticInit_FUN_0043d8e0(void);
 CCurtain * __cdecl core_curtain_cpp_factoryFunc_FUN_0043d930(void);
-CDemonActorType * core_curtain_cpp_CCurtain_getActorType_FUN_0043d950(void);
+CDemonActorType * __cdecl core_curtain_cpp_CCurtain_getActorType_FUN_0043d950(CCurtain *this_ptr);
 CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_0043d960(CCurtain *this_ptr);
-void core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *param_1);
+void __cdecl core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *this_ptr);
 void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(CCurtain *this_ptr);
 void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(CCurtain *this_ptr);
 void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *this_ptr,SCurtainVertex *vertex);
-void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2);
+void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,float delta_time);
 int __cdecl core_curtain_cpp_FUN_0043f330(CCurtain *this_ptr);
-int core_curtain_cpp_CCurtain_renderOpaque_FUN_0043f610(CCurtain *param_1);
-int core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(CCurtain *param_1);
-undefined4 core_curtain_cpp_CCurtain_getCollisionType_FUN_0043f640(void);
-void core_curtain_cpp_CCurtain_getBoundingBox_FUN_0043f650(int param_1,float *param_2);
-void core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(CDemonActor *param_1);
+int __cdecl core_curtain_cpp_CCurtain_renderOpaque_FUN_0043f610(CCurtain *this_ptr);
+int __cdecl core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(CCurtain *this_ptr);
+ECollisionType __cdecl core_curtain_cpp_CCurtain_getCollisionType_FUN_0043f640(CCurtain *this_ptr,SCollisionInfo *collision_info);
+CBoundingBox3D * __cdecl core_curtain_cpp_CCurtain_getBoundingBox_FUN_0043f650(CCurtain *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(CCurtain *this_ptr);
 int __cdecl core_curtain_cpp_CCurtain_getBlockVirtualDirectorFlag_FUN_0043f8d0(CCurtain *this_ptr);
 CCurtain * __cdecl core_curtain_cpp_CCurtain_dtor_FUN_0043f8e0(CCurtain *this_ptr,uint flags);
 SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_ctor_FUN_0043f950(SCurtainVertex *this_ptr);

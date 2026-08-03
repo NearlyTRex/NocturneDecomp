@@ -14,9 +14,10 @@ uint sound_sndmain_cpp_FUN_00527060(void)
 {
   CSfxSlot *this_ptr;
   uint uVar1;
+  uint in_stack_00000004;
   void *in_stack_00000008;
   
-  this_ptr = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0();
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(in_stack_00000004,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }

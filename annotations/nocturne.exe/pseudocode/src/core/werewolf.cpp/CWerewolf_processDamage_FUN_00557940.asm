@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *param_1,SDamageInfo *param_2)
+; void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined        Stack[-0x28]:1  local_28

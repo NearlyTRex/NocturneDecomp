@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_smiley_cpp_CSmiley_processDamage_FUN_00520e40(CSmiley *param_1,SDamageInfo *param_2)
+; void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_00520e40(CSmiley *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CSmiley *        Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_smiley_die_wav_005920fd

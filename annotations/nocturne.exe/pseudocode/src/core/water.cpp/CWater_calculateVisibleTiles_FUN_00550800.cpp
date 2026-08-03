@@ -145,11 +145,9 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
         iVar8 = iVar8 + 1;
       } while (iVar8 < (int)local_20);
     }
-    iVar8 = _DAT_02dd1234;
-    fVar2 = (float)_DAT_02dd1234 * this_ptr->tile_size * this_ptr->tile_size;
-    this_ptr->visible_area_sqft = fVar2;
+    this_ptr->visible_area_sqft = (float)_DAT_02dd1234 * this_ptr->tile_size * this_ptr->tile_size;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"Vis water tiles : %d, SqFt : %f",iVar8,(double)fVar2);
+              (g_CConsole_PTR_005ad350,"Vis water tiles : %d, SqFt : %f");
     return;
   }
   return;

@@ -58,11 +58,11 @@ LAB_00528a76:
       sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0(local_24);
       if (0 < DAT_005bea60) {
         do {
-          _sprintf(local_94,"SfxChannel%dEnabled",iVar1);
+          _sprintf(local_94,"SfxChannel%dEnabled");
           local_1c = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00527490(iVar1);
           engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(ini_file,local_94,&local_1c);
           sound_sndmain_cpp_enableSfxChannel_FUN_00527410(iVar1,local_1c);
-          _sprintf(local_94,"SfxChannel%dVol",iVar1);
+          _sprintf(local_94,"SfxChannel%dVol");
           local_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(iVar1);
           local_14 = local_18;
           engine_ini_cpp_CIniFile_getFloat_FUN_004bdac0(ini_file,local_94,&local_18);

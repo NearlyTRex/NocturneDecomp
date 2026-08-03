@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(CTrigger *param_1)
+; void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(CWayPoint *this_ptr)
 ;
+; Parameters:
+; CWayPoint *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;

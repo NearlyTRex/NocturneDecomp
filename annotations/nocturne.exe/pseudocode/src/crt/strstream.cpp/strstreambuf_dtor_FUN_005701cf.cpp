@@ -24,7 +24,8 @@ strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_005701cf(strstrea
         (*this_ptr->__free_fn)(ptr);
       }
     }
-    this_ptr = (strstreambuf *)crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(this_ptr,1);
+    this_ptr = (strstreambuf *)
+               crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(&this_ptr->_streambuf);
     if ((flags & 2) == 0) {
       return this_ptr;
     }

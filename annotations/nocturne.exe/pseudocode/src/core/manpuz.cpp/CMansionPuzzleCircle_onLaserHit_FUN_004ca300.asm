@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CDemonActor *param_1,SLaserInfo *param_2)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; SLaserInfo *     Stack[0x8]:4   laser_info
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ;

@@ -26,7 +26,7 @@ section .text
     PUSH EDX                            ; 00548fc9
     LEA ESI,[ESP + 0x14]                ; 00548fca
     CALL support_trisock.cpp_buildSockaddrIn_FUN_00548dc0 ; 00548fce
-        ;   XREF to: 00548dc0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_buildSockaddrIn_FUN_00548dc0()
+        ;   XREF to: 00548dc0 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr * net_addr, SOCKADDR_IN * dest_buffer)
     ADD ESP,0x4                         ; 00548fd3
     MOV EDI,ESP                         ; 00548fd6
     PUSH 0x10                           ; 00548fd8

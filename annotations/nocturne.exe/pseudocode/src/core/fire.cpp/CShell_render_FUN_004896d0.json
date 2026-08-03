@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -75,39 +75,33 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 75,
-        "line": 28,
+        "column": 20,
+        "line": 29,
         "message": "use of undeclared identifier '_DAT_007f7370'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 32,
-        "line": 32,
+        "column": 78,
+        "line": 33,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 59,
-        "line": 32,
+        "column": 32,
+        "line": 34,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 33,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
         "line": 35,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
+        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
       },
       {
-        "category": "cast_error",
-        "column": 18,
-        "line": 38,
-        "message": "cannot cast from type 'float' to pointer type 'CKeyFramedModel *'"
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 37,
+        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
       }
     ],
     "success": false,
@@ -116,19 +110,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 238,
+    "complexity_score": 125,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 19,
+    "pseudocode_lines": 35,
+    "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 142
+    "total_lines": 144
   },
   "cross_references": [],
   "function": {
@@ -139,9 +132,9 @@
         "004897ca"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fire.cpp_CShell_render_FUN_004896d0",
-    "signature": "void core_fire_cpp_CShell_render_FUN_004896d0(CVector3f *param_1)"
+    "signature": "void __cdecl core_fire_cpp_CShell_render_FUN_004896d0(CShell *this_ptr)"
   },
   "function_calls": [
     {
@@ -238,9 +231,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -281,10 +274,10 @@
     "pcode_op_count": 450
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -307,6 +300,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShell *"
       }
     ]
   },
@@ -320,52 +320,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_fire_cpp_CShell_render_FUN_004896d0(CVector3f *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < param_1[2].x) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "vertex_ptr = DAT_005ae704->vertex_buffer_ptr;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c.x = (int)ROUND(param_1->x * 256.0f);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c.y = (int)ROUND(param_1->y * 256.0f);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c.z = (int)ROUND(param_1->z * 256.0f);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -384,84 +344,36 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(_DAT_007f7370,param_1,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,param_1,(UOrientationVector *)&param_1[4].z,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,param_1,(UOrientationVector *)&param_1[4].z,",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(CVector3f *)&DAT_02dd1184,(CVector3f *)&DAT_02dd1184,(CMatrix3x3f *)0x0);",
+      "text": "(UOrientationVector *)&this_ptr->euler_angles,(CVector3f *)&DAT_02dd1184,",
       "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_02dd1184",
-      "severity": "mild",
-      "text": "(CVector3f *)&DAT_02dd1184,(CVector3f *)&DAT_02dd1184,(CMatrix3x3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 27,
-      "match": "DAT_005ae704",
+      "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(DAT_005ae704,param_1);",
+      "text": "(CVector3f *)&DAT_02dd1184,(CMatrix3x3f *)0x0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&param_1[4].z,(CVector3f *)0x0);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&param_1[4].z,(CVector3f *)0x0);",
+      "text": "(DAT_005ae704,(CVector3f *)this_ptr);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Undefined global data reference",
       "line": 31,
-      "match": "param_1",
+      "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "((CKeyFramedModel *)param_1[7].x,0,(CKeyFramedModelInstance *)0x0,-1);",
-      "type": "unnamed_param"
+      "text": "(DAT_005ae704,&this_ptr->euler_angles,(CVector3f *)0x0);",
+      "type": "undefined_data"
     }
   ],
   "vtable_info": {

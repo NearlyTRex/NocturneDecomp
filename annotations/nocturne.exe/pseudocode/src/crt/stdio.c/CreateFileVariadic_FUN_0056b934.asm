@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_stdio_c_CreateFileVariadic_FUN_0056b934(char *param_1,dword param_2,dword param_3)
+; int __cdecl crt_stdio_c_CreateFileVariadic_FUN_0056b934(char *filename,int access_mode,int share_mode)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; int              Stack[0x8]:4   access_mode
+; int              Stack[0xc]:4   share_mode
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

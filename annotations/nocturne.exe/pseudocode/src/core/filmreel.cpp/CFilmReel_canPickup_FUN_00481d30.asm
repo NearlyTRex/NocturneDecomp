@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_filmreel_cpp_CFilmReel_canPickup_FUN_00481d30(undefined4 param_1,CDemonActor *param_2)
+; int __cdecl core_filmreel_cpp_CFilmReel_canPickup_FUN_00481d30(CFilmReel *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CFilmReel *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_00580fab

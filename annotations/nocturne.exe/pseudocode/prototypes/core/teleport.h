@@ -13,7 +13,7 @@ CTeleportDest * __cdecl factoryFunc(void);
 
 // Original: core_teleport.cpp_CTeleportDest_getActorType_FUN_00543830
 // Address: 00543830
-CDemonActorType * CTeleportDest::getActorType(void);
+CDemonActorType * __cdecl CTeleportDest::getActorType(CTeleportDest *this_ptr);
 
 // Original: core_teleport.cpp_CTeleportDest_ctor_FUN_00543840
 // Address: 00543840
@@ -33,7 +33,7 @@ CTeleport * __cdecl factoryFunc(void);
 
 // Original: core_teleport.cpp_CTeleport_getActorType_FUN_005438c0
 // Address: 005438c0
-CDemonActorType * CTeleport::getActorType(void);
+CDemonActorType * __cdecl CTeleport::getActorType(CTeleport *this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_ctor_FUN_005438d0
 // Address: 005438d0
@@ -41,7 +41,7 @@ CTeleport * __cdecl CTeleport::ctor(CTeleport *this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_process_FUN_00543910
 // Address: 00543910
-void CTeleport::process(CDemonActor *param_1);
+void __cdecl CTeleport::process(CTeleport *this_ptr,float delta_time);
 
 // Original: core_teleport.cpp_CTeleport_getBoundingBox_FUN_005439c0
 // Address: 005439c0

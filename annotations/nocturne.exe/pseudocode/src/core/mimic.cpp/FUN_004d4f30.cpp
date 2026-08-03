@@ -20,7 +20,7 @@ void __cdecl core_mimic_cpp_FUN_004d4f30(CMimic *this_ptr,float delta_time)
   int iVar6;
   uint uVar7;
   CBoundingBox3D *pCVar8;
-  float *pfVar9;
+  CMatrix3x4f *pCVar9;
   CMatrix3x4f *pCVar10;
   bool bVar11;
   byte bVar12;
@@ -28,7 +28,7 @@ void __cdecl core_mimic_cpp_FUN_004d4f30(CMimic *this_ptr,float delta_time)
   float fVar14;
   SDamageInfo *damage_info;
   SDamageInfo local_1e4;
-  float local_1a8 [12];
+  CMatrix3x4f local_1a8;
   CMatrix3x4f local_178;
   CBoundingBox3D local_148;
   CVector3f local_130;
@@ -95,13 +95,13 @@ void __cdecl core_mimic_cpp_FUN_004d4f30(CMimic *this_ptr,float delta_time)
             (1.0 - ABS(local_14) * (float)0.63661977238577705) * (float)25 +
             (float)30) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0
-                    (local_18,_DAT_01cc9094);
+                    (local_18,_DAT_01cc9094,&local_1a8);
           local_4c.y = 0.7;
-          pfVar9 = local_1a8;
+          pCVar9 = &local_1a8;
           pCVar10 = &local_178;
           for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-            pCVar10->m[0].w = *pfVar9;
-            pfVar9 = pfVar9 + (uint)bVar12 * -2 + 1;
+            pCVar10->m[0].w = pCVar9->m[0].w;
+            pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar12 * -2 + 1) * 4);
             pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);
           }
           local_4c.z = 0.3;

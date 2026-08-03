@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_succubus_cpp_CSuccubus_process_FUN_00540f50(CEnemy *param_1,float param_2)
+; void __cdecl core_succubus_cpp_CSuccubus_process_FUN_00540f50(CSuccubus *this_ptr,float delta_time)
 ;
+; Parameters:
+; CSuccubus *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70
@@ -477,7 +480,7 @@ section .text
     MOV ECX,dword ptr [0x005ad350]      ; 005413b4 | g_CConsole_PTR_005ad350
     PUSH ECX                            ; 005413ba | g_CConsole_0077ad0c
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005413bb
-        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_printf_FUN_0043ac60()
+        ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00541075                      ; 005413c0
         ;   XREF to: 00541075 (UNCONDITIONAL_JUMP)  ; LAB_00541075
     JBE 0x00541065                      ; 005413c5

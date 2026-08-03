@@ -264,7 +264,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0048ad7d
     PUSH EAX                            ; 0048ad81
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048ad82
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048ad87
     CMP byte ptr [ESP + 0x8],0x0        ; 0048ad8a
     JNZ 0x0048ae60                      ; 0048ad8f
@@ -292,7 +292,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0048adc1
     PUSH EAX                            ; 0048adc5
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048adc6
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048adcb
     CMP byte ptr [ESP + 0x8],0x0        ; 0048adce
     JNZ 0x0048ae60                      ; 0048add3
@@ -320,7 +320,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0048ae05
     PUSH EAX                            ; 0048ae09
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048ae0a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048ae0f
     CMP byte ptr [ESP + 0x8],0x0        ; 0048ae12
     JNZ 0x0048ae60                      ; 0048ae17
@@ -348,7 +348,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0048ae45
     PUSH EAX                            ; 0048ae49
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0048ae4a
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048ae4f
     CMP byte ptr [ESP + 0x8],0x0        ; 0048ae52
     JNZ 0x0048ae60                      ; 0048ae57

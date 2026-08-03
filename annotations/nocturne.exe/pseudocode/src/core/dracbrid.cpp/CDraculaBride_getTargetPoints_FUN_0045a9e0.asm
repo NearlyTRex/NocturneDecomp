@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(int param_1,CVector3f *param_2)
+; int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(CDraculaBride *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
 ; undefined        Stack[-0x30]:1  local_30
 ; undefined        Stack[-0x24]:1  local_24

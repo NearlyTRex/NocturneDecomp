@@ -12,7 +12,6 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(CDi
 
 {
   uint error_code;
-  char *pcVar1;
   int *piStack_1e0;
   int *piStack_40;
   int *piStack_3c;
@@ -70,9 +69,8 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(CDi
     }
   }
   else {
-    pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
-    _sprintf(&piStack_1e0,"DirectSux: Unable to %s.  (%s)","Create temp secondary buffer for property set creation",
-               pcVar1);
+    sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
+    _sprintf((char *)&piStack_1e0,"DirectSux: Unable to %s.  (%s)");
     sound_sndmain_cpp_FUN_00529980(&piStack_1e0);
   }
   return;

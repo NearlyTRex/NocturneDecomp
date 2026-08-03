@@ -16,9 +16,8 @@
 #include "system/winbase.h"
 #include "system/windef.h"
 #include "system/winnt.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
-#include "types/classes/CEnemy.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CZombie.h"
 #include "types/funcdefs/CustomScanlineFunc.h"
@@ -29,22 +28,22 @@
 // FUNCTION PROTOTYPES - Range 0x560000
 // =============================================================================
 
-void core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(int param_1,int param_2);
+void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_zombie_cpp_FUN_00561010(CZombie *this_ptr,float delta_time);
 int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(CZombie *this_ptr,int object_shape_type);
 int __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(CZombie *this_ptr,int object_shape_type);
-void core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005618c0(int param_1);
-int core_zombie_cpp_CZombie_renderOpaque_FUN_00561900(CCharacter *param_1);
-int core_zombie_cpp_CZombie_renderTransparent_FUN_00561940(CCharacter *param_1);
-void core_zombie_cpp_CZombie_archive_FUN_00561aa0(CEnemy *param_1);
-undefined4 core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(CDemonActor *param_1,CVector3f *param_2);
+void __cdecl core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005618c0(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_renderOpaque_FUN_00561900(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_00561940(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_archive_FUN_00561aa0(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(CZombie *this_ptr,CVector3f *out_attract_position);
 void __cdecl core_zombie_cpp_CZombie_processDismemberment_FUN_00561cf0(CZombie *this_ptr,SDamageInfo *damage_info);
-void core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *param_1,SDamageInfo *param_2);
-int core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(int param_1,CVector3f *param_2);
+void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(CZombie *this_ptr,CVector3f *out_points_array);
 int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_005623f0(CZombie *this_ptr,CDemonActor *grabber);
 int __cdecl core_zombie_cpp_CZombie_canBeGrabbed_FUN_00562430(CZombie *this_ptr,CDemonActor *grabber,int grab_type);
-undefined4 core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(int param_1,undefined4 param_2,int param_3);
-int core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(CDemonActor *param_1);
+int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(CZombie *this_ptr,CDemonActor *grabber,int grab_type);
+int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_00562550(CZombie *this_ptr,uint flags);
 void __cdecl engine_3d_c_addRasterizerEdge_FUN_00562620(SRenderVertex *v0,SRenderVertex *v1);
@@ -74,7 +73,7 @@ void __cdecl crt_unknown_c_StringBufferCallback_FUN_005639f0(StringOutputContext
 int __cdecl crt_stdio_c_vsprintf_FUN_00563a08(char *buffer,char *format,va_list_t args);
 double __fpureg_safe crt_math_c_round_FUN_00563a30(double value);
 SIZE_T __cdecl crt_stdio_c_fwrite_FUN_00563a50(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
-void crt_stdio_c_sprintf_FUN_00563c90(char *param_1,char *param_2);
+int __cdecl crt_stdio_c_sprintf_FUN_00563c90(char *buffer,char *format);
 void * __cdecl crt_memory_c_memset_FUN_00563cc0(void *dest,int value,ulong count);
 void crt_unknown_c_FUN_00563ce0(void);
 void crt_unknown_c_FUN_00563d12(void);
@@ -150,7 +149,7 @@ int __cdecl crt_unknown_c_seek_within_buffer_FUN_00565814(_FILE *file);
 int __cdecl crt_stdio_c_fseek_FUN_0056582c(_FILE *file,long offset,int whence);
 _ostream * __cdecl crt_fstream_cpp_ostream_write_FUN_00565a13(_ostream *stream,void *buffer,SIZE_T count);
 float10 __fpustack_safe crt_math_c_pow_FUN_00565ad6(float10 base,float10 exp);
-void crt_unknown_c_integer_power_FUN_00565c12(void);
+void __fpureg crt_unknown_c_integer_power_FUN_00565c12(void);
 void crt_unknown_c_FUN_00565c50(int param_1,int param_2);
 float10 __fpustack_safe crt_math_c_asin_FUN_00565c76(float10 sine_value);
 double __fpustack_safe crt_math_c_acos_FUN_00565ca4(double x);
@@ -244,7 +243,7 @@ undefined1 __cdecl crt_io_c_getTempDirectory_FUN_005687bc(void);
 int crt_unknown_c_FUN_00568890(undefined4 *param_1);
 int __watcallStack crt_stdio_c_lseek_FUN_005689c0(int file_handle_index,long distance_to_move,int move_method);
 int __cdecl crt_io_c_close_FUN_00568a50(int fd);
-uint * crt_heap_c_AllocateFromFreeList_FUN_00568b00(void);
+uint * __watcallRegister crt_heap_c_AllocateFromFreeList_FUN_00568b00(uint param_1,undefined4 param_2,int unaff_EBX);
 void __watcallRegister crt_heap_c_CoalesceAndAddFreeBlock_FUN_00568bb0(void *ptr,HeapBlock *heap_block,ushort segment);
 HeapBlock * __cdecl crt_heap_c_InsertHeapBlockInOrder_FUN_00568ce0(HeapBlock *new_block);
 int __cdecl crt_heap_c_AllocateNewHeapBlock_FUN_00568d58(uint size);
@@ -296,7 +295,7 @@ int crt_unknown_c_FUN_0056af50(void);
 void __watcallStack crt_cpp_c_reportPureVirtualError_FUN_0056af76(char *error_message,int exit_code);
 ulong __cdecl crt_heap_c_GetBlockSize_FUN_0056afc0(void *ptr);
 void crt_unknown_c_FUN_0056afd0(void *param_1,ulong param_2);
-undefined4 crt_heap_c_ResizeBlockInPlace_FUN_0056afe8(short param_1,int *param_2,uint param_3,uint *param_4);
+undefined4 __watcallRegister crt_heap_c_ResizeBlockInPlace_FUN_0056afe8(undefined4 param_1,undefined4 param_2,int *unaff_EBX,undefined4 param_4,short param_5,int *param_6,uint param_7,uint *param_8);
 void * __cdecl crt_heap_c_TryResizeInPlace_FUN_0056b1a4(void *ptr,ulong new_size);
 void crt_unknown_c_FUN_0056b1ee(void);
 void __cdecl crt_stdlib_c_atexitRegisterNode_FUN_0056b215(WatcomStaticDestructorNode *node_ptr);
@@ -320,7 +319,7 @@ char * crt_fstream_cpp_fstreambase_ctor_FUN_0056b75d(int *param_1,byte param_2,u
 void crt_unknown_c_FUN_0056b7f8(int param_1,uint param_2);
 fstreambase * __cdecl crt_fstream_cpp_fstreambase_dtor_FUN_0056b810(fstreambase *this_ptr,uint flags);
 fstreambase * __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0056b896(fstreambase *this_ptr,uint c1);
-void crt_stdio_c_CreateFileVariadic_FUN_0056b934(char *param_1,dword param_2,dword param_3);
+int __cdecl crt_stdio_c_CreateFileVariadic_FUN_0056b934(char *filename,int access_mode,int share_mode);
 HANDLE __cdecl crt_stdio_c_CreateFileImpl_FUN_0056b960(char *filename,dword access_mode,dword share_mode,va_list_t *extra_args);
 void __cdecl crt_stdio_c_DetectDeviceAndSetBuffering_FUN_0056bbb0(_FILE *file);
 int __watcallStack crt_unknown_c_FUN_0056bbf0(char *filename);
@@ -339,7 +338,7 @@ void crt_unknown_c_FUN_0056bf87(void);
 void crt_unknown_c_FUN_0056bf8d(void);
 void crt_unknown_c_FUN_0056bf93(void);
 void crt_unknown_c_FUN_0056bf99(void);
-float10 * __watcallRegister crt_math_c_dispatch_divide_FUN_0056bf9f(float10 *__return_storage_ptr__);
+void __watcallRegister crt_math_c_dispatch_divide_FUN_0056bf9f(void);
 void crt_unknown_c_FUN_0056bfbb(void);
 void crt_unknown_c_FUN_0056bfc0(void);
 void crt_unknown_c_FUN_0056bfd6(void);
@@ -395,7 +394,7 @@ void crt_unknown_c_FUN_0056c3a3(void);
 void crt_unknown_c_FUN_0056c3c3(void);
 void crt_math_c_fdiv_thunk_FUN_0056c3d7(void);
 void crt_unknown_c_FUN_0056c3ef(void);
-void crt_math_c_pentiumFdivpWorkaround_FUN_0056c403(void);
+void __fpustack_safe crt_math_c_pentiumFdivpWorkaround_FUN_0056c403(void);
 void crt_unknown_c_FUN_0056c416(void);
 void crt_unknown_c_FUN_0056c429(void);
 undefined4 crt_unknown_c_FUN_0056c4d4(uint param_1);
@@ -419,8 +418,8 @@ int crt_unknown_c_FUN_0056ced8(int param_1,int param_2);
 undefined4 crt_unknown_c_FUN_0056cfd8(int param_1,int param_2,undefined4 param_3);
 int __cdecl crt_time_c_determine_dst_status_FUN_0056d034(_tm *timeptr);
 undefined4 crt_unknown_c_FUN_0056d308(int *param_1,int *param_2);
-undefined4 * crt_time_c_gmtime_r_FUN_0056d340(int param_1,uint param_2,int param_3,undefined4 *param_4);
-void crt_unknown_c_FUN_0056d488(undefined4 *param_1,int param_2);
+undefined1 __cdecl crt_time_c_gmtime_r_FUN_0056d340(time_t days,time_t seconds,time_t timezone_offset,undefined1 result);
+void crt_unknown_c_FUN_0056d488(time_t *param_1,int param_2);
 void crt_unknown_c_FUN_0056d4ab(undefined4 param_1);
 uint crt_unknown_c_FUN_0056d4d0(void);
 uint crt_unknown_c_FUN_0056d4e8(void);
@@ -494,7 +493,7 @@ BOOL __cdecl crt_windows_c_has_active_window_FUN_0056ea40(void);
 void __cdecl crt_exception_c_FormatHexString_FUN_0056ea78(char *dest,char *format,DWORD value);
 long __cdecl crt_exception_c_TopLevelExceptionFilter_FUN_0056ead4(_EXCEPTION_POINTERS *ExceptionInfo);
 EXCEPTION_DISPOSITION __cdecl crt_exception_c_ExceptionHandler_FUN_0056ed08(EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,void *DispatcherContext);
-void crt_exception_c_installExceptionHandler_FUN_0056eed8(undefined4 param_1);
+void __cdecl crt_exception_c_installExceptionHandler_FUN_0056eed8(undefined4 param_1);
 void __cdecl crt_exception_c_RemoveExceptionHandler_FUN_0056ef24(void);
 void __cdecl crt_util_c_invokeRuntimeHandler_FUN_0056ef50(RUNTIME_HANDLER_FUNC **ppHandler);
 void __cdecl crt_init_c_ProcessInitTermHandlers_FUN_0056ef60(int max_priority);

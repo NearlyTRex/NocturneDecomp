@@ -11,15 +11,15 @@ CQuaternion4f * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolate
 {
   float fVar1;
   CQuaternion4f *pCVar2;
-  CQuaternion4f *pCVar3;
+  CQuaternion4f *quat1_in;
+  uint *puVar3;
   uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
+  byte bVar5;
   uint auStackY_180c [1520];
   int frame_index;
   CQuaternion4f local_20;
   
-  bVar6 = 0;
+  bVar5 = 0;
   frame_index = frame_index_1;
   if ((interpolation <= 0.0) || (frame_index = frame_index_2, 1.0 <= interpolation)) {
     pCVar2 = core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60
@@ -28,27 +28,27 @@ CQuaternion4f * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolate
   else {
     pCVar2 = core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60
                        (this_ptr,bone_index,frame_index_2);
-    pCVar3 = core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60
-                       (this_ptr,bone_index,frame_index_1);
-    core_xform_cpp_slerpQuaternion_FUN_0055d2d0(pCVar3,pCVar2,interpolation);
+    quat1_in = core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60
+                         (this_ptr,bone_index,frame_index_1);
+    core_xform_cpp_slerpQuaternion_FUN_0055d2d0(quat1_in,pCVar2,interpolation,&local_20);
     pCVar2 = &local_20;
   }
-  puVar4 = (uint *)((int)pCVar2 + (uint)bVar6 * -8 + 4);
+  puVar3 = (uint *)((int)pCVar2 + (uint)bVar5 * -8 + 4);
   fVar1 = pCVar2->w;
-  puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
-  *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) = *puVar4;
-  *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) = *puVar5;
+  puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
+  *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar3;
+  *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) = *puVar4;
   *(uint *)
-   ((int)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4) =
-       puVar5[(uint)bVar6 * -2 + 1];
-  puVar4 = (uint *)((int)result_out + (uint)bVar6 * -8 + 4);
+   ((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =
+       puVar4[(uint)bVar5 * -2 + 1];
+  puVar3 = (uint *)((int)result_out + (uint)bVar5 * -8 + 4);
   result_out->w = fVar1;
-  puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
-  *puVar4 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);
-  *puVar5 = *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  puVar5[(uint)bVar6 * -2 + 1] =
+  puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
+  *puVar3 = *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);
+  *puVar4 = *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+  puVar4[(uint)bVar5 * -2 + 1] =
        *(uint *)
-        ((int)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4)
+        ((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)
   ;
   return result_out;
 }

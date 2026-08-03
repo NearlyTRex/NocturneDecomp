@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_imp_cpp_CImp_getTargetPoints_FUN_004bce00(int param_1,CVector3f *param_2)
+; int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004bce00(CImp *this_ptr,CVector3f *out_points_array)
 ;
+; Parameters:
+; CImp *           Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined        Stack[-0x3c]:1  local_3c

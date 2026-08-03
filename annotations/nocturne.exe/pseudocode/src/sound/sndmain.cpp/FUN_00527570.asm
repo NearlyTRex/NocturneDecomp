@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_FUN_00527570(undefined1 *param_1)
+; void sound_sndmain_cpp_FUN_00527570(char *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
@@ -74,7 +74,7 @@ section .text
     PUSH 0x593712                       ; 005275cb | = "sfx slot %d: %s, pos %7.1f/%7.1f\n"
     PUSH EDI                            ; 005275d0
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005275d1
-        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
+        ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x20                        ; 005275d6
     ADD EDI,EAX                         ; 005275d9
     JMP 0x0052758a                      ; 005275db

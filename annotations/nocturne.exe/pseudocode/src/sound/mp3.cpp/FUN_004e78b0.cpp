@@ -29,7 +29,7 @@ int sound_mp3_cpp_FUN_004e78b0(void)
   local_18 = (char *)0x1cd8c28;
   local_14 = 0;
   do {
-    _sprintf(local_18,"%d",iVar5);
+    _sprintf(local_18,"%d");
     *(uint *)(&DAT_01cd944c + iVar4) = *(uint *)(&DAT_005bdba0 + local_14);
     *(uint *)(iVar4 + 0x1cd8c2c) = *(uint *)(&DAT_005bdba4 + local_14);
     *(uint *)(iVar4 + 0x1cd8c30) = *(uint *)(&DAT_005bdba8 + local_14);

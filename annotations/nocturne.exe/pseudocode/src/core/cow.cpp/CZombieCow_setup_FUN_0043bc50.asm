@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cow_cpp_CZombieCow_setup_FUN_0043bc50(CEnemy *param_1)
+; void __cdecl core_cow_cpp_CZombieCow_setup_FUN_0043bc50(CZombieCow *this_ptr)
 ;
+; Parameters:
+; CZombieCow *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Spine2_0057b2dd

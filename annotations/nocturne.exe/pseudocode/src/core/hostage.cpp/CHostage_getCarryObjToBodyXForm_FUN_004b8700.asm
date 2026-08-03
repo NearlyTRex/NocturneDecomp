@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(int param_1,int param_2)
+; CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
+; Parameters:
+; CHostage *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ; Local Variables:
 ; undefined        Stack[-0x294]:1  local_294
 ; undefined        Stack[-0x264]:1  local_264
@@ -148,7 +151,7 @@ section .text
     LEA ESI,[ESP + 0x38]                ; 004b8830
     LEA EDI,[ESP + 0x8]                 ; 004b8834
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004b8838
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004b883d
     LEA ESI,[ESP + 0x38]                ; 004b8842
     ADD ESP,0x8                         ; 004b8846
@@ -207,7 +210,7 @@ section .text
     LEA ESI,[ESP + 0xc8]                ; 004b8905
     LEA EDI,[ESP + 0x8]                 ; 004b890c
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004b8910
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004b8915
     LEA ESI,[ESP + 0xc8]                ; 004b891a
     JMP 0x004b8846                      ; 004b8921
@@ -271,7 +274,7 @@ section .text
     LEA ESI,[ESP + 0x128]               ; 004b8a15
     LEA EDI,[ESP + 0x8]                 ; 004b8a1c
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004b8a20
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004b8a25
     LEA ESI,[ESP + 0x128]               ; 004b8a2a
     JMP 0x004b8846                      ; 004b8a31
@@ -330,7 +333,7 @@ section .text
     LEA ESI,[ESP + 0x68]                ; 004b8b0c
     LEA EDI,[ESP + 0x8]                 ; 004b8b10
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00 ; 004b8b14
-        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00()
+        ;   XREF to: 0055aa00 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004b8b19
     LEA ESI,[ESP + 0x68]                ; 004b8b1e
     JMP 0x004b8846                      ; 004b8b22
@@ -348,7 +351,7 @@ section .text
     LEA ESI,[ESP + 0x158]               ; 004b8b48
     LEA EDI,[ESP + 0x8]                 ; 004b8b4f
     CALL core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490 ; 004b8b53
-        ;   XREF to: 00429490 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490()
+        ;   XREF to: 00429490 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490(CCharacter * this_ptr, int hand_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 004b8b58
     LEA ESI,[ESP + 0x158]               ; 004b8b5d
     JMP 0x004b8846                      ; 004b8b64

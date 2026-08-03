@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammobox_cpp_CAmmoBox_archive_FUN_0040f390(CDemonActor *param_1)
+; void __cdecl core_ammobox_cpp_CAmmoBox_archive_FUN_0040f390(CAmmoBox *this_ptr)
 ;
+; Parameters:
+; CAmmoBox *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_00578399

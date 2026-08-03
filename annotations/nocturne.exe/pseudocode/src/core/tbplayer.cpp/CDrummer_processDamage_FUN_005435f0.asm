@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tbplayer_cpp_CDrummer_processDamage_FUN_005435f0(int param_1,int param_2)
+; void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_005435f0(CDrummer *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CDrummer *       Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; *****************************************************************************
 

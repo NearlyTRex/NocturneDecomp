@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(int param_1,int param_2)
+; void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(CEnemy *this_ptr,CDemonActor *lost_actor)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   lost_actor
 ;
 ; *****************************************************************************
 

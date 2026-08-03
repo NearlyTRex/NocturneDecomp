@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 260,
+        "line": 259,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 269,
+        "line": 268,
         "message": "unknown type name 'code'"
       },
       {
@@ -52,68 +52,68 @@
       {
         "category": "other",
         "column": 64,
-        "line": 109,
+        "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
-        "line": 47,
+        "column": 26,
+        "line": 48,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 50,
+        "line": 51,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 59,
+        "line": 60,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 60,
+        "line": 61,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 60,
+        "line": 61,
         "message": "expected expression"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 68,
-        "message": "no matching function for call to 'core_hero_cpp_CHero_closestEnemy_FUN_004b5d00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 68,
-        "message": "incompatible pointer to integer conversion assigning to 'int' from 'CCharacter *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 96,
+        "line": 100,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 97,
+        "line": 101,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 45,
-        "line": 97,
+        "line": 101,
         "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 102,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 103,
+        "message": "use of undeclared identifier 'code'"
       }
     ],
     "success": false,
@@ -122,20 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 337,
+    "complexity_score": 359,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 227,
-    "suspect_count": 9,
+    "pseudocode_lines": 234,
+    "suspect_count": 10,
     "suspect_types": [
+      "raw_address_pointer_store",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 774
+    "total_lines": 781
   },
   "cross_references": [
     {
@@ -427,8 +428,16 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 41,
+      "match": "*(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "pCVar10 = *(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
+      "line": 54,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);",
@@ -436,7 +445,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 90,
+      "line": 94,
       "match": "code *",
       "severity": "moderate",
       "text": "pCStack_20 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0xbc))(iVar5);",
@@ -444,7 +453,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 92,
+      "line": 96,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);",
@@ -452,7 +461,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 154,
+      "line": 158,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);",
@@ -460,7 +469,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 76,
+      "line": 80,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_6c.x = CStack_78.x;",
@@ -468,7 +477,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 203,
+      "line": 210,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_6c.x = CStack_60.x;",
@@ -476,10 +485,10 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 209,
+      "line": 216,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_6c.x = pCVar6->x;",
+      "text": "local_6c.x = pCVar7->x;",
       "type": "unrolled_memcpy"
     }
   ]

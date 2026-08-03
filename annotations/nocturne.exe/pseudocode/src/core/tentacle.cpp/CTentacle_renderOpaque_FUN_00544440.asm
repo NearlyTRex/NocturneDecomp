@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_tentacle_cpp_CTentacle_renderOpaque_FUN_00544440(CCharacter *param_1)
+; int __cdecl core_tentacle_cpp_CTentacle_renderOpaque_FUN_00544440(CTentacle *this_ptr)
 ;
+; Parameters:
+; CTentacle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450

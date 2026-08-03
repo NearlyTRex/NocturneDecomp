@@ -1,14 +1,14 @@
 // Name: core_weapon.cpp_CWeapon_pickup_FUN_00554300
 // Address: 00554300
 // Address Range: [[00554300, 0055430e]]
-// Convention: unknown
-// Signature: void core_weapon_cpp_CWeapon_pickup_FUN_00554300(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_weapon_cpp_CWeapon_pickup_FUN_00554300(CWeapon *this_ptr,CDemonActor *carrier)
 
 #include "nocturne.h"
 
-void core_weapon_cpp_CWeapon_pickup_FUN_00554300(int param_1,uint param_2)
+void __cdecl core_weapon_cpp_CWeapon_pickup_FUN_00554300(CWeapon *this_ptr,CDemonActor *carrier)
 
 {
-  *(uint *)(param_1 + 0x2fc) = param_2;
+  this_ptr->carried_by_actor = carrier;
   return;
 }
